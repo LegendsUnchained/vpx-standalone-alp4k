@@ -1,5 +1,10 @@
-/*/*.vpx
-/*/*.direct2bs
-/*/pinmame/roms/*
-/*/vpinball.log
+/external/*/*.vpx
+/external/*/*.directb2s
+/external/*/*.elf
+/external/*/VPinballX.ini
+/external/*/gamecontrollerdb.txt
+/external/*/altsound.log
+/external/*/Cache
+/external/*/pinmame/roms/*
+/external/*/vpinball.log
 VPinballX_*-alp4k
