@@ -8,3 +8,4 @@
 /external/*/pinmame/roms/*
 /external/*/vpinball.log
 VPinballX_*-alp4k
+external/.DS_Store
