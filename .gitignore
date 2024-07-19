@@ -10,3 +10,4 @@
 VPinballX_*-alp4k
 external/.DS_Store
 .DS_Store
+/external/*/pinmame/roms/.gitkeep
