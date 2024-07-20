@@ -2,7 +2,7 @@
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_02/Sop_pf_FS.png.f0e3941b1a67ab063f837d0fb843197b.png)
 
-Author: [Siggi](https://www.vpforums.org/index.php?app=core&module=search&do=user_activity&sid=40128d9b02d204ff0a868b9c159c7f81&mid=277&search_app=downloads&userMode=all&search_app_filters%5Bdownloads%5D%5BsearchInKey%5D=files&search_app_filters%5Bdownloads%5D%5Bfiles%5D%5BsortKey%5D=update&search_app_filters%5Bdownloads%5D%5Bfiles%5D%5BsortDir%5D=)  
+Author: [Siggi](https://vpuniverse.com/profile/8779-siggi/)  
 Version: 1.0.0  
 Download: [VP Forums](https://vpuniverse.com/files/file/18652-the-sopranos-siggis-mod/)
 
