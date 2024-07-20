@@ -14,7 +14,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/12799-the-flintstones-
 
 ## Status 
 
-Minimum VPX Standalone build: 10.8.0-1983-b84441e
+Minimum VPX Standalone build: 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | FPS | 
 |-----------|----------|-----------|-----|----------|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 30 |
