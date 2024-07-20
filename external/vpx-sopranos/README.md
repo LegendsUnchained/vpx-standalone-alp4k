@@ -4,7 +4,7 @@
 
 Author: [Siggi](https://vpuniverse.com/profile/8779-siggi/)  
 Version: 1.0.0  
-Download: [VP Forums](https://vpuniverse.com/files/file/18652-the-sopranos-siggis-mod/)
+Download: [VP Universe](https://vpuniverse.com/files/file/18652-the-sopranos-siggis-mod/)
 
 DirectB2S
 
