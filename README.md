@@ -21,6 +21,9 @@ Links to these products on Amazon are through affiliate links.
 - [Rii RK707 Keyboard/Game Controller](https://amzn.to/4d0LalO)
 
 ## Tested tables
+Minimum VPX Standalone build: 10.8.0-1983-b84441e
+
 | Table | Playfield | Controls | Backglass | DMD | FPS | 
 |-------|-----------|----------|-----------|-----| --- |
 | [JP's Deadpool](external/vpx-deadpool/) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
+| [The Flintstones](external/vpx-flintstones/) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 30 |
