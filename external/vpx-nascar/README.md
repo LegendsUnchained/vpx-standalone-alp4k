@@ -15,6 +15,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/18983-nascar-stern-200
 ROM
 
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=157)
+
 SHA: 7b37c8e914ae58270ba9bbade33532672efe4d67
 MD5: 328e83dca300153030d4ee803fc90de2
 

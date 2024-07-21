@@ -15,6 +15,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/12991-sopranos-stern-2
 ROM
 
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=287)
+
 SHA: 1f6965d6f7b350a3cab52bd843f63270b159f703
 MD5:15ecf8c5a7cee365cad0be16ebbed414
 
