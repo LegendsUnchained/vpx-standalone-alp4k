@@ -22,9 +22,9 @@ MD5: bfa9f51b9d8b8e77c94a4fcfe0f4876c
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
-| Playfield | Controls | Backglass | DMD | FPS | 
-|-----------|----------|-----------|-----|----------|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 30 |
+| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
+|-----------|----------|-----------|-----|--------------|-----|
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 30 |
 
 ## Instructions
 
