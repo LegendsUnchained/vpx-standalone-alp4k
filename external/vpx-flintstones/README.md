@@ -12,6 +12,12 @@ Authors: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
 Version: 2.0  
 Download: [VP Universe](https://vpuniverse.com/files/file/12799-the-flintstones-williams-1994-b2s-full-dmd/)
 
+ROM
+
+Download: [VP Universe](https://vpuniverse.com/files/file/871-fs_lx5zip/)
+SHA: 6a1d12ad158ee092c036991343ecb448259a7b6c
+MD5: bfa9f51b9d8b8e77c94a4fcfe0f4876c
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
