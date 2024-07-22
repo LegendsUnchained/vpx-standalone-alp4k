@@ -6,7 +6,8 @@ The Legends Unchained Loader is not for sale. You are not permitted to distribut
 
 If you'd like to contribute to the development of the Legends Unchained Loader and VPX Standalone on the ALP 4K devices, we ask that you [make a donation to St. Jude](https://www.stjude.org/give.html) in any amount you choose.
 
-
+## Contributing
+This repo is public and accepts Pull Requests for new table configs and updates to existing configs.
 
 ## Recommended Hardware
 The following hardware has been verified to work with the Legends Unchained Loader.
