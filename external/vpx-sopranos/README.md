@@ -12,6 +12,13 @@ Author: [Ryguy417](https://vpuniverse.com/profile/31096-ryguy417/)
 Version: 2.0  
 Download: [VP Universe](https://vpuniverse.com/files/file/12991-sopranos-stern-2005-b2s-with-full-dmd/)
 
+ROM
+
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=287)
+
+SHA: 1f6965d6f7b350a3cab52bd843f63270b159f703
+MD5:15ecf8c5a7cee365cad0be16ebbed414
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

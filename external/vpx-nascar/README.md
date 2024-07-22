@@ -12,6 +12,13 @@ Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
 Version: 1.0.0  
 Download: [VP Universe](https://vpuniverse.com/files/file/18983-nascar-stern-2005-b2s-with-full-dmd/)
 
+ROM
+
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=157)
+
+SHA: 7b37c8e914ae58270ba9bbade33532672efe4d67
+MD5: 328e83dca300153030d4ee803fc90de2
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
