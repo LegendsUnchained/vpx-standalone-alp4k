@@ -1,0 +1,12 @@
+ScreenNum,ScreenDes,PlayList,PlayFile,Loopit,Active,Priority,CustomPos
+0,Topper,,,,0,off,,
+1,DMD,,,0,show,,
+2,Backglass,Movie,BackGlassMovie.mp4,0,ForceOn,,
+3,PlayField,,,0,off,,
+4,Music,,,0,off,,
+5,Menu,,,0,off,,
+6,Select,,,0,off,,
+7,Other1/BackGlass2,,,0,off,,
+8,Other2/Topper2,,,0,off,,
+9,GameInfo,,,0,off,,
+10,GameHelp,,,0,off,,
