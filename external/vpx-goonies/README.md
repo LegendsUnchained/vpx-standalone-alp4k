@@ -2,7 +2,7 @@
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_11/goonies-cab.png.e8dd5e4e4c778657418115507a5852fb.png)
 
-Authors: [vpinworkshop](https://vpuniverse.com/profile/40692-vpinworkshop/
+Authors: [vpinworkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)
 Download: [VP Universe](https://vpuniverse.com/files/file/7819-the-goonies-never-say-die-pinball-vpw/)
 
 DirectB2S
