@@ -26,6 +26,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 | Table | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-------|-----------|----------|-----------|-----|--------------|-----|
+| [Big Trouble in Little China](external/vpx-big_trouble) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [JP's Deadpool](external/vpx-deadpool/) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [The Flintstones](external/vpx-flintstones/) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 30 |
 | [The Sopranos](external/vpx-sopranos/) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
