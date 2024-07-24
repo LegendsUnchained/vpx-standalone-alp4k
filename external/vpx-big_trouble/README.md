@@ -18,7 +18,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/16604-big-trouble-in-l
 Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :X: | 60 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 
 ## Instructions
 
