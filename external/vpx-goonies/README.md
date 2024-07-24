@@ -5,9 +5,7 @@
 Authors: [vpinworkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)
 Download: [VP Universe](https://vpuniverse.com/files/file/7819-the-goonies-never-say-die-pinball-vpw/)
 
-DirectB2S
-
-Included
+DirectB2S : Included
 
 ## Status 
 
