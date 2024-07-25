@@ -2,7 +2,8 @@
 
 ![Table Preview](https://i.imgur.com/iJ6rXVJ.jpeg))
 
-Author: [masonm](https://www.vpforums.org/index.php?showuser=147793)  
+Author: [masonm](https://www.vpforums.org/index.php?showuser=147793)
+Tested by: Bla1ze  
 Version: 1.5  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=16898)
 
