@@ -1,6 +1,6 @@
 # Lethal Weapon 3 (Data East 1992)
 
-![Table Preview]()
+![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=77994&id=15140&full=1)
 
 Authors: [EBisLit](https://www.vpforums.org/index.php?showuser=150578)  
 Version: 1.0.1  
