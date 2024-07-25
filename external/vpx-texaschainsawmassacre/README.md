@@ -4,13 +4,13 @@
 
 Authors: [ivantba, Goldchicco and mfuegemann](https://www.vpforums.org/index.php?showuser=123858)  
 Version: 1.0  
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&module=display&section=download&do=confirm_download&hash=e1b607f377eb0f04139882eeb76fcae2)
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=15385)
 
 DirectB2S
 
 Authors: [ivantba, Goldchicco and mfuegemann](https://www.vpforums.org/index.php?showuser=123858)  
 Version: 1.0  
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&module=display&section=download&do=confirm_download&hash=e1b607f377eb0f04139882eeb76fcae2)
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=15385)
 
 ROM
 
