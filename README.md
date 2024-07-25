@@ -36,3 +36,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [The Goonies Never Say Die ](external/vpx-goonies/) | :white_check_mark: | :white_check_mark: | :white_check_mark: | 
 :white_check_mark: | :x: | 32 |
 | [I Dream of Jeannie](external/vpx-idreamofjeannie) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
+| [I Dream of Jeannie](external/vpx-idreamofjeannie) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
