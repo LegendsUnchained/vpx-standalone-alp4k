@@ -1,6 +1,6 @@
 # X-Men LE (Stern 2012) MOD color rush 1.5
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=111692&id=16898&full=1)
+![Table Preview](https://i.imgur.com/iJ6rXVJ.jpeg))
 
 Author: [masonm](https://www.vpforums.org/index.php?showuser=147793)  
 Version: 1.5  
@@ -30,4 +30,4 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-xmen.elf
 - Download the table and directb2s versions listed above and copy them into this folder
-- Much beauty in the swamp, if you only look 
+- Rumor has it this is Deadpool's favorite game because you get to bash Wolverine!
