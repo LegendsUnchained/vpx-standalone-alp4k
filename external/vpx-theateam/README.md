@@ -4,7 +4,7 @@
 
 Author: [jicho2003](https://vpuniverse.com/profile/15718-jicho2003/)  
 Version: 2.0.0  
-Download: [VP Forums](https://vpuniverse.com/files/file/17525-the-a-team-original-pinball/)
+Download: [VP Universe](https://vpuniverse.com/files/file/17525-the-a-team-original-pinball/)
 
 DirectB2S
 
