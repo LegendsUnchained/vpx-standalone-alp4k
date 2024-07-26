@@ -9,7 +9,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/15565-transformers-pro
 
 DirectB2S
 
-Author: [Hauntfreak](https://vpuniverse.com/profile/31096-ryguy417/)  
+Author: [Hauntfreaks](https://vpuniverse.com/profile/31096-ryguy417/)  
 Version: 1.1.0  
 Download: [VP Universe](https://vpuniverse.com/files/file/15569-transformers-stern-2011-b2s-with-full-dmd/)
 
