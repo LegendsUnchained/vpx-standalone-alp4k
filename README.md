@@ -24,8 +24,6 @@ Links to these products on Amazon are through affiliate links.
 ## Tested tables
 Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
-Certainly! Here is the sorted table:
-
 | Table | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-------|-----------|----------|-----------|-----|--------------|-----|
 | [ 24 (Stern 2009)](external/vpx-24) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 30 |
