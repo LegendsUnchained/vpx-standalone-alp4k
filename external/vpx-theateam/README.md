@@ -3,7 +3,7 @@
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_12/Tabla_Play.jpg.5d8bd07d4e8f1348e5cb174ea4562e59.jpg)
 
 Author: [jicho2003](https://vpuniverse.com/profile/15718-jicho2003/)  
-Version: 2.0.0  
+Version: 2.0.8  
 Download: [VP Universe](https://vpuniverse.com/files/file/17525-the-a-team-original-pinball/)
 
 DirectB2S
