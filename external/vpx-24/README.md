@@ -24,6 +24,7 @@ MD5: b8e13521877c048cd8f198a3cba105f8
 Alt Color DMD
 
 Author: [OdinBolt](https://vpuniverse.com/profile/24633-odinbolt/)
+
 Download [VP Universe](https://vpuniverse.com/files/file/20738-24-stern-2009-serum-colorization/)
 
 
