@@ -25,5 +25,3 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-meninblack.elf
 - Download the table and directb2s versions listed above and copy them into this folder
-
-- "You know what the difference is between you and me? I make this look GOOD."
