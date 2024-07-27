@@ -1,3 +1,0 @@
-ID,Active,Descript,Trigger,ScreenNum,PlayList,PlayFile,Volume,Priority,Length,Counter,RestSeconds,Loop,Defaults
-2,1,"Start Game",W66,2,Clips,start.mp4,0,7,,,10,SplashResume,0
-4,1,door,SW3,2,clips,"ball saved.mp4",0,7,,,10,,0
