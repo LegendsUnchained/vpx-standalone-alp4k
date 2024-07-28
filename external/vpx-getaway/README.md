@@ -8,9 +8,9 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 
 DirectB2S
 
-Author: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) 
-Version: 2.0
-Download: [VP Universe] https://vpuniverse.com/files/file/11932-the-getaway-high-speed-ii-williams-1992-b2s-with-full-dmd/
+Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
+Version: 2.0.0
+Download: [VP Universe](https://vpuniverse.com/files/file/11932-the-getaway-high-speed-ii-williams-1992-b2s-with-full-dmd/)
 
 ROM
 
