@@ -1,6 +1,6 @@
 # Big Buck Hunter Pro (Stern 2010)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_01/screenshot_cab.png.356d3ab352d886db87593e4331d5edb1.png)
+![Table Preview](https://i.imgur.com/c9VOMjn.png)
 
 Author: [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/) Tested by: Bla1ze 
 
