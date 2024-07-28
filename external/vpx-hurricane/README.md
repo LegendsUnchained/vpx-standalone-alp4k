@@ -10,7 +10,7 @@ DirectB2S
 
 Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
 Version: 2.0.1  
-Download: [VP Universe]https://vpuniverse.com/files/file/10985-hurricane-williams-1991-b2s-with-full-dmd/)
+Download: [VP Universe](https://vpuniverse.com/files/file/10985-hurricane-williams-1991-b2s-with-full-dmd/)
 
 ROM
 
