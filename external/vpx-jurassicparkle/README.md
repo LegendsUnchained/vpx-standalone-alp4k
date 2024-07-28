@@ -1,4 +1,4 @@
-# Hurricane - Jurassic Park Pro LE
+# Jurassic Park Pro LE
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_06/Capturedcran(569).png.ed378826543c79aafe608d28ccf7ea8e.png)
 
