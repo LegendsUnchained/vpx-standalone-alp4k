@@ -16,12 +16,6 @@ ROM
 
 Download: Included with table download
 
-PUP Pack
-
-Download [Mega.nz] https://mega.nz/file/XMIgnRwC#LmRlA5GjAzxrWdjxl4O87PxqjUldOF4kA-fLoU0odFQ
-
-Note - PUP Pack was not working at time of testing
-
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
@@ -32,6 +26,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 ## Instructions
 
 - Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-nascar.elf
+- Add your personalized launcher.elf and rename it to vpx-batman66.elf
 - Download the table and directb2s versions listed above and copy them into this folder
-- You're off to the races 🏁
+- Have fun
