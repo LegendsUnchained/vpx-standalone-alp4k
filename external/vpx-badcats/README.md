@@ -29,7 +29,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 ## Instructions
 
 - Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-hurricane.elf
+- Add your personalized launcher.elf and rename it to vpx-badcats.elf
 - Download the table, ROM and directb2s versions listed above and copy them into this folder
 - Backboard image (TOY image) renders upsidedown.  This is a table issue and not a VPX issue
 - Meow, Meow, Meow
