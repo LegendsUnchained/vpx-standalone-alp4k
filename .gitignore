@@ -6,6 +6,8 @@
 /external/*/altsound.log
 /external/*/Cache
 /external/*/vpinball.log
+/external/*/crash.dmp
+/external/*/crash.txt
 VPinballX_*-alp4k
 **/.DS_Store
 !/external/*/pinmame/roms/.gitkeep
