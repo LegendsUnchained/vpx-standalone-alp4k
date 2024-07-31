@@ -21,9 +21,9 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 
 Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
-| Table | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-------|-----------|----------|-----------|-----|--------------|-----|
-| [Back to the Future: The Pinball (Data East 1990)](external/vpx-bttf) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 30 |
+| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
+|-----------|----------|-----------|-----|--------------|-----|
+| :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 30 |
 
 
 ## Instructions
