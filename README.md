@@ -17,6 +17,7 @@ Links to these products on Amazon are through affiliate links.
 #### Flash Drives
 - [Samsung FIT 256GB Flash Drive](https://amzn.to/3W864IR)
 - [Samsung FIT 512GB Flash Drive](https://amzn.to/4bL2r1e)
+- [Silicon Power 1TB DS72](https://amzn.to/3SxulXI)
 
 #### Keyboards
 - [Rii RK707 Keyboard/Game Controller](https://amzn.to/4d0LalO)
