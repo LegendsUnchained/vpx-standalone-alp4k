@@ -14,11 +14,11 @@ Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
 
 Version: 1.0.0
 
-Download:[VP Universe](https://vpuniverse.com/files/file/14774-jokerz-williams-1988-b2s-with-full-dmd/)
+Download: [VP Universe](https://vpuniverse.com/files/file/14774-jokerz-williams-1988-b2s-with-full-dmd/)
 
 ROM
 
-Download:[VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=917)
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=917)
 
 SHA: 6ac485c8344472e2ef007773dc38ee6510f47553 
 
