@@ -1,4 +1,28 @@
-## Instructions ##
+# Killer Instinct
 
-- Add your personalized launcher and rename it to vpx-*TABLE_NAME*.elf
-- Download the table and directb2s versions into this folder
+![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_05/ki.png.84b8b967a975a4082e8fcd37186a5537.png)
+
+Authors: [ZandysArcade](https://vpuniverse.com/profile/57949-zandysarcade/)  
+Version: 1.3.1  
+Download: [VP Universe](https://vpuniverse.com/files/file/20213-killer-instinct/)  
+
+DirectB2S
+
+Authors: [ZandysArcade](https://vpuniverse.com/profile/57949-zandysarcade/)  
+Version: 1.3.1  
+Download: INCLUDED IN TABLE DOWNLOAD  
+
+
+## Status 
+
+Minimum VPX Standalone build: 10.8.0-1989-a764013
+| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
+|-----------|----------|-----------|-----|--------------|-----|
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 44 |
+
+## Instructions
+
+- Copy the contents of this repo folder to your USB drive
+- Add your personalized launcher.elf and rename it to vpx-flintstones.elf
+- Download the table and directb2s versions listed above and copy them into this folder
+- Once I’m done here, your planet is next.
