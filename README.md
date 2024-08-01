@@ -38,6 +38,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Elvira and the Party Monsters (Bally 1989)](external/vpx-partymonsters) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 33 |
 | [Hurricane - Balutito Mod 2.0](external/vpx-hurricane) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 40 |
 | [I Dream of Jeannie](external/vpx-idreamofjeannie) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
+| [Jokerz! (Williams 1988)](external/vpx-jokerz) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [JP's Addams Family, The (Bally 1992)](external/vpx-taf) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 58 |
 | [JP's Avengers LE (Stern 2012)](external/vpx-avengersclassic) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 59 |
 | [JP's Cyclone (Williams 1988)](external/vpx-cyclone) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
