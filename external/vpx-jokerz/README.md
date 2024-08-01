@@ -2,16 +2,18 @@
 
 ![Table Preview](https://raw.githubusercontent.com/Bla1ze/vpx-images/main/vpx-jokerz.png)
 
-Author:[VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/) Tested by: Bla1ze 
+Author: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/) Tested by: Bla1ze 
 
 Version: 1.3.1 
+
 Download:[VP Universe](https://vpuniverse.com/files/file/9971-jokerz-williams-1988-vpw/)
 
 DirectB2S
 
-Author:[Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
+Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
 
 Version: 1.0.0
+
 Download:[VP Universe](https://vpuniverse.com/files/file/14774-jokerz-williams-1988-b2s-with-full-dmd/)
 
 ROM
@@ -19,6 +21,7 @@ ROM
 Download:[VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=917)
 
 SHA: 6ac485c8344472e2ef007773dc38ee6510f47553 
+
 MD5: d939913d6932bdf417851cd4dd4663ee
 
 ## Status 
