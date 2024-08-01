@@ -10,17 +10,17 @@ If you'd like to contribute to the development of the Legends Unchained Loader a
 This repo is public and accepts Pull Requests for new table configs and updates to existing configs.
 
 ## Recommended Hardware
-The following hardware has been verified to work with the Legends Unchained Loader.
+The following hardware has been verified to work with the Legends Unchained Loader. Other products may work, but these are known to work well. If you find additional compatible hardware, please let us know and we'll add it to the list!
 
 Links to these products on Amazon are through affiliate links.
 
 #### Flash Drives
-- [Samsung FIT 256GB Flash Drive](https://amzn.to/3W864IR)
-- [Samsung FIT 512GB Flash Drive](https://amzn.to/4bL2r1e)
-- [Silicon Power 1TB DS72](https://amzn.to/3SxulXI)
+- [Samsung FIT 256GB Flash Drive](https://amzn.to/3ymA382)
+- [Samsung FIT 512GB Flash Drive](https://amzn.to/46uLC9M)
+- [Silicon Power 1TB DS72](https://amzn.to/3Wws3t6)
 
 #### Keyboards
-- [Rii RK707 Keyboard/Game Controller](https://amzn.to/4d0LalO)
+- [Rii RK707 Keyboard/Game Controller](https://amzn.to/4fqC1oC)
 
 ## Tested tables
 Minimum VPX Standalone build: 10.8.0-1983-b84441e
