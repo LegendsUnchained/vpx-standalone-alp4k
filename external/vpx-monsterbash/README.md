@@ -14,7 +14,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/2576-monster-bash-will
 
 ROM
 
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1340)
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1285)
 
 SHA: 
 MD5: 
