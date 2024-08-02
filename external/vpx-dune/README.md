@@ -2,14 +2,19 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-dune.png)
 
-Author:[ZandysArcade](https://vpuniverse.com/profile/57949-zandysarcade/) Tested by: Bla1ze 
+Author: [ZandysArcade](https://vpuniverse.com/profile/57949-zandysarcade/) Tested by: Bla1ze 
 
 Version: 1.40
+
 Download:[VP Universe](https://vpuniverse.com/files/file/19580-dune/)
 
 DirectB2S
 
 Included in table download
+
+ROM
+
+None needed
 
 ## Status 
 
