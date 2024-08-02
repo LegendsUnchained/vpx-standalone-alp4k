@@ -14,7 +14,7 @@ Author: [Wildman](https://vpuniverse.com/profile/5-wildman/)
 
 Verion: 2.0
 
-Download:[VP Universe](https://vpuniverse.com/files/file/2223-judge-dreddbally-1993/)
+Download: [VP Universe](https://vpuniverse.com/files/file/2223-judge-dreddbally-1993/)
 
 ROM
 
