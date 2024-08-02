@@ -6,7 +6,7 @@ Author: [ZandysArcade](https://vpuniverse.com/profile/57949-zandysarcade/) Teste
 
 Version: 1.40
 
-Download:[VP Universe](https://vpuniverse.com/files/file/19580-dune/)
+Download: [VP Universe](https://vpuniverse.com/files/file/19580-dune/)
 
 DirectB2S
 
