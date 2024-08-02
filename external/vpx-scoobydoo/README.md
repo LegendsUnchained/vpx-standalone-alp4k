@@ -24,6 +24,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 ## Instructions
 
 - Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-scooby_doo.elf
+- Add your personalized launcher.elf and rename it to vpx-scoobydoo.elf
 - Download the table and directb2s versions listed above and copy them into this folder
+- Be sure that the table name, direct2bs and table.ini are all named exactly the same except the file extension (.vpx/.directb2s/.ini) 
 - "And I would have gotten away with it, too, if it werent for you meddling kids!." --AtGames
