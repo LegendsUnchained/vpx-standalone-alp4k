@@ -1,0 +1,40 @@
+# Twister (Sega 1996)
+
+![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-twister.png)
+
+Author: [UnclePaulie](https://vpuniverse.com/profile/16685-unclepaulie/)  
+
+Version: 2.0.0
+
+Download: [VP Universe](https://vpuniverse.com/files/file/7453-twister-sega-1996-with-vr-room/)
+
+DirectB2S
+
+Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
+
+Version: 2.0
+
+Download: [VP Universe](https://vpuniverse.com/files/file/12219-twister-sega-1996-b2s-full-dmd/)
+
+ROM
+
+Download: [VP Universe](https://vpuniverse.com/files/file/3990-star-trek-stern-limited-edition-v161/)
+
+SHA: 39c063b1c58d6e127db702284dfad3b3a6ccb89f
+
+MD5: 8435fda49c4dfc2d82b9b361e8aa1155
+
+
+## Status 
+
+Minimum VPX Standalone build: 10.8.0-1983-a764013
+| Playfield | Controls | Backglass | DMD | FPS | 
+|-----------|----------|-----------|-----|----------|
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
+
+## Instructions
+
+- Copy the contents of this repo folder to your USB drive
+- Add your personalized launcher.elf and rename it to vpx-twister.elf
+- Download the table, ROM and directb2s versions listed above and copy them into this folder
+- Everybody underground... now! 🌪
