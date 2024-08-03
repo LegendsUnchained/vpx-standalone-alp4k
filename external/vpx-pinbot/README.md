@@ -1,6 +1,6 @@
 # Pin-Bot (Williams 1986)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=119620&id=18670&full=1)
+![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_09/Capture2.thumb.PNG.13656e4f67d469e80e7276a00beb29d3.PNG)
                  
 
 Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
