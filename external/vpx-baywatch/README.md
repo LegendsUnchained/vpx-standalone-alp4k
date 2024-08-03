@@ -10,7 +10,7 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 
 DirectB2S
 
-Author: [Hauntfreaks](https://vpuniverse.com/profile/31096-ryguy417/)  
+Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
 
 Version: 1.0.0
 
