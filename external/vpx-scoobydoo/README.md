@@ -8,11 +8,18 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 
 DirectB2S
 
-Direct B2S file is included in table zip.
+Authors: [LoadedWeapon](https://www.vpforums.org/index.php?showuser=60392)  
+Version: 1.0.0  
+Download: [VP Universe](https://www.vpforums.org/index.php?app=downloads&showfile=16634)
+
+Alternate DirectB2S
+
+Authors: [davadruix](https://www.vpforums.org/index.php?showuser=111417)  
+Version: 1.0.0  
+Download: [VP Universe](https://www.vpforums.org/index.php?app=downloads&showfile=16654)
 
 ROM:
 No ROM Needed
-
 
 ## Status 
 
