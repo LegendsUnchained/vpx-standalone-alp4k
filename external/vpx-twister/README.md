@@ -18,7 +18,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/12219-twister-sega-199
 
 ROM
 
-Download: [VP Universe](https://vpuniverse.com/files/file/3990-star-trek-stern-limited-edition-v161/)
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1065)
 
 SHA: 39c063b1c58d6e127db702284dfad3b3a6ccb89f
 
