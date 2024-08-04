@@ -1,6 +1,6 @@
 # Tron Legacy LE (Stern 2011)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-doctorwho.png)
+![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-tronlegacy.png)
 
 Author: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
 
