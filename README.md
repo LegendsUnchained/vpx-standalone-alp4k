@@ -36,7 +36,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Avengers LE, The - JP's (Stern 2012)](external/vpx-avengersclassic) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 59 |
 | [Back to the Future: The Pinball (Data East 1990)](external/vpx-bttf) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 30 |
 | [Bad Cats (Williams 1989) 1.2.1a](external/vpx-badcats) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 50 |
-| [Batman (Data East 1991)](external/batman) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 33 |
+| [Batman (Data East 1991)](external/vpx-batman) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 33 |
 | [Batman 66 (Stern Tribute Table)](external/vpx-batman66) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 30 |
 | [Baywatch Sega (1995)](external/vpx-baywatch) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 | [Beach Bums (Original 2018)](external/vpx-beachbums) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 42 |
