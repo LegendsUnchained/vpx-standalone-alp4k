@@ -39,5 +39,5 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-24.elf
-- Download the table and directb2s versions listed above and copy them into this folder. Alt Color DMD .cRZ file goes in altcolor folder which will need to be created if you wish to use it.
+- Download the table, ROM and directb2s versions listed above and copy them into this folder. Alt Color DMD .cRZ file goes in altcolor folder which will need to be created if you wish to use it.
 - The following takes places between 6 A.M. and 7 A.M 🕕
