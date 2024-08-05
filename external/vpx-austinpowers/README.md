@@ -1,6 +1,6 @@
 # Austin Powers (Stern 2001)_VPWmod
 
-![Table Preview](https://www.vpforums.org/index.php?s=d77dd11d3a10617da44805808363ef29&app=downloads&module=display&section=screenshot&record=114134&id=13043&full=1)
+![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=81180&id=15332&full=1)
 
 Author(s): [VPin Workshop](https://www.vpforums.org/index.php?showuser=153279)  
 Version: 1.0.3
@@ -14,7 +14,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/14003-austin-powers-st
 
 ROM:
 Version 3.02
-Download (https://www.vpforums.org/index.php?app=downloads&showfile=1115)
+Download [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1115)
 
 
 ## Status 
