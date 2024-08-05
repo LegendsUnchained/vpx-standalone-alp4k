@@ -4,7 +4,7 @@
 
 Author(s): [SG1bsoN](https://vpuniverse.com/profile/34010-sg1bson/)  
 Version: 4.3.0 
-Download: [VP Forums](https://vpuniverse.com/files/file/6978-creature-from-the-black-lagoon-bally-1992-sg1bson-bw-mod/)
+Download: [VP Universe](https://vpuniverse.com/files/file/6978-creature-from-the-black-lagoon-bally-1992-sg1bson-bw-mod/)
 
 DirectB2S
 
@@ -12,7 +12,7 @@ DirectB2S file is included in the in the table zip.
 
 ROM:
 Version (L-4)
-Download: [VP Universe](https://www.vpforums.org/index.php?app=downloads&showfile=1169)
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1169)
 
 Alternate Soundtrack:
 I highly recommend this file as it improves the overall experience of the table. (This file is not required for table to run)
