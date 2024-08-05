@@ -21,7 +21,7 @@ Download: [Archive](https://ia902301.us.archive.org/view_archive.php?archive=/30
 Minimum VPX Standalone build: 10.8.0-2006-6d603fb
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 
 ## Instructions
 
