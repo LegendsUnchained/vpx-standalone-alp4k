@@ -28,10 +28,9 @@ MD5: 54d77bbdb19c9dd8732f2340c2c0d62c
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1983-a764013
-| Playfield | Controls | Backglass | DMD | FPS | 
-|-----------|----------|-----------|-----|----------|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
-
+| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
+|-----------|----------|-----------|-----|--------------|-----|
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 ## Instructions
 
 - Copy the contents of this repo folder to your USB drive
