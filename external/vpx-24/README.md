@@ -2,8 +2,11 @@
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_06/24FS.png.c1cd691f0cacf7ee98f73adf3b696122.png)
 
-Author: [RobbyKingPin](https://vpuniverse.com/profile/10146-robbykingpin/) Tested by: Bla1ze  
-Version: 2.1
+Author: [RobbyKingPin](https://vpuniverse.com/profile/10146-robbykingpin/) 
+
+Tested by: Bla1ze 
+
+Version: 2.1 
 
 Download: [VP Universe](https://vpuniverse.com/files/file/20448-24-stern-2009-v21-dt-fs-fss-vr/)
 
