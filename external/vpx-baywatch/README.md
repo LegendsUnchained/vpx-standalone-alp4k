@@ -2,7 +2,9 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-baywatch.png)
 
-Author: [kiwi](https://www.vpforums.org/index.php?showuser=30913)  Tested by: Bla1ze
+Author: [kiwi](https://www.vpforums.org/index.php?showuser=30913)  
+
+Tested by: Bla1ze
 
 Version: 1.0.5  
 
