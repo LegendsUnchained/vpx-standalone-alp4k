@@ -4,6 +4,8 @@
 
 Author: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
 
+Tested by: Bla1ze 
+
 Version: 2.0
 
 Download: [VP Universe](https://vpuniverse.com/files/file/13893-starship-troopers-sega-1997-vpw-mod/)
