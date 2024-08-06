@@ -2,21 +2,21 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-dirtyharry.png)
 
-Author:[TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/)
+Author: [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/)
 
 Tested by: Bla1ze
 
 Version: 2.20 
 
-Download:[VP Universe](https://vpuniverse.com/files/file/12442-dirty-harry-williams-1995/)
+Download: [VP Universe](https://vpuniverse.com/files/file/12442-dirty-harry-williams-1995/)
 
 DirectB2S
 
-Author:[Walterwhite](https://vpuniverse.com/profile/17464-walterwhite/)
+Author: [Walterwhite](https://vpuniverse.com/profile/17464-walterwhite/)
 
 Version: 1.1
 
-Download:[VP Universe](https://vpuniverse.com/files/file/12237-dirty-harry-fulldmd-williams-1995/)
+Download: [VP Universe](https://vpuniverse.com/files/file/12237-dirty-harry-fulldmd-williams-1995/)
 
 ROM
 
