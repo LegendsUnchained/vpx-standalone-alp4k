@@ -2,7 +2,9 @@
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_03/screenshot_cab.png.cb18ada5277069130ecd01a85255f1a3.png)
 
-Author: [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/)  Tested by: Bla1ze
+Author: [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/)  
+
+Tested by: Bla1ze
 
 Version: 1.17
 
