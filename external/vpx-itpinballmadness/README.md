@@ -12,9 +12,6 @@ Authors: [jpsalas](https://vpuniverse.com/profile/5-wildman/)
 Version: 1.0  
 Download: [VP Universe](https://www.vpforums.org/index.php?app=downloads&showfile=16880)
 
-SHA: 
-MD5: 
-
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

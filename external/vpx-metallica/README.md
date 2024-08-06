@@ -16,9 +16,6 @@ ROM
 
 Download: [Stern - mtl_170h](https://sternpinball.com/?post_type=game_code&s=metallica)
 
-SHA: 
-MD5: 
-
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
