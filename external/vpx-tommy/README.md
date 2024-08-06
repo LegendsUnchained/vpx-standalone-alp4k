@@ -2,7 +2,7 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-tommy.png)
 
-Author: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
+Author: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  Tested by: Bla1ze
 
 Version: 1.2.1
 
