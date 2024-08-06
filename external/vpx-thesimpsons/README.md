@@ -22,7 +22,7 @@ ROM
 
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=824)
 
-SHA: def1ad913e3c933b2282a8c64c84a739
+SHA: 063595dac40b8571eb5dd9893cead54127e67b87
 
 MD5: def1ad913e3c933b2282a8c64c84a739
 
