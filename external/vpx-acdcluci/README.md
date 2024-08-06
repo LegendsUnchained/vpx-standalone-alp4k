@@ -14,10 +14,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/11475-acdc-luci-premiu
 
 ROM
 
-Download: [Stern](https://sternpinball.com/?post_type=game_code&s=dc)
-
-SHA: 
-MD5: 
+Download and save as acd_170h: [Stern](https://sternpinball.com/?post_type=game_code&s=dc)
 
 ## Status 
 

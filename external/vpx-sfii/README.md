@@ -16,9 +16,6 @@ ROM
 
 Download: [Pinball Nirvana](https://pinballnirvana.com/forums/resources/sfight2.2281/)
 
-SHA: 
-MD5: 
-
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

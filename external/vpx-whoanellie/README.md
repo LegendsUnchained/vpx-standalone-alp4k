@@ -12,9 +12,6 @@ Authors: [jpsalas](https://www.vpforums.org/index.php?s=543a5ca562cc33a89debe8ac
 Version: 1.0  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=16889)
 
-SHA: 
-MD5: 
-
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
