@@ -2,7 +2,7 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-startrekle.png)
 
-Author: [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/)  
+Author: [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/)  Tested by: Bla1ze
 
 Version: 1.09
 
