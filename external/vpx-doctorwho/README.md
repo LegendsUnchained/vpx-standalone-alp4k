@@ -2,7 +2,9 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-doctorwho.png)
 
-Author: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  Tested by: Bla1ze
+Author: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
+
+Tested by: Bla1ze
 
 Version: 1.1
 
