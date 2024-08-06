@@ -2,7 +2,9 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-twister.png)
 
-Author: [UnclePaulie](https://vpuniverse.com/profile/16685-unclepaulie/)  Tested by: Bla1ze
+Author: [UnclePaulie](https://vpuniverse.com/profile/16685-unclepaulie/)  
+
+Tested by: Bla1ze
 
 Version: 2.0.0
 
