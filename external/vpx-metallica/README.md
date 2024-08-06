@@ -14,7 +14,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/10947-metallica-premiu
 
 ROM
 
-Download: [Stern - mtl_170h](https://sternpinball.com/?post_type=game_code&s=metallica)
+Download: [Stern - mtl_180h](https://sternpinball.com/?post_type=game_code&s=metallica)
 
 ## Status 
 
