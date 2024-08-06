@@ -10,11 +10,11 @@ Download: [VP Universe](https://vpuniverse.com/files/file/12948-centaur-bally-19
 
 DirectB2S
 
-Author: [Manbearpig](https://vpuniverse.com/profile/32743-manbearpig/)  
+Author: [Manbearpig](https://vpuniverse.com/profile/32743-manbearpig/)
 
 Version: 1
 
-Download: [VP Universe](https://vpuniverse.com/files/file/11861-centaur-bally-1981-b2s-full-dmd-and-3-screen/)
+Download: [VP Universe](https://vpuniverse.com/files/file/11861-centaur-bally-1981-b2s-full-dmd-and-3-screen/) - Choose Centaur (Bally 1981) 3 screen.directb2s as it has the score on the backglass.
 
 ROM
 
