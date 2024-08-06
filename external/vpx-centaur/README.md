@@ -4,6 +4,8 @@
 
 Author: [Bord](https://vpuniverse.com/profile/9265-bord/)  
 
+Tested by: Bla1ze
+
 Version: 1.1
 
 Download: [VP Universe](https://vpuniverse.com/files/file/12948-centaur-bally-1981/)

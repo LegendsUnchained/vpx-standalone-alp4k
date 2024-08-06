@@ -4,6 +4,8 @@
 
 Author: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
 
+Tested by: Bla1ze
+
 Version: 1.1
 
 Download: [VP Universe](https://vpuniverse.com/files/file/7701-tron-legacy-le-stern-2011-vpw-mod/)

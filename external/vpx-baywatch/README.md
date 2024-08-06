@@ -4,6 +4,8 @@
 
 Author: [kiwi](https://www.vpforums.org/index.php?showuser=30913)  
 
+Tested by: Bla1ze
+
 Version: 1.0.5  
 
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14813)

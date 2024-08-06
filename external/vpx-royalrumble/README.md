@@ -4,6 +4,8 @@
 
 Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
 
+Tested by: Bla1ze
+
 Version: 2.03
 
 Download: [VP Universe](https://vpuniverse.com/files/file/7733-wwf-royal-rumble-data-east-1994-3hr-makeover/)

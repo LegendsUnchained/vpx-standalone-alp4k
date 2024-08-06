@@ -4,6 +4,8 @@
 
 Author: [Mikcab](https://vpuniverse.com/profile/16013-mikcab/)  
 
+Tested by: Bla1ze
+
 Version: 1.43
 
 Download: [VP Universe](https://vpuniverse.com/files/file/10267-the-champion-pub-williams-1998/)

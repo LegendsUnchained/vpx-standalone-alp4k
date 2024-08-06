@@ -4,6 +4,8 @@
 
 Author: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
 
+Tested by: Bla1ze
+
 Version: 1.2.1
 
 Download: [VP Universe](https://vpuniverse.com/files/file/10193-the-whos-tommy-pinball-wizard-data-east-1994-vpwmod/)

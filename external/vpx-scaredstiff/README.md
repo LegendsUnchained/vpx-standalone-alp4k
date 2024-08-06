@@ -5,6 +5,8 @@
 
 Author: [Mikcab](https://vpuniverse.com/profile/16013-mikcab/)  
 
+Tested by: Bla1ze
+
 Version: 1.29
 
 Download: [VP Universe](https://vpuniverse.com/files/file/13544-scared-stiff-bally-1996-mikcab_mod/)
@@ -46,5 +48,5 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-scaredstiff.elf
 - Download the table, ROM and directb2s versions listed above and copy them into this folder
-- If using the Alt Color, make altcolor folder in pinmame folder and place the ss_15 folder with the .cRZ file in it in the altcolor folder
+- If using the Alt Color, make an altcolor folder inside the pinmame folder. Inside the altcolor folder, make a ss_15 folder and place the .cRZ file inside. 
 - Turn out the lights... it's time to get Scared Stiff!

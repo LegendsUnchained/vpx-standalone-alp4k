@@ -2,9 +2,12 @@
 
 ![Table Preview](https://i.imgur.com/c9VOMjn.png)
 
-Author: [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/) Tested by: Bla1ze 
+Author: [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/) 
+
+Tested by: Bla1ze 
 
 Version: 1.10 
+
 Download: [VP Universe](https://vpuniverse.com/files/file/18215-big-buck-hunter-pro-stern-2010/)
 
 DirectB2S

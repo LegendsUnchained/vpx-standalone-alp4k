@@ -4,6 +4,8 @@
 
 Author: [UnclePaulie](https://vpuniverse.com/profile/16685-unclepaulie/)  
 
+Tested by: Bla1ze
+
 Version: 2.0.0
 
 Download: [VP Universe](https://vpuniverse.com/files/file/7453-twister-sega-1996-with-vr-room/)

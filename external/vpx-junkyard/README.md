@@ -4,6 +4,8 @@ Junk Yard (Williams 1996)
 
 Author: [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/)  
 
+Tested by: Bla1ze
+
 Version: 1.8.3
 
 Download: [VP Universe](https://vpuniverse.com/files/file/12322-junk-yard-williams-1996/)
