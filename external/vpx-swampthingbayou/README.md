@@ -2,7 +2,9 @@
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_07/Screenshot.jpg.481223a135a5c3e9888d9c115b9cf95d.jpg)
 
-Authors: [LTek, Clairvius](https://vpuniverse.com/profile/67685-ltek/)  Tested by: Bla1ze
+Authors: [LTek, Clairvius](https://vpuniverse.com/profile/67685-ltek/)  
+
+Tested by: Bla1ze
 
 Version: 2.0.0  
 
