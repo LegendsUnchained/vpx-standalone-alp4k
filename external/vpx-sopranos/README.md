@@ -2,7 +2,9 @@
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_02/Sop_pf_FS.png.f0e3941b1a67ab063f837d0fb843197b.png)
 
-Author: [Siggi](https://vpuniverse.com/profile/8779-siggi/)  Tested by: Bla1ze
+Author: [Siggi](https://vpuniverse.com/profile/8779-siggi/)  
+
+Tested by: Bla1ze
 
 Version: 1.0.0  
 
