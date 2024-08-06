@@ -2,7 +2,9 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-centaur.png)
 
-Author: [Bord](https://vpuniverse.com/profile/9265-bord/)  Tested by: Bla1ze
+Author: [Bord](https://vpuniverse.com/profile/9265-bord/)  
+
+Tested by: Bla1ze
 
 Version: 1.1
 
