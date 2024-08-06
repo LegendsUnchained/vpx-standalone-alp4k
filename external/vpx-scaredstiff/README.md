@@ -3,7 +3,7 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-scaredstiff.png)
 
-Author: [Mikcab](https://vpuniverse.com/profile/16013-mikcab/)  
+Author: [Mikcab](https://vpuniverse.com/profile/16013-mikcab/)  Tested by: Bla1ze
 
 Version: 1.29
 
