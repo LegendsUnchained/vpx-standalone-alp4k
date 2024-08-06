@@ -20,7 +20,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/12237-dirty-harry-full
 
 ROM
 
-Download:[VP Universe](https://www.vpforums.org/index.php?app=downloads&showfile=1265)
+Download: [VP Universe](https://www.vpforums.org/index.php?app=downloads&showfile=1265)
 
 SHA: 3c5680a68aefb4224e77f060d9403249d2e54de0
 
