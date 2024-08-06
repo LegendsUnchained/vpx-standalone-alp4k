@@ -2,7 +2,9 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-royalrumble.png)
 
-Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  Tested by: Bla1ze
+Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
+
+Tested by: Bla1ze
 
 Version: 2.03
 
