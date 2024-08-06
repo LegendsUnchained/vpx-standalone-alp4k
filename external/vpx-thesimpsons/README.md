@@ -12,7 +12,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/11621-the-simpsons-dat
 
 DirectB2S
 
-Author: [Hauntfreaks](https://vpuniverse.com/profile/5-wildman/)  
+Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
 
 Version: 1.0.0
 
