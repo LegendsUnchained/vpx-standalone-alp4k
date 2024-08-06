@@ -3,7 +3,12 @@
 ![Table Preview](https://orbitalpin.com/wp-content/uploads/2019/07/lepking-1038x1298-768x960.jpg)
 
 Author: [ScottyWic](https://orbitalpin.com/)  
+
+Tested by: Bla1ze 
+
 Version: 35  
+
+
 Download: [Orbital Pin](https://orbitalpin.com/downloads/)
 
 ## Status 
