@@ -2,7 +2,9 @@ Junk Yard (Williams 1996)
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-junkyard.png)
 
-Author: [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/)  Tested by: Bla1ze
+Author: [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/)  
+
+Tested by: Bla1ze
 
 Version: 1.8.3
 
