@@ -8,7 +8,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/12471-acdc-luci-stern-
 
 DirectB2S
 
-Authors: [hauntfreaks](https://vpuniverse.com/profile/25802-mussinger/)
+Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
 Version: 3.1
 Download: [VP Universe](https://vpuniverse.com/files/file/11475-acdc-luci-premium-stern-2013-b2s-with-full-dmd/)
 
