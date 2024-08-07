@@ -3,13 +3,19 @@
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_03/54027530_TheFlintstones(Williams1994)v1_26.thumb.png.db4fc74b91ec204b1ed663689f4d3006.png)
 
 Authors: [g5k, 3rdAxis, DJRobX and Dark](https://vpuniverse.com/profile/14065-g5k/?tab=node_filestabprofile_filesTab)  
+
+Tested by: Bla1ze
+
 Version: 1.2.6  
+
 Download: [VP Universe](https://vpuniverse.com/files/file/8763-the-flintstones/)
 
 DirectB2S
 
 Authors: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
+
 Version: 2.0  
+
 Download: [VP Universe](https://vpuniverse.com/files/file/12799-the-flintstones-williams-1994-b2s-full-dmd/)
 
 ROM

@@ -16,8 +16,11 @@ ROM
 
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1340)
 
-SHA: 
-MD5: 
+Color DMD
+
+Author: [KRAKEN](https://vpuniverse.com/profile/35517-kraken/)
+Download: [VP Universe](https://vpuniverse.com/files/file/19896-attack-from-mars-serum-colorization/)
+Place the .cRZ file "external\vpx-attackfrommars\pinmame\altcolor\afm_113b" (create the folders if needed)
 
 ## Status 
 
@@ -29,5 +32,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 ## Instructions
 
 - Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-attackfromars.elf
+- Add your personalized launcher.elf and rename it to vpx-attackfrommars.elf
 - Download the table and directb2s versions listed above and copy them into this folder

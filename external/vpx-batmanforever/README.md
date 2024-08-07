@@ -2,7 +2,9 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-batmanforever.png)
 
-Author: [drakkon](https://vpuniverse.com/profile/51568-drakkon/)
+Author: [drakkon](https://vpuniverse.com/profile/51568-drakkon/) 
+
+Tested by: Bla1ze
 
 Version: 1.3
 

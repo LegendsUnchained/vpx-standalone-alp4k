@@ -4,6 +4,8 @@
 
 Author: [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/)  
 
+Tested by: Bla1ze
+
 Version: 1.09
 
 Download: [VP Universe](https://vpuniverse.com/files/file/17313-star-trek-le-stern-2013/)

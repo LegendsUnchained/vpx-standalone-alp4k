@@ -2,7 +2,9 @@
 
 ![Table Preview](https://raw.githubusercontent.com/Bla1ze/vpx-images/main/vpx-jokerz.png)
 
-Author: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/) Tested by: Bla1ze 
+Author: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/) 
+
+Tested by: Bla1ze 
 
 Version: 1.3.1 
 

@@ -17,9 +17,6 @@ ROM (both required)
 Download: [VP Universe](https://vpuniverse.com/files/file/5095-hook-501-unofficial-mod/)
 Download: [VP Universe](https://vpuniverse.com/files/file/1781-hook_408zip/)
 
-SHA: 
-MD5: 
-
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

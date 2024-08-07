@@ -16,8 +16,11 @@ ROM
 
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1169)
 
-SHA: 
-MD5: 
+Color DMD
+
+Author: [ebor](https://vpuniverse.com/profile/29168-ebor/)
+Download: [VP Universe](https://vpuniverse.com/files/file/20079-creature-from-the-black-lagoon-bally-1992-dmd-64-colors-serum-format/)
+Place the .cRZ file "external\vpx-cftbl\pinmame\altcolor\cftbl_l4" (create the folders if needed)
 
 ## Status 
 

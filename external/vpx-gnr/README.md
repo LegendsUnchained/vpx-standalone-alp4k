@@ -2,7 +2,9 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-gnr.png)
 
-Author: [versins77](https://vpuniverse.com/profile/29661-versins77/)  
+Author: [versins77](https://vpuniverse.com/profile/29661-versins77/) 
+
+Tested by: Bla1ze 
 
 Version: 1.03
 
