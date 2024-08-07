@@ -16,6 +16,12 @@ ROM
 
 Download and save as acd_170h: [Stern](https://sternpinball.com/?post_type=game_code&s=dc)
 
+Color DMD
+
+Author: [PastorLUL](https://vpuniverse.com/profile/42770-pastorlul/)
+Download: [VP Universe](https://vpuniverse.com/files/file/17697-acdc-stern-2012-64-colors/)
+Place the .cRZ file "external\vpx-acdcluci\pinmame\altcolor\acd_170h" (create the folders if needed)
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
