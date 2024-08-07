@@ -10,7 +10,7 @@ DirectB2S
 
 Authors: [jpsalas](https://vpuniverse.com/profile/5-wildman/)  
 Version: 1.0  
-Download: [VP Universe](https://www.vpforums.org/index.php?app=downloads&showfile=16880)
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=16880)
 
 ## Status 
 
