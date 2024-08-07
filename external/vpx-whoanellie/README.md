@@ -8,9 +8,7 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 
 DirectB2S
 
-Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 1.0  
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=16889)
+Included with the VPX
 
 ## Status 
 
