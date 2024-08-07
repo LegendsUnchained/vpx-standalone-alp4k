@@ -3,9 +3,9 @@
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_09/Capture2.thumb.PNG.13656e4f67d469e80e7276a00beb29d3.PNG)
                  
 
-Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
-Version: 1.0.0  
-Download: [VPUniverse](https://vpuniverse.com/files/file/11489-pinbot-williams-1986-b2s-with-full-dmd/)
+Authors: [bord](https://vpuniverse.com/profile/9265-bord/)  
+Version: 2.1.1  
+Download: [VPUniverse](https://vpuniverse.com/files/file/6116-pin-bot-williams-1986/)
 
 DirectB2S
 
