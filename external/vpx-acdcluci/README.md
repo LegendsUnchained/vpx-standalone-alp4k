@@ -8,13 +8,19 @@ Download: [VP Universe](https://vpuniverse.com/files/file/12471-acdc-luci-stern-
 
 DirectB2S
 
-Authors: [hauntfreaks](https://vpuniverse.com/profile/25802-mussinger/)
+Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
 Version: 3.1
 Download: [VP Universe](https://vpuniverse.com/files/file/11475-acdc-luci-premium-stern-2013-b2s-with-full-dmd/)
 
 ROM
 
 Download and save as acd_170h: [Stern](https://sternpinball.com/?post_type=game_code&s=dc)
+
+Color DMD
+
+Author: [PastorLUL](https://vpuniverse.com/profile/42770-pastorlul/)
+Download: [VP Universe](https://vpuniverse.com/files/file/17697-acdc-stern-2012-64-colors/)
+Place the .cRZ file "external\vpx-acdcluci\pinmame\altcolor\acd_170h" (create the folders if needed)
 
 ## Status 
 
