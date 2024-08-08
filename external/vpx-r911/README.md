@@ -1,6 +1,6 @@
 # Rescue 911 (Gottlieb, 1994) 
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-r991.png)
+![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-r911.png)
 
 Author: [antisect](https://vpuniverse.com/profile/36923-antisect/) 
 
@@ -31,11 +31,11 @@ MD5: c4897d8d8f2af353a980aae47cd7dafd
 Minimum VPX Standalone build: 10.8.0-1983-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 
 ## Instructions
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-r911.elf
 - Download the table, ROM and directb2s versions listed above and copy them into this folder
-- GET BACK INTO THE RING.. IT'S TIME FOR THE WWF ROYAL RUMBLE!
+- If you're loking for Shatner, he's not here! 🚑
