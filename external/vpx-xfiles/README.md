@@ -2,25 +2,25 @@ X Files (Sega 1997)
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-xfiles.png)
 
-Author:[TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/) 
+Author: [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/) 
 
 Tested by: Bla1ze 
 
 Version: 1.29 
 
-Download:[VP Universe](https://vpuniverse.com/files/file/14912-the-x-files-sega-1997/)
+Download: [VP Universe](https://vpuniverse.com/files/file/14912-the-x-files-sega-1997/)
 
 DirectB2S
 
-Author:[Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
+Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
 
 Version: 1.0.0
 
-Download:[VP Universe](https://vpuniverse.com/files/file/14927-x-files-sega-1997-b2s-with-full-dmd/)
+Download: [VP Universe](https://vpuniverse.com/files/file/14927-x-files-sega-1997-b2s-with-full-dmd/)
 
 ROM
 
-Download:[VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1077)
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1077)
 
 SHA: ff04213446b2adeadfad0a3034f105b2e742b85c
 
