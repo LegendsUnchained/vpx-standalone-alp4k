@@ -1,6 +1,6 @@
 # Red & Ted's Road Show (Williams 1994)
 
-![Table Preview]https://vpuniverse.com/screenshots/monthly_2022_08/RS_Screenshot_2022-08-05_113658.png.67cebf2f24ae32f5f6078a6a921aefb2.png)
+![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_08/RS_Screenshot_2022-08-05_113658.png.67cebf2f24ae32f5f6078a6a921aefb2.png)
 
 Authors: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
 Version: 1.4

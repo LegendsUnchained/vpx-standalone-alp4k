@@ -64,6 +64,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Earthshaker (Williams 1989)](external/vpx-earthshaker) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 32 |
 | [Elvira and the Party Monsters (Bally 1989)](external/vpx-partymonsters) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 33 |
 | [Flintstones, The](external/vpx-flintstones) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 30 |
+| [Freddy A Nightmare on Elm Street (Gottlieb 1994)](external/vpx-freddy) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 33 |
 | [Friday the 13th - JP's (Original 2021)](external/vpx-fridaythe13th) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Getaway, The - High Speed II](external/vpx-getaway) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 42 |
 | [Ghostbusters Slimer 5.0.0 - JP's](external/vpx-ghostbustersslimer) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
@@ -83,6 +84,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Jokerz! (Williams 1988)](external/vpx-jokerz) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Judge Dredd (Bally 1993)](external/vpx-judgedredd) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 25 | 
 | [Junk Yard (Williams 1996)](external/vpx-junkyard) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
+| [Jurassic Park (Data East 1993)](external/vpx-jurassicpark) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 30 |
 | [Jurassic Park Pro LE](external/vpx-jurassicparkle) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :x: | 48 |
 | [Killer Instinct)](external/vpx-killerinstinct) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 44 |
 | [Leprechaun King, The](external/vpx-theleprechaunking) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
@@ -106,7 +108,9 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Seawitch - JP's (Stern 1980)](external/vpx-seawitch) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Simpsons, The](external/vpx-thesimpsons) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 | [Sopranos, The](external/vpx-sopranos) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
+| [South Park (Sega 1999)](external/vpx-southpark) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 45 |
 | [Spider-Man - JP's (Stern 2007)](external/vpx-spiderman) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
+| [Stargate (Gottlieb 1995)](external/vpx-stargate) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Star Trek LE (Stern 2013)](external/vpx-startrekle) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 | [Star Trek LE - JP's (Original 2020)](external/vpx-startreklejp) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 50 |
 | [Star Trek The Next Generation (Williams 1993)](external/vpx-startrektng) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 38 |
@@ -115,6 +119,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Swamp Thing (Clairvius 2024)](external/vpx-swampthing) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 | [Swamp Thing 2.0 Bayou Edition (LTek 2024)](external/vpx-swampthingbayou) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
 | [Tales of the Arabian  Nights - JP's (Williams 1996)](external/vpx-totan) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 48 |
+| [Tales from the Crypt (Data East 1993)](external/vpx-tftc) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 30 |
 | [Taxi (Wiliiams 1988)](external/vpx-taxi) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 34 |
 | [Terminator 2 (Williams 1991 2009)](external/vpx-t2) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 42 |
 | [Terminator 2 - JP's (Original 2020)](external/vpx-t2jp) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 60 |
@@ -126,6 +131,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Transformers Pro (Stern 2011)](external/vpx-transformers) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Trick 'r Treat](external/vpx-trickrtreat) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Tron Legacy LE (Stern 2011)](external/vpx-tronlegacy) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
+| [Twilight Zone (Bally 1993)](external/vpx-tz) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 42 |
 | [Twisted Metal (Clairvius 2024)](external/vpx-twistedmetal) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Twister (Sega 1996)](external/vpx-twister) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 | [Wacky Races (Original 2022)](external/vpx-wackyraces) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 47 |

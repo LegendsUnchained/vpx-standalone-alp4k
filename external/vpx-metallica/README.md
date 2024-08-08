@@ -8,7 +8,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/6058-metallica-premium
 
 DirectB2S
 
-Authors: [haundfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
+Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
 Version: 2.0
 Download: [VP Universe](https://vpuniverse.com/files/file/10947-metallica-premium-monsters-stern-2013-b2s-with-full-dmd/)
 
