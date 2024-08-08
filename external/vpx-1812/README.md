@@ -29,6 +29,8 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-1812.elf
 - Download the table and directb2s versions listed above and copy them into this folder
 
+***DO NOT RENAME Class1812.vbs***
+
 If your ROM is adding 3 credits per coin:
 	Press 7 when starting the game to enter ROM menu
 	Immediately Press 8 to enter game adjustments
