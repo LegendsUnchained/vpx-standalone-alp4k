@@ -2,13 +2,13 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-xfileshanibal.png)
 
-Author:[hanibal2001](https://vpuniverse.com/profile/872-hanibal2001/) 
+Author: [hanibal2001](https://vpuniverse.com/profile/872-hanibal2001/) 
 
 Tested by: Bla1ze 
 
 Version: 1.9 
 
-Download:[VP Universe](https://vpuniverse.com/files/file/4595-x-files-hanibal-4k-led-edition/)
+Download: [VP Universe](https://vpuniverse.com/files/file/4595-x-files-hanibal-4k-led-edition/)
 
 DirectB2S
 
@@ -16,11 +16,11 @@ Author:[Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
 
 Version: 1.0.0
 
-Download:[VP Universe](https://vpuniverse.com/files/file/14927-x-files-sega-1997-b2s-with-full-dmd/)
+Download: [VP Universe](https://vpuniverse.com/files/file/14927-x-files-sega-1997-b2s-with-full-dmd/)
 
 ROM
 
-Download:[VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1077)
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1077)
 
 SHA: ff04213446b2adeadfad0a3034f105b2e742b85c
 
