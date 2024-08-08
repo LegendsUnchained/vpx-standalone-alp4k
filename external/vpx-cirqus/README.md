@@ -1,6 +1,6 @@
 # Cirqus Voltaire
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_06/CV.png.3423f354845047598ae9e93bb91ced24.png )
+![Table Preview](https://github.com/Mar3nBu/vpx-images/blob/main/vpx-cirqus.png)
 
 Author: [Knorr](https://vpuniverse.com/profile/3120-knorr/) 
 
