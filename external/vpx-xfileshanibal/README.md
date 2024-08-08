@@ -12,7 +12,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/4595-x-files-hanibal-4
 
 DirectB2S
 
-Author:[Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
+Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
 
 Version: 1.0.0
 
