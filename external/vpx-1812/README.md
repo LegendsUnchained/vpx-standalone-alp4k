@@ -1,0 +1,37 @@
+# Class of 1812 (Gottlieb 1991)
+
+![Table Preview](https://vpuniverse.com/screenshots/monthly_2019_03/1859157671_1812(Custom).png.5b750bce8ec99699c1e84a9d7043c03f.png)
+
+Authors: [ninuzzu](https://vpuniverse.com/profile/5530-ninuzzu/)
+Version: 1.0
+Download: [VP Universe](https://vpuniverse.com/files/file/5491-class-of-1812/)
+
+DirectB2S
+
+Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
+Version: 1.5
+Download: [VP Universe](https://vpuniverse.com/files/file/17846-class-of-1812-gottlieb-1991-b2s/)
+
+ROM
+
+Download: [Pinball Nirvana](https://pinballnirvana.com/forums/resources/clas1812.1668/)
+
+## Status 
+
+Minimum VPX Standalone build: 10.8.0-1989-a764013
+| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
+|-----------|----------|-----------|-----|--------------|-----|
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 47 |
+
+## Instructions
+
+- Copy the contents of this repo folder to your USB drive
+- Add your personalized launcher.elf and rename it to vpx-1812.elf
+- Download the table and directb2s versions listed above and copy them into this folder
+
+If your ROM is adding 3 credits per coin:
+	Press 7 when starting the game to enter ROM menu
+	Immediately Press 8 to enter game adjustments
+	Press 7 to advance to the adjustment you want to modify. The center slot credit menu is adjustment number 11. 
+	Press 8 or 9 to increase or decrease the setting.  (In this case, hit 8 twice, to go from 3 to 1)
+	Press F3 to save
