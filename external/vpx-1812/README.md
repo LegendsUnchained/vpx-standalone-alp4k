@@ -32,8 +32,9 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 ***DO NOT RENAME Class1812.vbs***
 
 If your ROM is adding 3 credits per coin:
-	Press 7 when starting the game to enter ROM menu
-	Immediately Press 8 to enter game adjustments
-	Press 7 to advance to the adjustment you want to modify. The center slot credit menu is adjustment number 11. 
-	Press 8 or 9 to increase or decrease the setting.  (In this case, hit 8 twice, to go from 3 to 1)
-	Press F3 to save
+
+- Press 7 when starting the game to enter ROM menu
+- Immediately Press 8 to enter game adjustments
+- Press 7 to advance to the adjustment you want to modify. The center slot credit menu is adjustment number 11. 
+- Press 8 or 9 to increase or decrease the setting.  (In this case, hit 8 twice, to go from 3 to 1)
+- Press F3 to save
