@@ -1,4 +1,4 @@
-# 24 (Stern 2009)
+# Cirqus Voltaire
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_06/CV.png.3423f354845047598ae9e93bb91ced24.png)
 
