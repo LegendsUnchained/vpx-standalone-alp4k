@@ -34,7 +34,7 @@
 ' ****************************************************************
 '                       VISUAL PINBALL X 1.72
 '                 Jicho Original Pinball Table
-'                         Version 2.0.8
+'                         Version 3.0.0
 ' ****************************************************************
 
 '*********************************************************************************************************************************
@@ -144,7 +144,7 @@ Const lob = 0					   'Locked balls
 ' Define Table Constants
 Const cGameName = "TheATeam"
 Const TableName = "TheATeam"
-Const myVersion = "2.0.8"
+Const myVersion = "3.0.0"
 Const MaxPlayers = 4     ' from 1 to 4
 Const BallSaverTime = 20 ' in seconds NORMALMENTE 20
 Const MaxMultiplier = 5  ' limit to 5x in this game, both bonus multiplier and playfield multiplier
@@ -208,8 +208,7 @@ Dim BallsInHole
 Dim EnableBallControl
 EnableBallControl = false 'Change to true to enable manual ball control (or press C in-game) via the arrow keys and B (boost movement) keys
 	
-'-------------------------------------COLOCADO-----------------------------
-
+'------------------------------------- -----------------------------
 ' Define Game Flags
 Dim bFreePlay
 Dim bGameInPlay
@@ -365,9 +364,7 @@ Dim SuperTargets
 
 Dim MisionStatusLigth (4,4) 'ESTADO DE LAS MISIONES PARA ACTUALIZAR LAS LUCES
 
-
 Dim ContadorMisionDone(4) 'CONTADOR DE MISIONES POR JUGADOR
- 
 
 Dim LaneIntroDMD (4)
 Dim Pausa_DMD
@@ -385,11 +382,13 @@ Dim GifVanRelancuchActive
 
 
 'Mostrar el gif de Puntuacion o el de los Bumpers
+
 Dim BumperActivo 
 BumperActivo=0 
   
 Dim SpinnerActivo
-Spinneractivo =0       
+Spinneractivo =0     
+  
 Dim ScoreBumpers(4)
 Dim ScoreDMDActive
 Dim Door_Bloqued
@@ -398,8 +397,11 @@ Dim Door_is_open(4)
 Dim RedayTriballDMD (4)
 
 'Activar o desactivr la puntuación en el DMD
+
 ScoreDMDActive=0
+
 ' Valor inicial Mision Trinity Scape en Spinners
+
 Dim TrinityScape_value
 TrinityScape_Value=25000000
 
@@ -416,7 +418,6 @@ Dim Player : Player = 1
 Dim Battle_is_Active
 
 'MISSION 2: Punch Out Variables
-
 Dim Punch_Out_Value 
 
 'MISSION 3: Lotrey Variables
@@ -459,7 +460,6 @@ Dim Enemy2_Frames(5)
 Dim Enemy3_Frames(5)
 Dim Enemy4_Frames(5)
 
-
 Dim Frame_Enemy(4) : Frame_Enemy (1) = 0 : Frame_Enemy (2) = 0 : Frame_Enemy (3) =0 : Frame_Enemy (4)=0
 
 Dim Mirilla_posX
@@ -481,11 +481,9 @@ Dim FindAndShoot_Value
 
 Dim TargetsHannibal_Status (4,4)
 
-
 '*******************************************
 '  ZDMD: FlexDMD
 '*******************************************
-
 
 'FlexDMD in high or normal quality
 'change it to True if you have an LCD screen, 256x64
@@ -497,7 +495,6 @@ Set fso = CreateObject("Scripting.FileSystemObject")
 		curDir = fso.GetAbsolutePathName(".")
 		FlexPath = curDir & "\TheATeam\"
 			
-
 '*****************************************************************************************************
 ' UltraDMD constants
 Const UltraDMD_VideoMode_Stretch=0, UltraDMD_VideoMode_Top = 1, UltraDMD_VideoMode_Middle = 2, UltraDMD_VideoMode_Bottom = 3
@@ -534,7 +531,6 @@ Const 	FlexDMD_Align_TopLeft = 0, _
 		FlexDMD_Align_BottomLeft = 6, _
 		FlexDMD_Align_Bottom = 7, _
 		FlexDMD_Align_BottomRight = 8
-
 
 Dim AlphaChars(255)
 AlphaChars(48) = &h443F ' 0
@@ -574,7 +570,6 @@ AlphaChars(88) = &h5500 ' X
 AlphaChars(89) = &h2500 ' Y
 AlphaChars(90) = &h4409 ' Z
 
-
 '*****************************************************************************************************
 '
 ' FlexDMD's script
@@ -592,184 +587,26 @@ Dim FontScoreInactive, FontScoreActive
 Dim VideoModeActive  'IF TRUE, LOCK THE FLIPPERS. IF fALSE UNLOCK THE FLIPPERS
 Dim Frame : Frame = 0
 
-
 ' *********************************************************************
-'                Text types
+'                DMD Text types
 ' *********************************************************************
 
 Dim Font_Small
+Dim Font_Small_special
+Dim Font_Medium
 Dim	Font_Medium_special
+Dim Font_Score_Active
+Dim Font_Score_Inactive 
+Dim Font_Big
 
 	Font_Small = "FlexDMD.Resources.teeny_tiny_pixls-5.fnt"
+	Font_Medium= "FlexDMD.Resources.udmd-f6by12.fnt"
 	Font_Medium_special= "FlexDMD.Resources.bm_army-12.fnt"
-
-
-'*******************************************
-'	ZINI: Table Initialization and Exiting
-'*******************************************
-
-Sub Table1_Init()
-    LoadEM
-    Dim i
-    Randomize
-	
-
-	'Reset HighScores
-		'Reseths()
-
-    'Impulse Plunger as autoplunger
-    Const IMPowerSetting = 50 ' Plunger Power
-    Const IMTime = 1.1        ' Time in seconds for Full Plunge
-    Set plungerIM = New cvpmImpulseP
-    With plungerIM
-        .InitImpulseP swplunger, IMPowerSetting, IMTime
-        .Random 1.5
-        .InitExitSnd SoundFXDOF("Saucer_Kick", 141, DOFPulse, DOFContactors), SoundFXDOF("fx_solenoid", 141, DOFPulse, DOFContactors)
-        .CreateEvents "plungerIM"
-    End With
-
-	'CharacterKicker hole
-	Set bsCharacterKicker = New cvpmTrough
-    With bsCharacterKicker
-        .size = 5
-		'JackalHole direction
-        .Initexit CharacterKicker, 188, 35
-        '.InitExitVariance 2, 2
-        .MaxBallsPerKick = 1
-    End With
-
-	'ExtraBall hole
-	Set bsExtraBallKicker = New cvpmTrough
-    With bsExtraBallKicker
-        .size = 5
-        .Initexit ExtraBallKicker, 50, 35
-        .MaxBallsPerKick = 1
-    End With
-
-    ' Jackal hole
-    Set bsJackal = New cvpmTrough
-    With bsJackal
-        .size = 5
-		'JackalHole direction
-        .Initexit JackalHole, 188, 35
-        '.InitExitVariance 2, 2
-        .MaxBallsPerKick = 1
-    End With
-
-	Set bsJeep = New cvpmTrough
-    With bsJeep
-        .size = 5
-		'JeepHole direction
-        .Initexit JeepHole, 220, 25
-        '.InitExitVariance 2, 2
-        .MaxBallsPerKick = 1
-    End With
-
-	Set bsBarrel = New cvpmTrough
-    With bsBarrel
-        .size = 5
-		'JeepHole direction
-        .Initexit BarrelHole, 220, 25
-        '.InitExitVariance 2, 2
-        .MaxBallsPerKick = 1
-    End With
-
-    ' Misc. VP table objects Initialisation, droptargets, animations...
-    VPObjects_Init
-
-    ' load saved values, highscore, names, jackpot
-    Loadhs
-
-
-    ' freeplay or coins
-    bFreePlay = False 'we want coins
-
-    if bFreePlay Then DOF 125, DOFOn
-
-    ' Init main variables and any other flags
-    bAttractMode = False
-    bOnTheFirstBall = False
-    bBallInPlungerLane = False
-    bBallSaverActive = False
-    bBallSaverReady = False
-    bMultiBallMode = False
-    bGameInPlay = False
-    bAutoPlunger = False
-    bMusicOn = True
-    BallsOnPlayfield = 0
-    BallsInLock(1) = 0
-    BallsInLock(2) = 0
-    BallsInLock(3) = 0
-    BallsInLock(4) = 0
-    BallsInHole = 0
-    LastSwitchHit = ""
-    Tilt = 0
-    TiltSensitivity = 6
-    Tilted = False
-    bBonusHeld = False
-    bJustStarted = True
-    bJackpot = False
-    bInstantInfo = False
-    ' set any lights for the attract mode
-    GiOff
-    StartAttractMode
-
-    ' Start the RealTime timer
-    RealTime.Enabled = 1
-
-    ' Load table color
-    LoadLut
-	'CAMBIO EL ARCO
-	Primitive011.ObjRoty= 315
-	Primitive011.ObjRotx= 90
-Set FlexDMD = CreateObject("FlexDMD.FlexDMD")
-    If FlexDMD is Nothing Then
-        MsgBox "No FlexDMD found. This table will NOT run without it."
-        Exit Sub
-    End If
-	SetLocale(1033)
-	With FlexDMD
-		.GameName = cGameName
-		.TableFile = Table1.Filename & ".vpx"
-		.Color = RGB(255, 0, 0)
-		.RenderMode = FlexDMD_RenderMode_DMD_GRAY_4
-		.Width = 128
-		.Height = 32
-		.Clear = True
-		.Run = True
-	End With
-	Set AlphaNumDMD = CreateObject("FlexDMD.FlexDMD")
-	With AlphaNumDMD
-		.GameName = cGameName+"-AlphaNum"
-		.RenderMode = FlexDMD_RenderMode_SEG_2x16Alpha
-	End With
-	
-	'START SCENE TABLE TEST
-		'FindAndShootDMD()
-
-
-	InicioDMDScenes()
-	
-End Sub
-
-Sub DotMatrix_Timer
-	Dim DMDp
-	If FlexDMD.RenderMode = FlexDMD_RenderMode_DMD_RGB Then
-		DMDp = FlexDMD.DmdColoredPixels
-		If Not IsEmpty(DMDp) Then
-			DMDWidth = FlexDMD.Width
-			DMDHeight = FlexDMD.Height
-			DMDColoredPixels = DMDp
-		End If
-	Else
-		DMDp = FlexDMD.DmdPixels
-		If Not IsEmpty(DMDp) Then
-			DMDWidth = FlexDMD.Width
-			DMDHeight = FlexDMD.Height
-			DMDPixels = DMDp
-		End If
-	End If
-End Sub
+	Font_Score_Active = "FlexDMD.Resources.udmd-f7by13.fnt"
+	Font_Score_Inactive = "FlexDMD.Resources.teeny_tiny_pixls-5.fnt"
+	Font_Small_special = "FlexDMD.Resources.udmd-f5by7.fnt"
+	Font_Big = "FlexDMD.Resources.udmd-f12by24.fnt"
+'AQUI
 
 '------------------------------------------------------------------------------------------
 '******************************************************************************************
@@ -788,7 +625,6 @@ Function FileExists(FilePath)
     FileExists=CBool(0)
   End If
 End Function
-
 
 '****************************
 '		DMD INICIO
@@ -828,8 +664,6 @@ Sub InicioDMDScenes ()
 			scene3.GetVideo("Intro").SetBounds 0, 0, 128, 32
 			scene3.GetVideo("Intro").Visible = True
 		
-
-		
 		'Escena 4 Presentatión NO CREDITS "INSERT COIN"
 			
 			If Credits =0 Then
@@ -843,8 +677,7 @@ Sub InicioDMDScenes ()
 		'Escena 4 Presentación CON CREDITOS "MARCO PULSA START"
 			If Credits >0 Then
 				Set scene4 = FlexDMD.NewGroup("Scene 3")
-				'scene2.AddActor FlexDMD.NewImage("Back", "FlexDMD.Resources.dmds.black.png")
-				scene4.AddActor FlexDMD.NewLabel("Credits", FlexDMD.NewFont("FlexDMD.Resources.bm_army-12.fnt", vbWhite, vbBlack, 1), "Credits " & Credits)
+				scene4.AddActor FlexDMD.NewLabel("Credits", FlexDMD.NewFont(Font_Medium_special, vbWhite, vbBlack, 1), "Credits " & Credits)
 				scene4.GetLabel("Credits").SetBounds 0, 0, 130, 34
 				scene4.AddActor FlexDMD.NewFrame("Marco")
 				scene4.GetFrame("Marco").Thickness = 1
@@ -854,8 +687,8 @@ Sub InicioDMDScenes ()
 		'Escena 4 Presentación CON CREDITOS "PULSA START"
 			If Credits >0 Then
 				Dim scenePush_Start
+
 				Set scenePush_Start = FlexDMD.NewGroup("scenePush_Start")
-				
 				scenePush_Start.AddActor FlexDMD.NewVideo("Push_Start",  FlexPath & "Push_Start.gif")
 				scenePush_Start.GetVideo("Push_Start").SetBounds 0, 0, 128, 32
 				scenePush_Start.GetVideo("Push_Start").Visible = True	
@@ -878,11 +711,11 @@ Sub InicioDMDScenes ()
 				list.Add af.Wait(3)
 				list.Add af.RemoveChild(scene2)
 
-				If FileExists( FlexPath & File_Name_Check ) Then
-						list.Add af.AddChild(scene3)
-						list.Add af.Wait(3.285)
-						list.Add af.RemoveChild(scene3)  
-				End If
+					If FileExists( FlexPath & File_Name_Check ) Then
+							list.Add af.AddChild(scene3)
+							list.Add af.Wait(3.285)
+							list.Add af.RemoveChild(scene3)  
+					End If
 
 				Repeat_DMD_From_Start = False' 	Dont repeat the opening scene after adding credit
 
@@ -896,7 +729,6 @@ Sub InicioDMDScenes ()
 				list.Add af.AddChild(scenePush_Start)
 				list.Add af.Wait(3.2)
 				list.Add af.RemoveChild(scenePush_Start)
-
 			End If
 
 			sequence.AddAction af.Repeat(list, -1)
@@ -907,8 +739,7 @@ Sub InicioDMDScenes ()
 			FlexDMD.Stage.AddActor sequence
 			FlexDMD.UnlockRenderThread		
 
-		End Sub
-		
+		End Sub		
 ' Final Presentation Scene
 
 '****************************
@@ -918,17 +749,15 @@ Sub InicioDMDScenes ()
 Sub ScoreDMD() 
 	DotMatrix.color = RGB(255, 0, 0)
 	Dim i,j
-	
-	Set FontScoreActive = FlexDMD.NewFont("FlexDMD.Resources.udmd-f7by13.fnt", vbWhite, vbWhite, 0)
-	Set FontScoreInactive = FlexDMD.NewFont("FlexDMD.Resources.teeny_tiny_pixls-5.fnt", vbWhite, vbWhite, 0)
-	
 
+	Set FontScoreActive = FlexDMD.NewFont(Font_Score_Active, vbWhite, vbWhite, 0)
+	Set FontScoreInactive = FlexDMD.NewFont(Font_Score_Inactive, vbWhite, vbWhite, 0)
+	
 	Dim scene : Set scene = FlexDMD.NewGroup("Score")
 
 	scene.AddActor FlexDMD.NewFrame("Frame1")
 	scene.GetFrame("Frame1").Thickness = 1
 	scene.GetFrame("Frame1").SetBounds 0, 24, 128, 1
-	
 	
 	For j = 1 to PlayersPlayingGame
 		If CurrentPlayer = j Then
@@ -941,17 +770,10 @@ Sub ScoreDMD()
 
 For i = 1 to PlayersPlayingGame
 				scene.AddActor FlexDMD.NewLabel("Content_" & i, Fuente(i), FormatNumber(Score(i), 0, -1, 0, -1))
-				'scene.AddActor FlexDMD.NewGroup("Content_" & i)
-				'scene.Text = FormatNumber(Scores(i), 0, -1, 0, -1)
 				Next
 		If PlayersPlayingGame >0  Then
 			scene.GetLabel("Content_1").SetAlignedPosition 0, 0, FlexDMD_Align_TopLeft
 		End If
-'scene.AddActor FlexDMD.NewLabel("Content_" & i, Fuente(1), Score(1))
-			'FlexDMD.Stage.GetLabel("Score_3").SetAlignedPosition 0, 24, FlexDMD_Align_BottomLeft
-			'FlexDMD.Stage.GetLabel("Score_4").SetAlignedPosition 128, 24, FlexDMD_Align_BottomRight
-			'FlexDMD.Stage.GetLabel("Ball").SetAlignedPosition 2, 33, FlexDMD_Align_BottomLeft
-			'FlexDMD.Stage.GetLabel("Credit").SetAlignedPosition 126, 33, FlexDMD_Align_BottomRight
 
 	If PlayersPlayingGame >1 Then
 			
@@ -983,11 +805,6 @@ For i = 1 to PlayersPlayingGame
 
 	End If
 
-	'scene.AddActor FlexDMD.NewGroup("Content_1")
-	'scene.GetGroup("Content_1").SetAlignedPosition 0, 0, FlexDMD_Align_TopLeft
-	'scene.GetGroup("Content_1").AddActor FlexDMD.NewLabel("Content_1", fuente1, Score(1))
-
-	
 'FLAGS
 	'scene.AddActor FlexDMD.NewGroup("Content_flag")
 	'scene.GetGroup("Content_flag").SetBounds 1, 18, 128, 32
@@ -999,7 +816,6 @@ For i = 1 to PlayersPlayingGame
 	scene.GetGroup("Content").SetBounds 55, 26, 128, 32
 	scene.GetGroup("Content").AddActor FlexDMD.NewLabel("BALL", FontScoreInactive,"BALL "& Balls)
 	
-
 	scene.AddActor FlexDMD.NewGroup("Content2")
 	scene.GetGroup("Content2").SetBounds 1, 26, 128, 32
 	scene.GetGroup("Content2").AddActor FlexDMD.NewLabel("PLAYER", FontScoreInactive,"PLAYER " & CurrentPlayer )
@@ -1016,6 +832,7 @@ For i = 1 to PlayersPlayingGame
 	FlexDMD.Show = True
 	FlexDMD.UnlockRenderThread
 End Sub
+
 '****************************
 '	End Score DMD 
 '****************************
@@ -1023,11 +840,11 @@ End Sub
 Sub End_Score_DMD ()
 	DotMatrix.color = RGB(225, 0, 0)
 
-			Dim FontScoreShadow, FontScoreBlack 
+			Dim Font_EndScore_Active, Font_EndScore_Shadow, Font_EndScore_Black
 	 
-			Set FontScoreActive = FlexDMD.NewFont("FlexDMD.Resources.udmd-f7by13.fnt", vbWhite, vbWhite, 0) 
-			Set FontScoreShadow = FlexDMD.NewFont("FlexDMD.Resources.udmd-f7by13.fnt", RGB(50,50,50), RGB(50,50,50), 0)
-			Set FontScoreBlack = FlexDMD.NewFont("FlexDMD.Resources.udmd-f7by13.fnt", vbBlack, vbBlack, 0)
+			Set Font_EndScore_Active = FlexDMD.NewFont(Font_Score_Active, vbWhite, vbWhite, 0) 
+			Set Font_EndScore_Shadow = FlexDMD.NewFont(Font_Score_Active, RGB(50,50,50), RGB(50,50,50), 0)
+			Set Font_EndScore_Black = FlexDMD.NewFont(Font_Score_Active, vbBlack, vbBlack, 0)
 
 			Dim Scene_bonus : Set Scene_bonus = FlexDMD.NewGroup("Bonus")
 			Dim Scene_score : Set Scene_score = FlexDMD.NewGroup("Score")
@@ -1038,59 +855,41 @@ Sub End_Score_DMD ()
 					Dim Background_End_Scene
 						'Añande el Gif
 						Set Background_End_Scene = FlexDMD.NewGroup("Scene")
-					
-						
+							
 						If FileExists( File_Name_Check ) Then
 							Background_End_Scene.AddActor FlexDMD.NewVideo("Gif", FlexPath &"endofball.gif")
 							Background_End_Scene.GetVideo("Gif").SetBounds 0, 0, 128, 32
-						Background_End_Scene.GetVideo("Gif").Visible = True
+							Background_End_Scene.GetVideo("Gif").Visible = True
 						End If 
 						
 			Scene_score.AddActor FlexDMD.NewGroup("Content")
-			'Scene_score.GetGroup("Content").'SetAlignedPosition 0, 15, FlexDMD_Align_Top
-			Scene_score.GetGroup("Content").AddActor FlexDMD.NewLabel("BALL1", FontScoreShadow, FormatNumber(Score(CurrentPlayer), 0, -1, 0, -1))   
+			Scene_score.GetGroup("Content").AddActor FlexDMD.NewLabel("BALL1", Font_EndScore_Shadow, FormatNumber(Score(CurrentPlayer), 0, -1, 0, -1))   
 			Scene_score.GetLabel("BALL1").SetBounds 1, -4, 130, 34 
 
-			Scene_score.GetGroup("Content").AddActor FlexDMD.NewLabel("BALL2", FontScoreBlack , FormatNumber(Score(CurrentPlayer), 0, -1, 0, -1))
+			Scene_score.GetGroup("Content").AddActor FlexDMD.NewLabel("BALL2", Font_EndScore_Black , FormatNumber(Score(CurrentPlayer), 0, -1, 0, -1))
 			Scene_score.GetLabel("BALL2").SetBounds 0, -5, 130, 34 
 			
-		
-			Scene_score.GetGroup("Content").AddActor FlexDMD.NewLabel("BALL", FontScoreActive, FormatNumber(Score(CurrentPlayer), 0, -1, 0, -1))
+			Scene_score.GetGroup("Content").AddActor FlexDMD.NewLabel("BALL", Font_EndScore_Active, FormatNumber(Score(CurrentPlayer), 0, -1, 0, -1))
 			Scene_score.GetLabel("BALL").SetBounds 0, -5, 130, 34 
 
-
 			Scene_bonus.AddActor FlexDMD.NewGroup("Content_bonus")
-			'Scene_score.GetGroup("Content").'SetAlignedPosition 0, 15, FlexDMD_Align_Top
-			Scene_bonus.GetGroup("Content_bonus").AddActor FlexDMD.NewLabel("BONUS1", FontScoreShadow, FormatNumber(BonusPoints(CurrentPlayer), 0, -1, 0, -1))   
+			Scene_bonus.GetGroup("Content_bonus").AddActor FlexDMD.NewLabel("BONUS1", Font_EndScore_Shadow, FormatNumber(BonusPoints(CurrentPlayer), 0, -1, 0, -1))   
 			Scene_bonus.GetLabel("BONUS1").SetBounds 1, -4, 130, 34 
 
-			Scene_bonus.GetGroup("Content_bonus").AddActor FlexDMD.NewLabel("BONUS2", FontScoreBlack , FormatNumber(BonusPoints(CurrentPlayer), 0, -1, 0, -1))
+			Scene_bonus.GetGroup("Content_bonus").AddActor FlexDMD.NewLabel("BONUS2", Font_EndScore_Black , FormatNumber(BonusPoints(CurrentPlayer), 0, -1, 0, -1))
 			Scene_bonus.GetLabel("BONUS2").SetBounds 0, -5, 130, 34 
 			
 		
-			Scene_bonus.GetGroup("Content_bonus").AddActor FlexDMD.NewLabel("BONUS3", FontScoreActive, FormatNumber(BonusPoints(CurrentPlayer), 0, -1, 0, -1))
+			Scene_bonus.GetGroup("Content_bonus").AddActor FlexDMD.NewLabel("BONUS3", Font_EndScore_Active, FormatNumber(BonusPoints(CurrentPlayer), 0, -1, 0, -1))
 			Scene_bonus.GetLabel("BONUS3").SetBounds 0, -5, 130, 34
-			
-							'Añade el Marco
-						
-				
-						'DMDScene.AddActor FlexDMD.NewLabel("PuntuacionBumper", FlexDMD.NewFont("FlexDMD.Resources.teeny_tiny_pixls-5.fnt", RGB(255, 255, 255), vbBlack, 0), ScoreBumpers(CurrentPlayer))
-						'DMDScene.GetLabel("PuntuacionBumper").SetAlignedPosition 120, 2, FlexDMD_Align_TopRight
-
-						'DMDScene.AddActor FlexDMD.NewFrame("Marco")
-						'DMDScene.GetFrame("Marco").Thickness = 1
-						'DMDScene.GetFrame("Marco").SetBounds 0, 0, 128, 32
-						
-					   ' Presenta el DMD
-						
-				 ' Presenta el DMD
+	
+				 ' Present el DMD
 			Dim sequence, af, list
 
            Set sequence = FlexDMD.NewGroup("Sequence")
 				sequence.SetSize 128, 32
 				Set af = sequence.ActionFactory
-				Set list = af.Sequence()
-					
+				Set list = af.Sequence()					
 					
 					list.Add af.AddChild(Background_End_Scene)								
 					list.Add af.Wait(1.5)		
@@ -1104,7 +903,6 @@ Sub End_Score_DMD ()
 				'Final Secuencia
 					sequence.AddAction af.Repeat(list, -1)
 			
-
 			AlphaNumDMD.Run = False
 			FlexDMD.LockRenderThread
 			FlexDMD.RenderMode = FlexDMD_RenderMode_DMD_GRAY_4
@@ -1115,11 +913,9 @@ Sub End_Score_DMD ()
    
 End Sub
 
-
 '****************************
 '	GIF en el DMD 
 '****************************
-
 
 Sub GifDMD(GifAnimated)
 	DotMatrix.color = RGB(255, 0, 0)
@@ -1127,101 +923,39 @@ Sub GifDMD(GifAnimated)
 		Dim DMDScene
 			'Añande el Gif
             Set DMDScene = FlexDMD.NewGroup("Scene")
-            'DMDScene.AddActor FlexDMD.NewImage("Back", "VPX.bkempty")
-           ' DMDScene.GetImage("Back").SetSize FlexDMD.Width, FlexDMD.Height
-			If FileExists( FlexPath & GifAnimated &".gif" ) Then
-			DMDScene.AddActor FlexDMD.NewVideo("Gif", FlexPath & GifAnimated &".gif")
-			
-			'Añade el Marco
-			DMDScene.GetVideo("Gif").SetBounds 0, 0, 128, 32
-			DMDScene.GetVideo("Gif").Visible = True
-			DMDScene.AddActor FlexDMD.NewFrame("Marco")
-			DMDScene.GetFrame("Marco").Thickness = 1
-			DMDScene.GetFrame("Marco").SetBounds 0, 0, 128, 32
-           ' Presenta el DMD
-            FlexDMD.LockRenderThread
-			FlexDMD.RenderMode = FlexDMD_RenderMode_DMD_GRAY_4
-			FlexDMD.Stage.RemoveAll
-            FlexDMD.Stage.AddActor DMDScene
-            FlexDMD.UnlockRenderThread	
-		End If	
+				If FileExists( FlexPath & GifAnimated &".gif" ) Then
+					DMDScene.AddActor FlexDMD.NewVideo("Gif", FlexPath & GifAnimated &".gif")
+					
+					'Añade el Marco
+					DMDScene.GetVideo("Gif").SetBounds 0, 0, 128, 32
+					DMDScene.GetVideo("Gif").Visible = True
+					DMDScene.AddActor FlexDMD.NewFrame("Marco")
+					DMDScene.GetFrame("Marco").Thickness = 1
+					DMDScene.GetFrame("Marco").SetBounds 0, 0, 128, 32
+				   ' Presenta el DMD
+					FlexDMD.LockRenderThread
+					FlexDMD.RenderMode = FlexDMD_RenderMode_DMD_GRAY_4
+					FlexDMD.Stage.RemoveAll
+					FlexDMD.Stage.AddActor DMDScene
+					FlexDMD.UnlockRenderThread	
+				End If	
         
 End Sub
 	' Final Escena con GIF
 
 '****************************
-' TEST GifDMD_int         
-'****************************
-
-Sub GifDMD_int()
-	DotMatrix.color = RGB(255, 0, 0)
-	Dim  scene,  i
-
-		Set scene = FlexDMD.NewGroup("Scene_FindAndShoot")
-
-		For i = 1 to 5
-		Dim y : y = Int((i - 1) / 5)
-		Dim x : x = (i - 1) - y * 5
-
-		'Cargo y oculto frames del Coche Izquierdo
-		Set Enemy1_Frames(i) = FlexDMD.NewImage("Enemy1_Img_" & i, "VPX.MR_LEE_Back&region=" & (x * 128) & "," & (y * 32) & ",128,32")
-		Enemy1_Frames(i).Visible = True
-		scene.AddActor Enemy1_Frames(i)
-		Next
-
-	'Añade la frase
-			Dim FraseInfo, sequence, af, list
-			
-			'Dim Explanation
-			'	Set Explanation = FlexDMD.NewGroup("FraseExplanation")
-			'		Explanation.AddActor FlexDMD.NewLabel("Explanation", SmallFont, FraseExplanation )
-			'		Explanation.GetLabel("Explanation").SetBounds 0, 0, 130, 34
-			'Dim ExplanationLine2
-			'	Set ExplanationLine2 = FlexDMD.NewGroup("FraseExplanation")
-			'		ExplanationLine2.AddActor FlexDMD.NewLabel("Explanation", SmallFont, FraseExplanationLine2 )
-			'		ExplanationLine2.GetLabel("Explanation").SetBounds 0, 10, 130, 34
-
-           ' Presenta el DMD
-           Set sequence = FlexDMD.NewGroup("Sequence")
-				sequence.SetSize 128, 32
-				Set af = sequence.ActionFactory
-				Set list = af.Sequence()
-					
-				For i=1 to 5	
-					list.Add af.AddChild(Enemy1_Frames(i))
-					list.Add af.Wait(0.5)		
-					list.Add af.RemoveChild(Enemy1_Frames(i))	
-					
-
-				'Final Secuencia
-					sequence.AddAction af.Repeat(list, -1)
-				Next
-
-			AlphaNumDMD.Run = False
-			FlexDMD.LockRenderThread
-			FlexDMD.RenderMode = FlexDMD_RenderMode_DMD_GRAY_4
-			FlexDMD.Stage.RemoveAll
-			FlexDMD.Stage.AddActor sequence
-			FlexDMD.Show = True
-			FlexDMD.UnlockRenderThread	
-
-End Sub
-'****************************
 '	GIF en el DMD CON FRASE
 '****************************
-
 
 Sub GifDMDFrase(GifAnimated, Frase, FraseExplanation,FraseExplanationLine2)
 	DotMatrix.color = RGB(255, 0, 0)
 
 		Dim DMDScene
 		
-		Dim MediumFont : Set MediumFont = FlexDMD.NewFont("FlexDMD.Resources.udmd-f6by12.fnt", vbWhite, vbBlack, 1)
-		Dim SmallFont: Set SmallFont = FlexDMD.NewFont("FlexDMD.Resources.teeny_tiny_pixls-5.fnt", vbBlack, vbWhite, 1)
+		Dim GifDMD_Medium_Font : Set GifDMD_Medium_Font = FlexDMD.NewFont(Font_Medium, vbWhite, vbBlack, 1)
+		Dim GifDMD_Small_Font: Set GifDMD_Small_Font = FlexDMD.NewFont(Font_Small, vbBlack, vbWhite, 1)
 			'Añande el Gif
             Set DMDScene = FlexDMD.NewGroup("Scene")
-            'DMDScene.AddActor FlexDMD.NewImage("Back", "VPX.bkempty")
-           ' DMDScene.GetImage("Back").SetSize FlexDMD.Width, FlexDMD.Height
 			DMDScene.AddActor FlexDMD.NewVideo("Gif", FlexPath & GifAnimated &".gif")
 			'Añade el Marco
 			DMDScene.GetVideo("Gif").SetBounds 0, 0, 128, 32
@@ -1234,26 +968,24 @@ Sub GifDMDFrase(GifAnimated, Frase, FraseExplanation,FraseExplanationLine2)
 			Dim FraseInfo, sequence, af, list
 			Set FraseInfo = FlexDMD.NewGroup("FraseInfo")
 	
-				FraseInfo.AddActor FlexDMD.NewLabel("InfoText", MediumFont, Frase )
+				FraseInfo.AddActor FlexDMD.NewLabel("InfoText", GifDMD_Medium_Font, Frase )
 				FraseInfo.GetLabel("InfoText").SetBounds 0, 0, 130, 34
 
 			Dim Explanation
 				Set Explanation = FlexDMD.NewGroup("FraseExplanation")
-					Explanation.AddActor FlexDMD.NewLabel("Explanation", SmallFont, FraseExplanation )
+					Explanation.AddActor FlexDMD.NewLabel("Explanation", GifDMD_Small_Font, FraseExplanation )
 					Explanation.GetLabel("Explanation").SetBounds 0, 0, 130, 34
 			Dim ExplanationLine2
 				Set ExplanationLine2 = FlexDMD.NewGroup("FraseExplanation")
-					ExplanationLine2.AddActor FlexDMD.NewLabel("Explanation", SmallFont, FraseExplanationLine2 )
+					ExplanationLine2.AddActor FlexDMD.NewLabel("Explanation", GifDMD_Small_Font, FraseExplanationLine2 )
 					ExplanationLine2.GetLabel("Explanation").SetBounds 0, 10, 130, 34
-
 
            ' Presenta el DMD
            Set sequence = FlexDMD.NewGroup("Sequence")
 				sequence.SetSize 128, 32
 				Set af = sequence.ActionFactory
 				Set list = af.Sequence()
-					
-					
+						
 					list.Add af.AddChild(DMDScene)
 					list.Add af.Wait(1.5)		
 					list.Add af.AddChild(FraseInfo)	
@@ -1266,7 +998,6 @@ Sub GifDMDFrase(GifAnimated, Frase, FraseExplanation,FraseExplanationLine2)
 				'Final Secuencia
 					sequence.AddAction af.Repeat(list, -1)
 			
-
 			AlphaNumDMD.Run = False
 			FlexDMD.LockRenderThread
 			FlexDMD.RenderMode = FlexDMD_RenderMode_DMD_GRAY_4
@@ -1278,15 +1009,15 @@ Sub GifDMDFrase(GifAnimated, Frase, FraseExplanation,FraseExplanationLine2)
 End Sub
 	' Final Escena con GIF y Frase
 
-
 '****************************
 '	FraseMediumDMD
 '****************************
+
 Sub FraseMediumDMD ( FraseDMD )
 		DotMatrix.color = RGB(255, 0, 0)
 
 
-Dim MediumFont : Set MediumFont = FlexDMD.NewFont("FlexDMD.Resources.udmd-f6by12.fnt", vbWhite, vbWhite, 0)
+Dim Frase_Medium_Font : Set Frase_Medium_Font = FlexDMD.NewFont(Font_Medium, vbWhite, vbWhite, 0)
 Dim FraseInfo : Set FraseInfo = FlexDMD.NewGroup("Frase")
 
 '------------------------------FRAME INFO COMÚN---------------------------------------------
@@ -1299,7 +1030,7 @@ Dim FraseInfo : Set FraseInfo = FlexDMD.NewGroup("Frase")
 				FraseInfo.GetFrame("MarcoInfo2").Thickness = 1
 				FraseInfo.GetFrame("MarcoInfo2").SetBounds 2, 2, 124, 28
 
-				FraseInfo.AddActor FlexDMD.NewLabel("InfoText", MediumFont, FraseDMD )
+				FraseInfo.AddActor FlexDMD.NewLabel("InfoText", Frase_Medium_Font, FraseDMD )
 				FraseInfo.GetLabel("InfoText").SetBounds 0, 0, 130, 34
 
 			AlphaNumDMD.Run = False
@@ -1317,7 +1048,7 @@ End Sub
 
 Sub FraseSmallDMD ( FraseDMD )
 	DotMatrix.color =RGB(255, 0, 0)
-Dim SmallFont: Set SmallFont = FlexDMD.NewFont("FlexDMD.Resources.udmd-f5by7.fnt", vbWhite, vbWhite, 0) 
+Dim Frase_Small_Font: Set Frase_Small_Font = FlexDMD.NewFont(Font_Small_special, vbWhite, vbWhite, 0) 
 Dim FraseInfo : Set FraseInfo = FlexDMD.NewGroup("Frase")
 
 '------------------------------FRAME INFO COMÚN---------------------------------------------
@@ -1330,7 +1061,7 @@ Dim FraseInfo : Set FraseInfo = FlexDMD.NewGroup("Frase")
 				FraseInfo.GetFrame("MarcoInfo2").Thickness = 1
 				FraseInfo.GetFrame("MarcoInfo2").SetBounds 2, 2, 124, 28
 
-				FraseInfo.AddActor FlexDMD.NewLabel("InfoText", SmallFont, FraseDMD )
+				FraseInfo.AddActor FlexDMD.NewLabel("InfoText", Frase_Small_Font, FraseDMD )
 				FraseInfo.GetLabel("InfoText").SetBounds 0, 0, 130, 34
 
 			AlphaNumDMD.Run = False
@@ -1341,14 +1072,15 @@ Dim FraseInfo : Set FraseInfo = FlexDMD.NewGroup("Frase")
 				FlexDMD.Show = True
 				FlexDMD.UnlockRenderThread
 End Sub
+
 '****************************
 '	DoubleFraseDMD
 '****************************
 
 Sub DoubleFraseDMD ( FraseDMD, FraseExplanation)
 	DotMatrix.color = RGB(255, 0, 0)
-Dim SmallFont: Set SmallFont = FlexDMD.NewFont("FlexDMD.Resources.udmd-f5by7.fnt", vbWhite, vbWhite, 0) 
-Dim MediumFont : Set MediumFont = FlexDMD.NewFont("FlexDMD.Resources.udmd-f6by12.fnt",RGB(125,0,0), vbWhite, 1)
+Dim DoubleFraseDMD_Small_Font  : Set DoubleFraseDMD_Small_Font = FlexDMD.NewFont(Font_Small_special, vbWhite, vbWhite, 0) 
+Dim DoubleFraseDMD_Medium_Font : Set DoubleFraseDMD_Medium_Font = FlexDMD.NewFont(Font_Medium,RGB(125,0,0), vbWhite, 1)
 Dim FraseInfo : Set FraseInfo = FlexDMD.NewGroup("Frase")
 
 '------------------------------FRAME INFO COMÚN---------------------------------------------
@@ -1361,10 +1093,10 @@ Dim FraseInfo : Set FraseInfo = FlexDMD.NewGroup("Frase")
 				FraseInfo.GetFrame("MarcoInfo2").Thickness = 1
 				FraseInfo.GetFrame("MarcoInfo2").SetBounds 2, 2, 124, 28
 
-				FraseInfo.AddActor FlexDMD.NewLabel("InfoText", SmallFont, FraseExplanation )
+				FraseInfo.AddActor FlexDMD.NewLabel("InfoText", DoubleFraseDMD_Small_Font, FraseExplanation )
 				FraseInfo.GetLabel("InfoText").SetBounds 0, 8, 130, 34
 
-				FraseInfo.AddActor FlexDMD.NewLabel("InfoText2", MediumFont, FraseDMD )
+				FraseInfo.AddActor FlexDMD.NewLabel("InfoText2", DoubleFraseDMD_Medium_Font, FraseDMD )
 				FraseInfo.GetLabel("InfoText2").SetBounds 0, -4, 130, 34
 
 			AlphaNumDMD.Run = False
@@ -1399,10 +1131,9 @@ Sub GifDMDBumper()
 						End If 
 						
 					End If
-							'Añade el Marco
-						
+							'Añade el Marco						
 				
-						DMDScene.AddActor FlexDMD.NewLabel("PuntuacionBumper", FlexDMD.NewFont("FlexDMD.Resources.teeny_tiny_pixls-5.fnt", RGB(255, 255, 255), vbBlack, 0), ScoreBumpers(CurrentPlayer))
+						DMDScene.AddActor FlexDMD.NewLabel("PuntuacionBumper", FlexDMD.NewFont(Font_Small, RGB(255, 255, 255), vbBlack, 0), ScoreBumpers(CurrentPlayer))
 						DMDScene.GetLabel("PuntuacionBumper").SetAlignedPosition 120, 2, FlexDMD_Align_TopRight
 
 						DMDScene.AddActor FlexDMD.NewFrame("Marco")
@@ -1427,16 +1158,16 @@ Sub ChangeGifDMDBumper_status
 		GifDMDBumper_active = false
 End Sub
 
-
 '****************************
 '	SIMPLE GIf CON FRASE EN DMD 
 '****************************
+
 Sub SimpleGifDMDFrase(GifAnimated, Frase)
 	DotMatrix.color = RGB(255, 0, 0)
 
 		Dim DMDScene
 		
-		Dim MediumFont : Set MediumFont = FlexDMD.NewFont("FlexDMD.Resources.udmd-f6by12.fnt", vbWhite, vbBlack, 0)
+		Dim SimpleGifDMDFrase_Medium_Font : Set SimpleGifDMDFrase_Medium_Font = FlexDMD.NewFont(Font_Medium, vbWhite, vbBlack, 0)
 			'Añande el Gif
             Set DMDScene = FlexDMD.NewGroup("Scene")
             'DMDScene.AddActor FlexDMD.NewImage("Back", "VPX.bkempty")
@@ -1453,28 +1184,23 @@ Sub SimpleGifDMDFrase(GifAnimated, Frase)
 			Dim FraseInfo, sequence, af, list
 			Set FraseInfo = FlexDMD.NewGroup("FraseInfo")
 	
-				FraseInfo.AddActor FlexDMD.NewLabel("InfoText", MediumFont, Frase )
+				FraseInfo.AddActor FlexDMD.NewLabel("InfoText", SimpleGifDMDFrase_Medium_Font, Frase )
 				FraseInfo.GetLabel("InfoText").SetBounds 0, 0, 130, 34
-
 
            ' Presenta el DMD
            Set sequence = FlexDMD.NewGroup("Sequence")
 				sequence.SetSize 128, 32
 				Set af = sequence.ActionFactory
 				Set list = af.Sequence()
-					
-					
+				
 					list.Add af.AddChild(DMDScene)
 					list.Add af.Wait(0.1)		
 					list.Add af.AddChild(FraseInfo)	
 					list.Add af.Wait(2.5)
 					list.Add af.RemoveChild(FraseInfo)	
-					
-
 				'Final Secuencia
 					sequence.AddAction af.Repeat(list, -1)
 			
-
 			AlphaNumDMD.Run = False
 			FlexDMD.LockRenderThread
 			FlexDMD.RenderMode = FlexDMD_RenderMode_DMD_GRAY_4
@@ -1490,13 +1216,12 @@ End Sub
 
 Sub Weel_Of_fortune_DMD ( )
 	DotMatrix.color =RGB(255, 0, 0)
-Dim SmallFont: Set SmallFont = FlexDMD.NewFont("FlexDMD.Resources.teeny_tiny_pixls-5.fnt", vbWhite, vbWhite, 0) 
-Dim Scene , FraseInfo , FrameInfo
- 
 
- Set scene = FlexDMD.NewGroup("Score")	
+		Dim Weel_Of_fortune_DMD_Small_Font: Set Weel_Of_fortune_DMD_Small_Font = FlexDMD.NewFont(Font_Small, vbWhite, vbWhite, 0) 
+		Dim Scene , FraseInfo , FrameInfo
 
-			
+		Set scene = FlexDMD.NewGroup("Score")	
+	
 			If FileExists( FlexPath & "Faceman_Background.gif" ) Then
 			Scene.AddActor FlexDMD.NewVideo("Gif", FlexPath & "Faceman_Background.gif")
 			End If
@@ -1508,12 +1233,7 @@ Dim Scene , FraseInfo , FrameInfo
 			scene.AddActor FlexDMD.NewGroup("Content_1")
 			scene.GetGroup("Content_1").Clip = True
 			scene.GetGroup("Content_1").SetBounds 0, 0, 128, 32
-			
-			'scene.AddActor FlexDMD.NewGroup("Content_2")
-			'scene.GetGroup("Content_2").Clip = True
-			'scene.GetGroup("Content_2").SetBounds 0, 0, 128, 32
-			
-'------------------------------FRAME INFO COMÚN---------------------------------------------
+
 			Set FrameInfo = FlexDMD.NewGroup("Marco")
 				FrameInfo.AddActor FlexDMD.NewFrame("MarcoInfo")
 				FrameInfo.GetFrame("MarcoInfo").Thickness = 1
@@ -1525,49 +1245,38 @@ Dim Scene , FraseInfo , FrameInfo
 			Set FraseInfo = FlexDMD.NewGroup("Frase")
 
 			Dim i 
-
 				for i = 1 to 20
 
 					If i < 11  Then 
-					FraseInfo.AddActor FlexDMD.NewLabel("InfoText" & i, SmallFont, Nombre_Sorteo (Draw(CurrentPlayer, i)))
+					FraseInfo.AddActor FlexDMD.NewLabel("InfoText" & i, Weel_Of_fortune_DMD_Small_Font, Nombre_Sorteo (Draw(CurrentPlayer, i)))
 					FraseInfo.GetLabel("InfoText" & i).SetBounds 15, ((8*i)-18), 128, 32
 
 					Else 
-					
-					FraseInfo.AddActor FlexDMD.NewLabel("InfoText" & i, SmallFont, Nombre_Sorteo (Draw(CurrentPlayer, i -10)))
-					FraseInfo.GetLabel("InfoText" & i).SetBounds 15, ((8*(i))-18), 128, 32
-
+						FraseInfo.AddActor FlexDMD.NewLabel("InfoText" & i, Weel_Of_fortune_DMD_Small_Font, Nombre_Sorteo (Draw(CurrentPlayer, i -10)))
+						FraseInfo.GetLabel("InfoText" & i).SetBounds 15, ((8*(i))-18), 128, 32
 					End If
-					'FraseInfo.GetLabel("InfoText" & i).SetAlignedPosition 50, 1, FlexDMD_Align_Top
+		
 				Next
 
-				'GANADOR SORTEO NUEMRO 9
-
-				'FraseInfo.AddActor FlexDMD.NewLabel("InfoText", SmallFont, Draw(CurrentPlayer, 0)&","& Draw(CurrentPlayer, 1)&","& Draw(CurrentPlayer, 2)&","& Draw(CurrentPlayer, 3)&","& Draw(CurrentPlayer, 4)&","& Draw(CurrentPlayer, 5)&","& Draw(CurrentPlayer, 6)&","& Draw(CurrentPlayer, 7)&","& Draw(CurrentPlayer, 8)&","& Draw(CurrentPlayer, 9)&","&Draw(CurrentPlayer, 10))
-				'FraseInfo.GetLabel("InfoText").SetBounds 0, 0, 130, 34
 			Dim af, Sequence, list
 			Set af = FraseInfo.ActionFactory
 					Set list = af.Sequence()
 						list.Add af.MoveTo(0, -130, 1.0)
-
 						FraseInfo.AddAction af.Repeat(list, -1)
-
-			scene.GetGroup("Marco").AddActor FrameInfo
-			scene.GetGroup("Content_1").AddActor FraseInfo
-
-			AlphaNumDMD.Run = False
-				FlexDMD.LockRenderThread
-				FlexDMD.RenderMode = FlexDMD_RenderMode_DMD_GRAY_4
-				FlexDMD.Stage.RemoveAll
-				FlexDMD.Stage.AddActor scene
-				FlexDMD.Show = True
-				FlexDMD.UnlockRenderThread
+					scene.GetGroup("Marco").AddActor FrameInfo
+					scene.GetGroup("Content_1").AddActor FraseInfo
+					AlphaNumDMD.Run = False
+					FlexDMD.LockRenderThread
+					FlexDMD.RenderMode = FlexDMD_RenderMode_DMD_GRAY_4
+					FlexDMD.Stage.RemoveAll
+					FlexDMD.Stage.AddActor scene
+					FlexDMD.Show = True
+					FlexDMD.UnlockRenderThread
 End Sub
 		
 '****************************
 '	GIF MR LEE DMD
 '****************************
-
 
 Sub MrLeeDMD()
 	DotMatrix.color = RGB(255, 0, 0)
@@ -1577,15 +1286,11 @@ Sub MrLeeDMD()
  
 			GifMrLee ="MR_Lee_Background"
 
-		'GifDMDFrase "MR_LEE_Background", "   MR LEE", MrLee_Value(CurrentPlayer)&" HITS" ,  "FOR CONTACT MR LEE"
-
-
-		Dim MediumFont : Set MediumFont = FlexDMD.NewFont("FlexDMD.Resources.udmd-f6by12.fnt", vbWhite, vbBlack, 1)
-		Dim SmallFont: Set SmallFont = FlexDMD.NewFont("FlexDMD.Resources.teeny_tiny_pixls-5.fnt", vbBlack, vbWhite, 1)
+		Dim MrLeeDMD_Medium_Font : Set MrLeeDMD_Medium_Font  = FlexDMD.NewFont(Font_Medium, vbWhite, vbBlack, 1)
+		Dim MrLeeDMD_Small_Font	 : Set MrLeeDMD_Small_Font = FlexDMD.NewFont(Font_Small, vbBlack, vbWhite, 1)
 			'Añande el Gif
             Set DMDScene = FlexDMD.NewGroup("Scene")
-            'DMDScene.AddActor FlexDMD.NewImage("Back", "VPX.bkempty")
-           ' DMDScene.GetImage("Back").SetSize FlexDMD.Width, FlexDMD.Height
+
 			DMDScene.AddActor FlexDMD.NewVideo("Gif", FlexPath & "MR_Lee_Background.gif")
 			'Añade el Marco
 			DMDScene.GetVideo("Gif").SetBounds 0, 0, 128, 32
@@ -1593,17 +1298,16 @@ Sub MrLeeDMD()
 			DMDScene.AddActor FlexDMD.NewFrame("Marco")
 			DMDScene.GetFrame("Marco").Thickness = 1
 			DMDScene.GetFrame("Marco").SetBounds 0, 0, 128, 32
-
 			'Añade la frase
 			Dim FraseInfo, sequence, af, list
 			Set FraseInfo = FlexDMD.NewGroup("FraseInfo")
 	
-				FraseInfo.AddActor FlexDMD.NewLabel("InfoText", MediumFont, MrLee_Value(CurrentPlayer)&" HITS TO" )
+				FraseInfo.AddActor FlexDMD.NewLabel("InfoText", MrLeeDMD_Medium_Font, MrLee_Value(CurrentPlayer)&" HITS TO" )
 				FraseInfo.GetLabel("InfoText").SetBounds 15, -5, 130, 34
 
 			Dim Explanation
 				Set Explanation = FlexDMD.NewGroup("FraseExplanation")
-					Explanation.AddActor FlexDMD.NewLabel("Explanation", SmallFont, " CONTACT MR LEE" )
+					Explanation.AddActor FlexDMD.NewLabel("Explanation", MrLeeDMD_Small_Font, " CONTACT MR LEE" )
 					Explanation.GetLabel("Explanation").SetBounds 12, 10, 130, 34
 
            ' Presenta el DMD
@@ -1612,13 +1316,11 @@ Sub MrLeeDMD()
 				Set af = sequence.ActionFactory
 				Set list = af.Sequence()
 					
-					
 					list.Add af.AddChild(DMDScene)
 					list.Add af.Wait(0.8)		
 					list.Add af.AddChild(FraseInfo)							
 					list.Add af.AddChild(Explanation)
 					list.Add af.Wait(5)
-
 				'Final Secuencia
 					sequence.AddAction af.Repeat(list, -1)
 
@@ -1636,11 +1338,11 @@ End Sub
 '****************************
 '	Mision en el DMD 
 '****************************
+
 Sub MisionDMD
 
 	DotMatrix.color = RGB(255, 0, 0)
 		Dim i
-
 		Dim sequence, af, list
 		Dim DMDbacground
 		Dim DMDNiebla
@@ -1649,6 +1351,8 @@ Sub MisionDMD
 		Dim sceneactiva
 		Dim scene
 		Dim SceneCruz
+		Dim MisionDMD_FontScoreActive
+		Dim MisionDMD_FontScoreInactive
 
 Dim Pos_media (4,3)
 
@@ -1664,9 +1368,8 @@ Pos_media(2,1) = 9
 Pos_media(3,0) = 98
 Pos_media(3,1) = 9
 
-
-		Set FontScoreActive = FlexDMD.NewFont("FlexDMD.Resources.teeny_tiny_pixls-5.fnt", RGB(255, 255, 255), vbBlack, 1)
-		Set FontScoreInactive = FlexDMD.NewFont("FlexDMD.Resources.teeny_tiny_pixls-5.fnt", RGB(128, 128, 128), vbWhite, 0)
+		Set MisionDMD_FontScoreActive = FlexDMD.NewFont(Font_Small, RGB(255, 255, 255), vbBlack, 1)
+		Set MisionDMD_FontScoreInactive = FlexDMD.NewFont(Font_Small, RGB(128, 128, 128), vbWhite, 0)
 			
 	If Mision(CurrentPlayer,1)>0 Then 'Cuando haya cargado las misiones del jugador
 
@@ -1677,8 +1380,7 @@ Pos_media(3,1) = 9
 			'*------------------*
 			'   LOGO BACKGROUND
 			'*------------------*
-
-			
+	
 					'Añande el Gif
 					Set DMDbacground = FlexDMD.NewGroup("Scene")
 					DMDbacground.AddActor FlexDMD.NewImage("LogoATeam", FlexPath & "LogoATeam.png")
@@ -1698,7 +1400,6 @@ Pos_media(3,1) = 9
 			'   BACKGROUND MISION ACTIVA
 			'*--------------------------*
 
-			
 					'Añande el Gif
 					Set DMDScene = FlexDMD.NewGroup("Scene")
 					DMDScene.AddActor FlexDMD.NewVideo("Gif", FlexPath & "BackgroundMision.gif")
@@ -1710,7 +1411,7 @@ Pos_media(3,1) = 9
 			'*--------------------------*
 
 			Set sceneActiva = FlexDMD.NewGroup("Activa")
-			sceneActiva.AddActor FlexDMD.NewLabel("Content1", FontScoreActive, OrdenNombreMision(CurrentPlayer,ContadorMisionDone(CurrentPlayer)+1))
+			sceneActiva.AddActor FlexDMD.NewLabel("Content1", MisionDMD_FontScoreActive, OrdenNombreMision(CurrentPlayer,ContadorMisionDone(CurrentPlayer)+1))
 			sceneActiva.GetLabel("Content1").SetBounds 0, 0, 64, 32			
 			sceneActiva.GetLabel("Content1").SetAlignedPosition Pos_media(ContadorMisionDone(CurrentPlayer),0),Pos_media(ContadorMisionDone(CurrentPlayer),1), FlexDMD_Align_Top
 			
@@ -1720,7 +1421,6 @@ Pos_media(3,1) = 9
 			
 			Set scene = FlexDMD.NewGroup("Inactiva")
 
-
 			'MISION 2 NOMBRE Y FONDO
 				If ContadorMisionDone(CurrentPlayer)=0 Then 
 
@@ -1729,13 +1429,11 @@ Pos_media(3,1) = 9
 				Scene.GetVideo("Gif2").Visible = True
 
 				Scene.AddActor FlexDMD.NewGroup("Inactiva2")
-				Scene.AddActor FlexDMD.NewLabel("Content2", FontScoreActive, OrdenNombreMision(CurrentPlayer,2))
+				Scene.AddActor FlexDMD.NewLabel("Content2", MisionDMD_FontScoreActive, OrdenNombreMision(CurrentPlayer,2))
 				Scene.GetLabel("Content2").SetBounds 0, 0, 64, 32			
 				Scene.GetLabel("Content2").SetAlignedPosition Pos_media(1,0),Pos_media(1,1), FlexDMD_Align_Top
-			
-				
+							
 				End If
-
 
 			'MISION 3 NOMBRE Y FONDO
 				If ContadorMisionDone(CurrentPlayer)<2 Then 
@@ -1745,15 +1443,13 @@ Pos_media(3,1) = 9
 				Scene.GetVideo("Gif3").Visible = True
 
 				Scene.AddActor FlexDMD.NewGroup("Inactiva3")
-				Scene.AddActor FlexDMD.NewLabel("Content3", FontScoreActive, OrdenNombreMision(CurrentPlayer,3))
+				Scene.AddActor FlexDMD.NewLabel("Content3", MisionDMD_FontScoreActive, OrdenNombreMision(CurrentPlayer,3))
 				Scene.GetLabel("Content3").SetBounds 0, 0, 64, 32			
 				Scene.GetLabel("Content3").SetAlignedPosition Pos_media(2,0),Pos_media(2,1), FlexDMD_Align_Top
 				End If
 
 				'MISION 4 NOMBRE Y FONDO
-				
-				
-
+								
 			If ContadorMisionDone(CurrentPlayer)<3 Then 
 
 				Scene.AddActor FlexDMD.NewVideo("Gif4", FlexPath & "BackgroundNoMision4.gif")
@@ -1761,37 +1457,32 @@ Pos_media(3,1) = 9
 				Scene.GetVideo("Gif4").Visible = True
 
 				Scene.AddActor FlexDMD.NewGroup("Inactiva4")
-				Scene.AddActor FlexDMD.NewLabel("Content4", FontScoreActive, OrdenNombreMision(CurrentPlayer,4))
+				Scene.AddActor FlexDMD.NewLabel("Content4", MisionDMD_FontScoreActive, OrdenNombreMision(CurrentPlayer,4))
 				Scene.GetLabel("Content4").SetBounds 0, 0, 64, 32			
 				Scene.GetLabel("Content4").SetAlignedPosition Pos_media(3,0),Pos_media(3,1), FlexDMD_Align_Top
 				End If
 
-			'DIVIDE EN CUADRANTES
-
-			
+				'DIVIDE EN CUADRANTES
+	
 			Set SceneCruz = FlexDMD.NewGroup("sceneCruz")
 			If ContadorMisionDone(CurrentPlayer) < 3 Then
 					SceneCruz.AddActor FlexDMD.NewImage("Cruz", FlexPath & "Cruz"& ContadorMisionDone(CurrentPlayer) &".png")
 					SceneCruz.GetImage("Cruz").SetBounds 0, 0, 128, 32
 			End If
 
-            'INICIO SECUENCIA
+				'INICIO SECUENCIA
 
-				
 				Set sequence = FlexDMD.NewGroup("Sequence")
 				sequence.SetSize 128, 32
 				Set af = sequence.ActionFactory
 				Set list = af.Sequence()
-					
-					
+						
 					list.Add af.AddChild(DMDbacground)
-
 					list.Add af.Wait(0.5)		
 					list.Add af.AddChild(scene)	
 					list.Add af.AddChild(DMDScene)
 					list.Add af.AddChild(SceneCruz)
-
-				list.Add af.AddChild(DMDNiebla)	
+					list.Add af.AddChild(DMDNiebla)	
 					list.Add af.Wait(0.5)
 					list.Add af.RemoveChild(DMDNiebla)			
 					list.Add af.AddChild(sceneActiva)
@@ -1817,7 +1508,6 @@ Pos_media(3,1) = 9
 				'Final Secuencia
 					sequence.AddAction af.Repeat(list, -1)
 			
-
 			AlphaNumDMD.Run = False
 			FlexDMD.LockRenderThread
 			FlexDMD.RenderMode = FlexDMD_RenderMode_DMD_GRAY_4
@@ -1827,131 +1517,73 @@ Pos_media(3,1) = 9
 			FlexDMD.UnlockRenderThread
 
 	End If
-	
-		vpmtimer.addtimer 2800, "MISION_active_DMD() '"
-
-End Sub
-'-----------------------------------------------
-'-----------------------------------------------
-'-----------------------------------------------
-
-
-'****************************
-'	MISIONACTIVE en el DMD 
-'****************************
-Sub MISION_active_DMD()
-	   
-	Dim i, mensaje, Background_Mision
-	Dim MediumFont : Set MediumFont = FlexDMD.NewFont("FlexDMD.Resources.udmd-f6by12.fnt", vbWhite, vbWhite, 0)
-	Set FontScoreActive = FlexDMD.NewFont("FlexDMD.Resources.teeny_tiny_pixls-5.fnt", vbWhite, vbWhite, 0)
 
 	MisionStatusLigth(CurrentPlayer,Mision(CurrentPlayer,0))=2
- 
-	Dim scene : Set scene = FlexDMD.NewGroup("Score")
-	
-	If  (Mision(CurrentPlayer, 0)) > 0 Then
-		scene.AddActor FlexDMD.NewFrame("Marco")
-		scene.GetFrame("Marco").Thickness = 1
-		scene.GetFrame("Marco").SetBounds 0, 0, 128, 32
-		
-		scene.AddActor FlexDMD.NewFrame("Marco2")
-		scene.GetFrame("Marco2").Thickness = 1
-		scene.GetFrame("Marco2").SetBounds 2, 2, 124, 28
 
-		Dim y : y = Int((Mision(CurrentPlayer,0) - 1) / 2)
-		Dim x : x = (Mision(CurrentPlayer,0) - 1) - y * 2
-
-		'Background Mission charge 
-
-		
-			Set Background_Mision = FlexDMD.NewImage("Background", "VPX.Character&region=" & (x * 128) & "," & (y * 32) & ",128,32")
-			Background_Mision.Visible = True
-			scene.AddActor Background_Mision
-
-	End If
-			scene.AddActor FlexDMD.NewLabel("InfoMision_Part1", MediumFont, OrdenNombreMision(Currentplayer,MisionActiva(CurrentPlayer)))
-			scene.AddActor FlexDMD.NewLabel("InfoMision_Part2", FontScoreActive,"SHOOT THE "& Sub_Mensaje_Mision(Mision(CurrentPlayer, 0)) )
-		
-			scene.GetLabel("InfoMision_Part1").SetBounds Pos_temp (Mision(CurrentPlayer, 0)), -5, 100, 34 
-			scene.GetLabel("InfoMision_Part2").SetBounds Pos_temp (Mision(CurrentPlayer, 0)), 7, 100, 34 	
-
-	AlphaNumDMD.Run = False
-	FlexDMD.LockRenderThread
-	FlexDMD.RenderMode = FlexDMD_RenderMode_DMD_GRAY_4
-	FlexDMD.Stage.RemoveAll
-	FlexDMD.Stage.AddActor scene
-	FlexDMD.Show = True
-	FlexDMD.UnlockRenderThread
-
-
-Light1.State = MisionStatusLigth(CurrentPlayer,1)
-Light2.State = MisionStatusLigth(CurrentPlayer,2)
-Light3.State = MisionStatusLigth(CurrentPlayer,3)
-Light4.State = MisionStatusLigth(CurrentPlayer,4)
+	Light1.State = MisionStatusLigth(CurrentPlayer,1)
+	Light2.State = MisionStatusLigth(CurrentPlayer,2)
+    Light3.State = MisionStatusLigth(CurrentPlayer,3)	
+	Light4.State = MisionStatusLigth(CurrentPlayer,4)
 
 End Sub
-
 
 '****************************
 '	REST OF MISION ACTIVE en el DMD 
+'****************************
+
 Sub Rest_MISION_active_DMD()
-	
-          
+   
 		Mensaje_Mision(1)=(150 - SpinCountMision(CurrentPlayer))
 		Mensaje_Mision(2)=(20 - SuperBumperHits(CurrentPlayer))
-		Mensaje_Mision(3)=(8 - RampHits3(CurrentPlayer))
+		Mensaje_Mision(3)=(6 - RampHits3(CurrentPlayer))
 		Mensaje_Mision(4)=(8 - TargetHits8(CurrentPlayer))	
 
-	Dim MediumFont : Set MediumFont = FlexDMD.NewFont("FlexDMD.Resources.udmd-f6by12.fnt", vbWhite, vbWhite, 0)
-	Dim SmallFont: Set SmallFont = FlexDMD.NewFont("FlexDMD.Resources.udmd-f5by7.fnt", vbWhite, vbWhite, 0) 
+	Dim Rest_MISION_Medium_Font : Set Rest_MISION_Medium_Font = FlexDMD.NewFont(Font_Medium, vbWhite, vbWhite, 0)
+	Dim Rest_MISION_Small_Font: Set Rest_MISION_Small_Font = FlexDMD.NewFont(Font_Small_special, vbWhite, vbWhite, 0) 
 	Dim Background_Mision
-
 	Dim scene : Set scene = FlexDMD.NewGroup("Score")
 	MisionStatusLigth(CurrentPlayer,Mision(CurrentPlayer,0))=2
+
 	'Añande el Gif
- If  (Mision(CurrentPlayer, 0)) > 0 Then 
-    
-	scene.AddActor FlexDMD.NewFrame("Marco")
-				scene.GetFrame("Marco").Thickness = 1
-				scene.GetFrame("Marco").SetBounds 0, 0, 128, 32
-	scene.AddActor FlexDMD.NewFrame("Marco2")
-				scene.GetFrame("Marco2").Thickness = 1
-				scene.GetFrame("Marco2").SetBounds 2, 2, 124, 28
+	 If  (Mision(CurrentPlayer, 0)) > 0 Then 
+		
+			scene.AddActor FlexDMD.NewFrame("Marco")
+			scene.GetFrame("Marco").Thickness = 1
+			scene.GetFrame("Marco").SetBounds 0, 0, 128, 32
+			scene.AddActor FlexDMD.NewFrame("Marco2")
+			scene.GetFrame("Marco2").Thickness = 1
+			scene.GetFrame("Marco2").SetBounds 2, 2, 124, 28
 
-	If Mision(CurrentPlayer, 0)= 3 Then
-		Dmd_Rest_Active = True
-	End if
+		If Mision(CurrentPlayer, 0)= 3 Then
+			Dmd_Rest_Active = True
+		End if
 
-	If Dmd_Rest_Active = True Then 
+		If Dmd_Rest_Active = True Then 
 			'Background Mission charge
-		Dim y : y = Int((Mision(CurrentPlayer,0) - 1) / 2)
-		Dim x : x = (Mision(CurrentPlayer,0) - 1) - y * 2
+			Dim y : y = Int((Mision(CurrentPlayer,0) - 1) / 2)
+			Dim x : x = (Mision(CurrentPlayer,0) - 1) - y * 2
 
-		Set Background_Mision = FlexDMD.NewImage("Background", "VPX.Character&region=" & (x * 128) & "," & (y * 32) & ",128,32")
-		
-
-		If Mision(CurrentPlayer,0) >< 1 Then
-			Background_Mision.Visible = True
-			scene.AddActor Background_Mision
+			Set Background_Mision = FlexDMD.NewImage("Background", "VPX.Character&region=" & (x * 128) & "," & (y * 32) & ",128,32")
+			
+			If Mision(CurrentPlayer,0) >< 1 Then
+				Background_Mision.Visible = True
+				scene.AddActor Background_Mision
+			End If
+			
 		End If
-		
-	End If
-			scene.AddActor FlexDMD.NewLabel("InfoMision_Part1", MediumFont, Mensaje_Mision(Mision(CurrentPlayer, 0))&" "&Sub_Mensaje_Mision(Mision(CurrentPlayer, 0)))
-				
-			scene.AddActor FlexDMD.NewLabel("InfoMision_Part2", SmallFont,"TO COMPLETE" )
-				
+				scene.AddActor FlexDMD.NewLabel("InfoMision_Part1",Rest_MISION_Medium_Font, Mensaje_Mision(Mision(CurrentPlayer, 0))&" "&Sub_Mensaje_Mision(Mision(CurrentPlayer, 0)))		
+				scene.AddActor FlexDMD.NewLabel("InfoMision_Part2",Rest_MISION_Small_Font,"TO COMPLETE" )
+					
+			If Mision(CurrentPlayer,0) >< 1 Then
+				scene.GetLabel("InfoMision_Part1").SetBounds Pos_temp (Mision(CurrentPlayer, 0)), -5, 100, 34 
+				scene.GetLabel("InfoMision_Part2").SetBounds Pos_temp (Mision(CurrentPlayer, 0)), 7, 100, 34 		
+			End If
 
-		If Mision(CurrentPlayer,0) >< 1 Then
-			scene.GetLabel("InfoMision_Part1").SetBounds Pos_temp (Mision(CurrentPlayer, 0)), -5, 100, 34 
-			scene.GetLabel("InfoMision_Part2").SetBounds Pos_temp (Mision(CurrentPlayer, 0)), 7, 100, 34 		
-		End If
-
-		If Mision(CurrentPlayer,0) = 1 Then
-			scene.GetLabel("InfoMision_Part1").SetBounds 0,-5, 128, 32 
-			scene.GetLabel("InfoMision_Part2").SetBounds 0, 7, 128, 32 	
-		End If
-
-End if	
+			If Mision(CurrentPlayer,0) = 1 Then
+				scene.GetLabel("InfoMision_Part1").SetBounds 0,-5, 128, 32 
+				scene.GetLabel("InfoMision_Part2").SetBounds 0, 7, 128, 32 	
+			End If
+	End if	
 
 	AlphaNumDMD.Run = False
 	FlexDMD.LockRenderThread
@@ -1960,20 +1592,18 @@ End if
 	FlexDMD.Stage.AddActor scene
 	FlexDMD.Show = True
 	FlexDMD.UnlockRenderThread
-	
 	
     Light1.State = MisionStatusLigth(CurrentPlayer,1)
 	Light2.State = MisionStatusLigth(CurrentPlayer,2)
     Light3.State = MisionStatusLigth(CurrentPlayer,3)	
 	Light4.State = MisionStatusLigth(CurrentPlayer,4)
 
-	
-
 End Sub
 
 '****************************
 '	DMD in HANNIBAL TARGET MISION 
 '****************************
+
 Sub Hannibal_Targets_MisionDMD(Target)
 
 	DotMatrix.color = RGB(255, 0, 0)
@@ -1988,11 +1618,9 @@ Sub Hannibal_Targets_MisionDMD(Target)
 
 	Dim af, list
 				Dim  scene1, scene2, scene3, scene4, FrameDMD
-				
-				Dim FontBigBig2 : Set FontBigBig2 = FlexDMD.NewFont("FlexDMD.Resources.udmd-f12by24.fnt", vbWhite,RGB(125, 125, 125), 1)
-				Dim FontBigBig: Set FontBigBig = FlexDMD.NewFont("FlexDMD.Resources.udmd-f12by24.fnt", vbBlack, vbWhite, 1)
-				 	
-			
+				Dim FontBigBig2 : Set FontBigBig2 = FlexDMD.NewFont(Font_Big, vbWhite,RGB(125, 125, 125), 1)
+				Dim FontBigBig: Set FontBigBig = FlexDMD.NewFont(Font_Big, vbBlack, vbWhite, 1)
+				 		
 			Dim scene : Set scene = FlexDMD.NewGroup("Score")	
 
 			scene.AddActor FlexDMD.NewGroup("Marco")
@@ -2143,7 +1771,7 @@ End Sub
 '****************************
 '		DMD InstantInfo
 '****************************
-
+'Aqui
 Sub InstantInfo
 
     DotMatrix.color = RGB(255, 0, 0)
@@ -2155,9 +1783,7 @@ Sub InstantInfo
 			Dim FontScoreActive: Set FontScoreActive = FlexDMD.NewFont("FlexDMD.Resources.teeny_tiny_pixls-5.fnt", vbWhite, vbWhite, 0)
 			Dim FontBigBig: Set FontBigBig = FlexDMD.NewFont("FlexDMD.Resources.udmd-f12by24.fnt", vbWhite, vbBlack, 1)
 			Dim SmallFont: Set SmallFont = FlexDMD.NewFont("FlexDMD.Resources.udmd-f5by7.fnt", vbWhite, vbWhite, 0) 	
-    
-   
-    
+
     'DMD CL("LANE BONUS"), CL(LaneBonus), "", eNone, eNone, eNone, 800, False, ""
     'DMD CL("TARGET BONUS"), CL(TargetBonus), "", eNone, eNone, eNone, 800, False, ""
     'DMD CL("RAMP BONUS"), CL(RampBonus), "", eNone, eNone, eNone, 800, False, ""
@@ -2181,12 +1807,11 @@ Sub InstantInfo
 				InstantInfoDMD.GetLabel("InfoText").SetBounds 0, 0, 130, 34
 '------------------------------MISION ACTIVE---------------------------------------------
 		
-
 			Dim MisionActiveDMD : Set MisionActiveDMD = FlexDMD.NewGroup("Character")
 
 		Mensaje_Mision(1)=(150 - SpinCountMision(CurrentPlayer))
 		Mensaje_Mision(2)=(20 - SuperBumperHits(CurrentPlayer))
-		Mensaje_Mision(3)=(8 - RampHits3(CurrentPlayer))
+		Mensaje_Mision(3)=(6 - RampHits3(CurrentPlayer))
 		Mensaje_Mision(4)=(8 - TargetHits8(CurrentPlayer))	
 				
 			If Mision(CurrentPlayer,0) = 0 Then 'Indica no hay misión
@@ -2506,8 +2131,6 @@ Sub HighScoreDisplayName()
     Dim TempTopStr
     Dim TempBotStr
 
-
-
     TempTopStr = "YOUR NAME:"
     dLine(0) = ExpandLine(TempTopStr)
     'DMDUpdate 0
@@ -2532,8 +2155,6 @@ Sub HighScoreDisplayName()
     dLine(1) = ExpandLine(TempBotStr)
    
 	'TEXT IN DMD
-
-
 
 			DotMatrix.color = RGB(255, 0, 0)
 
@@ -2575,6 +2196,12 @@ Sub HighScoreDisplayName()
 
 
 End Sub
+
+'*************************************************************************
+
+'							DMD BATTLES
+
+'*************************************************************************
 
 '****************************
 'BATTLE1	Find The BOX en el DMD 
@@ -3139,17 +2766,200 @@ Sub DMDFlush()
     Next
 End Sub
 
-'COLOCAR DESDE AQUI
-
-
-
-'*******************************************
-'	ZTIM:Timers
-'*******************************************
-
 '*******************************************
 '	ZINI: Table Initialization and Exiting
 '*******************************************
+
+Sub Table1_Init()
+    LoadEM
+    Dim i
+    Randomize
+	
+
+	'Reset HighScores
+		'Reseths()
+
+    'Impulse Plunger as autoplunger
+    Const IMPowerSetting = 50 ' Plunger Power
+    Const IMTime = 1.1        ' Time in seconds for Full Plunge
+    Set plungerIM = New cvpmImpulseP
+    With plungerIM
+        .InitImpulseP swplunger, IMPowerSetting, IMTime
+        .Random 1.5
+        .InitExitSnd SoundFXDOF("Saucer_Kick", 141, DOFPulse, DOFContactors), SoundFXDOF("fx_solenoid", 141, DOFPulse, DOFContactors)
+        .CreateEvents "plungerIM"
+    End With
+
+	' *********HOLES**********
+
+	'CharacterKicker hole
+	Set bsCharacterKicker = New cvpmTrough
+    With bsCharacterKicker
+        .size = 5
+		'JackalHole direction
+        .Initexit CharacterKicker, 188, 35
+        '.InitExitVariance 2, 2
+        .MaxBallsPerKick = 1
+    End With
+
+	'ExtraBall hole
+	Set bsExtraBallKicker = New cvpmTrough
+    With bsExtraBallKicker
+        .size = 5
+        .Initexit ExtraBallKicker, 50, 35
+        .MaxBallsPerKick = 1
+    End With
+
+    ' Jackal hole
+    Set bsJackal = New cvpmTrough
+    With bsJackal
+        .size = 5
+		'JackalHole direction
+        .Initexit JackalHole, 188, 35
+        '.InitExitVariance 2, 2
+        .MaxBallsPerKick = 1
+    End With
+	
+	'Jeep hole
+	Set bsJeep = New cvpmTrough
+    With bsJeep
+        .size = 5
+		'JeepHole direction
+        .Initexit JeepHole, 220, 25
+        '.InitExitVariance 2, 2
+        .MaxBallsPerKick = 1
+    End With
+	
+	'Barrel hole
+	Set bsBarrel = New cvpmTrough
+    With bsBarrel
+        .size = 5
+		'JeepHole direction
+        .Initexit BarrelHole, 220, 25
+        '.InitExitVariance 2, 2
+        .MaxBallsPerKick = 1
+    End With
+
+    ' Misc. VP table objects Initialisation, droptargets, animations...
+    VPObjects_Init
+
+    ' load saved values, highscore, names, jackpot
+    Loadhs
+
+
+    ' freeplay or coins
+    bFreePlay = False 'we want coins
+
+    if bFreePlay Then DOF 125, DOFOn
+
+    ' Init main variables and any other flags
+    bAttractMode = False
+    bOnTheFirstBall = False
+    bBallInPlungerLane = False
+    bBallSaverActive = False
+    bBallSaverReady = False
+    bMultiBallMode = False
+    bGameInPlay = False
+    bAutoPlunger = False
+    bMusicOn = True
+    BallsOnPlayfield = 0
+    BallsInLock(1) = 0
+    BallsInLock(2) = 0
+    BallsInLock(3) = 0
+    BallsInLock(4) = 0
+    BallsInHole = 0
+    LastSwitchHit = ""
+    Tilt = 0
+    TiltSensitivity = 6
+    Tilted = False
+    bBonusHeld = False
+    bJustStarted = True
+    bJackpot = False
+    bInstantInfo = False
+    ' set any lights for the attract mode
+    GiOff
+    StartAttractMode
+
+    ' Start the RealTime timer
+    RealTime.Enabled = 1
+
+    ' Load table color
+    LoadLut
+	'CAMBIO EL ARCO
+
+'helice_helicopter.ObjRoty= 315
+'helice_helicopter.ObjRotx= 90
+
+
+	Primitive011.ObjRoty= 315
+	Primitive011.ObjRotx= 90
+Set FlexDMD = CreateObject("FlexDMD.FlexDMD")
+    If FlexDMD is Nothing Then
+        MsgBox "No FlexDMD found. This table will NOT run without it."
+        Exit Sub
+    End If
+	SetLocale(1033)
+	With FlexDMD
+		.GameName = cGameName
+		.TableFile = Table1.Filename & ".vpx"
+		.Color = RGB(255, 0, 0)
+		.RenderMode = FlexDMD_RenderMode_DMD_GRAY_4
+		.Width = 128
+		.Height = 32
+		.Clear = True
+		.Run = True
+	End With
+	Set AlphaNumDMD = CreateObject("FlexDMD.FlexDMD")
+	With AlphaNumDMD
+		.GameName = cGameName+"-AlphaNum"
+		.RenderMode = FlexDMD_RenderMode_SEG_2x16Alpha
+	End With
+
+	' *********START SCENE**********
+		
+	' TABLE TEST
+		'FindAndShootDMD()
+	InicioDMDScenes()
+	
+End Sub
+
+'*******************************************
+'          ZTIM: Timers
+'*******************************************
+
+Sub DotMatrix_Timer
+	Dim DMDp
+	If FlexDMD.RenderMode = FlexDMD_RenderMode_DMD_RGB Then
+		DMDp = FlexDMD.DmdColoredPixels
+		If Not IsEmpty(DMDp) Then
+			DMDWidth = FlexDMD.Width
+			DMDHeight = FlexDMD.Height
+			DMDColoredPixels = DMDp
+		End If
+	Else
+		DMDp = FlexDMD.DmdPixels
+		If Not IsEmpty(DMDp) Then
+			DMDWidth = FlexDMD.Width
+			DMDHeight = FlexDMD.Height
+			DMDPixels = DMDp
+		End If
+	End If
+End Sub
+
+' Real Time updatess using the GameTimer
+'used for all the real time updates
+
+Sub Realtime_Timer
+    RollingUpdate
+    ' add any other real time update subs, like gates or diverters
+    doorp.Roty = - DoorF.CurrentAngle + 90
+	doorp001.Roty = - DoorF001.CurrentAngle + 90
+    FlipperVisualUpdate 
+	
+End Sub
+
+'COLOCAR DESDE AQUI
+
 
 '*******************************************
 '	ZDRN: Drain, Trough, and Ball Release
@@ -5505,14 +5315,10 @@ Sub Table1_KeyDown(ByVal Keycode)
 				PlaySound ("Coin_In_3"), 0, CoinSoundLevel, 0, 0.25
 			End Select
 
-
 			'NEW CREDIT IN DMD
 
-			
 				InicioDMDScenes
-			
-
-			
+				
 			if bFreePlay = False Then DOF 125, DOFOn
 			If(Tilted = False)Then
 				DMDFlush
@@ -5549,7 +5355,6 @@ Sub Table1_KeyDown(ByVal Keycode)
 
         If keycode = LeftFlipperKey Then 
 			
-
 			If VideoModeActive= False Then 'UNLOCK THE FLIPPERS
 			InstantInfoTimer.Enabled = True
 			FlipperActivate LeftFlipper, LFPress
@@ -5664,7 +5469,7 @@ Sub Table1_KeyDown(ByVal Keycode)
 
 'test keys
 
-'****** MANUEL BALL CONTROL  *********
+'****** MANUAL BALL CONTROL  *********
 	If keycode = 46 Then	 				' C Key
 		If EnableBallControl = 1 Then
 			EnableBallControl = 0
@@ -5786,11 +5591,9 @@ End If
 			If keycode = 33 Then
 				Select Case Mision(CurrentPlayer, 0)
 					Case 1
-						Addscore 40000
 						SpinCountMision(CurrentPlayer) = SpinCountMision(CurrentPlayer) + 150
 						CheckMisionDone
-						
-						
+					
 						'Dmd scrore Wait
 						If Status_DMD_Mision (1) = True Then
 							ScoreDMDActive =0
@@ -5802,16 +5605,17 @@ End If
 						End If
 					Case 2
 							SuperBumperHits(CurrentPlayer) = SuperBumperHits(CurrentPlayer) + 25
-							Addscore 500000
+							
 							CheckMisionDone
 					Case 3
 							RampHits3(CurrentPlayer) = RampHits3(CurrentPlayer) + 6
-							Addscore 250000
 							CheckMisionDone
-					Case 4
-				
-							TargetHannibal = TargetHannibal + 4 
-							Addscore 2500000
+					Case 4		
+						
+							DTHannibalHit TargetS1, 1
+							DTHannibalHit TargetS2, 2	
+							DTHannibalHit TargetS3, 3
+							DTHannibalHit TargetS4, 4
 							CheckMisionDone
 				End Select
 			End if
@@ -6924,7 +6728,8 @@ End Sub
 ' complete.  When it expires it creates a ball for the player to start playing with
 
 Sub FirstBall
-
+'ÀQUI
+	Helice_Timer.Enabled = True
 
 	Dim Delay
     Delay = 1000
@@ -6932,10 +6737,6 @@ Sub FirstBall
     ResetForNewPlayerBall()
 
 
-	
-	
-
-	
 	TimerHistory.Enabled =True
 
     ' create a new ball in the shooters lane
@@ -7168,6 +6969,14 @@ AddScore AwardPoints
 				Light48.State = 0
 
 				Light4.State = 0
+		'STOP THE Helicopter
+				If Helice_Timer.enabled =True then 
+					Helice_Timer.enabled = False
+					Helice_Timer.interval = 210
+					Helice_Timer_Inverse.enabled = true
+					Helice_Timer_inverse.interval = 10
+				End If
+
 		'Stop Left save Ball Light
 				Light002.State = 0
 				Light003.State = 0
@@ -7538,6 +7347,23 @@ Sub Trigger001_UnHit()
 		StopSound "Intro_spech" 
 		ChangeSong
 	End If
+		'---------------------------------------------------------
+		' Deactivate Helicopter
+		'---------------------------------------------------------
+	If Mision(CurrentPlayer, 0) >< 1 then 
+		If Helice_Timer.enabled = True Then 
+			Helice_Timer.enabled = False
+			Helice_Timer.interval = 210
+			Helice_Timer_inverse.interval = 10
+			Helice_Timer_Inverse.enabled = True
+		End If
+	End if
+
+	If Mision(CurrentPlayer, 0) = 1 then 
+		Helice_Timer.enabled = True 
+		Helice_Timer_inverse.interval = 10
+		Helice_Timer_Inverse.enabled = False		
+	End if
 
 End Sub
 
@@ -8231,20 +8057,6 @@ Sub DMDInit
     Chars(185) = "d_9a" '9.
 End Sub
 
-
-'****************************************
-' Real Time updatess using the GameTimer
-'****************************************
-'used for all the real time updates
-
-Sub Realtime_Timer
-    RollingUpdate
-    ' add any other real time update subs, like gates or diverters
-    doorp.Roty = - DoorF.CurrentAngle + 90
-	doorp001.Roty = - DoorF001.CurrentAngle + 90
-    FlipperVisualUpdate 
-	
-End Sub
 
 '********************************************************************************************
 ' Only for VPX 10.2 and higher.
@@ -8959,6 +8771,10 @@ Sub ResetNewBallLights()
 			Case 1
 				Light35.State = 2
 				Light33.State = 2
+				If Helice_Timer.enabled =True then 
+					Helice_Timer.enabled = False
+					Helice_Timer_Inverse.enabled = true
+				End If
 			Case 2				
 				LightSeqBumpers.Play SeqRandom, 10, , 1000
 				Light55.State = 2			
@@ -9447,7 +9263,6 @@ Sub spinner1_Spin
 
 		'ObjRotx= 90 en el fijo
 		'ObjRoty= 225 en el fijo
-		
 
 	Primitive011.ObjRoty= 315
 	Primitive011.ObjRotx= 90
@@ -9481,8 +9296,7 @@ Sub spinner2_Spin
 			End If
     End Select
 		'ObjRotx= 90 en el fijo
-		'ObjRoty= 225 en el fijo
-		
+		'ObjRoty= 225 en el fijo		
 
 	Primitive011.ObjRoty= 315
 	Primitive011.ObjRotx= 90
@@ -9632,20 +9446,7 @@ Sub Target13_Hit
 
 	End If
 
-				'If Mision(CurrentPlayer, 0) = 4 Then
-				'        TargetHits8(CurrentPlayer)= TargetHits8(CurrentPlayer)+1
-				'        Addscore 250000
-				'        CheckMisionDone
-
-						'Dmd scrore Wait
-
-				'			If Status_DMD_Mision (4) = True Then
-				'					ScoreDMDActive =0
-				'					TiempoActivarDMDScore(2000)
-				'					Rest_MISION_active_DMD
-				'			End If
-
-				' End If
+				
 	
     LastSwitchHit = "Target13"
 
@@ -9669,20 +9470,7 @@ Sub Target1_Hit
 
 	End If
 
-				'If Mision(CurrentPlayer, 0) = 4 Then
-				'        TargetHits8(CurrentPlayer)= TargetHits8(CurrentPlayer)+1
-				'        Addscore 250000
-				'        CheckMisionDone
-
-						'Dmd scrore Wait
-
-				'			If Status_DMD_Mision (4) = True Then
-				'					ScoreDMDActive =0
-				'					TiempoActivarDMDScore(2000)
-				'					Rest_MISION_active_DMD
-				'			End If
-
-				' End If
+				
 
 	
     LastSwitchHit = "Target1"
@@ -10471,16 +10259,9 @@ Sub BarrelHole_Hit
 								End If	
 							Next
 					End If
-
-			
-				
-				
-
-				
 					
 					SimpleGifDMDFrase "Sol_Naciente", "WELL OF FORTUNE"
-					
-					
+									
 					vpmtimer.addtimer 1500, "Weel_Of_fortune_DMD '"
 					vpmtimer.addtimer 4000, "GiveRandomAward '"
 					vpmtimer.addtimer 10000, "ResetDraw '"
@@ -11252,7 +11033,11 @@ Sub SelectMision 'select a new battle if none is active
 				Light2.State = 0
 				Light3.State = 0
 				Light4.State = 0
+
 			MisionActiva (CurrentPlayer)= 0
+
+			vpmtimer.addtimer 1000, "Start_Special_Mision '" 
+
 				For i = 0 to 4
 					Mision(CurrentPlayer, i)=0
 					Norepetirmision(CurrentPlayer,i) = 0 
@@ -11261,7 +11046,7 @@ Sub SelectMision 'select a new battle if none is active
 				Next
 			SpinCountMision(CurrentPlayer) = 150
 			SuperBumperHits(CurrentPlayer) =20
-			RampHits3(CurrentPlayer) = 8
+			RampHits3(CurrentPlayer) = 6
 
 			TargetsHannibal_Status (CurrentPlayer,1)= 0
 			TargetsHannibal_Status (CurrentPlayer,2)= 0
@@ -11291,6 +11076,18 @@ Sub SelectMision 'select a new battle if none is active
     
 End Sub
 
+Sub Message_special_Ready
+
+		If ContadorMisionDone(CurrentPlayer) = 4 Then 
+
+				ScoreDMDActive =0
+				TiempoActivarDMDScore(2000)
+				GifDMD "Special_Mision_Ready"
+				vpmtimer.addtimer 4500, "Message_special_Ready '"
+		End if
+
+End Sub
+
 '************************
 ' START MISION PERSONAJE
 '************************
@@ -11313,6 +11110,8 @@ Select Case NewMision
             Light33.State = 2
             Light35.State = 2
             SpinCountMision(CurrentPlayer) = 0
+			Helice_Timer.enabled= True
+
         Case 2 'BARRACUS
            ' DMD CL("ISIS"), CL("HIT THE POP BUMPERS"), "", eNone, eNone, eNone, 1500, True, ""
             Light55.State = 2
@@ -11331,14 +11130,15 @@ Select Case NewMision
 			UpAllTargetHannibal
 			BlinkLightTargetHannibal
             TargetHits8(CurrentPlayer) = 0
-        
-        Case 5 
-            AddMultiball 4
-            StartJackpots
-            ChangeGi 5
     End Select
 End Sub
 
+Sub Start_Special_Mision 'All Characters completed
+
+		AddMultiball 4
+        StartJackpots
+        ChangeGi 5
+End Sub
 '************************
 ' CHECK MISION DONE
 '************************
@@ -11357,6 +11157,8 @@ Sub CheckMisionDone
 				MisionDone
 				SpinCountMision(CurrentPlayer)=0
 				MisionStatusLigth(CurrentPlayer,1)=1 
+				Helice_Timer.enabled = False
+				Helice_Timer_Inverse.enabled = True
 			End if
         Case 2
             If SuperBumperHits(CurrentPlayer) > 19 Then 
@@ -11367,7 +11169,7 @@ Sub CheckMisionDone
 			LightSeqBumpers.StopPlay
 			End if
         Case 3
-            If RampHits3(CurrentPlayer)> 7 Then 
+            If RampHits3(CurrentPlayer)> 5 Then 
 			RampHits3(CurrentPlayer)=0
 			MisionStatusLigth(CurrentPlayer,3)=1
 			MisionDone
@@ -11399,7 +11201,12 @@ Sub MisionDone
 	If ContadorMisionDone(CurrentPlayer) >< 4 Then 
 		vpmtimer.addtimer 2500, "FraseMediumDMD ""SHOOT THE VAN"" '"
 		vpmtimer.addtimer 4500, "FraseMediumDMD ""TO NEXT MISION"" '"
+
+		Else 
+		vpmtimer.addtimer 2500, "Message_special_Ready '"		
     End if
+
+
 	'UpdateBattleLights
     'FlashEffect 2
     'LightEffect 2
@@ -11412,7 +11219,6 @@ Sub MisionDone
         Case 3:vpmtimer.addtimer 1500, "PlaySound ""vo_YouWon"" '"
     End Select
     StopMision2
-    
     
     'add a multiball after each 2 Mision Done
     Select Case  ContadorMisionDone(CurrentPlayer)
@@ -11453,8 +11259,11 @@ Sub StopMision2
     Light34.State = 0
     Light35.State = 0
     Light36.State = 0
-    
 
+	If Helice_Timer.enabled =True then 
+			Helice_Timer.enabled = False
+			Helice_Timer_Inverse.enabled = true
+	End If
 
 	ResetNewBallLights
     ' stop some timers or reset battle variables
@@ -11663,6 +11472,10 @@ Sub StartBattle
 
         Case 3 'BATTLE NAME: LOTERY
 
+				'DELAY DMDScore
+					ScoreDMDActive =0
+					TiempoActivarDMDScore(4510)
+
 				'BATTLE VARIABLES
 					Dim i 
 
@@ -11675,9 +11488,7 @@ Sub StartBattle
 				'BATTLE ACTIONS ON THE TABLE	
 					VideoModeActive = True 'LOCK THE FLIPPERS
 				
-				'DELAY DMDScore
-					ScoreDMDActive =0
-					TiempoActivarDMDScore(4510)
+				
 					
 				'ADJUST THE BALL EXIT TIME = 0, WHITHOUT DELAY
 					Activate_Batte 
@@ -12097,6 +11908,11 @@ Sub StopBattle2
 
 	Door_Bloqued = false
 
+	If Helice_Timer.enabled =True then 
+		Helice_Timer.enabled = False
+		Helice_Timer_Inverse.enabled = true
+	End If
+
 	' DESACTIVO TODO 
 
 		
@@ -12354,6 +12170,59 @@ Function Min(a, b)
   If a < b Then Min = a Else Min = b
 End Function
 
+Sub Helice_Timer_Timer
+
+	If Helice_Timer.Interval > 10 then
+		Helice_Timer.Interval = Helice_Timer.Interval - 5
+	End If
+
+	helice_helicopter.ObjRoty= 0
+	helice_helicopter.ObjRotx= 0
+	helice_helicopter.ObjRotz= 0
+
+	If helice_helicopter.TransY < 100  And Helice_Timer.Interval < 11 Then
+
+		Helicopter.TransY = Helicopter.TransY + 0.4
+		helice_helicopter.TransY=helice_helicopter.TransY + 0.4
+		Window_Helicopter.TransY=Window_Helicopter.TransY + 0.4
+
+	End if
+		helice_helicopter.Roty = helice_helicopter.Roty - 10
+
+End Sub
+	
+
+Sub Helice_Timer_Inverse_Timer
+
+	Helice_Timer.Interval = 120
+
+	helice_helicopter.ObjRoty= 0
+	helice_helicopter.ObjRotx= 0
+	helice_helicopter.ObjRotz= 0
+
+	If helice_helicopter.TransY > 0 Then
+
+		Helicopter.TransY = Helicopter.TransY - 0.5
+		helice_helicopter.TransY=helice_helicopter.TransY - 0.5
+		Window_Helicopter.TransY=Window_Helicopter.TransY - 0.5
+
+	If helice_helicopter.TransY < 10 then
+		Helice_Timer_Inverse.Interval = Helice_Timer_Inverse.Interval + 5
+	End If
+
+	If helice_helicopter.TransY <1 then
+		helice_helicopter.TransY = 0
+		Helice_Timer_Inverse.Enabled = false
+		Helice_Timer_Inverse.Interval = 10
+	End If
+
+	End if
+		
+		helice_helicopter.Roty = helice_helicopter.Roty - 10
+
+
+
+End Sub
 Sub DMDTimer_Timer
 	Dim i, n, n2, n3, n4, n5, x, y
 
