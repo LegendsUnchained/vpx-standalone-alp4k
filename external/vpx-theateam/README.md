@@ -6,7 +6,8 @@ Author: [jicho2003](https://vpuniverse.com/profile/15718-jicho2003/)
 
 Tested by: Bla1ze
 
-Version: 2.0.8  
+Version: 3.0.0
+ 
 Download: [VP Universe](https://vpuniverse.com/files/file/17525-the-a-team-original-pinball/)
 
 DirectB2S
