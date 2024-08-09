@@ -1,4 +1,4 @@
-# Walking Dead, The - Siggi (Stern 2014)
+# Walking Dead, The (Stern 2014)
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_01/twd.png.c8eaa94a11ef88bf016e4cae036f7271.png)
 

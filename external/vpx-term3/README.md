@@ -1,4 +1,4 @@
-# Terminator 3 - Siggi's (Stern 2003)
+# Terminator 3 (Stern 2003)
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_07/t3dt.png.6b65177e71b6187179d478e6b2263bf8.png)
 
