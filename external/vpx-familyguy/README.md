@@ -18,7 +18,7 @@ Download [VP Universe](https://vpuniverse.com/files/file/12988-family-guy-stern-
 
 ROM
 
-Download [VP Forums](https://vpuniverse.com/files/file/3397-family-guy-v120-english-french/)
+Download [VP Universe](https://vpuniverse.com/files/file/3397-family-guy-v120-english-french/)
 
 SHA: 01284f7238734b0bdf736491bfd117e8ca85d678
 
