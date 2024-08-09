@@ -10,4 +10,7 @@
 /external/*/crash.txt
 VPinballX_*-alp4k
 **/.DS_Store
+.Trashes
+**/._*
 !/external/*/pinmame/roms/.gitkeep
+
