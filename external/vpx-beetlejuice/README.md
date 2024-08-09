@@ -1,5 +1,4 @@
-# 
-Beetlejuice (Original 2023) DVL Reskin
+# Beetlejuice (Original 2023) DVL Reskin
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_11/BeetlejuiceDT.png.a0b5e5a6fa02405ba7fbfdf08a1acc58.png)
 
