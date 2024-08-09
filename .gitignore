@@ -8,6 +8,8 @@
 /external/*/vpinball.log
 /external/*/crash.dmp
 /external/*/crash.txt
+/external/*/pinmame/altcolor/*
+/external/*/pinmame/roms/*
 VPinballX_*-alp4k
 **/.DS_Store
 .Trashes
