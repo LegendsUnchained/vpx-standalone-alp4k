@@ -33,6 +33,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 If your ROM is adding 3 credits per coin:
 
+- Insert a USB Keyboard into the ALP. If you need one [this one works well](https://amzn.to/4fqC1oC).
 - Press 7 when starting the game to enter ROM menu
 - Immediately Press 8 to enter game adjustments
 - Press 7 to advance to the adjustment you want to modify. The center slot credit menu is adjustment number 11. 
