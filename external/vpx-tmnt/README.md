@@ -12,11 +12,11 @@ Download: [VP Universe](https://vpuniverse.com/files/file/9326-teenage-mutant-ni
 
 DirectB2S
 
-Authors: [Mr. Flytrap](https://vpuniverse.com/profile/5216-hauntfreaks/)
+Authors: [Mr. Flytrap](https://vpuniverse.com/profile/43240-mrflytrap/)
 
 Version: 2.0
 
-Download: [VP Universe](https://vpuniverse.com/profile/43240-mrflytrap/)
+Download: [VP Universe](https://vpuniverse.com/files/file/11308-tmnt-data-east-1991-animated-alternate-backglass/)
 
 ROM
 
