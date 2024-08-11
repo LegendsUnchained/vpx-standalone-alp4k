@@ -1,11 +1,16 @@
 # Mickey Mouse in Steamboat Willie
 
 ![Table Preview](https://github.com/Mar3nBu/vpx-images/blob/main/vpx-mickeysbwbw.png)
-                 
+            
 
 Authors: [Manbearpig](https://vpuniverse.com/profile/32743-manbearpig/)  
+
+Tested by: Mar3nBu
+
 Version: 1  
+
 Download: [VPUniverse](https://vpuniverse.com/files/file/9843-mickey-mouse-in-steamboat-willie-original-2022-manbearpig/)
+
 
 DirectB2S
 
@@ -16,7 +21,7 @@ Included
 Minimum VPX Standalone build: 10.8.0-2006-6d603fb
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 46 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 
 ## Instructions
 
