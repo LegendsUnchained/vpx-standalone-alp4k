@@ -1,6 +1,6 @@
 # Tom & Jerry (Original 2018)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_04/1020426883_TomandJerry.png.5252f4f805b7be72920a097f6f66589f.png)
+![Table Preview](https://imgur.com/a/4ViDXU9)
 
 Authors: [Gedankekojote97](https://vpuniverse.com/profile/42203-gedankekojote97/)
 Version: 1.33
