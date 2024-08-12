@@ -4,12 +4,12 @@
 
 Author(s): [ninuzzu](https://vpuniverse.com/profile/5530-ninuzzu/)  
 Version: 1.2
-Download: [VP Universe](https://vpuniverse.com/files/file/12637-indiana-jones-the-pinball-adventure-williams-1993-b2s-with-full-dmd/)
+Download: [VP Universe](https://vpuniverse.com/files/file/5493-indiana-jones-the-pinball-adventure-williams-1993/)
 
 DirectB2S
 Author(s): [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
 Version: 1.0.0
-Download: [VP Universe](https://vpuniverse.com/files/file/5493-indiana-jones-the-pinball-adventure-williams-1993/)
+Download: [VP Universe](https://vpuniverse.com/files/file/12637-indiana-jones-the-pinball-adventure-williams-1993-b2s-with-full-dmd/)
 
 ROM:
 Author(s): [destruk]
