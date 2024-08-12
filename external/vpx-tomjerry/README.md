@@ -1,6 +1,6 @@
 # Tom & Jerry (Original 2018)
 
-![Table Preview](https://imgur.com/a/4ViDXU9)
+![Table Preview](https://i.imgur.com/kenWQOg_d.webp?maxwidth=760&fidelity=grand)
 
 Authors: [Gedankekojote97](https://vpuniverse.com/profile/42203-gedankekojote97/)
 Version: 1.33
