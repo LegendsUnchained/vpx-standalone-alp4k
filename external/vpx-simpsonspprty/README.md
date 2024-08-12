@@ -1,4 +1,4 @@
-# The Simpsons Pinball Party
+# The Simpsons Pinball Party (Stern 2003)
 
 ![Table Preview](https://github.com/Mar3nBu/vpx-images/blob/main/vpx-simpsonspprty.png)
 

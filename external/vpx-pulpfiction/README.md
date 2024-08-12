@@ -1,4 +1,4 @@
-# Pulp Fiction
+# Pulp Fiction (CGC 2023)
 
 ![Table Preview](https://github.com/Mar3nBu/vpx-images/blob/main/vpx-pulpfiction.png)
 
