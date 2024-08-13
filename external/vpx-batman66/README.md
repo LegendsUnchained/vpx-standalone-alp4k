@@ -14,7 +14,7 @@ Download: [MEGA](https://mega.nz/file/XMIgnRwC#LmRlA5GjAzxrWdjxl4O87PxqjUldOF4kA
 
 DirectB2S
 
-Included in PUP Pack which is REQIRED for this table
+Included in PUP Pack which is REQUIRED for this table
 
 ROM
 
