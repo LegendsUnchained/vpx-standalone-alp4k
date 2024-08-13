@@ -2,13 +2,13 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-tmnt.png)
 
-Authors: [retro27](https://vpuniverse.com/profile/4085-retro27/)
+Authors: [rGedankekojote97](https://vpuniverse.com/profile/42203-gedankekojote97/)
 
 Tested by: Bla1ze
 
-Version: 1.2.2
+Version: 1.0
 
-Download: [VP Universe](https://vpuniverse.com/files/file/9326-teenage-mutant-ninja-turtles-data-east-1991/)
+Download: [VP Universe](https://vpuniverse.com/files/file/9830-teenage-mutant-ninja-turtles-mod-nfozzy-fleep-sounds-lut/)
 
 DirectB2S
 
