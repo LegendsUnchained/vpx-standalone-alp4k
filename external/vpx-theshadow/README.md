@@ -1,6 +1,6 @@
 # The Shadow (Bally 1994)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=113654&id=17575&full=1)
+![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=107457&id=17050&full=1)
 
 Author(s): [bigus1](https://www.vpforums.org/index.php?showuser=107629)  
 Version: The Shadow (Bally 1994)_Bigus(MOD)1.0.vpx.zip

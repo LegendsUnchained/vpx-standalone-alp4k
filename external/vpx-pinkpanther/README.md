@@ -1,23 +1,23 @@
-# Mustang Bullitt LE
+# Pink Panther (Gottlieb 1981) SoundMod Hybrid
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_07/2131515761_Sanstitre.png.f3c4a73a28f84d7cfb779a6ae7d1eeaa.png)
+![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_06/pinkFS.PNG.dc34b787271e9693bba4ad08f4d3227e.PNG)
 
-Author(s): [balutito](https://vpuniverse.com/profile/36070-balutito/)  
-Version:  Mustang Bullitt LE.rar Version 1.0.0
-Download:  [VPUniverse](https://vpuniverse.com/files/file/10654-mustang-bullitt-le-by-balutito/)
+Author(s): [xenonph](https://www.vpforums.org/index.php?showuser=14100)  
+Version:  Pink Panther (Gottlieb 1981) SoundMod Hybrid (DT-FS-VR) v1.1.zip
+Download:  [VPUniverse](https://vpuniverse.com/files/file/20596-pink-panther-gottlieb-1981-soundmod-hybrid-dt-fs-vr/)
 
 DirectB2S
 
-Version: Mustang Bullitt LE Version 1.0.0
+Version: Pink Panther (Gottlieb 1981).rar v1.0
 
-Author(s): [balutito](https://vpuniverse.com/profile/36070-balutito/) 
-Download:  [VPUniverse](https://vpuniverse.com/files/file/10652-backglass-b2s-mustang-bullitt-le/)
+Author(s): [Wildman](https://vpuniverse.com/profile/5-wildman/) 
+Download:  [VPUniverse](https://vpuniverse.com/files/file/3739-pink-panther-gottlieb-1981/)
 
-ROM: mt_145h.zip
-Mustang Limited Edition (V1.45)
+ROM: pnkpnthr.zip
+version: pnkpnthr 9-9-2022
 
-Author(s): [CarnyPriest](https://vpuniverse.com/profile/1146-carnypriest/)
-Download:  [VPUniverse](https://vpuniverse.com/files/file/4129-mustang-limited-edition-v145/)
+Author(s): [CRock-ola]
+Download:  [Pinball Nirvana](https://pinballnirvana.com/forums/resources/pnkpnthr.2182/)
 
 Tested by:
 [TechZombie]
@@ -32,9 +32,10 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 ## Instructions
 
 - Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-mustangbullitt.elf
-- Download the table and directb2s versions listed above, extract them (if necessary) and copy them into vpx-mustangbullitt
-- Rom file (mt_145h.zip) stays in zip folder, place zip file in vpx-mustangbullitt/pinmame/roms
+- Add your personalized launcher.elf and rename it to vpx-pinkpanther.elf
+- Download the table and directb2s versions listed above, extract them (if necessary) and copy them into vpx-pinkpanther
+- In the table build open the nvram folder and place (pnkpnthr.zip) file in vpx-pinkpanther/pinmame/nvram
+- Rom file (pnkpnthr.zip) stays in zip folder, place zip file in vpx-pinkpanther/pinmame/roms
 - Make sure (.vpx) (.direct2b2s) and (.ini) are all named the same. 
 - Go fire up your Vpin and enjoy!
-- "Bullshit! Get the hell out of here, now." ---Bullitt
+- "It won't be easy, that is why I have always failed where others have succeeded." ---Inspector Jacques Clouseau

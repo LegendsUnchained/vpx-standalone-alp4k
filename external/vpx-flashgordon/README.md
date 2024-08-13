@@ -1,6 +1,6 @@
 # Flash Gordon (Bally 1981) 2.0.2
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=107823&id=13137&full=1)
+![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_09/Desktop.png.ecd40348f60753fb0c4dfe91ac6ff553.png)
 
 Author(s): [rothbauerw](https://vpuniverse.com/profile/10798-rothbauerw/)  
 Version: Flash Gordon (Bally 1981) 2.0.2.zip

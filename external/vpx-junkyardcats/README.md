@@ -1,6 +1,6 @@
 # Junkyard Cats (Bailey 2012)
 
-![Table Preview](https://pinballnirvana.com/forums/attachments/junkyard-cats-bam-edition-flashers-png.22851/)
+![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_05/desktop.png.ee10e4fcf46163c9eb96039060d3563f.png)
 
 Author(s): [Brendan Bailey](http://www.junkyardcats.net/index.php)  [javier1515](https://www.vpforums.org/index.php?showuser=37787)
 Version: Junkyard Cats_1.07.rar
