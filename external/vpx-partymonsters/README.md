@@ -4,7 +4,7 @@
 
 Authors: [versins77](https://vpuniverse.com/profile/29661-versins77/)  
 Version: 1.0 
-Download: [VP Universe](https://vpuniverse.com/files/file/2576-monster-bash-williams-1998/)
+Download: [VP Universe](https://vpuniverse.com/files/file/14817-elvira-and-the-party-monsters-bally-1989/)
 
 DirectB2S
 
@@ -15,9 +15,6 @@ Download: [VP Universe](https://vpuniverse.com/files/file/2911-elvira-and-the-pa
 ROM
 
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=959)
-
-SHA: 
-MD5: 
 
 ## Status 
 

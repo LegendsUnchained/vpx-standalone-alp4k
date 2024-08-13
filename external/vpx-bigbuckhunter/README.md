@@ -2,9 +2,12 @@
 
 ![Table Preview](https://i.imgur.com/c9VOMjn.png)
 
-Author: [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/) Tested by: Bla1ze 
+Author: [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/) 
+
+Tested by: Bla1ze 
 
 Version: 1.10 
+
 Download: [VP Universe](https://vpuniverse.com/files/file/18215-big-buck-hunter-pro-stern-2010/)
 
 DirectB2S
@@ -25,9 +28,9 @@ MD5: 2a1fee81a313da2a3c0e1e6d715abbf1
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1983-a764013
-| Playfield | Controls | Backglass | DMD | FPS | 
-|-----------|----------|-----------|-----|----------|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 30 |
+| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
+|-----------|----------|-----------|-----|--------------|-----|
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 30 |
 
 ## Instructions
 

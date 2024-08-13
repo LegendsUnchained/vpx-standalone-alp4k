@@ -3,13 +3,19 @@
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_02/Sop_pf_FS.png.f0e3941b1a67ab063f837d0fb843197b.png)
 
 Author: [Siggi](https://vpuniverse.com/profile/8779-siggi/)  
+
+Tested by: Bla1ze
+
 Version: 1.0.0  
+
 Download: [VP Universe](https://vpuniverse.com/files/file/18652-the-sopranos-siggis-mod/)
 
 DirectB2S
 
 Author: [Ryguy417](https://vpuniverse.com/profile/31096-ryguy417/)  
+
 Version: 2.0  
+
 Download: [VP Universe](https://vpuniverse.com/files/file/12991-sopranos-stern-2005-b2s-with-full-dmd/)
 
 ROM
@@ -30,5 +36,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-sopranos.elf
-- Download the table and directb2s versions listed above and copy them into this folder
+- Download the table and directb2s versions listed above and copy them into this folder. The ROM zip gets copied to pinmame/roms (do not unzip).
 - Party like you're at The Bing!

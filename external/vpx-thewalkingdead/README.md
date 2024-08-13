@@ -16,9 +16,6 @@ ROM
 
 Download: [Stern](https://sternpinball.com/support/game-code/) Just zip it to twd_160.zip.
 
-SHA: 
-MD5: 
-
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

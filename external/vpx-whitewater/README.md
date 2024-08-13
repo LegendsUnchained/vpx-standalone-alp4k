@@ -2,9 +2,9 @@
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_12/screenshot101.jpg.0bf31b9d6417fff40d70ffeee81fd771.jpg)
 
-Authors: [flupper](https://vpuniverse.com/profile/9559-flupper/)  
-Version: 1.2  
-Download: [VP Universe](https://vpuniverse.com/files/file/17705-white-water-williams-1993-v12/)
+Authors: [flupper1](https://www.vpforums.org/index.php?s=05e03fe36add6a3442e6213130765900&showuser=62268)  
+Version: 1.1  
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=13423)
 
 DirectB2S
 
@@ -16,15 +16,12 @@ ROM
 
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1251#)
 
-SHA: 
-MD5: 
-
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 27 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 
 ## Instructions
 

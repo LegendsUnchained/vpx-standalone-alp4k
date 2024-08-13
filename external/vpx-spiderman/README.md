@@ -16,9 +16,6 @@ ROM
 
 Download: [VP Universe](https://vpuniverse.com/files/file/4202-spider-man-vault-edition-v101/)
 
-SHA: 
-MD5: 
-
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

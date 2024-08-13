@@ -2,9 +2,12 @@
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_07/Playfield01.jpg.b629242fc373653d90b9f2f910ad8c22.jpg)
 
-Author: [MachWon](https://vpuniverse.com/profile/70146-machwon/) Tested by: Bla1ze 
+Author: [MachWon](https://vpuniverse.com/profile/70146-machwon/) 
 
-Version: 1.2.1  
+Tested by: Bla1ze 
+
+Version: 1.2.2 
+
 Download: [VP Universe](https://vpuniverse.com/files/file/21020-the-pabst-can-crusher-stern-2016/)
 
 DirectB2S
@@ -14,9 +17,9 @@ Included in table download
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1983-a764013
-| Playfield | Controls | Backglass | DMD | FPS | 
-|-----------|----------|-----------|-----|----------|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
+| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
+|-----------|----------|-----------|-----|--------------|-----|
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 50 |
 
 ## Instructions
 
