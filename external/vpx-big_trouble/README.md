@@ -28,4 +28,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-big_trouble.elf
 - Download the table and directb2s versions listed above and copy them into this folder
-- Remember, "It's All In The Reflexes!"
+- Remember, "It's All In The Reflexes!" ---Jack Burton
