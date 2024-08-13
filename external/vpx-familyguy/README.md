@@ -1,4 +1,4 @@
-# Family Guy
+# Family Guy (Stern 2007)
 
 ![Table Preview](https://github.com/Mar3nBu/vpx-images/blob/main/vpx-familyguy.png)
 

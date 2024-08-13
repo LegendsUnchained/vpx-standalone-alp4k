@@ -6,7 +6,7 @@ Authors: [LTek, Clairvius](https://vpuniverse.com/profile/67685-ltek/)
 
 Tested by: Bla1ze
 
-Version: 2.0.0  
+Version: 2.1.1  
 
 Download: [VP Universe](https://vpuniverse.com/files/file/21040-swamp-thing-20-bayou-edition-ltek-2024/)
 
