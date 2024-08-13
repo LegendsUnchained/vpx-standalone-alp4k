@@ -2,7 +2,7 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-tmnt.png)
 
-Authors: [rGedankekojote97](https://vpuniverse.com/profile/42203-gedankekojote97/)
+Authors: [Gedankekojote97](https://vpuniverse.com/profile/42203-gedankekojote97/)
 
 Tested by: Bla1ze
 
