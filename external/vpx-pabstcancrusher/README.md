@@ -6,7 +6,7 @@ Author: [MachWon](https://vpuniverse.com/profile/70146-machwon/)
 
 Tested by: Bla1ze 
 
-Version: 1.2.1  
+Version: 1.2.2 
 
 Download: [VP Universe](https://vpuniverse.com/files/file/21020-the-pabst-can-crusher-stern-2016/)
 
