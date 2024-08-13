@@ -14,7 +14,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/10947-metallica-premiu
 
 ROM
 
-Download: [Stern - download Metallica Premium 1.80 Game Code; rename file to mtl180h.BIN then add the file to mtl_180h.zip](https://sternpinball.com/?post_type=game_code&s=metallica)
+Download: [VP Universe](https://vpuniverse.com/files/file/5266-metallica-limited-edition-v17/)
 
 ## Status 
 
