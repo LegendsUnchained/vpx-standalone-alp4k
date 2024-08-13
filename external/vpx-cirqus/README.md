@@ -1,4 +1,4 @@
-# Cirqus Voltaire
+# Cirqus Voltaire (Bally 1997)
 
 ![Table Preview](https://github.com/Mar3nBu/vpx-images/blob/main/vpx-cirqus.png)
 
