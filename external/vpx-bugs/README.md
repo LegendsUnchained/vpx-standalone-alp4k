@@ -20,7 +20,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/17218-bugs-bunny-birth
 
 ROM
 
-Download: [VP Forums](https://vpuniverse.com/files/file/17218-bugs-bunny-birthday-ball-bally-1989-alt-b2s-with-full-dmd/)
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=954)
 
 SHA: c2eeb0d4100a0e82af91e9d8eb50a34e69a1710d
 
