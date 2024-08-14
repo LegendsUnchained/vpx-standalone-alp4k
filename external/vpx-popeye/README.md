@@ -31,7 +31,7 @@ MD5: 04d420e6d493d1d65b7228a0694d390be
 Minimum VPX Standalone build: 10.8.0-1983-a764013
 | Playfield | Controls | Backglass | DMD | FPS | 
 |-----------|----------|-----------|-----|----------|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 35 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 
 ## Instructions
 
