@@ -11,6 +11,7 @@ DirectB2S
 Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
 Version: 1.5
 Download: [VP Universe](https://vpuniverse.com/files/file/12651-star-wars-data-east-1992-b2s-with-full-dmd/)
+Notes: I used the first file - "Star Wars (Data East 1992) full dmd.zip"
 
 ROMs - need all 3
 
