@@ -1,4 +1,4 @@
-# Kiss (Stern 2015)
+# KISS (Stern 2015)
 
 ![Table Preview](https://github.com/Mar3nBu/vpx-images/blob/main/vpx-kiss.png)
 
