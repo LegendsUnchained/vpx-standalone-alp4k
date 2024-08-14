@@ -5,7 +5,7 @@ import datetime;
 # the GitHub Actions runner sets the working directory to 
 # the root of the checked-out repository before executing 
 # your steps.
-project_directory = os.getcwd()
+project_directory = os.getcwd() + '/'
 
 # helper function to read JSON files
 def read_json_file(file_path):
@@ -62,11 +62,11 @@ def generate_markdown(data):
   return markdown_string
 
 # open and read the JSON file from VPSDB
-vpsdb_file_path = project_directory + '/' + 'vpsdb.json'
+vpsdb_file_path = project_directory + 'vpsdb.json'
 vpsdb_file_data = read_json_file(vpsdb_file_path)
 
 # open a table-specific JSON file (eventually iterate)
-table_file_path = project_directory + '/' + 'vpx-24_simple.json'
+table_file_path = project_directory + 'vpx-24_simple.json'
 table_file_data = read_json_file(table_file_path)
 table = table_file_data[0]
 
@@ -104,6 +104,7 @@ for rom_search_id in rom_search_ids:
     markdown_content += rom_content
     counter += 1
 
-readme = open(project_directory + 'readme.md', "w")
+readme = open(project_directory + 'ga_readme.md', "w")
 readme.write(markdown_content)
 
+readme.close()
