@@ -16,6 +16,12 @@ ROM
 
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=948)
 
+Color DMD
+
+Author: [ebor](https://vpuniverse.com/profile/29168-ebor/)
+Download: [VP Universe](https://vpuniverse.com/files/file/15442-diner-williams-1990-dmd-64-colors-serum-format/)
+Place the .cRZ file "external\vpx-diner\pinmame\altcolor\diner_l4" (create the folders if needed)
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
