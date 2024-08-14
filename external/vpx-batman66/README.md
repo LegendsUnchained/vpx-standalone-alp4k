@@ -49,7 +49,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
     
 - In your vpx-batman66 folder, create a new folder named pupvideos
 - Download the PUP Pack from the link above
-- Open the b66_orig-1.1.0-PupPack.zip file and copy the bb66_orig folder into the pupvideos folder you created
+- Open the b66_orig-1.1.0-PupPack.zip file and copy the b66_orig folder into the pupvideos folder you created
 	
  5.	Finalize pupvideos setup:
 
