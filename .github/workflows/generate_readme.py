@@ -62,11 +62,11 @@ def generate_markdown(data):
   return markdown_string
 
 # open and read the JSON file from VPSDB
-vpsdb_file_path = project_directory + 'vpsdb.json'
+vpsdb_file_path = project_directory + '/' + 'vpsdb.json'
 vpsdb_file_data = read_json_file(vpsdb_file_path)
 
 # open a table-specific JSON file (eventually iterate)
-table_file_path = project_directory + 'vpx-24_simple.json'
+table_file_path = project_directory + '/' + 'vpx-24_simple.json'
 table_file_data = read_json_file(table_file_path)
 table = table_file_data[0]
 
