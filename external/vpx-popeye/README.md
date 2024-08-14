@@ -39,4 +39,4 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 - Add your personalized launcher.elf and rename it to vpx-popeye.elf
 - Download the table, ROM and directb2s versions listed above and copy them into this folder
 - Note: While this table largely works great, there is a chance the ball may get stuck at times requiring a relaunch. 
-- I’m strong to the finish cause I eats me spinach!
+- I’m strong to the finish cause I eats me spinach! :muscle:
