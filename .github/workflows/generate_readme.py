@@ -2,8 +2,10 @@ import os;
 import json;
 import datetime;
 
-# folder where root of vpx-standalone-alp4k-main is
-project_directory = "C:/users/twsch/code/vpx/vps/"
+# the GitHub Actions runner sets the working directory to 
+# the root of the checked-out repository before executing 
+# your steps.
+project_directory = os.getcwd()
 
 # helper function to read JSON files
 def read_json_file(file_path):
