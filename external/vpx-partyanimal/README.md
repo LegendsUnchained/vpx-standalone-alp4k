@@ -1,6 +1,6 @@
 # Party Animal (Bally 1978)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_04/pa.png.ff5e474a425b863868194a8763c9432f.png)
+![Table Preview](https://i.imgur.com/ya5n3eg.png)
 
 Authors: [ARMYAVIATION](https://vpuniverse.com/profile/18348-armyaviation/)
 Version: 1.0
