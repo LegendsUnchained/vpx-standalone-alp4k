@@ -12,7 +12,7 @@ Authors: [mussinger](https://vpuniverse.com/profile/25802-mussinger/)
 Version: 1.0
 Download: [VP Universe](https://vpuniverse.com/files/file/6246-ace-of-speed-b2s/)
 
-PUP - Included with VPX
+PUP - Included with VPX copy to "external\vpx-aceofspeed\pupvideos\mousn_l4\"
 
 ROM
 

@@ -55,6 +55,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Bugs Bunny Birthday Ball (Bally 1991)](external/vpx-bugs) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [BMX (Bally 1983)](external/vpx-bmx) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
 | [Cactus Canyon (Bally 1998)](external/vpx-cactuscanyon) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
+| [Capt. Fantastic and The Brown Dirt Cowboy (Bally 1976)](external/vpx-captfantastic) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 40 |
 | [Centaur (Bally 1981)](external/vpx-centaur) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 35 |
 | [Checkpoint (Data East 1991)](external/vpx-checkpoint) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 | [Class of 1812 (Gottlieb 1991)](external/vpx-1812) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 47 |
@@ -72,7 +73,11 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [DUNE](external/vpx-dune) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
 | [Earthshaker (Williams 1989)](external/vpx-earthshaker) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 32 |
 | [Elvira and the Party Monsters (Bally 1989)](external/vpx-partymonsters) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 33 |
+| [F-14 Tomcat (Williams, 1987) Hanibals Mod](external/vpx-f14tomcat) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Family Guy (Stern 2007)](external/vpx-familyguy) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 28 |
+| [Firepower (Williams 1980)](external/vpx-firepower) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
+| [Firepower II (Williams 1983)](external/vpx-firepower2) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
+| [Flash (Williams 1979)](external/vpx-flash) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
 | [Flash Gordon (Bally 1981)](external/vpx-flashgordon) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 | [Flash Gordon (Bally 1981) Sound Mod](external/vpx-flashgordonsm) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 | [Flintstones, The](external/vpx-flintstones) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 30 |
@@ -84,6 +89,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Getaway, The - High Speed II](external/vpx-getaway) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 42 |
 | [Ghostbusters Slimer 5.0.0 - JP](external/vpx-ghostbustersslimer) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Gilligan's Island (Bally 1991)](external/vpx-gilligansisland) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
+| [Godzilla (Sega 1998)](external/vpx-godzilla) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 36 |
 | [Goldeneye (Sega 1996)](external/vpx-goldeneye) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 | [Goonies, The - Never Say Die ](external/vpx-goonies) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 32 |
 | [Gorgar (Williams 1979)](external/vpx-gorgar) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 45 |
@@ -107,6 +113,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Jurassic Park (Data East 1993)](external/vpx-jurassicpark) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 30 |
 | [Jurassic Park Pro LE](external/vpx-jurassicparkle) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :x: | 48 |
 | [Killer Instinct)](external/vpx-killerinstinct) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 44 |
+| [KISS (Stern 2015)](external/vpx-kiss) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Krull (Gottlieb 1983)](external/vpx-krull) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 57 |
 | [Last Action Hero (Balutito Mod)](external/vpx-lastactionhero) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 | [Last Starfighter, The (Taito, 1983) hybrid](external/vpx-thelaststarfighter) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 52 |
@@ -117,11 +124,13 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Mask, The (TBA 2019)](external/vpx-themask) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 52 |
 | [Maverick (Data East 1994) VPW](external/vpx-maverick) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 | [Medieval Madness (Williams 1997)](external/vpx-mm) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 40 |
+| [Medusa (Bally 1981)](external/vpx-medusa) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 32 |
 | [Men in Black](external/vpx-meninblack) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Metallica Premium Monsters (Stern 2013)](external/vpx-metallica) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 30 |
 | [MF DOOM (GOILL773 2024)](external/vpx-mfdoom) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :x: | 35 |
 | [Miami Vice (TBA 2020)](external/vpx-miamivice) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 33 |
 | [Mickey Mouse in Steamboat Willie](external/vpx-mickeysbw) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
+| [Miraculous Original (2019)](external/vpx-miraculous) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Mustang (Stern 2014)](external/vpx-mustang) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 33 |
 | [Mustang Bullitt LE](external/vpx-mustangbullitt) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 37 |
 | [Nascar (Stern 2005)](external/vpx-nascar) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
@@ -130,6 +139,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Pin-Bot (Williams 1986)](external/vpx-pinbot) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 33 |
 | [Pink Panther (Gottlieb 1981) SoundMod Hybrid](external/vpx-pinkpanther) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 37 |
 | [Pirates Life 2.0 - Under a Black Flag)](external/vpx-pirateslife) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
+| [Pirates of the Caribbean (Siggis Mod)](external/vpx-potc) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 45 |
 | [Pulp Fiction (CGC 2023)](external/vpx-pulpfiction) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Red & Ted's Road Show (Williams 1994)](external/vpx-redandteds) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 | [Rescue 911 (Gottlieb 1994)](external/vpx-r911) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
@@ -149,6 +159,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Star Trek LE (Stern 2013)](external/vpx-startrekle) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 | [Star Trek LE - JP (Original 2020)](external/vpx-startreklejp) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 50 |
 | [Star Trek The Next Generation (Williams 1993)](external/vpx-startrektng) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 38 |
+| [Star Wars (Data East 1992)](external/vpx-starwars) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 30 |
 | [Starship Troopers (Sega 1997)](external/vpx-starship) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 38 |
 | [Street Fighter II - JP (Gottlieb 1993)](external/vpx-sfii) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Swamp Thing (Clairvius 2024)](external/vpx-swampthing) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
