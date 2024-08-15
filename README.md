@@ -90,6 +90,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Freddy A Nightmare on Elm Street (Gottlieb 1994) LED Mod](external/vpx-freddyled) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 35 |
 | [Friday the 13th - JP (Original 2021)](external/vpx-fridaythe13th) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Funhouse (Williams 1990)](external/vpx-funhouse) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 30 |
+| [Future Spa (Bally 1979)](external/vpx-futurespa) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 57 |
 | [Game of Thrones (Stern 2015)](external/vpx-got) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 25 |
 | [Getaway, The - High Speed II](external/vpx-getaway) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 42 |
 | [Ghostbusters Slimer 5.0.0 - JP](external/vpx-ghostbustersslimer) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
