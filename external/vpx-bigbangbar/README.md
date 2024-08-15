@@ -1,6 +1,6 @@
 # Big Bang Bar (Capcom 1996)
 
-![Table Preview](https://www.vpforums.org/index.php?s=0958292089178ca59acc7415051521a7&app=downloads&module=display&section=screenshot&record=75936&id=15000&full=1)
+![Table Preview](https://i.imgur.com/SFtE38e.jpeg)
 
 Authors: [Sheltemke](https://www.vpforums.org/index.php?showuser=727)
 Version: 1.0
