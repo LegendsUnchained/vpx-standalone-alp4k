@@ -15,7 +15,7 @@ DirectB2S
 Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
 
 
-Download: [VP Universe](https://vpuniverse.com/files/file/12981-no-fear-dangerous-sports-williams-1995-b2s-with-full-dmd/))
+Download: [VP Universe](https://vpuniverse.com/files/file/12981-no-fear-dangerous-sports-williams-1995-b2s-with-full-dmd/)
 
 Verison: 2.0
 
