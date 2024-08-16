@@ -12,9 +12,12 @@ Author: [RyDarquayle](https://www.vpforums.org/index.php?showuser=51255)
 Version: 1.0 
 Download: [VP Universe] (DirectB2S file included in table zip)
 
-ROM
+ROM: genie.zip (Custom Created ROM) (Compatible with VpinMame beta 3.6 and newer.)
+I Dream of Jeannie - ROM
 
-Download: [VP Forums](https://pinballnirvana.com/forums/resources/genie.1863/)
+Author(s): [TechZombie]
+Download:  [Internet Archive](https://archive.org/details/genie_202407)
+Click "SHOW ALL" / Click "genie.zip"
 
 SHA: 86c91838e6f9564ee4b1421e7d24f8f3f908f5bf
 MD5: 02c3bb866e8c97642f61ea4e5c03ceb7
