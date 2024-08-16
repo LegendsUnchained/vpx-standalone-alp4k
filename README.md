@@ -71,7 +71,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Class of 1812 (Gottlieb 1991)](external/vpx-1812) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 47 |
 | [Creature from the Black Lagoon (Bally 1992)](external/vpx-cftbl) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 40 |
 | [Creature From The Black Lagoon (1992) - BW Edition](external/vpx-creaturebw) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 40 |
-| [Congo (Williams 1995)](external/vpx-ccongo) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
+| [Congo (Williams 1995)](external/vpx-congo) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Cue Ball Wizard (Gottlieb 1992)](external/vpx-cueball) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 33 |
 | [Cyclone - JP (Williams 1988)](external/vpx-cyclone) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Deadpool - JP (Original 2021)](external/vpx-deadpool) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
