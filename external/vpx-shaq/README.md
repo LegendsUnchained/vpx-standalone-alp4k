@@ -1,6 +1,6 @@
 # Shaq Attaq (Gottlieb 1995)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=81995&id=15362&full=1)
+![Table Preview](https://i.imgur.com/gaEEpd2.jpeg)
 
 Authors: [JLouLoulou](https://www.vpforums.org/index.php?showuser=134330)
 Version: 1.0.1
