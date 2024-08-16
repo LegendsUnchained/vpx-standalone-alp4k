@@ -17,7 +17,7 @@ ROM: ali.zip
 Ali - ROM
 
 Author(s): [destruk](https://www.vpforums.org/index.php?showuser=5)
-Download:  [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=212)
+Download:  [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=741)
 
 Tested by:
 [TechZombie]
