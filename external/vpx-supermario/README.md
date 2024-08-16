@@ -1,6 +1,6 @@
 # Super Mario Bros. (Gottlieb 1992)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_06/441929458_SuperMarioBrothers1.1.png.4c8c29da2c8b9457a17aa2e77809faef.png)
+![Table Preview](https://i.imgur.com/2c6T9P7.png)
 
 Authors: [Gedankekojote97](https://vpuniverse.com/profile/42203-gedankekojote97/)
 Version: 1.1
