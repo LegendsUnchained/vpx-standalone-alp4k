@@ -91,7 +91,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Flash Gordon (Bally 1981)](external/vpx-flashgordon) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 | [Flash Gordon (Bally 1981) Sound Mod](external/vpx-flashgordonsm) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 | [Flintstones, The](external/vpx-flintstones) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 30 |
-| [Frank Thomas' Big Hurt (Gottlieb 1995)](external/vpx-franktthomas) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
+| [Frank Thomas' Big Hurt (Gottlieb 1995)](external/vpx-frankthomas) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 | [Freddy A Nightmare on Elm Street (Gottlieb 1994)](external/vpx-freddy) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 33 |
 | [Freddy A Nightmare on Elm Street (Gottlieb 1994) LED Mod](external/vpx-freddyled) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 35 |
 | [Friday the 13th - JP (Original 2021)](external/vpx-fridaythe13th) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
