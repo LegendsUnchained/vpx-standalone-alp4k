@@ -124,7 +124,7 @@ def process_alp4k_yml_file(entry):
   markdown_content += "</td><td valign='top' style='padding-left:20px;'>\n\n"
   markdown_content += "### Instructions: \n" 
   markdown_content += "- Copy the entire contents of this repo folder to your USB drive\n"
-  markdown_content += f"- Add your personalized launcher.elf and rename it to '{table["name"]}.elf'\n"
+  markdown_content += f"- Add your personalized launcher.elf and rename it to \"{table['name']}.elf.\"\n"
   markdown_content += "- Download the VPX & one of the directb2s files and copy them into this folder.\n"
   markdown_content += "- Download the ROM to pinmame/roms (do not unzip).\n\n"
   markdown_content += f"#### {table["name"]} specific: \n" 
