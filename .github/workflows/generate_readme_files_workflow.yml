@@ -23,6 +23,9 @@ jobs:
       with:
         python-version: '3.9'
 
+    - name: Install PyYAML
+      run: pip install pyyaml
+
     - name: Run Python script
       run: python .github/workflows/generate_readmes_from_yml.py
 
