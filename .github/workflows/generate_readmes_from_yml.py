@@ -57,7 +57,7 @@ def convert_to_datetime(epoch):
 
 # generate the actual markdown
 def generate_markdown(data):
-  markdown_string = "<table><tr><td valign='top' style='width:60%'>\n\n"
+  markdown_string = "<table style='border-collapse: collapse;'><tr><td valign='top' style='width:60%'>\n\n"
   image_string = ""
   for key, value in data.items():
     # if key == "url":
@@ -118,7 +118,7 @@ def process_alp4k_yml_file(entry):
 
   # use table-specific JSON file to set basic table info in readme
   markdown_content = "# " + table["name"] +" \n\n"
-  markdown_content += "<table style='width:90%;'><tr><td valign='top' style='width:20%; border-right:1px solid grey;font-size:18px;'>\n\n"
+  markdown_content += "<table style='width:90%;border-collapse: collapse;'><tr><td valign='top' style='width:20%; border-right:1px solid grey;font-size:18px;'>\n\n"
   markdown_content += f"**Tester**: "+ table["tester"] +"\n\n"
   markdown_content += f"**FPS**: "+ str(table["FPS"]) +"\n\n"
   markdown_content += "</td><td valign='top' style='padding-left:20px;'>\n\n"
