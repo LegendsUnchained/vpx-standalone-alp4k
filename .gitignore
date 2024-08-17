@@ -15,5 +15,3 @@ VPinballX_*-alp4k
 .Trashes
 **/._*
 !/external/*/pinmame/roms/.gitkeep
-
-external/vpx-nogoodgofers/pinmame/cfg/default.cfg
