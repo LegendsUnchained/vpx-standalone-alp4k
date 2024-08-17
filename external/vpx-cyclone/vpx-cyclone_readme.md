@@ -1,6 +1,6 @@
 # vpx-cyclone 
 
-<table style='width:90%;'><tr><td valign='top' style='width:20%; border-right:1px solid grey;font-size:18px;'>
+<table style='width:90%;border-collapse: collapse;'><tr><td valign='top' style='width:20%; border-right:1px solid grey;font-size:18px;'>
 
 **Tester**: mcap10
 
@@ -20,7 +20,7 @@
 
 ## VPX File 
 
-<table><tr><td valign='top' style='width:60%'>
+<table style='border-collapse: collapse;'><tr><td valign='top' style='width:60%'>
 
 * **Id**: OCpeW-vQIW
 * **Createdat**: 2023-10-31 23:00
@@ -49,7 +49,7 @@
 
 ### Option: 1 
 
-<table><tr><td valign='top' style='width:60%'>
+<table style='border-collapse: collapse;'><tr><td valign='top' style='width:60%'>
 
 * **Id**: CVq_3yjfNw
 * **Createdat**: 2023-08-17 14:41
@@ -71,7 +71,7 @@
 
 ### Option: 2 
 
-<table><tr><td valign='top' style='width:60%'>
+<table style='border-collapse: collapse;'><tr><td valign='top' style='width:60%'>
 
 * **Id**: H1Yu4rFDFm
 * **Createdat**: 2022-03-30 20:02
@@ -93,7 +93,7 @@
 
 ## ROMs 
 
-<table><tr><td valign='top' style='width:60%'>
+<table style='border-collapse: collapse;'><tr><td valign='top' style='width:60%'>
 
 * **Id**: WkZgbdHshZ
 * **Createdat**: 2022-03-30 20:02

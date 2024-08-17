@@ -1,6 +1,6 @@
 # vpx-24 
 
-<table style='width:90%;'><tr><td valign='top' style='width:20%; border-right:1px solid grey;font-size:18px;'>
+<table style='width:90%;border-collapse: collapse;'><tr><td valign='top' style='width:20%; border-right:1px solid grey;font-size:18px;'>
 
 **Tester**: Bla1ze
 
@@ -21,7 +21,7 @@
 
 ## VPX File 
 
-<table><tr><td valign='top' style='width:60%'>
+<table style='border-collapse: collapse;'><tr><td valign='top' style='width:60%'>
 
 * **Id**: QcOG228URt
 * **Createdat**: 2024-06-08 19:59
@@ -53,7 +53,7 @@
 
 ## DirectB2S 
 
-<table><tr><td valign='top' style='width:60%'>
+<table style='border-collapse: collapse;'><tr><td valign='top' style='width:60%'>
 
 * **URL**: <a href='http://vpuniverse.com/forums/files/file/2438-24-stern-2009/' target='_blank'>http://vpuniverse.com/forums/files/file/2438-24-stern-2009/</a>
 * **Version**: 2.0
@@ -73,7 +73,7 @@
 
 ## ROMs 
 
-<table><tr><td valign='top' style='width:60%'>
+<table style='border-collapse: collapse;'><tr><td valign='top' style='width:60%'>
 
 * **Version**: twenty4_150
 * **URL**: <a href='https://vpuniverse.com/forums/files/file/3368-twenty4_150zip/' target='_blank'>https://vpuniverse.com/forums/files/file/3368-twenty4_150zip/</a>
