@@ -127,7 +127,7 @@ def process_alp4k_yml_file(entry):
   markdown_content += f"- Add your personalized launcher.elf and rename it to \"{table['name']}.elf.\"\n"
   markdown_content += "- Download the VPX & one of the directb2s files and copy them into this folder.\n"
   markdown_content += "- Download the ROM to pinmame/roms (do not unzip).\n\n"
-  markdown_content += f"#### {table["name"]} specific: \n" 
+  markdown_content += f"#### {table['name']} specific: \n" 
   for instruction in table["special_instructions"]:
     markdown_content += "- " + instruction + "\n"
   markdown_content += "</td></tr></table>\n\n"
