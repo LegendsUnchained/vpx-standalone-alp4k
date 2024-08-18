@@ -12,6 +12,10 @@ jobs:
 
         steps:
         - uses: actions/checkout@v3
-        - name: Loop through subfolders alphabetically
+        - name: List subfolders
           run: |
-            find external -type d -print0 | sort -z | xargs -0 -I subfolder sh -c 'cd subfolder && ./.github/workflows/scripts/check_subfolder_requirements.sh'
+            find external -type d -print0 | xargs -0 echo
+        - name: Check requirements in each subfolder
+          run: |
+            find external -type d -print0 | xargs -0 -I subfolder sh -c 'cd subfolder && ./.github/workflows/scripts/check-subfolder-requirements.sh'
+
