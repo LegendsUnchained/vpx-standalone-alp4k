@@ -14,4 +14,4 @@ jobs:
         - uses: actions/checkout@v3
         - name: Loop through subfolders alphabetically
           run: |
-            find external -type d -print0 | sort -z | xargs -0 -I subfolder sh -c 'cd subfolder && ./check_subfolder_requirements.sh'
+            find external -type d -print0 | sort -z | xargs -0 -I subfolder sh -c 'cd subfolder && ./scripts/check_subfolder_requirements.sh'
