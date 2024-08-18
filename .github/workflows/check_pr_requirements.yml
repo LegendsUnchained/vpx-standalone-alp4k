@@ -2,7 +2,9 @@
 name: Check PR Requirements
 
 on:
-    pull_request:
+  # Allows to manually run the job
+  workflow_dispatch:
+  pull_request:
   
 jobs:
     check-requirements:
