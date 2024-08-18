@@ -65,6 +65,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Capt. Fantastic and The Brown Dirt Cowboy (Bally 1976)](external/vpx-captfantastic) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 40 |
 | [Centaur (Bally 1981)](external/vpx-centaur) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 35 |
 | [Champion Pub, The (Williams 1998)](external/vpx-champpub) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 45 |
+| [Charlie's Angels (Gottlieb 1978)](external/vpx-charliesangelsremix) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 57 |
 | [Checkpoint (Data East 1991)](external/vpx-checkpoint) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 | [Cheech & Chong: Road-Trip'pin (Bally 2021)](external/vpx-cheechandchong) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 40 |
 | [Cirqus Voltaire (Bally 1997)](external/vpx-cirqus) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 37 |
@@ -161,6 +162,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Playboy (Stern 2002)](external/vpx-playboy2002) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 48 |
 | [Popeye saves the Earth (Bally 1994)](external/vpx-popeye) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 | [Pulp Fiction (CGC 2023)](external/vpx-pulpfiction) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
+| [Real Ghostbusters, The (JPs Ghostbusters mod)](external/vpx-realghostbusters) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 57 |
 | [Red & Ted's Road Show (Williams 1994)](external/vpx-redandteds) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 | [Rescue 911 (Gottlieb 1994)](external/vpx-r911) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Ripley's Believe it or Not! (Stern 2004)](external/vpx-ripleys) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
