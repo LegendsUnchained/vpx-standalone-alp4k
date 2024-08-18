@@ -15,9 +15,10 @@ jobs:
         - name: List subfolders
           run: |
             for dir in external/*/ do
-              dir=${dir%/}  # Remove trailing "/"
-              echo "${dir##*/}"  # Print basename
-            done | sort
+                dir=${dir%/}  # Remove trailing "/"
+            done | sort | while read dir; do
+                echo "${dir##*/}"
+            done
             #find external -type d -print0 | xargs -0 -n1 | sort | xargs -0 echo
         - name: Check requirements in each subfolder
           run: |
