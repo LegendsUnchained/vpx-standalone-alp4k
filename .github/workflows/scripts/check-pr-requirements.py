@@ -42,13 +42,14 @@ def check_subfolder_requirements(subfolder_path):
     for root, dirs, files in os.walk(subfolder_path):
         for file in files:
             if file.endswith(tuple(forbidden_extensions)):
-                errors.append(f"     {bcolors.FAIL}Error: Forbidden file {file} found in {subfolder_path}{bcolors.ENDC}")
+                file_path = os.path.join(root, file)
+                errors.append(f"     {bcolors.FAIL}Error: Forbidden file \"{file_path}\" found{bcolors.ENDC}")
 
     # Check for pinmame folders
     pinmame_folders = ["cfg", "ini", "nvram", "roms"]
     for folder in pinmame_folders:
         if not os.path.isdir(os.path.join(subfolder_path, "pinmame", folder)):
-            errors.append(f"Error: pinmame/{folder} not found in {subfolder_path}")
+            errors.append(f"Error: pinmame/{folder} not found in {root}")
 
 
 
