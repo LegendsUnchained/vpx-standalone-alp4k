@@ -10,8 +10,14 @@ def check_subfolders(external_dir):
 
 def check_subfolder_requirements(subfolder_path):
     """Checks specific requirements within a subfolder."""
+    # Get subfolder name
+    subfolder_name = os.path.basename(subfolder_path)
+    print(subfolder_name)
+
     # Check for required files
-    required_files = ["README.md", "launcher.png", "launcher.xml"]
+    required_files = ["README.md", 
+                      subfolder_name + ".png", 
+                      subfolder_name + ".xml"]
     for file in required_files:
         if not os.path.exists(os.path.join(subfolder_path, file)):
             print(f"Error: {file} not found in {subfolder_path}")
@@ -26,7 +32,7 @@ def check_subfolder_requirements(subfolder_path):
 
 # Main function to start the process
 def main():
-    check_subfolder_requirements("external")
+    check_subfolders("external")
 
 if __name__ == "__main__":
     main()
