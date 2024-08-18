@@ -14,7 +14,11 @@ jobs:
         - uses: actions/checkout@v3
         - name: List subfolders
           run: |
-            find external -type d -print0 | xargs -0 -n1 | sort | xargs -0 echo
+            for dir in external/*/ do
+              dir=${dir%/}  # Remove trailing "/"
+              echo "${dir##*/}"  # Print basename
+            done | sort
+            #find external -type d -print0 | xargs -0 -n1 | sort | xargs -0 echo
         - name: Check requirements in each subfolder
           run: |
             find external -type d -print0 | xargs -0 -I subfolder sh -c 'cd subfolder && ./.github/workflows/scripts/check_subfolder_requirements.sh'
