@@ -1,26 +1,33 @@
 # vpx-cyclone 
 
-<table style='width:90%;border-collapse: collapse;'><tr><td valign='top' style='width:20%; border-right:1px solid grey;font-size:18px;'>
+#### vpx-cyclone Instructions: 
+- None
+<br><br>
+
+<details><summary><b>Show standard instructions</b></summary><br>
+
+- Copy the entire contents of this repo folder to your USB drive in the external folder
+
+- Add your personalized launcher.elf and rename it to "vpx-cyclone.elf."
+- Download the VPX & one of the directb2s files and copy them into this folder.
+- Download the ROM to pinmame/roms (do not unzip).<br><br>
+
+-  Example directory structure:<br>
+
+       USB Drive Root
+       - vpx-launcher.elf
+       - external
+           table['name'] ```
+
+</details><br>
 
 **Tester**: mcap10
 
 **FPS**: 40
 
-</td><td valign='top' style='padding-left:20px;'>
-
-### Instructions: 
-- Copy the entire contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to "vpx-cyclone.elf."
-- Download the VPX & one of the directb2s files and copy them into this folder.
-- Download the ROM to pinmame/roms (do not unzip).
-
-#### vpx-cyclone specific: 
-- None
-</td></tr></table>
-
 ## VPX File 
 
-<table style='border-collapse: collapse;'><tr><td valign='top' style='width:60%'>
+<table style='width:90%;'><tr><td valign='top' style='width:60%'>
 
 * **Id**: OCpeW-vQIW
 * **Createdat**: 2023-10-31 23:00
@@ -49,7 +56,7 @@
 
 ### Option: 1 
 
-<table style='border-collapse: collapse;'><tr><td valign='top' style='width:60%'>
+<table style='width:90%;'><tr><td valign='top' style='width:60%'>
 
 * **Id**: CVq_3yjfNw
 * **Createdat**: 2023-08-17 14:41
@@ -71,7 +78,7 @@
 
 ### Option: 2 
 
-<table style='border-collapse: collapse;'><tr><td valign='top' style='width:60%'>
+<table style='width:90%;'><tr><td valign='top' style='width:60%'>
 
 * **Id**: H1Yu4rFDFm
 * **Createdat**: 2022-03-30 20:02
@@ -93,7 +100,7 @@
 
 ## ROMs 
 
-<table style='border-collapse: collapse;'><tr><td valign='top' style='width:60%'>
+<table style='width:90%;'><tr><td valign='top' style='width:60%'>
 
 * **Id**: WkZgbdHshZ
 * **Createdat**: 2022-03-30 20:02
@@ -105,6 +112,5 @@
 * **Game**:
   - id: yIzKdXh4vF
   - name: JP's Cyclone
-</td><td valign='top'>
 </td></tr></table>
 

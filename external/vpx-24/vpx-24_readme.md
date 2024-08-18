@@ -1,27 +1,34 @@
 # vpx-24 
 
-<table style='width:90%;border-collapse: collapse;'><tr><td valign='top' style='width:20%; border-right:1px solid grey;font-size:18px;'>
+#### vpx-24 Instructions: 
+- If using the Alt Color, make an altcolor folder inside the pinmame folder. Inside the altcolor folder, make a twenty4_150 folder and place the .cRZ file inside.
+- The following takes places between 6 A.M. and 7 A.M 🕕
+<br><br>
+
+<details><summary><b>Show standard instructions</b></summary><br>
+
+- Copy the entire contents of this repo folder to your USB drive in the external folder
+
+- Add your personalized launcher.elf and rename it to "vpx-24.elf."
+- Download the VPX & one of the directb2s files and copy them into this folder.
+- Download the ROM to pinmame/roms (do not unzip).<br><br>
+
+-  Example directory structure:<br>
+
+       USB Drive Root
+       - vpx-launcher.elf
+       - external
+           table['name'] ```
+
+</details><br>
 
 **Tester**: Bla1ze
 
 **FPS**: 30
 
-</td><td valign='top' style='padding-left:20px;'>
-
-### Instructions: 
-- Copy the entire contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to "vpx-24.elf."
-- Download the VPX & one of the directb2s files and copy them into this folder.
-- Download the ROM to pinmame/roms (do not unzip).
-
-#### vpx-24 specific: 
-- If using the Alt Color, make an altcolor folder inside the pinmame folder. Inside the altcolor folder, make a twenty4_150 folder and place the .cRZ file inside.
-- The following takes places between 6 A.M. and 7 A.M 🕕
-</td></tr></table>
-
 ## VPX File 
 
-<table style='border-collapse: collapse;'><tr><td valign='top' style='width:60%'>
+<table style='width:90%;'><tr><td valign='top' style='width:60%'>
 
 * **Id**: QcOG228URt
 * **Createdat**: 2024-06-08 19:59
@@ -53,7 +60,7 @@
 
 ## DirectB2S 
 
-<table style='border-collapse: collapse;'><tr><td valign='top' style='width:60%'>
+<table style='width:90%;'><tr><td valign='top' style='width:60%'>
 
 * **URL**: <a href='http://vpuniverse.com/forums/files/file/2438-24-stern-2009/' target='_blank'>http://vpuniverse.com/forums/files/file/2438-24-stern-2009/</a>
 * **Version**: 2.0
@@ -73,7 +80,7 @@
 
 ## ROMs 
 
-<table style='border-collapse: collapse;'><tr><td valign='top' style='width:60%'>
+<table style='width:90%;'><tr><td valign='top' style='width:60%'>
 
 * **Version**: twenty4_150
 * **URL**: <a href='https://vpuniverse.com/forums/files/file/3368-twenty4_150zip/' target='_blank'>https://vpuniverse.com/forums/files/file/3368-twenty4_150zip/</a>
@@ -84,6 +91,5 @@
 * **Game**:
   - id: P15WeTaO
   - name: 24
-</td><td valign='top'>
 </td></tr></table>
 
