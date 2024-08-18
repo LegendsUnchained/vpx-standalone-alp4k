@@ -5,9 +5,9 @@ on:
   # Allows to manually run the job
   workflow_dispatch:
   
-  push:
-    branches:
-    - main  
+  #push:
+   # branches:
+   # - main  
     
 jobs:
   generate-readme-files:
