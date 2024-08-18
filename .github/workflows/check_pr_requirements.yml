@@ -1,3 +1,6 @@
+# name to display in GitHub Actions
+name: Check PR Requirements
+
 on:
     pull_request:
   
