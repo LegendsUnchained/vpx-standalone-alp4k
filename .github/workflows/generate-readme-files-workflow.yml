@@ -27,7 +27,7 @@ jobs:
       run: pip install pyyaml
 
     - name: Run Python script
-      run: python .github/workflows/scripts/generate_readmes_from_yml.py
+      run: python .github/workflows/scripts/generate-readmes-from-yml.py
 
     - name: Commit changes
       run: |
