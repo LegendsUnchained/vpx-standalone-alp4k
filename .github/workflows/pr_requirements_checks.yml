@@ -12,5 +12,5 @@ jobs:
             find external -type d -print0 | xargs -0 echo
         - name: Check requirements in each subfolder
           run: |
-            find external -type d -print0 | xargs -0 -I subfolder sh -c 'cd subfolder && ./check_subfolder_requirements.sh'
+            find external -type d -print0 | xargs -0 -I subfolder sh -c 'cd subfolder && ./.github/workflows/scripts/check_subfolder_requirements.sh'
 
