@@ -12,21 +12,6 @@ jobs:
 
         steps:
         - uses: actions/checkout@v3
-        - name: List subfolders
+        - name: Loop through subfolders alphabetically
           run: |
-            for dir in external/*/; do
-              # Remove trailing slash from directory name
-              dir=${dir%/}
-            
-              # Sort the files within the current directory (optional)
-              find "$dir" -maxdepth 0 -type d | sort | while read subdir; do
-                 echo "$subdir"
-              done
-            
-              # Or, list only the directory name (assuming no nested directories)
-              #echo "${dir##*/}"
-            done | sort
-            #find external -type d -print0 | xargs -0 -n1 | sort | xargs -0 echo
-        - name: Check requirements in each subfolder
-          run: |
-            find external -type d -print0 | xargs -0 -I subfolder sh -c 'cd subfolder && ./.github/workflows/scripts/check_subfolder_requirements.sh'
+            find external -type d -print0 | sort -z | xargs -0 -I subfolder sh -c 'cd subfolder && ./check_subfolder_requirements.sh'
