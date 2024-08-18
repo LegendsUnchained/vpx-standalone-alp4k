@@ -56,8 +56,8 @@ def convert_to_datetime(epoch):
      return date_str + " " + time_str + "\n"   
 
 # generate the actual markdown
-def generate_markdown(data):
-  markdown_string = "<table style='border-collapse: collapse;'><tr><td valign='top' style='width:60%'>\n\n"
+def generate_markdown(data, has_image=True):
+  markdown_string = "<table style='width:90%;'><tr><td valign='top' style='width:60%'>\n\n"
   image_string = ""
   for key, value in data.items():
     # if key == "url":
@@ -82,8 +82,9 @@ def generate_markdown(data):
         markdown_string += f"  - {subkey}: {subvalue}\n"
     else:
       markdown_string += f"* **{key.capitalize()}**: {value}\n"
-  markdown_string += "</td><td valign='top'>\n"
-  markdown_string += image_string
+  if has_image:
+    markdown_string += "</td><td valign='top'>\n"
+    markdown_string += image_string
   markdown_string += "</td></tr></table>\n\n"
   return markdown_string
 
@@ -118,19 +119,27 @@ def process_alp4k_yml_file(entry):
 
   # use table-specific JSON file to set basic table info in readme
   markdown_content = "# " + table["name"] +" \n\n"
-  markdown_content += "<table style='width:90%;border-collapse: collapse;'><tr><td valign='top' style='width:20%; border-right:1px solid grey;font-size:18px;'>\n\n"
-  markdown_content += f"**Tester**: "+ table["tester"] +"\n\n"
-  markdown_content += f"**FPS**: "+ str(table["FPS"]) +"\n\n"
-  markdown_content += "</td><td valign='top' style='padding-left:20px;'>\n\n"
-  markdown_content += "### Instructions: \n" 
-  markdown_content += "- Copy the entire contents of this repo folder to your USB drive\n"
-  markdown_content += f"- Add your personalized launcher.elf and rename it to \"{table['name']}.elf.\"\n"
-  markdown_content += "- Download the VPX & one of the directb2s files and copy them into this folder.\n"
-  markdown_content += "- Download the ROM to pinmame/roms (do not unzip).\n\n"
-  markdown_content += f"#### {table['name']} specific: \n" 
+  markdown_content += f"#### {table['name']} Instructions: \n" 
   for instruction in table["special_instructions"]:
     markdown_content += "- " + instruction + "\n"
-  markdown_content += "</td></tr></table>\n\n"
+  markdown_content += "<br><br>\n\n"
+  markdown_content += "<details><summary><b>Show standard instructions</b></summary><br>\n\n"
+  markdown_content += "- Copy the entire contents of this repo folder to your USB drive in the external folder\n\n"
+  markdown_content += f"- Add your personalized launcher.elf and rename it to \"{table['name']}.elf.\"\n"
+  markdown_content += "- Download the VPX & one of the directb2s files and copy them into this folder.\n"
+  markdown_content += "- Download the ROM to pinmame/roms (do not unzip).<br><br>\n\n"
+  markdown_content += "-  Example directory structure:<br>\n\n"
+  markdown_content += "       USB Drive Root\n"
+  markdown_content += "       - vpx-launcher.elf\n"
+  markdown_content += "       - external\n"
+  markdown_content += "           table['name'] ```\n\n"
+  markdown_content += "</details><br>\n\n"
+
+  markdown_content += f"**Tester**: "+ table["tester"] +"\n\n"
+  markdown_content += f"**FPS**: "+ str(table["FPS"]) +"\n\n"
+
+
+
   
   # lookup table in VPSDB and generate VPX content for readme
   markdown_content += "## VPX File \n\n"
@@ -167,7 +176,7 @@ def process_alp4k_yml_file(entry):
       author = item.get('author', None)
       result = find_vpsdb_roms(vpsdb_file_data, game_id, version, author)
       for item in result:
-          rom_content = generate_markdown(item)
+          rom_content = generate_markdown(item, False)
           markdown_content += rom_content
       data = {"rom_files": result}
       counter += 1
