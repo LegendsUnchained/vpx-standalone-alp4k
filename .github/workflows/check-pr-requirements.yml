@@ -12,6 +12,6 @@ jobs:
         steps:
         - uses: actions/checkout@v3
     
-        - name: List subfolders (using Python script)
+        - name: Run Python PR check Script
           run: |
-            find external -type d -print0 | sort -z | xargs -0 -I subfolder sh -c 'cd subfolder && python .github/workflows/scripts/check_subfolder_requirements.py'
+             python .github/workflows/scripts/check-pr-requirements.py
