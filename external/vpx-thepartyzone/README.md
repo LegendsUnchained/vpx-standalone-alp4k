@@ -12,7 +12,7 @@ DirectB2S
 Authors: [wildman](https://vpuniverse.com/profile/5-wildman/)
 Version: 3.0
 Download: [VP Universe](https://vpuniverse.com/files/file/2147-the-party-zone-bally-1991/#google_vignette)
-
+- *Download the 2 screen version*
 ROM
 
 Download: [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=1196)
