@@ -8,11 +8,10 @@ Download:  [VPUniverse](https://vpuniverse.com/files/file/5943-charlie%e2%80%99s
 
 DirectB2S
 
-Version: Last Starfighter, The (Taito, 1983) v1.01.zip  
-Need to download this build to get Last Starfighter, The (Taito, 1983) v1.01.directB2S file and the Music folder LStarfighter.
+Version: Charlie's Angels (Gottlieb 1978) iDig Complete rEMix.directb2s
+directb2s file is included in the table zip.
 
-Author(s): [xenonph](https://www.vpforums.org/index.php?showuser=14100) 
-Download:  [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=17241)
+Author(s): [iDigStuff](https://vpuniverse.com/profile/29753-idigstuff/) 
 
 ROM: charlies.zip (Custom Created ROM) (Compatible with VpinMame beta 3.6 and newer.)
 Charlie's Angels - ROM
