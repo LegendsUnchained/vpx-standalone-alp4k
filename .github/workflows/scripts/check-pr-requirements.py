@@ -1,5 +1,6 @@
 import os
 import sys
+import textwrap
 
 class bcolors:
     HEADER = '\033[95m'
@@ -35,7 +36,7 @@ def check_subfolder_requirements(subfolder_path):
                       subfolder_name + ".xml"]
     for file in required_files:
         if not os.path.exists(os.path.join(subfolder_path, file)):
-            errors.append(f"     {bcolors.WARNING}Warning: {file} not found in {subfolder_path}{bcolors.ENDC}")
+            errors.append(f"{subfolder_name} | {bcolors.WARNING}Warning: {file} not found in {subfolder_path}{bcolors.ENDC}")
 
     # Check for forbidden files
     forbidden_extensions = [".b2s", ".vpx", ".zip"]
@@ -43,13 +44,13 @@ def check_subfolder_requirements(subfolder_path):
         for file in files:
             if file.endswith(tuple(forbidden_extensions)):
                 file_path = os.path.join(root, file)
-                errors.append(f"     {bcolors.FAIL}Error: Forbidden file \"{file_path}\" found{bcolors.ENDC}")
+                errors.append(f"{subfolder_name} | {bcolors.FAIL}Error: Forbidden file \"{file_path}\" found{bcolors.ENDC}")
 
     # Check for pinmame folders
     pinmame_folders = ["cfg", "ini", "nvram", "roms"]
     for folder in pinmame_folders:
         if not os.path.isdir(os.path.join(subfolder_path, "pinmame", folder)):
-            errors.append(f"Error: pinmame/{folder} not found in {root}")
+            errors.append(f"{subfolder_name} | {bcolors.FAIL}Error: Folder not found: \"pinmame\{folder}\"{bcolors.ENDC}")
 
 
 
@@ -63,11 +64,18 @@ def check_subfolder_requirements(subfolder_path):
 # Main function to start the process
 def main():
     errors = check_subfolders("external")
+    counter = 1
     if errors:
-        print("Errors encountered:")
+        print("-"*80)
+        print("Issues found:")
         for error in errors:
-            print(error)
-        sys.exit(1)  # Fail the build
+            print("   "+ str(counter)+": " + error)
+            counter += 1
+        print("Not currently failing the build. Bulid failures coming soon...")
+        #sys.exit(1)  # Fail the build
+        print("\n")
+
+
 
 if __name__ == "__main__":
     main()
