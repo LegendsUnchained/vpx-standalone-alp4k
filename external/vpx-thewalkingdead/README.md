@@ -14,7 +14,11 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 
 ROM
 
-Download: [Stern](https://sternpinball.com/support/game-code/) Just zip it to twd_160.zip.
+Download: [Stern](https://sternpinball.com/support/game-code/)
+- Sort by All Games - The Walking Dead
+- The Walking Dead Pro 1.60 Game Code (bottom)
+- Rename the BIN file to twd_160.bin
+- Zip the BIN file to twd_160.zip
 
 ## Status 
 

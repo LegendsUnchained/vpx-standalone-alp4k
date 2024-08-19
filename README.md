@@ -49,6 +49,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Batman Forever (Sega 1995)](external/vpx-batmanforever) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Baywatch Sega (1995)](external/vpx-baywatch) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 | [Beach Bums (Original 2018)](external/vpx-beachbums) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 42 |
+| [Beavis and Butt-head: Pinballed (Original 2024))](external/vpx-bbhpinballed) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 34 |
 | [Beetlejuice (Original 2023) 1.0.2](external/vpx-beetlejuice) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 38 |
 | [Beverly Hills Cop (TBA 2019)](external/vpx-beverlyhillscop) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 57 |
 | [Big Bang Bar (Capcom 1996)](external/vpx-bigbangbar) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 50 |
@@ -158,6 +159,8 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Pink Panther (Gottlieb 1981) SoundMod Hybrid](external/vpx-pinkpanther) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 37 |
 | [Pirates Life 2.0 - Under a Black Flag)](external/vpx-pirateslife) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Pirates of the Caribbean (Siggis Mod)](external/vpx-potc) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 45 |
+| [Playboy 35th Anniversary (Data East 1989)](external/vpx-playboy35) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:x: | :white_check_mark: | 50 |
+| [Playboy 35th Anniversary - Marilyn Edition (Data East 1989)](external/vpx-playboy35m) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:x: | :white_check_mark: | 50 |
 | [Playboy (Stern 2002)](external/vpx-playboy2002) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 48 |
 | [Popeye saves the Earth (Bally 1994)](external/vpx-popeye) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 | [Pulp Fiction (CGC 2023)](external/vpx-pulpfiction) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
@@ -166,6 +169,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Ripley's Believe it or Not! (Stern 2004)](external/vpx-ripleys) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 | [Rollercoaster Tycoon (Stern 2008)](external/vpx-rctycn) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 | [Samba (LTD do Brasil 1976)](external/vpx-samba) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 47 |
+| [Sands of the Aton - JP (Original 2023)](external/vpx-sandsaton) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Scared Stiff (Bally 1996)](external/vpx-scaredstiff) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Scooby Doo (2022)](external/vpx-scoobydoo) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Seawitch - JP (Stern 1980)](external/vpx-seawitch) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
