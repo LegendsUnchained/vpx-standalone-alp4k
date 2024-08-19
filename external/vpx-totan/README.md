@@ -8,9 +8,9 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 
 DirectB2S
 
-Authors: [Wildman](https://vpuniverse.com/profile/5-wildman/)  
-Version: 3.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/4195-tales-of-the-arabian-nights-williams-1996/)
+Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
+Version: 2.0
+Download: [VP Universe](https://vpuniverse.com/files/file/12134-tales-of-the-arabian-nights-williams-1996-b2s-full-dmd/)
 
 ROM
 
