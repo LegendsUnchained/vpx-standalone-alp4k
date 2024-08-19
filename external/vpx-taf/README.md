@@ -1,6 +1,6 @@
 # Addams Family, The (Bally 1992)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_06/addamsdesktop_2441.png.e9c41c4b9277a88ed69730e3f8a64e03.png)
+![Table Preview](https://i.imgur.com/p9smBME.png)
 
 Authors: [3rdaxis](https://www.vpforums.org/index.php?s=4cdd23adf9b1cb8f10b8a3c848ce0ae0&showuser=91493)  
 Version: 2.3
