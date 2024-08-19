@@ -31,7 +31,6 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Add your personalized launcher.elf and rename it to vpx-realghostbusters.elf
 - Download the table (.vpx) and copy (The Real Ghostbusters.vpx) into vpx-realghostbusters
 - Download (.directb2s) and copy The Real Ghostbusters.directb2s into vpx-realghostbusters.
-- Open V1.01 and copy LStarfighter folder into the music file on your USB drive.
 - Make sure (.vpx) (.direct2b2s) (.vbs) and (.ini) are all named the vpx-realghostbusters. 
 - Go fire up your Vpin and enjoy!
 - "Sometimes I think the universe just waits for me to get cocky!" ---Egon Spengler

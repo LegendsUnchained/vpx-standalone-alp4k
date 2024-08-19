@@ -163,6 +163,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Miami Vice (TBA 2020)](external/vpx-miamivice) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 33 |
 | [Mickey Mouse in Steamboat Willie](external/vpx-mickeysbw) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Miraculous Original (2019)](external/vpx-miraculous) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Monster Bash (Williams 1998)](external/vpx-monsterbash) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 33 |
 | [Mustang (Stern 2014)](external/vpx-mustang) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 33 |
 | [Mustang Bullitt LE](external/vpx-mustangbullitt) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 37 |
 | [Nascar (Stern 2005)](external/vpx-nascar) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
@@ -214,7 +215,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Super Mario Bros. (Gottlieb 1992)](external/vpx-supermario) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 38 |
 | [Swamp Thing (Clairvius 2024)](external/vpx-swampthing) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 | [Swamp Thing 2.0 Bayou Edition (LTek 2024)](external/vpx-swampthingbayou) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
-| [Swords of Fury (Williams 1988)](external/swordsoffury) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 29 |
+| [Swords of Fury (Williams 1988)](external/vpx-swordsoffury) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 29 |
 | [Tales from the Crypt (Data East 1993)](external/vpx-tftc) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 30 |
 | [Tales of the Arabian  Nights - JP (Williams 1996)](external/vpx-totan) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 48 |
 | [Tango & Cash (TBA 2019)](external/vpx-tangoandcash) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 58 |
