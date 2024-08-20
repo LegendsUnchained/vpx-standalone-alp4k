@@ -1,6 +1,6 @@
 # Funhouse (Williams 1990)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_05/Funhouse.png.4fc62b6c83deaaa39c366298e0dfbd92.png)
+![Table Preview](https://i.imgur.com/0bAABbg.png)
 
 Authors: [Gedankekojote97](https://vpuniverse.com/profile/42203-gedankekojote97/)
 Version: 1.1
