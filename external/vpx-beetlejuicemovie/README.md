@@ -38,7 +38,8 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-beetlejuicemovie.elf
 - Download the table zip above, extract it and copy (BeetleJuice 1.0.vpx) into vpx-beetlejuicemovie
-- Select one of the (.directb2s) files and copy only one (BeetleJuice 1.0.directb2s) into vpx-beetlejuicemovie
+- Select and copy (BeetleJuice 1.0.directb2s) into vpx-beetlejuicemovie
+- Open the Music file and copy BeetleJuice.mp3 into the music file on your USB drive.
 - Rom file (strngsci.zip) stays in zip folder, place zip file in vpx-beetlejuicemovie/pinmame/roms
 - Verify that (strngsci.nv) is located in (vpx-beetlejuicemovie/pinmame/nvram) if not then download the NVRAM pack and extract it from there.
 - Make sure (.vpx) (.direct2b2s) (.vbs) and (.ini) are all named the same. 
