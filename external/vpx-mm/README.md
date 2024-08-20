@@ -1,6 +1,6 @@
 # Medival Madness (Williams 1997)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_04/28518970_MedievalMadness.png.93530b680f2cee000f2508aeed6b0fec.png)
+![Table Preview](https://i.imgur.com/Yp6uu9L.jpeg)
 
 Authors: [Gedankekojote97](https://vpuniverse.com/profile/42203-gedankekojote97/)
 Version: 1.0
