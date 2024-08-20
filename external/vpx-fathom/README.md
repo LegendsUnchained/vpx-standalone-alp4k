@@ -12,6 +12,7 @@ DirectB2S
 Authors: [RetroRichie](https://vpuniverse.com/profile/52743-retroritchie/)  
 Version:  1.0.0
 Download: [VPUniverse](https://vpuniverse.com/files/file/16074-fathom-bally-1981-3d-anaglyph-full-dmd-and-backglass-scoring-b2s/)
+*download the backglass scoring version, fulldmd version is currently not supported in VPX standalone.
 
 ROM
 
