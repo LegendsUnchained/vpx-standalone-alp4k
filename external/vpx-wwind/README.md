@@ -1,21 +1,29 @@
 # Whirlwind 
 ![Table Preview](https://www.vpforums.org/index.php?s=29ccc831f10a34059c30612e6c2d0630&app=downloads&module=display&section=screenshot&record=96113&id=16337&full=1)
 
-Author(s): [flupper1](https://www.vpforums.org/index.php?s=29ccc831f10a34059c30612e6c2d0630&showuser=62268)  
+Author(s): [flupper1](https://www.vpforums.org/index.php?s=29ccc831f10a34059c30612e6c2d0630&showuser=62268)
+  
 Version:  Whirlwind 4K 1.1
+
 Download:  [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=16337)
+
 
 DirectB2S
 
 Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
+
 Version: Whirlwind (Williams 1990) b2s with full dmd 1.0.0 
+
 Download: [VP Universe](https://vpuniverse.com/files/file/10812-whirlwind-williams-1990-b2s-with-full-dmd/)
+
 
 
 ROM: Whirlwind (L-3)
 
 Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)
+
 Version: whirl_l3.zip
+
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=937)
 
 
