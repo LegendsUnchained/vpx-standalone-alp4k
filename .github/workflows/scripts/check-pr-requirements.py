@@ -37,7 +37,7 @@ def check_subfolder_requirements(subfolder_path):
             errors.append(f"{subfolder_name} | {bcolors.WARNING}Warning: {file} not found in {subfolder_path}{bcolors.ENDC}")
 
     # Check for forbidden files
-    forbidden_extensions = [".b2s", ".vpx", ".zip"]
+    forbidden_extensions = [".directb2s", ".vpx", ".zip"]
     for root, dirs, files in os.walk(subfolder_path):
         for file in files:
             if file.endswith(tuple(forbidden_extensions)):
