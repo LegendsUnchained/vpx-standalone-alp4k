@@ -148,6 +148,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Killer Instinct)](external/vpx-killerinstinct) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 44 |
 | [KISS (Stern 2015)](external/vpx-kiss) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Krull (Gottlieb 1983)](external/vpx-krull) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 57 |
+| [Kung Fu Hustle](external/vpx-kungfuhustle) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Last Action Hero (Balutito Mod)](external/vpx-lastactionhero) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 | [Last Starfighter, The (Taito, 1983) hybrid](external/vpx-thelaststarfighter) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 52 |
 | [Leprechaun King, The](external/vpx-theleprechaunking) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
@@ -189,6 +190,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Pulp Fiction (CGC 2023)](external/vpx-pulpfiction) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Radical! (Bally 1990)](external/vpx-rad) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 42 | 
 | [Real Ghostbusters, The (JPs Ghostbusters mod)](external/vpx-realghostbusters) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 57 |
+| [Re-Animator](external/vpx-reanimator) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 54 |
 | [Red & Ted's Road Show (Williams 1994)](external/vpx-redandteds) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 | [Rescue 911 (Gottlieb 1994)](external/vpx-r911) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Ripley's Believe it or Not! (Stern 2004)](external/vpx-ripleys) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |

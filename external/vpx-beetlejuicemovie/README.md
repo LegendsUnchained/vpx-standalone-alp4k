@@ -4,7 +4,7 @@
 
 Author(s): [sebastiendelf](https://vpuniverse.com/profile/42328-sebastiendelf/)  
 Version:  BeetleJuice 1.0.vpx
-Download:  [VP Forums](https://vpuniverse.com/files/file/7875-beetlejuice-movie-10-vpx/)
+Download:  [VPUniverse](https://vpuniverse.com/files/file/7875-beetlejuice-movie-10-vpx/)
 
 DirectB2S included with Table Zip.
 BeetleJuice 1.0.directb2s
@@ -18,7 +18,7 @@ Download:  [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile
 
 **This table requires a Pre-initialized NVRAM file in order for this table to work properly and accept coins.**
 Required NVRAM File: strngsci.nv
-It should already be in: (vpx-beetlejuicemovie/pinmame/nvram) if not then download the NVRAM Pack from the download link below.
+It should already be in: (vpx-beetlejuicemovie/pinmame/nvram) if not or you have problems then download the NVRAM Pack from the download link below.
 
 Author(s): [destruk](https://www.vpforums.org/index.php?showuser=5)
 Download:  [Pinball Nirvana](https://pinballnirvana.com/forums/resources/bally-6803-gottlieb-gts3-nvram-pack.3346/)
