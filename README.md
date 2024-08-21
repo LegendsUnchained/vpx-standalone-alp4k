@@ -134,6 +134,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Indianapolis 500 (Bally 1995)](external/vpx-indy500) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
 | [IT - Pinball Madness - JP (Original 2022)](external/vpx-itpinballmadness) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 59 |
 | [Jack-Bot (Williams 1995)](external/vpx-jackbot) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
+| [James Bond 007 (Stern 2022)](external/vpx-jamesbond007) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [James Bond 007 60th Anniversary (Stern 2023)](external/vpx-jb00760th) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Jaws (Balutito MOD)](external/vpx-jaws) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
 | [Johnny Mnemonic (Williams 1995)](external/vpx-johnnymnemonic) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 41 |
