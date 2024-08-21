@@ -1,6 +1,6 @@
 # Gorgar (Williams 1979)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_08/358149410_Screenshot(132).png.31e10932a538e864d8e4cce61935570e.png)
+![Table Preview](https://i.imgur.com/sjtIeDx.jpeg)
 
 Authors: [Gedankekojote97](https://vpuniverse.com/profile/42203-gedankekojote97/)
 Version: 1.1
