@@ -27,9 +27,8 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-beetlejuice.elf
-- Download 1.0.2.rar, unzip, open, and copy Beetlejuice (Original 2023) DVL Reskin.vpx, Beetlejuice 2Screen.directB2S. into this folder.
+- Download 1.0.2.rar, unzip, open, and copy (Beetlejuice (Original 2023) DVL Reskin.vpx), (Beetlejuice 2Screen.directB2S) into this folder.
 - Rom file (ironmaid.zip) stays in zip folder, place zip file in vpx-beetlejuice/pinmame/roms
 - Make sure (.vpx) (.direct2b2s) (.vbs) and (.ini) are all named the same. 
 - "Nice f***ing Vpin Table!" --Beetlejuice
-
 **Warning**   **This Table Contains Excplicit Language**   **Warning**

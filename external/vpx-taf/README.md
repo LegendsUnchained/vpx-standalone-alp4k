@@ -1,10 +1,10 @@
 # Addams Family, The (Bally 1992)
 
-![Table Preview](https://i.imgur.com/p9smBME.png)
+![Table Preview](https://i.imgur.com/QaIKhdz.jpeg)
 
-Authors: [3rdaxis](https://www.vpforums.org/index.php?s=4cdd23adf9b1cb8f10b8a3c848ce0ae0&showuser=91493)  
-Version: 2.3
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=15693)
+Authors: [g5k](https://vpuniverse.com/profile/14065-g5k/)  
+Version: 2.4.41
+Download: [VP Universe](https://vpuniverse.com/files/file/20654-the-addams-family-bally-1992-2441vpx/)
 
 DirectB2S
 
@@ -21,7 +21,7 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 Minimum VPX Standalone build: 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 29 |
 
 ## Instructions
 
