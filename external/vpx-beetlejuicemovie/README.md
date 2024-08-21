@@ -14,7 +14,7 @@ ROM: strngsci.zip
 Strange Science - ROM
 
 Author(s): [destruk](https://www.vpforums.org/index.php?showuser=5)
-Download:  [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=584)
+Download:  [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=715)
 
 **This table requires a Pre-initialized NVRAM file in order for this table to work properly and accept coins.**
 Required NVRAM File: strngsci.nv
