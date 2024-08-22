@@ -28,7 +28,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 ## Special Instructions
 - Copy the included altsound folder "beav_butt" to (external\vpx-bbhpinballed\pinmame\altsound\); you may need to create the altsound folder in pinmame
 - Copy the included "beav_butt.nv" file to (external\vpx-bbhpinballed\pinmame\nvram) - DONE FOR YOU
-- Copy the included "beav_butt.vbs" file in the main folder (external\vpx-bbhpinballed) - DONE FOR YOU
+- Copy the included "beav_butt.vbs" file in the main folder (external\vpx-bbhpinballed) - DONE FOR YOU - DO NOT RENAME THIS FILE
 - Copy the included rom "beav_butt" zip file in to the roms folder (external\vpx-bbhpinballed\pinmame\roms)
 - Copy and paste the "altsound.ini" file from (external\vpx-bbhpinballed\pinmame\altsound\beav_butt) to (external\vpx-bbhpinballed) - DONE FOR YOU
 
