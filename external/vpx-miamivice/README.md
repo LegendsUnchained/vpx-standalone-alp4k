@@ -16,7 +16,7 @@ ROM:
 comet_l5.zip
 
 Author(s): [destruk](https://www.vpforums.org/index.php?showuser=5)
-Download:  [Pinball Nirvana](https://pinballnirvana.com/forums/resources/mav_402.2065/)
+Download:  [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=891)
 
 Tested by:
 [TechZombie]
