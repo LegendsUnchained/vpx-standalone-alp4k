@@ -10,7 +10,7 @@ DirectB2S
 
 Authors: [wildman](https://vpuniverse.com/profile/5-wildman/)
 Version: 1.0.0
-Download: [VPUniverse](https://vpuniverse.com/profile/5-wildman/)
+Download: [VPUniverse](https://vpuniverse.com/files/file/3083-blackout-williams-1980/)
 
 ROM
 
