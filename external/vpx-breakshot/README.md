@@ -14,7 +14,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/2286-breakshotcapcom-1
 
 ROM
 
-Download: [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=1194)
+Download: [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=142)
 Rom Name: bsv103.zip
 
 Alt Color
