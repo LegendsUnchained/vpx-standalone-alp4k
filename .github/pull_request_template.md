@@ -1,3 +1,4 @@
+<!--
 Please ensure your PR includes the following:
 
 - README.md
@@ -14,3 +15,4 @@ Please ensure your PR **DOES NOT** include any of the following:
 - Any sort of licensing text that goes against the licensing of this repository
 
 By submitting this PR, you are agreeing that any artwork submitted is your own, or you have the legal right to distribute such artwork.
+-->
