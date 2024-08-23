@@ -3,9 +3,9 @@ TESTED: Mar3nBu
 
 ![Table Preview](https://github.com/Mar3nBu/vpx-images/blob/main/vpx-jamesbond007.png)
 
-Authors: [marty02](https://vpuniverse.com/profile/16531-marty02/)  
-Version: 4.3
-Download: [VPUniverse](https://vpuniverse.com/files/file/11827-bond-60-th/)
+Authors: [timblo](https://vpuniverse.com/profile/22603-timblo/)  
+Version: 1.1.0
+Download: [VPUniverse](https://vpuniverse.com/files/file/12132-james-bond-60-th-timblo-grafic-mod-v-11/)
 
 DirectB2S
 
@@ -27,6 +27,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-jamesbond007.elf
 - Download the table and directb2s versions listed above.
-- The table will come in a zip file, uncompress it and go to "bond Vpx4.3/table+bs/" and copy the bond.vpx file to the vpx-jamesbond007 folder
+- Rename the table file from "Bond Final  timblo V1.10.vpx" to "bond.vpx" and copy to the vpx-jamesbond007 folder
 - Copy the backglass file you downloaded (bond.directb2s) to the vpx-jamesbond007 folder
 - Go enjoy some shaken, not stirred, Martinis! 
