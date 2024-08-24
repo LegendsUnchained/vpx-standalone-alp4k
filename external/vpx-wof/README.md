@@ -2,13 +2,13 @@
 
 ![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=103525&id=16821)
 
-Author: [ninuzzu](https://vpuniverse.com/files/file/5501-wheel-of-fortune-stern-2007/) 
+Author: [ninuzzu](https://vpuniverse.com/profile/5530-ninuzzu/) 
 
 Tested by: Imscomobob
 
 Version: 1.0  
 
-Download: [VP Forums](https://www.vpforums.org/index.php?s=9cc09b6e2bea6c841ac7c7621bfc7df2&app=downloads&showfile=16821)
+Download: [VP Universe](https://vpuniverse.com/files/file/5501-wheel-of-fortune-stern-2007/)
 
 DirectB2S
 
