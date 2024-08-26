@@ -14,7 +14,8 @@ Download: [VP Universe](https://vpuniverse.com/files/file/18070-beat-the-clock-b
 
 ROM
 
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=249)[Internet Archive] (https://archive.org/download/mame-0.236-roms-split/MAME%200.236%20ROMs%20%28split%29/beatclck2.zip)
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=249)
+[Internet Archive](https://archive.org/download/mame-0.236-roms-split/MAME%200.236%20ROMs%20%28split%29/beatclck2.zip)
 
 - Both ROMs are required for this table
 
