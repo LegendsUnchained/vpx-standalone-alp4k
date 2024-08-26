@@ -2,7 +2,7 @@
 
 ![Table Preview](preview.png)
 
-Authors: [bord](https://www.vpforums.org/index.php?app=downloads&showfile=12428)\
+Authors: [bord](https://www.vpforums.org/index.php?showuser=83256)\
 Version: 1.2\
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=12428)
 
