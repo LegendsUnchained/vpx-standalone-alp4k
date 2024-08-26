@@ -13,10 +13,9 @@ Version: 1.5
 Download: [VP Universe](https://vpuniverse.com/files/file/12651-star-wars-data-east-1992-b2s-with-full-dmd/)
 Notes: I used the first file - "Star Wars (Data East 1992) full dmd.zip"
 
-ROMs - need all 3
+ROMs - need both
 
 Download: [VP Universe](https://vpuniverse.com/files/file/4362-star-wars-107-20th-anniversary/)
-Download: [VP Universe](https://vpuniverse.com/files/file/4201-star-wars-106-20th-anniversary/)
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=7207)
 
 ## Status 
