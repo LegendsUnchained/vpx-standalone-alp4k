@@ -1,7 +1,7 @@
 # Safe Cracker (Bally 1996)
 Tested By: kaoticBPR
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_05/CaptureDT.PNG.a2d6ba73bb5384204e4e5a3a435426ed.PNG)
+![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_05/CaptureCab.PNG.fb87bb70436f2fce6acfa46889a9950e.PNG)
 
 Authors: [UnclePaulie](https://vpuniverse.com/profile/16685-unclepaulie/)
 Version: 2.0.0
