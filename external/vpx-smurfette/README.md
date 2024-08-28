@@ -5,7 +5,7 @@
 Author(s): [jpsalas](https://www.vpforums.org/index.php?showuser=277)
 Download:  JPs Smurfette v4.zip
 Version:   JP's Smurfette v4.vpx
-Download:  [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=11609)
+Download:  [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=11621)
 
 DirectB2S included with Table Zip
 Author(s): [jpsalas](https://www.vpforums.org/index.php?showuser=277)
