@@ -206,6 +206,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [No Fear Dangerous Sports (Williams 1995)](external/vpx-nofear) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [No Good Gofers! (Williams 1997)](external/vpx-nogoodgofers) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 42 |
 | [Pabst Can Crusher, The (Stern 2016)](external/vpx-pabstcancrusher) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 50 |
+| [Papa Smurf, JP's](external/vpx-papasmurf) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Paragon (Bally 1979)](external/vpx-paragon) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:x: | :white_check_mark: | 49 |
 | [Party Animal (Bally 1978)](external/vpx-partyanimal) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 42 |
 | [Pin-Bot (Williams 1986)](external/vpx-pinbot) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 33 |
@@ -243,6 +244,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Simpsons Pinball Party, The (Stern 2003)](external/vpx-simpsonspprty) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 37 |
 | [Six Million Dollar Man, The (Bally 1978) Sound MOD](external/vpx-sixmilliondollarman) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
 | [Skateball (Bally 1980)](external/vpx-skateball) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
+| [Smurfette, JP's](external/vpx-smurfette) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Sorcerer (Williams 1985)](external/vpx-sorcerer) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 43 |
 | [Sopranos, The](external/vpx-sopranos) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [South Park (Sega 1999)](external/vpx-southpark) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 45 |

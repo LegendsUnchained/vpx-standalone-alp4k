@@ -9,9 +9,9 @@ Download: [VpUniverse](https://vpuniverse.com/files/file/19850-safe-cracker-ball
 
 DirectB2S
 
-Authors: [ryguy417](https://vpuniverse.com/profile/31096-ryguy417/)
+Authors: [Wildman](https://vpuniverse.com/profile/5-wildman/)
 Version: 1.0.0
-Download: [VPUniverse](https://vpuniverse.com/files/file/13522-safe-cracker-bally-1996-b2s-with-full-dmd/)
+Download: [VPUniverse](https://vpuniverse.com/files/file/6999-safe-cracker-bally-1996/)
 
 ROMs: this table requires two roms: (1)sc_18n11 and (2)sc_18s11
 
