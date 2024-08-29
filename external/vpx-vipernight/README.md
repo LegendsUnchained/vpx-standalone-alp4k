@@ -1,7 +1,7 @@
 # Viper Night Drivin' (Sega 1998)
 Tested By: kaoticBPR
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=91614&id=15405&full=1)
+![Table Preview](https://www.vpforums.org/index.php?s=a541a4b327658d9bea63cc2e0ae4042b&app=downloads&module=display&section=screenshot&record=24853&id=8410&full=1)
 
 Authors: [goldchicco](https://www.vpforums.org/index.php?showuser=88795)
 Version: 1.0d
