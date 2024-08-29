@@ -8,7 +8,7 @@
 |:---------:|:----:|:-------:|:---------:|
 | VPX | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14952) | 1.3.0 | [JLouLoulou](https://www.vpforums.org/index.php?showuser=134330) |
 | DirectB2S | [VP Universe](https://vpuniverse.com/files/file/11644-stargate-gottlieb-1995-fulldmd/) | 1.0.0 | [Walterwhite](https://vpuniverse.com/profile/17464-walterwhite/)
-| ROM | [Pinball Nirvana](https://pinballnirvana.com/forums/resources/stargat5.6026/) | stargat5 | `N/A` |
+| ROM | [Pinball Nirvana](https://pinballnirvana.com/forums/resources/stargat5.6026/) | stargat5 | [NateMac00](https://pinballnirvana.com/forums/members/natemac00.30769/) |
 
 ## Status 
 Minimum VPX Standalone build: 10.8.0-2006-6d603fb
