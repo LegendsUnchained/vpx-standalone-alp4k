@@ -20,7 +20,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/15947-the-incredible-h
 
 ROM
 
-Download: [Internet Arcive](https://archive.org/details/hulk_20240824)
+Download: [Internet Archive](https://archive.org/details/hulk_20240824)
 
 SHA: CAEA94ABD2E627D9F4A57494016549B705300DEB
 
