@@ -2,18 +2,18 @@
 
 ![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=105688&id=11609&full=1)
 
-Author(s): [jpsalas](https://www.vpforums.org/index.php?showuser=277)
-Download:  JPs Papa Smurf v4.zip
-Version:   Papa_Smurf_1.2.0.vpx
-Download:  [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=11609)
+Author(s): [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
+Download:  JPs Papa Smurf v4.zip  
+Version:   Papa_Smurf_1.2.0.vpx  
+Download:  [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=11609)  
 
-DirectB2S included with Table Zip
-Author(s): [jpsalas](https://www.vpforums.org/index.php?showuser=277)
-DirectB2S: JP's Papa Smurf v4.directb2s
+DirectB2S included with Table Zip  
+Author(s): [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
+DirectB2S: JP's Papa Smurf v4.directb2s  
 
 ROM: No ROM Needed For This Table
 
-Tested by:
+Tested by: 
 [TechZombie]
 
 ## Status 
