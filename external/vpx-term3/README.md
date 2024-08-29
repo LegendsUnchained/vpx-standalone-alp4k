@@ -5,6 +5,7 @@
 Authors: [Siggi](https://vpuniverse.com/profile/8779-siggi/)  
 Version: 2.0_TW
 Download: [VP Universe](https://vpuniverse.com/files/file/15094-terminator-3-stern-2003-siggis-mod-jp/)
+Note: Choose Terminator 3 (Stern 2003 - Siggi)TW.zip
 
 DirectB2S
 
