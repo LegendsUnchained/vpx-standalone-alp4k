@@ -10,7 +10,7 @@ DirectB2S
 
 Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
 Version: 1.0
-Download: [VP Universe](https://vpuniverse.com/files/file/18003-super-mario-brothers-mushroom-world-premier-1992-b2s-with-full-dmd/)
+Download: [VP Universe](https://vpuniverse.com/files/file/18004-super-mario-bros-gottlieb-1992-b2s-with-full-dmd/)
 
 ROM
 
