@@ -13,7 +13,7 @@ File is included in the table zip.
 
 ROM: spidermn.zip
 
-Author(s): [Rock-ola]
+Author(s): [Rock-ola](https://pinballnirvana.com/forums/members/rock-ola.1/)
 Download:  [Pinball Nirvana](https://pinballnirvana.com/forums/resources/spidermn.2352/)
 
 Tested by:
@@ -35,4 +35,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Rom file (spidermn.zip) stays in zip folder, place zip file in vpx-amazingspidermansse/pinmame/roms
 - Make sure (.vpx) (.direct2b2s) and (.ini) are all named the same. 
 - Go fire up your Vpin and enjoy!
-- "My Vpin Sense is tingling!" ---SpiderMan
+- "My Vpin Sense is tingling!" --- Spider-Man
