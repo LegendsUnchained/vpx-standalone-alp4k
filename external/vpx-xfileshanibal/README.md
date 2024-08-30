@@ -38,4 +38,5 @@ MD5: 5ad341cc9c983cfde8ddbca479530b6c
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-xfileshanibal.elf
 - Download the table, ROM and directb2s versions listed above and copy them into this folder
+- Make sure the vpx, directb2s, vbs, and ini files are all named the "exact" same
 - Your investigation is faltering 👽

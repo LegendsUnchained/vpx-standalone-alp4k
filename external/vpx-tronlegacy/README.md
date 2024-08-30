@@ -47,5 +47,6 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-tronlegacy.elf
 - Download the table, ROM and directb2s versions listed above and copy them into this folder
+- Make sure the vpx, directb2s, vbs, and ini files are all named the "exact" same
 - If using the Alt Color, make altcolor folder in pinmame folder and place the trn_174h folder with the .cRZ file in it in the altcolor folder
 - Power to the users! 
