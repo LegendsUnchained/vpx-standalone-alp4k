@@ -15,8 +15,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/14183-wipe-out-gottlie
 ROM
 
 Download: [VP Universe](https://vpuniverse.com/applications/core/interface/file/attachment.php?id=39631&key=24ca977f8455be743648517625cf9faf)
-Note: You need both ROMs in the zip
-
+Note: Unzip the "WipeOut_VPinMAME_rom.zip"; extract the 2 ROM files from the ROM folder and place in your "external\vpx-wipeout\pinmame\roms folder"
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
