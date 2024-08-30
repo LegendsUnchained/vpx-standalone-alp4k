@@ -18,10 +18,10 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 
 Color DMD
 
-Author: [ebor](https://vpuniverse.com/profile/29168-ebor/)
+Author: [ebor](https://vpuniverse.com/profile/29168-ebor/)  
 Download: [VP Universe](https://vpuniverse.com/files/file/15442-diner-williams-1990-dmd-64-colors-serum-format/)
 
-## Status 
+## Status
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
