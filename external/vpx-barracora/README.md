@@ -1,6 +1,6 @@
 # Barracora (Williams 1981)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_10/CaptureCabscreenBarracora(Williams1981).png.03a87e54145ef0029cde11b94b8e77b5.png)
+![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_10/CapturedesktopBarracora.PNG.3dc7244ec39ed400daf2fc3ec90297a2.PNG)
 
 Authors: [UnclePaulie](https://vpuniverse.com/profile/16685-unclepaulie/)
 Version: 2.1.3

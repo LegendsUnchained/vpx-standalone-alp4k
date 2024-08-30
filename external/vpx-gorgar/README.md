@@ -28,3 +28,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-gorgar.elf
 - Download the table and directb2s versions listed above and copy them into this folder
+- Make sure the vpx, directb2s, vbs, and ini files are all named the "exact" same
+- "Gorgar SPEAKS!"
