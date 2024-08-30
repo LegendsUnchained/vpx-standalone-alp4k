@@ -8,6 +8,10 @@ Version: 1.0
 
 Download: [VP Universe](https://vpuniverse.com/files/file/5501-wheel-of-fortune-stern-2007/)
 
+Version: 1.0  
+
+Download: [VP Universe](https://vpuniverse.com/files/file/5501-wheel-of-fortune-stern-2007/)
+
 DirectB2S
 
 Author: [Wildman](https://vpuniverse.com/profile/5-wildman/)  
