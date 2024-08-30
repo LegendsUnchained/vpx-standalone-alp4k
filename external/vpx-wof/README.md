@@ -4,15 +4,9 @@
 
 Author: [ninuzzu](https://vpuniverse.com/profile/5530-ninuzzu/) 
 
-Author: [ninuzzu](https://vpuniverse.com/files/file/5501-wheel-of-fortune-stern-2007/) 
-
-Tested by: Imscomobob
-
 Version: 1.0  
 
 Download: [VP Universe](https://vpuniverse.com/files/file/5501-wheel-of-fortune-stern-2007/)
-
-Download: [VP Forums](https://www.vpforums.org/index.php?s=9cc09b6e2bea6c841ac7c7621bfc7df2&app=downloads&showfile=16821)
 
 DirectB2S
 
