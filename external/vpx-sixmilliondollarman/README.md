@@ -12,14 +12,11 @@ Six Million Dollar Man, The (Bally 1978) D-MOD v1.1.directb2s (Daytime Mod - Bri
 Six Million Dollar Man, The (Bally 1978) N-MOD v1.1.directb2s (Night Mod - Darker backglass)
 **Select only ONE For Your Preferred Choice**
 
-Author(s): [xenonph](https://www.vpforums.org/index.php?showuser=14100) 
-Download:  [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=17241)
-
 ROM: smmanc.zip
 Six Million Dollar Man (7-digit Rev3 Free Play) - ROM
 
 Author(s): [destruk](https://www.vpforums.org/index.php?showuser=5)
-Download:  [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=584)
+Download:  [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=5467)
 
 Tested by:
 [TechZombie]
@@ -29,7 +26,7 @@ Tested by:
 Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 55 |
 
 ## Instructions
 
