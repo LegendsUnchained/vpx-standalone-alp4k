@@ -249,6 +249,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Scared Stiff (Bally 1996)](external/vpx-scaredstiff) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Scooby Doo (2022)](external/vpx-scoobydoo) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Seawitch - JP (Stern 1980)](external/vpx-seawitch) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
+| [Senna Prototype Edition (Culik Pinball 2020) 1.0.1 ](external/vpx-senna) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Shadow, The (Bally 1994)](external/vpx-theshadow) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 52 |
 | [Shaq Attaq (Gottlieb 1995)](external/vpx-shaq) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 | [Shooting The Rapids (Zaccaria 1979)](external/vpx-shootingtherapids) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
