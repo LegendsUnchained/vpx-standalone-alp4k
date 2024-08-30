@@ -6,6 +6,7 @@ Tested By: kaoticBPR
 Authors: [marty02](https://vpuniverse.com/profile/16531-marty02/)
 Version: 2.1
 Download: [VPUniverse](https://vpuniverse.com/files/file/19352-godfather/)
+* discard and don't use the video files, nor the pup triggers. they won't work with this table
 
 DirectB2S
 
@@ -28,5 +29,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-godfather.elf
 - Download the table and directb2s versions listed above and copy them into this folder
 - Make sure the vpx, direct2b, and ini files are all named the "exact" same
+- ignore and don't use the video or puppacks in the download. Discard them, they will tank FPS, and will be choppy during gameplay
 - "Join the Family"
 
