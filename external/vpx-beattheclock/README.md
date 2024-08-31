@@ -4,7 +4,7 @@
 
 Authors: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)
 Version: 2.3
-Download: [VP Universe](https://vpuniverse.com/files/file/6210-big-house-gottlieb-1989-mod/)
+Download: [VP Universe](https://vpuniverse.com/files/file/18072-beat-the-clock-bally-1985-vpw/)
 
 DirectB2S
 
