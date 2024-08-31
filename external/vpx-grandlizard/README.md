@@ -15,7 +15,7 @@ Download: [VPUniverse](https://vpuniverse.com/files/file/5609-grand-lizard-willi
 ROM
 
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=894)\
-ROM Name and version: `grand_l4`
+ROM Name and version: "grand_l4"
 
 Tested by: [GyroJoe](https://github.com/GyroJoe)
 
@@ -31,7 +31,7 @@ Minimum VPX Standalone build: 10.8.0-2026-3b68d7c
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to `vpx-grandlizard.elf`
 - Download the table and directb2s versions listed above and copy them into this folder
-- Make sure the vpx, direct2b, and ini files are all named the "exact" same
-- Place `grand_l4.zip` in the `external/vpx-spaceshuttle/pinmame/roms` folder *Do Not unzip*
+- Make sure the vpx, direct2b, ini, and vbs files are all named the "exact" same
+- Place "grand_l4.zip" in the "external/vpx-grandlizard/pinmame/roms" folder *Do Not unzip*
 - For this table, the nudge buttons have been mapped to magna save
 - "It's a jungle out there"
