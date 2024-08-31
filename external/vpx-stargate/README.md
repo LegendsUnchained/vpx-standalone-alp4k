@@ -17,10 +17,10 @@ Minimum VPX Standalone build: 10.8.0-2006-6d603fb
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 
 ## Instructions
-- Copy the **vpx-stargate** folder to the `external` directory of your USB drive
+- Copy the **vpx-stargate** folder to the "external" directory of your USB drive
 - Add your personalized launcher.elf and rename it to **vpx-stargate.elf**
 - Download the **VPX** and **DIRECTB2S** versions listed above and copy them into the **vpx-stargate** folder
-- Rename `Stargate ( Gottlieb 1995 )v1.3.0.ini`, as well as the **VPX** and **DIRECTB2S** files to all match
-- Copy the `\Nvram English\stargat5.nv` file from the VPX download to the `\vpx-stargate\pinmame\nvram` folder
-- Download the **ROM** version listed above and copy it into `\vpx-stargate\pinmame\roms`
+- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+- Copy the "\Nvram English\stargat5.nv" file from the VPX download to the "\vpx-stargate\pinmame\nvram" folder
+- Download the **ROM** version listed above and copy it into "\vpx-stargate\pinmame\roms"
 - "It will take you a million light years from home. But will it bring you back?"
