@@ -11,7 +11,7 @@ DirectB2S
 
 Authors: [marty02]https://vpuniverse.com/profile/16531-marty02)
 Version: 3.4
-Download: [vpuniverse](https://vpuniverse.com/files/file/15815-jack-sparrow/)
+Download: Included with table download
 
 ROM is not required 
 
