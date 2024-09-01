@@ -18,11 +18,10 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 
 Color DMD
 
-Author: [ebor](https://vpuniverse.com/profile/29168-ebor/)
+Author: [ebor](https://vpuniverse.com/profile/29168-ebor/)  
 Download: [VP Universe](https://vpuniverse.com/files/file/15442-diner-williams-1990-dmd-64-colors-serum-format/)
-Place the .cRZ file "external\vpx-diner\pinmame\altcolor\diner_l4" (create the folders if needed)
 
-## Status 
+## Status
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
@@ -34,3 +33,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-diner.elf
 - Download the table and directb2s versions listed above and copy them into this folder
+- Place the color DMD (.cRZ) file in "external\vpx-diner\pinmame\altcolor\diner_l4" (create the folders if needed)

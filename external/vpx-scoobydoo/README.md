@@ -2,7 +2,7 @@
 
 ![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=99846&id=16631&full=1)
 
-Author(s): mrjcrane(https://www.vpforums.org/index.php?showuser=117777)  
+Author(s): [mrjcrane](https://www.vpforums.org/index.php?showuser=117777)  
 Scooby Doo, 2022 v1.0_04012022
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=16631)
 

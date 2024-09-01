@@ -5,7 +5,7 @@
 ## Information
 | File Type | Link | Version | Author(s) | 
 |:---------:|:----:|:-------:|:---------:|
-| VPX | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=12488) | 5.0.0 | [jpsals](https://www.vpforums.org/index.php?showuser=277) |
+| VPX | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=12488) | 5.0.0 | [jpsalas](https://www.vpforums.org/index.php?showuser=277) |
 | DirectB2S | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=12899) | 1.0 | [hauntfreaks](https://www.vpforums.org/index.php?showuser=73849) |
 | ROM | :x: | :x: | :x: |
 
