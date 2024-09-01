@@ -2,7 +2,7 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-startrekmu.png)
 
-Authors: [JPsalas](https://www.vpforums.org/index.php?showuser=277)
+Author: [JPsalas](https://www.vpforums.org/index.php?showuser=277)
 
 Tested by: Bla1ze
 
