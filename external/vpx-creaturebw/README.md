@@ -8,7 +8,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/6978-creature-from-the
 
 DirectB2S
 
-DirectB2S file is included in the in the table zip.
+DirectB2S file is included in the table zip.
 
 ROM:
 Version (L-4)
@@ -31,6 +31,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-creaturebw.elf
 - Download the table version listed above and copy the vpx and b2s file into this folder
-- Rom file stays in zip folder, place zip file in vpx-creaturebw/pinmame/roms
+- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+- Place ROM file in vpx-creaturebw/pinmame/roms - DO NOT UNZIP!
 - Unzip Altsound 2.0, open unzipped folder and place the folder cftbl_l4 in vpx-creaturebw/pimame/altsound
 - "Of all the lagoons, in all the world, she came into mine."
