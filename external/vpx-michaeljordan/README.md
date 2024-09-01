@@ -37,4 +37,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Download the table, ROM and directb2s versions listed above and copy them into this folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place mj_130.zip in the external/vpx-michaeljordan/pinmame/roms folder *Do Not unzip*
-- The only game where Charles Barkely fights Godzilla! 🏀
+- The only game where Charles Barkley fights Godzilla! 🏀
