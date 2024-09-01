@@ -37,4 +37,6 @@ MD5: aa79bb455243345aea72a134de4f57cd
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-dirtyharry.elf
 - Download the table, ROM and directb2s versions listed above and copy them into this folder
-- Go Ahead. Make My Day!
+- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
+- Place ROM file in external/vpx-dirtyharry/pinmame/roms folder - DO NOT UNZIP!
+- "Go Ahead. Make My Day!"
