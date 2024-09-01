@@ -36,5 +36,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-flintstones.elf
-- Download the table and directb2s versions listed above and copy them into this folder. The ROM zip gets copied to pinmame/roms (do not unzip).
+- Download the table and directb2s versions listed above and copy them into this folder
+- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+- Place the ROM zip into external/vpx-flintstones/pinmame/roms. (Do not unzip)!
 - Yabba Dabba Doooo!
