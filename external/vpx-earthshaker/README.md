@@ -29,3 +29,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-earthshaker.elf
 - Download the table and directb2s versions listed above and copy them into this folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+- Place ROM zip file in the external/vpx-earthshaker/pinmame/roms folder. Do Not unzip!
