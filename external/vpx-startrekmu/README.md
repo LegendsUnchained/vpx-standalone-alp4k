@@ -2,7 +2,7 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-startrekmu.png)
 
-Authors: [JPsalas](https://www.vpforums.org/index.php?showuser=277)
+Author: [JPsalas](https://www.vpforums.org/index.php?showuser=277)
 
 Tested by: Bla1ze
 
@@ -12,7 +12,7 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 
 DirectB2S
 
-Authors: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
+Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
 
 Version: 1.0.0
 
