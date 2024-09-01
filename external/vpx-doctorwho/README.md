@@ -47,5 +47,6 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-doctorwho.elf
 - Download the table, ROM and directb2s versions listed above and copy them into this folder
+- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - If using the Alt Color, make an altcolor folder inside the pinmame folder. Inside the altcolor folder, make a dw_l2 folder and place the .cRZ file inside. 
 - There’s no point in being grown up if you can’t be childish sometimes - Fourth (and best) Doctor!
