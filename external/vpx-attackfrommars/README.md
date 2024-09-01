@@ -20,7 +20,6 @@ Color DMD
 
 Author: [KRAKEN](https://vpuniverse.com/profile/35517-kraken/)
 Download: [VP Universe](https://vpuniverse.com/files/file/19896-attack-from-mars-serum-colorization/)
-Place the .cRZ file "external\vpx-attackfrommars\pinmame\altcolor\afm_113b" (create the folders if needed)
 
 ## Status 
 
@@ -34,3 +33,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-attackfrommars.elf
 - Download the table and directb2s versions listed above and copy them into this folder
+- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+- For color DMD: Place the .cRZ file in "external\vpx-attackfrommars\pinmame\altcolor\afm_113b" (create the folders if needed)

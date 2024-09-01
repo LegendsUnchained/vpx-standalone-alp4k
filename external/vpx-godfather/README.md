@@ -12,7 +12,7 @@ DirectB2S
 
 Authors: [marty02](https://vpuniverse.com/profile/16531-marty02/)
 Version: 2.1
-Download: [VPUniverse](https://vpuniverse.com/files/file/19352-godfather/)
+Download: Included in table download
 
 ROM no Rom necessary
 

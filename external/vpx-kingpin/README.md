@@ -11,7 +11,7 @@ DirectB2S
 
 Authors: [sg1bson](https://vpuniverse.com/profile/34010-sg1bson/)
 Version: 1.1
-Download: [vpuinverse](https://vpuniverse.com/files/file/7039-kingpin-capcom-1996-sg1bson-1920-mod/)
+Download: Included in table download
 
 ROM
 

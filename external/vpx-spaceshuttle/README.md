@@ -30,7 +30,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-spaceshuttle.elf
 - Download the table and directb2s versions listed above and copy them into this folder
-- Make sure the vpx, direct2b, and ini files are all named the "exact" same
+- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same. No need to rename the .dmd file.
 - Place sshtl_l7.zip in the external/vpx-spaceshuttle/pinmame/roms folder *Do Not unzip*
 - "It's time for take off."
 
