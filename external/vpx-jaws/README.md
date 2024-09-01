@@ -3,7 +3,7 @@
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_08/v1.4.png.bd4afb26539ce223748806c198f65828.png)
 
 Author(s): [balutito](https://vpuniverse.com/profile/36070-balutito/)  
-Version: **Download Jaws.rar**  **It is the first file otherwise you will have a black dmd.**
+Version: **Download Jaws.rar**  **It is the first file otherwise you will have a black dmd.**  
 Download: [VP Forums](https://vpuniverse.com/files/file/10976-jaws-balutito-mod/)
 
 DirectB2S
@@ -29,7 +29,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-jaws.elf
-- Download the table and directb2s versions listed above and copy them into this folder.
-- Make sure .vpx and .direct2b2s and Jaws in English.ini are all named the same. 
-- Inside the table zip there is a folder titled music, copy it into this folder.
-- "You're gonna need a bigger USB."
+- Download the table and directb2s versions listed above and copy them into this folder
+- Make sure .vpx and .directb2s and Jaws in English.ini are all named the same
+- Inside the table zip there is a folder titled music, copy it into this folder
+- "You're gonna need a bigger USB!"
