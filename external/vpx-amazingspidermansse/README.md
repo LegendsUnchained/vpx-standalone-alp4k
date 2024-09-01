@@ -32,7 +32,6 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Add your personalized launcher.elf and rename it to vpx-amazingspidermansse.elf
 - Download the table zip above, extract it and copy Amazing Spiderman (Gottlieb 1980) Sinister Six Edition v1.1.vpx
 - and Amazing Spiderman (Gottlieb 1980) Sinister Six Edition v1.0.directb2s to vpx-amazingspidermansse.
-- Rom file (spidermn.zip) stays in zip folder, place zip file in vpx-amazingspidermansse/pinmame/roms
+- Place ROM file (spidermn.zip) into vpx-amazingspidermansse/pinmame/roms -- Do NOT unzip!
 - Make sure (.vpx) (.direct2b2s) and (.ini) are all named the same. 
-- Go fire up your Vpin and enjoy!
 - "My Vpin Sense is tingling!" --- Spider-Man

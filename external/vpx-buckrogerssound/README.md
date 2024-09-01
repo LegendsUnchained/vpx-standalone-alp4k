@@ -35,7 +35,6 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Add your personalized launcher.elf and rename it to vpx-buckrogerssound.elf
 - Download the table and directb2s versions listed above, extract them (if necessary) and copy them into vpx-buckrogerssound
 - In the table build open the nvram folder and place (buckrgrs.nv) file in vpx-buckrogerssound/pinmame/nvram
-- Rom file (buckrgrs.zip) stays in zip folder, place zip file in vpx-buckrogerssound/pinmame/roms
+- Place ROM file (buckrgrs.zip) in vpx-buckrogerssound/pinmame/roms - Do NOT unzip!
 - Make sure (.vpx) (.direct2b2s) (.vbs) and (.ini) are all named the same. 
-- Go fire up your Vpin and enjoy!
 - "I'm freezing my ball-bearings off!" --Twiki
