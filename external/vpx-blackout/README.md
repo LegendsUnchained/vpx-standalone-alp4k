@@ -1,6 +1,6 @@
 # Blackout (Williams 1980)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=117747&id=18393&full=1)
+![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_02/1291040529_BO2.0-DT.png.6a478d59067ff0b0bb45aba6570c4e9e.png)
 
 Authors: [unclewilly](https://www.vpforums.org/index.php?showuser=12)
 Version: 1.3
