@@ -1,6 +1,6 @@
 # Indianapolis 500 (Bally 1995)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_05/screenshot_cabinet.png.793b63839ff2a03468fe1f377a6f77b2.png)
+![Table Preview]([https://www.vpforums.org/index.php?s=c9ae639526ca4911ece3423374898dbe&app=downloads&module=display&section=screenshot&record=75079&id=14459&full=1])
 
 Authors: [tastywasps](https://vpuniverse.com/profile/44724-tastywasps/)
 Version: 1.36
