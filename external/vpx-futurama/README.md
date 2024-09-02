@@ -6,7 +6,7 @@ Author: [Wizball](https://vpuniverse.com/profile/16604-wizball/)
 
 Tested by: Bla1ze & Mar3nBu
 
-Version: 1.1
+Version: 1.2.1
 
 Download: [VP Universe](https://vpuniverse.com/files/file/18010-futurama-original-2024/)
 

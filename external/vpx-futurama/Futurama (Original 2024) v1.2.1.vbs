@@ -1,5 +1,30 @@
 Option Explicit
 Randomize
+
+'DMD Hack to include FlexDMD inside the table
+Sub ImplicitDMD_Init
+   Me.x = 30
+   Me.y = 30 
+   'Me.fontColor = RGB(255, 255, 255)
+   Me.intensityScale = 2
+   Me.width = 128 * 2
+   Me.height = 32 * 2
+   Me.visible = true
+   Me.timerenabled = true
+End Sub
+
+Sub ImplicitDMD_Timer
+   If Not FlexDMD Is Nothing Then
+      Dim DMDp: DMDp = FlexDMD.DmdColoredPixels
+      If Not IsEmpty(DMDp) Then
+         DMDWidth = FlexDMD.Width
+         DMDHeight = FlexDMD.Height
+         DMDColoredPixels = DMDp
+      End If
+   End If
+End Sub
+
+'End of DMD Hack to include FlexDMD inside the table
 '*******************************************
 '  User Options
 '*******************************************
@@ -11,7 +36,7 @@ Dim UseFlexDMD : UseFlexDMD = 1		'0 = no FlexDMD, 1 = enable FlexDMD. FlexDMD ca
 Const stagedFlipperStyle = 0		' 0 = MagnaSaves, 1 = A and apostrophe
 
 '----- Action button options -----
-Const BlastWithPlunger = True		' Set to True to use the plunger key as the action button.
+Const BlastWithPlunger = False		' Set to True to use the plunger key as the action button.
 									' Only recommended if you have an analog plunger.
 Const HideBlastButton = False		' Set to True to hide the button on the lockbar.
 
@@ -182,6 +207,10 @@ End if
 '				  Add option to hide blast button
 ' 				  Move side loop inserts for better visibility
 '				  Fix Morbo not appearing in the TV in 10.8
+' 1.2 (wizball) : Fix bug where the game rarely would not feed a ball after a Bender lock
+'				  Add sound cue when reverse flippers expire
+'				  Attract music now has the proper volume after a game over
+'				  Prevent selecting a mode from using a blast with some button configs
 
 '***********************************
 ' DOF IDs
@@ -307,6 +336,7 @@ Dim nTimeLowerLeftFlip	' The time when the lower left flipper was last raised
 Dim nTimeLowerRightFlip	' The time when the lower right flipper was last raised
 Dim nTimeUpperLeftFlip	' The time when the lower left flipper was last raised
 Dim nTimeUpperRightFlip	' The time when the lower right flipper was last raised
+Dim nTimeBlastUsed		' The time when a player last pressed the blast button
 Dim bDrainingBalls		' Is the table draining balls after a tilt or timed out multiball?
 Dim nTimeStartPressed	' timestamp when the start button was pressed
 Dim nTimeVUKFired		' timestamp when the kickout from the upper scoop was last fired
@@ -2062,6 +2092,7 @@ End Sub
 '*******************************************
 Dim pGameName       : pGameName=cGameName
 Dim PuPlayer
+Dim oLabelText
 Const pFontFuturama = "Futurama Bold Font"
 
 Const pDMD=5
@@ -2078,7 +2109,8 @@ Const pBooth = 5
 
 Sub PuPInit
 	If Not bEnablePuP Then Exit Sub
-	Set PuPlayer = CreateObject("PinUpPlayer.PinDisplay")   
+	Set PuPlayer = CreateObject("PinUpPlayer.PinDisplay")
+	Set oLabelText = CreateObject("Scripting.Dictionary")
 	CheckPupVersion ' ensure we are using the correct version of Pup Player for the Table1
 	PuPlayer.B2SInit "", pGameName
 	PuPlayer.LabelInit pDMD					
@@ -2340,7 +2372,10 @@ End Sub
 '***********************************************************PinUP Player DMD Helper Functions
 
 Sub pDMDLabelSet(labName,LabText)
-	PuPlayer.LabelSet pDMD, labName, " " & LabText & " ", 1, ""   
+	If oLabelText.Item(LabName) <> LabText Then
+		oLabelText.Item(LabName) = LabText
+		PuPlayer.LabelSet pDMD, labName, " " & LabText & " ", 1, ""
+	End If
 end sub
 
 Sub pDMDLabelHide(labName)
@@ -2460,6 +2495,7 @@ Sub Table1_Init
 	Set ETBall4 = KickerTrough4.CreateSizedballWithMass(Ballsize/2,Ballmass)
 	Set ETBall5 = KickerTrough5.CreateSizedballWithMass(Ballsize/2,Ballmass)
 	Set ETBall6 = KickerTrough6.CreateSizedballWithMass(Ballsize/2,Ballmass)
+	nBallsToFeed = 0
 
 	'*** Use gBOT in the script wherever BOT is normally used. Then there is no need for GetBalls calls ***
 	gBOT = Array(ETBall1, ETBall2, ETBall3, ETBall4, ETBall5, ETBall6)
@@ -2533,6 +2569,7 @@ Sub Table1_Init
 	nTimeLowerRightFlip = -1
 	nTimeUpperLeftFlip = -1
 	nTimeUpperRightFlip = -1
+	nTimeBlastUsed = 0
 	If Table1.ShowDT Then
 		FlipperULSh.Visible = False
 		FlipperURSh.Visible = False
@@ -3017,10 +3054,15 @@ End Sub
 
 
 Sub SolRelease(enabled)
-	If enabled Then 
-		DOF 111,DOFPulse
-		KickerTrough1.kick 90, 10		
-		RandomSoundBallRelease KickerTrough1
+	If enabled Then
+		If KickerTrough1.BallCntOver > 0 Then
+			DOF 111,DOFPulse
+			KickerTrough1.kick 90, 10		
+			RandomSoundBallRelease KickerTrough1
+		Else
+			nBallsToFeed = nBallsToFeed + 1
+			UpdateTrough
+		End If
 	End If
 End Sub
 
@@ -3224,12 +3266,15 @@ Sub Table1_KeyDown(ByVal keycode)
 		End If
 
 		If keycode = PlungerKey Then
-			If BlastWithPlunger And (Not BIPL) And (Not bSelectingMode) Then
+			If BlastWithPlunger And (Not BIPL) _
+			And (Not bSelectingMode) And (nTimeBooth < 1) Then
 				BlastButtonUsed
 			End If
 			If bSelectingMode And bFirstSwitchHit then
+				nTimeBlastUsed = GameTime
 				ModeSelectChoose
 			ElseIf nTimeBooth > 0 Then
+				nTimeBlastUsed = GameTime
 				DoubleFlipHurry
 			Else
 				Plunger.Pullback
@@ -3268,8 +3313,10 @@ Sub Table1_KeyDown(ByVal keycode)
 
 		If keycode = LockBarKey Then
 			If nTimeBooth > 0 Then
+				nTimeBlastUsed = GameTime
 				DoubleFlipHurry
 			ElseIf bSelectingMode Then
+				nTimeBlastUsed = GameTime
 				ModeSelectChoose
 			Else
 				BlastButtonUsed
@@ -4831,7 +4878,13 @@ Sub BlastButtonUsed
 	Dim anShotTotal(11)
 	Dim nBiggestShot, nBiggestValue, i, sPoints, oEvent
 
+	If GameTime - nTimeBlastUsed < 50 Then
+		Exit Sub
+	Else
+		nTimeBlastUsed = GameTime
+	End If
 	If (nPlayersInGame < 1) Or bDrainingBalls Or bCountingBonus Then Exit Sub
+
 	If 0 = anBlasts(nPlayer) Or avModesRunning(nPlayer).count < 1 Then
 		SoundStartButton
 		Exit Sub
@@ -7078,6 +7131,9 @@ Sub TimerMode_Timer
 		if avModesRunning(nPlayer).Contains(i) Then
 			aanModeTime(nPlayer, i) = aanModeTime(nPlayer, i) - TimerMode.interval
 			If aanModeTime(nPlayer, i) < 1 Then
+				If i = eModeReverseFlips Then
+					PlaySound "buzzer"
+				End If
 				aanModeTime(nPlayer, i) = 0
 				EndMode i, False, True, eShotNone
 			End If
@@ -10854,8 +10910,14 @@ Sub SwitchMusic(sTrack)
 End Sub
 
 Sub DuckMusic
-	PlaySound sMusicTrack, -1, fMusicVolume * fDuckFactor * fSongVolume,0,0,0,1,0
-	fCurrentMusicVol = fMusicVolume * fDuckfactor
+	Dim fGoalVolume
+	If sMusicTrack = "music-attract" then
+		fGoalVolume = fAttractVolume
+	Else
+		fGoalVolume = fMusicVolume
+	end If
+	PlaySound sMusicTrack, -1, fGoalVolume * fDuckFactor * fSongVolume,0,0,0,1,0
+	fCurrentMusicVol = fGoalVolume * fDuckfactor
 end sub
 
 Sub DuckUpdate
