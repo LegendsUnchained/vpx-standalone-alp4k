@@ -19,6 +19,7 @@ Download: [Pinball Nirvana](https://pinballnirvana.com/forums/resources/clas1812
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 47 |
@@ -28,6 +29,8 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-1812.elf
 - Download the table and directb2s versions listed above and copy them into this folder
+- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+- Place ROM zip file into vpx-1812/pinmame/roms folder. DO NOT UNZIP!
 
 ***DO NOT RENAME Class1812.vbs***
 
