@@ -36,7 +36,7 @@ Dim UseFlexDMD : UseFlexDMD = 1		'0 = no FlexDMD, 1 = enable FlexDMD. FlexDMD ca
 Const stagedFlipperStyle = 0		' 0 = MagnaSaves, 1 = A and apostrophe
 
 '----- Action button options -----
-Const BlastWithPlunger = False		' Set to True to use the plunger key as the action button.
+Const BlastWithPlunger = True		' Set to True to use the plunger key as the action button.
 									' Only recommended if you have an analog plunger.
 Const HideBlastButton = False		' Set to True to hide the button on the lockbar.
 
