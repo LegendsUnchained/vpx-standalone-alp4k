@@ -37,5 +37,5 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-familyguy.elf
 - Download the table, ROM and directb2s versions listed above 
-- Copy the table (.vpx) and backglass (.directb2s) to this folder and remember to rename the vpx and directb2s files to "Family Guy 1.0"
-- The ROM zip gets copied to pinmame/roms (do not unzip)
+- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
+- The ROM zip file gets copied to vpx-familyguy/pinmame/roms (do not unzip)
