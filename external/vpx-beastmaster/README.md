@@ -3,22 +3,22 @@
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_10/20211027_183639.jpg.00e15ca9ea12afde87a0881978f09a25.jpg)
 
 Author(s): [balutito](https://vpuniverse.com/profile/36070-balutito/)  
-Table: Version 1.0.2
-Download: 521718423_BeastmastersoundFX.rar
-VPX Version: Beastmaster_v1.1.vpx
-Download:  [VPUniverse](https://vpuniverse.com/files/file/7792-the-beastmaster-v2-soundfx/)
+Table: Version 1.0.2  
+Download: 521718423_BeastmastersoundFX.rar  
+VPX Version: Beastmaster_v1.1.vpx  
+Download: [VPUniverse](https://vpuniverse.com/files/file/7792-the-beastmaster-v2-soundfx/)
 
-DirectB2S is included with Table Zip
-Directb2s: Beastmaster_v1.1.directb2s
+DirectB2S is included with Table Zip  
+Directb2s: Beastmaster_v1.1.directb2s  
 Author(s): [balutito](https://vpuniverse.com/profile/36070-balutito/) 
 
-ROM is included with Table Zip
-Black Pyramid - ROM
-ROM: blakpyra.zip
+ROM is included with Table Zip  
+Black Pyramid - ROM  
+ROM: blakpyra.zip  
 Included in 521718423_BeastmastersoundFX.rar ---> ROM
 
-NVRAM is included with Table Zip
-NVRAM: blakpyra.nv
+NVRAM is included with Table Zip  
+NVRAM: blakpyra.nv  
 Included in 521718423_BeastmastersoundFX.rar ---> ROM
 
 Author(s): [balutito](https://vpuniverse.com/profile/36070-balutito/)
@@ -40,11 +40,9 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-beastmaster.elf
-- Download the table zip above, extract it and copy/place (Beastmaster_v1.1.vpx) into vpx-beastmaster
-- Select (Beastmaster_v1.1.directb2s) file and copy/place into vpx-beastmaster
-- open (BM_music), Place (Beastmaster.mp3) into ---> vpx-beastmaster/music
+- Download the table, and directb2s, extract them and copy/place them into vpx-beastmaster
+- Make sure (.vpx) (.direct2b2s) and (.ini) are all named the same
 - Open (ROM) Folder, (blakpyra.zip) stays in zip folder, place zip file in vpx-beastmaster/pinmame/roms
 - Open (ROM) Folder, (blakpyra.nv) place (.nv) file in vpx-beastmaster/pinmame/nvram
-- Make sure (.vpx) (.direct2b2s) (.vbs) and (.ini) are all named the same. 
-- Go fire up your Vpin and enjoy!
+- Open (BM_music), Place (Beastmaster.mp3) into ---> vpx-beastmaster/music
 - "Life is a circle. I am sure we will meet again, my friend!"  ---Dar
