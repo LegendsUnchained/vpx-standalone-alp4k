@@ -1,10 +1,12 @@
-# JP's Deadpool
+# OneVox volkan-steel-and-metal-original-2023/
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=115543&id=15967&full=1)
+![Table Preview]https://vpuniverse.com/files/file/14978-volkan-steel-and-metal-original-2023/
 
-Author: [JP Salas](https://www.vpforums.org/index.php?app=core&module=search&do=user_activity&sid=40128d9b02d204ff0a868b9c159c7f81&mid=277&search_app=downloads&userMode=all&search_app_filters%5Bdownloads%5D%5BsearchInKey%5D=files&search_app_filters%5Bdownloads%5D%5Bfiles%5D%5BsortKey%5D=update&search_app_filters%5Bdownloads%5D%5Bfiles%5D%5BsortDir%5D=)  
+Author: [OneVox](https://vpuniverse.com/profile/14340-onevox/
 Version: 5.1.2  
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=15967)
+Download: [VP Forums]https://vpuniverse.com/files/file/14978-volkan-steel-and-metal-original-2023/
+
+B2S: Included in the Table Download.
 
 ## Status 
 
@@ -16,6 +18,5 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 ## Instructions
 
 - Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-deadpool.elf
+- Add your personalized launcher.elf and rename it to vpx-tablename.elf
 - Download the table and directb2s versions listed above and copy them into this folder
-- Enjoy this amazing original table by JP Salas!
