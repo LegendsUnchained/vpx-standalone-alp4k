@@ -1,5 +1,6 @@
 # Medusa (Bally 1981)
 Tested by: kaoticBPR
+
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_07/CaptureCabinetMedusa(Bally1981).png.a33fdcb4de301d45dd8fc098ce593e0f.png)
 
 Table
