@@ -16,7 +16,7 @@ No Rom Needed
 Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | Playfield | Controls | Backglass | DMD | FPS | 
 |-----------|----------|-----------|-----|----------|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 30 |
 
 ## Instructions
 
