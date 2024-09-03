@@ -38,4 +38,6 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-royalrumble.elf
 - Download the table, ROM and directb2s versions listed above and copy them into this folder
-- GET BACK INTO THE RING.. IT'S TIME FOR THE WWF ROYAL RUMBLE!
+- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
+- Place ROM zip file into vpx-royalrumble/pinmame/roms folder. Do NOT unzip!
+- "GET BACK INTO THE RING.. IT'S TIME FOR THE WWF ROYAL RUMBLE!"

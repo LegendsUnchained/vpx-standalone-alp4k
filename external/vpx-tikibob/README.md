@@ -10,7 +10,7 @@ DirectB2S
 
 Authors: [iDigStuff](https://vpuniverse.com/profile/29753-idigstuff/)
 Version: 
-Download: [VPUniverse](https://vpuniverse.com/files/file/7143-tiki-bobs-atomic-beach-party-original-theme-2021/)
+Download: [VPUniverse] Included with table download
 
 Custom Music
 

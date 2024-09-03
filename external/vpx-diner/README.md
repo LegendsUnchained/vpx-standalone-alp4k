@@ -33,4 +33,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-diner.elf
 - Download the table and directb2s versions listed above and copy them into this folder
+- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
+- Place ROM zip file into vpx-diner/pinmame/roms folder. DO NOT UNZIP!
 - Place the color DMD (.cRZ) file in "external\vpx-diner\pinmame\altcolor\diner_l4" (create the folders if needed)

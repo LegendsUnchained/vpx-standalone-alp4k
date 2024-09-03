@@ -38,4 +38,6 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-judgedredd.elf
 - Download the table, ROM and directb2s versions listed above and copy them into this folder
-- I never broke the law, I AM THE LAW!
+- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
+- Place ROM zip file into vpx-judgedredd/pinmame/roms folder. DO NOT UNZIP!
+- "I never broke the law, I AM THE LAW!"

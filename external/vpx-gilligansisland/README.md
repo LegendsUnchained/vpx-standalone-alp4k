@@ -34,7 +34,6 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-gilligansisland.elf
 - Download the table and directb2s versions listed above, extract them (if necessary) and copy them into vpx-gilligansisland
-- Rom file (gi_l9.zip) stays in zip folder, place zip file in vpx-gilligansisland/pinmame/roms
+- Place ROM file (gi_l9.zip) in vpx-gilligansisland/pinmame/roms folder - DO NOT UNZIP!
 - Make sure (.vpx) (.direct2b2s) and (.ini) are all named the same. 
-- Go fire up your Vpin and enjoy!
 - "Gilligan, when they were passing out the brains, you weren't at the end of the line. YOU WERE ON VACATION!" --Skipper

@@ -26,8 +26,6 @@ Author: [PastorLUL](https://vpuniverse.com/profile/42770-pastorlul/)
 
 Download: [VP Universe](https://vpuniverse.com/files/file/17697-acdc-stern-2012-64-colors/)
 
-Place the .cRZ file "external\vpx-acdcluci\pinmame\altcolor\acd_170h" (create the folders if needed)
-
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
@@ -40,3 +38,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-acdcluci.elf
 - Download the table, ROM and directb2s versions listed above and copy them into this folder
+- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
+- For color DMD: Place the .cRZ file in "external\vpx-acdcluci\pinmame\altcolor\acd_170h" (create the folders if needed)

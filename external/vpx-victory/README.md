@@ -10,7 +10,7 @@ DirectB2S
 
 Authors: [chucky87](https://vpuniverse.com/profile/10099-chucky87/)
 Version: 1.0
-Download: [VP Universe](https://vpuniverse.com/files/file/4737-victory-premier-1987-2scr-et-3scr-with-animation/)
+Download: [VP Universe](https://vpuniverse.com/files/file/4737-victory-premier-1987-2scr-et-3scr-with-animation/)  
 Note: Use Victory (Gottlieb 1987)full dmd.directb2s from the zip
 
 ROM
@@ -29,3 +29,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-victory.elf
 - Download the table and directb2s versions listed above and copy them into this folder
+- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
+- Place ROM zip file into vpx-victory/pinmame/roms folder. DO NOT UNZIP!

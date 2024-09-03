@@ -30,7 +30,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-cheetah.elf
 - Download the table and directb2s versions listed above and copy them into this folder
-- Make sure the vpx, direct2b, and ini files are all named the "exact" same
-- Place cheetah.zip and cheetah2.zip in the external/vpx-cheetah/pinmame/roms folder *Do Not unzip*
+- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+- Place cheetah.zip and cheetah2.zip ROMS in the external/vpx-cheetah/pinmame/roms folder *Do Not unzip*!
 - "Live and Hunt like the Cheetah in the Wild"
-
