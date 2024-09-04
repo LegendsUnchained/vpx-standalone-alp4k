@@ -3,7 +3,7 @@
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_07/earth.png.36aec03d367410af8c2037333dc2834c.png)
 
 Authors: [versins77](https://vpuniverse.com/profile/29661-versins77/)  
-Version: 1.0.3
+Version: 1.0.3  
 Download: [VP Universe](https://vpuniverse.com/files/file/14968-earthshaker-williams-1989)
 
 DirectB2S
@@ -19,6 +19,7 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 32 |

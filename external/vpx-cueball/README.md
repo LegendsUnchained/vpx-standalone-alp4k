@@ -2,14 +2,14 @@
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_08/Cabinet.png.be519c68a46e10842660c0143ebf4f6c.png)
 
-Authors: [Mikcab](https://vpuniverse.com/profile/16013-mikcab/)
-Version: 1.2.4
+Authors: [Mikcab](https://vpuniverse.com/profile/16013-mikcab/)  
+Version: 1.2.4  
 Download: [VP Universe](https://vpuniverse.com/files/file/15354-cue-ball-wizard-gottlieb-1992-mikcab_mod/)
 
 DirectB2S
 
-Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
-Version: 1.0
+Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
+Version: 1.0  
 Download: [VP Universe](https://vpuniverse.com/files/file/14085-cue-ball-wizard-gottlieb-1992-b2s-with-full-dmd/)
 
 ROM
@@ -19,6 +19,7 @@ Download: [Pinball Nirvana](https://pinballnirvana.com/forums/resources/cueball.
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 33 |
@@ -27,4 +28,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-cueball.elf
-- Download the table and directb2s versions listed above and copy them into this folder
+- Download the table and directb2s versions listed above, extract and copy them into this folder
+- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+- Place ROM zip file into external/vpx-cueball/pinmame/roms folder. DO NOT UNZIP!
