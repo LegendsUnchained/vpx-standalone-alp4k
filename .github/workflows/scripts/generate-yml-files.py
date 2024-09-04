@@ -223,7 +223,7 @@ def find_directb2s_file_ids(urls, table_data):
               b2s_file_found = True
               b2s_file_ids.append(b2s_file["id"])
               if debug_vpx_file_search:
-                print(f"{bcolors.OKGREEN}     -MATCH!{bcolors.DEBUG} directb2s id: {b2s_file["id"]}{bcolors.ENDC}")
+                print(f"{bcolors.OKGREEN}     -MATCH!{bcolors.DEBUG} directb2s id: {b2s_file['id']}{bcolors.ENDC}")
               break
             if debug_b2s_file_search:
               print(f"{bcolors.FAIL}     -NO MATCH!{bcolors.ENDC}")
