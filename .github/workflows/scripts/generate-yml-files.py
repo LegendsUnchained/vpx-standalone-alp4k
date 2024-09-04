@@ -188,7 +188,7 @@ def find_vpx_file_ids(urls, table_data):
           if debug_vpx_file_search:
             print(f"{bcolors.DEBUG}  DEBUG: VPXS URL Search")
             print(f"     -{clean_url(url)}")
-            print(f"     -{clean_url(file_url["url"])}{bcolors.ENDC}")
+            print(f"     -{clean_url(file_url['url'])}{bcolors.ENDC}")
           if clean_url(url) == clean_url(file_url["url"]):  # Case-insensitive comparison
             vpx_file_found = True
             vpx_file_id = table_file["id"]
@@ -218,7 +218,7 @@ def find_directb2s_file_ids(urls, table_data):
             if debug_b2s_file_search:
               print(f"{bcolors.DEBUG}   DEBUG: DirectB2S URL Search")
               print(f"     -{clean_url(url)}")
-              print(f"     -{clean_url(file_url["url"])}{bcolors.ENDC}")
+              print(f"     -{clean_url(file_url['url'])}{bcolors.ENDC}")
             if (clean_url(url)) == clean_url(file_url["url"]):
               b2s_file_found = True
               b2s_file_ids.append(b2s_file["id"])
@@ -288,7 +288,8 @@ def parse_download_links(readme):
 def process_READMEmd_file(entry, dir):
    # open a table-specific JSON file (eventually iterate)
   folder_path = os.path.dirname(entry.path)
-  with open(folder_path + '/' "README.md", "r", errors="ignore") as f:
+  folder_path = os.path.join(folder_path, "README.md")
+  with open(folder_path, "r", errors="ignore") as f:
   #readme = open(folder_path + '/' "README.md", "r", errors="replace")
     readme = f.read()
     print('     - README.md file data loaded')
