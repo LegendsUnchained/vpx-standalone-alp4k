@@ -69,7 +69,8 @@ def parse_and_set_table_name(readme):
     match = re.search(table_name_pattern, readme, re.MULTILINE)
     if match:
       table_name = match.group(0).strip().lstrip('# ') 
-      return f"name: '{table_name.replace("'", "''")}'\n" 
+      table_name = table_name.replace("'", "''")
+      return f"name: '{table_name}'\n" 
     else:
       raise ValueError("Failed to read table name")
   except Exception as e:
