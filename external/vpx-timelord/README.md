@@ -26,6 +26,6 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 ## Instructions
 
 - Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-timeLord.elf
-- Download the table and directb2s versions listed above and copy them into vpx-timeLord
+- Add your personalized launcher.elf and rename it to vpx-timelord.elf
+- Download the table and directb2s versions listed above and copy them into vpx-timelord
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
