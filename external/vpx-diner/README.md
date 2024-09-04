@@ -3,7 +3,7 @@
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_07/Diner-SS-Cab.png.9214b505a96887167fa5185d9ba6d136.png)
 
 Authors: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
-Version: 1.02
+Version: 1.02  
 Download: [VP Universe](https://vpuniverse.com/files/file/10699-diner-williams-1990-vpw-mod/)
 
 DirectB2S
@@ -24,6 +24,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/15442-diner-williams-1
 ## Status
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |

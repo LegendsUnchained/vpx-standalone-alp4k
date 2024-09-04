@@ -2,14 +2,18 @@
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_12/CharlieScreenshot.jpg.263a8ca3c2783dac02b55d463144ddce.jpg)
 
+TABLE
+
 Author(s): [iDigStuff](https://vpuniverse.com/profile/29753-idigstuff/)  
 Version: Version 1.1  
 VPX Version: A Charlie Brown Christmas feat. Vince Guaraldi (iDigStuff 2023) 1.1.vpx  
 Download: [VPUniverse](https://vpuniverse.com/files/file/17613-a-charlie-brown-christmas-feat-the-vince-guaraldi-trio-idigstuff-2023-w-vr-room/)
 
+BACKGLASS/B2S
+
 Author(s): [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
-Charlie Brown Christmas (Original 2023).zip  
 Directb2s Version: Charlie Brown Christmas (Original 2023).directb2s  
+Charlie Brown Christmas (Original 2023).zip (Do NOT download FULLDMD version)  
 Download: [VPUniverse](https://vpuniverse.com/files/file/17612-charlie-brown-christmas-original-2023-b2s-23-scn-full-dmd/)
 
 Music file: Charlie Brown.zip  
