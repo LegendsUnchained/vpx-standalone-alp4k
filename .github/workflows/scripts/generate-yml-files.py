@@ -310,7 +310,7 @@ def process_READMEmd_file(entry, dir):
     #write output .yml files to temp folder for now = we can put them in folders later using this...
       #yml = open(folder_path + '/' + entry.name +  '.yml', "w")
 
-    yml_file_path = project_directory + "/.github/workflows/temp_yml/" + dir +  '.yml'
+    yml_file_path = project_directory + "/.wizard/" + dir +  '.yml'
     os.makedirs(os.path.dirname(yml_file_path), exist_ok=True)
     yml_file = open(yml_file_path, "w")
     yml_file.write(yml_text)
