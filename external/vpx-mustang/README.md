@@ -15,7 +15,7 @@ Download: [VPUniverse](https://vpuniverse.com/files/file/4969-mustang-premium-st
 ROM
 
 Author: [CarnyPriest](https://vpuniverse.com/profile/1146-carnypriest/)  
-Version: Mustang Limited Edition (V1.45) - mt_145h.zip
+Version: Mustang Limited Edition (V1.45) - mt_145h.zip  
 Download: [VPUniverse](https://vpuniverse.com/files/file/4129-mustang-limited-edition-v145/)
 
 Tested by:
