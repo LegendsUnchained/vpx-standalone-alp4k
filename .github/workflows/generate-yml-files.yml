@@ -43,7 +43,7 @@ jobs:
         git config user.email 'github-actions[bot]@users.noreply.github.com'
         git add .
         git commit -m "Updated Readme Files" || exit 0
-        git push origin ${{ github.head_ref || github.ref_name }} 
+        git push origin wizard 
     
     env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
