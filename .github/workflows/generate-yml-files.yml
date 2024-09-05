@@ -10,7 +10,7 @@ on:
    # - main  
     
 jobs:
-  generate-readme-files:
+  generate-yml-files:
   
     runs-on: ubuntu-latest
 
@@ -26,6 +26,12 @@ jobs:
     - name: Install PyYAML
       run: pip install pyyaml
 
+    - name: Install git
+      run: pip install git-python 
+ 
+    - name: Install url parser
+      run: pip install urllib3
+      
     - name: Run Python script
       run: python .github/workflows/scripts/generate-yml-files.py
 
