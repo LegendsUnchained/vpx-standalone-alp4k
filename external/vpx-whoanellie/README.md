@@ -9,7 +9,7 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 DirectB2S
 
 Authors: [hauntfreaks](https://www.vpforums.org/index.php?showuser=73849)  
-Version: 4.1.0 / JP's Whoa Nellie! v41.directb2s.zip
+Version: 4.1.0 / JP's Whoa Nellie! v41.directb2s.zip  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=16889)
 
 ## Status 
