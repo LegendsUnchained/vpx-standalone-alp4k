@@ -17,7 +17,7 @@ Version: Robocop (1989)b2s with full dmd
 Download: [VP Universe](https://vpuniverse.com/files/file/11285-robocop-1989b2s-with-full-dmd/)
 
 
-ROM: Laser War (8.3)
+ROM: Robocop (3.4)
 
 Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)
 
