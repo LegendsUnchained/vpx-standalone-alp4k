@@ -25,14 +25,12 @@ jobs:
       with:
         python-version: '3.9'
 
-    - name: Install PyYAML
-      run: pip install pyyaml
-
-    - name: Install git
-      run: pip install git-python 
- 
-    - name: Install url parser
-      run: pip install urllib3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        cache: 'pip'
+    - run: pip install -r .github/workflows/requirements.txt
       
     - name: Run Python script
       run: python .github/workflows/scripts/generate-yml-files.py
