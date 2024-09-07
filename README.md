@@ -60,7 +60,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [BeastMaster V2 SoundFX, The (Original 2021)](external/vpx-beastmaster) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:x: | :white_check_mark: | 60 |
 | [Beavis and Butt-head: Pinballed (Original 2024)](external/vpx-bbhpinballed) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 34 |
 | [Beetlejuice (Original 2023)](external/vpx-beetlejuice) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 38 |
-| [Beetlejuice Movie Pinball](external/vpx-beetlejuicemovie) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 48 |
+| [Beetlejuice Movie Pinball (Original 2021)](external/vpx-beetlejuicemovie) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 48 |
 | [Beat The Clock (Bally 1985)](external/vpx-beattheclock) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:x: | :white_check_mark: | 34 |
 | [Beverly Hills Cop (Original 2019)](external/vpx-beverlyhillscop) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 57 |
 | [Big Bang Bar (Capcom 1996)](external/vpx-bigbangbar) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 50 |
