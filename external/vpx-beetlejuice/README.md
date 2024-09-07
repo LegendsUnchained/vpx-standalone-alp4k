@@ -2,6 +2,8 @@
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_11/BeetlejuiceDT.png.a0b5e5a6fa02405ba7fbfdf08a1acc58.png)
 
+**Warning!**   **This Table Contains Explicit Language!**   **Warning!**
+
 Author: [doivelspack](https://vpuniverse.com/profile/9648-doivelspack/)  
 Version: Beetlejuice (Original 2023) DVL Reskin 1.0.2.rar  
 Download: [VP Universe](https://vpuniverse.com/files/file/16562-beetlejuice-original-2023-dvl-reskin/)
@@ -26,7 +28,6 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- **Warning**   **This Table Contains Explicit Language**   **Warning**
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-beetlejuice.elf
 - Download table, unzip, open, and copy the vpx and directb2s into this folder
