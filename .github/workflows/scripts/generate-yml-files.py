@@ -76,10 +76,15 @@ def parse_and_set_table_name(readme):
   except Exception as e:
     print(f"Error: {e}")
 
-def get_earliest_commit_owner(repo_path, folder_path):
+def get_earliest_commit_owner_from_xml(repo_path, folder_path):
   try:
     repo = Repo(repo_path)
-    commit_history = repo.git.log('--pretty=format:%ae', '--follow', '--', folder_path)
+    # Get XML files in dir
+    xml_files = repo.git.ls_files(folder_path + "/*.xml")
+    if not xml_files:
+      return f"tester: ?\n"
+    first_xml_file_path = xml_files.split()[0]
+    commit_history = repo.git.log('--pretty=format:%ae', '--follow', '--', first_xml_file_path)
     earliest_commit_owner = commit_history.splitlines()[-1]
     username, domain = earliest_commit_owner.split("@")
     parts = username.split("+")
@@ -300,7 +305,7 @@ def process_READMEmd_file(entry, dir):
     yml_text += parse_and_set_table_name(readme)
 
     # get tester from git history
-    yml_text += get_earliest_commit_owner(project_directory, folder_path)
+    yml_text += get_earliest_commit_owner_from_xml(project_directory, folder_path)
 
     # get FPS
     yml_text += get_FPS(readme)
@@ -310,7 +315,7 @@ def process_READMEmd_file(entry, dir):
     #write output .yml files to temp folder for now = we can put them in folders later using this...
       #yml = open(folder_path + '/' + entry.name +  '.yml', "w")
 
-    yml_file_path = project_directory + "/.wizard/" + dir +  '.yml'
+    yml_file_path = project_directory + "/.wizard/yaml" + dir +  '.yml'
     os.makedirs(os.path.dirname(yml_file_path), exist_ok=True)
     yml_file = open(yml_file_path, "w")
     yml_file.write(yml_text)
