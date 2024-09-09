@@ -12,7 +12,7 @@ Version: Elvira limited edition.directb2s
 
 ROM
 
-Author(s): [destruk](https://www.vpforums.org/index.php?showuser=5)
+Author(s): [destruk](https://www.vpforums.org/index.php?showuser=5)  
 Elvira and the Party Monsters (L-4)  
 ROM Version: eatpm_l4.zip  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=959)
