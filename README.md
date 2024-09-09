@@ -26,7 +26,7 @@ Links to these products on Amazon are through affiliate links.
 Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 | Table | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|:-----:|:---------:|:--------:|:---------:|:---:|:------------:|:---:|
+|:------|:---------:|:--------:|:---------:|:---:|:------------:|:---:|
 | [24 (Stern 2009)](external/vpx-24) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 30 |
 | [A Charlie Brown Christmas (Original 2023)](external/vpx-acharliebrownchristmas) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [A-Team, The (Original 2023)](external/vpx-theateam) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
