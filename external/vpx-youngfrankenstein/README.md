@@ -2,6 +2,8 @@
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_10/YF_DT_screenshot.jpg.e3a0919a4a6c99705a905d2412397326.jpg)
 
+Tested by: Mox
+
 ## Information
 | File Type | Link | Version | Author(s) | 
 |:---------:|:----:|:-------:|:---------:|
@@ -12,7 +14,7 @@
 ## Status 
 Minimum VPX Standalone build: 10.8.0-2006-6d603fb
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
+|:---------:|:--------:|:---------:|:---:|:------------:|:---:|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 
 ## Instructions
@@ -20,6 +22,6 @@ Minimum VPX Standalone build: 10.8.0-2006-6d603fb
 - Add your personalized launcher.elf and rename it to **vpx-youngfrankenstein.elf**
 - Download and extract the **VPX** file ONLY, and copy into the **vpx-youngfrankenstein** folder
 - Download and extract any of the **DIRECTB2S** files based on your setup, and copy into the **vpx-youngfrankenstein** folder
-- Rename `Young Frankenstein (hauntfreaks 2021).vbs`, `Young Frankenstein (hauntfreaks 2021).ini`, as well as the **VPX** and **DIRECTB2S** files to all match
-- Download the **ROM** version listed above and copy it into `\vpx-youngfrankenstein\pinmame\roms`
+- Make sure (.vpx), (.directb2s), (.vbs), and (.ini) files are all named the same
+- Download the **ROM** version listed above and copy it into `\vpx-youngfrankenstein\pinmame\roms` (DO NOT UNZIP)
 - "Put. The. Candle. Back."
