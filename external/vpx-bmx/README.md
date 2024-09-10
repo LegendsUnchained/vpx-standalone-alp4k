@@ -1,4 +1,4 @@
-# BMX (Bally 1983)
+# BMX (Radical Rick) (Bally 1983)
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_06/FS.png.74cd4e55fe628febb09c88d3d88be2e3.png)
 
@@ -13,6 +13,7 @@ Tested by: Mox
 
 ## Status 
 Minimum VPX Standalone build: 10.8.0-2006-6d603fb
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |:---------:|:--------:|:---------:|:---:|:------------:|:---:|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
@@ -21,6 +22,6 @@ Minimum VPX Standalone build: 10.8.0-2006-6d603fb
 - Copy the **vpx-bmx** folder to the `external` directory of your USB drive
 - Add your personalized launcher.elf and rename it to **vpx-bmx**
 - Download the **VPX** and **DIRECTB2S** versions listed above and copy them into the **vpx-bmx** folder
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same. Do NOT rename VPReg.ini file
 - Download the **ROM** version listed above and copy it into `\vpx-bmx\pinmame\roms` (DO NOT UNZIP)
 - "I don't crash, I do random gravity checks."
