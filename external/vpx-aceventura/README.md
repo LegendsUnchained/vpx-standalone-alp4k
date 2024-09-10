@@ -2,6 +2,8 @@
 
 ![Table Preview](https://www.vpforums.org/index.php?s=fdac1e9482a7d4c7a920e6b655fb63c2&app=downloads&module=display&section=screenshot&record=70754&id=14343&full=1)
 
+Tested by: Mox
+
 ## Information
 | File Type | Link | Version | Author(s) | 
 |:---------:|:----:|:-------:|:---------:|
@@ -12,13 +14,13 @@
 ## Status 
 Minimum VPX Standalone build: 10.8.0-2006-6d603fb
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
+|:---------:|:--------:|:---------:|:---:|:------------:|:---:|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 
 ## Instructions
 - Copy the **vpx-aceventura** folder to the `external` directory of your USB drive
 - Add your personalized launcher.elf and rename it to **vpx-aceventura.elf**
 - Download and extract the **VPX** and **DIRECTB2S** files ONLY, and copy them into the **vpx-aceventura** folder
-- Rename `Ace Ventura Pet Detective (TBA 2019).ini`, as well as the **VPX** and **DIRECTB2S** files to all match
-- Download the **ROM** version listed above and copy it into `\vpx-aceventura\pinmame\roms`
+- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+- Download the **ROM** version listed above and copy it into `\vpx-aceventura\pinmame\roms` (DO NOT UNZIP)
 - "May I ass you a few questions?"
