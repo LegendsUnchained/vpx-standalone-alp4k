@@ -22,6 +22,7 @@ Tested by: [GyroJoe](https://github.com/GyroJoe)
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-2042-1431983
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
@@ -30,6 +31,6 @@ Minimum VPX Standalone build: 10.8.0-2042-1431983
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to `vpx-kissbally.elf`
-- Download the table and directb2s versions listed above and copy them into this folder
-- Make sure the vpx, directb2s, and ini files are all named the "exact" same
-- Place `kissc.zip` in the `external/vpx-kissbally/pinmame/roms` folder *Do Not unzip*
+- Download the table and directb2s versions listed above, extract and copy them into this folder
+- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+- Place `kissc.zip` in the `external/vpx-kissbally/pinmame/roms` folder. *Do Not unzip*!
