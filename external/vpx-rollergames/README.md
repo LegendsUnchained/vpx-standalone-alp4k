@@ -10,7 +10,7 @@ DirectB2S
 
 Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
 Version: Rollergames (Williams 1990) full dmd  
-Download: [VP Universe](https://vpuniverse.com/files/file/13593-laser-war-data-east-1987-alt2-standardfull-dmd/)
+Download: [VP Universe](https://vpuniverse.com/files/file/16638-rollergames-williams-1990-b2s-with-full-dmd/)
 
 ROM: Rollergames (L-2)
 
