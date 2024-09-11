@@ -183,6 +183,7 @@ Sub Table1_Init
          On Error Goto 0
      End With
      On Error Goto 0
+     InitVpmFFlipsSAM
 
     PinMAMETimer.Interval = PinMAMEInterval
     PinMAMETimer.Enabled = 1
