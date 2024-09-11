@@ -10,7 +10,7 @@ DirectB2S
 
 Author: [purcho](https://vpuniverse.com/profile/121-purcho/)  
 Version: 1.0.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/13543-the-champion-pub-bally-1998-b2s-with-full-dmd/)
+Download: [VP Universe](https://vpuniverse.com/files/file/17191-ali-stern-1980-b2s-backglass-full-dmd/)
 
 ROM (ali)
 
