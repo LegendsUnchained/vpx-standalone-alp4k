@@ -10,7 +10,7 @@ DirectB2S
 
 Author: [marcobus2005](https://vpuniverse.com/profile/53087-marcobus2005/)  
 Version: 1.0.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/13543-the-champion-pub-bally-1998-b2s-with-full-dmd/)
+Download: [VP Universe](https://vpuniverse.com/files/file/16053-csi-stern-2008-backglass-with-full-dmd/)
 
 ROM (csi_240)
 
