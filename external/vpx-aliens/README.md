@@ -19,7 +19,7 @@ Download: [VPUniverse](https://vpuniverse.com/files/file/19644-aliens-30-final-r
 
 ROM
 
-Download: [vpforums](http://www.vpforums.org/index.php?app=downloads&showfile=888)  
+Download: [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=889)  
 ROM Name and version: sorcr_l2
 
 ## Status 
