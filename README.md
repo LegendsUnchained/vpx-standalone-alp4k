@@ -199,6 +199,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Jokerz! (Williams 1988)](external/vpx-jokerz) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Joust (Williams 1983)](external/vpx-joust) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Judge Dredd (Bally 1993)](external/vpx-judgedredd) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 25 |
+| [Jumanji (Original 2023)](external/vpx-jumanji) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
 | [Jungle Lord (Williams 1981)](external/vpx-junglelord) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 30 | 
 | [Junk Yard (Williams 1996)](external/vpx-junkyard) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Junkyard Cats (Bailey 2012)](external/vpx-junkyardcats) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 54 |
@@ -222,6 +223,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Lord of the Rings - JP (Original 2017)](external/vpx-lordoftherings) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 49 |
 | [Lost World Jurassic Park, The - JP (Sega 1997)](external/vpx-thelostworldjp) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 47 |
 | [Machine, Bride of Pin-Bot, The (Williams 1991)](external/vpx-bop) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 25 |
+| [Mario Andretti (Gottlieb 1995)](external/vpx-marioandretti) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 33 |
 | [Mary Shelley's Frankenstein (Sega 1995)](external/vpx-maryshelleyfrank) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Mata Hari (Bally 1978)](external/vpx-matahari) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Mask, The (Original 2019)](external/vpx-themask) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 52 |
@@ -289,6 +291,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Scooby Doo (2022)](external/vpx-scoobydoo) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Seawitch - JP's (Stern 1980)](external/vpx-seawitch) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Senna Prototype Edition (Culik Pinball 2020)](external/vpx-senna) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
+| [Serious Sam (Original 2017)](external/vpx-ssam) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 47 |
 | [Shadow, The (Bally 1994)](external/vpx-theshadow) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 52 |
 | [Shaq Attaq (Gottlieb 1995)](external/vpx-shaq) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 | [Shooting The Rapids (Zaccaria 1979)](external/vpx-shootingtherapids) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
