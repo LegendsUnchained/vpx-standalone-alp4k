@@ -31,3 +31,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-marioandretti.elf
 - Download the table and directb2s versions listed above, extract and copy them to external/vpx-marioandretti
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+- Place ROM zip file into vpx-marioandretti/pinmame/roms folder. DO NOT UNZIP!
