@@ -12,7 +12,7 @@ Authors: [Wildman](https://vpuniverse.com/profile/5-wildman/)
 Version: 2.0  
 Download: [VP Universe](https://vpuniverse.com/files/file/5084-mr-mrs-pac-man-bally-1982/)
 
-Note: Use 3scr version
+Note: Use 2scr version (scoring on backglass)
 
 ROM
 
@@ -38,6 +38,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-mrandmrspacman.elf
 - Download the table and directb2s versions listed above, extract them and copy them into external/vpx-mrandmrspacman
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
+- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place ROM zip file into vpx-mrandmrspacman/pinmame/roms folder. DO NOT UNZIP!
 - "WAKKA WAKKA"
