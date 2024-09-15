@@ -1,28 +1,32 @@
-# JP's WOW Monopoly Original (2015)
+# WOW Monopoly, JPs (Original 2015)
 
 ![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=104167&id=11612&full=1)
 
 Table
+
 Author: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
-Filename:  JPs WOW-Monopoly v4.zip
-VPX Version: (Version 4.0.0) JP's WOW-Monopoly v4.vpx 
+Filename:  JPs WOW-Monopoly v4.zip  
+VPX Version: (Version 4.0.0) JP's WOW-Monopoly v4.vpx  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=11612)
 
 Backglass
+
 Author: [hauntfreaks](https://www.vpforums.org/index.php?showuser=73849)  
-Filename: WOW_Monopoly.rar
-VPX Version: (Version 1.0) WOW_Monopoly.directb2s 
+Filename: WOW_Monopoly.rar  
+VPX Version: (Version 1.0) WOW_Monopoly.directb2s  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=10808)
 
-Monopoly (3.20) - ROM
-Author: [destruk](https://www.vpforums.org/index.php?showuser=5) 
-Filename: monopoly.zip
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=10808)
+ROM
 
-MD5: 8C763B7C6708184D432ED534CA88E2C2
+Author: [destruk](https://www.vpforums.org/index.php?showuser=5)  
+Monopoly (3.20) - ROM  
+Filename: monopoly.zip  
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=7320)
+
+MD5: 8C763B7C6708184D432ED534CA88E2C2  
 SHA-1: F1B67925C8BFEEF82EEBA9F47692CD8B72532023
   
-Tested by:
+Tested by:  
 [TechZombie]
 
 ## Status 
