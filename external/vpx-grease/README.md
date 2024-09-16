@@ -6,12 +6,12 @@ Table
 
 Author: [LAROUILLAS](https://vpuniverse.com/profile/46701-larouillas/)  
 Filename:  Grease (Original 2020).vpx  
-VPX Version: ( Version 1.0.0) Grease (Original 2020).vpx 
+VPX Version: ( Version 1.0.0) Grease (Original 2020).vpx  
 Download: [VPUniverse](https://vpuniverse.com/files/file/8103-grease-original-2020/)
 
 Backglass
 
-Author: [LAROUILLAS](https://vpuniverse.com/profile/46701-larouillas/) 
+Author: [LAROUILLAS](https://vpuniverse.com/profile/46701-larouillas/)  
 Filename: Grease (Original 2020).directb2s  
 VPX Version: (V2.0.0) Grease (Original 2020).directb2s  
 Download: [VPUniverse](https://vpuniverse.com/files/file/8100-grease-original-2020-v200/)
@@ -29,13 +29,13 @@ SHA-1: 3C770207CFB74BEA4553E51765825FFBD5D0AA9F
 OPTIONAL - COLORED DMD
 
 Author: [Boroka](https://vpuniverse.com/profile/56302-boroka/)  
-Version: (1.0.0)  grease.cRZ
+Version: (1.0.0)  grease.cRZ  
 Download: [VP Universe](https://vpuniverse.com/files/file/17835-grease-original-2023-serum-colorization-elvis-re-imagining/)
 
 Music
 
-Author: [TechZombie]
-Version: (1.0.0)  Grease.zip
+Author: [TechZombie]  
+Version: (1.0.0)  Grease.zip  
 Download: [Archive](https://archive.org/details/grease_202409)
   
 Tested and Fixed by:  
@@ -53,9 +53,9 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-grease.elf
-- Download the table and directb2s files above and copy/move into /external/vpx-grease
+- Download the table and directb2s files above, extract and copy/move into /external/vpx-grease
 - Extract and open (Grease.zip), place folder into vpx-grease/Music
-- Download the rom (elvis.zip) stays in zip folder, place zip file in vpx-grease/pinmame/roms
+- Download the rom (elvis.zip) which stays in zip folder, place zip file in vpx-grease/pinmame/roms
 - If using the Alt Color, download and rename grease.cRZ file to elvis.cRZ and place it in vpx-grease/pinmame/altcolor/elvis
 - Make sure (.vpx), (.directb2s), (.vbs) and (.ini) files are all named the same
 - "Why, this car is auto-matic. It's system-matic. Its hyyyyydro-matic. Why, it's greased lightning!" - Danny Zuko
