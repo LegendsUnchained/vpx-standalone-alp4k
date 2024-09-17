@@ -5,14 +5,14 @@
 Table
 
 Author: [dragon44](https://vpuniverse.com/profile/39368-dragon44/)  
-Filename:  775300337_Grease(2021)BWpro.rar 
+Filename:  775300337_Grease(2021)BWpro.rar  
 VPX Version: (V1.0.0) Grease (2021) B&W pro.vpx  
 Download: [VPUniverse](https://vpuniverse.com/files/file/8664-grease-2021-bw-pro/)
 
 Backglass
 
 Author: [Kellogs](https://vpuniverse.com/profile/3388-kellogs/)  
-Filename: Grease BW.directb2s 
+Filename: Grease BW.directb2s  
 VPX Version: (V1.0.0) Grease BW.directb2s  
 Download: [VPUniverse](https://vpuniverse.com/files/file/8671-backglass-for-grease-black-white/)
 
