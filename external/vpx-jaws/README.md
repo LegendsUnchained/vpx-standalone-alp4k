@@ -15,12 +15,13 @@ Download: [VP Universe](https://vpuniverse.com/files/file/15400-jaws-original-20
 ROM:
 No Rom Needed
 
-Tested:
+Tested:  
 [TechZombie]
 
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1983-b84441e
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
@@ -29,7 +30,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-jaws.elf
-- Download the table and directb2s versions listed above and copy them into this folder
-- Make sure .vpx and .directb2s and Jaws in English.ini are all named the same
+- Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-jaws
+- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same. DO NOT RENAME VPReg.ini file!
 - Inside the table zip there is a folder titled music, copy it into this folder
 - "You're gonna need a bigger USB!"
