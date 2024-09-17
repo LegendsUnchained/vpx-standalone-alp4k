@@ -15,7 +15,7 @@ Note: Choose "Metallica Pro (Stern 2013).zip"
 
 ROM
 
-Download: [Stern] https://sternpinball.com/?post_type=game_code&s=metallica  
+Download: [Stern](https://sternpinball.com/?post_type=game_code&s=metallica)  
 Note: Choose "Metallica Pro 1.80 Game Code" and zip it to mtl_180.
 
 ## Status 
@@ -31,5 +31,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-jpmetallica.elf
 - Download the table and directb2s versions listed above, extract and copy them into your external/vpx-jpmetallica folder
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
+- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place ROM zip file into vpx-jpmetallica/pinmame/roms folder. DO NOT UNZIP!
