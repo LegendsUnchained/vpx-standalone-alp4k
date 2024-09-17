@@ -1,4 +1,4 @@
-# Evel Knievel (Bally 1977) v5.0
+# Evel Knievel (Bally 1977)
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_10/DT_SS.jpg.a3db8392413c521dc93dd9ac5e05709f.jpg) 
 
