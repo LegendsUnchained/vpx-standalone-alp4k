@@ -1,10 +1,10 @@
 # JP's Metallica Pro (Stern 2013)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_04/Metallica_v1.jpg.8f7bacfb9e21da02e1d5ef9b2d8beb0b.jpg)
+![Table Preview](https://www.vpforums.org/index.php?s=c4190c252e4b0afe20488a58dfe99e31&app=downloads&module=display&section=screenshot&record=119216&id=18612&full=1)
 
-Authors: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
-Version: 1.1  
-Download: [VP Universe](https://vpuniverse.com/files/file/6058-metallica-premium-monsters-stern-2013-vpw-mod/)
+Authors: [jpsalas](https://www.vpforums.org/index.php?s=c4190c252e4b0afe20488a58dfe99e31&showuser=277)
+Version: 1.0
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=18612)
 
 DirectB2S
 
