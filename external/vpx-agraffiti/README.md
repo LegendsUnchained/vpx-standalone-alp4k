@@ -1,6 +1,6 @@
 # American Graffiti (Original 2024)
 
-![Table Preview]()
+![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_09/FullCab.jpg.7fd86a8fe7383e246b798ec4013c9861.jpg)
 
 Authors: [Onevox](https://vpuniverse.com/profile/14340-onevox/)
 
