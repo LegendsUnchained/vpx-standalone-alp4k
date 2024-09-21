@@ -18,6 +18,9 @@ Filename: Audio Files.zip
 
 Download: [VP Universe](https://vpuniverse.com/files/file/21684-american-graffiti-original-2024/)
 
+Filename: (Soundtrack) AG.zip
+[Mega](https://mega.nz/file/SO5HDaiQ#utWneFC1FHewsqr38NqtoGZTh6sgw_-HF2bAKeeeEEo)
+
 Tested by: evilwraith
 
 ## Status 
@@ -35,5 +38,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s listed above, extract (if necessary) and copy them to external/vpx-agraffiti
 - Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
 - Unzip Audio Files.zip. Copy AG and AGSounds to vpx-agraffiti/Music
+- If you downloaded the soundtrack (AG.ZIP) from Mega: Unzip AG.zip. Copy and Replace AG folder in vpx-agraffiti/Music 
 - Follow directions on VPUniverse if you want music. Otherwise, leave music turned off
 - "squaresville, daddy-o"
