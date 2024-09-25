@@ -31,5 +31,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-ramones.elf
 - Download the table and directb2s listed above, extract (if necessary) and copy them to external/vpx-ramones
 - Move Ramones folder to Music directory
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - "I wanna be sedated..."
