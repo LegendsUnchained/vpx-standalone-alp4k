@@ -22,6 +22,7 @@ Tested by: [GyroJoe](https://github.com/GyroJoe)
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-2042-1431983
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
@@ -32,5 +33,5 @@ Minimum VPX Standalone build: 10.8.0-2042-1431983
 - Add your personalized launcher.elf and rename it to `vpx-stars.elf`
 - Download the table and directb2s listed above, extract (if necessary) and copy them to `external/vpx-stars`
 - Make sure `.vpx`, `.directb2s`, `.ini`, and `.vbs` files are all named the same
-- Place `stars.zip` in the `external/vpx-stars/pinmame/roms` folder *Do Not unzip*
+- Place `stars.zip` rom in the `external/vpx-stars/pinmame/roms` folder. *Do Not unzip*!
 - "Space age profits"
