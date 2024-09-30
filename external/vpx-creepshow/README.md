@@ -38,6 +38,8 @@ Tested by:
 
 ## Status 
 
+**Table Notes: Some audio is currently not working (error21). Color/Custom DMD is not working (not currently supported by standalone)**
+
 Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
@@ -52,5 +54,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Download and unzip the installation zip. Copy (Music) into /external/vpx-creepshow
 - Download the rom (tftc_400.zip) stays in zip folder, place zip file in vpx-creepshow/pinmame/roms
 - Make sure (.vpx), (.directb2s), (.vbs) and (.ini) files are all named the same
-- "Meteor shit!" - Jordy Verrill
-**Table Notes: Some audio is currently not working (error21). Color/Custom DMD is not working (not currently supported by standalone)**
+- "Meteor shit!" - Jordy Verrill 
