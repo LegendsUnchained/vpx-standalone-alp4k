@@ -16,6 +16,8 @@ None
 
 Tested by: evilwraith
 
+NOTE: This is an unreleased 2-PLAYER version of OXO (Williams 1973)! OXO is the original 4-PLAYER version.
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
