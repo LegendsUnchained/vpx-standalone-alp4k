@@ -1,37 +1,44 @@
-# The Mask (TBA 2019)
+# Lost in Space (Sega 1998) Bigus(MOD) 2.0
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=71446&id=14429&full=1)
+![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_09/TheMask(TBA2019)Desktop.png.39d23b96a759f1318c33cd2c21208554.png)
 
-Author(s): [ivantba](https://www.vpforums.org/index.php?showuser=123858)  
-Version: The Mask (TBA 2019).rar  (V1.0)
-Download:  [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14429)
+Table
 
-DirectB2S
+Author: [stevegooner123](https://vpuniverse.com/profile/1357-stevegooner123/)  
+Filename:  (Version 1.0) The Mask (TBA 2019).zip  
+VPX Version: (Version 1.0) The Mask (TBA 2019).vpx  
+Download: [VPUniverse](https://vpuniverse.com/files/file/21768-the-mask-tba-2019/)
 
-The Mask (TBA 2019).directb2s is included in the table download.
+Backglass included with table zip  
+directb2s Version: (Version 1.0.0) The Mask (TBA 2019).directb2s
 
-ROM:
-lortium.zip
+Music folder (The Mask) is included
 
-Author(s): [Rock-ola]
-Download:  [Pinball Nirvana](https://pinballnirvana.com/forums/resources/lortium.2030/)
 
-Tested by:
+ROM 
+Filename: lortium.zip  
+Download: Included with table zip
+
+MD5: 72194AC4DBB001769292301FA5F3C23E  
+SHA-1: D6E2750AE8F89CCF65661C9A303EFE1A18373E6C
+  
+Tested by:  
 [TechZombie]
 
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1983-b84441e
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 52 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 
 ## Instructions
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-themask.elf
-- Download the table and directb2s versions listed above, extract them (if necessary) and copy them into vpx-themask
-- Rom file (lortium.zip) stays in zip folder, place zip file in vpx-themask/pinmame/roms
-- Make sure (.vpx) (.direct2b2s) (.vbs) and (.ini) are all named the same. 
-- Go fire up your Vpin and enjoy!
-- "Sssomebody Stop Me!" --The Mask
+- Download the table zip above, extract and copy .vpx and .directb2s into /external/vpx-themask
+- Open the Rom folder, the rom (lortium.zip) stays in zip folder, place zip file in vpx-themask/pinmame/roms
+- Place (The Mask) folder in vpx-themask/Music
+- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+- "SSSSomebody Stop Me!" - The Mask
