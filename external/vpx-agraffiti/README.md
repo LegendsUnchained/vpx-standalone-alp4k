@@ -2,14 +2,8 @@
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_09/FullCab.jpg.7fd86a8fe7383e246b798ec4013c9861.jpg)
 
-Authors: [Onevox](https://vpuniverse.com/profile/14340-onevox/)
-
-Tested by: evilwraith
-
-Version: 1.3
-
 Authors: [Onevox](https://vpuniverse.com/profile/14340-onevox/)  
-Version: 1.0  
+Version: 1.3  
 Download: [VP Universe](https://vpuniverse.com/files/file/21684-american-graffiti-original-2024/)
 
 DirectB2S
