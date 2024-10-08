@@ -2,8 +2,8 @@
 '
 '         American Graffiti (Original 2024) by Onevox
 '				        Script by Scottacus
-'				  	   	      v 0.19
-'					        August 2024
+'				  	   	      v 0.20
+'					       October 2024
 '
 '	Basic DOF config
 						 
@@ -34,7 +34,7 @@ On Error Goto 0
 
 Const cGameName  = "AmericanGraffiti_1962"
 Const hsFileName = "American Graffiti (Original 2024)"
-Const cOptions   = "American_Graffiti_v0.17.txt"
+Const cOptions   = "American_Graffiti_v1.3.txt"
 
 Dim vrOption
 '*************************** VR Room****************************************************
@@ -2110,9 +2110,10 @@ Sub Gates_Hit(idx)
 	PlayFieldSoundAB "gate", 0, 1
 End Sub
 
-'********************************** XERB Saucer *********************************
-Dim xerbVO
-Sub XERBkicker_Hit()
+''********************************** XERB Saucer *********************************
+Dim xerbVO, kickerBall, inSaucer, kickstep
+Sub Saucer001_hit
+	set kickerBall = activeBall	
 	xerbVO = xerbVO + 1
 	If xerbVO > 5 Then xerbVO = 1
 	saucer.enabled = True
@@ -2124,6 +2125,19 @@ Sub XERBkicker_Hit()
 		Case 4: addScore 300: playSound"sfx_Payphone", 0, musicVol: phone.enabled = 1
 	End Select
 	L030.state = 0: L031.state = 0: L032.state = 0: L033.state = 0
+End Sub
+
+Function RndNum(min, max)
+  RndNum = Int(Rnd() * (max-min + 1) ) + min
+End Function
+
+Sub kickBall(kball, kangle, kvel, kvelz, kzlift)
+	dim rangle
+	rangle = 3.14 * (kangle - 90) / 180
+	kball.z = kball.z + kzlift
+	kball.velz = kvelz
+	kball.velx = cos(rangle)*kvel
+	kball.vely = sin(rangle)*kvel
 End Sub
 
 Dim cars
@@ -2156,13 +2170,14 @@ Sub plate_timer
 	End If
 End Sub
 
-dim kickStep
 Sub saucer_timer
     Select Case kickStep
         Case 7:
 			SaucerArm.ObjRotX = 12
-			XERBkicker.kick 188, 20, .1
-			PlayFieldSound "SaucerKick", 0, Xerbkicker, 0.6
+			If saucer001.ballcntover > 0 then
+				kickBall kickerBall, 190+RndNum(1,4), 8+RndNum(1,4), 5, 30
+			End If
+			PlayFieldSound "SaucerKick", 0, Saucer001, 0.6
         Case 8:SaucerArm.ObjRotX = -45
         Case 9:SaucerArm.ObjRotX = -45
         Case 10:SaucerArm.ObjRotX = 24
@@ -3936,9 +3951,9 @@ Sub RollingTimer_Timer()
 	If PFOption = 1 or PFOption = 2 Then
 		If BallVel(BOT(b)) > 1 AND BOT(b).z > 10 and BOT(b).z <26 Then	'Ball on playfield
 			rolling(b) = True
-			PlaySound("BallrollingA" & b), -1, Vol(BOT(b)) * 0.2 * xGain(BOT(b)), AudioPan(BOT(b)), 0, Pitch(BOT(b)), 1, 0, 0	'Left & Right stereo or Top & Bottom stereo PF Speakers.
+			PlaySound("BallrollingA" & b), -1, Vol(BOT(b)) * 2.5 * xGain(BOT(b)), AudioPan(BOT(b)), 0, Pitch(BOT(b)), 1, 0, 0	'Left & Right stereo or Top & Bottom stereo PF Speakers.
 		ElseIf BallVel(BOT(b)) > 1 AND BOT(b).z < -5 Then	'Ball on subway
-			PlaySound("BallrollingA" & b), -1, Vol(BOT(b)) * 0.2 * xGain(BOT(b)), AudioPan(BOT(b)), 0, Pitch(BOT(b))+paSub, 1, 0, 0	'Left & Right stereo or Top & Bottom stereo PF Speakers.			
+			PlaySound("BallrollingA" & b), -1, Vol(BOT(b)) * 2.5 * xGain(BOT(b)), AudioPan(BOT(b)), 0, Pitch(BOT(b))+paSub, 1, 0, 0	'Left & Right stereo or Top & Bottom stereo PF Speakers.			
 		ElseIf rolling(b) = True Then
 			StopSound("BallrollingA" & b)
 			rolling(b) = False
@@ -3948,15 +3963,15 @@ Sub RollingTimer_Timer()
 	If PFOption = 3 Then
 		If BallVel(BOT(b)) > 1 AND BOT(b).z > 10 and BOT(b).z < 26 Then	'Ball on playfield
 			rolling(b) = True
-			PlaySound("BallrollingA" & b), -1, Vol(BOT(b)) * 0.2 *    XVol(BOT(b))  *     YVol(BOT(b)), -1, 0, Pitch(BOT(b)), 1, 0, -1	'Top Left PF Speaker
-			PlaySound("BallrollingB" & b), -1, Vol(BOT(b)) * 0.2 * (1-XVol(BOT(b))) *     YVol(BOT(b)),  1, 0, Pitch(BOT(b)), 1, 0, -1	'Top Right PF Speaker
-			PlaySound("BallrollingC" & b), -1, Vol(BOT(b)) * 0.2 *    XVol(BOT(b))  * (1-YVol(BOT(b))), -1, 0, Pitch(BOT(b)), 1, 0,  1	'Bottom Left PF Speaker
-			PlaySound("BallrollingD" & b), -1, Vol(BOT(b)) * 0.2 * (1-XVol(BOT(b))) * (1-YVol(BOT(b))),  1, 0, Pitch(BOT(b)), 1, 0,  1	'Bottom Right PF Speaker
+			PlaySound("BallrollingA" & b), -1, Vol(BOT(b)) * 2.5 *    XVol(BOT(b))  *     YVol(BOT(b)), -1, 0, Pitch(BOT(b)), 1, 0, -1	'Top Left PF Speaker
+			PlaySound("BallrollingB" & b), -1, Vol(BOT(b)) * 2.5 * (1-XVol(BOT(b))) *     YVol(BOT(b)),  1, 0, Pitch(BOT(b)), 1, 0, -1	'Top Right PF Speaker
+			PlaySound("BallrollingC" & b), -1, Vol(BOT(b)) * 2.5 *    XVol(BOT(b))  * (1-YVol(BOT(b))), -1, 0, Pitch(BOT(b)), 1, 0,  1	'Bottom Left PF Speaker
+			PlaySound("BallrollingD" & b), -1, Vol(BOT(b)) * 2.5 * (1-XVol(BOT(b))) * (1-YVol(BOT(b))),  1, 0, Pitch(BOT(b)), 1, 0,  1	'Bottom Right PF Speaker
 		ElseIf BallVel(BOT(b)) > 1 AND BOT(b).z < -5 Then	'Ball on subway
-			PlaySound("BallrollingA" & b), -1, Vol(BOT(b)) * 0.2 *    XVol(BOT(b))  *     YVol(BOT(b)), -1, 0, Pitch(BOT(b))+paSub, 1, 0, -1	'Top Left PF Speaker
-			PlaySound("BallrollingB" & b), -1, Vol(BOT(b)) * 0.2 * (1-XVol(BOT(b))) *     YVol(BOT(b)),  1, 0, Pitch(BOT(b))+paSub, 1, 0, -1	'Top Right PF Speaker
-			PlaySound("BallrollingC" & b), -1, Vol(BOT(b)) * 0.2 *    XVol(BOT(b))  * (1-YVol(BOT(b))), -1, 0, Pitch(BOT(b))+paSub, 1, 0,  1	'Bottom Left PF Speaker
-			PlaySound("BallrollingD" & b), -1, Vol(BOT(b)) * 0.2 * (1-XVol(BOT(b))) * (1-YVol(BOT(b))),  1, 0, Pitch(BOT(b))+paSub, 1, 0,  1	'Bottom Right PF Speaker
+			PlaySound("BallrollingA" & b), -1, Vol(BOT(b)) * 2.5 *    XVol(BOT(b))  *     YVol(BOT(b)), -1, 0, Pitch(BOT(b))+paSub, 1, 0, -1	'Top Left PF Speaker
+			PlaySound("BallrollingB" & b), -1, Vol(BOT(b)) * 2.5 * (1-XVol(BOT(b))) *     YVol(BOT(b)),  1, 0, Pitch(BOT(b))+paSub, 1, 0, -1	'Top Right PF Speaker
+			PlaySound("BallrollingC" & b), -1, Vol(BOT(b)) * 2.5 *    XVol(BOT(b))  * (1-YVol(BOT(b))), -1, 0, Pitch(BOT(b))+paSub, 1, 0,  1	'Bottom Left PF Speaker
+			PlaySound("BallrollingD" & b), -1, Vol(BOT(b)) * 2.5 * (1-XVol(BOT(b))) * (1-YVol(BOT(b))),  1, 0, Pitch(BOT(b))+paSub, 1, 0,  1	'Bottom Right PF Speaker
 		ElseIf rolling(b) = True Then
 			StopSound("BallrollingA" & b)		'Top Left PF Speaker
 			StopSound("BallrollingB" & b)		'Top Right PF Speaker

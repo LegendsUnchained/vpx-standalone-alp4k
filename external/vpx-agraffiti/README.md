@@ -6,7 +6,7 @@ Authors: [Onevox](https://vpuniverse.com/profile/14340-onevox/)
 
 Tested by: evilwraith
 
-Version: 1.0
+Version: 1.3
 
 Download: [VP Universe](https://vpuniverse.com/files/file/21684-american-graffiti-original-2024/)
 
