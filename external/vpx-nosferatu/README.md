@@ -1,6 +1,6 @@
 # Nosferatu 1922 (Original 2023)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_10/Nosferatu1922screenshot-1.png.97228ebb4797c722946abf50fc5eefba.png)
+![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-nosferatu.png)
 
 Authors: [DAMONRA](https://vpuniverse.com/profile/48356-damonra/content/?type=downloads_file)  
 Version: 1.0.0 Nosferatu 1922 (dea TEE Original VPX 2023) v1.0.zip  
