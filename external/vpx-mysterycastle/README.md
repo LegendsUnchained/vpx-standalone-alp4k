@@ -2,20 +2,21 @@
 
 ![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-mysterycastle.jpg)
 
-Authors: [agentEighty6](https://vpuniverse.com/profile/25523-agenteighty6/)
-Version: 2.1.0
+Authors: [agentEighty6](https://vpuniverse.com/profile/25523-agenteighty6/)  
+Version: 2.1.0  
 Download: [VPUniverse](https://vpuniverse.com/files/file/6425-mystery-castle-alvin-g-1993/)
 
 DirectB2S
 
-Authors: [Wildman](https://vpuniverse.com/profile/5-wildman/)
+Authors: [Wildman](https://vpuniverse.com/profile/5-wildman/)  
 Download: [VPUniverse](https://vpuniverse.com/files/file/2829-mystery-castle-alvin-g-1993/)
 
 ROM
 
-ROM Name: mystcasa.zip
-Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=6234)
-SHA1: FF92A529E1B6EB775501C7A412A24B17421CE176
+ROM Name: mystcasa.zip  
+Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=6234)  
+
+SHA1: FF92A529E1B6EB775501C7A412A24B17421CE176  
 MD5:  A3551EA7C94F7B8C3891521786BCEA76
 
 Tested by: evilwraith
@@ -23,6 +24,7 @@ Tested by: evilwraith
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 45 |
