@@ -2,13 +2,13 @@
 
 ![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-jollyroger.png)
 
-Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
-Version: 2.0.1
+Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
+Version: 2.0.1  
 Download: [VPUniverse](https://vpuniverse.com/files/file/18084-jolly-roger-williams-1967-v201/)
 
 DirectB2S
 
-Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
+Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
 Download: [VPUniverse](https://vpuniverse.com/files/file/18083-jolly-roger-williams-1967-b2s/)
 
 ROM
@@ -20,6 +20,7 @@ Tested by: evilwraith
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 51 |
