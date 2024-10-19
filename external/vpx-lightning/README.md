@@ -2,20 +2,21 @@
 
 ![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-lightning.jpg)
 
-Authors: [jpsalas](hhttps://www.vpforums.org/index.php?showuser=277)
-Version: 4.0.1
+Authors: [jpsalas](hhttps://www.vpforums.org/index.php?showuser=277)  
+Version: 4.0.1  
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=13028)
 
 DirectB2S
 
-Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
+Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
 Download: [VPUniverse](https://vpuniverse.com/files/file/19261-lightning-stern-1981-b2s/)
 
 ROM
 
-ROM Name: lightnin.zip
-Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=750)
-SHA1: 7E07A927618A5C6D409804A20D8379CEB6406BC6
+ROM Name: lightnin.zip  
+Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=750)  
+
+SHA1: 7E07A927618A5C6D409804A20D8379CEB6406BC6  
 MD5:  4BAEBE7AB6AE493A7CA400B967ED6FB8 
 
 Tested by: evilwraith
@@ -23,6 +24,7 @@ Tested by: evilwraith
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
