@@ -2,7 +2,7 @@
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_05_2016/416ff6823983a72056bf1240dd700c61-bildschirmfoto-2016-05-28-um-190828.png)
 
-Authors: [Knorr-Kiwi](none)  
+Authors: Knorr-Kiwi  
 Version: 1.3.1  
 Download: [VPUniverse](https://vpuniverse.com/files/file/3743-demolition-man-williams1994knorr-kiwifs-dtvp10/)
 
