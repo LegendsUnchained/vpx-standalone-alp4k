@@ -1,21 +1,22 @@
 # Demolition Man (Williams 1994)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_06/1098682037_EightballChamp.jpg.43b2d60dc9daf58eff5385e44a9fe723.jpg)
+![Table Preview](https://vpuniverse.com/screenshots/monthly_05_2016/416ff6823983a72056bf1240dd700c61-bildschirmfoto-2016-05-28-um-190828.png)
 
-Authors: [Knorr-Kiwi](none)
-Version: 1.3.1
+Authors: [Knorr-Kiwi](none)  
+Version: 1.3.1  
 Download: [VPUniverse](https://vpuniverse.com/files/file/3743-demolition-man-williams1994knorr-kiwifs-dtvp10/)
 
 DirectB2S
 
-Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
+Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
 Download: [VPUniverse](https://vpuniverse.com/files/file/12716-demolition-man-williams-1994-b2s-with-full-dmd/)
 
 ROM
 
-ROM Name: dm_lx4.zip
-Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=1307)
-SHA1: DEC6DDE55D3CECA5C9093B0CEB960FD35EB4E4B1
+ROM Name: dm_lx4.zip  
+Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=1307)  
+
+SHA1: DEC6DDE55D3CECA5C9093B0CEB960FD35EB4E4B1  
 MD5:  104F6D8613008824972DCAAE3975E85B 
 
 Tested by: evilwraith
@@ -23,6 +24,7 @@ Tested by: evilwraith
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 42 |
