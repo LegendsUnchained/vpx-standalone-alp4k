@@ -14,7 +14,7 @@ Download: [VPUniverse](https://vpuniverse.com/files/file/14105-night-rider-bally
 ROM
 
 ROM Name: nightrdr.zip  
-Download: [VPUniverse](https://vpuniverse.com/files/file/690-nightrdrzip/)  
+Download: [VPUniverse](https://vpuniverse.com/files/file/690-nightrdrzip/)
 
 SHA1: 39D2FBBBD97F143A0C865667AE9944CC13C258EC  
 MD5:  142AA635E2B9A13AEE16AE1330AFC8C3
