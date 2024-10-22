@@ -2,7 +2,7 @@
 
 ![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-viking.jpg)
 
-Authors: [bord](https://vpuniverse.com/profile/23579-goldchicco/)  
+Authors: [bord](https://vpuniverse.com/profile/9265-bord/)  
 Version: 2.0.0  
 Download: [VPUniverse](https://vpuniverse.com/files/file/12163-viking-bally-1980/)
 
