@@ -4,7 +4,7 @@
 
 Authors: [bord](https://vpuniverse.com/profile/23579-goldchicco/)  
 Version: 2.0.0  
-Download: [VPUniverse](hhttps://vpuniverse.com/files/file/12163-viking-bally-1980/)
+Download: [VPUniverse](https://vpuniverse.com/files/file/12163-viking-bally-1980/)
 
 DirectB2S
 
