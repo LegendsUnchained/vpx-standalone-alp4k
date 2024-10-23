@@ -2,13 +2,13 @@
 
 ![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-jetspin.png)
 
-Authors: [JCalhoun](https://vpuniverse.com/profile/66921-jcalhoun/)
-Version: 1.2.1
+Authors: [JCalhoun](https://vpuniverse.com/profile/66921-jcalhoun/)  
+Version: 1.2.1  
 Download: [VPUniverse](https://vpuniverse.com/files/file/18460-jet-spin-gottlieb-1977-121/)
 
 DirectB2S
 
-Authors: [Wildman](https://vpuniverse.com/profile/5-wildman/)
+Authors: [Wildman](https://vpuniverse.com/profile/5-wildman/)  
 Download: [VPUniverse](https://vpuniverse.com/files/file/16712-jet-spin-gottlieb-1977/)
 
 ROM
@@ -20,6 +20,7 @@ Tested by: evilwraith
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 58 |
