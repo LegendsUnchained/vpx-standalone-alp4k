@@ -521,18 +521,18 @@ Sub sw29_Hit()   : MoveStandUpTarget 29, sw29, sw29P, sw29PGIOff, sw29Dir, True 
 Sub sw29_Timer() : MoveStandUpTarget 29, sw29, sw29P, sw29PGIOff, sw29Dir, False : End Sub
 
 Sub MoveStandUpTarget(id, sw, prim, primGIOff, counter, init)
-	If init And prim.RotX < 10 Then
+	If init And prim.RotX < 20 Then
 		OnStandupTargetHit
 		vpmTimer.PulseSw id
 		sw.TimerInterval = 5
 		sw.TimerEnabled  = True
-		counter = 5
+		counter = 0
 	End If
 	prim.TransY = prim.TransY - counter / 4
 	prim.RotX = prim.RotX + counter
 	primGIOff.TransY = prim.TransY
 	primGIOff.RotX = prim.RotX
-	If prim.RotX >= 10 Then counter = 0
+	If prim.RotX >= 20 Then counter = 0
 	If prim.RotX = 0 Then sw.TimerEnabled = False
 End Sub
 
