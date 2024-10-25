@@ -1,8 +1,8 @@
-# Nine Ball (Stern 1980) 
+# Nine Ball (Stern 1980)
 
 ![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-nineball.jpg)
 
-Authors: [bord](https://vpuniverse.com/profile/23579-goldchicco/)
+Authors: [bord](https://vpuniverse.com/profile/9265-bord/)
 Version: 1.0.0
 Download: [VPUniverse](https://vpuniverse.com/files/file/8520-nine-ball-stern-1980-sk-3/)
 
