@@ -1,13 +1,13 @@
 # Poltergeist (Original 2022)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=105842&id=16959&full=1)
+![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-poltergeist.png)
 
-Authors: [VP COOKS](https://www.vpforums.org/index.php?showuser=180201) 
-Download: POLTERGEIST-VPCOOKS.rar
-Filename: Poltergeist - VP_Cooks.vpx
+Authors: [VP COOKS](https://www.vpforums.org/index.php?showuser=180201)  
+Download: POLTERGEIST-VPCOOKS.rar  
+Filename: Poltergeist - VP_Cooks.vpx  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=16959)
 
-DirectB2S is Included in Table Zip/rar
+DirectB2S is Included in Table Zip/rar  
 Filename: Poltergeist - VP_Cooks.directb2s
 
 No ROM is Needed for This Table.
