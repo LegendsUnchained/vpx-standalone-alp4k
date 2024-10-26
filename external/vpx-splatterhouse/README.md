@@ -2,15 +2,15 @@
 
 ![Table Preview](https://pinballnirvana.com/forums/attachments/sh-jpg.36091/)
 
-Authors: [spookyMoulder]
-Filename: Splatterhouse 1.52.vpx
+Authors: [spookyMoulder](https://pinballnirvana.com/forums/members/spookymoulder.24371/)  
+Filename: Splatterhouse 1.52.vpx  
 Download: [Pinball Nirvana](https://pinballnirvana.com/forums/resources/splatterhouse-original.8071/)
 
 DirectB2S
 
 Authors: [roccodimarco](https://vpuniverse.com/profile/15135-roccodimarco/)  
-Filename: Splatterhouse.directb2s
-Download: [VP Universe](https://vpuniverse.com/files/file/9691-backgkass-and-b2s-for-django-unchained-balutito-mod/)
+Filename: Splatterhouse.directb2s  
+Download: [VP Universe](https://vpuniverse.com/files/file/14131-splatterhouse-backglass/)
 
 No Rom Needed
 
