@@ -3,20 +3,19 @@
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_03/20220331_133106.jpg.97002e0ba42721d62d804c9675f81c16.jpg)
 
 Authors: [balutito](https://vpuniverse.com/profile/36070-balutito/)  
-Filename: Django v1 music only.vpx (1.2)
+Filename: Django v1 music only.vpx (1.2)  
 Download: [VP Universe](https://vpuniverse.com/files/file/9690-django-unchained-balutito-mod/)
 
 DirectB2S
 
 Authors: [balutito](https://vpuniverse.com/profile/36070-balutito/)  
-Filename: Django.directb2s (1.2) 
+Filename: Django.directb2s (1.2)  
 Download: [VP Universe](https://vpuniverse.com/files/file/9691-backgkass-and-b2s-for-django-unchained-balutito-mod/)
 
 Music + ROM
 
+Download: [VP Universe](https://vpuniverse.com/files/file/9690-django-unchained-balutito-mod/)  
 Filename: Django Rom + Music +Altcolor.rar
-
-Download: [VP Universe](Django Rom + Music +Altcolor.rar)
 
 Tested by: TechZombie
 
