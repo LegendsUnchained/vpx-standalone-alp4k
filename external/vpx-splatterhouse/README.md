@@ -2,7 +2,7 @@
 
 ![Table Preview](https://pinballnirvana.com/forums/attachments/sh-jpg.36091/)
 
-Authors: [spookyMoulder]  
+Authors: [spookyMoulder](https://pinballnirvana.com/forums/members/spookymoulder.24371/)  
 Filename: Splatterhouse 1.52.vpx  
 Download: [Pinball Nirvana](https://pinballnirvana.com/forums/resources/splatterhouse-original.8071/)
 
