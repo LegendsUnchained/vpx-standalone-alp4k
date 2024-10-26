@@ -10,7 +10,7 @@ DirectB2S
 
 Authors: [roccodimarco](https://vpuniverse.com/profile/15135-roccodimarco/)  
 Filename: Splatterhouse.directb2s
-Download: [VP Universe](https://vpuniverse.com/files/file/9691-backgkass-and-b2s-for-django-unchained-balutito-mod/)
+Download: [VP Universe](https://vpuniverse.com/files/file/14131-splatterhouse-backglass/)
 
 No Rom Needed
 
