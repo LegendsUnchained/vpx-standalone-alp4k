@@ -1,21 +1,22 @@
 # Dr. Jekyll and Mr. Hyde (Original 2022)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_06/1979887320_hyde131.PNG.3504fc7a6720604ce28a0ca7268cfc7f.PNG)
+![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-drjekyllandmrhyde.png)
 
 Authors: [BurtMacklin](https://vpuniverse.com/profile/39250-burtmacklin/)  
-Download File: Dr. Jekyll and Mr. Hyde V1.3.7z
-Filename: Dr. Jekyll and Mr. Hyde 1.3.vpx
+Download File: Dr. Jekyll and Mr. Hyde V1.3.7z  
+Filename: Dr. Jekyll and Mr. Hyde 1.3.vpx  
 Download: [VP Universe](https://vpuniverse.com/files/file/10342-dr-jekyll-and-mr-hyde-reskin-vpx-table/)
 
-DirectB2S Included with Table zip
+DirectB2S Included with Table zip  
 Filename: Dr. Jekyll and Mr. Hyde 2 screen.directb2s
 
-Music Included with Table zip
+Music Included with Table zip  
 Filenames: music (encoded at FULL VOLUME) and music (encoded at LOWER VOLUME) **Choose Only One Folder**
 
 Rom
-Authors: [destruk](https://www.vpforums.org/index.php?showuser=5) 
-Filename: elektra.zip
+
+Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)  
+Filename: elektra.zip  
 Download: [VPforums](https://www.vpforums.org/index.php?app=downloads&showfile=657)
 
 Tested by: TechZombie
