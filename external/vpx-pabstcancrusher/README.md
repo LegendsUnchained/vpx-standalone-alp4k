@@ -12,7 +12,9 @@ Download: [VP Universe](https://vpuniverse.com/files/file/21020-the-pabst-can-cr
 
 DirectB2S
 
-Included in table download
+Author: [MachWon](https://vpuniverse.com/profile/70146-machwon/) 
+
+Download: [Mega](https://mega.nz/file/nhh3DIIa#FOATCPz5nYEcW3uQ-ptb2IPSVwbslvCBoQ7_Z-UX-Ks)
 
 ## Status 
 
@@ -26,4 +28,5 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-pabstcancrusher.elf
 - Download the table and directb2s versions listed above and copy them into this folder
+- Rename the included "Music Folder" to Music and move the contents to vpx-pabstcancrusher
 - Craft beer? Not here! 🍻
