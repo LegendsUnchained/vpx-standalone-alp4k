@@ -1,9 +1,9 @@
 # Evil Dead 2 (TBA 2019)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=71519&id=14439&full=1)
+![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-evildead22019.png)
 
 Authors: [ivantba](https://www.vpforums.org/index.php?showuser=123858)  
-Download: Evil Dead 2 (TBA 2019).rar
+Download: Evil Dead 2 (TBA 2019).rar  
 Download: [VP Universe](https://www.vpforums.org/index.php?app=downloads&showfile=14439)
 
 DirectB2S Included with Table Download
@@ -11,7 +11,7 @@ DirectB2S Included with Table Download
 ROM
 
 Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)  
-Filename: ironmaid.zip 
+Filename: ironmaid.zip  
 Download: [VP Universe](https://www.vpforums.org/index.php?app=downloads&showfile=169)
 
 Tested by: TechZombie
