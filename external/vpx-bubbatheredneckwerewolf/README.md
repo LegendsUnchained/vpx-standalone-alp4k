@@ -1,15 +1,15 @@
 # Bubba the Redneck Werewolf (Original 2017)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=116710&id=13158&full=1)
+![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-bubbatheredneckwerewolf.png)
 
 Authors: [hauntfreaks](https://www.vpforums.org/index.php?showuser=73849)  
-Filename: Bubba the Redneck Werewolf (2017)1.1.vpx
+Filename: Bubba the Redneck Werewolf (2017)1.1.vpx  
 Download: [VP Universe](https://www.vpforums.org/index.php?app=downloads&showfile=13158)
 
 DirectB2S
 
 Authors: [hauntfreaks](https://www.vpforums.org/index.php?showuser=73849)  
-Filename: Bubba the Redneck Werewolf (HauntFreaks 2017) alt.directb2s
+Filename: Bubba the Redneck Werewolf (HauntFreaks 2017) alt.directb2s  
 Download: [VP Universe](https://vpuniverse.com/files/file/22036-bubba-the-redneck-werewolf-hauntfreaks-2017-alt-b2s/)
 
 Custom ROM (hlywoodh.zip) is included in Table Pack
