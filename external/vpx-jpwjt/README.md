@@ -1,4 +1,4 @@
-# World Joker Tour, JP's(2024)
+# World Joker Tour, JP's (Original 2024)
 
 ![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-jpwjt.jpg)
 
