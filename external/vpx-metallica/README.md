@@ -14,7 +14,8 @@ Download: [VP Universe](https://vpuniverse.com/files/file/10947-metallica-premiu
 
 ROM
 
-Download: [VP Universe](https://vpuniverse.com/files/file/5266-metallica-limited-edition-v17/)
+ROM Name: MTL180LE.BIN
+Download: [Stern](https://sternpinball.com/?post_type=game_code&s=Metallica)
 
 ## Status 
 
@@ -30,4 +31,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-metallica.elf
 - Download the table and directb2s versions listed above, extract and copy them into your external/vpx-metallica folder
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
+- Use the Metallica Premium 1.80 Game Code link to download the ROM
+- Zip MTL180LE.BIN, name the zip file mtl_180h.zip
 - Place ROM zip file into vpx-metallica/pinmame/roms folder. DO NOT UNZIP!
