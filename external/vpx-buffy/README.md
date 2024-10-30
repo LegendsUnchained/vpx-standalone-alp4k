@@ -1,12 +1,12 @@
 # Buffy The Vampire Slayer (Original 2022)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_10/1383883433_BUFFYSCREENSHOT1.png.2feb1004292913abfba423b75ae45f8f.png)
+![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-buffy.png)
 
 Authors: [VP_Cooks](https://vpuniverse.com/profile/33960-vp_cooks/)  
-Filename: Buffy The Vampire Slayer_VP_Cooks.vpx
+Filename: Buffy The Vampire Slayer_VP_Cooks.vpx  
 Download: [VP Universe](https://vpuniverse.com/files/file/11811-buffy-the-vampire-slayer-vp_cooks/)
 
-DirectB2S Included with Table Pack 
+DirectB2S Included with Table Pack  
 Filename: Buffy The Vampire Slayer_VP_Cooks.directb2s
 
 No ROM Needed
