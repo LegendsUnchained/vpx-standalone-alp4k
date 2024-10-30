@@ -6,7 +6,7 @@ Table
 
 Author: [marty02](https://vpuniverse.com/profile/16531-marty02/)  
 Filename:  Pack halloween.zip  
-VPX Version: (Version 3.1) halloween_MM_Edition 
+VPX Version: (Version 3.1) halloween_MM_Edition  
 Download: [VPUniverse](https://vpuniverse.com/files/file/16526-halloween-mm-edition/)
 
 Backglass is included in Table Zip (Pack halloween.zip)
@@ -31,5 +31,5 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-halloweenmm.elf
 - Download the table and directb2s zips above, extract (if necessary) and copy into /external/vpx-halloweenmm
-- Make sure (.vpx), (.directb2s), (.vbs) and (.ini) files are all named the same
+- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - "I realized that what was living behind that boy's eyes was purely and simply... evil." - Dr. Loomis
