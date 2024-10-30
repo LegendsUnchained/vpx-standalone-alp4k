@@ -2,8 +2,8 @@
 
 ![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-catburglars.jpg)
 
-Authors: [Anthias](https://vpuniverse.com/profile/69616-anthias/)
-Version: 1.1
+Authors: [Anthias](https://vpuniverse.com/profile/69616-anthias/)  
+Version: 1.1  
 Download: [VPUniverse](https://vpuniverse.com/files/file/22051-cat-burglars-anthias-2024-original-em-b2s/)
 
 DirectB2S
@@ -19,6 +19,7 @@ Tested by: evilwraith
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
