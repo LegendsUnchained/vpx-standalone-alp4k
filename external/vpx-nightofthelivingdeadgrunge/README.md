@@ -3,18 +3,18 @@
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2018_06/NOTLD-68-GRUNGE-FS.png.d2ff0c5b8f30891100d2854271be1912.png)
 
 Authors: [HiRez00](https://vpuniverse.com/profile/19941-hirez00/)  
-Download File: NOTLD-68_v1.2_Grunge_Mod.zip (1.2)
-Filename: NOTLD-68 (Original 2018) Grunge Mod v1.2.vpx
+Download File: NOTLD-68_v1.2_Grunge_Mod.zip (1.2)  
+Filename: NOTLD-68 (Original 2018) Grunge Mod v1.2.vpx  
 Download: [VP Universe](https://vpuniverse.com/files/file/5156-night-of-the-living-dead-68-original-2018-mod/)
 
 DirectB2S
 
-Authors: [HiRez00](https://vpuniverse.com/profile/19941-hirez00/)
+Authors: [HiRez00](https://vpuniverse.com/profile/19941-hirez00/)  
 Download File: NOTLD-68 Backglass.zip  
-Filename: NOTLD-68 (Original 2018) Grunge Mod v1.2.directB2S
+Filename: NOTLD-68 (Original 2018) Grunge Mod v1.2.directB2S  
 Download: [VP Universe](https://vpuniverse.com/files/file/5156-night-of-the-living-dead-68-original-2018-mod/)
 
-Music Located in Table Zip
+Music Located in Table Zip  
 Filename: NOTLD-68-Music.zip
 
 
