@@ -3,13 +3,13 @@
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_09/sotn_screenshot.jpg.b87c9a81ae4d0a40030f96e70a605476.jpg)
 
 Authors: [Supergibson](https://vpuniverse.com/profile/48714-supergibson/)  
-Filename: SOTN (Mephisto Mod).vpx
+Filename: SOTN (Mephisto Mod).vpx  
 Download: [VP Universe](https://vpuniverse.com/files/file/11454-sotn-mephisto-mod/)
 
 DirectB2S
 
 Authors: [BurtMacklin](https://vpuniverse.com/profile/39250-burtmacklin/)  
-Filename: Castlevania Symphony of the Night.directb2s
+Filename: Castlevania Symphony of the Night.directb2s  
 Download: [VP Universe](https://vpuniverse.com/files/file/11462-castlevania-symphony-of-the-night-backglass/)
 
 No Rom Needed for Table
