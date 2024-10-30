@@ -103,6 +103,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Cactus Jack's (Gottlieb 1991)](external/vpx-cactusjacks) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 29 |
 | [Capt. Fantastic and The Brown Dirt Cowboy (Bally 1976)](external/vpx-captfantastic) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 40 |
 | [Car Hop (Gottlieb 1991)](external/vpx-carhop) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 40 |
+| [Castlevania - Symphony of the Night (Original 2022)](external/vpx-castlevaniasotn) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Cat Burglars (Anthias 2024)](external/vpx-catburglars) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Centaur (Bally 1981)](external/vpx-centaur) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 35 |
 | [Champion Pub, The (Williams 1998)](external/vpx-champpub) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 45 |
@@ -292,8 +293,8 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Mustang (Bullitt LE) (Stern 2014)](external/vpx-mustangbullitt) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 37 |
 | [Mystery Castle (Alvin G 1993)](external/vpx-mysterycastle) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 45 |
 | [Nascar (Stern 2005)](external/vpx-nascar) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
-| [Night of the Living Dead '68 (Original 2018) Grunge Mod](external/vpx-nightofthelivingdeadgrunge) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 45 |
 | [Night of the Living Dead '68, Pinvention's (Original 2021)](external/vpx-vpx-nightofthelivingdeadpin) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 38 |
+| [Night of the Living Dead '68 Grunge Mod (Original 2018)](external/vpx-nightofthelivingdeadgrunge) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 45 |
 | [Night Rider (Bally 1977)](external/vpx-nightrider) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Nine Ball (Stern 1980)](external/vpx-nineball) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 45 |
 | [Nip-It (Bally 1973)](external/vpx-nipit) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 54 |
@@ -449,6 +450,8 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Wipe Out (Gottlieb 1993)](external/vpx-wipeout) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 52 |
 | [Wizard! (Bally 1975)](external/vpx-wizard) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [World Challenge Soccer (Gottlieb 1994)](external/vpx-wcsoccer) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
+| [World Joker Tour, JP's (Original 2024)](external/vpx-jpwjt) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
+| [World Poker Tour (Stern 2006)](external/vpx-wpt) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 36 |
 | [WOW Monopoly, JPs (Original 2015)](external/vpx-wowmonopoly) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Wrath of Olympus - JP (Original 2022)](external/vpx-wrath) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [WWF Royal Rumble (Data East 1994)](external/vpx-royalrumble) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
