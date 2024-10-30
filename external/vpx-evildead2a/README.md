@@ -1,24 +1,24 @@
-# Evil Dead 2  (Original 2022) verA 
+# Evil Dead 2 - Version A (Original 2022)
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_01/1.jpg.2c8d932e28e985c023c64f2fa8ec99ad.jpg)
 
-Authors: [bombaj344](https://vpuniverse.com/profile/33732-bombaj344/) 
-Download: 2050363239_EvilDed2.rar
-Filename: Evil Ded2  2022 verA.vpx
+Authors: [bombaj344](https://vpuniverse.com/profile/33732-bombaj344/)  
+Download: 2050363239_EvilDed2.rar  
+Filename: Evil Ded2  2022 verA.vpx  
 Download: [VP Universe](https://vpuniverse.com/files/file/8953-the-evil-dead-2-2022/)
 
 DirectB2S
 
-Authors: [ivantba](https://www.vpforums.org/index.php?showuser=123858) 
-Download: Evil Dead 2 (TBA 2019).rar
-Filename: Evil Dead 2 (TBA 2019).directb2s
+Authors: [ivantba](https://www.vpforums.org/index.php?showuser=123858)  
+Download: Evil Dead 2 (TBA 2019).rar  
+Filename: Evil Dead 2 (TBA 2019).directb2s  
 Download: [VPforums](https://www.vpforums.org/index.php?app=downloads&showfile=14439)
 
 
 ROM
 
 Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)  
-Filename: ironmaid.zip 
+Filename: ironmaid.zip  
 Download: [VP Universe](https://www.vpforums.org/index.php?app=downloads&showfile=169)
 
 Music Folder is included in Table Download
