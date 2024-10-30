@@ -149,6 +149,11 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Escape from the Lost World (Bally 1988)](external/vpx-escapefromthelostworld) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 | [Evel Knievel (Bally 1977)](external/vpx-evelknievel) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 50 |
 | [Evil Dead 2 (TBA 2019)](external/vpx-evildead22019) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
+<<<<<<< Updated upstream
+=======
+| [Evil Dead 2  (Original 2022) verA](external/vpx-evildead2a) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
+| [Evil Dead 2  (Original 2022) verB](external/vpx-evildead2b) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
+>>>>>>> Stashed changes
 | [Evil Dead 3 Army of Darkness (TBA 2020)](external/vpx-armyofdarkness) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 52 |
 | [Exorcist, The (Original 2023)](external/vpx-exorcist) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [F-14 Tomcat Hanibals Mod (Williams, 1987)](external/vpx-f14tomcat) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
