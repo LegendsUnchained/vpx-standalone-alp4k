@@ -1,9 +1,9 @@
 # Pet Sematary (TBA 2019)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_10/ExorcistPReview.png.a909e31eec2618cb43930d9985b0d0f1.png)
+![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-petsemetary.png)
 
-Authors: [ivantba](https://www.vpforums.org/index.php?showuser=123858)    
-Filename: Pet Sematary (TBA 2019).vpx
+Authors: [ivantba](https://www.vpforums.org/index.php?showuser=123858)  
+Filename: Pet Sematary (TBA 2019).vpx  
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=14211)
 
 DirectB2S is included in Table Zip
@@ -12,8 +12,8 @@ Filename: Pet Sematary (TBA 2019).directb2s
 
 ROM
 
-dracula.zip
-Download: [VPForums] (https://www.vpforums.org/index.php?app=downloads&showfile=733)
+Filename: dracula.zip  
+Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=733)
 
 Music Folder Included in Table Zip
 
