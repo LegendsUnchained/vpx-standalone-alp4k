@@ -1,6 +1,6 @@
 # Dark Crystal, The (Original 2020)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-darkcrystal.jpg)
+![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-darkcrystal.png)
 
 Authors: [wpilot](https://www.vpforums.org/index.php?showuser=135549)
 Version: 1.2
