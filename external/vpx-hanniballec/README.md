@@ -2,8 +2,8 @@
 
 ![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-hanniballec.png)
 
-Authors: [VP_Cooks](https://vpuniverse.com/profile/33960-vp_cooks/)
-Version: 1.0.0
+Authors: [VP_Cooks](https://vpuniverse.com/profile/33960-vp_cooks/)  
+Version: 1.0.0  
 Download: [VPUniverse](https://vpuniverse.com/files/file/11941-hannibal-lecter-vp_cooks/)
 
 DirectB2S
@@ -19,6 +19,7 @@ Tested by: Bruno15477 and evilwraith
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
