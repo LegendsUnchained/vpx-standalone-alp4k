@@ -135,6 +135,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Django Unchained (Original 2022)](external/vpx-djangounchained) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 45 |
 | [Doctor Who (Bally 1992)](external/vpx-doctorwho) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 | [Dolly Parton (Bally 1979)](external/vpx-dolly) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
+| [Doom Eternal (Original 2022)](external/vpx-doometernal) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Dr. Dude (Bally 1999)](external/vpx-drdude) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 42 |
 | [Dracula (Stern 1979)](external/vpx-dracula) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 53 |
 | [Dr. Jekyll and Mr. Hyde (Original 2022)](external/vpx-drjekyllandmrhyde) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 45 |
