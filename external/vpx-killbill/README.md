@@ -2,13 +2,13 @@
 
 ![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-killbill.png)
 
-Authors: [VP_Cooks](https://www.vpforums.org/index.php?showuser=180201)
-Version: 1.0.1
+Authors: [VP_Cooks](https://www.vpforums.org/index.php?showuser=180201)  
+Version: 1.0.1  
 Download: [VPUniverse](https://www.vpforums.org/index.php?app=downloads&showfile=16919)
 
 DirectB2S
 
-Authors: [marcobus2005](https://vpuniverse.com/profile/53087-marcobus2005/)
+Authors: [marcobus2005](https://vpuniverse.com/profile/53087-marcobus2005/)  
 Download: [VPUniverse](https://vpuniverse.com/files/file/14629-kill-bill-full-dmd/)
 
 ROM
@@ -20,6 +20,7 @@ Tested by: Bruno15477 and evilwraith
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
