@@ -1,6 +1,6 @@
 # Odisea Paris-Dakar (Peyper 1987)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=82556&id=15360&full=1)
+![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-odisea.png)
 
 Authors: [Goldchicco](https://vpuniverse.com/profile/23579-goldchicco/)  
 Version: 1.2  
