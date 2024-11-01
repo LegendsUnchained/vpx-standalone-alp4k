@@ -2,20 +2,21 @@
 
 ![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-ironman2jp.jpg)
 
-Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)
-Version: 4.3.0
+Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
+Version: 4.3.0  
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=13613)
 
 DirectB2S
 
-Authors: [haggi](https://www.vpforums.org/index.php?showuser=1220)
+Authors: [haggi](https://www.vpforums.org/index.php?showuser=1220)  
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=15731)
 
 ROM
 
-ROM Name: IM21860V.BIN
-Download: [Stern](https://sternpinball.com/?post_type=game_code&s=iron+man)
-SHA1: 11787B8C73883E417B92791FA2AB45416EE718EF
+ROM Name: IM21860V.BIN  
+Download: [Stern](https://sternpinball.com/?post_type=game_code&s=iron+man)  
+
+SHA1: 11787B8C73883E417B92791FA2AB45416EE718EF  
 MD5:  FB971A641EFB89B0D131FDD3BFE3579D 
 
 Tested by: Bruno15477 and evilwraith
@@ -23,6 +24,7 @@ Tested by: Bruno15477 and evilwraith
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
