@@ -1,6 +1,6 @@
 # Sir Lancelot (Peyper 1994)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=82556&id=15360&full=1)
+![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-sirlancelot.png)
 
 Authors: [GauGau](https://vpuniverse.com/profile/43510-gaugau/)  
 Version: 1.1  
