@@ -1,6 +1,6 @@
 # Neverending Story, The (Original 2021)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-tnes.jpg)
+![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-tnes.png)
 
 Authors: [oly2](https://vpuniverse.com/profile/51096-oly2/)  
 Version: 1.0.0  
