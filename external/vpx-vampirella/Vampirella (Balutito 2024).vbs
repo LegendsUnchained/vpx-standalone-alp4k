@@ -60,6 +60,19 @@ Const SFlipperOff = "FlipperDown"
 Const SCoin = "Coin"
 Const MusicOn = true ' False if you don't want music
 
+ ' Define an array of playfield image names
+Dim playfieldImages(3)
+playfieldImages(0) = "PF VampirellaB"
+playfieldImages(1) = "PF VampirellaA"
+playfieldImages(2) = "PF VampirellaC"
+playfieldImages(3) = "PF VampirellaD"
+
+' Generate a random number between 0 and 3
+Dim randomIndex
+randomIndex = Int(Rnd * 4)
+
+' Set the playfield image using the randomly selected image
+Table1.Image = playfieldImages(randomIndex)
  
 Set GiCallback2 = GetRef("UpdateGI2")
  
