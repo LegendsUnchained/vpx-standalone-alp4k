@@ -14,7 +14,7 @@ Download: [VPUniverse](https://vpuniverse.com/files/file/3051-split-second-stern
 ROM
 
 ROM Name: splitsec.zip  
-Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=15957)  
+Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=751)  
 
 SHA1: E57CE9378A50675BE2347A54CE0534F80F852991  
 MD5:  8B096F585C2A1730D46735D694887ED9
