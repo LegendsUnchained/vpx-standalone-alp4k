@@ -2,20 +2,21 @@
 
 ![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-flight2000.png)
 
-Authors: [Bigus](https://www.vpforums.org/index.php?showuser=107629)
-Version: 2.0
+Authors: [Bigus](https://www.vpforums.org/index.php?showuser=107629)  
+Version: 2.0  
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=16799)
 
 DirectB2S
 
-Authors: [htamas](https://www.vpforums.org/index.php?showuser=16933)
+Authors: [htamas](https://www.vpforums.org/index.php?showuser=16933)  
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=7683)
 
 ROM
 
-ROM Name: flight2k.zip
-Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=746)
-SHA1: 6878EF1BD1F855D2318CA382F7C7D2013060BA62
+ROM Name: flight2k.zip  
+Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=746)  
+
+SHA1: 6878EF1BD1F855D2318CA382F7C7D2013060BA62  
 MD5:  1F4C9DFF8929CA6DB1F58CE872DF09BF
 
 Tested by: evilwraith
@@ -23,6 +24,7 @@ Tested by: evilwraith
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
