@@ -2,8 +2,8 @@
 
 ![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-thematrix.png)
 
-Authors: [Enthusiast](https://vpuniverse.com/profile/62357-enthusiast/)[VP_Cooks](https://vpuniverse.com/profile/33960-vp_cooks/)
-Version: 1.0.14
+Authors: [Enthusiast](https://vpuniverse.com/profile/62357-enthusiast/) & [VP_Cooks](https://vpuniverse.com/profile/33960-vp_cooks/)  
+Version: 1.0.14  
 Download: [VPUniverse](https://vpuniverse.com/files/file/18478-the-matrix-pup-pack-wtable-vp-cooks-pup-by-enthusiast/)
 
 PupPack
@@ -23,6 +23,7 @@ Tested by: evilwraith
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
