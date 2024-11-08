@@ -2,8 +2,8 @@
 
 ![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-deathnote.jpg)
 
-Authors: [anthias](https://www.vpforums.org/index.php?showuser=9159)
-Version: 1.2
+Authors: [anthias](https://www.vpforums.org/index.php?showuser=9159)  
+Version: 1.2  
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=18569)
 
 DirectB2S
@@ -19,6 +19,7 @@ Tested by: evilwraith
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
