@@ -2,10 +2,11 @@
 
 ![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-raygunrunner.png)
 
-Authors: [CrimsonTurtle8](https://www.vpforums.org/index.php?showuser=49512)
-Version: 1.0
+Authors: [CrimsonTurtle8](https://www.vpforums.org/index.php?showuser=49512)  
+Version: 1.0  
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=18551)
 
+Backglass:  
 Included in table download link
 
 ROM
@@ -17,6 +18,7 @@ Tested by: evilwraith
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
