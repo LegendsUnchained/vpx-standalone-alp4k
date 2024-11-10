@@ -3,23 +3,24 @@
 ![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=75210&id=14885&full=1)
 
 Author(s): [ivantba](https://www.vpforums.org/index.php?showuser=123858)  
-VPX Version: Rambo First Blood Part II (TBA 2020).vpx
+VPX Version: Rambo First Blood Part II (TBA 2020).vpx  
 Download:  [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14885)
 
-DirectB2S included with Table Zip
+DirectB2S included with Table Zip  
 Rambo First Blood Part II (TBA 2020).directb2s
 
-ROM: ravena.zip
-**Custom Created Rom With All Necessary Files Included**
-Author(s): [TechZombie]
+ROM: ravena.zip  
+**Custom Created Rom With All Necessary Files Included**  
+Author(s): [TechZombie]  
 Download:  [Mega](https://mega.nz/file/qKpzGIpb#bKP9zB2Cw3flN_m27P-snSvxjSwriZHqJscTPNISIG0)
 
-Tested by:
+Tested by:  
 [TechZombie]
 
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1983-b84441e
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 54 |
