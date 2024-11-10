@@ -6,11 +6,10 @@ Author: [dgrace](https://vpuniverse.com/profile/24616-dgrace/)
 Filename: Childs Play (Original 2018) Joe Picasso.vpx  
 Download: [VPUniverse](https://vpuniverse.com/files/file/14246-childs-play-table-v10-puppack-10/)
 
-Backglass Included with Table Pack
- 
+Backglass Included with Table Pack  
 directb2s Version: Childs Play (Original 2018) Joe Picasso.directb2s
 
-Pup Pack **You need to download and use this version or there will be no music on the table if you use the version in the table pack**  
+Pup Pack: **You need to download and use this version or there will be no music on the table if you use the version in the table pack**  
 Author: [TechZombie]  
 Filename: Fast_Draw_1975.zip  
 Download: [Mega](https://mega.nz/file/rKA1XYQD#QnbDK0z6u2yxh-Z69v3G32SksmdQM8VpZP6ZtVMSI2Y)
