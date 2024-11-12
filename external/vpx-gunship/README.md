@@ -3,21 +3,22 @@
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_09/gs.png.c1b54d7d4b2809fd529b5ecbfd5bd332.png)
 
 Authors: [ZandysArcade](https://vpuniverse.com/profile/57949-zandysarcade/)  
-Filename: GUNSHIP.vpx
+Filename: GUNSHIP.vpx  
 Download: [VP Universe](https://vpuniverse.com/files/file/15778-gunship-pinball-music-table-with-pup-pack/)
 
-DirectB2S is Included in Media-Pack
+DirectB2S is Included in Media-Pack  
 Download File Name: MEDIA-pack.zip  
-Filename: GUNSHIP.directb2s
+Filename: GUNSHIP.directb2s  
 Download: [VP Universe](https://vpuniverse.com/files/file/15778-gunship-pinball-music-table-with-pup-pack/)
 
 Music
-Authors: [TechZombie]
-Download File Name: Gunship.zip 
-Folder Name: Gunship
+
+Authors: [TechZombie]  
+Download File Name: Gunship.zip  
+Folder Name: Gunship  
 Download: [Mega](https://mega.nz/file/TX4H2Qxa#8j3g2iPHQBfWLv979TAaCR_yQZInCE5EWp64WMI-9C8)
 
-Rom is included in Media-pack.zip
+Rom is included in Media-pack.zip  
 Filename: lostwrld.zip
 
 Tested by: TechZombie
