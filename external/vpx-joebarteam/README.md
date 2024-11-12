@@ -8,7 +8,7 @@ Download: [VPUniverse](https://vpuniverse.com/files/file/14127-joe-bar-team-mod-
 
 DirectB2S included with table pack
 
-ROM included with table pack
+ROM included with table pack  
 ROM Name: frpwr_b7.zip  
 
 Tested by: TechZombie
@@ -26,7 +26,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-joebarteam.elf
 - Download the table and directb2s listed above, extract (if necessary) and copy to external/vpx-joebarteam
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+- Make sure (.vpx), (.directb2s), (.vbs) and (.ini) files are all named the same
 - Move/Copy Music Folder ---> external/vpx-joebarteam
 - The ROM zip file gets copied to external/vpx-joebarteam/pinmame/roms (Do not unzip)
 - "Ca Passe Pas!" - Jeremie Lapuree
