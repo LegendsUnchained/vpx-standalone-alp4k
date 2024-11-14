@@ -1,7 +1,7 @@
 # Shooting the Rapids (Zaccaria 1979)
 Tested By: kaoticBPR
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=117539&id=18383&full=1)
+![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-shootingtherapids.jpg)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 1.0.0  

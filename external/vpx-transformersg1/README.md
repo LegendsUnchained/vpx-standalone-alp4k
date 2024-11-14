@@ -1,6 +1,6 @@
 # Transformers G1 Generation One (TBA 2018) 1.7
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=65920&id=13658&full=1)
+![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-transformersg1.png)
 
 Author(s): [ivantba](https://www.vpforums.org/index.php?showuser=123858)
 Download:  Transformers G1 (Generation One) Pinball (TBA 2018).zip

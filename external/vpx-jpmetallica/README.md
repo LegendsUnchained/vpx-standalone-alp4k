@@ -1,6 +1,6 @@
 # JP's Metallica Pro (Stern 2013)
 
-![Table Preview](https://www.vpforums.org/index.php?s=c4190c252e4b0afe20488a58dfe99e31&app=downloads&module=display&section=screenshot&record=119216&id=18612&full=1)
+![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-jpmetallica.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?s=c4190c252e4b0afe20488a58dfe99e31&showuser=277)  
 Version: 1.0  

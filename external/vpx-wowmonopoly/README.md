@@ -1,6 +1,6 @@
 # WOW Monopoly, JPs (Original 2015)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=104167&id=11612&full=1)
+![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-wowmonopoly.jpg)
 
 Table
 

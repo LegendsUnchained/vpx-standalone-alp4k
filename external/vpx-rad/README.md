@@ -1,5 +1,5 @@
 # Radical (Bally 1990)
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=104776&id=13694&full=1)
+![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-rad.jpg)
 
 Author: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: Radical (Bally 1990) 4.0.0  

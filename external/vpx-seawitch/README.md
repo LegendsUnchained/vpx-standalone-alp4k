@@ -1,6 +1,6 @@
 # JP's Seawitch (Stern 1980)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=114045&id=15265&full=1)
+![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-seawitch.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?s=543a5ca562cc33a89debe8ace8834f1e&showuser=277)  
 Version: 4.3.0  
