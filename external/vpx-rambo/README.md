@@ -1,6 +1,6 @@
 # Rambo First Blood Part II (TBA 2020)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=75210&id=14885&full=1)
+![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-rambo.png)
 
 Author(s): [ivantba](https://www.vpforums.org/index.php?showuser=123858)  
 VPX Version: Rambo First Blood Part II (TBA 2020).vpx  
