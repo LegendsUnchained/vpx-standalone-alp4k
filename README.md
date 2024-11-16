@@ -252,6 +252,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [James Bond 007 60th Anniversary (Stern 2023)](external/vpx-jb00760th) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Jaws (Balutito MOD) (Original 2013)](external/vpx-jaws) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
 | [Jet Spin (Gottlieb 1977)](external/vpx-jetspin) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 58 |
+| [Jimi Hendrix (Original 2021)](external/vpx-jimihendrix) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Joe Bar Team (ZXR 2019)](external/vpx-joebarteam) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 52 |
 | [Johnny Mnemonic (Williams 1995)](external/vpx-johnnymnemonic) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 41 |
 | [Joker Poker (Gottlieb 1978)](external/vpx-jokerpoker) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 50 |
