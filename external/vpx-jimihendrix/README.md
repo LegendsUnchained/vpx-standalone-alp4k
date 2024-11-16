@@ -2,8 +2,8 @@
 
 ![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-jimihendrix.jpg)
 
-Authors: [balutito](https://vpuniverse.com/profile/36070-balutito/)
-Version: 1.2
+Authors: [balutito](https://vpuniverse.com/profile/36070-balutito/)  
+Version: 1.2  
 Download: [VPUniverse](https://vpuniverse.com/files/file/7736-jimi-hendrix-v1/)
 
 DirectB2S
@@ -16,9 +16,10 @@ Included in table zip
 
 ROM
 
-ROM Name: ironmaid.zip
+ROM Name: ironmaid.zip  
 Included in table zip
-SHA1: AFDBE26D3830D41850C701F0983842E2A6144662
+
+SHA1: AFDBE26D3830D41850C701F0983842E2A6144662  
 MD5:  712C9FF61BE0834F9E154AFD67660A06 
 
 Tested by: evilwraith
@@ -26,6 +27,7 @@ Tested by: evilwraith
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
