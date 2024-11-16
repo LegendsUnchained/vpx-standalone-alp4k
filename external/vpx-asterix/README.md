@@ -2,8 +2,8 @@
 
 ![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-asterix.png)
 
-Authors: [Balanica](https://www.vpforums.org/index.php?showuser=154639)
-Version: 4.0
+Authors: [Balanica](https://www.vpforums.org/index.php?showuser=154639)  
+Version: 4.0  
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=16674)
 
 DirectB2S
@@ -19,6 +19,7 @@ Tested by: evilwraith
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
