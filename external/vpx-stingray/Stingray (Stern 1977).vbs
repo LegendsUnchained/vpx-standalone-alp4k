@@ -48,7 +48,7 @@ End If
 '*********** VR settings ************************
 Dim VR_Obj, VR_Room
 
-VR_Room = 1  ' 1 = Aquatic Wonderland  2 = Minimal Room
+VR_Room = 0  ' 1 = Aquatic Wonderland  2 = Minimal Room
 
 If RenderingMode = 2 Then
 	For Each VR_Obj in VRCabinet : VR_Obj.Visible = 1 : Next
