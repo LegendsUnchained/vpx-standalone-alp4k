@@ -1,4 +1,4 @@
-# A Charlie Brown Christmas (Original 2023)
+# Charlie Brown Christmas, A (Original 2023)
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_12/CharlieScreenshot.jpg.263a8ca3c2783dac02b55d463144ddce.jpg)
 
@@ -17,7 +17,7 @@ Charlie Brown Christmas (Original 2023).zip (Do NOT download FULLDMD version)
 Download: [VPUniverse](https://vpuniverse.com/files/file/17612-charlie-brown-christmas-original-2023-b2s-23-scn-full-dmd/)
 
 Music file: Charlie Brown.zip  
-Download: https://mega.nz/folder/1VIghDZK#HE57FDs0_Bb2Hwb3odgUlg
+Download: [Mega](https://mega.nz/folder/1VIghDZK#HE57FDs0_Bb2Hwb3odgUlg)
 
 **No ROM needed for this table.**
 
@@ -38,5 +38,5 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Add your personalized launcher.elf and rename it to vpx-acharliebrownchristmas.elf
 - Download the table vpx file, and the directb2s file and copy to vpx-acharliebrownchristmas
 - Make sure (.vpx) (.direct2b2s) (.vbs) and (.ini) are all named the same. 
-- Download the music (Charlie Brown.zip) above, extract it and place the files into vpx-acharliebrownchristmas/music
+- Download the music (Charlie Brown.zip) above, extract it and place the files into vpx-acharliebrownchristmas/Charlie Brown
 - "Look, Charlie, let's face it. We all know that Christmas is a big commercial racket. It's run by a big eastern syndicate, you know." - Lucy Van Pelt
