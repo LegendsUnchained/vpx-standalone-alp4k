@@ -1,6 +1,6 @@
 # Algar (Williams 1980)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=80125&id=13520&full=1)
+![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-algar.png)
 
 Tested by: Mox
 
@@ -13,6 +13,7 @@ Tested by: Mox
 
 ## Status 
 Minimum VPX Standalone build: 10.8.0-2042-1431983
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS |
 |:---------:|:--------:|:---------:|:---:|:------------:|:---:|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
