@@ -174,6 +174,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [F-14 Tomcat Hanibals Mod (Williams, 1987)](external/vpx-f14tomcat) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Family Guy (Stern 2007)](external/vpx-familyguy) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 28 |
 | [Fan-Tas-Tic (Williams 1972)](external/vpx-fantastic) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
+| [Farfalla (Zaccaria 1983)](external/vpx-farfalla) | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | :white_check_mark: | 45 |
 | [Fathom (Bally 1981)](external/vpx-fathom) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 34 |
 | [Fireball (Bally 1972)](external/vpx-fireball) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Fireball II (Bally 1981)](external/vpx-fireballii) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 55 |
@@ -437,6 +438,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Superman and The Justice League (Original 2024)](external/vpx-supermanjl) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 58 |
 | [Super Mario Bros. (Gottlieb 1992)](external/vpx-supermario) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 38 |
 | [Super Mario Bros. Mushroom World (Premier 1992)](external/vpx-smbmushroom) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 45 |
+| [Surf Champ (Gottlieb 1976)](external/vpx-surfchamp) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 52 |
 | [Swamp Thing (Clairvius 2024)](external/vpx-swampthing) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 | [Swamp Thing 2.0 Bayou Edition (LTek 2024)](external/vpx-swampthingbayou) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
 | [Swords of Fury (Williams 1988)](external/vpx-swordsoffury) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 29 |
@@ -506,3 +508,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [X-Men LE (Stern 2012)](external/vpx-xmen) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Young Frankenstein (hauntfreaks 2021)](external/vpx-youngfrankenstein) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 | [Zissou - The Life Aquatic (Original 2022)](external/vpx-zissou) | | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 46 |
+| [Zip-a-Doo (Bally 1970)](external/vpx-zipadoo) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 50 | 
