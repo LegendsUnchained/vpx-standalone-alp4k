@@ -1,4 +1,4 @@
-# Surf Champ
+# Surf Champ (Gottlieb 1976)
 
 ![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=117736&id=18409&full=1)
 
