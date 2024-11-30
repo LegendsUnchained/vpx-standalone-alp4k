@@ -2,7 +2,7 @@
 
 ![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-zipadoo.jpg)
 
-Authors: [teisen](https://vpuniverse.com/profile/31525-teisen/)[loserman76](https://vpuniverse.com/profile/2798-loserman76/)
+Authors: [teisen](https://vpuniverse.com/profile/31525-teisen/) & [loserman76](https://vpuniverse.com/profile/2798-loserman76/)  
 Version: 1.0.0  
 Download: [VPUniverse](https://vpuniverse.com/files/file/15256-zip-a-doo-bally-1970_teisen_mod/)
 
