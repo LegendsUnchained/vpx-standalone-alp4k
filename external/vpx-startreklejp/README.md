@@ -30,4 +30,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-startreklejp.elf
 - Download the table and directb2s versions listed above, extract (if necessary) and copy to external/vpx-startreklejp
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+- Download st_162h rom above, then zip it and name the zip file st_162h.zip
 - Place ROM zip file into vpx-startreklejp/pinmame/roms folder. DO NOT UNZIP!
