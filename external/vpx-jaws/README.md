@@ -1,4 +1,4 @@
-# JAWS (Balutito MOD)
+# JAWS (Balutito MOD) (Original 2013)
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_08/v1.4.png.bd4afb26539ce223748806c198f65828.png)
 
@@ -32,5 +32,5 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Add your personalized launcher.elf and rename it to vpx-jaws.elf
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-jaws
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same. DO NOT RENAME VPReg.ini file!
-- Inside the table zip there is a folder titled music, copy it into this folder
+- Inside the table zip there is a folder titled "Jaws" with music files. These music files need to be in: external/vpx-jaws/music/Jaws
 - "You're gonna need a bigger USB!"
