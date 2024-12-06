@@ -1,6 +1,6 @@
 # Magic Castle (Zaccaria 1984)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=44535&id=11586&full=1)
+![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-magiccastle.png)
 
 Authors: [32assassin](https://www.vpforums.org/index.php?showuser=77712)  
 Version: 2.0  
@@ -9,12 +9,12 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 DirectB2S
 
 Authors: [slashbot](https://www.vpforums.org/index.php?showuser=65211)  
-Version: 1.2
+Version: 1.2  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=9922)  
 
 ROM
 
-ROM Name: mcastle.zip
+ROM Name: mcastle.zip  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=618)
 
 ## Status 
