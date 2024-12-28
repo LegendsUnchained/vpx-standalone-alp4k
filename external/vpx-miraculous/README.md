@@ -6,7 +6,7 @@ Author: [JPSalas](https://www.vpforums.org/index.php?showuser=277)
 
 Tested by: Bla1ze
 
-Version: 4.3.0
+Version: 5.5.0
 
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14421)
 
