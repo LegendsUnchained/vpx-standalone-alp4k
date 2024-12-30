@@ -21,6 +21,7 @@ Links to these products on Amazon are through affiliate links.
 
 #### Keyboards
 - [Rii RK707 Keyboard/Game Controller](https://amzn.to/4fqC1oC)
+- [Logitech K400 Wireless](https://amzn.to/4iPOG6l)
 
 ## Tested tables
 Minimum VPX Standalone build: 10.8.0-1983-b84441e
