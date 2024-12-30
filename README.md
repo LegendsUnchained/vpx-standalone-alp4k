@@ -21,6 +21,7 @@ Links to these products on Amazon are through affiliate links.
 
 #### Keyboards
 - [Rii RK707 Keyboard/Game Controller](https://amzn.to/4fqC1oC)
+- [Rii Mini](https://amzn.to/40iwZE7)
 - [Logitech K400 Wireless](https://amzn.to/4iPOG6l)
 
 ## Tested tables
