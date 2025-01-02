@@ -3,11 +3,12 @@
 ![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=123891&id=17797&full=1)
 
 Author: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
-Filename: Stampede (Stern 1977) v55_VPX8.vpx  
+Version: 5.5.0 / Stampede (Stern 1977) v55_VPX8.vpx  
 Download: [VPUniverse](https://www.vpforums.org/index.php?app=downloads&showfile=17797#)
 
-Backglass Included with Table Pack  
-directb2s Version: Stampede (Stern 1977) JP_VPX8.directb2s
+DirectB2S
+Author: [halen](https://www.vpforums.org/index.php?showuser=74)
+Backglass Included with Table above: Stampede (Stern 1977) JP_VPX8.directb2s
 
 No ROM Needed for Table
   
