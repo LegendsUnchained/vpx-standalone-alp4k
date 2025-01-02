@@ -1,6 +1,5 @@
 # Stampede (Stern 1977)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=123891&id=17797&full=1)
 ![stampede](https://github.com/user-attachments/assets/dc3ea6cd-d1a9-45b1-8d5c-560f9b09f45b)
 
 Author: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
