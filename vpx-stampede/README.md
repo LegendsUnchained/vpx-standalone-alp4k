@@ -8,6 +8,7 @@ Download: [VPUniverse](https://www.vpforums.org/index.php?app=downloads&showfile
 
 DirectB2S
 Author: [halen](https://www.vpforums.org/index.php?showuser=74)
+
 Backglass Included with Table above: Stampede (Stern 1977) JP_VPX8.directb2s
 
 No ROM Needed for Table
