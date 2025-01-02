@@ -3,7 +3,7 @@
 ![stampede](https://github.com/user-attachments/assets/dc3ea6cd-d1a9-45b1-8d5c-560f9b09f45b)
 
 Author: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 5.5.0
+Version: 5.5.0  
 Stampede (Stern 1977) v55_VPX8.vpx  
 Download: [VPUniverse](https://www.vpforums.org/index.php?app=downloads&showfile=17797#)
 
