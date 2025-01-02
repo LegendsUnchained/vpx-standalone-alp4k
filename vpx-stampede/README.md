@@ -28,4 +28,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-stampede.elf
 - Download the table and directb2s zips above, extract (if necessary) and copy into /external/vpx-stampede
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-- "Keep your eyes up where I can see 'um and stop staring at my backglass!"
+- "Keep your eyes where I can see 'um and stop staring at my backglass!"
