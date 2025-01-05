@@ -1,10 +1,9 @@
 # Fleetwood Mac (Original 2024)
 
-![stampede](https://github.com/user-attachments/assets/dc3ea6cd-d1a9-45b1-8d5c-560f9b09f45b)
-! [fleetwood](https://github.com/psybocilin/vpx-images/blob/main/vpx-fleetwood.png)
+![vpx-fleetwood](https://github.com/user-attachments/assets/75f9283e-eaf1-4d9c-837d-1df6a3d062de)
 
 Author: [ZandysArcade](https://vpuniverse.com/profile/57949-zandysarcade/)  
-Version: 1.0.0
+Version: 1.0.0  
 Fleetwood.vpx  
 Download: [VPUniverse](https://vpuniverse.com/files/file/23024-fleetwood-mac/?tab=reviews&sort=newest#review-28384) 
 
@@ -14,10 +13,10 @@ Backglass Included with Table above
 Fleetwood.directb2s
 
 ROM
-Included with Table in Media pack.zip. ROM name: dollyptb.zip
+Included with Table in "Media pack.zip": dollyptb.zip
 
 MUSIC
-Included with Table in Media pack.zip: Fleetwood.zip
+Included with Table in "Media pack.zip": Fleetwood.zip
   
 Tested by:  
 [psybocilin]
