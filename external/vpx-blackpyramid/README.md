@@ -1,20 +1,25 @@
 # Black Pyramid (Bally 1980)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=103160&id=13126&full=1)
+![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-blackpyramid.png)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)
-Version: 4.0.1
+
+Version: 5.5.0
+
 Download: [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=13126)
 
 DirectB2S
 
 Authors: [HiRez00](https://vpuniverse.com/profile/19941-hirez00/)
+
 Version: 1.0.0
+
 Download: [VPUniverse](https://vpuniverse.com/files/file/5887-black-pyramid-bally-1984-authentic-and-fantasy-b2s-backglass/)
 
 ROM
 
 Download: [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=639)
+
 ROM Name and version: blakpyra.zip
 
 ## Status 
