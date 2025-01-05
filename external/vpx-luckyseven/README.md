@@ -1,6 +1,6 @@
 # Lucky Seven (Williams 1978)
 
-![stampede](https://github.com/user-attachments/assets/dc3ea6cd-d1a9-45b1-8d5c-560f9b09f45b)
+![luckyseven](https://github.com/user-attachments/assets/b94bd259-d617-4ca8-93c4-c79545c5fedd)
 
 Author: [kiwi](https://www.vpforums.org/index.php?showuser=30913)  
 Version: 1.2.2   
