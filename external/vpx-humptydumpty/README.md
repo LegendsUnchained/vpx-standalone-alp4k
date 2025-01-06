@@ -1,6 +1,6 @@
 # Humpty Dumpty (Gottlieb 1947)
 
-![Table Preview](./humptyPreview.jpg)
+![Table Preview]([./humptyPreview.jpg](https://github.com/ricardo-hoar/vpx-standalone-alp4k/blob/main/external/vpx-humptydumpty/vpx-humptydumpty.png))
 
 Authors: [randr](https://vpuniverse.com/profile/1835-randr/)
 
