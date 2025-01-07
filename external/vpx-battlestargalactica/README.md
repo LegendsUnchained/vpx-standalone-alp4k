@@ -2,21 +2,20 @@
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2018_04/5ae014939ef6b_BattlestarGalactica(Williams1980)Modv1_02Fb.PNG.67545024e2a637c9d18deb86c2c449e8.PNG)
 
-Authors: [xenonph](https://www.vpforums.org/index.php?showuser=14100)
-Download File Name: Battlestar Galactica (Williams 1980) v2.1.zip    
-Filename: Battlestar Galactica (Williams 1980) Mod v2.1.vpx
+Authors: [xenonph](https://www.vpforums.org/index.php?showuser=14100)  
+Download File Name: Battlestar Galactica (Williams 1980) v2.1.zip  
+Filename: Battlestar Galactica (Williams 1980) Mod v2.1.vpx  
 Download: [VPUniverse](https://vpuniverse.com/files/file/5061-battlestar-galactica-williams-1980/)
 
 There are several DirectB2S backglasses included with Table.rar file, choose whichever you prefer. 
 
+ROM
 
-ROM 
-Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)
-scrpn_l1.zip
+Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)  
+Filename: scrpn_l1.zip  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=779)
 
 Tested by: TechZombie
-
 
 ## Status 
 
