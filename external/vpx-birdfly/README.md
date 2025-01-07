@@ -1,22 +1,23 @@
-# Bird Fly Original (2022)
+# Bird Fly (Original 2022)
 
 ![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=99985&id=16555&full=1)
 
-Authors: [loloallo](https://www.vpforums.org/index.php?showuser=160835)
-Download File Name: Bird_Fly.0.9.0_VPX10.7.zip    
-Filename: Bird_Fly.vpx
+Authors: [loloallo](https://www.vpforums.org/index.php?showuser=160835)  
+Download File Name: Bird_Fly.0.9.0_VPX10.7.zip  
+Filename: Bird_Fly.vpx  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=16555)
 
-DirectB2S included with Table.rar file. 
+DirectB2S included with Table.rar file.
+
 No ROM Needed
 
 Music File
-Download File Name: Bird_Fly_Music_folder.zip
-File Name: Bird_Fly
+
+Download File Name: Bird_Fly_Music_folder.zip  
+File Name: Bird_Fly  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=16555)
 
 Tested by: TechZombie
-
 
 ## Status 
 
