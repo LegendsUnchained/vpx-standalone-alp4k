@@ -2,21 +2,20 @@
 
 ![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=74112&id=14775&full=1)
 
-Authors: [ivantba](https://www.vpforums.org/index.php?showuser=123858)
-Download File Name: Airwolf (TBA 2020).rar    
-Filename: Airwolf (TBA 2020).vpx 
+Authors: [ivantba](https://www.vpforums.org/index.php?showuser=123858)  
+Download File Name: Airwolf (TBA 2020).rar  
+Filename: Airwolf (TBA 2020).vpx  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14775)
 
 DirectB2S included with Table.rar file. 
 
-
 ROM 
-Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)
-cosmic.zip
+
+Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)  
+Filename: cosmic.zip  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=564)
 
 Tested by: TechZombie
-
 
 ## Status 
 
