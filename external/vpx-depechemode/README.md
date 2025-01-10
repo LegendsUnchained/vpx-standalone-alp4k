@@ -2,9 +2,9 @@
 
 ![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=74112&id=14775&full=1)
 
-Authors: [ivantba](https://www.vpforums.org/index.php?showuser=123858)
-Download File Name: Depeche Mode Pinball.zip    
-Filename: Depeche Mode Pinball.vpx
+Authors: [ivantba](https://www.vpforums.org/index.php?showuser=123858)  
+Download File Name: Depeche Mode Pinball.zip  
+Filename: Depeche Mode Pinball.vpx  
 Download: [Google Drive](https://drive.google.com/file/d/1FXwjcfwOUuITWT2Se7AQ3MIoTDzNCsOA/view)
 
 DirectB2S included with Table.rar file. 
@@ -12,7 +12,6 @@ DirectB2S included with Table.rar file.
 ROM included with Table.rar file. 
 
 Tested by: TechZombie
-
 
 ## Status 
 
@@ -30,4 +29,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Select/Copy Music Folder (D.Mode) and move to external/vpx-depechemode/music
 - Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
 - Use the rom inside Desktop Rom folder. The ROM zip file gets copied to vpx-depechemode/pinmame/roms (Do not unzip)
-- "Here is a plea From my heart to you. Nobody knows me As well as you do." - Depeche Mode
+- "Here is a plea from my heart to you. Nobody knows me as well as you do." - Depeche Mode
