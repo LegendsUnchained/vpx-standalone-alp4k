@@ -181,6 +181,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [F-14 Tomcat Hanibals Mod (Williams, 1987)](external/vpx-f14tomcat) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Family Guy (Stern 2007)](external/vpx-familyguy) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 28 |
 | [Fan-Tas-Tic (Williams 1972)](external/vpx-fantastic) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
+| [Far Cry 3 - Blood Dragon (Original 2018)](external/vpx-farcry3) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Farfalla (Zaccaria 1983)](external/vpx-farfalla) | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | :white_check_mark: | 45 |
 | [Fathom (Bally 1981)](external/vpx-fathom) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 34 |
 | [Fireball (Bally 1972)](external/vpx-fireball) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
