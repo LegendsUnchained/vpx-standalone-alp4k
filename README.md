@@ -293,6 +293,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Laser War (Data East 1987)](external/vpx-laserwar) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 29 |
 | [Last Action Hero (Balutito Mod) (Data East 1993)](external/vpx-lastactionhero) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 | [Last Starfighter, The (Taito, 1983)](external/vpx-thelaststarfighter) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 52 |
+| [Legend - A Pinball Adventure (Original 2023)](external/vpx-legend) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 54 |
 | [Legend of Zelda, The (Original 2015)](external/vpx-legendofzelda) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Leprechaun King, The (Original 2019)](external/vpx-theleprechaunking) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Lethal Weapon 3 (Data East 1992)](external/vpx-lethalweapon3) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
