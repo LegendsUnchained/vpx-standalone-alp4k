@@ -2,24 +2,25 @@
 
 ![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=74112&id=14775&full=1)
 
-Authors: [balutito](https://vpuniverse.com/profile/36070-balutito/)
-Download File Name: 1823184329_FrankensteinVPX.rar    
-Filename: Frankenstein.vpx 
+Authors: [balutito](https://vpuniverse.com/profile/36070-balutito/)  
+Download File Name: 1823184329_FrankensteinVPX.rar  
+Filename: Frankenstein.vpx  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14775)
 
 DirectB2S included with Table.rar file. 
 
-ROM 
-Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)
-frankst.zip
+ROM
+
+Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)  
+Filename: frankst.zip  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=238)
 
 Music
-Filename: Medias FRAnk Color.rar 
+
+Filename: Medias FRAnk Color.rar  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14775)
 
 Tested by: TechZombie
-
 
 ## Status 
 
