@@ -2,23 +2,23 @@
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_09/Rocky_Single_Screen.PNG.a15cea7cf3ae4f33daee108cd969cb4f.PNG)
 
-Authors: [Dr.Nobody](https://vpuniverse.com/profile/31560-drnobody/)
-Download File Name: 1160767996_RockyTKOv1.1.zip    
-Filename: Rocky_TKO_v1.1.vpx
+Authors: [Dr.Nobody](https://vpuniverse.com/profile/31560-drnobody/)  
+Download File Name: 1160767996_RockyTKOv1.1.zip  
+Filename: Rocky_TKO_v1.1.vpx  
 Download: [VPUniverse](https://vpuniverse.com/files/file/7604-rocky-tko-tribute/)
 
 DirectB2S included with Table.zip file. 
 
-ROM included in Table.zip file
-ali.zip
+ROM included in Table.zip file.  
+Filename: ali.zip
 
 Music
-Authors: [TechZombie]
-music.zip
+
+Authors: [TechZombie]  
+Filename: music.zip  
 Download: [Internet Archive](https://archive.org/details/music_202501)
 
 Tested by: TechZombie
-
 
 ## Status 
 
