@@ -2,21 +2,20 @@
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_07/9880474_Sanstitre.png.de2adeb6bcfddda679d1a69efbcba77c.png)
 
-Authors: [balutito](https://vpuniverse.com/profile/36070-balutito/)
-Download File Name: full metal 1.2.rar    
-Filename: Full Metal Jacket 1.2.vpx 
+Authors: [balutito](https://vpuniverse.com/profile/36070-balutito/)  
+Download File Name: full metal 1.2.rar  
+Filename: Full Metal Jacket 1.2.vpx  
 Download: [VP Forums](https://vpuniverse.com/files/file/9484-full-metal-jacket/)
 
 DirectB2S included with Table.rar file. 
 
+ROM
 
-ROM 
-Authors: [TechZombie]
-ravena.zip
+Authors: [TechZombie]  
+Filename: ravena.zip  
 Download: [Internet Archive](https://archive.org/details/ravena)
 
 Tested by: TechZombie
-
 
 ## Status 
 
