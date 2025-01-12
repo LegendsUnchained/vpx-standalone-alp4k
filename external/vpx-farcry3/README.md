@@ -2,21 +2,20 @@
 
 ![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=72006&id=13657&full=1)
 
-Authors: [ivantba](https://www.vpforums.org/index.php?showuser=123858)
-Download File Name:  Far Cry 3 Blood Dragon (TBA 2018).rar    
-Filename: Far Cry 3 Blood Dragon (TBA 2018).vpx
+Authors: [ivantba](https://www.vpforums.org/index.php?showuser=123858)  
+Download File Name:  Far Cry 3 Blood Dragon (TBA 2018).rar  
+Filename: Far Cry 3 Blood Dragon (TBA 2018).vpx  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=13657)
 
 DirectB2S included with Table.rar file. 
 
+ROM
 
-ROM 
-Authors: [Rock-ola]
-panther7.zip
+Authors: [Rock-ola]  
+Filename: panther7.zip  
 Download: [VP Forums](https://pinballnirvana.com/forums/resources/panther7.2147/)
 
 Tested by: TechZombie
-
 
 ## Status 
 
@@ -32,6 +31,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-farcry3.elf
 - Download the table and directb2s listed above, extract (if necessary) and copy them to external/vpx-farcry3
 - Select/Copy music Folder and move to external/vpx-farcry3
-- Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
+- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - The ROM zip file gets copied to vpx-farcry3/pinmame/roms (Do not unzip)
 - Sgt. Rex 'Power' Colt: "I'm tucking you into your death bed, and your blanket is six feet of my shit."
