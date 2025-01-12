@@ -3,17 +3,15 @@
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_10/Screenshot2023-10-08at5_56_23PM.png.dbc67df49feab1a1884f8838357a619b.png)
 
 Authors: [ZandysArcade](https://vpuniverse.com/profile/57949-zandysarcade/)  
-Filename: LEGEND_2.0.vpx & legend.zip (Unzip)
-Info: [VP Forums](https://vpuniverse.com/files/file/16197-legend-a-pinball-adventure/)
+Filename: LEGEND_2.0.vpx & legend.zip (Unzip)  
+Info: [VP Forums](https://vpuniverse.com/files/file/16197-legend-a-pinball-adventure/)  
 Download: [Google Drive](https://drive.google.com/drive/folders/17mLWdBpKmHc9OlX44tR5DMFMqtz2bCjW)
 
 DirectB2S included in legend.zip/MEDIA PACK
 
-
 No ROM needed
 
 Tested by: TechZombie
-
 
 ## Status 
 
