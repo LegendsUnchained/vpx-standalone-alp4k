@@ -3,7 +3,7 @@
 ![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=103507&id=12917&full=1)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 4.0  
+Version: 5.5  
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=12917)
 
 DirectB2S
@@ -15,11 +15,12 @@ ROM
 
 ROM Name: dollyptb.zip  
 Download: [Pinball Nirvana](https://pinballnirvana.com/forums/resources/dollyptb.1732/)
+Alt. Download [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=693)
 
 MD5: 57ED716D60DF66D4F868619C332B0CB7  
 SHA: 3EF8146E62BD0D8E7A0D376839ACA2EE2FD6D015
 
-Tested by: evilwraith
+Tested by: evilwraith (V4), parceval (V5.5)
 
 ## Status 
 
@@ -33,7 +34,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-dolly.elf
-- Download the table and directb2s listed above, extract (if necessary) and copy all contents to external/vpx-dolly
+- Download the table and directb2s listed above, extract (if necessary) and copy "Dolly Parton (Bally 1979) v55_VPX8.zip" and Dolly Parton (Bally 1978) to external/vpx-dolly
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - The ROM zip file gets copied to vpx-dolly/pinmame/roms (do not unzip)
 - "I'm not offended by all the dumb blonde jokes because I know I'm not dumb...and I also know that I'm not blonde."
