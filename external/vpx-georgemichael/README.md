@@ -2,27 +2,29 @@
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_03/PlayfieldFaithGeorgeMichaelver.1_01.jpg.7e4fdb8fd4a6d74fb2b2cb70333eb378.jpg)
 
-Authors: [VLive](https://vpuniverse.com/profile/57704-vlive/)   
-Filename: Faith George Michael ver. 1.01.vpx
+Authors: [VLive](https://vpuniverse.com/profile/57704-vlive/)  
+Filename: Faith George Michael ver. 1.01.vpx  
 Download: [VPUniverse](https://vpuniverse.com/files/file/13638-vpx-table-faith-george-michael-ver-101/)
 
-DirectB2S 
-Authors: [VLive](https://vpuniverse.com/profile/57704-vlive/)   
-Filename: Faith George Michael ver. 1.01.directb2s
+DirectB2S
+
+Authors: [VLive](https://vpuniverse.com/profile/57704-vlive/)  
+Filename: Faith George Michael ver. 1.01.directb2s  
 Download: [VPUniverse](https://vpuniverse.com/files/file/13638-vpx-table-faith-george-michael-ver-101/)
 
 ROM 
-Authors: [TechZombie]
-charlies.zip
+
+Authors: [TechZombie]  
+Filename: charlies.zip  
 Download: [Internet Archive](https://archive.org/details/charlies_202412)
 
 Music
-Authors: [TechZombie]
-music.zip
+
+Authors: [TechZombie]  
+Filename: music.zip  
 Download: [Internet Archive](https://archive.org/details/music_202412)
 
 Tested by: TechZombie
-
 
 ## Status 
 
