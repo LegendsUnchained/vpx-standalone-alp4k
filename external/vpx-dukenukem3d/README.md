@@ -1,6 +1,6 @@
 # Duke Nukem 3D (Original 2020)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=73688&id=14731&full=1)
+![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-dukenukem3d.png)
 
 Authors: [ivantba](https://www.vpforums.org/index.php?showuser=123858)  
 Download File Name: Duke Nukem 3D (TBA 2020).rar  
