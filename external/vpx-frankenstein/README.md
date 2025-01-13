@@ -1,11 +1,11 @@
 # Frankenstein - Balutito MOD (Original 2022)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=74112&id=14775&full=1)
+![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-frankenstein.png)
 
 Authors: [balutito](https://vpuniverse.com/profile/36070-balutito/)  
 Download File Name: 1823184329_FrankensteinVPX.rar  
 Filename: Frankenstein.vpx  
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14775)
+Download: [VP Forums](https://vpuniverse.com/files/file/8983-frankenstein-color-edition-balutito-mod/)
 
 DirectB2S included with Table.rar file. 
 
@@ -18,7 +18,7 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 Music
 
 Filename: Medias FRAnk Color.rar  
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14775)
+Download: [VP Forums](https://vpuniverse.com/files/file/8983-frankenstein-color-edition-balutito-mod/)
 
 Tested by: TechZombie
 
