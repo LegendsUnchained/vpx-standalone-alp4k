@@ -8,8 +8,8 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 
 DirectB2S
 
-Authors: [hauntfreaks](https://www.vpforums.org/index.php?showuser=73849)
-Version 1.0
+Authors: [hauntfreaks](https://www.vpforums.org/index.php?showuser=73849)  
+Version 1.0  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=13216) 
 
 Tested by: Boris
