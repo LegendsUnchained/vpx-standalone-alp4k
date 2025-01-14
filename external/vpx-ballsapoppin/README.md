@@ -23,7 +23,7 @@ Tested by:
 Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 50 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 52 |
 
 ## Instructions
 
@@ -31,6 +31,5 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Add your personalized launcher.elf and rename it to vpx-ballsapoppin.elf
 - Download the table & backglass zips above, extract them and copy them into the "/vpx-ballsapoppin" folder
 - Make sure (.vpx), (.directb2s), (.ini) files are all named the same
-- The vbs file is optional, but it turns off shadows and gets FPS up. 
 
 - "The world's first 'multiball' equipped machine"
