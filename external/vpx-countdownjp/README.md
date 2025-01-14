@@ -3,16 +3,18 @@
 ![Table Preview](https://github.com/BorisUndead/vpx-images/blob/main/vpx-countdownjp.png)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 5.5.0 
+Version: 5.5.0  
 Download: [VP Universe](https://www.vpforums.org/index.php?app=downloads&showfile=13519)
 
 DirectB2S
-Authors: [ryguy417](https://vpuniverse.com/profile/31096-ryguy417/)
-Version 1.0.1
+
+Authors: [ryguy417](https://vpuniverse.com/profile/31096-ryguy417/)  
+Version 1.0.1  
 Download: [VP Universe](https://vpuniverse.com/files/file/13505-count-down-gottlieb-1979/)
 
 ROM
-Download[Pinball Nirvana](https://pinballnirvana.com/forums/resources/new-fixed-roms-for-vpinmame-v3-6-0-963-beta.8379/)
+
+Download: [Pinball Nirvana](https://pinballnirvana.com/forums/resources/new-fixed-roms-for-vpinmame-v3-6-0-963-beta.8379/)
 
 Tested by: Boris
 
