@@ -1,5 +1,5 @@
 # Balls-A-Poppin (Bally 1956)
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=114335&id=17920&full=1)
+![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_12/ballsapoppin_playfield.PNG.6c258e7d176338d9ff8d9f1e7e5a5a82.PNG)
 
 Author(s): [loserman](https://www.vpforums.org/index.php?showuser=41250)
   
