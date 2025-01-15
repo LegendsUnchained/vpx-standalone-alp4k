@@ -1,6 +1,6 @@
 # Conan (Rowamet 1983)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-conan.png)
+![Table Preview](https://www.vpforums.org/index.php?app=downloads&showfile=13053#)
 
 Authors: [xenonph](https://www.vpforums.org/index.php?showuser=14100)
 	 [batch](https://www.vpforums.org/index.php?showuser=30858)
