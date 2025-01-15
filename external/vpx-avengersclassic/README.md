@@ -1,18 +1,20 @@
 # JP's Avengers LE (Stern 2012)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=111114&id=14537&full=1)
+![Table Preview](https://github.com/bhobman/vpx-previews/blob/878805b69210dfdbefa94b46b955cf7903acc522/vpx-jps-avengers.jpg)
+
+**VPX Table**
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?s=543a5ca562cc33a89debe8ace8834f1e&showuser=277)  
-Version: 5.0.0  
+Version: 5.5.0  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14537)
 
-DirectB2S
+**DirectB2S**
 
 Authors: [Wildman](https://vpuniverse.com/profile/5-wildman/)  
 Version: 1.0  
 Download: [VP Universe](https://vpuniverse.com/files/file/2452-the-avengers-premium-stern-2013/)
 
-ROM
+**ROM**
 
 Download: [VP Universe](https://vpuniverse.com/files/file/3917-avengers-the-limited-edition-v17/)
 
@@ -29,3 +31,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-avengersclassic.elf
 - Download the table and directb2s versions listed above and copy them into this folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+- "Hulk Smash!" your high score
