@@ -1,16 +1,13 @@
 # Conan (Rowamet 1983)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=108064&id=13053&full=1)
+[Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=108064&id=13053&full=1)
 
-Authors: [xenonph](https://www.vpforums.org/index.php?showuser=14100);
-	 [batch](https://www.vpforums.org/index.php?showuser=30858);
-	 [JPSalas](https://www.vpforums.org/index.php?showuser=277);
-
+Authors: [xenonph](https://www.vpforums.org/index.php?showuser=14100) [batch](https://www.vpforums.org/index.php?showuser=30858) [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=13053)
 
 DirectB2S
 
-Authors: [gothrutt](https://www.vpforums.org/index.php?showuser=113691)
+Authors: [gothrutt](https://www.vpforums.org/index.php?showuser=113691)  
 Version: 1.0.1  
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=12626)
 
@@ -19,7 +16,7 @@ ROM
 ROM Name: rollstob.zip  
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=681)  
 
-SHA1: 
+SHA1:  
 MD5: 
 
 Tested by: Parceval
