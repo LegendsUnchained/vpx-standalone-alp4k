@@ -7,9 +7,9 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 
 DirectB2S
 
-Authors: [loserman](https://www.vpforums.org/index.php?showuser=41250)  
+Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
 Version: v 1.0  
-Download: [VP Universe](https://www.vpforums.org/index.php?app=downloads&showfile=14097)
+Download: [VP Universe](https://vpuniverse.com/files/file/16696-balls-a-poppin-bally-1956-b2s/)
 
 Tested by:  
 [Rick]
@@ -27,5 +27,5 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-ballsapoppin.elf
 - Download the table & backglass zips above, extract them (if neccssary) and copy them into the external/vpx-ballsapoppin folder
-- Make sure (.vpx), (.directb2s), (.ini) files are all named the same
+- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - "The world's first 'multiball' equipped machine"
