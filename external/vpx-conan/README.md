@@ -1,6 +1,6 @@
 # Conan (Rowamet 1983)
 
-[Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=108064&id=13053&full=1)
+![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-conan.png)
 
 Authors: [xenonph](https://www.vpforums.org/index.php?showuser=14100) [batch](https://www.vpforums.org/index.php?showuser=30858) [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=13053)
@@ -17,7 +17,7 @@ ROM Name: rollstob.zip
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=681)  
 
 SHA1:  
-MD5: 
+MD5:  
 
 Tested by: Parceval
 
