@@ -1,6 +1,6 @@
 # Space Mission (Williams 1976)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_02/SpaceMissionScreenshotVertical.png.c8f16ee5f04e2d38b3f31052b0305a1a.png)
+![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-spacemission.png)
 
 Authors: [jcalhoun](https://vpuniverse.com/profile/66921-jcalhoun/)  
 Version: 1.1  
@@ -26,6 +26,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-spacemission.elf
-- Download the table and directb2s versions listed above and copy them into this folder
+- Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-spacemission
 - Make sure (.vpx), and (.directb2s) files are all named the same
 - "Your mission is space"
