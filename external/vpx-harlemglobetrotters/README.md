@@ -15,7 +15,12 @@ Download: [VP Universe](https://vpuniverse.com/files/file/13443-harlem-globetrot
 **ROM**<br>
 This table uses two roms:<br>
 Download hglbtrtb.zip: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=695)<br>
-Download hglbtrtr.zip: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=696)
+SHA1: 527A688E11398CCD49ED0A1B9A404EC013A308D6<br>
+MD5: A56BAC62DC6DDB828EBF65EE43CF885F
+
+Download hglbtrtr.zip: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=696)<br>
+SHA1: 446365CD2800D2312861132AF6E028FCF1623C3A<br>
+MD5: A0B8F1530FF690649322D63E631610BA<br>
 
 Tested by: bhhob
 

@@ -1,6 +1,6 @@
 # Bad Cats (Williams 1989)
 
-![Table Preview](https://www.vpforums.org/index.php?s=582515d2c70108c6e0b0ff449083190c&app=downloads&module=display&section=screenshot&record=66323&id=12401&full=1)
+![Table Preview](https://github.com/bhobman/vpx-previews/blob/1448c4d8c5e2f6d06d3acc94b4012999e2f920e7/vpx-badcats-preview.png)
 
 Author: [Unclewilly](https://www.vpforums.org/index.php?s=582515d2c70108c6e0b0ff449083190c&showuser=12)  
 Version: 1.2.1a  

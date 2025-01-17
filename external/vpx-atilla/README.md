@@ -1,6 +1,6 @@
 # Attila The Hun (Game Plan 1984)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=62992&id=13486&full=1)
+![Table Preview](https://github.com/bhobman/vpx-previews/blob/63dc569dad9ecebc93e1ef49d710c77afe04639b/vpx-attila-preview.png)
 
 Tested by: Mox
 
