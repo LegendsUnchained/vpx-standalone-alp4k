@@ -1,6 +1,6 @@
 # Beverly Hills Cop (TBA 2019)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=72058&id=14501&full=1)
+![Table Preview](https://github.com/bhobman/vpx-previews/blob/50bfa48cd441bc8d22049beb3863d1968dfc7af4/vpx-beverly-hills-preview.png)
 
 Author(s): [ivantba](https://www.vpforums.org/index.php?showuser=123858)  
 Version: Beverly Hills Cop (TBA 2019) 1.0
