@@ -1,7 +1,7 @@
 # The Shadow (Bally 1994)
 
-![External Image](https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/external/vpx-theshadow/vpx-theshadow.png?raw=true)
-![Table Preview](https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/external/vpx-theshadow/vpx-theshadow-table.jpeg?raw=true)
+![External Image](vpx-theshadow.png?raw=true)
+![Table Preview](vpx-theshadow-table.jpeg?raw=true)
 
 
 ## Files
