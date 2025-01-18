@@ -29,7 +29,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-badcats.elf
-- Download the table, ROM and directb2s versions listed above, extract and copy them into this folder
+- Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-badcats
 - Make sure (.vpx), (.directb2s), and (.vbs) files are all named the same
 - Place ROM zip file into vpx-badcats/pinmame/roms folder. DO NOT UNZIP!
 - NOTE: Backboard image (TOY image) renders upsidedown.  This is a table issue and not a VPX issue
