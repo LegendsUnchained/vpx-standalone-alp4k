@@ -1,6 +1,6 @@
 # Evil Dead 3 Army of Darkness (TBA 2020)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=74122&id=14777&full=1)
+![Table Preview](https://github.com/bhobman/vpx-previews/blob/63dc569dad9ecebc93e1ef49d710c77afe04639b/vpx-evil-dead-3-army-of-darkness-preview.png)
 
 Author: [ivantba](https://www.vpforums.org/index.php?showuser=123858)  
 Filename:  Evil Dead 3 Army of Darkness (TBA 2020).rar 

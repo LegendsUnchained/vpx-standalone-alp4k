@@ -1,6 +1,6 @@
 # Airwolf (TBA 2020)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=74112&id=14775&full=1)
+![Table Preview](https://github.com/bhobman/vpx-previews/blob/e877ee0cf36ccceabbefdcf28a68290fe1d87066/vpx-airwolf-preview.png)
 
 Authors: [ivantba](https://www.vpforums.org/index.php?showuser=123858)  
 Download File Name: Airwolf (TBA 2020).rar  

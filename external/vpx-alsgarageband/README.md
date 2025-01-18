@@ -1,6 +1,6 @@
 # Al's Garage Band Goes on a World Tour (Gottlieb 1992)
 
-![Table Preview](https://www.vpforums.org/index.php?s=8351400e311e3d8e95ecf0fcb31842f1&app=downloads&module=display&section=screenshot&record=84324&id=15417&full=1)
+![Table Preview](https://github.com/bhobman/vpx-previews/blob/e877ee0cf36ccceabbefdcf28a68290fe1d87066/vpx-alsgarageband-preview.png)
 
 Authors: [antisect](https://www.vpforums.org/index.php?s=8351400e311e3d8e95ecf0fcb31842f1&showuser=153545)  
 Version: 2.0  

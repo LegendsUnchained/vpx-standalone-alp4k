@@ -1,6 +1,6 @@
 # Klondike (Williams 1971)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=110291&id=17300&full=1)
+![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-klondike.png)
 
 Authors: [kiwi](https://www.vpforums.org/index.php?showuser=30913)  
 Version: 1.0.2  
@@ -27,5 +27,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-klondike.elf
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-klondike
-- Make sure the vpx, directb2s, vbs, and ini files are all named the "exact" same
+- Make sure the (.vpx), (.directb2s), (.vbs), and (.ini) files are all named the "exact" same
 - "Gold rush in the klondike"

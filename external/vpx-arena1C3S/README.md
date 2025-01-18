@@ -1,6 +1,6 @@
 # Arena 1.0c (Gottlieb 1987)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=83596&id=15411&full=1)
+![Table Preview](https://github.com/bhobman/vpx-previews/blob/63dc569dad9ecebc93e1ef49d710c77afe04639b/vpx-arena-preview.jpg)
 
 Tested by: Mox
 
