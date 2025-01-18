@@ -1,6 +1,6 @@
 # Austin Powers (Stern 2001)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=81180&id=15332&full=1)
+![Table Preview](https://github.com/bhobman/vpx-previews/blob/1448c4d8c5e2f6d06d3acc94b4012999e2f920e7/vpx-austin-powers-preview.png)
 
 Author(s): [VPin Workshop](https://www.vpforums.org/index.php?showuser=153279)  
 Version: 1.0.3  
@@ -28,7 +28,8 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-austinpowers.elf
-- Download the table and directb2s versions listed above, extract and copy them into this folder
+- Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-austinpowers
+- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Rom file stays in zip folder, place zip file in vpx-austinpowers/pinmame/roms
 - "Mr. Powers, I bid you adieu!" --Dr. Evil
 - "Get in my belly!" --Fat Bastard

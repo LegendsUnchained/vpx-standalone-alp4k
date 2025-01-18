@@ -1,6 +1,6 @@
 # Airborne Avenger (Atari 1977)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=78762&id=13676&full=1)
+![Table Preview](https://github.com/bhobman/vpx-previews/blob/3b211f4bddea86c25fa94f0045c326fa39c0dc9f/vpx-airborneavenger-preview.png)
 
 Tested by: Mox
 
