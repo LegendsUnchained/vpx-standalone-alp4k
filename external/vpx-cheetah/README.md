@@ -1,6 +1,6 @@
 # Cheetah (Stern 1980)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_08/screenshot_1.0.0.PNG.ac789add91ea613fb40dc2c88affbe93.PNG)
+![Table Preview](https://github.com/bhobman/vpx-previews/blob/825be6e1c9d965668b840a43915e87f46fa3bc48/vpx-cheetah-preview.jpg)
 
 Authors: [Frank_Enstein](https://vpuniverse.com/profile/57481-frank_enstein/)  
 Version: 1.0.2  

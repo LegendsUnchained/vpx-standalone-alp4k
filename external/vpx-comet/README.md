@@ -1,6 +1,6 @@
 # Comet (Williams 1985)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_01/392386208_CometCabinetScreenCapture.PNG.d8d0f3ac1b86d3da6c04b0fb0837f8f8.PNG)
+![Table Preview](https://github.com/bhobman/vpx-previews/blob/f38f7c50d55230820c14395d713dfc89dda93460/vpx-Comet-preivew.png)
 
 Authors: [UnclePaulie](https://vpuniverse.com/profile/16685-unclepaulie/)
 Version: 2.3
