@@ -1,6 +1,6 @@
 # Bird Fly (Original 2022)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=99985&id=16555&full=1)
+![Table Preview](https://github.com/bhobman/vpx-previews/blob/0ea5421ab6f297edb6ae7c4b5587c4fd03a14834/vpx-birdfly-preview.png)
 
 Authors: [loloallo](https://www.vpforums.org/index.php?showuser=160835)  
 Download File Name: Bird_Fly.0.9.0_VPX10.7.zip  
