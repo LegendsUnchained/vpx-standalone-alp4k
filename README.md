@@ -9,6 +9,8 @@ If you'd like to contribute to the development of the Legends Unchained Loader a
 ## Contributing
 This repo is public and accepts Pull Requests for new table configs and updates to existing configs.
 
+A table template [README.md](table-template_README.md) file to assist with documentation consistency across all tables.
+
 ## Recommended Hardware
 The following hardware has been verified to work with the Legends Unchained Loader. Other products may work, but these are known to work well. If you find additional compatible hardware, please let us know and we'll add it to the list!
 
