@@ -31,7 +31,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-banzairun.elf
-- Download the table and directb2s versions listed above, extract and copy them into this folder
+- Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-banzairun
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same - DO NOT RENAME VPReg.ini file!
 - Place bnzai_l3.zip in the external/vpx-banzairun/pinmame/roms folder. *Do Not unzip*!
 - "Challenge racers, Win the race up the mountain, Banzai!"
