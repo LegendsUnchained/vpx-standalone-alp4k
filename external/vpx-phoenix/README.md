@@ -2,21 +2,21 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-phoenix.png)
 
-Author: [JPSalas](https://www.vpforums.org/index.php?showuser=277) 
-
-Tested by: Bla1ze 
+Author: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
 
 Version: 5.5.0
 
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=16456)
 
-DirectB2S
+Tested by: Bla1ze
+
+**DirectB2S**
 
 Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
 
 Download: [VP Universe](https://vpuniverse.com/files/file/21369-phoenix-williams-1978-b2s/)
 
-ROM
+**ROM**
 
 Download: [VP Universe](https://vpuniverse.com/files/file/4744-phoenix-l-1/)
 
@@ -24,7 +24,7 @@ SHA: 22d990057423e936475df9baa4365ee1b3417d69
 
 MD5: a5de3a78c1e7eebcf1d1378362ea94b2
 
-Alt Color DMD
+**Alt Color DMD**
 
 Author: [KRAKEN](https://vpuniverse.com/profile/24633-odinbolt/)
 
