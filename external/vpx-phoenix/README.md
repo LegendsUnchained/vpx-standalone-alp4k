@@ -14,11 +14,11 @@ DirectB2S
 
 Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
 
-Download [VP Universe](https://vpuniverse.com/files/file/21369-phoenix-williams-1978-b2s/)
+Download: [VP Universe](https://vpuniverse.com/files/file/21369-phoenix-williams-1978-b2s/)
 
 ROM
 
-Download [VP Universe](https://vpuniverse.com/files/file/4744-phoenix-l-1/)
+Download: [VP Universe](https://vpuniverse.com/files/file/4744-phoenix-l-1/)
 
 SHA: 22d990057423e936475df9baa4365ee1b3417d69
 
