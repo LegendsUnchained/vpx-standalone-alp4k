@@ -2,6 +2,8 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-phoenix.png)
 
+**Table**
+
 Author: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
 
 Version: 5.5.0
