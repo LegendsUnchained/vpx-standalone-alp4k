@@ -16,7 +16,6 @@
 
 ---
 
-
 ## Status 
 **Minimum VPX Standalone build:** {vpx-standalone-build-#}
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
@@ -29,6 +28,6 @@
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to `vpx-{tablename}.elf`
-- Download the table and directb2s versions listed above and copy them into `vpx-{tablename}`
-- Rom file (ts_lx5.zip) stays in zip folder, place zip file in `vpx-{tablename}/pinmame/roms`
-- Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same. 
+- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-{tablename}`
+- Rom file (FILENAME.zip) stays in zip folder, place zip file in `vpx-{tablename}/pinmame/roms`
+- Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same.
