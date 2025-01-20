@@ -1,6 +1,6 @@
 # Yellow Submarine (Original 2021)
 
-![vpx-yellowsubmarine](https://github.com/user-attachments/assets/75f9283e-eaf1-4d9c-837d-1df6a3d062de)
+![yellowsubmarine](https://github.com/user-attachments/assets/127dc8d6-0378-46ce-8d1a-702558ca5700)
 
 Author: [drinkcristal](https://vpuniverse.com/profile/38572-drinkcristal/)  
 Version: 1.0.0  
@@ -14,7 +14,7 @@ VR ROOM Yellow Submarine (Original 2021) 1.0.0.directb2s
 
 MUSIC
 Thanks to TechZombie for hosting!  
-[archive.org](https://archive.org/details/em_20250105) 
+[archive.org](https://archive.org/details/em_20250105)  
 em.zip 
 
 Press Start button twice to begin play.  DPad Right changes tracks.
