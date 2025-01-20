@@ -28,7 +28,10 @@ Download: [VP Universe](https://vpuniverse.com/files/file/17697-acdc-stern-2012-
 
 ## Status 
 
+Tested by: OminousOsie
+
 Minimum VPX Standalone build: 10.8.0-1989-a764013
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 44 |
