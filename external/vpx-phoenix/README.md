@@ -28,7 +28,7 @@ Alt Color DMD
 
 Author: [KRAKEN](https://vpuniverse.com/profile/24633-odinbolt/)
 
-Download [VP Universe](https://vpuniverse.com/files/file/22901-williams-system-46-serum-pack/)
+Download: [VP Universe](https://vpuniverse.com/files/file/22901-williams-system-46-serum-pack/)
 
 
 ## Status 
