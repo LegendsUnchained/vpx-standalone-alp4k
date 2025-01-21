@@ -12,7 +12,7 @@
 | **DMD** | Included in table zip | 1.0 | |
 | **ROM** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=832) | **SHA:** fe2d2356d2366b67ffe14695d210279879035cb7 <br /> **MD5:** 6bc12de01f7dfa179845e1190a936bc9 | |
 
-**Tested by:** 
+**Tested by:** Mar3nBu
 
 ---
 
