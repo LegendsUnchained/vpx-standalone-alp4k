@@ -20,7 +20,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/17853-big-game-stern-1
 
 **ROM**
 
-Download: [VP Universe](https://vpuniverse.com/files/file/750-big-game-stern-1980/)
+Download: [VP Universe](https://vpuniverse.com/files/file/750-big-game-stern-1980/) - biggame.zip
 
 SHA: bac2245363c73701ee5f02c9f1771c6c635588b5
 
