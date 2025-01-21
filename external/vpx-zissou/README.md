@@ -11,6 +11,8 @@
 | **B2S & DMD** | *Included in table download* | 1.2 | [Manbearpig](https://vpuniverse.com/profile/32743-manbearpig/) |
 | **ROM** | none |  |  |
 
+**Tested by:** Boris
+
 ---
 
 ## Status 
@@ -27,5 +29,5 @@
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to `vpx-zissou.elf`
-- Download the table, ROM and directb2s versions listed above and copy them into the `vpx-zissou`
-- Make sure `(.vpx)` `(.direct2b2s)` and `(.ini)` are all named the same. s
+- Download the table and directb2s versions listed above, extract (if necessary) and copy them to `external/vpx-zissou`
+- Make sure `(.vpx)` `(.direct2b2s)` and `(.ini)` are all named the same
