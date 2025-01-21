@@ -9,18 +9,17 @@ Download: [VPUniverse](https://vpuniverse.com/files/file/6692-vr-room-yellow-sub
 
 DirectB2S
 Author: [drinkcristal](https://vpuniverse.com/profile/38572-drinkcristal/)   
-Backglass Included with Table above  
-VR ROOM Yellow Submarine (Original 2021) 1.0.0.directb2s  
+Download: Backglass Included with Table above  
+Filename: VR ROOM Yellow Submarine (Original 2021) 1.0.0.directb2s
 
 MUSIC
 Thanks to TechZombie for hosting!  
-[archive.org](https://archive.org/details/em_20250105)  
-em.zip 
+Download: [archive.org](https://archive.org/details/em_20250105)  
+Filename: em.zip 
 
 Press Start button twice to begin play.  DPad Right changes tracks.
   
-Tested by:  
-[psybocilin]
+Tested by: [psybocilin]
 
 ## Status 
 
@@ -34,7 +33,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-yellowsubmarine.elf
-- Download the table and Media pack zips above, extract (if necessary) and copy into /external/vpx-yellowsubmarine
+- Download the table and directb2s above, extract (if necessary) and copy into /external/vpx-yellowsubmarine
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Unzip em.zip and place folder "em" in vpx-yellowsubmarine/music
 - "There's a hole in my pocket, maybe that's the way out?"
