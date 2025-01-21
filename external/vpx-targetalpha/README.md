@@ -1,17 +1,14 @@
 # Target Alpha (Gottlieb 1976)
 
-![Table Preview](https://github.com/old-cyrus/vpx-images/blob/main/vpx-targetalpha.png)
+![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-targetalpha.jpg)
 
 Authors: [teisen](https://www.vpforums.org/index.php?showuser=140346)  
-
-Version: 1.0
-
+Version: 1.0  
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=17957)
 
 DirectB2S
 
 Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
-
 Download: [VPUniverse](https://vpuniverse.com/files/file/15097-target-alpha-gottlieb-1976-b2s/)
 
 ROM
