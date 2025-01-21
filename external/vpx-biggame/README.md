@@ -5,27 +5,23 @@
 **Table**
 
 Author: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
-
-Version: 5.5.1
-
+Version: 5.5.1  
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=12920)
-
-Tested by: Bla1ze
 
 **DirectB2S**
 
-Author: [Blacksad](https://vpuniverse.com/profile/9127-blacksad/)
-
+Author: [Blacksad](https://vpuniverse.com/profile/9127-blacksad/)  
 Download: [VP Universe](https://vpuniverse.com/files/file/17853-big-game-stern-1980-b2s-with-full-dmd/)
 
 **ROM**
 
-Download: [VP Universe](https://vpuniverse.com/files/file/750-big-game-stern-1980/) - biggame.zip
+Filename: biggame.zip  
+Download: [VP Universe](https://vpuniverse.com/files/file/750-big-game-stern-1980/)  
 
-SHA: bac2245363c73701ee5f02c9f1771c6c635588b5
-
+SHA: bac2245363c73701ee5f02c9f1771c6c635588b5  
 MD5: b481cc8b558b5d83e601b15e7c42367a
 
+Tested by: Bla1ze
 
 ## Status 
 
@@ -38,7 +34,7 @@ Minimum VPX Standalone build: 10.8.0-2042-1431983
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-biggame.elf
-- Download the table, ROM and directb2s versions listed above and copy them into this folder
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-- The ROM zip file gets copied to pinmame/roms (do not unzip)
+- Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-biggame
+- Make sure (.vpx), (.directb2s), (.vbs) and (.ini) files are all named the same
+- The ROM zip file gets copied to vpx-biggame/pinmame/roms (Do not unzip!)
 - "So big: it's making pinball history." 🐯
