@@ -1,6 +1,6 @@
 # Cuphead Pro (Original 2020)
 
-![vpx-yellowsubmarine](https://github.com/user-attachments/assets/75f9283e-eaf1-4d9c-837d-1df6a3d062de)
+![cuphead](https://github.com/user-attachments/assets/77d533ec-dc0c-4016-9dc1-5fa0fe523477)
 
 Author: [Onevox](https://vpuniverse.com/profile/14340-onevox/)  
 Version: 1.0.0  
@@ -12,9 +12,9 @@ Author: [Onevox](https://vpuniverse.com/profile/14340-onevox/)
 Backglass Included with Table above  
 Cuphead Pro (D. Goblett & Co 2020).directb2s  
 
-MUSIC
-[uploadnow.io](https://uploadnow.io/s/45a7100f-273b-403f-8a4e-389b15197a61) 
-em.zip 
+MUSIC  
+[uploadnow.io](https://uploadnow.io/s/45a7100f-273b-403f-8a4e-389b15197a61)  
+Music.zip 
   
 Tested by:  
 [psybocilin]
