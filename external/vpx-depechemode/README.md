@@ -1,6 +1,6 @@
 # Depeche Mode Pinball (Original 2021)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=74112&id=14775&full=1)
+![Table Preview](../../images/vpx-fifth-element-preview.png)
 
 Authors: [ivantba](https://www.vpforums.org/index.php?showuser=123858)  
 Download File Name: Depeche Mode Pinball.zip  
