@@ -5,13 +5,13 @@
 Author: [pedator](https://www.vpforums.org/index.php?showuser=141813)  
 Version: 1.0   
 Black Fever (Playmatic 1980).zip  
-Download: [vpforums](https://www.vpforums.org/index.php?s=d454908580f80f63b6fa31ba5524abf9&app=downloads&showfile=18810)
+Download: [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=18810)
 
 DirectB2S  
 Author: [pedator](https://www.vpforums.org/index.php?showuser=141813)    
 Version 1.0   
 Black Fever (Playmatic 1980) directb2s.zip  
-Download: [vpforums](https://www.vpforums.org/index.php?s=d454908580f80f63b6fa31ba5524abf9&app=downloads&showfile=18810)
+Download: [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=18810)
 
 ROM  
 Download: [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=3074)  
