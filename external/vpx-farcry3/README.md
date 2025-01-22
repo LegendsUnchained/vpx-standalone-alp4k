@@ -1,6 +1,6 @@
 # Far Cry 3 - Blood Dragon (Original 2018)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=72006&id=13657&full=1)
+![Table Preview](../../images/vpx-far-cry-3-blood-dragon-preview.png)
 
 Authors: [ivantba](https://www.vpforums.org/index.php?showuser=123858)  
 Download File Name:  Far Cry 3 Blood Dragon (TBA 2018).rar  
