@@ -22,6 +22,6 @@ Minimum VPX Standalone build: 10.8.0-2006-6d603fb
 - Add your personalized launcher.elf and rename it to **vpx-youngfrankenstein.elf**
 - Download and extract the **VPX** file ONLY, and copy into the **vpx-youngfrankenstein** folder
 - Download and extract any of the **DIRECTB2S** files based on your setup, and copy into the **vpx-youngfrankenstein** folder
-- Make sure (.vpx), (.directb2s), (.vbs), and (.ini) files are all named the same
+- Make sure (`.vpx`), (`.directb2s`), (`.vbs`), and (`.ini`) files are all named the same
 - Download the **ROM** version listed above and copy it into `\vpx-youngfrankenstein\pinmame\roms` (DO NOT UNZIP)
 - "Put. The. Candle. Back."

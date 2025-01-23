@@ -1,6 +1,6 @@
 # Gladiators (Gottlieb 1993)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=96356&id=13868&full=1)
+![Table Preview](../../images/vpx-gladiators-preview.png)
 
 Authors: [kiwi](https://www.vpforums.org/index.php?showuser=30913)
 Version: 1.1.1.

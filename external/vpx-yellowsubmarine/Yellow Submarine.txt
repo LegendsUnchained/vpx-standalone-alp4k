@@ -1,0 +1,41 @@
+
+Yellow Submarine (2020)
+This was my first board thanks to the generosity of JPsalas who allowed me to destroy his Speakeasy
+so it deserved an update
+
+new playfield, backglass with images of the movie, lights and rules
+added extra ball, the light turns on by slot combination
+added an interdimensional black hole that disappears the ball by opening a random portal above the plaifield expelling the ball, if I'm serious haha
+Easy change of the ambient lightning: Hold down LeftMagnaSave and with RightMagnaSave it will switch between LUT images, from light to dark, 9 levels, 
+and the selection will be saved for the table
+added DOF, thanks Arngim 
+Rules in the aprom	
+
+Music mode that is activated in script (line 34: MusicMode = True)
+The location for the music is as follows: Visual Pinball\Music\EM\Yellow
+Those who had the previous version is the same music
+
+Music must be "purchased / downloaded for copyright" and placed in Visual Pinball \ Music \ EM \ Yellow with these names or change them in the script (line 413)
+YS1.mp3 to YS10.mp3 and the music you want for the launch presentation with the name intro.mp3
+
+my recomendation is:
+intro.mp3 ---> Beatles__Yellow_Submarine_In_Pepperland__INSTRUMENTAL.mp3
+YS1.mp3   ---> Yellow Submarine	
+YS2.mp3   ---> Hey Bulldog
+YS3.mp3   ---> Eleanor Rigby
+YS4.mp3   ---> Love You To
+YS5.mp3   ---> All Together Now
+YS6.mp3   ---> Lucy in the Sky with Diamonds
+YS7.mp3   ---> Think for Yourself
+YS8.mp3   ---> Sgt. Pepper's Lonely Hearts Club Band
+YS9.mp3   ---> With a Little Help from My Friends
+YS10.mp3   ---> Nowhere Man
+
+Right Magnasave turn on and change the music (MusicMode = True)
+Left Magnasave stops the music
+For those who do not have Magnasave, the start key turns on and changes the music but remember if you press it before 
+the first ball is lost, it will activate the second player
+
+
+
+

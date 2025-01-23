@@ -1,7 +1,7 @@
 # Harley Davidson (Bally 1991)
 Tested By: kaoticBPR
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=113988&id=13632&full=1)
+![Table Preview](../../images/vpx-harley-davidson-bally-preview.jpg)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)
 Version: 4.3.0
