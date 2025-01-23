@@ -1,7 +1,7 @@
 # Flash (Williams 1979)
 TESTED: kaoticBPR
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=103634&id=12024&full=1)
+![Table Preview](../../images/vpx-flash1979-preview.jpg)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: V4.0

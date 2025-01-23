@@ -1,6 +1,6 @@
 # Frank Thomas' Big Hurt (Gottlieb 1995)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=108911&id=17152&full=1)
+![Table Preview](../../images/vpx-frankthomasbighurt-preview.jpg)
 
 Authors: [bigus1](https://www.vpforums.org/index.php?showuser=107629)
 Version: 1.1
