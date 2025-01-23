@@ -1,7 +1,7 @@
 # Firepower II (Williams 1983)
 TESTED: kaoticBPR
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=108684&id=17049&full=1)
+![Table Preview](../../images/vpx-firepower2-preview.jpg)
 
 Authors: [Bigus1](https://www.vpforums.org/index.php?showuser=107629)  
 Version: V1.4 

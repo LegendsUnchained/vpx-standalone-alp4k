@@ -1,6 +1,6 @@
 # Hardbody (Bally 1987)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_04/hb.png.a26df209c934794357023af42d9b0d42.png)
+![Table Preview](../../images/vpx-hardbody-preview.png)
 
 Author: [ARMYAVIATION](https://vpuniverse.com/profile/18348-armyaviation/)  
 Version:  Hardbody (Bally 1987) 1.4  

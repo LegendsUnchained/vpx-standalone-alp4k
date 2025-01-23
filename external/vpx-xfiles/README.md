@@ -1,30 +1,19 @@
-X Files (Sega 1997)
+# X Files (Sega 1997)
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-xfiles.png)
 
-Author: [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/) 
+---
 
-Tested by: Bla1ze 
+## Files
+| File Type | Link | Version | Author | 
+|-----------|--------|----------|--------------|
+| **VPX** | [VP Universe](https://vpuniverse.com/files/file/14912-the-x-files-sega-1997/) | 1.2.9 | [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/) |
+| **B2S & DMD** | [VP Universe](https://vpuniverse.com/files/file/14927-x-files-sega-1997-b2s-with-full-dmd/) | 1.0.0 | [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
+| **ROM** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1077) | **SHA:** ff04213446b2adeadfad0a3034f105b2e742b85c <br /> **MD5:** 5ad341cc9c983cfde8ddbca479530b6c |  |
 
-Version: 1.29 
+**Tested by:** Bla1ze
 
-Download: [VP Universe](https://vpuniverse.com/files/file/14912-the-x-files-sega-1997/)
-
-DirectB2S
-
-Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
-
-Version: 1.0.0
-
-Download: [VP Universe](https://vpuniverse.com/files/file/14927-x-files-sega-1997-b2s-with-full-dmd/)
-
-ROM
-
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1077)
-
-SHA: ff04213446b2adeadfad0a3034f105b2e742b85c
-
-MD5: 5ad341cc9c983cfde8ddbca479530b6c
+---
 
 ## Status 
 
@@ -32,10 +21,13 @@ MD5: 5ad341cc9c983cfde8ddbca479530b6c
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 
+---
 
 ## Instructions
 
 - Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-xfiles.elf
-- Download the table, ROM and directb2s versions listed above and copy them into this folder
-- Trust no-one!
+- Add your personalized launcher.elf and rename it to `vpx-xfiles.elf`
+- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-xfiles`
+- Rom file (`xfiles.zip`) stays in zip folder, place zip file in `vpx-xfiles/pinmame/roms`
+- Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same.
+> Trust no-one!

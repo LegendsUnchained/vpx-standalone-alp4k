@@ -1,7 +1,7 @@
 # Fathom (Bally 1981)
 TESTED: kaoticBPR
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_09/FathomCaptureCabinet.png.0d4487d0c3c25716b4106503eaf62e3b.png)
+![Table Preview](../../images/vpx-Fathom-preview.jpg)
 
 Authors: [UnclePaulie](https://vpuniverse.com/profile/16685-unclepaulie/)  
 Version: 2.0.1
