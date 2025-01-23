@@ -1,7 +1,7 @@
 # Firepower (Williams 1980)
 TESTED: kaoticBPR
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=106538&id=13971&full=1)
+![Table Preview](../../images/vpx-firepower-preview.png)
 
 Authors: [3rdaxis](https://www.vpforums.org/index.php?showuser=91493)  
 Version: V1.0.5 
