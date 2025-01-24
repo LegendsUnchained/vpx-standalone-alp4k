@@ -1,6 +1,6 @@
 # King Kong (Data East 1990)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=105417&id=15118&full=1)
+![Table Preview](../../images/vpx-kingkong-preview.jpg)
 
 Authors: [Bigus1](https://www.vpforums.org/index.php?showuser=107629)  
 Version: 2.0  
