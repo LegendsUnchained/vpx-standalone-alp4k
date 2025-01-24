@@ -1,6 +1,6 @@
 # Miami Vice (TBA 2020)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=75396&id=14925&full=1)
+![Table Preview](../../images/vpx-miami-vice-preview.jpg)
 
 Author(s): [ivantba](https://www.vpforums.org/index.php?showuser=123858)  
 Version:  Miami Vice (TBA 2020).zip Version 1.0
