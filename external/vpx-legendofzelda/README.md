@@ -2,7 +2,7 @@
 
 Tested by: kaoticBPR
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=117126&id=11608&full=1)
+![Table Preview](../../images/vpx-legend-of-zelda-preview.jpg)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 4.3.1  

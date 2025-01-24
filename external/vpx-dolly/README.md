@@ -1,6 +1,6 @@
 # Dolly Parton (Bally 1979)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=103507&id=12917&full=1)
+![Table Preview](../../images/vpx-dolly-parton-preview.jpg)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 4.0  

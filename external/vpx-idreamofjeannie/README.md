@@ -1,6 +1,6 @@
 # I Dream of Jeannie (Original 2019)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2019_03/552127063_IDreamofJeannie(Original2019)CryptDoctor21Xenonphfullscreen.PNG.2e1ff0135bfdaa0fbce950f3989e4496.PNG)
+![Table Preview](../../images/vpx-idreamofjeanie-preview.png)
 
 Author: [cryptdoctor21](https://vpuniverse.com/profile/12711-cryptdoctor21/)  
 Version: 1.0.0  
