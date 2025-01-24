@@ -1,7 +1,7 @@
 # Mata Hari (Bally 1978)
 Tested by: kaoticBPR
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=114831&id=14287&full=1)
+![Table Preview](../../images/vpx-matahari-preview.jpg)
 
 Authors: [bigus1](https://www.vpforums.org/index.php?showuser=107629)
 Version: 2.1

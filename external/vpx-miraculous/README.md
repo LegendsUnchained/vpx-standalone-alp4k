@@ -1,6 +1,6 @@
 # Miraculous Original (2019)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-miraculous.png)
+![Table Preview](../../images/vpx-miraculous-preview.jpg)
 
 Author: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
 
