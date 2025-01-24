@@ -3,17 +3,13 @@
 ![Table Preview](https://raw.githubusercontent.com/Bla1ze/vpx-images/refs/heads/main/vpx-playboy1978.png)
 
 Author: [HSM](https://www.vpforums.org/index.php?showuser=78127)  
-
 Version: 1.0  
-
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=13571)
 
 **DirectB2S**
 
-Author: [HiRez00](https://www.vpforums.org/index.php?showuser=125278)
-
-Version: 1.0
-
+Author: [HiRez00](https://www.vpforums.org/index.php?showuser=125278)  
+Version: 1.0  
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=15396)
 
 **ROM**
@@ -31,7 +27,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 ## Instructions
 
 - Add your personalized launcher.elf and rename it to vpx-playboy1978.elf
-- Extract the Playboy (1978).zip to your desktop
-- Copy the Playboy VPX and directb2s files to "external\vpx-playboy1978" from the Playboy 1978 folder
+- Download the vpx and directb2s files above, extract (if necessary) and copy to /external/vpx-playboy1978
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
+- Place ROM zip file into vpx-playboy1978/pinmame/roms folder. DO NOT UNZIP!
 - Party like Hef. 👯‍♂️
