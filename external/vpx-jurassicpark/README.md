@@ -1,6 +1,6 @@
 # Jurassic Park (Data East 1993)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_04/vr_jpark.JPG.ff73fe96edf34573df71ad6a02c0f24d.JPG)
+![Table Preview](../../images/vpx-jurasicpark-dataeast-preview.jpg)
 
 Authors: [Sixtoe](https://vpuniverse.com/profile/4516-sixtoe/)  
 Version: 1.0  
