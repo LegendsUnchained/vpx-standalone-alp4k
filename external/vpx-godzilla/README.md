@@ -1,6 +1,6 @@
 # Godzilla (Sega 1998)
 Tested by: kaoticBPR
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=101653&id=14616&full=1)
+![Table Preview](../../images/vpx-godzilla-preview.jpg)
 
 Table
 

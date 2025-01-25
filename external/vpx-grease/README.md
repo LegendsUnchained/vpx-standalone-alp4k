@@ -1,6 +1,6 @@
 # Grease (Original 2020)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_12/Capture.PNG.054803aec911370aba22825851cbb459.PNG)
+![Table Preview](../../images/vpx-grease-preview.png)
 
 Table
 

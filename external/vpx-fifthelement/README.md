@@ -1,6 +1,6 @@
 # The Fifth Element (Original 2022)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_09/0.png.1b30f6b8b19b1c2b137e28263140d51b.png)
+![Table Preview](../../images/vpx-fifth-element-preview.png)
 
 Authors: [nesta78](https://vpuniverse.com/profile/42455-nesta78/)
 Version: 1.3

@@ -1,6 +1,6 @@
 # Ghostbusters Slimer 5.0.0 (JP's) (Original 2023)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=112830&id=12488&full=1)
+![Table Preview](../../images/vpx-jps-ghostbusters-slimer-preview.jpg)
 
 ## Information 
 | File Type | Link | Version | Author(s) | 

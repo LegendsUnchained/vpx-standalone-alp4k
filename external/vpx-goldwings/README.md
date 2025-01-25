@@ -1,7 +1,7 @@
 # Gold Wings (Gottlieb 1986)
 Tested by: kaoticBPR
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=118787&id=18558&full=1)
+![Table Preview](../../images/vpx-goldwings-preview.jpg)
 
 Authors: [bigus1](https://www.vpforums.org/index.php?showuser=107629)
 Version: 1.1

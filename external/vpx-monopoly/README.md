@@ -1,5 +1,5 @@
 # Monopoly (Stern 2001)
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=112619&id=16734&full=1)
+![Table Preview](../../images/vpx-monopoly-preview.jpg)
 
 Author: [bigus1](https://www.vpforums.org/index.php?showuser=107629)  
 Version:  Monopoly (Stern 2001)_Bigus(MOD) 2.0  

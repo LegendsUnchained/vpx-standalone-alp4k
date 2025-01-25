@@ -1,6 +1,6 @@
 # Laser War (Data East 1987)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_06/1894942628_DesktopScreenCaptureLaserWar.PNG.1d1c2fa50b516c31ceb782c81f3a4643.PNG)
+![Table Preview](../../images/vpx-LaserWar-preview.png)
 
 Author(s): [UnclePaulie](https://vpuniverse.com/profile/16685-unclepaulie/)
   
