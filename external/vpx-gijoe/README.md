@@ -1,24 +1,21 @@
 # A Real American Hero - Operation P.I.N.B.A.L.L. (Original 2017)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2018_10/5bd4153ca8117_ARealAmericanHero1_7FS.PNG.f00361012c419e4cf739f4880f287738.PNG)
+![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-gijoe.png)
 
-Authors: [xenonph](https://vpuniverse.com/profile/8789-xenonph/)
-   
-Download File/Version: A Real American Hero (Original 2022) v2.1 VPX7.2.zip
-Filename: A Real American Hero v2.1 VPX7.2.vpx 
-
+Authors: [xenonph](https://vpuniverse.com/profile/8789-xenonph/)  
+Download File/Version: A Real American Hero (Original 2022) v2.1 VPX7.2.zip  
+Filename: A Real American Hero v2.1 VPX7.2.vpx  
 Download: [VP Forums](https://vpuniverse.com/files/file/4852-a-real-american-hero-operation-pinball-original-2022/)
 
 DirectB2S Included Wtih Table Zip.
 
 ROM
 
-Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)
-playboyb.zip
+Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)  
+Filename: playboyb.zip  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=701)
 
 Tested by: TechZombie
-
 
 ## Status 
 
