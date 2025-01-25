@@ -2,7 +2,7 @@
 
 Tested by: kaoticBPR
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=104797&id=12546&full=1)
+![Table Preview](../../images/vpx-old-coney-island-1929-preview.jpg)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 4.0.2  

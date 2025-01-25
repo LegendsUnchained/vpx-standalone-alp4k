@@ -1,6 +1,6 @@
 # Hook (Data East 1992)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=85342&id=15555&full=1)
+![Table Preview](../../images/vpx-hook-preview.png)
 
 Authors: [VPinWorkshop](https://www.vpforums.org/index.php?showuser=153279)  
 Version: 1.0

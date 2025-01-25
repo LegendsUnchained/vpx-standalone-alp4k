@@ -1,6 +1,6 @@
 # Lost in Space (Sega 1998) Bigus(MOD) 2.0
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=103965&id=14812&full=1)
+![Table Preview](../../images/vpx-lostinspace-preview.jpg)
 
 Table
 

@@ -3,7 +3,7 @@
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_04/GoldenEye-Cab.png.4a69af68f8af966126fb4c6bc58ca4d4.png)
 
 Authors: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
-Version: 1.0
+Version: 1.0  
 Download: [VP Universe](https://vpuniverse.com/files/file/10040-goldeneye-sega-1996-vpw-mod/)
 
 DirectB2S
@@ -28,5 +28,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-goldeneye.elf
-- Download the table and directb2s versions listed above and copy them into this folder
+- Download the table and directb2s versions listed above, extract them (if necessary) and copy them to external/vpx-goldeneye
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
+- Place ROM zip file into vpx-goldeneye/pinmame/roms folder. DO NOT UNZIP!
