@@ -8,11 +8,11 @@
 ## Files
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
-| **VPX** | [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=12258) | 5.5.0| [jpsalas]({https://www.vpforums.org/index.php?showuser=277)|
-| **B2S** | [vpforums] (https://www.vpforums.org/index.php?app=downloads&showfile=12269)| 1.1 | [
-hauntfreaks]({https://www.vpforums.org/index.php?showuser=73849)|
-| **DMD** | [{website}]({link}) | {version} | [{author}]({link}) | **ROM** | None | None | None |
-|
+| **VPX** | [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=12258) | 5.5.0| [jpsalas](https://www.vpforums.org/index.php?showuser=277)|
+| **B2S** | [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=12269) | 1.1 | [hauntfreaks](https://www.vpforums.org/index.php?showuser=73849)|
+| **DMD** | None | None | None |
+| **ROM** | None | None | None |
+
 
 **Tested by:** [Curt]
 
@@ -23,7 +23,7 @@ hauntfreaks]({https://www.vpforums.org/index.php?showuser=73849)|
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark | :white_check_mark: | :x: | 60 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 
 ---
 
