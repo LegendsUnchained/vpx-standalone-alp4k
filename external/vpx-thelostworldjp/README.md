@@ -3,7 +3,7 @@
 ![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=114081&id=15072&full=1)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?s=543a5ca562cc33a89debe8ace8834f1e&showuser=277)  
-Version: 4.3.0  
+Version: 5.5.0  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=15072)
 
 DirectB2S
@@ -21,7 +21,7 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 Minimum VPX Standalone build: 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 47 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 
 ## Instructions
 
