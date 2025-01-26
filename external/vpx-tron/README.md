@@ -16,7 +16,7 @@ ROM
 ROM Name: panther7.zip  
 Download: [Pinball Nirvana](https://pinballnirvana.com/forums/resources/panther7.2147/)
 
-MD5: 5bfff2b4a5b043ff621dee0b42e482a1
+MD5: 5bfff2b4a5b043ff621dee0b42e482a1  
 SHA1: 1cf92401d9ba9806e616be6d10bdccd87ee676e3
 
 Tested by: Parceval
