@@ -1,6 +1,6 @@
 # Tango & Cash Pinball (TBA 2019)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=95186&id=16281&full=1)
+![Table Preview](../../images/vpx-tango-cash-preview.jpg)
 
 Author(s): [ivantba](https://www.vpforums.org/index.php?showuser=123858)  
 Version:  Tango & Cash (TBA 2019).zip (Version 1.0)

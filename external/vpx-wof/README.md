@@ -1,6 +1,6 @@
 # Wheel of Fortune (Stern 2007)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=103525&id=16821)
+![Table Preview](../../images/vpx_wof-preview.jpg)
 
 Author: [ninuzzu](https://vpuniverse.com/profile/5530-ninuzzu/) 
 

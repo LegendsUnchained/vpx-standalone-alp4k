@@ -1,6 +1,6 @@
 # JP's Terminator 3 (Stern 2003)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=114070&id=15321&full=1)
+![Table Preview](../../images/vpx-jps-terminator-3-preview.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?s=543a5ca562cc33a89debe8ace8834f1e&showuser=277)  
 Version: 4.3.0  
