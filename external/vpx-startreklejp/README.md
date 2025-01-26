@@ -1,6 +1,6 @@
 # JP's Star Trek LE (Original 2020)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=116181&id=15247&full=1)
+![Table Preview](../../images/vpx-jps-star-trek-le-preview.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 4.3.1  

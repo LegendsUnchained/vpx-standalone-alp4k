@@ -1,5 +1,5 @@
 # Playboy 35th Anniversary (Data East 1989)
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=114122&id=17278&full=1)
+![Table Preview](../../images/vpx-playboy-35th-anniversary-data-east-1989-preview.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)
 Version: 4.3.0

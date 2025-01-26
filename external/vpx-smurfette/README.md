@@ -1,6 +1,6 @@
 # JP's Smurfette
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=105669&id=11610&full=1)
+![Table Preview](../../images/vpx-jps-smurfette-preview.jpg)
 
 Author(s): [jpsalas](https://www.vpforums.org/index.php?showuser=277)
 Download:  JPs Smurfette v4.zip

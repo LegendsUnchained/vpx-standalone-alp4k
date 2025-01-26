@@ -1,6 +1,6 @@
 # Stampede (Stern 1977)
 
-![stampede](https://github.com/user-attachments/assets/dc3ea6cd-d1a9-45b1-8d5c-560f9b09f45b)
+![stampede](../../images/vpx-stampede-preview.jpg)
 
 Author: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 5.5.0  

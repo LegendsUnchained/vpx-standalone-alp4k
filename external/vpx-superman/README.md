@@ -1,5 +1,5 @@
 # Superman (Atari 1979)
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=118791&id=18560&full=1)
+![Table Preview](../../images/vpx-superman-preview.jpg)
 
 Author(s): [bigus1](https://www.vpforums.org/index.php?showuser=107629)
   

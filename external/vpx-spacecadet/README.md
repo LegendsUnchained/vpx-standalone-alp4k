@@ -1,7 +1,7 @@
 # JP's Space Cadet (Maxis 1995) (Original)
 Tested by: kaoticBPR
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=114051&id=16091&full=1)
+![Table Preview](../../images/vpx-jps-space-cadet-preview.jpg)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)
 Version: 4.3.0
