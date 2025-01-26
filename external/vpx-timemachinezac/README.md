@@ -1,7 +1,7 @@
 # Time Machine (Zaccaria 1983)
 Tested By: kaoticBPR
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=87509&id=15536&full=1)
+![Table Preview](../../images/vpx-time-machine-preview.jpg)
 
 Authors: [goldchicco](https://www.vpforums.org/index.php?showuser=88795)
 Version: 1.3
