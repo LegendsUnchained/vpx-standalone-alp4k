@@ -20,7 +20,9 @@ ROM
 
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=681)
 
-ROM Name and version: `kissb`
+ROM Name and version: `rollstob`
+
+MD5: 9bd19e195b3e33a80de5525419a64eba
 
 ## Status 
 
