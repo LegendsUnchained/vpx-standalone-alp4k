@@ -1,6 +1,6 @@
 # Breakshot (capcom 1996)
 
-![Table Preview](https://github.com/bhobman/vpx-previews/blob/19ad80bdb45f83975a59dc1bd7a027f1eccce58c/vpx-breakshot-preview.png)
+![Table Preview](../../images/vpx-breakshot-preview.png)
 
 Authors: [Vpinworkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)
 Version: 1.1
