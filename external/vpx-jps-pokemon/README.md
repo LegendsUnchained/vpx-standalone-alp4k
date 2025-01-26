@@ -14,7 +14,7 @@
 | **ROM** | None | None | None |
 
 
-**Tested by:** [Curt]
+**Tested by:** Curt
 
 ---
 
