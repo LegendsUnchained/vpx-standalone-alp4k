@@ -1,6 +1,6 @@
 # Apollo 13 (Sega 1995)
 
-![Table Preview](https://github.com/bhobman/vpx-previews/blob/e877ee0cf36ccceabbefdcf28a68290fe1d87066/vpx-apollo13-preview.png)
+![Table Preview](../../images/vpx-apollo13-preview.png)
 
 Authors: [balater](https://www.vpforums.org/index.php?s=ecc80ff65f52642febea09026be698f8&showuser=112487)  
 Version: 1.62  
