@@ -1,6 +1,6 @@
 # Six Million Dollar Man, The (Bally 1978) Sound MOD
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=106107&id=12557&full=1)
+![Table Preview](../../images/vpx-million-dollar-man--the--bally-1978-previeww.png)
 
 Author(s): [xenonph](https://www.vpforums.org/index.php?showuser=14100)  
 Version:  Six Million Dollar Man, The (Bally 1978) Sound MOD v2.3.zip

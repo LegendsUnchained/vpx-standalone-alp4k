@@ -1,5 +1,5 @@
 # JP's Sands of the Aton (Original 2023)
-![Table Preview](https://www.vpforums.org/index.php?s=e0e01fe59134bcdae74da492069273ed&app=downloads&module=display&section=screenshot&record=118706&id=17422&full=1)
+![Table Preview](../../images/vpx-sands-of-the-aton-preview.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 2.0  

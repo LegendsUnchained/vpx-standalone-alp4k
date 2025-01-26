@@ -1,6 +1,6 @@
 # JP's Papa Smurf
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=105688&id=11609&full=1)
+![Table Preview](../../images/vpx-jps-papa-smurf-preview.jpg)
 
 Author(s): [BorgDog](https://www.vpforums.org/index.php?showuser=89975)
 Original Author(s): [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
