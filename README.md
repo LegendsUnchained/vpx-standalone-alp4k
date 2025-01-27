@@ -383,6 +383,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Party Animal (Bally 1987)](external/vpx-partyanimal) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 42 |
 | [Party Zone, The (Bally 1991)](external/vpx-thepartyzone) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 45 |
 | [Pat Hand (Williams 1978)](external/vpx-pathand) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :x: | 60 |
+| [Pennant Fever (Williams 1984)](external/vpx-pennantfever) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:x: | :white_check_mark: | N/A |
 | [Pet Sematary (TBA 2019)](external/vpx-petsemetary) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:x: | :white_check_mark: | 55 |
 | [Phantom of the Opera (Data East 1990)](external/vpx-phantom) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 38 |
 | [Phoenix (Williams 1978)](external/vpx-phoenix) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
