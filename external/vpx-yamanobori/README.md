@@ -6,11 +6,11 @@ Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)
 Version: 2.0.0  
 Download: [VP Universe](https://www.vpforums.org/index.php?app=downloads&showfile=15578) 
 
-DirectB2S
+**DirectB2S**
 
 Download: Included with table download.
 
-ROM
+**ROM**
 
 Not Needed
 
