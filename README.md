@@ -551,6 +551,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [X Files (Sega 1997)](external/vpx-xfiles) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [X-Files Hanibal LED Edition (Sega 1997)](external/vpx-xfileshanibal) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 | [X-Men LE (Stern 2012)](external/vpx-xmen) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
+| [Yamanobori - (KOMAYA 1981)](external/vpx-yamanobori) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | NA |
 | [Yellow Submarine (Original 2021)](external/vpx-yellowsubmarine) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Young Frankenstein (hauntfreaks 2021)](external/vpx-youngfrankenstein) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 | [Zissou - The Life Aquatic (Original 2022)](external/vpx-zissou) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 46 |
