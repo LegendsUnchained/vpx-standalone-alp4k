@@ -7,7 +7,7 @@
 ## Files
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
-| **VPX** | [VPUniverse](https://vpuniverse.com/files/file/5971-pennant-fever-williams-1984/) | 1.0.0 | [ARMYAVIATION]({https://vpuniverse.com/profile/18348-armyaviation/}) |
+| **VPX** | [VPUniverse](https://vpuniverse.com/files/file/5971-pennant-fever-williams-1984/) | 1.0.0 | [ARMYAVIATION](https://vpuniverse.com/profile/18348-armyaviation/) |
 | **B2S** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=9564) | 1.0 | [shadowsclassic](https://www.vpforums.org/index.php?showuser=63299) |
 | **DMD** | N/A | N/A | N/A |
 | **ROM** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=513) | pfevr_p3.zip | [destruk](https://www.vpforums.org/index.php?showuser=5) |
