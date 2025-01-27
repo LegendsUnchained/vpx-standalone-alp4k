@@ -258,6 +258,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Harlem Globetrotters On Tour, JPs (Bally 1978)](external/vpx-harlemglobetrotters) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Harley Davidson (Bally 1991)](external/vpx-hdavidson) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 | [Harley Davidson (Sega 1999)](external/vpx-harleyd) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
+| [Hall & Oates (Original 2025)](external/vpx-hallandoates) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 45 |
 | [Halloween 1978-1981 (Original 2022)](external/vpx-halloween) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Halloween MM Edition (Original 2023)](external/vpx-halloweenmm) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Hannibal Lecter (Original 2022)](external/vpx-hanniballec) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
