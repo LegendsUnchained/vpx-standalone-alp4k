@@ -1,7 +1,7 @@
 # Space Jam (Sega 1996)
 Tested By: kaoticBPR
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=88486&id=15766&full=1)
+![Table Preview](../../images/vpx-spacejam-preview.jpg)
 
 Authors: [jjpeji](https://www.vpforums.org/index.php?showuser=18140)
 Version: 1.4

@@ -1,6 +1,6 @@
 # Barb Wire (Gottlieb 1996)
 
-![Table Preview](https://github.com/bhobman/vpx-previews/blob/5c3da8f44699be6fbeea3683b9ebc8db6d8d41a4/vpx-barbwire-preview.png)
+![Table Preview](../../images/vpx-barbwire-preview.png)
 
 Authors: [Aubrel](https://www.vpforums.org/index.php?showuser=67749)
 Version: 2.6a

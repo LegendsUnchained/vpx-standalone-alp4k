@@ -1,7 +1,7 @@
 # Torpedo Alley (Data East 1988)
 Tested By: kaoticBPR
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=88480&id=15764&full=1)
+![Table Preview](../../images/vpx-torpedo-alley-preview.jpg)
 
 Authors: [jipeji16](https://www.vpforums.org/index.php?showuser=18140)
 Version: 2.2

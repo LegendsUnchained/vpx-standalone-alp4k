@@ -2,7 +2,7 @@
 
 Tested By: kaoticBPR
 
-![Table Preview](https://github.com/bhobman/vpx-previews/blob/721c78328e6af458934f9a02a467769909fc7e77/vpx-banzai-run-preview.jpg)
+![Table Preview](../../images/vpx-banzai-run-preview.jpg)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 4.3.0  

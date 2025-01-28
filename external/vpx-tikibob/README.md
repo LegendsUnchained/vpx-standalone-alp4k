@@ -1,6 +1,6 @@
 # Tiki Bob's Atomic Beach Party (Original 2021)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_07/1168319625_TikiBob.png.fb2796bbbb329cc645d5bc98430f971f.png)
+![Table Preview](../../images/vpx-TikiBob-preview.jpg)
 
 Authors: [iDigStuff](https://vpuniverse.com/profile/29753-idigstuff/)  
 Version: 1.1  

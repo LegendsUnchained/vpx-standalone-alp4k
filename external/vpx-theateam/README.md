@@ -14,6 +14,10 @@ DirectB2S
 
 Included in table download
 
+## Note
+
+This table *may* initially crash, requiring a restart of your machine. Just try again.
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1983-a764013

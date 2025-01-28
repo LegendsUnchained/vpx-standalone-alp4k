@@ -1,6 +1,6 @@
 # JP's Mephisto (Cirsa 1987)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=113752&id=15561&full=1)
+![Table Preview](../../images/vpx-jps-mephisto-preview.jpg)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)
 Version: 4.3.0

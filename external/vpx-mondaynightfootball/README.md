@@ -2,7 +2,7 @@
 
 Tested By: kaoticBPR
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=103527&id=16822&full=1)
+![Table Preview](../../images/vpx-monday-night-football-preview.jpg)
 
 Authors: [bigus1](https://www.vpforums.org/index.php?showuser=107629)  
 Version: 1.0  

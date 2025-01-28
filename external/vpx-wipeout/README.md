@@ -1,6 +1,6 @@
 # Wipe Out (Gottlieb 1993)
 
-![Table Preview](https://www.vpforums.org/index.php?s=3f1fe8815d9e3bf83b91648c8dc85e20&app=downloads&module=display&section=screenshot&record=73029&id=14171&full=1)
+![Table Preview](../../images/vpx-wipeoutdt-preview.jpg)
 
 Authors: [kiwi](https://www.vpforums.org/index.php?s=3f1fe8815d9e3bf83b91648c8dc85e20&showuser=30913)
 Version: 1.1.0

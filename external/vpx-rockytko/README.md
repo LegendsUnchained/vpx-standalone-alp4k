@@ -1,6 +1,6 @@
 # Rocky TKO (Original 2021)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_09/Rocky_Single_Screen.PNG.a15cea7cf3ae4f33daee108cd969cb4f.PNG)
+![Table Preview](../../images/vpx-rocky-preview.jpg)
 
 Authors: [Dr.Nobody](https://vpuniverse.com/profile/31560-drnobody/)  
 Download File Name: 1160767996_RockyTKOv1.1.zip  

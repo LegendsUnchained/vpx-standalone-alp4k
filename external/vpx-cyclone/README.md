@@ -1,6 +1,6 @@
 # JP's Cyclone (Williams 1988)
 
-![Table Preview](https://github.com/bhobman/vpx-previews/blob/8f0f403743ca50bd4c9469edb49d147cd30d94dd/vpx-jps-cyclone-preview.jpg)
+![Table Preview](../../images/vpx-jps-cyclone-preview.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?s=543a5ca562cc33a89debe8ace8834f1e&showuser=277)  
 Version: 4.3.0

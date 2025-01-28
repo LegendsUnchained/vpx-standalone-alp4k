@@ -1,6 +1,6 @@
 # JP's Harlem Globetrotters On Tour (Bally 1978)
 
-![Table Preview](https://github.com/bhobman/vpx-previews/blob/702a863425dfe0fcdc5390d0339e7f7dc020cd40/vpx-jps-harlemglobetrotters.jpg)
+![Table Preview](../../images/vpx-jps-harlemglobetrotters.jpg)
 
 **VPX Table** <br>
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  

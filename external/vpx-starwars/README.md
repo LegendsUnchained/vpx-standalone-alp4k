@@ -1,6 +1,6 @@
 # Star Wars (Data East 1992)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_11/starwars_cab.JPG.1fdc7cd3d857cdb4f8072a4deed99062.JPG)
+![Table Preview](../../images/vpx-starwars-preview.jpg)
 
 Author: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
 Version: 1.2.2  

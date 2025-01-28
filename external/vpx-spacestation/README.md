@@ -1,6 +1,6 @@
 # Space Station (Williams 1987)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=118795&id=18562&full=1)
+![Table Preview](../../images/vpx-space-station-preview.jpg)
 
 Authors: [bigus1](https://www.vpforums.org/index.php?showuser=107629)  
 Version: 1.1  

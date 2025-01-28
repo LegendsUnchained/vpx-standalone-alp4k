@@ -1,6 +1,6 @@
 # Ace Ventura Pet Detective (TBA 2019)
 
-![Table Preview](https://github.com/bhobman/vpx-previews/blob/464659948ca6a223f32d66eb7e0123d69d621037/vpx-aceventura-preview.png)
+![Table Preview](../../images/vpx-aceventura-preview.png)
 
 Tested by: Mox
 

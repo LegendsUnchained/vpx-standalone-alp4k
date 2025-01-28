@@ -1,6 +1,6 @@
 # Warlok (Williams 1982)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=105201&id=14371&full=1)
+![Table Preview](../../images/vpx-warlok--williams-preview.jpg)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)
 Version: 4.0.0
