@@ -30,6 +30,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-blackpyramid.elf
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-blackpyramid
-- Make sure the vpx, directb2s, vbs and ini files are all named the "exact" same
-- Place blakpyra.zip in the external/vpx-blackpyramid/pinmame/roms folder *Do Not unzip*
+- Make sure the (.vpx), (.directb2s), (.vbs) and (.ini) files are all named the "exact" same
+- Place blakpyra.zip in the external/vpx-blackpyramid/pinmame/roms folder. *Do Not unzip*
 - "Journey through, explore, survive, and escape the Black Pyramid"
