@@ -1,6 +1,6 @@
 # Austin Powers (Stern 2001)
 
-![Table Preview](https://github.com/bhobman/vpx-previews/blob/1448c4d8c5e2f6d06d3acc94b4012999e2f920e7/vpx-austin-powers-preview.png)
+![Table Preview](../../images/vpx-austin-powers-preview.png)
 
 Author(s): [VPin Workshop](https://www.vpforums.org/index.php?showuser=153279)  
 Version: 1.0.3  

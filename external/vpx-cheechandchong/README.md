@@ -1,6 +1,6 @@
 # Cheech & Chong: Road-Trip'pin (Bally 2021)
 
-![Table Preview](https://github.com/bhobman/vpx-previews/blob/ea2214acd638d4a9dc42adb574a3a147926c72ad/vpx-cheech-chong-preview.jpg)
+![Table Preview](../../images/vpx-cheech-chong-preview.jpg)
 
 Author(s): [watacaractr](https://www.vpforums.org/index.php?showuser=89014)  
 Version: 1.0  

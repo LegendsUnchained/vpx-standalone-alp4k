@@ -1,6 +1,6 @@
 # Barracora (Williams 1981)
 
-![Table Preview](https://github.com/bhobman/vpx-previews/blob/f2113b5dc67516bf9e635a4f10e0fefc4945c605/vpx-Barracora-preview.jpg)
+![Table Preview](../../images/vpx-Barracora-preview.jpg)
 
 Authors: [UnclePaulie](https://vpuniverse.com/profile/16685-unclepaulie/)  
 Version: 2.1.3  

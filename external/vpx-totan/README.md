@@ -1,6 +1,6 @@
 # JP's Tales of the Arabian Nights (Williams 1996)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=114158&id=11611&full=1)
+![Table Preview](../../images/vpx-tales-of-the-arabian-nights-preview.jpg)
 
 ---
 
