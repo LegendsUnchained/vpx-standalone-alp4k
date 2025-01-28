@@ -1,4 +1,4 @@
-# Pokémon Pinball (JP Salas Original)
+# PokÃ©mon Pinball, JPs (Original 2016)
 
 ![Table Preview](../../images/vpx-jps-pokemon-preview.png)
 
@@ -31,7 +31,7 @@
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to `vpx-jps-pokemon.elf`
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-jps-pokemon`
+- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `external/vpx-jps-pokemon`
 - Make sure `(.vpx)` and `(.direct2b2s)` are named the same.
 
 ---
