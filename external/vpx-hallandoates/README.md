@@ -2,27 +2,23 @@
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2025_01/HALLOATES.png.965b7c0bc351df4551a56d05aa75a87f.png)
 
-Authors: [ZandysArcade](https://vpuniverse.com/profile/57949-zandysarcade/)
-
-Filename: HallandOates.vpx 
-
+Authors: [ZandysArcade](https://vpuniverse.com/profile/57949-zandysarcade/)  
+Filename: HallandOates.vpx  
 Download: [VPUniverse](https://vpuniverse.com/files/file/23106-hall-oates/)
 
 DirectB2S 
 
-Download File: Media Pack.zip 
-
+Download File: Media Pack.zip  
 Download: [VP Forums](https://vpuniverse.com/files/file/23106-hall-oates/)
 
 ROM
 
-Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)
-wolfman.zip
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=4785)
+Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)  
+Filename: wolfman.zip  
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=4785)  
 MD5: 8b8c43fd8d6040332c7d0732e24c8b71
 
 Tested by: TechZombie
-
 
 ## Status 
 
