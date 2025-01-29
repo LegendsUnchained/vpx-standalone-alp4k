@@ -1,6 +1,6 @@
 # JP's Terminator 2 (Original 2020)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=114064&id=15249&full=1)
+![Table Preview](../../images/vpx-jps-terminator-preview.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 4.3.0  

@@ -1,6 +1,6 @@
 # TimeLord 3.0.10 (Luigi Saves the Universe) OriginalHybrid (Original 2022)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_08/timelord307playfield.png.a6d58409675abfee5503896c6a7692fc.png)
+![Table Preview](../../images/vpx-timelord-preview.jpg)
 
 TABLE  
 

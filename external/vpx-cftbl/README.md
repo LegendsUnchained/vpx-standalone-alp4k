@@ -1,6 +1,6 @@
 # Creature from the Black Lagoon (Bally 1992)
 
-![Table Preview](https://github.com/bhobman/vpx-previews/blob/13360cabcdc1f230579a35ba1f4b4b1fc180898d/vpx-creature-preview.jpg)
+![Table Preview](../../images/vpx-creature-preview.jpg)
 
 Authors: [fuzzel](https://www.vpforums.org/index.php?showuser=69907)
 Version: 1.3

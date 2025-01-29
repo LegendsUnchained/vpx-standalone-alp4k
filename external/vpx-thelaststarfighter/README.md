@@ -1,6 +1,6 @@
 # Last Starfighter, The (Taito, 1983)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=109845&id=17327&full=1)
+![Table Preview](../../images/vpx-last-starfighter-preview.jpg)
 
 Author: [rascal](https://www.vpforums.org/index.php?showuser=347)  
 Version: Last Starfighter, The (Taito, 1983) hybrid v1.04.zip  

@@ -1,6 +1,6 @@
 # Ace of Speed (Original 2019)
 
-![Table Preview](https://github.com/bhobman/vpx-previews/blob/464659948ca6a223f32d66eb7e0123d69d621037/vpx-aceofspeed-preview.png)
+![Table Preview](../../images/vpx-aceofspeed-preview.png)
 
 Authors: [mussinger](https://vpuniverse.com/profile/25802-mussinger/)  
 Version: 1.0.1  
