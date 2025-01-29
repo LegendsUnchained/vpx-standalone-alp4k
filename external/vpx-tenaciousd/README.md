@@ -2,27 +2,23 @@
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2025_01/Screenshot2025-01-23at8_16_10PM.png.c4003e74da3935f29796123236b5781f.png)
 
-Authors: [ZandysArcade](https://vpuniverse.com/profile/57949-zandysarcade/)
-
-Filename: TENACIOUSD.vpx
-
+Authors: [ZandysArcade](https://vpuniverse.com/profile/57949-zandysarcade/)  
+Filename: TENACIOUSD.vpx  
 Download: [VPUniverse](https://vpuniverse.com/files/file/23461-tenacious-d/)
 
 DirectB2S 
 
-Download File: Media Pack.zip 
-
+Download File: Media Pack.zip  
 Download: [VP Forums](https://vpuniverse.com/files/file/23461-tenacious-d/)
 
 ROM
 
-Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)
-fpwr2_l2.zip
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=808)
+Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)  
+Filename: fpwr2_l2.zip  
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=808)  
 MD5: 64596df579b8e19bf66f3de1c0f9e302
 
 Tested by: TechZombie
-
 
 ## Status 
 
