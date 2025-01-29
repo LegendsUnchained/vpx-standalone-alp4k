@@ -8,8 +8,8 @@ Download: [VPUniverse](https://vpuniverse.com/files/file/15413-fast-draw-gottlie
 
 DirectB2S
 
-Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
-Version: 1.0.0
+Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
+Version: 1.0.0  
 Download: [VPUniverse](https://vpuniverse.com/files/file/15513-fast-draw-gottlieb-1975-b2s/)
 
 ROM
