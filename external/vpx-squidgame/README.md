@@ -2,9 +2,9 @@
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2025_01/1Desafio.png.3dcd0dd7128dc874ef7788b63f8adc9c.png)
 
-Authors: [Rickmeine](https://vpuniverse.com/profile/46002-rickmeine/)
-Download File Name: Squid Game1.2.zip    
-Filename: Squid Game1.2.vpx 
+Authors: [Rickmeine](https://vpuniverse.com/profile/46002-rickmeine/)  
+Download File Name: Squid Game1.2.zip  
+Filename: Squid Game1.2.vpx  
 Download: [VP Forums](https://vpuniverse.com/files/file/23135-squid-game)
 
 DirectB2S included with Zip file. 
@@ -12,7 +12,6 @@ DirectB2S included with Zip file.
 No ROM Needed
 
 Tested by: TechZombie
-
 
 ## Status 
 
