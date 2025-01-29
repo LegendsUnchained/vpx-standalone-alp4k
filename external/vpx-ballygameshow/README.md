@@ -1,6 +1,6 @@
 # Bally Game Show, The (Bally 1990)
 
-![Table Preview](https://github.com/bhobman/vpx-previews/blob/1448c4d8c5e2f6d06d3acc94b4012999e2f920e7/vpx-bally-game-show-preview.png)
+![Table Preview](../../images/vpx-bally-game-show-preview.png)
 
 Authors: [WED21](https://www.vpforums.org/index.php?s=3de704e3c35f0e5ebfa93740284ec896&showuser=89286)  
 Version: 1.1.1.1  

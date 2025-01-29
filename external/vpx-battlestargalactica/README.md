@@ -1,6 +1,6 @@
 # Battlestar Galactica (Original 2018)
 
-![Table Preview](https://github.com/bhobman/vpx-previews/blob/4ec1ea19800a9e09c5fc757d562f66902c818938/vpx-BattlestarGalactica-preview.png)
+![Table Preview](../../images/vpx-BattlestarGalactica-preview.png)
 
 Authors: [xenonph](https://www.vpforums.org/index.php?showuser=14100)  
 Download File Name: Battlestar Galactica (Williams 1980) v2.1.zip  

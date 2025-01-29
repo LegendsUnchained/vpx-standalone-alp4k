@@ -1,6 +1,6 @@
 # JP's Avengers LE (Stern 2012)
 
-![Table Preview](https://github.com/bhobman/vpx-previews/blob/878805b69210dfdbefa94b46b955cf7903acc522/vpx-jps-avengers.jpg)
+![Table Preview](../../images/vpx-jps-avengers.jpg)
 
 **VPX Table**
 

@@ -1,6 +1,6 @@
 # Bad Cats (Williams 1989)
 
-![Table Preview](https://github.com/bhobman/vpx-previews/blob/1448c4d8c5e2f6d06d3acc94b4012999e2f920e7/vpx-badcats-preview.png)
+![Table Preview](../../images/vpx-badcats-preview.png)
 
 ---
 

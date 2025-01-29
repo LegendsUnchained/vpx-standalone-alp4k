@@ -1,6 +1,6 @@
 # Texas Chainsaw Massacre 1974, The (Original 2020)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=82234&id=15385&full=1)
+![Table Preview](../../images/vpx-texas-chainsaw-preview.jpg)
 
 Tested by: Mox 
 
