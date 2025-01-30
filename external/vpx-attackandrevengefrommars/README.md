@@ -2,26 +2,28 @@
 
 ![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=122628&id=11604&full=1)
 
-Authors: [icepinball](https://vpuniverse.com/profile/4306-icepinball/)
-Download File Name: Attack and Revenge from Mars v55_VPX8.zip   
-Filename: Attack and Revenge from Mars v55_VPX8.vpx 
+Authors: [icepinball](https://vpuniverse.com/profile/4306-icepinball/)  
+Download File Name: Attack and Revenge from Mars v55_VPX8.zip  
+Filename: Attack and Revenge from Mars v55_VPX8.vpx  
 Download: [VPUniverse](https://www.vpforums.org/index.php?app=downloads&showfile=11604)
 
 DirectB2S
-Authors: [Teo_Topper](https://vpuniverse.com/profile/63278-teo_topper/)
-Download File Name: Attack & Revenge from Mars (Bally 1999) - FullDMD.zip   
-Filename: Attack & Revenge from Mars - FullDMD.directb2s
+
+Authors: [Teo_Topper](https://vpuniverse.com/profile/63278-teo_topper/)  
+Download File Name: Attack & Revenge from Mars (Bally 1999) - FullDMD.zip  
+Filename: Attack & Revenge from Mars - FullDMD.directb2s  
 Download: [VP Forums](https://vpuniverse.com/files/file/14811-attack-revenge-from-mars-bally-1999-b2s-backglass-full-dmd/)
 
 ROM 
-Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)
-afm_113b.zip
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1340)
+
+Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)  
+Filename: afm_113b.zip  
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1340)  
+
 **How to adjust Rom Volume Guide**
 (https://www.vpforums.org/index.php?showtopic=5220)
 
 Tested by: TechZombie
-
 
 ## Status 
 
