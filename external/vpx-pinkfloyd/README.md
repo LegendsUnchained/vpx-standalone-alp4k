@@ -12,9 +12,8 @@ DirectB2S included with Table.zip file.
 ROM
 
 Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)  
-Filename: esha_la3.zip  
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=919)  
-MD5: e4c898afcdcf6fd2a884c77c7fd6c3a9
+Filename: esha_l4c.zip (FOUND WITHIN "Pink Floyd NO PUPPACK.zip" file above!)  
+Download: [VPUniverse](https://vpuniverse.com/files/file/10341-pink-floyd-vpx-cw-pup-pack/)
 
 Tested by: TechZombie
 
