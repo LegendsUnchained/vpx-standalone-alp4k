@@ -1,6 +1,6 @@
 # Buck Rogers (Gottlieb 1980) Sound MOD
 
-![Table Preview](https://github.com/bhobman/vpx-previews/blob/9def9bf5b4c02c43d7fc6ac9c74625a4e97ee50a/vpx-buck-rogers-gottlieb-1980-preview.png)
+![Table Preview](../../images/vpx-buck-rogers-gottlieb-1980-preview.png)
 
 Author(s): [xenonph](https://www.vpforums.org/index.php?showuser=14100)  
 Version: Buck Rogers (Gottlieb 1980) Sound MOD v2.1.zip

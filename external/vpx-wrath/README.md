@@ -1,6 +1,6 @@
 # JP's Wrath of Olympus (Original 2022)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=114089&id=16457&full=1)
+![Table Preview](../../images/vpx-jps-wrath-of-olympus-preview.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)
 Version: 4.3.0

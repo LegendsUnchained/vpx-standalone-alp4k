@@ -1,6 +1,6 @@
 # Beverly Hills Cop (TBA 2019)
 
-![Table Preview](https://github.com/bhobman/vpx-previews/blob/50bfa48cd441bc8d22049beb3863d1968dfc7af4/vpx-beverly-hills-preview.png)
+![Table Preview](../../images/vpx-beverly-hills-preview.png)
 
 ---
 

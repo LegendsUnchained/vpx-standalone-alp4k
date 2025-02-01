@@ -1,6 +1,6 @@
 # Attila The Hun (Game Plan 1984)
 
-![Table Preview](https://github.com/bhobman/vpx-previews/blob/63dc569dad9ecebc93e1ef49d710c77afe04639b/vpx-attila-preview.png)
+![Table Preview](../../images/vpx-attila-preview.png)
 
 Tested by: Mox
 

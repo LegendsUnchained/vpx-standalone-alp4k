@@ -1,6 +1,6 @@
 # Street Fighter II - JP (Gottlieb 1993)
 
-![Table Preview](https://www.vpforums.org/index.php?s=0da6a8a9567fe76d71e48a15ce6e354a&app=downloads&module=display&section=screenshot&record=112187&id=12561&full=1)
+![Table Preview](../../images/vpx-jps-street-fighter-preview.jpg)
 
 Author: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 5.1.1  

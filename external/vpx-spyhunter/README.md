@@ -1,7 +1,7 @@
 # Spy Hunter (Bally 1984)
 Tested by: kaoticBPR
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=52683&id=11624&full=1)
+![Table Preview](../../images/vpx-spy-hunter-bally-1984-preview.jpg)
 
 Authors: [32asssassin](https://www.vpforums.org/index.php?showuser=77712)  
 Version: 1.4  

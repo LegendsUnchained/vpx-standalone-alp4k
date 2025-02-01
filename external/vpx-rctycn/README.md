@@ -1,6 +1,6 @@
 # Rollercoaster Tycoon (Stern 2002)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=113867&id=13920&full=1)
+![Table Preview](../../images/preview-rollercoaster-tycoon-preview.jpg)
 
 Author(s): [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 4.3.0  

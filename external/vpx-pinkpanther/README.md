@@ -1,6 +1,6 @@
 # Pink Panther (Gottlieb 1981) SoundMod Hybrid
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_06/pinkFS.PNG.dc34b787271e9693bba4ad08f4d3227e.PNG)
+![Table Preview](../../images/vpx-pinkpanther-preview.jpg)
 
 Author(s): [xenonph](https://www.vpforums.org/index.php?showuser=14100)  
 Version:  Pink Panther (Gottlieb 1981) SoundMod Hybrid (DT-FS-VR) v1.1.zip

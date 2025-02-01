@@ -14,7 +14,10 @@ Download: [VP Universe](https://vpuniverse.com/files/file/18004-super-mario-bros
 
 ROM
 
-Download: [Pinball Nirvana](https://pinballnirvana.com/forums/resources/new-roms-for-vpinmame-v3-5-final.8024/)
+Download: [Pinball Nirvana](https://pinballnirvana.com/forums/resources/smb3.2317/)
+
+SHA: 0430b932b0f388d12ddcff736406f1b445b0c820
+MD5: 5bbbf451cdf5353b7b5d69ba17da8825
 
 ## Status 
 

@@ -1,13 +1,13 @@
 # JP's Tales of the Arabian Nights (Williams 1996)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=114158&id=11611&full=1)
+![Table Preview](../../images/vpx-tales-of-the-arabian-nights-preview.jpg)
 
 ---
 
 ## Files
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
-| **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=11611) | 5.0.0 | [jpsalas](https://www.vpforums.org/index.php?s=543a5ca562cc33a89debe8ace8834f1e&showuser=277)   |
+| **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=11611) | 5.5.0 | [jpsalas](https://www.vpforums.org/index.php?s=543a5ca562cc33a89debe8ace8834f1e&showuser=277)   |
 | **B2S & DMD** | [VP Universe](https://vpuniverse.com/files/file/12134-tales-of-the-arabian-nights-williams-1996-b2s-full-dmd/) | 2.0 | [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
 | **ROM** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1273) |  |  |
 

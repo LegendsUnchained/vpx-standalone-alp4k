@@ -1,6 +1,6 @@
 # Scooby Doo (2022) 
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=99846&id=16631&full=1)
+![Table Preview](../../images/vpx-scoobydoo-preview.png)
 
 Author(s): [mrjcrane](https://www.vpforums.org/index.php?showuser=117777)  
 Version: Scooby Doo, 2022 v1.0_04012022  
