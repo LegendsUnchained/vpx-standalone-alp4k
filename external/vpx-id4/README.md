@@ -1,6 +1,6 @@
 # Independence Day (SEGA 1996)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=77960&id=15138&full=1)
+![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-id4.png)
 
 Authors: [goldchicco](https://www.vpforums.org/index.php?showuser=88795)  
 Version: 1.0  
@@ -17,7 +17,6 @@ ROM
 Info: Download 'PinMAME Romset' (1MB ZIP) from under the 'ROMs' section
 Download: [ipdb.org](https://www.ipdb.org/machine.cgi?id=3878)
 
-
 ## Status 
 
 Tested by: OminousOsie
@@ -33,5 +32,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-id4.elf
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-id4
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
-- Download the ROM and place it zipped in the pinMAME > ROMs folder. No need to rename
+- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+- Place ROM zip file into vpx-id4/pinmame/roms folder. DO NOT UNZIP!
