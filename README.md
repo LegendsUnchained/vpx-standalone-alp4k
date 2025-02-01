@@ -383,6 +383,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Operation Thunder (Gottlieb 1992)](external/vpx-opthunder) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 52 |
 | [OXO (Williams 1973)](external/vpx-oxo) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 45 |
 | [Pabst Can Crusher, The (Stern 2016)](external/vpx-pabstcancrusher) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 50 |
+| [Panthera (Gottlieb 1980)](external/vpx-panthera) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Papa Smurf, JP's (Original 2015)](external/vpx-papasmurf) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Paragon (Bally 1979)](external/vpx-paragon) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:x: | :white_check_mark: | 49 |
 | [Party Animal (Bally 1987)](external/vpx-partyanimal) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 42 |
