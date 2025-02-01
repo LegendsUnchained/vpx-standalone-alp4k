@@ -93,6 +93,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Big Bang Bar (Capcom 1996)](external/vpx-bigbangbar) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 50 |
 | [Big Buck Hunter Pro (Stern 2010)](external/vpx-bigbuckhunter) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 30 |
 | [Big Game (Stern 1980)](external/vpx-biggame) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
+| [Big Lebowski, The (2025)](external/vpx-biglebowski) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Big Trouble in Little China (Original 2022)](external/vpx-big_trouble) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Big House (Gottlieb 1989)](external/vpx-bighouse) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 32 |
 | [Bird Fly Original (2022)](external/vpx-birdfly) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
@@ -119,6 +120,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Cactus Jack's (Gottlieb 1991)](external/vpx-cactusjacks) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 29 |
 | [Capersville (Bally 1966)](external/vpx-capersville) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 43 |
 | [Capt. Fantastic and The Brown Dirt Cowboy (Bally 1976)](external/vpx-captfantastic) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 40 |
+| [Capt. Fantastic and The Brown Dirt Cowboy, JPs (Bally 1976)](external/vpx-jpcaptfantastic) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Car Hop (Gottlieb 1991)](external/vpx-carhop) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 40 |
 | [Castlevania - Symphony of the Night (Original 2022)](external/vpx-castlevaniasotn) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Cat Burglars (Anthias 2024)](external/vpx-catburglars) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
@@ -276,6 +278,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Hurricane - Balutito Mod 2.0 (Williams 1991)](external/vpx-hurricane) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 40 |
 | [I Dream of Jeannie (Original 2019)](external/vpx-idreamofjeannie) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Incredible Hulk (Gottlieb 1979)](external/vpx-incrediblehulk) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
+| [Independence Day (Sega 1996)](external/vpx-id4) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
 | [Indiana Jones - JP (Stern 2008)](external/vpx-indianajones) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 57 |
 | [Indiana Jones The Pinball Adventure (Williams 1993)](external/vpx-indianajonestpa) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 41 |
 | [Indianapolis 500 (Bally 1995)](external/vpx-indy500) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
@@ -382,6 +385,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Operation Thunder (Gottlieb 1992)](external/vpx-opthunder) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 52 |
 | [OXO (Williams 1973)](external/vpx-oxo) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 45 |
 | [Pabst Can Crusher, The (Stern 2016)](external/vpx-pabstcancrusher) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 50 |
+| [Panthera (Gottlieb 1980)](external/vpx-panthera) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Papa Smurf, JP's (Original 2015)](external/vpx-papasmurf) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Paragon (Bally 1979)](external/vpx-paragon) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:x: | :white_check_mark: | 49 |
 | [Party Animal (Bally 1987)](external/vpx-partyanimal) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 42 |
@@ -427,7 +431,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Roller Disco (Gottlieb 1980)](external/vpx-rollerdisco) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 45 |
 | [Rollercoaster Tycoon (Stern 2002)](external/vpx-rctycn) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 | [RollerGames (Williams 1990)](external/vpx-rollergames) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 45 |
-| [Rolling Stones - JP (Bally 1980)](external/vpx-jprollingstones) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
+| [Rolling Stones - JP (Bally 1980)](external/vpx-jprollingstones) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Safe Cracker (Bally 1996)](external/vpx-safecracker) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 46 |
 | [Samba (LTD do Brasil 1976)](external/vpx-samba) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 47 |
 | [Sands of the Aton - JP (Original 2023)](external/vpx-sandsaton) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
@@ -461,6 +465,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Space Mission (Williams 1976)](external/vpx-spacemission) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Space Oddity (Original 2022)](external/vpx-spaceoddity) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 37 |
 | [Space Rider (Geiger 1980)](external/vpx-spacerider) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
+| [Space Shuttle (Taito do Brasil 1982)](external/vpx-spaceshuttletaito) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Space Shuttle (Williams 1984)](external/vpx-spaceshuttle) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
 | [Space Station (Williams 1987)](external/vpx-spacestation) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 38 |
 | [Spider-Man - JP (Stern 2007)](external/vpx-spiderman) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
@@ -485,6 +490,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Stingray (Stern 1977)](external/vpx-stingray) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 47 |
 | [Strikes and Spares (Bally 1978)](external/vpx-strikes) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 42 |
 | [Student Prince (Williams 1968)](external/vpx-studentprince) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
+| [Summer Time (Williams 1972)](external/vpx-summertime) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Super Spin (Gottlieb 1977)](external/vpx-superspin) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 48 |
 | [Superman (Atari 1979)](external/vpx-superman) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 | [Superman and The Justice League (Original 2024)](external/vpx-supermanjl) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 58 |
@@ -534,6 +540,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Viking (Bally 1980)](external/vpx-viking) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 42 |
 | [Viper (Stern 1981)](external/vpx-viper) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Viper Night Drivin' (Sega 1998)](external/vpx-vipernight) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 37 |
+| [Vortex (Taito do Brasil 1981)](external/vpx-vortex) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Volkan Metal and Steel (Original 2023)](external/vpx-volkan) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Wacky Races (Original 2022)](external/vpx-wackyraces) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 47 |
 | [Walking Dead, The - JP (Stern 2014)](external/vpx-thewalkingdead) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
@@ -544,14 +551,14 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Whirlwind (Williams 1990)](external/vpx-wwind) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 32 |
 | [Wheel of Fortune (Stern 2007)](external/vpx-wof) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 37 |
 | [White Water (Williams 1993)](external/vpx-whitewater) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
-| [Whoa Nellie! - JP (Stern 2015)](external/vpx-whoanellie) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Who Dunnit (Bally 1995)](external/vpx-whodunnit) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Who's Tommy Pinball Wizard, The (Data East 1994)](external/vpx-tommy) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
-| [Wolf Man (Peyper 1987)](external/vpx-wolfman) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 42 |
+| [Whoa Nellie! - JPs (Stern 2015)](external/vpx-whoanellie) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Wild West (Original 2024)](external/vpx-wildwest) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Willy Wonka Pro (Original 2020)](external/vpx-wonka) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Wipe Out (Gottlieb 1993)](external/vpx-wipeout) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 52 |
 | [Wizard! (Bally 1975)](external/vpx-wizard) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Wolf Man (Peyper 1987)](external/vpx-wolfman) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 42 |
 | [World Challenge Soccer (Gottlieb 1994)](external/vpx-wcsoccer) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 | [World Joker Tour, JP's (Original 2024)](external/vpx-jpwjt) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
 | [World Poker Tour (Stern 2006)](external/vpx-wpt) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 36 |
