@@ -1,4 +1,4 @@
-# Capt. Fantastic and The Brown Dirt Cowboy (Bally 1976) - JP
+# Capt. Fantastic and The Brown Dirt Cowboy, JPs (Bally 1976)
 
 ![Table Preview](../../images/vpx-jps-captfantastic-preview.jpg)
 
@@ -14,6 +14,7 @@
 
 ## Status 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
@@ -25,7 +26,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to `vpx-jpcaptfantastic.elf`
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-jpcaptfantastic` folder
-- Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same.
+- Make sure `(.vpx)` `(.direct2b2s)` and `(.ini)` are all named the same. Do NOT rename VPReg.ini file.
 - Special version by JP Salas with single left flipper. Ring them bells!
 
 ---
