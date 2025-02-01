@@ -1,6 +1,6 @@
 # Panthera (Gottlieb 1980)
 
-![Table Preview](../../images/vpx-aceventura-preview.png)
+![Table Preview](../../images/vpx-panthera-preview.png)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 5.0.5  
