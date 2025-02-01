@@ -7,7 +7,7 @@
 ## Files
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
-| **VPX** | [Supergibson](https://vpuniverse.com/profile/48714-supergibson/) | SOTN (Mephisto Mod).vpx | [VP Universe](https://vpuniverse.com/files/file/11454-sotn-mephisto-mod/) |
+| **VPX** | [VP Universe](https://vpuniverse.com/files/file/11454-sotn-mephisto-mod/) | SOTN (Mephisto Mod).vpx | [Supergibson](https://vpuniverse.com/profile/48714-supergibson/) |
 | **B2S & DMD** | [VP Universe](https://vpuniverse.com/files/file/11462-castlevania-symphony-of-the-night-backglass/) | Castlevania Symphony of the Night.directb2s | [BurtMacklin](https://vpuniverse.com/profile/39250-burtmacklin/) |
 | **ROM** | none |  |  |
 
