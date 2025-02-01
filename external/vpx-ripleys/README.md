@@ -3,7 +3,7 @@
 ![Table Preview](../../images/vpx-ripleys-believe-it-or-not-preview.jpg)
 
 Author: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 4.3.0  
+Version: 5.5.0  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=13043)
 
 DirectB2S
