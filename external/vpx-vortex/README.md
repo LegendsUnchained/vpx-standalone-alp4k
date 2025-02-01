@@ -3,17 +3,19 @@
 ![Table Preview](https://github.com/BorisUndead/vpx-standalone-alp4k/blob/main/images/vpx-vortex-preview.png)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 5.5.0
+Version: 5.5.0  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=13336)
 
 DirectB2S
-Authors [Wildman](https://vpuniverse.com/profile/5-wildman/)
-Version: 2.5
+
+Authors [Wildman](https://vpuniverse.com/profile/5-wildman/)  
+Version: 2.5  
 Download: [VP Universe](https://vpuniverse.com/files/file/2466-vortex-taito-1983/)
 
 ROM
-Authors:[destruk](https://www.vpforums.org/index.php?showuser=5)
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=567)
+
+Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)  
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=567)  
 MD5:3b524272cc39b51fb516cbc8dc2139cf
 
 Tested by: Boris
