@@ -1,6 +1,6 @@
 # AC/DC Pro Vault (Stern 2017)
 
-## <span style="color:red">WARNING: This table does not run consistantly, a lot of users report a 'locating balls' error. We have not found a solution to that problem yet unfortunately.</span>
+## WARNING: This table does not run consistantly, a lot of users report a 'locating balls' error. We have not found a solution to that problem yet unfortunately.
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2019_03/1368165697_acdc(Custom).png.c9f3a93877cd9a64bb486a7d5f3cd7f1.png)
 
