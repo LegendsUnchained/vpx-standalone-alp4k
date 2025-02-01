@@ -3,7 +3,7 @@
 ![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=113527&id=16889&full=1)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 4.1.0  
+Version: 5.5.0
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=16889)
 
 DirectB2S
