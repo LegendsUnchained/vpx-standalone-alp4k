@@ -18,13 +18,6 @@ Author: [Wildman](https://vpuniverse.com/profile/5-wildman/)
 Download [VP Universe](https://vpuniverse.com/files/file/4321-kiss-stern-2015/)
 
 
-Media File
-Author: [balutito](https://vpuniverse.com/profile/36070-balutito/)
-
-Download [VP Universe](https://vpuniverse.com/files/file/10614-kiss-stern-balutito-le/) Only download file: kiss install.rar
-
-
-
 
 ## Status 
 
@@ -41,4 +34,3 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Add your personalized launcher.elf and rename it to vpx-kiss.elf
 - Download the table, directb2s and media files versions listed above 
 - Copy the table (.vpx) and backglass (.directb2s) to this folder and remember to rename the vpx and directb2s files to "KISS (Stern 2015)_Bigus(MOD)1.1"
-- From the media file, the only files we are interested in are the ones inside the Music folder. Copy all those files into the Music folder you have under vpx-kiss/
