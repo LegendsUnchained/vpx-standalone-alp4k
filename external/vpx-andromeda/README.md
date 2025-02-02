@@ -12,7 +12,7 @@
 | **DMD** | -- | -- | -- |
 | **ROM** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=544) | -- | [Williams](https://www.vpforums.org/index.php?app=core&module=search&do=user_activity&search_app=downloads&mid=5) |
 
-**Tested by:** Curt
+**Tested by:** [Curt](https://github.com/Old-Cyrus)
 
 ---
 
