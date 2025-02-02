@@ -26,7 +26,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to `vpx-jpcaptfantastic.elf`
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-jpcaptfantastic` folder
-- Make sure `(.vpx)` `(.direct2b2s)` and `(.ini)` are all named the same. Do NOT rename VPReg.ini file.
+- Make sure `(.vpx)` `(.direct2b2s)` and `(.ini)` are all named the same. 
 - Special version by JP Salas with single left flipper. Ring them bells!
 
 ---
