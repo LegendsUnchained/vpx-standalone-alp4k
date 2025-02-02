@@ -37,4 +37,5 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - Place ROM zip file into vpx-hardbody/pinmame/roms folder. DO NOT UNZIP!
 - Note: You can choose which backglass you prefer! I went with the classic faux mirror look, with the DMD on the glass!
+- Note: The nudge buttons have been mapped to the save gates for ease of use.
 - "We're here to *PUMP* you up!"
