@@ -94,6 +94,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Big Bang Bar (Capcom 1996)](external/vpx-bigbangbar) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 50 |
 | [Big Buck Hunter Pro (Stern 2010)](external/vpx-bigbuckhunter) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 30 |
 | [Big Game (Stern 1980)](external/vpx-biggame) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
+| [Big Lebowski, The (2025)](external/vpx-biglebowski) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Big Trouble in Little China (Original 2022)](external/vpx-big_trouble) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Big House (Gottlieb 1989)](external/vpx-bighouse) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 32 |
 | [Bird Fly Original (2022)](external/vpx-birdfly) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
@@ -385,6 +386,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Operation Thunder (Gottlieb 1992)](external/vpx-opthunder) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 52 |
 | [OXO (Williams 1973)](external/vpx-oxo) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 45 |
 | [Pabst Can Crusher, The (Stern 2016)](external/vpx-pabstcancrusher) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 50 |
+| [Panthera (Gottlieb 1980)](external/vpx-panthera) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Papa Smurf, JP's (Original 2015)](external/vpx-papasmurf) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Paragon (Bally 1979)](external/vpx-paragon) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:x: | :white_check_mark: | 49 |
 | [Party Animal (Bally 1987)](external/vpx-partyanimal) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 42 |
@@ -464,6 +466,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Space Mission (Williams 1976)](external/vpx-spacemission) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Space Oddity (Original 2022)](external/vpx-spaceoddity) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 37 |
 | [Space Rider (Geiger 1980)](external/vpx-spacerider) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
+| [Space Shuttle (Taito do Brasil 1982)](external/vpx-spaceshuttletaito) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Space Shuttle (Williams 1984)](external/vpx-spaceshuttle) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
 | [Space Station (Williams 1987)](external/vpx-spacestation) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 38 |
 | [Spider-Man - JP (Stern 2007)](external/vpx-spiderman) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
@@ -488,6 +491,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Stingray (Stern 1977)](external/vpx-stingray) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 47 |
 | [Strikes and Spares (Bally 1978)](external/vpx-strikes) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 42 |
 | [Student Prince (Williams 1968)](external/vpx-studentprince) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
+| [Summer Time (Williams 1972)](external/vpx-summertime) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Super Spin (Gottlieb 1977)](external/vpx-superspin) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 48 |
 | [Superman (Atari 1979)](external/vpx-superman) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 | [Superman and The Justice League (Original 2024)](external/vpx-supermanjl) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 58 |
