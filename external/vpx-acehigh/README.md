@@ -1,6 +1,6 @@
 # Ace High (Gottlieb 1957)
 
-![Table Preview](https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/images/vpx-acehigh.jpg)
+![Table Preview](https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/images/vpx-acehigh.png)
 
 Table
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
