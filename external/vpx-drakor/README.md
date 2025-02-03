@@ -9,6 +9,7 @@ Download: [VP Forums](https://www.vpforums.org/index.php?s=4f2961675eb26d02e5873
 
 DirectB2S
 Authors: [Wildman](https://vpuniverse.com/profile/5-wildman/)
+Version: 2.0
 Download: [VP Universe](https://vpuniverse.com/files/file/4977-drakor-taito-1979/)
 
 ROM
