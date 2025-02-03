@@ -1,6 +1,6 @@
 # Zonderik ( Belgian Gaming Company 1980) 
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=124160&id=16943&full=1)
+![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_10/Desktop.png.9efedcda4483b49cd7c6a32128499ea4.png)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?s=543a5ca562cc33a89debe8ace8834f1e&showuser=277)  
 Version: 5.5.0  
