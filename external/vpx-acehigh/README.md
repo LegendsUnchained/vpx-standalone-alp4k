@@ -29,3 +29,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above, extract them (if necessary) and copy them to external/vpx-acehigh/
 - Make sure any (.vpx), (.directb2s), (.vbs), and (.ini) files are all named the same
 - Download the ROM listed above and copy it to vpx-acehigh\pinmame\roms. DO NOT UNZIP!
+
+## Notes
+Press right on the control panel to load a ball from the hopper
