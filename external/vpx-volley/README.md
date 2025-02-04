@@ -5,7 +5,7 @@
 ## Files
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
-| **VPX** | [VPForums](https://www.vpforums.org/index.php?s=a9fea4ad9d6b2df5d7419c36e488abaa&app=downloads&showfile=17350) | 1.0 | [bigus1](https://www.vpforums.org/index.php?showuser=107629) |
+| **VPX** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=17350) | 1.0 | [bigus1](https://www.vpforums.org/index.php?showuser=107629) |
 | **B2S** | [VPUniverse](https://vpuniverse.com/files/file/15987-volley-gottlieb-1976/) | 1.0.0 | [Wildman](https://vpuniverse.com/profile/5-wildman/) |
 | **DMD** | Not Needed | Not Needed | Not Needed |
 | **ROM** | Not Needed | Not Needed | Not Needed |
@@ -26,5 +26,5 @@
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to `vpx-volley.elf`
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-volley`
+- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `external/vpx-volley`
 - Make sure `(.vpx)` `(.directb2s)` and `(.ini)` are all named the same.
