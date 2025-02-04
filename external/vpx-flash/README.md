@@ -1,10 +1,10 @@
 # Flash (Williams 1979)
-TESTED: kaoticBPR
+TESTED: kaoticBPR, shaver (v5.5.0)
 
 ![Table Preview](../../images/vpx-flash1979-preview.jpg)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: V4.0
+Version: 5.5.0
 Download: [VPforums](https://www.vpforums.org/index.php?app=downloads&showfile=12024)
 
 DirectB2S
@@ -26,7 +26,7 @@ Download: [VPforums](http://www.vpforums.org/index.php?app=downloads&showfile=75
 Minimum VPX Standalone build: 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 
 ## Instructions
 
