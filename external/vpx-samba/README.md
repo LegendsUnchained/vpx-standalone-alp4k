@@ -4,8 +4,7 @@
                  
 Authors: [Halen](https://www.vpforums.org/index.php?showuser=74)  
 Version: 1.0.0  
-Download: [MEGA (temporary)](https://mega.nz/file/0B120JBD#Z7gAt-4mp5VRl7lzbxSKjbk3g2fsq06mciiLrcyvgqc)  
-~~Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=18670)~~
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=18628)
 
 DirectB2S
 

@@ -1,18 +1,18 @@
 # Tales from the Crypt (Data East 1993)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_07/cab_tftc.jpg.1158b266c80c9ec2a3dbf4f557f6b8b3.jpg)
+![Table Preview](https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/images/vpx-tftc.jpg)
 
 ---
 
 ## Files
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
-| **VPX** | [VP Universe](https://vpuniverse.com/files/file/6933-tales-from-the-crypt-vpw-premium-data-east-1993/) | 1.22 | [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/) |
+| **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14335) | 2.0 | [bigus1](https://www.vpforums.org/index.php?showuser=107629) |
 | **B2S & DMD** | [VP Universe](https://vpuniverse.com/files/file/11194-tales-from-the-crypt-data-east-1993-b2s-with-full-dmd/) | 3.0.0 | [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
 | **ROM** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=11340) | |  |
 
 **Tested by:** 
-
+Boris
 ---
 
 ## Status 
@@ -20,7 +20,7 @@
 Minimum VPX Standalone build: 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 30 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 45 |
 
 ---
 
@@ -28,6 +28,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to `vpx-tftc.elf`
-- Download the table and directb2s versions listed above and copy them into this folder
-- Make sure (`.vpx`), (`.directb2s`), (`.ini`) and (`.vbs`) files are all named the same
+- Download the table and directb2s versions listed above, extract them (if necessary) and copy them to external/vpx-tftc
+- Make sure (`.vpx`), (`.directb2s`), and (`.ini`) files are all named the same
 - Place ROM zip file into `vpx-tftc/pinmame/roms` folder. Do not unzip!
