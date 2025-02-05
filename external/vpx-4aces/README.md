@@ -10,8 +10,8 @@ Download: [VP Forums]( https://www.vpforums.org/index.php?app=downloads&showfile
 
 DirectB2S
 
-Authors: [Abhcoide](https://vpuniverse.com/profile/48895-abhcoide/)
-Version: 1.0.1
+Authors: [Abhcoide](https://vpuniverse.com/profile/48895-abhcoide/)  
+Version: 1.0.1  
 Download: [VP Universe](https://vpuniverse.com/files/file/23077-4-aces-williams-1970-backglass/)
 
 Tested by: Boris
@@ -28,8 +28,8 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 - Copy this repo folder into the "external" folder on your USB drive
 - Add your personalized launcher.elf and rename it to vpx-4aces.elf
-- Download the table and directb2s versions listed above, extract them (if necessary) and copy them to external/vpx-4aces/
-- Make sure any (.vpx), (.directb2s), (.vbs), and (.ini) files are all named the same
+- Download the table and directb2s versions listed above, extract them (if necessary) and copy them to external/vpx-4aces
+- Make sure any (.vpx), (.directb2s), and (.ini) files are all named the same
 
 ## Notes
 Press up to launch ball from the drain! 
