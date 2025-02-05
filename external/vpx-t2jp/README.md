@@ -3,14 +3,14 @@
 ![Table Preview](../../images/vpx-jps-terminator-preview.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 4.3.0  
+Version: 5.5.0  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=15249)
 
 DirectB2S
 
 Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
-Version: 1.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/12599-terminator-2-williams-1991-b2s-with-full-dmd/)
+Version: 1.1  
+Download: [VP Universe](https://vpuniverse.com/files/file/13345-terminator-2-williams-1991-alt-b2s-with-full-dmd/)
 
 ROM
 
