@@ -31,12 +31,15 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 | Table | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |:------|:---------:|:--------:|:---------:|:---:|:------------:|:---:|
+| [4 Aces (Williams 1970)](external/vpx-4aces) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [24 (Stern 2009)](external/vpx-24) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 30 |
+| [301 Bullseye (Grand Products 1986)](external/vpx-301bullseye) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 57 |
 | [A-Team, The (Original 2023)](external/vpx-theateam) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Aaron Spelling (Data East 1992)](external/vpx-aaronspelling) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
 | [Abra Ca Dabra (Gottlieb 1975)](external/vpx-abracadabra) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 49 |
 | [AC/DC Luci (Stern 2013)](external/vpx-acdcluci) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 28 |
 | [AC/DC Pro Vault (Stern 2017)](external/vpx-acdcpro) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 44 |
+| [Ace High (Gottlieb 1957)](external/vpx-acehigh) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Ace of Speed (Original 2019)](external/vpx-aceofspeed) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 30 |
 | [Ace Ventura Pet Detective (Original 2019)](external/vpx-aceventura) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Addams Family, The (Bally 1992)](external/vpx-taf) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
@@ -101,6 +104,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Bird Fly Original (2022)](external/vpx-birdfly) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Black Belt (Bally 1986)](external/vpx-blackbeltbally) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 55 |
 | [Black Fever (Playmatic 1980)](external/vpx-blackfever) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:x: | :white_check_mark: | 50 |
+| [Black Hole (Gottlieb 1981)](external/vpx-blackhole) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 30 |
 | [Black Knight (Williams 1980)](external/vpx-blackknight) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 32 |
 | [Black Knight 2000 (Williams 1989)](external/vpx-blackknight2000) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 46 |
 | [Black Pyramid (Bally 1984)](external/vpx-blackpyramid) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
@@ -179,6 +183,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Dragon Ball Z Budokai (Original 2023)](external/vpx-dbzbudokai) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Dragon Ball Z (Original 2018)](external/vpx-dbz) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Dr. Jekyll and Mr. Hyde (Original 2022)](external/vpx-drjekyllandmrhyde) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 45 |
+| [Drakor (Taito do Brasil 1979)](external/vpx-drakor) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Duke Nukem 3D (Original 2020)](external/vpx-dukenukem3d) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Ducktales - Quest For Money (Original 2020)](external/vpx-ducktales) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [DUNE (Original 2024)](external/vpx-dune) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
@@ -235,6 +240,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Gamatron (Pinstar 1985)](external/vpx-gamatron) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Game of Thrones (Stern 2015)](external/vpx-got) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 25 |
 | [Gargamel Park (Orginal 2016)](external/vpx-gargamelpark) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Gemini 2000 (Taito do Brasil 1982)](external/vpx-gemini2000) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 55 |
 | [Genie (Gottlieb 1979)](external/vpx-genie) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 40 |
 | [George Michael - Faith (Original 2023)](external/vpx-georgemichael) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 60 |
 | [Getaway, The - High Speed II (Williams 1992)](external/vpx-getaway) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 42 |
@@ -463,7 +469,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Sopranos, The (Stern 2005)](external/vpx-sopranos) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [South Park (Sega 1999)](external/vpx-southpark) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 45 |
 | [Space Cadet (Maxis 1995)](external/vpx-spacecadet) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
-| [Space Invaders (Bally 1979)](external/vpx-spaceinvaders) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
+| [Space Invaders - JP (Bally 1979)](external/vpx-jpspaceinvaders) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 55 |
 | [Space Jam (Sega 1996)](external/vpx-spacejam) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 36 |
 | [Space Mission (Williams 1976)](external/vpx-spacemission) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Space Oddity (Original 2022)](external/vpx-spaceoddity) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 37 |
