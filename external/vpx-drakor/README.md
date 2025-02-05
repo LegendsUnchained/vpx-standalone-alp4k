@@ -3,17 +3,21 @@
 ![Table Preview](https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/images/vpx-drakor.jpg)
 
 Table
+
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 5.5.0  
 Download: [VP Forums](https://www.vpforums.org/index.php?s=4f2961675eb26d02e587381de15efd78&app=downloads&showfile=13470)
 
 DirectB2S
-Authors: [Wildman](https://vpuniverse.com/profile/5-wildman/)
-Version: 2.0
+
+Authors: [Wildman](https://vpuniverse.com/profile/5-wildman/)  
+Version: 2.0  
 Download: [VP Universe](https://vpuniverse.com/files/file/4977-drakor-taito-1979/)
 
 ROM
+
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=555)
+
 Tested by: Boris
 
 ## Status 
