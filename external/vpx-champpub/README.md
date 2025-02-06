@@ -10,7 +10,7 @@
 | **VPX** | [VP Universe](https://vpuniverse.com/files/file/10267-the-champion-pub-williams-1998/) | 1.43 | [Mikcab](https://vpuniverse.com/profile/16013-mikcab/) |
 | **B2S & DMD** | [VP Universe](https://vpuniverse.com/files/file/13543-the-champion-pub-bally-1998-b2s-with-full-dmd/) | 1.0.0 | [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
 | **DMD ALT** | [VP Universe](https://vpuniverse.com/files/file/13968-champion-pub-bally-1998-dmd-64-colors-serum-remaster/) | 1.0.1 | [dtatane](https://vpuniverse.com/profile/30013-dtatane/) |
-| **ROM** | [{website}]({link}) | **SHA:** 1263d1bda6db1afe5c8352147cb0ea382cb3778b <br />**MD5:** 565c087dfbe46a014282122878ef8c7a | |
+| **ROM** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=1263) | **SHA:** 1263d1bda6db1afe5c8352147cb0ea382cb3778b <br />**MD5:** 565c087dfbe46a014282122878ef8c7a | |
 
 **Tested by:** [Bla1ze]
 
