@@ -30,4 +30,3 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-apache.elf
 - Download the table and directb2s versions listed above, extract them (if necessary) and copy them to external/vpx-apache
 - Make sure any (.vpx), (.directb2s), and (.ini) files are all named the same
-- Download the ROM listed above and copy it to vpx-apache\pinmame\roms -- DO NOT UNZIP!
