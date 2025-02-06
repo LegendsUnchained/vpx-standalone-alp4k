@@ -16,6 +16,10 @@ ROM
 
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=7318)
 
+Wheel 
+
+Wheel image by [davadruix](https://vpuniverse.com/profile/22190-davadruix/)
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
