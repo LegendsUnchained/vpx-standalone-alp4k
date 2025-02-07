@@ -38,7 +38,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-attackandrevengefrommars.elf
 - Download the table and directb2s listed above, extract (if necessary) and copy them to external/vpx-attackandrevengefrommars
-- Select/Copy Music Folder and move to external/vpx-attackandrevengefrommars
 - Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
 - The ROM zip file gets copied to vpx-attackandrevengefrommars/pinmame/roms (Do not unzip)
 - "We'll Blow The Snot Out Of You, Martian"
