@@ -9,7 +9,7 @@
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
 | **VPX** | [Archive.org](https://ia903203.us.archive.org/view_archive.php?archive=/17/items/Visual_Pinball_2020-06-20/Visual%20Pinball%20%5BVPXx%5D%20Original%20Tables/Cuphead%20%28D.Goblett%20%26%20Co%202019%29%28Onevox%29%284.0b%29%5BVPX06%5D%5BDT%2BFS%2BdB2S%2BDOF%5D.zip) | V4b | [Onevox](https://vpuniverse.com/profile/14340-onevox/)|
-| **B2S** | [Archive.org](https://ia903203.us.archive.org/view_archive.php?archive=/17/items/Visual_Pinball_2020-06-20/Visual%20Pinball%20%5BVPXx%5D%20Original%20Tables/Cuphead%20%28D.Goblett%20%26%20Co%202019%29%28Onevox%29%284.0b%29%5BVPX06%5D%5BDT%2BFS%2BdB2S%2BDOF%5D.zip) | V4 | [Onevox] (https://vpuniverse.com/profile/14340-onevox/)|
+| **B2S** | [Archive.org](https://ia903203.us.archive.org/view_archive.php?archive=/17/items/Visual_Pinball_2020-06-20/Visual%20Pinball%20%5BVPXx%5D%20Original%20Tables/Cuphead%20%28D.Goblett%20%26%20Co%202019%29%28Onevox%29%284.0b%29%5BVPX06%5D%5BDT%2BFS%2BdB2S%2BDOF%5D.zip) | V4 | [Onevox](https://vpuniverse.com/profile/14340-onevox/)|
 | **DMD** | DMD Included with Table | N/A | [Onevox]({https://vpuniverse.com/profile/14340-onevox/) |
 | **ROM** | None | None | None |
 
