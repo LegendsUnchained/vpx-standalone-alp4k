@@ -10,11 +10,12 @@
 | **VPX** | [VPUniverse](https://vpuniverse.com/files/file/21843-bad-girls-gottlieb-1988-table/) | 1.6.5 | [cheese3075](https://vpuniverse.com/profile/73114-cheese3075/) |
 | **B2S** | [VPUniverse](https://vpuniverse.com/files/file/22267-bad-girls-gottlieb-1988-original-for-vpx-standalone/) | 1.0.0 | [evilwraith](https://vpuniverse.com/profile/66535-evilwraith/) |
 | **DMD** | N/A | N/A | N/A |
-| **ROM** | [VPUniverse](https://vpuniverse.com/files/file/693-bad-girls-premier-1988-badgirls/) | badgirls.zip | [{VPUStaff](https://vpuniverse.com/profile/50-vpustaff/) |
+| **ROM** | [VPUniverse](https://vpuniverse.com/files/file/693-bad-girls-premier-1988-badgirls/) | badgirls.zip | [VPUStaff](https://vpuniverse.com/profile/50-vpustaff/) |
 
 **Tested by:** [Bla1ze]
 
 SHA: 84e46156d5fb96be5e0d58a2581ae5887def2f95
+
 MD5: 029079b8a2957b53ff26ccc3c013ae73
 
 ---
