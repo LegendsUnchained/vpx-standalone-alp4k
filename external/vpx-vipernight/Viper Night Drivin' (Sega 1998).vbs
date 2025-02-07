@@ -282,35 +282,39 @@ End Sub
 
 ' Gi Timer for fading up and down lights / Changes in GI
 Sub GITimer_Timer()
-	If Not GITimer.Enabled Then GITimer.Enabled = True
-	GIStep = GIStep + GIDir
-	
-	' DEBUG
-	Debug.Print GIStep
+If Not GITimer.Enabled Then GITimer.Enabled = True
 
-	' set opacity of the shadow overlays and overhead GI illumination (this is where the GI is overlaid with the flasher
-	SetShadowOpacityAndGIOverhead
-	' set GI illumination
-	SetGIIllumination
-	SetGIIlluminationInv
-	' set racoon models 
-	Set3DModels
-	' set material of targets, posts, pegs, ramps etc
-	SetMaterials
-	' set ramps
-	SetRamps
-	' GI on/off goes in 4 steps so maybe stop timer
-	If (GIDir = 1 And GIStep = 4) Or (GIDir = -1 And GIStep = 0) Then
-		GITimer.Enabled = False
-	End If
+' ErhÃ¶he / verringere GIStep je nach GIDir
+GIStep = GIStep + GIDir
+
+' 1) GIStep begrenzen (nur 0 bis 2)
+If GIStep < 0 Then GIStep = 0
+If GIStep > 2 Then GIStep = 2
+
+Debug.Print GIStep
+
+' set opacity of the shadow overlays (angepasst auf max. 2 statt 4! Das war ja viel zu viel..)
+SetShadowOpacityAndGIOverhead
+SetGIIllumination
+SetGIIlluminationInv
+Set3DModels
+SetMaterials
+SetRamps
+
+' GI on/off nur in Schritten 0â€“2 => Timer stoppen wenn am Ende
+If (GIDir = 1 And GIStep = 2) Or (GIDir = -1 And GIStep = 0) Then
+GITimer.Enabled = False
+End If
 End Sub
 
 Sub SetShadowOpacityAndGIOverhead()
-	
-	fGIOn.Opacity 	= (ShadowOpacityGIOn / 4) * GIStep : fGIOn.IntensityScale = (GIStep/4)
-	fGIUV.Opacity = (ShadowOpacityUVOn / 4) * (4 - GIStep) : fGIUV.IntensityScale = (4-GIStep)	
-	GIOverhead.IntensityScale 		= GIStep/4
+    fGIOn.Opacity        = (ShadowOpacityGIOn / 2) * GIStep
+    fGIOn.IntensityScale = (GIStep / 2)
 
+    fGIUV.Opacity        = (ShadowOpacityUVOn / 2) * (2 - GIStep)
+    fGIUV.IntensityScale = (2 - GIStep)
+
+    GIOverhead.IntensityScale = GIStep / 2
 End Sub
 
 Sub SetGIIllumination()
@@ -1656,7 +1660,7 @@ End Sub
 '                  Start nFOZZY FLIPPERS'
 '******************************************************
 
-'Flipper Correction Initialization late 80’s to early 90’s
+'Flipper Correction Initialization late 80ï¿½s to early 90ï¿½s
 dim LF : Set LF = New FlipperPolarity
 dim RF : Set RF = New FlipperPolarity
 
