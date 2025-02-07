@@ -1,14 +1,14 @@
-# Nevermind The Bollocks (1977)
+# Nevermind The Bollocks 1977 (Original 2024)
 
 ![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-nmtbollocks.png)
 
-Authors: [DAMONRA](https://vpuniverse.com/profile/48356-damonra/)
-Version: 1.0.4
+Authors: [DAMONRA](https://vpuniverse.com/profile/48356-damonra/)  
+Version: 1.0.4  
 Download: [VPUniverse](https://vpuniverse.com/files/file/22227-nevermind-the-bollocks-1977)
 
 DirectB2S
 
-Authors: [JPO](https://vpuniverse.com/profile/12208-jpo/)
+Authors: [JPO](https://vpuniverse.com/profile/12208-jpo/)  
 Download: [VPUniverse](https://vpuniverse.com/files/file/22232-nevermind-the-bollocks-backglass/)
 
 ROM
@@ -20,6 +20,7 @@ Tested by: evilwraith
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
