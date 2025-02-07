@@ -1,6 +1,6 @@
 # Mousin' Around! (Bally 1989)
 
-![Table Preview]((https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/images/vpx-mousin-preview.png)
+![Table Preview](https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/images/vpx-mousin-preview.png)
 
 Author: [Herweh](https://www.vpforums.org/index.php?showuser=57523)  
 Version:  Mousin' Around! (Bally 1989) 1.1  
