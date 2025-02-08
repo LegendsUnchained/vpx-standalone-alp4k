@@ -1,5 +1,7 @@
 # AC/DC Pro Vault (Stern 2017)
 
+## WARNING: This table does not run consistantly, a lot of users report a 'locating balls' error. We have not found a solution to that problem yet unfortunately.
+
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2019_03/1368165697_acdc(Custom).png.c9f3a93877cd9a64bb486a7d5f3cd7f1.png)
 
 Authors: [ninuzzu](https://vpuniverse.com/profile/5530-ninuzzu/)  
@@ -10,7 +12,7 @@ DirectB2S
 
 Authors: [Wildman](https://vpuniverse.com/profile/5-wildman/)  
 Version: 3.1  
-Download: [VP Wildman](https://vpuniverse.com/files/file/3131-acdc-pro-stern-2012/)
+Download: [VP Universe](https://vpuniverse.com/files/file/3131-acdc-pro-stern-2012/)
 
 ROM
 
@@ -21,6 +23,10 @@ Color DMD
 
 Author: [PastorLUL](https://vpuniverse.com/profile/42770-pastorlul/)  
 Download: [VP Universe](https://vpuniverse.com/files/file/17697-acdc-stern-2012-64-colors/)
+
+Patch
+Info: Download the 'AC-DC Pro Vault-1.0.vbs' file, once downloaded rename it to the same as your VPX file and place it next to the vpx file in the vpx-acdcpro folder 
+Download: [GitHub](https://github.com/jsm174/vpx-standalone-scripts) (AC-DC Pro Vault-1.0.vbs)
 
 ## Status 
 
