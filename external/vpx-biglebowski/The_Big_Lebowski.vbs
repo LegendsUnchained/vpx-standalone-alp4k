@@ -81,7 +81,7 @@ End Sub
 PuPStart(cPuPPack) 'Check for PuP - 
 
 Const BallSize = 50    ' 50 is the normal size used in the core.vbs, VP kicker routines uses this value divided by 2
-Const BallMass = 0.95    ' 1 is the normal mass
+Const BallMass = 1    ' 1 is the normal mass
 Const SongVolume = 0.5 ' 1 is full volume. Value is from 0 to 1
 Dim mMagnaSave1,mMagnaSave2, mMagnaSave3
 dim spinner
@@ -699,12 +699,12 @@ sub KbowlingHaut_hit()
     Timerbowling.enabled=1
     Targetcar1.collidable = 1
     Targetcar2.collidable = 1
-    ChangeBall(0)
 end Sub
 
 sub Timerbowling_timer
 	Timerbowling.enabled=0
     Kpiste.kick 65, 10:PlaySound "super-jackpot"
+    ChangeBall(5)
     Wopenunder.collidable = 0
     Targetcar.isdropped = 0  :DMD "", "", "dmdcarmode" , eBlink, eBlink, eNone, 3000, True, ""
     AddScore 10000
@@ -799,6 +799,7 @@ end sub
 Sub TimerdrainPfBas_timer
     TimerdrainPfBas.Enabled = 0
     PyramidKicker.kick 165, 5:PlaySound "fx_kicker_enter"
+    ChangeBall(0)
 End Sub
 
 Sub drainPfBas_hit()
@@ -938,6 +939,7 @@ End Sub
 sub Timerjesus_timer
 	Timerjesus.enabled=0
     Kpiste.kick 65, 10:PlaySound "super-jackpot"
+    ChangeBall(4)
     Wopenunder.collidable = 0
     Tjesus.isdropped = 0 :DMD "", "", "dmdJESUSparty" , eBlink, eBlink, eNone, 2500, True, ""
     AddScore 10000
@@ -1071,6 +1073,7 @@ End Sub
 sub Timerdude_timer
 	Timerdude.enabled=0
     Kpiste.kick 65, 10:PlaySound "super-jackpot"
+    ChangeBall(8)
     Wopenunder.collidable = 0
     AddScore 10000
 End Sub
@@ -1189,6 +1192,7 @@ End Sub
 sub Timerwalter_timer
 	Timerwalter.enabled=0
     Kpiste.kick 65, 10:PlaySound "super-jackpot"
+    ChangeBall(2)
     Wopenunder.collidable = 0
     AddScore 10000
 End Sub
@@ -1292,6 +1296,7 @@ End Sub
 sub TimerMaude_timer
 	TimerMaude.enabled=0
     Kpiste.kick 65, 10:PlaySound "super-jackpot"
+    ChangeBall(1)
     Wopenunder.collidable = 0
     Lrampbowling = 0
     AddScore 10000
@@ -1386,6 +1391,7 @@ End Sub
 sub Timerdonny_timer
 	Timerdonny.enabled=0
     Kpiste.kick 65, 10:PlaySound "super-jackpot"
+    ChangeBall(3)
     Wopenunder.collidable = 0
     AddScore 10000
 End Sub
@@ -2227,6 +2233,377 @@ Sub RollingUpdate()
         End If
     Next
 End Sub
+
+'******************************************************
+'		FLIPPER CORRECTION INITIALIZATION
+'******************************************************
+
+dim LF : Set LF = New FlipperPolarity
+dim RF : Set RF = New FlipperPolarity
+
+InitPolarity
+
+Sub InitPolarity()
+   dim x, a : a = Array(LF, RF)
+	for each x in a
+		x.AddPt "Ycoef", 0, RightFlipper.Y-65, 1 'disabled
+		x.AddPt "Ycoef", 1, RightFlipper.Y-11, 1
+		x.enabled = True
+		x.TimeDelay = 80
+		x.DebugOn=False ' prints some info in debugger
+
+
+        x.AddPt "Polarity", 0, 0, 0
+        x.AddPt "Polarity", 1, 0.05, - 2.7
+        x.AddPt "Polarity", 2, 0.16, - 2.7
+        x.AddPt "Polarity", 3, 0.22, - 0
+        x.AddPt "Polarity", 4, 0.25, - 0
+        x.AddPt "Polarity", 5, 0.3, - 1
+        x.AddPt "Polarity", 6, 0.4, - 2
+        x.AddPt "Polarity", 7, 0.5, - 2.7
+        x.AddPt "Polarity", 8, 0.65, - 1.8
+        x.AddPt "Polarity", 9, 0.75, - 0.5
+        x.AddPt "Polarity", 10, 0.81, - 0.5
+        x.AddPt "Polarity", 11, 0.88, 0
+        x.AddPt "Polarity", 12, 1.3, 0
+
+		x.AddPt "Velocity", 0, 0, 0.85
+		x.AddPt "Velocity", 1, 0.15, 0.85
+		x.AddPt "Velocity", 2, 0.2, 0.9
+		x.AddPt "Velocity", 3, 0.23, 0.95
+		x.AddPt "Velocity", 4, 0.41, 0.95
+		x.AddPt "Velocity", 5, 0.53, 0.95 '0.982
+		x.AddPt "Velocity", 6, 0.62, 1.0
+		x.AddPt "Velocity", 7, 0.702, 0.968
+		x.AddPt "Velocity", 8, 0.95,  0.968
+		x.AddPt "Velocity", 9, 1.03,  0.945
+		x.AddPt "Velocity", 10, 1.5,  0.945
+
+	Next
+
+	' SetObjects arguments: 1: name of object 2: flipper object: 3: Trigger object around flipper
+    LF.SetObjects "LF", LeftFlipper, TriggerLF
+    RF.SetObjects "RF", RightFlipper, TriggerRF
+    RF.SetObjects "RF", FlipperHAUT, TriggerRFhaut
+End Sub
+
+'******************************************************
+'  FLIPPER CORRECTION FUNCTIONS
+'******************************************************
+
+' modified 2023 by nFozzy
+' Removed need for 'endpoint' objects
+' Added 'createvents' type thing for TriggerLF / TriggerRF triggers.
+' Removed AddPt function which complicated setup imo
+' made DebugOn do something (prints some stuff in debugger)
+'   Otherwise it should function exactly the same as before\
+' modified 2024 by rothbauerw
+' Added Reprocessballs for flipper collisions (LF.Reprocessballs Activeball and RF.Reprocessballs Activeball must be added to the flipper collide subs
+' Improved handling to remove correction for backhand shots when the flipper is raised
+
+Class FlipperPolarity
+	Public DebugOn, Enabled
+	Private FlipAt		'Timer variable (IE 'flip at 723,530ms...)
+	Public TimeDelay		'delay before trigger turns off and polarity is disabled
+	Private Flipper, FlipperStart, FlipperEnd, FlipperEndY, LR, PartialFlipCoef, FlipStartAngle
+	Private Balls(20), balldata(20)
+	Private Name
+	
+	Dim PolarityIn, PolarityOut
+	Dim VelocityIn, VelocityOut
+	Dim YcoefIn, YcoefOut
+	Public Sub Class_Initialize
+		ReDim PolarityIn(0)
+		ReDim PolarityOut(0)
+		ReDim VelocityIn(0)
+		ReDim VelocityOut(0)
+		ReDim YcoefIn(0)
+		ReDim YcoefOut(0)
+		Enabled = True
+		TimeDelay = 50
+		LR = 1
+		Dim x
+		For x = 0 To UBound(balls)
+			balls(x) = Empty
+			Set Balldata(x) = new SpoofBall
+		Next
+	End Sub
+	
+	Public Sub SetObjects(aName, aFlipper, aTrigger)
+		
+		If TypeName(aName) <> "String" Then MsgBox "FlipperPolarity: .SetObjects error: first argument must be a String (And name of Object). Found:" & TypeName(aName) End If
+		If TypeName(aFlipper) <> "Flipper" Then MsgBox "FlipperPolarity: .SetObjects error: Second argument must be a flipper. Found:" & TypeName(aFlipper) End If
+		If TypeName(aTrigger) <> "Trigger" Then MsgBox "FlipperPolarity: .SetObjects error: third argument must be a trigger. Found:" & TypeName(aTrigger) End If
+		If aFlipper.EndAngle > aFlipper.StartAngle Then LR = -1 Else LR = 1 End If
+		Name = aName
+		Set Flipper = aFlipper
+		FlipperStart = aFlipper.x
+		FlipperEnd = Flipper.Length * Sin((Flipper.StartAngle / 57.295779513082320876798154814105)) + Flipper.X ' big floats for degree to rad conversion
+		FlipperEndY = Flipper.Length * Cos(Flipper.StartAngle / 57.295779513082320876798154814105)*-1 + Flipper.Y
+		
+		Dim str
+		str = "Sub " & aTrigger.name & "_Hit() : " & aName & ".AddBall ActiveBall : End Sub'"
+		ExecuteGlobal(str)
+		str = "Sub " & aTrigger.name & "_UnHit() : " & aName & ".PolarityCorrect ActiveBall : End Sub'"
+		ExecuteGlobal(str)
+		
+	End Sub
+	
+	' Legacy: just no op
+	Public Property Let EndPoint(aInput)
+		
+	End Property
+	
+	Public Sub AddPt(aChooseArray, aIDX, aX, aY) 'Index #, X position, (in) y Position (out)
+		Select Case aChooseArray
+			Case "Polarity"
+				ShuffleArrays PolarityIn, PolarityOut, 1
+				PolarityIn(aIDX) = aX
+				PolarityOut(aIDX) = aY
+				ShuffleArrays PolarityIn, PolarityOut, 0
+			Case "Velocity"
+				ShuffleArrays VelocityIn, VelocityOut, 1
+				VelocityIn(aIDX) = aX
+				VelocityOut(aIDX) = aY
+				ShuffleArrays VelocityIn, VelocityOut, 0
+			Case "Ycoef"
+				ShuffleArrays YcoefIn, YcoefOut, 1
+				YcoefIn(aIDX) = aX
+				YcoefOut(aIDX) = aY
+				ShuffleArrays YcoefIn, YcoefOut, 0
+		End Select
+	End Sub
+	
+	Public Sub AddBall(aBall)
+		Dim x
+		For x = 0 To UBound(balls)
+			If IsEmpty(balls(x)) Then
+				Set balls(x) = aBall
+				Exit Sub
+			End If
+		Next
+	End Sub
+	
+	Private Sub RemoveBall(aBall)
+		Dim x
+		For x = 0 To UBound(balls)
+			If TypeName(balls(x) ) = "IBall" Then
+				If aBall.ID = Balls(x).ID Then
+					balls(x) = Empty
+					Balldata(x).Reset
+				End If
+			End If
+		Next
+	End Sub
+	
+	Public Sub Fire()
+		Flipper.RotateToEnd
+		processballs
+	End Sub
+	
+	Public Property Get Pos 'returns % position a ball. For debug stuff.
+		Dim x
+		For x = 0 To UBound(balls)
+			If Not IsEmpty(balls(x)) Then
+				pos = pSlope(Balls(x).x, FlipperStart, 0, FlipperEnd, 1)
+			End If
+		Next
+	End Property
+	
+	Public Sub ProcessBalls() 'save data of balls in flipper range
+		FlipAt = GameTime
+		Dim x
+		For x = 0 To UBound(balls)
+			If Not IsEmpty(balls(x)) Then
+				balldata(x).Data = balls(x)
+			End If
+		Next
+		FlipStartAngle = Flipper.currentangle
+		PartialFlipCoef = ((Flipper.StartAngle - Flipper.CurrentAngle) / (Flipper.StartAngle - Flipper.EndAngle))
+		PartialFlipCoef = abs(PartialFlipCoef-1)
+	End Sub
+
+	Public Sub ReProcessBalls(aBall) 'save data of balls in flipper range
+		If FlipperOn() Then
+			Dim x
+			For x = 0 To UBound(balls)
+				If Not IsEmpty(balls(x)) Then
+					if balls(x).ID = aBall.ID Then
+						If isempty(balldata(x).ID) Then
+							balldata(x).Data = balls(x)
+						End If
+					End If
+				End If
+			Next
+		End If
+	End Sub
+
+	'Timer shutoff for polaritycorrect
+	Private Function FlipperOn()
+		If GameTime < FlipAt+TimeDelay Then
+			FlipperOn = True
+		End If
+	End Function
+	
+	Public Sub PolarityCorrect(aBall)
+		If FlipperOn() Then
+			Dim tmp, BallPos, x, IDX, Ycoef, BalltoFlip, BalltoBase, NoCorrection, checkHit
+			Ycoef = 1
+			
+			'y safety Exit
+			If aBall.VelY > -8 Then 'ball going down
+				RemoveBall aBall
+				Exit Sub
+			End If
+			
+			'Find balldata. BallPos = % on Flipper
+			For x = 0 To UBound(Balls)
+				If aBall.id = BallData(x).id And Not IsEmpty(BallData(x).id) Then
+					idx = x
+					BallPos = PSlope(BallData(x).x, FlipperStart, 0, FlipperEnd, 1)
+					BalltoFlip = DistanceFromFlipperAngle(BallData(x).x, BallData(x).y, Flipper, FlipStartAngle)
+					If ballpos > 0.65 Then  Ycoef = LinearEnvelope(BallData(x).Y, YcoefIn, YcoefOut)								'find safety coefficient 'ycoef' data
+				End If
+			Next
+			
+			If BallPos = 0 Then 'no ball data meaning the ball is entering and exiting pretty close to the same position, use current values.
+				BallPos = PSlope(aBall.x, FlipperStart, 0, FlipperEnd, 1)
+				If ballpos > 0.65 Then  Ycoef = LinearEnvelope(aBall.Y, YcoefIn, YcoefOut)												'find safety coefficient 'ycoef' data
+				NoCorrection = 1
+			Else
+				checkHit = 50 + (20 * BallPos) 
+
+				If BalltoFlip > checkHit or (PartialFlipCoef < 0.5 and BallPos > 0.22) Then
+					NoCorrection = 1
+				Else
+					NoCorrection = 0
+				End If
+			End If
+			
+			'Velocity correction
+			If Not IsEmpty(VelocityIn(0) ) Then
+				Dim VelCoef
+				VelCoef = LinearEnvelope(BallPos, VelocityIn, VelocityOut)
+				
+				'If partialflipcoef < 1 Then VelCoef = PSlope(partialflipcoef, 0, 1, 1, VelCoef)
+				
+				If Enabled Then aBall.Velx = aBall.Velx*VelCoef
+				If Enabled Then aBall.Vely = aBall.Vely*VelCoef
+			End If
+			
+			'Polarity Correction (optional now)
+			If Not IsEmpty(PolarityIn(0) ) Then
+				Dim AddX
+				AddX = LinearEnvelope(BallPos, PolarityIn, PolarityOut) * LR
+				
+				If Enabled and NoCorrection = 0 Then aBall.VelX = aBall.VelX + 1 * (AddX*ycoef*PartialFlipcoef*VelCoef)
+			End If
+			If DebugOn Then debug.print "PolarityCorrect" & " " & Name & " @ " & GameTime & " " & Round(BallPos*100) & "%" & " AddX:" & Round(AddX,2) & " Vel%:" & Round(VelCoef*100)
+		End If
+		RemoveBall aBall
+	End Sub
+End Class
+
+'******************************************************
+'  FLIPPER POLARITY AND RUBBER DAMPENER SUPPORTING FUNCTIONS
+'******************************************************
+
+' Used for flipper correction and rubber dampeners
+Sub ShuffleArray(ByRef aArray, byVal offset) 'shuffle 1d array
+	Dim x, aCount
+	aCount = 0
+	ReDim a(UBound(aArray) )
+	For x = 0 To UBound(aArray)		'Shuffle objects in a temp array
+		If Not IsEmpty(aArray(x) ) Then
+			If IsObject(aArray(x)) Then
+				Set a(aCount) = aArray(x)
+			Else
+				a(aCount) = aArray(x)
+			End If
+			aCount = aCount + 1
+		End If
+	Next
+	If offset < 0 Then offset = 0
+	ReDim aArray(aCount-1+offset)		'Resize original array
+	For x = 0 To aCount-1				'set objects back into original array
+		If IsObject(a(x)) Then
+			Set aArray(x) = a(x)
+		Else
+			aArray(x) = a(x)
+		End If
+	Next
+End Sub
+
+' Used for flipper correction and rubber dampeners
+Sub ShuffleArrays(aArray1, aArray2, offset)
+	ShuffleArray aArray1, offset
+	ShuffleArray aArray2, offset
+End Sub
+
+' Used for flipper correction, rubber dampeners, and drop targets
+Function BallSpeed(ball) 'Calculates the ball speed
+	BallSpeed = Sqr(ball.VelX^2 + ball.VelY^2 + ball.VelZ^2)
+End Function
+
+' Used for flipper correction and rubber dampeners
+Function PSlope(Input, X1, Y1, X2, Y2)		'Set up line via two points, no clamping. Input X, output Y
+	Dim x, y, b, m
+	x = input
+	m = (Y2 - Y1) / (X2 - X1)
+	b = Y2 - m*X2
+	Y = M*x+b
+	PSlope = Y
+End Function
+
+' Used for flipper correction
+Class spoofball
+	Public X, Y, Z, VelX, VelY, VelZ, ID, Mass, Radius
+	Public Property Let Data(aBall)
+		With aBall
+			x = .x
+			y = .y
+			z = .z
+			velx = .velx
+			vely = .vely
+			velz = .velz
+			id = .ID
+			mass = .mass
+			radius = .radius
+		End With
+	End Property
+	Public Sub Reset()
+		x = Empty
+		y = Empty
+		z = Empty
+		velx = Empty
+		vely = Empty
+		velz = Empty
+		id = Empty
+		mass = Empty
+		radius = Empty
+	End Sub
+End Class
+
+' Used for flipper correction and rubber dampeners
+Function LinearEnvelope(xInput, xKeyFrame, yLvl)
+	Dim y 'Y output
+	Dim L 'Line
+	'find active line
+	Dim ii
+	For ii = 1 To UBound(xKeyFrame)
+		If xInput <= xKeyFrame(ii) Then
+			L = ii
+			Exit For
+		End If
+	Next
+	If xInput > xKeyFrame(UBound(xKeyFrame) ) Then L = UBound(xKeyFrame)		'catch line overrun
+	Y = pSlope(xInput, xKeyFrame(L-1), yLvl(L-1), xKeyFrame(L), yLvl(L) )
+	
+	If xInput <= xKeyFrame(LBound(xKeyFrame) ) Then Y = yLvl(LBound(xKeyFrame) )		 'Clamp lower
+	If xInput >= xKeyFrame(UBound(xKeyFrame) ) Then Y = yLvl(UBound(xKeyFrame) )		'Clamp upper
+	
+	LinearEnvelope = Y
+End Function
 
 '**********************
 ' Ball Collision Sound
@@ -5716,6 +6093,7 @@ Sub SelectBattle 'select a new random battle if none is active
                 loop
                 Battle(CurrentPlayer, NewBattle) = 2
                 Light26.State = 2
+                Light26a.State = 2
                 UpdateBattleLights
         End Select
     'debug.print "newbatle " & newbattle
@@ -5747,6 +6125,7 @@ End Sub
 Sub StartBattle
     Battle(CurrentPlayer, 0) = NewBattle
     Light26.State = 0
+    Light26a.State = 0
     ChangeSong
     PlaySound "fx_alarm"
     EnableBallsaver 15 'start a 15 seconds ball saver
@@ -6098,7 +6477,7 @@ GBred(7) = 255 : GBgreen(7)	= 255 : GBblue(7) = 000
 
 ' gold GlowBall
 CustomBallGlow(8) = 		True
-CustomBallImage(8) = 		"glowball gold"
+CustomBallImage(8) = 		"ball"
 CustomBallLogoMode(8) = 	True
 CustomBallDecal(8) = 		""
 CustomBulbIntensity(8) = 	0
