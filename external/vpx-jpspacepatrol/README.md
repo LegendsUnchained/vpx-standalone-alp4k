@@ -1,6 +1,6 @@
 # Space Patrol (Taito do Brasil 1978)
 
-![Table Preview](../../images/vpx-jps-jpspacepatrol-preview.jpg)
+![Table Preview](../../images/vpx-jps-spacepatrol-preview.jpg)
 
 ---
 
