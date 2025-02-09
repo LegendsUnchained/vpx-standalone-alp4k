@@ -26,4 +26,3 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-bigindian.elf
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-bigindian
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-- Place ROM zip file into vpx-bigindian/pinmame/roms folder. DO NOT UNZIP!
