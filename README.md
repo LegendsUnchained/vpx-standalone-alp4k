@@ -68,6 +68,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Andromeda (Game Plan 1985)](external/vpx-andromeda) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 51 |
 | [Apollo 13 (Sega 1995)](external/vpx-apollo13) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 47 |
 | [Arena (Gottlieb 1987)](external/vpx-arena1C3S) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 45 |
+| [Aspen (Brunswick 1979)](external/vpx-aspen) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Asterix The Twelve Tasks (Original 2022)](external/vpx-asterix) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Asteroid Annie (Gottlieb 1980)](external/vpx-astannie) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Atlantis (Bally 1989)](external/vpx-atlantis) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
