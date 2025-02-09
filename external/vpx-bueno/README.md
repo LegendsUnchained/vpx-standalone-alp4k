@@ -1,6 +1,6 @@
 # El Bueno, el Feo y el Malo (Original 2015)
 
-![Table Preview](https://github.com/psybocilin/vpx-standalone-alp4k/blob/vpx-elbueno/images/vpx-elbueno-preview.jpg)
+![Table Preview](https://github.com/psybocilin/vpx-standalone-alp4k/blob/vpx-bueno/images/vpx-bueno-preview.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 5.5.0  
