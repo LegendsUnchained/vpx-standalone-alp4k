@@ -8,8 +8,8 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 
 DirectB2S
 
-Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
-Version: 5.5.1  
+Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
+Version: 5.5.1
 Download: [VP Universe](https://www.vpforums.org/index.php?app=downloads&showfile=16114)
 
 ## Status 
