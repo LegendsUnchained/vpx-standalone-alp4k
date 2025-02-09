@@ -1,7 +1,6 @@
 # solar City (Fipermatic 1977)
 
-![Table Preview](../../images/vpx-solarcity-preview.jpg)
-
+![Table Preview](../../images/vpx-solarcity-preview.png)
 ---
 
 ## Files
