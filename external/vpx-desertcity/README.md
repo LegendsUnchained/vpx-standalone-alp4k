@@ -2,19 +2,13 @@
 
 ![Table Preview](../../images/vpx-desertcity-preview.png)
 
-Authors: [loserman76](https://www.vpforums.org/index.php?showuser=41250)  
-
-Version: 1.0  
-
-Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=13681)
-
-DirectB2S
-
-Included with table
-
-ROM
-
-None
+## Files
+| File Type | Link | Version | Author | 
+|-----------|--------|----------|--------------|
+| **VPX** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=13681) | 1.0b | [loserman76](https://www.vpforums.org/index.php?showuser=41250) |
+| **B2S** | included with table | 1.0b | [loserman76](https://www.vpforums.org/index.php?showuser=41250) |
+| **DMD** | None | None | None |
+| **ROM** | None | None | None |
 
 Tested by: Curt
 
