@@ -1,6 +1,6 @@
 # Desert City (Fipermatic 1977)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-jetspin.png)
+![Table Preview](../../images/vpx-desertcity-preview.jpg)
 
 Authors: [loserman76](https://www.vpforums.org/index.php?showuser=41250)  
 
