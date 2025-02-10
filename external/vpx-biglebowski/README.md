@@ -6,7 +6,7 @@
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
 | **VPX** | [VPUniverse](https://vpuniverse.com/files/file/23627-big-lebowski/) | 3.3 | [Marty02](https://vpuniverse.com/profile/16531-marty02/) |
-| **B2S** | Included In Download | Included In Download | Included In Download |
+| **B2S** | [VPUniverse](https://vpuniverse.com/files/file/23679-big-lebowski-dutch-ish-2019-b2s-full-dmd/) | 1.0 | [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
 | **DMD** | Included In Download | Included In Download | Included In Download |
 | **ROM** | Not Needed| Not Needed | Not Needed|
 
