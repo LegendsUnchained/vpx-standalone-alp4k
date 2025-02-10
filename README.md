@@ -107,6 +107,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Big House (Gottlieb 1989)](external/vpx-bighouse) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 32 |
 | [Big Indian (Gottlieb 1975)](external/vpx-bigindian) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Big Lebowski, The (2025)](external/vpx-biglebowski) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
+| [Big Star (Williams 1972)](external/vpx-bigstar) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Big Trouble in Little China (Original 2022)](external/vpx-big_trouble) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Bird Fly Original (2022)](external/vpx-birdfly) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Black Belt (Bally 1986)](external/vpx-blackbeltbally) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 55 |
