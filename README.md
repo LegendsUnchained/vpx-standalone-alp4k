@@ -560,6 +560,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Twilight Zone (Bally 1993)](external/vpx-tz) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 42 |
 | [Twisted Metal (Clairvius 2024)](external/vpx-twistedmetal) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Twister (Sega 1996)](external/vpx-twister) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
+| [Underwater (Recel 1976)](external/vpx-underwater) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Vampirella (Balutito 2024)](external/vpx-vampirella) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 | [Victory (Gottlieb 1987)](external/vpx-victory) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 35 |
 | [Viking (Bally 1980)](external/vpx-viking) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 42 |
