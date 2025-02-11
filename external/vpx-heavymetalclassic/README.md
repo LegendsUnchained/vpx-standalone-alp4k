@@ -1,6 +1,6 @@
 # Heavy Metal [Classic] (Rowamet 1983)
 
-![Table Preview](../../images/vpx-heavymetalclassic-preview.jpg)
+![Table Preview](../../images/vpx-heavymetalclassic-preview.png)
 
 ---
 
