@@ -10,7 +10,7 @@
 | **VPX** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=15165) | 4.0 | [weisshund](https://www.vpforums.org/index.php?s=33b6da5b0d30dd67744393476a653fb4&showuser=150364) |
 | **B2S** | included with table | 4.0 | [weisshund](https://www.vpforums.org/index.php?s=33b6da5b0d30dd67744393476a653fb4&showuser=150364) |
 | **DMD** | N/A | N/A | N/A |
-| **ROM** | [VPForums]({https://www.vpforums.org/index.php?app=downloads&showfile=455) | ? | [Rowamet](https://www.arcade-museum.com/company/rowamet-ind-a-eletrometal-a-ltda) |
+| **ROM** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=455) | ? | [Rowamet](https://www.arcade-museum.com/company/rowamet-ind-a-eletrometal-a-ltda) |
 
 **Tested by:** [Curt](https://github.com/Old-Cyrus)
 
