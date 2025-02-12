@@ -14,9 +14,9 @@ Download: [VP Universe](https://vpuniverse.com/files/file/17868-mousin-around-ba
 
 ROM
 
-Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)  
+Authors: [Rock-ola](https://pinballnirvana.com/forums/members/rock-ola.1/)  
 Version: mousn_l4.zip  
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=933)
+Download: [Pinball Nirvana](https://pinballnirvana.com/forums/resources/mousn_l4.2103/)
 
 Tested by:
 [CoffeeAtJoes]
