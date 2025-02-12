@@ -3,7 +3,7 @@
 ![Table Preview](https://i.imgur.com/Yp6uu9L.jpeg)
 
 Authors: [Gedankekojote97](https://vpuniverse.com/profile/42203-gedankekojote97/)  
-Version: 1.0  
+Version: (Real Final)
 Download: [VP Universe](https://vpuniverse.com/files/file/9784-medieval-madness-mod-nfozzy-fleep-sounds-lut-11/)
 
 DirectB2S
