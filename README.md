@@ -200,6 +200,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [DUNE (Original 2024)](external/vpx-dune) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
 | [Dungeons & Dragons (Bally 1987)](external/vpx-dungeonsndragons) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
 | [Earthshaker (Williams 1989)](external/vpx-earthshaker) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 32 |
+| [Eight Ball (Bally 1977), JPs](external/vpx-jpeightball) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Eight Ball Champ (Bally 1985)](external/vpx-eightballchamp) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 51 |
 | [Eight Ball Deluxe (Bally 1981)](external/vpx-eightballdeluxe) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:x: | :white_check_mark: | 45 |
 | [El Dorado (Gottlieb 1975)](external/vpx-eldorado) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 43 |
