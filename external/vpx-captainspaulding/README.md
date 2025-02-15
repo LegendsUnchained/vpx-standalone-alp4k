@@ -13,6 +13,7 @@
 | **ROM** | N/A | N/A | N/A |
 
 **Tested by:** [Bla1ze]
+**Additional Notes:** The table runs fine however, if you leave it running but are not playing it (Attract Mode), there is the potential it will lock up your 4KP requiring a reboot. This does not affect gameplay and only happens if left alone for 5 minutes or longer. 
 
 ---
 
