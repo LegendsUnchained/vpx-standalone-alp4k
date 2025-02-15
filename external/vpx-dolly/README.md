@@ -3,7 +3,7 @@
 ![Table Preview](../../images/vpx-dolly-parton-preview.jpg)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 4.0  
+Version: 5.5.0  
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=12917)
 
 DirectB2S
