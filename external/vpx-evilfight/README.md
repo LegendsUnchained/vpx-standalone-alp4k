@@ -31,4 +31,4 @@
 - Add your personalized launcher.elf and rename it to `vpx-evilfight.elf`
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-evilfight`
 - Rom file (evlfight.zip) stays in zip folder, place zip file in `vpx-{tablename}/pinmame/roms`
-- Make sure `(.vpx)` `(.directb2s)` `(.vbs)` and `(.ini)` are all named the same. Do not rename `(VPinballX.ini.ini)`
+- Make sure `(.vpx)` `(.directb2s)` `(.vbs)` and `(.ini)` are all named the same. Do not rename `(VPinballX.ini)`.
