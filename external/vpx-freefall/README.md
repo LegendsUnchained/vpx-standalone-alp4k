@@ -1,6 +1,7 @@
 # Freefall (Stern 1981)
 
-![Table Preview](https://github.com/psybocilin/vpx-standalone-alp4k/blob/vpx-bueno/images/vpx-bueno-preview.jpg)
+![Table Preview](https://github.com/psybocilin/vpx-standalone-alp4k/blob/vpx-freefall/images/vpx-freefall-preview.jpg)
+
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 5.5.0  
