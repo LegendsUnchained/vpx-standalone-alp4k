@@ -8,7 +8,7 @@ Tested by: Mox
 | File Type | Link | Version | Author(s) | 
 |:---------:|:----:|:-------:|:---------:|
 | VPX | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14343) | 1.0 | [ivantba](https://www.vpforums.org/index.php?showuser=123858) |
-| DirectB2S | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14416) | 1.0 | [GrayGhost](https://www.vpforums.org/index.php?showuser=92399) |
+| DirectB2S | Included w/ Table | N/A | N/A |
 | ROM | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=575) | stest | [destruk](https://www.vpforums.org/index.php?showuser=5) |
 
 ## Status 
