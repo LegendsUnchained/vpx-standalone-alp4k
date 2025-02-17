@@ -29,7 +29,7 @@
 - Add your personalized launcher.elf and rename it to `vpx-batman66flash.elf`
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-batman66flash`
 - Rom file (flash_l1.zip) stays in zip folder, place zip file in `vpx-batman66flash/pinmame/roms`
-- Make sure `(.vpx)` `(.direct2b2s)` and `(.ini)` are all named the same.
+- Make sure `(.vpx)` `(.directb2s)` and `(.ini)` are all named the same.
 
 
 ## TO GET ALL MUSIC AND SOUNDS TO PLAY
