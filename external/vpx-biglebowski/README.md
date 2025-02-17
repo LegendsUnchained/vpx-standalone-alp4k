@@ -5,8 +5,8 @@
 ## Files
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
-| **VPX** | [VPUniverse](https://vpuniverse.com/files/file/23627-big-lebowski/) | 3.0 | [Marty02](https://vpuniverse.com/profile/16531-marty02/) |
-| **B2S** | Included In Download | Included In Download | Included In Download |
+| **VPX** | [VPUniverse](https://vpuniverse.com/files/file/23627-big-lebowski/) | 3.3 | [Marty02](https://vpuniverse.com/profile/16531-marty02/) |
+| **B2S** | [VPUniverse](https://vpuniverse.com/files/file/23679-big-lebowski-dutch-ish-2019-b2s-full-dmd/) | 1.0 | [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
 | **DMD** | Included In Download | Included In Download | Included In Download |
 | **ROM** | Not Needed| Not Needed | Not Needed|
 
@@ -28,3 +28,4 @@
 - Add your personalized launcher.elf and rename it to `vpx-biglebowski.elf`
 - Download the package listed above, extract (if necessary) and copy the .vpx and .directb2s into `vpx-biglebowski`
 - Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same.
+- I'm the Dude. So that's what you call me. You know, that or, uh, His Dudeness, or uh, Duder, or El Duderino if you're not into the whole brevity thing.
