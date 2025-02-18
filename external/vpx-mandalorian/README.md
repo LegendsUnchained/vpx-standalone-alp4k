@@ -27,4 +27,4 @@
 - Add your personalized launcher.elf and rename it to `vpx-mandalorian.elf`
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-mandalorian`
 - Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same.
-- Don't forget to have regular breaks!
+- This is the way!
