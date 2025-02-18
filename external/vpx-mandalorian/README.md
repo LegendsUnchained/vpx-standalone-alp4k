@@ -1,6 +1,6 @@
 # The Mandalorian (Stern 2021)
 
-![Table Preview](vpx-mandalorian-table.jpeg?raw=true)
+![Table Preview](../../images/vpx-mandalorian-table.jpeg?raw=true)
 
 ---
 

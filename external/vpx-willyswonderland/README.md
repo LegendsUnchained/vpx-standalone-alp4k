@@ -1,6 +1,6 @@
 # Willy's Wonderland (Original 2021)
 
-![Table Preview](vpx-willyswonderland-table.jpeg?raw=true)
+![Table Preview](../../images/vpx-willyswonderland-table.jpeg?raw=true)
 
 ---
 
