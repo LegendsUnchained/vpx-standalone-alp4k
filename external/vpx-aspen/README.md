@@ -1,4 +1,4 @@
-# Aspen (Brunswitck 1979)
+# Aspen (Brunswick 1979)
 
 ![Table Preview](../../images/vpx-aspen.png)
 
