@@ -30,4 +30,4 @@
 - Rom file (FILENAME.zip) stays in zip folder, place zip file in `vpx-willyswonderland/pinmame/roms`
 - Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same.
 - Place `Willy` folder in `vpx-willyswonderland/music`
-- Don't forget to have regular breaks!
+- Don't forget to take regular breaks!
