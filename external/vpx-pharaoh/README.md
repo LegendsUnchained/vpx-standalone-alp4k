@@ -14,7 +14,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/2216-pharaohwilliams-1
 
 ROM
 
-Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)
+Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)  
 ROM Name: pharo_l2  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=798)
 
