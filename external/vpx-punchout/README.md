@@ -1,4 +1,4 @@
-# Punch Out (Original)
+# Punch Out (Original 2025)
 
 ![Table Preview](https://raw.githubusercontent.com/Bla1ze/vpx-images/refs/heads/main/vpx-punchout.jpg)
 
@@ -16,8 +16,10 @@
 
 ---
 
-## Status 
+## Status
+
 **Minimum VPX Standalone build:** 10.8.0-1983-b84441e
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
