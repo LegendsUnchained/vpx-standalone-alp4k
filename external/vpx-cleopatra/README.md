@@ -1,6 +1,6 @@
 # Cleopatra (Gottlieb 1977)
 
-![Table Preview](https://github.com/psybocilin/vpx-standalone-alp4k/blob/vpx-cleopatra/images/vpx-cleopatra-preview.jpg)
+![Table Preview](https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/images/vpx-cleopatra-preview.jpg)
 
 
 Authors: [Goldchicco](https://vpuniverse.com/profile/23579-goldchicco/)  
