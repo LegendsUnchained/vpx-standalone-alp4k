@@ -1,4 +1,4 @@
-# solar City (Fipermatic 1977)
+# solar City (Gottlieb 1976)
 
 ![Table Preview](../../images/vpx-solarcity-preview.png)
 ---
