@@ -8,7 +8,7 @@
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
 | **VPX** | [VP Universe](https://vpuniverse.com/files/file/10534-world-cup-soccer-bally-1994/) | 1.4 | [VPUStaff](https://vpuniverse.com/profile/50-vpustaff/content/?type=downloads_file) |
-| **B2S** | [VP Universe](https://vpuniverse.com/files/file/4873-world-cup-soccer-bally-midway-1994/) | 1.0.0 | [Blacksad](https://vpuniverse.com/profile/9127-blacksad/content/?type=downloads_file) |
+| **B2S** | [VP Universe](https://vpuniverse.com/files/file/4873-world-cup-soccer-bally-midway-1994/) | 1.0.0 - 2&3_scr_big_DMD.directb2s| [Blacksad](https://vpuniverse.com/profile/9127-blacksad/content/?type=downloads_file) |
 | **ROM** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=296) | wcs_l2.zip | [destruk](https://www.vpforums.org/index.php?showuser=5) |
 
 ---
