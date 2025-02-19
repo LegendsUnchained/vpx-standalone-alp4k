@@ -14,7 +14,9 @@
 ---
 
 ## Status 
+
 Minimum VPX Standalone build: 10.8.0-1989-a764013
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
@@ -27,7 +29,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to `vpx-jpfireactiondeluxe.elf`
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-jpfireactiondeluxe` folder
 - Place ROM zip file into `vpx-jpfireactiondeluxe/pinmame/roms` folder. DO NOT UNZIP!
-- Make sure `(.vpx)` `(.direct2b2s)` and `(.ini)` are all named the same.
+- Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same.
 
 ---
 
