@@ -523,6 +523,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Star Trek LE (Stern 2013)](external/vpx-startrekle) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 | [Star Trek LE - JPs (Original 2020)](external/vpx-startreklejp) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 | [Star Wars (Data East 1992)](external/vpx-starwars) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 30 |
+  [Star Wars Episode 1(Original 2023)](external/vpx-starwarsepisode1) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :X: | :white_check_mark: | 48 |
 | [Star Wars Trilogy (Sega 1997)](external/vpx-starwarstrilogy) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
 | [Stargate (Gottlieb 1995)](external/vpx-stargate) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Stars (Stern 1978)](external/vpx-stars) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
