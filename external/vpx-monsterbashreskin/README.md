@@ -27,7 +27,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to `vpx-monsterbashreskin.elf`
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-monsterbashreskin` folder
 - Place ROM zip file into `vpx-monsterbashreskin/pinmame/roms` folder. DO NOT UNZIP!
-- Make sure `(.vpx)` and `(.direct2b2s)` are named the same.
+- Make sure `(.vpx)`, `(.direct2b2s)` and `(.ini)` are named the same.
 
 ---
 
