@@ -1,6 +1,6 @@
 # Doodle Bug (Williams 1971)
 
-![Table Preview](https://github.com/vfirebirdGH/vpx-images/blob/main/vpx-doodlebug-Table%20Preview.jpg)
+![Table Preview](../../images/vpx-doodlebug-preview.png)
 
 Authors: [loserman76](https://vpuniverse.com/profile/2798-loserman76/)  
 Version: 1.0.0f  
