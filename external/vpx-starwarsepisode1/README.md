@@ -1,4 +1,4 @@
-# Star Wars Episode 1 Original 2023)
+# Star Wars Episode 1 (Original 2023)
 
 ![Table Preview](../../images/vpx-swepisodeone-preview.jpg)
 
@@ -13,6 +13,7 @@ Version: 1.2
 Download: INCLUDED IN TABLE DOWNLOAD  
 
 ROM
+
 Authors: [ryguy417](https://vpuniverse.com/profile/31096-ryguy417/)  
 Version: 1.2  
 Download: INCLUDED IN TABLE DOWNLOAD  
