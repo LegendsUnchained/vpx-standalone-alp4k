@@ -392,12 +392,14 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Monday Night Football (Data East 1989)](external/vpx-mondaynightfootball) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 42 |
 | [Monopoly (Stern 2001)](external/vpx-monopoly) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Monster Bash (Williams 1998)](external/vpx-monsterbash) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 33 |
+| [Monster Bash (Williams 1998) Balutito Reskin](external/vpx-monsterbashreskin) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 47 |
 | [Motordome (Bally 1986)](external/vpx-motordome) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 55 |
 | [Mousin' Around! (Bally 1989)](external/vpx-mousin) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 32 |
 | [Mr. and Mrs. Pac-Man (Bally 1982)](external/vpx-mrandmrspacman) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 45 |
 | [Mustang (Stern 2014)](external/vpx-mustang) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 33 |
 | [Mustang (Bullitt LE) (Stern 2014)](external/vpx-mustangbullitt) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 37 |
 | [Mystery Castle (Alvin G 1993)](external/vpx-mysterycastle) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 45 |
+| [Mystic, JPs (Bally 1980)](external/vpx-jpmystic) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Nascar (Stern 2005)](external/vpx-nascar) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Nemesis (Peyper 1986)](external/vpx-nemesis) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 50 |
 | [Neverending Story, The (Original 2021)](external/vpx-tnes) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
