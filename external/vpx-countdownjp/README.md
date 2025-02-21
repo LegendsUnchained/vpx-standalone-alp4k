@@ -1,6 +1,6 @@
 # Count-Down (Gottlieb 1979)
 
-![Table Preview](https://github.com/BorisUndead/vpx-images/blob/main/vpx-countdownjp.png)
+![Table Preview](../../vpx-countdownjp.png)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 5.5.0  
