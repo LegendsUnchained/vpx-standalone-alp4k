@@ -12,7 +12,7 @@ DirectB2S
 
 Authors: [Wildman](https://www.vpforums.org/index.php?showuser=277)  
 Version: 3.0 
-Download: [VP Universe](https://vpuniverse.com/profile/5-wildman/)
+Download: [VP Universe](https://vpuniverse.com/files/file/2278-cybernautbally-1985/)
 
 ROM
 
