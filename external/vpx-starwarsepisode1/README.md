@@ -1,6 +1,6 @@
 # Star Wars Episode 1 Original 2023)
 
-![Table Preview] (../../images/vpx-swepisodeone-preview.jpg)
+![Table Preview](../../images/vpx-swepisodeone-preview.jpg)
 
 Authors: [ryguy417](https://vpuniverse.com/profile/31096-ryguy417/)  
 Version: 1.2  
