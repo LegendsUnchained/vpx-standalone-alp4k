@@ -4,7 +4,7 @@
 Table
 
 Authors: [JoePicasso](https://vpuniverse.com/profile/15285-joepicasso/)
-Version: 4.3.0
+Version: 1.1
 Download: [VP Universe](https://vpuniverse.com/files/file/17512-megadeth-original)
 
 DirectB2S
