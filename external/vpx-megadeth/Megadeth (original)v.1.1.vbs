@@ -71,7 +71,7 @@ Const FlexDMDHighQuality = True		' If using RealDMD set to False
 Dim VRRoomChoice: VRRoomChoice = 1   '1 = Prison Room  2 = Minimal Room  3 = Ultra Minimal Room.
 '***************MINI GAME ***************************** AOR
 
-'Const bIsMiniGameActive = 1  'is Minigame Active   Don't Launch MiniGame = 0,  Launch Minigame = 1, using Const Videos variable, line 69 :) 
+'Const bIsMiniGameActive = 0  'is Minigame Active   Don't Launch MiniGame = 0,  Launch Minigame = 1, using Const Videos variable, line 69 :) 
 Const PupScreenMiniGame = 2  '5 = FullDMD, Backglass = 2
 '*****************************************END OF USER OPTIONS**********************************
 'Minigame variable AOR
