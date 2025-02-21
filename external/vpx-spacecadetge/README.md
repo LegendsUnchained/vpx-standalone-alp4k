@@ -7,7 +7,7 @@ Authors: [Funkatron101](https://vpuniverse.com/profile/49709-funkatron101/)
 Version: 1.0
 Download: [VP Universe](https://vpuniverse.com/files/file/24068-jps-space-cadet-galaxy-edition/)
 
-PUP Pack - REQIRED FOR THIS TABLE
+PUP Pack - REQUIRED FOR THIS TABLE
 
 Authors: [Funkatron101](https://vpuniverse.com/profile/49709-funkatron101/)
 Version: 1.0
