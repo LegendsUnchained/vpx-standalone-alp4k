@@ -2,13 +2,13 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-judgedredd.png)
 
-Author: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/) 
+Author: [bigus1](https://www.vpforums.org/index.php?showuser=107629) 
 
 Tested by: Bla1ze 
 
-Version: 1.1
+Version: 3.1
 
-Download: [VP Universe](https://vpuniverse.com/files/file/7750-judge-dredd-bally-1993-vpw/)
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14597)
 
 DirectB2S
 
@@ -31,7 +31,7 @@ MD5: 9b34563dac437408dfb6753965cb5723
 Minimum VPX Standalone build: 10.8.0-1983-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 25 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 45 |
 
 ## Instructions
 
