@@ -3,7 +3,7 @@
 ![Table Preview](https://github.com/Mar3nBu/vpx-images/blob/main/vpx-futurespa.png)
 
 Author: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 4.3  
+Version: 5.5.0
 Download: [VP Forums](https://www.vpforums.org/index.php?s=3d4ebfb2462744f6ffd97dbd571fe844&app=downloads&showfile=13112)
 
 DirectB2S
