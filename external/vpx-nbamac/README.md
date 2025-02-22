@@ -31,5 +31,4 @@
 - Add your personalized launcher.elf and rename it to `vpx-nbamac.elf`
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-nbamac`
 - Rom file (nbamac.zip) stays in zip folder, place zip file in `vpx-nbamac/pinmame/roms`
-- Make sure `(.vpx)` `(.directb2s)` `(.vbs)` and `(.ini)` are all named the same. Do not rename VPinballX.ini.
-
+- Make sure `(.vpx)` `(.directb2s)` and `(.ini)` are all named the same.
