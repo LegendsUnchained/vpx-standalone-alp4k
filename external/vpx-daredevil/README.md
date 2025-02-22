@@ -1,4 +1,4 @@
-# Daredevil and The Defenders
+# Daredevil and The Defenders (Original 2024)
 
 ![Table Preview](https://raw.githubusercontent.com/Bla1ze/vpx-images/refs/heads/main/vpx-daredevil.png)
 
@@ -16,8 +16,10 @@
 
 ---
 
-## Status 
+## Status
+
 **Minimum VPX Standalone build:** 10.8.0-1983-b84441e
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
@@ -28,6 +30,6 @@
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to `vpx-daredevil.elf`
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-daredevil.elf`
+- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `external/vpx-daredevil`
 - Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same.
 - If you can’t stand the heat, stay out of Hell’s Kitchen! 😈
