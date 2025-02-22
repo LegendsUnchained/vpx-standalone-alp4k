@@ -16,7 +16,8 @@
 
 ---
 
-## Status 
+## Status
+
 **Minimum VPX Standalone build:** 10.8.0-1989-a764013
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
@@ -31,5 +32,4 @@
 - Add your personalized launcher.elf and rename it to `vpx-spacetrainmac.elf`
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-spacetrainmac`
 - Rom file (spctrain.zip) stays in zip folder, place zip file in `vpx-spacetrainmac/pinmame/roms`
-- Make sure `(.vpx)` `(.directb2s)` `(.vbs)` and `(.ini)` are all named the same. Do not rename VPinballX.ini.
-
+- Make sure `(.vpx)` `(.directb2s)` and `(.ini)` are all named the same.
