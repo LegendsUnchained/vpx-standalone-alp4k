@@ -2,13 +2,13 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-judgedredd.png)
 
-Author: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/) 
+Author: [bigus1](https://www.vpforums.org/index.php?showuser=107629) 
 
 Tested by: Bla1ze 
 
-Version: 1.1
+Version: 3.1
 
-Download: [VP Universe](https://vpuniverse.com/files/file/7750-judge-dredd-bally-1993-vpw/)
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14597)
 
 DirectB2S
 
