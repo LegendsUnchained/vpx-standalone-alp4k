@@ -1,6 +1,6 @@
 # Pirate Gold (Chicago Coin 1969)
 
-![Table Preview](https://github.com/BorisUndead/vpx-images/blob/main/vpx-pirategold.png)
+![Table Preview](../../vpx-pirategold.png)
 
 Authors: [Scottacus](https://vpuniverse.com/profile/11566-scottacus/)  
 Version: 2.05  
