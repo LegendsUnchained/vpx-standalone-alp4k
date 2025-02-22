@@ -1,16 +1,16 @@
-# JP's Space Cadet: Galaxy Edition
+# JP's Space Cadet: Galaxy Edition (Original 2021)
 
 
 ![Table Preview](../../images/vpx-spacecadetge-preview.jpg)
 
-Authors: [Funkatron101](https://vpuniverse.com/profile/49709-funkatron101/)
-Version: 1.0
+Authors: [Funkatron101](https://vpuniverse.com/profile/49709-funkatron101/)  
+Version: 1.0  
 Download: [VP Universe](https://vpuniverse.com/files/file/24068-jps-space-cadet-galaxy-edition/)
 
 PUP Pack - REQUIRED FOR THIS TABLE
 
-Authors: [Funkatron101](https://vpuniverse.com/profile/49709-funkatron101/)
-Version: 1.0
+Authors: [Funkatron101](https://vpuniverse.com/profile/49709-funkatron101/)  
+Version: 1.0  
 Download: [Mega](https://mega.nz/file/nBAmBITT#_RruG_apkXHoGXA6aWPzU_HA-oyQWTeGBivLRrc_kf8)
 
 DirectB2S
@@ -41,4 +41,3 @@ Minimum VPX Standalone build: 10.8.0-2042-1431983
 - On your USB drive go to the "external\vpx-spacecadetge\pupvideos\jpspacecadetGE\PuP-Pack_Options\Option 2 - FullDMD on Backglass" folder
 - Copy the 5 files from this folder to external\vpx-spacecadetge\pupvideos\jpspacecadetGE (answer yes (or replace) to the 5 files that need to be overwritten)
 - Enjoy the story and beat the 18 missions.
-
