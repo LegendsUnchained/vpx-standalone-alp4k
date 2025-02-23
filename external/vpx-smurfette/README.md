@@ -2,14 +2,14 @@
 
 ![Table Preview](../../images/vpx-jps-smurfette-preview.jpg)
 
-Author(s): [jpsalas](https://www.vpforums.org/index.php?showuser=277)
-Download:  JPs Smurfette v4.zip
-Version:   JP's Smurfette v4.vpx
+Author(s): [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
+Download:  JPs Smurfette v4.zip  
+Version:   JP's Smurfette v4.vpx  
 Download:  [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=11621)
 
-DirectB2S included with Table Zip
-Author(s): [jpsalas](https://www.vpforums.org/index.php?showuser=277)
-DirectB2S: JP's Smurfette v4.directb2s
+DirectB2S included with Table Zip  
+Author(s): [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
+DirectB2S: JP's Smurfette v4.directb2s  
 
 ROM: No ROM Needed For This Table
 

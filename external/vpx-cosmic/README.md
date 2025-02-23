@@ -11,12 +11,12 @@ Download: [VP Forums](https://www.vpforums.org/index.php?s=81e3316e17b8e2a79c701
 DirectB2S
 
 Authors: [Wildman](https://vpuniverse.com/profile/5-wildman/)  
-Version: 1.0.0
+Version: 1.0.0  
 Download: [VP Universe](https://vpuniverse.com/files/file/5119-cosmic-taito-1980/)
 
 ROM
 
-Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)
+Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=564)
 
 Tested by: Boris
