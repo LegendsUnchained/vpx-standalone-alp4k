@@ -1,6 +1,6 @@
 # Criterium 77 (Taito do Brasil 1977)
 
-![Table Preview](../../vpx-criterium77.jpg)
+![Table Preview](../../images/vpx-criterium77.jpg)
 
 Table
 
