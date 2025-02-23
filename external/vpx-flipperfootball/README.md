@@ -1,4 +1,4 @@
-# Flipper Football
+# Flipper Football (Capcom 1996)
 
 ![Table Preview](../../images/vpx-flipperfootball.jpg)
 
