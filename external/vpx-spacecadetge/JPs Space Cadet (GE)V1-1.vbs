@@ -18,6 +18,8 @@ Const BallMass = 1      ' standard ball mass in JP's VPX Physics 3.0
 
 
 
+
+
 '----- VR Room -----
 Const VRRoomChoice = 2			  ' 1 - Minimal Room, 2 - Space Room, 3 - MR mode
 
@@ -38,6 +40,25 @@ Dim SongVolume : SongVolume = 0.1 				' 1 is full volume, but I set it quite low
 
 
 '**************************
+'   FlexDMD (Discouraged unless you have a 4:1 DMD and REALLY want something on there)
+'**************************
+
+' Use FlexDMD if in FS mode
+Dim UseFlexDMD
+If Table1.ShowDT = True then
+    UseFlexDMD = False
+Else
+    UseFlexDMD = False ' set to True if you want both Flex and PupDMD on
+End If
+
+'FlexDMD in high or normal quality
+'True if you have an LCD screen, 256x64
+'or False if you have a real DMD at 128x32 in size
+Const FlexDMDHighQuality = True
+
+
+
+'**************************
 '   PinUp Player USER Config
 '**************************
 
@@ -46,10 +67,6 @@ dim useDMDVideos    : useDMDVideos=true   ' true or false to use DMD splash vide
 dim pGameName       : pGameName="jpspacecadetGE"  'pupvideos foldername, probably set to cGameName in realworld
 
 
-'FlexDMD in high or normal quality
-'True if you have an LCD screen, 256x64
-'or False if you have a real DMD at 128x32 in size
-Const FlexDMDHighQuality = True
 
 
 
@@ -84,13 +101,6 @@ Const MaxBonusMultiplier = 5 'limit Bonus multiplier
 Const BallsPerGame = 3       ' usually 3 or 5
 Const MaxMultiballs = 3      ' max number of balls during multiballs
 
-' Use FlexDMD if in FS mode
-Dim UseFlexDMD
-If Table1.ShowDT = True then
-    UseFlexDMD = False
-Else
-    UseFlexDMD = False
-End If
 
 ' Define Global Variables
 Dim PlayersPlayingGame
@@ -1709,6 +1719,7 @@ End Sub
 Sub SolLFlipper(Enabled)
     If Enabled Then
 		LF.Fire
+       DOF 101, DOFOn ' Outhere
 If leftflipper.currentangle < leftflipper.endangle + ReflipAngle Then 
 			RandomSoundReflipUpLeft LeftFlipper
 		Else 
@@ -1716,6 +1727,7 @@ If leftflipper.currentangle < leftflipper.endangle + ReflipAngle Then
 			RandomSoundFlipperUpLeft LeftFlipper
 	      End If		
 	Else
+       DOF 101, DOFOff ' Outhere
 		LeftFlipper.RotateToStart
 		If LeftFlipper.currentangle < LeftFlipper.startAngle - 5 Then
 			RandomSoundFlipperDownLeft LeftFlipper
@@ -1727,6 +1739,7 @@ End Sub
 Sub SolRFlipper(Enabled)
     If Enabled Then
 		RF.Fire
+       DOF 102, DOFOn ' Outhere
 		If rightflipper.currentangle > rightflipper.endangle - ReflipAngle Then
 			RandomSoundReflipUpRight RightFlipper
 		Else 
@@ -1734,6 +1747,7 @@ Sub SolRFlipper(Enabled)
 			RandomSoundFlipperUpRight RightFlipper
 		End If
 	Else
+       DOF 102, DOFOff ' Outhere
 		RightFlipper.RotateToStart
 		If RightFlipper.currentangle > RightFlipper.startAngle + 5 Then
 			RandomSoundFlipperDownRight RightFlipper
@@ -2373,6 +2387,7 @@ Sub CreateNewBall()
     ' kick it out..
     		RandomSoundBallRelease BallRelease
     BallRelease.Kick 90, 4
+        DOF 123, DOFPulse
 
 ' if there is 2 or more balls then set the multibal flag (remember to check for locked balls and other balls used for animations)
 ' set the bAutoPlunger flag to kick the ball in play automatically
@@ -2997,7 +3012,7 @@ Sub HighScoreEntryInit()
 	pDMDSetPage(8)
 	PuPEvent 2
 	puPlayer.LabelSet pDMD,"HighScore3","ENTER INITIALS" ,1,""
-	puPlayer.LabelSet pDMD,"HighScore2"," " ,1,""
+	puPlayer.LabelSet pDMD,"HighScore2","" ,1,""
 	puPlayer.LabelSet pDMD,"HighScore4","" & FormatNumber(Score(CurrentPlayer),0),1,""
     hsbModeActive = True
 	hsbStartButtonPresses = 0
@@ -3227,19 +3242,19 @@ Sub HideLUT
 End Sub
 
 
-'Code for PUPDMD STATUS
 Sub pStatus(text, duration)
-    ' Set the status text
-    pStatusText = text
-    
-    ' Update the status label immediately
-    puPlayer.LabelSet pDMD, "pupStatus", pStatusText, 1, ""
-    
-    ' Start a timer to clear the status after the specified duration
-    DMDTimer.Interval = duration
-    DMDTimer.Enabled = True
-
-
+    ' Check if status text is actually changing
+    If pStatusText <> text Then
+        ' Set the status text
+        pStatusText = text
+        
+        ' Update the status label only if it has changed
+        puPlayer.LabelSet pDMD, "pupStatus", pStatusText, 1, ""
+        
+        ' Restart the timer
+        DMDTimer.Interval = duration
+        DMDTimer.Enabled = True
+    End If
 End Sub
 
 
@@ -3407,7 +3422,7 @@ Sub DMDScore()
 					pStatus "SELECT YOUR MISSION", 1000
                     End If
                 End If
-            Case 1:'tmp1 = " RAMP HITS LEFT " &MissionHits
+            Case 1:tmp1 = " RAMP HITS LEFT " &MissionHits
 				   pStatus "RAMP HITS LEFT " &MissionHits, 1000
             Case 2:tmp1 = " LANE HITS LEFT " &MissionHits
 				   pStatus "LANE HITS LEFT " &MissionHits, 1000
@@ -4444,6 +4459,7 @@ Dim LStep, RStep
 Sub LeftSlingShot_Slingshot
     If Tilted Then Exit Sub
     RandomSoundSlingshotLeft Lemk
+    DOF  103, DOFPulse ' Outhere
     PlaySound "sc_slingshot"
     DOF 105, DOFPulse
     LeftSling004.Visible = 1
@@ -4475,6 +4491,7 @@ End Sub
 Sub RightSlingShot_Slingshot
     If Tilted Then Exit Sub
     RandomSoundSlingshotRight Remk
+    DOF  104, DOFPulse ' Outhere
     PlaySound "sc_slingshot"
     DOF 106, DOFPulse
     RightSling004.Visible = 1
@@ -4569,6 +4586,7 @@ Sub Bumper1_Hit
     If Tilted Then Exit Sub
 	RandomSoundBumperTop Bumper1
     PlaySound "sc_bumper"
+    DOF 107, DOFPulse ' Outhere
     DOF 138, DOFPulse
     FlashForms li135, 1500, 75, 1
     ' add some points
@@ -4588,6 +4606,7 @@ Sub Bumper2_Hit
     If Tilted Then Exit Sub
     RandomSoundBumperMiddle Bumper2
     PlaySound "sc_bumper"
+    DOF 108, DOFPulse ' Outhere
     DOF 138, DOFPulse
     FlashForms li136, 1500, 75, 1
     ' add some points
@@ -4607,6 +4626,7 @@ Sub Bumper3_Hit
     If Tilted Then Exit Sub
 	RandomSoundBumperBottom Bumper3
     PlaySound "sc_bumper"
+    DOF 109, DOFPulse ' Outhere
     DOF 138, DOFPulse
     FlashForms li137, 1500, 75, 1
     ' add some points
@@ -4626,6 +4646,7 @@ Sub Bumper4_Hit 'Satellite bumper
     If Tilted Then Exit Sub
     RandomSoundBumperTop Bumper4
     PlaySound "sc_bumper"
+    DOF 113, DOFPulse ' Outhere
     DOF 138, DOFPulse
     FlashForms li138, 1500, 75, 1
     ' add some points
@@ -4726,6 +4747,7 @@ Sub Bumper5_Hit
 	RandomSoundBumperTop Bumper5
     DOF 138, DOFPulse
     PlaySound "sc_bumper"
+    DOF 110, DOFPulse ' Outhere
     FlashForms li139, 1500, 75, 1
     ' add some points
     Select Case EngineBumperColor
@@ -4745,6 +4767,7 @@ Sub Bumper6_Hit
     RandomSoundBumperMiddle Bumper6
     DOF 138, DOFPulse
     PlaySound "sc_bumper"
+    DOF 111, DOFPulse ' Outhere
     FlashForms li140, 1500, 75, 1
     ' add some points
     Select Case EngineBumperColor
@@ -4764,6 +4787,7 @@ Sub Bumper7_Hit
 	RandomSoundBumperBottom Bumper7
     DOF 138, DOFPulse
     PlaySound "sc_bumper"
+    DOF 112, DOFPulse ' Outhere
     FlashForms li141, 1500, 75, 1
     ' add some points
     Select Case EngineBumperColor
@@ -8396,6 +8420,8 @@ DIM dmdalt
 DIM dmdscr
 DIM dmdfixed
 
+DIM dmdscreenscale
+
 'labelNew <screen#>, <Labelname>, <fontName>,<size%>,<colour>,<rotation>,<xalign>,<yalign>,<xpos>,<ypos>,<PageNum>,<visible>
 '***********************************************************************'
 '<screen#>, in standard we’d set this to pDMD ( or 1)
@@ -8411,53 +8437,53 @@ DIM dmdfixed
 '<PageNum> IMPORTANT… this will assign this label to this ‘page’ or group.
 '<visible> initial state of label. visible=1 show, 0 = off. 
 
-
 	dmdalt="Komu A"    
     dmdfixed="Komu A"
 	dmdscr="Komu A" 'main score font
 	dmddef="Exima Geometric"
+    dmdscreenscale = 0.7
 
 	'Page 1 (default score display)
-		PuPlayer.LabelNew pDMD,"Credits"    ,dmddef,7,2041045   ,0,1,2,0,0,1,0
-		PuPlayer.LabelNew pDMD,"Playlabel"  ,dmddef, 5,2041045   ,448,1,0,8,12,1,0
-		PuPlayer.LabelNew pDMD,"Play1"      ,dmddef,18,14111599   ,1,1,0,5,0,1,0
-		PuPlayer.LabelNew pDMD,"Ball"       ,dmddef,18,14111599   ,1,1,0,95,0,1,0
-		PuPlayer.LabelNew pDMD,"Balllabel"  ,dmddef, 5,2041045   ,3160,1,0,92,15,1,0
-        PuPlayer.LabelNew pDMD, "pupStatus" ,dmdscr, 20, 14111599, 0, 1, 0, 0, 65, 1, 0
-		PuPlayer.LabelNew pDMD,"CurScore"   ,dmdscr,28,2530743   ,0,1,0, 0,10,1,0	
+		PuPlayer.LabelNew pDMD,"Credits"    ,dmddef,7 * dmdscreenscale,2041045   ,0,1,2,0,0,1,0
+		PuPlayer.LabelNew pDMD,"Playlabel"  ,dmddef,5 * dmdscreenscale,2041045   ,448,1,0,10,22,1,0
+		PuPlayer.LabelNew pDMD,"Play1"      ,dmddef,18 * dmdscreenscale,14111599   ,1,1,0,5,0,1,0
+		PuPlayer.LabelNew pDMD,"Ball"       ,dmddef,18 * dmdscreenscale,14111599   ,1,1,0,95,0,1,0
+		PuPlayer.LabelNew pDMD,"Balllabel"  ,dmddef,5 * dmdscreenscale,2041045   ,3160,1,0,92,15,1,0
+        PuPlayer.LabelNew pDMD, "pupStatus" ,dmdscr,20 * dmdscreenscale, 14111599, 0, 1, 0, 0, 65, 1, 0
+		PuPlayer.LabelNew pDMD,"CurScore"   ,dmdscr,28 * dmdscreenscale,2530743   ,0,1,0, 0,10,1,0	
 
 	'Page 2 (default Text Splash 1 Big Line)
-		PuPlayer.LabelNew pDMD,"Splash"  ,dmdalt,32,2041045,0,1,1,0,0,2,0
+		PuPlayer.LabelNew pDMD,"Splash"  ,dmdalt,32 * dmdscreenscale,2041045,0,1,1,0,0,2,0
 
 	'Page 3 (default Text 3 Lines)
-		PuPlayer.LabelNew pDMD,"Splash3a",dmddef,14,2041045,0,1,0,0,8,3,0
-		PuPlayer.LabelNew pDMD,"Splash3b",dmddef,14,2041045,0,1,0,0,24,3,0
-		PuPlayer.LabelNew pDMD,"Splash3c",dmdalt,18,14111599,0,1,0,0,65,3,0
+		PuPlayer.LabelNew pDMD,"Splash3a",dmddef,14 * dmdscreenscale,2041045,0,1,0,0,8,3,0
+		PuPlayer.LabelNew pDMD,"Splash3b",dmddef,14 * dmdscreenscale,2041045,0,1,0,0,24,3,0
+		PuPlayer.LabelNew pDMD,"Splash3c",dmdalt,18 * dmdscreenscale,14111599,0,1,0,0,65,3,0
 
 	'Page 4 (default Text 2 Line)
-		PuPlayer.LabelNew pDMD,"Splash4a",dmddef,16,2041045,0,1,0,0,22,4,0
-		PuPlayer.LabelNew pDMD,"Splash4b",dmdalt,22,14111599,0,1,2,0,90,4,0
+		PuPlayer.LabelNew pDMD,"Splash4a",dmddef,16 * dmdscreenscale,2041045,0,1,0,0,22,4,0
+		PuPlayer.LabelNew pDMD,"Splash4b",dmdalt,22 * dmdscreenscale,14111599,0,1,2,0,90,4,0
 
 	'Page 5 (3 layer large text for overlay targets function,  must you fixed width font!
-		PuPlayer.LabelNew pDMD,"Back5"    ,dmdfixed,20,8421504,0,1,1,0,0,5,0
-		PuPlayer.LabelNew pDMD,"Middle5"  ,dmdfixed,20,65535  ,0,1,1,0,0,5,0
-		PuPlayer.LabelNew pDMD,"Flash5"   ,dmdfixed,20,65535  ,0,1,1,0,0,5,0
+		PuPlayer.LabelNew pDMD,"Back5"    ,dmdfixed,20 * dmdscreenscale,8421504,0,1,1,0,0,5,0
+		PuPlayer.LabelNew pDMD,"Middle5"  ,dmdfixed,20 * dmdscreenscale,65535  ,0,1,1,0,0,5,0
+		PuPlayer.LabelNew pDMD,"Flash5"   ,dmdfixed,20 * dmdscreenscale,65535  ,0,1,1,0,0,5,0
 
 	'Page 6 (3 Lines for big # with two lines,  "19^Orbits^Count")
-		PuPlayer.LabelNew pDMD,"Splash6a",dmddef,18,65280,0,0,0,15,1,6,0
-		PuPlayer.LabelNew pDMD,"Splash6b",dmddef,18,33023,0,1,0,60,0,6,0
-		PuPlayer.LabelNew pDMD,"Splash6c",dmddef,18,33023,0,1,0,60,50,6,0
+		PuPlayer.LabelNew pDMD,"Splash6a",dmddef,18 * dmdscreenscale,65280,0,0,0,15,1,6,0
+		PuPlayer.LabelNew pDMD,"Splash6b",dmddef,18 * dmdscreenscale,33023,0,1,0,60,0,6,0
+		PuPlayer.LabelNew pDMD,"Splash6c",dmddef,18 * dmdscreenscale,33023,0,1,0,60,50,6,0
 
 	'Page 7 (Show High Scores Fixed Fonts)
-		PuPlayer.LabelNew pDMD,"Splash7a",dmddef,20,2041045,0,1,0,0,8,7,0
-		PuPlayer.LabelNew pDMD,"Splash7b",dmdfixed,28,14111599,0,1,0,0,30,7,0
-		PuPlayer.LabelNew pDMD,"Splash7c",dmdfixed,28,14111599,0,1,0,0,58,7,0
+		PuPlayer.LabelNew pDMD,"Splash7a",dmddef,20 * dmdscreenscale,2041045,0,1,0,0,8,7,0
+		PuPlayer.LabelNew pDMD,"Splash7b",dmdfixed,28 * dmdscreenscale,14111599,0,1,0,0,30,7,0
+		PuPlayer.LabelNew pDMD,"Splash7c",dmdfixed,28 * dmdscreenscale,14111599,0,1,0,0,58,7,0
 
 	'Page 8 (High Score Entry)
-		PuPlayer.LabelNew pDMD,"HighScore",dmdalt,24,14111599,0,1,0,0,32,8,0
-		PuPlayer.LabelNew pDMD,"HighScore2",dmdalt,22,14111599,0,1,0,28,50,8,0
-		PuPlayer.LabelNew pDMD,"HighScore3",dmddef,16,2041045,0,1,0,0,16,8,0
-		PuPlayer.LabelNew pDMD,"HighScore4",dmdalt,22,2530743,0,1,0,0,60,8,0
+		PuPlayer.LabelNew pDMD,"HighScore",dmdalt,24 * dmdscreenscale,14111599,0,1,0,0,32,8,0
+		PuPlayer.LabelNew pDMD,"HighScore2",dmdalt,22 * dmdscreenscale,14111599,0,1,0,28,50,8,0
+		PuPlayer.LabelNew pDMD,"HighScore3",dmddef,16 * dmdscreenscale,2041045,0,1,0,0,16,8,0
+		PuPlayer.LabelNew pDMD,"HighScore4",dmdalt,22 * dmdscreenscale,2530743,0,1,0,0,60,8,0
 
 END Sub 'page Layouts
 
@@ -8560,8 +8586,7 @@ Sub pUpdateScores()
 	puPlayer.LabelSet pDMD,"Ball","" & ""& balls ,1,""
 	puPlayer.LabelSet pDMD,"PlayLabel","Player",1,""
 	puPlayer.LabelSet pDMD,"BallLabel","Ball",1,""
-	puPlayer.LabelSet pDMD,"BallLabel","Ball",1,""
-    puPlayer.LabelSet pDMD, "pupStatus", pStatusText, 1, ""
+ '   puPlayer.LabelSet pDMD, "pupStatus", pStatusText, 1, ""
 end Sub
 
 
@@ -8791,16 +8816,16 @@ End Sub
 '114 Wormhole 1
 '115 Wormhole 2
 '116 Wormhole 3
-'117 Drop Targets Left
+'117 Drop Targets Left Reset
 '118 GI on / off
-'119 Drop Targets Center
-'120 Drop Targets Right
+'119 Drop Targets Center Reset
+'120 Drop Targets Right Reset
 '121
 '122 Knocker
 '123 Ball Release
 '124 Left Kick Back
 '125
-'126sc_droptarget
+'126 sc_droptarget
 '127
 '128 Right Kick Back
 '129 BlackHole Kick Out
