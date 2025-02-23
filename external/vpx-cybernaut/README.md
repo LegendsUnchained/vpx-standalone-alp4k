@@ -1,6 +1,6 @@
 # Cybernaut (Bally 1985)
 
-![Table Preview](../../vpx-cybernaut.jpg)
+![Table Preview](../../images/vpx-cybernaut.jpg)
 
 Table
 
