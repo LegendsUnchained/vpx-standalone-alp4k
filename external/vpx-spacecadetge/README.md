@@ -11,7 +11,7 @@ PUP Pack - REQUIRED FOR THIS TABLE
 
 Authors: [Funkatron101](https://vpuniverse.com/profile/49709-funkatron101/)  
 Version: 1.1  
-Download: [Mega](https://mega.nz/file/nBAmBITT#_RruG_apkXHoGXA6aWPzU_HA-oyQWTeGBivLRrc_kf8)
+Download: [Mega](https://mega.nz/file/KJZm0Cza#8RIaLIAlpnE2CH7qj1-4TAGGCnQjUHcRPmXb2etEtx4)
 
 DirectB2S
 
