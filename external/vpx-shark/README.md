@@ -1,6 +1,6 @@
 # Shark (Taito do Brasil 1982)
 
-![Table Preview](../../vpx-shark.jpg)
+![Table Preview](../../images/vpx-shark.jpg)
 
 Table
 
