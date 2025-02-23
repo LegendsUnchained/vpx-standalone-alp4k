@@ -3,7 +3,7 @@
 ![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-meteort.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 4.0.0  
+Version: 5.5.0
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=13403)
 
 DirectB2S
