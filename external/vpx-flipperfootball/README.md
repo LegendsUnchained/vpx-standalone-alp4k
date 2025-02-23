@@ -1,6 +1,6 @@
 # Flipper Football
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=111641&id=16273&full=1)
+![Table Preview](../../images/vpx-flipperfootball.jpg)
 
 Authors: [bigus](https://www.vpforums.org/index.php?showuser=107629)  
 Version: 2.1  
