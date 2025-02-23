@@ -1,6 +1,6 @@
 # 250cc (Inder, 1992)
 
-![Table Preview](../../images/vpx-250cc)
+![Table Preview](../../images/vpx-250cc.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?s=543a5ca562cc33a89debe8ace8834f1e&showuser=277)  
 Version: 5.5.0  
