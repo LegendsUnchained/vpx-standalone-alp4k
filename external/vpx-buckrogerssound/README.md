@@ -16,8 +16,8 @@ Download:  [VPUniverse](https://vpuniverse.com/files/file/14150-buck-rogers-gott
 ROM:
 buckrgrs.zip
 
-Author(s): [Rock-ola]  
-Download:  [Pinball Nirvana](https://pinballnirvana.com/forums/resources/buckrgrs.1639/)
+Author(s): [VPUStaff]  
+Download:  [VPUniverse]([https://vpuniverse.com/files/file/1368-buck-rogers/)
 
 Tested by:
 [TechZombie]
