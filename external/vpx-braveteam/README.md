@@ -1,6 +1,6 @@
 # Brave Team (Inder 1985)
 
-![Table Preview](../../vpx-braveteam.jpg)
+![Table Preview](../../images/vpx-braveteam.jpg)
 
 Table
 
