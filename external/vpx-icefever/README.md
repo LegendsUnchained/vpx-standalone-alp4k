@@ -8,7 +8,7 @@
 | **VPX** | [VPUniverse](https://vpuniverse.com/files/file/11868-ice-fever-gottleib-1985/) | 3.0.1 | [endeemillr](https://vpuniverse.com/profile/37895-endeemillr/) |
 | **B2S** | Included In VPX | Included In VPX  | Included In VPX |
 | **DMD** | Not Needed | Not Needed | Not Needed |
-| **ROM** | [PinballNirvana] (https://pinballnirvana.com/forums/resources/icefever.3350/) | 9-7-2022 | [rockola] (https://pinballnirvana.com/forums/members/rock-ola.1/) |
+| **ROM** | [PinballNirvana](https://pinballnirvana.com/forums/resources/icefever.3350/) | 9-7-2022 | [rockola](https://pinballnirvana.com/forums/members/rock-ola.1/) |
 
 **Tested by:** [vicpac73]
 
@@ -16,6 +16,7 @@
 
 ## Status 
 **Minimum VPX Standalone build:** {vpx-standalone-build-#}
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 45 |
@@ -32,8 +33,8 @@
 - Make sure `(.vpx)` `(.directb2s)` and `(.ini)` are all named the same.
 - Place icefever.zip rom file in the external/vpx-icefever/pinmame/roms folder. *Do Not unzip*!
 
+## Important Info
+
 - To change the home and away teams use the D-pad/Joystick and the left flipper.  Hold the D-pad to the right and press the left flipper to change the Home team
 - Contining to hold the d-pad additional presses of the left flipper until will cycle through the teams until the one you want is displayed.
 - Hold the D-pad to the left and press the left flipper to change the Away team.
-
-

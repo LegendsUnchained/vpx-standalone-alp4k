@@ -11,12 +11,12 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 DirectB2S
 
 Authors: [Manbearpig](https://vpuniverse.com/profile/32743-manbearpig/)  
-Version: 1
+Version: 1  
 Download: [VP Universe](https://vpuniverse.com/files/file/12178-shark-taito-1982-b2s-full-dmd/)
 
 ROM
 
-Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)
+Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=572)
 
 Tested by: Boris
