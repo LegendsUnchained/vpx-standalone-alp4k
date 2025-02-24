@@ -40,7 +40,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path:./
+          asset_path: ./
           asset_name: ${{ github.event.release.name }}-${{ github.event.release.tag_name }}.zip
           asset_content_type: application/zip
         continue-on-error: true
@@ -73,7 +73,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path:./manifest.json
+          asset_path: ./manifest.json
           asset_name: manifest.json
           asset_content_type: application/json
           overwrite: true
