@@ -46,8 +46,12 @@ jobs:
           release_id=$(echo "$release_data" | jq -r '.id')
           asset_data=$(gh api /repos/${{ github.repository }}/releases/$release_id/assets)
           manifest_content=$(cat manifest.json)
-          updated_manifest=$(echo "$manifest_content" | jq --arg asset_data "$asset_data" '. as $manifest |. as $outer | keys_unsorted as $key |.[$key] |= (. + {url: ($asset_data |. | select(.name == ($key + ".zip")) |.browser_download_url)})')
-          echo "$updated_manifest" > manifest.json
+          for key in $(echo "$manifest_content" | jq -r 'keys[]'); do
+            asset_name="${key}.zip"
+            browser_download_url=$(echo "$asset_data" | jq -r --arg asset_name "$asset_name" '.[] | select(.name == $asset_name) | .browser_download_url')
+            manifest_content=$(echo "$manifest_content" | jq --arg key "$key" --arg browser_download_url "$browser_download_url" '.[$key].repoConfig = $browser_download_url')
+          done
+          echo "$manifest_content" > manifest.json
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
