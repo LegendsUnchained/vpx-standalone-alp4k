@@ -47,6 +47,8 @@ jobs:
           manifest_content=$(cat manifest.json)
           updated_manifest=$(echo "$manifest_content" | jq --arg asset_data "$asset_data" '. as $manifest |. as $outer | keys_unsorted as $key |.[$key] |= (. + {url: ($asset_data |. | select(.name == ($key + ".zip")) |.browser_download_url)})')
           echo "$updated_manifest" > manifest.json
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload updated manifest
         uses: actions/upload-release-asset@v1
