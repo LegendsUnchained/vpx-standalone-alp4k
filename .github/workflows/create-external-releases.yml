@@ -1,43 +1,55 @@
-name: Create External Folder Releases
+name: Create External Folder Releases and Manifest
 
 on:
   release:
-    types: [created]
+    types: [published]
 
 jobs:
-  create_zips:
+  create_zips_and_manifest:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
+        if: ${{ github.event.release.draft }}
         uses: actions/checkout@v4
 
-      - name: Create zips
+      - name: Create zips and manifest data
+        if: ${{ github.event.release.draft }}
         run: |
           cd external
+          manifest_data="{}"
           for dir in */; do
             if [ -d "$dir" ]; then
               base_name="${dir%/}"
               zip -r "../${base_name}.zip" "$dir"
               echo "Created ${base_name}.zip"
+
+              if [ -f "$dir/table.yml" ]; then
+                yaml_content=$(cat "$dir/table.yml")
+                json_data=$(echo "$yaml_content" | sed '1d' | sed 's/^\([^:]*\): \(.*\)$/    "\1": "\2",/g' | sed '$s/,$//')
+                manifest_data=$(echo "$manifest_data" | jq --arg key "$base_name" --argjson value "{$json_data}" '. + {($key): $value}')
+              fi
             fi
           done
+          echo "$manifest_data" >../manifest.json
 
-      - name: Upload release assets
+      - name: Upload release assets (zips)
+        if: ${{ github.event.release.draft }}
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./
+          asset_path:./
           asset_name: ${{ github.event.release.name }}-${{ github.event.release.tag_name }}.zip
           asset_content_type: application/zip
         continue-on-error: true
 
       - name: Upload individual folder zips
+        if: ${{ github.event.release.draft }}
         run: |
           for file in *.zip; do
-            if [[ "$file" != "${{ github.event.release.name }}-${{ github.event.release.tag_name }}.zip" ]]; then
+            if [[ "$file"!= "${{ github.event.release.name }}-${{ github.event.release.tag_name }}.zip" ]]; then
               echo "Uploading $file"
               gh release upload ${{ github.event.release.tag_name }} "$file"
             fi
@@ -45,5 +57,33 @@ jobs:
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Get asset URLs and update manifest
+        if: ${{ github.event.release.draft }}
+        run: |
+          release_id=$(gh release view ${{ github.event.release.tag_name }} --json id -q.id)
+          asset_data=$(gh api repos/${{ github.repository }}/releases/$release_id/assets)
+          manifest_content=$(cat manifest.json)
+          updated_manifest=$(echo "$manifest_content" | jq --arg asset_data "$asset_data" '. as $manifest |. as $outer | keys_unsorted as $key |.[$key] |= (. + {url: ($asset_data |. | select(.name == ($key + ".zip")) |.browser_download_url)})')
+          echo "$updated_manifest" > manifest.json
+
+      - name: Upload updated manifest
+        if: ${{ github.event.release.draft }}
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path:./manifest.json
+          asset_name: manifest.json
+          asset_content_type: application/json
+          overwrite: true
+
       - name: Clean up zips
-        run: rm -f *.zip
+        if: ${{ github.event.release.draft }}
+        run: rm -f *.zip  # Moved before "Publish Release"
+
+      - name: Publish Release (if draft and first publish)
+        if: ${{ github.event.release.draft && github.event.action == 'published' }}
+        run: gh release publish ${{ github.event.release.tag_name }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
