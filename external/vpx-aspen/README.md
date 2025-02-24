@@ -1,6 +1,6 @@
 # Aspen (Brunswick 1979)
 
-![Table Preview](../../images/vpx-aspen.png)
+![Table Preview](../../images/vpx-aspen.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 5.5.0  
