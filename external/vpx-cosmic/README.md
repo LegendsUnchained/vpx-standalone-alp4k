@@ -1,6 +1,6 @@
 # Cosmic (Taito do Brasil 1980)
 
-![Table Preview](../../vpx-cosmic)
+![Table Preview](../../images/vpx-cosmic.jpg)
 
 Table
 
