@@ -10,11 +10,9 @@ jobs:
 
     steps:
       - name: Checkout code
-        if: ${{ github.event.release.draft }}
         uses: actions/checkout@v4
 
       - name: Create zips and manifest data
-        if: ${{ github.event.release.draft }}
         run: |
           cd external
           manifest_data="{}"
@@ -34,7 +32,6 @@ jobs:
           echo "$manifest_data" >../manifest.json
 
       - name: Upload individual folder zips
-        if: ${{ github.event.release.draft }}
         run: |
           for file in *.zip; do
             echo "Uploading $file"
@@ -44,7 +41,6 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Get asset URLs and update manifest
-        if: ${{ github.event.release.draft }}
         run: |
           release_id=$(gh release view ${{ github.event.release.tag_name }} --json id -q.id)
           asset_data=$(gh api repos/${{ github.repository }}/releases/$release_id/assets)
@@ -53,7 +49,6 @@ jobs:
           echo "$updated_manifest" > manifest.json
 
       - name: Upload updated manifest
-        if: ${{ github.event.release.draft }}
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -65,11 +60,4 @@ jobs:
           overwrite: true
 
       - name: Clean up zips
-        if: ${{ github.event.release.draft }}
         run: rm -f *.zip  # Moved before "Publish Release"
-
-      - name: Publish Release (if draft and first publish)
-        if: ${{ github.event.release.draft && github.event.action == 'published' }}
-        run: gh release publish ${{ github.event.release.tag_name }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
