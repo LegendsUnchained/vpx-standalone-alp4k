@@ -171,10 +171,12 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Creature from the Black Lagoon (Bally 1992)](external/vpx-cftbl) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 40 |
 | [Creature From The Black Lagoon - BW Edition (1992)](external/vpx-creaturebw) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 40 | 
 | [Creepshow (Original 2022)](external/vpx-creepshow) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 42 |
+| [Criterium 77 (Taito do Brasil 1977)](external/vpx-criterium77) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [CSI - LED Mod (Stern 2008)](external/vpx-csiled) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 45 | 
 | [Cue Ball Wizard (Gottlieb 1992)](external/vpx-cueball) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 33 |
 | [Cuphead Original (Original 2019)](external/vpx-cupheadoriginal) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 47 |
 | [Cuphead Pro (Original 2020)](external/vpx-cuphead) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 34 |
+| [Cybernaut (Bally 1985)](external/vpx-cybernaut) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 45 |
 | [Cyclone - JP (Williams 1988)](external/vpx-cyclone) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 45 |
 | [Daredevil and The Defenders (Original 2024)](external/vpx-daredevil) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Dark Crystal, The (Original 2020)](external/vpx-darkcrystal) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
@@ -246,6 +248,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Fleetwood Mac (Original 2024)](external/vpx-fleetwood) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 52 |
 | [Flight 2000 (Stern 1980)](external/vpx-flight2000) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Flintstones, The (Williams 1994)](external/vpx-flintstones) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 30 |
+| [Flipper Football (Capcom 1996)](external/vpx-flipperfootball) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 50 |
 | [Fog, The (Original 2022)](external/vpx-thefog) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 52 |
 | [Football, JPs (Taito do Brasil 1979)](external/vpx-jpfootball) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Frank Thomas' Big Hurt (Gottlieb 1995)](external/vpx-frankthomas) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
@@ -511,7 +514,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Sorcerer, JPs (Williams 1985)](external/vpx-jpsorcerer) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [South Park (Sega 1999)](external/vpx-southpark) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 45 |
 | [Space Cadet (Maxis 1995)](external/vpx-spacecadet) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
-| [Space Cadet: Galaxy Edition (Original 2021)](external/vpx-spacecadetge) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 40 |
+| [Space Cadet: Galaxy Edition (Original 2021)](external/vpx-spacecadetge) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 45 |
 | [Space Invaders - JP (Bally 1979)](external/vpx-jpspaceinvaders) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 55 |
 | [Space Jam (Sega 1996)](external/vpx-spacejam) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 36 |
 | [Space Mission (Williams 1976)](external/vpx-spacemission) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
@@ -596,6 +599,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Twister (Sega 1996)](external/vpx-twister) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 | [Underwater (Recel 1976)](external/vpx-underwater) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Vampirella (Balutito 2024)](external/vpx-vampirella) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
+| [Vector (Bally 1982)](external/vpx-vector) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 45 |
 | [Victory (Gottlieb 1987)](external/vpx-victory) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 35 |
 | [Viking (Bally 1980)](external/vpx-viking) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 42 |
 | [Viper (Stern 1981)](external/vpx-viper) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
