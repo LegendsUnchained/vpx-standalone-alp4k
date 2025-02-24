@@ -1,0 +1,68 @@
+name: Create External Folder Releases and Manifest
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  create_zips_and_manifest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create zips and manifest data
+        run: |
+          cd external
+          manifest_data="{}"
+          for dir in */; do
+            if [ -d "$dir" ]; then
+              base_name="${dir%/}"
+              zip -r "../${base_name}.zip" "$dir"
+              echo "Created ${base_name}.zip"
+
+              if [ -f "$dir/table.yml" ]; then
+                yaml_content=$(cat "$dir/table.yml")
+                json_data=$(echo "$yaml_content" | sed '1d' | sed 's/^\([^:]*\): \(.*\)$/    "\1": "\2",/g' | sed '$s/,$//')
+                manifest_data=$(echo "$manifest_data" | jq --arg key "$base_name" --argjson value "{$json_data}" '. + {($key): $value}')
+              fi
+            fi
+          done
+          echo "$manifest_data" >../manifest.json
+
+      - name: Upload individual folder zips
+        run: |
+          for file in *.zip; do
+            echo "Uploading $file"
+            gh release upload ${{ github.event.release.tag_name }} "$file" --clobber
+          done
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Get asset URLs and update manifest
+        run: |
+          asset_data=$(gh release view ${{ github.event.release.tag_name }} --repo ${{ github.repository }} --json assets --jq '.assets')
+          manifest_content=$(cat manifest.json)
+          for key in $(echo "$manifest_content" | jq -r 'keys[]'); do
+            asset_name="${key}.zip"
+            browser_download_url=$(echo "$asset_data" | jq -r --arg asset_name "$asset_name" '.[] | select(.name == $asset_name) | .url')
+            manifest_content=$(echo "$manifest_content" | jq --arg key "$key" --arg browser_download_url "$browser_download_url" '.[$key] += {repoConfig: $browser_download_url}')
+          done
+          echo "$manifest_content" > manifest.json
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload updated manifest
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./manifest.json
+          asset_name: manifest.json
+          asset_content_type: application/json
+          overwrite: true
+
+      - name: Clean up zips
+        run: rm -f *.zip  # Moved before "Publish Release"
