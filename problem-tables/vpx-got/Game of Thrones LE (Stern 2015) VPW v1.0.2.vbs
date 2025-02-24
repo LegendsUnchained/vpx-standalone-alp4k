@@ -6934,6 +6934,7 @@ Class cHouse
             If i < 5 Then PlaySoundVol "say-walljp"&i,VolCallout
             i =  WallMBShotCount
             If (WallMBState MOD 4) = 2 Then i = i + 3
+            If (i = 0) Then i = 1
             vid = "got-wallmbhit"&i
             snd = "gotfx-increasewalljp"
             If i = 2 or i = 5 then delay = 1 else delay = 2
@@ -9703,7 +9704,7 @@ Sub SetLockbarLight
     End if
     if st < 2 Then
         li230.TimerEnabled = False
-        if Cabinetmode And Not bHaveLockbarButton Then
+        if (Cabinetmode And (bHaveLockbarButton = 0)) Then
             SetLightColor li231,HouseColor(col),st
         Else
             SetLightColor li230,HouseColor(col),st
@@ -9724,7 +9725,7 @@ Sub li230_Timer
     if tmp > li230States(0) Then tmp = 1    
     For i = 141 to 147 : DOF i,DOFOff : Next
     if li230States(tmp) > 0 then 
-        if Cabinetmode And Not bHaveLockbarButton Then
+        if (Cabinetmode And (bHaveLockbarButton = 0)) Then
             SetLightColor li231,HouseColor(li230States(tmp)),1
         Else
             SetLightColor li230,HouseColor(li230States(tmp)),1
@@ -16917,7 +16918,7 @@ End Function
 '* TABLE OPTIONS *******************************************************
 '***********************************************************************
 
-Dim Cabinetmode				'0 - Siderails On, 1 - Siderails Off
+Dim Cabinetmode			'0 - Siderails On, 1 - Siderails Off
 Dim OutPostMod
 Dim LightLevel : LightLevel = 50
 VolumeDial = 0.8			'Overall Mechanical sound effect volume. Recommended values should be no greater than 1.
@@ -17168,7 +17169,7 @@ Sub Options_Load
     x = LoadValue(cGameName, "CABINET")
     If x <> "" Then CabinetMode = CInt(x) Else CabinetMode = 0
     x = LoadValue(cGameName,"LBBUT")
-    If x <> "" Then bHaveLockbarButton = CInt(x) Else bHaveLockbarButton = False
+    If x <> "" Then bHaveLockbarButton = CInt(x) Else bHaveLockbarButton = 0
     x = LoadValue(cGameName, "DYNBALLSH")
     If x <> "" Then DynamicBallShadowsOn = CInt(x) Else DynamicBallShadowsOn = 1
 	UpdateMods
