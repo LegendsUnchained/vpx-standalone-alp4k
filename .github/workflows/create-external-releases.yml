@@ -42,14 +42,12 @@ jobs:
 
       - name: Get asset URLs and update manifest
         run: |
-          release_data=$(gh api /repos/${{ github.repository }}/releases/tags/${{ github.event.release.tag_name }})
-          release_id=$(echo "$release_data" | jq -r '.id')
-          asset_data=$(gh api /repos/${{ github.repository }}/releases/$release_id/assets)
+          asset_data=$(gh release view ${{ github.event.release.tag_name }} --repo ${{ github.repository }} --json assets --jq '.assets')
           manifest_content=$(cat manifest.json)
           for key in $(echo "$manifest_content" | jq -r 'keys[]'); do
             asset_name="${key}.zip"
-            browser_download_url=$(echo "$asset_data" | jq -r --arg asset_name "$asset_name" '.[] | select(.name == $asset_name) | .browser_download_url')
-            manifest_content=$(echo "$manifest_content" | jq --arg key "$key" --arg browser_download_url "$browser_download_url" '.[$key].repoConfig = $browser_download_url')
+            browser_download_url=$(echo "$asset_data" | jq -r --arg asset_name "$asset_name" '.[] | select(.name == $asset_name) | .url')
+            manifest_content=$(echo "$manifest_content" | jq --arg key "$key" --arg browser_download_url "$browser_download_url" '.[$key] += {repoConfig: $browser_download_url}')
           done
           echo "$manifest_content" > manifest.json
         env:
