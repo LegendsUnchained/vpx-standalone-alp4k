@@ -3,7 +3,7 @@
 ![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-motordome.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 1.0  
+Version: 5.5.0  
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=16993)
 
 DirectB2S
