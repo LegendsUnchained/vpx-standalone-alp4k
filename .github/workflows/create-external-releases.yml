@@ -35,7 +35,7 @@ jobs:
         run: |
           for file in *.zip; do
             echo "Uploading $file"
-            gh release upload ${{ github.event.release.tag_name }} "$file"
+            gh release upload ${{ github.event.release.tag_name }} "$file" --clobber
           done
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
