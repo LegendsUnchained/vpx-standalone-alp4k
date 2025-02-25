@@ -1,6 +1,6 @@
 # Aerosmith (Pro) (Stern/Tribute 2017) 
 
-![Table Preview](https://vpuniverse.com/files/file/13403-aerosmith-pro-sterntribute-2017-v102zip-with-vr/)
+![Table Preview](../../images/vpx-aerosmith-preview.jpg)
 
 Table:  
 Authors: [allknowing2012](https://vpuniverse.com/profile/5615-allknowing2012/)  
