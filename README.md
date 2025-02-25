@@ -572,6 +572,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Tee'd Off (Gottlieb 1993)](external/vpx-teedoff) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
 | [Teenage Mutant Ninja Turtles (Data East 1991) ](external/vpx-tmnt) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 40 |
 | [Tenacious D (Original 2025) ](external/vpx-tenaciousd) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:x: | :white_check_mark: | 33 |
+| [Terminator 1 (Original 2019)](external/vpx-terminator1) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 58 |
 | [Terminator 2 - Judgment Day (Williams 1991)](external/vpx-t2) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 42 |
 | [Terminator 2 - JP (Original 2020)](external/vpx-t2jp) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 60 |
 | [Terminator 3 - JP (Stern 2003)](external/vpx-terminator3) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
