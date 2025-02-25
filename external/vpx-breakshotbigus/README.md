@@ -7,7 +7,7 @@
 ## Files
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
-| **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14361) | 3.1.0 | [Bigus1](hhttps://www.vpforums.org/index.php?showuser=107629) |
+| **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14361) | 3.1.0 | [Bigus1](https://www.vpforums.org/index.php?showuser=107629) |
 | **B2S** | [VP Universe](https://vpuniverse.com/files/file/20472-breakshot-capcom-1996-b2s-full-dmd/) | 1.0.0 | [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
 | **ROM** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=142) | bsv103 | [destruk](https://www.vpforums.org/index.php?showuser=5) |
 | **Color DMD** | [VP Universe](https://vpuniverse.com/files/file/20470-breakshot-serum-colorization/) | 1.0.1 | [KRAKEN](https://vpuniverse.com/profile/35517-kraken/) |
