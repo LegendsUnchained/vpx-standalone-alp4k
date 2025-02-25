@@ -1,6 +1,6 @@
 # Vector (Bally 1982)
 
-![Table Preview](../../images/vpx-vector-preview.jpg)
+![Table Preview](../../images/vpx-vector-preview.png)
 
 ---
 
