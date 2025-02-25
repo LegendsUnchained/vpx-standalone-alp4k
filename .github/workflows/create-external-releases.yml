@@ -1,0 +1,30 @@
+name: Create External Folder Releases and Manifest
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  create_zips_and_manifest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11.2
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11.2'
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pygithub requests pyyaml
+
+      - name: Generate release files
+        run: python .github/workflows/scripts/generate-release.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_REF_NAME: ${{ github.event.release.tag_name }}
