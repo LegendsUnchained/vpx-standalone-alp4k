@@ -1,6 +1,6 @@
 # Super Mario Galaxy (Original 2021)
 
-! Table Preview (../../images/vpx-mariogalaxy-preview.png)
+! Table Preview (../../vpx-mariogalaxy-preview.png)
 
 ---
 
