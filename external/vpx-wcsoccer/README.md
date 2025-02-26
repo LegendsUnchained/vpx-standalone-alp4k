@@ -17,7 +17,7 @@
 ```diff
 ! Warning: 
 ! There is a known bug on this table, if you soft plunge there is a chance the ball 
-! can get stuck in the coin flip rail. It is recommended to always full plunge.
+!   can get stuck in the coin flip rail. It is recommended to always full plunge.
 ```
 
 ---
