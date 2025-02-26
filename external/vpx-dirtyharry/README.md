@@ -7,7 +7,7 @@
 ## Files
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
-| **VPX** | [VP Universe](https://vpuniverse.com/files/file/12442-dirty-harry-williams-1995/) | 2.20 | [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/) |
+| **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=16651) | 1.0 | [bigus1](https://www.vpforums.org/index.php?showuser=107629) |
 | **B2S & DMD** | [VP Universe](https://vpuniverse.com/files/file/12237-dirty-harry-fulldmd-williams-1995/) | 1.1 | [Walterwhite](https://vpuniverse.com/profile/17464-walterwhite/) |
 | **ROM** | [VP Universe](https://www.vpforums.org/index.php?app=downloads&showfile=1265) | **SHA:** 3c5680a68aefb4224e77f060d9403249d2e54de0 <br />**MD5:** aa79bb455243345aea72a134de4f57cd | |
 
