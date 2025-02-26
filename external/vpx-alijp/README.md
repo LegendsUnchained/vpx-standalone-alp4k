@@ -10,7 +10,7 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 
 DirectB2S
 
-Authors: [Wildman](https://vpuniverse.com/profile/5-wildman/)  
+Authors: [HauntFreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
 Version: 1.0.0  
 Download: [VP Universe](https://vpuniverse.com/files/file/21356-ali-stern-1980-b2s/)
 

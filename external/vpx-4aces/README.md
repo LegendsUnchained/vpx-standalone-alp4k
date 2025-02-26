@@ -6,7 +6,7 @@ Table
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 5.5.0  
-Download: [VP Forums]( https://www.vpforums.org/index.php?app=downloads&showfile=17632)
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=17632)
 
 DirectB2S
 
