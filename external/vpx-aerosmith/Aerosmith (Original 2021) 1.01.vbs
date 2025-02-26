@@ -5134,9 +5134,6 @@ Sub EndOfBall()
 	End If
 
 	SceneClearMessage()	
-	if NOT bUsePUPDMD then
-		EndMusic
-	End If
 
     ' only process any of this If the table is not tilted.  (the tilt recovery
     ' mechanism will handle any extra balls or end of game)
