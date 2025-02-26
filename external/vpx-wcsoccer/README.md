@@ -14,6 +14,10 @@
 
 ---
 
+## <span style="color:red">Warning: There is a known bug on this table, if you soft plunge there is a change the ball can get stuck in the coin flip rail. It is recommended to always full plunge.</span>
+
+---
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
