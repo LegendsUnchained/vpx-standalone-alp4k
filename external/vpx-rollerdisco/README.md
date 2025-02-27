@@ -1,6 +1,6 @@
 # Roller Disco (Gottlieb 1980)
 
-![Table Preview](https://github.com/BorisUndead/vpx-images/blob/main/rollerdisco.png)
+![Table Preview](../../images/vpx-rollerdisco.png)
 
 Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
 Tested by: Boris  

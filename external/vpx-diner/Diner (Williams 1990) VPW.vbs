@@ -94,7 +94,7 @@ Const VRRoom = 0 					'0 = OFF, 1 = BaSti/Rawd Room, 2 = Minimal Room, 3 = Ultra
 
 '----- Enable Backsad Backglass code
 '                - Enable this if using Blacksad backglass.Downloaded from here https://vpuniverse.com/files/file/4892-diner-williams-1990-2-3-screens-db2s/
-Const EnableBlacksadBackglass = 0   '1 = Enabled , 0 = (default) disabled
+Const EnableBlacksadBackglass = 1   '1 = Enabled , 0 = (default) disabled
 
 '----- Shadow Options -----
 Const DynamicBallShadowsOn = 1		'0 = no dynamic ball shadow ("triangles" near slings and such), 1 = enable dynamic ball shadow

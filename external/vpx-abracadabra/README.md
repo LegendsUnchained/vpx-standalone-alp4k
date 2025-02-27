@@ -1,6 +1,6 @@
 # Abra Ca Dabra (Gottlieb 1975)
 
-![Table Preview](https://github.com/BorisUndead/vpx-images/blob/main/vpx-abracadabra.png)
+![Table Preview](../../images/vpx-abracadabra.png)
 
 Authors: [Batch](https://www.vpforums.org/index.php?showuser=30858)  
 Version: 1.1  
