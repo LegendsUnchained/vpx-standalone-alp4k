@@ -17,6 +17,7 @@
 ## Status 
 
 **Minimum VPX Standalone build:** 10.8.0-2042-1431983
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 45 |
@@ -25,7 +26,7 @@
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-secretservice.elf
-- Download the table and directb2s versions listed above and copy them into this folder
+- Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-secretservice
 - Make sure the (.vpx), (.directb2s), and (.ini) files are all named the "exact" same
-- Place ssvc_a26.zip in the external/vpx-secretservice/pinmame/roms folder *Do Not unzip*
+- Place ssvc_a26.zip in the external/vpx-secretservice/pinmame/roms folder. *Do Not unzip*
 - "Baby you're the best!"
