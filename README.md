@@ -498,6 +498,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Scooby Doo! and KISS Rock n' Roll Mystery (Original 2021)](external/vpx-sdookiss) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Seawitch - JP's (Stern 1980)](external/vpx-seawitch) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Secret Agent (Original 2024)](external/vpx-secretagent) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 30 |
+| [Secret Service (Data East 1988)](external/vpx-secretservice) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 45 |
 | [Senna Prototype Edition (Culik Pinball 2020)](external/vpx-senna) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Serious Sam (Original 2017)](external/vpx-ssam) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 47 |
 | [Shadow, The (Bally 1994)](external/vpx-theshadow) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 52 |
