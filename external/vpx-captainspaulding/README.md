@@ -7,7 +7,7 @@
 ## Files
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
-| **VPX** | [VPUniverse](https://vpuniverse.com/files/file/23876-captain-spauldings-museum-of-monsters-and-madmen/) | 1.1.0 | [Zandy'sArcade](https://vpuniverse.com/profile/57949-zandysarcade/) |
+| **VPX** | [VPUniverse](https://vpuniverse.com/files/file/23876-captain-spauldings-museum-of-monsters-and-madmen/) | 1.2.0 | [Zandy'sArcade](https://vpuniverse.com/profile/57949-zandysarcade/) |
 | **B2S** | Included w/ Table | 1.0.0 |[Zandy'sArcade](https://vpuniverse.com/profile/57949-zandysarcade/) |
 | **DMD** | N/A | N/A | N/A |
 | **ROM** | N/A | N/A | N/A |
