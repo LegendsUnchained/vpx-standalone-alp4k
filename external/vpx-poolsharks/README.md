@@ -3,7 +3,7 @@
 ![Table Preview](../../images/vpx-pool-sharks-preview.jpg)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)
-Version: 4.0.0
+Version: 5.5.0
 Download: [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=13790)
 
 DirectB2S
@@ -22,7 +22,7 @@ ROM Name and version: pool_l7.zip
 Minimum VPX Standalone build: 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
 
 ## Instructions
 
