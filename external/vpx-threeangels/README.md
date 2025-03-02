@@ -8,7 +8,7 @@
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
 | **VPX** | [VPUniverse](https://vpuniverse.com/files/file/24248-three-angels-4k/) | 2.0 | [LoadedWeapon](https://vpuniverse.com/profile/493-loadedweapon/) | 
-| **B2S** | [VPUniverse](https://vpuniverse.com/files/file/12067-three-angels-original-2018-b2s-with-full-dmd/) | 1.5 |[hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
+| **B2S** | [VPUniverse](https://vpuniverse.com/files/file/12067-three-angels-original-2018-b2s-with-full-dmd/) | 1.0.0 |[hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
 | **DMD** | - | - | - |
 | **ROM** | - | - | - |
 
