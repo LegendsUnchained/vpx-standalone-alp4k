@@ -6607,6 +6607,7 @@ End Sub
 
 Sub PromoteRank
 PuPEvent 505
+PuPlayer.playlistplayex pCallouts,"Callouts","vo_Gravity Normalized.ogg",0,0
 PuPEvent 503
     If Rank(CurrentPlayer) < 9 Then
         LightEffect 4
@@ -8504,6 +8505,7 @@ END Sub 'page Layouts
 Sub pDMDStartGame
 pInAttract=False
 pDMDSetPage(pScores)   'set blank text overlay page.
+    PuPlayer.playlistplayex pCallouts,"Callouts","vo_Gravity Normalized.ogg",0,0
 	PuPEvent 503
     PuPEvent 4
     PuPEvent 1
@@ -8561,6 +8563,7 @@ if Credits = 0 then
   Case 6 pupDMDDisplay "highscore","LeaderBoard^3. " & HighScoreName(2)& "  " & FormatNumber(HighScore(2),0)&"^4. " & HighScoreName(3) & "  " & FormatNumber(HighScore(3),0) , "", 3, 0, 10  
 
   Case 7 pupDMDDisplay "attract","","",51,0,10 
+                PuPlayer.playlistplayex pCallouts,"Callouts","vo_Gravity Normalized.ogg",0,0
 				PuPEvent 503
 				PuPEvent 0
 				PuPEvent 3
