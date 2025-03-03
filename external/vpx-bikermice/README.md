@@ -17,6 +17,8 @@ Not Required
 Tested by:
 [Silentkat]
 
+*****Table might crash if left on attract mode after a few minutes*****
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1983-b84441e
