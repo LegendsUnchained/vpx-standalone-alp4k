@@ -31,6 +31,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ---
 
-*MD5**: 718b4d07b1da13d74df1751573b021f6
+**MD5**: 718b4d07b1da13d74df1751573b021f6
 
 **Tested by:** Shaver
