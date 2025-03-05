@@ -25,7 +25,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to `vpx-jpromanvictory.elf`
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-jpromanvictory` folder
-- Make sure `(.vpx)`, `(.vbs)`, `(.direct2b2s)` and `(.ini)` are all named the same.
+- Make sure `(.vpx)`, `(.direct2b2s)` and `(.ini)` are all named the same.
 
 ---
 
