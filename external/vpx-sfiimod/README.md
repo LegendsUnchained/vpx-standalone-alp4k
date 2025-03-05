@@ -16,7 +16,7 @@ ROM:[Pinball Nirvana] (https://pinballnirvana.com/forums/resources/sfight2.2281/
 Tested by:  
 [Silentkat]
 
-***** To complete this Street Fighter 2 Alternate table from the original I strongly recommend using this alt sound file as well*****
+***** To complete this Street Fighter 2 Alternate table I strongly recommend using this alt sound file as well*****
 
 ALT SOUND [Pinball Universe] (https://vpuniverse.com/files/file/21833-street-fighter-ii-gottlieb-1993-altsound/?tab=comments#comment-77041)
 
