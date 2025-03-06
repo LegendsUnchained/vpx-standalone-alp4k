@@ -163,9 +163,11 @@ if __name__ == "__main__":
                 continue
 
             table_meta['designers'] = table.get('designers', [])
+            table_meta['image'] = table.get('imgUrl', "")
             table_meta['manufacturer'] = table.get('manufacturer', "")
             table_meta['name'] = table.get('name', "")
             table_meta['players'] = table.get('players', 0)
+            table_meta['type'] = table.get('type', "")
             table_meta['version'] = table.get('version', "")
             table_meta['year'] = table.get('year', 0)
 

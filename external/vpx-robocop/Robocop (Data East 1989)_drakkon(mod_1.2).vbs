@@ -51,8 +51,8 @@ Const AmbientBallShadowOn = 1		'0 = Static shadow under ball ("flasher" image, l
 									'2 = flasher image shadow, but it moves like ninuzzu's
 
 '----- FlexDMD Options -----
-Dim UseFlexDMD:UseFlexDMD = 0		' 1 is on to replace external dmd. 0 off (default). 
-Const FlexColour = 0				' 0 = mid blue (default), 1 = cyan, 2 = red, 3 = yellow, 4 = Green, 5 = blue, 6 = white
+Dim UseFlexDMD:UseFlexDMD = 1		' 1 is on to replace external dmd. 0 off (default). 
+Const FlexColour = 2				' 0 = mid blue (default), 1 = cyan, 2 = red, 3 = yellow, 4 = Green, 5 = blue, 6 = white
 Const FlexShowSuspects = 1			' 1 (default) show colour bars matching suspect lights. 0 off.
 
 
@@ -66,7 +66,7 @@ LoadLUT
 'LUTset = 11	'override saved LUT for debug
 SetLUT
 
-DisableLUTSelector = 0  ' Disables the ability to change LUT option with magna saves in game when set to 1
+DisableLUTSelector = 0 ' Disables the ability to change LUT option with magna saves in game when set to 1
 LutToggleSound = 1		' Enables sound when changing LUT lighting.  Switch to 0 to disable.
 
 
@@ -141,7 +141,7 @@ Sub Table1_Init
 			.Hidden = 0
 		else
 			If B2SOn then
-			   .Hidden = 1
+			   .Hidden = 0
 			else
 			   .Hidden = 0
 			End If

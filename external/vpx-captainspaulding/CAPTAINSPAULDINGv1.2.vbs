@@ -3283,7 +3283,7 @@ Sub InstantInfo
         Case 5 'RICHARD WICK = Shoot 4 lights 60 seconds
             DMD CL("CURRENT MODE"), CL("RICHARD"), "", eNone, eNone, eNone, 2000, False, ""
             DMD CL("SHOOT 4 LIGHTS"), CL("YOU HAVE 60 SECONDS"), "", eNone, eNone, eNone, 2000, False, ""
-            DMD CL("AND SPAULDING TO FINISH"), "", eNone, eNone, eNone, 2000, False, ""
+            DMD CL("SHOOT THE CLOWN"), CL("BEFORE TIME IS UP"), "", eNone, eNone, eNone, 2000, False, ""
         Case 6 'BILL HUDLEY = Shoot the ramps
             DMD CL("CURRENT MODE"), CL("BILL"), "", eNone, eNone, eNone, 2000, False, ""
             DMD CL("ERIC"), CL("SHOOT 5 RAMPS"), "", eNone, eNone, eNone, 2000, False, ""
@@ -4413,7 +4413,6 @@ Sub Target006o_Hit
 End Sub
 
 Sub Target007_Hit 'magnet target W3
-    STHit 7
 	' xCFx
 	DOF 314, DOFPulse
 	' ----
@@ -4440,10 +4439,6 @@ Sub Target007_Hit 'magnet target W3
             TargetHits(CurrentPlayer, 1) = 0
             CheckTargets
     End Select
-End Sub
-
-Sub Target007o_Hit
-	TargetBouncer ActiveBall, 1
 End Sub
 
 Sub CheckTargets
@@ -5326,7 +5321,7 @@ Sub StartMode
             End Select
         Case 3 'DON = 5 Flashing Shots 90 seconds to complete
             DMD CL("KILL DON"), CL("SHOOT THE LIGHTS"), "", eNone, eNone, eNone, 1500, True, ""
-            DMD CL("KILL DON"), CL("YOU HAVE 90 SECONDS"), "", eNone, eNone, eNone, 1500, True, ""
+            DMD CL("KILL DON"), CL("YOU HAVE 90 SECS"), "", eNone, eNone, eNone, 1500, True, ""
             TargetModeHits = 0
             SetLightColor li062, amber, 2
             SetLightColor li064, amber, 2
@@ -5552,8 +5547,8 @@ Sub WinMode
             DMD "", "", "d_kill11", eNone, eNone, eNone, 120, False, ""
             DMD "", "", "d_kill12", eNone, eNone, eNone, 120, False, ""
             DMD "", "", "d_kill13", eNone, eNone, eNone, 120, False, ""
-            DMD CL("YOU KILLED HER"), CL(FormatScore(3500000) ), "_", eNone, eBlink, eNone, 1200, False, ""
-            DMD CL("YOU KILLED HER"), CL(FormatScore(3500000) ), "_", eNone, eBlink, eNone, 2000, True, "vo_fantastic"
+            DMD CL("YOU KILLED THEM"), CL(FormatScore(3500000) ), "_", eNone, eBlink, eNone, 1200, False, ""
+            DMD CL("YOU KILLED THEM"), CL(FormatScore(3500000) ), "_", eNone, eBlink, eNone, 2000, True, "vo_fantastic"
             Addscore2 3500000
         Case 3, 5, 6, 7, 9, 10, 11, 13, 14
             DMD "", "", "d_kill1", eNone, eNone, eNone, 120, False, ""
@@ -7140,7 +7135,7 @@ Class StandupTarget
 End Class
 
 'Define a variable for each stand-up target
-Dim ST1, ST2, ST3, ST4, ST5, ST6, ST7
+Dim ST1, ST2, ST3, ST4, ST5, ST6
 
 'Set array with stand-up target objects
 '
@@ -7162,12 +7157,12 @@ Set ST3 = (new StandupTarget)(Target003, PTarget003,3, 0)
 Set ST4 = (new StandupTarget)(Target004, PTarget004,4, 0)
 Set ST5 = (new StandupTarget)(Target005, PTarget005,5, 0)
 Set ST6 = (new StandupTarget)(Target006, PTarget006,6, 0)
-Set ST7 = (new StandupTarget)(Target007, PTarget007,7, 0)
+
 
 'Add all the Stand-up Target Arrays to Stand-up Target Animation Array
 '   STAnimationArray = Array(ST1, ST2, ....)
 Dim STArray
-STArray = Array(ST1, ST2, ST3, ST4, ST5, ST6, ST7)
+STArray = Array(ST1, ST2, ST3, ST4, ST5, ST6)
 
 'Configure the behavior of Stand-up Targets
 Const STAnimStep = 1.5  'vpunits per animation step (control return to Start)

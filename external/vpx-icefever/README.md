@@ -1,6 +1,6 @@
 # Ice Fever (Gottlieb 1985)
 
-![Table Preview](../../images/vpx-icefever-preview.png)
+![Table Preview](../../images/vpx-icefever-preview.jpg)
 
 ## Files
 | File Type | Link | Version | Author | 
@@ -19,7 +19,7 @@
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 45 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 45 |
 
 ---
 

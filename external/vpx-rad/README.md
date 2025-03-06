@@ -2,7 +2,7 @@
 ![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-rad.jpg)
 
 Author: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: Radical (Bally 1990) 4.0.0  
+Version: Radical (Bally 1990) 5.5.0  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=13694)
 
 DirectB2S
@@ -25,7 +25,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 42 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 42 |
 
 ## Instructions
 

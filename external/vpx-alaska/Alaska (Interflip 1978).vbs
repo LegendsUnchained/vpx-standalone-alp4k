@@ -782,7 +782,7 @@ Sub EndOfBall2()
 
         ' ¿Es ésta la última bola?
         If(BallsRemaining(CurrentPlayer) <= 0)Then
-
+        AddScore -1
             ' miramos si la puntuación clasifica como el Highscore
             CheckHighScore()
         End If
