@@ -3,7 +3,7 @@
 ![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-jpmetallica.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?s=c4190c252e4b0afe20488a58dfe99e31&showuser=277)  
-Version: 1.01  
+Version: 5.5.1
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=18612)
 
 DirectB2S
