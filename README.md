@@ -323,6 +323,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Indiana Jones - JP (Stern 2008)](external/vpx-indianajones) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 57 |
 | [Indiana Jones The Pinball Adventure (Williams 1993)](external/vpx-indianajonestpa) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 41 |
 | [Indianapolis 500 (Bally 1995)](external/vpx-indy500) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
+| [Inhabiting Mars (original 2023)](external/vpx-inhabitinmars) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 43 |
 | [Iron Maiden (Stern 1981)](external/vpx-ironmaiden) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Iron Man 2, JP's (Original 2018)](external/vpx-ironman2jp) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [IT - Pinball Madness - JP (Original 2022)](external/vpx-itpinballmadness) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 59 |
@@ -496,6 +497,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [RollerGames (Williams 1990)](external/vpx-rollergames) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 45 |
 | [Rolling Stones - JP (Bally 1980)](external/vpx-jprollingstones) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Rolling Stones - Balutito MOD (Stern 2011)](external/vpx-rollingstonesbalutito) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 45 |
+| [Roman Victory - JP (Taito do Brasil 1978)](external/vpx-jpromanvictory) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 58 |
 | [Royal Flush (Gottlieb 1976)](external/vpx-royalflush) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 57 |
 | [Safe Cracker (Bally 1996)](external/vpx-safecracker) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 46 |
 | [Samba (LTD do Brasil 1976)](external/vpx-samba) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 47 |
@@ -563,6 +565,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Stingray (Stern 1977)](external/vpx-stingray) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 47 |
 | [Strange Science (Bally 1986)](external/vpx-strangescience) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 36 |
 | [Street Fighter II - JP (Gottlieb 1993)](external/vpx-sfii) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
+| [Street Fighter 2 JP's Felsir Mod (original 2021)](external/vpx-sfiimod) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Strikes and Spares (Bally 1978)](external/vpx-strikes) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 42 |
 | [Student Prince (Williams 1968)](external/vpx-studentprince) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Summer Time (Williams 1972)](external/vpx-summertime) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
