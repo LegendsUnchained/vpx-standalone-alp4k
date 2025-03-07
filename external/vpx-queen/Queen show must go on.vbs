@@ -1193,7 +1193,7 @@ Sub sw14_hit   ' left orbit
       KissCombo.enabled=False
       debug.print "Queen Hurry Up"
       DMDFlush()
-      DMDTextI ">QUEEN Hurry Up!<", QUEENBONUS, bgi
+      DMDTextI ">QUEEN Hurry Up!<", KISSBONUS, bgi
       ComboCnt(CurPlayer)=ComboCnt(CurPlayer)+1
       i33.state=LightStateOff
     else
@@ -1535,7 +1535,7 @@ Sub sw56_Hit() ' Right Ramp1  RightRampDone
   if NOT i118.state=LightStateOff then ' Super Ramps
       debug.print "Ramp Cnt is " & RampCnt(CurPlayer)
       RampCnt(CurPlayer)=RampCnt(CurPlayer)+1
-      if lastShot(CurrentPlayer)=3 then ' if prior shot was mid ramp
+      if lastShot(CurPlayer)=3 then ' if prior shot was mid ramp
         AddScore(150000)
       else
         AddScore(75000)
@@ -1596,7 +1596,7 @@ Sub sw64_Hit  ' Center Ramp
   if NOT i118.state=LightStateOff then ' Super Ramps
       debug.print "Ramp Cnt is " & RampCnt(CurPlayer)
       RampCnt(CurPlayer)=RampCnt(CurPlayer)+1
-      if lastShot(CurrentPlayer)=5 then  ' If prior shot was RR
+      if lastShot(CurPlayer)=5 then  ' If prior shot was RR
         AddScore(150000)
       else
         AddScore(75000)
@@ -2207,7 +2207,7 @@ End Sub
 
 Sub KISSHurryUp_timer
   KISSBonus=KISSBonus- 25000
-  DMDTextPause "QUEEN Hurry Up!", QUEENBonus,0
+  DMDTextPause "QUEEN Hurry Up!", KISSBonus,0
   if KISSBonus <=0 then
     KISSHurryUp.Enabled=False
     i115.state=LightStateOff  ' Doublecheck that light
