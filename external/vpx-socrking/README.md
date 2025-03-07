@@ -11,7 +11,7 @@
 | **B2S** | [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=9420) | 1.0 | [32assassin](https://www.vpforums.org/index.php?showuser=77712) |
 | **ROM** | [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=600) | 1.0 | [destruk](https://www.vpforums.org/index.php?showuser=5) |
 
-**Tested by:** [{tester}]
+**Tested by:** [Ominous Osie]
 
 ---
 
