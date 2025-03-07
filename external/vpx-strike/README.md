@@ -11,7 +11,7 @@
 | **B2S** | [vpforums](https://www.vpforums.org/index.php?s=98e1beeb51039d706abb11cc2fd77bf1&app=downloads&showfile=18845) | 1.0 | [jpsalas](https://www.vpforums.org/index.php?showuser=277) |
 | **ROM** | [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=460) | 1.0 | [destruk](https://www.vpforums.org/index.php?showuser=5) |
 
-**Tested by:** [{tester}]
+**Tested by:** [Ominous Osie]
 
 ---
 
