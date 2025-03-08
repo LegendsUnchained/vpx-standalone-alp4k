@@ -1,6 +1,6 @@
 # Counterforce (Gottlieb 1980)
 
-![Table Preview](../../images/vpx-jps-counterforce-preview.jpg)
+![Table Preview](../../images/vpx-counterforce-preview.jpg)
 
 ---
 
@@ -8,7 +8,7 @@
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
 | **VPX** | [VP Universe](https://vpuniverse.com/files/file/24058-counterforce-gottlieb-1980/) | Basic 1.1 | [Mecha_Enron](https://vpuniverse.com/profile/68445-mecha_enron/) |
-| **B2S** | [VP Universe](https://vpuniverse.com/files/file/24073-counterforce-gottlieb-1980-b2s/) | 1.0.0 | [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
+| **B2S** | [VP Universe](https://vpuniverse.com/files/file/24073-counterforce-gottlieb-1980-b2s/) | 1.0.0 (7-digit) | [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
 | **ROM 1** | [VP Universe](https://vpuniverse.com/files/file/881-cntforcezip/) | cntforce | [VPUStaff](https://vpuniverse.com/profile/50-vpustaff/) |
 | **ROM 2** | [VP Universe](https://vpuniverse.com/files/file/1794-cntforc7zip/) | cntforc7 | [VPUStaff](https://vpuniverse.com/profile/50-vpustaff/) |
 
