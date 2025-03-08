@@ -1,6 +1,6 @@
 # Counterforce (Gottlieb 1980)
 
-![Table Preview](../../images/vpx-counterforce-preview.jpg)
+![Table Preview](../../images/vpx-counterforce-preview.png)
 
 ---
 
