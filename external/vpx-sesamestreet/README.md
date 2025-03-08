@@ -1,6 +1,6 @@
 # Sesame Street (Original 2021)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_04/playfield.PNG.a391bbd0f477a1a5768f99f0c2046558.PNG)
+![Table Preview](/images/vpx-sesamestreet-preview.png)
 
 ---
 
@@ -8,7 +8,7 @@
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
 | **VPX** | [VP Universe](https://vpuniverse.com/files/file/13938-sesame-street/) | 2.0 | [ninjafu](https://vpuniverse.com/profile/11138-ninjafu/) |
-| **B2S** | [VP Universe](Included with table.zip) | 1.0.0 |
+| **B2S** | Included with table.zip | 1.0.0 | [ninjafu](https://vpuniverse.com/profile/11138-ninjafu/) |
 | **ROM** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=701) | playboyb.zip | [destruk](https://www.vpforums.org/index.php?showuser=5) |
 
 **Tested by:** [TechZombie]
@@ -17,6 +17,7 @@
 
 ## Status 
 **Minimum VPX Standalone build:** {vpx-standalone-build-#}
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 50 |
