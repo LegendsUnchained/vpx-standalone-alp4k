@@ -29,4 +29,4 @@
 - Add your personalized launcher.elf and rename it to `vpx-strike.elf`
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into `external/vpx-strike`
 - Rom file (FILENAME.zip) stays in zip folder, place zip file in `external/vpx-strike/pinmame/roms`
-- Make sure `(.vpx)` `(.direct2b2s)` and `(.ini)` are all named the same.
+- Make sure `(.vpx)` `(.directb2s)` and `(.ini)` are all named the same.
