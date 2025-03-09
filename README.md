@@ -655,7 +655,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Willy Wonka Pro (Original 2020)](external/vpx-wonka) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Willy's Wonderland (Original 2021)](external/vpx-willyswonderland) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 45 |
 | [Wipe Out (Gottlieb 1993)](external/vpx-wipeout) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 52 |
-| [Witcher, The (Original 2020)](external/vpx-witcher) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:x: | :white_check_mark: | 40 |
+| [Witcher, The (Original 2020)](external/vpx-witcher) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:x: | :white_check_mark: | 48 |
 | [Wizard! (Bally 1975)](external/vpx-wizard) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Wolf Man (Peyper 1987)](external/vpx-wolfman) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 42 |
 | [World Challenge Soccer (Gottlieb 1994)](external/vpx-wcsoccer) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
