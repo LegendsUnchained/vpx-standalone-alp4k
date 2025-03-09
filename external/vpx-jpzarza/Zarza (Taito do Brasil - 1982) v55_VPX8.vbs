@@ -6,6 +6,7 @@ Randomize
 
 Const BallSize = 50
 Const BallMass = 1
+Plunger.MechStrength = 150
 
 On Error Resume Next
 ExecuteGlobal GetTextFile("controller.vbs")
