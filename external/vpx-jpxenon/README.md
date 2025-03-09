@@ -27,7 +27,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to `vpx-jpxenon.elf`
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-jpxenon` folder
 - Place ROM zip file into `vpx-jpxenon/pinmame/roms` folder. DO NOT UNZIP!
-- Make sure `(.vpx)`, `(.vpx)`, `(.direct2b2s)` and `(.ini)` are all named the same.
+- Make sure `(.vpx)`, `(.vbs)`, `(.direct2b2s)` and `(.ini)` are all named the same.
 
 ---
 
