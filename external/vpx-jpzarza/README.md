@@ -28,7 +28,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-jpzarza` folder
 - Place ROM zip file into `vpx-jpzarza/pinmame/roms` folder. DO NOT UNZIP!
 - Make sure `(.vpx)`, `(.vbs)`, `(.direct2b2s)` and `(.ini)` are all named the same.
-- **Use D-Pad UP to plunge** 
 
 ---
 
