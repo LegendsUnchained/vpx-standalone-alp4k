@@ -37,7 +37,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the files linked above to your PC/Mobile
 
 | Found from | Field Name | Value 
-|-----------|----------|-----------|-----|--------------|-----|
+|-----------|----------|-----------|
 | Typed In | **General Loader Name** | `vpx-` `aerosmith` |
 | Typed In | **General Loader Table Name:** | `Aerosmith (Pro) (Stern/Tribute 2017)` |
 | Repo Files | **General Loader Image:** | `vpx-aerosmith.png` |
