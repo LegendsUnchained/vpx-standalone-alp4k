@@ -32,7 +32,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Manual Instructions
 
-### Table Manager > Add Table > Manual:
+### [OPTION 1] Table Manager > Add Table > Manual:
 - Download the repo folder to your PC/Mobile
 - Download the files linked above to your PC/Mobile
 - Open the Table Manager app on your 4KP, log in, and go to `Add Table` > `Manual`
@@ -56,7 +56,9 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - In `music\aerosmith` copy the files from `aerosmith-1.0.0-PupPack.zip` `\aerosmith\Music` directly into the folder.
 - For example, song 1 would be `music\aerosmith\Song-1.mp3`
 
-### Table Manager > File Browser:
+<br>
+
+### [OPTION 2] Table Manager > File Browser:
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-aerosmith.elf
