@@ -7,7 +7,7 @@
 ## Files
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
-| **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=13488#) | 5.5.0 | [JP Salas](https://www.vpforums.org/index.php?showuser=277) |
+| **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=13488) | 5.5.0 | [JP Salas](https://www.vpforums.org/index.php?showuser=277) |
 | **B2S** | [VP Universe](https://vpuniverse.com/files/file/4979-zarza-taito-1982/) | 2.1 | [Wildman](https://vpuniverse.com/profile/5-wildman/) |
 | **ROM** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=570) | zarza | [destruk](https://www.vpforums.org/index.php?showuser=5) |
 
