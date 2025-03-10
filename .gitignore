@@ -6,6 +6,7 @@
 !/external/*/launcher.cfg
 !/external/*/VPReg.ini
 !/external/*/nvram.nv
+!/external/*/README.md
 
 /external/*/VPinballX.ini
 /external/*/gamecontrollerdb.txt
