@@ -49,6 +49,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 | None | **ROM File:** | `[EMPTY]` | 
 | None | **NVRAM File:** | `[EMPTY]` | 
 
+- Click `ADD` at the bottom right of the screen
 - Once uploaded, click `GO TO TABLE`
 - Create a new folder called `music`
 - Inside the `music` folder, create a new folder called `aerosmith`
