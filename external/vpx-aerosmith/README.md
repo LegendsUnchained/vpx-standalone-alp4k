@@ -35,6 +35,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 ### Table Manager > Add Table > Manual:
 - Download the repo folder to your PC/Mobile
 - Download the files linked above to your PC/Mobile
+
 | Found from | Field Name | Value 
 |-----------|----------|-----------|-----|--------------|-----|
 | Typed In | **General Loader Name** | `vpx-` `aerosmith` |
@@ -46,6 +47,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 | README Links | **DirectB2S File:** | `Aerosmith (Stern 2017) full dmd.directb2s` |
 | None | **ROM File:** | `[EMPTY]` | 
 | None | **NVRAM File:** | `[EMPTY]` | 
+
 - Once uploaded, click `GO TO TABLE`
 - Create a new folder called `music`
 - Inside the `music` folder, create a new folder called `aerosmith`
