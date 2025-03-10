@@ -37,17 +37,17 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the files linked above to your PC/ Mobile
 - Open the Table Manager app on your 4KP, log in, and go to `Add Table` > `Manual`
 
-| Found from | Field Name | Value 
+| Field Name | Value | Found from 
 |-----------|----------|-----------|
-| Typed In | **General Loader Name** | `vpx-` `aerosmith` |
-| Typed In | **General Loader Table Name:** | `Aerosmith (Pro) (Stern/Tribute 2017)` |
-| Repo Files | **General Loader Image:** | `vpx-aerosmith.png` |
-| README Links | **VPX File:** | `Aerosmith (Original 2021) 1.01.vpx` |
-| Repo Files | **VBS File:** | `Aerosmith (Original 2021) 1.01.vbs` |
-| Repo Files | **Ini File:** | `Aerosmith (Original 2021) 1.01.ini` |
-| README Links | **DirectB2S File:** | `Aerosmith (Stern 2017) full dmd.directb2s` |
-| None | **ROM File:** | `[EMPTY]` | 
-| None | **NVRAM File:** | `[EMPTY]` | 
+| **General Loader Name** | `vpx-` `aerosmith` | Typed In 
+| **General Loader Table Name:** | `Aerosmith (Pro) (Stern/Tribute 2017)` | Typed In
+| **General Loader Image:** | `vpx-aerosmith.png` | Repo Files 
+| **VPX File:** | `Aerosmith (Original 2021) 1.01.vpx` | README Links 
+| **VBS File:** | `Aerosmith (Original 2021) 1.01.vbs` | Repo Files 
+| **Ini File:** | `Aerosmith (Original 2021) 1.01.ini` | Repo Files 
+| **DirectB2S File:** | `Aerosmith (Stern 2017) full dmd.directb2s` | README Links 
+| **ROM File:** | `[EMPTY]` | None  
+| **NVRAM File:** | `[EMPTY]` | None 
 
 - Click `ADD` at the bottom right of the screen
 - Once uploaded, click `GO TO TABLE`
