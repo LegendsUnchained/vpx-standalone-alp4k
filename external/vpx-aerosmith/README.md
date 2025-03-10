@@ -28,7 +28,29 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 44 |
 
-## Instructions
+
+
+## Manual Instructions
+
+### Table Manager > Add Table > Manual:
+- Download the repo folder to your PC/Mobile
+- Download the files linked above to your PC/Mobile
+   - [Typed] **General Loader Name:** `vpx-` aerosmith
+   - [Typed] **General Loader Table Name:** Aerosmith (Pro) (Stern/Tribute 2017)
+   - [Repo] **General Loader Image:** vpx-aerosmith.png
+   - [README] **VPX File:** Aerosmith (Original 2021) 1.01.vpx
+   - [Repo] **VBS File:** Aerosmith (Original 2021) 1.01.vbs
+   - [Repo] **Ini File:** Aerosmith (Original 2021) 1.01.ini
+   - [README] **DirectB2S File:** Aerosmith (Stern 2017) full dmd.directb2s
+   - [NONE] **ROM File:** [EMPTY]
+   - [NONE] **NVRAM File:** [EMPTY]
+- Once uploaded, click `GO TO TABLE`
+- Create a new folder called `music`
+- Inside the `music` folder, create a new folder called `aerosmith`
+- In `music\aerosmith` copy the files from `aerosmith-1.0.0-PupPack.zip` `\aerosmith\Music` directly into the folder.
+- For example, song 1 would be `music\aerosmith\Song-1.mp3`
+
+### Table Manager > File Browser:
 
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-aerosmith.elf
