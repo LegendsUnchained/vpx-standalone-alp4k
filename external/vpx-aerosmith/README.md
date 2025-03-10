@@ -35,15 +35,15 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 ### Table Manager > Add Table > Manual:
 - Download the repo folder to your PC/Mobile
 - Download the files linked above to your PC/Mobile
-   - [Typed] **General Loader Name:** `vpx-` aerosmith
-   - [Typed] **General Loader Table Name:** Aerosmith (Pro) (Stern/Tribute 2017)
-   - [Repo] **General Loader Image:** vpx-aerosmith.png
-   - [README] **VPX File:** Aerosmith (Original 2021) 1.01.vpx
-   - [Repo] **VBS File:** Aerosmith (Original 2021) 1.01.vbs
-   - [Repo] **Ini File:** Aerosmith (Original 2021) 1.01.ini
-   - [README] **DirectB2S File:** Aerosmith (Stern 2017) full dmd.directb2s
-   - [NONE] **ROM File:** [EMPTY]
-   - [NONE] **NVRAM File:** [EMPTY]
+   - [Typed] | **General Loader Name:** `vpx-` `aerosmith`
+   - [Typed] | **General Loader Table Name:** `Aerosmith (Pro) (Stern/Tribute 2017)`
+   - [Repo] | **General Loader Image:** `vpx-aerosmith.png`
+   - [README] | **VPX File:** `Aerosmith (Original 2021) 1.01.vpx`
+   - [Repo] | **VBS File:** `Aerosmith (Original 2021) 1.01.vbs`
+   - [Repo] | **Ini File:** `Aerosmith (Original 2021) 1.01.ini`
+   - [README] | **DirectB2S File:** `Aerosmith (Stern 2017) full dmd.directb2s`
+   - [NONE] | **ROM File:** `[EMPTY]`
+   - [NONE] | **NVRAM File:** `[EMPTY]`
 - Once uploaded, click `GO TO TABLE`
 - Create a new folder called `music`
 - Inside the `music` folder, create a new folder called `aerosmith`
