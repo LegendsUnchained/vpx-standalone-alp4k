@@ -33,8 +33,8 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 ## Manual Instructions
 
 ### [OPTION 1] Table Manager > Add Table > Manual:
-- Download the repo folder to your PC/Mobile
-- Download the files linked above to your PC/Mobile
+- Download the `vpx-aerosmith` repo folder to your PC/ Mobile
+- Download the files linked above to your PC/ Mobile
 - Open the Table Manager app on your 4KP, log in, and go to `Add Table` > `Manual`
 
 | Found from | Field Name | Value 
