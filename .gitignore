@@ -1,6 +1,12 @@
-/external/*/*.vpx
-/external/*/*.directb2s
-/external/*/*.elf
+/external/*/*.*
+
+!/external/*/table.ini
+!/external/*/table.vbs
+!/external/*/launcher.png
+!/external/*/launcher.cfg
+!/external/*/VPReg.ini
+!/external/*/nvram.nv
+
 /external/*/VPinballX.ini
 /external/*/gamecontrollerdb.txt
 /external/*/altsound.log
