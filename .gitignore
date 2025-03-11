@@ -1,5 +1,13 @@
-
-
+/external/*/*.*
+!/external/*/launcher.cfg
+!/external/*/launcher.png
+!/external/*/nvram.nv
+!/external/*/README.md
+!/external/*/table.ini
+!/external/*/table.prt
+!/external/*/table.vbs
+!/external/*/use_these_pup_files.zip
+!/external/*/VPReg.ini
 /external/*/VPinballX.ini
 /external/*/gamecontrollerdb.txt
 /external/*/altsound.log
