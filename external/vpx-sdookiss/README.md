@@ -17,7 +17,7 @@ ROMs: kiss, kissb
 INCLUDED IN TABLE DOWNLOAD, REQUIRES BOTH ROMS
 
 Tested by:  
-[CoffeeAtJoes]
+[CoffeeAtJoes & pointdablame]
 
 ## Status 
 
