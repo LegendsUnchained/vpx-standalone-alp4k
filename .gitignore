@@ -1,13 +1,4 @@
-/external/*/*.*
 
-!/external/*/table.ini
-!/external/*/table.vbs
-!/external/*/table.prt
-!/external/*/launcher.png
-!/external/*/launcher.cfg
-!/external/*/VPReg.ini
-!/external/*/nvram.nv
-!/external/*/README.md
 
 /external/*/VPinballX.ini
 /external/*/gamecontrollerdb.txt
