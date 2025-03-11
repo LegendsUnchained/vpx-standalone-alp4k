@@ -34,7 +34,7 @@
 ' ****************************************************************
 '                       VISUAL PINBALL X 1.72
 '                 Jicho Original Pinball Table
-'                         Version 3.0.0
+'                         Version 3.0.1
 ' ****************************************************************
 
 '*********************************************************************************************************************************
@@ -100,7 +100,9 @@
 	' Queuing System & Coding Standard: Arelyel
 	' Error logs: baldgeek
 'JP SALAS
-	' Multiple codes 
+	' Multiple codes
+'Abhcoide
+	' Added DOF to flippers and other toys. If you have issues, search for abhcoide and comment out the start of each line
 '*********************************************************************************************************************************
 
 Option Explicit
@@ -118,15 +120,15 @@ Const UseFlexDMD = 1				'0 = no FlexDMD, 1 = enable FlexDMD
 Const FlexONPlayfield = False	   'False = off, True=DMD on playfield ( vrroom overrides this )
 
 '----- Shadow Options -----
-Const DynamicBallShadowsOn = 1	  '0 = no dynamic ball shadow ("triangles" near slings and such), 1 = enable dynamic ball shadow
-Const AmbientBallShadowOn = 1	   '0 = Static shadow under ball ("flasher" image, like JP's), 1 = Moving ball shadow ("primitive" object, like ninuzzu's) - This is the only one that behaves like a true shadow!, 2 = flasher image shadow, but it moves like ninuzzu's
+Const DynamicBallShadowsOn = 0	  '0 = no dynamic ball shadow ("triangles" near slings and such), 1 = enable dynamic ball shadow
+Const AmbientBallShadowOn = 0	   '0 = Static shadow under ball ("flasher" image, like JP's), 1 = Moving ball shadow ("primitive" object, like ninuzzu's) - This is the only one that behaves like a true shadow!, 2 = flasher image shadow, but it moves like ninuzzu's
 
 '----- General Sound Options -----
-Const VolumeDial = 0.8			  'Overall Mechanical sound effect volume. Recommended values should be no greater than 1.
-Const BallRollVolume = 0.5		  'Level of ball rolling volume. Value between 0 and 1
-Const RampRollVolume = 0.5		  'Level of ramp rolling volume. Value between 0 and 1
+Const VolumeDial = 1			  'Overall Mechanical sound effect volume. Recommended values should be no greater than 1.
+Const BallRollVolume = 1		  'Level of ball rolling volume. Value between 0 and 1
+Const RampRollVolume = 1		  'Level of ramp rolling volume. Value between 0 and 1
 'JP SALAS MODE SOUND
-Const SongVolume = 0.3 ' 1 is full volume. Value is from 0 to 1
+Const SongVolume = 1 ' 1 is full volume. Value is from 0 to 1
 '----- VR Room -----
 Const VRRoomChoice = 0			  ' 1 - Minimal Room, 2 - Ultra Minimal Room
 
@@ -144,7 +146,7 @@ Const lob = 0					   'Locked balls
 ' Define Table Constants
 Const cGameName = "TheATeam"
 Const TableName = "TheATeam"
-Const myVersion = "3.0.0"
+Const myVersion = "3.0.1"
 Const MaxPlayers = 4     ' from 1 to 4
 Const BallSaverTime = 20 ' in seconds NORMALMENTE 20
 Const MaxMultiplier = 5  ' limit to 5x in this game, both bonus multiplier and playfield multiplier
@@ -488,7 +490,7 @@ Dim TargetsHannibal_Status (4,4)
 'FlexDMD in high or normal quality
 'change it to True if you have an LCD screen, 256x64
 'or keep it False if you have a real DMD at 128x32 in size
-Const FlexDMDHighQuality = False
+Const FlexDMDHighQuality = True
 
 
 Set fso = CreateObject("Scripting.FileSystemObject")
@@ -658,6 +660,7 @@ Sub InicioDMDScenes ()
 
 			Dim File_Name_Check
 				File_Name_Check = "Intro_A_Team.gif"
+
 
 		'
 			scene3.AddActor FlexDMD.NewVideo("Intro", FlexPath & File_Name_Check )
@@ -4282,18 +4285,22 @@ End Sub
 '--------------------TargetS1-------------
 Sub TargetS1_Hit
     DTHannibalHit TargetS1, 1	
+	DOF 115, DOFPulse 'abhcoide - added the left sound
 End Sub
 '--------------------TargetS2-------------
 Sub TargetS2_Hit
      DTHannibalHit TargetS2, 2
+	DOF 115, DOFPulse 'abhcoide - added the left sound
 End Sub
 '--------------------TargetS3-------------
 Sub TargetS3_Hit
     DTHannibalHit TargetS3, 3	
+	DOF 115, DOFPulse 'abhcoide - added the left sound
 End Sub
 '--------------------TargetS4-------------
 Sub TargetS4_Hit
     DTHannibalHit TargetS4, 4
+	DOF 115, DOFPulse 'abhcoide - added the left sound
 End Sub
 '******************************************************
 '  DROP TARGETS INITIALIZATION
@@ -5792,14 +5799,17 @@ Sub SolLFlipper(Enabled) 'Left flipper solenoid callback
 		LF.Fire  
 		
 		If leftflipper.currentangle < leftflipper.endangle + ReflipAngle Then
-			RandomSoundReflipUpLeft LeftFlipper
+			RandomSoundReflipUpLeft LeftFlipper 
+			DOF 101, 1   ' abhcoide - DOF left flipper up
 		Else
+			DOF 101, 1  ' abhcoide - DOF left flipper up
 			SoundFlipperUpAttackLeft LeftFlipper
 			RandomSoundFlipperUpLeft LeftFlipper
 		End If
 	Else
 		LeftFlipper.RotateToStart
 		If LeftFlipper.currentangle < LeftFlipper.startAngle - 5 Then
+			DOF 101, 0   ' abhcoide - DOF left flipper down
 			RandomSoundFlipperDownLeft LeftFlipper
 		End If
 		FlipperLeftHitParm = FlipperUpSoundLevel
@@ -5812,14 +5822,17 @@ Sub SolRFlipper(Enabled) 'Right flipper solenoid callback
 		
 		If rightflipper.currentangle > rightflipper.endangle - ReflipAngle Then
 			RandomSoundReflipUpRight RightFlipper
+			DOF 102, 1 ' abhcoide - DOF right flipper up
 		Else
 			SoundFlipperUpAttackRight RightFlipper
 			RandomSoundFlipperUpRight RightFlipper
+			DOF 102, 1 ' abhcoide - DOF right flipper up
 		End If
 	Else
 		RightFlipper.RotateToStart
 		If RightFlipper.currentangle > RightFlipper.startAngle + 5 Then
 			RandomSoundFlipperDownRight RightFlipper
+			DOF 102, 0 ' abhcoide - DOF right flipper down
 		End If
 		FlipperRightHitParm = FlipperUpSoundLevel
 	End If
@@ -5869,6 +5882,7 @@ Sub RightSlingShot_Slingshot
 	RightSlingShot.TimerInterval = 10
 	'   vpmTimer.PulseSw 52	'Slingshot Rom Switch
 	RandomSoundSlingshotRight Sling1
+	DOF 104, DOFPulse 'abhcoide - right slingshot
 End Sub
 
 Sub RightSlingShot_Timer
@@ -5899,6 +5913,7 @@ Sub LeftSlingShot_Slingshot
 	'   vpmTimer.PulseSw 51	'Slingshot Rom Switch
 	
 	RandomSoundSlingshotLeft Sling2
+	DOF 103, DOFPulse 'abhcoide - left slingshot
 End Sub
 
 Sub LeftSlingShot_Timer
@@ -8951,9 +8966,7 @@ Sub EnableBlinkBumper(bumpernumber)
     ' start the timers
     TimerBumperBlink.Enabled = True
    ' Blink bumper light
-   bumpernumber.Visible = 1
-
-    
+   bumpernumber.Visible = 1    
 End Sub
 
 Sub TimerBumperBlink_Timer()
@@ -8967,6 +8980,7 @@ End Sub
 Sub Bumper1_Hit
     If NOT Tilted Then
         RandomSoundBumperTop Bumper1
+		DOF 107, DOFPulse 'abhcoide - back centre 
        'JPSALAS bumper demo
 	'	 DOF 138, DOFPulse
 	'	Bumper1Light.visible=1
@@ -8990,6 +9004,7 @@ End Sub
 Sub Bumper2_Hit
     If NOT Tilted Then
        RandomSoundBumperMiddle Bumper2
+			DOF 109, DOFPulse 'abhcoide - back left 
 	       'JPSALAS bumper demo
     '  DOF 140, DOFPulse
 	'	Bumper2Light.Visible = 1
@@ -9012,6 +9027,7 @@ End Sub
 Sub Bumper3_Hit
     If NOT Tilted Then
        RandomSoundBumperBottom Bumper3
+		DOF 107, DOFPulse 'abhcoide - back centre 
        'JPSALAS bumper demo
     '   DOF 137, DOFPulse
 	'	Bumper3Light.Visible = 1
@@ -9454,7 +9470,7 @@ End Sub
 
 Sub Target1_Hit
 
-    PlaySoundAt SoundFXDOF("fx_target", 116, DOFPulse, DOFTargets), Target1
+    PlaySoundAt SoundFXDOF("fx_target", 116, DOFPulse, DOFTargets), Target1 
     If Tilted Then Exit Sub
     AddScore 5000
     TargetBonus = TargetBonus + 1
@@ -9676,7 +9692,7 @@ End Sub
 '***********************************
 
 Sub Target2_Hit
-    PlaySoundAtBall SoundFXDOF("fx_target", 120, DOFPulse, DOFTargets)
+    PlaySoundAtBall SoundFXDOF("fx_target", 120, DOFPulse, DOFTargets) 
     If Tilted Then Exit Sub
     AddScore 5000
     TargetBonus = TargetBonus + 1

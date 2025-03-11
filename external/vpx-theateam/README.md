@@ -6,7 +6,7 @@ Author: [jicho2003](https://vpuniverse.com/profile/15718-jicho2003/)
 
 Tested by: Bla1ze
 
-Version: 3.0.0
+Version: 3.0.1
  
 Download: [VP Universe](https://vpuniverse.com/files/file/17525-the-a-team-original-pinball/)
 
@@ -23,7 +23,7 @@ This table *may* initially crash, requiring a restart of your machine. Just try 
 Minimum VPX Standalone build: 10.8.0-1983-a764013
 | Playfield | Controls | Backglass | DMD | FPS | 
 |-----------|----------|-----------|-----|----------|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
 
 ## Instructions
 
