@@ -154,7 +154,15 @@ if __name__ == "__main__":
         coloredROMVPSId = data.get('coloredROMVPSId')
         tutorialVPSId = data.get('tutorialVPSId')
 
-        table_meta = {}
+        table_meta = {
+            'backglassNotes':  data.get('backglassNotes'),
+            'coloredROMNotes': data.get('coloredROMNotes'),
+            'fps':             data.get('fps'),
+            'mainNotes':       data.get('mainNotes'),
+            'romNotes':        data.get('romNotes'),
+            'tableNotes':      data.get('tableNotes'),
+            'testers':         data.get('testers'),
+        }
         if tableVPSId:
             table = vpsdb.get_table(tableVPSId)
             if not table:

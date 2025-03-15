@@ -2,14 +2,31 @@
 Settings and configs for VPX Standalone on the AtGames ALP 4K Pinball
 
 ## Paying for the Legends Unchained Loader
-The Legends Unchained Loader is not for sale. You are not permitted to distribute the software in any way and are not permitted to charge a "service fee", or any other charge for assisting users with obtaining or using the software. The Legends Unchained Loader is Copyright (c) 2024 by Jeff Rebeiro.
+The Legends Unchained Loader is not for sale. You are not permitted to distribute the software in any way and are not permitted to charge a "service fee", or any other charge for assisting users with obtaining or using the software. The Legends Unchained Launcher and Legends Unchained Table Manager are Copyright (c) 2025 by Jeff Rebeiro.
 
-If you'd like to contribute to the development of the Legends Unchained Loader and VPX Standalone on the ALP 4K devices, we ask that you [make a donation to St. Jude](https://www.stjude.org/give.html) in any amount you choose.
+If you'd like to contribute to the development of the Legends Unchained Launcher, Legends Unchained Table Manager and VPX Standalone on the ALP 4K devices, we ask that you [make a donation to St. Jude](https://www.stjude.org/give.html) in any amount you choose.
 
 ## Contributing
 This repo is public and accepts Pull Requests for new table configs and updates to existing configs.
 
 A table template [README.md](table-template_README.md) file to assist with documentation consistency across all tables.
+
+The repo has specific naming requirements in order to work with the Legends Unchained Table Manager.
+
+Please ensure your files are named:
+
+| File Name | Required | Description |
+|:---------:|:--------:|:-----------:|
+| launcher.png | :white_check_mark: | The image used by the AtGames Launcher UI |
+| table.yml | :white_check_mark: | Wizard config YAML |
+| backglass.png | :x: | Backglass image to use during loading |
+| dmd.png | :x: | DMD image to use during loading and as a static image for tables without a DMD |
+| launcher.cfg | :x: | Any launcher configs like button labels |
+| nvram.nv | :x: | NVRAM file needed for the table to initialize (should not have high-scores from play) |
+| playfield.png | :x: | Playfield image to use during loading |
+| table.ini | :x: | VPX settings to overried to use the table |
+| table.vbs | :x: | VBS file to use instead of the one built-in to the VPX |
+| VPReg.ini | :x: | Registry emulation file. If high scores are in the file, ensure the following initials are used JSM, CTH, NIX, VPX |
 
 ## Recommended Hardware
 The following hardware has been verified to work with the Legends Unchained Loader. Other products may work, but these are known to work well. If you find additional compatible hardware, please let us know and we'll add it to the list!
@@ -282,7 +299,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Gilligan's Island (Bally 1991)](external/vpx-gilligansisland) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Gladiators (Gottlieb 1993)](external/vpx-gladiators) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 45 |
 | [Godfather, The (Original 2024)](external/vpx-godfather) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
-| [Godzilla (Sega 1998)](external/vpx-godzilla) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 36 |
+| [Godzilla (Sega 1998)](external/vpx-godzilla) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
 | [Godzilla LE (Sega - Stern Mashup) (Original 2021)](external/vpx-godzillale) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 39 |
 | [Goin' Nuts (Gottlieb 1983)](external/vpx-goinnuts) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 40 |
 | [Gold Ball (Bally 1983)](external/vpx-goldball) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 44 |
