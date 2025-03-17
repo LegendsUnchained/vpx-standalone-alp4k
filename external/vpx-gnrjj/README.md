@@ -16,7 +16,7 @@
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
 | **Colored ROM** | [VPU](https://vpuniverse.com/files/file/7254-guns-edition-limited/) | gnr_300.cRZ | [ebor](https://vpuniverse.com/profile/29168-ebor/) |
-| **Alt Sound**   | VPU](https://vpuniverse.com/files/file/7254-guns-edition-limited/) | Pack 2.0 | [iDigStuff](https://vpuniverse.com/profile/29753-idigstuff/) |
+| **Alt Sound**   | [VPU](https://vpuniverse.com/files/file/7254-guns-edition-limited/) | Pack 2.0 | [iDigStuff](https://vpuniverse.com/profile/29753-idigstuff/) |
 
 
 **Tested by:** fAthAwg13
