@@ -6,15 +6,15 @@
 
 ## Files
 | File Type | Link | Version | Author | 
-|-----------|--------|----------|--------------|
+|:---------:|:----:|:-------:|:------:|
 | **VPX** | [VPU](https://vpuniverse.com/files/file/7254-guns-edition-limited/) | Pack 2.0 | [marty02](https://vpuniverse.com/profile/16531-marty02/) |
-| **B2S** | [Included in vpx pack|
-| **DMD** | [Included in vpx pack|
-| **ROM** | [Included in vpx pack|
+| **B2S** | Included in vpx pack | | |
+| **DMD** | Included in vpx pack | | |
+| **ROM** | Included in vpx pack | | |
 
 ## Optional
 | File Type | Link | Version | Author | 
-|-----------|--------|----------|--------------|
+|:---------:|:----:|:-------:|:------:|
 | **Colored ROM** | [VPU](https://vpuniverse.com/files/file/7254-guns-edition-limited/) | gnr_300.cRZ | [ebor](https://vpuniverse.com/profile/29168-ebor/) |
 | **Alt Sound**   | [VPU](https://vpuniverse.com/files/file/7254-guns-edition-limited/) | Pack 2.0 | [iDigStuff](https://vpuniverse.com/profile/29753-idigstuff/) |
 
