@@ -32,4 +32,4 @@
 - Make sure `(.vpx)` `(.directb2s)` `(.vbs)` and `(.ini)` are all named the same.
 
 ## NOTE
-- The directb2s file has a graphic bug in displaying scores. To overcome it, my .vbs inserts a kludge to start every game with a score of 1 point, and subtract it when the game ends. I'm very open to other solutions, just edit as needed.
+- The directb2s file has a graphic bug in displaying scores. To overcome it, my .vbs adds and subtracts a single point at the start of each ball. I'm very open to other solutions, just edit as needed.
