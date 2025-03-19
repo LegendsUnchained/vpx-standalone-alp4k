@@ -2,13 +2,13 @@
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_06/24FS.png.c1cd691f0cacf7ee98f73adf3b696122.png)
 
-Author: [RobbyKingPin](https://vpuniverse.com/profile/10146-robbykingpin/) 
+Author: [bigus1](https://www.vpforums.org/index.php?showuser=107629) 
 
-Tested by: Bla1ze 
+Tested by: Bla1ze & OminousOsie
 
-Version: 2.1 
+Version: 2.0
 
-Download: [VP Universe](https://vpuniverse.com/files/file/20448-24-stern-2009-v21-dt-fs-fss-vr/)
+Download: [VP Forum](https://www.vpforums.org/index.php?app=downloads&showfile=15460)
 
 DirectB2S
 
@@ -36,7 +36,7 @@ Download [VP Universe](https://vpuniverse.com/files/file/20738-24-stern-2009-ser
 Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 30 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 54 |
 
 ## Instructions
 
