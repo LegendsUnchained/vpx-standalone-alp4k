@@ -1,8 +1,12 @@
 ---
-tableVPSId: z9BMLCAY
-vpxVPSId: U2H4JNoYU3
 backglassVPSId: lzDEr8I_T3
-romVPSId: 9sHHwihv
+backglassChecksum: 8431c5bcf384c100d67c1bcd3666afb9
 fps: 55
+romVPSId: 9sHHwihv
+romChecksum: 7bccd3b85a2f23dda5a37417f1a259fd
+tableVPSId: z9BMLCAY
+tagline: "Don't count the days, make the days count."
 testers:
 - Bla1ze
+vpxVPSId: U2H4JNoYU3
+vpxChecksum: db3bbb0fbe164fdeb58a8da346757797
