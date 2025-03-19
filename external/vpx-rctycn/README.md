@@ -3,7 +3,7 @@
 ![Table Preview](../../images/preview-rollercoaster-tycoon-preview.jpg)
 
 Author(s): [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 4.3.0  
+Version: 5.5.0  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=13920)
 
 DirectB2S
