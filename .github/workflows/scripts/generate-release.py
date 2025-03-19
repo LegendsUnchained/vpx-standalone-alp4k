@@ -150,17 +150,32 @@ if __name__ == "__main__":
         coloredROMVPSId = data.get("coloredROMVPSId")
         tutorialVPSId = data.get("tutorialVPSId")
 
+        backglassChecksum = data.get("backglassChecksum")
+        coloredROMChecksum = data.get("coloredROMChecksum")
+        romChecksum = data.get("romChecksum")
+        vpxChecksum = data.get("vpxChecksum")
+
+        if backglassChecksum:
+            backglassChecksum = backglassChecksum.lower()
+        if coloredROMChecksum:
+            coloredROMChecksum = coloredROMChecksum.lower()
+        if romChecksum:
+            romChecksum = romChecksum.lower()
+        if vpxChecksum:
+            vpxChecksum = vpxChecksum.lower()
+
         table_meta = {
-            "backglassChecksum": data.get("backglassChecksum"),
+            "backglassChecksum": backglassChecksum,
             "backglassNotes": data.get("backglassNotes"),
-            "coloredROMChecksum": data.get("coloredROMChecksum"),
+            "coloredROMChecksum": coloredROMChecksum,
             "coloredROMNotes": data.get("coloredROMNotes"),
             "fps": data.get("fps"),
             "mainNotes": data.get("mainNotes"),
-            "romChecksum": data.get("romChecksum"),
+            "romChecksum": romChecksum,
             "romNotes": data.get("romNotes"),
-            "tableChecksum": data.get("vpxChecksum"),
+            "tableChecksum": vpxChecksum,
             "tableNotes": data.get("tableNotes"),
+            "tagline": data.get("tagline"),
             "testers": data.get("testers"),
         }
         if tableVPSId:
