@@ -1,6 +1,6 @@
 # Whoa Nellie! (Original 2022)
 
-![Table Preview](../../vpx-whoanellie.png)
+![Table Preview](../../images/vpx-whoanellie.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 5.5.0  
