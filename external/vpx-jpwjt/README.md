@@ -2,18 +2,12 @@
 
 ![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-jpwjt.jpg)
 
-Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 1.0  
-Download: [VPForums](https://www.vpforums.org/index.php?s=38b2503d776aaf995a4f1ecedd56c712&app=downloads&showfile=18660)
-
-DirectB2S
-
-In download link
-
-ROM
-
-ROM Name: wpt_140a.zip  
-Download: [Stern](https://sternpinball.com/game/world-poker-tour/)  
+## Information 
+| File Type | Link | Version | Author(s) | 
+|:---------:|:----:|:-------:|:---------:|
+| VPX | [VPForums](https://www.vpforums.org/index.php?s=38b2503d776aaf995a4f1ecedd56c712&app=downloads&showfile=18660) | 1.0 | [JPSalas](https://www.vpforums.org/index.php?showuser=277) |
+| DirectB2S | Included w/ Table | N/A | N/A |
+| ROM | [Stern](https://sternpinball.com/?post_type=game_code&s=world+poker+tour) | wpt_140a.zip | Stern |
 
 SHA1: AF757E9D4653001C45984A6E8B14E2D2FD028482  
 MD5:  1F99B4DD59AAC328C540CCA6D63CE297
@@ -21,11 +15,9 @@ MD5:  1F99B4DD59AAC328C540CCA6D63CE297
 Tested by: evilwraith
 
 ## Status 
-
 Minimum VPX Standalone build: 10.8.0-1989-a764013
-
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
+|:---------:|:--------:|:---------:|:---:|:------------:|:---:|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
 
 ## Instructions
@@ -34,5 +26,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-jpwjt.elf
 - Download the table and directb2s listed above, extract (if necessary) and copy to external/vpx-jpwjt
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-- Rename the ROM zip file to wpt_140a.zip
+- Download `World Poker Tour 14.0 Game Code (<Language of Choice>)`, and rename to `wpt_140a.zip`
 - The ROM zip file gets copied to vpx-jpwjt/pinmame/roms (Do not unzip)
