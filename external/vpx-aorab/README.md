@@ -2,13 +2,13 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-aorab.png)
 
-Author: [cyberpez](https://vpuniverse.com/profile/1663-cyberpez/)
+Author: [bigus1](https://www.vpforums.org/index.php?showuser=107629)
 
-Tested by: Bla1ze
+Tested by: Bla1ze & OminousOsie
 
-Version: 1.06
+Version: 1.00
 
-Download: [VP Universe](https://vpuniverse.com/files/file/17971-adventures-of-rocky-and-bullwinkle-and-friends-data-east-1993-v106/)
+Download: [VP Universe](https://www.vpforums.org/index.php?app=downloads&showfile=16533)
 
 DirectB2S
 
