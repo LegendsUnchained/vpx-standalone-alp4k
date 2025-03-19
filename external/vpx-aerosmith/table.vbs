@@ -5705,8 +5705,8 @@ Sub Table1_KeyDown(ByVal Keycode)
 	If keycode = LeftFlipperKey Then lfPress = 1
 	If keycode = RightFlipperKey Then rfPress = 1	
 
-    'If keycode = LeftTiltKey Then Nudge 90, 6:SoundNudgeLeft():CheckTilt
-    'If keycode = RightTiltKey Then Nudge 270,6:SoundNudgeRight():CheckTilt
+    If keycode = LeftTiltKey Then Nudge 90, 6:SoundNudgeLeft():CheckTilt
+    If keycode = RightTiltKey Then Nudge 270,6:SoundNudgeRight():CheckTilt
 
 
     If keycode = CenterTiltKey Then 
