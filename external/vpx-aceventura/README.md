@@ -2,20 +2,27 @@
 
 ![Table Preview](../../images/vpx-aceventura-preview.png)
 
-Tested by: Mox
+---
 
-## Information
-| File Type | Link | Version | Author(s) | 
-|:---------:|:----:|:-------:|:---------:|
+## Files
+| File Type | Link | Version | Author | 
+|:---------:|:----:|:-------:|:------:|
 | VPX | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14343) | 1.0 | [ivantba](https://www.vpforums.org/index.php?showuser=123858) |
-| DirectB2S | Included w/ Table | N/A | N/A |
+| B2S | Included with VPX | N/A | N/A |
+| DMD | N/A | N/A | N/A |
 | ROM | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=575) | stest | [destruk](https://www.vpforums.org/index.php?showuser=5) |
 
-## Status 
-Minimum VPX Standalone build: 10.8.0-2006-6d603fb
+**Tested by:** [Mox]
+
+---
+
+## Status
+**Minimum VPX Standalone build:** 10.8.0-2006-6d603fb
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |:---------:|:--------:|:---------:|:---:|:------------:|:---:|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
+
+---
 
 ## Instructions
 - Copy the **vpx-aceventura** folder to the `external` directory of your USB drive

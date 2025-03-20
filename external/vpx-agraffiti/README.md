@@ -2,37 +2,29 @@
 
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_09/FullCab.jpg.7fd86a8fe7383e246b798ec4013c9861.jpg)
 
-Authors: [Onevox](https://vpuniverse.com/profile/14340-onevox/)  
-Version: 1.3  
-Download: [VP Universe](https://vpuniverse.com/files/file/21684-american-graffiti-original-2024/)
+---
 
-DirectB2S
+## Files
+| File Type | Link | Version | Author |
+|:---------:|:----:|:-------:|:------:|
+| VPX | [VP Universe](https://vpuniverse.com/files/file/21684-american-graffiti-original-2024/) | 1.3 | [Onevox](https://vpuniverse.com/profile/14340-onevox/) |
+| B2S | Included with VPX | N/A | N/A |
+| DMD | N/A | N/A | N/A |
+| ROM | N/A | N/A | N/A |
 
-Authors: [Onevox](https://vpuniverse.com/profile/14340-onevox/)  
-Filename: American Graffiti (Original 2024)2scr.directb2s  
-Download: [VP Universe](https://vpuniverse.com/files/file/21684-american-graffiti-original-2024/)
+**Tested by:** [evilwraith]
 
-Audio
-
-Filename: Audio Files.zip
-
-Download: [VP Universe](https://vpuniverse.com/files/file/21684-american-graffiti-original-2024/)
-
-Filename: (Soundtrack) AG.zip
-[Mega](https://mega.nz/file/SO5HDaiQ#utWneFC1FHewsqr38NqtoGZTh6sgw_-HF2bAKeeeEEo)
-
-Tested by: evilwraith
+---
 
 ## Status 
-
-Minimum VPX Standalone build: 10.8.0-1989-a764013
-
+**Minimum VPX Standalone build:** 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
 
-## Instructions
+---
 
+## Instructions
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-agraffiti.elf
 - Download the table and directb2s listed above, extract (if necessary) and copy them to external/vpx-agraffiti
