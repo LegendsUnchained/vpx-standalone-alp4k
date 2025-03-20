@@ -1,39 +1,38 @@
 # Child's Play (Original 2018)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_04/341735213_6550948954917778_7300535280181960346_n.png.4f7344b858d6ff74772ea82b206cbe89.png)
+![Table Preview](../../images/vpx-childsplay-preview.jpg)
 
-Author: [dgrace](https://vpuniverse.com/profile/24616-dgrace/)  
-Filename: Childs Play (Original 2018) Joe Picasso.vpx  
-Download: [VPUniverse](https://vpuniverse.com/files/file/14246-childs-play-table-v10-puppack-10/)
+---
 
-Backglass Included with Table Pack  
-directb2s Version: Childs Play (Original 2018) Joe Picasso.directb2s
+## Files
+| File Type | Link | Version | Author | 
+|-----------|--------|----------|--------------|
+| **VPX** | [VPUniverse](https://vpuniverse.com/files/file/14246-childs-play-table-v10-puppack-10/) | 1.0 | [dgrace](https://vpuniverse.com/profile/24616-dgrace/) |
+| **B2S** | N/A | N/A | N/A |
+| **DMD** | N/A | N/A | N/A |
+| **ROM** | N/A | N/A | N/A |
 
-Pup Pack: **You need to download and use this version or there will be no music on the table if you use the version in the table pack**  
-Author: [TechZombie]  
-Filename: Fast_Draw_1975.zip  
-Download: [Mega](https://mega.nz/file/rKA1XYQD#QnbDK0z6u2yxh-Z69v3G32SksmdQM8VpZP6ZtVMSI2Y)
+**Tested by:** [mrandromeda]
 
-No ROM Needed for Table
-  
-Tested by:  
-[TechZombie]
+---
 
 ## Status 
-
-**NSFW Adults Only**   **Scoring is on Table / No DMD and No Scoring on Backglass**
-
-Minimum VPX Standalone build: 10.8.0-1983-b84441e
-
+**Minimum VPX Standalone build:** 10.8.0-5b941e6
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 52 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 50 |
+
+---
 
 ## Instructions
 
 - Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-childsplay.elf
-- Download the table and directb2s zips above, extract (if necessary) and copy into /external/vpx-childsplay
-- Make sure (.vpx), (.directb2s), (.vbs) and (.ini) files are all named the same
-- Download the pup pack zip from link above, extract it and copy into /external/vpx-childsplay/pupvideos
+- Add your personalized launcher.elf and rename it to `vpx-childsplay.elf`
+- Download the table with pup file `Child's Play.zip` version listed above.
+- Extract from the zip the table `Childs Play (Original 2018) Joe Picasso.vpx` and copy it into `vpx-childsplay`
+- Make sure `(.vpx)` `(.vbs)` and `(.ini)` are all named the same.
+- Create the folder `pupvideos`.
+- Extract from the zip the folder `PupPack/Fast_Draw_1975` and place this folder in `pupvideos`.
+- Unzip the `use_these_pup_files.zip` and place them inside the `pupvideos/Fast_Draw_1975` folder, and overwrite files if prompted.
 - "I'm your friend to the end" - Chucky
+
