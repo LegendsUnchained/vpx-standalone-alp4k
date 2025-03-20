@@ -12,7 +12,7 @@
 | **DMD** | -- | -- | -- |
 | **ROM** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=544) | -- | [Williams](https://www.vpforums.org/index.php?app=core&module=search&do=user_activity&search_app=downloads&mid=5) |
 
-**Tested by:** [Curt](https://github.com/Old-Cyrus)
+**Tested by:** [Curt]
 
 ---
 
@@ -25,7 +25,6 @@
 ---
 
 ## Instructions
-
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to `vpx-andromeda.elf`
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-andromeda`
@@ -35,5 +34,4 @@
 ---
 
 ## Note
-
 - You can swap in the 'easy' .vbs file for an Easy Mode experience--This one gives extended duration Ball Saves on Ball 1, easy-to-earn Free Credits, and 55 fps.
