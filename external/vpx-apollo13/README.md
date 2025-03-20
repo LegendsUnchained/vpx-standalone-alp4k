@@ -2,19 +2,19 @@
 
 ![Table Preview](../../images/vpx-apollo13-preview.png)
 
-Authors: [balater](https://www.vpforums.org/index.php?s=ecc80ff65f52642febea09026be698f8&showuser=112487)  
-Version: 1.62  
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14766)
+---
 
-DirectB2S
+## Files
+| File Type | Link | Version | Author |
+|:---------:|:----:|:-------:|:------:|
+| VPX | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14766) | 1.62 | [balater](https://www.vpforums.org/index.php?s=ecc80ff65f52642febea09026be698f8&showuser=112487) |
+| B2S | [VP Universe](https://vpuniverse.com/files/file/10898-apollo-13-sega-1995-b2s-with-full-dmd/) | 3.0 | [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
+| DMD | N/A | N/A | N/A |
+| ROM | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1063) | apollo13.zip | [destruk](https://www.vpforums.org/index.php?showuser=5) |
 
-Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
-Version: 3.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/10898-apollo-13-sega-1995-b2s-with-full-dmd/)
+**Tested by:** [mcap]
 
-ROM
-
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1063)
+---
 
 ## Status 
 

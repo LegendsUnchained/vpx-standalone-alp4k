@@ -2,39 +2,29 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-xfileshanibal.png)
 
-Author: [hanibal2001](https://vpuniverse.com/profile/872-hanibal2001/) 
+---
 
-Tested by: Bla1ze 
+## Files
+| File Type | Link | Version | Author |
+|:---------:|:----:|:-------:|:------:|
+| VPX | [VP Universe](https://vpuniverse.com/files/file/4595-x-files-hanibal-4k-led-edition/) | 1.9 | [hanibal2001](https://vpuniverse.com/profile/872-hanibal2001/) |
+| B2S | [VP Universe](https://vpuniverse.com/files/file/14927-x-files-sega-1997-b2s-with-full-dmd/) | 1.0.0 | [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
+| DMD | N/A | N/A | N/A |
+| ROM | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1077) | N/A | N/A |
 
-Version: 1.9 
+**Tested by:** [Bla1ze]
 
-Download: [VP Universe](https://vpuniverse.com/files/file/4595-x-files-hanibal-4k-led-edition/)
-
-DirectB2S
-
-Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
-
-Version: 1.0.0
-
-Download: [VP Universe](https://vpuniverse.com/files/file/14927-x-files-sega-1997-b2s-with-full-dmd/)
-
-ROM
-
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1077)
-
-SHA: ff04213446b2adeadfad0a3034f105b2e742b85c
-
-MD5: 5ad341cc9c983cfde8ddbca479530b6c
+---
 
 ## Status 
-
+Minimum VPX Standalone build: 10.8.0-1983-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 
+---
 
 ## Instructions
-
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-xfileshanibal.elf
 - Download the table, ROM and directb2s versions listed above and copy them into this folder
