@@ -2,21 +2,25 @@
 
 ![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-algar.png)
 
-Tested by: Mox
-
-## Information
-| File Type | Link | Version | Author(s) | 
-|:---------:|:----:|:-------:|:---------:|
+## Files
+| File Type | Link | Version | Author |
+|:---------:|:----:|:-------:|:------:|
 | VPX | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=13520) | 1.3.3 | [kalavera](https://www.vpforums.org/index.php?showuser=6139) |
-| DirectB2S | [VP Universe](https://vpuniverse.com/files/file/5121-algar-williams-1980/) | 1.0.0 | [kalavera3](https://vpuniverse.com/profile/14233-kalavera3/) |
+| B2S | [VP Universe](https://vpuniverse.com/files/file/5121-algar-williams-1980/) | 1.0.0 | [kalavera3](https://vpuniverse.com/profile/14233-kalavera3/) |
+| DMD | N/A | N/A | N/A |
 | ROM | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=789) | algar_l1 | [destruk](https://www.vpforums.org/index.php?showuser=5) |
 
-## Status 
-Minimum VPX Standalone build: 10.8.0-2042-1431983
+**Tested by:** [Mox]
 
+---
+
+## Status 
+**Minimum VPX Standalone build:** 10.8.0-2042-1431983
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS |
 |:---------:|:--------:|:---------:|:---:|:------------:|:---:|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
+
+---
 
 ## Instructions
 - Copy the **vpx-algar** folder to the `external` directory of your USB drive

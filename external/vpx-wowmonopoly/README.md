@@ -2,43 +2,29 @@
 
 ![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-wowmonopoly.jpg)
 
-Table
+---
 
-Author: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
-Filename:  JPs WOW-Monopoly v4.zip  
-VPX Version: (Version 4.0.0) JP's WOW-Monopoly v4.vpx  
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=11612)
+## Files
+| File Type | Link | Version | Author |
+|:---------:|:----:|:-------:|:------:|
+| VPX | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=11612) | 4.0.0 | [jpsalas](https://www.vpforums.org/index.php?showuser=277) |
+| B2S | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=10808) | 1.0 | [hauntfreaks](https://www.vpforums.org/index.php?showuser=73849) |
+| DMD | N/A | N/A | N/A |
+| ROM | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=7320) | monopoly.zip | [destruk](https://www.vpforums.org/index.php?showuser=5) |
 
-Backglass
+**Tested by:** [TechZombie]
 
-Author: [hauntfreaks](https://www.vpforums.org/index.php?showuser=73849)  
-Filename: WOW_Monopoly.rar  
-VPX Version: (Version 1.0) WOW_Monopoly.directb2s  
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=10808)
-
-ROM
-
-Author: [destruk](https://www.vpforums.org/index.php?showuser=5)  
-Monopoly (3.20) - ROM  
-Filename: monopoly.zip  
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=7320)
-
-MD5: 8C763B7C6708184D432ED534CA88E2C2  
-SHA-1: F1B67925C8BFEEF82EEBA9F47692CD8B72532023
-  
-Tested by:  
-[TechZombie]
+---
 
 ## Status 
-
 Minimum VPX Standalone build: 10.8.0-1983-b84441e
-
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 
-## Instructions
+---
 
+## Instructions
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-wowmonopoly.elf
 - Download the table and directb2s zips above, extract and copy into /external/vpx-wowmonopoly
