@@ -2,30 +2,29 @@
 
 ![Table Preview](../../images/vpx-austin-powers-preview.png)
 
-Author(s): [VPin Workshop](https://www.vpforums.org/index.php?showuser=153279)  
-Version: 1.0.3  
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=15332)
+---
 
-DirectB2S
+## Files
+| File Type | Link | Version | Author |
+|:---------:|:----:|:-------:|:------:|
+| VPX | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=15332) | 1.0.3 | [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
+| B2S | [VP Universe](https://vpuniverse.com/files/file/14003-austin-powers-stern-2001-b2s-with-full-dmd/) | 1.0.0 | [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
+| DMD | N/A | N/A | N/A |
+| ROM | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1115) | austin.zip | [destruk](https://www.vpforums.org/index.php?showuser=5) |
 
-Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
-Version: 1.0.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/14003-austin-powers-stern-2001-b2s-with-full-dmd/)
+**Tested by:** [T3chZombie]
 
-ROM:  
-Version 3.02  
-Download [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1115)
+---
 
 ## Status 
-
-Minimum VPX Standalone build: 10.8.0-1983-b84441e
-
+**Minimum VPX Standalone build:** 10.8.0-1983-b84441e
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 37 |
 
-## Instructions
+---
 
+## Instructions
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-austinpowers.elf
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-austinpowers
