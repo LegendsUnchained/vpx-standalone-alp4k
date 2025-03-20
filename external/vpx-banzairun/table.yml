@@ -1,13 +1,13 @@
 ---
-backglassVPSId: 6g1eEfMtd9
-backglassChecksum: 0a4da343e92eb0c69633d55146e80904
+backglassVPSId: "6g1eEfMtd9"
+backglassChecksum: "0a4da343e92eb0c69633d55146e80904"
 fps: 55
-romVPSId: GSq8PW4s
-romChecksum: f2571fc419f9ec584b8e74ef6c6ff771
-tableVPSId: D7db6H4M
+romVPSId: "GSq8PW4s"
+romChecksum: "f2571fc419f9ec584b8e74ef6c6ff771"
+tableVPSId: "D7db6H4M"
 tagline: "Challenge racers, Win the race up the mountain, Banzai!"
 testers:
-- kaoticBPR
-vpxVPSId: sD53cbKdgn
-vpxChecksum: e977104b9b81a64f107162ec02033f03
+- "kaoticBPR"
+vpxVPSId: "sD53cbKdgn"
+vpxChecksum: "e977104b9b81a64f107162ec02033f03"
 tableNotes: "Download version v4.3"
