@@ -31,9 +31,3 @@
 - Add your personalized launcher.elf and rename it to `vpx-galaxia.elf`
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-galaxia`
 - Make sure `(.vpx)` `(.directb2s)` `(.vbs)` and `(.ini)` are all named the same. 
-
-
-## NOTES
-1. Yes, I realize that there SHOULD BE an accent over the second 'a'. I am working on a Mac, and frequently encounter discrepancies between the way Windows and MacOS handle ASCII. Please understand that any omissions other than the ones in the filenames are unintentional.
-
-2. This table has a graphic bug in displaying scores. To overcome it, the .vbs adds and subtracts one point at the start of every ball. No, it's not a very elegant solution, but it doesn't slow down gameplay
