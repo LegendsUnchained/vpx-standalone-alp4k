@@ -9,7 +9,9 @@ from pathlib import Path
 
 
 class VPSDB:
-    def __init__(self, url="https://virtualpinballspreadsheet.github.io/vps-db/db/vpsdb.json"):
+    def __init__(
+        self, url="https://virtualpinballspreadsheet.github.io/vps-db/db/vpsdb.json"
+    ):
         self.url = url
         self.tables = self._fetch_tables()
 
@@ -26,53 +28,52 @@ class VPSDB:
         except json.JSONDecodeError as json_err:
             print(f"JSON decode error: {json_err}")
         return []
-    
+
     def get_table(self, id):
-        return next((table for table in self.tables if table.get('id') == id), None)
-    
+        return next((table for table in self.tables if table.get("id") == id), None)
+
     def get_altcolor_by_id(self, id):
         for table in self.tables:
-            if 'altColorFiles' in table:
-                for altColorFile in table['altColorFiles']:
-                    if altColorFile.get('id') == id:
+            if "altColorFiles" in table:
+                for altColorFile in table["altColorFiles"]:
+                    if altColorFile.get("id") == id:
                         return altColorFile
         return None
 
     def get_backglass_by_id(self, id):
         for table in self.tables:
-            if 'b2sFiles' in table:
-                for b2sFile in table['b2sFiles']:
-                    if b2sFile.get('id') == id:
+            if "b2sFiles" in table:
+                for b2sFile in table["b2sFiles"]:
+                    if b2sFile.get("id") == id:
                         return b2sFile
         return self.get_tablefile_by_id(id)
-    
+
     def get_rom_by_id(self, id):
         for table in self.tables:
-            if 'romFiles' in table:
-                for romFile in table['romFiles']:
-                    if romFile.get('id') == id:
+            if "romFiles" in table:
+                for romFile in table["romFiles"]:
+                    if romFile.get("id") == id:
                         return romFile
         return None
-    
+
     def get_tablefile_by_id(self, id):
         for table in self.tables:
-            if 'tableFiles' in table:
-                for tableFile in table['tableFiles']:
-                    if tableFile.get('id') == id:
+            if "tableFiles" in table:
+                for tableFile in table["tableFiles"]:
+                    if tableFile.get("id") == id:
                         return tableFile
         return None
-    
+
     def get_tutorialfile_by_id(self, id):
         for table in self.tables:
-            if 'tutorialFiles' in table:
-                for tutorialFile in table['tutorialFiles']:
-                    if tutorialFile.get('id') == id:
+            if "tutorialFiles" in table:
+                for tutorialFile in table["tutorialFiles"]:
+                    if tutorialFile.get("id") == id:
                         return tutorialFile
         return None
 
 
-
-def find_table_yml(base_dir='external'):
+def find_table_yml(base_dir="external"):
     result = []
     if not os.path.exists(base_dir):
         print(f"Directory {base_dir} does not exist.")
@@ -80,8 +81,8 @@ def find_table_yml(base_dir='external'):
 
     for entry in os.listdir(base_dir):
         entry_path = os.path.join(base_dir, entry)
-        if os.path.isdir(entry_path) and entry.startswith('vpx-'):
-            table_yml = os.path.join(entry_path, 'table.yml')
+        if os.path.isdir(entry_path) and entry.startswith("vpx-"):
+            table_yml = os.path.join(entry_path, "table.yml")
             if os.path.exists(table_yml):
                 result.append(table_yml)
 
@@ -133,28 +134,50 @@ if __name__ == "__main__":
     files = find_table_yml()
 
     vpsdb = VPSDB()
-    # ---
-    # tableVPSId: P15WeTaO
-    # vpxVPSId: QcOG228URt
-    # backglassVPSId: vpfZXF3x
-    # romVPSId: GhBaghhT
-    # coloredROMVPSId: aIWgsQ7Po0
+
     for table_yaml in files:
         path = Path(table_yaml)
         folder_name = path.parent.name
 
         print(f"Processing {folder_name}")
-        with open(table_yaml, 'r') as table_data:
+        with open(table_yaml, "r") as table_data:
             data = yaml.safe_load(table_data)
 
-        tableVPSId = data.get('tableVPSId')
-        vpxVPSId = data.get('vpxVPSId')
-        backglassVPSId = data.get('backglassVPSId')
-        romVPSId = data.get('romVPSId')
-        coloredROMVPSId = data.get('coloredROMVPSId')
-        tutorialVPSId = data.get('tutorialVPSId')
+        tableVPSId = data.get("tableVPSId")
+        vpxVPSId = data.get("vpxVPSId")
+        backglassVPSId = data.get("backglassVPSId")
+        romVPSId = data.get("romVPSId")
+        coloredROMVPSId = data.get("coloredROMVPSId")
+        tutorialVPSId = data.get("tutorialVPSId")
 
-        table_meta = {}
+        backglassChecksum = data.get("backglassChecksum")
+        coloredROMChecksum = data.get("coloredROMChecksum")
+        romChecksum = data.get("romChecksum")
+        vpxChecksum = data.get("vpxChecksum")
+
+        if backglassChecksum:
+            backglassChecksum = backglassChecksum.lower()
+        if coloredROMChecksum:
+            coloredROMChecksum = coloredROMChecksum.lower()
+        if romChecksum:
+            romChecksum = romChecksum.lower()
+        if vpxChecksum:
+            vpxChecksum = vpxChecksum.lower()
+
+        table_meta = {
+            "backglassChecksum": backglassChecksum,
+            "backglassNotes": data.get("backglassNotes"),
+            "coloredROMChecksum": coloredROMChecksum,
+            "coloredROMNotes": data.get("coloredROMNotes"),
+            "fps": data.get("fps"),
+            "mainNotes": data.get("mainNotes"),
+            "romChecksum": romChecksum,
+            "romNotes": data.get("romNotes"),
+            "tableChecksum": vpxChecksum,
+            "tableNotes": data.get("tableNotes"),
+            "tagline": data.get("tagline"),
+            "testers": data.get("testers"),
+        }
         if tableVPSId:
             table = vpsdb.get_table(tableVPSId)
             if not table:
@@ -162,42 +185,44 @@ if __name__ == "__main__":
                 print(f"WARNING: Skipping {folder_name}")
                 continue
 
-            table_meta['designers'] = table.get('designers', [])
-            table_meta['image'] = table.get('imgUrl', "")
-            table_meta['manufacturer'] = table.get('manufacturer', "")
-            table_meta['name'] = table.get('name', "")
-            table_meta['players'] = table.get('players', 0)
-            table_meta['type'] = table.get('type', "")
-            table_meta['version'] = table.get('version', "")
-            table_meta['year'] = table.get('year', 0)
+            table_meta["designers"] = table.get("designers", [])
+            table_meta["image"] = table.get("imgUrl", "")
+            table_meta["manufacturer"] = table.get("manufacturer", "")
+            table_meta["name"] = table.get("name", "")
+            table_meta["players"] = table.get("players", 0)
+            table_meta["type"] = table.get("type", "")
+            table_meta["version"] = table.get("version", "")
+            table_meta["year"] = table.get("year", 0)
 
         if vpxVPSId:
             tableFile = vpsdb.get_tablefile_by_id(vpxVPSId)
             if tableFile:
                 print(f"Parsing table {vpxVPSId} for {folder_name}")
-                table_meta['tableAuthors'] = tableFile.get('authors', [])
-                table_meta['tableComment'] = tableFile.get('comment', "")
-                table_meta['tableFileUrl'] = tableFile.get('urls', [])[0].get('url', "")
-                table_meta['tableImage'] = tableFile.get('imgUrl', "")
-                table_meta['tableVersion'] = tableFile.get('version', "")
+                table_meta["tableAuthors"] = tableFile.get("authors", [])
+                table_meta["tableComment"] = tableFile.get("comment", "")
+                table_meta["tableFileUrl"] = tableFile.get("urls", [])[0].get("url", "")
+                table_meta["tableImage"] = tableFile.get("imgUrl", "")
+                table_meta["tableVersion"] = tableFile.get("version", "")
             else:
-                print(f'WARNING: VPX id {vpxVPSId} not found in VPSDB')
+                print(f"WARNING: VPX id {vpxVPSId} not found in VPSDB")
                 print(f"WARNING: Skipping {folder_name}")
                 continue
         else:
             print(f"WARNING: Table {folder_name} missing VPX file")
             print(f"WARNING: Skipping {folder_name}")
             continue
-        
+
         if backglassVPSId:
             backglass = vpsdb.get_backglass_by_id(backglassVPSId)
             if backglass:
                 print(f"Parsing backglass {backglassVPSId} for {folder_name}")
-                table_meta['backglassAuthors'] = backglass.get('authors', [])
-                table_meta['backglassComment'] = backglass.get('comment', "")
-                table_meta['backglassFileUrl'] = backglass.get('urls', [])[0].get('url', "")
-                table_meta['backglassImage'] = backglass.get('imgUrl', "")
-                table_meta['backglassVersion'] = backglass.get('version', "")
+                table_meta["backglassAuthors"] = backglass.get("authors", [])
+                table_meta["backglassComment"] = backglass.get("comment", "")
+                table_meta["backglassFileUrl"] = backglass.get("urls", [])[0].get(
+                    "url", ""
+                )
+                table_meta["backglassImage"] = backglass.get("imgUrl", "")
+                table_meta["backglassVersion"] = backglass.get("version", "")
             else:
                 print(f"WARNING: Backglass id {backglassVPSId} not found in VPSDB")
                 print(f"WARNING: Skipping {folder_name}")
@@ -207,10 +232,10 @@ if __name__ == "__main__":
             rom = vpsdb.get_rom_by_id(romVPSId)
             if rom:
                 print(f"Parsing ROM {romVPSId} for {folder_name}")
-                table_meta['romAuthors'] = rom.get('authors', [])
-                table_meta['romComment'] = rom.get('comment', "")
-                table_meta['romFileUrl'] = rom.get('urls', [])[0].get('url', "")
-                table_meta['romVersion'] = rom.get('version', "")
+                table_meta["romAuthors"] = rom.get("authors", [])
+                table_meta["romComment"] = rom.get("comment", "")
+                table_meta["romFileUrl"] = rom.get("urls", [])[0].get("url", "")
+                table_meta["romVersion"] = rom.get("version", "")
             else:
                 print(f"WARNING: ROM id {romVPSId} not found in VPSDB")
                 print(f"WARNING: Skipping {folder_name}")
@@ -220,11 +245,13 @@ if __name__ == "__main__":
             coloredROM = vpsdb.get_altcolor_by_id(coloredROMVPSId)
             if coloredROM:
                 print(f"Parsing colored ROM {coloredROMVPSId} for {folder_name}")
-                table_meta['coloredROMAuthors'] = coloredROM.get('authors', [])
-                table_meta['coloredROMComment'] = coloredROM.get('comment', "")
-                table_meta['coloredROMFolder'] = coloredROM.get('folder', "")
-                table_meta['coloredROMFileUrl'] = coloredROM.get('urls', [])[0].get('url', "")
-                table_meta['coloredROMVersion'] = coloredROM.get('version', "")
+                table_meta["coloredROMAuthors"] = coloredROM.get("authors", [])
+                table_meta["coloredROMComment"] = coloredROM.get("comment", "")
+                table_meta["coloredROMFolder"] = coloredROM.get("folder", "")
+                table_meta["coloredROMFileUrl"] = coloredROM.get("urls", [])[0].get(
+                    "url", ""
+                )
+                table_meta["coloredROMVersion"] = coloredROM.get("version", "")
             else:
                 print(f"WARNING: Colored ROM id {coloredROMVPSId} not found in VPSDB")
                 print(f"WARNING: Skipping {folder_name}")
@@ -234,9 +261,9 @@ if __name__ == "__main__":
             tutorial = vpsdb.get_tutorialfile_by_id(tutorialVPSId)
             if tutorial:
                 print(f"Parsing tutorial {tutorialVPSId} for {folder_name}")
-                table_meta['tutorialAuthors'] = tutorial.get('authors', [])
-                table_meta['tutorialTitle'] = tutorial.get('title', "")
-                table_meta['tutorialYouTubeID'] = tutorial.get('youtubeId', "")
+                table_meta["tutorialAuthors"] = tutorial.get("authors", [])
+                table_meta["tutorialTitle"] = tutorial.get("title", "")
+                table_meta["tutorialYouTubeID"] = tutorial.get("youtubeId", "")
             else:
                 print(f"WARNING: Tutorial id {tutorialVPSId} not found in VPSDB")
                 print(f"WARNING: Skipping {folder_name}")
@@ -245,19 +272,21 @@ if __name__ == "__main__":
         external_path = str(path.parent)
 
         print(f"Zipping {folder_name} for release")
-        shutil.make_archive(folder_name, 'zip', external_path)
+        shutil.make_archive(folder_name, "zip", external_path)
 
         print(f"Uploading {folder_name}.zip to GitHub")
         file_path = f"{folder_name}.zip"
-        download_url = upload_release_asset(github_token, repo_name, release_tag, file_path)
+        download_url = upload_release_asset(
+            github_token, repo_name, release_tag, file_path
+        )
 
         print(f"Cleaning up {folder_name}.zip")
         os.remove(file_path)
 
-        table_meta['repoConfig'] = download_url
+        table_meta["repoConfig"] = download_url
 
         tables[folder_name] = table_meta
 
-    manifest_file = 'manifest.json'
-    json.dump(tables, open(manifest_file, 'w'))
+    manifest_file = "manifest.json"
+    json.dump(tables, open(manifest_file, "w"))
     upload_release_asset(github_token, repo_name, release_tag, manifest_file)
