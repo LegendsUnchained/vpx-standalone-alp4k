@@ -30,7 +30,8 @@
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to `vpx-galaxia.elf`
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-galaxia`
-- Make sure `(.vpx)` `(.directb2s)` `(.vbs)` and `(.ini)` are all named the same. Do not rename VPinballX.ini
+- Make sure `(.vpx)` `(.directb2s)` `(.vbs)` and `(.ini)` are all named the same. 
+
 
 ## NOTES
 1. Yes, I realize that there SHOULD BE an accent over the second 'a'. I am working on a Mac, and frequently encounter discrepancies between the way Windows and MacOS handle ASCII. Please understand that any omissions other than the ones in the filenames are unintentional.
