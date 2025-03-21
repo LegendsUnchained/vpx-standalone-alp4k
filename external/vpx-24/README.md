@@ -1,6 +1,6 @@
 # 24 (Stern 2009)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_06/24FS.png.c1cd691f0cacf7ee98f73adf3b696122.png)
+![Table Preview](../../images/vpx-24-preview.png)
 
 ## Files
 | File Type | Link | Version | Author |
