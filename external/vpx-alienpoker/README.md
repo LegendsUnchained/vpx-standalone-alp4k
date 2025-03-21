@@ -12,7 +12,7 @@
 | DMD | N/A | N/A | N/A |
 | ROM | [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=790) | alpok_l6.zip | N/A |
 
-**Tested by:** [n-i-x [NEEDS CORRECTION]]
+**Tested by:** [kaoticBPR]
 
 ---
 
