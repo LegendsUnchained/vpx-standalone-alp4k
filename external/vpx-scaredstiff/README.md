@@ -22,7 +22,7 @@ MD5: 6c4a4f2bd3e1e4e2d72065fcaf4b3b9c
 Alt Color
 
 Author: [dtatane](https://vpuniverse.com/profile/30013-dtatane/)  
-Version: 1.1.0  
+Version: 1.1  
 Download: [VP Universe](https://vpuniverse.com/files/file/13489-scared-stiff-bally-1996-dmd-64-colors-serum-format/)
 
 Tested by: Bla1ze
