@@ -5,8 +5,8 @@
 ## Instructions
 <h6>Download the following files and add them to the appropriate areas in the Table Manager.</h6>
 
-| File Type⠀⠀⠀⠀⠀⠀⠀ | Notes⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ | ⠀⠀⠀File Download⠀⠀⠀ |
-|:------------------|:------------------------------------------|:--------------------:|
+| File Type | Notes | File Download |
+|:----------|:------|:-------------:|
 | VPX | 1879829303_PackGuns2.0.zip | [VPUniverse](https://vpuniverse.com/files/file/7254-guns-edition-limited/) |
 | DirectB2S | N/A | Included with VPX Pack |
 | ROM | gnr_300.zip | Included with VPX Pack |
