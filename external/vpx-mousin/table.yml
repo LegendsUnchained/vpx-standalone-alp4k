@@ -1,0 +1,15 @@
+---
+backglassVPSId: gkFcS4tRQG
+backglassChecksum: 60b282db76ed446a70a32e238b45b121
+backglassNotes: Mousin Around (Bally 1989) b2s authentic 2.0
+fps: 32
+romVPSId: uTb3zlcm
+romChecksum: 4ea05bd8434abe00457ba86d139fd2be
+tableVPSId: n0QJLWPB
+tagline: "SO YOU WANNA MOUSE AROUND!?!?!"
+testers:
+- "[CoffeeAtJoes]"
+vpxVPSId: zfBJdPcA
+vpxChecksum: b914bac4ab0a196c2e8b5adae9bbbe8e
+tableNotes: "Mousin' Around! (Bally 1989) 1.1"
+mainNotes: "Note: There is a known issue regarding the 1-2-3 POW! gate motor, it fails to resest occasionally. Only occurred once during hours of testing."
