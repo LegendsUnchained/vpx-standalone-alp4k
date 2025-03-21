@@ -9,8 +9,8 @@ romVPSId: "Zho3rYsp"
 romChecksum: "862EE474E14684FF77D3299914940927"
 tableVPSId: "JcJtmz2q"
 tagline: "A storm is coming! This one's gonna blow you AWAY!"
-testers: "CoffeeAtJoes"
-- 
+testers: 
+- "CoffeeAtJoes"
 vpxVPSId: "ZX39Pet3"
 vpxChecksum: "289715FD0532CDD3F765F3CEE1723E45"
 tableNotes: "Download Whirlwind 4K 1.1.zip"
