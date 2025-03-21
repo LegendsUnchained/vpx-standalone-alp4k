@@ -15,11 +15,11 @@
 ## Optional
 | File Type | Link | Version | Author | 
 |:---------:|:----:|:-------:|:------:|
-| **Colored ROM** | [VPU](https://vpuniverse.com/files/file/7254-guns-edition-limited/) | gnr_300.cRZ | [ebor](https://vpuniverse.com/profile/29168-ebor/) |
-| **Alt Sound**   | [VPU](https://vpuniverse.com/files/file/7254-guns-edition-limited/) | Pack 2.0 | [iDigStuff](https://vpuniverse.com/profile/29753-idigstuff/) |
+| **Colored ROM** | [VPU](https://vpuniverse.com/files/file/17131-guns-n-roses-data-east-1994-dmd-64-colors-serum-format/) | gnr_300.cRZ | [ebor](https://vpuniverse.com/profile/29168-ebor/) |
+| **Alt Sound**   | [VPU](https://vpuniverse.com/files/file/6087-altsound_guns_and_roses/) | g-sound | [iDigStuff](https://vpuniverse.com/profile/29753-idigstuff/) |
 
 
-**Tested by:** fAthAwg13
+**Tested by:** fAthAwg
 
 ---
 
@@ -41,4 +41,4 @@
 - Once added you can close out and enjoy the table or navigate to the table and place the optional alt sound files in the vpx-gnrjj/alt sound/gnr_300 folder
 - I highly recommend the alt sound for this table
 
-- "A table that needs no introduction, but F'ing gets one anyway. From marty02 its Guns n' Roses!!!!"
+- "A table that needs no introduction, but F'ing gets one anyway. From marty its Guns n' Roses!!!!"
