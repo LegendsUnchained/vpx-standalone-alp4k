@@ -1,7 +1,7 @@
 ---
 backglassVPSId: ZEY6N1liTk
 backglassChecksum: 61ad6c2b3a42c6b21dc412361dd20b5d
-backglassNotes: "Version: 2.0"
+backglassNotes: "Version 2.0"
 fps: 40
 romVPSId: cqLi4H4h
 romChecksum: 693e2b1455daea17ac28b2b9c72246f1
@@ -11,4 +11,4 @@ testers:
 - Bla1ze
 vpxVPSId: NkU9XqCn
 vpxChecksum: 3508cd5eb172938120f7c679ebdc6612
-tableNotes: "Version: 1.1"
+tableNotes: "Version 1.1"
