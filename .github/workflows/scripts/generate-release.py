@@ -165,6 +165,7 @@ if __name__ == "__main__":
             vpxChecksum = vpxChecksum.lower()
 
         table_meta = {
+            "applyFixes": data.get("applyFixes"),
             "backglassChecksum": backglassChecksum,
             "backglassNotes": data.get("backglassNotes"),
             "coloredROMChecksum": coloredROMChecksum,
@@ -173,6 +174,7 @@ if __name__ == "__main__":
             "mainNotes": data.get("mainNotes"),
             "romChecksum": romChecksum,
             "romNotes": data.get("romNotes"),
+            "romFileUrl": data.get("romUrlOverride"),
             "tableChecksum": vpxChecksum,
             "tableNotes": data.get("tableNotes"),
             "tagline": data.get("tagline"),
