@@ -1,6 +1,6 @@
 # Batman Forever (Sega 1995)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-batmanforever.png)
+![Table Preview](../../images/vpx-batmanforever.png)
 
 ---
 
@@ -20,7 +20,7 @@
 **Minimum VPX Standalone build:** 10.8.0-1983-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 45 |
 
 ---
 
