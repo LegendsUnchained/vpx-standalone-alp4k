@@ -17,7 +17,7 @@ Please ensure your files are named:
 
 | File Name | Required | Description |
 |:---------:|:--------:|:-----------:|
-| launcher.png | :white_check_mark: | The image used by the AtGames Launcher UI |
+| launcher.png | :white_check_mark: | The image used by the AtGames Launcher UI (500px x 750px)|
 | table.yml | :white_check_mark: | Wizard config YAML |
 | backglass.png | :x: | Backglass image to use during loading |
 | dmd.png | :x: | DMD image to use during loading and as a static image for tables without a DMD |
