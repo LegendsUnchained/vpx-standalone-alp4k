@@ -40,5 +40,4 @@
 - Select add table
 - Once added you can close out and enjoy the table or navigate to the table and place the optional alt sound files in the vpx-gnrjj/alt sound/gnr_300 folder
 - I highly recommend the alt sound for this table
-
 - "A table that needs no introduction, but F'ing gets one anyway. From marty its Guns n' Roses!!!!"
