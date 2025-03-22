@@ -25,3 +25,4 @@ VPinballX_*-alp4k
 **/._*
 !/external/*/pinmame/roms/.gitkeep
 .venv
+!/external/*/table.yml
