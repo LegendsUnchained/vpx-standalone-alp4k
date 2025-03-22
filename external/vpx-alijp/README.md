@@ -1,6 +1,6 @@
 # Ali, JP's (Stern 1980)
 
-![Table Preview](https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/images/vpx-alijp.jpg)
+![Table Preview](../../images/vpx-alijp.jpg)
 
 ---
 

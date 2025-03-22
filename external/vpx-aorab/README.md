@@ -2,17 +2,15 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-aorab.png)
 
----
-
 ## Files
 | File Type | Link | Version | Author |
 |:---------:|:----:|:-------:|:------:|
-| VPX | [VP Universe](https://vpuniverse.com/files/file/17971-adventures-of-rocky-and-bullwinkle-and-friends-data-east-1993-v106/) | 1.06 | [cyberpez](https://vpuniverse.com/profile/1663-cyberpez/) |
+| VPX | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=16533) | 1.06 | [bigus1](https://www.vpforums.org/index.php?showuser=107629) |
 | B2S | [VP Universe](https://vpuniverse.com/files/file/17974-adventures-of-rocky-and-bullwinkle-and-friends-data-east-1993-b2s/) | 1.0.0 | [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
 | DMD | N/A | N/A | N/A |
 | ROM | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=850) | rab_320.zip | [destruk](https://www.vpforums.org/index.php?showuser=5) |
 
-**Tested by:** [Bla1ze]
+**Tested by:** [Bla1ze] & [OminousOsie]
 
 ---
 
@@ -20,7 +18,7 @@
 **Minimum VPX Standalone build:** 10.8.0-1983-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 
 ---
 

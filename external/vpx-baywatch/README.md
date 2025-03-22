@@ -1,6 +1,6 @@
 # Baywatch (Sega 1995)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-baywatch.png)
+![Table Preview](../../images/vpx-baywatch-preview.png)
 
 Author: [kiwi](https://www.vpforums.org/index.php?showuser=30913)  
 Version: 1.0.5  

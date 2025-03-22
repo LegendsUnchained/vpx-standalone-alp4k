@@ -1,6 +1,6 @@
 # Batman Forever (Sega 1995)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-batmanforever.png)
+![Table Preview](../../images/vpx-batmanforever.png)
 
 ---
 

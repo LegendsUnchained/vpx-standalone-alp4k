@@ -1,6 +1,6 @@
 # Asteroid Annie (Gottlieb 1980)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_01/AsteroidAnnie.jpg.e0a1418dc7874af0205c64c537fac3f3.jpg)
+![Table Preview](../../images/vpx-astannie-preview.jpg)
 
 ---
 
