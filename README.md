@@ -190,7 +190,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Cosmic Princess (Stern 1979)](external/vpx-cosmicprincess) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Count-Down (Gottlieb 1979)](external/vpx-countdownjp) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Counterforce (Gottlieb 1980)](external/vpx-counterforce) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 33 |
-| [Creature from the Black Lagoon (Bally 1992)](external/vpx-cftbl) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 40 |
+| [Creature from the Black Lagoon (Bally 1992)](external/vpx-cftbl) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 50 |
 | [Creature From The Black Lagoon - BW Edition (1992)](external/vpx-creaturebw) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 40 | 
 | [Creepshow (Original 2022)](external/vpx-creepshow) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 42 |
 | [Criterium 77 (Taito do Brasil 1977)](external/vpx-criterium77) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
