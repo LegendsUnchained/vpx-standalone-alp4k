@@ -1,7 +1,10 @@
 ---
 tableVPSId: OgtWKSmg
 vpxVPSId: hTwgaH56vw
+vpxChecksum: BD000C0969511C7BC7F343DEB8CEFFEB
+tableNotes: "Copy 'SpongebobDMD' folder to root of vpx-spongebob after adding table"
 backglassVPSId: CcRmPZ1pfy
+backglassChecksum: 3EA3E61C6CCC19A33F1555B2ECEF4843
 fps: 35
 testers:
 - Bla1ze
