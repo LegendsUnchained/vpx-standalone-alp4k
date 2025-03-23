@@ -7,7 +7,7 @@
 ## Files
 | File Type | Link | Version | Author |
 |:---------:|:----:|:-------:|:------:|
-| VPX | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=17036) | 4.3.0 | [JPSalas](https://www.vpforums.org/index.php?showuser=277) |
+| VPX | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=17036) | 5.5.0 | [JPSalas](https://www.vpforums.org/index.php?showuser=277) |
 | B2S | [VPUniverse](https://vpuniverse.com/files/file/13322-banzai-run-williams-1988-marquee-backglass/) | 1.0 | [HiRez00](https://vpuniverse.com/profile/19941-hirez00/) |
 | DMD | N/A | N/A | N/A |
 | ROM | [VPForums](http://www.vpforums.org/index.php?app=downloads&showfile=909) | bnzai_l3 | N/A |
@@ -20,7 +20,7 @@
 **Minimum VPX Standalone build:** 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 
 ---
 

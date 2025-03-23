@@ -5,12 +5,12 @@
 ---
 
 ## Files
-| File Type | Link | Version | Author |
-|:---------:|:----:|:-------:|:------:|
-| VPX | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=14871) | 5.5.0 | [jpsalas](https://www.vpforums.org/index.php?showuser=277) |
-| B2S | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=13626) | 1.1.led | [editoy](https://www.vpforums.org/index.php?showuser=80626) |
-| DMD | N/A | N/A | N/A |
-| ROM | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=544) | andromed.zip | [Williams](https://www.vpforums.org/index.php?app=core&module=search&do=user_activity&search_app=downloads&mid=5) |
+| File Type | Link | Version | Author | 
+|-----------|--------|----------|--------------|
+| **VPX** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=14871) | 5.5.0 | [jpsalas](https://www.vpforums.org/index.php?showuser=277) |
+| **B2S** | [VPUniverse](https://vpuniverse.com/files/file/11306-andromeda-game-plan-1985-alt-backglass-with-full-dmd/) | 1.0 | [ryguy417](https://vpuniverse.com/profile/31096-ryguy417/) |
+| **DMD** | -- | -- | -- |
+| **ROM** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=544) | -- | [Williams](https://www.vpforums.org/index.php?app=core&module=search&do=user_activity&search_app=downloads&mid=5) |
 
 **Tested by:** [Curt]
 
@@ -20,7 +20,7 @@
 **Minimum VPX Standalone build:** 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 51 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 58 |
 
 ---
 
