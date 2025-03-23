@@ -50,7 +50,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 |:------|:---------:|:--------:|:---------:|:---:|:------------:|:---:|
 | [1-2-3 (Talleres de Llobregat 1973)](external/vpx-123) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [4 Aces (Williams 1970)](external/vpx-4aces) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
-| [24 (Stern 2009)](external/vpx-24) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 30 |
+| [24 (Stern 2009)](external/vpx-24) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 54 |
 | [250cc (Inder 1992)](external/vpx-250cc) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [301 Bullseye (Grand Products 1986)](external/vpx-301bullseye) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 57 |
 | [Aaron Spelling (Data East 1992)](external/vpx-aaronspelling) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
@@ -59,7 +59,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Ace of Speed (Original 2019)](external/vpx-aceofspeed) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 30 |
 | [Ace Ventura Pet Detective (Original 2019)](external/vpx-aceventura) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Addams Family, The (Bally 1992)](external/vpx-taf) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
-| [Adventures of Rocky and Bullwinkle and Friends (Data East - 1993)](external/vpx-aorab) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
+| [Adventures of Rocky and Bullwinkle and Friends (Data East - 1993)](external/vpx-aorab) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Aerosmith (Pro) (Stern/Tribute 2017) ](external/vpx-aerosmith) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 44 |
 | [Agents 777 (Game Plan 1984)](external/vpx-agents777) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
 | [Airborne (Capcom 1996)](external/vpx-airborne) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 37 |
@@ -78,7 +78,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Amazon Hunt (Gottlieb 1983)](external/vpx-amazonhunt) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [America 1492 (Juegos Populares 1986)](external/vpx-america1492) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 48 |
 | [American Graffiti (Original 2024)](external/vpx-agraffiti) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
-| [Andromeda (Game Plan 1985)](external/vpx-andromeda) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 51 |
+| [Andromeda (Game Plan 1985)](external/vpx-andromeda) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 58 |
 | [Apache! (Taito do Brasil 1978)](external/vpx-apache) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Apollo 13 (Sega 1995)](external/vpx-apollo13) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 47 |
 | [Arena (Gottlieb 1987)](external/vpx-arena1C3S) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 45 |
@@ -100,7 +100,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Bad Girls (Gottlieb 1988)](external/vpx-badgirls) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:x: | :white_check_mark: | 50 |
 | [Balls-A-Poppin (Bally 1956)](external/vpx-ballsapoppin) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 52 |
 | [Bally Game Show, The (Bally 1990)](external/vpx-ballygameshow) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 33 |
-| [Banzai Run (Williams 1988)](external/vpx-banzairun) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
+| [Banzai Run (Williams 1988)](external/vpx-banzairun) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 | [Barb Wire (Gottlieb 1996)](external/vpx-barbwire) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 41 |
 | [Barracora (Williams 1981)](external/vpx-barracora) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 32 |
 | [Baseball (Gottlieb 1970)](external/vpx-baseball1970) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 46 |
@@ -170,7 +170,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Charlie Brown Christmas, A (Original 2023)](external/vpx-acharliebrownchristmas) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Charlie's Angels (Gottlieb 1978)](external/vpx-charliesangelsremix) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 57 |
 | [Checkpoint (Data East 1991)](external/vpx-checkpoint) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
-| [Cheech & Chong: Road-Trip'pin (Bally 2021)](external/vpx-cheechandchong) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 40 |
+| [Cheech & Chong: Road-Trip'pin (Bally 2021)](external/vpx-cheechandchong) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 45 |
 | [Cheetah (Stern 1980)](external/vpx-cheetah) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 40 |
 | [Child's Play (Original 2018)](external/vpx-childsplay) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:x: | :x: | 50 |
 | [Chrono Trigger (JPSalas' Pokemon Re-Theme (Original 2022)](external/vpx-chrono) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
@@ -461,7 +461,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Nine Ball (Stern 1980)](external/vpx-nineball) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 45 |
 | [Nip-It (Bally 1973)](external/vpx-nipit) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 54 |
 | [Nitro Ground Shaker (Bally 1980)](external/vpx-nitrogs) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
-| [No Fear Dangerous Sports (Williams 1995)](external/vpx-nofear) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
+| [No Fear Dangerous Sports (Williams 1995)](external/vpx-nofear) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 | [No Good Gofers! (Williams 1997)](external/vpx-nogoodgofers) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 42 |
 | [North Star (Gottlieb 1964)](external/vpx-northstar) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 52 |
 | [Nosferatu 1922 (Original 2023)](external/vpx-nosferatu) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
@@ -537,7 +537,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Safe Cracker (Bally 1996)](external/vpx-safecracker) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 46 |
 | [Samba (LTD do Brasil 1976)](external/vpx-samba) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 47 |
 | [Sands of the Aton - JP (Original 2023)](external/vpx-sandsaton) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
-| [Scared Stiff (Bally 1996)](external/vpx-scaredstiff) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
+| [Scared Stiff (Bally 1996)](external/vpx-scaredstiff) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 47 |
 | [Scooby Doo (Original 2022)](external/vpx-scoobydoo) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Scooby Doo! and KISS Rock n' Roll Mystery (Original 2021)](external/vpx-sdookiss) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Seawitch - JP's (Stern 1980)](external/vpx-seawitch) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
