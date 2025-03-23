@@ -27,15 +27,14 @@ jobs:
       - name: Get changed table.yml files
         id: changed-files
         run: |
-          git --version
-          git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }}
           CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep 'table.yml')
-          echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_OUTPUT
-
+          echo "CHANGED_FILES=$(echo "$CHANGED_FILES" | tr '\n' ',')" >> $GITHUB_OUTPUT
+  
       - name: Run validation script for each changed file
         run: |
           if [[ -n "${{ steps.changed-files.outputs.CHANGED_FILES }}" ]]; then
-            for file in ${{ steps.changed-files.outputs.CHANGED_FILES }}; do
+            FILES=(${${ steps.changed-files.outputs.CHANGED_FILES//,/ }})
+            for file in "${FILES[@]}"; do
               python .github/workflows/scripts/validate-table-yaml.py "$file"
               yamllint "$file"
             done
