@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 100 # limit the git history to speed up the checkout
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -20,6 +22,8 @@ jobs:
       - name: Get changed table.yml files
         id: changed-files
         run: |
+          git --version
+          git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }}
           CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep 'table.yml')
           echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_OUTPUT
 
