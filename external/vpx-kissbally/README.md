@@ -1,6 +1,6 @@
 # KISS (Bally 1979)
 
-![Table Preview](preview.png)
+![Table Preview](../../images/vpx-kissbally-preview.png)
 
 Authors: [ARMYAVIATION](https://vpuniverse.com/profile/18348-armyaviation/)\
 Version: 1.0.0\
