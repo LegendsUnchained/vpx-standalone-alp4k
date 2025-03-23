@@ -22,7 +22,7 @@ MD5: 6c4a4f2bd3e1e4e2d72065fcaf4b3b9c
 Alt Color
 
 Author: [dtatane](https://vpuniverse.com/profile/30013-dtatane/)  
-Version: 1.1.0  
+Version: 1.1  
 Download: [VP Universe](https://vpuniverse.com/files/file/13489-scared-stiff-bally-1996-dmd-64-colors-serum-format/)
 
 Tested by: Bla1ze
@@ -33,7 +33,7 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 47 |
 
 ## Instructions
 
