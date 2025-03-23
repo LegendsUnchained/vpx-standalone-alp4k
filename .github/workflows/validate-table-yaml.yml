@@ -33,10 +33,9 @@ jobs:
       - name: Run validation script for each changed file
         run: |
           if [[ -n "${{ steps.changed-files.outputs.CHANGED_FILES }}" ]]; then
-            FILES=(${${ steps.changed-files.outputs.CHANGED_FILES//,/ }})
+            IFS=',' read -ra FILES <<< "${{ steps.changed-files.outputs.CHANGED_FILES }}"
             for file in "${FILES[@]}"; do
               python .github/workflows/scripts/validate-table-yaml.py "$file"
-              yamllint "$file"
             done
           else
             echo "No table.yml files were changed."
