@@ -13,6 +13,7 @@ def check_backbuffer_scale(config):
 
 if __name__ == "__main__":
     table_ini = sys.argv[1]
+    
     config = configparser.ConfigParser()
     config.read(table_ini)
 
