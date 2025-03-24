@@ -11,6 +11,7 @@ def check_backbuffer_scale(config):
     allowed_values = [".833333", ".666666", ".5", ".416666", ".355729", ".333333"]
     if backbuffer_scale not in allowed_values:
         print(f"Invalid BackBufferScale value: {backbuffer_scale}")
+        print(f"Allowed values: {', '.join(allowed_values)}")
         sys.exit(1)
 
 
