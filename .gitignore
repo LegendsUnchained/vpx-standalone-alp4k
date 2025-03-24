@@ -26,3 +26,4 @@ VPinballX_*-alp4k
 **/._*
 !/external/*/pinmame/roms/.gitkeep
 .venv
+__pycache__
