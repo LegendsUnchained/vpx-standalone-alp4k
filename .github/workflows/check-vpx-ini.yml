@@ -22,7 +22,7 @@ jobs:
       - name: Get changed table.ini files
         id: changed-files
         run: |
-          CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep 'table.ini')
+          CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep -w 'table\.ini$')
           echo "CHANGED_FILES=$(echo "$CHANGED_FILES" | tr '\n' ',')" >> $GITHUB_OUTPUT
   
       - name: Check table.ini files
