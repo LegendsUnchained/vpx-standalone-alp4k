@@ -30,7 +30,7 @@ jobs:
           CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep 'table.yml')
           echo "CHANGED_FILES=$(echo "$CHANGED_FILES" | tr '\n' ',')" >> $GITHUB_OUTPUT
   
-      - name: Run validation script for each changed file
+      - name: Validate table.yml files
         run: |
           if [[ -n "${{ steps.changed-files.outputs.CHANGED_FILES }}" ]]; then
             IFS=',' read -ra FILES <<< "${{ steps.changed-files.outputs.CHANGED_FILES }}"
