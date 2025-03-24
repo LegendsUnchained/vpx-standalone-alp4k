@@ -1,7 +1,7 @@
 import os
+import re
 import shutil
 import json
-import yaml
 
 import vpsdb
 
@@ -24,6 +24,23 @@ def find_table_yml(base_dir="external"):
 
     return result
 
+
+def process_title(title):
+    """
+    Transforms a title for proper sorting, moving leading "The" to the end,
+    and handling optional "JP's" or "JPs" prefixes, moving them after the comma
+    when 'The' is not present.
+    """
+    match_the = re.match(r"^(JP'?s\s*)?(The)\s+(.+)$", title)
+    match_jps = re.match(r"^(JP'?s)\s+(.+)$", title)
+
+    if match_the and match_the.group(2):
+        prefix = match_the.group(1) or ""
+        return f"{match_the.group(3)}, {prefix}{match_the.group(2)}"
+    elif match_jps:
+        return f"{match_jps.group(2)}, {match_jps.group(1)}"
+    else:
+        return title
 
 def upload_release_asset(github_token, repo_name, release_tag, file_path, clobber=True):
     """Uploads a file as a release asset."""
@@ -91,6 +108,9 @@ if __name__ == "__main__":
         os.remove(file_path)
 
         tables[table]["repoConfig"] = download_url
+
+        # Apply field processing
+        tables[table]["name"] = process_title(tables[table]["name"])
 
     manifest_file = "manifest.json"
     json.dump(tables, open(manifest_file, "w"))
