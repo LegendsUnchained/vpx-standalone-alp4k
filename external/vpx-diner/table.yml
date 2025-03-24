@@ -13,3 +13,5 @@ testers:
   - "mcap"
 vpxVPSId: "9-YJeZ-RkH"
 vpxChecksum: "9e35cec2781eb05b5da3b43e54a8b80a"
+applyFixes:
+  - "bass"

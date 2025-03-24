@@ -10,3 +10,5 @@ testers:
   - "kaoticBPR"
 vpxVPSId: "ifSoCSVr"
 vpxChecksum: "c94ebeee997098711308245a2939f919"
+applyFixes:
+  - "bass"
