@@ -11,3 +11,5 @@ testers:
 vpxVPSId: "YeHFhctP"
 vpxChecksum: "977c80cefbdbbc23ca2f0b2f2714fbba"
 tableNotes: "Download '3.2.zip'"
+applyFixes:
+  - "bass"

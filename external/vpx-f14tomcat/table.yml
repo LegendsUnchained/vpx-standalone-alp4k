@@ -11,3 +11,5 @@ testers:
 vpxVPSId: "0Qepbg-3mI"
 vpxChecksum: "e05426c7337852471dee18fa4897aae0"
 mainNotes: "Color ROM Serum file available on VPUniverse!"
+applyFixes:
+  - "bass"
