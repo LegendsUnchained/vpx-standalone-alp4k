@@ -7,7 +7,7 @@ romChecksum: "ba1a504968c88ab22a817f4c898d1717"
 tableVPSId: "uiEUziXx"
 tagline: "First of a new generation of multiple ball pin games!!"
 testers:
-- "Curt"
+  - "Curt"
 vpxVPSId: "z7q3NjkJ"
 vpxChecksum: "56203525e6eb0240e1b7977e0a9f8aaf"
 tableNotes: "Download v55_VPX8.zip"

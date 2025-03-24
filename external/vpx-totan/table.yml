@@ -5,8 +5,11 @@ fps: "48"
 romVPSId: "sNdevnd0"
 romChecksum: "FC8373E3925D671EDE800B3BD9B47D88"
 tableVPSId: "3CvHz8Fa"
-testers: 
-- "Bla1ze"
+tagline: >-
+  "In ancient Baghdad, a most beautiful princess
+  was imprisoned by the evil genie Saleem Bagazi.."
+testers:
+  - "Bla1ze"
 vpxVPSId: "7m7IM8bI"
 vpxChecksum: "A881856F4AE32A30791F434F55171E93"
-tableNotes: "Download 'Tales of the Arabian Nights (Williams 1996) v55_VPX8.zip'"
+tableNotes: "Download 'v55_VPX8.zip'"

@@ -10,8 +10,9 @@ Download: [VPforums](https://www.vpforums.org/index.php?app=downloads&showfile=1
 DirectB2S
 
 Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
-Version:  2.0.0
-Download: [VPUniverse](https://vpuniverse.com/files/file/12923-firepower-ii-williams-1983/)
+Version:  2.0.0 (FirePower II (Williams 1983) 2scn.zip)
+Download: [VPUniverse](https://vpuniverse.com/files/file/12923-firepower-ii-williams-1983/) 'FirePower II (Williams 1983) 2scn.zip'
+
 
 ROM
 

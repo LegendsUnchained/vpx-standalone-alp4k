@@ -11,6 +11,7 @@
 !/external/*/dmd.png
 !/external/*/pinmamedmd.ini
 !/external/*/backglass.png
+!/external/.yamllint
 /external/*/VPinballX.ini
 /external/*/gamecontrollerdb.txt
 /external/*/altsound.log

@@ -5,9 +5,11 @@ fps: 60
 romVPSId: "9sHHwihv"
 romChecksum: "7bccd3b85a2f23dda5a37417f1a259fd"
 tableVPSId: "z9BMLCAY"
-tagline: "If my mind can conceive it, if my heart can believe it–then I can achieve it."
+tagline: >-
+  "If my mind can conceive it, if my heart
+  can believe it–then I can achieve it."
 testers:
-- "Bla1ze"
+  - "Bla1ze"
 vpxVPSId: "jZlXak4Y"
 vpxChecksum: "9E16873FC853FB956CB4872B16F3BB03"
 tableNotes: "Download v55_VPX8.zip"
