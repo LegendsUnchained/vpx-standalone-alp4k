@@ -1,11 +1,10 @@
 # Fathom (Bally 1981)
-TESTED: kaoticBPR
 
 ![Table Preview](../../images/vpx-Fathom-preview.jpg)
 
-Authors: [UnclePaulie](https://vpuniverse.com/profile/16685-unclepaulie/)  
-Version: 2.0.1
-Download: [VPUniverse](https://vpuniverse.com/files/file/16043-fathom-bally-1981-w-vr-room/)
+Authors: [Goldchicco](https://vpuniverse.com/profile/23579-goldchicco/)  
+Version: 1.1b
+Download: [VPUniverse](https://vpuniverse.com/files/file/6841-fathom-bally-1981/)
 
 DirectB2S
 
@@ -21,13 +20,14 @@ Version:  Fathom.zip
 Download: [VPforums](https://www.vpforums.org/index.php?app=downloads&showfile=661)
 
 
+**Testers:** [kaoticBPR] & [OminousOsie]
 
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 34 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 38 |
 
 ## Instructions
 
