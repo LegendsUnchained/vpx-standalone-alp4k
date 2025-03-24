@@ -71,6 +71,11 @@ if __name__ == "__main__":
     tables = vpsdb.get_table_meta(files)
     
     for table, table_data in tables.items():
+        if table_data.get("enabled") is False:
+            print(f"Skipping disabled table: {table}")
+            del tables[table]
+            continue
+
         external_path = os.path.join("external", table)
 
         print(f"Zipping {table} for release")
