@@ -5,6 +5,8 @@ fps: 40
 romVPSId: "EQfOFCxq"
 romChecksum: "8C9A09212DD10AD69EBFB24A129D7287"
 tagline: "Welcome to Wet Willie's!"
+testers:
+  - "mcap"
 tableVPSId: "LJRH3fKk"
 vpxVPSId: "--fspsKJ"
 vpxChecksum: "58BF754498CF629F5F0D4269735E0D8B"
