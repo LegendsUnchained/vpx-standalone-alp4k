@@ -3,6 +3,9 @@ import sys
 
 
 def check_backbuffer_scale(config):
+    if not config.has_option('Standalone', 'BackBufferScale'):
+        return
+
     backbuffer_scale = config.get("Standalone", "BackBufferScale")
 
     allowed_values = [".833333", ".666666", ".5", ".416666", ".355729", ".333333"]
