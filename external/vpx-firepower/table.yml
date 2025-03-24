@@ -7,7 +7,7 @@ romChecksum: "edd9bd5aeaa63b8d300e4d42724aa166"
 tableVPSId: "OC08D_fq"
 tagline: "The Classic requested by many!"
 testers:
-- "kaoticBPR"
+  - "kaoticBPR"
 vpxVPSId: "V6GAlqxe"
 vpxChecksum: "15bb3bf40cd6e1e9cc06d5a8c3ab8040"
 tableNotes: "Download 'V1.0.5.zip'"

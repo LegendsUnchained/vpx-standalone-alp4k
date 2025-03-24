@@ -8,7 +8,7 @@ romChecksum: "676b70c9a67ceca4a607e9a076358e80"
 tableVPSId: "9cAcDFA8"
 tagline: "I'll never look at a sandcastle the same way again!"
 testers:
-- "Bla1ze"
+  - "Bla1ze"
 vpxVPSId: "A_CodyKoS7"
 vpxChecksum: "47ebcf7c39ddcbedccaa33198ee0a121"
 tableNotes: "Version 2.1"

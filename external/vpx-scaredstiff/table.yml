@@ -10,7 +10,7 @@ romChecksum: "6c4a4f2bd3e1e4e2d72065fcaf4b3b9c"
 tableVPSId: "EC_7xF96"
 tagline: "Turn out the lights... it's time to get Scared Stiff!"
 testers:
-- "Bla1ze"
+  - "Bla1ze"
 vpxVPSId: "LlxnGKSP7P"
 vpxChecksum: "2126e4e199d24674d9aed78c054aff00"
 tableNotes: "Version: 1.29"
