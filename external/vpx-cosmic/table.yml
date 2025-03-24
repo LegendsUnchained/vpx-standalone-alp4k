@@ -5,7 +5,9 @@ fps: 60
 romVPSId: "upRQOKt5"
 romChecksum: "9c4eed807a09314b09e167ef81eec724"
 tableVPSId: "_EnIegJR"
-tagline: "\"There is stardust in your veins. We are literally, ultimately children of the stars.\" -Jocelyn Bell Burnell"
+tagline: |
+  "There is stardust in your veins. We are literally,
+  ultimately children of the stars." -Jocelyn Bell Burnell
 testers:
   - "Boris"
 vpxVPSId: "KeJ-pS3E"

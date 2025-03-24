@@ -7,7 +7,9 @@ romChecksum: "e1f87e7c99a9889e063049832601b733"
 coloredROMVPSId: "uJsvDC9nsB"
 coloredROMChecksum: "96cba80f368abad3526ce8e97ac25a91"
 tableVPSId: "OiRcNWYu"
-tagline: "The boys around here call it \"The Black Lagoon\" - a paradise. Only they say nobody has ever come back to prove it."
+tagline: |
+  "The boys around here call it "The Black Lagoon"
+  - a paradise. Only they say nobody has ever come back to prove it."
 testers:
   - "mcap"
 vpxVPSId: "m78OeFSG"
