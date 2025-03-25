@@ -1,9 +1,10 @@
 ---
 backglassVPSId: "xHWfrWoj0i"
 backglassChecksum: "0517D601DAA8703B72315DB3B2F9DAFF"
-backglassNotes: "Download 'Terminator 2 (Williams 1991) full dmd.zip'"
+backglassNotes: "Download - Terminator 2 (Williams 1991) full dmd.zip"
 romVPSId: "0zPMCWcA"
 romChecksum: "F4D3810B45EFBAE942176C8BA5E1002C"
+romNotes: "Download -  t2_l8.zip"
 fps: 42
 tableVPSId: "BunvWvh9"
 tagline: "I'll be back..."
@@ -11,4 +12,4 @@ testers:
   - "mcap"
 vpxVPSId: "3a3JZPkj"
 vpxChecksum: "0CF8D81A3EAD67EE5952749637AC5E6A"
-tableNotes: "Use 1431544526_Terminator2(Williams1991)g5kv1.1d.vpx"
+tableNotes: "Download - 1431544526_Terminator2(Williams1991)g5kv1.1d.vpx"
