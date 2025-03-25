@@ -10,3 +10,5 @@ testers:
   - "Bla1ze"
 vpxVPSId: "xb_wf53G6R"
 vpxChecksum: "278104a25c7b6c28d63ed643801f2484"
+applyFixes:
+  - "bass"
