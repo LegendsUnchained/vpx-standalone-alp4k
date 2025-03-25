@@ -2,12 +2,18 @@
 backglassVPSId: "qV3Z3oQ8md"
 backglassChecksum: "535bc0cb3c0fe732f6bb874cac8f9e1b"
 fps: 42
-romUrlOverride: "https://vpuniverse.com/files/file/10341-pink-floyd-vpx-cw-pup-pack/"
+romUrlOverride: >-
+  https://vpuniverse.com/files/file/10341-pink-floyd-vpx-cw-pup-pack/
 romChecksum: "e4c898afcdcf6fd2a884c77c7fd6c3a9"
 tableVPSId: "Lgi1JLk0Vf"
-tagline: "'If ya don't eat yer meat, you can't have any pudding! How can ya have any pudding if ya don't eat ya meat?' - Teacher"
+tagline: >-
+  'If ya don't eat yer meat, you can't have any
+  pudding! How can ya have any pudding if ya
+  don't eat ya meat?' - Teacher
 testers:
-- "TechZombie"
+  - "TechZombie"
 vpxVPSId: "qV3Z3oQ8md"
 vpxChecksum: "e6df3800f7c9286fa195e84034da683a"
-tableNotes: "Single file includes table, backglass, and rom. Download 'Pink Floyd NO PUPPack.zip'"
+tableNotes: >-
+  Single file includes table, backglass,
+  and rom. Download 'Pink Floyd NO PUPPack.zip'

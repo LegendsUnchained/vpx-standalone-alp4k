@@ -6,9 +6,9 @@ fps: 60
 tableVPSId: "671IjPCYuN"
 tagline: "We are Groot!"
 testers:
-- "kaoticBPR"
-- "Mox"
+  - "kaoticBPR"
+  - "Mox"
 vpxVPSId: "_3ZHbzlbuv"
 vpxChecksum: "61C6712A91D03CB8555CD43E48D01CE9"
-tableNotes: 
-mainNotes: 
+applyFixes:
+  - "bass"

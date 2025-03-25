@@ -8,16 +8,14 @@ Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=1
 
 DirectB2S
 
-Authors: [Manbearpig](https://vpuniverse.com/profile/32743-manbearpig/)  
-Download: [VPUniverse](https://vpuniverse.com/files/file/20191-dolly-parton-bally-1978-b2s-full-dmd/)
+Authors: [ryguy417](https://vpuniverse.com/profile/31096-ryguy417/)  
+Download: [VPUniverse](https://vpuniverse.com/files/file/13456-dolly-parton-bally-1978-b2s-with-full-dmd/)
 
 ROM
 
-ROM Name: dollyptb.zip  
-Download: [Pinball Nirvana](https://pinballnirvana.com/forums/resources/dollyptb.1732/)
+Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)  
+Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=693)
 
-MD5: 57ED716D60DF66D4F868619C332B0CB7  
-SHA: 3EF8146E62BD0D8E7A0D376839ACA2EE2FD6D015
 
 Tested by: evilwraith
 

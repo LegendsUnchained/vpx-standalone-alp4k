@@ -8,7 +8,7 @@ romChecksum: "514554cb47ccfa9902993d7f13a2c17c"
 tableVPSId: "Pn4Qv448"
 tagline: "Beware the Sorcery of Seawitch!"
 testers:
-- "mcap"
+  - "mcap"
 vpxVPSId: "hMM0J00w"
 vpxChecksum: "6d94b6275a65f529939f6836ead55c92"
 tableNotes: "Version: 5.5"

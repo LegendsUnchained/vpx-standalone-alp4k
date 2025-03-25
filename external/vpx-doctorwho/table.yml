@@ -1,0 +1,18 @@
+---
+backglassVPSId: "MchOoPrbiP"
+backglassChecksum: "a3e1af9f5ba44177357379583ea31397"
+fps: 51
+coloredROMVPSId: "RPIsO7UnUu"
+coloredROMChecksum: "e5ba3f57c60e899fc9afe35b28b44ad1"
+romVPSId: "p9hGBlm6ef"
+romChecksum: "bee33e29f6714795116a1bda67f62c55"
+tableVPSId: "0wPuijKc"
+tagline: >-
+  "There’s no point in being grown up if you
+  can’t be childish sometimes" - Fourth (and best) Doctor!
+testers:
+  - "Bla1ze"
+vpxVPSId: "1ym9HpnI"
+vpxChecksum: "ca013aa443cdedcf6639bd9d3bd3b67a"
+applyFixes:
+  - "bass"

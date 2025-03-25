@@ -1,0 +1,12 @@
+---
+backglassVPSId: "u4J0Hdkz0u"
+backglassChecksum: "3916801345a6c10cec4d1fd7ab9f6759"
+fps: 60
+tableVPSId: "bwggWE8UrF"
+tagline: "Go enjoy some shaken, not stirred, Martinis!"
+testers:
+  - "Mar3nBu"
+vpxVPSId: "_xt4j3-2S6"
+vpxChecksum: "29e99ea6439d707fd19de254cd5b5a7c"
+applyFixes:
+  - "bass"
