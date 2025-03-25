@@ -16,3 +16,5 @@ mainNotes: >-
   Note: There is a known issue regarding the 1-2-3
   POW! gate motor, it fails to resest occasionally.
   Only occurred once during hours of testing.
+applyFixes:
+  - "bass"
