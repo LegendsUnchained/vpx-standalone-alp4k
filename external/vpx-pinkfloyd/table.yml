@@ -1,12 +1,12 @@
 ---
 backglassVPSId: "qV3Z3oQ8md"
 backglassChecksum: "535bc0cb3c0fe732f6bb874cac8f9e1b"
-backglassNotes: "b2s file found in VPX download. Named 'Pink FloydNOPP.directb2s'"
+backglassNotes: "`Pink FloydNOPP.directb2s` in the VPX download zip"
 backglassBundled: true
 fps: 42
 romVPSId: "qV3Z3oQ8md"
 romChecksum: "e4c898afcdcf6fd2a884c77c7fd6c3a9"
-romNotes: "Rom file found in VPX download. Named 'esha_l4c.zip'"
+romNotes: "`esha_l4c.zip` in the VPX download zip"
 romBundled: true
 tableNotes: "Download 'Pink Floyd NO PUPPack.zip'"
 tableVPSId: "Lgi1JLk0Vf"
