@@ -67,6 +67,7 @@ def find_changed_files(repo, tag1_hash, tag2_hash):
                 changed_folder = f"{status}\t{folder_name}"
                 if changed_folder not in changed_files:
                     changed_files.append(changed_folder)
+            changed_files.sort()
             return "\n".join(changed_files)
     except Exception as e:
         print(f"Error finding changed files: {e}", file=sys.stderr)
@@ -205,11 +206,31 @@ def main():
                 print(f"Release notes for tag '{end_tag}' updated successfully.")
             except Exception as e:
                 print(f"Error editing release notes: {e}", file=sys.stderr)
+                sys.exit(1)
         else:
             print("Error: Failed to get commit hashes for tags.", file=sys.stderr)
             sys.exit(1)
     else:
-        print("No previous release tag found.")
+        enabled_tables = get_enabled_tables()
+        if not enabled_tables:
+            print("No tables found in the 'external' folder.")
+            sys.exit(1)
+        print("No previous release tag found. Listing all tables:")
+        changed_files = []
+        for table in enabled_tables:
+            changed_files.append(f"added\t{table}")
+        wizard_data = get_wizard_data(repo, end_tag)
+        changed_files.sort()
+        new_release_notes = get_release_notes("\n".join(changed_files), wizard_data)
+        print("Adding release notes to the release...")
+        print(new_release_notes)
+        try:
+            release = repo.get_release(end_tag)
+            release.update_release(name=release.title, message=new_release_notes)
+            print(f"Release notes for tag '{end_tag}' updated successfully.")
+        except Exception as e:
+            print(f"Error editing release notes: {e}", file=sys.stderr)
+            sys.exit(1)
 
 
 if __name__ == "__main__":
