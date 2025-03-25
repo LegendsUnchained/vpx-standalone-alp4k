@@ -11,3 +11,5 @@ testers:
   - "'Coffee' Joe"
 vpxVPSId: "KMfiSseS"
 vpxChecksum: "367d3152e534698eaa4be507970068ba"
+applyFixes:
+  - "bass"
