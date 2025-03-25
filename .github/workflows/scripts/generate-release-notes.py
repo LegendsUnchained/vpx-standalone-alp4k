@@ -165,9 +165,7 @@ def main():
     parser.add_argument(
         "--repository", default=repo_name, help="Repository to check (owner/repo)."
     )
-    parser.add_argument(
-        "--github-token", default=github_token, help="Github token", required=True
-    )
+    parser.add_argument("--github-token", default=github_token, help="Github token")
 
     args = parser.parse_args()
 
@@ -175,6 +173,10 @@ def main():
     start_tag = args.start_tag
     repository = args.repository
     github_token = args.github_token
+
+    if not github_token:
+        print("Error: --github-token is required.", file=sys.stderr)
+        sys.exit(1)
 
     if not end_tag:
         print("Error: --end-tag is required.", file=sys.stderr)
