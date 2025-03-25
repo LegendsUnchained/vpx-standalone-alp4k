@@ -121,6 +121,8 @@ def get_release_notes(changed_files, wizard_data):
         if added_files:
             release_notes.append("## Newly added tables")
             for file in added_files:
+                if file in modified_files:
+                    modified_files.remove(file)
                 table_name = wizard_data.get(file, {}).get("name", file)
                 release_notes.append(f"- {table_name} ({file})")
         if modified_files:
