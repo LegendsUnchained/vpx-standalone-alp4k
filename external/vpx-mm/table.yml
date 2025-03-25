@@ -7,7 +7,9 @@ fps: 40
 tableVPSId: "-5yMpqSy"
 tagline: "Is that a sword in your pocket?"
 testers:
-- "mcap"
-- "Mox"
+  - "mcap"
+  - "Mox"
 vpxVPSId: "oa2VDRAKIc"
 vpxChecksum: "FDF922977B32CBA3E382511B960F1B32"
+applyFixes:
+  - "bass"

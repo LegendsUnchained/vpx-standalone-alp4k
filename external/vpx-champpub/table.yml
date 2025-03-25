@@ -1,0 +1,14 @@
+---
+backglassVPSId: "0yFxjIKq6V"
+backglassChecksum: "66d8a2c1ed83b2559131eb4b643480b2"
+fps: 45
+romVPSId: "88HGH-gX"
+romChecksum: "565c087dfbe46a014282122878ef8c7a"
+tableVPSId: "2HPDN_tT"
+tagline: "Welcome to Champion Pub, kid!"
+testers:
+  - "Bla1ze"
+vpxVPSId: "a6q4djY5bP"
+vpxChecksum: "ecfef280791c3d29077fbac13fe0ba03"
+applyFixes:
+  - "bass"

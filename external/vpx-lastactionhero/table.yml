@@ -5,8 +5,10 @@ fps: 50
 romVPSId: "pqzz0v2O"
 romChecksum: "7DA0660206EDF4D5BAB2320FD30D143A"
 tableVPSId: "OHcji-5r"
-tagline: "Sir, are you a henchman? No, I only go as far as lackey. Anything else?"
+tagline: >-
+  "Sir, are you a henchman?"   "No, I only go
+  as far as lackey. Anything else?"
 testers:
-- TechZombie
+  - TechZombie
 vpxVPSId: "jaSjAX0vTu"
 vpxChecksum: "DFAFEBBDF54DFF044E5C0BAC1FDACFA1"

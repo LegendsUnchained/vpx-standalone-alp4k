@@ -7,6 +7,6 @@ romChecksum: "aa79bb455243345aea72a134de4f57cd"
 tableVPSId: "my2RZ_v_"
 tagline: "Go Ahead. Make My Day!"
 testers:
-- "Bla1ze"
+  - "Bla1ze"
 vpxVPSId: "xb_wf53G6R"
 vpxChecksum: "278104a25c7b6c28d63ed643801f2484"

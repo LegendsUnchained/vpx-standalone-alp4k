@@ -10,9 +10,9 @@ fps: 40
 tableVPSId: "M7FYR1GJ"
 tagline: "Of all the bands in the world.... this is definitely one of them!"
 testers:
-- "Bla1ze"
-- "Mox"
+  - "Bla1ze"
+  - "Mox"
 vpxVPSId: "SV-Ul3CNuE"
 vpxChecksum: "2182846FB63A0484A1AF72DC9103160A"
-tableNotes: 
-mainNotes: 
+applyFixes:
+  - "bass"

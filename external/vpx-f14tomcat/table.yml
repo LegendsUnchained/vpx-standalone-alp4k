@@ -1,0 +1,15 @@
+---
+backglassVPSId: "WnCuy2PPsE"
+backglassChecksum: "2f36a56535883ed3cc2b07a1ac725ef9"
+fps: 40
+romVPSId: "V91gVf-r"
+romChecksum: "21ba673a8588cfdb6b2ce7c5b9fdb664"
+tableVPSId: "ckemo8oL"
+tagline: "Hiiiiighwaaaay tooooooo theeee DANGER ZONNEEE!"
+testers:
+  - "Bla1ze"
+vpxVPSId: "0Qepbg-3mI"
+vpxChecksum: "e05426c7337852471dee18fa4897aae0"
+mainNotes: "Color ROM Serum file available on VPUniverse!"
+applyFixes:
+  - "bass"

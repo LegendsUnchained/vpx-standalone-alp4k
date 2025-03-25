@@ -1,0 +1,15 @@
+---
+backglassVPSId: "m7VJfTrl"
+backglassChecksum: "483e98f42f044912225a3d885ac84de0"
+fps: 43
+tableVPSId: "oL7V1Gc7"
+tagline: >-
+  "Giant thermometer creates eye-catching
+  animation in light box" - D. Gottlieb & Co.
+testers:
+  - "evilwraith"
+vpxVPSId: "YeHFhctP"
+vpxChecksum: "977c80cefbdbbc23ca2f0b2f2714fbba"
+tableNotes: "Download '3.2.zip'"
+applyFixes:
+  - "bass"

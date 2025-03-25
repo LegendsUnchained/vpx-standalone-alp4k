@@ -1,0 +1,14 @@
+---
+backglassVPSId: "auhj1ZbaMq"
+backglassChecksum: "61ab4b4289a66bae7b43f5138c2d6a05"
+romVPSId: "jHGP1J2T"
+romChecksum: "790d7e4c3194073fc939b0586cc481e2"
+fps: 49
+tableVPSId: "3wd2iWjz"
+tagline: "It aint't just any plain old silver ball..."
+testers:
+  - "kaoticBPR"
+vpxVPSId: "ifSoCSVr"
+vpxChecksum: "c94ebeee997098711308245a2939f919"
+applyFixes:
+  - "bass"

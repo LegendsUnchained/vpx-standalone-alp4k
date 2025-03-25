@@ -8,7 +8,7 @@ def check_backbuffer_scale(config):
 
     backbuffer_scale = config.get("Standalone", "BackBufferScale")
 
-    allowed_values = [".833333", ".666666", ".5", ".416666", ".355729", ".333333"]
+    allowed_values = ["1.0", "0.833333", "0.666666", "0.5", "0.416666", "0.355729", "0.333333"]
     if backbuffer_scale not in allowed_values:
         print(f"Invalid BackBufferScale value: {backbuffer_scale}")
         print(f"Allowed values: {', '.join(allowed_values)}")
