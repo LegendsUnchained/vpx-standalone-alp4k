@@ -5,6 +5,84 @@ import sys
 import vpsdb
 
 
+def check_bundled(meta):
+    """Checks if bundled fields have associated notes.
+
+    Args:
+      meta: The table metadata.
+
+    Returns:
+      None
+    """
+    for table, table_meta in meta.items():
+        if (
+            "backglassBundled" in table_meta
+            and table_meta["backglassBundled"] is not None
+        ):
+            if table_meta["backglassBundled"]:
+                if (
+                    "backglassNotes" not in table_meta
+                    or table_meta["backglassNotes"] is None
+                ):
+                    print(
+                        f"ERROR: backglassBundled is True but backglassNotes is not found in table: {table}"
+                    )
+                    sys.exit(1)
+
+                if (
+                    "backglassChecksum" not in table_meta
+                    or table_meta["backglassChecksum"] is None
+                ):
+                    print(
+                        f"ERROR: backglassBundled is True but backglassChecksum is not found in table: {table}"
+                    )
+                    sys.exit(1)
+
+                if not isinstance(table_meta["backglassNotes"], str):
+                    print(f"ERROR: backglassNotes is not a string in table: {table}")
+                    sys.exit(1)
+
+            if table_meta["coloredROMBundled"]:
+                if (
+                    "coloredROMNotes" not in table_meta
+                    or table_meta["coloredROMNotes"] is None
+                ):
+                    print(
+                        f"ERROR: coloredROMBundled is True but coloredROMNotes is not found in table: {table}"
+                    )
+                    sys.exit(1)
+
+                if (
+                    "coloredROMChecksum" not in table_meta
+                    or table_meta["coloredROMChecksum"] is None
+                ):
+                    print(
+                        f"ERROR: coloredROMBundled is True but coloredROMChecksum is not found in table: {table}"
+                    )
+                    sys.exit(1)
+
+                if not isinstance(table_meta["coloredROMNotes"], str):
+                    print(f"ERROR: coloredROMNotes is not a string in table: {table}")
+                    sys.exit(1)
+
+            if table_meta["romBundled"]:
+                if "romNotes" not in table_meta or table_meta["romNotes"] is None:
+                    print(
+                        f"ERROR: romBundled is True but romNotes is not found in table: {table}"
+                    )
+                    sys.exit(1)
+
+                if "romChecksum" not in table_meta or table_meta["romChecksum"] is None:
+                    print(
+                        f"ERROR: romBundled is True but romChecksum is not found in table: {table}"
+                    )
+                    sys.exit(1)
+
+                if not isinstance(table_meta["romNotes"], str):
+                    print(f"ERROR: romNotes is not a string in table: {table}")
+                    sys.exit(1)
+
+
 def check_checksums(meta):
     """Checks if the checksums are valid MD5 hashes.
 
@@ -119,6 +197,7 @@ if __name__ == "__main__":
     meta = vpsdb.get_table_meta([table_yaml], warn_on_error=False)
 
     # Perform checks
+    check_bundled(meta)
     check_fixes(meta)
     check_fps(meta)
     check_checksums(meta)

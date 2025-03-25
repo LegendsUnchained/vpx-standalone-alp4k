@@ -12,5 +12,3 @@ testers:
 vpxVPSId: "Q8DOi1_yat"
 vpxChecksum: "8cb873f815f86cc2d94c476e10c2e314"
 tableNotes: "Download 1.01 VR.rar"
-applyFixes:
-  - "bass"
