@@ -12,3 +12,5 @@ testers:
 vpxVPSId: "A_CodyKoS7"
 vpxChecksum: "47ebcf7c39ddcbedccaa33198ee0a121"
 tableNotes: "Version 2.1"
+applyFixes:
+  - "bass"
