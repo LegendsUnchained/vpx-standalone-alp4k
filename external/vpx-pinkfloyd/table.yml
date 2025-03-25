@@ -1,12 +1,12 @@
 ---
 backglassVPSId: "qV3Z3oQ8md"
 backglassChecksum: "535bc0cb3c0fe732f6bb874cac8f9e1b"
-backglassNotes: "Included in VPX download"
+backglassNotes: "b2s file found in VPX download. Named 'Pink FloydNOPP.directb2s'"
+bundledBackglass: true
 fps: 42
 romChecksum: "e4c898afcdcf6fd2a884c77c7fd6c3a9"
-romNotes: "Included in VPX download"
-romUrlOverride: >-
-  https://vpuniverse.com/files/file/10341-pink-floyd-vpx-cw-pup-pack/
+romNotes: "Rom file found in VPX download. Named 'esha_l4c.zip'"
+bundledROM: true
 tableNotes: "Download 'Pink Floyd NO PUPPack.zip'"
 tableVPSId: "Lgi1JLk0Vf"
 tagline: >-
