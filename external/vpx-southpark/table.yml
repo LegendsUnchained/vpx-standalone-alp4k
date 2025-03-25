@@ -1,16 +1,17 @@
 ---
 backglassVPSId: "yO6cSlEirs"
 backglassChecksum: "a7f949868e8f2bda64c9c230cba5577d"
-backglassNotes: "Version 1.0"
+backglassNotes: "Download - South Park (Sega 1999) full dmd.zip"
 fps: 45
 romVPSId: "9WjKJMcq"
 romChecksum: "9f604cd406898a8271e27c6bb707cb8d"
+romNotes: "Download - sprk_103.zip"
 tableVPSId: "FkkA7R0w"
 tagline: "So come on down to South Park, and meet some friends of mine."
 testers:
   - "mcap"
 vpxVPSId: "HP5t0r1m"
 vpxChecksum: "f10f601997cf4581b383894f72238e6a"
-tableNotes: "Version 1.2"
+tableNotes: "Version 1.3"
 applyFixes:
   - "bass"
