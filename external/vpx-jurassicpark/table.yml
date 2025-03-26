@@ -3,7 +3,7 @@ backglassVPSId: "ulmJn9mNE6"
 backglassChecksum: "18fdf34ee41e8cfb58672cfa675a07d4"
 romVPSId: "uML9auPR"
 romChecksum: "68a0d9b3221137ed2d7015a7c4094ca2"
-romFileVersion: "jupk_600"
+romVersionOverride: "jupk_600"
 fps: 36
 tableVPSId: "i47o-Nvr"
 tagline: "Welcome... to Jurassic Park!"
