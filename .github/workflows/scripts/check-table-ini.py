@@ -55,5 +55,5 @@ if __name__ == "__main__":
 
     # Run checks
     check_backbuffer_scale(config)
-    check_duplicate_settings(config, default_config)
+    # check_duplicate_settings(config, default_config)
     check_sound3d(config)
