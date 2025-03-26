@@ -119,6 +119,7 @@ def get_table_meta(files, warn_on_error=True):
             "coloredROMBundled": data.get("coloredROMBundled"),
             "coloredROMChecksum": coloredROMChecksum,
             "coloredROMNotes": data.get("coloredROMNotes"),
+            "enabled": data.get("enabled"),
             "fps": data.get("fps"),
             "mainNotes": data.get("mainNotes"),
             "romBundled": data.get("romBundled"),
