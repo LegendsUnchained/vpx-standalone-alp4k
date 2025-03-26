@@ -23,6 +23,20 @@ def check_backbuffer_scale(config):
         sys.exit(1)
 
 
+def check_duplicate_settings(config, default_config):
+    for section in config.sections():
+        if section in default_config.sections():
+            for option in config[section]:
+                if (
+                    option in default_config[section]
+                    and config[section][option] == default_config[section][option]
+                ):
+                    print("Duplicate setting found in Default_VPinballX.ini:")
+                    print(f"[{section}]")
+                    print(f"{option}")
+                    sys.exit(1)
+
+
 def check_sound3d(config):
     if config.has_option("Player", "Sound3D"):
         print(f"Sound3D should not be defined in table.ini")
@@ -31,10 +45,15 @@ def check_sound3d(config):
 
 if __name__ == "__main__":
     table_ini = sys.argv[1]
+    default_ini = sys.argv[2]
 
     config = configparser.ConfigParser()
     config.read(table_ini)
 
+    default_config = configparser.ConfigParser()
+    default_config.read(default_ini)
+
     # Run checks
     check_backbuffer_scale(config)
+    check_duplicate_settings(config, default_config)
     check_sound3d(config)
