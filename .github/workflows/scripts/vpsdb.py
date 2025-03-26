@@ -86,8 +86,7 @@ def get_table_meta(files, warn_on_error=True):
         with open(table_yaml, "r") as table_data:
             data = yaml.safe_load(table_data)
 
-        isEnabled = data.get("enabled")
-        if isEnabled is not None and isEnabled == False:
+        if data.get("enabled") is False:
             print(f"WARNING: Skipping {folder_name}")
             continue
         
