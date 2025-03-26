@@ -5,6 +5,7 @@
 ' Light numbers from the table by Joe Entropy & RipleYYY
 
 Option Explicit
+Randomize
 
 '****** PuP Variables ******
 
@@ -12,14 +13,17 @@ Dim usePUP: Dim cPuPPack: Dim PuPlayer: Dim PUPStatus: PUPStatus=false ' dont ed
 
 '*************************** PuP Settings for this table ********************************
 
-usePUP   = True             ' enable Pinup Player functions for this table
+usePUP   = True               ' enable Pinup Player functions for this table
 cPuPPack = "Gunship"    ' name of the PuP-Pack / PuPVideos folder for this table
 
 '//////////////////// PINUP PLAYER: STARTUP & CONTROL SECTION //////////////////////////
 
 ' This is used for the startup and control of Pinup Player
 
-Sub PuPStart(cPuPPack)
+Dim gameStarted
+Dim keyStarted
+
+Sub PuPStart()
     If PUPStatus=true then Exit Sub
     If usePUP=true then
         Set PuPlayer = CreateObject("PinUpPlayer.PinDisplay")
@@ -52,7 +56,7 @@ End Sub
 
 '************ PuP-Pack Startup **************
 
-PuPStart(cPuPPack) 'Check for PuP - If found, then start Pinup Player / PuP-Pack
+PuPStart() 'Check for PuP - If found, then start Pinup Player / PuP-Pack
 Randomize
 
 Dim BallGuardActive
@@ -69,8 +73,7 @@ LoadVPM "01550000", "Bally.vbs", 3.26
 Dim bsTrough, bsLSaucer, bsRSaucer, cbR
 Dim x
 
-Const cGameName = "lostwrld"
-'Const cGameName = "lostwrld"
+Const cGameName= "lostwrld"
 
 Const UseSolenoids = 1
 Const UseLamps = 0
@@ -79,16 +82,12 @@ Const UseSync = 0
 Const HandleMech = 0
 
 Dim VarHidden
-If Table1.ShowDT = true then
-    VarHidden = 1
-else
     VarHidden = 0
     For each x in aReels
         x.Visible = 0
     Next
     lrail.Visible = 0
     rrail.Visible = 0
-end if
 
 ' Standard Sounds
 Const SSolenoidOn = "fx_Solenoid"
@@ -111,8 +110,9 @@ Const ChooseBall 			= 7		' *** Ball Settings **********
 									' *** 1 = Purple GlowBall
 									' *** 7 = Blue GlowBall																		
 
-
 									
+
+
 
 '************
 ' Table init.
@@ -193,10 +193,9 @@ Sub table1_Init
 
 	If PupEnabled=False Then MusicOn
 
-PlayMusic "Gunship\Intro.mp3"
-
 	Glowball_Init
-
+    gameStarted = 0
+    keyStarted = 0
 End Sub
 
 Sub table1_Paused:Controller.Pause = 1:End Sub
@@ -272,47 +271,47 @@ Sub PopupAnimDown(FrameStart, FrameEnd)
 	Popupsolenoidpulse2.enabled = 1
 End Sub
 
-'******************************
-'*     HiRez00: Music Mod     *
-'******************************
+'**********************************************************************************************************
+'Gunship Tunes
+'**********************************************************************************************************
 
-Dim musicNum
+Sub MusicOn
+	
+    Dim FileSystemObject, folder, r, ct, file, musicPath, myMusicFolder
+    myMusicFolder = "Gunship" 
+    Set FileSystemObject = CreateObject("Scripting.FileSystemObject")
+    musicPath = FileSystemObject.GetAbsolutePathName(".") ' get path to Visual Pinball\table
+    musicPath = Left(musicPath, Len(musicPath) - 6) + "music\" 'get path to Visual Pinball\music
+    
+	Set folder = FileSystemObject.GetFolder(musicPath + myMusicFolder) 'Comment out if using custom path
 
-Sub PlayRandomMusic()
-    ' Initialize random number generator
+	'*****************************************************************************************************************
+	'NOTE- If you use a non-standard folder structure {IE not using "VisualPinball\Tables" and "VisualPinball\Music"} 
+	'please enter in the direct path to music sub-folder on the "Set Folder=" below and comment out "Set Folder=" Line above.
+	'*****************************************************************************************************************
+	
+	'Set custom path below
+	'Set folder= FileSystemObject.GetFolder("C:\vPinball\VisualPinball\Music\Evanescne")
+	
     Randomize
+    r = INT(folder.Files.Count * Rnd + 1)
+    ct=1
+    For Each file in folder.Files
+        if ct = r Then 
+            if (LCase(Right(file,4))) = ".mp3" Then ' can only play mp3 files
+               PlayMusic Mid(file, Len(musicPath) + 1, 1000) 
+            End If 
+       End If
+   ct = ct + 1
+   Next
+ End Sub
+ 
+Sub Table1_MusicDone() 
+    MusicOn
+ End Sub
 
-    ' Select a random number between 0 and 15
-    musicNum = Int(16 * Rnd)
 
-    ' Play the selected track based on the random number
-    Select Case musicNum
-        Case 0: PlayMusic "Gunship\1.mp3"
-        Case 1: PlayMusic "Gunship\2.mp3"
-        Case 2: PlayMusic "Gunship\3.mp3"
-        Case 3: PlayMusic "Gunship\4.mp3"
-        Case 4: PlayMusic "Gunship\5.mp3"
-        Case 5: PlayMusic "Gunship\6.mp3"
-        Case 6: PlayMusic "Gunship\7.mp3"
-        Case 7: PlayMusic "Gunship\8.mp3"
-        Case 8: PlayMusic "Gunship\9.mp3"
-        Case 9: PlayMusic "Gunship\10.mp3"
-        Case 10: PlayMusic "Gunship\11.mp3"
-        Case 11: PlayMusic "Gunship\12.mp3"
-        Case 12: PlayMusic "Gunship\13.mp3"
-        Case 13: PlayMusic "Gunship\14.mp3"
-        Case 14: PlayMusic "Gunship\15.mp3"
-    End Select
-End Sub
 
-Sub Table1_MusicDone()
-    ' Play a random track when the current track finishes
-    PlayRandomMusic
-End Sub
-
-'*****************************
-'*       End Music Mod       *
-'*****************************
 
 
 '**********
@@ -324,7 +323,12 @@ Sub table1_KeyDown(ByVal Keycode)
     If keycode = LeftTiltKey Then Nudge 90, 5:PlaySound SoundFX("fx_nudge", 0), 0, 1, -0.1, 0.25
     If keycode = RightTiltKey Then Nudge 270, 5:PlaySound SoundFX("fx_nudge", 0), 0, 1, 0.1, 0.25
     If keycode = CenterTiltKey Then Nudge 0, 6:PlaySound SoundFX("fx_nudge", 0), 0, 1, 0, 0.25
-
+	If keycode = RightMagnaSave Then PuPEvent 800
+	If keycode = LeftMagnaSave Then PuPEvent 801
+	If keycode = StartGameKey Then
+        keyStarted = 1
+        PuPEvent 802
+    End If
 	
     If vpmKeyDown(keycode)Then Exit Sub
 End Sub
@@ -397,7 +401,11 @@ Sub Bumper2_Hit:vpmTimer.PulseSw 39:PlaySound SoundFX("fx_bumper", DOFContactors
 Sub Bumper3_Hit:vpmTimer.PulseSw 38:PlaySound SoundFX("fx_bumper", DOFContactors), 0, 1, 0.05, 0.15:End Sub
 
 ' Drain holes
-Sub Drain_Hit:PlaySound "fx_drain" :PuPEvent 803:bsTrough.AddBall Me:End Sub
+Sub Drain_Hit
+    PlaySound "fx_drain"
+    PuPEvent 803
+    bsTrough.AddBall Me
+End Sub
 
 'Saucer
 Sub sw23_Hit:PlaySound "fx_kicker_enter", 0, 1, -0.01:bsLSaucer.AddBall 0:End Sub
@@ -576,6 +584,20 @@ Sub LampTimer_Timer()
     UpdateLamps
     GIUpdate
     RollingUpdate
+
+    If Controller.Lamp(45) Then
+        If (keyStarted > 0) Then
+            If (gameStarted > 0) Then
+                pupevent 804
+                gameStarted = 0
+                keyStarted = 0
+            End If
+        Else
+            gameStarted = 0
+        End If
+    Else
+        gameStarted = 1
+    End If
 End Sub
 
 Sub UpdateLamps()
