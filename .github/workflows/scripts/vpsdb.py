@@ -87,7 +87,7 @@ def get_table_meta(files, warn_on_error=True):
             data = yaml.safe_load(table_data)
 
         isEnabled = data.get("enabled")
-        if not isEnabled
+        if not isEnabled:
             continue
         
         tableVPSId = data.get("tableVPSId")
