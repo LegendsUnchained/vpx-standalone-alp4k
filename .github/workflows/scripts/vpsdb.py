@@ -86,6 +86,10 @@ def get_table_meta(files, warn_on_error=True):
         with open(table_yaml, "r") as table_data:
             data = yaml.safe_load(table_data)
 
+        isEnabled = data.get("enabled")
+        if not isEnabled
+            continue
+        
         tableVPSId = data.get("tableVPSId")
         vpxVPSId = data.get("vpxVPSId")
         backglassVPSId = data.get("backglassVPSId")
