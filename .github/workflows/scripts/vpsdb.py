@@ -196,7 +196,10 @@ def get_table_meta(files, warn_on_error=True):
                 table_meta["romAuthors"] = rom.get("authors", [])
                 table_meta["romComment"] = rom.get("comment", "")
                 table_meta["romFileUrl"] = rom.get("urls", [])[0].get("url", "")
-                table_meta["romVersion"] = rom.get("version", "")
+                if table_meta["romFileVersion"]:
+                    table_meta["romVersion"] = table_meta["romFileVersion"]
+                else:
+                    table_meta["romVersion"] = rom.get("version", "")
             else:
                 print(f"{error_prefix}: ROM id {romVPSId} not found in VPSDB")
                 if warn_on_error:
