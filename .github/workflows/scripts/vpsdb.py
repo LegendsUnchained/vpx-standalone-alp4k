@@ -85,10 +85,6 @@ def get_table_meta(files, warn_on_error=True):
         print(f"Processing {folder_name}")
         with open(table_yaml, "r") as table_data:
             data = yaml.safe_load(table_data)
-
-        if data.get("enabled") is False:
-            print(f"WARNING: Skipping {folder_name}")
-            continue
         
         tableVPSId = data.get("tableVPSId")
         vpxVPSId = data.get("vpxVPSId")
@@ -130,6 +126,7 @@ def get_table_meta(files, warn_on_error=True):
             "tableNotes": data.get("tableNotes"),
             "tagline": data.get("tagline"),
             "testers": data.get("testers"),
+            "enabled": data.get("enabled")
         }
         if tableVPSId:
             table = vpsdb.get_table(tableVPSId)
