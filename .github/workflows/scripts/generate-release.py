@@ -87,10 +87,11 @@ if __name__ == "__main__":
 
     tables = vpsdb.get_table_meta(files)
     
+    tables_to_remove = []
     for table, table_data in tables.items():
         if table_data.get("enabled") is False:
             print(f"Skipping disabled table: {table}")
-            del tables[table]
+            tables_to_remove.append(table)
             continue
 
         external_path = os.path.join("external", table)
@@ -111,6 +112,9 @@ if __name__ == "__main__":
 
         # Apply field processing
         tables[table]["name"] = process_title(tables[table]["name"])
+
+    for table in tables_to_remove:
+        del tables[table]
 
     manifest_file = "manifest.json"
     json.dump(tables, open(manifest_file, "w"))
