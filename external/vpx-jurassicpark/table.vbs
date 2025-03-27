@@ -74,12 +74,12 @@ CollectionVolume = 20 			'Standard Sound Amplifier (targets, gates, rubbers, met
 ' *** 2: darker, better contrast, daytime settings in insert lighting below ***************
 ' *** 3: same as 2, but with nighttime settings in insert lighting below ******************
 ' *** etc for 4-7; default is 3 ***********************************************************
-ContrastSetting = 0
+ContrastSetting = 2
 
 ' *** Insert Lighting settings ************************************************************
 ' *** The settings below together with ContrastSetting determines how the lighting looks **
 ' *** for all values: 1.0 = default, useful range 0.1 - 5 *********************************
-GlowAmountDay = 0.03
+GlowAmountDay = 0.1
 InsertBrightnessDay = 0.8 
 GlowAmountNight = 0.5
 InsertBrightnessNight = 0.6
@@ -111,7 +111,7 @@ FlasherShadows = 0		' 0=Off 1=On
 ReflectLights = 0 			' 0=Off 1=On   *Light reflections on wire ramp*
 
 'SideWallReflect ****************************************************************************
-SideWallReflect= 0 			' 0=Off 1=On
+SideWallReflect= 1 			' 0=Off 1=On
 
 'End Options ****************************************************************************
 '****************************************************************************************
