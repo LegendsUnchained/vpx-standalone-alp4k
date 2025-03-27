@@ -1,0 +1,15 @@
+---
+backglassVPSId: "AIPHlp-K4M"
+backglassChecksum: "a1609177eea70631ee000415580427c5"
+backglassNotes: "Download 'Anaglyph Backglass Scoring.directB2S'"
+fps: 47
+romVPSId: "dg19vgfm"
+romChecksum: "1f87e8fb85c00ea5236e2dc5db87a1e1"
+tableVPSId: "7fSqIbWL"
+tagline: "Capture the Mermaids!"
+testers:
+  - "kaoticBPR"
+vpxVPSId: "QWo-whR7Y0"
+vpxChecksum: "9e64180a564076a3897413ce13211d5a"
+applyFixes:
+  - "bass"

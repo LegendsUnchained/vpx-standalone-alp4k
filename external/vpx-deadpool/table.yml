@@ -1,9 +1,10 @@
 ---
-tableVPSId: nu50f2Mg
-vpxChecksum: 9491f49be6cb3befb6d5c878da088149
-vpxVPSId: FsGFGZC_
-backglassChecksum: 89b766eb02bba0457b4a87c96ff48d83
-backglassVPSId: 4gJnSY7GHx
+tableVPSId: "nu50f2Mg"
+vpxChecksum: "9491f49be6cb3befb6d5c878da088149"
+vpxVPSId: "FsGFGZC_"
+backglassChecksum: "89b766eb02bba0457b4a87c96ff48d83"
+backglassVPSId: "4gJnSY7GHx"
 fps: 60
 testers:
-- n-i-x
+  - "n-i-x"
+tableNotes: "Download 'v55_VPX8.zip'"

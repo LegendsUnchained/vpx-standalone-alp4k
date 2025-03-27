@@ -24,7 +24,7 @@ Randomize
 
 '---- Show Alternate Sidewalls ----
 Dim sidewalls
-sidewalls = 0	'(0 = default, 1 = custom 1, 2 = custom 2, 3 = custom Scared Stiff) 
+sidewalls = 3	'(0 = default, 1 = custom 1, 2 = custom 2, 3 = custom Scared Stiff) 
 
 '----- General Sound Options -----
 Const VolumeDial = 0.8				'Overall Mechanical sound effect volume. Recommended values should be no greater than 1.
@@ -564,10 +564,10 @@ Sub FlasherPlacement() 'dirty script based flasher placement
 	FlSkull4_2.x =	772.2'774.3
 	FlSkull4_1.y =	81'86.609
 
-	f19f.x = 854'853.3457
-	f19f.y = 697'696.2
-	f18f.x = 703'695
-	f18f.y = 555'550.6
+	'f19f.x = 854'853.3457
+	'f19f.y = 697'696.2
+	'f18f.x = 703'695
+	'f18f.y = 555'550.6
 
 	f17.x = 858.2477164
 	f17.y = 355.0953586
@@ -576,8 +576,8 @@ Sub FlasherPlacement() 'dirty script based flasher placement
 	f19.x = 858.3208126
 	f19.y = 648.2506583
 
-	f17f.x = 848'850.5333
-	f17f.y = 420'424.1581
+	'f17f.x = 848'850.5333
+	'f17f.y = 420'424.1581
 
 	f23.x = 215'195
 	f23.y = 600'527
@@ -2056,7 +2056,7 @@ End Sub
 'Various wrapper subs
 Sub Lswitch(aObj)  : set LastSwitch = aObj  : End Sub
 Sub LswitchA(aArray)  : LastSwitch = aArray  : End Sub
-Sub LswitchBall() : Set LastSwitch = TempPos : TempPos.Update : End Sub
+Sub LswitchBall() Set LastSwitch = TempPos : TempPos.Update : End Sub
 Sub LswitchBumper()  : Set LastSwitch = BumperPos : BumperPos.Update  : End Sub
 
 Class WallSwitchPos 

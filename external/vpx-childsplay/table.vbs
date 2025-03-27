@@ -56,7 +56,7 @@ Const BallsperGame = 3         'the original table allows for 3 or 5 Balls
 Const ShowHighScore = True     'enable to show HighScore tape on Apron, a new HighScore will be saved anyway
 Const ShowPlayfieldReel = True 'set to True to show Playfield EM-Reel and Post-It for Player Scores (instead of a B2S backglass)
 Const FreePlay = True
-const RollingSoundFactor = 1 'set sound level factor here for Ball Rolling Sound, 1=default level
+const RollingSoundFactor = 2.5 'set sound level factor here for Ball Rolling Sound, 1=default level
 Const ChimesEnabled = False    'You have been warned!
 Const ChimeVolume = 1          'to limit ear bleeding set between 0 and 1
 
@@ -183,7 +183,7 @@ Sub FastDraw_Init
     RightDTBank_Cover.isdropped = True
 
     Tilt = 0
-PUPInit
+    PUPInit
 End Sub
 
 Dim GameStarted, NoPointsScored
@@ -219,7 +219,9 @@ Sub StartGame
             end If
             if NoofPlayers < 4 Then
                 Credits = Credits - 1
-                If Credits < 1 Then DOF 126, DOFOff
+                If Credits < 1 Then
+                    DOF 126, DOFOff
+                End If
                 if FreePlay and(Credits = 0)then
                     Credits = 5
                     DOF 126, DOFOn
@@ -246,6 +248,7 @@ Sub StartGame
                 Controller.B2SSetBallInPlay BallInPlay
                 Controller.B2SSetCanPlay NoofPlayers
                 Controller.B2SSetScore 6, HSAHighScore
+                PupEvent 160
                 DOF 160, DOFPulse
             End if
             EMReel_BiP.setvalue BallinPlay
@@ -261,6 +264,7 @@ Sub GameStartTimer_Timer
     ActivePlayer = 0
     BallinPlay = 1
     NextBall
+    PupEvent 159
     DOF 159, DOFPulse
 End Sub
 
@@ -302,6 +306,7 @@ Sub NextBall
         NoPointsScored = True
         BallRelease.CreateBall
         BallRelease.Kick 90, 7
+        PupEvent 122
         DOF 122, DOFPulse
         BallsOnPlayfield = 1
     End If
@@ -336,12 +341,15 @@ Sub EndGame
     end If
     Stopsound "ChildsPlayTheme"
     Playsound "GameEnd"
+    PupEvent 150
     DOF 150, DOFPulse
 End Sub
 
 Sub Drain_Hit()
     PlaySound "drain3", 0, 0.2, 0, 0.25
+    PupEvent 121
     DOF 121, DOFPulse
+    PupEvent 149
     DOF 149, DOFPulse
     Drain.DestroyBall
     BallsOnPlayfield = BallsOnPlayfield - 1
@@ -363,6 +371,7 @@ Sub ReleaseSameBallTimer_Timer
     ReleaseSameBallTimer.enabled = False
     BallRelease.CreateBall
     BallRelease.Kick 90, 7
+    PupEvent 122
     DOF 122, DOFPulse
     BallsOnPlayfield = 1
 End Sub
@@ -719,6 +728,7 @@ Sub FastDraw_KeyUp(ByVal keycode)
     If keycode = PlungerKey Then
         Plunger.Fire
         PlaySound "plunger", 0, 1, 0.25, 0.25
+        PupEvent 151
         DOF 151, DOFPulse
     End If
 
@@ -849,6 +859,7 @@ Sub LKicker_Timer
     P_LeftKicker.rotx = -85
     Kickertimer.enabled = False
     Kickertimer.enabled = True
+    PupEvent 117
     DOF 117, DOFPulse
 End Sub
 
@@ -888,6 +899,7 @@ Sub RKicker_Timer
     P_LeftKicker.rotx = -85
     Kickertimer.enabled = False
     Kickertimer.enabled = True
+    PupEvent 118
     DOF 118, DOFPulse
 End Sub
 
@@ -909,6 +921,7 @@ Sub Bumper1_Hit
         Addpoints(10)
     end If
     PlaySound SoundFXDOF("FD_Bumper1", 103, DOFPulse, DOFContactors), 0, 1, -0.05, 0.05
+    PupEvent 152
     DOF 152, DOFPulse
 End Sub
 
@@ -919,6 +932,7 @@ Sub Bumper2_Hit
         Addpoints(10)
     end If
     PlaySound SoundFXDOF("FD_Bumper2", 105, DOFPulse, DOFContactors), 0, 1, 0.05, 0.05
+    PupEvent 153
     DOF 153, DOFPulse
 End Sub
 
@@ -927,6 +941,7 @@ Dim HeadPos
 Sub Bumper001_Hit 'chucky bumper
     Addpoints(5000)
     PlaySound SoundFXDOF("FD_Bumper2", 105, DOFPulse, DOFContactors), 0, 1, 0.05, 0.05
+    PupEvent 153
     DOF 153, DOFPulse
     HeadPos = 6
     Bumper001.TimerEnabled = True
@@ -950,6 +965,7 @@ Sub Bumper3_Hit
         Addpoints(10)
     end If
     PlaySound SoundFXDOF("FD_Bumper3", 104, DOFPulse, DOFContactors), 0, 1, 0, 0.05
+    PupEvent 154
     DOF 154, DOFPulse
     if LeftSpecial Then
         RightSpecial = True
@@ -966,24 +982,24 @@ Sub Bumper3_Hit
     end If
 End Sub
 
-Sub Trigger_A1_Hit:PlaySound RolloverSound1, 0, Soundlevel, -0.05, 0.05:Addpoints(50):Light_A:ScoreMotor:DOF 108, DOFPulse:End Sub
-Sub Trigger_A2_Hit:Playsound RolloverSound2, 0, Soundlevel, -0.09, 0.05:Addpoints(50):Light_A:ScoreMotor:DOF 112, DOFPulse:End Sub
-Sub Trigger_B1_Hit:Playsound RolloverSound1, 0, Soundlevel, 0, 0.05:Addpoints(50):Light_B:ScoreMotor:DOF 109, DOFPulse:End Sub
-Sub Trigger_B2_Hit:P_LeftInlane.TransZ = -25:Playsound RolloverSound2, 0, Soundlevel, -0.08, 0.05:Addpoints(50):Light_B:ScoreMotor:DOF 113, DOFOn:DOF 144, DOFOn:End Sub
-Sub Trigger_B2_Unhit:Trigger_B2.timerenabled = True:DOF 113, DOFOff:End Sub
+Sub Trigger_A1_Hit:PlaySound RolloverSound1, 0, Soundlevel, -0.05, 0.05:Addpoints(50):Light_A:ScoreMotor:PupEvent 108: DOF 108, DOFPulse:End Sub
+Sub Trigger_A2_Hit:Playsound RolloverSound2, 0, Soundlevel, -0.09, 0.05:Addpoints(50):Light_A:ScoreMotor:PupEvent 112:DOF 112, DOFPulse:End Sub
+Sub Trigger_B1_Hit:Playsound RolloverSound1, 0, Soundlevel, 0, 0.05:Addpoints(50):Light_B:ScoreMotor:PupEvent 109:DOF 109, DOFPulse:End Sub
+Sub Trigger_B2_Hit:P_LeftInlane.TransZ = -25:Playsound RolloverSound2, 0, Soundlevel, -0.08, 0.05:Addpoints(50):Light_B:ScoreMotor:PupEvent 113:DOF 113, DOFOn:DOF 144, DOFOn:End Sub
+Sub Trigger_B2_Unhit:Trigger_B2.timerenabled = True:PupEvent 113:DOF 113, DOFOff:End Sub
 Sub Trigger_B2_Timer:Trigger_B2.timerenabled = False:P_LeftInlane.TransZ = 0:End Sub
-Sub Trigger_B3_Hit:P_RightInlane.TransZ = -25:Playsound RolloverSound2, 0, Soundlevel, 0.08, 0.05:Addpoints(50):Light_B:ScoreMotor:DOF 115, DOFOn:DOF 144, DOFOn:End Sub
-Sub Trigger_B3_Unhit:Trigger_B3.timerenabled = True:DOF 115, DOFOff:End Sub
+Sub Trigger_B3_Hit:P_RightInlane.TransZ = -25:Playsound RolloverSound2, 0, Soundlevel, 0.08, 0.05:Addpoints(50):Light_B:ScoreMotor:PupEvent 115:DOF 115, DOFOn:DOF 144, DOFOn:End Sub
+Sub Trigger_B3_Unhit:Trigger_B3.timerenabled = True:PupEvent 115:DOF 115, DOFOff:End Sub
 Sub Trigger_B3_Timer:Trigger_B3.timerenabled = False:P_RightInlane.TransZ = 0:End Sub
 
-Sub Trigger_C1_Hit:Playsound RolloverSound1, 0, Soundlevel, 0.05, 0.05:Addpoints(50):Light_C:ScoreMotor:DOF 110, DOFPulse:End Sub
-Sub Trigger_C2_Hit:Playsound RolloverSound2, 0, Soundlevel, 0.09, 0.05:Addpoints(50):Light_C:ScoreMotor:DOF 114, DOFPulse:End Sub
+Sub Trigger_C1_Hit:Playsound RolloverSound1, 0, Soundlevel, 0.05, 0.05:Addpoints(50):Light_C:ScoreMotor:PupEvent 110:DOF 110, DOFPulse:End Sub
+Sub Trigger_C2_Hit:Playsound RolloverSound2, 0, Soundlevel, 0.09, 0.05:Addpoints(50):Light_C:ScoreMotor:PupEvent 114:DOF 114, DOFPulse:End Sub
 
-Sub Trigger_LeftOutlane_Hit:P_LeftOutlane.TransZ = -25:PlaySound OutlaneSound, 0, Soundlevel, -0.1, 0.05:AddBonus:Addpoints(500):ScoreMotor:DOF 111, DOFOn:DOF 147, DOFOn:End Sub
-Sub Trigger_LeftOutlane_Unhit:Trigger_LeftOutlane.timerenabled = True:DOF 111, DOFOff:End Sub
+Sub Trigger_LeftOutlane_Hit:P_LeftOutlane.TransZ = -25:PlaySound OutlaneSound, 0, Soundlevel, -0.1, 0.05:AddBonus:Addpoints(500):ScoreMotor:PupEvent 111:DOF 111, DOFOn:PupEvent 147:DOF 147, DOFOn:End Sub
+Sub Trigger_LeftOutlane_Unhit:Trigger_LeftOutlane.timerenabled = True:PupEvent 111:DOF 111, DOFOff:End Sub
 Sub Trigger_LeftOutlane_Timer:Trigger_LeftOutlane.timerenabled = False:P_LeftOutlane.TransZ = 0:End Sub
-Sub Trigger_RightOutlane_Hit:P_RightOutlane.TransZ = -25:PlaySound OutlaneSound, 0, Soundlevel, 0.1, 0.05:AddBonus:Addpoints(500):ScoreMotor:DOF 116, DOFOn:DOF 146, DOFOn:End Sub
-Sub Trigger_RightOutlane_Unhit:Trigger_RightOutlane.timerenabled = True:DOF 116, DOFOff:End Sub
+Sub Trigger_RightOutlane_Hit:P_RightOutlane.TransZ = -25:PlaySound OutlaneSound, 0, Soundlevel, 0.1, 0.05:AddBonus:Addpoints(500):ScoreMotor:PupEvent 116:DOF 116, DOFOn:PupEvent 146:DOF 146, DOFOn:End Sub
+Sub Trigger_RightOutlane_Unhit:Trigger_RightOutlane.timerenabled = True:PupEvent 116:DOF 116, DOFOff:End Sub
 Sub Trigger_RightOutlane_Timer:Trigger_RightOutlane.timerenabled = False:P_RightOutlane.TransZ = 0:End Sub
 
 Sub Target11_Hit:PlaySound SoundFXDOF(TargetSound, 106, DOFPulse, DOFContactors), 0, Soundlevel, -0.09, 0.05:AddBonus:Addpoints(500):ScoreMotor:End Sub
@@ -1004,10 +1020,10 @@ Sub Target3_Hit
     end If
     ScoreMotor
 End Sub
-Sub Target4_Hit:playsound SoundFXDOF(DTSound, 119, DOFPulse, DOFContactors), 0, Soundlevel, -0.08, 0.05:AddBonus:Addpoints(500):ScoreMotor:DOF 140, DOFPulse:End Sub
-Sub Target5_Hit:playsound SoundFXDOF(DTSound, 119, DOFPulse, DOFContactors), 0, Soundlevel, -0.08, 0.05:AddBonus:Addpoints(500):ScoreMotor:DOF 139, DOFPulse:End Sub
-Sub Target6_Hit:playsound SoundFXDOF(DTSound, 120, DOFPulse, DOFContactors), 0, Soundlevel, 0.08, 0.05:AddBonus:Addpoints(500):ScoreMotor:DOF 138, DOFPulse:End Sub
-Sub Target7_Hit:playsound SoundFXDOF(DTSound, 120, DOFPulse, DOFContactors), 0, Soundlevel, 0.08, 0.05:AddBonus:Addpoints(500):ScoreMotor:DOF 137, DOFPulse:End Sub
+Sub Target4_Hit:playsound SoundFXDOF(DTSound, 119, DOFPulse, DOFContactors), 0, Soundlevel, -0.08, 0.05:AddBonus:Addpoints(500):ScoreMotor:PupEvent 140:DOF 140, DOFPulse:End Sub
+Sub Target5_Hit:playsound SoundFXDOF(DTSound, 119, DOFPulse, DOFContactors), 0, Soundlevel, -0.08, 0.05:AddBonus:Addpoints(500):ScoreMotor:PupEvent 139:DOF 139, DOFPulse:End Sub
+Sub Target6_Hit:playsound SoundFXDOF(DTSound, 120, DOFPulse, DOFContactors), 0, Soundlevel, 0.08, 0.05:AddBonus:Addpoints(500):ScoreMotor:PupEvent 138:DOF 138, DOFPulse:End Sub
+Sub Target7_Hit:playsound SoundFXDOF(DTSound, 120, DOFPulse, DOFContactors), 0, Soundlevel, 0.08, 0.05:AddBonus:Addpoints(500):ScoreMotor:PupEvent 137:DOF 137, DOFPulse:End Sub
 Sub Target8_Hit
     playsound SoundFXDOF(DTSound, 120, DOFPulse, DOFContactors), 0, Soundlevel, 0.08, 0.05
     AddBonus
@@ -1411,6 +1427,7 @@ End Sub
 
 Sub ShooterLaneLaunch_Hit
     if ActiveBall.vely < -8 then playsound "Launch", 0, 0.3, 0.1, 0.25
+    PupEvent 124
     DOF 124, DOFPulse
 End Sub
 
@@ -1791,6 +1808,7 @@ mBalls2Eject = 0
 Sub CreateMultiball
     BallRelease.CreateBall
     BallRelease.Kick 90, 7
+    PupEvent 122
     DOF 122, DOFPulse
     BallsOnPlayfield = BallsOnPlayfield + 1
     bMultiBallMode = True
@@ -1854,7 +1872,7 @@ End Sub
 
 dim PuPDMDDriverType: PuPDMDDriverType=0   ' 0=LCD DMD, 1=RealDMD 2=FULLDMD (large/High LCD)
 dim useRealDMDScale : useRealDMDScale=0    ' 0 or 1 for RealDMD scaling.  Choose which one you prefer.
-dim useDMDVideos    : useDMDVideos=false   ' true or false to use DMD splash videos.
+dim useDMDVideos    : useDMDVideos=true   ' true or false to use DMD splash videos.
 Dim pGameName       : pGameName="Fast_Draw_1975"  'pupvideos foldername, probably set to cGameName in realworld
 
 
@@ -1893,17 +1911,7 @@ Dim pGameName       : pGameName="Fast_Draw_1975"  'pupvideos foldername, probabl
 
 Const HasPuP = True   'dont set to false as it will break pup
 
-Const pTopper=0
 Const pDMD=1
-Const pBackglass=2
-Const pPlayfield=3
-Const pMusic=4
-Const pMusic2=5
-Const pCallouts=6
-Const pBackglass2=7
-Const pTopper2=8
-Const pPopUP=9
-Const pPopUP2=10
 
 
 'pages
@@ -2347,6 +2355,8 @@ if PuPDMDDriverType=pDMDTypeReal Then 'using RealDMD Mirroring.  **********  128
 
 END IF  ' use PuPDMDDriver
 
+Const fontScale = 0.7
+
 if PuPDMDDriverType=pDMDTypeLCD THEN  'Using 4:1 Standard ratio LCD PuPDMD  ************ lcd **************
 
 	'dmddef="Impact"
@@ -2356,40 +2366,40 @@ if PuPDMDDriverType=pDMDTypeLCD THEN  'Using 4:1 Standard ratio LCD PuPDMD  ****
 	dmddef="Impact"
 
 	'Page 1 (default score display)
-		PuPlayer.LabelNew pDMD,"Credits" ,dmddef,20,33023   ,0,2,2,95,0,1,0
-		PuPlayer.LabelNew pDMD,"Play1"   ,dmdalt,20,33023   ,1,0,0,15,0,1,0
-		PuPlayer.LabelNew pDMD,"Ball"    ,dmdalt,20,33023   ,1,2,0,85,0,1,0
-		PuPlayer.LabelNew pDMD,"MsgScore",dmddef,45,33023   ,0,1,0, 0,40,1,0
-		PuPlayer.LabelNew pDMD,"CurScore",dmdscr,60,8454143   ,0,1,1, 0,0,1,0
+		PuPlayer.LabelNew pDMD,"Credits" ,dmddef,20 * fontScale,33023   ,0,2,2,95,0,1,0
+		PuPlayer.LabelNew pDMD,"Play1"   ,dmdalt,20 * fontScale,33023   ,1,0,0,15,0,1,0
+		PuPlayer.LabelNew pDMD,"Ball"    ,dmdalt,20 * fontScale,33023   ,1,2,0,85,0,1,0
+		PuPlayer.LabelNew pDMD,"MsgScore",dmddef,45 * fontScale,33023   ,0,1,0, 0,40,1,0
+		PuPlayer.LabelNew pDMD,"CurScore",dmdscr,60 * fontScale,8454143   ,0,1,1, 0,0,1,0
 
 
 	'Page 2 (default Text Splash 1 Big Line)
-		PuPlayer.LabelNew pDMD,"Splash"  ,dmdalt,40,33023,0,1,1,0,0,2,0
+		PuPlayer.LabelNew pDMD,"Splash"  ,dmdalt,40 * fontScale,33023,0,1,1,0,0,2,0
 
 	'Page 3 (default Text 3 Lines)
-		PuPlayer.LabelNew pDMD,"Splash3a",dmddef,30,8454143,0,1,0,0,2,3,0
-		PuPlayer.LabelNew pDMD,"Splash3b",dmdalt,30,33023,0,1,0,0,30,3,0
-		PuPlayer.LabelNew pDMD,"Splash3c",dmdalt,25,33023,0,1,0,0,57,3,0
+		PuPlayer.LabelNew pDMD,"Splash3a",dmddef,30 * fontScale,8454143,0,1,0,0,2,3,0
+		PuPlayer.LabelNew pDMD,"Splash3b",dmdalt,30 * fontScale,33023,0,1,0,0,30,3,0
+		PuPlayer.LabelNew pDMD,"Splash3c",dmdalt,25 * fontScale,33023,0,1,0,0,57,3,0
 
 
 	'Page 4 (default Text 2 Line)
-		PuPlayer.LabelNew pDMD,"Splash4a",dmddef,40,8454143,0,1,0,0,0,4,0
-		PuPlayer.LabelNew pDMD,"Splash4b",dmddef,30,33023,0,1,2,0,75,4,0
+		PuPlayer.LabelNew pDMD,"Splash4a",dmddef,40 * fontScale,8454143,0,1,0,0,0,4,0
+		PuPlayer.LabelNew pDMD,"Splash4b",dmddef,30 * fontScale,33023,0,1,2,0,75,4,0
 
 	'Page 5 (3 layer large text for overlay targets function,  must you fixed width font!
-		PuPlayer.LabelNew pDMD,"Back5"    ,dmdfixed,80,8421504,0,1,1,0,0,5,0
-		PuPlayer.LabelNew pDMD,"Middle5"  ,dmdfixed,80,65535  ,0,1,1,0,0,5,0
-		PuPlayer.LabelNew pDMD,"Flash5"   ,dmdfixed,80,65535  ,0,1,1,0,0,5,0
+		PuPlayer.LabelNew pDMD,"Back5"    ,dmdfixed,80 * fontScale,8421504,0,1,1,0,0,5,0
+		PuPlayer.LabelNew pDMD,"Middle5"  ,dmdfixed,80 * fontScale,65535  ,0,1,1,0,0,5,0
+		PuPlayer.LabelNew pDMD,"Flash5"   ,dmdfixed,80 * fontScale,65535  ,0,1,1,0,0,5,0
 
 	'Page 6 (3 Lines for big # with two lines,  "19^Orbits^Count")
-		PuPlayer.LabelNew pDMD,"Splash6a",dmddef,90,65280,0,0,0,15,1,6,0
-		PuPlayer.LabelNew pDMD,"Splash6b",dmddef,50,33023,0,1,0,60,0,6,0
-		PuPlayer.LabelNew pDMD,"Splash6c",dmddef,40,33023,0,1,0,60,50,6,0
+		PuPlayer.LabelNew pDMD,"Splash6a",dmddef,90 * fontScale,65280,0,0,0,15,1,6,0
+		PuPlayer.LabelNew pDMD,"Splash6b",dmddef,50 * fontScale,33023,0,1,0,60,0,6,0
+		PuPlayer.LabelNew pDMD,"Splash6c",dmddef,40 * fontScale,33023,0,1,0,60,50,6,0
 
 	'Page 7 (Show High Scores Fixed Fonts)
-		PuPlayer.LabelNew pDMD,"Splash7a",dmddef,20,8454143,0,1,0,0,2,7,0
-		PuPlayer.LabelNew pDMD,"Splash7b",dmdfixed,40,33023,0,1,0,0,20,7,0
-		PuPlayer.LabelNew pDMD,"Splash7c",dmdfixed,40,33023,0,1,0,0,50,7,0
+		PuPlayer.LabelNew pDMD,"Splash7a",dmddef,20 * fontScale,8454143,0,1,0,0,2,7,0
+		PuPlayer.LabelNew pDMD,"Splash7b",dmdfixed,40 * fontScale,33023,0,1,0,0,20,7,0
+		PuPlayer.LabelNew pDMD,"Splash7c",dmdfixed,40 * fontScale,33023,0,1,0,0,50,7,0
 
 
 END IF  ' use PuPDMDDriver

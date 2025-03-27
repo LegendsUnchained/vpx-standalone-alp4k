@@ -2,9 +2,9 @@
 
 ![Table Preview](../../images/vpx-jurasicpark-dataeast-preview.jpg)
 
-Authors: [Sixtoe](https://vpuniverse.com/profile/4516-sixtoe/)  
-Version: 1.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/6010-jurassic-park-minimal-vr-room-data-east-1993)
+Authors: [bigus1](https://www.vpforums.org/index.php?showuser=107629)  
+Version: 1.1 
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=16283)
 
 DirectB2S
 
@@ -16,13 +16,15 @@ ROM
 
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=11339)
 
+**Testers:** [mcap] & [OminousOsie]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 30 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 36 |
 
 ## Instructions
 

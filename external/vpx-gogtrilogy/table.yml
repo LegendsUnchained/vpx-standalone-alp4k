@@ -1,0 +1,14 @@
+---
+backglassVPSId: "UCOpOyF-IU"
+backglassChecksum: "9307830CBC0FFD6C29D64F9E8AB7B4BB"
+backglassNotes: "DO NOT use B2S that is included within the VPX download"
+fps: 60
+tableVPSId: "671IjPCYuN"
+tagline: "We are Groot!"
+testers:
+  - "kaoticBPR"
+  - "Mox"
+vpxVPSId: "_3ZHbzlbuv"
+vpxChecksum: "61C6712A91D03CB8555CD43E48D01CE9"
+applyFixes:
+  - "bass"

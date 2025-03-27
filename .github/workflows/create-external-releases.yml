@@ -15,7 +15,7 @@ jobs:
       - name: Set up Python 3.11.2
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11.2'
+          python-version: "3.11.2"
 
       - name: Install Python dependencies
         run: |
@@ -24,6 +24,13 @@ jobs:
 
       - name: Generate release files
         run: python .github/workflows/scripts/generate-release.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_REF_NAME: ${{ github.event.release.tag_name }}
+
+      - name: Update Release notes
+        run: python .github/workflows/scripts/generate-release-notes.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}

@@ -1,4 +1,11 @@
 ---
-tableVPSId: HhMnyw53
-vpxVPSId: Saxn4nV9
-backglassVPSId: Saxn4nV9
+backglassVPSId: "Saxn4nV9"
+backglassChecksum: "A76A659BBE590DCDB2006D01A17611A3"
+fps: 60
+tableVPSId: "HhMnyw53"
+tagline: "One, Two, Three... Answer Again!"
+testers:
+  - "Boris"
+vpxVPSId: "Saxn4nV9"
+vpxChecksum: "065F506F7AD4873D64875B45B015809A"
+tableNotes: "Download version v55 VPX8"

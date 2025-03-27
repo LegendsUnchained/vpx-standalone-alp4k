@@ -1,6 +1,15 @@
 ---
-tableVPSId: P15WeTaO
-vpxVPSId: QcOG228URt
-backglassVPSId: vpfZXF3x
-romVPSId: GhBaghhT
-coloredROMVPSId: aIWgsQ7Po0
+backglassVPSId: "vpfZXF3x"
+backglassChecksum: "9342233E172907FB4AA7F21E4E3CE48C"
+coloredROMVPSId: "aIWgsQ7Po0"
+coloredROMChecksum: "14EBF1B2B346AECDADB8314170535E20"
+fps: 54
+romVPSId: "GhBaghhT"
+romChecksum: "B8E13521877C048CD8F198A3CBA105F8"
+tableVPSId: "P15WeTaO"
+tagline: "The following takes place between 6 A.M. and 7 A.M"
+testers:
+  - "Bla1ze"
+  - "OminousOsie"
+vpxVPSId: "6T98rAIp"
+vpxChecksum: "8DC5DDF640BC04608094D9A0EC76FFD5"

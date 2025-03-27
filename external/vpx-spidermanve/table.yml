@@ -1,8 +1,14 @@
 ---
-tableVPSId: 9cAcDFA8
-vpxVPSId: A_CodyKoS7
-backglassVPSId: 5zno3zre
-romVPSId: AWiQu3VK
+backglassVPSId: "5zno3zre"
+backglassChecksum: "ef65f0397200a125b3a57db35227d35e"
+backglassNotes: "Version 1.5"
 fps: 40
+romVPSId: "AWiQu3VK"
+romChecksum: "676b70c9a67ceca4a607e9a076358e80"
+tableVPSId: "9cAcDFA8"
+tagline: "I'll never look at a sandcastle the same way again!"
 testers:
-- Bla1ze
+  - "Bla1ze"
+vpxVPSId: "A_CodyKoS7"
+vpxChecksum: "47ebcf7c39ddcbedccaa33198ee0a121"
+tableNotes: "Version 2.1"

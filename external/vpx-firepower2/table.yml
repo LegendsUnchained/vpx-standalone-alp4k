@@ -1,0 +1,15 @@
+---
+backglassVPSId: "ejd1kCFi8P"
+backglassChecksum: "b35ad102945cd50c8c6d9f98476c8de1"
+backglassNotes: "Download 'FirePower II (Williams 1983) 2scn.zip'"
+fps: 48
+romVPSId: "WibV5jtO"
+romChecksum: "64596df579b8e19bf66f3de1c0f9e302"
+tableVPSId: "nrjS2oY0"
+tagline: "The Sequel to the Classic, that is also a Classic"
+testers:
+  - "kaoticBPR"
+vpxVPSId: "lWs010fjqE"
+vpxChecksum: "4ad305f80ef4a459a688967de7b9c808"
+applyFixes:
+  - "bass"

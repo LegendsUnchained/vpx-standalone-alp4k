@@ -2,30 +2,29 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-yamanobori.jpg)
 
-Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 2.0.0  
-Download: [VP Universe](https://www.vpforums.org/index.php?app=downloads&showfile=15578) 
+---
 
-**DirectB2S**
+## Files
+| File Type | Link | Version | Author |
+|:---------:|:----:|:-------:|:------:|
+| VPX | [VP Universe](https://www.vpforums.org/index.php?app=downloads&showfile=15578) | 2.0.0 | [JPSalas](https://www.vpforums.org/index.php?showuser=277) |
+| B2S | Included with VPX | N/A | N/A |
+| DMD | N/A | N/A | N/A |
+| ROM | N/A | N/A | N/A |
 
-Download: Included with table download.
+**Tested by:** [Bla1ze]
 
-**ROM**
-
-Not Needed
+---
 
 ## Status 
-
-Tested by: Bla1ze
-
 Minimum VPX Standalone build: 10.8.0-1989-a764013
-
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | NA |
 
-## Instructions
+---
 
+## Instructions
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-yamanobori.elf
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-yamanobori

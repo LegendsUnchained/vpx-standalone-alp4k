@@ -2,13 +2,13 @@
 
 ![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-doctorwho.png)
 
-Author: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
+Author: [bigus1](https://www.vpforums.org/index.php?showuser=107629)  
 
-Tested by: Bla1ze
+Tested by: Bla1ze & OminousOsie
 
 Version: 1.1
 
-Download: [VP Universe](https://vpuniverse.com/files/file/9325-doctor-who-bally-1992-vpw-mod/)
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=16022)
 
 DirectB2S
 
@@ -40,7 +40,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/17586-doctor-who-bally
 Minimum VPX Standalone build: 10.8.0-1983-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 51 |
 
 ## Instructions
 

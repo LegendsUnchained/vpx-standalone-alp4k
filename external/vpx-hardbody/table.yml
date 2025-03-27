@@ -1,0 +1,16 @@
+---
+backglassVPSId: 'XNZeF14kkH'
+backglassChecksum: '178DF61EBF411094557EA13B948E5413'
+backglassNotes: "Download 'Hardbody (Bally 1987).rar'"
+romVPSId: 'XpnfFmFR'
+romChecksum: 'DA72FA8413CE7A7025FA12A5B6BA2742'
+fps: 48
+tableVPSId: 'X_2dmmTr'
+tagline: "We're here to *PUMP* you up!"
+testers:
+  - 'CoffeeAtJoes'
+  - 'Mox'
+vpxVPSId: 'E2HKc9Tl'
+vpxChecksum: 'F75A9E626587D61A60CC305F1841B57B'
+applyFixes:
+  - "bass"

@@ -1,0 +1,14 @@
+---
+backglassVPSId: "g9ZMfhVFhz"
+backglassChecksum: "65D670F98FEB0A989DD6F28F1F808512"
+backglassNotes: "Bundled with VPX"
+fps: 54
+tableVPSId: "Ua8rVDhy"
+tagline: "By the power of Grayskull, I have the power!"
+testers:
+  - "TechZombie"
+  - "Mox"
+vpxVPSId: "g9ZMfhVFhz"
+vpxChecksum: "216AF6772C6A2C82FC342C3C3A3B87A3"
+applyFixes:
+  - "bass"

@@ -1,0 +1,18 @@
+---
+backglassVPSId: "UzwDgqRass"
+backglassChecksum: "C487D420EB097907452087D1FAD1E485"
+backglassNotes: "Download 'Guns N Roses (Data East 1994) full dmd.zip'"
+coloredROMVPSId: "pDaRRBxOOn"
+coloredROMChecksum: "9E1CF553A657115763021283215CA94C"
+romVPSId: "OvPWlsbB"
+romChecksum: "C6F4660FD9AF560637BDE2DF7668B5C4"
+fps: 40
+tableVPSId: "M7FYR1GJ"
+tagline: "Of all the bands in the world.... this is definitely one of them!"
+testers:
+  - "Bla1ze"
+  - "Mox"
+vpxVPSId: "SV-Ul3CNuE"
+vpxChecksum: "2182846FB63A0484A1AF72DC9103160A"
+applyFixes:
+  - "bass"

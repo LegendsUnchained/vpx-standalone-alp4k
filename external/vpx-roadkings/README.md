@@ -8,7 +8,7 @@
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
 | **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=17600) | 2.0 | [bigus1](https://www.vpforums.org/index.php?showuser=107629) |
-| **B2S** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=11058) | 2.1 | [kramer73](https://www.vpforums.org/index.php?showuser=309) |
+| **B2S** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=11058) | 1.0 | [kramer73](https://www.vpforums.org/index.php?showuser=309) |
 | **ROM** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=134) | rdkng_l4 | [destruk](https://www.vpforums.org/index.php?showuser=5) |
 
 ---

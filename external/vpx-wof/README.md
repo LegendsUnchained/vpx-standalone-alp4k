@@ -2,37 +2,29 @@
 
 ![Table Preview](../../images/vpx_wof-preview.jpg)
 
-Author: [ninuzzu](https://vpuniverse.com/profile/5530-ninuzzu/) 
+---
 
-Version: 1.0  
+## Files
+| File Type | Link | Version | Author |
+|:---------:|:----:|:-------:|:------:|
+| VPX | [VP Universe](https://vpuniverse.com/files/file/5501-wheel-of-fortune-stern-2007/) | 1.0 | [ninuzzu](https://vpuniverse.com/profile/5530-ninuzzu/) |
+| B2S | [VP Universe](https://vpuniverse.com/files/file/2434-wheel-of-fortune-stern-2007/) | 1.1.0 | [Wildman](https://vpuniverse.com/profile/5-wildman/) |
+| DMD | N/A | N/A | N/A |
+| ROM | [VP Universe](https://vpuniverse.com/files/file/3291-wheel-of-fortune-v50/) | N/A | N/A |
 
-Download: [VP Universe](https://vpuniverse.com/files/file/5501-wheel-of-fortune-stern-2007/)
+**Tested by:** [Imscomobob]
 
-DirectB2S
-
-Author: [Wildman](https://vpuniverse.com/profile/5-wildman/)  
-
-Version: 1.1.0  
-
-Download: [VP Universe](https://vpuniverse.com/files/file/2434-wheel-of-fortune-stern-2007/)
-
-ROM
-
-Download: [VP Universe](https://vpuniverse.com/files/file/3291-wheel-of-fortune-v50/)
-
-SHA: 7BC0240843620B21288904F957AB82455438F711
-
-MD5: C3DEDF6D0954C70F8B9E23A78E795D67
+---
 
 ## Status 
-
-Minimum VPX Standalone build: 10.8.0-1983-a764013
+**Minimum VPX Standalone build:** 10.8.0-1983-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 37 |
 
-## Instructions
+---
 
+## Instructions
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-wof.elf
 - Download the table and directb2s versions listed above and copy them into this folder.
