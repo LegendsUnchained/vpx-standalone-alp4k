@@ -1,6 +1,6 @@
 # The Simpsons (Data East 1990) 
 
-![Table Preview](vpx-thesimpsons-table.png?raw=true)
+![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_04/Desktop.png.b943088787eb95c534fe615d8adaf46d.png)
 
 ---
 
