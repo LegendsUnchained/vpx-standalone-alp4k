@@ -1,8 +1,11 @@
 import json
 import re
 import sys
+import yaml
 
 import vpsdb
+
+from pathlib import Path
 
 
 def check_bundled(meta):
@@ -14,6 +17,7 @@ def check_bundled(meta):
     Returns:
       None
     """
+    print("Checking bundled fields...")
     for table, table_meta in meta.items():
         if (
             "backglassBundled" in table_meta
@@ -92,6 +96,7 @@ def check_checksums(meta):
     Returns:
       None
     """
+    print("Checking checksums...")
     for table, table_meta in meta.items():
         for checksum_type in [
             "backglassChecksum",
@@ -122,7 +127,7 @@ def check_fixes(meta):
     Returns:
       None
     """
-
+    print("Checking applyFixes...")
     allowed_fixes = [
         "bass",
     ]
@@ -151,6 +156,7 @@ def check_fps(meta):
     Returns:
       None
     """
+    print("Checking fps...")
     for table, table_meta in meta.items():
         if "fps" not in table_meta or table_meta["fps"] is None:
             print(f"ERROR: fps field not found in table: {table}")
@@ -158,6 +164,38 @@ def check_fps(meta):
 
         if not isinstance(table_meta["fps"], int):
             print(f"ERROR: fps is not an integer in table: {table}")
+            sys.exit(1)
+
+
+def check_overrides(meta):
+    """Checks if the overrides have versions defined.
+
+    Args:
+      meta: The table metadata.
+
+    Returns:
+      None
+    """
+    print("Checking overrides...")
+
+    if "romUrlOverride" in meta and meta["romUrlOverride"] is not None:
+        if not isinstance(meta["romUrlOverride"], str):
+            print(f"ERROR: romUrlOverride is not a string")
+            sys.exit(1)
+
+        if "romVPSId" in meta and meta["romVPSId"] is not None:
+            print(
+                f"ERROR: romVPSId is not allowed with romUrlOverride"
+            )
+            sys.exit(1)
+
+        if (
+            "romVersionOverride" not in meta
+            or meta["romVersionOverride"] is None
+        ):
+            print(
+                f"ERROR: romUrlOverride defined and romVersionOverride field not found"
+            )
             sys.exit(1)
 
 
@@ -170,6 +208,7 @@ def check_testers(meta):
     Returns:
       None
     """
+    print("Checking testers...")
     for table, table_meta in meta.items():
         if "testers" not in table_meta or table_meta["testers"] is None:
             print(f"ERROR: testers field not found in table: {table}")
@@ -193,14 +232,25 @@ def is_md5_hash(hash_string):
 
 
 if __name__ == "__main__":
-    table_yaml = sys.argv[1]
-    meta = vpsdb.get_table_meta([table_yaml], warn_on_error=False)
+    yml_file = sys.argv[1]
 
-    # Perform checks
+    with open(yml_file, "r") as table_data:
+        table_yaml = yaml.safe_load(table_data)
+
+    path = Path(yml_file)
+    folder_name = path.parent.name
+    print(f"Processing {folder_name}")
+
+    # Perform checks on the YAML file
+    check_overrides(table_yaml)
+
+    # Perform checks on the rendered metadata
+    meta = vpsdb.get_table_meta([yml_file], warn_on_error=False)
+
     check_bundled(meta)
+    check_checksums(meta)
     check_fixes(meta)
     check_fps(meta)
-    check_checksums(meta)
     check_testers(meta)
 
     j = json.dumps(meta, indent=4)
