@@ -123,6 +123,7 @@ def get_table_meta(files, warn_on_error=True):
             "romNotes": data.get("romNotes"),
             "romFileUrl": data.get("romUrlOverride"),
             "romFileVersion": data.get("romVersionOverride"),
+            "romVersion": data.get("romVersionOverride"),
             "tableChecksum": vpxChecksum,
             "tableNotes": data.get("tableNotes"),
             "tagline": data.get("tagline"),
