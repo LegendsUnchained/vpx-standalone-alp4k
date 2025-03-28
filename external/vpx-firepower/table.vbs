@@ -45,7 +45,7 @@ Const cGameName="frpwr_b7"
 'Const UseSolenoids=1
 Const UseSolenoids=25 'FastFlips for system6
 Const UseLamps = True 'VPM to control Lights
-Const UseGI=0,SSolenoidOn="SolOn",SSolenoidOff="SolOff", SCoin="coin"
+Const UseGI=1,SSolenoidOn="SolOn",SSolenoidOff="SolOff", SCoin="coin"
 Const BallSize = 50 
 Const Ballmass = 1  
 
