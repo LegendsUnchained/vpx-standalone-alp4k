@@ -8,10 +8,11 @@ romVPSId: "p9hGBlm6ef"
 romChecksum: "bee33e29f6714795116a1bda67f62c55"
 tableVPSId: "0wPuijKc"
 tagline: >-
-  "There’s no point in being grown up if you
-  can’t be childish sometimes" - Fourth (and best) Doctor!
+  "There's no point in being grown up if you
+  can't be childish sometimes" - Fourth (and best) Doctor!
 testers:
   - "Bla1ze"
+  - "OminousOsie"
 vpxVPSId: "1ym9HpnI"
 vpxChecksum: "ca013aa443cdedcf6639bd9d3bd3b67a"
 applyFixes:

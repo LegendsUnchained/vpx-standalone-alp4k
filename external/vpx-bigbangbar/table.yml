@@ -11,7 +11,8 @@ romChecksum: "689548ef14a6dd6550901378c63fa43c"
 tableVPSId: "ZxOdqKhi"
 tagline: "**Warning:** Mature table, not suitable for children!"
 testers:
-  - mcap
+  - "mcap"
+  - "OminousOsie"
 vpxVPSId: "zL4Mo0At"
 vpxChecksum: "a0461315f909dde832bc8ed247fb14bc"
 applyFixes:
