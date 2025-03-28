@@ -1,7 +1,7 @@
 ---
-backglassVPSId: "jxmanCjboW"
-backglassChecksum: "0F2D0B0205AF76BB8BF0628A699B7A9A"
-backglassNotes: "Download - JPs Whoa Nellie! v41.directb2s.zip"
+backglassVPSId: "xgKVaHD7"
+backglassChecksum: "7012400064acadc74b5114e8a6ccc160"
+backglassBundled: true
 fps: 60
 tableVPSId: "jZ9BEzitrV"
 tagline: "See the mountain of melons!"
@@ -9,6 +9,7 @@ testers:
   - "mcap10"
   - "Bla1ze"
   - "CoffeeAtJoes"
-vpxVPSId: "HIykvJBUPh"
-vpxChecksum: "7C4D16398DA19590DFC1A4A8655C4FA3"
-tableNotes: "Download - JPs Whoa Nellie! v55_VPX8.zip"
+vpxVPSId: "xgKVaHD7"
+vpxChecksum: "ba1a9533b418fdfd4d98bf0cf259ae7c"
+applyFixes:
+  - "bass"
