@@ -35,5 +35,5 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Do not copy .ini use one in repo folder that is already there
 - Make sure (.vpx) (.vbs) and (.ini) are all named the same
 - In vpx-bikermice root folder make folder called pupvideos - copy Biker Mice folder from table download in to the pupvideos folder and rename it bikermicefrommars
-- From your vpx-bikermice folder, unzip the Use These PUP files.zip and place them inside the pupvideos/bikermicefrommars folder, and overwrite files if prompted
+- From your vpx-bikermice folder, unzip the use_these_pup_files.zip and place them inside the pupvideos/bikermicefrommars folder, and overwrite files if prompted
 - Guys, let me tell you something. In this wild and woolly universe of ours, there's only three things you can count on: You brains, your bros... and your bike!

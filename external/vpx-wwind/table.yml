@@ -4,9 +4,13 @@ backglassChecksum: "4A075B6067BE608B5A63AC7A438EB027"
 fps: 51
 romVPSId: "Zho3rYsp"
 romChecksum: "862EE474E14684FF77D3299914940927"
+romNotes: "Download - whirl_l3.zip"
 tableVPSId: "JcJtmz2q"
 tagline: "A storm is coming! This one's gonna blow you AWAY!"
 testers:
   - "CoffeeAtJoes"
+  - "evilwraith"
 vpxVPSId: "huOWrTMO"
 vpxChecksum: "4b1c823ac3bea82cb6dd06f987be0991"
+applyFixes:
+  - "bass"

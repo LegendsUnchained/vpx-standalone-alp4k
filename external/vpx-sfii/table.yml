@@ -1,15 +1,17 @@
 ---
 backglassVPSId: "7AthvIhxFj"
 backglassChecksum: "6576310D897011B1BF5B45256EB68345"
-backglassNotes: "Use Street Fighter II (Gottlieb 1993).zip in the download link"
+backglassNotes: "Download - Street Fighter II (Gottlieb 1993).zip"
 fps: 60
 romChecksum: "A88B7D86F882206C1FABF2A87DAF2E4E"
 romUrlOverride: "https://pinballnirvana.com/forums/resources/sfight2.2281/"
 romVersionOverride: "sfight2"
+romNotes: "Download - sfight2.zip"
 tableVPSId: "_8wsc4AY"
 tagline: "You need to defeat Sheng Long to stand a chance..."
 testers:
   - "mcap"
+  - "evilwraith"
 vpxVPSId: "ChQLTP9w"
 vpxChecksum: "0AC85739532A19D00707B30FDB97061E"
-tableNotes: "Download version 5.5.0"
+tableNotes: "Version 5.5.0"

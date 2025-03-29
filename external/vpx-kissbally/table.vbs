@@ -11,7 +11,7 @@ On Error Goto 0
 '********************* Rom Selection ***************************
 Const SCoin="coin"
  'Const cGameName = "kiss"  ,UseSolenoids=2,UseLamps=1,UseGI=0,SSolenoidOn="SolOn",SSolenoidOff="SolOff",SFlipperOn="fx_Flipperup",SFlipperOff="fx_Flipperdown"
- Const cGameName = "kissb" ,UseSolenoids=2,UseLamps=1,UseGI=0,SSolenoidOn="SolOn",SSolenoidOff="SolOff",SFlipperOn="fx_Flipperup",SFlipperOff="fx_Flipperdown"
+ Const cGameName = "kissb" ,UseSolenoids=2,UseLamps=1,UseGI=1,SSolenoidOn="SolOn",SSolenoidOff="SolOff",SFlipperOn="fx_Flipperup",SFlipperOff="fx_Flipperdown"
  'Const cGameName = "kissc" ,UseSolenoids=2,UseLamps=1,UseGI=0,SSolenoidOn="SolOn",SSolenoidOff="SolOff",SFlipperOn="fx_Flipperup",SFlipperOff="fx_Flipperdown"
 
 '******************************************************************

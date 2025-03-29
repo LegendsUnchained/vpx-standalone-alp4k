@@ -16,7 +16,7 @@ On Error Goto 0
 LoadVPM "01120100", "GamePlan.VBS", 3.1
 
 Const UseSolenoids = 2
-Const UseLamps = 0
+Const UseLamps = 1
 Const UseSync = 0
 Const HandleMech = 0
 Const SSolenoidOn = "fx_solenoidon"

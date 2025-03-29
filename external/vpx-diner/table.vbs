@@ -97,8 +97,8 @@ Const VRRoom = 0 					'0 = OFF, 1 = BaSti/Rawd Room, 2 = Minimal Room, 3 = Ultra
 Const EnableBlacksadBackglass = 1   '1 = Enabled , 0 = (default) disabled
 
 '----- Shadow Options -----
-Const DynamicBallShadowsOn = 1		'0 = no dynamic ball shadow ("triangles" near slings and such), 1 = enable dynamic ball shadow
-Const AmbientBallShadowOn = 1		'0 = Static shadow under ball ("flasher" image, like JP's)
+Const DynamicBallShadowsOn = 0		'0 = no dynamic ball shadow ("triangles" near slings and such), 1 = enable dynamic ball shadow
+Const AmbientBallShadowOn = 0		'0 = Static shadow under ball ("flasher" image, like JP's)
 									'1 = Moving ball shadow ("primitive" object, like ninuzzu's) - This is the only one that shows up on the pf when in ramps and fades when close to lights!
 									'2 = flasher image shadow, but it moves like ninuzzu's
 
@@ -117,7 +117,7 @@ ShowClock = false
 ' *** 2: darker, better contrast, daytime settings in insert lighting below ***************
 ' *** 3: same as 2, but with nighttime settings in insert lighting below ******************
 ' *** etc for 4-7; default is 3 ***********************************************************
-ContrastSetting = 3
+ContrastSetting = 1
 
 
 ' *** relative sound level for all mechanical sounds **************************************
@@ -130,7 +130,7 @@ AlternateDroptargets = False
 ' *** Insert Lighting settings ************************************************************
 ' *** The settings below together with ContrastSetting determines how the lighting looks **
 ' *** for all values: 1.0 = default, useful range 0.1 - 5 *********************************
-GlowAmountDay = 0.05
+GlowAmountDay = 0.07
 InsertBrightnessDay = 0.8 
 GlowAmountCutoutDay = 0 
 InsertBrightnessCutoutDay = 0.6
