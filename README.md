@@ -321,7 +321,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Guardians of the Galaxy Trilogy (Original 2023)](external/vpx-gogtrilogy) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Guns N' Roses (Data East 1994)](external/vpx-gnr) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Guns n' Roses Remix (Original 2021)](external/vpx-gnrjj) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
-| [GUNSHIP PINBALL (Music Mod) (Original 2023)](external/vpx-gunship) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
+| [Gunship pinball music table (Original 2023)](external/vpx-gunship) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 | [Hall & Oates (Original 2025)](external/vpx-hallandoates) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 45 |
 | [Halloween 1978-1981 (Original 2022)](external/vpx-halloween) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Halloween MM Edition (Original 2023)](external/vpx-halloweenmm) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
@@ -511,6 +511,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | [Radical! (Bally 1990)](external/vpx-rad) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 43 |
 | [Rally - JP (Taito do Brasil 1980)](external/vpx-jprally) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 58 |
 | [Rambo First Blood Part II (TBA 2020)](external/vpx-rambo) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 54 |  
+| [Rambo: From first to last blood (Original 2025)](external/vpx-ramboflb) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |  
 | [Ramones (Original 2021/1972)](external/vpx-ramones) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 50 |
 | [Rawhide - JP (Stern 1977)](external/vpx-jprawhide) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Raygun Runner (Original 2024)](external/vpx-raygunrunner) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
