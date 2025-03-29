@@ -112,6 +112,7 @@ def get_table_meta(files, warn_on_error=True):
             "backglassBundled": data.get("backglassBundled"),
             "backglassChecksum": backglassChecksum,
             "backglassFileUrl": data.get("backglassUrlOverride"),
+            "backglassAuthors": data.get("backglassAuthorsOverride"),
             "backglassNotes": data.get("backglassNotes"),
             "coloredROMBundled": data.get("coloredROMBundled"),
             "coloredROMChecksum": coloredROMChecksum,
