@@ -7,9 +7,8 @@ romChecksum: "2EA68F9908142FDCDCCD2FD493FDCC5D"
 tableVPSId: "0-GeiE03"
 tagline: "The same hieroglyphics over and over. What do they mean?"
 testers:
-- "Bla1ze"
+  - "Bla1ze"
 vpxVPSId: "DuoklEj4"
 vpxChecksum: "A7CC8A4F931ED141B76813D89B8E08A8"
 applyFixes:
   - "bass"
-
