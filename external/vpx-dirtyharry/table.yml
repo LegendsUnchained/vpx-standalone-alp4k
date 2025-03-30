@@ -8,5 +8,8 @@ tableVPSId: "my2RZ_v_"
 tagline: "Go Ahead. Make My Day!"
 testers:
   - "Bla1ze"
+  - "OminousOsie"
 vpxVPSId: "xb_wf53G6R"
 vpxChecksum: "278104a25c7b6c28d63ed643801f2484"
+applyFixes:
+  - "bass"

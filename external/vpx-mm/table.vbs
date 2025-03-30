@@ -1372,66 +1372,87 @@ End Sub
 '************************************************************************
 '						 DRAW BRIDGE 
 '************************************************************************
+'The bridge is controlled by a motor and 2 switches.
+'The motor spins in one direction, using a cranksystem to convert rotation to up/down
+'Switch 56, Bridge is up
+'Switch 57. Bridge is down
 
-Dim dbpos
+Dim OldDbPos,CurDbPos,DbPosX
+OldDbPos = 0
 
-Sub SolDrawBridge(enabled)
-	If Enabled AND Controller.GetMech(0)/16 <= 15 then 
-		dbpos = 1
-		dbridge.enabled = 1
-		PlaySound SoundFX("Bridge_Move", DOFGear), -1, 0.1, AudioPan(braket) , 0, 0, 1, AudioPan(braket)
-		DOF 104, DOFOn
-	end If
-	If Enabled AND Controller.GetMech(0)/16 > 15 then 
-		dbpos = 2
-		dbridge.enabled = 1
-		PlaySound SoundFX("Bridge_Move", DOFGear), -1, 0.1, AudioPan(braket) , 0, 0, 1, AudioPan(braket)
-		DOF 104, DOFOn
+Set MotorCallback = GetRef("updateDbridge")
+
+Sub updateDbridge() 
+	'Get the bridge position from pinMame
+	CurDbPos = controller.GetMech(1)
+
+	'Has the bridge moved?
+	If OldDbPos <> CurDbPos Then
+        
+		'Bridge moved, store current value so we can compare again next time
+		OldDbPos = CurDbPos
+
+		' Translate the current position (0 to 500) to DbPosX 0 to -90 (Degrees)
+		DbPosX = Translate(CurDbPos)
+
+		' Handle switch logic for drawbridge status
+		Select Case True
+			'Bridge is up
+			Case Controller.Switch(56)
+				DbPosX = 0
+				Door1.isdropped       = 0
+				BridgeRamp.collidable = 0
+				Ramp22.collidable     = 1
+				Ramp002.collidable    = 1
+				BW1.isdropped         = 1
+				BW2.isdropped         = 1
+			'Bridge is down
+			Case Controller.Switch(57)
+				DbPosX = -90
+				Door1.isdropped 	  = 1
+				BridgeRamp.collidable = 1
+				Ramp22.collidable     = 0
+				Ramp002.collidable    = 0
+				BW1.isdropped         = 0
+				BW2.isdropped         = 0
+		End Select
+        
+		' Apply the rotation values to the components
+		drawbridgep.RotX = DbPosX
+		DBdecal.RotX     = DbPosX
+		braket.RotX      = DbPosX
+        
 	End If
+
 End Sub
 
-Sub dbridge_timer()
-	Select Case dbpos
-		Case 1:			'bridge is going down
-			drawbridgep.RotX = drawbridgep.Rotx - 1
-			DBdecal.rotx=DBdecal.rotx-1
-			braket.rotx=braket.rotx-1
-			If drawbridgep.RotX <= -90 Then
-				DOF 104, DOFOff
-				drawbridgep.RotX= -90
-				DBdecal.rotx=-90
-				braket.rotx=-90
-				Door1.isdropped = 1
-				BridgeRamp.collidable = 1
-				Ramp22.collidable = 0
-				Ramp002.collidable = 0
-				BW1.isdropped = 0
-				BW2.isdropped = 0
-				Me.Enabled = 0
-				StopSound "Bridge_Move"
-				PlaySound SoundFX("Bridge_Stop", 0),0, 0.1, AudioPan(braket) , 0, 0, 1, AudioPan(braket)
-			End If
+'Translate pinMame bridge position to degrees so we can use it to animate
+Function Translate(inputValue)
 
-		Case 2:			'bridge is going up
-			drawbridgep.RotX = drawbridgep.Rotx + 1
-			DBdecal.rotx=DBdecal.rotx+1
-			braket.rotx=braket.rotx+1
-			If drawbridgep.RotX >= 0 Then
-				DOF 104, DOFOff
-				drawbridgep.RotX= 0
-				DBdecal.rotx=0
-				braket.rotx=0
-				Door1.isdropped = 0
-				BridgeRamp.collidable = 0
-				Ramp22.collidable = 1
-				Ramp002.collidable = 1
-				BW1.isdropped = 1
-				BW2.isdropped = 1
-				Me.Enabled = 0
-				StopSound "Bridge_Move"
-				PlaySound SoundFX("Bridge_Stop", 0),0, 0.1, AudioPan(braket) , 0, 0, 1, AudioPan(braket)
-			End If
-	End Select
+	If inputValue >= 0 And inputValue <= 250 Then
+		Translate = Round(-90 * (inputValue / 250), 0)
+
+	ElseIf inputValue > 250 And inputValue <= 500 Then
+		Translate = Round(-90 + 90 * ((inputValue - 250) / 250), 0)
+
+	Else
+		'something went wrong, just set it to 0 to be sure
+		Translate = 0
+	End If
+End Function
+
+'Sound
+Sub SolDrawBridge(enabled)
+	'Motor running
+	If enabled Then
+		PlaySound SoundFX("Bridge_Move", DOFGear), -1, 0.1, AudioPan(braket), 0, 0, 1, AudioPan(braket)
+		DOF 104, DOFOn
+	'Motor stopped
+	Else
+		DOF 104, DOFOff
+		StopSound "Bridge_Move"
+		PlaySound SoundFX("Bridge_Stop", 0), 0, 0.1, AudioPan(braket), 0, 0, 1, AudioPan(braket)
+	End If
 End Sub
 
 

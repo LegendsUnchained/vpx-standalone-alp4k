@@ -9,6 +9,9 @@ tagline: >-
   "Sir, are you a henchman?"   "No, I only go
   as far as lackey. Anything else?"
 testers:
-  - TechZombie
+  - "TechZombie"
+  - "SilentKat"
 vpxVPSId: "jaSjAX0vTu"
 vpxChecksum: "DFAFEBBDF54DFF044E5C0BAC1FDACFA1"
+applyFixes:
+  - "bass"

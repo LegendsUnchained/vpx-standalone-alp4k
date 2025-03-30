@@ -12,3 +12,6 @@ testers:
   - "T3chZombie"
 vpxVPSId: "1wscbBj9"
 vpxChecksum: "12c3b42ff0c68cbb7f6d2cf6c797079a"
+enabled: false
+applyFixes:
+  - "bass"

@@ -7,6 +7,10 @@ romChecksum: "775D9C63D975C3580639661FA68AC892"
 tableVPSId: "pSJ03Xru"
 tagline: "Rock and roll all night and party everyday!"
 testers:
-  - GyroJoe
+  - "GyroJoe"
+  - "SilentKat"
+  - "CoffeeAtJoes"
 vpxVPSId: "CLeUeGT6"
 vpxChecksum: "A035EF13D3664774A9E3155D3C945550"
+applyFixes:
+  - "bass"
