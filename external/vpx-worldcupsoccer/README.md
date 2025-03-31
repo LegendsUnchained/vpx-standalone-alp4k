@@ -16,6 +16,14 @@
 
 ---
 
+```diff
+!   Warning: 
+!   There is a known bug on this table, if you soft plunge there is a chance the ball 
+!   could get stuck in the coin flip rail. It is recommended to always full plunge.
+```
+
+---
+
 ## Status 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
