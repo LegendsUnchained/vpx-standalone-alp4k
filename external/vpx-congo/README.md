@@ -1,14 +1,14 @@
 # Congo (Williams 1995)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-congo.png)
+![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-congo.jpg)
 
-Authors: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)
+Authors: [Bigus1](https://www.vpforums.org/index.php?showuser=107629/)
 
 Tested by: Bla1ze
 
-Version: 1.0.0
+Version: 3.0
 
-Download: [VP Universe](https://vpuniverse.com/files/file/6546-congo-williams-1995-vpw-mod/)
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14799)
 
 DirectB2S
 
@@ -16,7 +16,7 @@ Authors: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
 
 Version: 1.0.0
 
-Download: [VP Universe](https://vpuniverse.com/files/file/12232-congo-williams-1995-b2s-with-full-dmd/)
+Download: [VP Universe](https://vpuniverse.com/files/file/13271-congo-williams-1995-alt-b2s-with-full-dmd/)
 
 ROM
 
@@ -31,7 +31,7 @@ SHA: 26efdf339ea8355523bf3727ed1e281fc0cbbc10
 Minimum VPX Standalone build: 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 
 ## Instructions
 
