@@ -1,6 +1,6 @@
 # Pharaoh (Williams 1981)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_09/CabViewCapture.png.8a877321ddf7d3b6a6cddc6cc175c027.png)
+![Table Preview](../../images/vpx-pharaoh.png)
 
 Authors: [32assassin](https://www.vpforums.org/index.php?showuser=77712)  
 Version: 1.0  
