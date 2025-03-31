@@ -1,6 +1,7 @@
 ---
 backglassVPSId: "91twii_cTY"
 backglassChecksum: "c9abc82f08d6fba3dc55677721dbdd47"
+backglassNotes: "Download file 'Metallica Pro (Stern 2013).zip'"
 romChecksum: "ed24ef6b50610e6b909e45ad2988fcda"
 romUrlOverride: >-
   https://sternpinball.com/?post_type=game_code&s=metallica%20Pro%201.80%20Game%20Code
@@ -15,5 +16,6 @@ testers:
   - "mcap"
 vpxVPSId: "P-R9a8GPd1"
 vpxChecksum: "678b32aec435373e336c619b879de48d"
+enabled: false
 applyFixes:
   - "bass"
