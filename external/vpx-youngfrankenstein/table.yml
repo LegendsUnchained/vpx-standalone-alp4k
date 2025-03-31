@@ -3,7 +3,7 @@ backglassVPSId: "1nK152JE"
 backglassChecksum: "0D3936B4CF8A1391DB54470FB0D4B822"
 backglassNotes: "Download - [...]3srn 4.1.directb2s"
 fps: 36
-romVPSId: "wrBI7RTr"
+romBundled: true
 romChecksum: "ADE43DFA9938324B30A4F11F2E8B9FB2"
 romNotes: "ROM (eclipse.zip) included in VPX Bundle"
 tableVPSId: "CNp5duSH"
