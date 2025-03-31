@@ -9,6 +9,7 @@ tableVPSId: "n0QJLWPB"
 tagline: "SO YOU WANNA MOUSE AROUND!?!?!"
 testers:
   - "CoffeeAtJoes"
+  - "Sscorpio"
 vpxVPSId: "zfBJdPcA"
 vpxChecksum: "b914bac4ab0a196c2e8b5adae9bbbe8e"
 tableNotes: "Mousin' Around! (Bally 1989) 1.1"
@@ -16,3 +17,5 @@ mainNotes: >-
   Note: There is a known issue regarding the 1-2-3
   POW! gate motor, it fails to resest occasionally.
   Only occurred once during hours of testing.
+applyFixes:
+  - "bass"

@@ -85,7 +85,7 @@ def get_table_meta(files, warn_on_error=True):
         print(f"Processing {folder_name}")
         with open(table_yaml, "r") as table_data:
             data = yaml.safe_load(table_data)
-
+        
         tableVPSId = data.get("tableVPSId")
         vpxVPSId = data.get("vpxVPSId")
         backglassVPSId = data.get("backglassVPSId")
@@ -111,6 +111,8 @@ def get_table_meta(files, warn_on_error=True):
             "applyFixes": data.get("applyFixes"),
             "backglassBundled": data.get("backglassBundled"),
             "backglassChecksum": backglassChecksum,
+            "backglassFileUrl": data.get("backglassUrlOverride"),
+            "backglassAuthors": data.get("backglassAuthorsOverride"),
             "backglassNotes": data.get("backglassNotes"),
             "coloredROMBundled": data.get("coloredROMBundled"),
             "coloredROMChecksum": coloredROMChecksum,
@@ -127,6 +129,7 @@ def get_table_meta(files, warn_on_error=True):
             "tableNotes": data.get("tableNotes"),
             "tagline": data.get("tagline"),
             "testers": data.get("testers"),
+            "enabled": data.get("enabled")
         }
         if tableVPSId:
             table = vpsdb.get_table(tableVPSId)

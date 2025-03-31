@@ -5,6 +5,7 @@ import json
 
 import vpsdb
 
+import git
 from github import Github
 from pathlib import Path
 
@@ -23,6 +24,39 @@ def find_table_yml(base_dir="external"):
                 result.append(table_yml)
 
     return result
+
+
+def get_latest_commit_hash(repo_path, folder_path):
+    """
+    Retrieves the latest commit hash that modified files in a specific folder.
+
+    Args:
+        repo_path (str): The path to the local Git repository.
+        folder_path (str): The folder path within the repository.
+
+    Returns:
+        str: The latest commit hash, or None if no matching commits are found.
+    """
+    try:
+        repo = git.Repo(repo_path)
+        commits = list(repo.iter_commits(paths=folder_path, max_count=None)) # max_count = None to get all commits.
+
+        if commits:
+            for commit in commits:
+                files = commit.stats.files
+                for file in files:
+                    if file.startswith(folder_path):
+                        return commit.hexsha
+            return None
+        else:
+            return None
+
+    except git.InvalidGitRepositoryError:
+        print(f"Error: Invalid Git repository at {repo_path}")
+        return None
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return None
 
 
 def process_title(title):
@@ -109,6 +143,13 @@ if __name__ == "__main__":
         os.remove(file_path)
 
         tables[table]["repoConfig"] = download_url
+
+        config_version = get_latest_commit_hash(".", external_path)
+        if config_version:
+            tables[table]["configVersion"] = config_version[:7]
+        else:
+            print(f"Error: No commit found for {external_path}")
+            exit(1)
 
         # Apply field processing
         tables[table]["name"] = process_title(tables[table]["name"])

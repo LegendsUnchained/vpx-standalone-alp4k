@@ -12,7 +12,7 @@ Const FlexScoreColour = 0			' 0 = yellow (default), 1 = cyan, 2 = red, 3 = Green
 
 'Const BallsSize = 50
 
-Const cGameName="fpwr2_l2",UseSolenoids=2,UseLamps=0,UseGI=0,SSolenoidOn="SolOn",SSolenoidOff="SolOff", SCoin="coin"
+Const cGameName="fpwr2_l2",UseSolenoids=2,UseLamps=1,UseGI=1,SSolenoidOn="SolOn",SSolenoidOff="SolOff", SCoin="coin"
 
 LoadVPM "01560000", "S7.VBS", 3.26
 

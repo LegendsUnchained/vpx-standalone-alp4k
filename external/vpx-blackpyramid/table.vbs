@@ -21,8 +21,8 @@ Dim bsTrough, bsSaucer, dtBank, x
 Const cGameName = "blakpyra"
 
 Const UseSolenoids = 2
-Const UseLamps = 0
-Const UseGI = 0
+Const UseLamps = 1
+Const UseGI = 1
 Const UseSync = 0 'set it to 1 if the table runs too fast
 Const HandleMech = 0
 

@@ -2,6 +2,7 @@
 backglassVPSId: "IzNfqj-xZn"
 backglassChecksum: "db98ac197e0378967ab7a23341bbbe6a"
 backglassNotes: "Included with table download"
+backglassBundled: true
 fps: 60
 tableVPSId: "vRHOHm-I0T"
 tagline: >-
@@ -10,6 +11,10 @@ tagline: >-
   This message will self destruct in 5....4....3....2....1!"
 testers:
   - "Silentkat"
+  - "Sscorpio"
+  - "Bla1ze"
 vpxVPSId: "IzNfqj-xZn"
 vpxChecksum: "f920f421782310a701f21d5e921e34ce"
 tableNotes: "Download Version 2.6"
+applyFixes:
+  - "bass"

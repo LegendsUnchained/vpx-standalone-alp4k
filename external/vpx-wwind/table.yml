@@ -9,5 +9,8 @@ tableVPSId: "JcJtmz2q"
 tagline: "A storm is coming! This one's gonna blow you AWAY!"
 testers:
   - "CoffeeAtJoes"
+  - "evilwraith"
 vpxVPSId: "huOWrTMO"
 vpxChecksum: "4b1c823ac3bea82cb6dd06f987be0991"
+applyFixes:
+  - "bass"

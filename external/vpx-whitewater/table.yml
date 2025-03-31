@@ -11,3 +11,6 @@ testers:
 tableVPSId: "LJRH3fKk"
 vpxVPSId: "--fspsKJ"
 vpxChecksum: "58BF754498CF629F5F0D4269735E0D8B"
+enabled: false
+applyFixes:
+  - "bass"
