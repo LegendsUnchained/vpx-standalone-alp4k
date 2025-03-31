@@ -1,6 +1,6 @@
 # Wolf Man (Peyper 1987)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_10/840733991_WolfMan(Peyper1987)
+![Table Preview](../../images/vpx-wolfman-preview.png)
 
 ---
 
