@@ -1,0 +1,17 @@
+---
+backglassVPSId: "91twii_cTY"
+backglassChecksum: "c9abc82f08d6fba3dc55677721dbdd47"
+romChecksum: "8c1a2b940f3cf0d0be466ec2521af3b5"
+romUrlOverride: >-
+  https://sternpinball.com/?post_type=game_code&s=metallica%20Premium%201.80%20Game%20Code
+romVersionOverride: "mtl_180h"
+romNotes: "Download 1.8 Game Code | Rename 'MTL180LE.BIN' to 'mtl180h.bin' | Zip the file"
+fps: 60
+tableVPSId: "kb8PmIUpX6"
+tagline: "Ride the lightning!"
+testers:
+  - "mcap"
+vpxVPSId: "P-R9a8GPd1"
+vpxChecksum: "678b32aec435373e336c619b879de48d"
+applyFixes:
+  - "bass"
