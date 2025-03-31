@@ -7,8 +7,10 @@ romUrlOverride: >-
   https://sternpinball.com/?post_type=game_code&s=metallica%20Pro%201.80%20Game%20Code
 romVersionOverride: "mtl_180h"
 romNotes: >-
-  Download 1.8 Game Code&nbsp;&nbsp;&nbsp;&nbsp;->&nbsp;&nbsp;&nbsp;&nbsp;Rename 'MTL180.BIN' to 
-  **'mtl180h.bin'**&nbsp;&nbsp;&nbsp;&nbsp;->&nbsp;&nbsp;&nbsp;&nbsp;Zip the file
+  Download 1.8 Game Code&nbsp;&nbsp;&nbsp;&nbsp;->
+  &nbsp;&nbsp;&nbsp;&nbsp;Rename 'MTL180.BIN' to
+  **'mtl180h.bin'**&nbsp;&nbsp;&nbsp;&nbsp;->
+  &nbsp;&nbsp;&nbsp;&nbsp;Zip the file
 fps: 60
 tableVPSId: "kb8PmIUpX6"
 tagline: "Ride the lightning!"
