@@ -1,0 +1,18 @@
+---
+backglassVPSId: "avma10TPu0"
+backglassChecksum: "106BBE82BEE6EB3E463F47656BB0DB47"
+backglassNotes: "Download - Goldeneye (Sega 1996).zip"
+coloredROMVPSId: "7gLLWVGnad"
+coloredROMChecksum: "8C4A24D85B7E9677B825336C1AAAB8D4"
+fps: 35
+romVPSId: "sVGtoVup"
+romChecksum: "821B648A64BFF1D28CF83F81C6BEF5DB"
+romNotes: "Download - gldneye.zip"
+tableVPSId: "lU4NSKWp"
+tagline: "Nobody Does It Like Bond!"
+testers:
+  - "Mox"
+vpxVPSId: "n_4piuthCj"
+vpxChecksum: "B5C0E3837F3FEB5667979BE3109A898D"
+applyFixes:
+  - "bass"

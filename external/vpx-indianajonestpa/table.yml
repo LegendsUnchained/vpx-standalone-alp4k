@@ -1,0 +1,16 @@
+---
+backglassVPSId: "eMpRNW-Yuk"
+backglassChecksum: "FF64F5707F8E446B2A295FC57D3C55B4"
+fps: 47
+romVPSId: "H6pEW4cE"
+romChecksum: "6E5FD8533AF8E5B1A2C710B5CE5E7A87"
+romNotes: "Download -  ij_l7.zip"
+tableVPSId: "lkSumsrF"
+tagline: "Snakes. Why'd it have to be snakes?"
+testers:
+  - "TechZombie"
+  - "Mox"
+vpxVPSId: "bpo2bAdE"
+vpxChecksum: "F7C1285F3FB1D1C4935C459EB64B5A04"
+applyFixes:
+  - "bass"

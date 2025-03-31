@@ -1,0 +1,15 @@
+---
+backglassVPSId: "ywZL6YqLIp"
+backglassChecksum: "51D71B2F49AF28F32197B3D4DF09970F"
+fps: 45
+romUrlOverride: "https://pinballnirvana.com/forums/resources/gladiatr.1870/"
+romChecksum: "59C7676D6435D48C5A7EC3FAD8B76075"
+romNotes: "Download - gladiatr.zip"
+tableVPSId: "_SuVoydb"
+tagline: "Take the Challenge, Brave One!"
+testers:
+  - "Mox"
+vpxVPSId: "x9ANmZ3X"
+vpxChecksum: "3B9404B0AAABCB5725E96E07A2C982D1"
+applyFixes:
+  - "bass"

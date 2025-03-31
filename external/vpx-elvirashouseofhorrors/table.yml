@@ -1,0 +1,17 @@
+---
+backglassVPSId: "1Qzqsg9R"
+backglassChecksum: "32E5226AC4F5F3267DD7AF5B2F359828"
+backglassNotes: "Bundled with VPX"
+fps: 38
+romVPSId: "uBU9fEcnS6"
+romChecksum: "27F95F381AA86D4F747EACBC0A9E9A8A"
+romNotes: Download - eatpm_l4.zip"
+tableVPSId: "lZP1ZHtt"
+tagline: "How 'bout another ball?"
+testers:
+  - "TechZombie"
+  - "Mox"
+vpxVPSId: "1Qzqsg9R"
+vpxChecksum: "015543F8B749615DDD91E6B31DAB22BB"
+applyFixes:
+  - "bass"

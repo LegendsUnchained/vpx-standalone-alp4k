@@ -1,0 +1,16 @@
+---
+backglassVPSId: "eCv7EkGM96"
+backglassChecksum: "853D9B7A36F7AC25750C287AE312CC0D"
+fps: 38
+romVPSId: "dnA2C0ua"
+romChecksum: "5AD341CC9C983CFDE8DDBCA479530B6C"
+romNotes: "Download - xfiles.zip"
+tableVPSId: "ImqfuWt4"
+tagline: "Trust No One!"
+testers:
+  - "Bla1ze"
+  - "Mox"
+vpxVPSId: "ZA6P_nOSzT"
+vpxChecksum: "152048985DA23568440F713D0184C4FF"
+applyFixes:
+  - "bass"

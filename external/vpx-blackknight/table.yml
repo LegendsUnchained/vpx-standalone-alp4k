@@ -1,0 +1,15 @@
+---
+backglassVPSId: "yPDBQVge"
+backglassChecksum: "D8B20694D97414AB0E29FDF0B4B0BDF7"
+fps: 30
+romVPSId: "Tk7Kvnxn"
+romChecksum: "C0689DA53921E30F6869EDBFCADE3A84"
+romNotes: "Download - bk_l4.zip"
+tableVPSId: "GsTo4kGh"
+tagline: "Can you defeat the Black Knight?"
+testers:
+  - "Mox"
+vpxVPSId: "EeMZzrFG"
+vpxChecksum: "497AB8D48F558A6E9F53524337357864"
+applyFixes:
+  - "bass"

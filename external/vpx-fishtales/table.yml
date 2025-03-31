@@ -1,0 +1,17 @@
+---
+backglassVPSId: "PwZqw3IxKI"
+backglassChecksum: "7B270B3C56172B0B00CC1D9A545E2E40"
+fps: 39
+romVPSId: "k3DEd-AK"
+romChecksum: "3FD56DE6F91F04E236D55F7FBDDCAA98"
+romNotes: "Download - ft_l5.zip"
+tableVPSId: "tV1GotAP"
+tagline: "Gone fishin', leave a message."
+testers:
+  - "evilwraith"
+  - "Mox"
+vpxVPSId: "PI8WMVQOwS"
+vpxChecksum: "AA6E4EA20D661600CEBD339F2AADDFDE"
+tableNotes: "Download - [...]_JLMD Edition v0.8..zip"
+applyFixes:
+  - "bass"

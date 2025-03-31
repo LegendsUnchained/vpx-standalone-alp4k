@@ -1,0 +1,16 @@
+---
+backglassVPSId: "NXO6osgNI5"
+backglassChecksum: "05F1C3DDC527ACFEDCE9C712D439DDF5"
+backglassNotes: "Download - [...]anti(Mod) V2.zip"
+fps: 38
+romVPSId: "67CFP-h2"
+romChecksum: "40E4FB4F13784904557D0DA5E5153D40"
+romNotes: "Download - wrldtou2.zip"
+tableVPSId: "RGY73iP3"
+tagline: "Rad Action Features for Rockin Fun!"
+testers:
+  - "Mox"
+vpxVPSId: "KSTq26CE"
+vpxChecksum: "7CB4A697364D09F70668B698444243AF"
+applyFixes:
+  - "bass"

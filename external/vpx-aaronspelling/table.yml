@@ -1,0 +1,16 @@
+---
+backglassVPSId: "7ZXnsDJc"
+backglassChecksum: "9B3C1B7FF58F3259CB704C4D43EE89B8"
+fps: 55
+romVPSId: "r639KgLM"
+romChecksum: "478E5CAD11E44424D0B68EB60054B8D8"
+romNotes: "Download - aar_101.zip"
+tableVPSId: "7O0Ir6NU"
+tagline: "I love you daddy."
+testers:
+  - "evilwraith"
+  - "Mox"
+vpxVPSId: "YS5Mj1_B"
+vpxChecksum: "8D8EA7F28BB8AE04423D8B49F2D3CD97"
+applyFixes:
+  - "bass"

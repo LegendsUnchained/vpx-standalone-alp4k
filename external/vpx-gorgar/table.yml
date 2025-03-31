@@ -1,0 +1,17 @@
+---
+backglassVPSId: "WlqxqdSSOm"
+backglassChecksum: "A73A0F2DB883AF638302C57BE1F24C52"
+coloredROMVPSId: "EXP60ArqQj"
+coloredROMChecksum: "8CF353E490392E7DDCEEAC0D07E039FB"
+fps: 48
+romVPSId: "ln7SaoBc"
+romChecksum: "509078C10929D74BC6900211D1937932"
+romNotes: "Download - grgar_l1.zip"
+tableVPSId: "qk6wFyrM"
+tagline: "Gorgar SPEAKS!"
+testers:
+  - "Mox"
+vpxVPSId: "t7UKY0cEAL"
+vpxChecksum: "B69FE933B9F7CC094BEA017FC54AB3B9"
+applyFixes:
+  - "bass"

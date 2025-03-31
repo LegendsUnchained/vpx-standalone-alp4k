@@ -1,0 +1,15 @@
+---
+backglassVPSId: "hripfXW8AB"
+backglassChecksum: "D893635A634EF2D0A0F1196A714513E5"
+fps: 51
+romVPSId: "hLkQcyX9"
+romChecksum: "D8941885B640395E9D21EC52CBA8779D"
+romNotes: "Download - swtril43.zip"
+tableVPSId: "utPtyR_5"
+tagline: "Try not. Do, or do not. There is no try."
+testers:
+  - "Mox"
+vpxVPSId: "FXFg6iyecu"
+vpxChecksum: "DBD5E0737301BD1856D6669D3740FC88"
+applyFixes:
+  - "bass"

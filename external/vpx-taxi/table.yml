@@ -1,0 +1,15 @@
+---
+backglassVPSId: "BTwEgA9z5D"
+backglassChecksum: "2ABE2721C7951B188FBF0FBCDF9B8A8D"
+fps: 36
+romVPSId: "y5-dvH5b"
+romChecksum: "D0A883F5671E868620A6640514E3C8E4"
+romNotes: "Download - taxi_l4.zip"
+tableVPSId: "7eRiA3gK"
+tagline: "Get ready for the taxi everyone's going to be lining up for!"
+testers:
+  - "Mox"
+vpxVPSId: "iXyYBivnD8"
+vpxChecksum: "9BDD1EC178A2EB4751FBD00F69741FEA"
+applyFixes:
+  - "bass"

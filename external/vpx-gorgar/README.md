@@ -16,8 +16,11 @@ ROM
 
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=783)
 
-## Status 
+Colored ROM
 
+Download: [VP Universe](https://vpuniverse.com/files/file/22901-williams-system-46-serum-pack/)
+
+## Status
 Minimum VPX Standalone build: 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|

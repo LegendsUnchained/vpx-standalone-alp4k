@@ -1,0 +1,20 @@
+---
+backglassVPSId: "mSnekrJ6Nl"
+backglassChecksum: "7BDF9E88747385CF67C8E17B53A5435E"
+fps: 30
+romUrlOverride: "https://pinballnirvana.com/forums/resources/blkhole7.1586/" 
+romChecksum: "B6924222A2E45D540B4C726AA5BF2673
+romNotes: "Download - blkhole7.zip"
+tableVPSId: "luHBfbwV"
+tagline: "Do you dare to enter the Black Hole?"
+testers:
+  - "evilwraith"
+  - "Mox"
+vpxVPSId: "OlytaBJ7e3"
+vpxChecksum: "1ECD0D3C1061C1887114246C0FD3EBE0"
+mainNotes:
+  - "https://pinballnirvana.com/forums/resources/blckhole.1582/"
+  - "5CAD19B76FA44C3B471CB260AAA18030"
+  - "Download - blkhole7.zip"
+applyFixes:
+  - "bass"

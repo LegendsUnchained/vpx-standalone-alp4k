@@ -8,7 +8,7 @@
 | File Type | Link | Version | Author |
 |:---------:|:----:|:-------:|:------:|
 | VPX | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=15417) | 2.0 | [antisect](https://www.vpforums.org/index.php?s=8351400e311e3d8e95ecf0fcb31842f1&showuser=153545) |
-| B2S | N/A | 1.0 | [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
+| B2S | [VP Universe](https://vpuniverse.com/files/file/18170-als-garage-band-goes-on-a-world-tour-alvin-g-1992-b2s-with-full-dmd/) | 1.0 | [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
 | DMD | N/A | N/A | N/A |
 | ROM | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=401) | N/A | N/A |
 

@@ -1,0 +1,17 @@
+---
+backglassVPSId: "hWuAb6Mrcl"
+backglassChecksum: "CF2781B02CEE8220545691B558967828"
+backglassNotes: "Download - Bram Stoker's Dracula (Williams 1993).zip"
+fps: 39
+romVPSId: "_UH4Udok"
+romChecksum: "6DDD36020F16A3C39683E7DCF660FFFE"
+romNotes: "Download - drac_l1.zip"
+tableVPSId: "F4ma5afn"
+tagline: "The blood is the life!"
+testers:
+  - "Bla1ze"
+  - "Mox"
+vpxVPSId: "oJqftfbwrS"
+vpxChecksum: "C1B4D74C72A854EED38DD7989A5086E7"
+applyFixes:
+  - "bass"

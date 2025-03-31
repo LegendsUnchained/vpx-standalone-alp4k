@@ -1,0 +1,17 @@
+---
+backglassVPSId: "Byy9_hJ0t8"
+backglassChecksum: "39019464042EA63CC74C9237EC4D66A3"
+backglassNotes: "Download - The Flintstones (Williams 1994) full dmd.zip"
+fps: 33
+romVPSId: "EUrgmoBU"
+romChecksum: "BFA9F51B9D8B8E77C94A4FCFE0F4876C"
+romNotes: "Download - fs_lx5.zip"
+tableVPSId: "Q6mN43lD"
+tagline: "Yabba Dabba Doooo!"
+testers:
+  - "Bla1ze"
+  - "Mox"
+vpxVPSId: "GHGA3K52"
+vpxChecksum: "33389E7A8EF52DB834328D083060B11A"
+applyFixes:
+  - "bass"

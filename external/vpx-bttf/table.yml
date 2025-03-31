@@ -1,0 +1,19 @@
+---
+backglassVPSId: "eLz2XPuacN"
+backglassChecksum: "E47A69AA51A5EF10EC3F5EEFFA30D98E"
+coloredROMVPSId: "UAXbLu0rGk"
+coloredROMChecksum: "55477D67645F9647755E65392B2186C6"
+fps: 35
+romVPSId: "kfX9FwKX"
+romChecksum: "AAAE65170FF4AF94C552AEAD8CCFAAFC"
+romNotes: "Download - bttf_a27.zip"
+tableVPSId: "43ma3WQK"
+tagline: >-
+  "Wait a Minute, Doc. Are You Telling Me You
+  Built a Time Machine... Out of a DeLorean?"
+testers:
+  - "Mox"
+vpxVPSId: "nskyoXPp"
+vpxChecksum: "5128EDB94988AF936A968B2C94B11182"
+applyFixes:
+  - "bass"

@@ -3,7 +3,7 @@
 ![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_04/GoldenEye-Cab.png.4a69af68f8af966126fb4c6bc58ca4d4.png)
 
 Authors: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
-Version: 1.0  
+Version: 1.2 
 Download: [VP Universe](https://vpuniverse.com/files/file/10040-goldeneye-sega-1996-vpw-mod/)
 
 DirectB2S
@@ -15,6 +15,10 @@ Download: [VP Universe](https://vpuniverse.com/files/file/12928-goldeneye-sega-1
 ROM
 
 Download: [VP Universe](https://vpuniverse.com/files/file/619-gldneyezip/)
+
+Colored ROM
+
+Download: [VP Universe](https://vpuniverse.com/files/file/22636-goldeneye-serum-colorization/)
 
 ## Status 
 
