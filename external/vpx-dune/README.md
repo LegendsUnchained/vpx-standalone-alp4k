@@ -1,6 +1,6 @@
 # DUNE
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-dune.png)
+![Table Preview](../../images/vpx-dune.png)
 
 Author: [ZandysArcade](https://vpuniverse.com/profile/57949-zandysarcade/) 
 

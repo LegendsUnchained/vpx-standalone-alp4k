@@ -1,6 +1,6 @@
 # The Champion Pub (Williams 1998) 
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-champpub.png)
+![Table Preview](../../images/vpx-champpub.png)
 
 ---
 

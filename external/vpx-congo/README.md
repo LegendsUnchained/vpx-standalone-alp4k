@@ -1,6 +1,6 @@
 # Congo (Williams 1995)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-congo.jpg)
+![Table Preview](../../images/vpx-congo.jpg)
 
 Authors: [Bigus1](https://www.vpforums.org/index.php?showuser=107629/)
 

@@ -1,6 +1,6 @@
 # Cactus Canyon (Bally 1998)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-cactuscanyon.png)
+![Table Preview](../../images/vpx-cactuscanyon.png)
 
 Author: [bigus1](https://www.vpforums.org/index.php?showuser=107629)  
 

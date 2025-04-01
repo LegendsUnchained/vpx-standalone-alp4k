@@ -1,6 +1,6 @@
 # Guns N Roses (Data East 1994) 
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-gnr.png)
+![Table Preview](../../images/vpx-gnr.png)
 
 Author: [versins77](https://vpuniverse.com/profile/29661-versins77/)  
 Version: 1.03  

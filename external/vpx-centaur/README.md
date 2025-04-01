@@ -1,6 +1,6 @@
 # Centaur (Bally 1981)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-centaur.png)
+![Table Preview](../../images/vpx-centaur.png)
 
 Author: [Bord](https://vpuniverse.com/profile/9265-bord/)  
 

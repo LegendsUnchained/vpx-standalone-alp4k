@@ -1,6 +1,6 @@
 # Surf 'N Safari (Gottlieb 1991)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-surfnsafari.png)
+![Table Preview](../../images/vpx-surfnsafari.png)
 
 ---
 

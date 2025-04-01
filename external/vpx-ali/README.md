@@ -1,6 +1,6 @@
 # Ali (Stern 1980)  
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-ali.png)
+![Table Preview](../../images/vpx-ali.png)
 
 ---
 

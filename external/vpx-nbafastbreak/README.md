@@ -1,6 +1,6 @@
 # NBA Fastbreak (Bally 1997)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-nbafastbreak.png)
+![Table Preview](../../images/vpx-nbafastbreak.png)
 
 Author: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
 

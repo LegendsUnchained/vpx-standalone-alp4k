@@ -1,6 +1,6 @@
 # Spider-Man (Vault Edition) (Stern 2016)
 
-![Table Preview](https://raw.githubusercontent.com/Bla1ze/vpx-images/refs/heads/main/vpx-spidermanve.png)
+![Table Preview](../../images/vpx-spidermanve.png)
 
 ---
 
