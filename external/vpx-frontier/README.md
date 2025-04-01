@@ -1,6 +1,6 @@
 # Frontier (Bally 1980)
 
-![Table Preview](../../images/vpx-frontier.png)
+![Table Preview](../../images/vpx-frontier.jpg)
 
 Authors: [bord](https://www.vpforums.org/index.php?showuser=83256)\
 Version: 1.2\
