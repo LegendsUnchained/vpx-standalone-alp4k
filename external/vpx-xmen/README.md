@@ -1,6 +1,6 @@
 # X-Men LE (Stern 2012) MOD color rush 1.5
 
-![Table Preview](../../images/vpx-xmen.jpg)
+![Table Preview](../../images/vpx-xmen.png)
 
 ---
 

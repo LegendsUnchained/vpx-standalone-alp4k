@@ -1,6 +1,6 @@
 # Black Fever (Playmatic 1980)
 
-![blackfever](https://github.com/user-attachments/assets/ba51c626-969c-4960-8299-97cc3b963b0b)
+![Table Preview](../../images/vpx-blackfever.jpg)
 
 Author: [pedator](https://www.vpforums.org/index.php?showuser=141813)  
 Version: 1.0   

@@ -1,6 +1,6 @@
 # Fleetwood Mac (Original 2024)
 
-![vpx-fleetwood](../../images/vpx-fleetwood-preview.jpg)
+![Table Preview](../../images/vpx-fleetwood-preview.jpg)
 
 Author: [ZandysArcade](https://vpuniverse.com/profile/57949-zandysarcade/)  
 Version: 1.0.0  
