@@ -1,6 +1,6 @@
 # Gold Wing (Original 2017)
 
-![Table Preview](../../images/vpx-goldwing-preview.png?raw=true)
+![Table Preview](../../images/vpx-goldwing-preview.png)
 
 ---
 

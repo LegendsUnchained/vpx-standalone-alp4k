@@ -1,7 +1,7 @@
 # Atlantis (Bally 1989)
 Tested by: kaoticBPR
 
-![Table Preview](../../images/vpx-atlantis.jpg)
+![Table Preview](../../images/vpx-atlantis.png)
 
 ---
 

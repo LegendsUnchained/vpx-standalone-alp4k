@@ -1,6 +1,6 @@
 # Splatterhouse (Original 2023)
 
-![Table Preview](../../images/vpx-splatterhouse.jpg)
+![Table Preview](../../images/vpx-splatterhouse.png)
 
 Authors: [spookyMoulder](https://pinballnirvana.com/forums/members/spookymoulder.24371/)  
 Filename: Splatterhouse 1.52.vpx  
