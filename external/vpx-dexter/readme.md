@@ -9,7 +9,7 @@
 |-----------|--------|----------|--------------|
 | **VPX** |  [Vpuniverse]  (https://vpuniverse.com/files/file/11395-dexter) | 1.0.0 |  iceman 2022 (https://vpuniverse.com/profile/4306-icepinball/}
 | **B2S** |  [Vpuniverse]  (https://vpuniverse.com/files/file/11395-dexter) | 1.0.0 |  iceman 2022 (https://vpuniverse.com/profile/4306-icepinball/}
-| **ROM** |  [Pinball Nirvana} (https://pinballnirvana.com/forums/resources/dvlsdre.1744/) (Rock-ola)
+| **ROM** |  [Pinball Nirvana} (https://pinballnirvana.com/forums/resources/dvlsdre.1744/) | n/a | Rock-ola (https://pinballnirvana.com/forums/members/rock-ola.1/)
 
 **Tested by:** {rocjr73}
 
