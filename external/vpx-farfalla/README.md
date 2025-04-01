@@ -1,6 +1,6 @@
 # Farfalla (Zaccaria 1983)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-farfalla.png)
+![Table Preview](../../images/vpx-farfalla.png)
 
 Authors: [kiwi](https://www.vpforums.org/index.php?showuser=30913)  
 Version: 1.0.1  
@@ -32,3 +32,4 @@ Minimum VPX Standalone build: 10.8.0-2042-1431983
 - The ROM zip file gets copied to vpx-farfalla/pinmame/roms (Do not unzip)
 - Make sure (.vpx), (.directb2s), (.vbs), and (.ini) files are all named the same
 - "For this score... no comment"
+

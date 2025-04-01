@@ -62,7 +62,7 @@ Const tnob = 5					  'Total number of balls the table can hold
 Const lob = 0					   'Locked balls
 Dim tablewidth: tablewidth = Table1.width
 Dim tableheight: tableheight = Table1.height
-Const cGameName="hardbody",UseSolenoids=2,UseLamps=0,UseGI=0,SSolenoidOn="SolOn",SSolenoidOff="SolOff", SCoin="coin"
+Const cGameName="hardbody",UseSolenoids=2,UseLamps=1,UseGI=1,SSolenoidOn="SolOn",SSolenoidOff="SolOff", SCoin="coin"
 
 LoadVPM "01500000", "6803.VBS", 3.2
 

@@ -1,12 +1,14 @@
 ---
-backglassVPSId: "qV3Z3oQ8md"
-backglassChecksum: "535bc0cb3c0fe732f6bb874cac8f9e1b"
-backglassNotes: "Included in VPX download"
+backglassChecksum: "b3500dc847ff54988db01c2ffdd0aaa0"
+backglassUrlOverride: >-
+  https://vpuniverse.com/files/file/24657-pink-floyd-back-catalogue-backglass/
+backglassAuthorsOverride:
+  - "CoffeeAtJoes"
+backglassNotes: "Download version 1.0"
 fps: 42
 romChecksum: "e4c898afcdcf6fd2a884c77c7fd6c3a9"
-romNotes: "Included in VPX download"
-romUrlOverride: >-
-  https://vpuniverse.com/files/file/10341-pink-floyd-vpx-cw-pup-pack/
+romNotes: "'esha_l4c.zip' in the VPX download zip"
+romBundled: true
 tableNotes: "Download 'Pink Floyd NO PUPPack.zip'"
 tableVPSId: "Lgi1JLk0Vf"
 tagline: >-
@@ -15,5 +17,9 @@ tagline: >-
   don't eat ya meat?' - Teacher
 testers:
   - "TechZombie"
+  - "Sscorpio"
+  - "CoffeeAtJoes"
 vpxVPSId: "qV3Z3oQ8md"
 vpxChecksum: "e6df3800f7c9286fa195e84034da683a"
+applyFixes:
+  - "bass"

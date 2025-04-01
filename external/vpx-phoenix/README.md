@@ -1,6 +1,6 @@
 # Phoenix (Williams 1978)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-phoenix.png)
+![Table Preview](../../images/vpx-phoenix.png)
 
 **Table**
 

@@ -1,6 +1,6 @@
 # Tee'd Off (Gottlieb 1993)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_05/Fullscreen.png.7bc53fb2055c83ee807c9f3e15b5aba9.png)
+![Table Preview](../../images/vpx-teedoff.png)
 
 Authors: [rothbauerw](https://vpuniverse.com/profile/10798-rothbauerw/)  
 Version: 2.0.5  

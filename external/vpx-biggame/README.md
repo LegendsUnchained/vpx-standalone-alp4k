@@ -1,6 +1,6 @@
 # Big Game (Stern 1980)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-biggame.png)
+![Table Preview](../../images/vpx-biggame.png)
 
 **Table**
 

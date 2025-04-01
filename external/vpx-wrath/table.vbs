@@ -32,7 +32,7 @@ End Sub
 
 ' Define any Constants
 Const cGameName = "Wooly"
-Const myVersion = "5.5.0"
+Const myVersion = "5.5.1"
 Const MaxPlayers = 4          ' from 1 to 4
 Const MaxMultiplier = 10      ' limit playfield multiplier
 Const MaxBonusMultiplier = 10 'limit Bonus multiplier
@@ -647,6 +647,7 @@ Sub ChangeGi(col) 'changes the gi color
     For each bulb in aGILights
         SetLightColor bulb, col, -1
     Next
+    SetFlashColor GiFlash, col, 1
 End Sub
 
 Sub ChangeGiIntensity(factor) 'changes the intensity scale
@@ -2645,6 +2646,7 @@ Sub SetFlashColor(n, col, stat) 'stat 0 = off, 1 = on, -1= no change - no blink 
             n.color = RGB(128, 0, 192)
         Case white 'bulb
             n.color = RGB(255, 197, 143)
+            stat = 0
         Case teal
             n.color = RGB(2, 128, 126)
          Case ledwhite
@@ -4036,7 +4038,7 @@ Sub scoop1_Hit 'helmet scoop
                 vpmtimer.addtimer 1500, "kickBallOut '"
             End If
         Case 2, 4
-            If ModeStep = 4 Then
+            If ModeStep = 5 Then
                 WinMode
             Else
                 vpmtimer.addtimer 1500, "kickBallOut '"
@@ -4500,7 +4502,7 @@ Sub StartNextMode 'starts the mode in the Mode(CurrentPlayer, 0) variable
             '180 second timer
             'Complete ZEUS targets 3 times and finish at the scoop.
             'check for special
-            If li012.State = 1 AND li014.State = 1 Then
+            If li013.State = 1 AND li014.State = 1 Then
                 DMD CL("SPECIAL"), CL("IS LIT"), "_", eNone, eNone, eNone, 2500, True, "vo_extraballislit"
                 Light010.State = 2
             End If
@@ -4572,6 +4574,7 @@ Sub CheckWinMode
                 Case 4:
                     li040.State = 0
                     TurnOnHelmet
+                    ModeStep = 5
             End Select
         Case 3                                                      ' Cerberus
             If ModeStep = 1 Then
@@ -4588,6 +4591,7 @@ Sub CheckWinMode
                 Case 4:
                     li044.State = 0
                     TurnOnHelmet
+                    ModeStep = 5
             End Select
         Case 5                             ' Ares
             If ModeStep = 1 Then

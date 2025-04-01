@@ -1,6 +1,6 @@
 # Gold Ball (Bally 1983) 
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-goldball.jpg)
+![Table Preview](../../images/vpx-goldball.jpg)
 
 Authors: [Goldchicco](https://vpuniverse.com/profile/23579-goldchicco/)  
 Version: 1.1  

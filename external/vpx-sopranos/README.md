@@ -1,6 +1,6 @@
 # The Sopranos Siggis Mod
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_02/Sop_pf_FS.png.f0e3941b1a67ab063f837d0fb843197b.png)
+![Table Preview](../../images/vpx-sopranos.png)
 
 Author: [Siggi](https://vpuniverse.com/profile/8779-siggi/)  
 
@@ -30,7 +30,7 @@ MD5:15ecf8c5a7cee365cad0be16ebbed414
 Minimum VPX Standalone build: 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50|
 
 ## Instructions
 

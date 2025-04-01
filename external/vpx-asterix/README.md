@@ -1,6 +1,6 @@
 # Asterix The Twelve Tasks (Original 2022)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-asterix.png)
+![Table Preview](../../images/vpx-asterix.png)
 
 ---
 

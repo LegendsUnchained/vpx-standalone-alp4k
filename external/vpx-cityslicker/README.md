@@ -1,6 +1,6 @@
 # City Slicker (Bally 1987)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-cityslicker.png)
+![Table Preview](../../images/vpx-cityslicker.png)
 
 Authors: [mistermixer](https://www.vpforums.org/index.php?showuser=21898)  
 Version: 1.0  

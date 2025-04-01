@@ -1,6 +1,6 @@
 # Circus (Gottlieb 1980)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-circus.png)
+![Table Preview](../../images/vpx-circus.png)
 
 Authors: [UnclePaulie](https://vpuniverse.com/profile/16685-unclepaulie/)  
 Version: 2.0.1  
@@ -38,3 +38,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Copy ROM to external/vpx-circus/pinmame/roms. Do not extract.
 - "Fantastic"
+

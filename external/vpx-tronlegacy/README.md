@@ -1,15 +1,15 @@
 # Tron Legacy LE (Stern 2011)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-tronlegacy.png)
+![Table Preview](../../images/vpx-tronlegacy.png)
 
-Author: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
-Version: 1.1  
-Download: [VP Universe](https://vpuniverse.com/files/file/7701-tron-legacy-le-stern-2011-vpw-mod/)
+Author: [Bigus1](https://www.vpforums.org/index.php?showuser=107629)  
+Version: 2.1  
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=15427)
 
 DirectB2S
 
 Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
-Version: 1.1.0  
+Version: 1.0.0  
 Download: [VP Universe](https://vpuniverse.com/files/file/14202-tron-legacy-le-stern-2011-b2s-2-with-full-dmd/)
 
 ROM
@@ -22,7 +22,7 @@ MD5: ad5dc9dd5b6b5ca3430866ff8897a09b
 Alt Color
 
 Author: [PastorLUL](https://vpuniverse.com/profile/42770-pastorlul/)  
-Version: 1.3.0  
+Version: 2.0.1 
 Download: [VP Universe](https://vpuniverse.com/files/file/18393-tron-legacy-stern-2011-64-colors/)
 
 Tested by: Bla1ze
@@ -33,7 +33,7 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 30 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 
 ## Instructions
 

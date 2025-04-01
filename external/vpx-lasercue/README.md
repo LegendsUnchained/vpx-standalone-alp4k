@@ -1,6 +1,6 @@
 # Laser Cue (Williams 1984)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-lasercue.png)
+![Table Preview](../../images/vpx-lasercue.png)
 
 Authors: [UnclePaulie](https://vpuniverse.com/profile/16685-unclepaulie/)  
 Version: 2.0.0  

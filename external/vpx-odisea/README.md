@@ -1,6 +1,6 @@
 # Odisea Paris-Dakar (Peyper 1987)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-odisea.png)
+![Table Preview](../../images/vpx-odisea.png)
 
 Authors: [Goldchicco](https://vpuniverse.com/profile/23579-goldchicco/)  
 Version: 1.2  
@@ -31,3 +31,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into the external/vpx-odisea folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place the downloaded ROM file into the vpx-odisea/pinmame/roms folder. DO NOT UNZIP!
+

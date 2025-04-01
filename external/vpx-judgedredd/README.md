@@ -1,6 +1,6 @@
 # Judge Dredd (Bally 1993)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-judgedredd.png)
+![Table Preview](../../images/vpx-judgedredd.png)
 
 Author: [bigus1](https://www.vpforums.org/index.php?showuser=107629) 
 

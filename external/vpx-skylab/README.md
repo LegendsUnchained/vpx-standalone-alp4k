@@ -1,6 +1,6 @@
 # Skylab (Williams 1974)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-skylab.jpg)
+![Table Preview](../../images/vpx-skylab.jpg)
 
 Authors: [klodo81](https://www.vpforums.org/index.php?showuser=44515)  
 Version: 1.3  

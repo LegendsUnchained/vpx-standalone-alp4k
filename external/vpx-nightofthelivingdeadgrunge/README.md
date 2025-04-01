@@ -1,6 +1,6 @@
 # Night of the Living Dead '68 (Original 2018) Grunge Mod
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2018_06/NOTLD-68-GRUNGE-FS.png.d2ff0c5b8f30891100d2854271be1912.png)
+![Table Preview](../../images/vpx-nightofthelivingdeadgrunge.png)
 
 Authors: [HiRez00](https://vpuniverse.com/profile/19941-hirez00/)  
 Download File: NOTLD-68_v1.2_Grunge_Mod.zip (1.2)  

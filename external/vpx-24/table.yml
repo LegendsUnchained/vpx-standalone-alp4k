@@ -1,6 +1,6 @@
 ---
-backglassVPSId: "vpfZXF3x"
-backglassChecksum: "9342233E172907FB4AA7F21E4E3CE48C"
+backglassVPSId: "_SWGA7jJeW"
+backglassChecksum: "947426bdecec0938dd987dbc58125674"
 coloredROMVPSId: "aIWgsQ7Po0"
 coloredROMChecksum: "14EBF1B2B346AECDADB8314170535E20"
 fps: 54
@@ -13,3 +13,5 @@ testers:
   - "OminousOsie"
 vpxVPSId: "6T98rAIp"
 vpxChecksum: "8DC5DDF640BC04608094D9A0EC76FFD5"
+applyFixes:
+  - "bass"

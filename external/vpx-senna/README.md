@@ -1,6 +1,6 @@
 # Senna Prototype Edition (Culik Pinball 2020) 1.0.1 
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-senna.png)
+![Table Preview](../../images/vpx-senna.png)
 
 Authors: [JPsalas](https://www.vpforums.org/index.php?showuser=277)
 

@@ -1,6 +1,6 @@
 # X Files (Sega 1997)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-xfiles.png)
+![Table Preview](../../images/vpx-xfiles.png)
 
 ---
 

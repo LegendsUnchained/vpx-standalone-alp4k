@@ -1,6 +1,6 @@
 # Bugs Bunny Birthday Ball (Bally 1991)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-bugs.png)
+![Table Preview](../../images/vpx-bugs.png)
 
 Author: [wrd1972](https://vpuniverse.com/profile/7788-wrd1972/) 
 

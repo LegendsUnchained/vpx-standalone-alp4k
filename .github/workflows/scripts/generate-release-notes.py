@@ -204,6 +204,8 @@ def main():
             new_release_notes = get_release_notes(changed_files, wizard_data)
             print("Adding release notes to the release...")
             print(new_release_notes)
+            if new_release_notes is None:
+                sys.exit(0)
             try:
                 release = repo.get_release(end_tag)
                 release.update_release(name=release.title, message=new_release_notes)

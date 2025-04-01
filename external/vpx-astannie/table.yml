@@ -6,7 +6,11 @@ tableVPSId: "nky-bYGY"
 tagline: "She knows when to hold 'em... knows when to fold 'em..."
 testers:
   - "CoffeeAtJoes"
+  - "OminousOsie"
 vpxVPSId: "DeAc-rI_"
 vpxChecksum: "99acda59c61174b94e0881aae1dc7798"
 romUrlOverride: "https://pinballnirvana.com/forums/resources/astannie-zip.8426/"
 romChecksum: "90299c893e0ceb26cd3326e3a3727bca"
+romVersionOverride: "astannie"
+applyFixes:
+  - "bass"

@@ -1,6 +1,6 @@
 # KING Donkey Kong (Original 2023)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-kingdonkeykong.jpg)
+![Table Preview](../../images/vpx-kingdonkeykong.jpg)
 
 Authors: [balutito](https://vpuniverse.com/profile/36070-balutito/)  
 Version: 1.0  

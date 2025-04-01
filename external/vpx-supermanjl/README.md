@@ -1,6 +1,6 @@
 # Superman and The Justice League (Original 2024)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-supermanjl.png)
+![Table Preview](../../images/vpx-supermanjl.png)
 
 Authors: [marty02](https://vpuniverse.com/profile/16531-marty02/)  
 Version: 3.1  

@@ -8,5 +8,8 @@ tableVPSId: "nQzXPTZz"
 tagline: "Do you have a thing for bats?"
 testers:
   - "Bla1ze"
+  - "OminousOsie"
 vpxVPSId: "oYDS3sMqBm"
 vpxChecksum: "69740dd38a4e40f8067d592e40dffa52"
+applyFixes:
+  - "bass"

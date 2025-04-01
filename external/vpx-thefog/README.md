@@ -1,6 +1,6 @@
 # The Fog (Original 2022)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_12/TF-Playfield.jpg.77c119b146adcf9e7390ca4a72fb293c.jpg)
+![Table Preview](../../images/vpx-thefog.jpg)
 
 Author(s): [HiRez00](https://vpuniverse.com/profile/19941-hirez00/)  
 Download Name:  1840136187_FogThe(Gottlieb1979)v2.5for10.7.vpx.zip  

@@ -85,7 +85,7 @@ def get_table_meta(files, warn_on_error=True):
         print(f"Processing {folder_name}")
         with open(table_yaml, "r") as table_data:
             data = yaml.safe_load(table_data)
-
+        
         tableVPSId = data.get("tableVPSId")
         vpxVPSId = data.get("vpxVPSId")
         backglassVPSId = data.get("backglassVPSId")
@@ -111,6 +111,8 @@ def get_table_meta(files, warn_on_error=True):
             "applyFixes": data.get("applyFixes"),
             "backglassBundled": data.get("backglassBundled"),
             "backglassChecksum": backglassChecksum,
+            "backglassFileUrl": data.get("backglassUrlOverride"),
+            "backglassAuthors": data.get("backglassAuthorsOverride"),
             "backglassNotes": data.get("backglassNotes"),
             "coloredROMBundled": data.get("coloredROMBundled"),
             "coloredROMChecksum": coloredROMChecksum,
@@ -122,11 +124,12 @@ def get_table_meta(files, warn_on_error=True):
             "romChecksum": romChecksum,
             "romNotes": data.get("romNotes"),
             "romFileUrl": data.get("romUrlOverride"),
-            "romFileVersion": data.get("romVersionOverride"),
+            "romVersion": data.get("romVersionOverride"),
             "tableChecksum": vpxChecksum,
             "tableNotes": data.get("tableNotes"),
             "tagline": data.get("tagline"),
             "testers": data.get("testers"),
+            "enabled": data.get("enabled")
         }
         if tableVPSId:
             table = vpsdb.get_table(tableVPSId)
@@ -197,7 +200,8 @@ def get_table_meta(files, warn_on_error=True):
                 table_meta["romAuthors"] = rom.get("authors", [])
                 table_meta["romComment"] = rom.get("comment", "")
                 table_meta["romFileUrl"] = rom.get("urls", [])[0].get("url", "")
-                table_meta["romVersion"] = rom.get("version", "")
+                if not table_meta["romVersion"]:
+                    table_meta["romVersion"] = rom.get("version", "")
             else:
                 print(f"{error_prefix}: ROM id {romVPSId} not found in VPSDB")
                 if warn_on_error:

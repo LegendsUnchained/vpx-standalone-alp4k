@@ -1,6 +1,6 @@
 # Nightmare Before Christmas (Original 2024)
 
-![Table Preview](https://raw.githubusercontent.com/Bla1ze/vpx-images/refs/heads/main/vpx-nbc.png)
+![Table Preview](../../images/vpx-nbc.png)
 
 ---
 

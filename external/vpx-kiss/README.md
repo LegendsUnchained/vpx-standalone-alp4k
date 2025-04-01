@@ -1,6 +1,6 @@
 # KISS (Stern 2015)
 
-![Table Preview](https://github.com/Mar3nBu/vpx-images/blob/main/vpx-kiss.png)
+![Table Preview](../../images/vpx-kiss.png)
 
 Author: [Bigus1](https://www.vpforums.org/index.php?showuser=107629)  
 Version: 1.1  
@@ -37,3 +37,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 - Left flipper = select city
 - Right flipper = select song
+

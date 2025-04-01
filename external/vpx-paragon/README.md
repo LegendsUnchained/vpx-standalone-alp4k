@@ -1,6 +1,6 @@
 # Paragon (Bally 1979)
 
-![Table Preview](https://github.com/Mar3nBu/vpx-images/blob/main/vpx-paragon.png)
+![Table Preview](../../images/vpx-paragon.png)
 
 Author: [Mustang1961](https://www.vpforums.org/index.php?showuser=101607) 
 
@@ -42,3 +42,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Download the table and ROM versions listed above 
 - Copy the table (.vpx) and backglass (.directb2s) to this folder and remember to rename the vpx and directb2s files to "Paragon (Bally 1979)"
 - The ROM zip gets copied to pinmame/roms (do not unzip)
+

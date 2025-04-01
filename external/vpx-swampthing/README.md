@@ -1,6 +1,6 @@
 # Swamp Thing (Clairvius 2024)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_06/vlcsnap-2024-06-04-00h15m27s360.png.8ca658c3a2a55b4542b5885cbaf438ef.png)
+![Table Preview](../../images/vpx-swampthing.png)
 
 Authors: [clairvius](https://vpuniverse.com/profile/16134-clairvius/)  
 Version: 1.5  

@@ -1,6 +1,6 @@
 # Transporter: The Rescue (Bally 1989)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-transporter.png)
+![Table Preview](../../images/vpx-transporter.png)
 
 Author: [VPin Workshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
 Version: 1.05  

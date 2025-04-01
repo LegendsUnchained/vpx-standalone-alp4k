@@ -1,6 +1,6 @@
 # Star Wars Trilogy (Sega 1997)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_09/SW.png.9734a65ae832b7903c3feb59b11234df.png)
+![Table Preview](../../images/vpx-starwarstrilogy.png)
 
 Authors: [siggi](https://vpuniverse.com/profile/8779-siggi/)  
 Version: 1.1  

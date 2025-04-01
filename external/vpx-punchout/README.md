@@ -1,6 +1,6 @@
 # Punch Out (Original 2025)
 
-![Table Preview](https://raw.githubusercontent.com/Bla1ze/vpx-images/refs/heads/main/vpx-punchout.jpg)
+![Table Preview](../../images/vpx-punchout.jpg)
 
 ---
 

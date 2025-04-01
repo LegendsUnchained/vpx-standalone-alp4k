@@ -1,0 +1,37 @@
+# Harry Potter and the Goblet of Fire (Original 2020)
+
+![Table Preview](../../images/vpx-hpgof-preview.jpg)
+
+---
+
+## Files
+| File Type | Link | Version | Author | 
+|-----------|--------|----------|--------------|
+| **VPX** | [orbitalpin](https://orbitalpin.com/downloads/) | 0.52 | [ScottyWic](https://orbitalpin.com/) |
+| **B2S** | N/A | N/A | N/A |
+| **DMD** | N/A | N/A | N/A |
+| **ROM** | N/A | N/A | N/A |
+
+**Tested by:** [mrandromeda]
+
+---
+
+## Status 
+**Minimum VPX Standalone build:** 10.8.0-5b941e6
+| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
+|-----------|----------|-----------|-----|--------------|-----|
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 35 |
+
+---
+
+## Instructions
+- Copy the contents of this repo folder to your USB drive
+- Add your personalized launcher.elf and rename it to `vpx-hpgof.elf`
+- Go to the website listed above and scroll down for Harry Potter. **Remember (copy) the password in the sixth column** and click on the Mega link in the previous column and download the `hpgof52.rar` archive.
+- Extract both archives from `hpgof52.rar` and enter the password when requested.
+- Extract from the archive `hpgf-052-DOF.zip` the table and copy it into `vpx-hpgof`
+- Make sure `(.vpx)` `(.vbs)` and `(.ini)` are all named the same.
+- Create the folder `pupvideos`.
+- Extract the archive `hpgof46.zip` and place the `hpgof` folder in `pupvideos`.
+- Unzip the `use_these_pup_files.zip` and place them inside the `pupvideos/hpgof` folder, and overwrite files if prompted.
+- You’re a wizard Harry! A pinball wizard!

@@ -1,6 +1,6 @@
 # Mustang Bullitt LE
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_07/2131515761_Sanstitre.png.f3c4a73a28f84d7cfb779a6ae7d1eeaa.png)
+![Table Preview](../../images/vpx-mustangbullitt.png)
 
 Author(s): [balutito](https://vpuniverse.com/profile/36070-balutito/)  
 Version:  Mustang Bullitt LE.rar Version 1.0.0

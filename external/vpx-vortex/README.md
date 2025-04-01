@@ -1,6 +1,6 @@
 # Vortex (Taito do Brasil 1981)
 
-![Table Preview](https://github.com/BorisUndead/vpx-standalone-alp4k/blob/main/images/vpx-vortex-preview.png)
+![Table Preview](../../images/vpx-vortex.png)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 5.5.0  

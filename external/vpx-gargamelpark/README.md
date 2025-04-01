@@ -1,6 +1,6 @@
 # Gargamel Park, JPs (Orginal 2016)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-gargamelpark.png)
+![Table Preview](../../images/vpx-gargamelpark.png)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 4.0.2  

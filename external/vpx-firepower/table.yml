@@ -1,6 +1,6 @@
 ---
-backglassVPSId: "UBPZRJtvIZ"
-backglassChecksum: "47f926c41c1c8b6bff62f74bafd6e181"
+backglassVPSId: "zkuPX4-azO"
+backglassChecksum: "747fe403e70f7365e853d7f071cdeeda"
 fps: 48
 romVPSId: "gvNzxvdo"
 romChecksum: "edd9bd5aeaa63b8d300e4d42724aa166"
@@ -8,6 +8,8 @@ tableVPSId: "OC08D_fq"
 tagline: "The Classic requested by many!"
 testers:
   - "kaoticBPR"
+  - "OminousOsie"
+  - "CoffeeAtJoes"
 vpxVPSId: "V6GAlqxe"
 vpxChecksum: "15bb3bf40cd6e1e9cc06d5a8c3ab8040"
 tableNotes: "Download 'V1.0.5.zip'"

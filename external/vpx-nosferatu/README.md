@@ -1,6 +1,6 @@
 # Nosferatu 1922 (Original 2023)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-nosferatu.png)
+![Table Preview](../../images/vpx-nosferatu.png)
 
 Authors: [DAMONRA](https://vpuniverse.com/profile/48356-damonra/content/?type=downloads_file)  
 Version: 1.0.0 Nosferatu 1922 (dea TEE Original VPX 2023) v1.0.zip  
@@ -32,3 +32,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s listed above, extract (if necessary) and copy them to external/vpx-nosferatu
 - Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
 - "Your wife has such a beautiful neck..." - Graf Orlok
+

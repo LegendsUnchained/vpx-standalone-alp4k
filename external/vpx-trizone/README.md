@@ -1,6 +1,6 @@
 # Tri Zone (Williams 1979)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-trizone.png)
+![Table Preview](../../images/vpx-trizone.png)
 
 Authors: [kiwi](https://www.vpforums.org/index.php?showuser=30913)  
 Version: 1.2  

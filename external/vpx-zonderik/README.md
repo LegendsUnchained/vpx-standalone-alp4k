@@ -1,6 +1,6 @@
 # Zonderik (Belgian Gaming Company 1980) 
 
-![Table Preview](http://www.zonderik.be/sites/default/files/imagecache/lightbox_fullscreen/global/pages/nieuws/IMAG0702.jpg)
+![Table Preview](../../images/vpx-zonderik.jpg)
 
 ---
 
