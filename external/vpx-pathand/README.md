@@ -1,6 +1,6 @@
 # Pat Hand (Williams 1975)
 
-![Table Preview](preview.png)
+![Table Preview](../../images/vpx-pathand.png)
 
 Authors: [EMUnderdogs](https://vpuniverse.com/profile/73817-emunderdogs/)\
 Version: 1.5.1\
