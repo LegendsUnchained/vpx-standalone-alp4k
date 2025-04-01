@@ -1,6 +1,6 @@
 # Lights Camera Action! (Gottlieb 1989)
 
-![Table Preview](../../images/vpx-lca.jpg)
+![Table Preview](../../images/vpx-lightscameraaction-preview.jpg)
 
 Authors: [bigus1](https://www.vpforums.org/index.php?showuser=107629)
 Version: 1.0
