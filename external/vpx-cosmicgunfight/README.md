@@ -2,7 +2,7 @@
 
 Tested by: kaoticBPR
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-cosmicgunfight.jpg)
+![Table Preview](../../images/vpx-cosmicgunfight.jpg)
 
 Authors: [bigus1](https://www.vpforums.org/index.php?s=6fc5c7c72f7465f3ef77b0c3bce8706f&showuser=107629)  
 Version: 1.0  
@@ -35,3 +35,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place csmic_l1.zip in the external/vpx-cosmicgunfight/pinmame/roms folder. *Do Not unzip*!
 - "Nothing like a good gunfight, in space."
+

@@ -2,7 +2,7 @@
 
 TESTED: Mar3nBu
 
-![Table Preview](https://github.com/Mar3nBu/vpx-images/blob/main/vpx-jamesbond007.png)
+![Table Preview](../../images/vpx-jamesbond007.png)
 
 Authors: [timblo](https://vpuniverse.com/profile/22603-timblo/)  
 Version: 1.1.0  
@@ -29,3 +29,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-jamesbond007
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Go enjoy some shaken, not stirred, Martinis! 
+

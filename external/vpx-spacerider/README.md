@@ -1,6 +1,6 @@
 # Space Rider (Geiger 1980)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-spacerider.png)
+![Table Preview](../../images/vpx-spacerider.png)
 
 ---
 

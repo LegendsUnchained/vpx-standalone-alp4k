@@ -1,6 +1,6 @@
 # Iron Maiden (Stern 1981)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-ironmaiden.png)
+![Table Preview](../../images/vpx-ironmaiden.png)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 5.5.0  
@@ -35,3 +35,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure the (.vpx), (.directb2s), and (.ini) files are all named the "exact" same
 - Place ironmaid.zip ROM in the external/vpx-ironmaiden/pinmame/roms folder. *Do Not unzip!*
 - "Survive the Iron Maiden"
+

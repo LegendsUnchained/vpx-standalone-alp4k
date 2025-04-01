@@ -2,7 +2,7 @@
 
 Tested By: kaoticBPR
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_06/Strek_cab.png.4857bb08b96a1d30e5e7c1a22536f1cb.png)
+![Table Preview](../../images/vpx-startrek25th.png)
 
 Authors: [versins77](https://vpuniverse.com/profile/29661-versins77/)  
 Version: 1.0.0  

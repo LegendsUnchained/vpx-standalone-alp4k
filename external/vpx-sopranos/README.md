@@ -1,6 +1,6 @@
 # The Sopranos Siggis Mod
 
-![Table Preview](https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/images/vpx-sopranos-preview.png)
+![Table Preview](../../images/vpx-sopranos.png)
 
 Author: [Siggi](https://vpuniverse.com/profile/8779-siggi/)  
 

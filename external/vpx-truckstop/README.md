@@ -1,7 +1,7 @@
 # Truck Stop (Bally 1988)
 Tested by: kaoticBPR
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_05/1680907738_TSSS.jpg.5e966b746a23bf5c17ce5bc7f956210f.jpg)
+![Table Preview](../../images/vpx-truckstop.jpg)
 
 Authors: [agenteighty6](https://vpuniverse.com/profile/25523-agenteighty6/)
 Version: 2.1.0

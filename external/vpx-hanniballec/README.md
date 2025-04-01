@@ -1,6 +1,6 @@
 # Hannibal Lecter (Original 2022)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-hanniballec.png)
+![Table Preview](../../images/vpx-hanniballec.png)
 
 Authors: [VP_Cooks](https://vpuniverse.com/profile/33960-vp_cooks/)  
 Version: 1.0.0  

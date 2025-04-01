@@ -1,6 +1,6 @@
 # Summer Time (Williams 1972) 
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_11/Desktop.png.5ba0aaad74952d5e687de5c6d8d17589.png)
+![Table Preview](../../images/vpx-summertime.png)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?s=543a5ca562cc33a89debe8ace8834f1e&showuser=277)  
 Version: 5.5.0  

@@ -1,6 +1,6 @@
 # Tales from the Crypt (Data East 1993)
 
-![Table Preview](https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/images/vpx-tftc.jpg)
+![Table Preview](../../images/vpx-tftc.jpg)
 
 ---
 

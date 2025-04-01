@@ -1,6 +1,6 @@
 # Black Hole (Gottlieb 1981)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-blackhole.png)
+![Table Preview](../../images/vpx-blackhole.png)
 
 Authors: [Bigus1](https://www.vpforums.org/index.php?showuser=107629)  
 Version: 1.0  

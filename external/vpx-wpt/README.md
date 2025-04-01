@@ -1,6 +1,6 @@
 # World Poker Tour (Stern 2006)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-wpt.jpg)
+![Table Preview](../../images/vpx-wpt.jpg)
 
 ---
 

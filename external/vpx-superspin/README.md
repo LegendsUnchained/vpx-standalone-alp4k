@@ -1,6 +1,6 @@
 # Super Spin (Gottlieb 1977)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-superspin.jpg)
+![Table Preview](../../images/vpx-superspin.jpg)
 
 Authors: [EMUnderdogs](https://vpuniverse.com/profile/73817-emunderdogs/)  
 Version: 1.1  

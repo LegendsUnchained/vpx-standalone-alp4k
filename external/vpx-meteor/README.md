@@ -1,6 +1,6 @@
 # Meteor (Stern 1979)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-meteor.jpg)
+![Table Preview](../../images/vpx-meteor.jpg)
 
 Authors: [bord](https://vpuniverse.com/profile/9265-bord/)  
 Version: 1.0.0a  

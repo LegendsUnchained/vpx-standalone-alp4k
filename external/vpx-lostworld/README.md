@@ -1,6 +1,6 @@
 # Lost World (Bally 1978)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-lostworld.jpg) 
+![Table Preview](../../images/vpx-lostworld.jpg) 
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 5.5.1  

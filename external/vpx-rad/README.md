@@ -1,5 +1,5 @@
 # Radical (Bally 1990)
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-rad.jpg)
+![Table Preview](../../images/vpx-rad.jpg)
 
 Author: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: Radical (Bally 1990) 5.5.0  

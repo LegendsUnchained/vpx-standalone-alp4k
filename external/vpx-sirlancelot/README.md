@@ -1,6 +1,6 @@
 # Sir Lancelot (Peyper 1994)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-sirlancelot.png)
+![Table Preview](../../images/vpx-sirlancelot.png)
 
 Authors: [GauGau](https://vpuniverse.com/profile/43510-gaugau/)  
 Version: 1.1  
@@ -31,3 +31,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into the external/vpx-sirlancelot folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place the downloaded ROM file into the vpx-sirlancelot/pinmame/roms folder. DO NOT UNZIP!
+

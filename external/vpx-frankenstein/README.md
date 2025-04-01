@@ -1,6 +1,6 @@
 # Frankenstein - Balutito MOD (Original 2022)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-frankenstein.png)
+![Table Preview](../../images/vpx-frankenstein.png)
 
 Authors: [balutito](https://vpuniverse.com/profile/36070-balutito/)  
 Download File Name: 1823184329_FrankensteinVPX.rar  
@@ -39,3 +39,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
 - The ROM zip file gets copied to vpx-frankenstein/pinmame/roms (Do not unzip)
 - "All men hate the wretched; how, then, must I be hated, who am miserable beyond all living things!" - The Monster
+

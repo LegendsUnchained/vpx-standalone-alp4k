@@ -1,6 +1,6 @@
 # Bubba the Redneck Werewolf (Original 2017)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-bubbatheredneckwerewolf.png)
+![Table Preview](../../images/vpx-bubbatheredneckwerewolf.png)
 
 Authors: [hauntfreaks](https://www.vpforums.org/index.php?showuser=73849)  
 Filename: Bubba the Redneck Werewolf (2017)1.1.vpx  
@@ -32,3 +32,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
 - Rom file (hlywoodh.zip) stays in zip folder, place zip file in vpx-bubbatheredneckwerewolf/pinmame/roms
 - In the town of "Broken Taint" located in Cracker County Fla (The land that time forgot and is damn proud of it!) - Bubba
+

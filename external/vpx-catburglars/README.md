@@ -1,6 +1,6 @@
 # Cat Burglars (Anthias 2024)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-catburglars.jpg)
+![Table Preview](../../images/vpx-catburglars.jpg)
 
 Authors: [Anthias](https://vpuniverse.com/profile/69616-anthias/)  
 Version: 1.1  

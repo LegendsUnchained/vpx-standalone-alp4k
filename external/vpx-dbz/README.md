@@ -1,6 +1,6 @@
 # Dragon Ball Z (Original 2018)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-dbz.png)
+![Table Preview](../../images/vpx-dbz.png)
 
 Authors: [Oly2](https://vpuniverse.com/profile/51096-oly2/)  
 Version: 1.2  

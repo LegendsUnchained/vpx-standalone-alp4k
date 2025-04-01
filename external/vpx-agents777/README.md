@@ -1,6 +1,6 @@
 # Agents 777 (Game Plan 1984)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-agents777.jpg)
+![Table Preview](../../images/vpx-agents777.jpg)
 
 ---
 
@@ -30,3 +30,4 @@
 - Download and extract the **VPX** and **DIRECTB2S** versions listed above and copy them into the **external/vpx-agents777** folder
 - Make sure (.vpx), (.directb2s), (.vbs), and (.ini) files are all named the same
 - Download the **ROM** version listed above and copy it into `\vpx-agents777\pinmame\roms` (DO NOT UNZIP)
+

@@ -1,6 +1,6 @@
 # Tenacious D (Original 2025)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2025_01/Screenshot2025-01-23at8_16_10PM.png.c4003e74da3935f29796123236b5781f.png)
+![Table Preview](../../images/vpx-tenaciousd.png)
 
 Authors: [ZandysArcade](https://vpuniverse.com/profile/57949-zandysarcade/)  
 Filename: TENACIOUSD.vpx  

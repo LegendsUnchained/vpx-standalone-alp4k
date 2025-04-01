@@ -1,6 +1,6 @@
 # Twisted Metal (Clairvius 2024)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_06/vlcsnap-2024-06-11-16h54m05s015.png.69774c622d175534fd957af61e258fd2.png)
+![Table Preview](../../images/vpx-twistedmetal.png)
 
 Authors: [clairvius](https://vpuniverse.com/profile/16134-clairvius/)  
 Version: 1.5  

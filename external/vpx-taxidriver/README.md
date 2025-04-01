@@ -1,6 +1,6 @@
 # Taxi Driver (Original 2024)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_06/TaxiDriver(Playfield).png.6da7b255d0fb47ca9c2bc37bf609a493.png)
+![Table Preview](../../images/vpx-taxidriver.png)
 
 Authors: [icepinball](https://vpuniverse.com/profile/4306-icepinball/)  
 Download File Name: Taxi Driver 2024 & Taxi Driver VR 2024.zip  
