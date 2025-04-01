@@ -1,6 +1,6 @@
 # Capt. Fantastic and The Brown Dirt Cowboy (Bally 1976)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-captfantastic.png)
+![Table Preview](../../images/vpx-captfantastic.png)
 
 Authors: [leojreimroc](https://vpuniverse.com/profile/33733-leojreimroc/)
 

@@ -1,6 +1,6 @@
 # CSI (Stern 2008) - LED Mod 
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-csiled.png)
+![Table Preview](../../images/vpx-csiled.png)
 
 Author: [Ejse83](https://vpuniverse.com/profile/53365-ejse83/)  
 Version: 1.00  

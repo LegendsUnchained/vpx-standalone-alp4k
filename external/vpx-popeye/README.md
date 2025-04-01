@@ -1,6 +1,6 @@
 # Popeye Saves the Earth (Bally 1994)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-popeye.png)
+![Table Preview](../../images/vpx-popeye.png)
 
 Author: [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/)  
 Version: 1.2.5  
@@ -37,4 +37,4 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - Place ROM zip file into vpx-popeye/pinmame/roms folder. DO NOT UNZIP!
 - Note: While this table largely works great, there is a chance the ball may get stuck at times requiring a relaunch. 
-- "I’m strong to the finish cause I eats me spinach!" :muscle:
+- "I'm strong to the finish cause I eats me spinach!" :muscle:

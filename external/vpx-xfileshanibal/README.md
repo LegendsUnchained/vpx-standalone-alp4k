@@ -1,6 +1,6 @@
 # X-Files Hanibal LED Edition
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-xfileshanibal.png)
+![Table Preview](../../images/vpx-xfileshanibal.png)
 
 ---
 

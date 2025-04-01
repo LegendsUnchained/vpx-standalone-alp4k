@@ -1,6 +1,6 @@
 # Car Hop (Gottlieb 1991)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-carhop.png)
+![Table Preview](../../images/vpx-carhop.png)
 
 Tested by: Bla1ze
 

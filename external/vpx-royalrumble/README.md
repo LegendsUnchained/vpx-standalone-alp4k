@@ -1,6 +1,6 @@
 # WWF Royal Rumble (Data East 1994) 
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-royalrumble.png)
+![Table Preview](../../images/vpx-royalrumble.png)
 
 Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
 

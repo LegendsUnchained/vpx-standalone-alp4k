@@ -1,6 +1,6 @@
 # The A-Team
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_12/Tabla_Play.jpg.5d8bd07d4e8f1348e5cb174ea4562e59.jpg)
+![Table Preview](../../images/vpx-theateam.png)
 
 Author: [jicho2003](https://vpuniverse.com/profile/15718-jicho2003/) 
 

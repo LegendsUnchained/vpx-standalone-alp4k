@@ -1,6 +1,6 @@
 # Playboy (Bally 1978)
 
-![Table Preview](https://raw.githubusercontent.com/Bla1ze/vpx-images/refs/heads/main/vpx-playboy1978.png)
+![Table Preview](../../images/vpx-playboy1978.png)
 
 Author: [HSM](https://www.vpforums.org/index.php?showuser=78127)  
 Version: 1.0  

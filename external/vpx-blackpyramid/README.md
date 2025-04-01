@@ -1,6 +1,6 @@
 # Black Pyramid (Bally 1980)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-blackpyramid.png)
+![Table Preview](../../images/vpx-blackpyramid.png)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 5.5.0  

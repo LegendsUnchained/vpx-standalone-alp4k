@@ -1,6 +1,6 @@
 # Blood Machines (Original 2022)
 
-![Table Preview](https://raw.githubusercontent.com/Bla1ze/vpx-images/refs/heads/main/vpx-bloodmachines.png)
+![Table Preview](../../images/vpx-bloodmachines.png)
 
 ---
 

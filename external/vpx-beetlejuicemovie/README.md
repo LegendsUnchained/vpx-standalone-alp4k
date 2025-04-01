@@ -1,6 +1,6 @@
 # BeetleJuice Movie (Original 2021)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_11/638208198_BeetleJuicemovie1.0.jpg.ee49828bc95b3f6599d530eff6684cab.jpg)
+![Table Preview](../../images/vpx-beetlejuicemovie.jpg)
 
 ---
 

@@ -1,6 +1,6 @@
 # No Fear Dangerous Sports (Williams 1995)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-nofear.png)
+![Table Preview](../../images/vpx-nofear.png)
 
 Author: [ninuzzu](https://vpuniverse.com/profile/5530-ninuzzu/)  
 Version: 1.1  

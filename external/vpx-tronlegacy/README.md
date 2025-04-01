@@ -1,6 +1,6 @@
 # Tron Legacy LE (Stern 2011)
 
-![Table Preview](https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/images/vpx-tron.jpg)
+![Table Preview](../../images/vpx-tronlegacy.png)
 
 Author: [Bigus1](https://www.vpforums.org/index.php?showuser=107629)  
 Version: 2.1  

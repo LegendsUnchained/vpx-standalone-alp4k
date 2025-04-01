@@ -1,6 +1,6 @@
 # Jungle Lord (Williams 1981)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-junglelord.png)
+![Table Preview](../../images/vpx-junglelord.png)
 
 Authors: [UnclePaulie](https://vpuniverse.com/profile/16685-unclepaulie/)  
 Version: 2.0.1  

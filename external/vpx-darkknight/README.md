@@ -1,6 +1,6 @@
 # Batman [The Dark Knight] (Stern 2008)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-darkknight.png)
+![Table Preview](../../images/vpx-darkknight.png)
 
 Author: [ninuzzu](https://vpuniverse.com/profile/5530-ninuzzu/)  
 Version: 1.2  
