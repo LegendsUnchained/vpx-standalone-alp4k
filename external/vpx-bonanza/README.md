@@ -1,6 +1,6 @@
 # Bonanza (Original 2022)
 
-![Table Preview](../../images/vpx-bonanza.png)(Playfield).png.12190ac45ef34719a6906dc89d8fcb94.png)
+![Table Preview](../../images/vpx-bonanza.png)
 
 ---
 
