@@ -1,6 +1,6 @@
 # Blackout (Williams 1980)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_02/1291040529_BO2.0-DT.png.6a478d59067ff0b0bb45aba6570c4e9e.png)
+![Table Preview](../../images/vpx-blackout.png)
 
 Authors: [unclewilly](https://www.vpforums.org/index.php?showuser=12)
 Version: 1.3
@@ -32,4 +32,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure the vpx, direct2b, and ini files are all named the "exact" same
 - Place blkou_l1.zip in the external/vpx-blackout/pinmame/roms folder *Do Not unzip*
 - "Time for the Blackout"
+
 

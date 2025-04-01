@@ -1,6 +1,6 @@
 # Attack from Mars (Bally 1995)
 
-![Table Preview](https://vpuniverse.com/downloads/monthly_2023_10/afm-g5k-1.311-pups.jpg.6ef012c919b274077abee94112a08f12.jpg)
+![Table Preview](../../images/vpx-attackfrommars.jpg)
 
 ---
 
@@ -30,3 +30,4 @@
 - Download the table and directb2s versions listed above and copy them into this folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - For color DMD: Place the .cRZ file in "external\vpx-attackfrommars\pinmame\altcolor\afm_113b" (create the folders if needed)
+

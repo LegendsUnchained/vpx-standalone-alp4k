@@ -1,6 +1,6 @@
 # Whirlwind (Williams 1990)
 
-![Table Preview](https://www.vpforums.org/index.php?s=29ccc831f10a34059c30612e6c2d0630&app=downloads&module=display&section=screenshot&record=96113&id=16337&full=1)
+![Table Preview](../../images/vpx-wwind.jpg)
 
 ---
 
@@ -31,3 +31,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place ROM zip file into vpx-wwind/pinmame/roms folder. DO NOT UNZIP!
 - A storm is coming! This one's gonna blow you AWAY!
+

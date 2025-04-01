@@ -1,6 +1,6 @@
 # Big House (Gottlieb 1989)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_07/BH23FS.png.996ecf289ce82ae8603f011d74a063d7.png)
+![Table Preview](../../images/vpx-bighouse.png)
 
 Authors: [Aubrel](https://vpuniverse.com/profile/257-aubrel/) [rascal](https://vpuniverse.com/profile/8-rascal/)
 Version: 2.3
@@ -30,3 +30,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above and copy them into this folder
 - Make sure the vpx, direct2b, and ini files are all named the "exact" same
 - Place bighouse.zip in the external/vpx-bighouse/pinmame/roms folder *Do Not unzip*
+

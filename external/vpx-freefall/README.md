@@ -1,6 +1,6 @@
 # Freefall (Stern 1981)
 
-![Table Preview](https://github.com/psybocilin/vpx-standalone-alp4k/blob/vpx-freefall/images/vpx-freefall-preview.jpg)
+![Table Preview](../../images/vpx-freefall.jpg)
 
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
@@ -33,3 +33,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into the external/vpx-freefall folder
 - Make sure (.vpx), (.directb2s) and (.ini) files are all named the same
 - Place freefall.zip in the external/vpx-freefall/pinmame/roms folder. DO NOT UNZIP!  
+

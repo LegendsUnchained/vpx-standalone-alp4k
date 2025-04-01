@@ -1,6 +1,6 @@
 # Black Rose (Bally 1992)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_11/BlackRose-ScreenShot.png.febbeb9ed038f2131333958fdba41328.png)
+![Table Preview](../../images/vpx-blackrose.png)
 
 Authors: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)
 Version: 1.4

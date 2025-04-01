@@ -1,6 +1,6 @@
 # Gemini 2000 (Taito do Brasil 1982)
 
-![Table Preview](https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/images/vpx-gemini2000.jpg)
+![Table Preview](../../images/vpx-gemini2000.jpg)
 
 Table
 
@@ -35,3 +35,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above, extract them (if necessary) and copy them to external/vpx-gemini2000
 - Make sure any (.vpx), (.directb2s), (.vbs), and (.ini) files are all named the same
 - Download the ROM listed above and copy it to vpx-gemini2000\pinmame\roms. DO NOT UNZIP!
+
