@@ -1,6 +1,6 @@
 # Mario Andretti (Gottlieb 1995)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_12/MarioAndrettiFS.jpg.3d91403e7bd10a1a3b46f6b861318748.jpg)
+![Table Preview](../../images/vpx-marioandretti.jpg)
 
 Authors: [Rascal](https://vpuniverse.com/profile/8-rascal/)  
 Version: 2.0.1  
@@ -32,3 +32,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above, extract and copy them to external/vpx-marioandretti
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place ROM zip file into vpx-marioandretti/pinmame/roms folder. DO NOT UNZIP!
+

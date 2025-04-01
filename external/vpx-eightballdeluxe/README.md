@@ -1,6 +1,6 @@
 # Eight Ball Deluxe (Bally 1981)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_06/481576642_EightBallDeluxe(Bally1980).jpg.69f677a4c09c508397b2fbc6e071d70b.jpg)
+![Table Preview](../../images/vpx-eightballdeluxe.jpg).jpg.69f677a4c09c508397b2fbc6e071d70b.jpg)
 
 Authors: [Goldchicco](https://vpuniverse.com/profile/23579-goldchicco/)
 Version: 1.0

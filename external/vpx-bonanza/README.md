@@ -1,6 +1,6 @@
 # Bonanza (Original 2022)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_06/752356159_Bonanza(Iceman2022)(Playfield).png.12190ac45ef34719a6906dc89d8fcb94.png)
+![Table Preview](../../images/vpx-bonanza.png)(Playfield).png.12190ac45ef34719a6906dc89d8fcb94.png)
 
 ---
 
@@ -32,3 +32,4 @@
 - Rom file (genie.zip) stays in zip folder, place zip file in `vpx-bonanza/pinmame/roms`
 - Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same.
 - "I don't have anything against education - as long as it doesn't interfere with your thinking!" - Ben Cartwright 
+

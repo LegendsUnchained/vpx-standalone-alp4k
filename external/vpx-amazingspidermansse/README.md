@@ -1,6 +1,6 @@
 # Amazing Spiderman (Gottlieb 1980) Sinister Six Edition
 
-![Table Preview](https://pinballnirvana.com/forums/attachments/0screenshot-dt-png.43242/)
+![Table Preview](../../images/vpx-amazingspidermansse.png)
 
 ---
 
@@ -32,3 +32,4 @@
 - Place ROM file (spidermn.zip) into vpx-amazingspidermansse/pinmame/roms -- Do NOT unzip!
 - Make sure (.vpx) (.direct2b2s) and (.ini) are all named the same. 
 - "My Vpin Sense is tingling!" --- Spider-Man
+

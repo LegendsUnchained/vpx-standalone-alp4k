@@ -1,6 +1,6 @@
 # Re-Animator
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_06/20220604_180442.jpg.821e13983caecc2f1cc16c2ac83e80f1.jpg)
+![Table Preview](../../images/vpx-reanimator.jpg)
 
 Author(s): [balutito](https://vpuniverse.com/profile/36070-balutito/)  
 Download: Re-animator.rar  
@@ -37,3 +37,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Open (medias), ROM file (diamond.zip) stays in zip folder, place zip file in vpx-reanimator/pinmame/roms
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - "Who's going to believe a talking head? Get a job in a sideshow." ---Herbert West
+

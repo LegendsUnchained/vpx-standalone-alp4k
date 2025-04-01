@@ -1,6 +1,6 @@
 # Cactus Jack's (Gottlieb 1991)
 
-![Table Preview](https://i.imgur.com/fDYxp8M.jpeg)
+![Table Preview](../../images/vpx-cactusjacks.jpeg)
 
 Authors: [UnclePaulie](https://vpuniverse.com/profile/16685-unclepaulie/)
 Version: 2.0.2

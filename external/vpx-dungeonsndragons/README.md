@@ -1,6 +1,6 @@
 # Dungeons & Dragons (Bally 1987)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_03/ddpffs.png.a1f1bcc180b9788c4d28ac95564b0bf6.png)
+![Table Preview](../../images/vpx-dungeonsndragons.png)
 
 Authors: [siggi](https://vpuniverse.com/profile/8779-siggi/)  
 Version: 1.0.0  
@@ -34,3 +34,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-dungeonsndragons
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place dungdrag.zip ROM in the external/vpx-dungeonsndragons/pinmame/roms folder. *Do Not unzip*
+

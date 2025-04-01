@@ -1,6 +1,6 @@
 # Frontier (Bally 1980)
 
-![Table Preview](preview.png)
+![Table Preview](../../images/vpx-frontier.png)
 
 Authors: [bord](https://www.vpforums.org/index.php?showuser=83256)\
 Version: 1.2\
@@ -34,3 +34,4 @@ Minimum VPX Standalone build: 10.8.0-2026-3b68d7c
 - Make sure the vpx, directb2s, and ini files are all named the "exact" same
 - Place `frontier.zip` in the `external/vpx-frontier/pinmame/roms` folder *Do Not unzip*
 - "Brings pinball out of the wilderness"
+

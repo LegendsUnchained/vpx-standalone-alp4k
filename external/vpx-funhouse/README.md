@@ -1,6 +1,6 @@
 # Funhouse (Williams 1990)
 
-![Table Preview](https://i.imgur.com/0bAABbg.png)
+![Table Preview](../../images/vpx-funhouse.png)
 
 Authors: [Gedankekojote97](https://vpuniverse.com/profile/42203-gedankekojote97/)
 Version: 1.1
@@ -41,3 +41,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - Copy your ROM zip file into external/vpx-funhouse/pinmame/roms folder. Do NOT unzip!
 - "Step right up to FUNHOUSE!"
+

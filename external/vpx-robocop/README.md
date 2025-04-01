@@ -1,6 +1,6 @@
 # RoboCop (Data East 1989)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_10/526432022_2022-10-1021_41_07-VisualPinballPlayer.png.dbab1a13f15661993b4e0de94f696159.png)
+![Table Preview](../../images/vpx-robocop.png)
 
 Author: [drakkon](https://vpuniverse.com/profile/51568-drakkon/)  
 Version:  Robocop (Data East 1989)_drakkon(mod_1.2)  
@@ -46,3 +46,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - Place the ROM zip (robo_a34.zip) in the vpx-robocop/pinmame/roms folder. (Do not un-zip!)
 - "Thank you for your cooperation. Good night."
+

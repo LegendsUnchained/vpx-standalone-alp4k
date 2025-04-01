@@ -1,6 +1,6 @@
 # Demolition Man (Williams 1994)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_05_2016/416ff6823983a72056bf1240dd700c61-bildschirmfoto-2016-05-28-um-190828.png)
+![Table Preview](../../images/vpx-demoman.png)
 
 Authors: Knorr-Kiwi  
 Version: 1.3.1  
@@ -36,3 +36,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s listed above, extract (if necessary) and copy to external/vpx-demoman
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - The ROM zip file gets copied to vpx-demoman/pinmame/roms (Do not unzip)
+

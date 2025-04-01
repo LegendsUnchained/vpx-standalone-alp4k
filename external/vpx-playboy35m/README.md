@@ -1,5 +1,5 @@
 # Playboy 35th Anniversary - Marilyn Edition (Data East 1989)
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_03/DT.jpg.2228572308aac2ab857c6b89336a8624.jpg)
+![Table Preview](../../images/vpx-playboy35m.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)
 Version: 4.3.0

@@ -1,7 +1,7 @@
 # The Godfather (Original 2024)
 Tested By: kaoticBPR    
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_04/desktopGodfather.png.d520e10c4ae6ed41d146f19bfc992155.png)
+![Table Preview](../../images/vpx-godfather.png)
 
 Authors: [marty02](https://vpuniverse.com/profile/16531-marty02/)
 Version: 2.1
@@ -31,4 +31,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure the vpx, direct2b, and ini files are all named the "exact" same
 - ignore and don't use the video or puppacks in the download. Discard them, they will tank FPS, and will be choppy during gameplay
 - "Join the Family"
+
 

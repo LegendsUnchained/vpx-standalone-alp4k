@@ -1,6 +1,6 @@
 # Operation Thunder (Gottlieb 1992)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_01/WM-Screenshots-20230124102506.png.4f2ac88342c2a9973fb02b69ae3b46ff.png)
+![Table Preview](../../images/vpx-opthunder.png)
 
 Tested by: evilwraith
 
@@ -42,3 +42,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s listed above, extract and copy all contents to external/vpx-opthunder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - The ROM zip file gets copied to vpx-opthunder/pinmame/roms (do not unzip)
+

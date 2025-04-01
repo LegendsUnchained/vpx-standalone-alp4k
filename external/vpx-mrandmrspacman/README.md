@@ -1,6 +1,6 @@
 # Mr. and Mrs. Pac-Man (Bally 1982)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_09/1603054694_Mr.andMrs.Pac-Man(Bally1982).jpg.5f612dcd112f6df74de111c1c3170d56.jpg)
+![Table Preview](../../images/vpx-mrandmrspacman.jpg).jpg.5f612dcd112f6df74de111c1c3170d56.jpg)
 
 Authors: [Goldchicco](https://vpuniverse.com/profile/23579-goldchicco/)  
 Version: 1.0  
@@ -41,3 +41,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place ROM zip file into vpx-mrandmrspacman/pinmame/roms folder. DO NOT UNZIP!
 - "WAKKA WAKKA"
+

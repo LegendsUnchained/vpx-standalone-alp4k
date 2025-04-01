@@ -1,7 +1,7 @@
 # Devil Riders (Zaccaria 1984)
 Tested By: kaoticBPR
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_08/Sanstitre.png.af7fb6d3877aaafed5ce809453cb5495.png)
+![Table Preview](../../images/vpx-devilriders.png)
 
 
 Original Table:
@@ -47,4 +47,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Again, Make sure the vpx, direct2b, and ini files are all named the "exact" same
 - Place dvlrider.zip in the external/vpx-devilriders/pinmame/roms folder *Do Not unzip*
 - "Spin your wheels thru the wheel of death"
+
 

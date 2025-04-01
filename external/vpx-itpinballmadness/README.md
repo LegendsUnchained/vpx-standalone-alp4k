@@ -1,6 +1,6 @@
 # JP's IT - Pinball Madness
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=113747&id=16880&full=1)
+![Table Preview](../../images/vpx-itpinballmadness.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?s=543a5ca562cc33a89debe8ace8834f1e&showuser=277)  
 Version: 4.3.0  
@@ -22,3 +22,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-itpinballmadness.elf
 - Download the table and directb2s versions listed above and copy them into this folder
 - Make sure (.vpx), and (.directb2s) files are all named the same
+

@@ -1,6 +1,6 @@
 # Gilligan's Island (Bally 1991)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_11/screenshot_desktop.png.b79497f8ac8937bec52cfb1b1a22ff7c.png)
+![Table Preview](../../images/vpx-gilligansisland.png)
 
 Author: [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/)  
 Version: Gilligan's Island (Bally 1991) v1.46.vpx  
@@ -37,3 +37,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place ROM file (gi_l9.zip) in vpx-gilligansisland/pinmame/roms folder - DO NOT UNZIP!
 - "Gilligan, when they were passing out the brains, you weren't at the end of the line. YOU WERE ON VACATION!" --Skipper
+

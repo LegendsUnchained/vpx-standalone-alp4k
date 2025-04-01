@@ -1,6 +1,6 @@
 # Red & Ted's Road Show (Williams 1994)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_08/RS_Screenshot_2022-08-05_113658.png.67cebf2f24ae32f5f6078a6a921aefb2.png)
+![Table Preview](../../images/vpx-redandteds.png)
 
 Author: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
 Version: 1.4  
@@ -30,3 +30,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-redandteds.elf
 - Download the table and directb2s versions listed above, extract and copy them into this folder
 - Place ROM zip file into vpx-redandteds/pinmame/roms folder. DO NOT UNZIP!
+

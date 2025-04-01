@@ -1,6 +1,6 @@
 # Full Metal Jacket (Original 2022)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_07/9880474_Sanstitre.png.de2adeb6bcfddda679d1a69efbcba77c.png)
+![Table Preview](../../images/vpx-fullmetaljacket.png)
 
 Authors: [balutito](https://vpuniverse.com/profile/36070-balutito/)  
 Download File Name: full metal 1.2.rar  
@@ -34,3 +34,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
 - The ROM zip file gets copied to vpx-fullmetaljacket/pinmame/roms (Do not unzip)
 - "What is your major malfunction, numbnuts? Didn't mommy and daddy show you enough attention when you were a child?" - Gunnery Sergeant Hartman
+

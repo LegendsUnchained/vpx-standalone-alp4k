@@ -1,6 +1,6 @@
 # Big Trouble in Little China (Original 2022)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_08/20220826_211114.jpg.9787604ac65e511b59f3ab641e7b222a.jpg)
+![Table Preview](../../images/vpx-big_trouble.jpg)
 
 Authors: [BALUTITO](https://vpuniverse.com/profile/36070-balutito/) / [TeamTuga](https://vpuniverse.com/profile/31843-teamtuga/)  
 Version: 1.5 DOF no puppack user  
@@ -28,3 +28,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Download the table and directb2s versions listed above, extract and copy them into the external/vpx-big_trouble folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Remember, "It's All In The Reflexes!" ---Jack Burton
+

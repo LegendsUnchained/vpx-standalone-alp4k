@@ -1,6 +1,6 @@
 # Johnny Mnemonic (Williams 1995)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_10/jm.png.8735145ec27e229c1c6e33cc96f6ee21.png)
+![Table Preview](../../images/vpx-johnnymnemonic.png)
 
 Authors: [drakkon](https://vpuniverse.com/profile/51568-drakkon/)  
 Version: 1.0  
@@ -30,3 +30,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above and copy them into this folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place ROM zip file into vpx-johnnymnemonic/pinmame/roms folder. DO NOT UNZIP!
+
