@@ -1,11 +1,11 @@
 ---
 backglassVPSId: "1nK152JE"
-backglassChecksum: "0D3936B4CF8A1391DB54470FB0D4B822"
-backglassNotes: "Download - [...]3srn 4.1.directb2s"
+backglassChecksum: "e9ca93e887b04c216080023b9faaf3d0"
+backglassNotes: "Download - Young Frankenstein (hauntfreaks 2021).directb2s"
 fps: 36
-romBundled: true
-romChecksum: "ADE43DFA9938324B30A4F11F2E8B9FB2"
-romNotes: "ROM (eclipse.zip) included in VPX Bundle"
+romUrlOvveride: "https://vpuniverse.com/files/file/1089-eclipsezip/?do=download"
+romChecksum: "99827f772968ef334ede295fcf0f93a9"
+romNotes: "Download - eclipse.zip"
 tableVPSId: "CNp5duSH"
 tagline: "Put... The candle... Back."
 testers:

@@ -44,9 +44,7 @@
 'the VP Dev's that make this all possible!!
 '
 '
-'****************************************************************************************************************************                                                                                                                          
-
-
+'****************************************************************************************************************************
  
 Option Explicit
 Randomize
@@ -89,12 +87,8 @@ Const TargetBouncerFactor = 0.7 	'Level of bounces. 0.0 thru 1.0, higher value i
 '********       OPTIONS     *******************************
 '**********************************************************
 
-Dim VRRoom: VRRoom = 0    ' 0 = Desktop/FS - 1 = VR Mode/FSS
-Dim VRGlass: VRGlass = 0   ' 0 = Performance - 1 = shiny glass in VR   
-Dim VRGlassScratches: VRGlassScratches = 0  '0 = Performance - 1 = scratched PF glass in VR 
-
-Dim BallShadows: Ballshadows=1          	'******************set to 1 to turn on Ball shadows
-Dim FlipperShadows: FlipperShadows=1  '***********set to 1 to turn on Flipper shadows
+Dim BallShadows: Ballshadows=0          	'******************set to 1 to turn on Ball shadows
+Dim FlipperShadows: FlipperShadows=0  '***********set to 1 to turn on Flipper shadows
 Dim ROMSounds: ROMSounds=0			'**********set to 0 for no rom sounds, 1 to play rom sounds.. mostly used for testing
 
 
@@ -105,7 +99,7 @@ b2sstep = 0
 Dim b2satm
 
 Sub startB2S(aB2S)
-	b2sflash.enabled = 1
+	b2sflash.enabled = 0
 	b2satm = ab2s
 End Sub
 
@@ -166,15 +160,7 @@ Sub YF_Init()
         .ShowDMDOnly                            = 1
         .ShowFrame                              = 0
         .ShowTitle                              = 0
-        .hidden                                 = 0
-
-		if VRRoom=1 then 
-            if B2sOn=True then
-            .LaunchBackglass=0
-             B2sOn=False
-            end if
-            end if
-
+        .hidden                                 = 1
         .Games(cGameName).Settings.Value("rol") = 0
 	.Games(cGameName).Settings.Value("sound") = ROMSounds
         .Run GetPlayerHWnd
@@ -206,7 +192,7 @@ Sub YF_Init()
 	Controller.Switch(25) = 1
 	controller.Switch(15) = 0
  
-	if b2son or VRROOM=1 then: for each xx in backdropstuff: xx.visible = 0: next
+    if b2son then: for each xx in backdropstuff: xx.visible = 0: next
 
     startGame.enabled= True
 
@@ -265,8 +251,8 @@ sub startGame_timer
 	wireramps.image="wire_ramp_1"
 	Psw34Shield.image="center_target_brain"
 	apron.image ="YF_Apron"
-	shadowsGIOFF.visible=0
-	shadowsGION.visible=1
+	shadowsGIOFF.visible= 0
+	shadowsGION.visible= 1
 	BGLit.visible = 1
 		Dim a_rubbers_on
 	for each a_rubbers_on in a_rubbers: a_rubbers_on.image = "": next
@@ -288,7 +274,7 @@ end sub
 Dim musicPlaying : musicPlaying = False
 
 sub MusicOn
-   musicPlaying = True
+   musicPlaying = False
    PlayMusic "YF_bg_music.mp3", BgVolumeDial
 end Sub
 
@@ -618,7 +604,7 @@ End Sub
 '*****************************************
 
 Sub sw5_Hit()
-	if b2son then startB2S(80)
+	startB2S(80)
 	SoundSaucerLock
     'PlaySoundAt "fx_hole_enter", sw5
     select case Int(rnd*9 + 1)
@@ -677,7 +663,7 @@ Sub Trigger004_Hit: WireRampOff : End Sub
 'Rollunder Gates
 '*****************************************
 Sub sw50a_Hit()
-	if b2son then startB2S(80)
+	startB2S(80)
     PlaySoundAt "rollover", sw50a
     select case Int(rnd*8 + 1)
         case 1: PlaySound "Ramp01"
@@ -729,7 +715,7 @@ End Sub
 
 
 Sub Bumper1_Hit
-	if b2son then startB2S(80)
+	startB2S(80)
     BGLightning.visible = True
     Bumper1Flasher.visible = true
 
@@ -746,7 +732,7 @@ Sub Bumper1_Hit
 End Sub
  
 Sub Bumper2_Hit
-	if b2son then startB2S(80)
+	startB2S(80)
     BGLightning.visible = True
     vpmTimer.PulseSw 51
     Bumper2Flasher.visible = true
@@ -763,7 +749,7 @@ Sub Bumper2_Hit
 End Sub
  
 Sub Bumper3_Hit
-	if b2son then startB2S(80)
+	startB2S(80)
     BGLightning.visible = True
     vpmTimer.PulseSw 51
     Bumper3Flasher.visible = true
@@ -780,7 +766,7 @@ Sub Bumper3_Hit
 End Sub
  
 Sub Bumper4_Hit
-	if b2son then startB2S(80)
+	startB2S(80)
     BGLightning.visible = True
     vpmTimer.PulseSw 51
     Bumper4Flasher.visible = true
@@ -882,7 +868,7 @@ Sub SW32_Hit:vpmTimer.PulseSw (32):End Sub
 '****************
 
 Sub sw56_Hit()
-	if b2son then startB2S(80)
+	startB2S(80)
     PlaySoundAt "rollover", sw56
     select case Int(rnd*8 + 1)
         case 1: PlaySound "Passage01"
@@ -1503,9 +1489,12 @@ End Sub
 ' Setup VR Room
 '******************************
 
+Dim VRRoom: VRRoom = 0    ' 0 = Desktop/FS - 1 = VR Mode/FSS
+Dim VRGlass: VRGlass = 0   ' 0 = Performance - 1 = shiny glass in VR   
+Dim VRGlassScratches: VRGlassScratches = 0  '0 = Performance - 1 = scratched PF glass in VR 
+
 ' Load VR timers if VR room is on...
 if VRRoom = 1 Then
-IgorTimer.enabled = true
 VRCandleTimer.enabled = true
 VRCandleTimer2.enabled = true
 VRCandleWoodTimer.enabled = true
@@ -2210,7 +2199,7 @@ DivGlow.opacity = 400
 End Sub
 
 sub VUKstrobe_hit()
-	if b2son then startB2S(80)
+startB2S(80)
 GiOff  ' Turns off GI  (sub below)
 GIStrobeTimer.enabled = true  ' Starts Strobe timer.  The strobe timer runs to Storbe = 51 and counts along the way
 StrobeRunning = true  'This variable was made so that our strobe didnt interfere with Controller10 sub
