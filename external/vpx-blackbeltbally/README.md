@@ -1,6 +1,6 @@
 # Black Belt (Bally 1986)
 
-![Table Preview](../../images/vpx-blackbeltbally.png)
+![Table Preview](../../images/vpx-blackbeltbally.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)\
 Version: 4.0.0\
