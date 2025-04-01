@@ -7,11 +7,11 @@
 ## Files
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
-| **VPX** |  [Vpuniverse]  (lhttps://vpuniverse.com/files/file/11395-dexter/}) | 1.0.0 |  iceman 2022 (https://vpuniverse.com/profile/4306-icepinball/}
-| **B2S** |  [Vpuniverse]  (lhttps://vpuniverse.com/files/file/11395-dexter/}) | 1.0.0 |  iceman 2022 (https://vpuniverse.com/profile/4306-icepinball/}
-| **ROM** |  [vpforum} {https://www.vpforums.org/index.php?app=downloads&showfile=15871}) | 1.0a | [Goldchicco}  (https://www.vpforums.org/index.php?s=54c41d7c702de5e5bdf00851af6ace91&showuser=88795}
+| **VPX** |  [Vpuniverse]  (https://vpuniverse.com/files/file/11395-dexter) | 1.0.0 |  iceman 2022 (https://vpuniverse.com/profile/4306-icepinball/}
+| **B2S** |  [Vpuniverse]  (https://vpuniverse.com/files/file/11395-dexter) | 1.0.0 |  iceman 2022 (https://vpuniverse.com/profile/4306-icepinball/}
+| **ROM** |  [Pinball Nirvana} (https://pinballnirvana.com/forums/resources/dvlsdre.1744/)
 
-**Tested by:** [{rocjr73}]
+**Tested by:** {rocjr73}
 
 ---
 
