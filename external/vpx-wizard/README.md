@@ -1,6 +1,6 @@
 # Wizard! (Bally 1975) 
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_04/Screenshot2024-04-01225711.thumb.png.0fb532c35fe84ade4a107fe7bcc9f49c.png)
+![Table Preview](../../images/vpx-wizard.png)
 
 ---
 

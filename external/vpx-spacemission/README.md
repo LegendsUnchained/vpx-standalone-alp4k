@@ -1,6 +1,6 @@
 # Space Mission (Williams 1976)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-spacemission.png)
+![Table Preview](../../images/vpx-spacemission.png)
 
 Authors: [jcalhoun](https://vpuniverse.com/profile/66921-jcalhoun/)  
 Version: 1.1  

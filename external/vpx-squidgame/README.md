@@ -1,6 +1,6 @@
 # Squid Game (Original 2024)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2025_01/1Desafio.png.3dcd0dd7128dc874ef7788b63f8adc9c.png)
+![Table Preview](../../images/vpx-squidgame.png)
 
 Authors: [Rickmeine](https://vpuniverse.com/profile/46002-rickmeine/)  
 Download File Name: Squid Game1.2.zip  

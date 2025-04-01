@@ -1,6 +1,6 @@
 # Twilight Zone (Bally 1993)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2019_03/1726446_tz(Custom).png.888514d438039c7c8d7a85a433ff2b13.png)
+![Table Preview](../../images/vpx-tz.png)
 
 Authors: [ninuzzu](https://vpuniverse.com/profile/5530-ninuzzu/)
 Version: 2.1

@@ -1,6 +1,6 @@
 # Castlevania - Symphony of the Night (Original 2022)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_09/sotn_screenshot.jpg.b87c9a81ae4d0a40030f96e70a605476.jpg)
+![Table Preview](../../images/vpx-castlevaniasotn.jpg)
 
 ---
 

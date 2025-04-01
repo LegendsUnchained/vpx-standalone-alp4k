@@ -1,6 +1,6 @@
 # World Challenge Soccer (Gottlieb 1994)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_08/WorldChallengeSoccer(Gottlieb1994)POV.jpg.2d2408f5be8fc9ccae0d2a03d6d149ce.jpg)
+![Table Preview](../../images/vpx-wcsoccer.jpg)
 
 ---
 

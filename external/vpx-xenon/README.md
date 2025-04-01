@@ -1,6 +1,6 @@
 # Xenon (Bally 1980)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_01/DT.png.6f31af32bd75dc18c3da62d6be7ab197.png)
+![Table Preview](../../images/vpx-xenon.png)
 
 ---
 

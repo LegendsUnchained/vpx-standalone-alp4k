@@ -1,6 +1,6 @@
 # The Witcher (Original 2020)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_01/tw.png.170cb3a5d217d4caf9b729412ada5263.png)
+![Table Preview](../../images/vpx-witcher.png)
 
 ---
 

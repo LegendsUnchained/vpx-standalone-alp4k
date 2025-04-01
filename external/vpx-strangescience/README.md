@@ -1,6 +1,6 @@
 # Strange Science (Bally 1986)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-strangescience.jpg)
+![Table Preview](../../images/vpx-strangescience.jpg)
 
 Authors: [agenteighty6](https://vpuniverse.com/profile/25523-agenteighty6/)  
 Version: 1.1  

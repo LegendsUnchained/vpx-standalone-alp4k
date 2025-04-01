@@ -1,6 +1,6 @@
 # The Thing (Balutito Reskin)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_05/482237955_Sanstitre.png.2ed553f6cb6ac0bb6e939d5dd524db33.png)
+![Table Preview](../../images/vpx-thething.png)
 
 Author(s): [balutito](https://vpuniverse.com/profile/36070-balutito/)  
 Version: The Thing Balutito MOD.rar  Version 1.0.0
