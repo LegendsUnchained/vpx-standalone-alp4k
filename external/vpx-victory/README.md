@@ -1,6 +1,6 @@
 # Victory (Gottlieb 1987)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_05/Victory202.png.7b9ac1f3b3710b32726655b8cb326f03.png)
+![Table Preview](../../images/vpx-victory.png)
 
 Authors: [Schlabber34](https://vpuniverse.com/profile/11680-schlabber34/)
 Version: 2.0.2
@@ -31,3 +31,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above and copy them into this folder
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - Place ROM zip file into vpx-victory/pinmame/roms folder. DO NOT UNZIP!
+

@@ -1,6 +1,6 @@
 # Baseball (Gottlieb 1970)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_04/Baseball1.2.1Cabinet.png.2b3e0b4a5c96783feabd809f681d46ac.png)
+![Table Preview](../../images/vpx-baseball1970.png)
 
 ---
 
@@ -30,3 +30,4 @@
 - Download the table and directb2s versions listed above, extract and copy them to this folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - "PLAY BALL" 🌴
+

@@ -1,6 +1,6 @@
 # Alien Star (Gottlieb 1984)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_01/CaptureDTAlienStar.png.e517f69e6664e3ce2787bcbbb76c8688.png)
+![Table Preview](../../images/vpx-alienstar.png)
 
 ---
 
@@ -30,3 +30,4 @@
 - Download the table and directb2s versions listed above, extract and copy them into this folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place alienstr.zip in the external/vpx-alienstar/pinmame/roms folder *Do Not unzip*
+

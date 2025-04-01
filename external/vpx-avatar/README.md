@@ -1,6 +1,6 @@
 # Avatar (Stern 2012)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_11/Avatar_DT1_11.webp.6ae6121e293be5b73c0145a52c276ec4.webp)
+![Table Preview](../../images/vpx-avatar.webp)
 
 ---
 
@@ -31,3 +31,4 @@
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - Place avr_200.zip in the external/vpx-avatar/pinmame/roms folder. *Do Not unzip*!
 - "The War For Pandora Begins Now!"
+

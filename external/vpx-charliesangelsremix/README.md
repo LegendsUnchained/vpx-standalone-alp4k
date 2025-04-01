@@ -1,6 +1,6 @@
 # Charlie's Angels (Gottlieb 1978) iDig Complete rEMix
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_03/charlie.png.d4756de622518ea2dadec8c95e229727.png)
+![Table Preview](../../images/vpx-charliesangelsremix.png)
 
 Author(s): [iDigStuff](https://vpuniverse.com/profile/29753-idigstuff/)  
 Version:  Charlies-Angels-Gottlieb-1978-iDig-Complete-rEMix.zip
@@ -56,4 +56,5 @@ Version 3 JPSalas Original Table
 I have included 2 folders which include a (.vbs) script that will change the soundtrack to either version 2 or version 3.
 Simply open the folder of your choice and copy the (.vbs) and place it ---> vpx-charliesangelsremix with your (.vpx).
 **Make sure (.vpx) (.direct2b2s) (.vbs) and (.ini) are all named the same.**
+
 

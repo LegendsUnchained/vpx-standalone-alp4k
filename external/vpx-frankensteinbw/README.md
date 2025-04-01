@@ -1,6 +1,6 @@
 # Frankenstein - Black and White Balutito MOD (Original 2022)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_01/20220130_183804bw.jpg.01bf1e0d2f8ca5074156a911909208b6.jpg)
+![Table Preview](../../images/vpx-frankensteinbw.jpg)
 
 Authors: [balutito](https://vpuniverse.com/profile/36070-balutito/)  
 Download File Name: 1491581049_Frankenstein-BW-vpx.rar  
@@ -40,3 +40,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
 - The ROM zip file gets copied to vpx-frankensteinbw/pinmame/roms (Do not unzip)
 - "There is love in me the likes of which you've never seen. There is rage in me the likes of which should never escape." - The Monster
+

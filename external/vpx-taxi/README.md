@@ -1,6 +1,6 @@
 # Taxi (Williams 1988)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_07/taxi1.0.jpg.c01019100778d9bd756b5e1e29c8ff98.jpg)
+![Table Preview](../../images/vpx-taxi.jpg)
 
 Authors: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
 Version: 1.2.2  
@@ -30,3 +30,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-taxi.elf
 - Download the table and directb2s versions listed above, extract and copy them into this folder
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
+

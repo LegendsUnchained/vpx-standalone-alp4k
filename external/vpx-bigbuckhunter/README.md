@@ -1,6 +1,6 @@
 # Big Buck Hunter Pro (Stern 2010)
 
-![Table Preview](https://i.imgur.com/c9VOMjn.png)
+![Table Preview](../../images/vpx-bigbuckhunter.png)
 
 Author: [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/) 
 
@@ -38,3 +38,4 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 - Add your personalized launcher.elf and rename it to vpx-bigbuckhunter.elf
 - Download the table, ROM and directb2s versions listed above and copy them into this folder
 - Don't be shootin' nothin' off Pappy's Porch and stay out of his Moonshine!
+

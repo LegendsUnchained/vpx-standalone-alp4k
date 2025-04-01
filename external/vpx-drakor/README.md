@@ -1,6 +1,6 @@
 # Drakor (Taito do Brasil 1979)
 
-![Table Preview](https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/images/vpx-drakor.jpg)
+![Table Preview](../../images/vpx-drakor.jpg)
 
 Table
 
@@ -36,3 +36,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure any (.vpx), (.directb2s), (.vbs), and (.ini) files are all named the same
 - Download the ROM listed above and copy it to vpx-drakor\pinmame\roms. DO NOT UNZIP!
 - Drakor is a Brazilian clone of the 1979 Williams table Gorgar
+

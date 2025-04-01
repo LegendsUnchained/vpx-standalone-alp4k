@@ -1,6 +1,6 @@
 # Aliens (Original 2020)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_04/AliensDesktop.png.0e972b187963b7b693040266c9c85567.png)
+![Table Preview](../../images/vpx-aliens.png)
 
 ---
 
@@ -32,3 +32,4 @@
 - Place sorcr_l2.zip in the external/vpx-aliens/pinmame/roms folder. *Do Not unzip*!
 - Place Music Folder in the vpx-aliens folder
 - "Game Over Man, Game Over!"
+
