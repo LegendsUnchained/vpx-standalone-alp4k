@@ -1,18 +1,18 @@
 # Batman (Data East 1991)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_09/batman-de_cab2.jpg.b87340f22eedb4a7a448e93bd777d783.jpg)
+![Table Preview](https://raw.githubusercontent.com/LegendsUnchained/vpx-standalone-alp4k/main/images/vpx-batman-preview.jpg)
 
 ---
 
 ## Files
 | File Type | Link | Version | Author |
 |:---------:|:----:|:-------:|:------:|
-| VPX | [VP Universe](https://vpuniverse.com/files/file/7502-batman-data-east-1991-vpw/) | 1.1 | [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/) |
+| VPX | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=15137) | 2.0 | [Bigus1](https://www.vpforums.org/index.php?showuser=107629) |
 | B2S | [VP Universe](https://vpuniverse.com/files/file/13523-batman-data-east-1991-b2s-with-full-dmd/) | 1.0 | [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
 | DMD | N/A | N/A | N/A |
 | ROM | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=832) | btmn_106.zip | [destruk](https://www.vpforums.org/index.php?showuser=5) |
 
-**Tested by:** [mcap]
+**Tested by:** [mcap], Bla1ze
 
 ---
 
@@ -20,7 +20,7 @@
 **Minimum VPX Standalone build:** 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 33 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 
 ---
 
