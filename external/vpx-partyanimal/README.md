@@ -1,6 +1,6 @@
 # Party Animal (Bally 1987)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-partyanimal.png)
+![Table Preview](../../images/vpx-partyanimal.png)
 
 Authors: [ARMYAVIATION](https://vpuniverse.com/profile/18348-armyaviation/)  
 Version: 1.0  
@@ -31,3 +31,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-partyanimal
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - Place ROM zip file into vpx-partyanimal/pinmame/roms folder. DO NOT UNZIP!
+

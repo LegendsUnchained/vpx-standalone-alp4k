@@ -1,6 +1,6 @@
 # Death Note (Original 2020)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-deathnote.jpg)
+![Table Preview](../../images/vpx-deathnote.jpg)
 
 Authors: [anthias](https://www.vpforums.org/index.php?showuser=9159)  
 Version: 1.2  

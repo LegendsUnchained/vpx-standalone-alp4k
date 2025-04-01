@@ -1,6 +1,6 @@
 # Duke Nukem 3D (Original 2020)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-dukenukem3d.png)
+![Table Preview](../../images/vpx-dukenukem3d.png)
 
 Authors: [ivantba](https://www.vpforums.org/index.php?showuser=123858)  
 Download File Name: Duke Nukem 3D (TBA 2020).rar  
@@ -38,3 +38,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - The ROM zip file gets copied to vpx-dukenukem3d/pinmame/roms (Do not unzip)
 - "Damn, that's the second time those alien bastards shot up my ride!" - Duke Nukem
+

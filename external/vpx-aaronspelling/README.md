@@ -1,6 +1,6 @@
 # Aaron Spelling (Data East 1992)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-aaronspelling.png)
+![Table Preview](../../images/vpx-aaronspelling.png)
 
 ---
 

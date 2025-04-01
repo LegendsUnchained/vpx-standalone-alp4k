@@ -1,6 +1,6 @@
 # Great Houdini (Original 2022)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-greathoudini.png)
+![Table Preview](../../images/vpx-greathoudini.png)
 
 Authors: [marty02](https://vpuniverse.com/profile/16531-marty02/)  
 Version: 2.4  
@@ -31,3 +31,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-greathoudini.elf
 - Download the table and directb2s listed above, extract (if necessary) and copy to external/vpx-greathoudini
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+

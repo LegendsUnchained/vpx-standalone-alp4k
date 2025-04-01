@@ -1,6 +1,6 @@
 # A Real American Hero - Operation P.I.N.B.A.L.L. (Original 2017)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-gijoe.png)
+![Table Preview](../../images/vpx-gijoe.png)
 
 Authors: [xenonph](https://vpuniverse.com/profile/8789-xenonph/)  
 Download File/Version: A Real American Hero (Original 2022) v2.1 VPX7.2.zip  
@@ -35,3 +35,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Open nvram folder and Select/Copy playboyb.nv and move to external/vpx-gijoe/pinmame/nvram
 - Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
 - "Now you know. And knowing is half the battle" - Duke
+

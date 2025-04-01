@@ -41,7 +41,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 # Neverending Story, The (Original 2021)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-tnes.png)
+![Table Preview](../../images/vpx-tnes.png)
 
 Authors: [oly2](https://vpuniverse.com/profile/51096-oly2/)  
 Version: 1.0.0  
@@ -79,3 +79,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), (.vbs) and (.ini) files are all named the same
 - Download the media listed above, extract and copy TNES folder to external/vpx-tnes/Music
 - "I still have no idea what she named herself. Even the subtitles are like ¯\_(ツ)_/¯" -evilwraith
+

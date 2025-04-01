@@ -1,6 +1,6 @@
 # Zip-A-Doo (Bally 1970)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-zipadoo.jpg)
+![Table Preview](../../images/vpx-zipadoo.jpg)
 
 ---
 

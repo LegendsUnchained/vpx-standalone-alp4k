@@ -1,6 +1,6 @@
 # Clock of Eternal Fog (Original 2024)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-clockofetfog.png)
+![Table Preview](../../images/vpx-clockofetfog.png)
 
 Authors: [CrimsonTurtle8](https://www.vpforums.org/index.php?showuser=49512)  
 Version: 1.1  

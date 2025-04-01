@@ -1,6 +1,6 @@
 # Fireball (Bally 1972)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-fireball.png)
+![Table Preview](../../images/vpx-fireball.png)
 
 Authors: [pinball58](https://vpuniverse.com/profile/12067-pinball58/)  
 Version: 1.1  

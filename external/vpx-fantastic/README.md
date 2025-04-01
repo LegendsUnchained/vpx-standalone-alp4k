@@ -1,6 +1,6 @@
 # Fan-Tas-Tic (Williams 1972)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-fantastic.jpg)
+![Table Preview](../../images/vpx-fantastic.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 1.0.1  
@@ -31,3 +31,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s listed above, extract (if necessary) and copy them to external/vpx-fantastic
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - "Fantastic"
+

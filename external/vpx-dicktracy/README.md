@@ -1,6 +1,6 @@
 # Dick Tracy (Original 2024)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-dicktracy.jpg)
+![Table Preview](../../images/vpx-dicktracy.jpg)
 
 Authors: [Rocketeer84](https://vpuniverse.com/profile/62204-rocketeer84/)  
 Version: 1.1  

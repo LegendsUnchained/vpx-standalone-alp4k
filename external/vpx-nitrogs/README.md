@@ -1,6 +1,6 @@
 # Nitro Ground Shaker (Bally 1980)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-nitrogs.jpg)
+![Table Preview](../../images/vpx-nitrogs.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 5.5.0  

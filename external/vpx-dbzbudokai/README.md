@@ -1,6 +1,6 @@
 # Dragon Ball Z Budokai (Original 2023)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-dbzbudokai.png)
+![Table Preview](../../images/vpx-dbzbudokai.png)
 
 Authors: [masonou](https://vpuniverse.com/profile/32420-masonou/)  
 Version: 1.1  
