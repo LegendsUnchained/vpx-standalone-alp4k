@@ -1,6 +1,6 @@
 # Joker Poker (Gottlieb 1978)
 
-![Table Preview](../../images/vpx-jokerpoker.jpg)DT.jpg.192fd2d189a97ab5cdddafa4c6c7e20f.jpg)
+![Table Preview](../../images/vpx-jokerpoker.jpg)
 
 Author(s): [Goldchicco](https://vpuniverse.com/profile/23579-goldchicco/)  
 Version:  Joker Poker (Gottlieb 1978) 1.1  
