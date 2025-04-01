@@ -1,7 +1,7 @@
 # Shrek (Stern 2008)
 Tested by: kaoticBPR
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_08/Shrek_Screenshot.png.45dbafb310464e6e2adc81b7aef292b5.png)
+![Table Preview](../../images/vpx-shrek.png)
 
 Authors: [paladinarcade](https://vpuniverse.com/profile/38767-paladinarcade/)  
 Version: 1.0  
@@ -33,3 +33,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above, extract and copy them into this folder
 - Make sure the vpx, directb2s, and ini files are all named the "exact" same
 - Place ROM shr_141.zip in the external/vpx-shrek/pinmame/roms folder. *Do Not unzip*!
+

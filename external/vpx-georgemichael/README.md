@@ -1,6 +1,6 @@
 # George Michael - Faith (Original 2023)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_03/PlayfieldFaithGeorgeMichaelver.1_01.jpg.7e4fdb8fd4a6d74fb2b2cb70333eb378.jpg)
+![Table Preview](../../images/vpx-georgemichael.jpg)
 
 Authors: [VLive](https://vpuniverse.com/profile/57704-vlive/)  
 Filename: Faith George Michael ver. 1.01.vpx  
@@ -43,3 +43,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
 - The ROM zip file gets copied to vpx-georgemichael/pinmame/roms (Do not unzip)
 - "I still believe that music is one of the greatest gifts that God gave to man." - George Michael
+

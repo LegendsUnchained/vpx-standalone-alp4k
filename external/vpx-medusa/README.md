@@ -1,7 +1,7 @@
 # Medusa (Bally 1981)
 Tested by: kaoticBPR
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_07/CaptureCabinetMedusa(Bally1981).png.a33fdcb4de301d45dd8fc098ce593e0f.png)
+![Table Preview](../../images/vpx-medusa.png).png.a33fdcb4de301d45dd8fc098ce593e0f.png)
 
 Table
 
@@ -36,3 +36,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - Place ROM zip file into vpx-medusa/pinmame/roms folder. DO NOT UNZIP!
 - "Bally MEDUSA... A Legend of Features"
+

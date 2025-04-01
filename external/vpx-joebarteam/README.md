@@ -1,6 +1,6 @@
 # Joe Bar Team (ZXR 2019)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_04/JoeBarTeam(ZXR2019)PFimage.png.374a51e4fb0b7db72b5d31e456c7bb08.png)
+![Table Preview](../../images/vpx-joebarteam.png)PFimage.png.374a51e4fb0b7db72b5d31e456c7bb08.png)
 
 Authors: Zedixair  
 Version: 1.0.0  
@@ -30,3 +30,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Move/Copy Music Folder ---> external/vpx-joebarteam
 - The ROM zip file gets copied to external/vpx-joebarteam/pinmame/roms (Do not unzip)
 - "Ca Passe Pas!" - Jeremie Lapuree
+

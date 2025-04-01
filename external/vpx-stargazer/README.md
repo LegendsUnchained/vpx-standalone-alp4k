@@ -1,7 +1,7 @@
 # Star Gazer (Stern 1980)
 Tested by: kaoticBPR
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_08/03.png.72537f59652b7e42f974c5fa5f9f297e.png)
+![Table Preview](../../images/vpx-stargazer.png)
 
 Authors: [Medusa2000](https://vpuniverse.com/profile/73400-medusa2000/)
 Version: 3.1
@@ -33,4 +33,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure the vpx, direct2b, and ini files are all named the "exact" same
 - Place stargzr.zip in the external/vpx-stargazer/pinmame/roms folder *Do Not unzip*
 - "Thou art gazing at the brightest star of all."
+
 

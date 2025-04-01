@@ -1,6 +1,6 @@
 # Lion King (Original 2020)
 
-![Table Preview](../../images/vpx-lionking-preview.png?raw=true)
+![Table Preview](../../images/vpx-lionking-preview.png)
 
 ---
 

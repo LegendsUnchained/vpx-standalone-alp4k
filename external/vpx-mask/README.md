@@ -1,6 +1,6 @@
 # Mask (Sound Mod) (Original 2023)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_08/20230805_172758.jpg.e8148b49a9659817cfa50b4ac5eb4f39.jpg)
+![Table Preview](../../images/vpx-mask.jpg)
 
 ---
 
@@ -34,3 +34,4 @@
 - Rom file (fpwr2_l2.zip) stays in zip folder, place zip file in `vpx-mask/pinmame/roms`
 - Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same.
 - "Let's roll, team!" - Matt Trakker
+

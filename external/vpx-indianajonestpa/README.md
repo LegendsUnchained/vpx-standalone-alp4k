@@ -1,6 +1,6 @@
 # Indiana Jones The Pinball Adventure (Williams 1993)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2019_03/969421717_indana(Custom).png.19dd7045c4235c0a1d4dec8ebfec7f6b.png)
+![Table Preview](../../images/vpx-indianajonestpa.png).png.19dd7045c4235c0a1d4dec8ebfec7f6b.png)
 
 Author(s): [ninuzzu](https://vpuniverse.com/profile/5530-ninuzzu/)  
 Version: 1.2

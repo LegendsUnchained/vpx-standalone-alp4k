@@ -1,6 +1,6 @@
 # Fire! (Williams 1987)
 
-![Table Preview](https://i.imgur.com/6RLbR9q.jpeg)
+![Table Preview](../../images/vpx-fire.jpeg)
 
 Authors: [Gedankekojote97](https://vpuniverse.com/profile/42203-gedankekojote97/)
 Version: 1.0

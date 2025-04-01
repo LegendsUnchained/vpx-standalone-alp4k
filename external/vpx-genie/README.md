@@ -1,6 +1,6 @@
 # Genie (Gottlieb 1979)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_01/Genie_DT.jpg.1e6d13d1ffcaed3fc24e1855fb23cede.jpg)
+![Table Preview](../../images/vpx-genie.jpg)
 
 Authors: [bord](https://vpuniverse.com/profile/9265-bord/)  
 Version: 2.0  
@@ -36,3 +36,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Open the unzipped folder. The ROM is in the Gottlieb_Sys1_newroms folder
 - Copy the genie.zip rom file to vpx-genie\pinmame\roms (Do not unzip)!
 - Dream of Genie!
+

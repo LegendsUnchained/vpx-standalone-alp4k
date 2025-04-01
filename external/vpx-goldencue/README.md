@@ -2,7 +2,7 @@
 
 Tested by: kaoticBPR
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_10/GC-FullscreenMode.png.ed7e2bdde6e2b389ad119e7c8d8ad48f.png)
+![Table Preview](../../images/vpx-goldencue.png)
 
 Authors: [felsir](https://vpuniverse.com/profile/37000-felsir/)  
 Version: 1.4  
@@ -35,3 +35,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place goldcue.zip ROM in the external/vpx-goldencue/pinmame/roms folder. *Do Not unzip*!
 - "Learn from the best, Kelly Packard"
+

@@ -1,6 +1,6 @@
 # Ramones (Original 2021/1972)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_08/screenshot2.png.0a52fcc476296b49000c2f5dbfd5bd23.png)
+![Table Preview](../../images/vpx-ramones.png)
 
 Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
 Version: 1.0.1  
@@ -33,3 +33,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Move Ramones folder to Music directory
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - "I wanna be sedated..."
+

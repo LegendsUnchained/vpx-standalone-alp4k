@@ -1,6 +1,6 @@
 # Robo-War (Gottlieb 1988)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_06/robo_cab.png.967b3b267e39fbb8a4f72f6483836b5f.png)
+![Table Preview](../../images/vpx-robowar.png)
 
 Author: [versins77](https://vpuniverse.com/profile/29661-versins77/)  
 Version: 1.0  
@@ -31,3 +31,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above, extract them and copy them into the /external/vpx-robowar folder
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - Place ROM zip file into vpx-robowar/pinmame/roms folder. DO NOT UNZIP!
+

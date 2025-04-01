@@ -1,7 +1,7 @@
 # Defender (Williams 1982)
 Tested by: kaoticBPR
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_03/Defender-Screenshot.png.9356123f0b4eaac17cfde96b8e118e69.png)
+![Table Preview](../../images/vpx-defender.png)
 
 Authors: [VpinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)
 Version: 1.3
@@ -32,5 +32,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above and copy them into this folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place dfndr_l4.zip in the external/vpx-defender/pinmame/roms folder. *Do Not unzip*!
+
 
 

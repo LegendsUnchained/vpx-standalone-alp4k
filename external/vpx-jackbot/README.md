@@ -1,6 +1,6 @@
 # Jack·Bot (Williams 1995) 
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_11/JBdt.jpg.a53affb2a9ea99a808d5f07fd3753d02.jpg)
+![Table Preview](../../images/vpx-jackbot.jpg)
                  
 Author: [bord](https://vpuniverse.com/profile/9265-bord/)  
 Version: 1.1.2a  
@@ -32,3 +32,4 @@ Minimum VPX Standalone build: 10.8.0-2006-6d603fb
 - Download the table and directb2s versions listed above, extract them and copy them into the external/vpx-jackbot folder
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - Place ROM zip file into vpx-jackbot/pinmame/roms folder. DO NOT UNZIP!
+

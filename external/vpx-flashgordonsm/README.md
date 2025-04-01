@@ -1,6 +1,6 @@
 # Flash Gordon (Bally, 1981) Sound MOD v2.1
 
-![Table Preview](https://pinballnirvana.com/forums/attachments/flash-gordon-bally-1981-sound-mod-v2-0b-png.24572/)
+![Table Preview](../../images/vpx-flashgordonsm.png)
 
 Author(s): [xenonph](https://vpuniverse.com/profile/8789-xenonph/)  
 Version: Flash Gordon (Bally, 1981) Sound MOD v2.1.zip

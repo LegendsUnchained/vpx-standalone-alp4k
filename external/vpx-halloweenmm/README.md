@@ -1,6 +1,6 @@
 # Halloween MM Edition (Original 2023) Version 3.1
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_10/hallo-desktop.png.22e53233834dcbfdc2120cdb663a9e4e.png)
+![Table Preview](../../images/vpx-halloweenmm.png)
 
 Table
 
@@ -33,3 +33,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Download the table and directb2s zips above, extract (if necessary) and copy into /external/vpx-halloweenmm
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - "I realized that what was living behind that boy's eyes was purely and simply... evil." - Dr. Loomis
+

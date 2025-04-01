@@ -1,6 +1,6 @@
 # Evel Knievel (Bally 1977)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_10/DT_SS.jpg.a3db8392413c521dc93dd9ac5e05709f.jpg) 
+![Table Preview](../../images/vpx-evelknievel.jpg) 
 
 Table
 
@@ -46,3 +46,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Download the rom (evelknie.zip) which stays in zip folder, place zip file in vpx-evelknievel/pinmame/roms
 - "When you're mad at someone, it's probably best not to break his arm with a baseball bat." - Evel Knievel 
+

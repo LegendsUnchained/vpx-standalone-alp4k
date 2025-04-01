@@ -1,7 +1,7 @@
 # Escape from the Lost World (Bally 1988)
 Tested by: kaoticBPR
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_06/631404338_Escape4.jpg.561e7788236d3a648856639f2c049100.jpg)
+![Table Preview](../../images/vpx-escapefromthelostworld.jpg)
 
 Authors: [rajojoey](https://vpuniverse.com/profile/9989-rajojoey/)
 Version: 1.0.1
@@ -33,4 +33,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure the vpx, direct2b, and ini files are all named the "exact" same
 - Place escwrld.zip in the external/vpx-escapefromthelostworld/pinmame/roms folder *Do Not unzip*
 - "Escape from the Lost World"
+
 

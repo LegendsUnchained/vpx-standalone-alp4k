@@ -1,6 +1,6 @@
 # Demolition Man (Williams 1994) - Limited Cryo Edition
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_07/DemolitionManLCE-Playfield.jpg.13dbfe2977de0c3e1ce4c11ac19ecc86.jpg)
+![Table Preview](../../images/vpx-demolitionmancryo.jpg)
 
 ---
 
@@ -33,3 +33,4 @@
 - Make sure (`.vpx`), (`.directb2s`), and (`.ini`) files are all named the same
 - The ROM zip file gets copied to `vpx-demolitionmancryo/pinmame/roms` (Do not unzip)
 > ohn Spartan: "So much for the seashells. See you in a few minutes."
+

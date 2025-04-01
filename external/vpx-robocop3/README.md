@@ -1,6 +1,6 @@
 # RoboCop 3 (Original 2018)
 
-![Table Preview](../../images/vpx-robocop3-preview.jpg?raw=true)
+![Table Preview](../../images/vpx-robocop3-preview.jpg)
 
 ---
 

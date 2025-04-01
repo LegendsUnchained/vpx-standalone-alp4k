@@ -1,7 +1,7 @@
 # Guardians of the Galaxy trilogy (Original 2023)
 Tested by: kaoticBPR
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_09/desktop.png.cdf45ad58987fd0be485e846104673cf.png)
+![Table Preview](../../images/vpx-gogtrilogy.png)
 
 Authors: [marty02](https://vpuniverse.com/profile/16531-marty02/)
 Version: 4.0
@@ -30,3 +30,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above and copy them into this folder
 - Make sure the vpx, direct2b, and ini files are all named the "exact" same
 - "Gather the Guardians, defend the galaxy"
+
