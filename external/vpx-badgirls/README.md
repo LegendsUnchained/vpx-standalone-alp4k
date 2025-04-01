@@ -1,6 +1,6 @@
 # Bad Girls (Gottlieb 1988)
 
-![Table Preview](https://raw.githubusercontent.com/Bla1ze/vpx-images/refs/heads/main/vpx-badgirls.png)
+![Table Preview](../../images/vpx-badgirls.png)
 
 ---
 
@@ -30,4 +30,4 @@
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-badgirls`
 - Rom file (FILENAME.zip) stays in zip folder, place zip file in `vpx-badgirls/pinmame/roms`
 - Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same.
-- So Bad It’s Good!
+- So Bad It's Good!

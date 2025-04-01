@@ -1,6 +1,6 @@
 # Bram Stoker's Dracula (Williams 1993)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-bsdracula.png)
+![Table Preview](../../images/vpx-bsdracula.png)
 
 Authors: [CSilk](https://www.vpforums.org/index.php?showuser=162097)
 

@@ -1,6 +1,6 @@
 # Family Guy (Stern 2007)
 
-![Table Preview](https://github.com/Mar3nBu/vpx-images/blob/main/vpx-familyguy.png)
+![Table Preview](../../images/vpx-familyguy.png)
 
 Author: [Gedankekojote97](https://vpuniverse.com/profile/42203-gedankekojote97/) 
 
@@ -39,3 +39,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Download the table, ROM and directb2s versions listed above 
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - The ROM zip file gets copied to vpx-familyguy/pinmame/roms (do not unzip)
+

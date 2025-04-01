@@ -1,6 +1,6 @@
 # Future Spa (Bally 1979)
 
-![Table Preview](https://github.com/Mar3nBu/vpx-images/blob/main/vpx-futurespa.png)
+![Table Preview](../../images/vpx-futurespa.png)
 
 Author: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 5.5.0  
@@ -35,3 +35,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Download the table and ROM versions listed above, extract (if necessary) and copy them to external/vpx-futurespa folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place ROM zip file into vpx-futurespa/pinmame/roms folder. DO NOT UNZIP!
+

@@ -1,6 +1,6 @@
 # Dirty Harry (Williams 1995)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-dirtyharry.png)
+![Table Preview](../../images/vpx-dirtyharry.png)
 
 ---
 

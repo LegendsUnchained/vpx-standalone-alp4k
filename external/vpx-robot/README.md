@@ -1,6 +1,6 @@
 # Robot (Zaccaria 1985)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_12/ExtraGI.png.b07845cf3f1d30d5d8a0f85674cf994a.png)
+![Table Preview](../../images/vpx-robot.png)
 
 Authors: [Wylte](https://vpuniverse.com/profile/40718-wylte/)  
 Version: 1.3.0  

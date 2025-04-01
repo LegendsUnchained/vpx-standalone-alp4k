@@ -1,6 +1,6 @@
 # Corvette (Midway 1994)  
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-corvette.png)
+![Table Preview](../../images/vpx-corvette.png)
 
 Author: [goldchicco](https://www.vpforums.org/index.php?showuser=88795)  
 Version: 1.4.2  

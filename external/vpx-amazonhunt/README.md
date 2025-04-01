@@ -1,6 +1,6 @@
 # Amazon Hunt (Gottlieb 1983)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-amazonhunt.png)
+![Table Preview](../../images/vpx-amazonhunt.png)
 
 ---
 
@@ -30,3 +30,4 @@
 - Download and extract the **VPX** and **DIRECTB2S** versions listed above and copy them into the **vpx-amazonhunt** folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Download the **ROM** version listed above and copy it into `\vpx-amazonhunt\pinmame\roms` (DO NOT UNZIP)
+

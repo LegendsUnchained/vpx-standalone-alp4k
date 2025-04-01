@@ -1,6 +1,6 @@
 # Freddy A Nightmare On Elm Street (Gottlieb 1994) Ejse83 LED Mod
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-freddyled.png)
+![Table Preview](../../images/vpx-freddyled.png)
 
 Authors: [ejse83](https://vpuniverse.com/profile/53365-ejse83/)
 

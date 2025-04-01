@@ -1,6 +1,6 @@
 # America 1492 (Juegos Populares 1986)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-america1492.jpg)
+![Table Preview](../../images/vpx-america1492.jpg)
 
 ---
 

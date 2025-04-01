@@ -1,6 +1,6 @@
 # MF DOOM (GOILL773 2024)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-mfdoom.png)
+![Table Preview](../../images/vpx-mfdoom.png)
 
 Tested by: Bla1ze & dr_wraith
 

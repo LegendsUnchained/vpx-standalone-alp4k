@@ -1,6 +1,6 @@
 # Poltergeist (Original 2022)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-poltergeist.png)
+![Table Preview](../../images/vpx-poltergeist.png)
 
 Authors: [VP COOKS](https://www.vpforums.org/index.php?showuser=180201)  
 Download: POLTERGEIST-VPCOOKS.rar  
@@ -29,3 +29,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s listed above, extract (if necessary) and copy them to external/vpx-poltergeist
 - Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
 - "Carol Anne - listen to me. Do *not* go into the light." - Diane Freeling
+

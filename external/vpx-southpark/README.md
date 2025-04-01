@@ -1,6 +1,6 @@
 # South Park (Sega 1999)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_06/1752361769_southpark.png.4c5c95e2869f0df9a424f3bc473d2f78.png)
+![Table Preview](../../images/vpx-southpark.png)
 
 Authors: [VPUStaff](https://vpuniverse.com/profile/50-vpustaff/)
 Version: 1.2

@@ -1,7 +1,7 @@
 # Metropolis (Original 2022)
 Tested By: kaoticBPR
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-metropolis.png)
+![Table Preview](../../images/vpx-metropolis.png)
 
 Authors: [funkatron101](https://vpuniverse.com/profile/49709-funkatron101/)  
 Version: 1.1  
@@ -33,3 +33,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Place genesis.zip ROM in the external/vpx-metropolis/pinmame/roms folder. *Do Not unzip*!
 - If you want to use the custom music, CREATE a folder in the main vpx-metropolis folder called "Music" and place mp3 files in there
 - "You must rebuild her, she must be reborn!"
+

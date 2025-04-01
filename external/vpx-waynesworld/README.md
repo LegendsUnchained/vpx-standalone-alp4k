@@ -1,6 +1,6 @@
 # Wayne's World (Original 2020)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_04/720-334x600.png.c9054c77d1fdff0f049cc1f5fe034dd6.png)
+![Table Preview](../../images/vpx-waynesworld.png)
 
 Author(s): [k8951](https://vpuniverse.com/profile/28646-k8951/)  
 Version: Version 1.1  

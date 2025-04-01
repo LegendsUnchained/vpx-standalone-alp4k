@@ -1,6 +1,6 @@
 # Michael Jordan (Data East 1992)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-michaeljordan.png)
+![Table Preview](../../images/vpx-michaeljordan.png)
 
 Author: [Rascal](https://vpuniverse.com/profile/8-rascal/)
 

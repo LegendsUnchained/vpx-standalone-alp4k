@@ -1,6 +1,6 @@
 # Adventures of Rocky and Bullwinkle and Friends (Data East - 1993)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-aorab.png)
+![Table Preview](../../images/vpx-aorab.png)
 
 ## Files
 | File Type | Link | Version | Author |

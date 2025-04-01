@@ -1,6 +1,6 @@
 # F-14 Tomcat (Williams, 1987) Hanibals Mod
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-f14tomcat.png)
+![Table Preview](../../images/vpx-f14tomcat.png)
 
 Author: [Hanibal2001](https://vpuniverse.com/profile/872-hanibal2001/) 
 

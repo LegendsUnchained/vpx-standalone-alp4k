@@ -1,6 +1,6 @@
 # Memory Lane (Stern 1978)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_04/ml.png.d7d80b85c0ac15eaeedd6a9b12f68654.png)
+![Table Preview](../../images/vpx-memlane.png)
 
 Author(s): [ARMYAVIATION](https://vpuniverse.com/profile/18348-armyaviation/)  
 Version:  Memory Lane (Stern 1978) Version 1.0.0  

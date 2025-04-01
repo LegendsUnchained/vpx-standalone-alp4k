@@ -1,6 +1,6 @@
 # Evil Dead 2 (TBA 2019)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-evildead22019.png)
+![Table Preview](../../images/vpx-evildead22019.png)
 
 Authors: [ivantba](https://www.vpforums.org/index.php?showuser=123858)  
 Download: Evil Dead 2 (TBA 2019).rar  
@@ -33,3 +33,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy (Music) folder to vpx-evildead22019/music
 - Rom file (ironmaid.zip) stays in zip folder, place zip file in vpx-evildead22019/pinmame/roms
 - "I'll swallow your soul! I'll swallow your soul! I'll swallow your soul!" - Henrietta
+

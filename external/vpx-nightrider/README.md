@@ -1,6 +1,6 @@
 # Night Rider (Bally 1977)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-nightrider.jpg)
+![Table Preview](../../images/vpx-nightrider.jpg)
 
 Authors: [Goldchicco](https://vpuniverse.com/profile/23579-goldchicco/)  
 Version: 2.0a  

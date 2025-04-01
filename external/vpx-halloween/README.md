@@ -1,6 +1,6 @@
 # Halloween 1978-1981 (Original 2022) 
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-halloween.png)
+![Table Preview](../../images/vpx-halloween.png)
 
 Author: [HiRez00](https://vpuniverse.com/profile/19941-hirez00/)  
 

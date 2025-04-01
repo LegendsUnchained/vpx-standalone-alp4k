@@ -1,6 +1,6 @@
 # Young Frankenstein (hauntfreaks 2021)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_10/YF_DT_screenshot.jpg.e3a0919a4a6c99705a905d2412397326.jpg)
+![Table Preview](../../images/vpx-youngfrankenstein.jpg)
 
 ---
 

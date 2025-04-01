@@ -1,6 +1,6 @@
 # Yellow Submarine (Original 2021)
 
-![Table Preview](https://github.com/user-attachments/assets/127dc8d6-0378-46ce-8d1a-702558ca5700)
+![Table Preview](../../images/vpx-yellowsubmarine.png)
 
 ---
 

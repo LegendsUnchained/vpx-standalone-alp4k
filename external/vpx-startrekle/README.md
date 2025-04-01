@@ -1,6 +1,6 @@
 # Star Trek (Enterprise Limited Edition) - Stern (2013)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-startrekle.png)
+![Table Preview](../../images/vpx-startrekle.png)
 
 Author: [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/)  
 

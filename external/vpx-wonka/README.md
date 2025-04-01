@@ -1,6 +1,6 @@
 # Willy Wonka Pro LE
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-wonka.png)
+![Table Preview](../../images/vpx-wonka.png)
 
 ---
 

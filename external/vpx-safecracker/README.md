@@ -2,7 +2,7 @@
 
 Tested By: kaoticBPR
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-safecracker.jpg)
+![Table Preview](../../images/vpx-safecracker.jpg)
 
 Author: [fuzzel](https://www.vpforums.org/index.php?showuser=69907)  
 Version: 1.0  

@@ -1,6 +1,6 @@
 # Night of the Living Dead '68, Pinvention's (Original 2021)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-nightofthelivingdeadpin.png)
+![Table Preview](../../images/vpx-nightofthelivingdeadpin.png)
 
 Authors: [Shannon](https://vpuniverse.com/profile/7353-shannon/)  
 Filename: Nightofthelivingdead_pimped.vpx (1.0.0)  
@@ -37,3 +37,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
 - Unzip (1652323682_NOTLDMUSIC.zip) Copy (NOTLD MUSIC) folder to vpx-nightofthelivingdeadpin -- Rename (NOTLD MUSIC) to (music).
 - "Good shot! OK, he's dead; let's go get 'im. That's another one for the fire." - Sheriff McClelland
+

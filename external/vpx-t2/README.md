@@ -1,6 +1,6 @@
 # Terminator 2 (Williams 1991)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-t2.png)
+![Table Preview](../../images/vpx-t2.png)
 
 Author: [g5k](https://vpuniverse.com/profile/14065-g5k/)  
 Version: 1.1d  
@@ -31,3 +31,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above, extract and copy them into this folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place ROM zip file into vpx-t2/pinmame/roms folder. DO NOT UNZIP!
+

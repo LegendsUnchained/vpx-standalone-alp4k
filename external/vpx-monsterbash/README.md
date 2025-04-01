@@ -1,6 +1,6 @@
 # Monster Bash (Williams 1998)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_02/mb_cab.jpg.40e0be2cb58d0be600ee0721c82da2d7.jpg)
+![Table Preview](../../images/vpx-monsterbash.jpg)
 
 Authors: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
 Version: 1.0  

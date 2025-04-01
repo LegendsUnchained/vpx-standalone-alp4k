@@ -1,6 +1,6 @@
 # Independence Day (SEGA 1996)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-id4.png)
+![Table Preview](../../images/vpx-id4.png)
 
 Authors: [goldchicco](https://www.vpforums.org/index.php?showuser=88795)  
 Version: 1.0  
@@ -34,3 +34,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-id4
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place ROM zip file into vpx-id4/pinmame/roms folder. DO NOT UNZIP!
+

@@ -1,6 +1,6 @@
 # Sharkey's Shootout (Stern 2000)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-shrkysht.jpg)
+![Table Preview](../../images/vpx-shrkysht.jpg)
 
 Authors: [Bigus](https://www.vpforums.org/index.php?showuser=107629)  
 Version: 1.0  

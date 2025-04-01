@@ -1,6 +1,6 @@
 # Doom Eternal (Original 2022)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-doometernal.png)
+![Table Preview](../../images/vpx-doometernal.png)
 
 ---
 

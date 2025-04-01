@@ -1,6 +1,6 @@
 # El Dorado (Gottlieb 1975)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-eldorado.jpg)
+![Table Preview](../../images/vpx-eldorado.jpg)
 
 Authors: [teisen](https://vpuniverse.com/profile/31525-teisen/)  
 Version: 1.1  

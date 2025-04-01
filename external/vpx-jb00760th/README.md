@@ -1,6 +1,6 @@
 # James Bond 007 60th Anniversary (Stern 2023)
 
-![Table Preview](https://github.com/Mar3nBu/vpx-images/blob/main/vpx-jb00760th.png)
+![Table Preview](../../images/vpx-jb00760th.png)
 
 Authors: [marty02](https://vpuniverse.com/profile/16531-marty02/)
 

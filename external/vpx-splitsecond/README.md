@@ -1,6 +1,6 @@
 # Split Second (Stern 1981)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-splitsecond.jpg)
+![Table Preview](../../images/vpx-splitsecond.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 4.0.1  

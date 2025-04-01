@@ -1,6 +1,6 @@
 # Pin-Bot (Williams 1986)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_04/DT-2-1038x1177.jpg.269afa81f0f12b6c15598622ad7604a0.jpg)
+![Table Preview](../../images/vpx-pinbot.jpg)
 
 Authors: [bord](https://vpuniverse.com/profile/9265-bord/)  
 Version: 2.1.1 / 211309852_Pinbot(Williams1986)2.1.1VR.zip

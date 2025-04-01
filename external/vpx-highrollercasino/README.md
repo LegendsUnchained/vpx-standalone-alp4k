@@ -1,6 +1,6 @@
 # High Roller Casino (Stern 2001)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-highrollercasino.jpg)
+![Table Preview](../../images/vpx-highrollercasino.jpg)
 
 Authors: [DJRobX](https://www.vpforums.org/index.php?showuser=25804)  
 Version: 1.1  

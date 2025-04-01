@@ -1,6 +1,6 @@
 # The Who's Tommy Pinball Wizard (Data East 1994) 
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-tommy.png)
+![Table Preview](../../images/vpx-tommy.png)
 
 Author: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
 

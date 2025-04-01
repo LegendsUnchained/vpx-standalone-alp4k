@@ -1,6 +1,6 @@
 # The Leprechaun King
 
-![Table Preview](https://orbitalpin.com/wp-content/uploads/2019/07/lepking-1038x1298-768x960.jpg)
+![Table Preview](../../images/vpx-theleprechaunking.jpg)
 
 Author: [ScottyWic](https://orbitalpin.com/)  
 
@@ -24,4 +24,4 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 - Add your personalized launcher.elf and rename it to vpx-theleprechaunking.elf
 - Download the table listed above and copy files into this folder
 - In order for Pup Pack to work, create pupvideos folder and place extracted "leprechaun" folder inside
-- A leprechaun’s luck can be yours if you’re brave enough to try 🍀
+- A leprechaun's luck can be yours if you're brave enough to try 🍀
