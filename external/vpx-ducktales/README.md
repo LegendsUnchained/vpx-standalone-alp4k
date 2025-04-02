@@ -1,6 +1,6 @@
 # Ducktales Quest For Money
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_10/ducktales2.jpg.340c68cc644ca5eb798e9056c1aeaf93.jpg)
+![Table Preview](../../images/vpx-ducktales.jpg)
 
 Author(s): [remdwaas1986](https://vpuniverse.com/profile/28048-remdwaas1986/)  
 Version: Ducktales_1_6

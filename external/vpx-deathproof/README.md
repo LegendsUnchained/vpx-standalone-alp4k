@@ -1,6 +1,6 @@
 # Death Proof (Original 2021)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_01/Sanstitre.png.c87ab0a897de8d39ddfa1ff5a9e04461.png)
+![Table Preview](../../images/vpx-deathproof.png)
 
 ---
 
@@ -32,3 +32,4 @@
 - Rom file (mousn_l4.zip) stays in zip folder, place zip file in `vpx-deathproof/pinmame/roms`
 - Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same.
 - "Well damn if you ain't so sweet you make sugar taste just like salt." - Stuntman Mike
+

@@ -1,6 +1,6 @@
 # Evil Dead 2 - Version B (Original 2022)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_01/1.jpg.2c8d932e28e985c023c64f2fa8ec99ad.jpg)
+![Table Preview](../../images/vpx-evildead2b.jpg)
 
 Authors: [bombaj344](https://vpuniverse.com/profile/33732-bombaj344/)  
 Download: 2050363239_EvilDed2.rar  
@@ -41,3 +41,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy (Music) folder to vpx-evildead2b/music
 - Rom file (ironmaid.zip) stays in zip folder, place zip file in vpx-evildead2b/pinmame/roms
 - "Gimme back my hand... GIMME BACK MY HAND!" - Ash
+

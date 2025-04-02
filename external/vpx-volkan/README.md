@@ -1,6 +1,6 @@
 # Volkan Metal and Steel (Original 2023)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_07/pf2.jpg.0ba147f9975c87217325ba13292253fc.jpg)
+![Table Preview](../../images/vpx-volkan.jpg)
 
 TABLE
 
@@ -33,3 +33,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Download (.vpx.zip) file, extract and copy/move (.vpx) into vpx-volkan
 - Download (B2S.zip) file, extract and copy/move (.directb2s) into vpx-volkan
 - Make sure (.vpx) (.direct2b2s) and (.ini) are all named the same. 
+

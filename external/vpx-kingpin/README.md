@@ -1,7 +1,7 @@
 # Kingpin (Capcom 1996) (1920's Mod)
 Tested by: kaoticBPR
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_07/Screenshot_281.jpg.dcd8e8cdf230b1f5539709c29b5cce58.jpg)
+![Table Preview](../../images/vpx-kingpin.jpg)
 
 Authors: [sg1bson](https://vpuniverse.com/profile/34010-sg1bson/)  
 Version: 1.1  
@@ -34,3 +34,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place kpb105.zip ROM in the external/vpx-kingpin/pinmame/roms folder. *Do Not unzip*!
 - "Working for the kingpin, expect to be double crossed"
+

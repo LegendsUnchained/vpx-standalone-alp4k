@@ -1,6 +1,6 @@
 # Beach Bums (Original 2018)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2018_07/5b541ba94c92c_tableFS.jpg.dc2c4300114cabb8d13b37ae88f5bceb.jpg)
+![Table Preview](../../images/vpx-beachbums.jpg)
 
 Authors: [watacaractr](https://vpuniverse.com/profile/5551-watacaractr/)
 Version: 1.0

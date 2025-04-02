@@ -1,7 +1,7 @@
 # Space Shuttle (Williams 1984)
 Tested by: kaoticBPR
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_05/FS.jpg.e3d73be57b1a87d5a5b791e3adbce6d0.jpg)
+![Table Preview](../../images/vpx-spaceshuttle.jpg)
 
 Authors: [bord](https://vpuniverse.com/profile/9265-bord/)  
 Version: 2.0  
@@ -34,4 +34,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same. No need to rename the .dmd file.
 - Place sshtl_l7.zip in the external/vpx-spaceshuttle/pinmame/roms folder. *Do Not unzip*!
 - "It's time for take off."
+
 

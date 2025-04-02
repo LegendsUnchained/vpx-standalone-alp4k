@@ -1,6 +1,6 @@
 # Samba (LTD do Brasil 1976)
 
-![Table Preview](https://virtualpinballspreadsheet.github.io/vps-db/img/H94bTMWLSC_1721490440996.webp)
+![Table Preview](../../images/vpx-samba.webp)
                  
 Authors: [Halen](https://www.vpforums.org/index.php?showuser=74)  
 Version: 1.0.0  
@@ -28,3 +28,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-samba.elf
 - Download the table and directb2s versions listed above and copy them into this folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+

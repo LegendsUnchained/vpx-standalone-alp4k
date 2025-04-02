@@ -1,6 +1,6 @@
 # Apache! (Taito do Brasil 1978)
 
-![Table Preview](https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/images/vpx-apache.jpg)
+![Table Preview](../../images/vpx-apache.jpg)
 
 ---
 
@@ -29,3 +29,4 @@
 - Add your personalized launcher.elf and rename it to vpx-apache.elf
 - Download the table and directb2s versions listed above, extract them (if necessary) and copy them to external/vpx-apache
 - Make sure any (.vpx), (.directb2s), and (.ini) files are all named the same
+

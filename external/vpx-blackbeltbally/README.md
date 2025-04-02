@@ -1,6 +1,6 @@
 # Black Belt (Bally 1986)
 
-![Table Preview](preview.png)
+![Table Preview](../../images/vpx-blackbeltbally.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)\
 Version: 4.0.0\
@@ -34,3 +34,4 @@ Minimum VPX Standalone build: 10.8.0-2026-3b68d7c
 - Make sure the vpx, directb2s, and ini files are all named the "exact" same
 - Place `blackblt.zip` in the `external/vpx-blackbeltbally/pinmame/roms` folder *Do Not unzip*
 - "Go for your BLACK BELT today!"
+

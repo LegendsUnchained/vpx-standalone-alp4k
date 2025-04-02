@@ -1,6 +1,6 @@
 # Django Unchained (Original 2022)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_03/20220331_133106.jpg.97002e0ba42721d62d804c9675f81c16.jpg)
+![Table Preview](../../images/vpx-djangounchained.jpg)
 
 Authors: [balutito](https://vpuniverse.com/profile/36070-balutito/)  
 Filename: Django v1 music only.vpx (1.2)  
@@ -36,3 +36,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Unzip (Django Rom + Music +Altcolor.rar) Copy (music) folder to vpx-djangounchained
 - Rom file (cc_13.zip) stays in zip folder, place zip file in vpx-djangounchained/pinmame/roms
 - "Kill white folks and they pay you for it? What's not to like?" - Django
+

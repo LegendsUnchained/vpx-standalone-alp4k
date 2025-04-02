@@ -1,6 +1,6 @@
 # Last Action Hero (Balutito MOD)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_08/1801289630_Sanstitre.png.1f29abd79f0e960db6c9f23cfc9eee4a.png)
+![Table Preview](../../images/vpx-lastactionhero.png)
 
 Author(s): [balutito](https://vpuniverse.com/profile/36070-balutito/)  
 Version:  Last Action Hero Balutito MOD.vpx  
@@ -38,3 +38,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Rom file (lah_112.zip) stays in zip folder, place zip file in vpx-lastactionhero/pinmame/roms
 - Make sure (.vpx) (.direct2b2s) and (.ini) are all named the same. 
 - Jack Slater: "Sir, are you a henchman?"   Benedict: "No, I only go as far as lackey. Anything else?"
+

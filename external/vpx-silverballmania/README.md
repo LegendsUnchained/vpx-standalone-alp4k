@@ -1,6 +1,6 @@
 # Silverball Mania (Bally 1978)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_08/630185711_SilverBallManiascreenshot.jpg.84995c7bae286185420f862155e25ebc.jpg)
+![Table Preview](../../images/vpx-silverballmania.jpg)
 
 Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
 Version: 1.2
@@ -31,5 +31,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above and copy them into this folder
 - Make sure (.vpx), and (.directb2s) files are all named the same
 - Place slbmanib.zip ROM in the external/vpx-silverballmania/pinmame/roms folder. *Do Not unzip*!
+
 
 

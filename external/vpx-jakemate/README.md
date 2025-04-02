@@ -1,6 +1,6 @@
 # Jake Mate, JPSalas DT-FS-VR-MR Ext2k Conversion (Petaco - 1974)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_10/Desktop.png.9efedcda4483b49cd7c6a32128499ea4.png)
+![Table Preview](../../images/vpx-jakemate.png)
 
 Authors: [ext2k](https://vpuniverse.com/profile/55948-ext2k/)  
 Version: 1.00  

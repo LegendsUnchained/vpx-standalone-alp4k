@@ -1,6 +1,6 @@
 # Space Shuttle (Taito do Brasil 1982)
 
-![Table Preview](https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/images/vpx-spaceshuttletaito.png)
+![Table Preview](../../images/vpx-spaceshuttletaito.png)
 
 Author: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 5.5.0  
@@ -35,3 +35,4 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - Place ROM zip file into vpx-spaceshuttletaito/pinmame/roms folder. DO NOT UNZIP!
 - "When I first looked back at the Earth, standing on the Moon, I cried." -Alan Shepard
+

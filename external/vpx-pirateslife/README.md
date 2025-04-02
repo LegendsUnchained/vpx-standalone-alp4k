@@ -1,6 +1,6 @@
 # Pirates Life
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_06/PiratesLifePlayfieldScreenshotReduced.png.33df97832da9afc067c6d34390a9a86b.png)
+![Table Preview](../../images/vpx-pirateslife.png)
 
 Authors: [RusstyT](https://vpuniverse.com/profile/32300-russtyt/)  
 Version: 2.0  
@@ -26,3 +26,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-PiratesLife.elf
 - Download the table and directb2s versions listed above and copy them into this folder
 - Always be yourself, unless you can be a pirate.
+

@@ -1,6 +1,6 @@
 # Batman (Data East 1991)
 
-![Table Preview](https://raw.githubusercontent.com/LegendsUnchained/vpx-standalone-alp4k/main/images/vpx-batman-preview.jpg)
+![Table Preview](../../images/vpx-batman.jpg)
 
 ---
 
@@ -29,3 +29,4 @@
 - Add your personalized launcher.elf and rename it to vpx-batman.elf
 - Download the table and directb2s versions listed above and copy them into this folder
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
+

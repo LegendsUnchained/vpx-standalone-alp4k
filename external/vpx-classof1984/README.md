@@ -1,6 +1,6 @@
 # Class of 1984 (Original 2024)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_03/Screenshot4.png.de0bfadb240635fbce5166d812278e82.png)
+![Table Preview](../../images/vpx-classof1984.png)
 
 Authors: [marcobus2005](https://vpuniverse.com/profile/53087-marcobus2005/)  
 Download File Name: Class1984.zip  
@@ -34,3 +34,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - The ROM zip file gets copied to vpx-classof1984/pinmame/roms (Do not unzip)
 - " I'ma gonna kill yo', sucka! No one messes around wit' my man, Leroy. I'm gonna cut you, white-meat." - Joo Joo
+

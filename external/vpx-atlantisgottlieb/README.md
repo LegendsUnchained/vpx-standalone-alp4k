@@ -1,6 +1,6 @@
 # Atlantis (Gottlieb 1975)
 
-![Table Preview](preview.png)
+![Table Preview](../../images/vpx-atlantisgottlieb.jpg)
 
 ---
 

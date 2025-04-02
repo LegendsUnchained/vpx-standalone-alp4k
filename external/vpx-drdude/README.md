@@ -1,7 +1,7 @@
 # Dr. Dude and his excellent ray (Bally 1999)
 Tested By: kaoticBPR
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_09/DD_FS_PIC.png.44413d0fb6aeea26814d2b1e764c0695.png)
+![Table Preview](../../images/vpx-drdude.png)
 
 Authors: [wrd1972](https://vpuniverse.com/profile/7788-wrd1972/)
 Version: 3.0
@@ -35,4 +35,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place dd_l2.zip in the external/vpx-drdude/pinmame/roms folder *Do Not unzip*
 - "Wish I had an Excellent Ray"
+
 

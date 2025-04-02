@@ -1,6 +1,6 @@
 # Bone Busters Inc. (Gottlieb 1989)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_07/BB15FS.png.4a82b52183b19b11f6d1f315d94fe358.png)
+![Table Preview](../../images/vpx-bonebusters.png)
 
 Authors: [Aubrel](https://vpuniverse.com/profile/257-aubrel/)
 Version: 1.6

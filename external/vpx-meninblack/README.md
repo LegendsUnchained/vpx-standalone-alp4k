@@ -1,6 +1,6 @@
 # Men in Black Trilogy
 Tested by: kaoticBPR
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_05/MIB_desktop.png.ba05743634508486ede44bdf4ebf396c.png)
+![Table Preview](../../images/vpx-meninblack.png)
 
 Authors: [marty02](https://vpuniverse.com/profile/16531-marty02/)  
 Version: 3.2  

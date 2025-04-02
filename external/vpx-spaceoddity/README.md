@@ -1,6 +1,6 @@
 # Space Oddity (Original 2022)
 
-![spaceoddity](https://github.com/user-attachments/assets/f0f3418e-5d96-4b95-b36c-ea201041ebd8)
+![Table Preview](../../images/vpx-spaceoddity.png)
 
 Author: [balutito](https://vpuniverse.com/profile/36070-balutito/)  
 Version: 1.3  

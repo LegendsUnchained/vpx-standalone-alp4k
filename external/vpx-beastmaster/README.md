@@ -1,6 +1,6 @@
 # The BeastMaster V2 SoundFX (Original 2021)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_10/20211027_183639.jpg.00e15ca9ea12afde87a0881978f09a25.jpg)
+![Table Preview](../../images/vpx-beastmaster.jpg)
 
 Author(s): [balutito](https://vpuniverse.com/profile/36070-balutito/)  
 Table: Version 1.0.2  
@@ -46,3 +46,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Open (ROM) Folder, (blakpyra.nv) place (.nv) file in vpx-beastmaster/pinmame/nvram
 - Open (BM_music), Place (Beastmaster.mp3) into ---> vpx-beastmaster/music
 - "Life is a circle. I am sure we will meet again, my friend!"  ---Dar
+

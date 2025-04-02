@@ -1,6 +1,6 @@
 # Elvira's House of Horrors Remix (Original 2021)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_08/1784372174_playfieldelvira.png.a65738f1e89441fd53a2bda3949aa5f5.png)
+![Table Preview](../../images/vpx-elvirashouseofhorrors.png)
 
 ---
 
@@ -34,3 +34,4 @@
 - Open (ROM) Folder, (`eatpm_l4.zip`) stays in zip folder, place zip file in `vpx-elvirashouseofhorrors/pinmame/roms`
 - Make sure (`.vpx`), (`.directb2s`), and (`.ini`) files are all named the same
 > Elvira Mistress of the Dark - "How 'bout another ball?"
+

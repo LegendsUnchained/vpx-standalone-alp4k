@@ -1,6 +1,6 @@
 # Galaxy (Stern 1980)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_05/GX_FS.png.7b6654d63e40856485fb06f0bf8d16b8.png)
+![Table Preview](../../images/vpx-galaxy.png)
 
 Authors: [bord](https://vpuniverse.com/profile/9265-bord/)
 Version: 2.0
@@ -32,4 +32,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure the vpx, direct2b, and ini files are all named the "exact" same
 - Place galaxy.zip in the external/vpx-galaxy/pinmame/roms folder *Do Not unzip*
 - "There's a whole galaxy out there"
+
 

@@ -1,6 +1,6 @@
 # RollerGames (Williams 1990)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_10/1290685543_2022-10-1722_17_04-VisualPinballPlayer.png.7b32adeacc9107a574285f7d7fe038fb.png)
+![Table Preview](../../images/vpx-rollergames.png)
 
 Author: [drakkon](https://vpuniverse.com/profile/51568-drakkon/)  
 Version: RollerGames (Williams 1990)_drakkon(mod_1.1)  
@@ -41,3 +41,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place the ROM zip (rollr_l2.zip) in the external/vpx-rollergames/pinmame/roms folder. (do not un-zip!)
 - "I want my ROCK... and ROLLERGAMES!!!"
+

@@ -1,6 +1,6 @@
 # Planet Of The Apes (Original 2021)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_11/1747200459_Sanstitre.png.5cee01c0cf25d138cddf8cc46dd39c4f.png)
+![Table Preview](../../images/vpx-planetoftheapes.png)
 
 Authors: balutito   
 Version: 1.0.0  
@@ -32,3 +32,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy/Move (pota.mp3) file to external/vpx-planetoftheapes/music
 - The ROM zip file gets copied to external/vpx-planetoftheapes/pinmame/roms (Do not unzip)
 - "Take your stinking paws off me, you damn dirty ape!" - Taylor
+

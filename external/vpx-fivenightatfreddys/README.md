@@ -1,6 +1,6 @@
 # Five Nights at Freddy's Original (2021)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_12/fnaf.png.dadceb24d20e32602f36dbf10f02eb3e.png)
+![Table Preview](../../images/vpx-fivenightatfreddys.png)
 
 Authors: [remdwaas1986](https://vpuniverse.com/profile/28048-remdwaas1986/)  
 Download File Name: FNAF 1.4.zip  
@@ -32,3 +32,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s listed above, extract (if necessary) and copy them to external/vpx-fivenightatfreddys
 - Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
 - "Most people don't last this long." - Phone Guy, Night 3
+

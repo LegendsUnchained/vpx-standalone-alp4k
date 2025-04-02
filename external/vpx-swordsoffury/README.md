@@ -1,6 +1,6 @@
 # Swords of Fury (Williams 1988)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_09/sof_dt.jpg.3995f17a98a3874fd5221b553705e647.jpg)
+![Table Preview](../../images/vpx-swordsoffury.jpg)
 
 Authors: [Bord](https://vpuniverse.com/profile/9265-bord/)  
 Version: 1.0.1  
@@ -33,3 +33,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - Place swrds_l2.zip ROM in the external/vpx-swordsoffury/pinmame/roms folder. *Do Not Uunzip*!
 - "LionMan!!!! This is an absolute Williams Classic!"
+

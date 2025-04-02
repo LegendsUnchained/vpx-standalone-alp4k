@@ -1,6 +1,6 @@
 # Cue Ball Wizard (Gottlieb 1992)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_08/Cabinet.png.be519c68a46e10842660c0143ebf4f6c.png)
+![Table Preview](../../images/vpx-cueball.png)
 
 Authors: [Mikcab](https://vpuniverse.com/profile/16013-mikcab/)  
 Version: 1.2.4  
@@ -31,3 +31,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above, extract and copy them into this folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place ROM zip file into external/vpx-cueball/pinmame/roms folder. DO NOT UNZIP!
+

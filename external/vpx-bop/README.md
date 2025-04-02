@@ -1,6 +1,6 @@
 # The Machine Bride Of Pinbot (Williams 1991)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_07/20220708_001557.jpg.7f5312a237f01f4b146125ab77e2e612.jpg)
+![Table Preview](../../images/vpx-bop.jpg)
                  
 
 Authors: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop//)  
@@ -35,3 +35,4 @@ Minimum VPX Standalone build: 10.8.0-2006-6d603fb
 - Download the table, directb2s, and ROM versions listed above and copy them into this folder
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - Copy the original non-extracted zip file to the vpx-bop/pinmame/roms folder
+

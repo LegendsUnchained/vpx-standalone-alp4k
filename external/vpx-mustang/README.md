@@ -1,6 +1,6 @@
 # Mustang (Stern 2014)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_10/screenshot_desktop.png.9dc1c9d19ab2167409633bbec76d66da.png)
+![Table Preview](../../images/vpx-mustang.png)
 
 Author: [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/)  
 Version:  Mustang (Stern 2014) v1.27  
@@ -37,3 +37,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Rom file (mt_145h.zip) stays in zip folder, place zip file in vpx-mustang/pinmame/roms
 - "There's a feeling you get from a Mustang that you just don't get from any other car!" ---Mustang Owner
+

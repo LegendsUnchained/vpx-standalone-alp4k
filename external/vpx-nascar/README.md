@@ -1,6 +1,6 @@
 # Nascar (Stern 2005)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_03/screenshot_cab.png.cb18ada5277069130ecd01a85255f1a3.png)
+![Table Preview](../../images/vpx-nascar.png)
 
 Author: [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/)  
 Version: 1.17  
@@ -37,3 +37,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place ROM zip file into vpx-nascar/pinmame/roms folder. DO NOT UNZIP!
 - You're off to the races 🏁
+

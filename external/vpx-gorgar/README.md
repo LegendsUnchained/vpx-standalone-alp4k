@@ -1,6 +1,6 @@
 # Gorgar (Williams 1979)
 
-![Table Preview](https://i.imgur.com/sjtIeDx.jpeg)
+![Table Preview](../../images/vpx-gorgar.jpeg)
 
 Authors: [Gedankekojote97](https://vpuniverse.com/profile/42203-gedankekojote97/)
 Version: 1.1
@@ -30,3 +30,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above and copy them into this folder
 - Make sure the vpx, directb2s, vbs, and ini files are all named the "exact" same
 - "Gorgar SPEAKS!"
+

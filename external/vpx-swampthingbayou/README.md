@@ -1,6 +1,6 @@
 # Swamp Thing 2.0 Bayou Edition (LTek 2024)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_07/Screenshot.jpg.481223a135a5c3e9888d9c115b9cf95d.jpg)
+![Table Preview](../../images/vpx-swampthingbayou.jpg)
 
 Authors: [LTek, Clairvius](https://vpuniverse.com/profile/67685-ltek/)  
 
@@ -27,3 +27,4 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 - Add your personalized launcher.elf and rename it to vpx-swampthingbayou.elf
 - Download the table and directb2s versions listed above and copy them into this folder
 - Much beauty in the swamp, if you only look 
+

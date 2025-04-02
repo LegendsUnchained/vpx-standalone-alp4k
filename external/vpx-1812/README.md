@@ -1,6 +1,6 @@
 # Class of 1812 (Gottlieb 1991)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2019_03/1859157671_1812(Custom))
+![Table Preview](../../images/vpx-1812.png)
 
 ---
 

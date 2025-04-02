@@ -1,6 +1,6 @@
 # Junkyard Cats (Bailey 2012)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_05/desktop.png.ee10e4fcf46163c9eb96039060d3563f.png)
+![Table Preview](../../images/vpx-junkyardcats.png)
 
 Author(s): [Brendan Bailey](http://www.junkyardcats.net/index.php)  [javier1515](https://www.vpforums.org/index.php?showuser=37787)  
 Version: Junkyard Cats_1.07.rar  
@@ -33,3 +33,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Download the table (Junkyard Cats_1.07.vpx) and directb2s (Junkyard Cats_1.07 (2 Screen).directB2S) and copy them into vpx-junkyardcats
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - "Join The Cats"
+

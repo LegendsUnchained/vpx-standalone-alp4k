@@ -1,6 +1,6 @@
 # Horrorburg JP_VPX8
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=113654&id=17575&full=1)
+![Table Preview](../../images/vpx-horrorburg.jpg)
 
 Author(s): [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: Horrorburg JP_VPX8.zip  
@@ -34,3 +34,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Download the table and directb2s versions listed above and copy them into vpx-horrorburg
 - Make sure (.vpx) (.direct2b2s) and (.ini) are all named the same. 
 - "Do you like Scary Vpin Tables?" --Ghostface
+

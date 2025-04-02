@@ -1,6 +1,6 @@
 # Trick 'r Treat (Original 2023)
 
-![Table Preview](https://i.ytimg.com/vi/XdCv7q0uk7E/maxresdefault.jpg)
+![Table Preview](../../images/vpx-trickrtreat.jpg)
 
 Tested by: Mox
 
@@ -23,3 +23,4 @@ Minimum VPX Standalone build: 10.8.0-2006-6d603fb
 - Download and extract the **VPX** and **DIRECTB2S** files ONLY, and copy them into the **vpx-trickrtreat** folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same. Do NOT rename the VPReg.ini file
 - "Poison, Drowning, Claw, Or Knife. So Many Ways To Take A Life"
+

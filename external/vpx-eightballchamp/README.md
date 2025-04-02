@@ -1,6 +1,6 @@
 # Eight Ball Champ (Bally 1985)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_06/1098682037_EightballChamp.jpg.43b2d60dc9daf58eff5385e44a9fe723.jpg)
+![Table Preview](../../images/vpx-eightballchamp.jpg)
 
 Authors: [Goldchicco](https://vpuniverse.com/profile/23579-goldchicco/)  
 Version: 1.1  
@@ -38,3 +38,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s listed above, extract and copy all contents into /external/vpx-eightballchamp
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - The ROM zip file gets copied to vpx-eightballchamp/pinmame/roms (do NOT unzip)
+
