@@ -1,7 +1,7 @@
 # Shovel Knight (Original 2017)
 Tested By: kaoticBPR
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_07/sk-screenshot-joe.jpeg.cc6cc3b7711c0d3c8143cd2174df40d0.jpeg)
+![Table Preview](../../images/vpx-shovel.jpeg)
 
 Authors: [Wizball](https://vpuniverse.com/profile/16604-wizball/)
 Version: 1.2.0
@@ -30,5 +30,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-shovel.elf
 - Download the table and directb2s versions listed above and copy them into this folder
 - "Save the beautiful Shield Maiden"
+
 
 

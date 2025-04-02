@@ -1,6 +1,6 @@
 # Hollywood Heat (Gottlieb 1986)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_04/1774976950_HHpreview.jpg.eea92d388512c85fa0bcc8e61b30d9ca.jpg)
+![Table Preview](../../images/vpx-hollywoodheat.jpg)
 
 Author(s): [BorgDog](https://vpuniverse.com/profile/5088-borgdog/)  
 Version:  2115183029_HollywoodHeat(Gottlieb1986) 1.0  
@@ -37,3 +37,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Place the ROM zip (hlywoodh.zip) in the /vpx-hollywoodheat/pinmame/roms folder. (Do not un-zip!)
 - Make sure (.vpx), (.direct2b2s), and (.ini) files are all named the same
 - "The Heat is on!"
+

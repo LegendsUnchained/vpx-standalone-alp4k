@@ -1,6 +1,6 @@
 # Deep Purple (Original 2024)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-deeppurple.jpg)
+![Table Preview](../../images/vpx-deeppurple.jpg)
 
 Authors: [balutito](https://vpuniverse.com/profile/36070-balutito/)  
 Version: 1.2  

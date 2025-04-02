@@ -1,6 +1,6 @@
 # Doctor Who (Bally 1992)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-doctorwho.png)
+![Table Preview](../../images/vpx-doctorwho.png)
 
 Author: [bigus1](https://www.vpforums.org/index.php?showuser=107629)  
 
@@ -49,4 +49,4 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 - Download the table, ROM and directb2s versions listed above and copy them into this folder
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - If using the Alt Color, make an altcolor folder inside the pinmame folder. Inside the altcolor folder, make a dw_l2 folder and place the .cRZ file inside. 
-- There’s no point in being grown up if you can’t be childish sometimes - Fourth (and best) Doctor!
+- There's no point in being grown up if you can't be childish sometimes - Fourth (and best) Doctor!

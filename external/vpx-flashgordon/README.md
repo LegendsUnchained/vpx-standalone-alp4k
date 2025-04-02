@@ -1,6 +1,6 @@
 # Flash Gordon (Bally 1981) 2.0.2
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_09/Desktop.png.ecd40348f60753fb0c4dfe91ac6ff553.png)
+![Table Preview](../../images/vpx-flashgordon.png)
 
 Author(s): [rothbauerw](https://vpuniverse.com/profile/10798-rothbauerw/)  
 Version: Flash Gordon (Bally 1981) 2.0.2.zip
@@ -37,3 +37,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Make sure (.vpx) (.direct2b2s) (.vbs) and (.ini) are all named the same. 
 - Place flashgdn.zip ROM file in external/vpx-flashgordon/pinmame/roms - DO NOT UNZIP!
 - "Klytus, I'm Boooored" --Emperor Ming
+

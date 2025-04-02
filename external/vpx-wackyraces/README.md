@@ -1,6 +1,6 @@
 # Wacky Races Pinball Original (2022)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_04/wackytable.jpg.a027dc183686889a9e7b64e0c2f9e5bd.jpg)
+![Table Preview](../../images/vpx-wackyraces.jpg)
 
 Author(s): remdwaas1986(https://vpuniverse.com/profile/28048-remdwaas1986/)
 Version: 1.3 

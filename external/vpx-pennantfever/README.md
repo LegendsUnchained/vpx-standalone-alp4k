@@ -1,6 +1,6 @@
 # Pennant Fever (Williams 1984)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-pennantfever.png)
+![Table Preview](../../images/vpx-pennantfever.png)
 
 ---
 

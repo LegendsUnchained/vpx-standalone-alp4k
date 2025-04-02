@@ -1,6 +1,6 @@
 # Viking (Bally 1980)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-viking.jpg)
+![Table Preview](../../images/vpx-viking.jpg)
 
 Authors: [bord](https://vpuniverse.com/profile/9265-bord/)  
 Version: 2.0.0  

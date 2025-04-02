@@ -1,6 +1,6 @@
 # Earthshaker (Williams 1989)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_07/earth.png.36aec03d367410af8c2037333dc2834c.png)
+![Table Preview](../../images/vpx-earthshaker.png)
 
 Authors: [bigus1](https://www.vpforums.org/index.php?showuser=107629)  
 Version: 3.0
@@ -31,3 +31,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above and copy them into this folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place ROM zip file in the external/vpx-earthshaker/pinmame/roms folder. Do Not unzip!
+

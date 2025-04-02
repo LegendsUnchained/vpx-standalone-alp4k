@@ -1,6 +1,6 @@
 # King Tut (Bally 1969)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_10/KingTutDTview.png.73660b6687339c3f74ab687f86352775.png)
+![Table Preview](../../images/vpx-kingtut.png)
 
 Authors: [drinkcristal](https://vpuniverse.com/profile/38572-drinkcristal/)  
 Version: 1.0.0  
@@ -31,3 +31,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s listed above, extract (if necessary) and copy all contents to external/vpx-kingtut
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - "Now when he was a young man, He never thought he'd see / People stand in line to see the boy king."
+

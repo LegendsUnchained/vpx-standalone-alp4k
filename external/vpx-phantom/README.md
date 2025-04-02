@@ -1,6 +1,6 @@
 # Phantom of the Opera (Data East 1990)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-phantom.png)
+![Table Preview](../../images/vpx-phantom.png)
 
 Authors: [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/)  
 Version: 1.25  

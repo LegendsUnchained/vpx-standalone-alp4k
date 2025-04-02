@@ -1,6 +1,6 @@
 # Black Knight (Williams 1980)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_11/bkdit.jpg.b04ecc748d79125b30673f0d37dd777f.jpg)
+![Table Preview](../../images/vpx-blackknight.jpg)
 
 Authors: [bord](https://vpuniverse.com/profile/9265-bord/)
 Version: 3.0
@@ -32,4 +32,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure the vpx, direct2b, and ini files are all named the "exact" same
 - Place bk_l4.zip in the external/vpx-blackknight/pinmame/roms folder *Do Not unzip*
 - "Can you defeat the Black Knight?"
+
 

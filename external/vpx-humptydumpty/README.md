@@ -1,6 +1,6 @@
 # Humpty Dumpty (Gottlieb 1947)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-humptydumpty.png)
+![Table Preview](../../images/vpx-humptydumpty.png)
 
 Authors: [randr](https://vpuniverse.com/profile/1835-randr/)  
 Version: 2.1  
@@ -29,3 +29,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-humptydumpty.elf
 - Download the table, and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-humptydumpty
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
+

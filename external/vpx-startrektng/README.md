@@ -1,6 +1,6 @@
 # Star Trek The Next Generation (Williams 1993)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_02/sttng_cab.jpg.618f340c3d4aef7b2d312592b79804c7.jpg)
+![Table Preview](../../images/vpx-startrektng.jpg)
 
 Authors: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
 Version: 1.1

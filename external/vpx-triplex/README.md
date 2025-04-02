@@ -1,6 +1,6 @@
 # Triple X (Williams 1973)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_07/OXOpf.jpg.b69f0c8f1b53ebfae20a4f7c8cd22d63.jpg)
+![Table Preview](../../images/vpx-triplex.jpg)
 
 Authors: [scottacus](https://vpuniverse.com/profile/11566-scottacus/)  
 Version: 1.08  

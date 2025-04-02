@@ -1,6 +1,6 @@
 # Tom & Jerry (Original 2018)
 
-![Table Preview](https://i.imgur.com/kenWQOg_d.webp?maxwidth=760&fidelity=grand)
+![Table Preview](../../images/vpx-tomjerry.png)
 
 Authors: [Gedankekojote97](https://vpuniverse.com/profile/42203-gedankekojote97/)
 Version: 1.33
@@ -33,3 +33,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-tomjerry.elf
 - Download the table and directb2s versions listed above and copy them into this folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+

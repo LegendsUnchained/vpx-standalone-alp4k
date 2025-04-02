@@ -1,6 +1,6 @@
 # Nip-It (Bally 1973)
 
-![Table Preview](preview.png)
+![Table Preview](../../images/vpx-nipit.png)
 
 Authors: [Mustang1961](https://www.vpforums.org/index.php?showuser=101607), [loserman76](https://www.vpforums.org/index.php?showuser=41250)\
 Version: 1.0c\

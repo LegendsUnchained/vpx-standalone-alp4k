@@ -1,6 +1,6 @@
 # The Flintstones (Williams 1994)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-flintstones.png)
+![Table Preview](../../images/vpx-flintstones.png)
 
 Authors: [g5k, 3rdAxis, DJRobX and Dark](https://vpuniverse.com/profile/14065-g5k)  
 Version: 1.2.6  
@@ -27,7 +27,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 30 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 43 |
 
 ## Instructions
 
@@ -37,3 +37,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place the ROM zip into external/vpx-flintstones/pinmame/roms. (Do not unzip)!
 - "Yabba Dabba Doooo"!
+

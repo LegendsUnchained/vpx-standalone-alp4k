@@ -1,6 +1,6 @@
 # Warriors, The (1979) Edition 2023 Reskin (Iceman 2023)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-thewarriors.png)
+![Table Preview](../../images/vpx-thewarriors.png)
 
 Author: [icepinball](https://vpuniverse.com/profile/4306-icepinball/)  
 Filename:  Warriors The.zip  

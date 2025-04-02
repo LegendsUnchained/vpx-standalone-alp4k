@@ -1,6 +1,6 @@
 # Scooby Doo! and KISS Rock n' Roll Mystery (Original 2021)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_08/1864077220_scoobkissFSscreenshot.jpg.4a7c2ee87c378538c649ad527722c2eb.jpg)
+![Table Preview](../../images/vpx-sdookiss.jpg)
 
 Author(s): [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
 Version:  Scooby Doo! and KISS Rock n' Roll Mystery v2.0  

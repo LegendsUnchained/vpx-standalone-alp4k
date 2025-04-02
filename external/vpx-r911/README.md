@@ -1,6 +1,6 @@
 # Rescue 911 (Gottlieb, 1994) 
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-r911.png)
+![Table Preview](../../images/vpx-r911.png)
 
 Author: [antisect](https://vpuniverse.com/profile/36923-antisect/) 
 

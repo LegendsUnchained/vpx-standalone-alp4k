@@ -1,6 +1,6 @@
 # Kung Fu Hustle
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_03/20240326_112933.jpg.0c553cc43d34bf0a91b4ad87d0c88524.jpg)
+![Table Preview](../../images/vpx-kungfuhustle.jpg)
 
 Author(s): [balutito](https://vpuniverse.com/profile/36070-balutito/)  
 Version:   Kung Fu Hustle V1.2.vpx

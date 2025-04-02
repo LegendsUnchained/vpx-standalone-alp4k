@@ -1,6 +1,6 @@
 # World Challenge Soccer (Gottlieb 1994)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_08/WorldChallengeSoccer(Gottlieb1994)POV.jpg.2d2408f5be8fc9ccae0d2a03d6d149ce.jpg)
+![Table Preview](../../images/vpx-wcsoccer.jpg)
 
 ---
 
@@ -11,16 +11,6 @@
 | **B2S & DMD** | [VP Universe](https://vpuniverse.com/files/file/15482-world-challenge-soccer-premier-1994-b2s-with-full-dmd/) | 1.0.1 | [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
 | **ROM** | [Pinball Nirvana](https://pinballnirvana.com/forums/resources/wcsoccer.2583/) | World Challenge Soccer (Premier 1994) full dmd.zip | [Rock-ola](https://pinballnirvana.com/forums/members/rock-ola.1/) |
 
-
----
-
-```diff
-!   Warning: 
-!   There is a known bug on this table, if you soft plunge there is a chance the ball 
-!   could get stuck in the coin flip rail. It is recommended to always full plunge.
-```
-
----
 
 ## Status 
 

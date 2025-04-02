@@ -1,7 +1,7 @@
 # Bounty Hunter (Gottlieb 1985)
 Tested by: kaoticBPR
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_04/bh01.png.69b3746902d13d689682f274f02bd2ff.png)
+![Table Preview](../../images/vpx-bountyhunter.png)
 
 Authors: [bord](https://vpuniverse.com/profile/9265-bord/)
 Version: 1.1

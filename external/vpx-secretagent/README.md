@@ -1,6 +1,6 @@
 # Secret Agent (Original 2024)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-secretagent.png)
+![Table Preview](../../images/vpx-secretagent.png)
 
 Author: [WizBall](https://vpuniverse.com/profile/16604-wizball/)  
 Version: 1.0  

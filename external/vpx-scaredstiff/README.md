@@ -1,6 +1,6 @@
 # Scared Stiff (Bally 1996) 
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-scaredstiff.png)
+![Table Preview](../../images/vpx-scaredstiff.png)
 
 Author: [Mikcab](https://vpuniverse.com/profile/16013-mikcab/)  
 Version: 1.29  

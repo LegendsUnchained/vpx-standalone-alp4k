@@ -1,6 +1,6 @@
 # Student Prince (Williams 1968)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-studentprince.png)
+![Table Preview](../../images/vpx-studentprince.png)
 
 Authors: [jogrady7](https://www.vpforums.org/index.php?showuser=142804)  
 Version: 2.0  

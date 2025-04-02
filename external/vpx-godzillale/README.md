@@ -1,7 +1,7 @@
 # Godzilla LE (Sega - Stern Mashup)
 Tested by: Mar3nBu
 
-![Table Preview](https://github.com/Mar3nBu/vpx-images/blob/main/vpx-godzillale.png)
+![Table Preview](../../images/vpx-godzillale.png)
 
 Table
 

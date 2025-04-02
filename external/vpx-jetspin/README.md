@@ -1,6 +1,6 @@
 # Jet Spin (Gottlieb 1977)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-jetspin.png)
+![Table Preview](../../images/vpx-jetspin.png)
 
 Authors: [JCalhoun](https://vpuniverse.com/profile/66921-jcalhoun/)  
 Version: 1.2.1  

@@ -1,7 +1,7 @@
 # WHO Dunnit (Bally 1995)
 Tested by: kaoticBPR
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_06/who_cab.png.57b6258fd750ee1fca02e06c2131dc03.png)
+![Table Preview](../../images/vpx-whodunnit.png)
 
 Authors: [versins77](https://vpuniverse.com/profile/29661-versins77/)
 Version: 1.0.0

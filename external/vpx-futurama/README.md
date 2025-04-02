@@ -1,6 +1,6 @@
 # Futurama (Original 2024)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-futurama.png)
+![Table Preview](../../images/vpx-futurama.png)
 
 Author: [Wizball](https://vpuniverse.com/profile/16604-wizball/) 
 

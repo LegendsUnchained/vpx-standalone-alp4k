@@ -1,5 +1,5 @@
 # Mary Shelley's Frankenstein (Sega 1995)
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-maryshelleyfrank.png)
+![Table Preview](../../images/vpx-maryshelleyfrank.png)
 
 Authors: [schlabber34](https://vpuniverse.com/profile/11680-schlabber34/)
 Version: 1.2.2

@@ -1,6 +1,6 @@
 # The Pabst Can Crusher (Stern 2016)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_07/Playfield01.jpg.b629242fc373653d90b9f2f910ad8c22.jpg)
+![Table Preview](../../images/vpx-pabstcancrusher.jpg)
 
 Author: [MachWon](https://vpuniverse.com/profile/70146-machwon/) 
 
@@ -30,3 +30,4 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 - Download the table and directb2s versions listed above and copy them into this folder
 - Rename the included "Music Folder" to Music and move the contents to vpx-pabstcancrusher
 - Craft beer? Not here! 🍻
+

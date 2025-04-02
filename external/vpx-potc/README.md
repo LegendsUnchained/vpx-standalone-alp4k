@@ -1,6 +1,6 @@
 # Pirates of the Caribbean (Siggis Mod) (Stern 2006)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-potc.png)
+![Table Preview](../../images/vpx-potc.png)
 
 Author: [Siggi](https://vpuniverse.com/profile/8779-siggi/)  
 Version: 1.0.0  

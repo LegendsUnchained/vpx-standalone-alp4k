@@ -1,6 +1,6 @@
 # Pink Floyd (Original 2022)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_05/577783919_PinkFloydtable.png.6f00485359926953feee4b2f66bbd023.png)
+![Table Preview](../../images/vpx-pinkfloyd.png)
 
 Authors: [Nitronimbus](https://vpuniverse.com/profile/10144-nitronimbus/)  
 Download File Name: Pink Floyd NO PUPPACK.zip  
@@ -33,3 +33,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
 - The ROM zip file gets copied to vpx-pinkfloyd/pinmame/roms (Do not unzip)
 - "If ya don't eat yer meat, you can't have any pudding! How can ya have any pudding if ya don't eat ya meat?" - Teacher
+

@@ -1,6 +1,6 @@
 # SpongeBob's Bikini Bottom Pinball
 
-![Table Preview](https://raw.githubusercontent.com/Bla1ze/vpx-images/refs/heads/main/vpx-spongebob.png)
+![Table Preview](../../images/vpx-spongebob.png)
 
 ---
 

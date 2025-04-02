@@ -1,6 +1,6 @@
 # El Bueno, el Feo y el Malo (Original 2015)
 
-![Table Preview](https://github.com/psybocilin/vpx-standalone-alp4k/blob/vpx-bueno/images/vpx-bueno-preview.jpg)
+![Table Preview](../../images/vpx-bueno.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 5.5.0  
@@ -32,3 +32,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into the external/vpx-bueno folder
 - Make sure (.vpx), (.directb2s) and (.ini) files are all named the same
 - Place eldorado.zip in the external/vpx-bueno/pinmame/roms folder. DO NOT UNZIP!  
+

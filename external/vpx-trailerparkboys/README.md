@@ -1,6 +1,6 @@
 # Trailer Park Boys
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_06/Screenshot(9).png.2c7814c48928dd5bc3e4ef0e6daec6f4.png)
+![Table Preview](../../images/vpx-trailerparkboys.png)
 
 Authors: [clairvius](https://vpuniverse.com/profile/16134-clairvius/)  
 Version: 1.0.0  

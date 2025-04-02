@@ -1,6 +1,6 @@
 # Goldeneye (Sega 1996)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_04/GoldenEye-Cab.png.4a69af68f8af966126fb4c6bc58ca4d4.png)
+![Table Preview](../../images/vpx-goldeneye.png)
 
 Authors: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
 Version: 1.0  
@@ -31,3 +31,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above, extract them (if necessary) and copy them to external/vpx-goldeneye
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - Place ROM zip file into vpx-goldeneye/pinmame/roms folder. DO NOT UNZIP!
+

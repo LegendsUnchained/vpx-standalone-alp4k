@@ -1,6 +1,6 @@
 # Balls-A-Poppin (Bally 1956)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-ballsapoppin.png)
+![Table Preview](../../images/vpx-ballsapoppin.png)
 
 ---
 
@@ -30,3 +30,4 @@
 - Download the table & backglass zips above, extract them (if neccssary) and copy them into the external/vpx-ballsapoppin folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - "The world's first 'multiball' equipped machine"
+

@@ -1,6 +1,6 @@
 # Stars (Stern 1978)
 
-![Table Preview](preview.png)
+![Table Preview](../../images/vpx-stars.jpg)
 
 Authors: [bord](https://vpuniverse.com/profile/9265-bord/)\
 Version: 1.0.2\

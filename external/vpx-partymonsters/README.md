@@ -1,6 +1,6 @@
 # Elvira and the Party Monsters (Bally 1989)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_06/elvira.png.fa1f60f74ed01caf93fedc0ae7eab27f.png)
+![Table Preview](../../images/vpx-partymonsters.png)
 
 Authors: [versins77](https://vpuniverse.com/profile/29661-versins77/)  
 Version: 1.0 

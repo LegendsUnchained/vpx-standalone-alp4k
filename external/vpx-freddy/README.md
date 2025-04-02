@@ -1,6 +1,6 @@
 # Freddy A Nightmare on Elm Street (Gottlieb 1994)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_01/freddy.png.edf0bf47e4c8cdb33e19e20f33040583.png)
+![Table Preview](../../images/vpx-freddy.png)
 
 Authors: [Siggi](https://vpuniverse.com/profile/8779-siggi/)
 Version: 1.2
@@ -29,3 +29,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-freddy.elf
 - Download the table and directb2s versions listed above and copy them into this folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+

@@ -1,6 +1,6 @@
 # Creature From The Black Lagoon (1992) - BW Edition
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_07/Screenshot.jpg.6910acb0148b2f3d2ad858f4393e684a.jpg)
+![Table Preview](../../images/vpx-creaturebw.jpg)
 
 Author(s): [SG1bsoN](https://vpuniverse.com/profile/34010-sg1bson/)  
 Version: 4.3.0 
@@ -35,3 +35,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Place ROM file in vpx-creaturebw/pinmame/roms - DO NOT UNZIP!
 - Unzip Altsound 2.0, open unzipped folder and place the folder cftbl_l4 in vpx-creaturebw/pimame/altsound
 - "Of all the lagoons, in all the world, she came into mine."
+

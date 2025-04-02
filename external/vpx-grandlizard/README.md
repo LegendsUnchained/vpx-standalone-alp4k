@@ -1,6 +1,6 @@
 # Grand Lizard (Williams 1986)
 
-![Table Preview](vpx-grandlizard.png)
+![Table Preview](../../images/vpx-grandlizard.png)
 
 Authors: [3rdaxis](https://vpuniverse.com/profile/5553-3rdaxis/) & [slydog43](https://vpuniverse.com/profile/35-slydog43/)\
 Version: 1.8.5\
@@ -35,3 +35,4 @@ Minimum VPX Standalone build: 10.8.0-2026-3b68d7c
 - Place "grand_l4.zip" in the "external/vpx-grandlizard/pinmame/roms" folder *Do Not unzip*
 - For this table, the nudge buttons have been mapped to magna save
 - "It's a jungle out there"
+

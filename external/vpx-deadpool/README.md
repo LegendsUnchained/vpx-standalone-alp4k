@@ -2,14 +2,16 @@
 
 ![Table Preview](../../images/vpx-jps-deadpool-preview.jpg)
 
-Author: [JP Salas](https://www.vpforums.org/index.php?app=core&module=search&do=user_activity&sid=40128d9b02d204ff0a868b9c159c7f81&mid=277&search_app=downloads&userMode=all&search_app_filters%5Bdownloads%5D%5BsearchInKey%5D=files&search_app_filters%5Bdownloads%5D%5Bfiles%5D%5BsortKey%5D=update&search_app_filters%5Bdownloads%5D%5Bfiles%5D%5BsortDir%5D=)  
-Version: 5.5.0  
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=15967)
+---
 
-PupPack
-Author: [TeamTuga](https://vpuniverse.com/profile/31843-teamtuga/)  
-Version: 2.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/7368-deadpool-table-v512-puppack-20/)
+## Files
+| File Type | Link | Version | Author | 
+|-----------|--------|----------|--------------|
+| **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=15967) | 5.5.0 | [jpsalas](https://www.vpforums.org/index.php?showuser=277) |
+| **B2S** | [VP Universe](https://vpuniverse.com/files/file/15497-deadpool-stern-2018-alternate-b2s-with-full-dmd/) | 1.0.0 | [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
+| **PUPPACK** | [VP Universe](https://vpuniverse.com/files/file/7368-deadpool-table-v512-puppack-20/) | 2.0 | [TeamTuga](https://vpuniverse.com/profile/31843-teamtuga/) |
+
+---
 
 ## Status 
 
@@ -17,6 +19,8 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+
+---
 
 ## Instructions
 

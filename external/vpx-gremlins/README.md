@@ -1,6 +1,6 @@
 # Gremlins (Original 2022)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_06/20220623_164442.jpg.e386f19a3d28863caa464f62c0e2c824.jpg)
+![Table Preview](../../images/vpx-gremlins.jpg)
 
 Authors: [balutito](https://vpuniverse.com/profile/36070-balutito/)  
 Download File: Gremlins by Balutito 1.7.rar  
@@ -35,3 +35,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy (gremlins.mp3) file to vpx-gremlins/music
 - Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
 - WARNING: 1. Do not play in direct sunlight 2. Do not drink water while playing 3. And above all never play after midnight!
+

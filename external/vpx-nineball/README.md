@@ -1,6 +1,6 @@
 # Nine Ball (Stern 1980)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-nineball.jpg)
+![Table Preview](../../images/vpx-nineball.jpg)
 
 Authors: [bord](https://vpuniverse.com/profile/9265-bord/)  
 Version: 1.0.0  

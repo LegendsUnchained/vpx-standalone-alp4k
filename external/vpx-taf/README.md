@@ -1,6 +1,6 @@
 # Addams Family, The (Bally 1992)
 
-![Table Preview](https://i.imgur.com/QaIKhdz.jpeg)
+![Table Preview](../../images/vpx-taf.jpeg)
 
 Authors: [g5k](https://vpuniverse.com/profile/14065-g5k/)  
 Version: 2.4.41

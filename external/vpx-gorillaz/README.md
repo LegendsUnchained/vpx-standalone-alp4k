@@ -1,6 +1,6 @@
 # GORILLAZ (Original 2024)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-gorillaz.jpg)
+![Table Preview](../../images/vpx-gorillaz.jpg)
 
 Authors: [ZandysArcade](https://vpuniverse.com/profile/57949-zandysarcade/)  
 Version: 1.0  

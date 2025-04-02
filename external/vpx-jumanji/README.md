@@ -1,6 +1,6 @@
 # Jumanji (Original 2023)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_12/20231125_154741.jpg.a5a6b64d2849745b1e76a45778f9067e.jpg)
+![Table Preview](../../images/vpx-jumanji.jpg)
 
 Authors: [balutito](https://vpuniverse.com/profile/36070-balutito/)  
 Version: 1.3 No PUP Pack  
@@ -26,3 +26,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-jumanji.elf
 - Download the table and directb2s versions listed above, extract if needed and copy them to external/vpx-jumanji
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+

@@ -1,6 +1,6 @@
 # Chrono Trigger (JPSalas' Pokemon Re-Theme)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_08/2093326562_CTPreview.png.fa527a55360818dbc2eb661d4b4a8386.png)
+![Table Preview](../../images/vpx-chrono.png)
 
 Author(s): [Chug](https://vpuniverse.com/profile/50524-chug/)  
 
@@ -36,3 +36,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Download the table & backglass zips above, extract them and copy them to the external/vpx-chrono folder
 - Make sure (.vpx) (.direct2b2s) and (.ini) are all named the same
 - "Aquire The Ultimate Weapons! Defeat Lavos! Save The Future!"
+

@@ -1,6 +1,6 @@
 # Flight 2000 (Stern 1980)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-flight2000.png)
+![Table Preview](../../images/vpx-flight2000.png)
 
 Authors: [Bigus](https://www.vpforums.org/index.php?showuser=107629)  
 Version: 2.0  

@@ -1,6 +1,6 @@
 # Fireball II (Bally 1981)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-fireballii.png)
+![Table Preview](../../images/vpx-fireballii.png)
 
 Authors: [Rajo Joey](https://www.vpforums.org/index.php?showuser=80054)  
 Version: 1.0.1  

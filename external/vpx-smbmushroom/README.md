@@ -1,6 +1,6 @@
 # Super Mario Bros. Mushroom World (Premier 1992)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_07/smbmwCabinet.png.02e3ce47ce5dedac1a32b48bfba6f790.png)
+![Table Preview](../../images/vpx-smbmushroom.png)
 
 Authors: [retro27](https://vpuniverse.com/profile/4085-retro27/)  
 Version: 1.0.4i  
@@ -30,3 +30,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above and copy them into this folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place ROM zip file into vpx-smbmushroom/pinmame/roms folder. DO NOT UNZIP!
+

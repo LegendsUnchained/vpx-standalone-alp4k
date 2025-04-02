@@ -1,6 +1,6 @@
 # Diner (Williams 1990)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_07/Diner-SS-Cab.png.9214b505a96887167fa5185d9ba6d136.png)
+![Table Preview](../../images/vpx-diner.png)
 
 Authors: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
 Version: 1.02  
@@ -37,3 +37,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - Place ROM zip file into vpx-diner/pinmame/roms folder. DO NOT UNZIP!
 - Place the color DMD (.cRZ) file in "external\vpx-diner\pinmame\altcolor\diner_l4" (create the folders if needed)
+

@@ -1,6 +1,6 @@
 # Jokerz! (Williams 1988)
 
-![Table Preview](https://raw.githubusercontent.com/Bla1ze/vpx-images/main/vpx-jokerz.png)
+![Table Preview](../../images/vpx-jokerz.png)
 
 Author: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/) 
 

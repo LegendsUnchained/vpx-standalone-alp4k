@@ -1,6 +1,6 @@
 # The Goonies Never Say Die (Original 2021)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_11/goonies-cab.png.e8dd5e4e4c778657418115507a5852fb.png)
+![Table Preview](../../images/vpx-goonies.png)
 
 Authors: [vpinworkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
 Download: [VP Universe](https://vpuniverse.com/files/file/7819-the-goonies-never-say-die-pinball-vpw/)
@@ -23,3 +23,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - Place "thegooniesDMD" folder into the vpx-goonies folder (included in table download) -- Table will crash without it.
 - "Baby Ruth!"
+

@@ -1,6 +1,6 @@
 # Maverick (Data East 1994)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_07/maverick.png.74b4e0527d845c67705be86ad031c364.png)
+![Table Preview](../../images/vpx-maverick.png)
 
 Author: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
 Version: Maverick (Data East 1994) VPW Version 1.3  
@@ -37,3 +37,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Rom file (mav_402.zip) stays in zip folder, place zip file in vpx-maverick/pinmame/roms
 - Make sure (.vpx), (.directb2s), and (.vbs) files are all named the same
 - Maverick: My old pappy always used to say, "there is no more deeply satisfying religious experience... than cheatin' on a cheater."
+

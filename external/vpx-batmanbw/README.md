@@ -1,6 +1,6 @@
 # Batman BW Edition (Data East 1991)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_07/Screenshot.jpg.c36e157f05c3d8c246dec53809fac629.jpg)
+![Table Preview](../../images/vpx-batmanbw.jpg)
 
 ---
 
@@ -32,3 +32,4 @@
 - Download the table () and directb2s versions listed above, extract (if necessary) and copy them into `vpx-batmanbw`
 - Rom file (`btmn_106.zip`) stays in zip folder, place zip file in `vpx-batmanbw/pinmame/roms`
 - Make sure `(.vpx)` `(.direct2b2s)` and `(.ini)` are all named the same.
+

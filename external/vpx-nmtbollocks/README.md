@@ -1,6 +1,6 @@
 # Nevermind The Bollocks 1977 (Original 2024)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-nmtbollocks.png)
+![Table Preview](../../images/vpx-nmtbollocks.png)
 
 Authors: [DAMONRA](https://vpuniverse.com/profile/48356-damonra/)  
 Version: 1.0.4  
