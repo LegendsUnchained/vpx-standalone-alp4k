@@ -12,9 +12,16 @@ Authors [marcobus2005](https://vpuniverse.com/profile/53087-marcobus2005/)
 Version: 2.0  
 Download: [VP Universe](https://vpuniverse.com/files/file/16604-big-trouble-in-little-china-original-2020-animated-b2s-with-full-dmd/)
 
+PupPack
+
+Author: [TeamTuga](https://vpuniverse.com/profile/31843-teamtuga/)  
+Version: 1.0.0  
+Download: [VP Universe](https://vpuniverse.com/files/file/11312-big-trouble-in-little-china/?do=download)
+
+
 ## Status 
 
-Minimum VPX Standalone build: 10.8.0-1983-b84441e
+Minimum VPX Standalone build: 10.8.0-5b941e6
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
@@ -29,3 +36,12 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Remember, "It's All In The Reflexes!" ---Jack Burton
 
+## Optional
+
+You can optionally install a puppack for this table. If you want the non pup version back, just delete the pupvideos folder.
+
+- Download the bigtroublepuppack.rar puppack from the above link.
+- Create the folder pupvideos.
+- Extract the folder BigTrouble from the archive bigtroublepuppack.rar into the pupvideos folder.
+- Unzip the use_these_pup_files.zip and place them inside the pupvideos/BigTrouble folder, and overwrite files if prompted.
+- Enjoy the table with puppack. 
