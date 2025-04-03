@@ -8,7 +8,7 @@
 | File Type | Link | Note | Version | Author | 
 |-----------|--------|----------|----------|--------------|
 | **VPX** | [VPUniverse](https://vpuniverse.com/files/file/10341-pink-floyd-vpx-cw-pup-pack/) | Download "Pink Floyd NO PUPPACK.zip" | 1.0 | [Nitronimbus](https://vpuniverse.com/profile/10144-nitronimbus/) |
-| **B2S** | [VPUniverse](https://vpuniverse.com/files/file/24657-pink-floyd-back-catalogue-backglass/) |  | 1.0 | [CoffeeJoe](https://vpuniverse.com/profile/79306-coffeejoe/) |
+| **B2S** | [VPUniverse](https://vpuniverse.com/files/file/24657-pink-floyd-back-catalogue-backglass/) | Made by our very own 'Coffee' Joe! | 1.0 | [CoffeeJoe](https://vpuniverse.com/profile/79306-coffeejoe/) |
 | **ROM** | [VPUniverse](https://vpuniverse.com/files/file/10341-pink-floyd-vpx-cw-pup-pack/) | "esha_l4c.zip" found within "Pink Floyd NO PUPPACK.zip" | 1.0 | [Nitronimbus](https://vpuniverse.com/profile/10144-nitronimbus/) |
 
 **Tested by:** [TechZombie] & [CoffeeAtJoes]
