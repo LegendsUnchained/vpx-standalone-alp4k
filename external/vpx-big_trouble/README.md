@@ -38,7 +38,7 @@ Minimum VPX Standalone build: 10.8.0-5b941e6
 
 ## Optional
 
-You can optional install a puppack for this table. If you want the non puck version back, just delete the pupvideos folder.
+You can optionally install a puppack for this table. If you want the non pup version back, just delete the pupvideos folder.
 
 - Download the bigtroublepuppack.rar puppack from the above link.
 - Create the folder pupvideos.
