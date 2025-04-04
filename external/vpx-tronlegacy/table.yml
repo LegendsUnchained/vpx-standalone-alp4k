@@ -1,0 +1,16 @@
+---
+backglassVPSId: "tOkhRy1ZJK"
+backglassChecksum: "1AC5E66249F4D1E18086C031F7D8DE90"
+fps: 60
+coloredROMVPSId: "aBc9oYO2uq"
+coloredROMChecksum: "7864D399BAED6B0799D83E7DFC4075F2"
+romVPSId: "o5CeYx43"
+romChecksum: "AD5DC9DD5B6B5CA3430866FF8897A09B"
+tableVPSId: "akYNyhNO"
+tagline: "Power to the users!"
+testers:
+  - "Bla1ze"
+vpxVPSId: "d70mjMQg"
+vpxChecksum: "6107A60EE39DD0A0B17A668F947036CA"
+applyFixes:
+  - "bass"
