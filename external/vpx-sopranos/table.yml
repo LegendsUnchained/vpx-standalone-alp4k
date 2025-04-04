@@ -1,0 +1,14 @@
+---
+backglassVPSId: "rY8wUQoIY_"
+backglassChecksum: "8D29B7B3EA600B3471DB4130F51EBC48"
+fps: 50
+romVPSId: "tD819oJaBW"
+romChecksum: "15ECF8C5A7CEE365CAD0BE16EBBED414"
+tableVPSId: "0j2uPCod"
+tagline: "Party like you're at The Bing!"
+testers:
+  - "Bla1ze"
+vpxVPSId: "d70mjMQg"
+vpxChecksum: "4EE397F6B739AAEA9D9051ED205E6749"
+applyFixes:
+  - "bass"
