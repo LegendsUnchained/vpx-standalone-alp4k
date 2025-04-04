@@ -36,11 +36,11 @@ RubberColor = 2				'0 = black , 1 = white, 2 = random
 
 '***********	Enable Union Jack Mod (Targets with UK flag)	********
 
-UnionJackMod = 0			'0 = disabled , 1 = enabled
+UnionJackMod = 1			'0 = disabled , 1 = enabled
 
 '***********	Enable TNT Amusements Mod	****************************
 
-TNTMod = 0					'0 = disabled , 1 = enabled
+TNTMod = 1					'0 = disabled , 1 = enabled
 
 '******************************************************
 '* VPM INIT *******************************************
