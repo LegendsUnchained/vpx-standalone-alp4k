@@ -1,6 +1,6 @@
 # Attack of the Killer Tomatoes (MusicMOD) (Iceman 2023)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_08/KillerTomatoesPlayfield.png.5d483fe11a2fd6b505270663406c2876.png)
+![Table Preview](../../images/vpx-attackofthekillertomatoes.png)
 
 ---
 

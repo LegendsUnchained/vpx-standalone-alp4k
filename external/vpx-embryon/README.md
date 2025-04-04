@@ -1,7 +1,7 @@
 # Embryon (Bally 1981)
 Tested By: kaoticBPR
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_10/EmbryonCabinetCapture.png.daad90de89aff78de4d9c64c1c01bb4e.png)
+![Table Preview](../../images/vpx-embryon.png)
 
 Authors: [UnclePaulie](https://vpuniverse.com/profile/16685-unclepaulie/)
 Version: 2.0.2
@@ -32,5 +32,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above and copy them into this folder
 - Make sure the vpx, direct2b, and ini files are all named the "exact" same
 - Place embryond.zip in the external/vpx-embryon/pinmame/roms folder *Do Not unzip*
+
 
 

@@ -1,6 +1,6 @@
 # 4 Aces (Williams 1979)
 
-![Table Preview](https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/images/vpx-4aces.jpg)
+![Table Preview](../../images/vpx-4aces.jpg)
 
 ---
 
@@ -32,3 +32,4 @@
 
 ## Notes
 Press up to launch ball from the drain!
+

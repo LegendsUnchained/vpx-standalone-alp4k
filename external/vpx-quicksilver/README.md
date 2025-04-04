@@ -1,7 +1,7 @@
 # Quicksilver (Stern 1980)
 Tested By: kaoticBPR
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_12/1168111684_Quicksilver(Stern1980).jpg.9805d6c0366021edfdb7d8263765699d.jpg)
+![Table Preview](../../images/vpx-quicksilver.jpg).jpg.9805d6c0366021edfdb7d8263765699d.jpg)
 
 Authors: [goldchicco](https://vpuniverse.com/profile/23579-goldchicco/)  
 Version: 2.0c  
@@ -33,3 +33,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above and copy them into this folder
 - Make sure (.vpx), and (.directb2s) files are all named the same
 - Place quicksil.zip ROM in the external/vpx-quicksilver/pinmame/roms folder. *Do Not unzip*!
+

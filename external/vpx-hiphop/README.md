@@ -1,6 +1,6 @@
 # HIPHOP
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_07/Desktop.png.b4b28c382121d893b213be638becf6c9.png)
+![Table Preview](../../images/vpx-hiphop.png)
 
 Authors: [Ext2k](https://vpuniverse.com/profile/55948-ext2k/)  
 Version: 1.1  
@@ -26,3 +26,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-hiphop.elf
 - Download the table and directb2s versions listed above and copy them into this folder
 - Whether you're West Coast or East Coast, won't matter if you don't have the balls! 
+

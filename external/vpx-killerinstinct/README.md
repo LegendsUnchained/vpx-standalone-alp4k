@@ -1,6 +1,6 @@
 # Killer Instinct
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_05/ki.png.84b8b967a975a4082e8fcd37186a5537.png)
+![Table Preview](../../images/vpx-killerinstinct.png)
 
 Authors: [ZandysArcade](https://vpuniverse.com/profile/57949-zandysarcade/)  
 Version: 1.3.1  

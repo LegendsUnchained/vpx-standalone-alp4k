@@ -1,6 +1,6 @@
 # Creepshow (Original 2022)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_01/20220118_180456.jpg.5df51e6a1e1f04ac367ee32201aef627.jpg)
+![Table Preview](../../images/vpx-creepshow.jpg)
 
 Table
 
@@ -55,3 +55,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Download the rom (tftc_400.zip) stays in zip folder, place zip file in vpx-creepshow/pinmame/roms
 - Make sure (.vpx), (.directb2s), (.vbs) and (.ini) files are all named the same
 - "Meteor shit!" - Jordy Verrill 
+

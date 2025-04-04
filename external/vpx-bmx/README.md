@@ -1,6 +1,6 @@
 # BMX (Radical Rick) (Bally 1983)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_06/FS.png.74cd4e55fe628febb09c88d3d88be2e3.png)
+![Table Preview](../../images/vpx-bmx.png)
 
 Tested by: Mox
 
@@ -25,3 +25,4 @@ Minimum VPX Standalone build: 10.8.0-2006-6d603fb
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same. Do NOT rename VPReg.ini file
 - Download the **ROM** version listed above and copy it into `\vpx-bmx\pinmame\roms` (DO NOT UNZIP)
 - "I don't crash, I do random gravity checks."
+

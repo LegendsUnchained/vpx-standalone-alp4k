@@ -1,6 +1,6 @@
 # Back to the Future: The Pinball (Data East 1990)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=125986&id=14338&full=1)
+![Table Preview](../../images/vpx-bttf.png)
 
 Author: [bigus1](https://www.vpforums.org/index.php?showuser=107629)  
 Version: 1.05  
@@ -36,3 +36,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Add your personalized launcher.elf and rename it to vpx-bttf.elf
 - Download the table, ROM, directb2s versions listed above and copy them into this folder
 - You built a time machine out of a DeLorean?
+

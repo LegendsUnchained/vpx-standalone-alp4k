@@ -1,6 +1,6 @@
 # The Exorcist (Original 2023)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_10/ExorcistPReview.png.a909e31eec2618cb43930d9985b0d0f1.png)
+![Table Preview](../../images/vpx-exorcist.png)
 
 Authors: [JoePicasso](https://vpuniverse.com/profile/15285-joepicasso/)  
 Download: The Exorcist Package.7z  
@@ -33,3 +33,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s listed above, extract (if necessary) and copy them to external/vpx-exorcist
 - Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
 - "What an excellent day for an exorcism" - The Demon Pazuzu
+

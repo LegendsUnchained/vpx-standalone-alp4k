@@ -1,6 +1,6 @@
 # Joust (Williams 1983)
 
-![Table Preview](https://pinballnirvana.com/forums/attachments/joust-williams-1983-mod-v1-0a-png.41053/)
+![Table Preview](../../images/vpx-joust.png)
 
 Authors: [xenonph](https://pinballnirvana.com/forums/members/xenonph.21719/)  
 Version: v1.0  
@@ -32,3 +32,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Place ROM file jst_l2.zip in the external/vpx-joust/pinmame/roms folder. *Do Not unzip*
 - Hold Left Flipper to access game options to change from 1p vs 1p, 1p vs com, 1p vs 2p(not recommended)
 - "Ride your Ostrich into battle"
+

@@ -1,6 +1,6 @@
 # Strikes and Spares (Bally 1978)
 
-![Table Preview](../../images/vpx-viper-strikes.jpg)
+![Table Preview](../../images/vpx-strikes.jpg)
 
 Authors: [HiRez00](https://vpuniverse.com/profile/19941-hirez00/)  
 Version: 2.0  

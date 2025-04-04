@@ -1,6 +1,6 @@
 # Hurricane - Balutito Mod 2.0
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_02/20240226_143126.thumb.jpg.8f346aef1a06eb9d75c1a7c1cba4f8e5.jpg)
+![Table Preview](../../images/vpx-hurricane.jpg)
 
 Author: [Balutito](https://vpuniverse.com/profile/36070-balutito/)  
 Version: 2.0  
@@ -33,3 +33,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Download the table, ROM and directb2s versions listed above and copy them into this folder
 - Make sure (.vpx) and (.directb2s) files are all named the same
 - Hurricane is Blowing into Town!
+

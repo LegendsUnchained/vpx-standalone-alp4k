@@ -1,6 +1,6 @@
 # Pinball Magic (Capcom 1995)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_04/20220423_153322.jpg.d2699b9b0edacc4daaec528566f20db9.jpg)
+![Table Preview](../../images/vpx-pinballmagic.jpg)
 
 Authors: [Balutito](https://vpuniverse.com/profile/36070-balutito/)  
 Version: 1.2  
@@ -33,3 +33,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), and (.directb2s) files are all named the same
 - Place pmv112.zip ROM in the external/vpx-pinballmagic/pinmame/roms folder. *Do Not unzip*!
 - "Feast your eyes on the amazing, floating, disappearing, flying pinball!"
+

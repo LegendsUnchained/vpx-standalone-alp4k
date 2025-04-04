@@ -1,6 +1,6 @@
 # Indiana Jones The Pinball Adventure (Williams 1993)
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=119107&id=14795&full=1)
+![Table Preview](../../images/vpx-indianajonestpa.png)
 
 Author(s): [bigus1](https://www.vpforums.org/index.php?showuser=107629)  
 Version: 2.1

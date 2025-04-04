@@ -1,6 +1,6 @@
 # Hellboy Pinball
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_09/playfield.png.f82e1a4e54ba13337dc36796f5faa686.png)
+![Table Preview](../../images/vpx-hellboy.png)
 
 Authors: [ZandysArcade](https://vpuniverse.com/profile/57949-zandysarcade/)  
 Version: 1.0.0  
@@ -32,3 +32,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - If the playfield is upside-down, edit HELLBOYv1.0.ini. Change ViewCabRotation = 270.000000 to ViewCabRotation = 90.000000
 - "Lobster Johnson?!"
+

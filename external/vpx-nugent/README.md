@@ -1,6 +1,6 @@
 # Nugent (Stern 1978)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_01/NugentFS.png.80336420255450fa193eafdc593b0b9a.png)
+![Table Preview](../../images/vpx-nugent.png)
 
 Author(s): [WED21](https://vpuniverse.com/profile/11990-wed21/)  
 Version:  Nugent (Stern 1978) 2.2  
@@ -41,3 +41,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Place the ROM zip (nugent.zip) in the /vpx-nugent/pinmame/roms folder. (Do not un-zip!)
 - Make sure (.vpx), (.direct2b2s), and (.ini) are all named the same
 - "Wango Tango!"
+

@@ -1,6 +1,6 @@
 # X-Men LE (Stern 2012) MOD color rush 1.5
 
-![Table Preview](https://i.imgur.com/iJ6rXVJ.jpeg)
+![Table Preview](../../images/vpx-xmen.png)
 
 ---
 
@@ -29,3 +29,4 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 - Add your personalized launcher.elf and rename it to vpx-xmen.elf
 - Download the table and directb2s versions listed above and copy them into this folder. The ROM zip gets copied to pinmame/roms (do not unzip).
 - Rumor has it this is Deadpool's favorite game because you get to bash Wolverine!
+

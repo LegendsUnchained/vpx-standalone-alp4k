@@ -1,6 +1,6 @@
 # Legend - A Pinball Adventure (Original 2023)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_10/Screenshot2023-10-08at5_56_23PM.png.dbc67df49feab1a1884f8838357a619b.png)
+![Table Preview](../../images/vpx-legend.png)
 
 Authors: [ZandysArcade](https://vpuniverse.com/profile/57949-zandysarcade/)  
 Filename: LEGEND_2.0.vpx & legend.zip (Unzip)  
@@ -28,3 +28,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s listed above, extract (if necessary) and copy them to external/vpx-legend
 - Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
 - "I require the solace of the shadows and the dark of the night. Sunshine is my destroyer." - Darkness
+

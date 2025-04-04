@@ -1,7 +1,7 @@
 # Time Fantasy (Williams 1983)
 Tested By: kaoticBPR
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_02/TimeFantasy(Williams1983)VRRoom1.0.jpg.cf527fbdb32dd5cb748279eb5f1e0d15.jpg)
+![Table Preview](../../images/vpx-timefantasy.jpg)VRRoom1.0.jpg.cf527fbdb32dd5cb748279eb5f1e0d15.jpg)
 
 Authors: [goldchicco](https://vpuniverse.com/profile/23579-goldchicco/)
 Version: 1.0.0
@@ -33,4 +33,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure the vpx, direct2b, and ini files are all named the "exact" same
 - Place tmfnt_l5.zip in the external/vpx-timefantasy/pinmame/roms folder *Do Not unzip*
 - "The Snail looks creepy as hell!"
+
 

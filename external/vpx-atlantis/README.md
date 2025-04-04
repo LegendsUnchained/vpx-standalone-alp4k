@@ -1,7 +1,7 @@
 # Atlantis (Bally 1989)
 Tested by: kaoticBPR
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_05/186024142_Atlantis(Bally1989)
+![Table Preview](../../images/vpx-atlantis.png)
 
 ---
 
@@ -32,3 +32,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure the vpx, direct2b, vbs, and ini files are all named the "exact" same
 - Place atlantis.zip in the external/vpx-atlantis/pinmame/roms folder *Do Not unzip*
 - "Discover the Wrath of Atlantis!"
+

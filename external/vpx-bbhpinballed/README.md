@@ -1,6 +1,6 @@
 # Beavis and Butt-head: Pinballed (Original 2024)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_02/BeavisandButt-head_Pinballed-Cabinet.jpg.3bb6d4397464b1478bc65edb992f5f4b.jpg)
+![Table Preview](../../images/vpx-bbhpinballed.jpg)
 
 Authors: [watacaractr](https://vpuniverse.com/profile/5551-watacaractr/)
 Version: 1.1
@@ -33,3 +33,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy and paste the "altsound.ini" file from (external\vpx-bbhpinballed\pinmame\altsound\beav_butt) to (external\vpx-bbhpinballed) - DONE FOR YOU
 
 ## THIS TABLE IS LOUD; LOWER YOUR ALP4K SOUND TO 5 AND ADJUST ACCORDINGLY
+

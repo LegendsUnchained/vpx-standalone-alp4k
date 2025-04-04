@@ -2,7 +2,7 @@
 
 Tested By: kaoticBPR
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_09/jack-desktop.png.63c5f261ac3c776650f4d47b96f2b2a9.png)
+![Table Preview](../../images/vpx-jacksparrow.png)
 
 Authors: [marty02](https://vpuniverse.com/profile/16531-marty02/)  
 Version: 3.4  
@@ -31,3 +31,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-jacksparrow
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same. DO NOT RENAME the VPReg.ini file
 - "But you have heard of me!"
+

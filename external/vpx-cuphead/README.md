@@ -1,6 +1,6 @@
 # Cuphead Pro (Original 2020)
 
-![cuphead](https://github.com/user-attachments/assets/77d533ec-dc0c-4016-9dc1-5fa0fe523477)
+![Table Preview](../../images/vpx-cuphead.png)
 
 Author: [Onevox](https://vpuniverse.com/profile/14340-onevox/)  
 Version: 1.0.0  

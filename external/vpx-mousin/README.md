@@ -1,6 +1,6 @@
 # Mousin' Around! (Bally 1989)
 
-![Table Preview](https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/images/vpx-mousin-preview.png)
+![Table Preview](../../images/vpx-mousin.png)
 
 Author: [Herweh](https://www.vpforums.org/index.php?showuser=57523)  
 Version:  Mousin' Around! (Bally 1989) 1.1  
@@ -38,3 +38,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Place ROM zip file into vpx-mousin/pinmame/roms folder. DO NOT UNZIP!
 - Note: There is a known issue regarding the 1-2-3 POW! gate motor, it fails to resest occasionally. Only occurred once during hours of testing.
 - "SO YOU WANNA MOUSE AROUND!?!?!"
+

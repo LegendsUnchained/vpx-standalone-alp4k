@@ -1,6 +1,6 @@
 # Beat The Clock (Bally 1985)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_01/BTC-Cab.png.deb80637083b97f9a35576a488031771.png)
+![Table Preview](../../images/vpx-beattheclock.png)
 
 Authors: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)
 Version: 2.3
@@ -32,3 +32,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above and copy them into this folder
 - Make sure the vpx, direct2b, and ini files are all named the "exact" same
 - Place beatclck.zip and beatclck2.zip in the external/vpx-beattheclock/pinmame/roms folder *Do Not unzip*
+
