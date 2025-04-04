@@ -1,0 +1,14 @@
+---
+backglassVPSId: "Fk2Rr23YO5"
+backglassChecksum: "F3D4D80648A3F69DD4198A3A579BD2C6"
+fps: 50
+romVPSId: "9zD-1Nt4"
+romChecksum: "782188DBF74486711DB6E428F95E76D5"
+tableVPSId: "5ucOcBHm"
+tagline: "Never rub another man's rhubarb."
+testers:
+  - "Bla1ze"
+vpxVPSId: "eu0Pp5WO"
+vpxChecksum: "3E19BA591D2DA59DD5834D5FAC852F17"
+applyFixes:
+  - "bass"
