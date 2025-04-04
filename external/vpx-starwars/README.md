@@ -2,21 +2,29 @@
 
 ![Table Preview](../../images/vpx-starwars-preview.jpg)
 
-Author: [Bigus1](https://www.vpforums.org/index.php?showuser=107629)  
-Version: 2.0  
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=18153)
 
-DirectB2S
+---
 
-Author: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
-Version: 1.5  
-Download: [VP Universe](https://vpuniverse.com/files/file/12651-star-wars-data-east-1992-b2s-with-full-dmd/)
+## Files
+| File Type | Link | Version | Author | 
+|-----------|--------|----------|--------------|
+| **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=18153) | 2.0 | [Bigus1](https://www.vpforums.org/index.php?showuser=107629) |
+| **B2S** | [VP Universe](https://vpuniverse.com/files/file/12651-star-wars-data-east-1992-b2s-with-full-dmd/) | 1.5 | [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
+| **ROM** | [VP Universe](https://vpuniverse.com/files/file/4201-star-wars-106-20th-anniversary/) | 1.06 | [CarnyPriest](https://vpuniverse.com/profile/1146-carnypriest/) |
 
-**Note: Use the first file - "Star Wars (Data East 1992) full dmd.zip"**
+### Note!
 
-ROM.
+If you would like to use version 1.07 of the ROM, instead of the above 1.06, then:
 
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=847)  
+- Download the 2 ROM files here:
+   - ROM 1: [VP Universe](https://vpuniverse.com/files/file/4362-star-wars-107-20th-anniversary/)  
+   - ROM 2: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=7207)
+- Upload both rom files, STILL ZIPPED, to `vpx-starwars/pinmame/roms`
+- Open `Star Wars (Data East 1992)_Bigus(MOD)2.0.vbs` file, and change line 40 from `Const cGameName = "stwr_106"` to `Const cGameName = "stwr_107"`
+
+---
+
+**Tested by:** [mcap] & [mrandromeda]
 
 ## Status 
 
