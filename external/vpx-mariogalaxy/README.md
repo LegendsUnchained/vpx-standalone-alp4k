@@ -1,6 +1,6 @@
 # Super Mario Galaxy (Original 2021)
 
-![Table Preview](/images/vpx-mariogalaxy-preview.png)
+![Table Preview](../../images/vpx-mariogalaxy.png)
 
 ---
 
@@ -31,3 +31,4 @@
 - Download the table and directb2s versions listed above, (Use the directb2s version named SMGP other versions of backglass untested) extract (if necessary) and copy them into `vpx-mariogalaxy`
 - Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same. Do NOT rename VPReg.ini file.
 - It's a me MARIO!!!
+

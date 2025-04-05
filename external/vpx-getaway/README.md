@@ -1,6 +1,6 @@
 # The Getaway - High Speed II
 
-![Table Preview](https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=63726&id=13130&full=1)
+![Table Preview](../../images/vpx-getaway.jpg)
 
 Author: [ganjafarmer](https://www.vpforums.org/index.php?app=core&module=search&do=user_activity&search_app=downloads&mid=113960)  
 Version: 1.2  
@@ -33,3 +33,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Download the table, ROM and directb2s versions listed above and copy them into this folder
 - D-pad up (or joystick up on the arcade control panel) launch the ball and shift gears
 - I can't drive 55
+

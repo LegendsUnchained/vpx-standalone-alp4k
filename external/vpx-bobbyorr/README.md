@@ -1,6 +1,6 @@
 # Bobby Orr Power Play (Bally 1977)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-bobbyorr.png)
+![Table Preview](../../images/vpx-bobbyorr.png)
 
 Author: [bord](https://vpuniverse.com/profile/9265-bord/)  
 

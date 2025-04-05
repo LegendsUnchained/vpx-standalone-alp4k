@@ -1,6 +1,6 @@
 # Ace High (Gottlieb 1957)
 
-![Table Preview](https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/images/vpx-acehigh.png)
+![Table Preview](../../images/vpx-acehigh.png)
 
 ---
 
@@ -33,3 +33,4 @@
 
 ## Notes
 - Press right on the control panel to load a ball from the hopper
+

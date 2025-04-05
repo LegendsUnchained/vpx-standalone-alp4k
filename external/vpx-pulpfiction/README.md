@@ -1,6 +1,6 @@
 # Pulp Fiction (CGC 2023)
 
-![Table Preview](https://github.com/Mar3nBu/vpx-images/blob/main/vpx-pulpfiction.png)
+![Table Preview](../../images/vpx-pulpfiction.png)
 
 Author: [marty02](https://www.vpforums.org/index.php?showuser=103788) 
 

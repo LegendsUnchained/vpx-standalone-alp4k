@@ -1,6 +1,6 @@
 # Willy Wonka Pro LE
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-wonka.png)
+![Table Preview](../../images/vpx-wonka.png)
 
 ---
 
@@ -12,12 +12,12 @@
 | DMD | N/A | N/A | N/A |
 | ROM | N/A | N/A | N/A |
 
-**Tested by:** [n-i-x [NEEDS CORRECTION]]
+**Tested by:** [Bla1ze]
 
 ---
 
 ## Status 
-Minimum VPX Standalone build: 10.8.0-1983-b84441e
+**Minimum VPX Standalone build:** 10.8.0-1983-b84441e
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |

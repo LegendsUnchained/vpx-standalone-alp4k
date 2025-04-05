@@ -1,6 +1,6 @@
 # CSI (Stern 2008) - LED Mod 
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-csiled.png)
+![Table Preview](../../images/vpx-csiled.png)
 
 Author: [Ejse83](https://vpuniverse.com/profile/53365-ejse83/)  
 Version: 1.00  
@@ -27,7 +27,7 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 45 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 
 ## Instructions
 

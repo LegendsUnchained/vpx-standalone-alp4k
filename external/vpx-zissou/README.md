@@ -1,6 +1,6 @@
 # Zissou - The Life Aquatic (Original 2022)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_07/Zissou_Desktop.png.1d3e7e69b1dd342d8e7c1c0090b58734.png)
+![Table Preview](../../images/vpx-zissou.png)
 
 ---
 

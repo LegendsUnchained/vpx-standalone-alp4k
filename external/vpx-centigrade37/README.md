@@ -1,6 +1,6 @@
 # Centigrade 37 (Gottlieb 1977)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-centigrade37.jpg)
+![Table Preview](../../images/vpx-centigrade37.jpg)
 
 Authors: [bord](https://vpuniverse.com/profile/9265-bord/)  
 Version: 3.2  

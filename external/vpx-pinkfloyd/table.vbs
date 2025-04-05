@@ -166,7 +166,7 @@ Sub Table1_Init
 		.ShowDMDOnly=1
 		.ShowFrame=0
 		.ShowTitle=0
-        .hidden = 0
+        .hidden = 1
         .Games(cGameName).Settings.Value("sound")=0
          On Error Resume Next
          .Run GetPlayerHWnd

@@ -1,6 +1,6 @@
 # Raygun Runner (Original 2024)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-raygunrunner.png)
+![Table Preview](../../images/vpx-raygunrunner.png)
 
 Authors: [CrimsonTurtle8](https://www.vpforums.org/index.php?showuser=49512)  
 Version: 1.0  

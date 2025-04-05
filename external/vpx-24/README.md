@@ -1,18 +1,16 @@
 # 24 (Stern 2009)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_06/24FS.png.c1cd691f0cacf7ee98f73adf3b696122.png)
-
----
+![Table Preview](../../images/vpx-24-preview.png)
 
 ## Files
 | File Type | Link | Version | Author |
 |:---------:|:----:|:-------:|:------:|
-| VPX | [VP Universe](https://vpuniverse.com/files/file/20448-24-stern-2009-v21-dt-fs-fss-vr/) | 2.1 | [RobbyKingPin](https://vpuniverse.com/profile/10146-robbykingpin/) |
+| VPX | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=15460) | 2.0 | [bigus1](https://www.vpforums.org/index.php?showuser=107629)  |
 | B2S | [VP Universe](https://vpuniverse.com/files/file/2438-24-stern-2009/) | N/A | [WildMan](https://vpuniverse.com/profile/5-wildman/) |
 | DMD | [VP Universe](https://vpuniverse.com/files/file/20738-24-stern-2009-serum-colorization/) | N/A | [OdinBolt](https://vpuniverse.com/profile/24633-odinbolt/)  |
 | ROM | [VP Universe](https://vpuniverse.com/files/file/3368-twenty4_150zip/) | N/A | N/A |
 
-**Tested by:** [Bla1ze]
+**Tested by:** [Bla1ze] & [OminousOsie]
 
 ---
 
@@ -21,7 +19,7 @@
 **Minimum VPX Standalone build:** 10.8.0-1983-b84441e
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 30 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 54 |
 
 ---
 

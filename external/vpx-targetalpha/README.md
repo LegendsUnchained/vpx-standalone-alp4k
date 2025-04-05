@@ -1,6 +1,6 @@
 # Target Alpha (Gottlieb 1976)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-targetalpha.jpg)
+![Table Preview](../../images/vpx-targetalpha.jpg)
 
 Authors: [teisen](https://www.vpforums.org/index.php?showuser=140346)  
 Version: 1.0  

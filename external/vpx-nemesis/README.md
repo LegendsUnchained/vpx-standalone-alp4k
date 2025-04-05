@@ -1,6 +1,6 @@
 # Nemesis (Peyper 1986)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-nemesis.jpg)
+![Table Preview](../../images/vpx-nemesis.jpg)
 
 Authors: [batch](https://www.vpforums.org/index.php?showuser=30858)  
 Version: 1.2  

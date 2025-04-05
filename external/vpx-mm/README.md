@@ -1,6 +1,6 @@
 # Medival Madness (Williams 1997)
 
-![Table Preview](https://i.imgur.com/Yp6uu9L.jpeg)
+![Table Preview](../../images/vpx-mm.jpeg)
 
 Authors: [Gedankekojote97](https://vpuniverse.com/profile/42203-gedankekojote97/)  
 Version: (Real Final)
@@ -31,3 +31,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-mm
 - Make sure (.vpx), (.direct2b2s), (.vbs) and (.ini) files are all named the same
 - Place ROM zip file into vpx-mm/pinmame/roms folder. DO NOT UNZIP!
+

@@ -1,6 +1,6 @@
 # Airborne (Capcom 1996)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_06/airborne_cab.png.2874ca98b961638249a9e4ebfc928c74.png)
+![Table Preview](../../images/vpx-airborne.png)
 
 ---
 
@@ -30,3 +30,4 @@
 - Download the table and directb2s versions listed above and copy them into this folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place abv106.zip in the external/vpx-airborne/pinmame/roms folder *Do Not unzip*
+

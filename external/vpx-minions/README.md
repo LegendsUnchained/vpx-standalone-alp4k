@@ -1,6 +1,6 @@
 # Minions (Original 2017)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_07/Minions.png.564e8f8cc948970c68f9115e02404ea8.png)
+![Table Preview](../../images/vpx-minions.png)
 
 Tested by: evilwraith
 
@@ -31,3 +31,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table listed above and copy all contents into the external/vpx-minions folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - "BANANA!"
+

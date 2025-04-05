@@ -2,30 +2,29 @@
 
 ![Table Preview](../../images/vpx-alsgarageband-preview.png)
 
-Authors: [antisect](https://www.vpforums.org/index.php?s=8351400e311e3d8e95ecf0fcb31842f1&showuser=153545)  
-Version: 2.0  
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=15417)
+---
 
-DirectB2S
+## Files
+| File Type | Link | Version | Author |
+|:---------:|:----:|:-------:|:------:|
+| VPX | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=15417) | 2.0 | [antisect](https://www.vpforums.org/index.php?s=8351400e311e3d8e95ecf0fcb31842f1&showuser=153545) |
+| B2S | N/A | 1.0 | [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
+| DMD | N/A | N/A | N/A |
+| ROM | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=401) | N/A | N/A |
 
-Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
-Version: 1.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/18170-als-garage-band-goes-on-a-world-tour-alvin-g-1992-b2s-with-full-dmd/)
+**Tested by:** [mcap]
 
-ROM
-
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=401)
+---
 
 ## Status 
-
-Minimum VPX Standalone build: 10.8.0-1989-a764013
-
+**Minimum VPX Standalone build:** 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 38 |
 
-## Instructions
+---
 
+## Instructions
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-alsgarageband.elf
 - Download the table and directb2s versions listed above, extract and copy them into this folder

@@ -1,7 +1,7 @@
 # Elvis (Stern 2004)
 Tested by: Mar3nBu
 
-![Table Preview](https://github.com/Mar3nBu/vpx-images/blob/main/vpx-elvis.png)
+![Table Preview](../../images/vpx-elvis.png)
 
 Table
 

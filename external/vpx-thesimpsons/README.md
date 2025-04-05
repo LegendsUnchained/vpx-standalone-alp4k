@@ -1,6 +1,6 @@
 # The Simpsons (Data East 1990) 
 
-![Table Preview](vpx-thesimpsons-table.png?raw=true)
+![Table Preview](../../images/vpx-thesimpsons.png)
 
 ---
 

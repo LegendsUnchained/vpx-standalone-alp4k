@@ -1,6 +1,6 @@
 # Shaq Attaq (Gottlieb 1995)
 
-![Table Preview](https://i.imgur.com/gaEEpd2.jpeg)
+![Table Preview](../../images/vpx-shaq.jpeg)
 
 Author: [JLouLoulou](https://www.vpforums.org/index.php?showuser=134330)  
 Version: 1.0.1  
@@ -31,3 +31,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s versions listed above, extract and copy them into this folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place ROM zip file into vpx-shaq/pinmame/roms folder. DO NOT UNZIP!
+

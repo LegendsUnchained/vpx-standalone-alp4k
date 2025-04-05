@@ -1,0 +1,16 @@
+---
+backglassVPSId: "sA8BNXIhOL"
+backglassChecksum: "f57b78558338ec5c0e9ae8b793377f84"
+fps: 35
+romVPSId: "Gobv2EXY"
+romChecksum: "a3dfec88cba7951116aca6585b973d21"
+tableVPSId: "vZDUDUii"
+tagline: "Welcome to Carcus... I mean... Cactus Canyon!"
+testers:
+  - "Bla1ze"
+  - "OminousOsie"
+  - "CoffeeAtJoes"
+vpxVPSId: "2XtND6uteu"
+vpxChecksum: "67812720881aa43441ce7a6c6595b60a"
+applyFixes:
+  - "bass"

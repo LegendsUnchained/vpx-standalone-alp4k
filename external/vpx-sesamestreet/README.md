@@ -1,6 +1,6 @@
 # Sesame Street (Original 2021)
 
-![Table Preview](/images/vpx-sesamestreet-preview.png)
+![Table Preview](../../images/vpx-sesamestreet.png)
 
 ---
 
@@ -33,3 +33,4 @@
 - Rom file (playboyb.zip) stays in zip folder, place zip file in `vpx-sesamestreet/pinmame/roms`
 - Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same.
 - Oscar the Grouch: "Now leave me alone and get lost!"
+

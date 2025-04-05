@@ -1,6 +1,6 @@
 # The Shadow (Bally 1994)
 
-![Table Preview](vpx-theshadow-table.jpeg?raw=true)
+![Table Preview](../../images/vpx-theshadow-table.jpg)
 
 ---
 

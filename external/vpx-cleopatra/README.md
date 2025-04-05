@@ -1,6 +1,6 @@
 # Cleopatra (Gottlieb 1977)
 
-![Table Preview](https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/images/vpx-cleopatra-preview.jpg)
+![Table Preview](../../images/vpx-cleopatra.jpg)
 
 
 Authors: [Goldchicco](https://vpuniverse.com/profile/23579-goldchicco/)  
@@ -33,3 +33,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into the external/vpx-cleopatra folder
 - Make sure (.vpx), (.directb2s) and (.ini) files are all named the same
 - Place cleoptra.zip in the external/vpx-cleopatra/pinmame/roms folder. DO NOT UNZIP!  
+

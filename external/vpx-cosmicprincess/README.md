@@ -1,6 +1,6 @@
 # Cosmic Princess (Stern 1979)
 
-![cosmicprincess](https://github.com/user-attachments/assets/e7fe47ab-2328-4712-866c-d3324714d0fa)
+![Table Preview](../../images/vpx-cosmicprincess.jpg)
 
 Author: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 5.5.1  

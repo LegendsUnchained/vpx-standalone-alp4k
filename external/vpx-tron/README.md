@@ -1,6 +1,6 @@
 # TRON Classic (Original 2022)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_04/567925790_NewBitmapImagea.png.a84d5c10e411eede0e898048cc5b2a01.png)
+![Table Preview](../../images/vpx-tron.png)
 
 Authors: [xenonph](https://vpuniverse.com/profile/8789-xenonph/)  
 Version: 2.1  

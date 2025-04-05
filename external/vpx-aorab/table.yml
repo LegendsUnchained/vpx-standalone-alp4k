@@ -1,8 +1,15 @@
 ---
-tableVPSId: DXehLyun
-vpxVPSId: ncBxxDuBlr
-backglassVPSId: TtZIXKi3pX
-romVPSId: 6SOILe1q
-fps: 35
+backglassVPSId: "TtZIXKi3pX"
+backglassChecksum: "589fdc0cd35db5ce091f9529be187011"
+fps: 42
+romVPSId: "6SOILe1q"
+romChecksum: "b6f8c5bcb3a8837f6afaadad13df0703"
+tableVPSId: "DXehLyun"
+tagline: "Hey, Rocky! Watch me pull a rabbit out of my hat!"
 testers:
-- Bla1ze
+  - "Bla1ze"
+  - "OminousOsie"
+vpxVPSId: "Yw5N-AQlOq"
+vpxChecksum: 4dd18cb1102d5bfab90980115fa97532
+applyFixes:
+  - "bass"

@@ -1,6 +1,6 @@
 # Jimi Hendrix (Original 2021)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-jimihendrix.jpg)
+![Table Preview](../../images/vpx-jimihendrix.jpg)
 
 Authors: [balutito](https://vpuniverse.com/profile/36070-balutito/)  
 Version: 1.2  

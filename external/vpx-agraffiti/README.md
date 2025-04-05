@@ -1,6 +1,6 @@
 # American Graffiti (Original 2024)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_09/FullCab.jpg.7fd86a8fe7383e246b798ec4013c9861.jpg)
+![Table Preview](../../images/vpx-agraffiti.jpg)
 
 ---
 
@@ -33,3 +33,4 @@
 - If you downloaded the soundtrack (AG.ZIP) from Mega: Unzip AG.zip. Copy and Replace AG folder in vpx-agraffiti/Music 
 - Follow directions on VPUniverse if you want music. Otherwise, leave music turned off
 - "squaresville, daddy-o"
+

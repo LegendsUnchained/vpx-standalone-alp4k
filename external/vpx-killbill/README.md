@@ -1,6 +1,6 @@
 # Kill Bill (Original 2022)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-killbill.png)
+![Table Preview](../../images/vpx-killbill.png)
 
 Authors: [VP_Cooks](https://www.vpforums.org/index.php?showuser=180201)  
 Version: 1.0.1  

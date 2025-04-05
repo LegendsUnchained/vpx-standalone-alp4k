@@ -1,6 +1,6 @@
 # Lightning (Stern 1981)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-lightning.jpg)
+![Table Preview](../../images/vpx-lightning.jpg)
 
 Authors: [jpsalas](hhttps://www.vpforums.org/index.php?showuser=277)  
 Version: 4.0.1  

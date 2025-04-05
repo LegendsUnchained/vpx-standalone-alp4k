@@ -1,6 +1,6 @@
 # Wild West (Original 2024)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2024_10/ScreenTable.jpg.da47e50940d172bb0a87f797bfa37409.jpg)
+![Table Preview](../../images/vpx-wildwest.jpg)
 
 Authors: [Tombg](https://vpuniverse.com/profile/61082-tombg/)  
 Version: (1.0.0) WildWest.zip  
@@ -33,3 +33,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s listed above, extract (if necessary) and copy them to external/vpx-wildwest
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - "Yee-Haw"
+

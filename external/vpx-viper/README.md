@@ -1,6 +1,6 @@
 # Viper (Stern 1981)
 
-![Table Preview](vpx-viper-table.jpg)
+![Table Preview](../../images/vpx-viper-table.jpg)
 
 
 ---

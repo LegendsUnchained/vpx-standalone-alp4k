@@ -1,0 +1,44 @@
+name: Validate table.yml
+
+on:
+  pull_request:
+    paths:
+      - '**table.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 50 # Adjust this value as needed
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests pyyaml yamllint
+
+      - name: Get changed table.yml files
+        id: changed-files
+        run: |
+          CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep -w 'table\.yml$')
+          echo "CHANGED_FILES=$(echo "$CHANGED_FILES" | tr '\n' ',')" >> $GITHUB_OUTPUT
+  
+      - name: Validate table.yml files
+        run: |
+          if [[ -n "${{ steps.changed-files.outputs.CHANGED_FILES }}" ]]; then
+            IFS=',' read -ra FILES <<< "${{ steps.changed-files.outputs.CHANGED_FILES }}"
+            for file in "${FILES[@]}"; do
+              echo "Checking \"$file\""
+              python .github/workflows/scripts/validate-table-yaml.py "$file"
+              yamllint "$file"
+            done
+          else
+            echo "No table.yml files were changed."
+          fi

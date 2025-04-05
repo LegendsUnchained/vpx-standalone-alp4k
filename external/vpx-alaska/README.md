@@ -7,7 +7,7 @@
 ## Files
 | File Type | Link | Version | Author |
 |:---------:|:----:|:-------:|:------:|
-| VPX | VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=16800) | 1.1 | [jejepinball](https://www.vpforums.org/index.php?s=3b0a5c7e845216cee68c2f1ca3da5281&app=core&module=search&do=user_activity&search_app=downloads&mid=108032) |
+| VPX | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=16800) | 1.1 | [jejepinball](https://www.vpforums.org/index.php?s=3b0a5c7e845216cee68c2f1ca3da5281&app=core&module=search&do=user_activity&search_app=downloads&mid=108032) |
 | B2S | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=16800) | 1.0 | 7he S4ge  |
 | DMD | N/A | N/A | N/A |
 | ROM | N/A | N/A | N/A |

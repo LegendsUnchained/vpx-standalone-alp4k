@@ -1,6 +1,6 @@
 # Bow and Arrow EM (Bally 1975)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-bowandarrow.png)
+![Table Preview](../../images/vpx-bowandarrow.png)
 
 Authors: [Mustang1961](https://www.vpforums.org/index.php?showuser=101607)  
 Version: 1.0c  

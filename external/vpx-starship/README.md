@@ -1,6 +1,6 @@
 # Starship Troopers (Sega 1997) 
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-starship.png)
+![Table Preview](../../images/vpx-starship.png)
 
 Tested by: Bla1ze
 

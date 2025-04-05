@@ -1,6 +1,6 @@
 # The Simpsons Pinball Party (Stern 2003)
 
-![Table Preview](https://github.com/Mar3nBu/vpx-images/blob/main/vpx-simpsonspprty.png)
+![Table Preview](../../images/vpx-simpsonspprty.png)
 
 Author: [bigus1](https://www.vpforums.org/index.php?showuser=107629) 
 
@@ -40,3 +40,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Download the table, and directb2s versions listed above, then extract them and place them in the vpx-simpsonspprty folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - The ROM zip gets copied to vpx-simpsonspprty/pinmame/roms folder. (Do not unzip)!
+

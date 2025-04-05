@@ -1,6 +1,6 @@
 # Terminator 3 (Stern 2003)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_07/t3dt.png.6b65177e71b6187179d478e6b2263bf8.png)
+![Table Preview](../../images/vpx-term3.png)
 
 Authors: [Siggi](https://vpuniverse.com/profile/8779-siggi/)  
 Version: 2.0_TW  

@@ -1,6 +1,6 @@
 # No Fear Dangerous Sports (Williams 1995)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-nofear.png)
+![Table Preview](../../images/vpx-nofear.png)
 
 Author: [ninuzzu](https://vpuniverse.com/profile/5530-ninuzzu/)  
 Version: 1.1  
@@ -27,7 +27,7 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 
 | Playfield | Controls | Backglass | DMD | FPS | 
 |-----------|----------|-----------|-----|----------|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 
 ## Instructions
 

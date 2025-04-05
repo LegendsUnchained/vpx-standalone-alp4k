@@ -1,6 +1,6 @@
 # Teenage Mutant Ninja Turtles Data East (1991)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-tmnt.png)
+![Table Preview](../../images/vpx-tmnt.png)
 
 Authors: [Gedankekojote97](https://vpuniverse.com/profile/42203-gedankekojote97/)
 

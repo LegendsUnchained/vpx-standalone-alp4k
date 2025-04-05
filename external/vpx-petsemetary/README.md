@@ -1,6 +1,6 @@
 # Pet Sematary (TBA 2019)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-petsemetary.png)
+![Table Preview](../../images/vpx-petsemetary.png)
 
 Authors: [ivantba](https://www.vpforums.org/index.php?showuser=123858)  
 Filename: Pet Sematary (TBA 2019).vpx  
@@ -36,3 +36,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy (Music) folder to vpx-petsemetary
 - Rom file (dracula.zip) stays in zip folder, place zip file in vpx-petsemetary/pinmame/roms
 - "Sometimes, dead is better" - Jud Crandall
+

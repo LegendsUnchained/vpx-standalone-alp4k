@@ -1,6 +1,6 @@
 # The Matrix (Original 2023)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-thematrix.png)
+![Table Preview](../../images/vpx-thematrix.png)
 
 Authors: [Enthusiast](https://vpuniverse.com/profile/62357-enthusiast/) & [VP_Cooks](https://vpuniverse.com/profile/33960-vp_cooks/)  
 Version: 1.0.14  

@@ -1,6 +1,6 @@
 # The Witcher (Original 2020)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_01/tw.png.170cb3a5d217d4caf9b729412ada5263.png)
+![Table Preview](../../images/vpx-witcher.png)
 
 ---
 
@@ -17,7 +17,7 @@
 ---
 
 ## Status 
-**Minimum VPX Standalone build:** {vpx-standalone-build-#}
+**Minimum VPX Standalone build:** 10.8.0-1983-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 48 |

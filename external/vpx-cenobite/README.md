@@ -1,6 +1,6 @@
 # Cenobite (Uncle Willy 2023)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-cenobite.jpg)
+![Table Preview](../../images/vpx-cenobite.jpg)
 
 Authors: [unclewilly](https://pinballnirvana.com/forums/members/unclewilly.738/)  
 Version: 1.0.0  

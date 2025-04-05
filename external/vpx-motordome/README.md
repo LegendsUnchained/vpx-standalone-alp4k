@@ -1,6 +1,6 @@
 # Motordome (Bally 1986)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-motordome.jpg)
+![Table Preview](../../images/vpx-motordome.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 5.5.0  

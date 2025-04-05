@@ -1,6 +1,6 @@
 # Magic Castle (Zaccaria 1984)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-magiccastle.png)
+![Table Preview](../../images/vpx-magiccastle.png)
 
 Authors: [32assassin](https://www.vpforums.org/index.php?showuser=77712)  
 Version: 2.0  

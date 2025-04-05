@@ -1,0 +1,19 @@
+---
+backglassVPSId: "t2tSRYqYk5"
+backglassChecksum: "762c19e565863d0754ee17de9f650391"
+backglassNotes: "Download 'Big Bang Bar (Capcom 1996) full dmd.zip'"
+coloredROMVPSId: "63Gi5Mp9me"
+coloredROMChecksum: "d601c650bf4c1628b207830956ce8c53"
+coloredROMNotes: "Download 'bbb109 non color rotation 1.4.rar'"
+fps: 50
+romVPSId: "Ks3T1Xy7"
+romChecksum: "689548ef14a6dd6550901378c63fa43c"
+tableVPSId: "ZxOdqKhi"
+tagline: "**Warning:** Mature table, not suitable for children!"
+testers:
+  - "mcap"
+  - "OminousOsie"
+vpxVPSId: "zL4Mo0At"
+vpxChecksum: "a0461315f909dde832bc8ed247fb14bc"
+applyFixes:
+  - "bass"

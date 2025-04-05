@@ -1,6 +1,6 @@
 # Jolly Roger (Williams 1967)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-jollyroger.png)
+![Table Preview](../../images/vpx-jollyroger.png)
 
 Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
 Version: 2.0.1  

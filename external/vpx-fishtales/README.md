@@ -1,6 +1,6 @@
 # Fish Tales (Williams 1992)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-fishtales.png)
+![Table Preview](../../images/vpx-fishtales.png)
 
 Authors: [JLouLoulou](https://www.vpforums.org/index.php?showuser=134330)  
 Version: 0.9  

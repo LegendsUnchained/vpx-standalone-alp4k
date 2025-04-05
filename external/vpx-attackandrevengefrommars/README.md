@@ -2,39 +2,29 @@
 
 ![Table Preview](../../images/vpx-attackandrevengefrommars-preview.jpg)
 
-Authors: [icepinball](https://vpuniverse.com/profile/4306-icepinball/)  
-Download File Name: Attack and Revenge from Mars v55_VPX8.zip  
-Filename: Attack and Revenge from Mars v55_VPX8.vpx  
-Download: [VPUniverse](https://www.vpforums.org/index.php?app=downloads&showfile=11604)
+---
 
-DirectB2S
+## Files
+| File Type | Link | Version | Author |
+|:---------:|:----:|:-------:|:------:|
+| VPX | [VPUniverse](https://www.vpforums.org/index.php?app=downloads&showfile=11604) | v55_VPX8 | [icepinball](https://vpuniverse.com/profile/4306-icepinball/) |
+| B2S | [VP Forums](https://vpuniverse.com/files/file/14811-attack-revenge-from-mars-bally-1999-b2s-backglass-full-dmd/) | N/A | [Teo_Topper](https://vpuniverse.com/profile/63278-teo_topper/) |
+| DMD | N/A | N/A | N/A |
+| ROM | [VPUniverse](https://www.vpforums.org/index.php?app=downloads&showfile=11604) | afm_113b.zip | [icepinball](https://vpuniverse.com/profile/4306-icepinball/) |
 
-Authors: [Teo_Topper](https://vpuniverse.com/profile/63278-teo_topper/)  
-Download File Name: Attack & Revenge from Mars (Bally 1999) - FullDMD.zip  
-Filename: Attack & Revenge from Mars - FullDMD.directb2s  
-Download: [VP Forums](https://vpuniverse.com/files/file/14811-attack-revenge-from-mars-bally-1999-b2s-backglass-full-dmd/)
+**Tested by:** [TechZombie]
 
-ROM 
-
-Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)  
-Filename: afm_113b.zip  
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1340)  
-
-**How to adjust Rom Volume Guide**
-Author: [ta2686](https://www.vpforums.org/index.php?showtopic=5220)
-
-Tested by: TechZombie
+---
 
 ## Status 
-
-Minimum VPX Standalone build: 10.8.0-1989-a764013
-
+**Minimum VPX Standalone build:** 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
 
-## Instructions
+---
 
+## Instructions
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to `vpx-attackandrevengefrommars.elf`
 - Download the table and directb2s listed above, extract (if necessary) and copy them to `external/vpx-attackandrevengefrommars`

@@ -1,0 +1,20 @@
+---
+backglassVPSId: "-62c-nUf5t"
+backglassChecksum: "4b424ca8cb9be22000e7916183f0e1df"
+fps: 50
+romVPSId: "d4nESeqt"
+romChecksum: "e1f87e7c99a9889e063049832601b733"
+coloredROMVPSId: "uJsvDC9nsB"
+coloredROMChecksum: "96cba80f368abad3526ce8e97ac25a91"
+tableVPSId: "OiRcNWYu"
+tagline: >-
+  "The boys around here call it "The Black Lagoon"
+  - a paradise. Only they say nobody has ever come back to prove it."
+testers:
+  - "mcap"
+  - "OminousOsie"
+vpxVPSId: "m78OeFSG"
+vpxChecksum: "ead413c3d1199577bd11e7fe8c5ba2ff"
+tableNotes: "Download 1.3.rar"
+applyFixes:
+  - "bass"

@@ -1,6 +1,6 @@
 # Star Trek the Mirror Universe (Zitt 2014)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-startrekmu.png)
+![Table Preview](../../images/vpx-startrekmu.png)
 
 Author: [JPsalas](https://www.vpforums.org/index.php?showuser=277)
 

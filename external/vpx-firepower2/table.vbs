@@ -7,12 +7,12 @@ If Err Then MsgBox "You need the controller.vbs in order to run this table, avai
 On Error Goto 0
  
 '----- FlexDMD Options -----
-Dim UseFlexDMD:UseFlexDMD = 1   	' 0 = off, 1 = on. Replaces external dmd when enabled 
+Dim UseFlexDMD:UseFlexDMD = 0   	' 0 = off, 1 = on. Replaces external dmd when enabled 
 Const FlexScoreColour = 0			' 0 = yellow (default), 1 = cyan, 2 = red, 3 = Green, 4 = blue, 5 = white
 
 'Const BallsSize = 50
 
-Const cGameName="fpwr2_l2",UseSolenoids=2,UseLamps=0,UseGI=0,SSolenoidOn="SolOn",SSolenoidOff="SolOff", SCoin="coin"
+Const cGameName="fpwr2_l2",UseSolenoids=2,UseLamps=1,UseGI=1,SSolenoidOn="SolOn",SSolenoidOff="SolOff", SCoin="coin"
 
 LoadVPM "01560000", "S7.VBS", 3.26
 

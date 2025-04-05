@@ -1,6 +1,6 @@
 # The Rolling Stones (Stern 2011) (Balutito MOD)
 
-![Table Preview](../../images/vpx-rollingstones-preview.jpg)
+![Table Preview](../../images/vpx-rollingstonesbalutito-preview.jpg)
 
 ---
 

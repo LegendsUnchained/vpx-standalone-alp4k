@@ -1,6 +1,6 @@
 # Buffy The Vampire Slayer (Original 2022)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-buffy.png)
+![Table Preview](../../images/vpx-buffy.png)
 
 Authors: [VP_Cooks](https://vpuniverse.com/profile/33960-vp_cooks/)  
 Filename: Buffy The Vampire Slayer_VP_Cooks.vpx  
@@ -28,3 +28,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download the table and directb2s listed above, extract (if necessary) and copy them to external/vpx-buffy
 - Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
 - "In every generation there is a Chosen One. She alone will stand against the vampires, the demons and the forces of darkness. She is the Slayer." - Giles
+

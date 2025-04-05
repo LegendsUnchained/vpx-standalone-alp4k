@@ -1,6 +1,6 @@
 # Daredevil and The Defenders (Original 2024)
 
-![Table Preview](https://raw.githubusercontent.com/Bla1ze/vpx-images/refs/heads/main/vpx-daredevil.png)
+![Table Preview](../../images/vpx-daredevil.png)
 
 ---
 
@@ -32,4 +32,4 @@
 - Add your personalized launcher.elf and rename it to `vpx-daredevil.elf`
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into `external/vpx-daredevil`
 - Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same.
-- If you can’t stand the heat, stay out of Hell’s Kitchen! 😈
+- If you can't stand the heat, stay out of Hell's Kitchen! 😈

@@ -1,6 +1,6 @@
 # Dr. Jekyll and Mr. Hyde (Original 2022)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-drjekyllandmrhyde.png)
+![Table Preview](../../images/vpx-drjekyllandmrhyde.png)
 
 Authors: [BurtMacklin](https://vpuniverse.com/profile/39250-burtmacklin/)  
 Download File: Dr. Jekyll and Mr. Hyde V1.3.7z  
@@ -38,3 +38,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Choose either Full Volume or Lower Volume and rename folder to (music) then Copy (music) folder to vpx-drjekyllandmrhyde
 - Rom file (elektra.zip) stays in zip folder, place zip file in vpx-drjekyllandmrhyde/pinmame/roms
 - "It is one thing to mortify curiosity, another to conquer it." - Dr. Jekyll
+

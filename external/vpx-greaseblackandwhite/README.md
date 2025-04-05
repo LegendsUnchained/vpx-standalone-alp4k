@@ -1,6 +1,6 @@
 # Grease B&W Pro (2021)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_01/809143380_Capturadepantalla(400).png.cc164df19bdd6fd7fc43eaaf742567cb.png)
+![Table Preview](../../images/vpx-greaseblackandwhite.png).png.cc164df19bdd6fd7fc43eaaf742567cb.png)
 
 Table
 
@@ -59,3 +59,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - If using the Alt Color, download and rename grease.cRZ file to elvis.cRZ and place it in vpx-greaseblackandwhite/pinmame/altcolor/elvis
 - Make sure (.vpx), (.directb2s), (.vbs) and (.ini) files are all named the same
 - "Tell me about it, stud." - Sandy
+

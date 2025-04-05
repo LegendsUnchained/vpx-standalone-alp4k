@@ -1,6 +1,6 @@
 # White Water (Williams 1993)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_12/screenshot101.jpg.0bf31b9d6417fff40d70ffeee81fd771.jpg)
+![Table Preview](../../images/vpx-whitewater.jpg)
 
 Authors: [flupper1](https://www.vpforums.org/index.php?s=05e03fe36add6a3442e6213130765900&showuser=62268)  
 Version: 1.1  

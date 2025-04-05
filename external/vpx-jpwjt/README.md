@@ -1,6 +1,6 @@
 # World Joker Tour, JP's (Original 2024)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-jpwjt.jpg)
+![Table Preview](../../images/vpx-jpwjt.jpg)
 
 ## Information 
 | File Type | Link | Version | Author(s) | 

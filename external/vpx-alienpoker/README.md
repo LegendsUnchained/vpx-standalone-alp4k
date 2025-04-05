@@ -1,6 +1,6 @@
 # Alien Poker (Williams 1980)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-alienpoker.png)
+![Table Preview](../../images/vpx-alienpoker.png)
 
 ---
 
@@ -12,7 +12,7 @@
 | DMD | N/A | N/A | N/A |
 | ROM | [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=790) | alpok_l6.zip | N/A |
 
-**Tested by:** [n-i-x [NEEDS CORRECTION]]
+**Tested by:** [kaoticBPR]
 
 ---
 
@@ -31,3 +31,4 @@
 - Make sure (.vpx), and (.directb2s) files are all named the same
 - Place alpok_l6.zip in the external/vpx-alienpoker/pinmame/roms folder. *Do Not unzip*!
 - "Check that alien's sleeve for a pocketed ace!"
+

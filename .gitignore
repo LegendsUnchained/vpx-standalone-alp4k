@@ -4,12 +4,14 @@
 !/external/*/nvram.nv
 !/external/*/README.md
 !/external/*/table.ini
-!/external/*/table.prt
+!/external/*/table.yml
 !/external/*/table.vbs
 !/external/*/use_these_pup_files.zip
 !/external/*/VPReg.ini
 !/external/*/dmd.png
+!/external/*/pinmame.ini
 !/external/*/backglass.png
+!/external/.yamllint
 /external/*/VPinballX.ini
 /external/*/gamecontrollerdb.txt
 /external/*/altsound.log
@@ -25,3 +27,4 @@ VPinballX_*-alp4k
 **/._*
 !/external/*/pinmame/roms/.gitkeep
 .venv
+__pycache__

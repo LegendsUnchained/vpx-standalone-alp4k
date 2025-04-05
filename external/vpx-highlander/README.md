@@ -1,6 +1,6 @@
 # Highlander (TBA 2019)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-highlander.png)
+![Table Preview](../../images/vpx-highlander.png)
 
 Authors: [ivantba](https://www.vpforums.org/index.php?showuser=123858)  
 Download File: Highlander (TBA 2019).zip  
@@ -41,3 +41,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Download and Unzip (music.zip) Copy (music) folder to vpx-highlander
 - Rom file (stest.zip) stays in zip folder, place zip file in vpx-highlander/pinmame/roms
 - "There can be only one!" - Connor MacLeod
+

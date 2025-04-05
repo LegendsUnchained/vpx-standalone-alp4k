@@ -1,6 +1,6 @@
 # North Star (Gottlieb 1964)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-northstar.png)
+![Table Preview](../../images/vpx-northstar.png)
 
 Authors: [RusstyT](https://vpuniverse.com/profile/32300-russtyt/)  
 Version: 1.0.3  

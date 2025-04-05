@@ -1,6 +1,6 @@
 # Fortnite (Original 2024)
 
-![Table Preview](/images/vpx-fortnite-preview.png)
+![Table Preview](../../images/vpx-fortnite.png)
 
 ---
 
@@ -33,3 +33,4 @@
 - Rom file (superman.zip) stays in zip folder, place zip file in `vpx-fortnite/pinmame/roms`
 - Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same.
 - "Fortnite teaches that every loss is a step closer to victory."
+

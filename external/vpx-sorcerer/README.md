@@ -1,6 +1,6 @@
 # Sorcerer (Williams 1985)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_06/882925633_CaptureCabinet.png.1f88cc2b1583c167f69b8bc7cd1a5806.png)
+![Table Preview](../../images/vpx-sorcerer.png)
 
 Authors: [UnclePaulie](https://vpuniverse.com/profile/16685-unclepaulie/)  
 Version: 3.0  
@@ -33,3 +33,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure the (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the "exact" same
 - Place sorcr_l2.zip in the external/vpx-sorcerer/pinmame/roms folder. *Do Not unzip*
 - "Best the sorcerer, defeat the sorcerer"
+

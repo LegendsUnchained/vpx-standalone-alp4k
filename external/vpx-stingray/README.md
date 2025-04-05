@@ -1,6 +1,6 @@
 # Stingray (Stern 1977)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-stingray.jpg)
+![Table Preview](../../images/vpx-stingray.jpg)
 
 Authors: [bord](https://vpuniverse.com/profile/9265-bord/)  
 Version: 2.0.0  

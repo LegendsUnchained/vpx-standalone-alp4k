@@ -1,6 +1,6 @@
 # Cirqus Voltaire (Bally 1997)
 
-![Table Preview](https://github.com/Mar3nBu/vpx-images/blob/main/vpx-cirqus.png)
+![Table Preview](../../images/vpx-cirqus.png)
 
 Author: [Knorr](https://vpuniverse.com/profile/3120-knorr/) 
 
@@ -45,3 +45,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Copy the table (.vpx) and backglass (.directb2s) to this folder and remember to rename the vpx and directb2s files to "Cirqus Voltaire (Bally 1997)1.1"
 - The ROM zip gets copied to pinmame/roms (do not unzip)
 - Get ready for the greatest pinball on earth!
+

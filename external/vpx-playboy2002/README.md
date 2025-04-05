@@ -1,6 +1,6 @@
 # Playboy (Stern 2002)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2021_12/playboy--stern-2002--fullscreen.png.5e7d59b345c5fbc413126a57a2477c0f.png)
+![Table Preview](../../images/vpx-playboy2002.png)
 
 Authors: [HiRez00](https://vpuniverse.com/profile/19941-hirez00/)
 Version: 1.1

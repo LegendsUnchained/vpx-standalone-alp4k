@@ -1,6 +1,6 @@
 # Breaking Bad (Original 2022)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-breakingbad.png)
+![Table Preview](../../images/vpx-breakingbad.png)
 
 Authors: [VP COOKS](https://www.vpforums.org/index.php?showuser=180201)  
 Version: 1.01  

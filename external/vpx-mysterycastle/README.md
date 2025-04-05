@@ -1,6 +1,6 @@
 # Mystery Castle (Alvin G 1993)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-mysterycastle.jpg)
+![Table Preview](../../images/vpx-mysterycastle.jpg)
 
 Authors: [agentEighty6](https://vpuniverse.com/profile/25523-agenteighty6/)  
 Version: 2.1.0  

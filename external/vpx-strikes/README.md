@@ -1,6 +1,6 @@
 # Strikes and Spares (Bally 1978)
 
-![Table Preview](https://github.com/psybocilin/vpx-standalone-alp4k/blob/vpx-strikes/images/vpx-strikes-preview.jpg)
+![Table Preview](../../images/vpx-strikes.jpg)
 
 Authors: [HiRez00](https://vpuniverse.com/profile/19941-hirez00/)  
 Version: 2.0  

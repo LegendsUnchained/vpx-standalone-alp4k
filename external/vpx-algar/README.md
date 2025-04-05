@@ -1,6 +1,6 @@
 # Algar (Williams 1980)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-algar.png)
+![Table Preview](../../images/vpx-algar.png)
 
 ## Files
 | File Type | Link | Version | Author |
@@ -28,3 +28,4 @@
 - Download and extract the **VPX** and **DIRECTB2S** versions listed above and copy them into the **vpx-algar** folder
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Download the **ROM** version listed above and copy it into `\vpx-algar\pinmame\roms` (DO NOT UNZIP)
+

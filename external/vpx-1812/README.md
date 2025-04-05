@@ -1,6 +1,6 @@
 # Class of 1812 (Gottlieb 1991)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2019_03/1859157671_1812(Custom)
+![Table Preview](../../images/vpx-1812.png)
 
 ---
 
@@ -12,7 +12,7 @@
 | DMD | N/A | N/A | N/A |
 | ROM | [Pinball Nirvana](https://pinballnirvana.com/forums/resources/clas1812.1668/) | N/A | N/A |
 
-**Tested by:** [n-i-x [NEEDS CORRECTION]]
+**Tested by:** [mcap]
 
 ---
 

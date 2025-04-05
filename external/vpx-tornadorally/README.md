@@ -1,6 +1,6 @@
 # Tornado Rally (Original 2024)
 
-![Table Preview](https://raw.githubusercontent.com/Bla1ze/vpx-images/refs/heads/main/vpx-torandorally.png)
+![Table Preview](../../images/vpx-tornadorally.png)
 
 ---
 
@@ -33,3 +33,4 @@
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-tornadorally.elf`
 - Make sure `(.vpx)` `(.direct2b2s)` and `(.ini)` are all named the same.
 - Riiiide em' cowboy! 🤠
+

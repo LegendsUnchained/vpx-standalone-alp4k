@@ -1,34 +1,30 @@
 # Banzai Run (Williams 1988)
 
-Tested By: kaoticBPR
-
 ![Table Preview](../../images/vpx-banzai-run-preview.jpg)
 
-Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 4.3.0  
-Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=17036)
+---
 
-DirectB2S
+## Files
+| File Type | Link | Version | Author |
+|:---------:|:----:|:-------:|:------:|
+| VPX | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=17036) | 5.5.0 | [JPSalas](https://www.vpforums.org/index.php?showuser=277) |
+| B2S | [VPUniverse](https://vpuniverse.com/files/file/13322-banzai-run-williams-1988-marquee-backglass/) | 1.0 | [HiRez00](https://vpuniverse.com/profile/19941-hirez00/) |
+| DMD | N/A | N/A | N/A |
+| ROM | [VPForums](http://www.vpforums.org/index.php?app=downloads&showfile=909) | bnzai_l3 | N/A |
 
-Authors: [HiRez00](https://vpuniverse.com/profile/19941-hirez00/)  
-Version: 1.0  
-Download: [VPUniverse](https://vpuniverse.com/files/file/13322-banzai-run-williams-1988-marquee-backglass/)
+**Tested by:** [kaoticBPR]
 
-ROM
-
-Download: [vpforums](http://www.vpforums.org/index.php?app=downloads&showfile=909)  
-ROM Name and version: bnzai_l3
+---
 
 ## Status 
-
-Minimum VPX Standalone build: 10.8.0-1989-a764013
-
+**Minimum VPX Standalone build:** 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
+
+---
 
 ## Instructions
-
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-banzairun.elf
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-banzairun

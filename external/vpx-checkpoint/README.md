@@ -1,6 +1,6 @@
 # Checkpoint (Data East 1991)
 
-![Table Preview](https://github.com/Mar3nBu/vpx-images/blob/main/vpx-checkpoint.png)
+![Table Preview](../../images/vpx-checkpoint.png)
 
 Author: [agenteighty6](https://vpuniverse.com/profile/25523-agenteighty6/) 
 

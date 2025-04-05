@@ -1,0 +1,16 @@
+---
+backglassVPSId: "4SDAgtc6DZ"
+backglassChecksum: "da066c639e34e1d4c2bcdff478932484"
+fps: 47
+romVPSId: "dg19vgfm"
+romChecksum: "1f87e8fb85c00ea5236e2dc5db87a1e1"
+tableVPSId: "7fSqIbWL"
+tagline: "Capture the Mermaids!"
+testers:
+  - "kaoticBPR"
+  - "OminousOsie"
+  - "CoffeeAtJoes"
+vpxVPSId: "QWo-whR7Y0"
+vpxChecksum: "9e64180a564076a3897413ce13211d5a"
+applyFixes:
+  - "bass"

@@ -1,6 +1,6 @@
 # Captain Spaulding's Museum Of Monsters And Madmen 
 
-![Table Preview](https://raw.githubusercontent.com/Bla1ze/vpx-images/refs/heads/main/vpx-captainspauldin.png)
+![Table Preview](../../images/vpx-captainspaulding.png)
 
 ---
 

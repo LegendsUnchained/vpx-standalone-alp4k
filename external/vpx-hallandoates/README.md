@@ -1,6 +1,6 @@
 # Hall & Oates (Original 2025)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2025_01/HALLOATES.png.965b7c0bc351df4551a56d05aa75a87f.png)
+![Table Preview](../../images/vpx-hallandoates.png)
 
 Authors: [ZandysArcade](https://vpuniverse.com/profile/57949-zandysarcade/)  
 Filename: HallandOates.vpx  
@@ -37,3 +37,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
 - The ROM zip file gets copied to vpx-hallandoates/pinmame/roms (Do not unzip)
 - "In my Philly neighborhood, black and white kids hung together without even thinking about it. The spirit of Martin Luther King was alive and well." - Daryl Hall
+

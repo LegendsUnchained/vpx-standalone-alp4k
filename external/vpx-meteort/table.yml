@@ -1,0 +1,17 @@
+---
+backglassVPSId: "VCkrs_C1"
+backglassChecksum: "e6dd42727519d4e810393636db580fc2"
+fps: 58
+romUrlOverride: "https://www.vpforums.org/index.php?app=downloads&showfile=556"
+romVersionOverride: "meteort"
+romChecksum: "dada7398238886184b911f6712a968c4"
+tableVPSId: "RwQfi1mb"
+tagline: >-
+  It's coming at 30,000 mph...
+  and there's no place on Earth to hide!
+testers:
+  - "evilwraith"
+  - "CoffeeAtJoes"
+vpxVPSId: "sIQfoxku"
+vpxChecksum: "0d8629b44849e66a368e69db6ef50c99"
+tableNotes: "Download 'v55_VPX8.zip'"

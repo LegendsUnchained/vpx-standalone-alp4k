@@ -1,6 +1,6 @@
 # Beetlejuice (Original 2023)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_11/BeetlejuiceDT.png.a0b5e5a6fa02405ba7fbfdf08a1acc58.png)
+![Table Preview](../../images/vpx-beetlejuice.png)
 
 **Warning!**   **This Table Contains Explicit Language!**   **Warning!**
 
@@ -34,3 +34,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 - Make sure (.vpx) (.direct2b2s) (.vbs) and (.ini) are all named the same
 - ROM file (ironmaid.zip) stays in zip folder, place zip file in /vpx-beetlejuice/pinmame/roms
 - "Nice f***ing Vpin Table!" --Beetlejuice
+

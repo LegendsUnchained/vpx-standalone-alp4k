@@ -1,6 +1,6 @@
 # Yamanobori - (KOMAYA 1981)
 
-![Table Preview](https://github.com/Bla1ze/vpx-images/blob/main/vpx-yamanobori.jpg)
+![Table Preview](../../images/vpx-yamanobori.jpg)
 
 ---
 

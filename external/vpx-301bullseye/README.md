@@ -1,6 +1,6 @@
 # 301 Bullseye (Grand Products 1986)
 
-![Table Preview](https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/images/vpx-301bullseye.jpg)
+![Table Preview](../../images/vpx-301bullseye.jpg)
 
 ---
 
@@ -34,3 +34,4 @@
 
 ## Notes
 - Press Start to initialize the table before adding credits.
+

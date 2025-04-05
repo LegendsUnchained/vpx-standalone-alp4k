@@ -1,6 +1,6 @@
 # Conan (Rowamet 1983)
 
-![Table Preview](https://github.com/lilalien/vpx-images/blob/main/vpx-conan.png)
+![Table Preview](../../images/vpx-conan.png)
 
 Authors: [xenonph](https://www.vpforums.org/index.php?showuser=14100) [batch](https://www.vpforums.org/index.php?showuser=30858) [JPSalas](https://www.vpforums.org/index.php?showuser=277) 
 Version: 2.1
@@ -39,3 +39,4 @@ Minimum VPX Standalone build: 10.8.0-2042-1431983
 - Copy the Conan folder containing .off files into vpx-conan/Music
 - The ROM zip file gets copied to vpx-conan/pinmame/roms (Do not unzip)
 - Conan, what is best in life?
+

@@ -1,6 +1,6 @@
 # Alice in Wonderland (Gottlieb 1948)
 
-![Table Preview](https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/images/vpx-alice1948.jpg)
+![Table Preview](../../images/vpx-alice1948.jpg)
 
 ---
 
@@ -32,3 +32,4 @@
 
 ## Notes
 - Push right on the control panel to load a ball from the hopper.
+

@@ -1,6 +1,6 @@
 # Black Knight 2000 (Williams 1989)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2022_02/959094238_CabinetScreenCaptureBK2000.png.2bb02444049927491edbb9a40191927b.png)
+![Table Preview](../../images/vpx-blackknight2000.png)
 
 ---
 
@@ -33,3 +33,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Place `bk2k_l4.zip` in the `external/vpx-blackknight2000/pinmame/roms` folder *Do Not unzip*
 
 > "Get your revenge on the black knight that mocks you"
+

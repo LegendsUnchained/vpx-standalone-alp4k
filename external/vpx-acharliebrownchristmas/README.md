@@ -1,6 +1,6 @@
 # Charlie Brown Christmas, A (Original 2023)
 
-![Table Preview](https://vpuniverse.com/screenshots/monthly_2023_12/CharlieScreenshot.jpg.263a8ca3c2783dac02b55d463144ddce.jpg)
+![Table Preview](../../images/vpx-acharliebrownchristmas.jpg)
 
 ---
 

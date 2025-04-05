@@ -1,6 +1,6 @@
 # 1-2-3 (Talleres de Llobregat 1973)
 
-![Table Preview](https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/images/vpx-123.jpg)
+![Table Preview](../../images/vpx-123.jpg)
 
 ---
 

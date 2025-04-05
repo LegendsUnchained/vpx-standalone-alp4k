@@ -1,6 +1,6 @@
 # Iron Man 2, JP's (Original 2018)
 
-![Table Preview](https://github.com/evilwraith/vpx-images/blob/main/vpx-ironman2jp.jpg)
+![Table Preview](../../images/vpx-ironman2jp.jpg)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
 Version: 4.3.0  
