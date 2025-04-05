@@ -1,7 +1,6 @@
 # WWF Royal Rumble (Data East 1994)
 
-![Table Preview](https://raw.githubusercontent.com/LegendsUnchained/vpx-standalone-alp4k/refs/heads/main/images/vpx-royalrumble.png)
-
+[![Table Preview](../../images/vpx-royalrumble.png)
 ---
 
 ## Files
