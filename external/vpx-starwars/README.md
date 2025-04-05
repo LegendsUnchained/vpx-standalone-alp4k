@@ -14,6 +14,8 @@
 
 ### Note!
 
+For the B2S download the first file: `Star Wars (Data East 1992) full dmd.zip`
+
 If you would like to use version 1.07 of the ROM, instead of the above 1.06, then:
 
 - Download the 2 ROM files here:

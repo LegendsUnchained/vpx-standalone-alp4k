@@ -1,0 +1,16 @@
+---
+backglassVPSId: "iytfp4df0Y"
+backglassChecksum: "B538086E94E72178680868C05C2C3681"
+backglassNotes: "Download Star Wars (Data East 1992) full dmd.zip"
+fps: 60
+romVPSId: "W6tGXpK5fI"
+romChecksum: "3DE4E940376B6027BB96ABAB50A54CF4"
+tableVPSId: "ON5FmcPI"
+tagline: "May the Force be With You!"
+testers:
+  - "mcap"
+  - "mrandromeda"
+vpxVPSId: "orDVZFDx8j"
+vpxChecksum: "34E0725DF92466F1351417AEA15A2471"
+applyFixes:
+  - "bass"
