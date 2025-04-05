@@ -7,8 +7,8 @@
 ## Files
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
-| **VPX** | [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=16623) | 10d2 | [Mustang1961](https://www.vpforums.org/index.php?showuser=101607) |
-| **B2S** |  [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=16623) | 10d2 | [Mustang1961](https://www.vpforums.org/index.php?showuser=101607) |
+| **VPX** | [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=16623) | 1.0f2 | [Mustang1961](https://www.vpforums.org/index.php?showuser=101607) |
+| **B2S** |  [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=16623) | 1.0f2 | [Mustang1961](https://www.vpforums.org/index.php?showuser=101607) |
 
 
 **Tested by:** [Brian-CK]
@@ -19,7 +19,7 @@
 Minimum VPX Standalone build: 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :x:  | :x:  | :x: | 46 |
+| :white_check_mark: | :white_check_mark: | :x:  | :x:  | :x: | 50 |
 
 ---
 
