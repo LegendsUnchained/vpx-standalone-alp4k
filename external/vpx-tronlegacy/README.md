@@ -25,7 +25,13 @@ Author: [PastorLUL](https://vpuniverse.com/profile/42770-pastorlul/)
 Version: 2.0.1 
 Download: [VP Universe](https://vpuniverse.com/files/file/18393-tron-legacy-stern-2011-64-colors/)
 
-Tested by: Bla1ze
+Pup Pack
+
+Author: [TerryRed](https://vpuniverse.com/profile/10155-terryred/)  
+Version: 1.0.0  
+Download: [VP Universe](https://vpuniverse.com/files/file/6814-tron-legacy-stern-end-of-line-pup-pack/)
+
+Tested by: Bla1ze, mrandromeda
 
 ## Status 
 
@@ -44,3 +50,13 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 - Place ROM zip file into vpx-tronlegacy/pinmame/roms folder. DO NOT UNZIP!
 - If using the Alt Color, make "altcolor" folder in pinmame folder and place the trn_174h folder with the .cRZ file in it in the altcolor folder
 - Power to the users!
+
+## Optional
+
+The puppack is optional and sometimes you get a few framerate drops to 55 but it looks so good.
+
+- Download the 648738633_TronLegacy-EndofLine-PuP-Pack.zip puppack from the above link.
+- Create the folder pupvideos and extract the folder trn_174h from the puppack zip in this folder.
+- Unzip the use_these_pup_files.zip and place them inside the pupvideos/trn_174h folder, and overwrite files if prompted.
+- __Delete the directb2s file because this is not needed anymore and makes the backglass blink.__
+
