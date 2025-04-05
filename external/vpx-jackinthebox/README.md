@@ -1,6 +1,6 @@
-# {Jack In The Box} ({Gottlieb} {1973})
+# Jack In The Box (Gottlieb 1973)
 
-![Table Preview]../../images/vpx-jackinthebox-preview.png
+![Table Preview](../../images/vpx-jackinthebox-preview.png)
 
 ---
 
