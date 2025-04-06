@@ -114,7 +114,7 @@ Sub Table1_Init()
     UpdateCredits
 
     ' Juego libre o con monedas: si es True entonces no se usaran monedas
-    bFreePlay = False 'queremos monedas
+    bFreePlay = True 'queremos monedas
 
     ' Inicialiar las variables globales de la mesa
     bAttractMode = False
