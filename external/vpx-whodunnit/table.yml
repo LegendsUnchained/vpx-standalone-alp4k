@@ -1,16 +1,15 @@
 ---
-backglassVPSId: "8oTJ137H"
-backglassChecksum: "0ec336eaa3b16f5b2fbbd1a14380d416"
-backglassNotes: "The Machine Bride Of Pinbot (Williams 1991)2scr.rar"
-fps: 43
-romVPSId: "vwDH6y_g"
-romChecksum: "356c7f7c943a5d72ace371c9398ea722"
-romNotes: "Download - bop_l8.zip"
-tableVPSId: "MKZNH4Rl"
-tagline: "My god, she's alive!"
+backglassVPSId: "c-01hR8h"
+backglassChecksum: "877596E48148FDE7A138B2086494016C"
+fps: 36
+romVPSId: "pzZrWXJf"
+romChecksum: "4F553E84D3A8E649B14467B12C5AB727"
+romNotes: "Download - wd_12.zip"
+tableVPSId: "n7aheBtw"
+tagline: "Discover WHO dunnit and you'll make a killing at the casino."
 testers:
-  - "Boris"
-vpxVPSId: "V1dcVAchIZ"
-vpxChecksum: "120efce1239a49a32f14bf628224bc37"
+  - "Mox"
+vpxVPSId: "g0wKStzBcB"
+vpxChecksum: "31A3DF7C65AFCCE43A00DC6799BDB604"
 applyFixes:
-  - "bass" 
+  - "bass"
