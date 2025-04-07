@@ -1,0 +1,16 @@
+---
+backglassVPSId: "2pP41LWO"
+backglassChecksum: "5687826B2C30383266D5FF29BC5CAD03"
+fps: 46
+romVPSId: "mDg0eT5V"
+romChecksum: "4E97AD95130427B71349AD9B206CD000"
+romNotes: "Download - dvlrider.zip"
+tableVPSId: "9zPDy2S2"
+tagline: "Spin your wheels thru the wheel of death."
+testers:
+  - "Mox"
+vpxVPSId: "nEMQHvrr"
+vpxChecksum: "600CDD5E7CEDF2BD7A49ECC8938B8C2D"
+tableNotes: "Download - Devil Riders (Zaccaria 1984) 1.1.zip"
+applyFixes:
+  - "bass"

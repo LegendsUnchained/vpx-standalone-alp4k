@@ -1,0 +1,17 @@
+---
+backglassVPSId: "8oTJ137H"
+backglassChecksum: "0ec336eaa3b16f5b2fbbd1a14380d416"
+backglassNotes: "The Machine Bride Of Pinbot (Williams 1991)2scr.rar"
+fps: 43
+romVPSId: "vwDH6y_g"
+romChecksum: "356c7f7c943a5d72ace371c9398ea722"
+romNotes: "Download - bop_l8.zip"
+tableVPSId: "MKZNH4Rl"
+tagline: "My god, she's alive!"
+testers:
+  - "Bla1ze"
+  - "Boris"
+vpxVPSId: "V1dcVAchIZ"
+vpxChecksum: "120efce1239a49a32f14bf628224bc37"
+applyFixes:
+  - "bass"

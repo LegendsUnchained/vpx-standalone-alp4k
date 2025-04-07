@@ -1,0 +1,17 @@
+---
+backglassVPSId: "c-01hR8h"
+backglassChecksum: "877596E48148FDE7A138B2086494016C"
+fps: 36
+romVPSId: "pzZrWXJf"
+romChecksum: "4F553E84D3A8E649B14467B12C5AB727"
+romNotes: "Download - wd_12.zip"
+tableVPSId: "n7aheBtw"
+tagline: "Discover WHO dunnit and you'll make a killing at the casino."
+testers:
+  - "Bla1ze"
+  - "Boris"
+  - "Mox"
+vpxVPSId: "g0wKStzBcB"
+vpxChecksum: "31A3DF7C65AFCCE43A00DC6799BDB604"
+applyFixes:
+  - "bass"

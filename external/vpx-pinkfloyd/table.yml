@@ -5,7 +5,7 @@ backglassUrlOverride: >-
 backglassAuthorsOverride:
   - "CoffeeAtJoes"
 backglassNotes: "Download version 1.0"
-fps: 42
+fps: 50
 romChecksum: "e4c898afcdcf6fd2a884c77c7fd6c3a9"
 romNotes: "'esha_l4c.zip' in the VPX download zip"
 romBundled: true
