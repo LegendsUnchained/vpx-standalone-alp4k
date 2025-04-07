@@ -1,18 +1,19 @@
 ---
 backglassVPSId: "tOkhRy1ZJK"
-backglassChecksum: "1ac5e66249f4d1e18086c031f7d8de90"
-coloredROMVPSId: "aBc9oYO2uq"
-coloredROMChecksum: "7864d399baed6b0799d83e7dfc4075f2"
+backglassChecksum: "1AC5E66249F4D1E18086C031F7D8DE90"
 fps: 60
+coloredROMVPSId: "aBc9oYO2uq"
+coloredROMChecksum: "7864D399BAED6B0799D83E7DFC4075F2"
 romVPSId: "o5CeYx43"
-romChecksum: "ad5dc9dd5b6b5ca3430866ff8897a09b"
+romChecksum: "AD5DC9DD5B6B5CA3430866FF8897A09B"
 tableVPSId: "akYNyhNO"
+tableNotes: "Download table version 2.1"
 tagline: "Power to the users!"
 testers:
   - "Bla1ze"
   - "mrandromeda"
   - "OminousOsie"
 vpxVPSId: "d70mjMQg"
-vpxChecksum: "c07b2e59624c03d9e271c9f17f3ae730"
+vpxChecksum: "C07B2E59624C03D9E271C9F17F3AE730"
 applyFixes:
   - "bass"
