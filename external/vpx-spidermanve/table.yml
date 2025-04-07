@@ -1,18 +1,18 @@
 ---
-backglassVPSId: 'JZN1nlsWkY'
-backglassChecksum: '06fe139b4f6fa05eca9706a5b95526e9'
+backglassVPSId: "JZN1nlsWkY"
+backglassChecksum: "06fe139b4f6fa05eca9706a5b95526e9"
 backglassNotes: "Use '3-SCR.directB2S' from the download"
 fps: 40
-romVPSId: 'AWiQu3VK'
-romChecksum: '676b70c9a67ceca4a607e9a076358e80'
-romNotes: 'Download - smanve_101.zip'
-tableVPSId: '9cAcDFA8'
+romVPSId: "AWiQu3VK"
+romChecksum: "676b70c9a67ceca4a607e9a076358e80"
+romNotes: "Download - smanve_101.zip"
+tableVPSId: "9cAcDFA8"
 tagline: "I'll never look at a sandcastle the same way again!"
 testers:
-  - 'Bla1ze'
-  - 'Sscorpio'
-vpxVPSId: 'A_CodyKoS7'
-vpxChecksum: '47ebcf7c39ddcbedccaa33198ee0a121'
-tableNotes: 'Version 2.1'
+  - "Bla1ze"
+  - "Sscorpio"
+vpxVPSId: "A_CodyKoS7"
+vpxChecksum: "47ebcf7c39ddcbedccaa33198ee0a121"
+tableNotes: "Version 2.1"
 applyFixes:
-  - 'bass'
+  - "bass"
