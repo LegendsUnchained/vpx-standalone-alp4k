@@ -5,6 +5,7 @@ fps: 45
 romUrlOverride: "https://pinballnirvana.com/forums/resources/gladiatr.1870/"
 romChecksum: "59C7676D6435D48C5A7EC3FAD8B76075"
 romNotes: "Download - gladiatr.zip"
+romVersionOverride: "gladiatr"
 tableVPSId: "_SuVoydb"
 tagline: "Take the Challenge, Brave One!"
 testers:
