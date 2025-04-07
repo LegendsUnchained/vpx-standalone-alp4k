@@ -2,36 +2,21 @@
 
 ![Table Preview](../../images/vpx-tronlegacy.png)
 
-Author: [Bigus1](https://www.vpforums.org/index.php?showuser=107629)  
-Version: 2.1  
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=15427)
+---
 
-DirectB2S
+## Files
+| File Type | Link | Version | Author | 
+|-----------|--------|----------|--------------|
+| **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=15427) | 2.1 | [Bigus1](https://www.vpforums.org/index.php?showuser=107629)  |
+| **B2S** | [VP Universe](https://vpuniverse.com/files/file/14202-tron-legacy-le-stern-2011-b2s-2-with-full-dmd/) | 1.0.0 | [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  |
+| **ROM** | [VP Forums](https://vpuniverse.com/files/file/3415-tron-legacy-limited-edition-v174/) | 1.74 | [VPUStaff](https://vpuniverse.com/profile/50-vpustaff/) |
+| **Serum** | [VP Universe](https://vpuniverse.com/files/file/18393-tron-legacy-stern-2011-64-colors/) | 2.01 | [PastorLUL](https://vpuniverse.com/profile/42770-pastorlul/)  |
+| **PUPPACK** | [VP Universe](https://vpuniverse.com/files/file/6814-tron-legacy-stern-end-of-line-pup-pack/) | 1.0.0 | [TerryRed](https://vpuniverse.com/profile/10155-terryred/)   |
 
-Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
-Version: 1.0.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/14202-tron-legacy-le-stern-2011-b2s-2-with-full-dmd/)
+**Tested by:** [Bla1ze] & [mrandromeda]
 
-ROM
+---
 
-Download: [VP Forums](https://vpuniverse.com/files/file/3415-tron-legacy-limited-edition-v174/)
-
-SHA: 95593c041c0b577bd4b16f132a362cef50370d70  
-MD5: ad5dc9dd5b6b5ca3430866ff8897a09b
-
-Alt Color
-
-Author: [PastorLUL](https://vpuniverse.com/profile/42770-pastorlul/)  
-Version: 2.0.1 
-Download: [VP Universe](https://vpuniverse.com/files/file/18393-tron-legacy-stern-2011-64-colors/)
-
-Pup Pack
-
-Author: [TerryRed](https://vpuniverse.com/profile/10155-terryred/)  
-Version: 1.0.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/6814-tron-legacy-stern-end-of-line-pup-pack/)
-
-Tested by: Bla1ze, mrandromeda
 
 ## Status 
 
