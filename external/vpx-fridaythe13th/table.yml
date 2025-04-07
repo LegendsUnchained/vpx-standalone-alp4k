@@ -1,0 +1,15 @@
+---
+tableVPSId: "q8GzR2bQ"
+vpxVPSId: "PiP6Dgy5"
+vpxChecksum: "b6a0066788ce6600582578dbfe6d2202"
+vpxNotes: "Download  'JPs Friday the 13th v55_VPX8.zip'"
+backglassBundled: true
+backglassVPSId: "PiP6Dgy5"
+backglassChecksum: "f1e2b37a526a52e5322de396da7d5bbe"
+backglassNotes: "Download 'JPs Friday the 13th.directb2s.zip' from VPX page"
+backglassAuthorsOverride:
+  - "jpsalas"
+fps: 60
+tagline: "You suck!"
+testers:
+  - "Boris"

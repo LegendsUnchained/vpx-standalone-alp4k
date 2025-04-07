@@ -2,13 +2,16 @@
 backglassVPSId: "1nK152JE"
 backglassChecksum: "e9ca93e887b04c216080023b9faaf3d0"
 backglassNotes: "Download - Young Frankenstein (hauntfreaks 2021).directb2s"
-fps: 36
-romUrlOvveride: "https://vpuniverse.com/files/file/1089-eclipsezip/?do=download"
+fps: 43
+romUrlOverride: "https://vpuniverse.com/files/file/1089-eclipsezip/?do=download"
+romVersionOverride: "eclipse"
 romChecksum: "99827f772968ef334ede295fcf0f93a9"
 romNotes: "Download - eclipse.zip"
 tableVPSId: "CNp5duSH"
 tagline: "Put... The candle... Back."
 testers:
+  - "Bla1ze"
+  - "Boris"
   - "Mox"
 vpxVPSId: "eGbPenYhBz"
 vpxChecksum: "bb812776973af0167e43ced91f714f64"

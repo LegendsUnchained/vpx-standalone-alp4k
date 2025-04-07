@@ -149,7 +149,7 @@ Dim ForceSiderailsFS, Bats
 
 ' *** Desktop, VR, or Full Cabinet Options *** These HAVE to be selected depending on the mode you are playing.
 
-const VR_Room = 0' 1 = VR Room; 0 = desktop or cab mode, 
+const VR_Room = 0 ' 1 = VR Room; 0 = desktop or cab mode, 
 const cab_mode = 1 ' 1 = cabinet mode (Turns off the desktop backglass score lights; also sets Fluppers 4k cabinet light intensity, and allows for higher cab side rail option)
 
 ' *** If using cabinet mode: ***
@@ -158,9 +158,9 @@ ForceSiderailsFS = 1 ' 1 = higher siderails in cabinet mode: 0 = does not show h
 
 ' *** If using VR Room: ***
 
-const CustomWalls = 0 	'set to 0 for Modern Minimal Walls, floor, and roof, 1 for Sixtoe's original walls and floor
-const WallClock = 0	  	'1 Shows the clock in the VR room only   
-const topper = 0		'0 = Off, 1 = Topper 1, 2 = Topper 2 visible in VR Room only
+const CustomWalls = 1 	'set to 0 for Modern Minimal Walls, floor, and roof, 1 for Sixtoe's original walls and floor
+const WallClock = 1	  	'1 Shows the clock in the VR room only   
+const topper = 1		'0 = Off, 1 = Topper 1, 2 = Topper 2 visible in VR Room only
 const poster = 0		'1 Shows the flyer poster in the VR room only 
 
 ' *** LUT Lighting Options ***
@@ -169,7 +169,7 @@ const poster = 0		'1 Shows the flyer poster in the VR room only
 ' 1 = VR brighter setting (default), Can use for cab/desktop if you want to override to dark
 ' 2 = VR darker LUT override.
 
-const LUT = 1 
+const LUT = 0 
 
 
 ' *** Rail Reflection / Glow Option:  If you experience signifcant "Reflection" or "Glow" on metal rails in desktop or cab ***
@@ -198,8 +198,8 @@ AmbienceCategory = False
 
 
 '----- Shadow Options -----
-Const DynamicBallShadowsOn 	= 0	'0 = no dynamic ball shadow ("triangles" near slings and such), 1 = enable dynamic ball shadow
-Const AmbientBallShadowOn 	= 0	'0 = Static shadow under ball ("flasher" image, like JP's)
+Const DynamicBallShadowsOn 	= 0		'0 = no dynamic ball shadow ("triangles" near slings and such), 1 = enable dynamic ball shadow
+Const AmbientBallShadowOn 	= 0		'0 = Static shadow under ball ("flasher" image, like JP's)
 									'1 = Moving ball shadow ("primitive" object, like ninuzzu's)
 									'2 = flasher image shadow, but it moves like ninuzzu's
 Const fovY					= 0		'Offset y position under ball to account for layback or inclination (more pronounced need further back)
@@ -267,7 +267,7 @@ InsertBrightness = 2
 ' 10 = Hauntfreaks really bright ball without ball reflections
 '******************************************************************************************
 
-const Ball_Choice = 0 		'Ball for Desktop and Cabinet users.  Default is 6.
+const Ball_Choice = 7 		'Ball for Desktop and Cabinet users.  Default is 6.
 const VR_Ball_Choice = 9	'Ball choice for VR users.  Default is 9.
 
 
