@@ -6,7 +6,8 @@ romVPSId: "px2FY10w"
 romChecksum: "104F6D8613008824972DCAAE3975E85B"
 romNotes: "Download - dm_lx4.zip"
 tableVPSId: "vT78ph4O"
-tagline: "We're police officers! We're not trained to handle this kind of violence!"
+tagline: >-
+  "We're police officers! We're not trained to handle this kind of violence!"
 testers:
   - "evilwraith"
   - "Mox"
