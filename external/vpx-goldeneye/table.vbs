@@ -1063,8 +1063,8 @@ End Sub
 Dim NullFader : set NullFader = new NullFadingObject
 Dim Lampz : Set Lampz = New LampFader
 InitLampsNF              ' Setup lamp assignments
-LampTimer.Interval = 16
 LampTimer.Enabled = 1
+LampTimer.Interval = 16
 
 Sub LampTimer_Timer()
 	dim x, chglamp
@@ -2484,11 +2484,11 @@ Sub CollisionTimer_Timer()
 
 	For B = UBound(BOT) +1 to tnob
 		If AmbientBallShadowOn = 0 Then BallShadowA(b).visible = 0
-		rolling(b) = False
 		StopSound("BallRoll_" & b)
 		StopSound("fx_plasticrolling" & b)
 		StopSound("fx_metalrollingA" & b)
 		StopSound("fx_metalrollingB" & b)
+		rolling(b) = False
 		'		StopSound("fx_Rolling_MetalC" & b)
 	Next
 
@@ -4237,9 +4237,9 @@ Function RotPoint(x,y,angle)
 End Function
 
 
-Sub RDampen_Timer()
-	Cor.Update
-End Sub
+'Sub RDampen_Timer()
+'	Cor.Update
+'End Sub
 
 '////////////////////////////  MECHANICAL SOUNDS  ///////////////////////////
 '//  This part in the script is an entire block that is dedicated to the physics sound system.

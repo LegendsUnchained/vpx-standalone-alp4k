@@ -1,0 +1,16 @@
+---
+backglassVPSId: "RHVC73TxKs"
+backglassChecksum: "2A0C710705DE657A1061CE1E7B442536"
+fps: 52
+romVPSId: "-07X1WLT"
+romChecksum: "1585E6C7650343E51D3CCCBC29E19D48"
+romNotes: "Download - id4.zip"
+tableVPSId: "G4BlaSXN"
+tagline: "Welcome to Earth!!"
+testers:
+  - "OminousOsie"
+  - "Mox"
+vpxVPSId: "BrZ-RApc"
+vpxChecksum: "16A2F1ED9CF7606D2B94D66D79D9D50B"
+applyFixes:
+  - "bass"

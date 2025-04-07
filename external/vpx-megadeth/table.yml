@@ -1,0 +1,17 @@
+---
+backglassVPSId: "t9WZcMFwyU"
+backglassChecksum: "306D2FC70CF4EACCCAAC88E9D535984A"
+backglassNotes: >-
+  Upon VPX bundle download, open 'Backglass' folder for DIRECTB2S
+fps: 47
+tableVPSId: "RTjNzNHOeW"
+tagline: "Peace sells... but who's buying?"
+testers:
+  - "Boris"
+  - "Mox"
+vpxVPSId: "t9WZcMFwyU"
+vpxChecksum: "542BF12BECA54ABD70439EAD84681898"
+tableNotes: "Upon download, open 'Table' folder for VPX"
+enabled: false
+applyFixes:
+  - "bass"
