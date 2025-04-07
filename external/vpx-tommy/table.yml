@@ -1,0 +1,15 @@
+---
+backglassVPSId: "q0DxJyIGQ1"
+backglassChecksum: "cbb319b7bf952033755d67ca2b027527"
+fps: 60
+romVPSId: "tF-yjAbJKZ"
+romChecksum: "bc4c13cafef4891c03ab46d72b3e20f2"
+tableVPSId: "p3HP_P2H"
+tagline: "He's a pinball wizard!"
+testers:
+  - "Bla1ze"
+  - "OminousOsie"
+vpxVPSId: "vvVop8xT"
+vpxChecksum: "56d91226a2cdb0b195d5cb4ddb3bf9af"
+applyFixes:
+  - "bass"
