@@ -13,5 +13,6 @@ testers:
 vpxVPSId: "232sR2Et"
 vpxChecksum: "36674A6DC01E67E90CB125EE6432D69F"
 tableNotes: "Download - 211309852_Pinbot(Williams1986)2.1.1VR.zip"
+enabled: false
 applyFixes:
   - "bass"

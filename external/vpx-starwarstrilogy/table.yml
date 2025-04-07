@@ -11,5 +11,6 @@ testers:
   - "Mox"
 vpxVPSId: "FXFg6iyecu"
 vpxChecksum: "DBD5E0737301BD1856D6669D3740FC88"
+enabled: false
 applyFixes:
   - "bass"

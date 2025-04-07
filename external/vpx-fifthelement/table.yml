@@ -14,5 +14,6 @@ vpxChecksum: "91F58A30E44665A5B3B48A4E982EC637"
 tableNotes: >-
   "VPX Link directs you to Mega. Download
   'The Fifth Element 1.3.vpx', then you will"
+enabled: false
 applyFixes:
   - "bass"

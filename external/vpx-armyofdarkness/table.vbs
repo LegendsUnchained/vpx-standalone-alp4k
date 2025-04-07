@@ -321,7 +321,7 @@ Sub Table1_Init()
 
 
     ' freeplay or coins
-    bFreePlay = False 'we dont want coins
+    bFreePlay = True 'we dont want coins
 
     ' initialse any other flags
     bOnTheFirstBall = False
@@ -3320,7 +3320,7 @@ sub showcredits()
 	'hdisplay1.flushqueue
 	'hdisplay2.flushqueue
 
-	hdisplay1.text = "   CREDITS " & (Credits) & "    "
+	hdisplay1.text = "   FREE PLAY    "
 	hdisplay2.text = "  PRESS START   " 
 
 'DMDUpdate.Interval = 2000
@@ -3338,11 +3338,11 @@ sub showcredits()
 'DMDUpdate.enabled = 1
 
 
-	display1.text = "   CREDITS " & (Credits) & "    "
+	display1.text = "   FREE PLAY    "
 	display2.text = "  PRESS START   "
 
   '  DisplayB2SText "    CREDITS  " & (Credits) & "                 "
-    DisplayB2SText2 "    CREDITS     " & (Credits) & "   PRESS START  "
+    DisplayB2SText2 "    FREE PLAY   PRESS START  "
 
 	'display2.QueueText "  PRESS START   ", seBlinkMask, 3000
 
@@ -3454,23 +3454,23 @@ sub attractmessagetimer_Timer()
 
 		if Credits = 0 then
 
-			hdisplay1.text = "   CREDITS " & (Credits) & "    "
-			hdisplay2.text = "  INSERT COIN   "
-			hdisplay2.text = "  INSERT COIN   "', seBlinkMask, 3000
+			hdisplay1.text = "   FREEPLAY    "
+			hdisplay2.text = "  PRESS START   "
+			hdisplay2.text = "  PRESS START   "', seBlinkMask, 3000
 
           ' DisplayB2SText2 "     CREDITS   " & "   " & (Credits) & "    " 
            'DisplayB2SText "  INSERT COIN   " & "               "
 
 
-			display1.text = "   CREDITS " & (Credits) & "    "
-			display2.text = "  INSERT COIN   "
-			display2.text = "  INSERT COIN   "', seBlinkMask, 3000
+			display1.text = "   FREEPLAY    "
+			display2.text = "  PRESS START   "
+			display2.text = "  PRESS START   "', seBlinkMask, 3000
 
-            DisplayB2SText2 "   CREDITS " &credits &"      INSERT COIN "
+            DisplayB2SText2 "   FREEPLAY      PRESS START "
 
 		else
 
-			hdisplay1.text = "   CREDITS " & (Credits) & "    "
+			hdisplay1.text = "   FREEPLAY    "
 			hdisplay2.text = "  PRESS START   "
 			hdisplay2.text = "  PRESS START   "', seBlinkMask, 3000
 
@@ -3479,11 +3479,11 @@ sub attractmessagetimer_Timer()
 
           ' DisplayB2SText "  PRESS START   "& "               "
 
-			display1.text = "   CREDITS " & (Credits) & "    "
+			display1.text = "   FREEPLAY    "
 			display2.text = "  PRESS START   "
 			display2.text = "  PRESS START   "', seBlinkMask, 3000
 
-           DisplayB2SText2 "     CREDITS" & "  "&(Credits) &"  " & "   PRESS START  "
+           DisplayB2SText2 "     FREEPLAY   PRESS START  "
 
 		end if
 
@@ -3679,20 +3679,20 @@ sub attractmessagetimer_Timer()
 	'hdisplay1.flushqueue
 	'hdisplay2.flushqueue
 
-	hdisplay1.text = "  AND START A   "', seScrollRightOver
-	hdisplay2.text = "      MISSION      "', seScrollLeftOver, , 20
-   hdisplay2.text = "      MISSION      "', seBlinkMask, 3000
+	hdisplay1.text = "WITH LOVE, THE  "', seScrollRightOver
+	hdisplay2.text = "VPXS 4KP TEAM <3"', seScrollLeftOver, , 20
+   hdisplay2.text = "VPXS 4KP TEAM <3"', seBlinkMask, 3000
 
  '   DisplayB2SText "  AND START A   " & "      MISSION      "
 
 	'display1.flushqueue
 	'display2.flushqueue
 
-	display1.text = "  AND START A   "', seScrollRightOver
-	display2.text = "      MISSION      "', seScrollLeftOver, , 20
-   display2.text = "      MISSION      "', seBlinkMask, 3000
+	display1.text = "WITH LOVE, THE  "', seScrollRightOver
+	display2.text = "VPXS 4KP TEAM <3"', seScrollLeftOver, , 20
+   display2.text = "VPXS 4KP TEAM <3"', seBlinkMask, 3000
 
-    DisplayB2SText2 "  AND START A   " & "      MISSION      "
+    DisplayB2SText2 "WITH LOVE, THE  " & "VPXS 4KP TEAM <3"
 
 
     Case 18:

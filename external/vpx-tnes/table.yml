@@ -12,5 +12,6 @@ testers:
 vpxVPSId: "wQbUidjrVI"
 vpxChecksum: "DC36316D92E7C38AE36FBF8A71D2500E"
 tableNotes: "Download - Neverending Story (2021).vpx"
+enabled: false
 applyFixes:
   - "bass"

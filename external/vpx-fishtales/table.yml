@@ -13,5 +13,6 @@ testers:
 vpxVPSId: "PI8WMVQOwS"
 vpxChecksum: "AA6E4EA20D661600CEBD339F2AADDFDE"
 tableNotes: "Download - [...]_JLMD Edition v0.8..zip"
+enabled: false
 applyFixes:
   - "bass"

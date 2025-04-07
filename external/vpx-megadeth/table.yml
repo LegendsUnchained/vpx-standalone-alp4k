@@ -12,5 +12,6 @@ testers:
 vpxVPSId: "t9WZcMFwyU"
 vpxChecksum: "542BF12BECA54ABD70439EAD84681898"
 tableNotes: "Upon download, open 'Table' folder for VPX"
+enabled: false
 applyFixes:
   - "bass"
