@@ -25,7 +25,6 @@ ROM Name: drac_l1.zip
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1173)
 
 SHA: 0122e6f44a2fcbd397c43a61aaad9cfffe681938
-
 MD5: 66d63871f98b5efefd7a67c4189c6946
 
 ## Status 

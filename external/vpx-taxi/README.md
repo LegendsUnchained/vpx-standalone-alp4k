@@ -2,15 +2,15 @@
 
 ![Table Preview](../../images/vpx-taxi.jpg)
 
-Authors: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
-Version: 1.2.2  
-Download: [VP Universe](https://vpuniverse.com/files/file/7074-taxi-williams-1988-vpw-mod/)
+Authors: [bigus1](https://www.vpforums.org/index.php?showuser=107629)  
+Version: 1.0
+Download: [VP Forum](https://www.vpforums.org/index.php?app=downloads&showfile=18659)
 
 DirectB2S
 
 Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
-Version: 1.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/14115-taxi-williams-1988-b2s-with-full-dmd/)
+Version: 1.0.0
+Download: [VP Universe](https://vpuniverse.com/files/file/21760-taxi-williams-1988-b2s-authentic/)
 
 ROM
 

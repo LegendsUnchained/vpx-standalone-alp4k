@@ -1,0 +1,18 @@
+---
+backglassBundled: true
+backglassChecksum: "5D5DDAAAFBBD2DC529AFA880702060DA"
+backglassNotes: "Bundled with VPX"
+fps: 35
+romVPSId: "aSGrFJgL"
+romChecksum: "A0ACE6E5EEDC8D2EDCCB36E3FF26B1D3"
+romNotes: "Download - pb_l5.zip"
+tableVPSId: "u3bADyBV"
+tagline: "I am in your control."
+testers:
+  - "Mox"
+vpxVPSId: "232sR2Et"
+vpxChecksum: "36674A6DC01E67E90CB125EE6432D69F"
+tableNotes: "Download - 211309852_Pinbot(Williams1986)2.1.1VR.zip"
+enabled: false
+applyFixes:
+  - "bass"
