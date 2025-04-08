@@ -60,7 +60,7 @@ __*We hope you enjoy!!   - the VPXS 4KP team!*__
 ### ⏯️ Music Files:
 
 1.  Download table folder from [VP Universe](https://vpuniverse.com/files/file/21107-fortnite-2024/) (by [kangar](https://vpuniverse.com/profile/75869-kangar/)
-2.  Extract the folder `Table Music` from the zip, and put it in the `external/vpx-fortnite` in the Table Manager
+2.  Extract the folder `Table Music` from the zip, and put it in the `external/vpx-fortnite` folder in the Table Manager
 3.  Rename the folder to `music`
 3.  You should then have `external/vpx-fortnite/music` > `Fortnite_Banger.mp3` / `Fortnite_Boss.mp3` / `Fortnite_Bounce.mp3`  etc
 4.  Enjoy!
