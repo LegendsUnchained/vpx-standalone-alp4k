@@ -1,4 +1,4 @@
-# Monster Bash (Williams 1998)
+﻿# Monster Bash (Williams 1998)
 
 ![Table Preview](../../images/vpx-monsterbashreskin-preview.jpg)
 
@@ -37,6 +37,7 @@ This table is available through the Table Manager Wizard, which makes installati
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`Monster Bash`**
 5.  Follow the on-screen instructions to download and upload the required files
+6. *"Reunite the creatures of the night and get ready to rock!"*
 
 <br>
 

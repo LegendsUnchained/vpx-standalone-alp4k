@@ -1,4 +1,4 @@
-# Terminator 2 - Judgment Day (Williams 1991)
+﻿# Terminator 2 - Judgment Day (Williams 1991)
 
 ![Table Preview](../../images/vpx-t2.png)
 
@@ -36,6 +36,7 @@ This table is available through the Table Manager Wizard, which makes installati
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`Terminator 2 - Judgment Day`**
 5.  Follow the on-screen instructions to download and upload the required files
+6. *"I'll be back..."*
 
 <br>
 

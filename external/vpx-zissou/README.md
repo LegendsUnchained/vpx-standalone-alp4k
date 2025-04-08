@@ -1,4 +1,4 @@
-# Zissou - The Life Aquatic (Original 2022)
+﻿# Zissou - The Life Aquatic (Original 2022)
 
 ![Table Preview](../../images/vpx-zissou.png)
 
@@ -36,6 +36,7 @@ This table is available through the Table Manager Wizard, which makes installati
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`Zissou - The Life Aquatic`**
 5.  Follow the on-screen instructions to download and upload the required files
+6. *I'm going to find it and I'm going to destroy it. I don't know how yet, maybe dynamite."*
 
 <br>
 

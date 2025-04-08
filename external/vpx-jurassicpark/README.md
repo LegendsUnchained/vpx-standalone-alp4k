@@ -1,4 +1,4 @@
-# Jurassic Park (Data East 1993)
+﻿# Jurassic Park (Data East 1993)
 
 ![Table Preview](../../images/vpx-jurasicpark-dataeast-preview.jpg)
 
@@ -36,6 +36,7 @@ This table is available through the Table Manager Wizard, which makes installati
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`Jurassic Park`**
 5.  Follow the on-screen instructions to download and upload the required files
+6. *"Welcome... to Jurassic Park!"*
 
 <br>
 

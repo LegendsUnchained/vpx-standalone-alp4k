@@ -1,4 +1,4 @@
-# Last Action Hero (Data East 1993)
+﻿# Last Action Hero (Data East 1993)
 
 ![Table Preview](../../images/vpx-lastactionhero.png)
 
@@ -35,6 +35,7 @@ This table is available through the Table Manager Wizard, which makes installati
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`Last Action Hero`**
 5.  Follow the on-screen instructions to download and upload the required files
+6. *"Sir, are you a henchman?"   "No, I only go as far as lackey. Anything else?"*
 
 <br>
 

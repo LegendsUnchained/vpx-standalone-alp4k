@@ -1,4 +1,4 @@
-# Scared Stiff (Bally 1996) 
+﻿# Scared Stiff (Bally 1996) 
 
 ![Table Preview](../../images/vpx-scaredstiff.png)
 
@@ -35,6 +35,7 @@ This table is available through the Table Manager Wizard, which makes installati
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`Scared Stiff`**
 5.  Follow the on-screen instructions to download and upload the required files
+6. *"Turn out the lights... it's time to get Scared Stiff!"*
 
 <br>
 

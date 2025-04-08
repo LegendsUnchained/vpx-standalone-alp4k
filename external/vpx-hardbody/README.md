@@ -1,4 +1,4 @@
-# Hardbody (Bally 1987)
+﻿# Hardbody (Bally 1987)
 
 ![Table Preview](../../images/vpx-hardbody-preview.png)
 
@@ -35,6 +35,7 @@ This table is available through the Table Manager Wizard, which makes installati
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`Hardbody`**
 5.  Follow the on-screen instructions to download and upload the required files
+6. *"We're here to *PUMP* you up!"*
 
 <br>
 

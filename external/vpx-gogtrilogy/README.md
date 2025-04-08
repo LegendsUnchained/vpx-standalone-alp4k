@@ -1,4 +1,4 @@
-# Guardians of the Galaxy trilogy (Original 2023)
+﻿# Guardians of the Galaxy trilogy (Original 2023)
 
 ![Table Preview](../../images/vpx-gogtrilogy.png)
 
@@ -35,6 +35,7 @@ This table is available through the Table Manager Wizard, which makes installati
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`Guardians of the Galaxy trilogy`**
 5.  Follow the on-screen instructions to download and upload the required files
+6. *"We are Groot!"*
 
 <br>
 
