@@ -63,7 +63,7 @@ __*We hope you enjoy!!   - the VPXS 4KP team!*__
 2.  Download the `DPpuppack2.0.7z` puppack from the download list
 3.  Create the folder `pupvideos` within the `external/vpx-deadpool` folder
 4.  Extract the folder `jpsdeadpool` from the puppack zip.
-5.  Unzip the `use_these_pup_files.zip` from the `external/vpx-deadpool` folder in the repository
+5.  Unzip the `use_these_pup_files.zip` from the `external/vpx-deadpool` folder in the [repository](https://github.com/TheOminousOsie/vpx-standalone-alp4k/tree/main/external/vpx-deadpool)
 6.  Place them inside the `pupvideos/jpsdeadpool` folder, and overwrite files if prompted.  **This is necessary otherwise it does not work**
 7. Enjoy this amazing table with extra sounds and videos! 
 
