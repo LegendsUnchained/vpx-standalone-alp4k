@@ -27,7 +27,8 @@
 ## ⚠️ Warning
 
 This table can occasionally crash for seemingly no reason. Our best guess is maybe some sort of 'Out of Memory' issue.
-You can play full games without crashes though. Please report it to us in the Discord if it makes the table unplayable!
+You can play full games without crashes though. Please report it to us in the Discord if 
+you feel that this makes the table unplayable and should be removed!
 
 <br>
 
