@@ -1,4 +1,4 @@
-# Wrath of Olympus, JP's (Original 2022)
+﻿# Wrath of Olympus, JP's (Original 2022)
 
 ![Table Preview](../../images/vpx-jps-wrath-of-olympus-preview.jpg)
 
@@ -36,6 +36,7 @@ This table is available through the Table Manager Wizard, which makes installati
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`Wrath of Olympus, JP's`**
 5.  Follow the on-screen instructions to download and upload the required files
+6. Slay the monsters and defeat the Gods to claim your right in the journals of history!
 
 <br>
 

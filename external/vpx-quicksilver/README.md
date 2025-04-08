@@ -1,4 +1,4 @@
-# Quicksilver (Stern 1980)
+﻿# Quicksilver (Stern 1980)
 
 ![Table Preview](../../images/vpx-quicksilver.jpg).jpg.9805d6c0366021edfdb7d8263765699d.jpg)
 
@@ -35,6 +35,7 @@ This table is available through the Table Manager Wizard, which makes installati
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`Quicksilver`**
 5.  Follow the on-screen instructions to download and upload the required files
+6. "It aint't just any plain old silver ball..."
 
 <br>
 

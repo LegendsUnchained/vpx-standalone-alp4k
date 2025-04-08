@@ -1,4 +1,4 @@
-# Creature from the Black Lagoon (Bally 1992)
+﻿# Creature from the Black Lagoon (Bally 1992)
 
 ![Table Preview](../../images/vpx-creature-preview.jpg)
 
@@ -35,6 +35,7 @@ This table is available through the Table Manager Wizard, which makes installati
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`Creature from the Black Lagoon`**
 5.  Follow the on-screen instructions to download and upload the required files
+6. "The boys around here call it "The Black Lagoon" - a paradise. Only they say nobody has ever come back to prove it."
 
 <br>
 

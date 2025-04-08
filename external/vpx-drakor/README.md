@@ -1,4 +1,4 @@
-# Drakor (Taito do Brasil 1979)
+﻿# Drakor (Taito do Brasil 1979)
 
 ![Table Preview](../../images/vpx-drakor.jpg)
 
@@ -36,6 +36,7 @@ This table is available through the Table Manager Wizard, which makes installati
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`Drakor`**
 5.  Follow the on-screen instructions to download and upload the required files
+6. Fun Fact: Drakor is a Brazilian clone of the 1979 Williams table Gorgar!
 
 <br>
 

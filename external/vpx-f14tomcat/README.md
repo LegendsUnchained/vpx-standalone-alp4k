@@ -1,4 +1,4 @@
-# F-14 Tomcat (Williams 1987)
+﻿# F-14 Tomcat (Williams 1987)
 
 ![Table Preview](../../images/vpx-f14tomcat.png)
 
@@ -35,6 +35,7 @@ This table is available through the Table Manager Wizard, which makes installati
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`F-14 Tomcat`**
 5.  Follow the on-screen instructions to download and upload the required files
+6. "Hiiiiighwaaaay tooooooo theeee DANGER ZONNEEE!"
 
 <br>
 

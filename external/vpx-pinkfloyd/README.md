@@ -1,4 +1,4 @@
-# Pink Floyd (Original 2022)
+﻿# Pink Floyd (Original 2022)
 
 ![Table Preview](../../images/vpx-pinkfloyd.png)
 
@@ -36,6 +36,7 @@ This table is available through the Table Manager Wizard, which makes installati
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`Pink Floyd`**
 5.  Follow the on-screen instructions to download and upload the required files
+6. 'If ya don't eat yer meat, you can't have any pudding! How can ya have any pudding if ya don't eat ya meat?' - Teacher
 
 <br>
 

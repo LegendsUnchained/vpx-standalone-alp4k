@@ -1,4 +1,4 @@
-# Guns N Roses (Data East 1994) 
+﻿# Guns N Roses (Data East 1994) 
 
 ![Table Preview](../../images/vpx-gnr.png)
 
@@ -35,6 +35,7 @@ This table is available through the Table Manager Wizard, which makes installati
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`Guns N Roses`**
 5.  Follow the on-screen instructions to download and upload the required files
+6. "Of all the bands in the world.... this is definitely one of them!"
 
 <br>
 
