@@ -15,7 +15,6 @@
 **Tested by:** [psybocilin]
 
 <br>
-<br>
 
 
 ## ⚠️ Warning
@@ -25,7 +24,6 @@ get stuck in the coin flip rail. It is recommended to always full plunge.
 
 <br>
 
----
 
 ## Status 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
