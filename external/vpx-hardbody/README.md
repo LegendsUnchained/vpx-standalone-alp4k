@@ -2,40 +2,48 @@
 
 ![Table Preview](../../images/vpx-hardbody-preview.png)
 
-Author: [ARMYAVIATION](https://vpuniverse.com/profile/18348-armyaviation/)  
-Version:  Hardbody (Bally 1987) 1.4  
-Download: [VP Universe](https://vpuniverse.com/files/file/5956-hardbody-bally-1987/)
+<br>
 
-DirectB2S
-
-Author: [Wildman](https://vpuniverse.com/profile/5-wildman/)  
-Version: Hardbody (Bally 1987) (Choice of with or w/o mirror effect)  
-Download: [VP Universe](https://vpuniverse.com/files/file/5654-hardbody-bally-1987/)
-
-ROM
-
-Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)  
-Version: hardbody.zip  
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=200)
-
-Tested by:
-[CoffeeAtJoes]
-
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-1983-b84441e
+## *️⃣  Table Statistics
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 48 |
 
-## Instructions
+<br>
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-hardbody.elf
-- Download the table & backglass zips above, extract them and copy them to external/vpx-hardbody folder
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
-- Place ROM zip file into vpx-hardbody/pinmame/roms folder. DO NOT UNZIP!
-- Note: You can choose which backglass you prefer! I went with the classic faux mirror look, with the DMD on the glass!
-- Note: The nudge buttons have been mapped to the save gates for ease of use.
-- "We're here to *PUMP* you up!"
+**VPXS 4KP Testers:**
+  - CoffeeAtJoes
+  - Mox
+
+<br>
+
+---
+
+<br>
+
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Hardbody`**
+5.  Follow the on-screen instructions to download and upload the required files
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+__*We hope you enjoy!!   - the VPXS 4KP team!*__
+
+<br>
+<br>
+<br>
+<br>
+<br>
