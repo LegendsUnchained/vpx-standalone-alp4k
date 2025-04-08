@@ -50,7 +50,7 @@ __*We hope you enjoy!!   - the VPXS 4KP team!*__
 
 ## ➕ Optional Extras
 
-> ℹ️ All optional extras can be added to the table after the Wizard installation via: 
+> All optional extras can be added to the table after the Wizard installation via: 
 > -  Clicking `"Go to table"` directly after wizard installation
 > -  Navigate to the table folder using the `USB Root` tab.
 
