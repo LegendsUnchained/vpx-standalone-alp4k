@@ -16,7 +16,7 @@
 
 <br>
 
-## ℹ️ This Table is Available in the Wizard! 🪄✨
+## ℹ️ Available in the Wizard! 🪄✨
 
 <br>
 
