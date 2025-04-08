@@ -23,6 +23,15 @@
 
 ---
 
+
+## ⚠️ Warning
+
+This table can occasionally crash for seemingly no reason. Our best guess is maybe some sort of 'Out of Memory' issue.
+You can play full games without crashes though. Please report it to us in the Discord if it makes the table unplayable!
+
+<br>
+
+
 ## Status 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
