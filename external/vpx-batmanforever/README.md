@@ -2,34 +2,47 @@
 
 ![Table Preview](../../images/vpx-batmanforever.png)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author | 
-|-----------|--------|----------|--------------|
-| **VPX** | [VP Universe](https://vpuniverse.com/files/file/11601-batman-forever-sega-1995-with-vr-room/) | 1.3 | [drakkon](https://vpuniverse.com/profile/51568-drakkon/) |
-| **B2S & DMD** | [VP Universe](https://vpuniverse.com/files/file/17563-batman-forever-sega-1995-b2s-with-full-dmd/) | 1.0 | [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
-| **ROM** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=871) | **SHA:** a93b6f149547dcf93ba524c0b8234592e1cbc12e <br />**MD5:** 66d63871f98b5efefd7a67c4189c6946 |  |
+## *️⃣  Table Statistics
 
-**Tested by:** [Bla1ze]
-
----
-
-## Status 
-
-**Minimum VPX Standalone build:** 10.8.0-1983-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 45 |
+<br>
+
+**VPXS 4KP Testers:**
+  - Bla1ze
+  - OminousOsie 🌸
+
+<br>
 
 ---
 
-## Instructions
+<br>
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-batmanforever.elf`
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-batmanforever`
-- Rom file (`batmanf.zip`) stays in zip folder, place zip file in `vpx-batmanforever/pinmame/roms`
-- Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same.
-> Do you have a thing for bats? 🦇
-s
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Batman Forever`**
+5.  Follow the on-screen instructions to download and upload the required files
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+__*We hope you enjoy!!   - the VPXS 4KP team!*__
+
+<br>
+<br>
+<br>
+<br>
+<br>
