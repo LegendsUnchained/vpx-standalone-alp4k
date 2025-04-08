@@ -1,35 +1,50 @@
-# Godzilla (Sega 1998)
-Tested by: kaoticBPR
+﻿# Godzilla (Sega 1998)
+
 ![Table Preview](../../images/vpx-godzilla-preview.jpg)
 
-Table
+<br>
 
-Authors: [bigus1](https://www.vpforums.org/index.php?showuser=107629)
-Version: 2.0
-Download [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14616)
+## *️⃣  Table Statistics
 
-
-DirectB2S
-
-Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
-Version: 2.0
-Download: [VP Universe](https://vpuniverse.com/files/file/15924-godzilla-sega-1998-b2s-with-full-dmd/)
-
-ROM
-
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=241)
-
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
 
-## Instructions
+<br>
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-godzilla.elf
-- Download the table and directb2s versions listed above and copy them into this folder
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-"Size Does Matter!"
+**VPXS 4KP Testers:**
+  - KaoticBPR
+  - OminousOsie 🌸
+
+<br>
+
+---
+
+<br>
+
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Godzilla`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"Size DOES matter!"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+__*We hope you enjoy!!   - the VPXS 4KP team!*__
+
+<br>
+<br>
+<br>
+<br>
+<br>

@@ -1,34 +1,51 @@
-# Whirlwind (Williams 1990)
+﻿# Whirlwind (Williams 1990)
 
 ![Table Preview](../../images/vpx-wwind.jpg)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author |
-|:---------:|:----:|:-------:|:------:|
-| VPX | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=15672) | 1.0 | [bigus1](https://www.vpforums.org/index.php?showuser=107629) |
-| B2S | [VP Universe](https://vpuniverse.com/files/file/10812-whirlwind-williams-1990-b2s-with-full-dmd/) | 1.0.0 | N/A |
-| DMD | N/A | N/A | N/A |
-| ROM | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=937) | whirl_l3.zip | [destruk](https://www.vpforums.org/index.php?showuser=5) |
+## *️⃣  Table Statistics
 
-**Tested by:** [CoffeeAtJoes]
-
----
-
-## Status 
-Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 51 |
 
+<br>
+
+**VPXS 4KP Testers:**
+  - CoffeeAtJoes
+  - evilwraith
+  - OminousOsie 🌸
+
+<br>
+
 ---
 
-## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-wwind.elf
-- Download the table & backglass zips above, extract them and copy them to the /external/vpx-wwind folder
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-- Place ROM zip file into vpx-wwind/pinmame/roms folder. DO NOT UNZIP!
-- A storm is coming! This one's gonna blow you AWAY!
+<br>
 
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Whirlwind`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"A storm is coming! This one's gonna blow you AWAY!"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+__*We hope you enjoy!!   - the VPXS 4KP team!*__
+
+<br>
+<br>
+<br>
+<br>
+<br>

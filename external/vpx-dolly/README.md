@@ -1,37 +1,51 @@
-# Dolly Parton (Bally 1979)
+﻿# Dolly Parton (Bally 1979)
 
 ![Table Preview](../../images/vpx-dolly-parton-preview.jpg)
 
-Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 5.5.0  
-Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=12917)
+<br>
 
-DirectB2S
-
-Authors: [ryguy417](https://vpuniverse.com/profile/31096-ryguy417/)  
-Download: [VPUniverse](https://vpuniverse.com/files/file/13456-dolly-parton-bally-1978-b2s-with-full-dmd/)
-
-ROM
-
-Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)  
-Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=693)
-
-
-Tested by: evilwraith
-
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-1989-a764013
+## *️⃣  Table Statistics
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 
-## Instructions
+<br>
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-dolly.elf
-- Download the table and directb2s listed above, extract (if necessary) and copy all contents to external/vpx-dolly
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-- The ROM zip file gets copied to vpx-dolly/pinmame/roms (do not unzip)
-- "I'm not offended by all the dumb blonde jokes because I know I'm not dumb...and I also know that I'm not blonde."
+**VPXS 4KP Testers:**
+  - evilwraith
+  - OminousOsie 🌸
+  - CoffeeAtJoes
+
+<br>
+
+---
+
+<br>
+
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Dolly Parton`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"I'm not offended by all the dumb blonde jokes because I know I'm not dumb... and I also know that I'm not blonde." - Dolly Parton*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+__*We hope you enjoy!!   - the VPXS 4KP team!*__
+
+<br>
+<br>
+<br>
+<br>
+<br>
