@@ -4,7 +4,7 @@
 
 <br>
 
-## ↗️ Table Statistics
+## *️⃣  Table Statistics
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
@@ -17,6 +17,8 @@
 <br>
 
 ## ℹ️ This Table is Available in the Wizard! 🪄✨
+
+<br>
 
 This table is available through the Table Manager Wizard, which makes installation quick and easy!
 
