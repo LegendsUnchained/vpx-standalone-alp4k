@@ -16,7 +16,7 @@
 
 <br>
 
-## ℹ️ Available in the Wizard! 🪄✨
+## ❇️ Available in the Wizard! 🪄✨
 
 <br>
 
