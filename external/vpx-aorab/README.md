@@ -35,7 +35,7 @@ This table is available through the Table Manager Wizard, which makes installati
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`Adventures of Rocky and Bullwinkle and Friends`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. "Hey, Rocky! Watch me pull a rabbit out of my hat!"
+6. *"Hey, Rocky! Watch me pull a rabbit out of my hat!"*
 
 <br>
 

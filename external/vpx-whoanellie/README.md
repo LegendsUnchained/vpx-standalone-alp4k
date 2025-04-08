@@ -36,7 +36,7 @@ This table is available through the Table Manager Wizard, which makes installati
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`Whoa Nellie! Big Juicy Melons`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. "See the mountain of melons!"
+6. *"See the mountain of melons!"*
 
 <br>
 

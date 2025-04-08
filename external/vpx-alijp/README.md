@@ -36,7 +36,7 @@ This table is available through the Table Manager Wizard, which makes installati
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`Ali`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. "If my mind can conceive it, if my heart can believe it–then I can achieve it."
+6. *"If my mind can conceive it, if my heart can believe it–then I can achieve it."*
 
 <br>
 

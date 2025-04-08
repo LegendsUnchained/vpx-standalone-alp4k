@@ -36,7 +36,7 @@ This table is available through the Table Manager Wizard, which makes installati
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`Mission Impossible (Limited Edition)`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. "Your mission should you choose to accept it, is to try and survive in this very fast, high scoring table. This message will self destruct in 5....4....3....2....1!"
+6. *"Your mission should you choose to accept it, is to try and survive in this very fast, high scoring table. This message will self destruct in 5....4....3....2....1!"*
 
 <br>
 

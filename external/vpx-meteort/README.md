@@ -35,7 +35,7 @@ This table is available through the Table Manager Wizard, which makes installati
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`Meteor`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. It's coming at 30,000 mph... and there's no place on Earth to hide!
+6. *It's coming at 30,000 mph... and there's no place on Earth to hide!*
 
 <br>
 

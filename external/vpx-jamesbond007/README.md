@@ -35,7 +35,7 @@ This table is available through the Table Manager Wizard, which makes installati
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`Bond 60th`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. "Go enjoy some shaken, not stirred, Martinis!"
+6. *"Go enjoy some shaken, not stirred, Martinis!"*
 
 <br>
 

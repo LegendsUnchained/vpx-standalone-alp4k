@@ -35,7 +35,7 @@ This table is available through the Table Manager Wizard, which makes installati
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`Street Fighter II, JP's`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. "You need to defeat Sheng Long to stand a chance..."
+6. *"You need to defeat Sheng Long to stand a chance..."*
 
 <br>
 

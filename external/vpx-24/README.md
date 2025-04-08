@@ -35,7 +35,7 @@ This table is available through the Table Manager Wizard, which makes installati
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`24`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. "The following takes place between 6 A.M. and 7 A.M"
+6. *"The following takes place between 6 A.M. and 7 A.M"*
 
 <br>
 

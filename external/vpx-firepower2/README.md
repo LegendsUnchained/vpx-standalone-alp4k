@@ -36,7 +36,7 @@ This table is available through the Table Manager Wizard, which makes installati
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`Firepower II`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. "The Sequel to the Classic, that is also a Classic"
+6. *"The Sequel to the Classic, that is also a Classic"*
 
 <br>
 
