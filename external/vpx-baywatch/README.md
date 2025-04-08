@@ -22,7 +22,7 @@
 
 This table is available through the Table Manager Wizard, which makes installation quick and easy!
 
-### How to find it:
+### How to install:
 
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
@@ -33,9 +33,10 @@ This table is available through the Table Manager Wizard, which makes installati
 
 Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
 
-__*We hope you enjoy!!   - ♡ the VPXS 4KP team!*__
+__*We hope you enjoy!!   - the VPXS 4KP team!*__
 
 
+<br>
 <br>
 <br>
 <br>
