@@ -12,7 +12,7 @@
 
 <br>
 
-VPXS 4KP Testers:
+**VPXS 4KP Testers:**
   - Bla1ze
   - OminousOsie 🌸
 
