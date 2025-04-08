@@ -58,9 +58,9 @@ __*We hope you enjoy!!   - the VPXS 4KP team!*__
 
 ### ⏯️ Music Files:
 
-1.  Download table from [VP Universe](https://vpuniverse.com/files/file/18690-f-14-tomcat-williams-1987-hanibals-4k-mod/) (by [Hanibal2001](https://vpuniverse.com/profile/872-hanibal2001/)
+1.  Download table folder from [VP Universe](https://vpuniverse.com/files/file/18690-f-14-tomcat-williams-1987-hanibals-4k-mod/) (by [Hanibal2001](https://vpuniverse.com/profile/872-hanibal2001/))
 2.  Extract the folder `Music` from the puppack zip, and put it in the `external/vpx-f14tomcat` in the Table Manager
-3.  You should then have `external/vpx-f14tomcat/Music`
+3.  You should then have `external/vpx-f14tomcat/Music/F14` > `1.mp3` / `2.mp3` / `3.mp3`  etc etc
 4.  Enjoy!
 
 
