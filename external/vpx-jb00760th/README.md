@@ -1,4 +1,4 @@
-# James Bond 007 60th Anniversary (Stern 2023)
+# Bond 60th - Limited Edition (Original 2023)
 
 ![Table Preview](../../images/vpx-jb00760th.png)
 

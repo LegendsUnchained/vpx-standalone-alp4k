@@ -2,46 +2,72 @@
 
 ![Table Preview](../../images/vpx-big_trouble.jpg)
 
-Authors: [BALUTITO](https://vpuniverse.com/profile/36070-balutito/) / [TeamTuga](https://vpuniverse.com/profile/31843-teamtuga/)  
-Version: 1.5 DOF no puppack user  
-Download: [VP Universe](https://vpuniverse.com/files/file/11309-big-trouble-in-little-china/)
+<br>
 
-DirectB2S
-
-Authors [marcobus2005](https://vpuniverse.com/profile/53087-marcobus2005/)  
-Version: 2.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/16604-big-trouble-in-little-china-original-2020-animated-b2s-with-full-dmd/)
-
-PupPack
-
-Author: [TeamTuga](https://vpuniverse.com/profile/31843-teamtuga/)  
-Version: 1.0.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/11312-big-trouble-in-little-china/?do=download)
-
-
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-5b941e6
+## *️⃣  Table Statistics
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 
-## Instructions
+<br>
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-big_trouble.elf
-- Make sure to download the 1.5 DOF no puppack otherwise there will be no music
-- Download the table and directb2s versions listed above, extract and copy them into the external/vpx-big_trouble folder
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-- Remember, "It's All In The Reflexes!" ---Jack Burton
+**VPXS 4KP Testers:**
+  - T3chZombie
+  - OminousOsie 🌸
 
-## Optional
+<br>
 
-You can optionally install a puppack for this table. If you want the non pup version back, just delete the pupvideos folder.
+---
 
-- Download the bigtroublepuppack.rar puppack from the above link.
-- Create the folder pupvideos.
-- Extract the folder BigTrouble from the archive bigtroublepuppack.rar into the pupvideos folder.
-- Unzip the use_these_pup_files.zip and place them inside the pupvideos/BigTrouble folder, and overwrite files if prompted.
-- Enjoy the table with puppack. 
+<br>
+
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Big Trouble in Little China`**
+5.  Follow the on-screen instructions to download and upload the required files
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+__*We hope you enjoy!!   - the VPXS 4KP team!*__
+
+<br>
+
+---
+
+<br>
+
+## ➕ Optional Extras
+
+> All optional extras can be added to the table after the Wizard installation via: 
+> -  Clicking `"Go to table"` directly after wizard installation
+> -  Navigate to the table folder using the `USB Root` tab.
+
+<br>
+
+### 🎦 Puppack (Backglass Videos/Music):
+
+1.  Download the puppack `bigtroublepuppack.rar` from [VP Universe](https://vpuniverse.com/files/file/11312-big-trouble-in-little-china/?do=download) (by [TeamTuga](https://vpuniverse.com/profile/31843-teamtuga/))
+2.  Create the folder `pupvideos` within the `external/vpx-big_trouble` folder in the Table Manager
+3.  Extract the folder `BigTrouble` from the puppack zip, and put it in the `pupvideos`
+4.  Unzip the `use_these_pup_files.zip` from the `external/vpx-big_trouble` folder in the [repository](https://github.com/TheOminousOsie/vpx-standalone-alp4k/tree/main/external/vpx-deadpool)
+5.  Place them inside the `pupvideos/BigTrouble` folder, and overwrite files if prompted.  **This is necessary otherwise it does not work**
+6. Enjoy this amazing table with extra sounds and videos! 
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

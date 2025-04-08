@@ -2,34 +2,48 @@
 
 ![Table Preview](../../images/vpx-spidermanve.png)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author | 
-|-----------|--------|----------|--------------|
-| **VPX** | [VPUniverse](https://vpuniverse.com/files/file/6530-spider-man-vault-edition-siggis-mod-stern-2016-vpw-mod/) | 2.1 | [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/) |
-| **B2S** | [VPUniverse](https://vpuniverse.com/files/file/13305-spider-man-stern-2007-alt-b2s-full-dmd/) | 1.5 |[hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
-| **DMD** | Included | - | - |
-| **ROM** | [VPUniverse](https://vpuniverse.com/files/file/4202-spider-man-vault-edition-v101/) | smanve_101 | [stefanaustria](https://vpuniverse.com/profile/5730-stefanaustria/) |
-
-**Tested by:** [Bla1ze]
-
----
-
-## Status 
-**Minimum VPX Standalone build:** 10.8.0-1983-b84441e
+## *️⃣  Table Statistics
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 
+<br>
+
+**VPXS 4KP Testers:**
+  - Bla1ze
+  - Sscorpio
+
+<br>
+
 ---
 
-## Instructions
+<br>
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-spidermanve.elf`
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-spidermanve.elf`
-- Make sure `(.vpx)` `(.direct2b2s)` and `(.ini)` are all named the same.
-- Rom file (smanve_101) stays in zip folder, place zip file in `vpx-spidermanvw/pinmame/roms`
-- "I'll never look at a sandcastle the same way again!"
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Spider-Man (Vault Edition)`**
+5.  Follow the on-screen instructions to download and upload the required files
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+__*We hope you enjoy!!   - the VPXS 4KP team!*__
+
+<br>
+<br>
+<br>
+<br>
+<br>
