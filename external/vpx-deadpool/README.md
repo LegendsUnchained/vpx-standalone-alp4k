@@ -35,6 +35,7 @@ This table is available through the Table Manager Wizard, which makes installati
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`Deadpool, JPs`**
+5.  Follow the on-screen instructions to download and upload the required files
 
 <br>
 
@@ -58,7 +59,6 @@ __*We hope you enjoy!!   - the VPXS 4KP team!*__
 
 ### 🎦 Puppack (Backglass Videos/Music):
 
-***Note:** The puppack is optional, but enhance the table. The framerate drops to around 55.*
 1.  Download the puppack `DPpuppack2.0.7z` from [VP Universe](https://vpuniverse.com/files/file/7368-deadpool-table-v512-puppack-20/) (by [TeamTuga](https://vpuniverse.com/profile/31843-teamtuga/))
 2.  Create the folder `pupvideos` within the `external/vpx-deadpool` folder
 3.  Extract the folder `jpsdeadpool` from the puppack zip.

@@ -34,9 +34,16 @@ This table is available through the Table Manager Wizard, which makes installati
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`24`**
+5.  Follow the on-screen instructions to download and upload the required files
 
 <br>
 
 Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
 
 __*We hope you enjoy!!   - the VPXS 4KP team!*__
+
+<br>
+<br>
+<br>
+<br>
+<br>
