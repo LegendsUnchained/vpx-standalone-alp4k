@@ -10,5 +10,9 @@ testers:
   - "Bla1ze"
 vpxVPSId: "MbInzTSL"
 vpxChecksum: "E6D5C1114F61EC758D14455B262B548E"
+mainNotes: >-
+  Note: There is a ROM/switch issue that means that
+  the ROM incorrectly believes the coin door is open.
+  Just ignore it and hit start!
 applyFixes:
   - "bass"
