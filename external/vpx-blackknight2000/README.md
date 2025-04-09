@@ -2,35 +2,51 @@
 
 ![Table Preview](../../images/vpx-blackknight2000.png)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author | 
-|-----------|--------|----------|--------------|
-| **VPX** | [VPUniverse](https://vpuniverse.com/files/file/9054-black-knight-2000-williams-1989-w-vr-room/) | 2.0.2 | [UnclePaulie](https://vpuniverse.com/profile/16685-unclepaulie/) |
-| **B2S & DMD** | [VPUniverse](https://vpuniverse.com/files/file/8497-black-knight-2000-williams-1989/) | {version} | [Wildman](https://vpuniverse.com/profile/5-wildman/) |
-| **ROM** | [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=925) | bk2k_l4.zip | |
+## *️⃣  Table Statistics
 
-**Tested by:** 
-
----
-
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 46 |
 
+<br>
+
+**VPXS 4KP Testers:**
+  - Bla1ze
+  - Boris
+  - Mox
+
+<br>
+
 ---
 
-## Instructions
+<br>
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-blackknight2000.elf`
-- Download the table and directb2s versions listed above and copy them into this folder
-- Make sure the `vpx`, `direct2b`, and `ini` files are all named the "exact" same
-- Place `bk2k_l4.zip` in the `external/vpx-blackknight2000/pinmame/roms` folder *Do Not unzip*
+## ❇️ Available in the Wizard! 🪄✨
 
-> "Get your revenge on the black knight that mocks you"
+<br>
 
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Black Knight 2000`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"Get your revenge on the black knight that mocks you."*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+__*We hope you enjoy!!   - the VPXS 4KP team!*__
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

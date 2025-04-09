@@ -10,6 +10,8 @@ tagline: "May the Force be With You!"
 testers:
   - "mcap"
   - "mrandromeda"
+  - "Boris"
+  - "OminousOsie"
 vpxVPSId: "orDVZFDx8j"
 vpxChecksum: "34E0725DF92466F1351417AEA15A2471"
 applyFixes:

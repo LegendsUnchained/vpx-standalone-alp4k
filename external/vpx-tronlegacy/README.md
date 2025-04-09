@@ -1,47 +1,78 @@
-# Tron Legacy LE (Stern 2011)
+# Disney TRON Legacy Limited Edition (Stern 2011)
 
 ![Table Preview](../../images/vpx-tronlegacy.png)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author | 
-|-----------|--------|----------|--------------|
-| **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=15427) | 2.1 | [Bigus1](https://www.vpforums.org/index.php?showuser=107629)  |
-| **B2S** | [VP Universe](https://vpuniverse.com/files/file/14202-tron-legacy-le-stern-2011-b2s-2-with-full-dmd/) | 1.0.0 | [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  |
-| **ROM** | [VP Forums](https://vpuniverse.com/files/file/3415-tron-legacy-limited-edition-v174/) | 1.74 | [VPUStaff](https://vpuniverse.com/profile/50-vpustaff/) |
-| **Serum** | [VP Universe](https://vpuniverse.com/files/file/18393-tron-legacy-stern-2011-64-colors/) | 2.01 | [PastorLUL](https://vpuniverse.com/profile/42770-pastorlul/)  |
-| **PUPPACK** | [VP Universe](https://vpuniverse.com/files/file/6814-tron-legacy-stern-end-of-line-pup-pack/) | 1.0.0 | [TerryRed](https://vpuniverse.com/profile/10155-terryred/)   |
-
-**Tested by:** [Bla1ze] & [mrandromeda]
-
----
-
-
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-1983-a764013
+## *️⃣  Table Statistics
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 
-## Instructions
+<br>
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-tronlegacy.elf
-- Download the table and directb2s versions listed above and copy them into /external/vpx-tronlegacy
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
-- Place ROM zip file into vpx-tronlegacy/pinmame/roms folder. DO NOT UNZIP!
-- If using the Alt Color, make "altcolor" folder in pinmame folder and place the trn_174h folder with the .cRZ file in it in the altcolor folder
-- Power to the users!
+**VPXS 4KP Testers:**
+  - Bla1ze
+  - mrandromeda
+  - OminousOsie 🌸
 
-## Optional
+<br>
 
-The puppack is optional and sometimes you get a few framerate drops to 55 but it looks so good.
+---
 
-- Download the 648738633_TronLegacy-EndofLine-PuP-Pack.zip puppack from the above link.
-- Create the folder pupvideos and extract the folder trn_174h from the puppack zip in this folder.
-- Unzip the use_these_pup_files.zip and place them inside the pupvideos/trn_174h folder, and overwrite files if prompted.
-- __Delete the directb2s file because this is not needed anymore and makes the backglass blink.__
+<br>
+
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Disney TRON Legacy (Limited Edition)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"Power to the users!"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+__*We hope you enjoy!!   - the VPXS 4KP team!*__
+
+
+<br>
+
+---
+
+<br>
+
+## ➕ Optional Extras
+
+> All optional extras can be added to the table after the Wizard installation via: 
+> -  Clicking `"Go to table"` directly after wizard installation
+> -  Navigate to the table folder using the `USB Root` tab.
+
+<br>
+
+### 🎦 Puppack (Backglass Videos/Music):
+
+1.  Download the puppack `648738633_TronLegacy-EndofLine-PuP-Pack.zip` from [VP Universe](https://vpuniverse.com/files/file/6814-tron-legacy-stern-end-of-line-pup-pack/) (by [TerryRed](https://vpuniverse.com/profile/10155-terryred/))
+2.  Create the folder `pupvideos` within the `external/vpx-tronlegacy` folder in the Table Manager
+3.  Extract the folder `trn_174h` from the puppack zip, and put it in the `pupvideos`
+4.  Unzip the `use_these_pup_files.zip` from the `external/vpx-tronlegacy` folder in the [repository](https://github.com/TheOminousOsie/vpx-standalone-alp4k/tree/main/external/vpx-tronlegacy)
+5.  Place them inside the `pupvideos/trn_174h` folder, and overwrite files if prompted.  **This is necessary otherwise it does not work**
+6. __Delete the `.directb2s` file in the `external/vpx-tronlegacy` folder in the Table Manager because this is not needed anymore and makes the backglass blink.__
+7. Enjoy this amazing table with extra sounds and videos! 
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
 
