@@ -7,7 +7,7 @@
 ## Files
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
-| **VPX** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=15102) | 5.5.0 | [jpsalas](https://www.vpforums.org/index.php?showuser=277) |
+| **VPX** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=15012) | 5.5.0 | [jpsalas](https://www.vpforums.org/index.php?showuser=277) |
 | **B2S** | `Cowboy Eight Ball.directb2s.zip` Included in VPX link |
 | **ROM** | `cowboy3p.zip` Included in VPX link |
 
