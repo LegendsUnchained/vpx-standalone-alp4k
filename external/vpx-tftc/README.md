@@ -1,33 +1,51 @@
-# Tales from the Crypt (Data East 1993)
+﻿# Tales from the Crypt (Data East 1993)
 
 ![Table Preview](../../images/vpx-tftc.jpg)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author | 
-|-----------|--------|----------|--------------|
-| **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14335) | 2.0 | [bigus1](https://www.vpforums.org/index.php?showuser=107629) |
-| **B2S & DMD** | [VP Universe](https://vpuniverse.com/files/file/11194-tales-from-the-crypt-data-east-1993-b2s-with-full-dmd/) | 3.0.0 | [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
-| **ROM** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=11340) | |  |
+## *️⃣  Table Statistics
 
-**Tested by:** 
-Boris
----
-
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 45 |
 
+<br>
+
+**VPXS 4KP Testers:**
+  - Boris
+  - evilwraith
+  - OminousOsie 🌸
+
+<br>
+
 ---
 
-## Instructions
+<br>
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-tftc.elf`
-- Download the table and directb2s versions listed above, extract them (if necessary) and copy them to external/vpx-tftc
-- Make sure (`.vpx`), (`.directb2s`), and (`.ini`) files are all named the same
-- Place ROM zip file into `vpx-tftc/pinmame/roms` folder. Do not unzip!
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Tales from the Crypt`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"Hello, boils and ghouls!"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+__*We hope you enjoy!!   - the VPXS 4KP team!*__
+
+<br>
+<br>
+<br>
+<br>
+<br>

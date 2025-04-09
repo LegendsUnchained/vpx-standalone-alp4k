@@ -1,41 +1,75 @@
-# JP's Deadpool
+# Deadpool, JPs (Original 2021)
 
 ![Table Preview](../../images/vpx-jps-deadpool-preview.jpg)
 
----
 
-## Files
-| File Type | Link | Version | Author | 
-|-----------|--------|----------|--------------|
-| **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=15967) | 5.5.0 | [jpsalas](https://www.vpforums.org/index.php?showuser=277) |
-| **B2S** | [VP Universe](https://vpuniverse.com/files/file/15497-deadpool-stern-2018-alternate-b2s-with-full-dmd/) | 1.0.0 | [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
-| **PUPPACK** | [VP Universe](https://vpuniverse.com/files/file/7368-deadpool-table-v512-puppack-20/) | 2.0 | [TeamTuga](https://vpuniverse.com/profile/31843-teamtuga/) |
+<br>
 
----
+## *️⃣  Table Statistics
 
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-1983-b84441e
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 
+<br>
+
+**VPXS 4KP Testers:**
+  - n-i-x
+  - SilentKat
+
+<br>
+
 ---
 
-## Instructions
+<br>
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-deadpool.elf
-- Download the table and directb2s versions listed above and copy them into this folder
-- The boom button is d-pad (or joystick) right. Press it when the light is blinking at the bottom of the table. 
-- Enjoy this amazing original table by JP Salas!
+## ❇️ Available in the Wizard! 🪄✨
 
-## Optional
+<br>
 
-The puppack is optional, but enhance the table. The framerate drops to around 55.
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
 
-- Download the DPpuppack2.0.7z puppack from the above link.
-- Create the folder pupvideos.
-- Extract the folder jpsdeadpool from the puppack zip.
-- Unzip the use_these_pup_files.zip and place them inside the pupvideos/jpsdeadpool folder, and overwrite files if prompted. __This is necessary otherwise it does not work__
-- Enjoy this amazing table with extra sounds and videos.
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Deadpool, JPs`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"MAXIMUM EFFORT!"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+__*We hope you enjoy!!   - the VPXS 4KP team!*__
+
+<br>
+
+---
+
+<br>
+
+## ➕ Optional Extras
+
+> All optional extras can be added to the table after the Wizard installation via: 
+> -  Clicking `"Go to table"` directly after wizard installation
+> -  Navigate to the table folder using the `USB Root` tab.
+
+<br>
+
+### 🎦 Puppack (Backglass Videos/Music):
+
+1.  Download the puppack `DPpuppack2.0.7z` from [VP Universe](https://vpuniverse.com/files/file/7368-deadpool-table-v512-puppack-20/) (by [TeamTuga](https://vpuniverse.com/profile/31843-teamtuga/))
+2.  Create the folder `pupvideos` within the `external/vpx-deadpool` folder in the Table Manager
+3.  Extract the folder `jpsdeadpool` from the puppack zip, and put it in the `pupvideos`
+4.  Unzip the `use_these_pup_files.zip` from the `external/vpx-deadpool` folder in the [repository](https://github.com/TheOminousOsie/vpx-standalone-alp4k/tree/main/external/vpx-deadpool)
+5.  Place them inside the `pupvideos/jpsdeadpool` folder, and overwrite files if prompted.  **This is necessary otherwise it does not work**
+6. Enjoy this amazing table with extra sounds and videos! 
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

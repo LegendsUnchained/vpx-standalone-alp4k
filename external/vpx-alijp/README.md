@@ -1,32 +1,52 @@
-# Ali, JP's (Stern 1980)
+﻿# Ali (JP's, Stern 1980)
 
 ![Table Preview](../../images/vpx-alijp.jpg)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author |
-|:---------:|:----:|:-------:|:------:|
-| VPX | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=12902) | 5.5.0 | [JPSalas](https://www.vpforums.org/index.php?showuser=277) |
-| B2S | [VP Universe](https://vpuniverse.com/files/file/21356-ali-stern-1980-b2s/) | 1.0.0 | [Wildman](https://vpuniverse.com/profile/5-wildman/) |
-| DMD | N/A | N/A | N/A |
-| ROM | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=741) | N/A | N/A |
+## *️⃣  Table Statistics
 
-**Tested by:** [Boris]
-
----
-
-## Status 
-**Minimum VPX Standalone build:** 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 
+<br>
+
+**VPXS 4KP Testers:**
+  - Bla1ze
+  - OminousOsie 🌸
+  - CoffeeAtJoes
+
+<br>
+
 ---
 
-## Instructions
-- Copy this repo folder into the "external" folder on your USB drive
-- Add your personalized launcher.elf and rename it to vpx-alijp.elf
-- Download the table and directb2s versions listed above, extract them (if necessary) and copy them to external/vpx-alijp
-- Make sure any (.vpx), (.directb2s), and (.ini) files are all named the same
-- Download the ROM listed above and copy it to vpx-alijp\pinmame\roms -- DO NOT UNZIP!
+<br>
+
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Ali`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"If my mind can conceive it, if my heart can believe it–then I can achieve it."*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+__*We hope you enjoy!!   - the VPXS 4KP team!*__
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

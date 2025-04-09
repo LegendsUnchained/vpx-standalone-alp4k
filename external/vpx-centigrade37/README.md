@@ -1,33 +1,51 @@
-# Centigrade 37 (Gottlieb 1977)
+﻿# Centigrade 37 (Gottlieb 1977)
 
 ![Table Preview](../../images/vpx-centigrade37.jpg)
 
-Authors: [bord](https://vpuniverse.com/profile/9265-bord/)  
-Version: 3.2  
-Download: [VPUniverse](https://vpuniverse.com/files/file/7231-centigrade-37-gottlieb-1977/)
+<br>
 
-DirectB2S
-
-Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
-Download: [VPUniverse](https://vpuniverse.com/files/file/7234-centigrade-37-gottlieb-1977-b2s/)
-
-ROM
-
-None
-
-Tested by: evilwraith
-
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-1989-a764013
+## *️⃣  Table Statistics
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 43 |
 
-## Instructions
+<br>
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-centigrade37.elf
-- Download the table and directb2s listed above, extract (if necessary) and copy to external/vpx-centigrade37
-- Make sure (.vpx), (.directb2s), (.vbs) and (.ini) files are all named the same
+**VPXS 4KP Testers:**
+  - evilwraith
+  - OminousOsie 🌸
+  - CoffeeAtJoes
+
+<br>
+
+---
+
+<br>
+
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Centigrade 37`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"Giant thermometer creates eye-catching animation in light box" - D. Gottlieb & Co.*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+__*We hope you enjoy!!   - the VPXS 4KP team!*__
+
+<br>
+<br>
+<br>
+<br>
+<br>
