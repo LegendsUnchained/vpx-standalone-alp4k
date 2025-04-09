@@ -15,7 +15,6 @@ LoadVPM "01000100", "Bally.VBS", 2.24
 Dim DesktopMode: DesktopMode = Table1.ShowDT
 
 Dim BallShadows: Ballshadows=0  		'******************set to 1 to turn on Ball shadows
-Dim BallShadows: Ballshadows=0  		'******************set to 1 to turn on Ball shadows
 Dim FlipperShadows: FlipperShadows=0  '***********set to 1 to turn on Flipper shadows
 
 '----- FlexDMD Options -----
