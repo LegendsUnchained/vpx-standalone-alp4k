@@ -1,7 +1,7 @@
 ---
-backglassVPSId: "5cYbFowKzU"
-backglassChecksum: "37247EB89CDC5FF3F9EB6C6A1E829308"
-backglassNotes: "Download - Centaur (Bally 1981) 3 screen.directb2s"
+backglassVPSId: "3l0Zvt8R__"
+backglassChecksum: "5977d1f16967aa539e5dd3bc5c18ead0"
+backglassNotes: "Download - Centaur (Bally 1981).zip"
 fps: 38
 romVPSId: "ayWJ44_J"
 romChecksum: "A4DC0C753D1C1E5F6D573478A7D17CF2"
@@ -11,5 +11,7 @@ tagline: "Destroy Centaur!"
 testers:
   - "Bla1ze"
   - "Mox"
-vpxVPSId: "ovlkdWgM"
-vpxChecksum: "24DBFC12F09F975DBF737DF5E2447B93"
+  - "Boris"
+  - "OminousOsie"
+vpxVPSId: "jafdLbK1"
+vpxChecksum: "8ea5708c07736287d23766f39a51ade6"
