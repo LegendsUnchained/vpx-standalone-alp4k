@@ -2,44 +2,77 @@
 
 ![Table Preview](../../images/vpx-starwars-preview.jpg)
 
+<br>
 
----
-
-## Files
-| File Type | Link | Version | Author | 
-|-----------|--------|----------|--------------|
-| **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=18153) | 2.0 | [Bigus1](https://www.vpforums.org/index.php?showuser=107629) |
-| **B2S** | [VP Universe](https://vpuniverse.com/files/file/12651-star-wars-data-east-1992-b2s-with-full-dmd/) | 1.5 | [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
-| **ROM** | [VP Universe](https://vpuniverse.com/files/file/4201-star-wars-106-20th-anniversary/) | 1.06 | [CarnyPriest](https://vpuniverse.com/profile/1146-carnypriest/) |
-
-### Note!
-
-For the B2S download the first file: `Star Wars (Data East 1992) full dmd.zip`
-
-If you would like to use version 1.07 of the ROM, instead of the above 1.06, then:
-
-- Download the 2 ROM files here:
-   - ROM 1: [VP Universe](https://vpuniverse.com/files/file/4362-star-wars-107-20th-anniversary/)  
-   - ROM 2: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=7207)
-- Upload both rom files, STILL ZIPPED, to `vpx-starwars/pinmame/roms`
-- Open `Star Wars (Data East 1992)_Bigus(MOD)2.0.vbs` file, and change line 40 from `Const cGameName = "stwr_106"` to `Const cGameName = "stwr_107"`
-
----
-
-**Tested by:** [mcap] & [mrandromeda]
-
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-1989-a764013
+## *️⃣  Table Statistics
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 
-## Instructions
+<br>
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-starwars.elf
-- Download the table and directb2s versions listed above, extract and copy them into this folder. 
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
-- Place the ROM zip file into vpx-starwars/pinmame/roms folder. DO NOT UNZIP!
+**VPXS 4KP Testers:**
+  - mcap
+  - mrandromeda
+  - Boris
+  - OminousOsie 🌸
+
+<br>
+
+---
+
+<br>
+
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Star Wars`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *""May the Force be With You!""*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+__*We hope you enjoy!!   - the VPXS 4KP team!*__
+
+<br>
+
+---
+
+<br>
+
+## ➕ Optional Extras
+
+> All optional extras can be added to the table after the Wizard installation via: 
+> -  Clicking `"Go to table"` directly after wizard installation
+> -  Navigate to the table folder using the `USB Root` tab.
+
+<br>
+
+### 🔃 Updated ROM:
+
+1.  If you would like to use version 1.07 of the ROM, instead of the above 1.06, then:
+2.  Download the 2 ROM files here:
+   - ROM 1: [VP Universe](https://vpuniverse.com/files/file/4362-star-wars-107-20th-anniversary/)  
+   - ROM 2: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=7207)
+3.  Upload both rom files, STILL ZIPPED, to `external/vpx-starwars/pinmame/roms`
+4.  Open `Star Wars (Data East 1992)_Bigus(MOD)2.0.vbs` file, and change line 40 from `Const cGameName = "stwr_106"` to `Const cGameName = "stwr_107"`
+5. Patch notes can be found here: [pinballcode](https://www.pinballcode.com/sw107)
+6. Enjoy the latest updates! and a big thank you to Dioskilos!
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
