@@ -11,7 +11,7 @@
 | **B2S** | `Cowboy Eight Ball 2.directb2s.zip` Included in VPX link |
 | **ROM** | [retrostic](https://www.retrostic.com/roms/mame/cowboy-eight-ball-2-55542#google_vignette) | | |
 
-**Tested by:** [Curt](https://github.com/Old-Cyrus)
+**Tested by:** Boris and Curt
 
 ---
 
