@@ -12,6 +12,15 @@
 
 <br>
 
+
+## ⚠️ Warning
+
+There is a known bug on this table, sometimes the ball gets stuck on the right ramp. 
+There isn't really anything that can be done about it. But it doesn't happen too often.
+
+<br>
+
+
 **VPXS 4KP Testers:**
   - TechZombie
   - Sscorpio
