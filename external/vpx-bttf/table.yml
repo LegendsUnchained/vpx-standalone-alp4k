@@ -1,20 +1,21 @@
 ---
-backglassVPSId: "eLz2XPuacN"
-backglassChecksum: "E47A69AA51A5EF10EC3F5EEFFA30D98E"
-coloredROMVPSId: "UAXbLu0rGk"
-coloredROMChecksum: "55477D67645F9647755E65392B2186C6"
-fps: 35
+tableVPSId: "43ma3WQK"
+vpxVPSId: "nskyoXPp"
+vpxChecksum: "5128EDB94988AF936A968B2C94B11182"
+vpxNotes: "'Download Back To The Future (Data East 1990)_Bigus(MOD)2.2.vpx.zip'"
+backglassVPSId: "nC5fd2Sk1b"
+backglassChecksum: "757ceb395bd69cf71b2e8f5dc0699053"
+backglassNotes: "Download 'Back to the Future 2-Screen B2S.rar'"
+fps: 40
 romVPSId: "kfX9FwKX"
 romChecksum: "AAAE65170FF4AF94C552AEAD8CCFAAFC"
 romNotes: "Download - bttf_a27.zip"
-tableVPSId: "43ma3WQK"
 tagline: >-
   "Wait a Minute, Doc. Are You Telling Me You
   Built a Time Machine... Out of a DeLorean?"
 testers:
+  - "Boris"
   - "Mox"
-vpxVPSId: "nskyoXPp"
-vpxChecksum: "5128EDB94988AF936A968B2C94B11182"
-enabled: false
 applyFixes:
   - "bass"
+  
