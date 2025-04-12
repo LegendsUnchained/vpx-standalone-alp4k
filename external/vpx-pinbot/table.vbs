@@ -26,7 +26,7 @@ Dim PFGlass
 
 
 '----- Shadow Options -----
-Const DynamicBallShadowsOn = 1		'0 = no dynamic ball shadow, 1 = enable dynamic ball shadow
+Const DynamicBallShadowsOn = 0		'0 = no dynamic ball shadow, 1 = enable dynamic ball shadow
 
 'VR Room
 VRRoom = 0					  	' 0 = VR OFF, 1 = Minimal VR Room
