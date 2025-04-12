@@ -18,6 +18,10 @@ testers:
   - "TechZombie"
   - "Sscorpio"
   - "CoffeeAtJoes"
+mainNotes: >-
+  Note: There is a known bug on this table, sometimes the ball
+  gets stuck on the right ramp. There isn't really anything that
+  can be done about it. But it doesn't happen too often.
 vpxVPSId: "qV3Z3oQ8md"
 vpxChecksum: "e6df3800f7c9286fa195e84034da683a"
 applyFixes:
