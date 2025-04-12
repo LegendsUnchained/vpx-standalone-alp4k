@@ -13,4 +13,3 @@ testers:
   - "Boris"
 applyFixes:
   - "bass"
-enabled: false
