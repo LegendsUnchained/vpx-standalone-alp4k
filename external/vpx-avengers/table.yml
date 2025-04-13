@@ -1,0 +1,14 @@
+---
+backglassVPSId: "5Cu7jSFSJF"
+backglassChecksum: "FBE177A1C8ACE2A3E1929E98F26BA963"
+fps: 60
+romVPSId: "_HrfD9cNY-"
+romChecksum: "E1FD53CE4225F90CB87D546B4984F088"
+tableVPSId: "GIAiwQnX"
+tagline: "Avengers... assemble"
+testers:
+  - "Bla1ze"
+vpxVPSId: "UAPa0kYYp_"
+vpxChecksum: "BC5699EDB1679E38094FC305BEB995E8"
+applyFixes:
+  - "bass"
