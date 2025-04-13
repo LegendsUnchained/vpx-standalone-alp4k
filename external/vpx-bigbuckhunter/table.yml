@@ -1,0 +1,14 @@
+---
+backglassVPSId: "GmTammA02B"
+backglassChecksum: "B931BF99BCDEE2676011FCA6E120A02B"
+fps: 60
+romVPSId: "0sK-slY-oy"
+romChecksum: "2A1FEE81A313DA2A3C0E1E6D715ABBF1"
+tableVPSId: "VSq_t7jP"
+tagline: "Don't be shootin' nothin' off Pappy's Porch!"
+testers:
+  - "Bla1ze"
+vpxVPSId: "UAPa0kYYp_"
+vpxChecksum: "1C614319D62274326F83A8AA2AB4C1CA"
+applyFixes:
+  - "bass"
