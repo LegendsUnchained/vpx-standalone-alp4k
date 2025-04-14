@@ -62,7 +62,7 @@ __*We hope you enjoy!!   - the VPXS 4KP team!*__
 1.  Download the puppack `bigtroublepuppack.rar` from [VP Universe](https://vpuniverse.com/files/file/11312-big-trouble-in-little-china/?do=download) (by [TeamTuga](https://vpuniverse.com/profile/31843-teamtuga/))
 2.  Create the folder `pupvideos` within the `external/vpx-big_trouble` folder in the Table Manager
 3.  Extract the folder `BigTrouble` from the puppack zip, and put it in the `pupvideos`
-4.  Unzip the `use_these_pup_files.zip` from the `external/vpx-big_trouble` folder in the [repository](https://github.com/TheOminousOsie/vpx-standalone-alp4k/tree/main/external/vpx-deadpool)
+4.  Unzip the `use_these_pup_files.zip` from the `external/vpx-big_trouble` folder in the [repository](https://github.com/LegendsUnchained/vpx-standalone-alp4k/tree/main/external/vpx-big_trouble)
 5.  Place them inside the `pupvideos/BigTrouble` folder, and overwrite files if prompted.  **This is necessary otherwise it does not work**
 6. Enjoy this amazing table with extra sounds and videos! 
 
