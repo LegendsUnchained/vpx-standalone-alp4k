@@ -639,13 +639,17 @@ Sub sw57_Hit
 End Sub
 
 Sub sw57_Timer
-    Do While cBall1.Z > 0
-        cBall1.Z = cBall1.Z -5
-        Exit Sub
-    Loop
-    Me.DestroyBall
-    Me.TimerEnabled = 0
-    Me.Enabled = 1
+    If IsObject(cBall1) Then
+        If Not cBall1 Is Nothing Then
+            Do While cBall1.Z > 0
+                cBall1.Z = cBall1.Z - 5
+                Exit Sub
+            Loop
+            Me.DestroyBall
+            Me.TimerEnabled = 0
+            Me.Enabled = 1
+        End If
+    End If
 End Sub
 
 Sub sw58_Hit
@@ -657,13 +661,17 @@ Sub sw58_Hit
 End Sub
 
 Sub sw58_Timer
-    Do While cBall2.Z > 0
-        cBall2.Z = cBall2.Z -5
-        Exit Sub
-    Loop
-    Me.DestroyBall
-    Me.TimerEnabled = 0
-    Me.Enabled = 1
+    If IsObject(cBall2) Then
+        If Not cBall2 Is Nothing Then
+            Do While cBall2.Z > 0
+                cBall2.Z = cBall2.Z - 5
+                Exit Sub
+            Loop
+            Me.DestroyBall
+            Me.TimerEnabled = 0
+            Me.Enabled = 1
+        End If
+    End If
 End Sub
 
 
