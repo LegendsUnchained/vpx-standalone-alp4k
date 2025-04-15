@@ -1,36 +1,11 @@
 Option Explicit
 Randomize
-
-'DMD Hack to include FlexDMD inside the table
-Sub ImplicitDMD_Init
-   Me.x = 30
-   Me.y = 30 
-   'Me.fontColor = RGB(255, 255, 255)
-   Me.intensityScale = 2
-   Me.width = 128 * 2
-   Me.height = 32 * 2
-   Me.visible = true
-   Me.timerenabled = true
-End Sub
-
-Sub ImplicitDMD_Timer
-   If Not FlexDMD Is Nothing Then
-      Dim DMDp: DMDp = FlexDMD.DmdColoredPixels
-      If Not IsEmpty(DMDp) Then
-         DMDWidth = FlexDMD.Width
-         DMDHeight = FlexDMD.Height
-         DMDColoredPixels = DMDp
-      End If
-   End If
-End Sub
-
-'End of DMD Hack to include FlexDMD inside the table
 '*******************************************
 '  User Options
 '*******************************************
 
 '----- DMD Options -----
-Dim UseFlexDMD : UseFlexDMD = 1		'0 = no FlexDMD, 1 = enable FlexDMD. FlexDMD cannot be used with VR.
+Dim UseFlexDMD : UseFlexDMD = 0		'0 = no FlexDMD, 1 = enable FlexDMD. FlexDMD cannot be used with VR.
 
 '----- Staged flippers options -----
 Const stagedFlipperStyle = 0		' 0 = MagnaSaves, 1 = A and apostrophe
@@ -45,8 +20,8 @@ Const LeftOutlaneDifficulty = 1		' 0 = easy, 1 = medium (default), 2 = hard, 3 =
 Const RightOutlaneDifficulty = 2	' 0 = easy, 1 = medium, 2 = hard (default), 3 = extra hard (no post)
 
 '----- Shadow Options -----
-Const DynamicBallShadowsOn = 1		'0 = no dynamic ball shadow ("triangles" near slings and such), 1 = enable dynamic ball shadow
-Const AmbientBallShadowOn = 1		'0 = Static shadow under ball ("flasher" image, like JP's)
+Const DynamicBallShadowsOn = 0		'0 = no dynamic ball shadow ("triangles" near slings and such), 1 = enable dynamic ball shadow
+Const AmbientBallShadowOn = 0		'0 = Static shadow under ball ("flasher" image, like JP's)
 									'1 = Moving ball shadow ("primitive" object, like ninuzzu's) - This is the only one that shows up on the pf when in ramps and fades when close to lights!
 									'2 = flasher image shadow, but it moves like ninuzzu's
 
@@ -2138,234 +2113,171 @@ Sub CheckPupVersion
 	End if
 End sub
 
+const fontScaling = 0.8
+
 Sub pSetPageLayouts
 	Dim i
 
 	' Scores
-	PuPlayer.LabelNew pDMD, "Score1Small", pFontFuturama, 4, VBWhite, 0, 1, 1, 12, 97, pScores, 0
-	PuPlayer.LabelNew pDMD, "Score1Big", pFontFuturama, 6, VBWhite, 0, 1, 1, 12, 97, pScores, 0
-	PuPlayer.LabelNew pDMD, "Score2Small", pFontFuturama, 4, VBWhite, 0, 1, 1, 37, 97, pScores, 0
-	PuPlayer.LabelNew pDMD, "Score2Big", pFontFuturama, 6, VBWhite, 0, 1, 1, 12, 97, pScores, 0
-	PuPlayer.LabelNew pDMD, "Score3Small", pFontFuturama, 4, VBWhite, 0, 1, 1, 62, 97, pScores, 0
-	PuPlayer.LabelNew pDMD, "Score3Big", pFontFuturama, 6, VBWhite, 0, 1, 1, 12, 97, pScores, 0
-	PuPlayer.LabelNew pDMD, "Score4Small", pFontFuturama, 4, VBWhite, 0, 1, 1, 87, 97, pScores, 0
-	PuPlayer.LabelNew pDMD, "Score4Big", pFontFuturama, 6, VBWhite, 0, 1, 1, 12, 97, pScores, 0
+	PuPlayer.LabelNew pDMD, "Score1Small", pFontFuturama, 4 * fontScaling, VBWhite, 0, 1, 1, 12, 97, pScores, 0
+	PuPlayer.LabelNew pDMD, "Score1Big", pFontFuturama, 6  * fontScaling, VBWhite, 0, 1, 1, 12, 97, pScores, 0
+	PuPlayer.LabelNew pDMD, "Score2Small", pFontFuturama, 4 * fontScaling, VBWhite, 0, 1, 1, 37, 97, pScores, 0
+	PuPlayer.LabelNew pDMD, "Score2Big", pFontFuturama, 6 * fontScaling, VBWhite, 0, 1, 1, 12, 97, pScores, 0
+	PuPlayer.LabelNew pDMD, "Score3Small", pFontFuturama, 4 * fontScaling, VBWhite, 0, 1, 1, 62, 97, pScores, 0
+	PuPlayer.LabelNew pDMD, "Score3Big", pFontFuturama, 6 * fontScaling, VBWhite, 0, 1, 1, 12, 97, pScores, 0
+	PuPlayer.LabelNew pDMD, "Score4Small", pFontFuturama, 4 * fontScaling, VBWhite, 0, 1, 1, 87, 97, pScores, 0
+	PuPlayer.LabelNew pDMD, "Score4Big", pFontFuturama, 6 * fontScaling, VBWhite, 0, 1, 1, 12, 97, pScores, 0
 
 	' Score Overlays
-	PuPlayer.LabelNew pDMD, "ScoreOverlay1", pFontFuturama, 5, VBWhite, 0, 1, 1, 0, 0, pScores, 0
-	PuPlayer.LabelSet pDMD, "ScoreOverlay1", "PuPOverlays\\Futurama_1P.png", 0, _
-		"{'mt':2, 'zback':1, 'width':100, 'height':100, 'yalign':0, 'xalign':0, 'ypos':0, 'xpos':0}"
-	PuPlayer.LabelNew pDMD, "ScoreOverlay2", pFontFuturama, 5, VBWhite, 0, 1, 1, 0, 0, pScores, 0
-	PuPlayer.LabelSet pDMD, "ScoreOverlay2", "PuPOverlays\\Futurama_2P.png", 0, _
-		"{'mt':2, 'zback':1, 'width':100, 'height':100, 'yalign':0, 'xalign':0, 'ypos':0, 'xpos':0}"
-	PuPlayer.LabelNew pDMD, "ScoreOverlay3", pFontFuturama, 5, VBWhite, 0, 1, 1, 0, 0, pScores, 0
-	PuPlayer.LabelSet pDMD, "ScoreOverlay3", "PuPOverlays\\Futurama_3P.png", 0, _
-		"{'mt':2, 'zback':1, 'width':100, 'height':100, 'yalign':0, 'xalign':0, 'ypos':0, 'xpos':0}"
-	PuPlayer.LabelNew pDMD, "ScoreOverlay4", pFontFuturama, 5, VBWhite, 0, 1, 1, 0, 0, pScores, 0
-	PuPlayer.LabelSet pDMD, "ScoreOverlay4", "PuPOverlays\\Futurama_4P.png", 0, _
-		"{'mt':2, 'zback':1, 'width':100, 'height':100, 'yalign':0, 'xalign':0, 'ypos':0, 'xpos':0}"
+	PuPlayer.LabelNew pDMD, "ScoreOverlay1", pFontFuturama, 5 * fontScaling, VBWhite, 0, 1, 1, 0, 0, pScores, 0
+	PuPlayer.LabelSet pDMD, "ScoreOverlay1", "PuPOverlays\\Futurama_1P.png", 0, "{'mt':2, 'zback':1, 'width':100, 'height':100, 'yalign':0, 'xalign':0, 'ypos':0, 'xpos':0}"
+	PuPlayer.LabelNew pDMD, "ScoreOverlay2", pFontFuturama, 5 * fontScaling, VBWhite, 0, 1, 1, 0, 0, pScores, 0
+	PuPlayer.LabelSet pDMD, "ScoreOverlay2", "PuPOverlays\\Futurama_2P.png", 0, "{'mt':2, 'zback':1, 'width':100, 'height':100, 'yalign':0, 'xalign':0, 'ypos':0, 'xpos':0}"
+	PuPlayer.LabelNew pDMD, "ScoreOverlay3", pFontFuturama, 5 * fontScaling, VBWhite, 0, 1, 1, 0, 0, pScores, 0
+	PuPlayer.LabelSet pDMD, "ScoreOverlay3", "PuPOverlays\\Futurama_3P.png", 0, "{'mt':2, 'zback':1, 'width':100, 'height':100, 'yalign':0, 'xalign':0, 'ypos':0, 'xpos':0}"
+	PuPlayer.LabelNew pDMD, "ScoreOverlay4", pFontFuturama, 5 * fontScaling, VBWhite, 0, 1, 1, 0, 0, pScores, 0
+	PuPlayer.LabelSet pDMD, "ScoreOverlay4", "PuPOverlays\\Futurama_4P.png", 0, "{'mt':2, 'zback':1, 'width':100, 'height':100, 'yalign':0, 'xalign':0, 'ypos':0, 'xpos':0}"
 
 	' Attract mode: high scores
-	PuPlayer.LabelNew pDMD, "Attract1", pFontFuturama, 16, VBWhite, 0, 1, 1, 50, 30, pAttract, 0
-	PuPlayer.LabelNew pDMD, "Attract2", pFontFuturama, 16, VBWhite, 0, 1, 1, 50, 60, pAttract, 0
+	PuPlayer.LabelNew pDMD, "Attract1", pFontFuturama, 16 * fontScaling, VBWhite, 0, 1, 1, 50, 30, pAttract, 0
+	PuPlayer.LabelNew pDMD, "Attract2", pFontFuturama, 16 * fontScaling, VBWhite, 0, 1, 1, 50, 60, pAttract, 0
 	'Add outlines to text labels
-	PuPlayer.LabelSet pDMD, "Attract1", "", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "Attract2", "", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "Attract1", "", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "Attract2", "", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
 
 	' Attract mode: the previous game's scores
-	PuPlayer.LabelNew pDMD, "PrevScores", pFontFuturama, 15, VBWhite, 0, 1, 1, 50, 20, pPrevScores, 0
-	PuPlayer.LabelNew pDMD, "PrevP1Label", pFontFuturama, 10, VBWhite, 0, 0, 1, 10, 40, pPrevScores, 0
-	PuPlayer.LabelNew pDMD, "PrevP1Score", pFontFuturama, 10, VBWhite, 0, 2, 1, 90, 40, pPrevScores, 0
-	PuPlayer.LabelNew pDMD, "PrevP2Label", pFontFuturama, 10, VBWhite, 0, 0, 1, 10, 52, pPrevScores, 0
-	PuPlayer.LabelNew pDMD, "PrevP2Score", pFontFuturama, 10, VBWhite, 0, 2, 1, 90, 52, pPrevScores, 0
-	PuPlayer.LabelNew pDMD, "PrevP3Label", pFontFuturama, 10, VBWhite, 0, 0, 1, 10, 64, pPrevScores, 0
-	PuPlayer.LabelNew pDMD, "PrevP3Score", pFontFuturama, 10, VBWhite, 0, 2, 1, 90, 64, pPrevScores, 0
-	PuPlayer.LabelNew pDMD, "PrevP4Label", pFontFuturama, 10, VBWhite, 0, 0, 1, 10, 76, pPrevScores, 0
-	PuPlayer.LabelNew pDMD, "PrevP4Score", pFontFuturama, 10, VBWhite, 0, 2, 1, 90, 76, pPrevScores, 0
+	PuPlayer.LabelNew pDMD, "PrevScores", pFontFuturama, 15 * fontScaling, VBWhite, 0, 1, 1, 50, 20, pPrevScores, 0
+	PuPlayer.LabelNew pDMD, "PrevP1Label", pFontFuturama, 10 * fontScaling, VBWhite, 0, 0, 1, 10, 40, pPrevScores, 0
+	PuPlayer.LabelNew pDMD, "PrevP1Score", pFontFuturama, 10 * fontScaling, VBWhite, 0, 2, 1, 90, 40, pPrevScores, 0
+	PuPlayer.LabelNew pDMD, "PrevP2Label", pFontFuturama, 10 * fontScaling, VBWhite, 0, 0, 1, 10, 52, pPrevScores, 0
+	PuPlayer.LabelNew pDMD, "PrevP2Score", pFontFuturama, 10 * fontScaling, VBWhite, 0, 2, 1, 90, 52, pPrevScores, 0
+	PuPlayer.LabelNew pDMD, "PrevP3Label", pFontFuturama, 10 * fontScaling, VBWhite, 0, 0, 1, 10, 64, pPrevScores, 0
+	PuPlayer.LabelNew pDMD, "PrevP3Score", pFontFuturama, 10 * fontScaling, VBWhite, 0, 2, 1, 90, 64, pPrevScores, 0
+	PuPlayer.LabelNew pDMD, "PrevP4Label", pFontFuturama, 10 * fontScaling, VBWhite, 0, 0, 1, 10, 76, pPrevScores, 0
+	PuPlayer.LabelNew pDMD, "PrevP4Score", pFontFuturama, 10 * fontScaling, VBWhite, 0, 2, 1, 90, 76, pPrevScores, 0
 	'Add outlines to text labels
-	PuPlayer.LabelSet pDMD, "PrevScores", " PREVIOUS GAME ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "PrevP1Label", " PLAYER 1 ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "PrevP1Score", " 00 ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "PrevP2Label", " PLAYER 2 ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "PrevP2Score", " 00 ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "PrevP3Label", " PLAYER 3 ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "PrevP3Score", " 00 ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "PrevP4Label", " PLAYER 4 ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "PrevP4Score", " 00 ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "PrevScores", " PREVIOUS GAME ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "PrevP1Label", " PLAYER 1 ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "PrevP1Score", " 00 ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "PrevP2Label", " PLAYER 2 ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "PrevP2Score", " 00 ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "PrevP3Label", " PLAYER 3 ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "PrevP3Score", " 00 ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "PrevP4Label", " PLAYER 4 ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "PrevP4Score", " 00 ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
 
 	' Attract mode: Credits
-	PuPlayer.LabelNew pDMD, "Credits", pFontFuturama, 4, VBWhite,_
-		0, 1, 1, 0, 0, pCredits, 1
-	PuPlayer.LabelSet pDMD, "Credits", "pngs\\credits2.png", 1, _
-		"{'mt':2, 'zback':1, 'width':100, 'height':100, 'yalign':0, 'xalign':0, 'ypos':0, 'xpos':0}"
+	PuPlayer.LabelNew pDMD, "Credits", pFontFuturama, 4 * fontScaling, VBWhite,	0, 1, 1, 0, 0, pCredits, 1
+	PuPlayer.LabelSet pDMD, "Credits", "pngs\\credits2.png", 1, "{'mt':2, 'zback':1, 'width':100, 'height':100, 'yalign':0, 'xalign':0, 'ypos':0, 'xpos':0}"
 
 	' Splash text
-	PuPlayer.LabelNew pDMD, "Splash1", pFontFuturama, 10, VBWhite, 0, 1, 1, 50, 45, pScores, 0
-	PuPlayer.LabelNew pDMD, "Splash2A", pFontFuturama, 10, VBWhite, 0, 1, 1, 50, 38, pScores, 0
-	PuPlayer.LabelNew pDMD, "Splash2B", pFontFuturama, 10, VBWhite, 0, 1, 1, 50, 52, pScores, 0
-	PuPlayer.LabelNew pDMD, "Splash3A", pFontFuturama, 10, VBWhite, 0, 1, 1, 50, 31, pScores, 0
-	PuPlayer.LabelNew pDMD, "Splash3B", pFontFuturama, 10, VBWhite, 0, 1, 1, 50, 45, pScores, 0
-	PuPlayer.LabelNew pDMD, "Splash3C", pFontFuturama, 10, VBWhite, 0, 1, 1, 50, 59, pScores, 0
+	PuPlayer.LabelNew pDMD, "Splash1", pFontFuturama, 10 * fontScaling, VBWhite, 0, 1, 1, 50, 45, pScores, 0
+	PuPlayer.LabelNew pDMD, "Splash2A", pFontFuturama, 10 * fontScaling, VBWhite, 0, 1, 1, 50, 38, pScores, 0
+	PuPlayer.LabelNew pDMD, "Splash2B", pFontFuturama, 10 * fontScaling, VBWhite, 0, 1, 1, 50, 52, pScores, 0
+	PuPlayer.LabelNew pDMD, "Splash3A", pFontFuturama, 10 * fontScaling, VBWhite, 0, 1, 1, 50, 31, pScores, 0
+	PuPlayer.LabelNew pDMD, "Splash3B", pFontFuturama, 10 * fontScaling, VBWhite, 0, 1, 1, 50, 45, pScores, 0
+	PuPlayer.LabelNew pDMD, "Splash3C", pFontFuturama, 10 * fontScaling, VBWhite, 0, 1, 1, 50, 59, pScores, 0
 	'Add outlines to text labels
-	PuPlayer.LabelSet pDMD, "Splash1", " ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "Splash2A", " ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "Splash2B", " ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "Splash3A", " ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "Splash3B", " ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "Splash3C", " ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "Splash1", " ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "Splash2A", " ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "Splash2B", " ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "Splash3A", " ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "Splash3B", " ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "Splash3C", " ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
 
 	' Mode info
-	PuPlayer.LabelNew pDMD, "TimeLabel", pFontFuturama, 5, VBWhite, 0, 1, 1, 6, 10, pScores, 0
-	PuPlayer.LabelNew pDMD, "TimeSeconds", pFontFuturama, 10, VBWhite, 0, 1, 1, 6, 16, pScores, 0
-	PuPlayer.LabelNew pDMD, "ShotsLabel", pFontFuturama, 5, VBWhite, 0, 1, 1, 94, 10, pScores, 0
-	PuPlayer.LabelNew pDMD, "ShotsLeft", pFontFuturama, 10, VBWhite, 0, 1, 1, 94, 16, pScores, 0
-	PuPlayer.LabelNew pDMD, "ModeInfo", pFontFuturama, 8, VBWhite, 0, 1, 1, 50, 6, pScores, 0
+	PuPlayer.LabelNew pDMD, "TimeLabel", pFontFuturama, 5 * fontScaling, VBWhite, 0, 1, 1, 6, 10, pScores, 0
+	PuPlayer.LabelNew pDMD, "TimeSeconds", pFontFuturama, 10 * fontScaling, VBWhite, 0, 1, 1, 6, 16, pScores, 0
+	PuPlayer.LabelNew pDMD, "ShotsLabel", pFontFuturama, 5 * fontScaling, VBWhite, 0, 1, 1, 94, 10, pScores, 0
+	PuPlayer.LabelNew pDMD, "ShotsLeft", pFontFuturama, 10 * fontScaling, VBWhite, 0, 1, 1, 94, 16, pScores, 0
+	PuPlayer.LabelNew pDMD, "ModeInfo", pFontFuturama, 8 * fontScaling, VBWhite, 0, 1, 1, 50, 6, pScores, 0
 	'Add outlines to text labels
-	PuPlayer.LabelSet pDMD, "TimeLabel", " TIME ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "TimeSeconds", " 0 ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "ShotsLabel", " SHOTS ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "ShotsLeft", " 6 ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "ModeInfo", " ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "TimeLabel", " TIME ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "TimeSeconds", " 0 ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "ShotsLabel", " SHOTS ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "ShotsLeft", " 6 ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "ModeInfo", " ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
 
 	'Blasts
-	PuPlayer.LabelNew pDMD, "Blast1", pFontFuturama, 5, VBWhite, 0, 1, 1, 0, 0, pScores, 0
-	PuPlayer.LabelSet pDMD, "Blast1", "pngs\\blastlogo.png", 0, _
-		"{'mt':2, 'zback':1, 'width':9, 'height':16, 'yalign':2, 'xalign':0, 'ypos':88, 'xpos':2}"
-	PuPlayer.LabelNew pDMD, "Blast2", pFontFuturama, 5, VBWhite, 0, 1, 1, 0, 0, pScores, 0
-	PuPlayer.LabelSet pDMD, "Blast2", "pngs\\blastlogo.png", 0, _
-		"{'mt':2, 'zback':1, 'width':9, 'height':16, 'yalign':2, 'xalign':0, 'ypos':73, 'xpos':2}"
-	PuPlayer.LabelNew pDMD, "Blast3", pFontFuturama, 5, VBWhite, 0, 1, 1, 0, 0, pScores, 0
-	PuPlayer.LabelSet pDMD, "Blast3", "pngs\\blastlogo.png", 0, _
-		"{'mt':2, 'zback':1, 'width':9, 'height':16, 'yalign':2, 'xalign':0, 'ypos':58, 'xpos':2}"
+	PuPlayer.LabelNew pDMD, "Blast1", pFontFuturama, 5 * fontScaling, VBWhite, 0, 1, 1, 0, 0, pScores, 0
+	PuPlayer.LabelSet pDMD, "Blast1", "pngs\\blastlogo.png", 0, "{'mt':2, 'zback':1, 'width':9, 'height':16, 'yalign':2, 'xalign':0, 'ypos':88, 'xpos':2}"
+	PuPlayer.LabelNew pDMD, "Blast2", pFontFuturama, 5 * fontScaling, VBWhite, 0, 1, 1, 0, 0, pScores, 0
+	PuPlayer.LabelSet pDMD, "Blast2", "pngs\\blastlogo.png", 0, "{'mt':2, 'zback':1, 'width':9, 'height':16, 'yalign':2, 'xalign':0, 'ypos':73, 'xpos':2}"
+	PuPlayer.LabelNew pDMD, "Blast3", pFontFuturama, 5 * fontScaling, VBWhite, 0, 1, 1, 0, 0, pScores, 0
+	PuPlayer.LabelSet pDMD, "Blast3", "pngs\\blastlogo.png", 0, "{'mt':2, 'zback':1, 'width':9, 'height':16, 'yalign':2, 'xalign':0, 'ypos':58, 'xpos':2}"
 
 	'Playfield multiplier
-	PuPlayer.LabelNew pDMD, "MultiplierLabel1", pFontFuturama, 3.4, VBWhite, 0, 1, 1, 94, 76, pScores, 0
-	PuPlayer.LabelNew pDMD, "MultiplierLabel2", pFontFuturama, 3.4, VBWhite, 0, 1, 1, 94, 80, pScores, 0
-	PuPlayer.LabelNew pDMD, "MultiplierValue", pFontFuturama, 8, VBWhite, 0, 1, 1, 94, 86, pScores, 0
-	PuPlayer.LabelSet pDMD, "MultiplierLabel1", " PLAYFIELD ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 3, 'yoffset': 2, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "MultiplierLabel2", " MULTIPLIER ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 3, 'yoffset': 2, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "MultiplierValue", " 1.0 X ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 4, 'yoffset': 3, 'outline':1}"
+	PuPlayer.LabelNew pDMD, "MultiplierLabel1", pFontFuturama, 3.4 * fontScaling, VBWhite, 0, 1, 1, 94, 76, pScores, 0
+	PuPlayer.LabelNew pDMD, "MultiplierLabel2", pFontFuturama, 3.4 * fontScaling, VBWhite, 0, 1, 1, 94, 80, pScores, 0
+	PuPlayer.LabelNew pDMD, "MultiplierValue", pFontFuturama, 8 * fontScaling, VBWhite, 0, 1, 1, 94, 86, pScores, 0
+	PuPlayer.LabelSet pDMD, "MultiplierLabel1", " PLAYFIELD ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 13, 'yoffset': 12, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "MultiplierLabel2", " MULTIPLIER ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 13, 'yoffset': 12, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "MultiplierValue", " 1.0 X ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 14, 'yoffset': 13, 'outline':1}"
 
 	' Super Features and booth effects
-	PuPlayer.LabelNew pDMD, "EffectsLabel", pFontFuturama, 5, VBWhite, 0, 1, 1, 94, 56, pScores, 0
-	PuPlayer.LabelNew pDMD, "EffectsSeconds", pFontFuturama, 10, VBWhite, 0, 1, 1, 94, 62, pScores, 0
-	PuPlayer.LabelSet pDMD, "EffectsLabel", " ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "EffectsSeconds", " 0 ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
+	PuPlayer.LabelNew pDMD, "EffectsLabel", pFontFuturama, 5 * fontScaling, VBWhite, 0, 1, 1, 94, 56, pScores, 0
+	PuPlayer.LabelNew pDMD, "EffectsSeconds", pFontFuturama, 10 * fontScaling, VBWhite, 0, 1, 1, 94, 62, pScores, 0
+	PuPlayer.LabelSet pDMD, "EffectsLabel", " ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "EffectsSeconds", " 0 ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
 
 	' Bonus
-	PuPlayer.LabelNew pDMD, "BonusCaption", pFontFuturama, 15, VBWhite, 0, 1, 1, 50, 10, pScores, 0
-	PuPlayer.LabelNew pDMD, "SwitchCaption", pFontFuturama, 8, VBWhite, 0, 0, 1, 15, 20, pScores, 0
-	PuPlayer.LabelNew pDMD, "SwitchValue", pFontFuturama, 8, VBWhite, 0, 2, 1, 85, 20, pScores, 0
-	PuPlayer.LabelNew pDMD, "ComboCaption", pFontFuturama, 8, VBWhite, 0, 0, 1, 15, 28, pScores, 0
-	PuPlayer.LabelNew pDMD, "ComboValue", pFontFuturama, 8, VBWhite, 0, 2, 1, 85, 28, pScores, 0
-	PuPlayer.LabelNew pDMD, "DeliverCaption", pFontFuturama, 8, VBWhite, 0, 0, 1, 15, 36, pScores, 0
-	PuPlayer.LabelNew pDMD, "DeliverValue", pFontFuturama, 8, VBWhite, 0, 2, 1, 85, 36, pScores, 0
-	PuPlayer.LabelNew pDMD, "BonusX", pFontFuturama, 8, VBWhite, 0, 1, 1, 50, 50, pScores, 0
-	PuPlayer.LabelNew pDMD, "BonusTotal", pFontFuturama, 8, VBWhite, 0, 1, 1, 50, 58, pScores, 0
-	PuPlayer.LabelNew pDMD, "BonusScoreCaption", pFontFuturama, 8, VBWhite, 0, 1, 1, 50, 70, pScores, 0
-	PuPlayer.LabelNew pDMD, "BonusScoreValue", pFontFuturama, 8, VBWhite, 0, 1, 1, 50, 78, pScores, 0
+	PuPlayer.LabelNew pDMD, "BonusCaption", pFontFuturama, 15 * fontScaling, VBWhite, 0, 1, 1, 50, 10, pScores, 0
+	PuPlayer.LabelNew pDMD, "SwitchCaption", pFontFuturama, 8 * fontScaling, VBWhite, 0, 0, 1, 15, 20, pScores, 0
+	PuPlayer.LabelNew pDMD, "SwitchValue", pFontFuturama, 8 * fontScaling, VBWhite, 0, 2, 1, 85, 20, pScores, 0
+	PuPlayer.LabelNew pDMD, "ComboCaption", pFontFuturama, 8 * fontScaling, VBWhite, 0, 0, 1, 15, 28, pScores, 0
+	PuPlayer.LabelNew pDMD, "ComboValue", pFontFuturama, 8 * fontScaling, VBWhite, 0, 2, 1, 85, 28, pScores, 0
+	PuPlayer.LabelNew pDMD, "DeliverCaption", pFontFuturama, 8 * fontScaling, VBWhite, 0, 0, 1, 15, 36, pScores, 0
+	PuPlayer.LabelNew pDMD, "DeliverValue", pFontFuturama, 8 * fontScaling, VBWhite, 0, 2, 1, 85, 36, pScores, 0
+	PuPlayer.LabelNew pDMD, "BonusX", pFontFuturama, 8 * fontScaling, VBWhite, 0, 1, 1, 50, 50, pScores, 0
+	PuPlayer.LabelNew pDMD, "BonusTotal", pFontFuturama, 8 * fontScaling, VBWhite, 0, 1, 1, 50, 58, pScores, 0
+	PuPlayer.LabelNew pDMD, "BonusScoreCaption", pFontFuturama, 8 * fontScaling, VBWhite, 0, 1, 1, 50, 70, pScores, 0
+	PuPlayer.LabelNew pDMD, "BonusScoreValue", pFontFuturama, 8 * fontScaling, VBWhite, 0, 1, 1, 50, 78, pScores, 0
 	'Add outlines to text labels
-	PuPlayer.LabelSet pDMD, "BonusCaption", " BONUS ", 0, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "SwitchCaption", " SWITCHES ", 0, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "SwitchValue", " 0 ", 0, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "ComboCaption", " COMBOS ", 0, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "ComboValue", " 0 ", 0, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "DeliverCaption", " MODES ", 0, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "DeliverValue", " 0 ", 0, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "BonusX", " BONUS X 1 ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "BonusTotal", " BONUS TOTAL 0 ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "BonusScoreCaption", " PLAYER 1 TOTAL SCORE ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
-	PuPlayer.LabelSet pDMD, "BonusScoreValue", " 00 ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 5, 'yoffset': 4, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "BonusCaption", " BONUS ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "SwitchCaption", " SWITCHES ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "SwitchValue", " 0 ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "ComboCaption", " COMBOS ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "ComboValue", " 0 ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "DeliverCaption", " MODES ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "DeliverValue", " 0 ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "BonusX", " BONUS X 1 ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "BonusTotal", " BONUS TOTAL 0 ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 11, 'xoffset': 5, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "BonusScoreCaption", " PLAYER 1 TOTAL SCORE ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
+	PuPlayer.LabelSet pDMD, "BonusScoreValue", " 00 ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 15, 'yoffset': 14, 'outline':1}"
 
 	'Suicide booth
-	PuPlayer.LabelNew pDMD, "Booth1", pFontFuturama, 5, VBWhite, 0, 1, 1, 0, 0, pBooth, 0
-	PuPlayer.LabelSet pDMD, "Booth1", "pngs\\boothwheel1.png", 0, _
-		"{'mt':2, 'zback':1, 'width':27, 'height':48, 'yalign':1, 'xalign':1, 'ypos':60, 'xpos':60}"
-	PuPlayer.LabelNew pDMD, "Booth2", pFontFuturama, 5, VBWhite, 0, 1, 1, 0, 0, pBooth, 0
-	PuPlayer.LabelSet pDMD, "Booth2", "pngs\\boothwheel2.png", 0, _
-		"{'mt':2, 'zback':1, 'width':27, 'height':48, 'yalign':1, 'xalign':1, 'ypos':60, 'xpos':60}"
-	PuPlayer.LabelNew pDMD, "Booth3", pFontFuturama, 5, VBWhite, 0, 1, 1, 0, 0, pBooth, 0
-	PuPlayer.LabelSet pDMD, "Booth3", "pngs\\boothwheel3.png", 0, _
-		"{'mt':2, 'zback':1, 'width':27, 'height':48, 'yalign':1, 'xalign':1, 'ypos':60, 'xpos':60}"
-	PuPlayer.LabelNew pDMD, "Booth4", pFontFuturama, 5, VBWhite, 0, 1, 1, 0, 0, pBooth, 0
-	PuPlayer.LabelSet pDMD, "Booth4", "pngs\\boothwheel4.png", 0, _
-		"{'mt':2, 'zback':1, 'width':27, 'height':48, 'yalign':1, 'xalign':1, 'ypos':60, 'xpos':60}"
-	PuPlayer.LabelNew pDMD, "Booth5", pFontFuturama, 5, VBWhite, 0, 1, 1, 0, 0, pBooth, 0
-	PuPlayer.LabelSet pDMD, "Booth5", "pngs\\boothwheel5.png", 0, _
-		"{'mt':2, 'zback':1, 'width':27, 'height':48, 'yalign':1, 'xalign':1, 'ypos':60, 'xpos':60}"
-	PuPlayer.LabelNew pDMD, "Booth6", pFontFuturama, 5, VBWhite, 0, 1, 1, 0, 0, pBooth, 0
-	PuPlayer.LabelSet pDMD, "Booth6", "pngs\\boothwheel6.png", 0, _
-		"{'mt':2, 'zback':1, 'width':27, 'height':48, 'yalign':1, 'xalign':1, 'ypos':60, 'xpos':60}"
-	PuPlayer.LabelNew pDMD, "Booth7", pFontFuturama, 5, VBWhite, 0, 1, 1, 0, 0, pBooth, 0
-	PuPlayer.LabelSet pDMD, "Booth7", "pngs\\boothwheel7.png", 0, _
-		"{'mt':2, 'zback':1, 'width':27, 'height':48, 'yalign':1, 'xalign':1, 'ypos':60, 'xpos':60}"
-	PuPlayer.LabelNew pDMD, "BoothArrow", pFontFuturama, 5, VBWhite, 0, 1, 1, 0, 0, pBooth, 1
-	PuPlayer.LabelSet pDMD, "BoothArrow", "pngs\\arrow.png", 0, _
-		"{'mt':2, 'zback':1, 'width':50, 'height':50, 'yalign':1, 'xalign':1, 'ypos':60, 'xpos':55}"
-	PuPlayer.LabelNew pDMD, "BoothText", pFontFuturama, 8, VBWhite, 0, 1, 1, 50, 90, pBooth, 1
-	PuPlayer.LabelSet pDMD, "BoothText", " PRESS ACTION BUTTON TO CHOOSE ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 4, 'yoffset': 3, 'outline':1}"
-	PuPlayer.LabelNew pDMD, "BoothTime", pFontFuturama, 50, VBWhite, 0, 1, 1, 20, 50, pBooth, 1
-	PuPlayer.LabelSet pDMD, "BoothTime", " 5 ", 1, _
-		"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 4, 'yoffset': 3, 'outline':1}"
+	PuPlayer.LabelNew pDMD, "Booth1", pFontFuturama, 5 * fontScaling, VBWhite, 0, 1, 1, 0, 0, pBooth, 0
+	PuPlayer.LabelSet pDMD, "Booth1", "pngs\\boothwheel1.png", 0, "{'mt':2, 'zback':1, 'width':27, 'height':48, 'yalign':1, 'xalign':1, 'ypos':60, 'xpos':60}"
+	PuPlayer.LabelNew pDMD, "Booth2", pFontFuturama, 5 * fontScaling, VBWhite, 0, 1, 1, 0, 0, pBooth, 0
+	PuPlayer.LabelSet pDMD, "Booth2", "pngs\\boothwheel2.png", 0, "{'mt':2, 'zback':1, 'width':27, 'height':48, 'yalign':1, 'xalign':1, 'ypos':60, 'xpos':60}"
+	PuPlayer.LabelNew pDMD, "Booth3", pFontFuturama, 5 * fontScaling, VBWhite, 0, 1, 1, 0, 0, pBooth, 0
+	PuPlayer.LabelSet pDMD, "Booth3", "pngs\\boothwheel3.png", 0, "{'mt':2, 'zback':1, 'width':27, 'height':48, 'yalign':1, 'xalign':1, 'ypos':60, 'xpos':60}"
+	PuPlayer.LabelNew pDMD, "Booth4", pFontFuturama, 5 * fontScaling, VBWhite, 0, 1, 1, 0, 0, pBooth, 0
+	PuPlayer.LabelSet pDMD, "Booth4", "pngs\\boothwheel4.png", 0, "{'mt':2, 'zback':1, 'width':27, 'height':48, 'yalign':1, 'xalign':1, 'ypos':60, 'xpos':60}"
+	PuPlayer.LabelNew pDMD, "Booth5", pFontFuturama, 5 * fontScaling, VBWhite, 0, 1, 1, 0, 0, pBooth, 0
+	PuPlayer.LabelSet pDMD, "Booth5", "pngs\\boothwheel5.png", 0, "{'mt':2, 'zback':1, 'width':27, 'height':48, 'yalign':1, 'xalign':1, 'ypos':60, 'xpos':60}"
+	PuPlayer.LabelNew pDMD, "Booth6", pFontFuturama, 5 * fontScaling, VBWhite, 0, 1, 1, 0, 0, pBooth, 0
+	PuPlayer.LabelSet pDMD, "Booth6", "pngs\\boothwheel6.png", 0, "{'mt':2, 'zback':1, 'width':27, 'height':48, 'yalign':1, 'xalign':1, 'ypos':60, 'xpos':60}"
+	PuPlayer.LabelNew pDMD, "Booth7", pFontFuturama, 5 * fontScaling, VBWhite, 0, 1, 1, 0, 0, pBooth, 0
+	PuPlayer.LabelSet pDMD, "Booth7", "pngs\\boothwheel7.png", 0, "{'mt':2, 'zback':1, 'width':27, 'height':48, 'yalign':1, 'xalign':1, 'ypos':60, 'xpos':60}"
+	PuPlayer.LabelNew pDMD, "BoothArrow", pFontFuturama, 5 * fontScaling, VBWhite, 0, 1, 1, 0, 0, pBooth, 1
+	PuPlayer.LabelSet pDMD, "BoothArrow", "pngs\\arrow.png", 1, "{'mt':2, 'zback':1, 'width':50, 'height':50, 'yalign':1, 'xalign':1, 'ypos':60, 'xpos':55}"
+	PuPlayer.LabelNew pDMD, "BoothText", pFontFuturama, 8 * fontScaling, VBWhite, 0, 1, 1, 50, 90, pBooth, 1
+	PuPlayer.LabelSet pDMD, "BoothText", " PRESS ACTION BUTTON TO CHOOSE ", 1, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 14, 'yoffset': 13, 'outline':1}"
+	PuPlayer.LabelNew pDMD, "BoothTime", pFontFuturama, 50 * fontScaling, VBWhite, 0, 1, 1, 20, 50, pBooth, 1
+	PuPlayer.LabelSet pDMD, "BoothTime", " 5 ", 1, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 14, 'yoffset': 13, 'outline':1}"
 
 	' mode selection
 	For i = eModeChapek to eModeMars
-		PuPlayer.LabelNew pDMD, "ModeProgress" & (1 + i), pFontFuturama, 5, VBWhite,_
-			0, 1, 1, afModeXCoordinates(i), afCompletionYCoords(i), pScores, 0
-		PuPlayer.LabelSet pDMD, "ModeProgress" & (1 + i), " 0% ", 0, _
-			"{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 3, 'yoffset': 2, 'outline':1}"
-		PuPlayer.LabelNew pDMD, "ModeComplete" & (1 + i), pFontFuturama, 4, VBWhite,_
-			0, 1, 1, afModeXCoordinates(i), afCompletionYCoords(i), pScores, 0
-		PuPlayer.LabelSet pDMD, "ModeComplete" & (1 + i), "pngs\\mode_complete.png", 0, _
-			"{'mt':2, 'zback':2, 'width':6.51, 'height':9.72}"
+		PuPlayer.LabelNew pDMD, "ModeProgress" & (1 + i), pFontFuturama, 5 * fontScaling, VBWhite, 0, 1, 1, afModeXCoordinates(i), afCompletionYCoords(i), pScores, 0
+		PuPlayer.LabelSet pDMD, "ModeProgress" & (1 + i), " 0% ", 0, "{'mt':2,'shadowcolor':0, 'shadowstate': 1, 'xoffset': 13, 'yoffset': 12, 'outline':1}"
+		PuPlayer.LabelNew pDMD, "ModeComplete" & (1 + i), pFontFuturama, 4 * fontScaling, VBWhite, 0, 1, 1, afModeXCoordinates(i), afCompletionYCoords(i), pScores, 0
+		PuPlayer.LabelSet pDMD, "ModeComplete" & (1 + i), "pngs\\mode_complete.png", 0, "{'mt':2, 'zback':2, 'width':6.51, 'height':9.72}"
 	Next
-	PuPlayer.LabelNew pDMD, "ModeSelectBG", pFontFuturama, 4, VBWhite,_
-		0, 1, 1, 0, 0, pScores, 0
-	PuPlayer.LabelSet pDMD, "ModeSelectBG", "pngs\\mode_select.png", 0, _
-		"{'mt':2, 'zback':1, 'width':100, 'height':100, 'yalign':0, 'xalign':0, 'ypos':0, 'xpos':0}"
-	PuPlayer.LabelNew pDMD, "ModeShip", pFontFuturama, 4, VBWhite,_
-		0, 1, 1, 50, 50, pScores, 0
-	PuPlayer.LabelSet pDMD, "ModeShip", "pngs\\shipicon.png", 0, _
-		"{'mt':2, 'width':14.27, 'height':10.19}"
+	PuPlayer.LabelNew pDMD, "ModeSelectBG", pFontFuturama, 4 * fontScaling, VBWhite, 0, 1, 1, 0, 0, pScores, 0
+	PuPlayer.LabelSet pDMD, "ModeSelectBG", "pngs\\mode_select.png", 0,	"{'mt':2, 'zback':1, 'width':100, 'height':100, 'yalign':0, 'xalign':0, 'ypos':0, 'xpos':0}"
+	PuPlayer.LabelNew pDMD, "ModeShip", pFontFuturama, 4 * fontScaling, VBWhite, 0, 1, 1, 50, 50, pScores, 0
+	PuPlayer.LabelSet pDMD, "ModeShip", "pngs\\shipicon.png", 0, "{'mt':2, 'width':14.27, 'height':10.19}"
 
 End Sub
 
@@ -2379,11 +2291,11 @@ Sub pDMDLabelSet(labName,LabText)
 end sub
 
 Sub pDMDLabelHide(labName)
-	PuPlayer.LabelSet pDMD,labName," ",0,""
+	PuPlayer.LabelSet pDMD,labName,"",0,""
 end sub
 
 Sub pDMDLabelShow(labName)
-	PuPlayer.LabelSet pDMD,labName," ",1,""
+	PuPlayer.LabelSet pDMD,labName,"",1,""
 end sub
 
 ' Use E as a prefix for event triggers in the Pup Pack Editor
@@ -2437,8 +2349,7 @@ End Sub
 
 sub pDMDImageMoveTo(LabName, mLen, pStartX, pStartY, pEndX, pEndY)
 	Dim sJson
-	sJson = "{'mt':1, 'at':2, 'mlen':" & (mLen) & ", 'len':" & (600000) & ", 'xps':" & _
-		pStartX & ",'xpe':" & pEndX &  ", 'yps':" & pStartY & ", 'ype':" & pEndY & ", 'tt':2 ,'ad':1}"
+	sJson = "{'mt':1, 'at':2, 'mlen':" & (mLen) & ", 'len':" & (600000) & ", 'xps':" & pStartX & ",'xpe':" & pEndX &  ", 'yps':" & pStartY & ", 'ype':" & pEndY & ", 'tt':2 ,'ad':1}"
     PuPlayer.LabelSet pDMD, labName, "`u`", 1, sJson
 end Sub
 '*******************************************
