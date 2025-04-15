@@ -9,7 +9,8 @@ romChecksum: "40E4FB4F13784904557D0DA5E5153D40"
 romNotes: "Download wrldtou2.zip"
 tagline: "Rad Action Features for Rockin Fun!"
 testers:
-  - "Mox"
   - "Boris"
+  - "Mox"
+  - "Silentkat" 
 applyFixes:
   - "bass"

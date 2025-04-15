@@ -10,8 +10,9 @@ tagline: "Trust No One!"
 testers:
   - "Bla1ze"
   - "Mox"
+  - "mrandromeda"
+  - "Silentkat"
 vpxVPSId: "ZA6P_nOSzT"
 vpxChecksum: "152048985DA23568440F713D0184C4FF"
-enabled: false
 applyFixes:
   - "bass"
