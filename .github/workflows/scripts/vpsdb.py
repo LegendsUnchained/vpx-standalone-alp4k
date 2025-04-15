@@ -108,7 +108,7 @@ def get_table_meta(files, warn_on_error=True):
             vpxChecksum = vpxChecksum.lower()
 
         table_meta = {
-            "name": data.get("tableNameOverride")
+            "name": data.get("tableNameOverride"),
             "applyFixes": data.get("applyFixes"),
             "backglassBundled": data.get("backglassBundled"),
             "backglassChecksum": backglassChecksum,
