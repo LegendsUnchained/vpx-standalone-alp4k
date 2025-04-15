@@ -15,16 +15,7 @@ If Err Then MsgBox "You need the controller.vbs in order to run this table, avai
 On Error Goto 0
 
 Dim UseVPMDMD
-UseVPMDMD = True
-Sub ImplicitDMD_Init
-   Me.x = 60
-   Me.y = 30
-   Me.width = 128 * 2
-   Me.height = 32 * 2
-   Me.visible = true
-   Me.fontColor = RGB(255, 255, 255)
-   Me.intensityScale = 1.5
-End Sub
+UseVPMDMD = 1
 
 LoadVPM "01560000", "SEGA.VBS", 3.26
 
