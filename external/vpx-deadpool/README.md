@@ -62,10 +62,11 @@ __*We hope you enjoy!!   - the VPXS 4KP team!*__
 
 1.  Download the puppack `DPpuppack2.0.7z` from [VP Universe](https://vpuniverse.com/files/file/7368-deadpool-table-v512-puppack-20/) (by [TeamTuga](https://vpuniverse.com/profile/31843-teamtuga/))
 2.  Create the folder `pupvideos` within the `external/vpx-deadpool` folder in the Table Manager
-3.  Extract the folder `jpsdeadpool` from the puppack zip, and put it in the `pupvideos`. You should have `external/vpx-deadpool/pupvideos/jpsdeadpool/{puppack files}`
-4.  Unzip the `use_these_pup_files.zip` from the `external/vpx-deadpool` folder in the [repository](https://github.com/TheOminousOsie/vpx-standalone-alp4k/tree/main/external/vpx-deadpool)
-5.  Place them inside the `pupvideos/jpsdeadpool` folder, and overwrite files if prompted.  **This is necessary otherwise it does not work**
-6. Enjoy this amazing table with extra sounds and videos! 
+3.  Extract the folder `jpsdeadpool` from the puppack zip, and put it in the `pupvideos`. 
+4.  You should now have `external/vpx-deadpool/pupvideos/jpsdeadpool/{puppack files}`
+5.  Unzip the `use_these_pup_files.zip` from the `external/vpx-deadpool` folder in the [repository](https://github.com/TheOminousOsie/vpx-standalone-alp4k/tree/main/external/vpx-deadpool)
+6.  Place them inside the `pupvideos/jpsdeadpool` folder, and overwrite files if prompted.  **This is necessary otherwise it does not work**
+7. Enjoy this amazing table with extra sounds and videos! 
 
 
 <br>
