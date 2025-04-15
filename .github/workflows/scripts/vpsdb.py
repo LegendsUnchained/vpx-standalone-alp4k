@@ -108,6 +108,7 @@ def get_table_meta(files, warn_on_error=True):
             vpxChecksum = vpxChecksum.lower()
 
         table_meta = {
+            "name": data.get("tableNameOverride"),
             "applyFixes": data.get("applyFixes"),
             "backglassBundled": data.get("backglassBundled"),
             "backglassChecksum": backglassChecksum,
@@ -144,7 +145,10 @@ def get_table_meta(files, warn_on_error=True):
             table_meta["designers"] = table.get("designers", [])
             table_meta["image"] = table.get("imgUrl", "")
             table_meta["manufacturer"] = table.get("manufacturer", "")
-            table_meta["name"] = table.get("name", "")
+            
+            if not table_meta["name"]:
+                table_meta["name"] = table.get("name", "")
+                
             table_meta["players"] = table.get("players", 0)
             table_meta["type"] = table.get("type", "")
             table_meta["version"] = table.get("version", "")
