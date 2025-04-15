@@ -1,0 +1,15 @@
+---
+backglassVPSId: "tsMjsKzc9u"
+backglassChecksum: "CDFB2E52D8A9A9FFAAF564DE582290BE"
+fps: 57
+tableVPSId: "Ezm1deQ6"
+tagline: "Can you survive zombie disney princesses?"
+testers:
+  - "Silentkat"
+  - "Coffee@Joe's"
+vpxVPSId: "jPLxVR4b"
+vpxChecksum: "C1371D8A8F9AD4E4001D38E523B78356"
+tableNotes: "Files needed are in the one download,get music file separately"
+enabled: false
+applyFixes:
+  - "bass"
