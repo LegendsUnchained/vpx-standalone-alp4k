@@ -43,13 +43,13 @@ Dim CDMotor,Perf,FRubber,CState
 '   Off =0
 '   On = 1
 'Change the value below to set option
-CDMotor = 0
+CDMotor = 1
 
 'Cabinet Clean Or Dirty
 '   Clean = 0
 '   Dirty = 1 
 'Change the value below to set option
-CState = 1
+CState = 0
 
 'Flipper Rubber Colour
 '   Red    		= 0
@@ -228,6 +228,8 @@ Else
 	gi020.intensity=8
 End if
 
+Table1.Bloomstrength=0
+
 'Load LUT
 LoadLUT
 
@@ -279,10 +281,10 @@ End Sub
 Sub Table1_KeyDown(ByVal KeyCode)
 	If keycode = LeftFlipperKey Then FlipperActivate LeftFlipper, LFPress
 	If keycode = RightFlipperKey Then FlipperActivate RightFlipper, RFPress
-	If keycode = LeftMagnaSave Then bLutActive = True
-	If keycode = RightMagnaSave Then 
-		If bLutActive Then NextLUT: End If
-	End If
+	If keycode = LeftMagnaSave Then bLutActive = True And NextLut: End If
+	'If keycode = RightMagnaSave Then 
+		'If bLutActive Then NextLUT: End If
+	'End If
 	If KeyCode=PlungerKey Then Controller.Switch(37)=1
 	If KeyDownHandler(keycode) Then Exit Sub
 End Sub
@@ -558,6 +560,7 @@ Sub GiON
 	dim xx
 	For each xx in GI
 		xx.State = 1
+		xx.Intensity = 5
 	Next
 End Sub
 
@@ -1303,7 +1306,7 @@ Sub RollingTimer_Timer()
     For b = UBound(BOT) + 1 to tnob
         rolling(b) = False
         StopSound("fx_ballrolling" & b)
-        aBallShadow(b).Y = 3000
+        'aBallShadow(b).Y = 3000
     Next
 
     ' exit the sub if no balls on the table
@@ -1316,17 +1319,17 @@ Sub RollingTimer_Timer()
 
     ' render the shadow for each ball
 
-        If BOT(b).X < Table1.Width/2 Then
-            aBallShadow(b).X = ((BOT(b).X) - (Ballsize/6) + ((BOT(b).X - (Table1.Width/2))/7)) + 6
-        Else
-            aBallShadow(b).X = ((BOT(b).X) + (Ballsize/6) + ((BOT(b).X - (Table1.Width/2))/7)) - 6
-        End If
-        aBallShadow(b).Y = BOT(b).Y + 12
-        If BOT(b).Z > 20 Then
-            aBallShadow(b).visible = 1
-        Else
-            aBallShadow(b).visible = 0
-        End If
+        'If BOT(b).X < Table1.Width/2 Then
+            'aBallShadow(b).X = ((BOT(b).X) - (Ballsize/6) + ((BOT(b).X - (Table1.Width/2))/7)) + 6
+        'Else
+            'aBallShadow(b).X = ((BOT(b).X) + (Ballsize/6) + ((BOT(b).X - (Table1.Width/2))/7)) - 6
+       ' End If
+        'aBallShadow(b).Y = BOT(b).Y + 12
+       ' If BOT(b).Z > 20 Then
+            'aBallShadow(b).visible = 1
+       ' Else
+            'aBallShadow(b).visible = 0
+        'End If
 
 
 
@@ -1385,8 +1388,8 @@ End Sub
 
 sub FlipperTimer_Timer()
 
-	FlipperLSh.RotZ = LeftFlipper.currentangle
-	FlipperRSh.RotZ = RightFlipper.currentangle
+	'FlipperLSh.RotZ = LeftFlipper.currentangle
+	'FlipperRSh.RotZ = RightFlipper.currentangle
 
 'Rotate Flipper prims
 
