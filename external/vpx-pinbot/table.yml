@@ -6,6 +6,8 @@ tableNotes: "Download - 211309852_Pinbot(Williams1986)2.1.1VR.zip"
 backglassBundled: true
 backglassChecksum: "5D5DDAAAFBBD2DC529AFA880702060DA"
 backglassNotes: "Bundled with VPX"
+backglassAuthorsOverride:
+  - "bord"
 fps: 40
 romVPSId: "aSGrFJgL"
 romChecksum: "A0ACE6E5EEDC8D2EDCCB36E3FF26B1D3"
