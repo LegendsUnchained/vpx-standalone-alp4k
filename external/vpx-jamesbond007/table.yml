@@ -3,6 +3,7 @@ backglassVPSId: "u4J0Hdkz0u"
 backglassChecksum: "3916801345a6c10cec4d1fd7ab9f6759"
 fps: 60
 tableVPSId: "bwggWE8UrF"
+tableNameOverride: "James Bond 007"
 tagline: "Go enjoy some shaken, not stirred, Martinis!"
 testers:
   - "Mar3nBu"
