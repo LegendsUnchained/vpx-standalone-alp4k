@@ -13,6 +13,7 @@ testers:
   - "mrandromeda"
   - "Silentkat"
 vpxVPSId: "ZA6P_nOSzT"
+enabled: false
 vpxChecksum: "152048985DA23568440F713D0184C4FF"
 applyFixes:
   - "bass"
