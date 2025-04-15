@@ -8,9 +8,9 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 
 DirectB2S
 
-Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
-Version: 2.5  
-Download: [VP Universe](https://vpuniverse.com/files/file/9501-cyclone-williams-1988-b2s-with-full-dmd/)
+Authors: [2borG](https://www.vpforums.org/index.php?showuser=43712)  
+Version: 1.1  
+Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=15163)
 
 ROM
 
