@@ -11,5 +11,6 @@ testers:
   - "CoffeeAtJoes"
 vpxVPSId: "DuoklEj4"
 vpxChecksum: "A7CC8A4F931ED141B76813D89B8E08A8"
+tableNotes: "Download version 3.0"
 applyFixes:
   - "bass"
