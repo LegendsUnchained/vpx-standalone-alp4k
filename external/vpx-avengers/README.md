@@ -1,33 +1,60 @@
-# Avengers Pro (Stern 2012)
+﻿# Avengers Pro (Stern 2012)
 
 ![Table Preview](../../images/vpx-avengers-preview.png)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author | 
-|-----------|--------|----------|--------------|
-| **VPX** | [VP Universe](https://vpuniverse.com/files/file/24741-avengers-pro-stern-2012-hanibal-4k/) | 1.0.0 | [hannibal2001](https://vpuniverse.com/profile/872-hanibal2001/) | 
-| **B2S** | [VP Universe](https://vpuniverse.com/files/file/15489-avengers-pro-stern-2012-b2s-with-full-dmd/) | 1.0.0 |[hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
-| **DMD** | - | - | - |
-| **ROM** | [VP Universe](https://vpuniverse.com/files/file/3916-avengers-the-v17/) | avs_170.zip  | [CarnyPriest](https://vpuniverse.com/profile/1146-carnypriest/) |
+## *️⃣  Table Statistics
 
-**Tested by:** [Bla1ze]
-
----
-
-## Status 
-**Minimum VPX Standalone build:** 10.8.0-1983-b84441e
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
 
+<br>
+
+**VPXS 4KP Testers:**
+  - Bla1ze
+
+<br>
+
 ---
 
-## Instructions
+<br>
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-avengers.elf`
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-avengers.elf`
-- Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same..
-- "Avengers... assemble"
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Avengers (Pro), The`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"Avengers... assemble"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - TechZombie
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
