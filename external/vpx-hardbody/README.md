@@ -1,4 +1,4 @@
-﻿# Hardbody (Bally 1987)
+﻿﻿# Hardbody (Bally 1987)
 
 ![Table Preview](../../images/vpx-hardbody-preview.png)
 
@@ -41,7 +41,17 @@ This table is available through the Table Manager Wizard, which makes installati
 
 Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
 
-__*We hope you enjoy!!   - the VPXS 4KP team!*__
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - TechZombie
+</pre>
 
 <br>
 <br>
