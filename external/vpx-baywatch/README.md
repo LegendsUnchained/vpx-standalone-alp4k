@@ -41,6 +41,7 @@ This table is available through the Table Manager Wizard, which makes installati
 
 Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
 
+<br>
 
 __*We hope you enjoy!!*__
 
