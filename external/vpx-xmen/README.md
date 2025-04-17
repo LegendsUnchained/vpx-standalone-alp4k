@@ -1,32 +1,60 @@
-# X-Men LE (Stern 2012) MOD color rush 1.5
+﻿# X-Men Wolverine LE (Stern 2012)
 
 ![Table Preview](../../images/vpx-xmen.png)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author |
-|:---------:|:----:|:-------:|:------:|
-| VPX | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=16898) | 1.5 | [masonm](https://www.vpforums.org/index.php?showuser=147793) |
-| B2S | [VP Universe](https://vpuniverse.com/files/file/2435-x-men-pro-stern-2012/) | 3.0 | [Wildman](https://vpuniverse.com/profile/5-wildman/) |
-| DMD | N/A | N/A | N/A |
-| ROM | [VP Universe](https://vpuniverse.com/files/file/12824-x-men-pro-xmn_151h/) | N/A | N/A |
+## *️⃣  Table Statistics
 
-**Tested by:** [Bla1ze]
-
----
-
-## Status 
-Minimum VPX Standalone build: 10.8.0-1983-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
+
+<br>
+
+**VPXS 4KP Testers:**
+  - Bla1ze
+
+<br>
 
 ---
 
-## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-xmen.elf
-- Download the table and directb2s versions listed above and copy them into this folder. The ROM zip gets copied to pinmame/roms (do not unzip).
-- Rumor has it this is Deadpool's favorite game because you get to bash Wolverine!
+<br>
 
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`X-Men Wolverine LE`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"Go try that again Bub!"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - TechZombie
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

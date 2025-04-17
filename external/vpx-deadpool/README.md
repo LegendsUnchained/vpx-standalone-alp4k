@@ -1,4 +1,4 @@
-# Deadpool, JPs (Original 2021)
+﻿# Deadpool, JPs (Original 2021)
 
 ![Table Preview](../../images/vpx-jps-deadpool-preview.jpg)
 
@@ -42,7 +42,17 @@ This table is available through the Table Manager Wizard, which makes installati
 
 Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
 
-__*We hope you enjoy!!   - the VPXS 4KP team!*__
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - TechZombie
+</pre>
 
 <br>
 
@@ -62,10 +72,11 @@ __*We hope you enjoy!!   - the VPXS 4KP team!*__
 
 1.  Download the puppack `DPpuppack2.0.7z` from [VP Universe](https://vpuniverse.com/files/file/7368-deadpool-table-v512-puppack-20/) (by [TeamTuga](https://vpuniverse.com/profile/31843-teamtuga/))
 2.  Create the folder `pupvideos` within the `external/vpx-deadpool` folder in the Table Manager
-3.  Extract the folder `jpsdeadpool` from the puppack zip, and put it in the `pupvideos`
-4.  Unzip the `use_these_pup_files.zip` from the `external/vpx-deadpool` folder in the [repository](https://github.com/TheOminousOsie/vpx-standalone-alp4k/tree/main/external/vpx-deadpool)
-5.  Place them inside the `pupvideos/jpsdeadpool` folder, and overwrite files if prompted.  **This is necessary otherwise it does not work**
-6. Enjoy this amazing table with extra sounds and videos! 
+3.  Extract the folder `jpsdeadpool` from the puppack zip, and put it in the `pupvideos`. 
+4.  You should now have `external/vpx-deadpool/pupvideos/jpsdeadpool/{puppack files}`
+5.  Unzip the `use_these_pup_files.zip` from the `external/vpx-deadpool` folder in the [repository](https://github.com/TheOminousOsie/vpx-standalone-alp4k/tree/main/external/vpx-deadpool)
+6.  Place them inside the `pupvideos/jpsdeadpool` folder, and overwrite files if prompted.  **This is necessary otherwise it does not work**
+7. Enjoy this amazing table with extra sounds and videos! 
 
 
 <br>

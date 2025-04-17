@@ -1,39 +1,63 @@
-# Back to the Future: The Pinball (Data East 1990)
+﻿# Back to the Future: The Pinball (Data East 1990)
 
 ![Table Preview](../../images/vpx-bttf.png)
 
-Author: [bigus1](https://www.vpforums.org/index.php?showuser=107629)  
-Version: 1.05  
-Download: [VP Forum](https://www.vpforums.org/index.php?app=downloads&showfile=14338)
+<br>
 
-DirectB2S
-
-Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
-Version: 1.0.0 
-Download: [VP Universe](https://vpuniverse.com/files/file/10713-back-to-the-future-data-east-1990-b2s-with-full-dmd/)
-
-ROM
-
-Download: [VP Universe](https://vpuniverse.com/files/file/1211-bttf_a27zip/)
-Version: bttf_a27.zip
-
-Colored ROM
-
-Download: [VP Universe](https://vpuniverse.com/files/file/22781-back-to-the-future-pinball-serum-colorization/)
-
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-1983-b84441e
+## *️⃣  Table Statistics
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 35 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 45 |
+
+<br>
+
+**VPXS 4KP Testers:**
+  - Boris
+  - Mox
+  - Silentkat
+  - CoffeeAtJoes
+
+<br>
+
+---
+
+<br>
+
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Back to the Future`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"Wait a Minute, Doc. Are You Telling Me You Built a Time Machine... Out of a DeLorean?"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - TechZombie
+</pre>
 
 
-## Instructions
-
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-bttf.elf
-- Download the table, ROM, directb2s versions listed above and copy them into this folder
-- You built a time machine out of a DeLorean?
-
+<br>
+<br>
+<br>
+<br>
+<br>
