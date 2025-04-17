@@ -10,7 +10,7 @@
 | **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=16126) | 2.0 | [Bigus1](https://www.vpforums.org/index.php?showuser=107629) | 
 | **B2S** | [VP Universe](https://vpuniverse.com/files/file/12988-family-guy-stern-2007-b2s-with-full-dmd/) | 2.0 |[Ryguy417](https://vpuniverse.com/profile/31096-ryguy417/) |
 | **DMD** | - | - | - |
-| **ROM** | [VP Universe](https://vpuniverse.com/files/file/3397-family-guy-v120-english-french/) | fg_1200af.zip   | [VPUStaff](https://vpuniverse.com/profile/50-vpustaff/) |
+| **ROM** | [VP Universe](https://vpuniverse.com/files/file/3397-family-guy-v120-english-french/) | fg_1200af.zip | [VPUStaff](https://vpuniverse.com/profile/50-vpustaff/) |
 
 **Tested by:** [Bla1ze, Mar3nBu]
 
@@ -20,7 +20,7 @@
 **Minimum VPX Standalone build:** 10.8.0-1983-b84441e
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
 
 ---
 
