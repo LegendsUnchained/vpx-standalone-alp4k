@@ -15,8 +15,10 @@ tagline: "Turn out the lights... it's time to get Scared Stiff!"
 testers:
   - "Bla1ze"
   - "Sscorpio"
+  - "CoffeeAtJoes"
 vpxVPSId: "VfopIX1N"
-vpxChecksum: "ee6031830c79b01941cb841c5f58c5c5"
+vpxChecksum: "7c832b732c25bd96457aed1923faad75"
+tableNotes: "Download version 3.0"
 mainNotes: "Download Colored ROM v1.1"
 applyFixes:
   - "bass"
