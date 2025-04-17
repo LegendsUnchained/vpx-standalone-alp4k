@@ -8,7 +8,7 @@
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
 | **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=16126) | 3.0 | [Bigus1](https://www.vpforums.org/index.php?showuser=107629) | 
-| **B2S** | [VP Universe](https://vpuniverse.com/files/file/14589-king-kong-data-east-1990-b2s/) | 1.5 |[hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
+| **B2S** | [VP Universe](https://vpuniverse.com/files/file/2538-king-kong-data-east-1990/) | 3.0 |[Wildman](https://vpuniverse.com/profile/5-wildman/) |
 | **DMD** | - | - | - |
 | **ROM** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=8732) | kiko_a10.zip | [Destruk](https://www.vpforums.org/index.php?showuser=5) |
 
