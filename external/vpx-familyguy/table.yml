@@ -1,0 +1,15 @@
+---
+backglassVPSId: "iaAGMUuI7g"
+backglassChecksum: "335542E8366FCBF981DA8349A9FB1387"
+fps: 60
+romVPSId: "WVVO9i6f"
+romChecksum: "515CACB07642990647CDE5BC495C6C48"
+tableVPSId: "qdNbj2SA"
+tagline: "Victory shall be mine!"
+testers:
+  - "Bla1ze"
+  - "Mar3nBu"
+vpxVPSId: "ktQX8dd3"
+vpxChecksum: "D24D346A4410B0EED24977A3CEE40810"
+applyFixes:
+  - "bass"
