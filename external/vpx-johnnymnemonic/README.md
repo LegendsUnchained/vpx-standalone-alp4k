@@ -2,32 +2,31 @@
 
 ![Table Preview](../../images/vpx-johnnymnemonic.png)
 
-Authors: [drakkon](https://vpuniverse.com/profile/51568-drakkon/)  
-Version: 1.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/11964-johnny-mnemonic-williams-1995-drakkon-mod-10/)
+---
 
-DirectB2S
+## Files
+| File Type | Link | Version | Author | 
+|-----------|--------|----------|--------------|
+| **VPX** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=15289) | 2.1 | [bigus1](https://www.vpforums.org/index.php?showuser=107629) |
+| **B2S** | [VPUniverse](https://vpuniverse.com/files/file/13622-johnny-mnemonic-williams-1995-b2s-with-full-dmd/) | 1.0 | [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
+| **ROM** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=1270) | N/A | N/A |
 
-Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
-Version: 1.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/13622-johnny-mnemonic-williams-1995-b2s-with-full-dmd/)
+**Tested by:** [Reboot & Bla1ze]
 
-ROM
-
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1270)
+---
 
 ## Status 
-
 Minimum VPX Standalone build: 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 41 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 56 |
+
+---
 
 ## Instructions
-
 - Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-johnnymnemonic.elf
-- Download the table and directb2s versions listed above and copy them into this folder
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-- Place ROM zip file into vpx-johnnymnemonic/pinmame/roms folder. DO NOT UNZIP!
-
+- Add your personalized launcher.elf and rename it to `vpx-johnnymnemonic.elf`
+- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-johnnymnemonic`
+- Rom file (FILENAME.zip) stays in zip folder, place zip file in `vpx-johnnymnemonic/pinmame/roms`
+- Make sure `(.vpx)` `(.direct2b2s)` and `(.ini)` are all named the same.
+- Glove forward and back are set to the left and right nudge buttons.
