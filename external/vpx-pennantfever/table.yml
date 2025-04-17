@@ -4,7 +4,7 @@ backglassChecksum: "04cf395574d9832772c712282207f57a"
 backglassAuthorsOverride:
   - "CoffeeAtJoes"
 backglassNotes: "Download version 1.0"
-fps: 60
+fps: 50
 romChecksum: "fefe4744771fecc3d2e6b5e568469611"
 romNotes: "Download version 'pfevr_p3'"
 romUrlOverride: "https://www.vpforums.org/index.php?app=downloads&showfile=513"
