@@ -2,7 +2,7 @@
 backglassVPSId: "5gex6OFs"
 backglassChecksum: "b8034183126d0d872e4f3643cc1812dc"
 backglassNotes: "Download version 2.0"
-fps: 54
+fps: 60
 romChecksum: "9cc6161300c1e0ac76d73ec6b847ee7c"
 romUrlOverride: "https://www.vpforums.org/index.php?app=downloads&showfile=7316"
 romVersionOverride: "lotr"
