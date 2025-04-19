@@ -411,7 +411,7 @@ Links to these products on Amazon are through affiliate links.
 | [Gold Wing (Original 2017)](external/vpx-goldwing) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Gold Wings (Gottlieb 1986)](external/vpx-goldwings) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 45 |
 | [Golden Cue (Sega 1998)](external/vpx-goldencue) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 38 |
-| [Goldeneye (Sega 1996)](external/vpx-goldeneye) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
+| [Goldeneye (Sega 1996)](external/vpx-goldeneye) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
 | [Goonies, The - Never Say Die (Original 2021)](external/vpx-goonies) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 32 |
 | [Gorgar (Williams 1979)](external/vpx-gorgar) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 45 |
 | [GORILLAZ (Original 2024)](external/vpx-gorillaz) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 30 |
