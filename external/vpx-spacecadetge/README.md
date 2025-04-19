@@ -1,33 +1,29 @@
 # JP's Space Cadet: Galaxy Edition (Original 2021)
 
-
 ![Table Preview](../../images/vpx-spacecadetge-preview.jpg)
 
-Authors: [Funkatron101](https://vpuniverse.com/profile/49709-funkatron101/)  
-Version: 1.1  
-Download: [VP Universe](https://vpuniverse.com/files/file/24068-jps-space-cadet-galaxy-edition/)
+---
 
-PUP Pack - REQUIRED FOR THIS TABLE
+## Files
+| File Type | Link | Version | Author | 
+|-----------|--------|----------|--------------|
+| **VPX** | [VP Universe](https://vpuniverse.com/files/file/24068-jps-space-cadet-galaxy-edition/) | 1.1 | [Funkatron101](https://vpuniverse.com/profile/49709-funkatron101/) |
+| **B2S** | N/A | N/A | N/A |
+| **DMD** | N/A | N/A | N/A |
+| **ROM** | N/A | N/A | N/A |
+| **PUP** | [Mega](https://mega.nz/file/KJZm0Cza#8RIaLIAlpnE2CH7qj1-4TAGGCnQjUHcRPmXb2etEtx4) | 1.1 | [Funkatron101](https://vpuniverse.com/profile/49709-funkatron101/) |
 
-Authors: [Funkatron101](https://vpuniverse.com/profile/49709-funkatron101/)  
-Version: 1.1  
-Download: [Mega](https://mega.nz/file/KJZm0Cza#8RIaLIAlpnE2CH7qj1-4TAGGCnQjUHcRPmXb2etEtx4)
+**Tested by:** [mrandromeda]
 
-DirectB2S
-
-None
-
-ROM
-
-No Rom Required
+---
 
 ## Status 
-
-Minimum VPX Standalone build: 10.8.0-2042-1431983
-
+**Minimum VPX Standalone build:** 10.8.0-5b941e6
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 45 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 52 |
+
+---
 
 ## Instructions
 

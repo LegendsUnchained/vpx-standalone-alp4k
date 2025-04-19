@@ -228,8 +228,12 @@ Sub Table1_Init()
 
 	PUPInit  'this should be called in table1_init at bottom after all else b2s/controller running.
 
+    pupDMDupdate.Enabled = false
+    pupDMDupdate.Interval = 500
+    pupDMDupdate.Enabled = true
+
     ' freeplay or coins
-    bFreePlay = False 'we want coins
+    bFreePlay = True 'we want coins
 
     if bFreePlay Then DOF 125, DOFOn
 
@@ -790,9 +794,8 @@ Class Dampener
 		DesiredCor = LinearEnvelope(cor.ballvel(aBall.id), ModIn, ModOut )
 		RealCOR = BallSpeed(aBall) / (cor.ballvel(aBall.id)+0.0001)
 		coef = desiredcor / realcor 
-		if debugOn then str = name & " in vel:" & round(cor.ballvel(aBall.id),2 ) & vbnewline & "desired cor: " & round(desiredcor,4) & vbnewline & _
-		"actual cor: " & round(realCOR,4) & vbnewline & "ballspeed coef: " & round(coef, 3) & vbnewline 
-		if Print then debug.print Round(cor.ballvel(aBall.id),2) & ", " & round(desiredcor,3)
+		'if debugOn then str = name & " in vel:" & round(cor.ballvel(aBall.id),2 ) & vbnewline & "desired cor: " & round(desiredcor,4) & vbnewline & "actual cor: " & round(realCOR,4) & vbnewline & "ballspeed coef: " & round(coef, 3) & vbnewline 
+		'if Print then debug.print Round(cor.ballvel(aBall.id),2) & ", " & round(desiredcor,3)
 
 		aBall.velx = aBall.velx * coef : aBall.vely = aBall.vely * coef
 		if debugOn then TBPout.text = str
@@ -6606,9 +6609,8 @@ Sub UpdateRankLights
 End Sub
 
 Sub PromoteRank
-PuPEvent 505
-PuPlayer.playlistplayex pCallouts,"Callouts","vo_Gravity Normalized.ogg",0,0
-PuPEvent 503
+    PuPEvent 505
+    PuPEvent 503
     If Rank(CurrentPlayer) < 9 Then
         LightEffect 4
         Rank(CurrentPlayer) = Rank(CurrentPlayer) + 1
@@ -8306,13 +8308,6 @@ pLine1Ani=""
 pLine2Ani=""
 pLine3Ani=""
 
-
-if pAni=1 Then  'we flashy now aren't we
-pLine1Ani="{'mt':1,'at':1,'fq':150,'len':" & (timeSec*1000) &  "}"  
-pLine2Ani="{'mt':1,'at':1,'fq':150,'len':" & (timeSec*1000) &  "}"  
-pLine3Ani="{'mt':1,'at':1,'fq':150,'len':" & (timeSec*1000) &  "}"  
-end If
-
 curPos=InStr(pText,"^")   'Lets break apart the string if needed
 if curPos>0 Then 
    pLine1=Left(pText,curPos-1) 
@@ -8399,8 +8394,16 @@ Sub pupDMDupdate_Timer()
 End Sub
 
 Sub PuPEvent(EventNum)
-if hasPUP=false then Exit Sub
-PuPlayer.B2SData "E"&EventNum,1  'send event to puppack driver  
+    if hasPUP=false then Exit Sub
+
+    Select Case EventNum
+        Case 502
+            PlayMusic "./pupvideos/" & pGameName & "/Callouts/mu_GE_Maelstrom-Re-attract.mp3", 0.8
+        Case 503
+            EndMusic
+    End Select
+
+    PuPlayer.B2SData "E"&EventNum,1  'send event to puppack driver  
 End Sub
 
 
@@ -8539,8 +8542,8 @@ pCurAttractPos=pCurAttractPos+1
   Select Case pCurAttractPos
 
   Case 1
-PuPEvent 502
-If score(currentplayer) > 0 Then    
+            PuPEvent 502
+            If score(currentplayer) > 0 Then    
 				pupDMDDisplay "GAMEOVER", " ^Last Score - " & FormatNumber(Score(CurrentPlayer),0), "", 2, 0, 10
 				pupDMDDisplay "GAMEOVER", " ^Last Score - " & FormatNumber(Score(CurrentPlayer),0),  "", 2, 0, 10
 				PuPEvent 501
@@ -8549,10 +8552,10 @@ If score(currentplayer) > 0 Then
 				pupDMDDisplay "attract", "", "", 3, 0, 10
 				PuPEvent 501				
 			end if 
-  Case 2 pupDMDDisplay "attract","","",18,0,10 
+  Case 2    pupDMDDisplay "attract","","",18,0,10 
 				PuPEvent 500
   Case 3 
-if Credits = 0 then    
+            if Credits = 0 then    
 				pupDMDDisplay "attract", "CREDITS 0^INSERT COIN", "", 3, 1, 10
 			Else    
 				pupDMDDisplay "attract", "CREDITS "&(Credits)&"^PRESS START", "", 3, 0, 10
@@ -8563,7 +8566,6 @@ if Credits = 0 then
   Case 6 pupDMDDisplay "highscore","LeaderBoard^3. " & HighScoreName(2)& "  " & FormatNumber(HighScore(2),0)&"^4. " & HighScoreName(3) & "  " & FormatNumber(HighScore(3),0) , "", 3, 0, 10  
 
   Case 7 pupDMDDisplay "attract","","",51,0,10 
-                PuPlayer.playlistplayex pCallouts,"Callouts","vo_Gravity Normalized.ogg",0,0
 				PuPEvent 503
 				PuPEvent 0
 				PuPEvent 3
@@ -8579,17 +8581,41 @@ if Credits = 0 then
 end Sub
 
 '************************ called during gameplay to update Scores ***************************
+Dim lastScore : lastScore = -1
+Dim lastCredits : lastCredits = -1
+Dim lastCurrentPlayer : lastCurrentPlayer = -1
+Dim lastBalls : lastBalls = -1
 
 Sub pUpdateScores()
-	if pDMDCurPage <> pScores then Exit Sub
+	if pDMDCurPage <> pScores then
+        lastScore = -1
+        lastCredits = -1
+        lastCurrentPlayer = -1
+        lastBalls = -1
+        Exit Sub
+    End if
 
-	puPlayer.LabelSet pDMD,"CurScore","" & FormatNumber(Score(CurrentPlayer),0) ,1,""
-	puPlayer.LabelSet pDMD,"Credits","CREDITS:" & ""& Credits ,1,""
-	puPlayer.LabelSet pDMD,"Play1","" & CurrentPlayer,1,""
-	puPlayer.LabelSet pDMD,"Ball","" & ""& balls ,1,""
-	puPlayer.LabelSet pDMD,"PlayLabel","Player",1,""
-	puPlayer.LabelSet pDMD,"BallLabel","Ball",1,""
- '   puPlayer.LabelSet pDMD, "pupStatus", pStatusText, 1, ""
+	If (lastScore <> Score(CurrentPlayer)) Then
+        lastScore = Score(CurrentPlayer)
+        puPlayer.LabelSet pDMD,"CurScore","" & FormatNumber(lastScore,0) ,1,""
+    End If
+
+	If (lastCredits <> Credits) Then
+        lastCredits = Credits
+    	puPlayer.LabelSet pDMD,"Credits","CREDITS:" & ""& lastCredits ,1,""
+    End If
+
+	If (lastCurrentPlayer <> CurrentPLayer) Then
+        lastCurrentPlayer = CurrentPLayer
+    	puPlayer.LabelSet pDMD,"Play1","" & lastCurrentPlayer,1,""
+    End If
+
+	If (lastBalls <> balls) Then
+        lastBalls = balls
+    	puPlayer.LabelSet pDMD,"Ball","" & ""& lastBalls ,1,""
+    	puPlayer.LabelSet pDMD,"PlayLabel","Player",1,""
+    	puPlayer.LabelSet pDMD,"BallLabel","Ball",1,""
+    End if
 end Sub
 
 

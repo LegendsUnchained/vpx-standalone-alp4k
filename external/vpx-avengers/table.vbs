@@ -11,7 +11,7 @@ Randomize
 
 Const BallSize = 50
 Const BallMass = 1
-
+HulkPrim.Roty = 180
 '************************************************************************
 ' 							Table Options
 '************************************************************************
@@ -656,14 +656,18 @@ End Sub
 
 ' Hulk Spotlight Flasher
 Sub Flash21(enabled)
+
+Back_Flash1.opacity = Enabled * 10
 	If Enabled Then	
 		Spot21a.State = 1
 		Spot21b.State = 1
 		Spot21c.State = 1
+Spot21c001.State = 1
 	Else
 		Spot21a.State = 0
 		Spot21b.State = 0
 		Spot21c.State = 0
+Spot21c001.State = 0
 	End If
 End Sub
 
@@ -867,33 +871,68 @@ Sub solTrough(Enabled)
 	End If
 End Sub
 
+Dim schwenkl:schwenkl=False
 sub solHulkCCW (enabled)
 	If enabled Then
-		HulkPrim.Roty = HulkPrim.roty + 20
-		HulkPrim1.Roty = HulkPrim.Roty
-		HulkPrim2.Roty = HulkPrim.Roty
-		HulkArm1.RotateToEnd
+		schwenkr = True
+		'HulkPrim.Roty = HulkPrim.roty + 20
+		'HulkPrim1.Roty = HulkPrim.Roty
+		'HulkPrim2.Roty = HulkPrim.Roty
+		'HulkArm1.RotateToEnd
 	Else
-		HulkPrim.Roty = 180
-		HulkPrim1.Roty = HulkPrim.Roty
-		HulkPrim2.Roty = HulkPrim.Roty
-		HulkArm1.RotateToStart
+		schwenkr = False
+		'HulkPrim.Roty = 180
+		'HulkPrim1.Roty = HulkPrim.Roty
+		'HulkPrim2.Roty = HulkPrim.Roty
+		'HulkArm1.RotateToStart
 	End If
 End Sub
 
+Dim schwenkr:schwenkr=False
 sub solHulkCW (enabled)
 	If enabled Then
-		HulkPrim.Roty = HulkPrim.roty - 20
-		HulkPrim1.Roty = HulkPrim.Roty
-		HulkPrim2.Roty = HulkPrim.Roty
-		HulkArm2.RotateToEnd
+		schwenkl = True
+		'HulkPrim.Roty = HulkPrim.roty - 20
+		'HulkPrim1.Roty = HulkPrim.Roty
+		'HulkPrim2.Roty = HulkPrim.Roty
+		'HulkArm2.RotateToEnd
 	Else
-		HulkPrim.Roty = 180	
-		HulkPrim1.Roty = HulkPrim.Roty
-		HulkPrim2.Roty = HulkPrim.Roty
-		HulkArm2.RotateToStart
+		schwenkl = False
+		'HulkPrim.Roty = 180	
+		'HulkPrim1.Roty = HulkPrim.Roty
+		'HulkPrim2.Roty = HulkPrim.Roty
+		'HulkArm2.RotateToStart
 	End If
 End Sub
+
+Dim hulkmove
+Sub HulkMain_Timer()
+	
+	If schwenkl = false and schwenkr = false and HulkPrim.Roty =  180 Then 
+	hulkmove = 0
+	HulkArm1.RotateToStart
+	HulkArm2.RotateToStart
+	End If
+
+	If schwenkl = false and HulkPrim.Roty > 180 then hulkmove = -2
+	If schwenkl = true and HulkPrim.Roty < 200 then hulkmove = 2:HulkArm2.RotateToEnd
+
+	If schwenkr = false and HulkPrim.Roty < 180 then hulkmove = 2
+	If schwenkr = true and HulkPrim.Roty > 160 then hulkmove = -2:HulkArm1.RotateToEnd
+
+
+
+		HulkPrim.Roty = HulkPrim.Roty + hulkmove
+		HulkPrim1.Roty = HulkPrim.Roty
+		HulkPrim2.Roty = HulkPrim.Roty
+
+
+
+	
+
+
+End Sub
+
 
 Dim armsup:armsup=False
 Sub solHulkArms (enabled)
@@ -917,8 +956,8 @@ End Sub
 Dim armmove
 Sub HulkArms_Timer()
 	armmove = 0
-	If armsup = false and HulkPrim1.RotX > 130 then armmove = -4
-	If armsup = true and HulkPrim1.RotX < 200 then armmove = 4
+	If armsup = false and HulkPrim1.RotX > 130 then armmove = -2
+	If armsup = true and HulkPrim1.RotX < 200 then armmove = 2
 	HulkPrim1.RotX = HulkPrim1.RotX + armmove
 End Sub
 
@@ -3213,7 +3252,7 @@ Dim TestFlashers, TableRef, FlasherLightIntensity, FlasherFlareIntensity, Flashe
 ' *********************************************************************
 TestFlashers = 0				' *** set this to 1 to check position of flasher object			 ***
 Set TableRef = Table1		   ' *** change this, if your table has another name				   ***
-FlasherLightIntensity = 0.1	 ' *** lower this, if the VPX lights are too bright (i.e. 0.1)	   ***
+FlasherLightIntensity = 0.3	 ' *** lower this, if the VPX lights are too bright (i.e. 0.1)	   ***
 FlasherFlareIntensity = 0.3	 ' *** lower this, if the flares are too bright (i.e. 0.1)		   ***
 FlasherBloomIntensity = 0.1	 ' *** lower this, if the blooms are too bright (i.e. 0.1)		   ***	
 FlasherOffBrightness = 0.5	  ' *** brightness of the flasher dome when switched off (range 0-2)  ***
@@ -3348,9 +3387,9 @@ Sub InitFlasher(nr, col)
 		objbloom(nr).color = RGB(12,255,4)
 		
 		Case "red"
-		objlight(nr).color = RGB(255,32,4)
-		objflasher(nr).color = RGB(255,32,4)
-		objbloom(nr).color = RGB(255,32,4)
+		objlight(nr).color = RGB(255,0,0)
+		objflasher(nr).color = RGB(255,0,0)
+		objbloom(nr).color = RGB(255,0,0)
 		
 		Case "purple"
 		objlight(nr).color = RGB(230,49,255)
@@ -3388,7 +3427,7 @@ End Sub
 Sub FlashFlasher(nr)
 	If Not objflasher(nr).TimerEnabled Then
 		objflasher(nr).TimerEnabled = True
-		objflasher(nr).visible = 1
+		objflasher(nr).visible = 0
 		objbloom(nr).visible = 1
 		objlit(nr).visible = 1
 	End If
@@ -3419,7 +3458,7 @@ End Sub
 
 Sub UpdateCaps(nr, aValue) ' nf UseVPMModSol dynamic fading version of 'FlashFlasher' (PWM Update). You can see most of the ramp up has been commented out in favor of Pinmame's curves
 	if aValue > 0 then 
-		objflasher(nr).visible = 1 : objlit(nr).visible = 1 ': objbloom(nr).visible = 1
+		objflasher(nr).visible = 1 : objlit(nr).visible = 0 ': objbloom(nr).visible = 1
 		Select Case nr
 			Case 1:							'1,2,3 are same event, so doing this only for 1
 				Flasherbloom1.ImageA="flasherbloomLowerLeft"
@@ -4036,6 +4075,22 @@ Sub LoadLUT
 	LUTset = int (rLine) 
 	Set ScoreFile = Nothing
 	Set FileObj = Nothing
+End Sub
+
+
+
+Sub Augen_Timer()
+Flasher26a.Intensity = Flasher26b.Intensity /4
+Flasher26b.Intensity = (25+(30*Rnd))
+Flasher26c.Intensity = Flasher26b.Intensity 
+
+Spot21c.Intensity = (5+(15*Rnd))
+Spot21a.Intensity = Spot21c.Intensity /4
+Spot21b.Intensity = Spot21c.Intensity /4
+Spot21c001.Intensity = Spot21c.Intensity 
+
+
+
 End Sub
 
 '****************************************************************
