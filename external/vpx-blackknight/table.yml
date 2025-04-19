@@ -1,12 +1,14 @@
 ---
 backglassVPSId: "yPDBQVge"
 backglassChecksum: "D8B20694D97414AB0E29FDF0B4B0BDF7"
+backglassNotes: "Download version 1.0.0"
 fps: 60
 romVPSId: "Tk7Kvnxn"
 romChecksum: "C0689DA53921E30F6869EDBFCADE3A84"
 romNotes: "Download - bk_l4.zip"
 tableVPSId: "GsTo4kGh"
 tagline: "Can you defeat the Black Knight?"
+tableNotes: "Download version v55_VPX8"
 testers:
   - "Mox"
   - "OminousOsie"
