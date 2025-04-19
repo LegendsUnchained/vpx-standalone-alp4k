@@ -1,7 +1,7 @@
 ---
-backglassVPSId: "JEo0dI18se"
-backglassChecksum: "9CB81C2312415D2C1778DFF9E6F55A4E"
-fps: 45
+backglassAuthorsOverride:
+  - ""
+fps: 50
 romVPSId: "px2FY10w"
 romChecksum: "104F6D8613008824972DCAAE3975E85B"
 romNotes: "Download - dm_lx4.zip"
