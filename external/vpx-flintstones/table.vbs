@@ -863,7 +863,7 @@ Sub UpdateTheMachine
 		'TurnTableNut.rotz = MachinePos 'AXS
 		TurnTable_giOFF.image = "Turntable_giOFF_" & Right("00" & CStr(Int(MachinePos / 2.5)), 3)
 		dim x: x= Int(MachinePos / 2.5)
-		if x < 0 or x > 143 then debug.print "X out of range " & CStr(x) & " for degree " & MachinePos
+		'if x < 0 or x > 143 then debug.print "X out of range " & CStr(x) & " for degree " & MachinePos
 	end if 
 End Sub
 
