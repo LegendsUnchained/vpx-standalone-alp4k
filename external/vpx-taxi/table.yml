@@ -1,13 +1,15 @@
 ---
 backglassVPSId: "Ve78z86QYx"
 backglassChecksum: "d42040f44096808fda28a316ae7485af"
-fps: 36
+backglassNotes: "Download version 2.0"
+fps: 50
 romChecksum: "3d410819250edbb7a8726f1788524df5"
 romUrlOverride: "https://www.vpforums.org/index.php?app=downloads&showfile=915"
 romVersionOverride: "taxi_l3"
 romNotes: "Download - taxi_l3.zip"
 tableVPSId: "7eRiA3gK"
 tagline: "Get ready for the taxi everyone's going to be lining up for!"
+tableNotes: "Download version 2.0"
 testers:
   - "Mox"
 vpxVPSId: "D3o3q9sKP1"
