@@ -2,9 +2,10 @@
 backglassAuthorsOverride:
   - ""
 fps: 50
-romVPSId: "px2FY10w"
-romChecksum: "104F6D8613008824972DCAAE3975E85B"
-romNotes: "Download - dm_lx4.zip"
+romChecksum: "c5ac656613515587aad3c2aaf47eecb9"
+romUrlOverride: "https://www.vpforums.org/index.php?app=downloads&showfile=5537"
+romVersionOverride: "dm_h6b"
+romNotes: "Download version dm_h6b"
 tableVPSId: "vT78ph4O"
 tagline: >-
   "We're police officers! We're not trained to handle this kind of violence!"
