@@ -1,0 +1,14 @@
+---
+backglassVPSId: "fVE3hd88Db"
+backglassChecksum: "BEF4B840F9949B46D070248FF6A551FC"
+fps: 60
+romVPSId: "NEmgefOn"
+romChecksum: "E82A3AFA2B3B59984C43E4A1BF822582"
+tableVPSId: "nKd3MiUo"
+tagline: "They Shoot, You Score!"
+testers:
+  - "Bla1ze"
+vpxVPSId: "y5saowFC_"
+vpxChecksum: "03F38584778625C6A4F59D88CED364F7"
+applyFixes:
+  - "bass"
