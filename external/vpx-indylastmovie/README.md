@@ -26,4 +26,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-indylastmovie.elf
 - Download the table, directb2s and listed above (use the separate link for the backglass. Don't use the one that came with the table), extract and copy them into this folder vpx-indylastmovie
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
+- Make sure (.vpx), (.directb2s), (.ini) files are all named the same
