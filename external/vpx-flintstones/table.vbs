@@ -690,13 +690,6 @@ Sub RealTimeUpdates
 	flipperR.RotZ = FlipperRight.CurrentAngle
 	flipperR1.RotZ = FlipperRight1.CurrentAngle
 
-	if BallShadowOn = 1 then BallShadowUpdate
-
-	If FlipperShadows = 1 Then
-		FlipperShadowL.RotZ = FlipperLeft.currentAngle
-		FlipperShadowR.RotZ = FlipperRight.currentAngle
-		FlipperShadowR1.RotZ = FlipperRight1.currentAngle
-	End If
 
         If OutlaneDifficulty = 1 Then 'AXS
 		OutlaneLeft1.Collidable = True
@@ -1558,39 +1551,6 @@ Sub OnBallBallCollision(ball1, ball2, velocity)
 	PlaySound("fx_collide"), 0, Csng(velocity) ^2 / 200, AudioPan(ball1), 0, Pitch(ball1), 0, 0, AudioFade(ball1)
 End Sub
 
-
-'*****************************************
-'	ninuzzu's	BALL SHADOW
-'*****************************************
-Dim BallShadow
-BallShadow = Array (BallShadow1,BallShadow2,BallShadow3,BallShadow4,BallShadow5)
-
-Sub BallShadowUpdate()
-    Dim BOT, b
-    BOT = GetBalls
-    ' hide shadow of deleted balls
-    If UBound(BOT)<(tnob-1) Then
-        For b = (UBound(BOT) + 1) to (tnob-1)
-            BallShadow(b).visible = 0
-        Next
-    End If
-    ' exit the Sub if no balls on the table
-    If UBound(BOT) = -1 Then Exit Sub
-    ' render the shadow for each ball
-    For b = fakeballs to UBound(BOT)
-        If BOT(b).X < Table1.Width/2 Then
-            BallShadow(b).X = ((BOT(b).X) - (Ballsize/6) + ((BOT(b).X - (Table1.Width/2))/7)) + 6
-        Else
-            BallShadow(b).X = ((BOT(b).X) + (Ballsize/6) + ((BOT(b).X - (Table1.Width/2))/7)) - 6
-        End If
-        ballShadow(b).Y = BOT(b).Y + 12
-        If BOT(b).Z > 20 Then
-            BallShadow(b).visible = 1
-        Else
-            BallShadow(b).visible = 0
-        End If
-    Next
-End Sub
 
 
 InitLamps()             ' turn off the lights and flashers and reset them to the default parameters
