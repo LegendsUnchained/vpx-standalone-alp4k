@@ -1,0 +1,17 @@
+---
+backglassAuthorsOverride:
+  - ""
+fps: 54
+romVPSId: "ymxnVQaE"
+romChecksum: "f5fe10836eeb802498c4e6d50ad00d95"
+tableVPSId: "DzsaK6qK"
+tagline: ""
+testers:
+  - "kaoticBPR"
+  - "evilwraith"
+  - "OminousOsie"
+vpxVPSId: "jUntdZLbHh"
+vpxChecksum: "4d88f706e65570020c7a8034e4693253"
+tableNotes: "Download version 1.0"
+applyFixes:
+  - "bass"
