@@ -1,0 +1,16 @@
+---
+backglassVPSId: "DThAvthDrr"
+backglassChecksum: "73B6079939457E795A33A180A28F8527"
+backglassNotes: "Download Transformers (Stern 2011) Marcade Mod 3scr 1.0.2"
+fps: 60
+romVPSId: "cfpz4S1g"
+romChecksum: "995A8B225A416DA70A56AC0BB41C919F"
+tableVPSId: "liKT-fsT"
+tableNotes: "Download Transformers Marcade MOD Edition 1.2"
+tagline: "Autobots... Transform and roll out!"
+testers:
+  - "Bla1ze"
+vpxVPSId: "zKW4eroF"
+vpxChecksum: "3C13D0A8BF315CE6913A1FB1E02B4AD2"
+applyFixes:
+  - "bass"
