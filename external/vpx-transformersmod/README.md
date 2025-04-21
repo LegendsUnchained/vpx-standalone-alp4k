@@ -10,7 +10,7 @@
 | **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=16211) | 1.2 | [wpilot](https://www.vpforums.org/index.php?showuser=135549) | 
 | **B2S** | [VP Universe](https://vpuniverse.com/files/file/7837-transformers-marcade-mod-alternate-db2s-2scr-or-3scr/) | 1.0.1 |[manbearpig](https://vpuniverse.com/profile/32743-manbearpig/) |
 | **DMD** | - | - | - |
-| **ROM** | [VP Universe](https://vpuniverse.com/files/file/3477-transformers-v18/) | nbaf_31.zip | [VPUStaff](https://vpuniverse.com/profile/50-vpustaff/) |
+| **ROM** | [VP Universe](https://vpuniverse.com/files/file/3477-transformers-v18/) | tf_180.zip | [VPUStaff](https://vpuniverse.com/profile/50-vpustaff/) |
 
 **Tested by:** [Bla1ze]
 
