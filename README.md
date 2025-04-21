@@ -629,6 +629,7 @@ Links to these products on Amazon are through affiliate links.
 | [Rescue 911 (Gottlieb 1994)](external/vpx-r911) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Ripley's Believe it or Not! (Stern 2004)](external/vpx-ripleys) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 | [Road Kings (Williams 1986)](external/vpx-roadkings) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 52 | 
+| [Road Runner (Atari 1979)](external/vpx-roadrunner) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [RoboCop (Data East 1989)](external/vpx-robocop) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 38 | 
 | [RoboCop 3 (Original 2018)](external/vpx-robocop3) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 | 
 | [Robot (Zaccaria 1985)](external/vpx-robot) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 41 |
