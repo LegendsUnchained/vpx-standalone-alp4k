@@ -75,7 +75,7 @@ EnableGI = 1
 ' ENABLE/DISABLE flasher
 '	0 = Flashers are off
 '	1 = Flashers are on
-EnableFlasher = 1
+EnableFlasher = 0
 
 ' ENABLE/DISABLE insert reflections at the ball
 '	0 = reflections are off
@@ -85,7 +85,7 @@ EnableReflectionsAtBall = 0
 ' ENABLED/DISABLE THE ABILITY TO CHANGE THE LUT FILE WITH THE RIGHT MAGNASAVE BUTTON
 '	0 = disabled
 '	1 = enabled (default)
-EnableLUTChangeWithRightMagnaSave = 1
+EnableLUTChangeWithRightMagnaSave = 0
 
 ' SELECT YOUR PREFERRED SIDEWALLS
 '	0 = autoselect (default)
@@ -93,7 +93,7 @@ EnableLUTChangeWithRightMagnaSave = 1
 '	2 = use sidewalls rendered for a medium view
 '	3 = use sidewalls rendered for desktop view
 '	4 = use sidewalls rendered for general illumination is off
-SelectSidewalls = 0
+SelectSidewalls = 3
 
 ' ANIMATE FRANK'S HEAD MOVING AROUND
 '	0 = animation is off or motor is broken
@@ -106,12 +106,12 @@ AnimateFranksHead = 4
 ' SHOW BALL SHADOWS
 '	0 = no ball shadows
 '	1 = ball shadows are visible
-ShowBallShadow = 1
+ShowBallShadow = 0
 
 ' LET THE BALL JUMP A BIT
 '	0 = off
 '	1 to 6 = ball jump intensity (3 = default)
-LetTheBallJump = 3
+LetTheBallJump = 0
 
 ' SIDE RAILS AND LOCKBAR VISIBILITY
 '   0 = hide side rails

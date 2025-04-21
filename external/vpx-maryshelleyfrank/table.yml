@@ -1,11 +1,13 @@
 ---
 backglassAuthorsOverride:
   - ""
-fps: 54
+fps: 60
 romVPSId: "ymxnVQaE"
 romChecksum: "f5fe10836eeb802498c4e6d50ad00d95"
 tableVPSId: "DzsaK6qK"
-tagline: ""
+tagline: >-
+  "I have love in me the likes of which you can scarcely imagine,
+  and rage the likes of which you would not believe"
 testers:
   - "kaoticBPR"
   - "evilwraith"
