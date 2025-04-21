@@ -11,7 +11,10 @@ tagline: "The blood is the life!"
 testers:
   - "Bla1ze"
   - "Mox"
-vpxVPSId: "oJqftfbwrS"
-vpxChecksum: "C1B4D74C72A854EED38DD7989A5086E7"
+  - "Boris"
+  - "OminousOsie"
+vpxVPSId: "v-WHlY04"
+vpxChecksum: "145bc0c3407249f73b3291e28337a288"
+tableNotes: "Download version 2.1"
 applyFixes:
   - "bass"
