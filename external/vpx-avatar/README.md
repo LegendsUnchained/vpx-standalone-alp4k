@@ -18,6 +18,7 @@
 
 ## Status 
 **Minimum VPX Standalone build:** 10.8.0-1989-a764013
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 42 |
@@ -27,8 +28,7 @@
 ## Instructions
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-avatar.elf
-- Download the table and directb2s versions listed above, extract and copy them to external/vpx-avatar
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
+- Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-avatar
+- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Place avr_200.zip in the external/vpx-avatar/pinmame/roms folder. *Do Not unzip*!
 - "The War For Pandora Begins Now!"
-
