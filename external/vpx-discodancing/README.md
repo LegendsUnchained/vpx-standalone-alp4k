@@ -30,4 +30,4 @@
 - Add your personalized launcher.elf and rename it to `discodancing.elf`
 - Download the table and directb2s versions listed above, extract, and copy them into `vpx-discodancing`
 - Rom file `(discodan.zip)`, stays in zip folder, place zip file in `vpx-discodancing/pinmame/roms`
-- Make sure `(.vpx)` `(.directb2s)` `(.vbs)` and `(.ini)` are all named the same.
+- Make sure `(.vpx)` `(.directb2s)` and `(.ini)` are all named the same.
