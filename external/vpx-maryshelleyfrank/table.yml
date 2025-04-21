@@ -10,8 +10,8 @@ testers:
   - "kaoticBPR"
   - "evilwraith"
   - "OminousOsie"
-vpxVPSId: "jUntdZLbHh"
-vpxChecksum: "4d88f706e65570020c7a8034e4693253"
-tableNotes: "Download version 1.0"
+vpxVPSId: "UFiN1mLE"
+vpxChecksum: "b496a25594a4e887c3a5a35f7b39bfa4"
+tableNotes: "Download version 1.2.2"
 applyFixes:
   - "bass"
