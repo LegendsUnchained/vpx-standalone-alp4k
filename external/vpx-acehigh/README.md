@@ -18,9 +18,10 @@
 
 ## Status 
 **Minimum VPX Standalone build:** 10.8.0-1989-a764013
+
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 
 ---
 
@@ -33,4 +34,3 @@
 
 ## Notes
 - Press right on the control panel to load a ball from the hopper
-
