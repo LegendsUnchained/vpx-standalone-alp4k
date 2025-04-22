@@ -509,7 +509,6 @@ Sub FlasherPlacement() 'dirty script based flasher placement
 '	f19f.y = 697'696.2
 '	f18f.x = 703'695
 '	f18f.y = 555'550.6
-
 	f17.x = 858.2477164
 	f17.y = 355.0953586
 	f18.x = 712.9653396
@@ -3917,17 +3916,12 @@ Class FlipperPolarity
 			'BallPos = BallPos + 
 			
 			'find slip Point B based on flipper strength	'could move elsewhere
-' Calculate slip point based on reference strength
-'dim SlipPointB : SlipPointB = PSlope(ref.strength, 2000, -0.28, 2850, -0.215)  'at 20.157 X speed slips this much
-
-' Calculate slip offset - assuming NewVector is intended to reference current vector
-'dim slipoffset : Slipoffset = pSlope(CurrentVector, 0, 0.0375, 20, SlipPointB)
-
-'Teststr = Teststr & "Slip offset: " & round(Slipoffset, 3) & vbnewline & _
-'          "Original Ballpos:" & formatpercent(ballpos) & vbnewline & vbnewline
-
-' Apply the slip offset to ball position
-'BallPos = BallPos - slipoffset
+			'dim SlipPointB : SlipPointB = PSlope(ref.strength, 2000, 0.22-0.5, 2850, 0.285-0.5)	'at 20.157 X speed slips this much
+			
+			'dim slipoffset : Slipoffset = pSlope(NewVector(0), 0, 0.5375-0.5, 20, SlipPointB)
+			'Teststr = Teststr & "Slip offset: " & round(Slipoffset,3) & vbnewline & _
+					'"Original Ballpos:" & formatpercent(ballpos) & vbnewline & vbnewline
+			'BallPos = BallPos - slipoffset
 
 
 '
@@ -4140,7 +4134,3 @@ End Function
 Function BallSpeed(ball) 'Calculates the ball speed
     BallSpeed = SQR(ball.VelX^2 + ball.VelY^2 + ball.VelZ^2)
 End Function
-
-
-
-

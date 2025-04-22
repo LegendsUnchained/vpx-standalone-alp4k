@@ -5,10 +5,11 @@ fps: 55
 romVPSId: "_HrfD9cNY-"
 romChecksum: "E1FD53CE4225F90CB87D546B4984F088"
 tableVPSId: "GIAiwQnX"
+tableNotes: "Download Avengers (Stern 2012)4k1.1.vpx"
 tagline: "Avengers... assemble"
 testers:
   - "Bla1ze"
 vpxVPSId: "pcKC5V8vvH"
-vpxChecksum: "BC5699EDB1679E38094FC305BEB995E8"
+vpxChecksum: "556A1037E619A8064EBA75B74DF28AE4"
 applyFixes:
   - "bass"

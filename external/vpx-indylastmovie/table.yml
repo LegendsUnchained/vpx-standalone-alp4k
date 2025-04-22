@@ -1,0 +1,14 @@
+---
+backglassVPSId: "qlBEpFhNUD"
+backglassChecksum: "E6650289E8E215B689B19CD2783BB54B"
+fps: 55
+tableVPSId: "R6SSuZg_pk"
+tagline: "Snakes. Why’d it have to be snakes?"
+testers:
+  - "Silentkat"
+vpxVPSId: "I0ysaAqWSq"
+vpxChecksum: "2939FA94010C503131DC79D9B6B36A5F"
+tableNotes: "use the separate link for the backglass"
+enabled: false
+applyFixes:
+  - "bass"
