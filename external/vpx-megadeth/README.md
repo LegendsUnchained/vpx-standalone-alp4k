@@ -1,34 +1,60 @@
 # Megadeth (Original 2023)
+
 ![Table Preview](../../images/vpx-megadeth.jpg)
 
-Table
+<br>
 
-Authors: [JoePicasso](https://vpuniverse.com/profile/15285-joepicasso/)  
-Version: 1.1  
-Download: [VP Universe](https://vpuniverse.com/files/file/17512-megadeth-original)
-
-DirectB2S
-
-INCLUDED IN TABLE DOWNLOAD
-
-ROM
-
-NO ROM REQUIRED
-
-Tested by Boris
-
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-1989-a764013
+## *️⃣  Table Statistics
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 52 |
 
-## Instructions
+<br>
 
-- Copy this entire folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-megadeth.elf
-- Download the pack at the table link above. Unzip it. Copy the vpx and directb2s files from the 'Table' and 'Backglass' folders to external/vpx-megadeth
-- Make sure the (.vpx), (.directb2s), (.vbs), and (.ini) files are all named the exact same.
-- "Peace sells... but who's buying?" 
+**VPXS 4KP Testers:**
+  - mcap
+  - Ominous Osie 🌸
+
+<br>
+
+---
+
+<br>
+
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Megadeth`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"Peace sells... but who's buying?"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - TechZombie
+</pre>
+
+<br>
+<br>
+<br>
+<br>
+<br>
