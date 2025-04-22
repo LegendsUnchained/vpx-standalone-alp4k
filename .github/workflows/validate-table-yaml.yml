@@ -37,7 +37,7 @@ jobs:
             for file in "${FILES[@]}"; do
               echo "Checking \"$file\""
               python .github/workflows/scripts/validate-table-yaml.py "$file"
-              yamllint "$file"
+              yamllint -c .yamllint "$file"
             done
           else
             echo "No table.yml files were changed."
