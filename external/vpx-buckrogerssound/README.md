@@ -17,7 +17,7 @@ ROM:
 buckrgrs.zip
 
 Author(s): [VPUStaff]  
-Download:  [VPUniverse]([https://vpuniverse.com/files/file/1368-buck-rogers/)
+Download:  [VPUniverse](https://vpuniverse.com/files/file/1368-buck-rogers/)
 
 Tested by:
 [TechZombie]
