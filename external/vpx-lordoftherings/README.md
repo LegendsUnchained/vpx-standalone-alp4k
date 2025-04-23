@@ -53,19 +53,38 @@ __*We hope you enjoy!!*__
 </pre>
 
 <br>
+
+---
+
+<br>
+
+## ➕ Optional Extras
+
+> All optional extras can be added to the table after the Wizard installation via: 
+> -  Clicking `"Go to table"` directly after wizard installation
+> -  Navigate to the table folder using the `USB Root` tab.
+
+<br>
+
+### 🎦 Puppack (Backglass Videos/Music):
+
+
+1. Download the `lotr_1.0.1.zip` puppack from [Mega](https://mega.nz/file/7BdSXbQJ#ReZzIrRvpYc2nyHMQjZSp2s91fZ7ly5YOVy5c12zg4U) (by [takut](https://vpuniverse.com/profile/3434-takut/))
+2. Create the folder `pupvideos` within the `external/vpx-lordoftherings` folder in the Table Manager
+3. Create the folder `lotr` within the `external/vpx-lordoftherings/pupvideos` folder in the Table Manager
+4. Extract the contents of the `lotr_1.0.1.zip` from the puppack zip, and put it in the `external/vpx-lordoftherings/pupvideos`. 
+5. You should now have `external/vpx-lordoftherings/pupvideos/lotr/{puppack files}`
+6. Unzip the `use_these_pup_files.zip` from the `external/vpx-lordoftherings` folder in the [repository](https://github.com/LegendsUnchained/vpx-standalone-alp4k/tree/main/external/vpx-lordoftherings)
+7. Place them inside the `external/vpx-lordoftherings/pupvideos`, and overwrite files if prompted. __This is necessary otherwise the table crashes after a while and your playfield will blink.__
+8. __Delete the directb2s file because this is not needed anymore and makes the backglass blink.__
+9. Download the `altsound_lotr_Sjoend_normalized.zip` altsound from [Mega](https://mega.nz/file/rnJCCZRD#wLnMhIKqTID9y8KHSYDlIJ4RpeiUPTOZ698N4mat-BY) (by Sjoend)
+10. Create the folders `pinmame/altsound/lotr` within the `external/vpx-lordoftherings` folder in the Table Manager 
+11. extract the files from the zip in the folder `LOTR_Sjoend_normalized` into this folder.
+11. Enjoy this amazing table with extra sounds and videos! 
+
+
 <br>
 <br>
 <br>
 <br>
-
-
-## Optional
-
-The puppack and alternate sounds are optional, but enhance the table quite a lot.
-
-- Download the lotr_1.0.1.zip puppack from the above link.
-- Create the folder pupvideos/lotr and extract the lotr_1.0.1.zip in this folder.
-- Unzip the use_these_pup_files.zip and place them inside the pupvideos/lotr folder, and overwrite files if prompted. __This is necessary otherwise the table crashes after a while and your playfield will blink.__
-- __Delete the directb2s file because this is not needed anymore and makes the backglass blink.__
-- Download the altsound_lotr_Sjoend_normalized.zip package from the above link.
-- Create the folder pinmame/altsound/lotr folder and extract the files from the zip in the folder LOTR_Sjoend_normalized into this folder.
+<br>

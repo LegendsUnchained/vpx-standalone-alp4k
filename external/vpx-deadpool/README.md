@@ -74,7 +74,7 @@ __*We hope you enjoy!!*__
 2.  Create the folder `pupvideos` within the `external/vpx-deadpool` folder in the Table Manager
 3.  Extract the folder `jpsdeadpool` from the puppack zip, and put it in the `pupvideos`. 
 4.  You should now have `external/vpx-deadpool/pupvideos/jpsdeadpool/{puppack files}`
-5.  Unzip the `use_these_pup_files.zip` from the `external/vpx-deadpool` folder in the [repository](https://github.com/TheOminousOsie/vpx-standalone-alp4k/tree/main/external/vpx-deadpool)
+5.  Unzip the `use_these_pup_files.zip` from the `external/vpx-deadpool` folder in the [repository](https://github.com/LegendsUnchained/vpx-standalone-alp4k/tree/main/external/vpx-deadpool)
 6.  Place them inside the `pupvideos/jpsdeadpool` folder, and overwrite files if prompted.  **This is necessary otherwise it does not work**
 7. Enjoy this amazing table with extra sounds and videos! 
 
