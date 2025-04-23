@@ -13,8 +13,8 @@
 <br>
 
 **VPXS 4KP Testers:**
-  - mcap
-  - Ominous Osie 🌸
+  - Boris
+  - Mox
 
 <br>
 
