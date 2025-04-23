@@ -1,4 +1,4 @@
-# Transformers (Pro) [Marcade Mode] (Original 2025)
+# Transformers (Pro) [Marcade Mod] (Original 2025)
 
 ![Table Preview](../../images/vpx-transformersmod.png)
 
