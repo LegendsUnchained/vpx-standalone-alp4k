@@ -2,32 +2,59 @@
 
 ![Table Preview](../../images/vpx-kingkong-preview.jpg)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author | 
-|-----------|--------|----------|--------------|
-| **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=16126) | 3.0 | [Bigus1](https://www.vpforums.org/index.php?showuser=107629) | 
-| **B2S** | [VP Universe](https://vpuniverse.com/files/file/2538-king-kong-data-east-1990/) | 3.0 |[Wildman](https://vpuniverse.com/profile/5-wildman/) |
-| **DMD** | - | - | - |
-| **ROM** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=8732) | kiko_a10.zip | [Destruk](https://www.vpforums.org/index.php?showuser=5) |
+## *️⃣  Table Statistics
 
-**Tested by:** [Bla1ze]
-
----
-
-## Status 
-**Minimum VPX Standalone build:** 10.8.0-1983-b84441e
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
+
+<br>
+
+**VPXS 4KP Testers:**
+  - Bla1ze
+  - CoffeeAtJoes
+
+<br>
 
 ---
 
-## Instructions
+<br>
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-kingkong.elf`
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-kingkong.elf`
-- Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same..
-- "The Eighth wonder of the World!"
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`King Kong`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"The Eighth wonder of the World!"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - TechZombie
+</pre>
+
+<br>
+<br>
+<br>
+<br>
+<br>

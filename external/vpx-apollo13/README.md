@@ -2,33 +2,59 @@
 
 ![Table Preview](../../images/vpx-apollo13-preview.png)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author |
-|:---------:|:----:|:-------:|:------:|
-| VPX | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14766) | 1.62 | [balater](https://www.vpforums.org/index.php?s=ecc80ff65f52642febea09026be698f8&showuser=112487) |
-| B2S | [VP Universe](https://vpuniverse.com/files/file/10898-apollo-13-sega-1995-b2s-with-full-dmd/) | 3.0 | [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
-| DMD | N/A | N/A | N/A |
-| ROM | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1063) | apollo13.zip | [destruk](https://www.vpforums.org/index.php?showuser=5) |
-
-**Tested by:** [mcap]
-
----
-
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-1989-a764013
+## *️⃣  Table Statistics
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 47 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
 
-## Instructions
+<br>
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-apollo13.elf
-- Download the table, directb2s, and ROM versions listed above and copy them into this folder
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-- Place ROM zip file into vpx-apollo13/pinmame/roms folder. DO NOT UNZIP!
-- "Houston, we have a problem!"
+**VPXS 4KP Testers:**
+  - mcap
+  - Ominous Osie 🌸
+
+<br>
+
+---
+
+<br>
+
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Apollo 13`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"Houston, we have a problem!"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - TechZombie
+</pre>
+
+<br>
+<br>
+<br>
+<br>
+<br>

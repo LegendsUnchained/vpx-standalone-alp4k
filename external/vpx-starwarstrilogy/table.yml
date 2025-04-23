@@ -9,8 +9,8 @@ tableVPSId: "utPtyR_5"
 tagline: "Try not. Do, or do not. There is no try."
 testers:
   - "Mox"
+  - "OminousOsie"
 vpxVPSId: "FXFg6iyecu"
 vpxChecksum: "DBD5E0737301BD1856D6669D3740FC88"
-enabled: false
 applyFixes:
   - "bass"

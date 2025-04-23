@@ -2,32 +2,60 @@
 
 ![Table Preview](../../images/vpx-taxi.jpg)
 
-Authors: [bigus1](https://www.vpforums.org/index.php?showuser=107629)  
-Version: 1.0
-Download: [VP Forum](https://www.vpforums.org/index.php?app=downloads&showfile=18659)
+<br>
 
-DirectB2S
-
-Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
-Version: 1.0.0
-Download: [VP Universe](https://vpuniverse.com/files/file/21760-taxi-williams-1988-b2s-authentic/)
-
-ROM
-
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=914)
-
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-1989-a764013
+## *️⃣  Table Statistics
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 34 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 
-## Instructions
+<br>
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-taxi.elf
-- Download the table and directb2s versions listed above, extract and copy them into this folder
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
+**VPXS 4KP Testers:**
+  - Mox
+  - Ominous Osie 🌸 
+  - CoffeeAtJoes
 
+<br>
+
+---
+
+<br>
+
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Taxi`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"Get ready for the taxi everyone's going to be lining up for!"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - TechZombie
+</pre>
+
+<br>
+<br>
+<br>
+<br>
+<br>

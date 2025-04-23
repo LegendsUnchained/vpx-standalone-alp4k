@@ -1,18 +1,19 @@
 ---
-backglassVPSId: "JEo0dI18se"
-backglassChecksum: "9CB81C2312415D2C1778DFF9E6F55A4E"
-fps: 45
-romVPSId: "px2FY10w"
-romChecksum: "104F6D8613008824972DCAAE3975E85B"
-romNotes: "Download - dm_lx4.zip"
+backglassAuthorsOverride:
+  - ""
+fps: 50
+romChecksum: "c5ac656613515587aad3c2aaf47eecb9"
+romUrlOverride: "https://www.vpforums.org/index.php?app=downloads&showfile=5537"
+romVersionOverride: "dm_h6b"
+romNotes: "Download version dm_h6b"
 tableVPSId: "vT78ph4O"
 tagline: >-
   "We're police officers! We're not trained to handle this kind of violence!"
+tableNotes: "Download version 1.3.1"
 testers:
   - "evilwraith"
   - "Mox"
 vpxVPSId: "l8B0QJLS"
 vpxChecksum: "96704EE99E805E299D754C4C7FB16BB4"
-enabled: false
 applyFixes:
   - "bass"

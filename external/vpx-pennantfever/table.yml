@@ -1,0 +1,22 @@
+---
+backglassVPSId: "prnFmYEK8-"
+backglassChecksum: "04cf395574d9832772c712282207f57a"
+backglassAuthorsOverride:
+  - "CoffeeAtJoes"
+backglassNotes: "Download version 1.0"
+fps: 50
+romChecksum: "fefe4744771fecc3d2e6b5e568469611"
+romNotes: "Download version 'pfevr_p3'"
+romUrlOverride: "https://www.vpforums.org/index.php?app=downloads&showfile=513"
+romVersionOverride: "pfevr_p3"
+tableVPSId: "kHiaAA0K"
+tagline: "Heyy batabatabata swing!"
+testers:
+  - "Bla1ze"
+  - "CoffeeAtJoes"
+  - "OminousOsie"
+vpxVPSId: "R1GOpnk4"
+vpxChecksum: "9559f3acfb5f56eab7e83944ba42a031"
+tableNotes: "Download version 1.0"
+applyFixes:
+  - "bass"

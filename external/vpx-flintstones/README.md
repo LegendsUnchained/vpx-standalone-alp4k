@@ -1,40 +1,61 @@
-# The Flintstones (Williams 1994)
+# Flintstones, The (Williams 1994)
 
 ![Table Preview](../../images/vpx-flintstones.png)
 
-Authors: [g5k, 3rdAxis, DJRobX and Dark](https://vpuniverse.com/profile/14065-g5k)  
-Version: 1.2.6  
-Download: [VP Universe](https://vpuniverse.com/files/file/8763-the-flintstones/)
+<br>
 
-DirectB2S
-
-Authors: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
-Version: 2.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/12799-the-flintstones-williams-1994-b2s-full-dmd/)
-
-ROM
-
-Download: [VP Universe](https://vpuniverse.com/files/file/871-fs_lx5zip/)
-
-SHA: 6a1d12ad158ee092c036991343ecb448259a7b6c  
-MD5: bfa9f51b9d8b8e77c94a4fcfe0f4876c
-
-Tested by: Bla1ze
-
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-1989-a764013
+## *️⃣  Table Statistics
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 43 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 45 |
 
-## Instructions
+<br>
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-flintstones.elf
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-flintstones
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-- Place the ROM zip into external/vpx-flintstones/pinmame/roms. (Do not unzip)!
-- "Yabba Dabba Doooo"!
+**VPXS 4KP Testers:**
+  - Bla1ze
+  - Mox
+  - Ominous Osie 🌸
 
+<br>
+
+---
+
+<br>
+
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Flintstones, The`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"Yabba Dabba Doooo!"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - TechZombie
+</pre>
+
+<br>
+<br>
+<br>
+<br>
+<br>
