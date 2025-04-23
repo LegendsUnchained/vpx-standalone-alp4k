@@ -3,7 +3,8 @@ backglassVPSId: "mMZbzTTS"
 backglassChecksum: "697d3bf4a1e77a93746a2d2d9ee9a3b2"
 backglassNotes: "Download 'Apollo 13 (Sega 1995)3scr.rar'"
 coloredROMChecksum: "3c263fac7c2b0246b5e8d5d343a8fa94"
-coloredROMUrlOverride: "https://vpuniverse.com/files/file/24973-apollo-13-sega-1995-v100/"
+coloredROMUrlOverride: >- 
+  https://vpuniverse.com/files/file/24973-apollo-13-sega-1995-v100/
 coloredROMVersion: "apollo13"
 coloredROMNotes: "Download version 1.0.0"
 fps: 55
