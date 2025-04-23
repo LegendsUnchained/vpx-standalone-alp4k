@@ -74,7 +74,7 @@ __*We hope you enjoy!!*__
 3. Extract the contents of the `lotr_1.0.1.zip` from the puppack zip, and put it in the `external/vpx-lordoftherings/pupvideos/lotr` folder. 
 4. You should now have `external/vpx-lordoftherings/pupvideos/lotr/{puppack files}`
 5. Unzip the `use_these_pup_files.zip` from the `external/vpx-lordoftherings` folder in the [repository](https://github.com/LegendsUnchained/vpx-standalone-alp4k/tree/main/external/vpx-lordoftherings)
-6. Place them inside the `external/vpx-lordoftherings/pupvideos`, and overwrite files if prompted. __This is necessary otherwise the table crashes after a while and your playfield will blink.__
+6. Place them inside the `external/vpx-lordoftherings/pupvideos/lotr`, and overwrite files if prompted. __This is necessary otherwise the table crashes after a while and your playfield will blink.__
 7. __Delete the directb2s file because this is not needed anymore and makes the backglass blink.__
 8. Download the `altsound_lotr_Sjoend_normalized.zip` altsound from [Mega](https://mega.nz/file/rnJCCZRD#wLnMhIKqTID9y8KHSYDlIJ4RpeiUPTOZ698N4mat-BY) (by Sjoend)
 9. Create the folders `pinmame/altsound/lotr` within the `external/vpx-lordoftherings` folder in the Table Manager 
