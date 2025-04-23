@@ -118,6 +118,8 @@ def get_table_meta(files, warn_on_error=True):
             "coloredROMBundled": data.get("coloredROMBundled"),
             "coloredROMChecksum": coloredROMChecksum,
             "coloredROMNotes": data.get("coloredROMNotes"),
+            "coloredROMFileUrl": data.get("coloredROMUrlOverride"),
+            "coloredROMVersion": data.get("coloredROMVersionOverride"),
             "enabled": data.get("enabled"),
             "fps": data.get("fps"),
             "mainNotes": data.get("mainNotes"),
@@ -230,7 +232,8 @@ def get_table_meta(files, warn_on_error=True):
                 table_meta["coloredROMFileUrl"] = coloredROM.get("urls", [])[0].get(
                     "url", ""
                 )
-                table_meta["coloredROMVersion"] = coloredROM.get("version", "")
+                if not table_meta["coloredROMVersion"]:
+                    table_meta["coloredROMVersion"] = coloredROM.get("version", "")
             else:
                 print(f"{error_prefix}: Colored ROM id {coloredROMVPSId} not found in VPSDB")
                 if warn_on_error:

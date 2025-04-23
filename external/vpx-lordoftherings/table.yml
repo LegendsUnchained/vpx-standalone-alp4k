@@ -1,0 +1,18 @@
+---
+backglassVPSId: "5gex6OFs"
+backglassChecksum: "b8034183126d0d872e4f3643cc1812dc"
+backglassNotes: "Download version 2.0"
+fps: 60
+romChecksum: "9cc6161300c1e0ac76d73ec6b847ee7c"
+romUrlOverride: "https://www.vpforums.org/index.php?app=downloads&showfile=7316"
+romVersionOverride: "lotr"
+romNotes: "Download - lotr.zip"
+tableVPSId: "3cxx1oTt"
+tagline: "It's a dangerous business, Frodo, going out your door..."
+tableNotes: "Download version v55_VPX8"
+testers:
+  - "OminousOsie"
+vpxVPSId: "q8ac-RuR"
+vpxChecksum: "30739e394118a0e794ea34d83c67e4d7"
+applyFixes:
+  - "bass"
