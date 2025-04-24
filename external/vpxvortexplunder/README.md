@@ -7,8 +7,8 @@
 ## Files
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
-| **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=18898) | 1.0 | [CrimsonTurtle8](https://www.vpforums.org/index.php?showuser=49512) |
-| **B2S** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=18898) | 1.0 | [CrimsonTurtle8](https://www.vpforums.org/index.php?showuser=49512) |
+| **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=18898) | `Vortex Plunder.part1.rar` | [CrimsonTurtle8](https://www.vpforums.org/index.php?showuser=49512) |
+| **B2S** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=18898) | `Vortex Plunder Wheel, B2S, POV.zip` | [CrimsonTurtle8](https://www.vpforums.org/index.php?showuser=49512) |
 
 **Tested by:** [BrianCK]
 
