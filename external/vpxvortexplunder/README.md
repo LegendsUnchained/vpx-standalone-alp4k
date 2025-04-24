@@ -7,8 +7,8 @@
 ## Files
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
-| **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&module=display&section=download&do=confirm_download&hash=275b59e54b8ddca0863faf6ba93162fc) | 1.0 | [CrimsonTurtle8](https://www.vpforums.org/index.php?showuser=49512) |
-| **B2S** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&module=display&section=download&do=confirm_download&hash=275b59e54b8ddca0863faf6ba93162fc) | 1.0 | [CrimsonTurtle8](https://www.vpforums.org/index.php?showuser=49512) |
+| **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=18898) | 1.0 | [CrimsonTurtle8](https://www.vpforums.org/index.php?showuser=49512) |
+| **B2S** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=18898) | 1.0 | [CrimsonTurtle8](https://www.vpforums.org/index.php?showuser=49512) |
 
 **Tested by:** [BrianCK]
 
