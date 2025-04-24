@@ -1,0 +1,17 @@
+---
+backglassVPSId: "Zni2abVCkU"
+backglassChecksum: "3799851ea37dce6f18fa6978fbead4b7"
+backglassNotes: "Download version 1.0.0"
+fps: 54
+romVPSId: "zyITO3jz"
+romChecksum: "33373af3a3c5f71fc1a6ebac1dfe44d4"
+tableVPSId: "D6pSfkMH"
+tagline: "Only the cool kids, drive Dodge Vipers"
+testers:
+  - "kaoticBPR"
+  - "OminousOsie"
+vpxVPSId: "6qFvtdfj"
+vpxChecksum: "e1b8c3dfe5057df17aff16f602499f60"
+tableNotes: "Download version '1.0d No Glow Ball.zip'"
+applyFixes:
+  - "bass"

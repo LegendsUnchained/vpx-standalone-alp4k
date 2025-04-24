@@ -1,0 +1,17 @@
+---
+backglassVPSId: "Cu7Wm1bjxA"
+backglassChecksum: "9c87a44775307e9b4f0a29fea6bd0389"
+backglassNotes: "Download version 2.0"
+fps: 54
+romVPSId: "dFDjrnqe"
+romChecksum: "7749a2f0739dd73bbe68350f28ef0941"
+tableVPSId: "nrzNYtRn"
+tagline: "Defeat the Monstars"
+testers:
+  - "kaoticBPR"
+  - "OminousOsie"
+vpxVPSId: "HAjS8Pm0"
+vpxChecksum: "e41f7ee3ea045db5de713d9ef1a533b2"
+tableNotes: "Download version 1.4"
+applyFixes:
+  - "bass"
