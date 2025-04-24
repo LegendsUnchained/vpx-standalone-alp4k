@@ -16,7 +16,7 @@ Dim DesktopMode: DesktopMode = Table1.ShowDT
 'Carl Stalling's Original Music Stems for, "There They Go Go Go (1956)" & "Zoom and Bored (1957)"
 '************************************************************************************************
 
-Dim TurnMusicOn = 0
+Const TurnMusicOn = 0
 
 ' Start the random music 
     MusicOn
