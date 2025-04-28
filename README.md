@@ -34,9 +34,10 @@ The following hardware has been verified to work with the Legends Unchained Load
 Links to these products on Amazon are through affiliate links.
 
 #### Flash Drives
+- [Kingston DataTraveler Max 256GB](https://amzn.to/42Ygu1k)
+- [Kingston DataTraveler Max 512GB](https://amzn.to/3ECtzFi)
 - [Samsung FIT 256GB Flash Drive](https://amzn.to/3ymA382)
 - [Samsung FIT 512GB Flash Drive](https://amzn.to/46uLC9M)
-- [Silicon Power 1TB DS72](https://amzn.to/3Wws3t6)
 
 #### Keyboards
 - [Rii RK707 Keyboard/Game Controller](https://amzn.to/4fqC1oC)
@@ -471,6 +472,7 @@ Links to these products on Amazon are through affiliate links.
 | [Hot Ball - JP (Taito do Brasil 1979)](external/vpx-jphotball) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Humpty Dumpty (Gottlieb 1947)](external/vpx-humptydumpty)  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Hurricane - Balutito Mod 2.0 (Williams 1991)](external/vpx-hurricane) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 40 |
+| [Hustler (LTD do Brasil 1980)](external/vpx-hustler) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:x: | :x: | 60 |
 | [I Dream of Jeannie (Original 2019)](external/vpx-idreamofjeannie) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Ice Fever (Gottlieb 1985)](external/vpx-icefever) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 45 |
 | [Incredible Hulk (Gottlieb 1979)](external/vpx-incrediblehulk) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
@@ -515,6 +517,7 @@ Links to these products on Amazon are through affiliate links.
 | [KISS (Stern 2015)](external/vpx-kiss) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 57 |
 | [Klondike (Williams 1971)](external/vpx-klondike) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Krull (Gottlieb 1983)](external/vpx-krull) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 57 |
+| [Kung Fu (LTD do Brasil 1975)](external/vpx-kungfu) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Kung Fu Hustle (Original 2024)](external/vpx-kungfuhustle) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Laser Cue (Williams 1984)](external/vpx-lasercue) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 33 |
 | [Laser War (Data East 1987)](external/vpx-laserwar) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 29 |
