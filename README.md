@@ -34,9 +34,10 @@ The following hardware has been verified to work with the Legends Unchained Load
 Links to these products on Amazon are through affiliate links.
 
 #### Flash Drives
+- [Kingston DataTraveler Max 256GB](https://amzn.to/42Ygu1k)
+- [Kingston DataTraveler Max 512GB](https://amzn.to/3ECtzFi)
 - [Samsung FIT 256GB Flash Drive](https://amzn.to/3ymA382)
 - [Samsung FIT 512GB Flash Drive](https://amzn.to/46uLC9M)
-- [Silicon Power 1TB DS72](https://amzn.to/3Wws3t6)
 
 #### Keyboards
 - [Rii RK707 Keyboard/Game Controller](https://amzn.to/4fqC1oC)
