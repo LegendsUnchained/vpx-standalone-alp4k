@@ -55,14 +55,6 @@ Primitive13.visible=0
 End if
 
 '******************************************************
-'					Plunger Options
-'******************************************************
-
-Plunger.MechStrength = 500
-Plunger.MomentumXfer = 1.75
-
-
-'******************************************************
 '					Sound Options
 '******************************************************
 
@@ -318,7 +310,7 @@ End Sub
 '**********************************************************************************************************
 
 Sub Table1_KeyDown(ByVal KeyCode)
-	If KeyCode=RightMagnaSave Then Controller.Switch(88)=1
+	If KeyCode=RightFlipperKey Then Controller.Switch(88)=1
 	If KeyCode=LeftFlipperKey Then Controller.Switch(63)=1 
 	If KeyCode=RightFlipperKey Then Controller.Switch(64)=1
 	If keycode = PlungerKey Then Plunger.Pullback:playsound"plungerpull"
@@ -326,7 +318,7 @@ Sub Table1_KeyDown(ByVal KeyCode)
 End Sub
 
 Sub Table1_KeyUp(ByVal KeyCode)
-	If KeyCode=RightMagnaSave Then Controller.Switch(88)=0
+	If KeyCode=RightFlipperKey Then Controller.Switch(88)=0
 	If KeyCode=LeftFlipperKey Then Controller.Switch(63)=0 
 	If KeyCode=RightFlipperKey Then Controller.Switch(64)=0
 	If keycode = PlungerKey Then Plunger.Fire:PlaySound"plunger"
@@ -336,7 +328,7 @@ End Sub
 	' Impulse Plunger
 	dim plungerIM
 
-	Const IMPowerSetting = 40 ' Plunger Power
+	Const IMPowerSetting = 60 ' Plunger Power
 	Const IMTime = 0.6        ' Time in seconds for Full Plunge
 	Set plungerIM = New cvpmImpulseP
 	With plungerIM
@@ -346,8 +338,6 @@ End Sub
 		.InitExitSnd SoundFX("Popper",DOFContactors), SoundFX("Solenoid",DOFContactors)
 		.CreateEvents "plungerIM"
 	End With
-	
-    plungerIM.Strength = 75
 
 '**********************************************************************************************************
 
@@ -1152,6 +1142,39 @@ sub FlipperTimer_Timer()
     LFLogo.RotY = LeftFlipper.CurrentAngle
     RFlogo.RotY = RightFlipper.CurrentAngle
 	MFlogo.RotZ = RightFlipper1.CurrentAngle + 120
+End Sub
+
+'*****************************************
+'	ninuzzu's	BALL SHADOW
+'*****************************************
+Dim BallShadow
+BallShadow = Array (BallShadow1,BallShadow2,BallShadow3,BallShadow4,BallShadow5)
+
+Sub BallShadowUpdate_timer()
+    Dim BOT, b
+    BOT = GetBalls
+    ' hide shadow of deleted balls
+    If UBound(BOT)<(tnob-1) Then
+        For b = (UBound(BOT) + 1) to (tnob-1)
+            BallShadow(b).visible = 0
+        Next
+    End If
+    ' exit the Sub if no balls on the table
+    If UBound(BOT) = -1 Then Exit Sub
+    ' render the shadow for each ball
+    For b = 0 to UBound(BOT)
+        If BOT(b).X < Table1.Width/2 Then
+            BallShadow(b).X = ((BOT(b).X) - (Ballsize/6) + ((BOT(b).X - (Table1.Width/2))/7)) + 6
+        Else
+            BallShadow(b).X = ((BOT(b).X) + (Ballsize/6) + ((BOT(b).X - (Table1.Width/2))/7)) - 6
+        End If
+        ballShadow(b).Y = BOT(b).Y + 12
+        If BOT(b).Z > 20 Then
+            BallShadow(b).visible = 1
+        Else
+            BallShadow(b).visible = 0
+        End If
+    Next
 End Sub
 
 '*********************************************************************

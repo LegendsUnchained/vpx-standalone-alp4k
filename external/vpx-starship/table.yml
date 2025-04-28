@@ -10,8 +10,8 @@ tagline: "The only good bug is a dead bug!"
 testers:
   - "Bla1ze"
   - "OminousOsie"
-vpxVPSId: "LCaO3DXT"
-vpxChecksum: "cd32c4ee58a245a4a94cc577b450d564"
-tableNotes: "Download version 2.1(.1)"
+vpxVPSId: "NvC4mOCX"
+vpxChecksum: "db8498e381e54af97a63897c30293923"
+tableNotes: "Download version 1.1"
 applyFixes:
   - "bass"
