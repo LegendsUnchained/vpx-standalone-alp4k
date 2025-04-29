@@ -1,4 +1,4 @@
-# Avatar (Stern 2010)
+# James Cameron's Avatar (Stern 2010)
 
 ![Table Preview](../../images/vpx-avatar.webp)
 
