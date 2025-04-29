@@ -31,5 +31,6 @@
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to `vpx-daredevil.elf`
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into `external/vpx-daredevil`
+- To download the 1.3 version of this VPX table, click the link above and find the "CHANGELOG" and select "1.3". A download link will appear for 1.3
 - Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same.
 - If you can't stand the heat, stay out of Hell's Kitchen! 😈

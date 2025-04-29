@@ -1,8 +1,0 @@
-# This configuration file is used to auto-generate README files
-# if you have multiple b2s files or roms, use the - on a new line to denote each one
-
-name: 'Mighty Morphin Power Rangers (Original 2024)'
-tester: 'n-i-x'
-FPS: '39'
-special_instructions: 
-     - 'Make sure (.vpx), (.directb2s), and (.ini) files are all named the same EXCEPT do NOT rename VPReg.ini file!'
