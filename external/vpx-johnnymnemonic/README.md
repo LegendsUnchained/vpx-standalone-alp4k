@@ -28,5 +28,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to `vpx-johnnymnemonic.elf`
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-johnnymnemonic`
 - Rom file (FILENAME.zip) stays in zip folder, place zip file in `vpx-johnnymnemonic/pinmame/roms`
-- Make sure `(.vpx)` `(.direct2b2s)` and `(.ini)` are all named the same.
+- Make sure `(.vpx)` `(.directb2s)` and `(.ini)` are all named the same.
 - Glove forward and back are set to the left and right nudge buttons.
