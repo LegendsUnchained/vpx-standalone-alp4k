@@ -27,6 +27,6 @@
 ## Instructions
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to `vpx-dbsse.elf`
-- Download the table from above link and copy it into `vpx-dbsse`
+- Download the table from above link, extract (if necessary) and copy it into `vpx-dbsse`
 - Download the media pack from the same link above and extract the directb2s file and copy it into `vpx-dbsse`
-- Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same.
+- Make sure `(.vpx)` `(.directb2s)` `(.vbs)` and `(.ini)` are all named the same.
