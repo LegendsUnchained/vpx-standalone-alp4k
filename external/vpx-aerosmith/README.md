@@ -7,7 +7,7 @@
 ## Files
 | File Type | Link | Version | Author |
 |:---------:|:----:|:-------:|:------:|
-| VPX | [VP Universe](https://vpuniverse.com/files/file/13413-aerosmith-stern-2017flex-b2s-with-full-dmd/) | 1.0 | [allknowing2012](https://vpuniverse.com/profile/5615-allknowing2012/) |
+| VPX | [VP Universe](https://vpuniverse.com/files/file/13403-aerosmith-pro-sterntribute-2017-v102zip-with-vr/) | 1.0 | [allknowing2012](https://vpuniverse.com/profile/5615-allknowing2012/) |
 | B2S | [VP Universe](https://vpuniverse.com/files/file/13413-aerosmith-stern-2017flex-b2s-with-full-dmd/) | 3.1 | [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
 | DMD | N/A | N/A | N/A |
 | ROM | N/A | N/A | N/A |
@@ -36,5 +36,4 @@
 - Music Files
 - Author: [allknowing2012](https://vpuniverse.com/profile/5615-allknowing2012/)
 - Version: 1.0 
-- Download: MEGA download link for PupPack in 'About This File' section, under 'Extra: PuP Pack Location'
-- Link: [VP Universe] https://vpuniverse.com/files/file/13403-aerosmith-pro-sterntribute-2017-v102zip-with-vr/
+- Download: [MEGA download link for PupPack](https://mega.nz/file/ErxEHAQY#9G1aWoR0aDAAFfz_bK3XrCB0clRzn5n7sBwzd7FX6-8)
