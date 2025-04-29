@@ -1,0 +1,21 @@
+---
+backglassAuthorsOverride:
+  - ""
+fps: 60
+pupChecksum: "ded551244d29b3f43a53535b9884b34a"
+pupFileUrl: >-
+  https://vpuniverse.com/files/file/16523-john-wick-babayaga-pinball-edition/
+pupRequired: true
+pupVersion: "johnwick"
+tableVPSId: "7bjYHY-8wv"
+tableNotes: "Download 'JohnWick 1.3(BABAYAGA Pinball edition) VPX 10.8.rar'"
+tagline: >-
+  "People keep asking me if I'm back, and I haven't really had
+  an answer. But now, yeah, I'm thinking I'm back!" - John Wick
+testers:
+  - "mrandromeda"
+  - "OminousOsie"
+vpxchecksum: "f89b694a79c893d93251279ddae39b1e"
+vpxVPSId: "VG0a5Acwiy"
+applyFixes:
+  - "bass"
