@@ -13,7 +13,7 @@
 <br>
 
 **VPXS 4KP Testers:**
-  - mrandromeda69
+  - mrandromeda
   - n-i-x
 
 <br>
