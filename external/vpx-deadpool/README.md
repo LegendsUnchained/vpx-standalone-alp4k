@@ -76,7 +76,7 @@ __*We hope you enjoy!!*__
         <strong>⚠️ WARNING</strong>
       </div>
       <div style="padding: 12px 12px 12px 12px;">
-        Manually added puppacks are not supported by the VPXS 4KP team, we will not be able to help you diagnose issues until this puppack is in the Wizard
+        Manually added puppacks are not supported by the VPXS 4KP team<br>We will not be able to help you diagnose issues until this puppack is in the Wizard
       </div>
     </td>
   </tr>
