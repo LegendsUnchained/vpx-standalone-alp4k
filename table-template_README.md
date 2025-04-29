@@ -29,4 +29,4 @@
 - Add your personalized launcher.elf and rename it to `vpx-{tablename}.elf`
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-{tablename}`
 - Rom file (FILENAME.zip) stays in zip folder, place zip file in `vpx-{tablename}/pinmame/roms`
-- Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same.
+- Make sure `(.vpx)` `(.directb2s)` `(.vbs)` and `(.ini)` are all named the same.

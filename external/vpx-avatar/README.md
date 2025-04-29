@@ -7,7 +7,7 @@
 ## Files
 | File Type | Link | Version | Author |
 |:---------:|:----:|:-------:|:------:|
-| **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14294) | 1.1.2 | [bigus1](https://www.vpforums.org/index.php?s=dbae17e67cbc2653be1a326c8134f0e7&showuser=107629) |
+| **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14294) | 3.1 | [bigus1](https://www.vpforums.org/index.php?s=dbae17e67cbc2653be1a326c8134f0e7&showuser=107629) |
 | **B2S** | N/A | N/A | N/A |
 | **DMD** | N/A | N/A | N/A |
 | **ROM** | [VPUniverse](http://vpuniverse.com/forums/files/file/3441-avr_200zip/) | 2.0 | [VPUStaff](https://vpuniverse.com/profile/50-vpustaff/) |
