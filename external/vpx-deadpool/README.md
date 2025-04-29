@@ -69,9 +69,26 @@ __*We hope you enjoy!!*__
 <br>
 <br>
 
-<div class="flash flash-full mt-3 flash-error">
+<!-- 
+<style>
+  strong {     background-image: linear-gradient(var(--bgColor-danger-muted), var(--bgColor-danger-muted));
+    border-color: var(--borderColor-danger-muted);
+    color: var(--fgColor-default);
+	border-radius: 0;
+    border-width: var(--borderWidth-thin) 0;
+    margin-top: calc(var(--borderWidth-thin) * -1);
+    border-style: solid;
+    padding: var(--base-size-20) var(--control-medium-paddingInline-spacious);
+    position: relative;
+    margin-top: var(--base-size-16, 16px) !important;
+    background-color: var(--bgColor-default);
+  }
+</style>
+-->
+
+<strong>
 	Manually added puppacks are not supported by the VPXS 4KP team, we will not be able to help you diagnose issues until this puppack is in the Wizard
-</div>
+</strong>
 
 ### 🎦 Puppack (Backglass Videos/Music):
 
