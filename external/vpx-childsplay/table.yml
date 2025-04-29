@@ -7,6 +7,7 @@ pupFileUrl: >-
   https://vpuniverse.com/files/file/14246-childs-play-table-v10-puppack-10/
 pupRequired: true
 pupVersion: "Fast_Draw_1975"
+pupArchiveRoot: "Child's Play/Puppack/"
 pupNotes: "Upload the whole 'Child's Play.zip' file for the PUP pack"
 tableVPSId: "uveE3RK0ya"
 tableNotes: "VPX file can be found in the zip inside the 'Table' folder."
@@ -17,5 +18,6 @@ testers:
   - "OminousOsie"
 vpxchecksum: "e6ad57ec95f0bafba2755cc5221455c3"
 vpxVPSId: "BP2fWpYJ1T"
+enabled: false # Osie: We need the 'pupArchiveRoot' yml field implemented
 applyFixes:
   - "bass"
