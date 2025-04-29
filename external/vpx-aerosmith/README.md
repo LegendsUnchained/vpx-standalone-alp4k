@@ -36,4 +36,4 @@
 - Music Files
 - Author: [allknowing2012](https://vpuniverse.com/profile/5615-allknowing2012/)
 - Version: 1.0 
-- Download: [MEGA download link for PupPack](https://mega.nz/file/ErxEHAQY#9G1aWoR0aDAAFfz_bK3XrCB0clRzn5n7sBwzd7FX6-8)
+- PupPack: [MEGA download link for PupPack](https://mega.nz/file/ErxEHAQY#9G1aWoR0aDAAFfz_bK3XrCB0clRzn5n7sBwzd7FX6-8)
