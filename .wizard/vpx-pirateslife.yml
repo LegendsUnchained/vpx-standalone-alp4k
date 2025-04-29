@@ -1,8 +1,0 @@
-# This configuration file is used to auto-generate README files
-# if you have multiple b2s files or roms, use the - on a new line to denote each one
-
-name: 'Pirates Life'
-tester: 'n-i-x'
-FPS: '40'
-special_instructions: 
-     - 'Always be yourself, unless you can be a pirate.'

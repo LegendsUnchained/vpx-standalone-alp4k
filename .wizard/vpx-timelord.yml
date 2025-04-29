@@ -1,9 +1,0 @@
-# This configuration file is used to auto-generate README files
-# if you have multiple b2s files or roms, use the - on a new line to denote each one
-
-name: 'TimeLord 3.0.10 (Luigi Saves the Universe) OriginalHybrid (Original 2022)'
-tester: 'n-i-x'
-FPS: '30'
-special_instructions: 
-     - 'Download the table and directb2s versions listed above and copy them into vpx-timelord'
-     - 'Make sure (.vpx), (.directb2s), and (.ini) files are all named the same'
