@@ -67,6 +67,11 @@ __*We hope you enjoy!!*__
 > -  Navigate to the table folder using the `USB Root` tab.
 
 <br>
+<br>
+
+<div class="flash flash-full mt-3 flash-error">
+	Manually added puppacks are not supported by the VPXS 4KP team, we will not be able to help you diagnose issues until this puppack is in the Wizard
+</div>
 
 ### 🎦 Puppack (Backglass Videos/Music):
 
