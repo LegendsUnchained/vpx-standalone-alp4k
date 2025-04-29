@@ -69,26 +69,13 @@ __*We hope you enjoy!!*__
 <br>
 <br>
 
-<!-- 
-<style>
-  strong {     background-image: linear-gradient(var(--bgColor-danger-muted), var(--bgColor-danger-muted));
-    border-color: var(--borderColor-danger-muted);
-    color: var(--fgColor-default);
-	border-radius: 0;
-    border-width: var(--borderWidth-thin) 0;
-    margin-top: calc(var(--borderWidth-thin) * -1);
-    border-style: solid;
-    padding: var(--base-size-20) var(--control-medium-paddingInline-spacious);
-    position: relative;
-    margin-top: var(--base-size-16, 16px) !important;
-    background-color: var(--bgColor-default);
-  }
-</style>
--->
-
-<strong>
-	Manually added puppacks are not supported by the VPXS 4KP team, we will not be able to help you diagnose issues until this puppack is in the Wizard
-</strong>
+<table>
+  <tr>
+    <td style="background-color: #FFDDDD; padding: 10px; border-left: 4px solid #FF0000;">
+      <strong>Manually added puppacks are not supported by the VPXS 4KP team, we will not be able to help you diagnose issues until this puppack is in the Wizard</strong>
+    </td>
+  </tr>
+</table>
 
 ### 🎦 Puppack (Backglass Videos/Music):
 
