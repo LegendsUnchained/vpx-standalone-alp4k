@@ -1,4 +1,4 @@
-﻿﻿# Big Trouble in Little China (Original 2022)
+﻿# Big Trouble in Little China (Original 2022)
 
 ![Table Preview](../../images/vpx-big_trouble.jpg)
 
@@ -47,7 +47,7 @@ __*We hope you enjoy!!*__
 
 *The VPXS 4KP Wizard team:*
 <pre>
-- n-i-x            - Mox
+- n-i-x            - Mox              - Lloydbraun
 - Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
 - Bla1ze           - evilwraith       - Silentkat        
 - mrandromeda      - SScorpio         - TechZombie

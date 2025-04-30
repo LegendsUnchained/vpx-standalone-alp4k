@@ -1,4 +1,4 @@
-﻿﻿# Centigrade 37 (Gottlieb 1977)
+﻿# Centigrade 37 (Gottlieb 1977)
 
 ![Table Preview](../../images/vpx-centigrade37.jpg)
 
@@ -48,7 +48,7 @@ __*We hope you enjoy!!*__
 
 *The VPXS 4KP Wizard team:*
 <pre>
-- n-i-x            - Mox
+- n-i-x            - Mox              - Lloydbraun
 - Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
 - Bla1ze           - evilwraith       - Silentkat        
 - mrandromeda      - SScorpio         - TechZombie
