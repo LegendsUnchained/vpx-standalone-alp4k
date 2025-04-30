@@ -2,20 +2,20 @@
 backglassAuthorsOverride:
   - ""
 fps: 52
-pupChecksum: "2bd1a2a4efba6a896963d833f47de98b"
+pupChecksum: "40CB8B2D1770692F94016E4332E3C829"
 pupFileUrl: >-
-  https://mega.nz/file/KJZm0Cza#8RIaLIAlpnE2CH7qj1-4TAGGCnQjUHcRPmXb2etEtx4
+  https://mega.nz/file/yZAEAawT#XlXXV5F_vwgCNGuQNfGKgbWjPha5C8CJP48QpfVcMiY
 pupRequired: true
-pupVersion: "jpspacecadetGE (1)"
+pupVersion: "jpspacecadetGE"
 tableVPSId: "fFQCNbNK"
-tableNotes: "Download JPs Space Cadet (GE)V1-1.zip"
+tableNotes: "Download JPs Space Cadet (GE)V1-2.zip"
 tagline: >- 
   The Astral Allegiance Corps need YOU in the fight against THE NEXUS!
 tableNameOverride: "Space Cadet, JP's - Galaxy Edition"
 testers:
-  - "mrandromeda69"
+  - "mrandromeda"
   - "n-i-x"
-vpxchecksum: "e59d6ee6d53fd835552cb83d632a1dc8"
+vpxchecksum: "1399D6064EF38CA23EBB44E22DDF52D4"
 vpxVPSId: "aHb-SNzjDs"
 applyFixes:
   - "bass"
