@@ -1,4 +1,4 @@
-﻿﻿# Ali (JP's, Stern 1980)
+﻿# Ali (JP's, Stern 1980)
 
 ![Table Preview](../../images/vpx-alijp.jpg)
 

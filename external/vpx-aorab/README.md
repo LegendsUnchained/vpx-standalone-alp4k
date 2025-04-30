@@ -1,4 +1,4 @@
-﻿﻿# Adventures of Rocky and Bullwinkle and Friends (Data East 1993)
+﻿# Adventures of Rocky and Bullwinkle and Friends (Data East 1993)
 
 ![Table Preview](../../images/vpx-aorab.png)
 

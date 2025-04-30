@@ -1,4 +1,4 @@
-﻿# Black Knight 2000 (Williams 1989)
+# Black Knight 2000 (Williams 1989)
 
 ![Table Preview](../../images/vpx-blackknight2000.png)
 

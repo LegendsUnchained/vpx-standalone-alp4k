@@ -1,4 +1,4 @@
-﻿# Mary Shelley's Frankenstein (Sega 1995)
+# Mary Shelley's Frankenstein (Sega 1995)
 
 ![Table Preview](../../images/vpx-maryshelleyfrank.png)
 

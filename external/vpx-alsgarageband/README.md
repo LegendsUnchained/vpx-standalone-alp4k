@@ -1,4 +1,4 @@
-﻿# Al's Garage Band Goes on a World Tour (Gottlieb 1992)
+# Al's Garage Band Goes on a World Tour (Gottlieb 1992)
 
 ![Table Preview](../../images/vpx-alsgarageband-preview.png)
 

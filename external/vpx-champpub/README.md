@@ -1,4 +1,4 @@
-﻿﻿# The Champion Pub (Williams 1998) 
+﻿# The Champion Pub (Williams 1998) 
 
 ![Table Preview](../../images/vpx-champpub.png)
 

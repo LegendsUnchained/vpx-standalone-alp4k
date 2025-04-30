@@ -1,4 +1,4 @@
-﻿# Pharaoh - Dead Rise
+# Pharaoh - Dead Rise
 
 ![Table Preview](../../images/pharaoh-deadrise-preview.jpg)
 

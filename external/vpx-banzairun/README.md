@@ -1,4 +1,4 @@
-﻿﻿# Banzai Run (Williams 1988)
+﻿# Banzai Run (Williams 1988)
 
 ![Table Preview](../../images/vpx-banzai-run-preview.jpg)
 

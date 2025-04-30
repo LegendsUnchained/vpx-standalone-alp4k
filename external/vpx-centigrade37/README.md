@@ -1,4 +1,4 @@
-﻿﻿# Centigrade 37 (Gottlieb 1977)
+﻿# Centigrade 37 (Gottlieb 1977)
 
 ![Table Preview](../../images/vpx-centigrade37.jpg)
 

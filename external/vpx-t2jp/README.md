@@ -1,4 +1,4 @@
-﻿# Terminator 2, JP's (Original 2020)
+# Terminator 2, JP's (Original 2020)
 
 ![Table Preview](../../images/vpx-jps-terminator-preview.jpg)
 

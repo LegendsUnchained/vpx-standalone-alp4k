@@ -1,4 +1,4 @@
-﻿# Avengers Pro (Stern 2012)
+# Avengers Pro (Stern 2012)
 
 ![Table Preview](../../images/vpx-avengers-preview.png)
 

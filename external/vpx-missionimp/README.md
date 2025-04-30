@@ -1,4 +1,4 @@
-﻿﻿#  Mission Impossible Limited Edition (Original 2022)
+﻿#  Mission Impossible Limited Edition (Original 2022)
 
 ![Table Preview](../../images/vpx-missionimp-preview.png)
 

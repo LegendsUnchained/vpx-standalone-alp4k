@@ -1,4 +1,4 @@
-﻿# WHO Dunnit (Bally 1995)
+# WHO Dunnit (Bally 1995)
 
 ![Table Preview](../../images/vpx-whodunnit.png)
 

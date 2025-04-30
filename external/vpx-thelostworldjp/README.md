@@ -1,4 +1,4 @@
-﻿﻿# Lost World Jurassic Park, JP's The (Sega 1997)
+﻿# Lost World Jurassic Park, JP's The (Sega 1997)
 
 ![Table Preview](../../images/vpx-jps-the-lost-world-jurassic-park-preview.jpg)
 

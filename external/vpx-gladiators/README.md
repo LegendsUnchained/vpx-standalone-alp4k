@@ -1,4 +1,4 @@
-﻿# Gladiators (Gottlieb 1993)
+# Gladiators (Gottlieb 1993)
 
  ![Table Preview](../../images/vpx-gladiators-preview.png)
  

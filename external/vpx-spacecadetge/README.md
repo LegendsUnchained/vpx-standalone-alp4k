@@ -1,4 +1,4 @@
-﻿# Space Cadet, JP's - Galaxy Edition (Original 2021)
+# Space Cadet, JP's - Galaxy Edition (Original 2021)
 
 ![Table Preview](../../images/vpx-spacecadetge-preview.jpg)
 

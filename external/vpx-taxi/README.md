@@ -1,4 +1,4 @@
-﻿# Taxi (Williams 1988)
+# Taxi (Williams 1988)
 
 ![Table Preview](../../images/vpx-taxi.jpg)
 

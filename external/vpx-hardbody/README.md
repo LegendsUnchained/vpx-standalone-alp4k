@@ -1,4 +1,4 @@
-﻿﻿# Hardbody (Bally 1987)
+﻿# Hardbody (Bally 1987)
 
 ![Table Preview](../../images/vpx-hardbody-preview.png)
 

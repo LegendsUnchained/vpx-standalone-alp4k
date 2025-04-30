@@ -1,4 +1,4 @@
-﻿﻿# Quicksilver (Stern 1980)
+﻿# Quicksilver (Stern 1980)
 
 ![Table Preview](../../images/vpx-quicksilver.jpg).jpg.9805d6c0366021edfdb7d8263765699d.jpg)
 

@@ -1,4 +1,4 @@
-﻿﻿# Zissou - The Life Aquatic (Original 2022)
+﻿# Zissou - The Life Aquatic (Original 2022)
 
 ![Table Preview](../../images/vpx-zissou.png)
 

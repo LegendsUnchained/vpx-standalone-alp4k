@@ -1,4 +1,4 @@
-﻿# Goldeneye (Sega 1996)
+# Goldeneye (Sega 1996)
 
 ![Table Preview](../../images/vpx-goldeneye.png)
 

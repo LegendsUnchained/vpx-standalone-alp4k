@@ -1,4 +1,4 @@
-﻿# Apollo 13 (Sega 1995)
+# Apollo 13 (Sega 1995)
 
 ![Table Preview](../../images/vpx-apollo13-preview.png)
 

@@ -1,4 +1,4 @@
-﻿﻿# Dolly Parton (Bally 1979)
+﻿# Dolly Parton (Bally 1979)
 
 ![Table Preview](../../images/vpx-dolly-parton-preview.jpg)
 

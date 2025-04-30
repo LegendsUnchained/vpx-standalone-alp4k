@@ -1,4 +1,4 @@
-﻿﻿# No Fear - Dangerous Sports (Williams 1995)
+﻿# No Fear - Dangerous Sports (Williams 1995)
 
 ![Table Preview](../../images/vpx-nofear.png)
 

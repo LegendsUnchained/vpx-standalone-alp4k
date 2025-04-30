@@ -1,4 +1,4 @@
-﻿# Who's Tommy Pinball Wizard, The (Data East 1994) 
+# Who's Tommy Pinball Wizard, The (Data East 1994) 
 
 ![Table Preview](../../images/vpx-tommy.png)
 

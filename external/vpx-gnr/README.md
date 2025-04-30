@@ -1,4 +1,4 @@
-﻿﻿# Guns N Roses (Data East 1994) 
+﻿# Guns N Roses (Data East 1994) 
 
 ![Table Preview](../../images/vpx-gnr.png)
 

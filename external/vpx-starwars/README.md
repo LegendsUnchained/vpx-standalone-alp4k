@@ -1,4 +1,4 @@
-﻿# Star Wars (Data East 1992)
+# Star Wars (Data East 1992)
 
 ![Table Preview](../../images/vpx-starwars-preview.jpg)
 

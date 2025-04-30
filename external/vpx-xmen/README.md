@@ -1,4 +1,4 @@
-﻿# X-Men Wolverine LE (Stern 2012)
+# X-Men Wolverine LE (Stern 2012)
 
 ![Table Preview](../../images/vpx-xmen.png)
 

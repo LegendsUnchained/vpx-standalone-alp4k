@@ -1,4 +1,4 @@
-﻿﻿# Jurassic Park (Data East 1993)
+﻿# Jurassic Park (Data East 1993)
 
 ![Table Preview](../../images/vpx-jurasicpark-dataeast-preview.jpg)
 

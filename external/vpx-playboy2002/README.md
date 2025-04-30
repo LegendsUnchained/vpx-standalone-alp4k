@@ -1,4 +1,4 @@
-﻿# Playboy (Stern 2002)
+# Playboy (Stern 2002)
 
 ![Table Preview](../../images/vpx-playboy2002.png)
 

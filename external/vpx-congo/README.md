@@ -1,4 +1,4 @@
-﻿# Congo (Williams 1995)
+# Congo (Williams 1995)
 
 ![Table Preview](../../images/vpx-congo.jpg)
 

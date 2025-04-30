@@ -1,4 +1,4 @@
-﻿﻿# Street Fighter II, JP's (Gottlieb 1993)
+﻿# Street Fighter II, JP's (Gottlieb 1993)
 
 ![Table Preview](../../images/vpx-jps-street-fighter-preview.jpg)
 

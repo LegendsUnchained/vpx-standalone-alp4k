@@ -1,4 +1,4 @@
-﻿﻿# 24 (Stern 2009)
+﻿# 24 (Stern 2009)
 
 ![Table Preview](../../images/vpx-24-preview.png)
 

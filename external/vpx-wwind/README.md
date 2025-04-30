@@ -1,4 +1,4 @@
-﻿﻿# Whirlwind (Williams 1990)
+﻿# Whirlwind (Williams 1990)
 
 ![Table Preview](../../images/vpx-wwind.jpg)
 

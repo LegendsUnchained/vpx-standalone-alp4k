@@ -1,4 +1,4 @@
-﻿﻿# Spider-Man (Vault Edition) (Stern 2016)
+﻿# Spider-Man (Vault Edition) (Stern 2016)
 
 ![Table Preview](../../images/vpx-spidermanve.png)
 

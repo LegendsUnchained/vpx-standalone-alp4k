@@ -1,4 +1,4 @@
-﻿# Fifth Element, The (Original 2022)
+# Fifth Element, The (Original 2022)
 
 ![Table Preview](../../images/vpx-fifth-element-preview.png)
 

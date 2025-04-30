@@ -1,4 +1,4 @@
-﻿# WWF Royal Rumble (Data East 1994)
+# WWF Royal Rumble (Data East 1994)
 
 [![Table Preview](../../images/vpx-royalrumble.png)
 

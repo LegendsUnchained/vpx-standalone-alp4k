@@ -1,4 +1,4 @@
-﻿# Pin-Bot (Williams 1986)
+# Pin-Bot (Williams 1986)
 
 ![Table Preview](../../images/vpx-pinbot.jpg)
 

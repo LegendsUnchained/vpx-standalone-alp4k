@@ -1,4 +1,4 @@
-﻿# Baywatch (Sega 1995)
+# Baywatch (Sega 1995)
 
 ![Table Preview](../../images/vpx-baywatch-preview.png)
 

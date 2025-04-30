@@ -1,4 +1,4 @@
-﻿﻿# Pink Floyd (Original 2022)
+﻿# Pink Floyd (Original 2022)
 
 ![Table Preview](../../images/vpx-pinkfloyd.png)
 

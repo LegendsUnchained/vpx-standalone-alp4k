@@ -1,4 +1,4 @@
-﻿# Evil Dead 3 Army of Darkness (Original 2020)
+# Evil Dead 3 Army of Darkness (Original 2020)
 
 ![Table Preview](../../images/vpx-evil-dead-3-army-of-darkness-preview.png)
 

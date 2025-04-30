@@ -1,4 +1,4 @@
-﻿﻿# Medival Madness (Williams 1997)
+﻿# Medival Madness (Williams 1997)
 
 ![Table Preview](../../images/vpx-mm.jpeg)
 

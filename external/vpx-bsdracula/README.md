@@ -1,4 +1,4 @@
-﻿# Bram Stoker's Dracula (Williams 1993)
+# Bram Stoker's Dracula (Williams 1993)
 
 ![Table Preview](../../images/vpx-bsdracula.png)
 

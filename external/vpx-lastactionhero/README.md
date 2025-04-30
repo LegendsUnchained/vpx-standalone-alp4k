@@ -1,4 +1,4 @@
-﻿﻿# Last Action Hero (Data East 1993)
+﻿# Last Action Hero (Data East 1993)
 
 ![Table Preview](../../images/vpx-lastactionhero.png)
 

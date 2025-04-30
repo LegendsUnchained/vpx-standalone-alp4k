@@ -1,4 +1,4 @@
-﻿# Flintstones, The (Williams 1994)
+# Flintstones, The (Williams 1994)
 
 ![Table Preview](../../images/vpx-flintstones.png)
 

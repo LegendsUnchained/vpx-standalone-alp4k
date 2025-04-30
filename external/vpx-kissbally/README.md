@@ -1,4 +1,4 @@
-﻿﻿# KISS (Bally 1979)
+﻿# KISS (Bally 1979)
 
 ![Table Preview](../../images/vpx-kissbally-preview.png)
 

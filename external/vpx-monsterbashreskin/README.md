@@ -1,4 +1,4 @@
-﻿﻿# Monster Bash (Williams 1998)
+﻿# Monster Bash (Williams 1998)
 
 ![Table Preview](../../images/vpx-monsterbashreskin-preview.jpg)
 

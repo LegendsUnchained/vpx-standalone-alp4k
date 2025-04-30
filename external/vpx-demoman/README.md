@@ -1,4 +1,4 @@
-﻿# Demolition Man (Williams 1994)
+# Demolition Man (Williams 1994)
 
 ![Table Preview](../../images/vpx-demoman.png)
 

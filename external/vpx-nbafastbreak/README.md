@@ -1,4 +1,4 @@
-﻿# NBA Fastbreak (Bally 1997)
+# NBA Fastbreak (Bally 1997)
 
 ![Table Preview](../../images/vpx-nbafastbreak.png)
 

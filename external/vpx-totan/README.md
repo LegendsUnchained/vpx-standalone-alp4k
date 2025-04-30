@@ -1,4 +1,4 @@
-﻿﻿# Tales of the Arabian Nights, JP's (Williams 1996)
+﻿# Tales of the Arabian Nights, JP's (Williams 1996)
 
 ![Table Preview](../../images/vpx-tales-of-the-arabian-nights-preview.jpg)
 

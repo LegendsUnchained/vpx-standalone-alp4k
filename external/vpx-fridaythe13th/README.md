@@ -1,4 +1,4 @@
-﻿# Friday the 13th, JP's (Original 2021)
+# Friday the 13th, JP's (Original 2021)
 
 ![Table Preview](../../images/vpx-jps-friday-the-13th-preview.jpg)
 

@@ -1,4 +1,4 @@
-﻿﻿# Bond 60th (Stern 2022)
+﻿# Bond 60th (Stern 2022)
 
 ![Table Preview](../../images/vpx-jamesbond007.png)
 

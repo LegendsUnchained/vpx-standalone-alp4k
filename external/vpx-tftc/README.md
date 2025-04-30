@@ -1,4 +1,4 @@
-﻿﻿# Tales from the Crypt (Data East 1993)
+﻿# Tales from the Crypt (Data East 1993)
 
 ![Table Preview](../../images/vpx-tftc.jpg)
 

@@ -1,4 +1,4 @@
-﻿# Big Buck Hunter Pro (Stern 2010)
+# Big Buck Hunter Pro (Stern 2010)
 
 ![Table Preview](../../images/vpx-bigbuckhunter.png)
 

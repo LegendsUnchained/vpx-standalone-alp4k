@@ -1,4 +1,4 @@
-﻿﻿# F-14 Tomcat (Williams 1987)
+﻿# F-14 Tomcat (Williams 1987)
 
 ![Table Preview](../../images/vpx-f14tomcat.png)
 

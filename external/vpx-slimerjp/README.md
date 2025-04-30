@@ -1,4 +1,4 @@
-﻿# Ghostbusters Slimer, JP's (Original 2023)
+# Ghostbusters Slimer, JP's (Original 2023)
 
 ![Table Preview](../../images/vpx-jps-ghostbusters-slimer-preview.jpg)
 

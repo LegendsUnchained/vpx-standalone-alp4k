@@ -1,4 +1,4 @@
-﻿﻿# Terminator 2 - Judgment Day (Williams 1991)
+﻿# Terminator 2 - Judgment Day (Williams 1991)
 
 ![Table Preview](../../images/vpx-t2.png)
 

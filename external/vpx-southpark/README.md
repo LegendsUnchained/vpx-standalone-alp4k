@@ -1,4 +1,4 @@
-﻿﻿# South Park (Sega 1999)
+﻿# South Park (Sega 1999)
 
 ![Table Preview](../../images/vpx-southpark.png)
 

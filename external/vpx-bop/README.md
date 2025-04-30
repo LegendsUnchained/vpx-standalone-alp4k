@@ -1,4 +1,4 @@
-﻿# Machine - Bride of Pin-bot, The (Williams 1991)
+# Machine - Bride of Pin-bot, The (Williams 1991)
 
 ![Table Preview](../../images/vpx-bop.jpg)
 <br>

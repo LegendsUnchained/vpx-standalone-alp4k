@@ -1,4 +1,4 @@
-﻿﻿# Wrath of Olympus, JP's (Original 2022)
+﻿# Wrath of Olympus, JP's (Original 2022)
 
 ![Table Preview](../../images/vpx-jps-wrath-of-olympus-preview.jpg)
 

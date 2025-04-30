@@ -1,4 +1,4 @@
-﻿﻿# Vortex (Taito do Brasil 1981)
+﻿# Vortex (Taito do Brasil 1981)
 
 ![Table Preview](../../images/vpx-vortex.png)
 

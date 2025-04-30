@@ -1,4 +1,4 @@
-﻿﻿# Creature from the Black Lagoon (Bally 1992)
+﻿# Creature from the Black Lagoon (Bally 1992)
 
 ![Table Preview](../../images/vpx-creature-preview.jpg)
 

@@ -1,4 +1,4 @@
-﻿# Disney TRON Legacy Limited Edition (Stern 2011)
+# Disney TRON Legacy Limited Edition (Stern 2011)
 
 ![Table Preview](../../images/vpx-tronlegacy.png)
 

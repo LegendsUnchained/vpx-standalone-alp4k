@@ -1,4 +1,4 @@
-﻿# Deadpool, JPs (Original 2021)
+# Deadpool, JPs (Original 2021)
 
 ![Table Preview](../../images/vpx-jps-deadpool-preview.jpg)
 

@@ -1,0 +1,1367 @@
+Script started at 04/30/2025 11:28:36
+Found 679 README.md files to check
+Processing [1/679]: external/vpx-123/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-123 README.md
+Processing [2/679]: external/vpx-1812/README.md
+No BOM found in vpx-1812 README.md
+Processing [3/679]: external/vpx-24/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-24 README.md
+Processing [4/679]: external/vpx-250cc/README.md
+No BOM found in vpx-250cc README.md
+Processing [5/679]: external/vpx-301bullseye/README.md
+No BOM found in vpx-301bullseye README.md
+Processing [6/679]: external/vpx-4aces/README.md
+No BOM found in vpx-4aces README.md
+Processing [7/679]: external/vpx-aaronspelling/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-aaronspelling README.md
+Processing [8/679]: external/vpx-abracadabra/README.md
+No BOM found in vpx-abracadabra README.md
+Processing [9/679]: external/vpx-acehigh/README.md
+No BOM found in vpx-acehigh README.md
+Processing [10/679]: external/vpx-aceofspeed/README.md
+No BOM found in vpx-aceofspeed README.md
+Processing [11/679]: external/vpx-aceventura/README.md
+No BOM found in vpx-aceventura README.md
+Processing [12/679]: external/vpx-acharliebrownchristmas/README.md
+No BOM found in vpx-acharliebrownchristmas README.md
+Processing [13/679]: external/vpx-aerosmith/README.md
+No BOM found in vpx-aerosmith README.md
+Processing [14/679]: external/vpx-agents777/README.md
+No BOM found in vpx-agents777 README.md
+Processing [15/679]: external/vpx-agraffiti/README.md
+No BOM found in vpx-agraffiti README.md
+Processing [16/679]: external/vpx-airavenger/README.md
+No BOM found in vpx-airavenger README.md
+Processing [17/679]: external/vpx-airborne/README.md
+No BOM found in vpx-airborne README.md
+Processing [18/679]: external/vpx-airwolf/README.md
+No BOM found in vpx-airwolf README.md
+Processing [19/679]: external/vpx-alaska/README.md
+No BOM found in vpx-alaska README.md
+Processing [20/679]: external/vpx-algar/README.md
+No BOM found in vpx-algar README.md
+Processing [21/679]: external/vpx-ali/README.md
+No BOM found in vpx-ali README.md
+Processing [22/679]: external/vpx-alice1948/README.md
+No BOM found in vpx-alice1948 README.md
+Processing [23/679]: external/vpx-alienpoker/README.md
+No BOM found in vpx-alienpoker README.md
+Processing [24/679]: external/vpx-aliens/README.md
+No BOM found in vpx-aliens README.md
+Processing [25/679]: external/vpx-alienstar/README.md
+No BOM found in vpx-alienstar README.md
+Processing [26/679]: external/vpx-alijp/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-alijp README.md
+Processing [27/679]: external/vpx-alsgarageband/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-alsgarageband README.md
+Processing [28/679]: external/vpx-amazingspidermansse/README.md
+No BOM found in vpx-amazingspidermansse README.md
+Processing [29/679]: external/vpx-amazonhunt/README.md
+No BOM found in vpx-amazonhunt README.md
+Processing [30/679]: external/vpx-america1492/README.md
+No BOM found in vpx-america1492 README.md
+Processing [31/679]: external/vpx-andromeda/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-andromeda README.md
+Processing [32/679]: external/vpx-aorab/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-aorab README.md
+Processing [33/679]: external/vpx-apache/README.md
+No BOM found in vpx-apache README.md
+Processing [34/679]: external/vpx-apollo13/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-apollo13 README.md
+Processing [35/679]: external/vpx-arena1C3S/README.md
+No BOM found in vpx-arena1C3S README.md
+Processing [36/679]: external/vpx-armyofdarkness/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-armyofdarkness README.md
+Processing [37/679]: external/vpx-aspen/README.md
+No BOM found in vpx-aspen README.md
+Processing [38/679]: external/vpx-astannie/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-astannie README.md
+Processing [39/679]: external/vpx-asterix/README.md
+No BOM found in vpx-asterix README.md
+Processing [40/679]: external/vpx-atilla/README.md
+No BOM found in vpx-atilla README.md
+Processing [41/679]: external/vpx-atlantis/README.md
+No BOM found in vpx-atlantis README.md
+Processing [42/679]: external/vpx-atlantisgottlieb/README.md
+No BOM found in vpx-atlantisgottlieb README.md
+Processing [43/679]: external/vpx-attackandrevengefrommars/README.md
+No BOM found in vpx-attackandrevengefrommars README.md
+Processing [44/679]: external/vpx-attackfrommars/README.md
+No BOM found in vpx-attackfrommars README.md
+Processing [45/679]: external/vpx-attackofthekillertomatoes/README.md
+No BOM found in vpx-attackofthekillertomatoes README.md
+Processing [46/679]: external/vpx-austinpowers/README.md
+No BOM found in vpx-austinpowers README.md
+Processing [47/679]: external/vpx-avatar/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-avatar README.md
+Processing [48/679]: external/vpx-avengers/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-avengers README.md
+Processing [49/679]: external/vpx-avengersclassic/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-avengersclassic README.md
+Processing [50/679]: external/vpx-badcats/README.md
+No BOM found in vpx-badcats README.md
+Processing [51/679]: external/vpx-badgirls/README.md
+No BOM found in vpx-badgirls README.md
+Processing [52/679]: external/vpx-ballsapoppin/README.md
+No BOM found in vpx-ballsapoppin README.md
+Processing [53/679]: external/vpx-ballygameshow/README.md
+No BOM found in vpx-ballygameshow README.md
+Processing [54/679]: external/vpx-banzairun/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-banzairun README.md
+Processing [55/679]: external/vpx-barbwire/README.md
+No BOM found in vpx-barbwire README.md
+Processing [56/679]: external/vpx-barracora/README.md
+No BOM found in vpx-barracora README.md
+Processing [57/679]: external/vpx-baseball1970/README.md
+No BOM found in vpx-baseball1970 README.md
+Processing [58/679]: external/vpx-batman/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-batman README.md
+Processing [59/679]: external/vpx-batman66flash/README.md
+No BOM found in vpx-batman66flash README.md
+Processing [60/679]: external/vpx-batmanbw/README.md
+No BOM found in vpx-batmanbw README.md
+Processing [61/679]: external/vpx-batmanforever/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-batmanforever README.md
+Processing [62/679]: external/vpx-battlestargalactica/README.md
+No BOM found in vpx-battlestargalactica README.md
+Processing [63/679]: external/vpx-baywatch/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-baywatch README.md
+Processing [64/679]: external/vpx-bbhpinballed/README.md
+No BOM found in vpx-bbhpinballed README.md
+Processing [65/679]: external/vpx-beachbums/README.md
+No BOM found in vpx-beachbums README.md
+Processing [66/679]: external/vpx-beastmaster/README.md
+No BOM found in vpx-beastmaster README.md
+Processing [67/679]: external/vpx-beattheclock/README.md
+No BOM found in vpx-beattheclock README.md
+Processing [68/679]: external/vpx-beetlejuice/README.md
+No BOM found in vpx-beetlejuice README.md
+Processing [69/679]: external/vpx-beetlejuicemovie/README.md
+No BOM found in vpx-beetlejuicemovie README.md
+Processing [70/679]: external/vpx-beverlyhillscop/README.md
+No BOM found in vpx-beverlyhillscop README.md
+Processing [71/679]: external/vpx-bigbangbar/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-bigbangbar README.md
+Processing [72/679]: external/vpx-bigbuckhunter/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-bigbuckhunter README.md
+Processing [73/679]: external/vpx-biggame/README.md
+No BOM found in vpx-biggame README.md
+Processing [74/679]: external/vpx-bighorse/README.md
+No BOM found in vpx-bighorse README.md
+Processing [75/679]: external/vpx-bighouse/README.md
+No BOM found in vpx-bighouse README.md
+Processing [76/679]: external/vpx-bigindian/README.md
+No BOM found in vpx-bigindian README.md
+Processing [77/679]: external/vpx-biglebowski/README.md
+No BOM found in vpx-biglebowski README.md
+Processing [78/679]: external/vpx-bigstar/README.md
+No BOM found in vpx-bigstar README.md
+Processing [79/679]: external/vpx-big_trouble/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-big_trouble README.md
+Processing [80/679]: external/vpx-bikermice/README.md
+No BOM found in vpx-bikermice README.md
+Processing [81/679]: external/vpx-birdfly/README.md
+No BOM found in vpx-birdfly README.md
+Processing [82/679]: external/vpx-blackbeltbally/README.md
+No BOM found in vpx-blackbeltbally README.md
+Processing [83/679]: external/vpx-blackfever/README.md
+No BOM found in vpx-blackfever README.md
+Processing [84/679]: external/vpx-blackhole/README.md
+No BOM found in vpx-blackhole README.md
+Processing [85/679]: external/vpx-blackknight/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-blackknight README.md
+Processing [86/679]: external/vpx-blackknight2000/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-blackknight2000 README.md
+Processing [87/679]: external/vpx-blackout/README.md
+No BOM found in vpx-blackout README.md
+Processing [88/679]: external/vpx-blackpyramid/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-blackpyramid README.md
+Processing [89/679]: external/vpx-blackrose/README.md
+No BOM found in vpx-blackrose README.md
+Processing [90/679]: external/vpx-bloodmachines/README.md
+No BOM found in vpx-bloodmachines README.md
+Processing [91/679]: external/vpx-bmx/README.md
+No BOM found in vpx-bmx README.md
+Processing [92/679]: external/vpx-bobbyorr/README.md
+No BOM found in vpx-bobbyorr README.md
+Processing [93/679]: external/vpx-bonanza/README.md
+No BOM found in vpx-bonanza README.md
+Processing [94/679]: external/vpx-bonebusters/README.md
+No BOM found in vpx-bonebusters README.md
+Processing [95/679]: external/vpx-bop/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-bop README.md
+Processing [96/679]: external/vpx-bountyhunter/README.md
+No BOM found in vpx-bountyhunter README.md
+Processing [97/679]: external/vpx-bowandarrow/README.md
+No BOM found in vpx-bowandarrow README.md
+Processing [98/679]: external/vpx-braveteam/README.md
+No BOM found in vpx-braveteam README.md
+Processing [99/679]: external/vpx-breakingbad/README.md
+No BOM found in vpx-breakingbad README.md
+Processing [100/679]: external/vpx-breakshot/README.md
+No BOM found in vpx-breakshot README.md
+Processing [101/679]: external/vpx-breakshotbigus/README.md
+No BOM found in vpx-breakshotbigus README.md
+Processing [102/679]: external/vpx-bsdracula/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-bsdracula README.md
+Processing [103/679]: external/vpx-bttf/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-bttf README.md
+Processing [104/679]: external/vpx-bubbatheredneckwerewolf/README.md
+No BOM found in vpx-bubbatheredneckwerewolf README.md
+Processing [105/679]: external/vpx-buckrogerssound/README.md
+No BOM found in vpx-buckrogerssound README.md
+Processing [106/679]: external/vpx-bueno/README.md
+No BOM found in vpx-bueno README.md
+Processing [107/679]: external/vpx-buffy/README.md
+No BOM found in vpx-buffy README.md
+Processing [108/679]: external/vpx-bugs/README.md
+No BOM found in vpx-bugs README.md
+Processing [109/679]: external/vpx-cactuscanyon/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-cactuscanyon README.md
+Processing [110/679]: external/vpx-cactusjacks/README.md
+No BOM found in vpx-cactusjacks README.md
+Processing [111/679]: external/vpx-capersville/README.md
+No BOM found in vpx-capersville README.md
+Processing [112/679]: external/vpx-captainspaulding/README.md
+No BOM found in vpx-captainspaulding README.md
+Processing [113/679]: external/vpx-captfantastic/README.md
+No BOM found in vpx-captfantastic README.md
+Processing [114/679]: external/vpx-carhop/README.md
+No BOM found in vpx-carhop README.md
+Processing [115/679]: external/vpx-carnaval/README.md
+No BOM found in vpx-carnaval README.md
+Processing [116/679]: external/vpx-castlevaniasotn/README.md
+No BOM found in vpx-castlevaniasotn README.md
+Processing [117/679]: external/vpx-catburglars/README.md
+No BOM found in vpx-catburglars README.md
+Processing [118/679]: external/vpx-cenobite/README.md
+No BOM found in vpx-cenobite README.md
+Processing [119/679]: external/vpx-centaur/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-centaur README.md
+Processing [120/679]: external/vpx-centigrade37/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-centigrade37 README.md
+Processing [121/679]: external/vpx-cftbl/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-cftbl README.md
+Processing [122/679]: external/vpx-champpub/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-champpub README.md
+Processing [123/679]: external/vpx-charliesangelsremix/README.md
+No BOM found in vpx-charliesangelsremix README.md
+Processing [124/679]: external/vpx-checkpoint/README.md
+No BOM found in vpx-checkpoint README.md
+Processing [125/679]: external/vpx-cheechandchong/README.md
+No BOM found in vpx-cheechandchong README.md
+Processing [126/679]: external/vpx-cheetah/README.md
+No BOM found in vpx-cheetah README.md
+Processing [127/679]: external/vpx-childsplay/README.md
+No BOM found in vpx-childsplay README.md
+Processing [128/679]: external/vpx-chrono/README.md
+No BOM found in vpx-chrono README.md
+Processing [129/679]: external/vpx-circus/README.md
+No BOM found in vpx-circus README.md
+Processing [130/679]: external/vpx-cirqus/README.md
+No BOM found in vpx-cirqus README.md
+Processing [131/679]: external/vpx-cityslicker/README.md
+No BOM found in vpx-cityslicker README.md
+Processing [132/679]: external/vpx-classof1984/README.md
+No BOM found in vpx-classof1984 README.md
+Processing [133/679]: external/vpx-cleopatra/README.md
+No BOM found in vpx-cleopatra README.md
+Processing [134/679]: external/vpx-clockofetfog/README.md
+No BOM found in vpx-clockofetfog README.md
+Processing [135/679]: external/vpx-comet/README.md
+No BOM found in vpx-comet README.md
+Processing [136/679]: external/vpx-conan/README.md
+No BOM found in vpx-conan README.md
+Processing [137/679]: external/vpx-congo/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-congo README.md
+Processing [138/679]: external/vpx-corvette/README.md
+No BOM found in vpx-corvette README.md
+Processing [139/679]: external/vpx-cosmic/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-cosmic README.md
+Processing [140/679]: external/vpx-cosmicgunfight/README.md
+No BOM found in vpx-cosmicgunfight README.md
+Processing [141/679]: external/vpx-cosmicprincess/README.md
+No BOM found in vpx-cosmicprincess README.md
+Processing [142/679]: external/vpx-countdownjp/README.md
+No BOM found in vpx-countdownjp README.md
+Processing [143/679]: external/vpx-counterforce/README.md
+No BOM found in vpx-counterforce README.md
+Processing [144/679]: external/vpx-cowboy8ball/README.md
+No BOM found in vpx-cowboy8ball README.md
+Processing [145/679]: external/vpx-creaturebw/README.md
+No BOM found in vpx-creaturebw README.md
+Processing [146/679]: external/vpx-creepshow/README.md
+No BOM found in vpx-creepshow README.md
+Processing [147/679]: external/vpx-criterium77/README.md
+No BOM found in vpx-criterium77 README.md
+Processing [148/679]: external/vpx-csiled/README.md
+No BOM found in vpx-csiled README.md
+Processing [149/679]: external/vpx-cueball/README.md
+No BOM found in vpx-cueball README.md
+Processing [150/679]: external/vpx-cuphead/README.md
+No BOM found in vpx-cuphead README.md
+Processing [151/679]: external/vpx-cupheadoriginal/README.md
+No BOM found in vpx-cupheadoriginal README.md
+Processing [152/679]: external/vpx-cybernaut/README.md
+No BOM found in vpx-cybernaut README.md
+Processing [153/679]: external/vpx-cyclone/README.md
+No BOM found in vpx-cyclone README.md
+Processing [154/679]: external/vpx-daredevil/README.md
+No BOM found in vpx-daredevil README.md
+Processing [155/679]: external/vpx-darkcrystal/README.md
+No BOM found in vpx-darkcrystal README.md
+Processing [156/679]: external/vpx-darkknight/README.md
+No BOM found in vpx-darkknight README.md
+Processing [157/679]: external/vpx-darkprincess/README.md
+No BOM found in vpx-darkprincess README.md
+Processing [158/679]: external/vpx-dbsse/README.md
+No BOM found in vpx-dbsse README.md
+Processing [159/679]: external/vpx-dbz/README.md
+No BOM found in vpx-dbz README.md
+Processing [160/679]: external/vpx-dbzbudokai/README.md
+No BOM found in vpx-dbzbudokai README.md
+Processing [161/679]: external/vpx-deadpool/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-deadpool README.md
+Processing [162/679]: external/vpx-deathnote/README.md
+No BOM found in vpx-deathnote README.md
+Processing [163/679]: external/vpx-deathproof/README.md
+No BOM found in vpx-deathproof README.md
+Processing [164/679]: external/vpx-deeppurple/README.md
+No BOM found in vpx-deeppurple README.md
+Processing [165/679]: external/vpx-defender/README.md
+No BOM found in vpx-defender README.md
+Processing [166/679]: external/vpx-demolitionmancryo/README.md
+No BOM found in vpx-demolitionmancryo README.md
+Processing [167/679]: external/vpx-demoman/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-demoman README.md
+Processing [168/679]: external/vpx-depechemode/README.md
+No BOM found in vpx-depechemode README.md
+Processing [169/679]: external/vpx-desertcity/README.md
+No BOM found in vpx-desertcity README.md
+Processing [170/679]: external/vpx-devilriders/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-devilriders README.md
+Processing [171/679]: external/vpx-dexter/readme.md
+No BOM found in vpx-dexter README.md
+Processing [172/679]: external/vpx-dicktracy/README.md
+No BOM found in vpx-dicktracy README.md
+Processing [173/679]: external/vpx-diner/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-diner README.md
+Processing [174/679]: external/vpx-dirtyharry/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-dirtyharry README.md
+Processing [175/679]: external/vpx-discodancing/README.md
+No BOM found in vpx-discodancing README.md
+Processing [176/679]: external/vpx-djangounchained/README.md
+No BOM found in vpx-djangounchained README.md
+Processing [177/679]: external/vpx-doctorwho/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-doctorwho README.md
+Processing [178/679]: external/vpx-dolly/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-dolly README.md
+Processing [179/679]: external/vpx-doodlebug/README.md
+No BOM found in vpx-doodlebug README.md
+Processing [180/679]: external/vpx-doometernal/README.md
+No BOM found in vpx-doometernal README.md
+Processing [181/679]: external/vpx-dracula/README.md
+No BOM found in vpx-dracula README.md
+Processing [182/679]: external/vpx-drakor/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-drakor README.md
+Processing [183/679]: external/vpx-drdude/README.md
+No BOM found in vpx-drdude README.md
+Processing [184/679]: external/vpx-drjekyllandmrhyde/README.md
+No BOM found in vpx-drjekyllandmrhyde README.md
+Processing [185/679]: external/vpx-ducktales/README.md
+No BOM found in vpx-ducktales README.md
+Processing [186/679]: external/vpx-dukenukem3d/README.md
+No BOM found in vpx-dukenukem3d README.md
+Processing [187/679]: external/vpx-dune/README.md
+No BOM found in vpx-dune README.md
+Processing [188/679]: external/vpx-dungeonsndragons/README.md
+No BOM found in vpx-dungeonsndragons README.md
+Processing [189/679]: external/vpx-earthshaker/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-earthshaker README.md
+Processing [190/679]: external/vpx-eightballchamp/README.md
+No BOM found in vpx-eightballchamp README.md
+Processing [191/679]: external/vpx-eightballdeluxe/README.md
+No BOM found in vpx-eightballdeluxe README.md
+Processing [192/679]: external/vpx-eldorado/README.md
+No BOM found in vpx-eldorado README.md
+Processing [193/679]: external/vpx-elektrabigus/README.md
+No BOM found in vpx-elektrabigus README.md
+Processing [194/679]: external/vpx-elvirashouseofhorrors/README.md
+No BOM found in vpx-elvirashouseofhorrors README.md
+Processing [195/679]: external/vpx-elvis/README.md
+No BOM found in vpx-elvis README.md
+Processing [196/679]: external/vpx-embryon/README.md
+No BOM found in vpx-embryon README.md
+Processing [197/679]: external/vpx-escapefromthelostworld/README.md
+No BOM found in vpx-escapefromthelostworld README.md
+Processing [198/679]: external/vpx-evelknievel/README.md
+No BOM found in vpx-evelknievel README.md
+Processing [199/679]: external/vpx-evildead22019/README.md
+No BOM found in vpx-evildead22019 README.md
+Processing [200/679]: external/vpx-evildead2a/README.md
+No BOM found in vpx-evildead2a README.md
+Processing [201/679]: external/vpx-evildead2b/README.md
+No BOM found in vpx-evildead2b README.md
+Processing [202/679]: external/vpx-evilfight/README.md
+No BOM found in vpx-evilfight README.md
+Processing [203/679]: external/vpx-exorcist/README.md
+No BOM found in vpx-exorcist README.md
+Processing [204/679]: external/vpx-f14tomcat/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-f14tomcat README.md
+Processing [205/679]: external/vpx-fallout/README.md
+No BOM found in vpx-fallout README.md
+Processing [206/679]: external/vpx-familyguy/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-familyguy README.md
+Processing [207/679]: external/vpx-fantastic/README.md
+No BOM found in vpx-fantastic README.md
+Processing [208/679]: external/vpx-farcry3/README.md
+No BOM found in vpx-farcry3 README.md
+Processing [209/679]: external/vpx-farfalla/README.md
+No BOM found in vpx-farfalla README.md
+Processing [210/679]: external/vpx-fastdraw/README.md
+No BOM found in vpx-fastdraw README.md
+Processing [211/679]: external/vpx-fathom/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-fathom README.md
+Processing [212/679]: external/vpx-fifthelement/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-fifthelement README.md
+Processing [213/679]: external/vpx-fire/README.md
+No BOM found in vpx-fire README.md
+Processing [214/679]: external/vpx-fireball/README.md
+No BOM found in vpx-fireball README.md
+Processing [215/679]: external/vpx-fireballii/README.md
+No BOM found in vpx-fireballii README.md
+Processing [216/679]: external/vpx-firepower/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-firepower README.md
+Processing [217/679]: external/vpx-firepower2/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-firepower2 README.md
+Processing [218/679]: external/vpx-fishtales/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-fishtales README.md
+Processing [219/679]: external/vpx-fivenightatfreddys/README.md
+No BOM found in vpx-fivenightatfreddys README.md
+Processing [220/679]: external/vpx-flash/README.md
+No BOM found in vpx-flash README.md
+Processing [221/679]: external/vpx-flashgordon/README.md
+No BOM found in vpx-flashgordon README.md
+Processing [222/679]: external/vpx-flashgordonsm/README.md
+No BOM found in vpx-flashgordonsm README.md
+Processing [223/679]: external/vpx-fleetwood/README.md
+No BOM found in vpx-fleetwood README.md
+Processing [224/679]: external/vpx-flight2000/README.md
+No BOM found in vpx-flight2000 README.md
+Processing [225/679]: external/vpx-flintstones/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-flintstones README.md
+Processing [226/679]: external/vpx-flipperfootball/README.md
+No BOM found in vpx-flipperfootball README.md
+Processing [227/679]: external/vpx-fortnite/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-fortnite README.md
+Processing [228/679]: external/vpx-frankenstein/README.md
+No BOM found in vpx-frankenstein README.md
+Processing [229/679]: external/vpx-frankensteinbw/README.md
+No BOM found in vpx-frankensteinbw README.md
+Processing [230/679]: external/vpx-frankthomas/README.md
+No BOM found in vpx-frankthomas README.md
+Processing [231/679]: external/vpx-freddy/README.md
+No BOM found in vpx-freddy README.md
+Processing [232/679]: external/vpx-freddyled/README.md
+No BOM found in vpx-freddyled README.md
+Processing [233/679]: external/vpx-freefall/README.md
+No BOM found in vpx-freefall README.md
+Processing [234/679]: external/vpx-fridaythe13th/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-fridaythe13th README.md
+Processing [235/679]: external/vpx-frontier/README.md
+No BOM found in vpx-frontier README.md
+Processing [236/679]: external/vpx-fullmetaljacket/README.md
+No BOM found in vpx-fullmetaljacket README.md
+Processing [237/679]: external/vpx-funhouse/README.md
+No BOM found in vpx-funhouse README.md
+Processing [238/679]: external/vpx-futurama/README.md
+No BOM found in vpx-futurama README.md
+Processing [239/679]: external/vpx-futurespa/README.md
+No BOM found in vpx-futurespa README.md
+Processing [240/679]: external/vpx-galaxia/README.md
+No BOM found in vpx-galaxia README.md
+Processing [241/679]: external/vpx-galaxy/README.md
+No BOM found in vpx-galaxy README.md
+Processing [242/679]: external/vpx-gamatron/README.md
+No BOM found in vpx-gamatron README.md
+Processing [243/679]: external/vpx-gargamelpark/README.md
+No BOM found in vpx-gargamelpark README.md
+Processing [244/679]: external/vpx-gemini2000/README.md
+No BOM found in vpx-gemini2000 README.md
+Processing [245/679]: external/vpx-genie/README.md
+No BOM found in vpx-genie README.md
+Processing [246/679]: external/vpx-georgemichael/README.md
+No BOM found in vpx-georgemichael README.md
+Processing [247/679]: external/vpx-getaway/README.md
+No BOM found in vpx-getaway README.md
+Processing [248/679]: external/vpx-gijoe/README.md
+No BOM found in vpx-gijoe README.md
+Processing [249/679]: external/vpx-gilligansisland/README.md
+No BOM found in vpx-gilligansisland README.md
+Processing [250/679]: external/vpx-gladiators/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-gladiators README.md
+Processing [251/679]: external/vpx-gnr/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-gnr README.md
+Processing [252/679]: external/vpx-godfather/README.md
+No BOM found in vpx-godfather README.md
+Processing [253/679]: external/vpx-godzilla/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-godzilla README.md
+Processing [254/679]: external/vpx-godzillale/README.md
+No BOM found in vpx-godzillale README.md
+Processing [255/679]: external/vpx-gogtrilogy/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-gogtrilogy README.md
+Processing [256/679]: external/vpx-goinnuts/README.md
+No BOM found in vpx-goinnuts README.md
+Processing [257/679]: external/vpx-goldball/README.md
+No BOM found in vpx-goldball README.md
+Processing [258/679]: external/vpx-goldencue/README.md
+No BOM found in vpx-goldencue README.md
+Processing [259/679]: external/vpx-goldeneye/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-goldeneye README.md
+Processing [260/679]: external/vpx-goldwing/README.md
+No BOM found in vpx-goldwing README.md
+Processing [261/679]: external/vpx-goldwings/README.md
+No BOM found in vpx-goldwings README.md
+Processing [262/679]: external/vpx-goonies/README.md
+No BOM found in vpx-goonies README.md
+Processing [263/679]: external/vpx-gorgar/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-gorgar README.md
+Processing [264/679]: external/vpx-gorillaz/README.md
+No BOM found in vpx-gorillaz README.md
+Processing [265/679]: external/vpx-grandlizard/README.md
+No BOM found in vpx-grandlizard README.md
+Processing [266/679]: external/vpx-grandprix/README.md
+No BOM found in vpx-grandprix README.md
+Processing [267/679]: external/vpx-grandslam1972/README.md
+No BOM found in vpx-grandslam1972 README.md
+Processing [268/679]: external/vpx-grease/README.md
+No BOM found in vpx-grease README.md
+Processing [269/679]: external/vpx-greaseblackandwhite/README.md
+No BOM found in vpx-greaseblackandwhite README.md
+Processing [270/679]: external/vpx-greathoudini/README.md
+No BOM found in vpx-greathoudini README.md
+Processing [271/679]: external/vpx-gremlins/README.md
+No BOM found in vpx-gremlins README.md
+Processing [272/679]: external/vpx-gunship/README.md
+No BOM found in vpx-gunship README.md
+Processing [273/679]: external/vpx-hallandoates/README.md
+No BOM found in vpx-hallandoates README.md
+Processing [274/679]: external/vpx-halloween/README.md
+No BOM found in vpx-halloween README.md
+Processing [275/679]: external/vpx-halloweenmm/README.md
+No BOM found in vpx-halloweenmm README.md
+Processing [276/679]: external/vpx-hanniballec/README.md
+No BOM found in vpx-hanniballec README.md
+Processing [277/679]: external/vpx-hardbody/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-hardbody README.md
+Processing [278/679]: external/vpx-harlemglobetrotters/README.md
+No BOM found in vpx-harlemglobetrotters README.md
+Processing [279/679]: external/vpx-harleyd/README.md
+No BOM found in vpx-harleyd README.md
+Processing [280/679]: external/vpx-harleyquinn/README.md
+No BOM found in vpx-harleyquinn README.md
+Processing [281/679]: external/vpx-hdavidson/README.md
+No BOM found in vpx-hdavidson README.md
+Processing [282/679]: external/vpx-heavymetalclassic/README.md
+No BOM found in vpx-heavymetalclassic README.md
+Processing [283/679]: external/vpx-hellboy/README.md
+No BOM found in vpx-hellboy README.md
+Processing [284/679]: external/vpx-hellraiser/README.md
+No BOM found in vpx-hellraiser README.md
+Processing [285/679]: external/vpx-highlander/README.md
+No BOM found in vpx-highlander README.md
+Processing [286/679]: external/vpx-highrollercasino/README.md
+No BOM found in vpx-highrollercasino README.md
+Processing [287/679]: external/vpx-hiphop/README.md
+No BOM found in vpx-hiphop README.md
+Processing [288/679]: external/vpx-hollywoodheat/README.md
+No BOM found in vpx-hollywoodheat README.md
+Processing [289/679]: external/vpx-hook/README.md
+No BOM found in vpx-hook README.md
+Processing [290/679]: external/vpx-horrorburg/README.md
+No BOM found in vpx-horrorburg README.md
+Processing [291/679]: external/vpx-hpgof/README.md
+No BOM found in vpx-hpgof README.md
+Processing [292/679]: external/vpx-humptydumpty/README.md
+No BOM found in vpx-humptydumpty README.md
+Processing [293/679]: external/vpx-hurricane/README.md
+No BOM found in vpx-hurricane README.md
+Processing [294/679]: external/vpx-hustler/README.md
+No BOM found in vpx-hustler README.md
+Processing [295/679]: external/vpx-icefever/README.md
+No BOM found in vpx-icefever README.md
+Processing [296/679]: external/vpx-id4/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-id4 README.md
+Processing [297/679]: external/vpx-idreamofjeannie/README.md
+No BOM found in vpx-idreamofjeannie README.md
+Processing [298/679]: external/vpx-incrediblehulk/README.md
+No BOM found in vpx-incrediblehulk README.md
+Processing [299/679]: external/vpx-indianajones/README.md
+No BOM found in vpx-indianajones README.md
+Processing [300/679]: external/vpx-indianajonestpa/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-indianajonestpa README.md
+Processing [301/679]: external/vpx-indy500/README.md
+No BOM found in vpx-indy500 README.md
+Processing [302/679]: external/vpx-indylastmovie/README.md
+No BOM found in vpx-indylastmovie README.md
+Processing [303/679]: external/vpx-inhabitinmars/README.md
+No BOM found in vpx-inhabitinmars README.md
+Processing [304/679]: external/vpx-ironmaiden/README.md
+No BOM found in vpx-ironmaiden README.md
+Processing [305/679]: external/vpx-ironman2jp/README.md
+No BOM found in vpx-ironman2jp README.md
+Processing [306/679]: external/vpx-itpinballmadness/README.md
+No BOM found in vpx-itpinballmadness README.md
+Processing [307/679]: external/vpx-jackbot/README.md
+No BOM found in vpx-jackbot README.md
+Processing [308/679]: external/vpx-jackinthebox/README.md
+No BOM found in vpx-jackinthebox README.md
+Processing [309/679]: external/vpx-jacksparrow/README.md
+No BOM found in vpx-jacksparrow README.md
+Processing [310/679]: external/vpx-jakemate/README.md
+No BOM found in vpx-jakemate README.md
+Processing [311/679]: external/vpx-jamesbond007/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-jamesbond007 README.md
+Processing [312/679]: external/vpx-jaws/README.md
+No BOM found in vpx-jaws README.md
+Processing [313/679]: external/vpx-jb00760th/README.md
+No BOM found in vpx-jb00760th README.md
+Processing [314/679]: external/vpx-jetspin/README.md
+No BOM found in vpx-jetspin README.md
+Processing [315/679]: external/vpx-jimihendrix/README.md
+No BOM found in vpx-jimihendrix README.md
+Processing [316/679]: external/vpx-joebarteam/README.md
+No BOM found in vpx-joebarteam README.md
+Processing [317/679]: external/vpx-johnnymnemonic/README.md
+No BOM found in vpx-johnnymnemonic README.md
+Processing [318/679]: external/vpx-johnwick/README.md
+No BOM found in vpx-johnwick README.md
+Processing [319/679]: external/vpx-jokerpoker/README.md
+No BOM found in vpx-jokerpoker README.md
+Processing [320/679]: external/vpx-jokerz/README.md
+No BOM found in vpx-jokerz README.md
+Processing [321/679]: external/vpx-jollyroger/README.md
+No BOM found in vpx-jollyroger README.md
+Processing [322/679]: external/vpx-joust/README.md
+No BOM found in vpx-joust README.md
+Processing [323/679]: external/vpx-jpcaptfantastic/README.md
+No BOM found in vpx-jpcaptfantastic README.md
+Processing [324/679]: external/vpx-jpeightball/README.md
+No BOM found in vpx-jpeightball README.md
+Processing [325/679]: external/vpx-jpfireaction/README.md
+No BOM found in vpx-jpfireaction README.md
+Processing [326/679]: external/vpx-jpfireactiondeluxe/README.md
+No BOM found in vpx-jpfireactiondeluxe README.md
+Processing [327/679]: external/vpx-jpflashman/README.md
+No BOM found in vpx-jpflashman README.md
+Processing [328/679]: external/vpx-jpfootball/README.md
+No BOM found in vpx-jpfootball README.md
+Processing [329/679]: external/vpx-jphotball/README.md
+No BOM found in vpx-jphotball README.md
+Processing [330/679]: external/vpx-jpmadrace/README.md
+No BOM found in vpx-jpmadrace README.md
+Processing [331/679]: external/vpx-jpmedusa/README.md
+No BOM found in vpx-jpmedusa README.md
+Processing [332/679]: external/vpx-jpmetallica/README.md
+No BOM found in vpx-jpmetallica README.md
+Processing [333/679]: external/vpx-jpmrblack/README.md
+No BOM found in vpx-jpmrblack README.md
+Processing [334/679]: external/vpx-jpmystic/README.md
+No BOM found in vpx-jpmystic README.md
+Processing [335/679]: external/vpx-jppolarexplorer/README.md
+No BOM found in vpx-jppolarexplorer README.md
+Processing [336/679]: external/vpx-jprally/README.md
+No BOM found in vpx-jprally README.md
+Processing [337/679]: external/vpx-jprawhide/README.md
+No BOM found in vpx-jprawhide README.md
+Processing [338/679]: external/vpx-jprollingstones/README.md
+No BOM found in vpx-jprollingstones README.md
+Processing [339/679]: external/vpx-jpromanvictory/README.md
+No BOM found in vpx-jpromanvictory README.md
+Processing [340/679]: external/vpx-jps-pokemon/README.md
+No BOM found in vpx-jps-pokemon README.md
+Processing [341/679]: external/vpx-jpsorcerer/README.md
+No BOM found in vpx-jpsorcerer README.md
+Processing [342/679]: external/vpx-jpspaceinvaders/README.md
+No BOM found in vpx-jpspaceinvaders README.md
+Processing [343/679]: external/vpx-jpspacepatrol/README.md
+No BOM found in vpx-jpspacepatrol README.md
+Processing [344/679]: external/vpx-jpspeedtest/README.md
+No BOM found in vpx-jpspeedtest README.md
+Processing [345/679]: external/vpx-jpsupersonic/README.md
+No BOM found in vpx-jpsupersonic README.md
+Processing [346/679]: external/vpx-jpwjt/README.md
+No BOM found in vpx-jpwjt README.md
+Processing [347/679]: external/vpx-jpxenon/README.md
+No BOM found in vpx-jpxenon README.md
+Processing [348/679]: external/vpx-jpzarza/README.md
+No BOM found in vpx-jpzarza README.md
+Processing [349/679]: external/vpx-judgedredd/README.md
+No BOM found in vpx-judgedredd README.md
+Processing [350/679]: external/vpx-jumanji/README.md
+No BOM found in vpx-jumanji README.md
+Processing [351/679]: external/vpx-junglelord/README.md
+No BOM found in vpx-junglelord README.md
+Processing [352/679]: external/vpx-junkyard/README.md
+No BOM found in vpx-junkyard README.md
+Processing [353/679]: external/vpx-junkyardcats/README.md
+No BOM found in vpx-junkyardcats README.md
+Processing [354/679]: external/vpx-jurassicpark/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-jurassicpark README.md
+Processing [355/679]: external/vpx-jurassicparkle/README.md
+No BOM found in vpx-jurassicparkle README.md
+Processing [356/679]: external/vpx-killbill/README.md
+No BOM found in vpx-killbill README.md
+Processing [357/679]: external/vpx-killerinstinct/README.md
+No BOM found in vpx-killerinstinct README.md
+Processing [358/679]: external/vpx-kingdonkeykong/README.md
+No BOM found in vpx-kingdonkeykong README.md
+Processing [359/679]: external/vpx-kingkong/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-kingkong README.md
+Processing [360/679]: external/vpx-kingpin/README.md
+No BOM found in vpx-kingpin README.md
+Processing [361/679]: external/vpx-kingtut/README.md
+No BOM found in vpx-kingtut README.md
+Processing [362/679]: external/vpx-kiss/README.md
+No BOM found in vpx-kiss README.md
+Processing [363/679]: external/vpx-kissbally/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-kissbally README.md
+Processing [364/679]: external/vpx-klondike/README.md
+No BOM found in vpx-klondike README.md
+Processing [365/679]: external/vpx-krull/README.md
+No BOM found in vpx-krull README.md
+Processing [366/679]: external/vpx-kungfu/README.md
+No BOM found in vpx-kungfu README.md
+Processing [367/679]: external/vpx-kungfuhustle/README.md
+No BOM found in vpx-kungfuhustle README.md
+Processing [368/679]: external/vpx-lasercue/README.md
+No BOM found in vpx-lasercue README.md
+Processing [369/679]: external/vpx-laserwar/README.md
+No BOM found in vpx-laserwar README.md
+Processing [370/679]: external/vpx-lastactionhero/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-lastactionhero README.md
+Processing [371/679]: external/vpx-lca/README.md
+No BOM found in vpx-lca README.md
+Processing [372/679]: external/vpx-legend/README.md
+No BOM found in vpx-legend README.md
+Processing [373/679]: external/vpx-legendofzelda/README.md
+No BOM found in vpx-legendofzelda README.md
+Processing [374/679]: external/vpx-lethalweapon3/README.md
+No BOM found in vpx-lethalweapon3 README.md
+Processing [375/679]: external/vpx-lightning/README.md
+No BOM found in vpx-lightning README.md
+Processing [376/679]: external/vpx-lionking/Readme.md
+No BOM found in vpx-lionking README.md
+Processing [377/679]: external/vpx-lordoftherings/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-lordoftherings README.md
+Processing [378/679]: external/vpx-lostinspace/README.md
+No BOM found in vpx-lostinspace README.md
+Processing [379/679]: external/vpx-lostworld/README.md
+No BOM found in vpx-lostworld README.md
+Processing [380/679]: external/vpx-luckyseven/README.md
+No BOM found in vpx-luckyseven README.md
+Processing [381/679]: external/vpx-macgalaxy/README.md
+No BOM found in vpx-macgalaxy README.md
+Processing [382/679]: external/vpx-macjungle/README.md
+No BOM found in vpx-macjungle README.md
+Processing [383/679]: external/vpx-magiccastle/README.md
+No BOM found in vpx-magiccastle README.md
+Processing [384/679]: external/vpx-mandalorian/README.md
+No BOM found in vpx-mandalorian README.md
+Processing [385/679]: external/vpx-marioandretti/README.md
+No BOM found in vpx-marioandretti README.md
+Processing [386/679]: external/vpx-mariogalaxy/README.md
+No BOM found in vpx-mariogalaxy README.md
+Processing [387/679]: external/vpx-marstrek/README.md
+No BOM found in vpx-marstrek README.md
+Processing [388/679]: external/vpx-maryshelleyfrank/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-maryshelleyfrank README.md
+Processing [389/679]: external/vpx-mask/README.md
+No BOM found in vpx-mask README.md
+Processing [390/679]: external/vpx-mastersoftheuniverse/README.md
+No BOM found in vpx-mastersoftheuniverse README.md
+Processing [391/679]: external/vpx-matahari/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-matahari README.md
+Processing [392/679]: external/vpx-maverick/README.md
+No BOM found in vpx-maverick README.md
+Processing [393/679]: external/vpx-medusa/README.md
+No BOM found in vpx-medusa README.md
+Processing [394/679]: external/vpx-megadeth/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-megadeth README.md
+Processing [395/679]: external/vpx-memlane/README.md
+No BOM found in vpx-memlane README.md
+Processing [396/679]: external/vpx-meninblack/README.md
+No BOM found in vpx-meninblack README.md
+Processing [397/679]: external/vpx-mephisto/README.md
+No BOM found in vpx-mephisto README.md
+Processing [398/679]: external/vpx-meteor/README.md
+No BOM found in vpx-meteor README.md
+Processing [399/679]: external/vpx-meteort/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-meteort README.md
+Processing [400/679]: external/vpx-metropolis/README.md
+No BOM found in vpx-metropolis README.md
+Processing [401/679]: external/vpx-mfdoom/README.md
+No BOM found in vpx-mfdoom README.md
+Processing [402/679]: external/vpx-miamivice/README.md
+No BOM found in vpx-miamivice README.md
+Processing [403/679]: external/vpx-michaeljordan/README.md
+No BOM found in vpx-michaeljordan README.md
+Processing [404/679]: external/vpx-mickeysbw/README.md
+No BOM found in vpx-mickeysbw README.md
+Processing [405/679]: external/vpx-minions/README.md
+No BOM found in vpx-minions README.md
+Processing [406/679]: external/vpx-miraculous/README.md
+No BOM found in vpx-miraculous README.md
+Processing [407/679]: external/vpx-missionimp/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-missionimp README.md
+Processing [408/679]: external/vpx-mm/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-mm README.md
+Processing [409/679]: external/vpx-mondaynightfootball/README.md
+No BOM found in vpx-mondaynightfootball README.md
+Processing [410/679]: external/vpx-monopoly/README.md
+No BOM found in vpx-monopoly README.md
+Processing [411/679]: external/vpx-monsterbash/README.md
+No BOM found in vpx-monsterbash README.md
+Processing [412/679]: external/vpx-monsterbashreskin/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-monsterbashreskin README.md
+Processing [413/679]: external/vpx-motordome/README.md
+No BOM found in vpx-motordome README.md
+Processing [414/679]: external/vpx-mousin/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-mousin README.md
+Processing [415/679]: external/vpx-mrandmrspacman/README.md
+No BOM found in vpx-mrandmrspacman README.md
+Processing [416/679]: external/vpx-mustang/README.md
+No BOM found in vpx-mustang README.md
+Processing [417/679]: external/vpx-mustangbullitt/README.md
+No BOM found in vpx-mustangbullitt README.md
+Processing [418/679]: external/vpx-mysterycastle/README.md
+No BOM found in vpx-mysterycastle README.md
+Processing [419/679]: external/vpx-nascar/README.md
+No BOM found in vpx-nascar README.md
+Processing [420/679]: external/vpx-nbafastbreak/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-nbafastbreak README.md
+Processing [421/679]: external/vpx-nbamac/README.md
+No BOM found in vpx-nbamac README.md
+Processing [422/679]: external/vpx-nbc/README.md
+No BOM found in vpx-nbc README.md
+Processing [423/679]: external/vpx-nemesis/README.md
+No BOM found in vpx-nemesis README.md
+Processing [424/679]: external/vpx-nfl/README.md
+No BOM found in vpx-nfl README.md
+Processing [425/679]: external/vpx-nightmoves/README.md
+No BOM found in vpx-nightmoves README.md
+Processing [426/679]: external/vpx-nightofthelivingdeadgrunge/README.md
+No BOM found in vpx-nightofthelivingdeadgrunge README.md
+Processing [427/679]: external/vpx-nightofthelivingdeadpin/README.md
+No BOM found in vpx-nightofthelivingdeadpin README.md
+Processing [428/679]: external/vpx-nightrider/README.md
+No BOM found in vpx-nightrider README.md
+Processing [429/679]: external/vpx-nineball/README.md
+No BOM found in vpx-nineball README.md
+Processing [430/679]: external/vpx-nipit/README.md
+No BOM found in vpx-nipit README.md
+Processing [431/679]: external/vpx-nitrogs/README.md
+No BOM found in vpx-nitrogs README.md
+Processing [432/679]: external/vpx-nmtbollocks/README.md
+No BOM found in vpx-nmtbollocks README.md
+Processing [433/679]: external/vpx-nofear/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-nofear README.md
+Processing [434/679]: external/vpx-nogoodgofers/README.md
+No BOM found in vpx-nogoodgofers README.md
+Processing [435/679]: external/vpx-northstar/README.md
+No BOM found in vpx-northstar README.md
+Processing [436/679]: external/vpx-nosferatu/README.md
+No BOM found in vpx-nosferatu README.md
+Processing [437/679]: external/vpx-nugent/README.md
+No BOM found in vpx-nugent README.md
+Processing [438/679]: external/vpx-odisea/README.md
+No BOM found in vpx-odisea README.md
+Processing [439/679]: external/vpx-oldchicago/README.md
+No BOM found in vpx-oldchicago README.md
+Processing [440/679]: external/vpx-oldconeyisland/README.md
+No BOM found in vpx-oldconeyisland README.md
+Processing [441/679]: external/vpx-opthunder/README.md
+No BOM found in vpx-opthunder README.md
+Processing [442/679]: external/vpx-oxo/README.md
+No BOM found in vpx-oxo README.md
+Processing [443/679]: external/vpx-pabstcancrusher/README.md
+No BOM found in vpx-pabstcancrusher README.md
+Processing [444/679]: external/vpx-panthera/README.md
+No BOM found in vpx-panthera README.md
+Processing [445/679]: external/vpx-papasmurf/README.md
+No BOM found in vpx-papasmurf README.md
+Processing [446/679]: external/vpx-paragon/README.md
+No BOM found in vpx-paragon README.md
+Processing [447/679]: external/vpx-partyanimal/README.md
+No BOM found in vpx-partyanimal README.md
+Processing [448/679]: external/vpx-partymonsters/README.md
+No BOM found in vpx-partymonsters README.md
+Processing [449/679]: external/vpx-pathand/README.md
+No BOM found in vpx-pathand README.md
+Processing [450/679]: external/vpx-pennantfever/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-pennantfever README.md
+Processing [451/679]: external/vpx-petsemetary/README.md
+No BOM found in vpx-petsemetary README.md
+Processing [452/679]: external/vpx-phantom/README.md
+No BOM found in vpx-phantom README.md
+Processing [453/679]: external/vpx-pharaoh/README.md
+No BOM found in vpx-pharaoh README.md
+Processing [454/679]: external/vpx-pharoahdr/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-pharoahdr README.md
+Processing [455/679]: external/vpx-phoenix/README.md
+No BOM found in vpx-phoenix README.md
+Processing [456/679]: external/vpx-pinballmagic/README.md
+No BOM found in vpx-pinballmagic README.md
+Processing [457/679]: external/vpx-pinbot/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-pinbot README.md
+Processing [458/679]: external/vpx-pinkfloyd/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-pinkfloyd README.md
+Processing [459/679]: external/vpx-pinkpanther/README.md
+No BOM found in vpx-pinkpanther README.md
+Processing [460/679]: external/vpx-pirategold/README.md
+No BOM found in vpx-pirategold README.md
+Processing [461/679]: external/vpx-pirateslife/README.md
+No BOM found in vpx-pirateslife README.md
+Processing [462/679]: external/vpx-planetoftheapes/README.md
+No BOM found in vpx-planetoftheapes README.md
+Processing [463/679]: external/vpx-playboy1978/README.md
+No BOM found in vpx-playboy1978 README.md
+Processing [464/679]: external/vpx-playboy2002/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-playboy2002 README.md
+Processing [465/679]: external/vpx-playboy35/README.md
+No BOM found in vpx-playboy35 README.md
+Processing [466/679]: external/vpx-playboy35m/README.md
+No BOM found in vpx-playboy35m README.md
+Processing [467/679]: external/vpx-poltergeist/README.md
+No BOM found in vpx-poltergeist README.md
+Processing [468/679]: external/vpx-poolsharks/README.md
+No BOM found in vpx-poolsharks README.md
+Processing [469/679]: external/vpx-popeye/README.md
+No BOM found in vpx-popeye README.md
+Processing [470/679]: external/vpx-potc/README.md
+No BOM found in vpx-potc README.md
+Processing [471/679]: external/vpx-powerrangers/README.md
+No BOM found in vpx-powerrangers README.md
+Processing [472/679]: external/vpx-predator2/README.md
+No BOM found in vpx-predator2 README.md
+Processing [473/679]: external/vpx-primus/README.md
+No BOM found in vpx-primus README.md
+Processing [474/679]: external/vpx-pulpfiction/README.md
+No BOM found in vpx-pulpfiction README.md
+Processing [475/679]: external/vpx-punchout/README.md
+No BOM found in vpx-punchout README.md
+Processing [476/679]: external/vpx-punkpark/README.md
+No BOM found in vpx-punkpark README.md
+Processing [477/679]: external/vpx-qbertquest/README.md
+No BOM found in vpx-qbertquest README.md
+Processing [478/679]: external/vpx-queen/README.md
+No BOM found in vpx-queen README.md
+Processing [479/679]: external/vpx-quicksilver/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-quicksilver README.md
+Processing [480/679]: external/vpx-r911/README.md
+No BOM found in vpx-r911 README.md
+Processing [481/679]: external/vpx-rad/README.md
+No BOM found in vpx-rad README.md
+Processing [482/679]: external/vpx-rambo/README.md
+No BOM found in vpx-rambo README.md
+Processing [483/679]: external/vpx-ramboflb/README.md
+No BOM found in vpx-ramboflb README.md
+Processing [484/679]: external/vpx-ramones/README.md
+No BOM found in vpx-ramones README.md
+Processing [485/679]: external/vpx-raygunrunner/README.md
+No BOM found in vpx-raygunrunner README.md
+Processing [486/679]: external/vpx-rctycn/README.md
+No BOM found in vpx-rctycn README.md
+Processing [487/679]: external/vpx-realghostbusters/README.md
+No BOM found in vpx-realghostbusters README.md
+Processing [488/679]: external/vpx-reanimator/README.md
+No BOM found in vpx-reanimator README.md
+Processing [489/679]: external/vpx-redandteds/README.md
+No BOM found in vpx-redandteds README.md
+Processing [490/679]: external/vpx-ripleys/README.md
+No BOM found in vpx-ripleys README.md
+Processing [491/679]: external/vpx-roadkings/README.md
+No BOM found in vpx-roadkings README.md
+Processing [492/679]: external/vpx-roadrunner/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-roadrunner README.md
+Processing [493/679]: external/vpx-robocop/README.md
+No BOM found in vpx-robocop README.md
+Processing [494/679]: external/vpx-robocop3/README.md
+No BOM found in vpx-robocop3 README.md
+Processing [495/679]: external/vpx-robot/README.md
+No BOM found in vpx-robot README.md
+Processing [496/679]: external/vpx-robowar/README.md
+No BOM found in vpx-robowar README.md
+Processing [497/679]: external/vpx-rock/README.md
+No BOM found in vpx-rock README.md
+Processing [498/679]: external/vpx-rockenc/README.md
+No BOM found in vpx-rockenc README.md
+Processing [499/679]: external/vpx-rockytko/README.md
+No BOM found in vpx-rockytko README.md
+Processing [500/679]: external/vpx-rollerdisco/README.md
+No BOM found in vpx-rollerdisco README.md
+Processing [501/679]: external/vpx-rollergames/README.md
+No BOM found in vpx-rollergames README.md
+Processing [502/679]: external/vpx-rollingstonesbalutito/README.md
+No BOM found in vpx-rollingstonesbalutito README.md
+Processing [503/679]: external/vpx-royalflush/README.md
+No BOM found in vpx-royalflush README.md
+Processing [504/679]: external/vpx-royalrumble/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-royalrumble README.md
+Processing [505/679]: external/vpx-safecracker/README.md
+No BOM found in vpx-safecracker README.md
+Processing [506/679]: external/vpx-samba/README.md
+No BOM found in vpx-samba README.md
+Processing [507/679]: external/vpx-sandsaton/README.md
+No BOM found in vpx-sandsaton README.md
+Processing [508/679]: external/vpx-scaredstiff/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-scaredstiff README.md
+Processing [509/679]: external/vpx-scoobydoo/README.md
+No BOM found in vpx-scoobydoo README.md
+Processing [510/679]: external/vpx-sdookiss/README.md
+No BOM found in vpx-sdookiss README.md
+Processing [511/679]: external/vpx-seawitch/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-seawitch README.md
+Processing [512/679]: external/vpx-secretagent/README.md
+No BOM found in vpx-secretagent README.md
+Processing [513/679]: external/vpx-secretservice/README.md
+No BOM found in vpx-secretservice README.md
+Processing [514/679]: external/vpx-senna/README.md
+No BOM found in vpx-senna README.md
+Processing [515/679]: external/vpx-sesamestreet/README.md
+No BOM found in vpx-sesamestreet README.md
+Processing [516/679]: external/vpx-sfii/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-sfii README.md
+Processing [517/679]: external/vpx-sfiimod/README.md
+No BOM found in vpx-sfiimod README.md
+Processing [518/679]: external/vpx-shaq/README.md
+No BOM found in vpx-shaq README.md
+Processing [519/679]: external/vpx-shark/README.md
+No BOM found in vpx-shark README.md
+Processing [520/679]: external/vpx-shootingtherapids/README.md
+No BOM found in vpx-shootingtherapids README.md
+Processing [521/679]: external/vpx-shovel/README.md
+No BOM found in vpx-shovel README.md
+Processing [522/679]: external/vpx-shrek/README.md
+No BOM found in vpx-shrek README.md
+Processing [523/679]: external/vpx-shrkysht/README.md
+No BOM found in vpx-shrkysht README.md
+Processing [524/679]: external/vpx-silverballmania/README.md
+No BOM found in vpx-silverballmania README.md
+Processing [525/679]: external/vpx-simpsonspprty/README.md
+No BOM found in vpx-simpsonspprty README.md
+Processing [526/679]: external/vpx-sirlancelot/README.md
+No BOM found in vpx-sirlancelot README.md
+Processing [527/679]: external/vpx-sixmilliondollarman/README.md
+No BOM found in vpx-sixmilliondollarman README.md
+Processing [528/679]: external/vpx-skateball/README.md
+No BOM found in vpx-skateball README.md
+Processing [529/679]: external/vpx-skylab/README.md
+No BOM found in vpx-skylab README.md
+Processing [530/679]: external/vpx-slimerjp/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-slimerjp README.md
+Processing [531/679]: external/vpx-smbmushroom/README.md
+No BOM found in vpx-smbmushroom README.md
+Processing [532/679]: external/vpx-smurfette/README.md
+No BOM found in vpx-smurfette README.md
+Processing [533/679]: external/vpx-socrking/README.md
+No BOM found in vpx-socrking README.md
+Processing [534/679]: external/vpx-solarcity/README.md
+No BOM found in vpx-solarcity README.md
+Processing [535/679]: external/vpx-sopranos/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-sopranos README.md
+Processing [536/679]: external/vpx-sorcerer/README.md
+No BOM found in vpx-sorcerer README.md
+Processing [537/679]: external/vpx-southpark/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-southpark README.md
+Processing [538/679]: external/vpx-spacecadet/README.md
+No BOM found in vpx-spacecadet README.md
+Processing [539/679]: external/vpx-spacecadetge/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-spacecadetge README.md
+Processing [540/679]: external/vpx-spacejam/README.md
+No BOM found in vpx-spacejam README.md
+Processing [541/679]: external/vpx-spacemission/README.md
+No BOM found in vpx-spacemission README.md
+Processing [542/679]: external/vpx-spaceoddity/README.md
+No BOM found in vpx-spaceoddity README.md
+Processing [543/679]: external/vpx-spacerider/README.md
+No BOM found in vpx-spacerider README.md
+Processing [544/679]: external/vpx-spaceshuttle/README.md
+No BOM found in vpx-spaceshuttle README.md
+Processing [545/679]: external/vpx-spaceshuttletaito/README.md
+No BOM found in vpx-spaceshuttletaito README.md
+Processing [546/679]: external/vpx-spacestation/README.md
+No BOM found in vpx-spacestation README.md
+Processing [547/679]: external/vpx-spacetrainmac/README.md
+No BOM found in vpx-spacetrainmac README.md
+Processing [548/679]: external/vpx-spiderman/README.md
+No BOM found in vpx-spiderman README.md
+Processing [549/679]: external/vpx-spidermanve/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-spidermanve README.md
+Processing [550/679]: external/vpx-splitsecond/README.md
+No BOM found in vpx-splitsecond README.md
+Processing [551/679]: external/vpx-spongebob/README.md
+No BOM found in vpx-spongebob README.md
+Processing [552/679]: external/vpx-spyhunter/README.md
+No BOM found in vpx-spyhunter README.md
+Processing [553/679]: external/vpx-squidgame/README.md
+No BOM found in vpx-squidgame README.md
+Processing [554/679]: external/vpx-ssam/README.md
+No BOM found in vpx-ssam README.md
+Processing [555/679]: external/vpx-stampede/README.md
+No BOM found in vpx-stampede README.md
+Processing [556/679]: external/vpx-stargate/README.md
+No BOM found in vpx-stargate README.md
+Processing [557/679]: external/vpx-stargazer/README.md
+No BOM found in vpx-stargazer README.md
+Processing [558/679]: external/vpx-stars/README.md
+No BOM found in vpx-stars README.md
+Processing [559/679]: external/vpx-starship/README.md
+No BOM found in vpx-starship README.md
+Processing [560/679]: external/vpx-startrek25th/README.md
+No BOM found in vpx-startrek25th README.md
+Processing [561/679]: external/vpx-startrekle/README.md
+No BOM found in vpx-startrekle README.md
+Processing [562/679]: external/vpx-startreklejp/README.md
+No BOM found in vpx-startreklejp README.md
+Processing [563/679]: external/vpx-startrekmu/README.md
+No BOM found in vpx-startrekmu README.md
+Processing [564/679]: external/vpx-startrektng/README.md
+No BOM found in vpx-startrektng README.md
+Processing [565/679]: external/vpx-starwars/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-starwars README.md
+Processing [566/679]: external/vpx-starwarsepisode1/README.md
+No BOM found in vpx-starwarsepisode1 README.md
+Processing [567/679]: external/vpx-starwarstrilogy/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-starwarstrilogy README.md
+Processing [568/679]: external/vpx-stingray/README.md
+No BOM found in vpx-stingray README.md
+Processing [569/679]: external/vpx-strangescience/README.md
+No BOM found in vpx-strangescience README.md
+Processing [570/679]: external/vpx-strike/README.md
+No BOM found in vpx-strike README.md
+Processing [571/679]: external/vpx-strikes/README.md
+No BOM found in vpx-strikes README.md
+Processing [572/679]: external/vpx-studentprince/README.md
+No BOM found in vpx-studentprince README.md
+Processing [573/679]: external/vpx-summertime/README.md
+No BOM found in vpx-summertime README.md
+Processing [574/679]: external/vpx-superman/README.md
+No BOM found in vpx-superman README.md
+Processing [575/679]: external/vpx-supermanjl/README.md
+No BOM found in vpx-supermanjl README.md
+Processing [576/679]: external/vpx-supermario/README.md
+No BOM found in vpx-supermario README.md
+Processing [577/679]: external/vpx-superspin/README.md
+No BOM found in vpx-superspin README.md
+Processing [578/679]: external/vpx-surfchamp/README.md
+No BOM found in vpx-surfchamp README.md
+Processing [579/679]: external/vpx-surfnsafari/README.md
+No BOM found in vpx-surfnsafari README.md
+Processing [580/679]: external/vpx-swampthing/README.md
+No BOM found in vpx-swampthing README.md
+Processing [581/679]: external/vpx-swampthingbayou/README.md
+No BOM found in vpx-swampthingbayou README.md
+Processing [582/679]: external/vpx-swordsoffury/README.md
+No BOM found in vpx-swordsoffury README.md
+Processing [583/679]: external/vpx-t2/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-t2 README.md
+Processing [584/679]: external/vpx-t2jp/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-t2jp README.md
+Processing [585/679]: external/vpx-taf/README.md
+No BOM found in vpx-taf README.md
+Processing [586/679]: external/vpx-tangoandcash/README.md
+No BOM found in vpx-tangoandcash README.md
+Processing [587/679]: external/vpx-targetalpha/README.md
+No BOM found in vpx-targetalpha README.md
+Processing [588/679]: external/vpx-taxi/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-taxi README.md
+Processing [589/679]: external/vpx-taxidriver/README.md
+No BOM found in vpx-taxidriver README.md
+Processing [590/679]: external/vpx-teedoff/README.md
+No BOM found in vpx-teedoff README.md
+Processing [591/679]: external/vpx-tenaciousd/README.md
+No BOM found in vpx-tenaciousd README.md
+Processing [592/679]: external/vpx-term3/README.md
+No BOM found in vpx-term3 README.md
+Processing [593/679]: external/vpx-terminator1/README.md
+No BOM found in vpx-terminator1 README.md
+Processing [594/679]: external/vpx-terminator3/README.md
+No BOM found in vpx-terminator3 README.md
+Processing [595/679]: external/vpx-texaschainsawmassacre/README.md
+No BOM found in vpx-texaschainsawmassacre README.md
+Processing [596/679]: external/vpx-tftc/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-tftc README.md
+Processing [597/679]: external/vpx-theateam/README.md
+No BOM found in vpx-theateam README.md
+Processing [598/679]: external/vpx-thefog/README.md
+No BOM found in vpx-thefog README.md
+Processing [599/679]: external/vpx-thelaststarfighter/README.md
+No BOM found in vpx-thelaststarfighter README.md
+Processing [600/679]: external/vpx-theleprechaunking/README.md
+No BOM found in vpx-theleprechaunking README.md
+Processing [601/679]: external/vpx-thelostworldjp/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-thelostworldjp README.md
+Processing [602/679]: external/vpx-themask/README.md
+No BOM found in vpx-themask README.md
+Processing [603/679]: external/vpx-thematrix/README.md
+No BOM found in vpx-thematrix README.md
+Processing [604/679]: external/vpx-thepartyzone/README.md
+No BOM found in vpx-thepartyzone README.md
+Processing [605/679]: external/vpx-theshadow/README.md
+No BOM found in vpx-theshadow README.md
+Processing [606/679]: external/vpx-thesimpsons/README.md
+No BOM found in vpx-thesimpsons README.md
+Processing [607/679]: external/vpx-thething/README.md
+No BOM found in vpx-thething README.md
+Processing [608/679]: external/vpx-thewalkingdead/README.md
+No BOM found in vpx-thewalkingdead README.md
+Processing [609/679]: external/vpx-thewarriors/README.md
+No BOM found in vpx-thewarriors README.md
+Processing [610/679]: external/vpx-threeangels/README.md
+No BOM found in vpx-threeangels README.md
+Processing [611/679]: external/vpx-tikibob/README.md
+No BOM found in vpx-tikibob README.md
+Processing [612/679]: external/vpx-timefantasy/README.md
+No BOM found in vpx-timefantasy README.md
+Processing [613/679]: external/vpx-timelord/README.md
+No BOM found in vpx-timelord README.md
+Processing [614/679]: external/vpx-timemachinezac/README.md
+No BOM found in vpx-timemachinezac README.md
+Processing [615/679]: external/vpx-tmnt/README.md
+No BOM found in vpx-tmnt README.md
+Processing [616/679]: external/vpx-tmntle/README.md
+No BOM found in vpx-tmntle README.md
+Processing [617/679]: external/vpx-tnes/README.md
+No BOM found in vpx-tnes README.md
+Processing [618/679]: external/vpx-tom/README.md
+No BOM found in vpx-tom README.md
+Processing [619/679]: external/vpx-tomjerry/README.md
+No BOM found in vpx-tomjerry README.md
+Processing [620/679]: external/vpx-tommy/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-tommy README.md
+Processing [621/679]: external/vpx-tornadorally/README.md
+No BOM found in vpx-tornadorally README.md
+Processing [622/679]: external/vpx-torpedoalley/README.md
+No BOM found in vpx-torpedoalley README.md
+Processing [623/679]: external/vpx-totan/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-totan README.md
+Processing [624/679]: external/vpx-trailerparkboys/README.md
+No BOM found in vpx-trailerparkboys README.md
+Processing [625/679]: external/vpx-transformers/README.md
+No BOM found in vpx-transformers README.md
+Processing [626/679]: external/vpx-transformersg1/README.md
+No BOM found in vpx-transformersg1 README.md
+Processing [627/679]: external/vpx-transformersmod/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-transformersmod README.md
+Processing [628/679]: external/vpx-transporter/README.md
+No BOM found in vpx-transporter README.md
+Processing [629/679]: external/vpx-trickrtreat/README.md
+No BOM found in vpx-trickrtreat README.md
+Processing [630/679]: external/vpx-triplex/README.md
+No BOM found in vpx-triplex README.md
+Processing [631/679]: external/vpx-trizone/README.md
+No BOM found in vpx-trizone README.md
+Processing [632/679]: external/vpx-tron/README.md
+No BOM found in vpx-tron README.md
+Processing [633/679]: external/vpx-tronlegacy/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-tronlegacy README.md
+Processing [634/679]: external/vpx-truckstop/README.md
+No BOM found in vpx-truckstop README.md
+Processing [635/679]: external/vpx-twistedmetal/README.md
+No BOM found in vpx-twistedmetal README.md
+Processing [636/679]: external/vpx-twister/README.md
+No BOM found in vpx-twister README.md
+Processing [637/679]: external/vpx-tz/README.md
+No BOM found in vpx-tz README.md
+Processing [638/679]: external/vpx-underwater/README.md
+No BOM found in vpx-underwater README.md
+Processing [639/679]: external/vpx-vampirella/README.md
+No BOM found in vpx-vampirella README.md
+Processing [640/679]: external/vpx-vector/README.md
+No BOM found in vpx-vector README.md
+Processing [641/679]: external/vpx-victory/README.md
+No BOM found in vpx-victory README.md
+Processing [642/679]: external/vpx-viking/README.md
+No BOM found in vpx-viking README.md
+Processing [643/679]: external/vpx-viper/README.md
+No BOM found in vpx-viper README.md
+Processing [644/679]: external/vpx-vipernight/README.md
+No BOM found in vpx-vipernight README.md
+Processing [645/679]: external/vpx-volkan/README.md
+No BOM found in vpx-volkan README.md
+Processing [646/679]: external/vpx-volley/README.md
+No BOM found in vpx-volley README.md
+Processing [647/679]: external/vpx-vortex/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-vortex README.md
+Processing [648/679]: external/vpx-wackyraces/README.md
+No BOM found in vpx-wackyraces README.md
+Processing [649/679]: external/vpx-warlok/README.md
+No BOM found in vpx-warlok README.md
+Processing [650/679]: external/vpx-waterworld/README.md
+No BOM found in vpx-waterworld README.md
+Processing [651/679]: external/vpx-waynesworld/README.md
+No BOM found in vpx-waynesworld README.md
+Processing [652/679]: external/vpx-wcsoccer/README.md
+No BOM found in vpx-wcsoccer README.md
+Processing [653/679]: external/vpx-whitewater/README.md
+No BOM found in vpx-whitewater README.md
+Processing [654/679]: external/vpx-whoanellie/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-whoanellie README.md
+Processing [655/679]: external/vpx-whodunnit/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-whodunnit README.md
+Processing [656/679]: external/vpx-wildwest/README.md
+No BOM found in vpx-wildwest README.md
+Processing [657/679]: external/vpx-willyswonderland/README.md
+No BOM found in vpx-willyswonderland README.md
+Processing [658/679]: external/vpx-wipeout/README.md
+No BOM found in vpx-wipeout README.md
+Processing [659/679]: external/vpx-witcher/README.md
+No BOM found in vpx-witcher README.md
+Processing [660/679]: external/vpx-wizard/README.md
+No BOM found in vpx-wizard README.md
+Processing [661/679]: external/vpx-wof/README.md
+No BOM found in vpx-wof README.md
+Processing [662/679]: external/vpx-wolfman/README.md
+No BOM found in vpx-wolfman README.md
+Processing [663/679]: external/vpx-wonka/README.md
+No BOM found in vpx-wonka README.md
+Processing [664/679]: external/vpx-worldcupsoccer/README.md
+No BOM found in vpx-worldcupsoccer README.md
+Processing [665/679]: external/vpx-wowmonopoly/README.md
+No BOM found in vpx-wowmonopoly README.md
+Processing [666/679]: external/vpx-wpt/README.md
+No BOM found in vpx-wpt README.md
+Processing [667/679]: external/vpx-wrath/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-wrath README.md
+Processing [668/679]: external/vpx-wwind/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-wwind README.md
+Processing [669/679]: external/vpx-xenon/README.md
+No BOM found in vpx-xenon README.md
+Processing [670/679]: external/vpx-xfiles/README.md
+No BOM found in vpx-xfiles README.md
+Processing [671/679]: external/vpx-xfileshanibal/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-xfileshanibal README.md
+Processing [672/679]: external/vpx-xmen/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-xmen README.md
+Processing [673/679]: external/vpx-yamanobori/README.md
+No BOM found in vpx-yamanobori README.md
+Processing [674/679]: external/vpx-yellowsubmarine/README.md
+No BOM found in vpx-yellowsubmarine README.md
+Processing [675/679]: external/vpx-youngfrankenstein/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-youngfrankenstein README.md
+Processing [676/679]: external/vpx-zephy/README.md
+No BOM found in vpx-zephy README.md
+Processing [677/679]: external/vpx-zipadoo/README.md
+No BOM found in vpx-zipadoo README.md
+Processing [678/679]: external/vpx-zissou/README.md
+Removed UTF-8 BOM (EF BB BF) from vpx-zissou README.md
+Processing [679/679]: external/vpx-zonderik/README.md
+No BOM found in vpx-zonderik README.md
+
+======================
+Summary:
+======================
+Total README files processed: 679
+README files with BOM removed: 113
+Script completed at 04/30/2025 11:28:38

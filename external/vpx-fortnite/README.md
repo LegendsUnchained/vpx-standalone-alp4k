@@ -1,4 +1,4 @@
-﻿﻿# Fortnite (Original 2024)
+﻿# Fortnite (Original 2024)
 
 ![Table Preview](../../images/vpx-fortnite.png)
 

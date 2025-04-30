@@ -1,4 +1,4 @@
-﻿﻿# Firepower II (Williams 1983)
+﻿# Firepower II (Williams 1983)
 
 ![Table Preview](../../images/vpx-firepower2-preview.jpg)
 

@@ -1,4 +1,4 @@
-﻿# Aaron Spelling (Data East 1992)
+# Aaron Spelling (Data East 1992)
 
 ![Table Preview](../../images/vpx-aaronspelling.png)
 

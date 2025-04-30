@@ -1,4 +1,4 @@
-﻿# Megadeth (Original 2023)
+# Megadeth (Original 2023)
 
 ![Table Preview](../../images/vpx-megadeth.jpg)
 

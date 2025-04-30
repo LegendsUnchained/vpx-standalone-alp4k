@@ -1,4 +1,4 @@
-﻿﻿# Dirty Harry (Williams 1995)
+﻿# Dirty Harry (Williams 1995)
 
 ![Table Preview](../../images/vpx-dirtyharry.png)
 

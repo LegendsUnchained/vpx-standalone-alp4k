@@ -1,4 +1,4 @@
-﻿﻿# Andromeda (Game Plan 1985)
+﻿# Andromeda (Game Plan 1985)
 
 ![Table Preview](../../images/vpx-andromeda-preview.jpg)
 

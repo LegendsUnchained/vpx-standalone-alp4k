@@ -1,4 +1,4 @@
-﻿# Young Frankenstein (Original 2021)
+# Young Frankenstein (Original 2021)
 
 ![Table Preview](../../images/vpx-youngfrankenstein.jpg)
 

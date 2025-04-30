@@ -1,4 +1,4 @@
-﻿﻿# Cosmic (Taito do Brasil 1980)
+﻿# Cosmic (Taito do Brasil 1980)
 
 ![Table Preview](../../images/vpx-cosmic.jpg)
 

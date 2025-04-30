@@ -1,4 +1,4 @@
-﻿﻿# Big Trouble in Little China (Original 2022)
+﻿# Big Trouble in Little China (Original 2022)
 
 ![Table Preview](../../images/vpx-big_trouble.jpg)
 

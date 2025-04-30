@@ -1,4 +1,4 @@
-﻿# Black Knight (Williams 1980)
+# Black Knight (Williams 1980)
 
 ![Table Preview](../../images/vpx-blackknight.jpg)
 

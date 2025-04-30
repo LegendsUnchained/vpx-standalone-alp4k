@@ -1,4 +1,4 @@
-﻿﻿# Guardians of the Galaxy trilogy (Original 2023)
+﻿# Guardians of the Galaxy trilogy (Original 2023)
 
 ![Table Preview](../../images/vpx-gogtrilogy.png)
 

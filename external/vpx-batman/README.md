@@ -1,4 +1,4 @@
-﻿# Batman (Data East 1991)
+# Batman (Data East 1991)
 
 ![Table Preview](../../images/vpx-batman.jpg)
 

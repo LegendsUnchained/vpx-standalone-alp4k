@@ -1,4 +1,4 @@
-﻿# Fish Tales (Williams 1992)
+# Fish Tales (Williams 1992)
 
 ![Table Preview](../../images/vpx-fishtales.png)
 

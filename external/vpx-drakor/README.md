@@ -1,4 +1,4 @@
-﻿﻿# Drakor (Taito do Brasil 1979)
+﻿# Drakor (Taito do Brasil 1979)
 
 ![Table Preview](../../images/vpx-drakor.jpg)
 

@@ -1,4 +1,4 @@
-﻿# Pennant Fever (Williams 1984)
+# Pennant Fever (Williams 1984)
 
 ![Table Preview](../../images/vpx-pennantfever.png)
 

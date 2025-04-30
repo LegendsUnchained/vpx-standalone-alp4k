@@ -1,4 +1,4 @@
-﻿﻿# Diner (Williams 1990)
+﻿# Diner (Williams 1990)
 
 ![Table Preview](../../images/vpx-diner.png)
 

@@ -1,4 +1,4 @@
-﻿﻿# Seawitch, JP's (Stern 1980)
+﻿# Seawitch, JP's (Stern 1980)
 
 ![Table Preview](../../images/vpx-seawitch.jpg)
 

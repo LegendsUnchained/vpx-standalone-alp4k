@@ -1,4 +1,4 @@
-﻿﻿# Cactus Canyon (Bally 1998)
+﻿# Cactus Canyon (Bally 1998)
 
 ![Table Preview](../../images/vpx-cactuscanyon.png)
 

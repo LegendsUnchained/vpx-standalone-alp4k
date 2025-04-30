@@ -1,4 +1,4 @@
-﻿# King Kong (Data East 1990)
+# King Kong (Data East 1990)
 
 ![Table Preview](../../images/vpx-kingkong-preview.jpg)
 

@@ -1,4 +1,4 @@
-﻿﻿# Big Bang Bar (Capcom 1996)
+﻿# Big Bang Bar (Capcom 1996)
 
 ![Table Preview](../../images/vpx-bigbangbar-preview.png)
 

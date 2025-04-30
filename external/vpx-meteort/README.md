@@ -1,4 +1,4 @@
-﻿﻿# Meteor (Taito do Brasil 1979)
+﻿# Meteor (Taito do Brasil 1979)
 
 ![Table Preview](../../images/vpx-meteort.jpg)
 

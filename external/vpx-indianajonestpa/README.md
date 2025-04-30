@@ -1,4 +1,4 @@
-﻿# Indiana Jones - The Pinball Adventure (Williams 1993)
+# Indiana Jones - The Pinball Adventure (Williams 1993)
 
 ![Table Preview](../../images/vpx-indianajonestpa.png)
 

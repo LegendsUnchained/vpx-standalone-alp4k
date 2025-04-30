@@ -1,4 +1,4 @@
-﻿# Star Wars Trilogy (Sega 1997)
+# Star Wars Trilogy (Sega 1997)
 
 ![Table Preview](../../images/vpx-starwarstrilogy.png)
 

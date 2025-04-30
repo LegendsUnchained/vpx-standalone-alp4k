@@ -1,4 +1,4 @@
-﻿﻿# Batman Forever (Sega 1995)
+﻿# Batman Forever (Sega 1995)
 
 ![Table Preview](../../images/vpx-batmanforever.png)
 

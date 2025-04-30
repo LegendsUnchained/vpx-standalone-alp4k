@@ -1,4 +1,4 @@
-﻿﻿# Firepower (Williams 1980)
+﻿# Firepower (Williams 1980)
 
 ![Table Preview](../../images/vpx-firepower-preview.png)
 

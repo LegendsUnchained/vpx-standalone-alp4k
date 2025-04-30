@@ -1,4 +1,4 @@
-﻿﻿# Scared Stiff (Bally 1996) 
+﻿# Scared Stiff (Bally 1996) 
 
 ![Table Preview](../../images/vpx-scaredstiff.png)
 

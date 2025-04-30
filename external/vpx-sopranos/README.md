@@ -1,4 +1,4 @@
-﻿# Sopranos, The (Stern 2005)
+# Sopranos, The (Stern 2005)
 
 ![Table Preview](../../images/vpx-sopranos.png)
 

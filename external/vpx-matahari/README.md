@@ -1,4 +1,4 @@
-﻿﻿# Mata Hari (Bally 1978)
+﻿# Mata Hari (Bally 1978)
 
 ![Table Preview](../../images/vpx-matahari-preview.jpg)
 

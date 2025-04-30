@@ -1,4 +1,4 @@
-﻿# Devil Riders (Zaccaria 1984)
+# Devil Riders (Zaccaria 1984)
 
 ![Table Preview](../../images/vpx-devilriders.png)
 

@@ -1,4 +1,4 @@
-﻿# Avengers, JP's The (Stern 2012)
+# Avengers, JP's The (Stern 2012)
 
 ![Table Preview](../../images/vpx-jps-avengers.jpg)
 

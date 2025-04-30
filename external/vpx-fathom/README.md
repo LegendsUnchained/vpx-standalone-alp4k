@@ -1,4 +1,4 @@
-﻿﻿# Fathom (Bally 1981)
+﻿# Fathom (Bally 1981)
 
 ![Table Preview](../../images/vpx-Fathom-preview.jpg)
 

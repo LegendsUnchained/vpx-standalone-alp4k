@@ -1,4 +1,4 @@
-﻿﻿# Mousin' Around! (Bally 1989)
+﻿# Mousin' Around! (Bally 1989)
 
 ![Table Preview](../../images/vpx-mousin.png)
 

@@ -1,4 +1,4 @@
-﻿﻿# Black Pyramid (Bally 1980)
+﻿# Black Pyramid (Bally 1980)
 
 ![Table Preview](../../images/vpx-blackpyramid.png)
 

@@ -1,4 +1,4 @@
-﻿# Gorgar (Williams 1979)
+# Gorgar (Williams 1979)
 
 ![Table Preview](../../images/vpx-gorgar.jpeg)
 

@@ -1,4 +1,4 @@
-﻿﻿# Road Runner (Atari 1979)
+﻿# Road Runner (Atari 1979)
 
 ![Table Preview](../../images/vpx-roadrunner-preview.jpg)
 

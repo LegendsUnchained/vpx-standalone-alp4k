@@ -1,4 +1,4 @@
-﻿﻿# Godzilla (Sega 1998)
+﻿# Godzilla (Sega 1998)
 
 ![Table Preview](../../images/vpx-godzilla-preview.jpg)
 

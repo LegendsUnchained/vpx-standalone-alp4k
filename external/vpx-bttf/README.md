@@ -1,4 +1,4 @@
-﻿# Back to the Future: The Pinball (Data East 1990)
+# Back to the Future: The Pinball (Data East 1990)
 
 ![Table Preview](../../images/vpx-bttf.png)
 

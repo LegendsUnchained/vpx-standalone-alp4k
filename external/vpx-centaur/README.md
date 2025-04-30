@@ -1,4 +1,4 @@
-﻿# Centaur (Bally 1981)
+# Centaur (Bally 1981)
 
 ![Table Preview](../../images/vpx-centaur.png)
 

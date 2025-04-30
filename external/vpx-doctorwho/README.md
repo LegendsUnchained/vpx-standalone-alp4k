@@ -1,4 +1,4 @@
-﻿﻿# Doctor Who (Bally 1992)
+﻿# Doctor Who (Bally 1992)
 
 ![Table Preview](../../images/vpx-doctorwho.png)
 

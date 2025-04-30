@@ -1,4 +1,4 @@
-﻿# Independence Day (SEGA 1996)
+# Independence Day (SEGA 1996)
 
 ![Table Preview](../../images/vpx-id4.png)
 

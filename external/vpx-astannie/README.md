@@ -1,4 +1,4 @@
-﻿﻿# Asteroid Annie (Gottlieb 1980)
+﻿# Asteroid Annie (Gottlieb 1980)
 
 ![Table Preview](../../images/vpx-astannie-preview.jpg)
 

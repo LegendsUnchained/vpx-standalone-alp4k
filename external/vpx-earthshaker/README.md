@@ -1,4 +1,4 @@
-﻿﻿# Earthshaker (Williams 1989)
+﻿# Earthshaker (Williams 1989)
 
 ![Table Preview](../../images/vpx-earthshaker.png)
 

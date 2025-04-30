@@ -1,4 +1,4 @@
-﻿# Lord of the Rings, JP's The (Original 2017)
+# Lord of the Rings, JP's The (Original 2017)
 
 ![Table Preview](../../images/vpx-lordoftherings.jpg)
 

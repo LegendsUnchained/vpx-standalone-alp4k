@@ -1,4 +1,4 @@
-﻿# X-Files (Sega 1997)
+# X-Files (Sega 1997)
 
 ![Table Preview](../../images/vpx-xfileshanibal.png)
 
