@@ -353,6 +353,7 @@ Links to these products on Amazon are through affiliate links.
 | [Dr. Dude (Bally 1999)](external/vpx-drdude) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 42 |
 | [Dr. Jekyll and Mr. Hyde (Original 2022)](external/vpx-drjekyllandmrhyde) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 45 |
 | [Dracula (Stern 1979)](external/vpx-dracula) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 53 |
+| [Dragon Ball Super Saiyan Edition (Original 2025)](external/vpx-dbsse) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Dragon Ball Z (Original 2018)](external/vpx-dbz) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Dragon Ball Z Budokai (Original 2023)](external/vpx-dbzbudokai) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Drakor (Taito do Brasil 1979)](external/vpx-drakor) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
@@ -498,7 +499,7 @@ Links to these products on Amazon are through affiliate links.
 | [Jimi Hendrix (Original 2021)](external/vpx-jimihendrix) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Joe Bar Team (ZXR 2019)](external/vpx-joebarteam) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 52 |
 | [John Wick (Original 2023)](external/vpx-johnwick) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
-| [Johnny Mnemonic (Williams 1995)](external/vpx-johnnymnemonic) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 41 |
+| [Johnny Mnemonic (Williams 1995)](external/vpx-johnnymnemonic) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 56 |
 | [Joker Poker (Gottlieb 1978)](external/vpx-jokerpoker) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 50 |
 | [Jokerz! (Williams 1988)](external/vpx-jokerz) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 | [Jolly Roger (Williams 1967)](external/vpx-jollyroger) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 51 |
@@ -620,6 +621,7 @@ Links to these products on Amazon are through affiliate links.
 | [Pet Sematary (TBA 2019)](external/vpx-petsemetary) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 55 |
 | [Phantom of the Opera (Data East 1990)](external/vpx-phantom) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 38 |
 | [Pharaoh (Williams 1981)](external/vpx-pharaoh) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 49 |
+| [Pharaoh - Dead Rise)](external/vpx-pharaohdr) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 45 |
 | [Phoenix (Williams 1978)](external/vpx-phoenix) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Pinball Magic (Capcom 1995)](external/vpx-pinballmagic) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 43 |
 | [Pin-Bot (Williams 1986)](external/vpx-pinbot) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 33 |
