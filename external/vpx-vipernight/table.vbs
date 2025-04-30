@@ -15,7 +15,7 @@ Const cgamename = "viprsega", UseSolenoids=1,UseLamps=0,UseGI=0, SCoin="coin3"
 LoadVPM "01530000","sega.vbs",3.1
 
 'Flipper Rampup mode: 0 = fast, 1 = medium, 2 = slow (tap passes should work)
-dim FlipperCoilRampupMode : FlipperCoilRampupMode = 1
+dim FlipperCoilRampupMode : FlipperCoilRampupMode = 0
 
 '************************
 'Glowball
@@ -75,8 +75,10 @@ SolCallback(29)="FlashBlue2"    'F5 X3
 SolCallback(30)="SetLamp 129,"   'F6 X2
 SolCallback(32)="SetLamp 128,"   'F8 X3
 
+
 SolCallback(sLRFlipper) = "SolRFlipper"
 SolCallback(sLLFlipper) = "SolLFlipper"
+
 
 Sub SolLFlipper(Enabled)
      If Enabled Then
@@ -95,7 +97,6 @@ Sub SolRFlipper(Enabled)
          PlaySound SoundFX("flipperdown",DOFFlippers):RightFlipper.RotateToStart
      End If
 End Sub 
-
 
 '**********************************************************************************************************
 'Solenoid Controlled toys
@@ -585,8 +586,12 @@ End Sub
 
 Sub Table1_KeyDown(ByVal KeyCode)
 
-	If keycode = LeftFlipperKey Then lfpress = 1
-	If keycode = RightFlipperKey Then rfpress = 1
+	If keycode = LeftFlipperKey Then 
+	    lfpress = 1
+	end if
+	If keycode = RightFlipperKey Then 
+	    rfpress = 1
+	end if
 
 	If keycode = LeftMagnaSave Then bLutActive = True
 	If keycode = RightMagnaSave Then 
@@ -631,6 +636,9 @@ Dim plungerIM
         .InitExitSnd SoundFX("fx_AutoPlunger",DOFContactors), SoundFX("Solenoid",DOFContactors)
         .CreateEvents "plungerIM"
     End With
+    
+    plungerIM.Strength = 40
+    
 
 '**********************************************************************************************************
 ' Drain hole and kickers
