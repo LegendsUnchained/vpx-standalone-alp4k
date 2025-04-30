@@ -12,6 +12,6 @@ testers:
   - "OminousOsie"
 vpxVPSId: "LCaO3DXT"
 vpxChecksum: "cd32c4ee58a245a4a94cc577b450d564"
-tableNotes: "Download version 2.1(.1)"
+tableNotes: "Download version 2.1.1"
 applyFixes:
   - "bass"
