@@ -7,8 +7,8 @@ Dim girllights, gl, maturepictures, alternateflippers
 'SET OPTIONS TO TRUE OR FALSE
 '-------------------------------------------------------------------------------------------------------------
 girllights=True 		'<--- Change True to False to DISABLE extra Centerfold playfield girl lights.
-maturepictures=False 	'<--- True = Full Nude/Mature images. False = Non-Nude images (default)
-alternateflippers=False	'<--- True = Alternative Flipper Decals, False = Factory Default Flipper Decals.
+maturepictures=True 	'<--- True = Full Nude/Mature images. False = Non-Nude images (default)
+alternateflippers=True	'<--- True = Alternative Flipper Decals, False = Factory Default Flipper Decals.
 '-------------------------------------------------------------------------------------------------------------
 'END GAME OPTIONS
 

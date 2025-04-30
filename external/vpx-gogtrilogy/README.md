@@ -1,4 +1,4 @@
-﻿﻿# Guardians of the Galaxy trilogy (Original 2023)
+﻿# Guardians of the Galaxy trilogy (Original 2023)
 
 ![Table Preview](../../images/vpx-gogtrilogy.png)
 
@@ -47,7 +47,7 @@ __*We hope you enjoy!!*__
 
 *The VPXS 4KP Wizard team:*
 <pre>
-- n-i-x            - Mox
+- n-i-x            - Mox              - Lloydbraun
 - Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
 - Bla1ze           - evilwraith       - Silentkat        
 - mrandromeda      - SScorpio         - TechZombie
