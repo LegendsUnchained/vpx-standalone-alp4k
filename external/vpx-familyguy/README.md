@@ -1,4 +1,4 @@
-# Family Guy (Stern 2007)
+﻿# Family Guy (Stern 2007)
 
 ![Table Preview](../../images/vpx-familyguy.png)
 
@@ -47,7 +47,7 @@ __*We hope you enjoy!!*__
 
 *The VPXS 4KP Wizard team:*
 <pre>
-- n-i-x            - Mox
+- n-i-x            - Mox              - Lloydbraun
 - Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
 - Bla1ze           - evilwraith       - Silentkat        
 - mrandromeda      - SScorpio         - TechZombie
