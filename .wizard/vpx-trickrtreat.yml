@@ -1,9 +1,0 @@
-# This configuration file is used to auto-generate README files
-# if you have multiple b2s files or roms, use the - on a new line to denote each one
-
-name: 'Trick ''r Treat'
-tester: 'n-i-x'
-FPS: '60'
-special_instructions: 
-     - 'Rename "Trick ''r Treat (Original 2023).ini" to match the table and directb2s file name'
-     - 'Poison, Drowning, Claw, Or Knife. So Many Ways To Take A Life'
