@@ -1,4 +1,4 @@
-﻿# Friday the 13th, JP's (Original 2021)
+# Friday the 13th, JP's (Original 2021)
 
 ![Table Preview](../../images/vpx-jps-friday-the-13th-preview.jpg)
 
@@ -47,7 +47,7 @@ __*We hope you enjoy!!*__
 
 *The VPXS 4KP Wizard team:*
 <pre>
-- n-i-x            - Mox
+- n-i-x            - Mox              - Lloydbraun
 - Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
 - Bla1ze           - evilwraith       - Silentkat        
 - mrandromeda      - SScorpio         - TechZombie

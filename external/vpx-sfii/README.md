@@ -1,4 +1,4 @@
-﻿﻿# Street Fighter II, JP's (Gottlieb 1993)
+﻿# Street Fighter II, JP's (Gottlieb 1993)
 
 ![Table Preview](../../images/vpx-jps-street-fighter-preview.jpg)
 
@@ -47,7 +47,7 @@ __*We hope you enjoy!!*__
 
 *The VPXS 4KP Wizard team:*
 <pre>
-- n-i-x            - Mox
+- n-i-x            - Mox              - Lloydbraun
 - Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
 - Bla1ze           - evilwraith       - Silentkat        
 - mrandromeda      - SScorpio         - TechZombie

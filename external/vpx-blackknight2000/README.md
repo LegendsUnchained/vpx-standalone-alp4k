@@ -1,4 +1,4 @@
-﻿# Black Knight 2000 (Williams 1989)
+# Black Knight 2000 (Williams 1989)
 
 ![Table Preview](../../images/vpx-blackknight2000.png)
 
@@ -48,7 +48,7 @@ __*We hope you enjoy!!*__
 
 *The VPXS 4KP Wizard team:*
 <pre>
-- n-i-x            - Mox
+- n-i-x            - Mox              - Lloydbraun
 - Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
 - Bla1ze           - evilwraith       - Silentkat        
 - mrandromeda      - SScorpio         - TechZombie

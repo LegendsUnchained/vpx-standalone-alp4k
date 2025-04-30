@@ -1,8 +1,85 @@
 ' ****************************************************************
-'      JP's Space Cadet for VISUAL PINBALL X 10.8, version 5.6.0
-'                 GALAXY EDITION by Funkatron101 
+'            JP's Space Cadet: Galaxy Edition V1.2
+'				     by Funkatron101 
 '       Based on the PC game by Cinematronics/Maxis from 1996
 ' ****************************************************************
+
+'DOF Triggers
+'101 Left Flipper
+'102 Right Flipper
+'103 Left Slingshot
+'104 Right Slingshot
+'105
+'106 Right Slingshot Shake
+'107 Top Bumper Left
+'108 Top Bumper Center
+'109 Top Bumper Right
+'110 Lower Bumper Left
+'111 Lower Bumper CenterLeft
+'112 Lower Bumper Right
+'113 Very Top Bumper Left
+'114 Wormhole 1
+'115 Wormhole 2
+'116 Wormhole 3
+'117 Drop Targets Left
+'118 GI on / off
+'119 Drop Targets Center
+'120 Drop Targets Right
+'121 Targets				'Comment Missing - Added by VPCLE
+'122 Knocker
+'123 Ball Release
+'124 Left Kick Back
+'125 Start Button Light			'Comment Missing - Added by VPCLE
+'126 Award Jackpot			'Comment Missing - Added by VPCLE
+'127 Award Skill Shot			'Comment Missing - Added by VPCLE
+'128 Right Kick Back
+'129 BlackHole Kick Out
+'130 HyperSpaceHole Kick Out
+'131 Upper Left Slingshot
+'132 Upper Right Slingshot
+'133 Shaker
+'134 Beacon - BallLock
+'135 Ball Launched			'Comment Missing - Added by VPCLE
+'136 Spaceman During Attract		'Added by VPCLE
+'137
+'138
+'139
+'140
+'141
+'142
+'143 AutoPlunger				'Added by VPCLE
+'144 Ball Drained				'Added by VPCLE
+'146 Blue Attack Bumpers		'Added by VPCLE
+'147 Green Attack Bumpers		'Added by VPCLE
+'148 Yellow Attack Bumpers		'Added by VPCLE
+'149 Red Attack Bumpers			'Added by VPCLE
+'150 Blue Engine Bumpers		'Added by VPCLE
+'151 Green Engine Bumpers		'Added by VPCLE
+'152 Yellow Engine Bumpers		'Added by VPCLE
+'153 Red Engine Bumpers			'Added by VPCLE
+'154
+'155
+'DOF Additions by VPCLE:
+'350 REFLEX SHOT				'Added by VPCLE
+'351 Ball in Plunger Lane		'Added by VPCLE
+'352 REFUEL						'Added by VPCLE
+'353 Promotion in Rank			'Added by VPCLE
+'354 No Credits to Start		'Added by VPCLE
+'355 Coin In					'Added by VPCLE
+'356 2X Bonus Multiplier		'Added by VPCLE
+'357 3X Bonus Multiplier		'Added by VPCLE
+'358 5X Bonus Multiplier		'Added by VPCLE
+'359 10X Bonus Multiplier		'Added by VPCLE
+'360 Right Spinner				'Added by VPCLE
+'361 Left Spinner				'Added by VPCLE
+'362 Space Warp Trigger001		'Added by VPCLE
+'363 MEDAL Awarded				'Added by VPCLE
+'364 Engine Upgrade				'Added by VPCLE
+'365 Weapons Upgraded			'Added by VPCLE
+'366 GI Effects Active			'Added by VPCLE
+'367 Lighting Effects Active	'Added by VPCLE
+'368 Wormhole 4					'Added by VPCLE
+
 'Mixed Reality supports chromakey on Virtual Desktop.
 '  Change MR_mdoe in F12 Menu
 '  Virtual Desktop settings
@@ -30,13 +107,12 @@ Dim RampRollVolume : RampRollVolume = 0.5 		' Level of ramp rolling volume. Valu
 Dim SongVolume : SongVolume = 0.1 				' 1 is full volume, but I set it quite low to listen better the other sounds since I use headphones, adjust to your setup :)
 
 
+
     ' Sound volumes
 	SongVolume = Table1.Option("Soundtrack Volume", 0, 1, 0.01, 0.2, 1)
     VolumeDial = Table1.Option("Mech Volume", 0, 1, 0.01, 0.8, 1)
     BallRollVolume = Table1.Option("Ball Roll Volume", 0, 1, 0.01, 0.5, 1)
 	RampRollVolume = Table1.Option("Ramp Roll Volume", 0, 1, 0.01, 0.5, 1)
-
-
 
 
 '**************************
@@ -93,7 +169,7 @@ End Sub
 
 ' Define any Constants
 Const cGameName = "jpspacecadetGE"
-Const myVersion = "5.6.0"
+Const myVersion = "1.2"
 Const MaxPlayers = 4         ' from 1 to 4
 Const BallSaverTime = 20     ' in seconds of the first ball
 Const MaxMultiplier = 10     ' limit playfield multiplier
@@ -133,6 +209,7 @@ Dim i, j, k, x 'used in loops
 Dim pStatusText
 Dim pStatusDuration
 Dim AllComplete
+
 
 ' Define Game Control Variables
 Dim LastSwitchHit
@@ -794,8 +871,9 @@ Class Dampener
 		DesiredCor = LinearEnvelope(cor.ballvel(aBall.id), ModIn, ModOut )
 		RealCOR = BallSpeed(aBall) / (cor.ballvel(aBall.id)+0.0001)
 		coef = desiredcor / realcor 
-		'if debugOn then str = name & " in vel:" & round(cor.ballvel(aBall.id),2 ) & vbnewline & "desired cor: " & round(desiredcor,4) & vbnewline & "actual cor: " & round(realCOR,4) & vbnewline & "ballspeed coef: " & round(coef, 3) & vbnewline 
-		'if Print then debug.print Round(cor.ballvel(aBall.id),2) & ", " & round(desiredcor,3)
+		if debugOn then str = name & " in vel:" & round(cor.ballvel(aBall.id),2 ) & vbnewline & "desired cor: " & round(desiredcor,4) & vbnewline & _
+		"actual cor: " & round(realCOR,4) & vbnewline & "ballspeed coef: " & round(coef, 3) & vbnewline 
+		if Print then debug.print Round(cor.ballvel(aBall.id),2) & ", " & round(desiredcor,3)
 
 		aBall.velx = aBall.velx * coef : aBall.vely = aBall.vely * coef
 		if debugOn then TBPout.text = str
@@ -1572,7 +1650,10 @@ Sub Table1_KeyDown(ByVal Keycode)
 			Case 2: PlaySound ("Coin_In_3"), 0, CoinSoundLevel, 0, 0.25
 		End Select
         Credits = Credits + 1
-        if bFreePlay = False Then DOF 125, DOFOn
+        if bFreePlay = False Then
+			DOF 125, DOFOn			'Turn on "Start Button" Light
+			DOF 355, DOFPulse		'Added by VPCLE - for LED Display Use
+        End if
         If(Tilted = False) Then
             DMDFlush
             DMD CL(1, "CREDITS " & Credits), "_", "", eNone, eNone, eNone, 500, True, "fx_coin"
@@ -1599,6 +1680,7 @@ Sub Table1_KeyDown(ByVal Keycode)
                     PlayersPlayingGame = PlayersPlayingGame + 1
                     TotalGamesPlayed = TotalGamesPlayed + 1
                     DMD "_", CL(1, PlayersPlayingGame & " PLAYERS"), "", eNone, eNone, eNone, 1000, True, ""
+						Playsound "sc_6"
                 Else
                     If(Credits> 0) then
                         PlayersPlayingGame = PlayersPlayingGame + 1
@@ -1606,8 +1688,10 @@ Sub Table1_KeyDown(ByVal Keycode)
                         Credits = Credits - 1
                         DMD "_", CL(1, PlayersPlayingGame & " PLAYERS"), "", eNone, eNone, eNone, 1000, True, ""
                         If Credits < 1 And bFreePlay = False Then DOF 125, DOFOff
+						Playsound "sc_6"
                         Else
                             ' Not Enough Credits to start a game.
+							DOF 354, DofPulse		'Added by VPCLE
                             DMD CL(0, "CREDITS " & Credits), CL(1, "INSERT COIN"), "", eNone, eBlink, eNone, 1000, True, "vo_nocredits"
                     End If
                 End If
@@ -1637,6 +1721,7 @@ Sub Table1_KeyDown(ByVal Keycode)
                         End If
                     Else
                         ' Not Enough Credits to start a game.
+                        DOF 354, DofPulse		'Added by VPCLE
                         DMDFlush
                         DMD CL(0, "CREDITS " & Credits), CL(1, "INSERT COIN"), "", eNone, eBlink, eNone, 1000, True, "vo_nocredits"
                         ShowTableInfo
@@ -2409,6 +2494,7 @@ Sub AddMultiball(nballs)
     CreateMultiballTimer.Enabled = True
     'and eject the first ball
     CreateMultiballTimer_Timer
+
 End Sub
 
 ' Eject the ball after the delay, AddMultiballDelay
@@ -2662,6 +2748,7 @@ End Function
 '
 Sub Drain_Hit()
     ' Destroy the ball
+	DOF 144, DOFPulse		'Added by VPCLE
     Drain.DestroyBall
     If bGameInPLay = False Then Exit Sub 'don't do anything, just delete the ball
     ' Exit Sub ' only for debugging - this way you can add balls from the debug window
@@ -2739,6 +2826,7 @@ Sub swPlungerRest_Hit()
     ' some sound according to the ball position
 	BIPL=1
     PlaySoundAt "fx_sensor", swPlungerRest
+    if bAutoPlunger = False then DOF 351, DofOn		'Added by VPCLE	
     bBallInPlungerLane = True
     ' turn on Launch light is there is one
     'LaunchLight.State = 2
@@ -2767,6 +2855,8 @@ Sub swPlungerRest_UnHit()
 	BIPL=0
     lighteffect 6
     bBallInPlungerLane = False
+    DOF 351, DofOff		'Added by VPCLE
+    DOF 135, DofPulse	'Added by VPCLE
     swPlungerRest.TimerEnabled = 0 'stop the launch ball timer if active
     If bSkillShotReady Then
         If MusicMode = 0 Then
@@ -2944,7 +3034,7 @@ Sub Loadhs
     x = LoadValue(cGameName, "HighScore4Name")
     If(x <> "") then HighScoreName(3) = x Else HighScoreName(3) = "DDD" End If
     x = LoadValue(cGameName, "Credits")
-    If(x <> "") then Credits = CInt(x) Else Credits = 0:If bFreePlay = False Then DOF 125, DOFOff:End If
+    If(x <> "") then Credits = CInt(x) Else Credits = 0:If bFreePlay = False and Credits = 0 Then DOF 125, DOFOff:End If	'Modified by VPCLE
     x = LoadValue(cGameName, "TotalGamesPlayed")
     If(x <> "") then TotalGamesPlayed = CInt(x) Else TotalGamesPlayed = 0 End If
 End Sub
@@ -3134,6 +3224,10 @@ Sub HighScoreCommitName()
 
     HighScoreName(3) = hsEnteredName
     SortHighscore
+
+pDMDSetPage(pScores)
+PupEvent 1
+
     EndOfBallComplete()
 End Sub
 
@@ -3197,6 +3291,22 @@ Sub UpdateLUT
         Case 19:table1.ColorGradeImage = "LUT Warm 8"
         Case 20:table1.ColorGradeImage = "LUT Warm 9"
         Case 21:table1.ColorGradeImage = "LUT Warm 10"
+        Case 22:table1.ColorGradeImage = "Fleep Natural Dark 1"
+        Case 23:table1.ColorGradeImage = "Fleep Natural Dark 2"
+        Case 24:table1.ColorGradeImage = "Fleep Warm Dark"
+        Case 25:table1.ColorGradeImage = "Fleep Warm Bright"
+        Case 26:table1.ColorGradeImage = "Fleep Warm Vivid Soft"
+        Case 27:table1.ColorGradeImage = "Fleep Warm Vivid Hard"
+        Case 28:table1.ColorGradeImage = "Skitso Natural and Balanced"
+        Case 29:table1.ColorGradeImage = "Skitso Natural High Contrast"
+        Case 30:table1.ColorGradeImage = "3rdaxis Referenced THX Standard"
+        Case 31:table1.ColorGradeImage = "CalleV Punchy Brightness and Contrast"
+        Case 32:table1.ColorGradeImage = "HauntFreaks Desaturated"
+        Case 33:table1.ColorGradeImage = "Tomate Washed Out"
+        Case 34:table1.ColorGradeImage = "VPW Original 1 to 1"
+        Case 35:table1.ColorGradeImage = "Bassgeige"
+        Case 36:table1.ColorGradeImage = "Blacklight"
+        Case 37:table1.ColorGradeImage = "B&W Comic Book"
     End Select
 End Sub
 
@@ -4060,6 +4170,7 @@ Sub RainbowTimer_Timer 'rainbow led light color changing
                 RGBStep = 2
             End If
         Case 2 'Blue
+            if RndNbr(3) = 2 then DOF 136, DofPulse					'Play Tumbling Spaceman Animated GIF (33% of the TimeOn) by VPCLE
             rBlue = rBlue + RGBFactor
             If rBlue> 255 then
                 rBlue = 255
@@ -4089,6 +4200,7 @@ Sub RainbowTimer_Timer 'rainbow led light color changing
         obj.colorfull = RGB(rRed, rGreen, rBlue)
     Next
 End Sub
+
 
 ' ********************************
 '   Table info & Attract Mode
@@ -4121,7 +4233,7 @@ Sub ShowTableInfo
     End If
     DMD "        JPSALAS", "          PRESENTS", "d_jppresents", eNone, eNone, eNone, 3000, False, ""
     DMD "", "", "d_title", eNone, eNone, eNone, 4000, False, ""
-    DMD "", CL(1, "ROM VERSION " &myversion), "", eNone, eNone, eNone, 2000, False, ""
+    DMD "", CL(1, "VERSION " &myversion), "", eNone, eNone, eNone, 2000, False, ""
     DMD CL(0, "HIGHSCORES"), Space(dCharsPerLine(1) ), "", eScrollLeft, eScrollLeft, eNone, 20, False, ""
     DMD CL(0, "HIGHSCORES"), "", "", eNone, eNone, eNone, 1000, False, ""
     DMD CL(0, "HIGHSCORES"), "1> " &HighScoreName(0) & " " &FormatScore(HighScore(0) ), "", eNone, eScrollLeft, eNone, 2000, False, ""
@@ -4137,7 +4249,7 @@ Sub StartAttractMode
     StartLightSeq
     DMDFlush
     ShowTableInfo
-    PlaySong ""
+    Playsong "mu_GE_Maelstrom-Re-attract"
 End Sub
 
 Sub StopAttractMode
@@ -4462,7 +4574,7 @@ Dim LStep, RStep
 Sub LeftSlingShot_Slingshot
     If Tilted Then Exit Sub
     RandomSoundSlingshotLeft Lemk
-    DOF  103, DOFPulse ' Outhere
+    DOF 103, DOFPulse			'Changed by VPCLE
     PlaySound "sc_slingshot"
     DOF 105, DOFPulse
     LeftSling004.Visible = 1
@@ -4494,7 +4606,7 @@ End Sub
 Sub RightSlingShot_Slingshot
     If Tilted Then Exit Sub
     RandomSoundSlingshotRight Remk
-    DOF  104, DOFPulse ' Outhere
+    DOF 104, DOFPulse			'Changed by VPCLE
     PlaySound "sc_slingshot"
     DOF 106, DOFPulse
     RightSling004.Visible = 1
@@ -4531,7 +4643,7 @@ Sub LeftSlingShot2_Slingshot
     If Tilted Then Exit Sub
     RandomSoundSlingshotLeft Lemk2 
     PlaySound "sc_slingshot"
-    DOF 105, DOFPulse
+    DOF 131, DOFPulse				'Changed by VPCLE
     Rubber018.Visible = 1
     Lemk2.RotX = 26
     LStep2 = 0
@@ -4558,7 +4670,7 @@ Sub RightSlingShot2_Slingshot
     If Tilted Then Exit Sub
     RandomSoundSlingshotRight Remk2
     PlaySound "sc_slingshot"
-    DOF 106, DOFPulse
+    DOF 132, DOFPulse				'Changed by VPCLE
     Rubber015.Visible = 1
     Remk2.RotX = 26
     RStep2 = 0
@@ -4581,6 +4693,17 @@ Sub RightSlingShot2_Timer
     RStep2 = RStep2 + 1
 End Sub
 
+
+'Sound added to Ramp Gate to match original table - VPCLE
+'****************
+'    Ramp Gate
+'****************
+Sub Gate004_Hit
+    If Tilted Then Exit Sub
+    PlaySound "sc_end"                   'Sound Added by VPCLE
+End Sub
+
+
 '***********************
 '    Attack Bumpers
 '***********************
@@ -4589,8 +4712,7 @@ Sub Bumper1_Hit
     If Tilted Then Exit Sub
 	RandomSoundBumperTop Bumper1
     PlaySound "sc_bumper"
-    DOF 107, DOFPulse ' Outhere
-    DOF 138, DOFPulse
+    DOF 107, DOFPulse				'Changed by VPCLE
     FlashForms li135, 1500, 75, 1
     ' add some points
     Select Case AttackBumperColor
@@ -4609,8 +4731,7 @@ Sub Bumper2_Hit
     If Tilted Then Exit Sub
     RandomSoundBumperMiddle Bumper2
     PlaySound "sc_bumper"
-    DOF 108, DOFPulse ' Outhere
-    DOF 138, DOFPulse
+    DOF 108, DOFPulse				'Changed by VPCLE
     FlashForms li136, 1500, 75, 1
     ' add some points
     Select Case AttackBumperColor
@@ -4629,8 +4750,7 @@ Sub Bumper3_Hit
     If Tilted Then Exit Sub
 	RandomSoundBumperBottom Bumper3
     PlaySound "sc_bumper"
-    DOF 109, DOFPulse ' Outhere
-    DOF 138, DOFPulse
+    DOF 109, DOFPulse				'Changed by VPCLE
     FlashForms li137, 1500, 75, 1
     ' add some points
     Select Case AttackBumperColor
@@ -4649,8 +4769,7 @@ Sub Bumper4_Hit 'Satellite bumper
     If Tilted Then Exit Sub
     RandomSoundBumperTop Bumper4
     PlaySound "sc_bumper"
-    DOF 113, DOFPulse ' Outhere
-    DOF 138, DOFPulse
+    DOF 113, DOFPulse				'Changed by VPCLE
     FlashForms li138, 1500, 75, 1
     ' add some points
     Select Case AttackBumperColor
@@ -4668,6 +4787,7 @@ End Sub
 
 Sub UpgradeWeapons 'upgrade the color of the weapon bumpers
     AttackBumperColor = AttackBumperColor + 1
+    DOF 365, DOFPulse		'Added by VPCLE
     Select Case AttackBumperColor
         Case 0 'blue
             For Each i In RightBumperLights
@@ -4722,22 +4842,54 @@ Sub UpdateBumperColor
     Select case AttackBumperColor
         Case 0 'blue
             For each i in RightBumperLights:SetLightColor i, Blue, 1:next
-        Case 1 'green
+			DOF 146, DofOn		'Added by VPCLE
+			DOF 147, DofOff		'Added by VPCLE
+			DOF 148, DofOff		'Added by VPCLE
+			DOF 149, DofOff		'Added by VPCLE
+		Case 1 'green
             For each i in RightBumperLights:SetLightColor i, Green, 1:next
-        Case 2 'yellow
+			DOF 146, DofOff		'Added by VPCLE
+			DOF 147, DofOn		'Added by VPCLE
+			DOF 148, DofOff		'Added by VPCLE
+			DOF 149, DofOff		'Added by VPCLE
+		Case 2 'yellow
             For each i in RightBumperLights:SetLightColor i, Yellow, 1:next
-        Case 3 'red
+			DOF 146, DofOff		'Added by VPCLE
+			DOF 147, DofOff		'Added by VPCLE
+			DOF 148, DofOn		'Added by VPCLE
+			DOF 149, DofOff		'Added by VPCLE
+		Case 3 'red
             For each i in RightBumperLights:SetLightColor i, Red, 1:next
-    End Select
+			DOF 146, DofOff		'Added by VPCLE
+			DOF 147, DofOff		'Added by VPCLE
+			DOF 148, DofOff		'Added by VPCLE
+			DOF 149, DofOn		'Added by VPCLE
+	End Select
     Select case EngineBumperColor
         Case 0 'blue
             For each i in LeftBumperLights:SetLightColor i, Blue, 1:next
+			DOF 150, DofOn		'Added by VPCLE
+			DOF 151, DofOff		'Added by VPCLE
+			DOF 152, DofOff		'Added by VPCLE
+			DOF 153, DofOff		'Added by VPCLE
         Case 1 'green
             For each i in LeftBumperLights:SetLightColor i, Green, 1:next
+			DOF 150, DofOff		'Added by VPCLE
+			DOF 151, DofOn		'Added by VPCLE
+			DOF 152, DofOff		'Added by VPCLE
+			DOF 153, DofOff		'Added by VPCLE
         Case 2 'yellow
             For each i in LeftBumperLights:SetLightColor i, Yellow, 1:next
+			DOF 150, DofOff		'Added by VPCLE
+			DOF 151, DofOff		'Added by VPCLE
+			DOF 152, DofOn		'Added by VPCLE
+			DOF 153, DofOff		'Added by VPCLE
         Case 3 'red
             For each i in LeftBumperLights:SetLightColor i, Red, 1:next
+			DOF 150, DofOff		'Added by VPCLE
+			DOF 151, DofOff		'Added by VPCLE
+			DOF 152, DofOff		'Added by VPCLE
+			DOF 153, DofOn		'Added by VPCLE
     End Select
 End Sub
 
@@ -4747,17 +4899,16 @@ End Sub
 
 Sub Bumper5_Hit
     If Tilted Then Exit Sub
-	RandomSoundBumperTop Bumper5
-    DOF 138, DOFPulse
+    RandomSoundBumperTop Bumper5
+    DOF 110, DOFPulse					'Changed VPCLE
     PlaySound "sc_bumper"
-    DOF 110, DOFPulse ' Outhere
     FlashForms li139, 1500, 75, 1
     ' add some points
     Select Case EngineBumperColor
-        Case 0:AddScore 1500
-        Case 1:AddScore 2500
-        Case 2:AddScore 3500
-        Case 3:AddScore 4500
+        Case 0:AddScore 1500: DOF 150, DOFPulse		'Added by VPCLE
+        Case 1:AddScore 2500: DOF 151, DOFPulse		'Added by VPCLE
+        Case 2:AddScore 3500: DOF 152, DOFPulse		'Added by VPCLE
+        Case 3:AddScore 4500: DOF 153, DOFPulse		'Added by VPCLE
     End Select
     ' check for modes
     Select Case Mission(CurrentPLayer)
@@ -4768,16 +4919,15 @@ End Sub
 Sub Bumper6_Hit
     If Tilted Then Exit Sub
     RandomSoundBumperMiddle Bumper6
-    DOF 138, DOFPulse
+    DOF 111, DOFPulse					'Changed VPCLE
     PlaySound "sc_bumper"
-    DOF 111, DOFPulse ' Outhere
     FlashForms li140, 1500, 75, 1
     ' add some points
     Select Case EngineBumperColor
-        Case 0:AddScore 1500
-        Case 1:AddScore 2500
-        Case 2:AddScore 3500
-        Case 3:AddScore 4500
+        Case 0:AddScore 1500: DOF 150, DOFPulse		'Added by VPCLE
+        Case 1:AddScore 2500: DOF 151, DOFPulse		'Added by VPCLE
+        Case 2:AddScore 3500: DOF 152, DOFPulse		'Added by VPCLE
+        Case 3:AddScore 4500: DOF 153, DOFPulse		'Added by VPCLE
     End Select
     ' check for modes
     Select Case Mission(CurrentPLayer)
@@ -4788,16 +4938,15 @@ End Sub
 Sub Bumper7_Hit
     If Tilted Then Exit Sub
 	RandomSoundBumperBottom Bumper7
-    DOF 138, DOFPulse
+    DOF 112, DOFPulse					'Changed VPCLE
     PlaySound "sc_bumper"
-    DOF 112, DOFPulse ' Outhere
     FlashForms li141, 1500, 75, 1
     ' add some points
     Select Case EngineBumperColor
-        Case 0:AddScore 1500
-        Case 1:AddScore 2500
-        Case 2:AddScore 3500
-        Case 3:AddScore 4500
+        Case 0:AddScore 1500: DOF 150, DOFPulse		'Added by VPCLE
+        Case 1:AddScore 2500: DOF 151, DOFPulse		'Added by VPCLE
+        Case 2:AddScore 3500: DOF 152, DOFPulse		'Added by VPCLE
+        Case 3:AddScore 4500: DOF 153, DOFPulse		'Added by VPCLE
     End Select
     ' check for modes
     Select Case Mission(CurrentPLayer)
@@ -4805,8 +4954,10 @@ Sub Bumper7_Hit
     End Select
 End Sub
 
+
 Sub UpgradeEngine 'upgrade the color of the Engine bumpers
     EngineBumperColor = EngineBumperColor + 1
+    DOF 364, DOFPulse		'Added by VPCLE
     Select Case EngineBumperColor
         Case 0 'blue
             For Each i In LeftBumperLights
@@ -4895,6 +5046,10 @@ Sub Trigger001_Hit 'left outlane
         case 14, 15, 172
             MissionHits = MissionHits-1:CheckMission
     End Select
+    If LeftKickbackActive Then
+        CloseLeftGate
+        LeftKickbackActive = False ' Reset flag
+    End If
 End Sub
 
 Sub Trigger002_Hit 'left inlane, re-fuel, Bonus lane
@@ -4912,6 +5067,7 @@ Sub Trigger002_Hit 'left inlane, re-fuel, Bonus lane
     're-fuel
 	pStatus "SHIP RE-FUELED", 1500
     DMD "", CL(1, "SHIP RE-FUELED"), "", eNone, eNone, eNone, 1500, True, "sc_shiprefueled"
+    DOF 352,2						'Added by VPCLE
     Fuel = 6:UpdateFuelLights:StartFuelTimers
     Select Case Mission(CurrentPlayer)
         case 14, 172
@@ -4955,6 +5111,11 @@ Sub Trigger005_Hit 'right outlane
         case 14, 15, 172
             MissionHits = MissionHits-1:CheckMission
     End Select
+
+    If RightKickbackActive Then
+        CloseRightGate
+        RightKickbackActive = False ' Reset flag
+    End If
 End Sub
 
 '***********
@@ -5173,6 +5334,7 @@ Sub Trigger017_Hit
     If li133.State = 0 Then Addscore 1000
     're-fuel
     DMD "", CL(1, "SHIP RE-FUELED"), "", eNone, eNone, eNone, 1000, True, "sc_shiprefueled"
+    DOF 352,2							'Added by VPCLE
     Fuel = 6:UpdateFuelLights:StartFuelTimers
     If Mission(CurrentPlayer) = 173 Then CheckMission
 End Sub
@@ -5314,6 +5476,7 @@ Sub Trigger028_Hit
     AddScore 10000
     li033.State = 1 'turn on the inlane lights for extra scoring
     li035.State = 1
+    DOF 362, DOFPulse							'Added by VPCLE
     If Mission(CurrentPlayer) = 121 Then CheckMission
 End Sub
 
@@ -5325,6 +5488,7 @@ Sub Target001_Hit
 	TargetBouncer Activeball, 1
     If Tilted Then Exit Sub
     Addscore 750
+    DOF 107,2					'Added by VPCLE
     Select Case Mission(CurrentPlayer)
         case 5, 171
             MissionHits = MissionHits-1:CheckMission
@@ -5368,6 +5532,7 @@ End Sub
 Sub Target002_Hit 'lower
 	TargetBouncer Activeball, 1
     If Tilted Then Exit Sub
+    DOF 107, DOFPulse					'Added by VPCLE
     PlaySound "sc_spinner"
     Select Case Mission(CurrentPlayer)
         case 0
@@ -5383,6 +5548,7 @@ End Sub
 Sub Target003_Hit 'center
 	TargetBouncer Activeball, 1
     If Tilted Then Exit Sub
+    DOF 107, DOFPulse					'Added by VPCLE
     PlaySound "sc_spinner"
     Select Case Mission(CurrentPlayer)
         case 0
@@ -5398,6 +5564,7 @@ End Sub
 Sub Target004_Hit 'upper
 	TargetBouncer Activeball, 1
     If Tilted Then Exit Sub
+    DOF 107, DOFPulse					'Added by VPCLE
     PlaySound "sc_spinner"
     Select Case Mission(CurrentPlayer)
         case 0
@@ -5418,6 +5585,7 @@ End Sub
 Sub Target005_Hit
 	TargetBouncer Activeball, 1
     If Tilted Then Exit Sub
+    DOF 107, DOFPulse					'Added by VPCLE
     PlaySound "sc_spinner"
     Addscore 750
     li066.State = 1
@@ -5431,6 +5599,7 @@ End Sub
 Sub Target006_Hit
 	TargetBouncer Activeball, 1
     If Tilted Then Exit Sub
+    DOF 107, DOFPulse					'Added by VPCLE
     PlaySound "sc_spinner"
     Addscore 750
     li067.State = 1
@@ -5444,6 +5613,7 @@ End Sub
 Sub Target007_Hit
 	TargetBouncer Activeball, 1
     If Tilted Then Exit Sub
+    DOF 107, DOFPulse					'Added by VPCLE
     PlaySound "sc_spinner"
     Addscore 750
     li068.State = 1
@@ -5458,6 +5628,7 @@ Sub CheckTopTargets
     If li066.State + li067.State + li068.State = 3 then
         're-fuel
         DMD "", CL(1, "SHIP RE-FUELED"), "", eNone, eNone, eNone, 1500, True, ""
+        DOF 352,2									'Added by VPCLE
         Fuel = 6:UpdateFuelLights:StartFuelTimers
         FlashForms li066, 1000, 50, 0
         FlashForms li067, 1000, 50, 0
@@ -5472,6 +5643,7 @@ End Sub
 Sub Target008_Hit 'lower
     TargetBouncer Activeball, 1
     If Tilted Then Exit Sub
+    DOF 107, DOFPulse					'Added by VPCLE
     PlaySound "sc_spinner"
     Addscore 750
     li052.State = 1
@@ -5491,6 +5663,7 @@ End Sub
 Sub Target009_Hit 'center
     TargetBouncer Activeball, 1
     If Tilted Then Exit Sub
+    DOF 107, DOFPulse					'Added by VPCLE
     PlaySound "sc_spinner"
     Addscore 750
     li053.State = 1
@@ -5510,6 +5683,7 @@ End Sub
 Sub Target010_Hit 'upper
     TargetBouncer Activeball, 1
     If Tilted Then Exit Sub
+    DOF 107, DOFPulse					'Added by VPCLE
     PlaySound "sc_spinner"
     Addscore 750
     li054.State = 1
@@ -5533,7 +5707,9 @@ Sub CheckCometLights
         li053.State = 0
         li054.State = 0
         LightSeqComet.Play SeqBlinking, , 15, 10
-        OpenRightGate
+        If BallsOnPlayfield = 1 Then ' Only open the gate if it's not multiball
+            OpenRightGate
+        End If
         If Mission(CurrentPlayer) = 9 Then CheckMission
     End If
 End Sub
@@ -5546,6 +5722,7 @@ End Sub
 Sub Target011_Hit 'lower
 	TargetBouncer Activeball, 1
     If Tilted Then Exit Sub
+    DOF 107, DOFPulse					'Added by VPCLE
     PlaySound "sc_spinner"
     Addscore 750
     li056.State = 1
@@ -5559,6 +5736,7 @@ End Sub
 Sub Target012_Hit 'center
 	TargetBouncer Activeball, 1
     If Tilted Then Exit Sub
+    DOF 107, DOFPulse					'Added by VPCLE
     PlaySound "sc_spinner"
     Addscore 750
     li057.State = 1
@@ -5572,6 +5750,7 @@ End Sub
 Sub Target013_Hit 'upper
 	TargetBouncer Activeball, 1
     If Tilted Then Exit Sub
+    DOF 107, DOFPulse					'Added by VPCLE
     PlaySound "sc_spinner"
     Addscore 750
     li058.State = 1
@@ -5588,7 +5767,9 @@ Sub CheckRadiationLights
         li057.State = 0
         li058.State = 0
         LightSeqRadiation.Play SeqBlinking, , 15, 10
-        OpenLeftGate
+        If BallsOnPlayfield = 1 Then ' Only open the gate if it's not multiball
+            OpenLeftGate
+        End If
         If Mission(CurrentPlayer) = 10 Then CheckMission
     End If
 End Sub
@@ -5598,6 +5779,7 @@ End Sub
 '*******************
 
 Sub Target014_Hit 'right
+    DOF 110,2					'Added by VPCLE
     RandomSoundDropTargetReset Target014
     If Tilted Then Exit Sub
     PlaySound "sc_droptarget"
@@ -5610,6 +5792,7 @@ Sub Target014_Hit 'right
 End Sub
 
 Sub Target015_Hit 'center
+    DOF 110,2					'Added by VPCLE
     RandomSoundDropTargetReset Target015
     If Tilted Then Exit Sub
     PlaySound "sc_droptarget"
@@ -5622,6 +5805,7 @@ Sub Target015_Hit 'center
 End Sub
 
 Sub Target016_Hit 'left
+    DOF 110,2					'Added by VPCLE
     RandomSoundDropTargetReset Target016
     If Tilted Then Exit Sub
     PlaySound "sc_droptarget"
@@ -5634,7 +5818,7 @@ Sub Target016_Hit 'left
 End Sub
 
 Sub ResetMedalDT
-    PlaySoundAt SoundFXDOF("fx_resetdrop", 119, DOFPulse, DOFcontactors), Target015 ' Outhere
+    PlaySoundAt SoundFXDOF("fx_resetdrop", 110, DOFPulse, DOFcontactors), Target015 ' Outhere - Corrected by VPCLE
     ' PlaySoundAt "fx_resetdrop", Target015
     PlaySound "sc_topdtreset"
     Target014.IsDropped = 0
@@ -5670,6 +5854,7 @@ Sub CheckMedal
 				PuPEvent 60
                 AwardExtraBall
         End Select
+	DOF 363, DOFPulse						'Added by VPCLE
     Else
         AddScore 500
     End if
@@ -5689,6 +5874,7 @@ End Sub
 '*********************
 
 Sub Target017_Hit 'right
+    DOF 107,2						'Added by VPCLE
     RandomSoundDropTargetReset Target017
     If Tilted Then Exit Sub
     PlaySound "sc_droptarget"
@@ -5701,6 +5887,7 @@ Sub Target017_Hit 'right
 End Sub
 
 Sub Target018_Hit 'center
+    DOF 107,2						'Added by VPCLE
     RandomSoundDropTargetReset Target018
     If Tilted Then Exit Sub
     PlaySound "sc_droptarget"
@@ -5713,6 +5900,7 @@ Sub Target018_Hit 'center
 End Sub
 
 Sub Target019_Hit 'left
+    DOF 107,2						'Added by VPCLE
     RandomSoundDropTargetReset Target019
     If Tilted Then Exit Sub
     PlaySound "sc_droptarget"
@@ -5764,33 +5952,37 @@ End Sub
 Sub SetPlayfieldX
     Select case xTargetCount
         Case 0: '1x
-            'DMD "_", CL(1, "PLAYFIELD 1 X"), "", eNone, eNone, eNone, 1500, True, ""
+            DMD "_", CL(1, "PLAYFIELD 1 X"), "", eNone, eNone, eNone, 1500, True, ""
             PlayfieldMultiplier(CurrentPlayer) = 1
             UpdatexTargets
             vpmtimer.AddTimer 500, "ResetxTargets '"
         Case 1: '2x
-            'DMD "_", CL(1, "PLAYFIELD 2 X"), "", eNone, eNone, eNone, 2000, True, ""
+            DOF 356, DofPulse									'Added by VPCLE
+            DMD "_", CL(1, "PLAYFIELD 2 X"), "", eNone, eNone, eNone, 2000, True, ""
 			PuPEvent 54
 			pStatus "2X MULTIPLIER", 2000
             PlayfieldMultiplier(CurrentPlayer) = 2
             UpdatexTargets
             vpmtimer.AddTimer 500, "ResetxTargets '"
         Case 2: '3x
-            'DMD "_", CL(1, "PLAYFIELD 3 X"), "", eNone, eNone, eNone, 2000, True, ""
+            DOF 357, DofPulse									'Added by VPCLE
+            DMD "_", CL(1, "PLAYFIELD 3 X"), "", eNone, eNone, eNone, 2000, True, ""
 			PuPEvent 55
 			pStatus "3X MULTIPLIER", 2000
             PlayfieldMultiplier(CurrentPlayer) = 3
             UpdatexTargets
             vpmtimer.AddTimer 500, "ResetxTargets '"
         Case 3: '5x
-            'DMD "_", CL(1, "PLAYFIELD 5 X"), "", eNone, eNone, eNone, 2000, True, ""
+            DOF 358, DofPulse									'Added by VPCLE
+            DMD "_", CL(1, "PLAYFIELD 5 X"), "", eNone, eNone, eNone, 2000, True, ""
 			PuPEvent 56
 			pStatus "5X MULTIPLIER", 2000
             PlayfieldMultiplier(CurrentPlayer) = 5
             UpdatexTargets
             vpmtimer.AddTimer 500, "ResetxTargets '"
         Case 4: '10x
-            'DMD "_", CL(1, "PLAYFIELD 10 X"), "", eNone, eNone, eNone, 3000, True, "v"
+            DOF 359, DofPulse									'Added by VPCLE
+            DMD "_", CL(1, "PLAYFIELD 10 X"), "", eNone, eNone, eNone, 3000, True, "v"
 			PuPEvent 57
 			pStatus "10X MULTIPLIER", 2000
             PlayfieldMultiplier(CurrentPlayer) = 10
@@ -5798,6 +5990,7 @@ Sub SetPlayfieldX
             vpmtimer.AddTimer 500, "ResetxTargets '"
     End Select
 End Sub
+
 
 Sub pfXTimerExpired_Timer
     xTargetCount = xTargetCount - 1
@@ -5813,6 +6006,7 @@ End Sub
 '***********************
 
 Sub Target020_Hit 'lower
+    DOF 112,2								'Added by VPCLE
     RandomSoundDropTargetReset Target020
     If Tilted Then Exit Sub
     PlaySound "sc_droptarget"
@@ -5825,6 +6019,7 @@ Sub Target020_Hit 'lower
 End Sub
 
 Sub Target021_Hit 'center
+    DOF 112,2								'Added by VPCLE
     RandomSoundDropTargetReset Target021
     If Tilted Then Exit Sub
     PlaySound "sc_droptarget"
@@ -5837,6 +6032,7 @@ Sub Target021_Hit 'center
 End Sub
 
 Sub Target022_Hit 'upper
+    DOF 112,2								'Added by VPCLE
     RandomSoundDropTargetReset Target022
     If Tilted Then Exit Sub
     PlaySound "sc_droptarget"
@@ -5847,6 +6043,7 @@ Sub Target022_Hit 'upper
             MissionHits = MissionHits-1:CheckMission
     End Select
 End Sub
+
 
 Sub ResetBoosterTargets
     PlaySoundAt SoundFXDOF("fx_resetdrop", 120, DOFPulse, DOFcontactors), Target021 ' Outhere
@@ -5942,6 +6139,7 @@ End Sub
 
 Sub Spinner001_Spin 'left
     DOF 133, 2      ' Outhere
+    DOF 361, DOFPulse					'Added by VPCLE
 	SoundSpinner Spinner001
     If Tilted Then Exit Sub
     PlaySound "sc_spinner"
@@ -5961,6 +6159,7 @@ End Sub
 
 Sub Spinner002_Spin 'right
     DOF 133, 2      ' Outhere
+    DOF 360, DOFPulse					'Added by VPCLE
 	SoundSpinner  Spinner002
     If Tilted Then Exit Sub
     PlaySound "sc_spinner"
@@ -5990,7 +6189,7 @@ Sub BlackHole_Hit
         CheckMission
         DMD CL(0, "BLACK HOLE"), CL(1, "20000"), "", eNone, eNone, eNone, 1500, True, ""
     Else
-        DMD CL(0, "BLACK HOLE"), CL(1, "20000"), "", eNone, eNone, eNone, 1500, True, "sc_blackhole Hole"
+        DMD CL(0, "BLACK HOLE"), CL(1, "20000"), "", eNone, eNone, eNone, 1500, True, ""
     End If
     End if
     ' Nothing left to do, so kick out the ball
@@ -6261,11 +6460,33 @@ Sub StartWormholeMultiball
     End If
 End Sub
 
+Dim GatesClosed
+
 Sub AsteroidsTimer_Timer
     Select Case BallsOnPlayfield
-        Case 1:li049.State = 0:li050.State = 0:li051.State = 2
-        Case 2:li049.State = 0:li050.State = 2:li051.State = 2
-        Case 3:li049.State = 2:li050.State = 2:li051.State = 2
+        Case 1
+            li049.State = 0
+            li050.State = 0
+            li051.State = 2
+            GatesClosed = False ' Reset flag if we go back to Case 1
+        Case 2
+            li049.State = 0
+            li050.State = 2
+            li051.State = 2
+            If Not GatesClosed Then
+                CloseLeftGate ' Close the left gate for 2 balls
+                CloseRightGate ' Close the right gate for 2 balls
+                GatesClosed = True ' Set the flag so the gates don't close again
+            End If
+        Case 3
+            li049.State = 2
+            li050.State = 2
+            li051.State = 2
+            If Not GatesClosed Then
+                CloseLeftGate ' Close the left gate for 2 balls
+                CloseRightGate ' Close the right gate for 2 balls
+                GatesClosed = True ' Set the flag so the gates don't close again
+            End If
     End Select
 End Sub
 
@@ -6302,19 +6523,41 @@ End Sub
 ' Left & Right KickBacks
 '***********************
 
-Sub LeftKickerRest_Hit
+Dim KickbackSide ' Variable to track which kicker triggered the timer
+Dim LeftKickbackActive ' Flag to track left kicker activation
+Dim RightKickbackActive ' Flag to track right kicker activation
+
+Sub LeftKickerRest_Hit()
     PlaySoundAt "fx_kicker_enter", LeftKickerRest
     FlashForMs li102, 2000, 50, 0
-    vpmtimer.addtimer 600, "PlaySound ""sc_wormhole"":LeftKickerIM.AutoFire:DOF 124,2 '" ' Outhere
-    vpmtimer.addtimer 1000, "CloseLeftGate '"
+    KickbackSide = "Left" ' Mark that the left kicker was hit
+    OpenLeftGate 
+    LeftKickbackActive = True
+    KickbackTimer.Enabled = True ' Start the timer
 End Sub
 
-Sub RightKickerRest_Hit
+Sub RightKickerRest_Hit()
     PlaySoundAt "fx_kicker_enter", RightKickerRest
     FlashForMs li103, 2000, 50, 0
-    vpmtimer.addtimer 600, "PlaySound ""sc_wormhole"":RightKickerIM.AutoFire:DOF 128,2 '" ' Outhere
-    vpmtimer.addtimer 1000, "CloseRightGate '"
+    KickbackSide = "Right" ' Mark that the right kicker was hit
+    RightKickbackActive = True 
+	OpenRightGate
+    KickbackTimer.Enabled = True ' Start the timer
 End Sub
+
+Sub KickbackTimer_Timer()
+    If KickbackSide = "Left" Then
+        PlaySound "sc_wormhole"
+        LeftKickerIM.AutoFire
+        DOF 124,2 ' Outhere
+    ElseIf KickbackSide = "Right" Then
+        PlaySound "sc_wormhole"
+        RightKickerIM.AutoFire
+        DOF 128,2 ' Outhere
+    End If
+    KickbackTimer.Enabled = False ' Disable the timer after execution
+End Sub
+
 
 Sub OpenLeftGate
     PlaySoundAt "fx_diverter", LeftLaneGate
@@ -6339,6 +6582,8 @@ Sub CloseRightGate
     RightLaneGate.RotateToStart
     li095.State = 0
 End Sub
+
+
 
 '*****************
 ' Gravity Magnet
@@ -6502,6 +6747,7 @@ End Sub
 Sub AwardReflexRampShot
 	pStatus "REFLEX SHOT", 1000
     DMD "_", CL(1, "REFLEX SHOT"), "", eNone, eNone, eNone, 1500, True, ""
+    DOF 350,2									'Added by VPCLE
     Addscore 20000
     StopReflexRampShot
 End Sub
@@ -6509,6 +6755,7 @@ End Sub
 Sub AwardReflexHyperShot
 	pStatus "REFLEX SHOT", 1000
     DMD "_", CL(1, "REFLEX SHOT"), "", eNone, eNone, eNone, 1500, True, ""
+    DOF 350,2									'Added by VPCLE
     Addscore 20000
     StopReflexHyperShot
 End Sub
@@ -6609,13 +6856,14 @@ Sub UpdateRankLights
 End Sub
 
 Sub PromoteRank
-    PuPEvent 505
-    PuPEvent 503
+PuPEvent 505
+PuPEvent 503
     If Rank(CurrentPlayer) < 9 Then
         LightEffect 4
         Rank(CurrentPlayer) = Rank(CurrentPlayer) + 1
         If Rank(CurrentPlayer) > 8 then Rank(CurrentPlayer) = 8
         UpdateRankLights
+		DOF 353, DOFPulse						'Added by VPCLE
         'show DMD new rank
         Select Case Rank(CurrentPlayer)
             Case 0:DMD CL(0, "PROMOTION TO"), CL(1, "CADET"), "", eNone, eNone, eNone, 1500, True, "" 'it should not happen :)
@@ -7323,6 +7571,7 @@ End Sub
 Sub CheckMission                    'check if mission objectives are completed
 DMDFlush
 PuPEvent 504
+PuPEvent 505
     Select Case Mission(CurrentPlayer)
         Case 1                      'Launch Training
             If Missionhits = 0 then 'win the mission
@@ -7866,8 +8115,9 @@ MissionStatusLights = Array(mli001, mli002, mli003, mli004, mli005, mli006, mli0
 
 Sub StopMissions 'this will stop all missions. Called  at the end of the ball or when the fuel runs out
     If Fuel = 0 Then
-        DMD "", CL(1, "MISSION ABORTED"), "", eNone, eNone, eNone, 1500, True, "vo_Mission Aborted"
+        DMD "", CL(1, "MISSION ABORTED"), "", eNone, eNone, eNone, 1500, True, ""
 		pStatus "MISSION ABORTED", 2000
+		Playsound "vo_Mission Aborted"
     End If
     RotateProgressLights.Enabled = 0:UpdateProgressLights
     RotateRankLights.Enabled = 0:UpdateRankLights
@@ -7881,6 +8131,12 @@ Sub StopMissions 'this will stop all missions. Called  at the end of the ball or
             light.State = 0
         End If
     Next
+	ResetMissionObjects
+	        If MusicMode = 0 Then
+            PlaySong "mu_Main"  ' Play default main music
+        ElseIf MusicMode = 1 Then
+            PlaySong "mu_GE_Main"  ' Play GE music
+        End If
 End Sub
 
 
@@ -8394,16 +8650,8 @@ Sub pupDMDupdate_Timer()
 End Sub
 
 Sub PuPEvent(EventNum)
-    if hasPUP=false then Exit Sub
-
-    Select Case EventNum
-        Case 502
-            PlayMusic "./pupvideos/" & pGameName & "/Callouts/mu_GE_Maelstrom-Re-attract.mp3", 0.8
-        Case 503
-            EndMusic
-    End Select
-
-    PuPlayer.B2SData "E"&EventNum,1  'send event to puppack driver  
+if hasPUP=false then Exit Sub
+PuPlayer.B2SData "E"&EventNum,1  'send event to puppack driver  
 End Sub
 
 
@@ -8423,7 +8671,6 @@ DIM dmddef
 DIM dmdalt
 DIM dmdscr
 DIM dmdfixed
-
 DIM dmdscreenscale
 
 'labelNew <screen#>, <Labelname>, <fontName>,<size%>,<colour>,<rotation>,<xalign>,<yalign>,<xpos>,<ypos>,<PageNum>,<visible>
@@ -8441,6 +8688,7 @@ DIM dmdscreenscale
 '<PageNum> IMPORTANT… this will assign this label to this ‘page’ or group.
 '<visible> initial state of label. visible=1 show, 0 = off. 
 
+
 	dmdalt="Komu A"    
     dmdfixed="Komu A"
 	dmdscr="Komu A" 'main score font
@@ -8448,13 +8696,13 @@ DIM dmdscreenscale
     dmdscreenscale = 0.7
 
 	'Page 1 (default score display)
-		PuPlayer.LabelNew pDMD,"Credits"    ,dmddef,7 * dmdscreenscale,2041045   ,0,1,2,0,0,1,0
-		PuPlayer.LabelNew pDMD,"Playlabel"  ,dmddef,5 * dmdscreenscale,2041045   ,448,1,0,10,22,1,0
 		PuPlayer.LabelNew pDMD,"Play1"      ,dmddef,18 * dmdscreenscale,14111599   ,1,1,0,5,0,1,0
 		PuPlayer.LabelNew pDMD,"Ball"       ,dmddef,18 * dmdscreenscale,14111599   ,1,1,0,95,0,1,0
-		PuPlayer.LabelNew pDMD,"Balllabel"  ,dmddef,5 * dmdscreenscale,2041045   ,3160,1,0,92,15,1,0
-        PuPlayer.LabelNew pDMD, "pupStatus" ,dmdscr,20 * dmdscreenscale, 14111599, 0, 1, 0, 0, 65, 1, 0
+        PuPlayer.LabelNew pDMD, "pupStatus" ,dmdscr, 20 * dmdscreenscale, 14111599, 0, 1, 0, 0, 65, 1, 0
 		PuPlayer.LabelNew pDMD,"CurScore"   ,dmdscr,28 * dmdscreenscale,2530743   ,0,1,0, 0,10,1,0	
+		PuPlayer.LabelNew pDMD,"Credits"    ,dmddef,4 * dmdscreenscale,2041045   ,0,2,2,48,98,1,0
+		PuPlayer.LabelNew pDMD,"Recruits"    ,dmddef,4 * dmdscreenscale,2041045   ,0,0,2,51,98,1,0
+
 
 	'Page 2 (default Text Splash 1 Big Line)
 		PuPlayer.LabelNew pDMD,"Splash"  ,dmdalt,32 * dmdscreenscale,2041045,0,1,1,0,0,2,0
@@ -8508,7 +8756,6 @@ END Sub 'page Layouts
 Sub pDMDStartGame
 pInAttract=False
 pDMDSetPage(pScores)   'set blank text overlay page.
-    PuPlayer.playlistplayex pCallouts,"Callouts","vo_Gravity Normalized.ogg",0,0
 	PuPEvent 503
     PuPEvent 4
     PuPEvent 1
@@ -8542,30 +8789,32 @@ pCurAttractPos=pCurAttractPos+1
   Select Case pCurAttractPos
 
   Case 1
-            PuPEvent 502
-            If score(currentplayer) > 0 Then    
+'PuPEvent 502
+Playsong "mu_GE_Maelstrom-Re-attract"
+If score(currentplayer) > 0 Then    
 				pupDMDDisplay "GAMEOVER", " ^Last Score - " & FormatNumber(Score(CurrentPlayer),0), "", 2, 0, 10
 				pupDMDDisplay "GAMEOVER", " ^Last Score - " & FormatNumber(Score(CurrentPlayer),0),  "", 2, 0, 10
 				PuPEvent 501
 				PuPEvent 2	
 			Else
-				pupDMDDisplay "attract", "", "", 3, 0, 10
+				pupDMDDisplay "attract", "", "", 2, 0, 10
 				PuPEvent 501				
 			end if 
-  Case 2    pupDMDDisplay "attract","","",18,0,10 
+  Case 2 pupDMDDisplay "attract","","",18,0,10 
 				PuPEvent 500
   Case 3 
-            if Credits = 0 then    
-				pupDMDDisplay "attract", "CREDITS 0^INSERT COIN", "", 3, 1, 10
+if Credits = 0 then    
+				pupDMDDisplay "highscore", "CREDITS^0^INSERT COIN", "", 3, 1, 3
 			Else    
-				pupDMDDisplay "attract", "CREDITS "&(Credits)&"^PRESS START", "", 3, 0, 10
+				pupDMDDisplay "highscore", "CREDITS^"&(Credits)&"^PRESS START", "", 3, 0, 3
 			End If
-  Case 4 pupDMDDisplay "attract", "ROM VERSION "&(myVersion), "", 2, 0, 10
+  Case 4 pupDMDDisplay "attract", "VERSION "&(myVersion), "", 2, 0, 10
 
   Case 5 pupDMDDisplay "highscore","LeaderBoard^1. " & HighScoreName(0)& "  " & FormatNumber(HighScore(0), 0) & "^2. " & HighScoreName(1) & "  " & FormatNumber(HighScore(1), 0), "", 3, 0, 10
   Case 6 pupDMDDisplay "highscore","LeaderBoard^3. " & HighScoreName(2)& "  " & FormatNumber(HighScore(2),0)&"^4. " & HighScoreName(3) & "  " & FormatNumber(HighScore(3),0) , "", 3, 0, 10  
 
   Case 7 pupDMDDisplay "attract","","",51,0,10 
+Playsong ""
 				PuPEvent 503
 				PuPEvent 0
 				PuPEvent 3
@@ -8585,6 +8834,7 @@ Dim lastScore : lastScore = -1
 Dim lastCredits : lastCredits = -1
 Dim lastCurrentPlayer : lastCurrentPlayer = -1
 Dim lastBalls : lastBalls = -1
+Dim lastPlayers : lastPlayers = -1
 
 Sub pUpdateScores()
 	if pDMDCurPage <> pScores then
@@ -8597,24 +8847,28 @@ Sub pUpdateScores()
 
 	If (lastScore <> Score(CurrentPlayer)) Then
         lastScore = Score(CurrentPlayer)
-        puPlayer.LabelSet pDMD,"CurScore","" & FormatNumber(lastScore,0) ,1,""
+	    puPlayer.LabelSet pDMD,"CurScore","" & FormatNumber(lastScore,0) ,1,""
     End If
 
-	If (lastCredits <> Credits) Then
-        lastCredits = Credits
-    	puPlayer.LabelSet pDMD,"Credits","CREDITS:" & ""& lastCredits ,1,""
-    End If
-
-	If (lastCurrentPlayer <> CurrentPLayer) Then
-        lastCurrentPlayer = CurrentPLayer
+	If (lastCurrentPlayer <> CurrentPlayer) Then
+        lastCurrentPlayer = CurrentPlayer
     	puPlayer.LabelSet pDMD,"Play1","" & lastCurrentPlayer,1,""
     End If
 
 	If (lastBalls <> balls) Then
         lastBalls = balls
-    	puPlayer.LabelSet pDMD,"Ball","" & ""& lastBalls ,1,""
-    	puPlayer.LabelSet pDMD,"PlayLabel","Player",1,""
-    	puPlayer.LabelSet pDMD,"BallLabel","Ball",1,""
+	    puPlayer.LabelSet pDMD,"Ball","" & ""& lastBalls ,1,""
+    End If
+
+	If (lastCredits <> Credits) Then
+        lastCredits = Credits
+	    puPlayer.LabelSet pDMD,"Credits","CREDITS:" & ""& lastCredits ,1,""
+    End If
+
+
+	If (lastPlayers <> PlayersPlayingGame) Then
+        lastPlayers = PlayersPlayingGame
+	    puPlayer.LabelSet pDMD,"Recruits","RECRUITS:" & ""& lastPlayers ,1,""
     End if
 end Sub
 
@@ -8667,16 +8921,14 @@ Sub SetupVRRoom()
             For Each VR_Obj in VR_MinimalRoom : VR_Obj.Visible = 0 : Next
             For Each VR_Obj in VR_Space : VR_Obj.Visible = 1 : Next
 			For Each VR_Obj in VR_Table : VR_Obj.Visible = 1 : Next
-			Wall040.SideVisible = 0
-			Wall042.SideVisible = 0
+			SideBlades.Visible = 0
         ElseIf VRRoom = 3 Then
             ' MR Mode
             For Each VR_Obj in VR_MinimalRoom : VR_Obj.Visible = 0 : Next
             For Each VR_Obj in VR_Space : VR_Obj.Visible = 0 : Next
 			For Each VR_Obj in VR_Table : VR_Obj.Visible = 1 : Next
 			Room360.Visible = 1
-			Wall040.SideVisible = 0
-			Wall042.SideVisible = 0
+			SideBlades.Visible = 0
         Else
             ' Minimal Room
             For Each VR_Obj in VR_MinimalRoom : VR_Obj.Visible = 1 : Next
@@ -8687,26 +8939,24 @@ Sub SetupVRRoom()
         rrail.Visible = 0
         lrail1.Visible = 0
         rrail1.Visible = 0
-		Wall040.Visible = 0
-		Wall042.Visible = 0
+		SideBlades.Visible = 0
     Else
         VRRoom = 0
         For Each VR_Obj in VR_MinimalRoom : VR_Obj.Visible = 0 : Next
         For Each VR_Obj in VR_Space : VR_Obj.Visible = 0 : Next
         For Each VR_Obj in VR_Table : VR_Obj.Visible = 0 : Next
-		Wall040.SideVisible = 1
-		Wall042.SideVisible = 1
         If Table1.ShowDT Then
             lrail.Visible = 1
             rrail.Visible = 1
             lrail1.Visible = 1
             rrail1.Visible = 1
-
+			SideBlades.Visible = 0
         Else
             lrail.Visible = 0
             rrail.Visible = 0
             lrail1.Visible = 0
             rrail1.Visible = 0
+			SideBlades.Visible = 1
 
         End If
     End If
@@ -8828,58 +9078,3 @@ if StarsCounter < 10 then
 End Sub
 
 
-'DOF Update it by Outhere - Search the word > outhere < for DOF I Changed or Added
-'101 Left Flipper
-'102 Right Flipper
-'103 Left Slingshot
-'104 Right Slingshot
-'105
-'106 Right Slingshot Shake
-'107 Top Bumper Left
-'108 Top Bumper Center
-'109 Top Bumper Right
-'110 Lower Bumper Left
-'111 Lower Bumper CenterLeft
-'112 Lower Bumper Right
-'113 Very Top Bumper Left
-'114 Wormhole 1
-'115 Wormhole 2
-'116 Wormhole 3
-'117 Drop Targets Left Reset
-'118 GI on / off
-'119 Drop Targets Center Reset
-'120 Drop Targets Right Reset
-'121
-'122 Knocker
-'123 Ball Release
-'124 Left Kick Back
-'125
-'126 sc_droptarget
-'127
-'128 Right Kick Back
-'129 BlackHole Kick Out
-'130 HyperSpaceHole Kick Out
-'131 Upper Left Slingshot
-'132 Upper Right Slingshot
-'133 Shaker
-'134 Beacon - BallLock
-'135
-'136
-'137
-'138
-'139
-'140
-'141
-'142
-'143 AutoPlunger
-'144
-'146
-'147
-'148
-'149
-'150
-'151
-'152
-'153
-'154
-'155

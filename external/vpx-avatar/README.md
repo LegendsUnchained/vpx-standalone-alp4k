@@ -1,52 +1,62 @@
-# Avatar (Stern 2010)
+# James Cameron's Avatar (Stern 2010)
 
 ![Table Preview](../../images/vpx-avatar.webp)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author |
-|:---------:|:----:|:-------:|:------:|
-| **VPX** | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14294) | 3.1 | [bigus1](https://www.vpforums.org/index.php?s=dbae17e67cbc2653be1a326c8134f0e7&showuser=107629) |
-| **B2S** | N/A | N/A | N/A |
-| **DMD** | N/A | N/A | N/A |
-| **ROM** | [VPUniverse](http://vpuniverse.com/forums/files/file/3441-avr_200zip/) | 2.0 | [VPUStaff](https://vpuniverse.com/profile/50-vpustaff/) |
+## *️⃣  Table Statistics
 
-**Tested by:** [kaoticBPR],[mrandromeda]
-
----
-
-## Status 
-**Minimum VPX Standalone build:** 10.8.0-5b941e6
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 52 |
+
+<br>
+
+**VPXS 4KP Testers:**
+  - kaoticBPR
+  - mrandromeda
+  - OminousOsie 🌸
+
+<br>
 
 ---
 
-## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-avatar.elf`
-- Download the table version listed above, extract and copy them to `external/vpx-avatar`
-- Rom file `avr_200.zip` stays in zip folder, place zip file in `vpx-avatar/pinmame/roms`
-- Make sure `(.vpx)` and `(.ini)` are named the same.
-- "The War For Pandora Begins Now!"
+<br>
 
----
+## ❇️ Available in the Wizard! 🪄✨
 
-## Optional Extras
+<br>
 
-## Alt color (Color DMD)
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
 
-- Download the `avr_200.cRZ` file from [VPUniverse](https://vpuniverse.com/files/file/24415-avatar-stern-2010-serum-colorization/) (by [Enthusiast](https://vpuniverse.com/profile/62357-enthusiast/))
-- Create the folder `altcolor/avr_200` within the `external/vpx-avatar/pinmame` folder
-- Move the file `avr_200.cRZ` in the `external/vpx-avatar/pinmame/altcolor/avr_200` folder
+### How to install:
 
-## Puppack (Backglass Videos/Music):
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`James Cameron's Avatar`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *The War For Pandora Begins Now!*
 
-The puppack make the FPS drop to 49.
+<br>
 
-- Download the `avr_200.zip` puppack from [VPUniverse](https://vpuniverse.com/files/file/8717-avatar-puppack/) (by [hawkeyez88](https://vpuniverse.com/profile/11315-hawkeyez88/))
-- Create the folder `pupvideos` within the `external/vpx-avatar` folder
-- Extract the folder `avr_200` from the puppack zip, and put it in the `pupvideos`
-- Unzip the use_these_pup_files.zip and place them inside the pupvideos/avr_200 folder, and overwrite files if prompted. 
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - TechZombie
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
