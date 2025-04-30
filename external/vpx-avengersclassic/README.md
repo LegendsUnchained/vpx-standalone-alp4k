@@ -1,4 +1,4 @@
-﻿# Avengers, JP's The (Stern 2012)
+# Avengers, JP's The (Stern 2012)
 
 ![Table Preview](../../images/vpx-jps-avengers.jpg)
 
@@ -47,7 +47,7 @@ __*We hope you enjoy!!*__
 
 *The VPXS 4KP Wizard team:*
 <pre>
-- n-i-x            - Mox
+- n-i-x            - Mox              - Lloydbraun
 - Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
 - Bla1ze           - evilwraith       - Silentkat        
 - mrandromeda      - SScorpio         - TechZombie

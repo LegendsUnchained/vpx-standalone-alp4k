@@ -1,4 +1,4 @@
-﻿﻿# Terminator 2 - Judgment Day (Williams 1991)
+﻿# Terminator 2 - Judgment Day (Williams 1991)
 
 ![Table Preview](../../images/vpx-t2.png)
 
@@ -48,7 +48,7 @@ __*We hope you enjoy!!*__
 
 *The VPXS 4KP Wizard team:*
 <pre>
-- n-i-x            - Mox
+- n-i-x            - Mox              - Lloydbraun
 - Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
 - Bla1ze           - evilwraith       - Silentkat        
 - mrandromeda      - SScorpio         - TechZombie

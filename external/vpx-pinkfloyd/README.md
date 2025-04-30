@@ -1,4 +1,4 @@
-﻿﻿# Pink Floyd (Original 2022)
+﻿# Pink Floyd (Original 2022)
 
 ![Table Preview](../../images/vpx-pinkfloyd.png)
 
@@ -57,7 +57,7 @@ __*We hope you enjoy!!*__
 
 *The VPXS 4KP Wizard team:*
 <pre>
-- n-i-x            - Mox
+- n-i-x            - Mox              - Lloydbraun
 - Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
 - Bla1ze           - evilwraith       - Silentkat        
 - mrandromeda      - SScorpio         - TechZombie
