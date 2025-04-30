@@ -11,7 +11,7 @@ testers:
   - "kaoticBPR"
   - "OminousOsie"
 vpxVPSId: "6qFvtdfj"
-vpxChecksum: "0ff79e36d91def11e7dbb5ef9ad567e5"
-tableNotes: "Download 'Viper Night Drivin'(Sega 1998) 1.0d.zip'"
+vpxChecksum: "e1b8c3dfe5057df17aff16f602499f60"
+tableNotes: "Download 'Viper Night Drivin'(Sega 1998) 1.0d No Glow Ball.zip'"
 applyFixes:
   - "bass"
