@@ -1,4 +1,4 @@
-﻿﻿# .1-2-3 (Talleres de Llobregat 1973)
+﻿# 1-2-3 (Talleres de Llobregat 1973)
 
 ![Table Preview](../../images/vpx-123.jpg)
 
