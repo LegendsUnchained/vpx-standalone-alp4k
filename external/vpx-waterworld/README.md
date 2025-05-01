@@ -28,5 +28,5 @@
 - Add your personalized launcher.elf and rename it to `vpx-waterworld.elf`
 - Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-waterworld`
 - Rom file (FILENAME.zip) stays in zip folder, place zip file in `vpx-waterworld/pinmame/roms`
-- Make sure `(.vpx)` `(.direct2b2s)` and `(.ini)` are all named the same.
+- Make sure `(.vpx)` `(.directb2s)` and `(.ini)` are all named the same.
 - "You get another chance!"

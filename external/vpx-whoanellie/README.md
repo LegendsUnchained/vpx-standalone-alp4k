@@ -1,4 +1,4 @@
-﻿﻿# Whoa Nellie! Big Juicy Melons (Stern 2015)
+﻿# Whoa Nellie! Big Juicy Melons (Stern 2015)
 
 ![Table Preview](../../images/vpx-whoanellie.jpg)
 
@@ -48,7 +48,7 @@ __*We hope you enjoy!!*__
 
 *The VPXS 4KP Wizard team:*
 <pre>
-- n-i-x            - Mox
+- n-i-x            - Mox              - Lloydbraun
 - Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
 - Bla1ze           - evilwraith       - Silentkat        
 - mrandromeda      - SScorpio         - TechZombie
