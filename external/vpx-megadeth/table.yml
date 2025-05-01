@@ -2,8 +2,10 @@
 backglassVPSId: "t9WZcMFwyU"
 backglassChecksum: "306D2FC70CF4EACCCAAC88E9D535984A"
 backglassNotes: >-
-  Upon VPX bundle download, open 'Backglass' folder for DIRECTB2S
-fps: 47
+  Download VPX folder, open 'Backglass' folder, get the
+  'MEGADETH_Original_2023.directb2s' file
+backglassBundled: true
+fps: 52
 tableVPSId: "RTjNzNHOeW"
 tagline: "Peace sells... but who's buying?"
 testers:
@@ -11,7 +13,8 @@ testers:
   - "Mox"
 vpxVPSId: "t9WZcMFwyU"
 vpxChecksum: "542BF12BECA54ABD70439EAD84681898"
-tableNotes: "Upon download, open 'Table' folder for VPX"
-enabled: false
+tableNotes: >-
+  Download VPX folder, open 'Table' folder, get the
+  'Megadeth (original)v.1.1.vpx' file
 applyFixes:
   - "bass"

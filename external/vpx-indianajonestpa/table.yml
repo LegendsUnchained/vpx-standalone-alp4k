@@ -1,17 +1,22 @@
 ---
-backglassVPSId: "eMpRNW-Yuk"
-backglassChecksum: "FF64F5707F8E446B2A295FC57D3C55B4"
-fps: 47
+tableVPSId: "lkSumsrF"
+vpxVPSId: "bpo2bAdE"
+vpxChecksum: "F7C1285F3FB1D1C4935C459EB64B5A04"
+tableNotes: "Download Indiana Jones...Bigus(MOD)2.1.vpx.zip"
+backglassVPSId: "puSi-3cozl"
+backglassChecksum: "140b4894293202e921b8d796ba4871c9"
+backglasNotes: >-
+  Download Indiana Jones The Pinball Adventure (Williams 1993).rar
+fps: 56
 romVPSId: "H6pEW4cE"
 romChecksum: "6E5FD8533AF8E5B1A2C710B5CE5E7A87"
 romNotes: "Download -  ij_l7.zip"
-tableVPSId: "lkSumsrF"
 tagline: "Snakes. Why'd it have to be snakes?"
 testers:
-  - "TechZombie"
+  - "Boris"
   - "Mox"
+  - "TechZombie"
 vpxVPSId: "bpo2bAdE"
 vpxChecksum: "F7C1285F3FB1D1C4935C459EB64B5A04"
-enabled: false
 applyFixes:
   - "bass"

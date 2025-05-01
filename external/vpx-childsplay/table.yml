@@ -1,0 +1,23 @@
+---
+backglassAuthorsOverride:
+  - ""
+fps: 52
+pupChecksum: "ef3889dd3385a7b5c08dcf7d9b8fd5f3"
+pupFileUrl: >-
+  https://vpuniverse.com/files/file/14246-childs-play-table-v10-puppack-10/
+pupRequired: true
+pupVersion: "Fast_Draw_1975"
+pupArchiveRoot: "Child's Play/Puppack/"
+pupNotes: "Upload the whole 'Child's Play.zip' file for the PUP pack"
+tableVPSId: "uveE3RK0ya"
+tableNotes: "VPX file can be found in the zip inside the 'Table' folder."
+tagline: >-
+  "I'm your friend to the end" - Chucky
+testers:
+  - "mrandromeda"
+  - "OminousOsie"
+vpxchecksum: "e6ad57ec95f0bafba2755cc5221455c3"
+vpxVPSId: "BP2fWpYJ1T"
+enabled: false # Osie: We need the 'pupArchiveRoot' yml field implemented
+applyFixes:
+  - "bass"

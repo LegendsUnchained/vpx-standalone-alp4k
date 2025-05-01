@@ -1,0 +1,17 @@
+---
+backglassVPSId: "a0B0BG9n"
+backglassChecksum: "246051b7b488e6196ed1f322c657160d"
+backglassNotes: "Download file 'Road Runner (Atari 1979) V1.1.rar'"
+fps: 60
+romVPSId: "n3Sn_IBE"
+romChecksum: "219b5fadc962cbf9b5a5250869e545d3"
+tableVPSId: "-U4tpnWh"
+tagline: "Meep! Meep!"
+testers:
+  - "CoffeeAtJoes"
+  - "OminousOsie"
+vpxVPSId: "NsPe5otOh3"
+vpxChecksum: "e6ba0a15f540573ea713abe8b1b7ce4c"
+tableNotes: "Download version 3.0"
+applyFixes:
+  - "bass"

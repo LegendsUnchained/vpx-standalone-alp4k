@@ -1,0 +1,25 @@
+---
+backglassAuthorsOverride:
+  - ""
+fps: 60
+pupChecksum: "af446e36d9f8d90c26d61e1c268ececb"
+pupFileUrl: >-
+  https://mega.nz/file/KFZWVLII#bb5WWzSx8ZmYc2-9C4uDwkbaPe2cU33ZbKDFpSQVEJk
+pupRequired: true
+pupVersion: "playboys"
+romVPSId: "MevPuI-6"
+romChecksum: "e0b9ff21c2e91bc2d37ef7733fec9f8d"
+coloredROMVPSId: "0CmueoPUwI"
+coloredROMChecksum: "fb623cf8816ddddd8a59b160952450db"
+coloredROMNotes: "Download version 1.0.1"
+tableVPSId: "4UE5fPs8"
+tableNotes: "Download version 1.1"
+tagline: "**Warning:** 18+ table - not suitable for children!"
+testers:
+  - "mcap"
+  - "SilentKat"
+  - "OminousOsie"
+vpxchecksum: "1634db2d565973a6894c354a42ab1da8"
+vpxVPSId: "cqC1LMDt"
+applyFixes:
+  - "bass"

@@ -108,6 +108,7 @@ def get_table_meta(files, warn_on_error=True):
             vpxChecksum = vpxChecksum.lower()
 
         table_meta = {
+            "name": data.get("tableNameOverride"),
             "applyFixes": data.get("applyFixes"),
             "backglassBundled": data.get("backglassBundled"),
             "backglassChecksum": backglassChecksum,
@@ -117,9 +118,17 @@ def get_table_meta(files, warn_on_error=True):
             "coloredROMBundled": data.get("coloredROMBundled"),
             "coloredROMChecksum": coloredROMChecksum,
             "coloredROMNotes": data.get("coloredROMNotes"),
+            "coloredROMFileUrl": data.get("coloredROMUrlOverride"),
+            "coloredROMVersion": data.get("coloredROMVersionOverride"),
             "enabled": data.get("enabled"),
             "fps": data.get("fps"),
             "mainNotes": data.get("mainNotes"),
+            "pupArchiveRoot": data.get("pupArchiveRoot"),
+            "pupChecksum": data.get("pupChecksum"),
+            "pupFileUrl": data.get("pupFileUrl"),
+            "pupNotes": data.get("pupNotes"),
+            "pupRequired": data.get("pupRequired"),
+            "pupVersion": data.get("pupVersion"),
             "romBundled": data.get("romBundled"),
             "romChecksum": romChecksum,
             "romNotes": data.get("romNotes"),
@@ -144,7 +153,10 @@ def get_table_meta(files, warn_on_error=True):
             table_meta["designers"] = table.get("designers", [])
             table_meta["image"] = table.get("imgUrl", "")
             table_meta["manufacturer"] = table.get("manufacturer", "")
-            table_meta["name"] = table.get("name", "")
+            
+            if not table_meta["name"]:
+                table_meta["name"] = table.get("name", "")
+                
             table_meta["players"] = table.get("players", 0)
             table_meta["type"] = table.get("type", "")
             table_meta["version"] = table.get("version", "")
@@ -220,7 +232,8 @@ def get_table_meta(files, warn_on_error=True):
                 table_meta["coloredROMFileUrl"] = coloredROM.get("urls", [])[0].get(
                     "url", ""
                 )
-                table_meta["coloredROMVersion"] = coloredROM.get("version", "")
+                if not table_meta["coloredROMVersion"]:
+                    table_meta["coloredROMVersion"] = coloredROM.get("version", "")
             else:
                 print(f"{error_prefix}: Colored ROM id {coloredROMVPSId} not found in VPSDB")
                 if warn_on_error:

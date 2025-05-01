@@ -1,34 +1,62 @@
-# Avatar (Stern 2012)
+# James Cameron's Avatar (Stern 2010)
 
 ![Table Preview](../../images/vpx-avatar.webp)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author |
-|:---------:|:----:|:-------:|:------:|
-| VPX | [VPUniverse](https://vpuniverse.com/files/file/6408-avatar-stern-2012oqqsanmod/) | 1.1.2 | [tartzani](https://vpuniverse.com/profile/36680-tartzani/) |
-| B2S | [VPUniverse](https://vpuniverse.com/files/file/12738-james-cameron%E2%80%99s-avatar-stern-2010-full-dmd/) | 1.01 | [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
-| DMD | N/A | N/A | N/A |
-| ROM | [VPUniverse](http://vpuniverse.com/forums/files/file/3441-avr_200zip/) | avr_200.zip | [VPUStaff](https://vpuniverse.com/profile/50-vpustaff/) |
+## *️⃣  Table Statistics
 
-**Tested by:** [kaoticBPR]
-
----
-
-## Status 
-**Minimum VPX Standalone build:** 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 42 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 52 |
+
+<br>
+
+**VPXS 4KP Testers:**
+  - kaoticBPR
+  - mrandromeda
+  - OminousOsie 🌸
+
+<br>
 
 ---
 
-## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-avatar.elf
-- Download the table and directb2s versions listed above, extract and copy them to external/vpx-avatar
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
-- Place avr_200.zip in the external/vpx-avatar/pinmame/roms folder. *Do Not unzip*!
-- "The War For Pandora Begins Now!"
+<br>
 
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`James Cameron's Avatar`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *The War For Pandora Begins Now!*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - TechZombie
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

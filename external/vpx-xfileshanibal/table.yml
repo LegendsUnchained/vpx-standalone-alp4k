@@ -11,5 +11,7 @@ romNotes: "Download - xfiles.zip"
 tagline: "Trust No One!"
 testers:
   - "Boris"
+  - "CoffeeAtJoes"
+  - "OminousOsie"
 applyFixes:
   - "bass"

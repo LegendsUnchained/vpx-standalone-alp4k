@@ -1,0 +1,16 @@
+---
+backglassVPSId: "fVE3hd88Db"
+backglassChecksum: "BEF4B840F9949B46D070248FF6A551FC"
+backglassNotes: "Download version 2.0"
+fps: 60
+romVPSId: "NEmgefOn"
+romChecksum: "E82A3AFA2B3B59984C43E4A1BF822582"
+tableVPSId: "nKd3MiUo"
+tableNotes: "Download NBA Fastbreak (Bally 1997)-DarthMarino Mod 1.2.zip"
+tagline: "They Shoot, You Score!"
+testers:
+  - "Bla1ze"
+vpxVPSId: "y5saowFC"
+vpxChecksum: "03F38584778625C6A4F59D88CED364F7"
+applyFixes:
+  - "bass"

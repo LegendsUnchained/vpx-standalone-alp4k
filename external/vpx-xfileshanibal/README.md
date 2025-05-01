@@ -1,32 +1,62 @@
-# X-Files Hanibal LED Edition
+# X-Files (Sega 1997)
 
 ![Table Preview](../../images/vpx-xfileshanibal.png)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author |
-|:---------:|:----:|:-------:|:------:|
-| VPX | [VP Universe](https://vpuniverse.com/files/file/4595-x-files-hanibal-4k-led-edition/) | 1.9 | [hanibal2001](https://vpuniverse.com/profile/872-hanibal2001/) |
-| B2S | [VP Universe](https://vpuniverse.com/files/file/14927-x-files-sega-1997-b2s-with-full-dmd/) | 1.0.0 | [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
-| DMD | N/A | N/A | N/A |
-| ROM | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1077) | N/A | N/A |
+## *️⃣  Table Statistics
 
-**Tested by:** [Bla1ze]
-
----
-
-## Status 
-Minimum VPX Standalone build: 10.8.0-1983-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 
+<br>
+
+**VPXS 4KP Testers:**
+  - Boris
+  - CoffeeAtJoes
+  - OminousOsie 🌸
+
+<br>
+
 ---
 
-## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-xfileshanibal.elf
-- Download the table, ROM and directb2s versions listed above and copy them into this folder
-- Make sure the vpx, directb2s, vbs, and ini files are all named the "exact" same
-- Your investigation is faltering 👽
+<br>
+
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`X Files, The`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"Trust No One!"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - TechZombie
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

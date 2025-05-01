@@ -42,7 +42,17 @@ This table is available through the Table Manager Wizard, which makes installati
 
 Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
 
-__*We hope you enjoy!!   - the VPXS 4KP team!*__
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - TechZombie
+</pre>
 
 
 <br>
@@ -58,16 +68,31 @@ __*We hope you enjoy!!   - the VPXS 4KP team!*__
 > -  Navigate to the table folder using the `USB Root` tab.
 
 <br>
+<br>
+
+<table>
+  <tr>
+    <td style="background-color: #FFDDDD; padding: 0; border-left: 4px solid #FF0000;">
+      <div style="padding: 8px 12px; background-color: #FFCCCB; font-weight: bold;font-size: 20px;">
+        <strong>⚠️ WARNING ⚠️</strong>
+      </div>
+      <div style="padding: 12px 12px 12px 12px;">
+        Manually added puppacks are not supported by the VPXS 4KP team<br>We will not be able to help you diagnose issues until this puppack is in the Wizard
+      </div>
+    </td>
+  </tr>
+</table>
 
 ### 🎦 Puppack (Backglass Videos/Music):
 
 1.  Download the puppack `648738633_TronLegacy-EndofLine-PuP-Pack.zip` from [VP Universe](https://vpuniverse.com/files/file/6814-tron-legacy-stern-end-of-line-pup-pack/) (by [TerryRed](https://vpuniverse.com/profile/10155-terryred/))
 2.  Create the folder `pupvideos` within the `external/vpx-tronlegacy` folder in the Table Manager
 3.  Extract the folder `trn_174h` from the puppack zip, and put it in the `pupvideos`
-4.  Unzip the `use_these_pup_files.zip` from the `external/vpx-tronlegacy` folder in the [repository](https://github.com/TheOminousOsie/vpx-standalone-alp4k/tree/main/external/vpx-tronlegacy)
-5.  Place them inside the `pupvideos/trn_174h` folder, and overwrite files if prompted.  **This is necessary otherwise it does not work**
-6. __Delete the `.directb2s` file in the `external/vpx-tronlegacy` folder in the Table Manager because this is not needed anymore and makes the backglass blink.__
-7. Enjoy this amazing table with extra sounds and videos! 
+4.  You should now have `external/vpx-tronlegacy/pupvideos/trn_174h/{puppack files}`
+5.  Unzip the `use_these_pup_files.zip` from the `external/vpx-tronlegacy` folder in the [repository](https://github.com/LegendsUnchained/vpx-standalone-alp4k/tree/main/external/vpx-tronlegacy)
+6.  Place them inside the `pupvideos/trn_174h` folder, and overwrite files if prompted.  **This is necessary otherwise it does not work**
+7. __Delete the `.directb2s` file in the `external/vpx-tronlegacy` folder in the Table Manager because this is not needed anymore and makes the backglass blink.__
+8. Enjoy this amazing table with extra sounds and videos! 
 
 
 <br>
