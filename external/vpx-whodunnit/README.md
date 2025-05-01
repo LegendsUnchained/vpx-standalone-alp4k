@@ -1,4 +1,4 @@
-﻿# WHO Dunnit (Bally 1995)
+# WHO Dunnit (Bally 1995)
 
 ![Table Preview](../../images/vpx-whodunnit.png)
 
@@ -48,7 +48,7 @@ __*We hope you enjoy!!*__
 
 *The VPXS 4KP Wizard team:*
 <pre>
-- n-i-x            - Mox
+- n-i-x            - Mox              - Lloydbraun
 - Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
 - Bla1ze           - evilwraith       - Silentkat        
 - mrandromeda      - SScorpio         - TechZombie

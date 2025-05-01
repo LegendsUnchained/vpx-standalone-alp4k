@@ -1,4 +1,4 @@
-﻿# Who's Tommy Pinball Wizard, The (Data East 1994) 
+# Who's Tommy Pinball Wizard, The (Data East 1994) 
 
 ![Table Preview](../../images/vpx-tommy.png)
 
@@ -47,7 +47,7 @@ __*We hope you enjoy!!*__
 
 *The VPXS 4KP Wizard team:*
 <pre>
-- n-i-x            - Mox
+- n-i-x            - Mox              - Lloydbraun
 - Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
 - Bla1ze           - evilwraith       - Silentkat        
 - mrandromeda      - SScorpio         - TechZombie

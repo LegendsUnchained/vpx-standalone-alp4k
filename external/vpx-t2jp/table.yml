@@ -1,0 +1,22 @@
+---
+backglassAuthorsOverride:
+  - ""
+fps: 60
+pupChecksum: "b939687ca882d009da709bfcd0ae383a"
+pupFileUrl: >-
+  https://vpuniverse.com/files/file/22604-terminator-2-pup-pack-and-full-dmd/
+pupRequired: true
+pupVersion: "t2_l8"
+romVPSId: "IWVOy5e8"
+romChecksum: "f4d3810b45efbae942176c8ba5e1002c"
+tableVPSId: "gyhULWKc"
+tableNotes: "Download version v55_VPX8.zip"
+tagline: "Hasta la vista, baby"
+testers:
+  - "mcap"
+  - "mrandromeda"
+  - "OminousOsie"
+vpxVPSId: "GAqfmxLp"
+vpxchecksum: "d081a0f38d2dcfd75dc96efe6a752aa5"
+applyFixes:
+  - "bass"

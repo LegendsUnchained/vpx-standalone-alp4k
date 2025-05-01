@@ -1,0 +1,26 @@
+---
+backglassAuthorsOverride:
+  - ""
+fps: 52
+pupChecksum: "d22f46b5ca0c978dd8abc7948200f4d8"
+pupFileUrl: >-
+  https://mega.nz/file/iNlEQJjI#nxoXhGk1r8N9oGOqDu8Znbx6E8UEpCkyihWivGBVmJY
+pupRequired: true
+pupVersion: "avr_200"
+romVPSId: "IaYZ89Ev"
+romChecksum: "2f295027a8e90b45fc58eea2ec51d66f"
+coloredROMVPSId: "B82eMKSnmb"
+coloredROMChecksum: "3cf33f0e04b14e27be85ffb812cb1cb2"
+coloredROMNotes: "Download version 1.0.0"
+tableVPSId: "W_p2sxKM"
+tableNotes: "Download version 3.1"
+tagline: >-
+  "The War For Pandora Begins Now!"
+testers:
+  - "kaoticBPR"
+  - "mrandromeda"
+  - "OminousOsie"
+vpxVPSId: "_KkJPEqB"
+vpxchecksum: "bc2f2a15440cc9e0759d3969f04b4fb4"
+applyFixes:
+  - "bass"

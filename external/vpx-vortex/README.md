@@ -1,4 +1,4 @@
-﻿﻿# Vortex (Taito do Brasil 1981)
+﻿# Vortex (Taito do Brasil 1981)
 
 ![Table Preview](../../images/vpx-vortex.png)
 
@@ -48,7 +48,7 @@ __*We hope you enjoy!!*__
 
 *The VPXS 4KP Wizard team:*
 <pre>
-- n-i-x            - Mox
+- n-i-x            - Mox              - Lloydbraun
 - Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
 - Bla1ze           - evilwraith       - Silentkat        
 - mrandromeda      - SScorpio         - TechZombie

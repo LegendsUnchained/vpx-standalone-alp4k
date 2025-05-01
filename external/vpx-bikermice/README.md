@@ -27,6 +27,23 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :x: | :x: | :x: | 47 |
 
+---
+
+<br>
+
+<table>
+  <tr>
+    <td style="background-color: #FFDDDD; padding: 0; border-left: 4px solid #FF0000;">
+      <div style="padding: 8px 12px; background-color: #FFCCCB; font-weight: bold;font-size: 20px;">
+        <strong>⚠️ WARNING ⚠️</strong>
+      </div>
+      <div style="padding: 12px 12px 12px 12px;">
+        Manually added puppacks are not supported by the VPXS 4KP team<br>We will not be able to help you diagnose issues until this puppack is in the Wizard
+      </div>
+    </td>
+  </tr>
+</table>
+
 ## Instructions
 
 - Copy the contents of this repo folder to your USB drive
