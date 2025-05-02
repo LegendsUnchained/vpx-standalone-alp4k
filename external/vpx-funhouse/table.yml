@@ -1,0 +1,15 @@
+---
+backglassBundled: "true"
+backglassNotes: "Wizard will install backglass"
+fps: 45
+romVPSId: "oKy7SY7JKC"
+romChecksum: "EE82A4A235451E36405E3AB90A54DA10"
+tableVPSId: "O1-qbuxg"
+tagline: "Hey, Bucko, shoot again!"
+testers:
+  - "Bla1ze"
+  - "mcap"
+vpxVPSId: "I7Vd9HVoHn"
+vpxChecksum: "332CBCE0754D1D203B88CAA26CAE7B5C"
+applyFixes:
+  - "bass"
