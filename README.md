@@ -713,7 +713,6 @@ Links to these products on Amazon are through affiliate links.
 | [Sorcerer, JPs (Williams 1985)](external/vpx-jpsorcerer) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Sound Stage (Chicago Coin 1976)](external/vpx-soundstage) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :x: | 60 |
 | [South Park (Sega 1999)](external/vpx-southpark) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 45 |
-| [Sound Stage (Chicago Coin 1976)](external/vpx-soundstage) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :x: | 60 |
 | [Space Cadet (Maxis 1995)](external/vpx-spacecadet) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Space Cadet, JP's - Galaxy Edition (Original 2021)](external/vpx-spacecadetge) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 52 |
 | [Space Invaders - JP (Bally 1979)](external/vpx-jpspaceinvaders) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 55 |
