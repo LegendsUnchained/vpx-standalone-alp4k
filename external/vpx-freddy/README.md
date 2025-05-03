@@ -2,31 +2,54 @@
 
 ![Table Preview](../../images/vpx-freddy.png)
 
-Authors: [Siggi](https://vpuniverse.com/profile/8779-siggi/)
-Version: 1.2
-Download: [VP Universe](https://vpuniverse.com/files/file/8626-freddy-a-nightmare-on-elm-street-siggis-mod/)
+<br>
 
-DirectB2S
+**VPXS 4KP Testers:**
+  - Boris
+  - OminousOsie 🌸
+  - CoffeeAtJoes
 
-Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
-Version: 1.0
-Download: [VP Universe](https://vpuniverse.com/files/file/16558-freddy-a-nightmare-on-elm-street-gottlieb-1994-b2s-with-full-dmd/)
+<br>
 
-ROM
+---
 
-Download: [Pinball Nirvana](https://pinballnirvana.com/forums/resources/freddy.1835/)
+<br>
 
-## Status 
+## ❇️ Available in the Wizard! 🪄✨
 
-Minimum VPX Standalone build: 10.8.0-1989-a764013
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 33 |
+<br>
 
-## Instructions
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-freddy.elf
-- Download the table and directb2s versions listed above and copy them into this folder
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`1-2-3`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"One, Two, Three... Answer Again!"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - TechZombie
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
 
