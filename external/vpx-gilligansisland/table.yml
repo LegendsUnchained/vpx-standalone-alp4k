@@ -1,0 +1,18 @@
+---
+backglassVPSId: "62o2b4X_"
+backglassChecksum: "6D7CBF7E5200B2611B495C696DD79B8A"
+backglassNotes: "Download Gilligan's Island (Bally 1991)3scr"
+fps: 50
+romVPSId: "epgJNgzU"
+romChecksum: "E1FD53CE4225F90CB87D546B4984F088"
+romNotes: "Download gi_l9"
+tableVPSId: "wzw7CUUw"
+tagline: "It's a Jungle out there!"
+testers:
+  - "Bla1ze"
+  - "TechZombie"
+vpxVPSId: "r1XNdVKv"
+vpxChecksum: "BC5699EDB1679E38094FC305BEB995E8"
+vpxNotes: "Download version 2.0"
+applyFixes:
+  - "bass"
