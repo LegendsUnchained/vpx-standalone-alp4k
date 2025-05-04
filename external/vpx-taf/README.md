@@ -9,7 +9,7 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 DirectB2S
 
 Authors: [Wildman](https://vpuniverse.com/profile/5-wildman/)  
-Version: 1.0  
+Version: 2.0  
 Download: [VP Universe](https://vpuniverse.com/files/file/2468-the-addams-family-bally-1992/)
 
 ROM
