@@ -1,0 +1,15 @@
+---
+backglassVPSId: "agRjCO8K"
+backglassChecksum: "63546A42C2876535DA86BB8F5440DA9E"
+romVPSId: "0zPMCWcA"
+romChecksum: "F4D3810B45EFBAE942176C8BA5E1002C"
+romNotes: "Download - taf_l7.zip"
+fps: 48
+tableVPSId: "aT_GONvw"
+tagline: "Are they made from real Girl Scouts?"
+testers:
+  - "evilwraith"
+vpxVPSId: "f5_x-oZT"
+vpxChecksum: "63546A42C2876535DA86BB8F5440DA9E"
+applyFixes:
+  - "bass"
