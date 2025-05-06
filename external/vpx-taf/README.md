@@ -1,8 +1,8 @@
 # Addams Family, The (Bally 1992)
 
-![Table Preview](../../images/vpx-taf.jpeg)
+![Table Preview](../../images/vpx-taf.jpg)
 
-Authors: [Bigus](https://vpuniverse.com/profile/14065-g5k/)  
+Authors: [bigus1](https://www.vpforums.org/index.php?showuser=107629)  
 Version: 3.0
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=15459)
 
@@ -28,4 +28,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to vpx-taf.elf
 - Download the table and directb2s versions listed above and copy them into this folder
+- Rom file (taf_l7.zip) stays in zip format, place zip file in `vpx-{tablename}/pinmame/roms`
 - Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
