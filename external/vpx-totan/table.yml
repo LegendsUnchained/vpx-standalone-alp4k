@@ -2,7 +2,7 @@
 backglassVPSId: "ddtvrKOtMj"
 backglassChecksum: "F0A68360701C8668939AEFE2C96E755F"
 backglassNotes: "Download - Tales of the Arabian Nights (Williams 1996) 3k.zip"
-fps: 48
+fps: 51
 romVPSId: "sNdevnd0"
 romChecksum: "FC8373E3925D671EDE800B3BD9B47D88"
 romNotes: "Download - totan_14.zip"
@@ -14,6 +14,7 @@ testers:
   - "Bla1ze"
   - "evilwraith"
   - "OminousOsie"
+  - "Boris"
 vpxVPSId: "7m7IM8bI"
-vpxChecksum: "A881856F4AE32A30791F434F55171E93"
+vpxChecksum: "ccb6f28f015d5b83838e7559e9e329d7"
 tableNotes: "Download - v55_VPX8.zip"
