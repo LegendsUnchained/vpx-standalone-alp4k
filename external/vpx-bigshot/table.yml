@@ -1,0 +1,17 @@
+---
+tableVPSId: "akqRhW76"
+vpxVPSId: "ZmKYwF-9"
+vpxChecksum: "6ed7f84cdc3c8aff397990b1c41aaf40"
+vpxNotes: "460673803_BigShot(Gottlieb1974)1.3.1VR.zip"
+# backglassVPSId: ""
+backglassChecksum: "f43ec77e306fc2c5ebc3c7c85561237b"
+backglassNotes: "Included in VPX download"
+backglassBundled: true
+# romVPSID:
+# romCheksum:
+# romNotes:
+fps: 51
+testers:
+  - "Boris"
+# tableNotes: ""
+tagline: "Just don’t miss."
