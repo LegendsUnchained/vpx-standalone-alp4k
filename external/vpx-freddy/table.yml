@@ -1,0 +1,19 @@
+---
+backglassBundled: "true"
+backglassChecksum: "F56C306BB49563F028FDFA3F2F202444"
+backglassNotes: "Wizard will install backglass"
+fps: 50
+romUrlOverride: "https://pinballnirvana.com/forums/resources/freddy.1835/"
+romVersionOverride: "freddy"
+romChecksum: "30D614734072E3FD25475EA9320B2865"
+romNotes: "Download freddy.zip"
+tableVPSId: "SrcagQN8"
+tagline: "1....2... Freddy's coming for you!"
+testers:
+  - "Bla1ze"
+  - "mcap"
+vpxVPSId: "4diBoDyZ"
+vpxChecksum: "4C738DA5F67E549705B2CFC05C3D9411"
+vpxNotes: "Download version 1.0"
+applyFixes:
+  - "bass"

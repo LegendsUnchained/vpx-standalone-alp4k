@@ -1,0 +1,16 @@
+---
+tableVPSId: "8La5MBsFtN"
+tableNameOverride: "Dragon Ball: Super Saiyan Edition"
+vpxChecksum: "3AB76D02CFE8FF8386A0CEAF37404627"
+vpxVPSId: "Nvm6jNTSXu"
+backglassBundled: true
+backglassVPSId: "Nvm6jNTSXu"
+backglassChecksum: "1CF141D167E337C37A2E66A3B7C86159"
+backglassNotes: >-
+  Download 'Media Pack.zip' from VPX page and extract 
+  'Dragon Ball Super Saiyan Edition_1.0.directb2s' file
+fps: 60
+tagline: "Fight You? No... I Wanna Kill You."
+enabled: false 
+testers:
+  - "mrandromeda"
