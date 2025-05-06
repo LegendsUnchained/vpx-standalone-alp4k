@@ -13,5 +13,6 @@ testers:
 vpxVPSId: "HAjS8Pm0"
 vpxChecksum: "e41f7ee3ea045db5de713d9ef1a533b2"
 tableNotes: "Download version 1.4"
+enabled: false
 applyFixes:
   - "bass"
