@@ -746,6 +746,7 @@ Links to these products on Amazon are through affiliate links.
 | [Starship Troopers (Sega 1997)](external/vpx-starship) | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :white_check_mark: | 38 |
 | [Stingray (Stern 1977)](external/vpx-stingray) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 47 |
 | [Strange Science (Bally 1986)](external/vpx-strangescience) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 36 |
+| [Stranger Things – Stranger Edition (Original 2018)](external/vpx-strangerthings) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
 | [Street Fighter II, JP's (Gottlieb 1993)](external/vpx-sfii) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Street Fighter 2 JP's Felsir Mod (original 2021)](external/vpx-sfiimod) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Strike (Zaccaria 1978)](external/vpx-strike) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
