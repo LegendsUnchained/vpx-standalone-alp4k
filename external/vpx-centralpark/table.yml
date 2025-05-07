@@ -1,0 +1,20 @@
+---
+tableVPSId: "xU_q53eD"
+vpxVPSId: "lLdJ5r2D"
+vpxChecksum: "356981813d59552b3c07f3bf5133fee9"
+vpxNotes: "CentralPark_FS.vpx.zip"
+backglassVPSId: "MapWXPk9"
+backglassChecksum: "276bace0116e7980484b4c6ebd4cb1f4"
+backglassNotes: "Central Park (Gottlieb 1966) directB2S for tgx release.zip"
+# backglassBundled: true
+# romVPSID:
+# romCheksum:
+# romNotes:
+fps: 46
+testers:
+  - "Boris"
+# tableNotes: ""
+tagline: "7 Bell-ringing features!"
+# applyFixes:
+  #- "bass"
+ 
