@@ -1734,47 +1734,6 @@ Sub OnBallBallCollision(ball1, ball2, velocity)
 	PlaySound("fx_collide"), 0, Csng(velocity) ^2 / 2000, AudioPan(ball1), 0, Pitch(ball1), 0, 0, AudioFade(ball1)
 End Sub
 
- '**********************
-'Flipper Shadows
-'***********************
-Sub RealTime_Timer
-  lfs.RotZ = LeftFlipper.CurrentAngle
-  rfs.RotZ = RightFlipper.CurrentAngle
-BallShadowUpdate
-End Sub
-
-
-Sub BallShadowUpdate()
-Dim BallShadow
-BallShadow = Array (BallShadow1,BallShadow2,BallShadow3,BallShadow4,BallShadow5,BallShadow6)
-    Dim BOT, b
-    BOT = GetBalls
-    ' hide shadow of deleted balls
-    If UBound(BOT)<(tnob-1) Then
-        For b = (UBound(BOT) + 1) to (tnob-1)
-            BallShadow(b).visible = 0
-        Next
-    End If
-    ' exit the Sub if no balls on the table
-    If UBound(BOT) = -1 Then Exit Sub
-    ' render the shadow for each ball
-    For b = 0 to UBound(BOT)
-		BallShadow(b).X = BOT(b).X
-		ballShadow(b).Y = BOT(b).Y + 10                       
-        If BOT(b).Z > 20 and BOT(b).Z < 200 Then
-            BallShadow(b).visible = 1
-        Else
-            BallShadow(b).visible = 0
-        End If
-if BOT(b).z > 30 Then 
-ballShadow(b).height = BOT(b).Z - 20
-ballShadow(b).opacity = 110
-Else
-ballShadow(b).height = BOT(b).Z - 24
-ballShadow(b).opacity = 90
-End If
-    Next	
-End Sub
 
 Sub BallHitSound(dummy):PlaySound "ball_bounce":End Sub
 
