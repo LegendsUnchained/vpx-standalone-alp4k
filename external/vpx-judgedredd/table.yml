@@ -1,0 +1,17 @@
+---
+backglassVPSId: "iv6IrMbzGi"
+backglassChecksum: "B6C526ACCB90CDD5072B9CEB4609C36B"
+backglassNotes: "Download version v2.1"
+fps: 53
+romVPSId: "HHn8zD6O"
+romChecksum: "9B34563DAC437408DFB6753965CB5723"
+romNotes: "Download jd_l1"
+tableVPSId: "aGzQHF72"
+tagline: "I never broke the law, I AM THE LAW!"
+testers:
+  - "Bla1ze"
+vpxVPSId: "wJZPSTmW"
+vpxChecksum: "410354B7DB1C0A9D3B579770B5E29332"
+vpxNotes: "Download version 3.1"
+applyFixes:
+  - "bass"
