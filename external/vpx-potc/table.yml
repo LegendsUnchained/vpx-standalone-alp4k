@@ -1,0 +1,16 @@
+---
+backglassBundled: "true"
+backglassNotes: "Wizard will install backglass"
+backglassChecksum: "68301E32D51C994075C2BA0BAC85D419"
+fps: 60
+romVPSId: "PRebrQRQ"
+romChecksum: "7F2C8108D34A861AA565B70377ADFBDF"
+tableVPSId: "fhehIu6i"
+tagline: "But.. why is the rum all gone?"
+testers:
+  - "Bla1ze"
+  - "CoffeeAtJoes"
+vpxVPSId: "rOx6ED7h"
+vpxChecksum: "E5579122D8F31D188FFF65906BFBDF24"
+applyFixes:
+  - "bass"
