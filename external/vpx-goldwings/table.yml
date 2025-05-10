@@ -3,7 +3,7 @@ backglassVPSId: "tBQwi-1k1g"
 backglassChecksum: "2AE9CA443B95F4BE421918AEDDB9D4F0"
 backglassNotes: "Download Gold Wings (Gottlieb 1986).rar"
 fps: 60
-romVPSIdromUrlOverride: "https://pinballnirvana.com/forums/resources/goldwing.1883/"
+romUrlOverride: "https://pinballnirvana.com/forums/resources/goldwing.1883/"
 romChecksum: "BA95F01EEFFEC739E118969AF1EC4D98"
 romNotes: "Download goldwing"
 tableVPSId: "on3VViv5"
