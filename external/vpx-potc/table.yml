@@ -7,12 +7,12 @@ romVPSId: "PRebrQRQ"
 romNotes: "Download potc_600as"
 romChecksum: "7F2C8108D34A861AA565B70377ADFBDF"
 tableVPSId: "fhehIu6i"
-tableNotes: "Download Pirates of the Caribbean (Stern 2006)_Bigus(MOD) 1.1"
 tagline: "But.. why is the rum all gone?"
 testers:
   - "Bla1ze"
   - "CoffeeAtJoes"
 vpxVPSId: "rOx6ED7h"
 vpxChecksum: "E5579122D8F31D188FFF65906BFBDF24"
+vpxNotes: "Download Pirates of the Caribbean (Stern 2006)_Bigus(MOD) 1.1"
 applyFixes:
   - "bass"
