@@ -2,13 +2,13 @@
 backglassBundled: true
 backglassVPSId: "oZhySmKn_A"
 backglassNotes: "Included with rom download"
-backglassChecksum: "030E9F2BFF90D21C40789C704B1521E0"
+backglassChecksum: "8D3A7ACC6E81CDC08766A0F6AB319049"
 fps: 60
 tableVPSId: "duaA4qYH"
 tagline: "PLAY BALL!"
 testers:
   - "evilwraith"
 vpxVPSId: "oZhySmKn_A"
-vpxChecksum: "8D3A7ACC6E81CDC08766A0F6AB319049"
+vpxChecksum: "030E9F2BFF90D21C40789C704B1521E0"
 applyFixes:
   - "bass"
