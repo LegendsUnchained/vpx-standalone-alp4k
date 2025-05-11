@@ -17,4 +17,8 @@ testers:
   - "OminousOsie"
 vpxchecksum: "f89b694a79c893d93251279ddae39b1e"
 vpxVPSId: "VG0a5Acwiy"
+<<<<<<< HEAD
 enabled: false # Osie: Cant handle .rar files yet
+=======
+enabled: false # Osie: Cant handle .rar files yet
+>>>>>>> parent of 652fd51b (Update table.yml)
