@@ -7,7 +7,7 @@ tableVPSId: "_kvNlmSu"
 tagline: "Your wish is my command!"
 romChecksum: "EEEE91C2C253496C61971C9B6600AD90"
 romUrlOverride: "https://vpuniverse.com/files/file/1184-genie/"
-romVersionOverride "1"
+romVersionOverride: "1"
 testers:
   - "evilwraith"
 vpxVPSId: "w2f18S9a"
