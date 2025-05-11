@@ -1,15 +1,17 @@
 ---
-backglassVPSId: "0_nir8w6ie"
-backglassChecksum: "C6EA68E98E6EC83B1C56F10BAAEA6AF3"
-backglassNotes: >-
-  Download 'The Fifth Element.directb2s' from the 
-  'B2S FOR NON-PUPPACK USERS' folder
-backglassBundled: true
+backglassAuthorsOverride:
+  - ""
+pupChecksum: "0A504BB017D02E82489F1488CCD552DA"
+pupFileUrl: >-
+  https://mega.nz/folder/2iZTwSAK#oaGO_A-5MKVg70VPPgAg5A/folder/CnoQ0KiC
+pupRequired: true
+pupVersion: "5th_Element.zip"
 fps: 60
 tableVPSId: "19gVKHrB8N"
 tagline: "Anybody Else Want To Negotiate?"
 testers:
   - "Mox"
+  - "mrandromeda"
 vpxVPSId: "0_nir8w6ie"
 vpxChecksum: "91F58A30E44665A5B3B48A4E982EC637"
 tableNotes: >-
