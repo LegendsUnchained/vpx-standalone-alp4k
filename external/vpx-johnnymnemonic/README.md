@@ -26,6 +26,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Copy the contents of this repo folder to your USB drive
 - Add your personalized launcher.elf and rename it to `vpx-johnnymnemonic.elf`
 - Download the table version listed above, extract (if necessary) and copy them into `vpx-johnnymnemonic`
+- Copy `backglass.png` to `vpx-johnnymnemonic`
 - Rom file (FILENAME.zip) stays in zip folder, place zip file in `vpx-johnnymnemonic/pinmame/roms`
 - Make sure `(.vpx)` and `(.ini)` are all named the same.
 - Glove forward and back are set to the left and right nudge buttons.
