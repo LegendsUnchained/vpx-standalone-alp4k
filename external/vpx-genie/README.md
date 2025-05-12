@@ -2,9 +2,9 @@
 
 ![Table Preview](../../images/vpx-genie.jpg)
 
-Authors: [bord](https://vpuniverse.com/profile/9265-bord/)  
+Authors: [Bigus1](https://www.vpforums.org/index.php?app=core&module=search&do=user_activity&search_app=downloads&mid=107629)  
 Version: 2.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/8711-genie-gottlieb-1979/)
+Download: [VP Universe](https://www.vpforums.org/index.php?app=downloads&showfile=143)
 
 DirectB2S
 
@@ -13,8 +13,8 @@ Download: [VPUniverse](https://vpuniverse.com/files/file/3053-genie-gottlieb-197
 
 ROM
 
-Download Name: -NEW FIXED ROMS for VPinMAME v3.6.0-963 BETA -FIX.zip  
-Download: [Pinball Nirvana](https://pinballnirvana.com/forums/resources/new-fixed-roms-for-vpinmame-v3-6-0-963-beta.8379/)
+Download Name: genie.zip  
+Download: [VP Universe](https://vpuniverse.com/files/file/1184-genie/)
 
 Tested by: evilwraith
 
@@ -32,8 +32,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Add your personalized launcher.elf and rename it to vpx-genie.elf
 - Download the table and directb2s listed above, extract (if necessary) and copy them to external/vpx-genie
 - Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
-- Unzip -NEW FIXED ROMS for VPinMAME v3.6.0-963 BETA -FIX.zip from the ROM download link
-- Open the unzipped folder. The ROM is in the Gottlieb_Sys1_newroms folder
 - Copy the genie.zip rom file to vpx-genie\pinmame\roms (Do not unzip)!
 - Dream of Genie!
 
