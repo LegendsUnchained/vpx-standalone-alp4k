@@ -1,0 +1,20 @@
+---
+backglassVPSId: "tBQwi-1k1g"
+backglassChecksum: "2AE9CA443B95F4BE421918AEDDB9D4F0"
+backglassNotes: "Download Gold Wings (Gottlieb 1986).rar"
+fps: 60
+romUrlOverride: "https://pinballnirvana.com/forums/resources/goldwing.1883/"
+romChecksum: "BA95F01EEFFEC739E118969AF1EC4D98"
+romNotes: "Download goldwing"
+romVersionOverride: "goldwing.zip"
+tableVPSId: "on3VViv5"
+tagline: "Top Gun but if you bought it on TEMU"
+testers:
+  - "Bla1ze"
+  - "CoffeeAtJoes"
+  - "kaoticBPR"
+vpxVPSId: "eIzj9aFm1H"
+vpxChecksum: "7FF1EB65AA7B21EC657AD32731BF2521"
+vpxNotes: "Download Gold Wings (Gottlieb 1986)_Bigus(MOD) 1.1"
+applyFixes:
+  - "bass"
