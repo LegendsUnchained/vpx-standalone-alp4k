@@ -38,6 +38,15 @@ Const BallSize = 50
 Const BallMass = 1.7
 Const FlexDMDHighQuality = True
 
+'****** PuP Variables ******
+
+Dim usePUP: Dim cPuPPack: Dim PuPlayer: Dim PUPStatus: PUPStatus=false ' dont edit this line!!!
+
+'*************************** PuP Settings for this table ********************************
+
+usePUP   = True               ' enable Pinup Player functions for this table
+cPuPPack = "5th_Element"    ' name of the PuP-Pack / PuPVideos folder for this table
+
 '/////////////////////////////  LOAD CORE.VBS  ////////////////////////////
 
 LoadCoreFiles
@@ -49,6 +58,18 @@ Sub LoadCoreFiles
     ExecuteGlobal GetTextFile("controller.vbs")
     If Err Then MsgBox "Can't open controller.vbs"
     On Error Goto 0
+
+    If usePUP=true then
+        ' Check if puppack is installed
+        Dim fso
+        Set fso = CreateObject("Scripting.FileSystemObject")
+        If (fso.FolderExists(".\\pupvideos\\" & cPuPPack)) Then
+            B2SOff=True
+        Else
+            usePUP=false
+            PUPStatus=true
+        End If
+    End If
 End Sub
 
 '/////////////////////////////  CONSTANTS AND GLOBAL VARIABLES  ////////////////////////////
@@ -56,7 +77,7 @@ End Sub
 Const TNOB = 4 'Total number of balls.
 Const MaxVel = 45 'Maximum ball velocity: lower is slower.
 Const VolumeDial = 0.8 'Sound volume.
-Const SongVolume = 0.8 'Music volume.
+Const SongVolume = 0.6 'Music volume.
 
 Const cGameName = "5th_Element"
 Const B2STableName = "The Fifth Element"
@@ -87,7 +108,7 @@ EnableBallControl = False
 Dim UseFlexDMD
 
 If Fluffy.ShowDT = True Then
-    UseFlexDMD = False
+    UseFlexDMD = True
 Else
     UseFlexDMD = True
 End If
@@ -210,21 +231,13 @@ Dim AUTOPLUNGER
 Dim MAGNET
 Dim TURNTABLE_DISC
 
-'****** PuP Variables ******
-
-Dim usePUP: Dim cPuPPack: Dim PuPlayer: Dim PUPStatus: PUPStatus=false ' dont edit this line!!!
-
-'*************************** PuP Settings for this table ********************************
-
-usePUP   = false               ' enable Pinup Player functions for this table
-cPuPPack = "5th_Element"    ' name of the PuP-Pack / PuPVideos folder for this table
-
 '//////////////////// PINUP PLAYER: STARTUP & CONTROL SECTION //////////////////////////
 
 ' This is used for the startup and control of Pinup Player
 
-Sub PuPStart(cPuPPack)
+Sub PuPStart()
     If PUPStatus=true then Exit Sub
+
     If usePUP=true then
         Set PuPlayer = CreateObject("PinUpPlayer.PinDisplay")
         If PuPlayer is Nothing Then
@@ -237,14 +250,89 @@ Sub PuPStart(cPuPPack)
     End If
 End Sub
 
+Function GetRandomSong(playlist)
+    Dim trkpik
+    select case playlist
+        case "Music"
+        	trkpik=RndNbr(9)
+            select case trkpik
+                case 1 : GetRandomSong = playlist & "/0-Diva-Dance.mp3"
+                case 2 : GetRandomSong = playlist & "/1.mp3"
+                case 3 : GetRandomSong = playlist & "/2.mp3"
+                case 4 : GetRandomSong = playlist & "/3.mp3"
+                case 5 : GetRandomSong = playlist & "/4.mp3"
+                case 6 : GetRandomSong = playlist & "/5-Intro.mp3"
+                case 7 : GetRandomSong = playlist & "/6.mp3"
+                case 8 : GetRandomSong = playlist & "/7-GameOver.mp3"
+                case 9 : GetRandomSong = playlist & "/8.mp3"
+            end Select
+    end select
+End Function
+
+Sub PlayPupSong(name)
+    If bMusicOn Then
+        If Song <> name Then
+            Song =  "./pupvideos/" & cPuPPack & "/" & name
+            PlayMusic Song, SongVolume
+        End If
+    End If
+End Sub
+
+Sub LowerPupSong()
+    If Song <> "" Then
+        MusicVolume = 0
+    End If
+End Sub
+
+Sub RestorePupSong()
+    If Song <> "" Then
+        MusicVolume = SongVolume
+    End If
+End Sub
+
+Sub StopPupSong()
+    EndMusic
+    Song = ""
+End Sub
+
+Sub Fluffy_MusicDone
+    If Not usePUP Then Exit Sub
+    If Song <> "" Then
+        PlayMusic Song, SongVolume
+    End If
+End Sub
+
+
 Sub pupevent(EventNum)
     if (usePUP=false or PUPStatus=false) then Exit Sub
+
+    'Catch music events
+    Select Case EventNum
+        Case 800
+			' Trigger: 9,1,Music,E800,4,Music,,,1,,,,SetBG,0
+            PlayPupSong GetRandomSong("Music")
+        Case 801
+			' Trigger: 11,1,BallLostMusicStop,E801,4,Blank,Blank7.mp3,,1,,,,SplashResume,0
+            LowerPupSong
+            vpmtimer.addtimer 7000, "RestorePupSong '"
+        Case 808
+			' Trigger: 43,1,KickerLeftMusicStop,E808,4,Blank,Blank7.mp3,,1,,,,SplashResume,0
+            LowerPupSong
+            vpmtimer.addtimer 7000, "RestorePupSong '"
+        Case 803
+            ' Trigger: 25,1,GameOverMusicKill,E803,4,Blank,Blank7.mp3,,2,,,-2,,0
+            StopPupSong
+        Case 816
+			' Trigger: 56,1,ChangeMusic,E816,4,Music,,,1,,,,SetBG,0
+            PlayPupSong GetRandomSong("Music")
+	End Select
+
     PuPlayer.B2SData "E"&EventNum,1  'send event to Pup-Pack
 End Sub
 
 '************ PuP-Pack Startup **************
 
-PuPStart(cPuPPack) 'Check for PuP - If found, then start Pinup Player / PuP-Pack
+PuPStart() 'Check for PuP - If found, then start Pinup Player / PuP-Pack
 
 '******************************************************
 '******  END TABLE SETUP
@@ -1011,7 +1099,7 @@ Sub EndOfBallComplete()
 End Sub
 
 Sub EndOfGame()
-
+	:pupevent 803
     bGameInPLay = False
 
     SolLFlipper False
