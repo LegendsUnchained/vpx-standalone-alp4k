@@ -32,9 +32,9 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`Baywatch`**
+4.  Find and select this table from the dropdown menu: **`Central Park`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *"Baywatch will be right back!"*
+6. *"7 Bell-ringing features!"*
 
 <br>
 
