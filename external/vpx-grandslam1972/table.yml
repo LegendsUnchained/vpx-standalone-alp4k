@@ -12,3 +12,5 @@ vpxVPSId: "oZhySmKn_A"
 vpxChecksum: "030E9F2BFF90D21C40789C704B1521E0"
 applyFixes:
   - "bass"
+tableNotes: >-
+  Note: You might need to use WinRAR to unzip the file, rather then Windows
