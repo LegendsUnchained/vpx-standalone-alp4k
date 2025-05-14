@@ -1,6 +1,6 @@
-# Pirates of the Caribbean (Stern 2006)
+# Big Shot (Gottlieb 1974)
 
-![Table Preview](../../images/vpx-potc.png)
+![Table Preview](../../images/vpx-bigshot.png)
 
 <br>
 
@@ -8,13 +8,12 @@
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 
 <br>
 
 **VPXS 4KP Testers:**
-  - Bla1ze
-  - CoffeeAtJoes
+  - Boris
 
 <br>
 
@@ -33,9 +32,9 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`Pirates of the Caribbean`**
+4.  Find and select this table from the dropdown menu: **`Big Shot`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *"But.. why is the rum all gone?"*
+6. *"Just don’t miss."*
 
 <br>
 
@@ -59,4 +58,3 @@ __*We hope you enjoy!!*__
 <br>
 <br>
 <br>
-

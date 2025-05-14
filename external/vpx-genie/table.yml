@@ -10,6 +10,8 @@ romUrlOverride: "https://vpuniverse.com/files/file/1184-genie/"
 romVersionOverride: "genie"
 testers:
   - "evilwraith"
+  - "CoffeeAtJoes"
+  - "Boris"
 vpxVPSId: "w2f18S9a"
 vpxChecksum: "09FCC93E7317A7E7E36A962F2D09E7C3"
 applyFixes:
