@@ -1,6 +1,6 @@
-# Grand Slam (Gottlieb 1972)
+# Big Shot (Gottlieb 1974)
 
-![Table Preview](../../images/vpx-grandslam1972.jpg)
+![Table Preview](../../images/vpx-bigshot.png)
 
 <br>
 
@@ -8,12 +8,12 @@
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 
 <br>
 
 **VPXS 4KP Testers:**
-  - evilwraith
+  - Boris
 
 <br>
 
