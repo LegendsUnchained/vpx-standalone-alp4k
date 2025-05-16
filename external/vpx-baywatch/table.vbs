@@ -380,7 +380,7 @@ Sub Table1_KeyUp(ByVal keycode)
 End Sub
 
 Plunger1.TimerEnabled = 1
-Plunger1.TimerInterval = 1
+Plunger1.TimerInterval = 100
 
 Sub Plunger1_Timer
     
