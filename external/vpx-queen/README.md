@@ -44,10 +44,6 @@ Minimum VPX Standalone build: 10.8.0-2042-1431983
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive.
-- Add your personalized launcher.elf and rename it to vpx-queen.elf
-- Download the "queen wembley3.5.zip" file and only extract the "Queen show must go on.vpx.vpx" to the vpx-queen folder.
-- Make sure (.vpx) (.vbs) and (.ini) are all named the same.
 - Extract "Queen show must go on.UltraDMD" folder from the zip to the vpx-queen folder.
 - In your vpx-queen folder, create a new folder named music.
 - Extract "wembley" folder from the zip into the music folder you created.

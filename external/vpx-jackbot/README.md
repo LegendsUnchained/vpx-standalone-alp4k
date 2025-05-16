@@ -27,9 +27,4 @@ Minimum VPX Standalone build: 10.8.0-2006-6d603fb
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-jackbot.elf
-- Download the table and directb2s versions listed above, extract them and copy them into the external/vpx-jackbot folder
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
-- Place ROM zip file into vpx-jackbot/pinmame/roms folder. DO NOT UNZIP!
 

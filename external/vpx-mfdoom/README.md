@@ -26,10 +26,6 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 
 ## Instructions
  
-- Copy the contents of this repository folder to your USB drive
-- Place your personalized launcher.elf file on the USB drive and rename it to vpx-mfdoom.elf
-- Download the MF DOOM table package and unzip it. From the MFDOOM package table folder, copy the .vpx table file to your /vpx-mfdoom folder
-- Make sure (.vpx), (.ini) and (.vbs) files are all named the same
 - From the MF DOOM package, navigate to the DMD folder and copy the MFDOOMDMD folder and paste it into your /vpx-mfdoom folder
 	
 	

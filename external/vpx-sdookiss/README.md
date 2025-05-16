@@ -32,10 +32,6 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-sdookiss.elf
-- Download the table & backglass files above, extract them (if necessary) and copy them to the external/vpx-sdookiss folder
 - Place both ROM zips (kiss.zip & kissb.zip) in the /vpx-sdookiss/pinmame/roms folder. (Do not un-zip!)
 - Place the sdookiss folder into the external/vpx-sdookiss/music folder
-- Make sure (.vpx), (.direct2b2s) and (.ini) are all named the same
 - Yes, 'Don't Touch My Ascot" is an actual song performed by KISS!

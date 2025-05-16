@@ -40,10 +40,5 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-robocop.elf
-- Download the table & backglass zips above, extract them and copy them to /external/vpx-robocop folder
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
-- Place the ROM zip (robo_a34.zip) in the vpx-robocop/pinmame/roms folder. (Do not un-zip!)
 - "Thank you for your cooperation. Good night."
 

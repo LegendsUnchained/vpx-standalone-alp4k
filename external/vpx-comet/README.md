@@ -26,9 +26,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-comet.elf
-- Download the table, directb2s, and ROM versions listed above and copy them into this folder
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
-- Place comet_l5.zip in the external/vpx-comet/pinmame/roms folder! *Do Not unzip*
 - "An unforgettable ride, as fast as a comet in space!"

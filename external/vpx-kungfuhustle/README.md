@@ -25,10 +25,5 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-kungfuhustle.elf
-- Download the (.vpx) file and copy/move (Kung Fu Hustle V1.2.vpx) into vpx-kungfuhustle
-- Download the (directb2s) file and copy/move (Kung Fu Hustle (Original) B2S with Full DMD.directb2s) into vpx-kungfuhustle
-- Make sure (.vpx) (.direct2b2s) and (.ini) are all named the same. 
 - Go fire up your Vpin and enjoy!
 - "You may know kung fu... but you're still a fairy." ---Landlady

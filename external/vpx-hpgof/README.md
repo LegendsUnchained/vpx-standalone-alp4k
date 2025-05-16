@@ -42,12 +42,9 @@
 </table>
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-hpgof.elf`
 - Go to the website listed above and scroll down for Harry Potter. **Remember (copy) the password in the sixth column** and click on the Mega link in the previous column and download the `hpgof52.rar` archive.
 - Extract both archives from `hpgof52.rar` and enter the password when requested.
 - Extract from the archive `hpgf-052-DOF.zip` the table and copy it into `vpx-hpgof`
-- Make sure `(.vpx)` `(.vbs)` and `(.ini)` are all named the same.
 - Create the folder `pupvideos`.
 - Extract the archive `hpgof46.zip` and place the `hpgof` folder in `pupvideos`.
 - Unzip the `use_these_pup_files.zip` and place them inside the `pupvideos/hpgof` folder, and overwrite files if prompted.

@@ -22,7 +22,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-trailerparkboys.elf
-- Download the table and directb2s versions listed above and copy them into this folder
 - Here's what I know, Rick. If you love something, let it go. If it comes back to you, you own it. If it doesn't, you don't own it.

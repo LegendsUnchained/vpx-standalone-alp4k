@@ -25,9 +25,6 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-pabstcancrusher.elf
-- Download the table and directb2s versions listed above and copy them into this folder
 - Rename the included "Music Folder" to Music and move the contents to vpx-pabstcancrusher
 - Craft beer? Not here! 🍻
 

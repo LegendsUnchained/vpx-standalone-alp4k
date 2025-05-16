@@ -25,8 +25,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 ---
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-yamanobori.elf
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-yamanobori
-- Make sure (.vpx), (.directb2s), (.ini) files are all named the same
 - This is NOT a traditional pinball game. Use your right flipper to move forward, use your left flipper to move back. To see how to play [watch this](https://www.youtube.com/watch?v=n1Z6CPgGka0)

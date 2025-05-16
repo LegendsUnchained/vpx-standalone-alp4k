@@ -26,8 +26,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Add your personalized launcher.elf and rename it to vpx-playboy1978.elf
-- Download the vpx and directb2s files above, extract (if necessary) and copy to /external/vpx-playboy1978
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
-- Place ROM zip file into vpx-playboy1978/pinmame/roms folder. DO NOT UNZIP!
 - Party like Hef. 👯‍♂️

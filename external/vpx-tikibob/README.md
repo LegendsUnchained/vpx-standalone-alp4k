@@ -31,10 +31,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-tikibob.elf
-- Download the table and directb2s versions listed above, extract and copy them into this folder
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
-- Place cheetah.zip ROM zip in the external/vpx-tikibob/pinmame/roms folder. *Do Not unzip*!
 - Place downloaded music in the external/vpx-tikibob/Music/Tiki folder
 - "Enjoy the beautiful beaches and fun at the atomic beach party"

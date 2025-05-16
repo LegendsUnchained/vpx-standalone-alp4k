@@ -26,11 +26,6 @@
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-sesamestreet.elf`
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-sesamestreet`
 - Select/Copy `SesameStreet` Folder and move to `vpx-sesamestreet/music`
-- Rom file (playboyb.zip) stays in zip folder, place zip file in `vpx-sesamestreet/pinmame/roms`
-- Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same.
 - Oscar the Grouch: "Now leave me alone and get lost!"
 

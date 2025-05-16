@@ -31,10 +31,5 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-carhop.elf
-- Download the table and directb2s versions listed above, extract and copy them to external/vpx-carhop
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
-- Place ROM zip file (carhop) into vpx-carhop/pinmame/roms folder. DO NOT UNZIP!
 - Note: The audio on this game starts up scratchy, it goes away as soon as you start playing. It's just the ROM.
 - Hop on over to the Car Hop! - 🚙

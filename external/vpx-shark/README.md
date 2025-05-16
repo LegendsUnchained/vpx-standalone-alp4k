@@ -31,9 +31,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy this repo folder into the "external" folder on your USB drive
-- Add your personalized launcher.elf and rename it to vpx-shark.elf
-- Download the table and directb2s versions listed above, extract them (if necessary) and copy them to external/vpx-shark
-- Make sure any (.vpx), (.directb2s), (.vbs), and (.ini) files are all named the same
-- Download the ROM file listed above and place it in vpx-shark/pinmame/roms. Do not unzip! 
 - "Fast as a shark, he'll cut out of the dark!" -Accept 'Fast As A Shark'

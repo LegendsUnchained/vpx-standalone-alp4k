@@ -33,10 +33,5 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-thewarriors.elf
-- Download the (vpx) zip above, extract and copy (.vpx) and (.b2s) into /external/vpx-thewarriors
-- (sharkt.zip) ROM stays in zip folder, place zip file in vpx-thewarriors/pinmame/roms
 - Extract music.zip and place (music) folder in vpx-thewarriors
-- Make sure (.vpx), (.directb2s), (.vbs) and (.ini) files are all named the same
 - [clicking beer bottles together] Waaaarrrrrriiiorsss, come out to pla-ay! - Luther

@@ -25,11 +25,6 @@
 ---
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-1812.elf
-- Download the table and directb2s versions listed above and copy them into this folder
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-- Place ROM zip file into vpx-1812/pinmame/roms folder. DO NOT UNZIP!
 
 ***DO NOT RENAME Class1812.vbs***
 

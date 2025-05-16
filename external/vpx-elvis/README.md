@@ -41,9 +41,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-elvis.elf
-- Download the table and directb2s files and copy them into the vpx-elvis folder
-- Download the ROM file and save it under vpx-elvis/pinmame/roms (do not unzip the file!)
-- Optional: if you choose to download the colored DMD option, download the cRZ file and place it under vpx-elvis/pinmame/altcolor/Elvis folder
 - You ain't nothing but a hound dog!

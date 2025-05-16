@@ -22,10 +22,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-oldchicago.elf`
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `external/vpx-oldchicago` folder
-- Make sure `(.vpx)`, `(.directb2s)` `(.vbs)` and `(.ini)` are all named the same.
 - When game is not in progress, hold down the left flipper to bring up the options menu. Left flipper selects item, right flipper changes option.
 
 ---

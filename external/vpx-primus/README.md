@@ -25,8 +25,4 @@
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-primus.elf`
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `external/vpx-primus`
-- Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same. Do NOT rename `VPReg.ini` file
 - Add a 'music' folder in `external/vpx-primus`, and then copy paste the 'primus' folder from the 'Add Folder to Music' folder in 'Primus (Stern 2018) 1.21 Mod.zip' there.

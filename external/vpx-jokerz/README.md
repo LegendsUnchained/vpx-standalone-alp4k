@@ -35,8 +35,5 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-jokerz.elf
-- Download the table, ROM and directb2s versions listed above and copy them into this folder
 - Note: On initial load, you may have to restart the table once or twice. It will be fine after that.
 - Jokerz! IZ WILD! 🃏

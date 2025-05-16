@@ -31,9 +31,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-safecracker.elf
-- Download the table and directb2s versions listed above, extract them and copy them into the external/vpx-safecracker folder
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
-- Place sc_18n11.zip and sc_18s11.zip roms in the external/vpx-safecracker/pinmame/roms folder. *Do Not unzip*!
 - "Crack the safe, get rich, before time runs out!"

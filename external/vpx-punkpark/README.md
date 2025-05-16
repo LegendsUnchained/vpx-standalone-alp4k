@@ -42,10 +42,6 @@
 </table>
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-punkpark.elf`
-- Download `PunkPark_v1.02.vpx` listed above and it into `vpx-punkpark`
-- Make sure `(.vpx)` `(.vbs)` and `(.ini)` are all named the same.
 - Download `Media And PupPack.zip` from the same link listed above.
 - Create the folder `pupvideos` within the `external/vpx-punkpark`
 - Extract the folder `Punk_Park` zip, and put it in the `pupvideos`

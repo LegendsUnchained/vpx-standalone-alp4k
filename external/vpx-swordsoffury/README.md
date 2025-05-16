@@ -27,10 +27,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-swordsoffury.elf
-- Download the table and directb2s versions listed above, extract and copy them into this folder
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
-- Place swrds_l2.zip ROM in the external/vpx-swordsoffury/pinmame/roms folder. *Do Not Uunzip*!
 - "LionMan!!!! This is an absolute Williams Classic!"
 

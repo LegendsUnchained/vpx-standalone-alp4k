@@ -26,10 +26,5 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-papasmurf.elf
-- Download and extract the (.zip) file and copy/move (Papa_Smurf_1.2.0.vpx) into vpx-papasmurf
-- Copy/move (Papa_Smurf_1.2.0.directb2s) into vpx-papasmurf
-- Make sure (.vpx) (.direct2b2s) and (.ini) are all named the same. 
 - Go fire up your Vpin and enjoy!
 - "It doesn't matter where you came from... What matters is who you choose to be." ---Papa Smurf

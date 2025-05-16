@@ -36,8 +36,5 @@ Minimum VPX Standalone build: 10.8.0-2026-3b68d7c
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-junkyard.elf
-- Download the table, ROM and directb2s versions listed above and copy them into this folder
 - "Don't Make Me Hungry. You Wouldn't Like Me When I'm Hungry." 🐾
 

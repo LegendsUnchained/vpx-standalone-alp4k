@@ -34,11 +34,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-highlander.elf
-- Download the table and directb2s listed above, extract (if necessary) and copy them to external/vpx-highlander
-- Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
 - Download and Unzip (music.zip) Copy (music) folder to vpx-highlander
-- Rom file (stest.zip) stays in zip folder, place zip file in vpx-highlander/pinmame/roms
 - "There can be only one!" - Connor MacLeod
 

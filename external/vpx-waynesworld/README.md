@@ -37,11 +37,5 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-waynesworld.elf
-- Download the table zip above, extract it and copy (Wayne's World1.1.vpx) into vpx-waynesworld
-- Select (Wayne's World1.1.directb2s) and copy into vpx-waynesworld
-- ROM file (radcl_l1.zip) stays in zip folder, place zip file in vpx-waynesworld/pinmame/roms
-- Make sure (.vpx) (.direct2b2s) and (.ini) are all named the same
 - Place Music Folder into vpx-waynesworld
 - "Hundreds of VPin tables on the ALP4K? On a single USB?"  "We're not worthy... we're not worthy!" ---Wayne and Garth

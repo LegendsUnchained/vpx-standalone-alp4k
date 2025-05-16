@@ -34,8 +34,3 @@ Minimum VPX Standalone build: 10.8.0-2042-1431983
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-lostworld.elf
-- Download the table & backglass above, extract (if necessary) and copy to external/vpx-lostworld
-- Place the ROM zip (lostwrld.zip) in the /vpx-lostworld/pinmame/roms folder. (Do not un-zip!)
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same

@@ -25,8 +25,3 @@
 ---
 
 ## Instructions
-- Copy the **vpx-arena1C3S** folder to the `external` directory of your USB drive
-- Add your personalized launcher.elf and rename it to **vpx-arena1C3S**
-- Download and extract the **VPX** and **DIRECTB2S** files and copy it them to the **vpx-arena1C3S** folder
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-- Download the **ROM** version listed above and copy it into `\vpx-arena1C3S\pinmame\roms` (DO NOT UNZIP)

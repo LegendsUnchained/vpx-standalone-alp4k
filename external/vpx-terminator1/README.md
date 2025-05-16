@@ -25,7 +25,3 @@ Minimum VPX Standalone build: 10.8.0-2042-1431983
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-terminator1.elf`
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `external/vpx-terminator1`
-- Make sure `(.vpx)` `(.direct2b2s)` and `(.ini)` are all named the same.

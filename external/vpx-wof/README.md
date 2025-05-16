@@ -25,9 +25,4 @@
 ---
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-wof.elf
-- Download the table and directb2s versions listed above and copy them into this folder.
-- The ROM zip gets copied to pinmame/roms (do not unzip).
-- Rename the .directb2s to match the vpx, ini and vbs files.
 - Would you like to buy a vowel?

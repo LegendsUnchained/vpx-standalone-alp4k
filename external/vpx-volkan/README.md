@@ -28,9 +28,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-volkan.elf
-- Download (.vpx.zip) file, extract and copy/move (.vpx) into vpx-volkan
-- Download (B2S.zip) file, extract and copy/move (.directb2s) into vpx-volkan
-- Make sure (.vpx) (.direct2b2s) and (.ini) are all named the same. 
 

@@ -25,8 +25,3 @@
 ---
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-ballygameshow.elf
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-ballygameshow
-- Make sure the (.vpx), (.directb2s) and (.ini) files are all named the "exact" same
-- Place ROM (gs_lu4.zip) in the external/vpx-ballygameshow/pinmame/roms folder. Do Not unzip!

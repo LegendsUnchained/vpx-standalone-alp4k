@@ -28,11 +28,6 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-creaturebw.elf
-- Download the table version listed above and copy the vpx and b2s file into this folder
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-- Place ROM file in vpx-creaturebw/pinmame/roms - DO NOT UNZIP!
 - Unzip Altsound 2.0, open unzipped folder and place the folder cftbl_l4 in vpx-creaturebw/pimame/altsound
 - "Of all the lagoons, in all the world, she came into mine."
 

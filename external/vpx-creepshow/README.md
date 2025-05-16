@@ -48,11 +48,6 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-creepshow.elf
-- Download the table and directb2s zips above, extract (if necessary) and copy into /external/vpx-creepshow
 - Download and unzip the installation zip. Copy (Music) into /external/vpx-creepshow
-- Download the rom (tftc_400.zip) stays in zip folder, place zip file in vpx-creepshow/pinmame/roms
-- Make sure (.vpx), (.directb2s), (.vbs) and (.ini) files are all named the same
 - "Meteor shit!" - Jordy Verrill 
 

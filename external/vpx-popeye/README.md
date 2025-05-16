@@ -31,10 +31,5 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-popeye.elf
-- Download the table, and directb2s versions listed above, extract and copy them into this folder
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
-- Place ROM zip file into vpx-popeye/pinmame/roms folder. DO NOT UNZIP!
 - Note: While this table largely works great, there is a chance the ball may get stuck at times requiring a relaunch. 
 - "I'm strong to the finish cause I eats me spinach!" :muscle:

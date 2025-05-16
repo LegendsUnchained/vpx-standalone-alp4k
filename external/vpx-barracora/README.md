@@ -25,8 +25,3 @@
 ---
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-barracora.elf
-- Download the table and directb2s versions listed above and copy them into this folder
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
-- Place barra_l1.zip ROM in the external/vpx-barracora/pinmame/roms folder. *Do Not unzip*!

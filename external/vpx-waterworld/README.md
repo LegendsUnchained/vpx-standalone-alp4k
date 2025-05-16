@@ -23,10 +23,5 @@
 ---
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-waterworld.elf`
-- Download the table version listed above, extract (if necessary) and copy them into `vpx-waterworld`
 - Copy `backglass.png` to `vpx-waterworld`
-- Rom file (FILENAME.zip) stays in zip folder, place zip file in `vpx-waterworld/pinmame/roms`
-- Make sure `(.vpx)` and `(.ini)` are all named the same.
 - "You get another chance!"

@@ -25,10 +25,5 @@
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-willyswonderland.elf`
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-willyswonderland`
-- Rom file (FILENAME.zip) stays in zip folder, place zip file in `vpx-willyswonderland/pinmame/roms`
-- Make sure `(.vpx)` `(.direct2b2s)` and `(.ini)` are all named the same.
 - Place `Willy` folder in `vpx-willyswonderland/music`
 - Don't forget to take regular breaks!

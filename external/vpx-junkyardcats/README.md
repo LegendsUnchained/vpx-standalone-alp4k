@@ -28,9 +28,5 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-junkyardcats.elf
-- Download the table (Junkyard Cats_1.07.vpx) and directb2s (Junkyard Cats_1.07 (2 Screen).directB2S) and copy them into vpx-junkyardcats
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - "Join The Cats"
 

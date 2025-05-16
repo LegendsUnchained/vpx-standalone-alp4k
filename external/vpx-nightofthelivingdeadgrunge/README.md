@@ -32,9 +32,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-nightofthelivingdeadgrunge.elf
-- Download the table and directb2s listed above, extract (if necessary) and copy them to external/vpx-nightofthelivingdeadgrunge
-- Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
 - Unzip (NOTLD-68-Music.zip) Copy (Music) folder (Located inside NOTLD-68-Music) to vpx-nightofthelivingdeadgrunge
 - "They're coming to get you, Barbara!" - Johnny

@@ -25,9 +25,4 @@
 ---
 
 ## Instructions
-- Copy the **vpx-agents777** folder to the `external` directory of your USB drive
-- Add your personalized launcher.elf and rename it to **vpx-agents777**
-- Download and extract the **VPX** and **DIRECTB2S** versions listed above and copy them into the **external/vpx-agents777** folder
-- Make sure (.vpx), (.directb2s), (.vbs), and (.ini) files are all named the same
-- Download the **ROM** version listed above and copy it into `\vpx-agents777\pinmame\roms` (DO NOT UNZIP)
 

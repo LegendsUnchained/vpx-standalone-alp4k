@@ -29,11 +29,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-djangounchained.elf
-- Download the table and directb2s listed above, extract (if necessary) and copy them to external/vpx-djangounchained
-- Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
 - Unzip (Django Rom + Music +Altcolor.rar) Copy (music) folder to vpx-djangounchained
-- Rom file (cc_13.zip) stays in zip folder, place zip file in vpx-djangounchained/pinmame/roms
 - "Kill white folks and they pay you for it? What's not to like?" - Django
 

@@ -25,9 +25,4 @@
 ---
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-badgirls.elf`
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-badgirls`
-- Rom file (FILENAME.zip) stays in zip folder, place zip file in `vpx-badgirls/pinmame/roms`
-- Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same.
 - So Bad It's Good!

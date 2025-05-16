@@ -25,10 +25,6 @@
 ---
 
 ## Instructions
-- Copy this repo folder into the "external" folder on your USB drive
-- Add your personalized launcher.elf and rename it to vpx-alice1948.elf
-- Download the table and directb2s versions listed above, extract them (if necessary) and copy them to external/vpx-alice1948
-- Make sure any (.vpx), (.directb2s), and (.ini) files are all named the same
 
 ## Notes
 - Push right on the control panel to load a ball from the hopper.

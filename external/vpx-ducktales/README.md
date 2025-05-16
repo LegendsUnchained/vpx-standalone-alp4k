@@ -23,7 +23,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-ducktales
-- Download the table zip and copy the vpx and b2s files into this folder
 - "Life is like a hurricane, here in Duckburg / Racecars, lasers, aeroplanes, it's a duck-blur!"

@@ -35,11 +35,5 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-thelaststarfighter.elf
-- Download the table zip above, extract it and copy .vpx file into /external/vpx-thelaststarfighter
-- Download Last Starfighter, The (Taito, 1983) v1.01.zip, unzip it and copy .directB2S into /external/vpx-thelaststarfighter
 - Open V1.01 and copy "LStarfighter" folder into "music" folder on your USB drive
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
-- Rom file (fireactd.zip) stays in zip folder, place zip file in vpx-thelaststarfighter/pinmame/roms folder
 - "Greetings, Starfighter. You have been recruited by the Star League to defend the Frontier against Xur and the Ko-dan Armada." ---Centauri

@@ -30,9 +30,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-monopoly.elf
-- Download the table and backglass zips above, extract them and copy them to the /vpx-monopoly folder
-- Place the ROM zip (monopoly.zip) in the external/vpx-monopoly/pinmame/roms folder. (do not un-zip!)
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Now destroying families and friendships in the arcade! NO FLIPPING TABLES!

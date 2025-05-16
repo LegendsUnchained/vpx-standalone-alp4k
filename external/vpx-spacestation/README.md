@@ -27,9 +27,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-spacestation.elf
-- Download the table and directb2s versions listed above and copy them into this folder
-- Make sure (.vpx), and (.directb2s) files are all named the same
-- Place spstn_l5.zip ROM in the external/vpx-spacestation/pinmame/roms folder. *Do Not unzip*!
 - "Complete your missions on the space station"

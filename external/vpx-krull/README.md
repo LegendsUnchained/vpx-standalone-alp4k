@@ -31,9 +31,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-krull.elf
-- Download the table and directb2s versions listed above, extract them (if necessary) and copy them into vpx-krull
-- Rom file (krull.zip) stays in zip folder, place zip file in vpx-krull/pinmame/roms
-- Make sure (.vpx) (.direct2b2s) (.vbs) and (.ini) are all named the same
 - "These are the sands of my life. Accept them and the spider will have no power to harm you." ---Widow of the Web

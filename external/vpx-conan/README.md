@@ -32,11 +32,6 @@ Minimum VPX Standalone build: 10.8.0-2042-1431983
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-conan.elf
-- Download the table and directb2s listed above (make sure you use the file with the correct version. Check version number above), extract (if necessary) and copy to external/vpx-conan
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Copy the Conan folder containing .off files into vpx-conan/Music
-- The ROM zip file gets copied to vpx-conan/pinmame/roms (Do not unzip)
 - Conan, what is best in life?
 

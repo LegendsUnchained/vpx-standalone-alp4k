@@ -31,10 +31,6 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-thething.elf
-- Rom file (ali.zip) stays in zip folder, place zip file in vpx-thething/pinmame/roms
-- Download the table and directb2s versions listed above unzip them and copy them into vpx-thething
 - Download the Medias Pack The Thing.rar and unzip it.
 - Open the Music file and copy both (.mp3) files into the music file on your USB drive.
 - Go fire up your Vpin turn down the lights and get ready for a new vision in terror!

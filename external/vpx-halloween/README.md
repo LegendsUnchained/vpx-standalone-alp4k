@@ -34,9 +34,5 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-halloween.elf
-- Download the table, ROM and directb2s versions listed above and copy them into this folder.
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - For the music files, download them at the table download link, and create a music folder. Unzip the music files and place the Halloween folder inside the music folder you created. The structure should look like this: "vpx-halloween/music/Hallowen"
 - You're Talking About Him As If He Were A Human Being. That Part Of Him Died Years Ago! 🎃

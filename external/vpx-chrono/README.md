@@ -31,9 +31,5 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-chrono.elf
-- Download the table & backglass zips above, extract them and copy them to the external/vpx-chrono folder
-- Make sure (.vpx) (.direct2b2s) and (.ini) are all named the same
 - "Aquire The Ultimate Weapons! Defeat Lavos! Save The Future!"
 

@@ -32,8 +32,4 @@ Minimum VPX Standalone build: 10.8.0-2022-f17c1a3
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-pulpfiction.elf
-- Download the zip file listed above and extract it in the vpx-pulpfiction directory (it will create the packpulp3.1 directory)
-- From the packpulp3.1 directory, move the table (.vpx) and backglass (.directb2s) to the vpx-pulpfiction directory
 - Enjoy the Royale with Cheese!

@@ -29,9 +29,5 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-horrorburg.elf
-- Download the table and directb2s versions listed above and copy them into vpx-horrorburg
-- Make sure (.vpx) (.direct2b2s) and (.ini) are all named the same. 
 - "Do you like Scary Vpin Tables?" --Ghostface
 

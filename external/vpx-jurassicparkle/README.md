@@ -43,11 +43,6 @@
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-jurassicparkle.elf`
-- Download the table file `Pack Jurassic Park Pro Le 4.02.zip` version listed above.
-- Extract from the zip the table `Jurassic Park Pro Le.vpx` and copy it into `vpx-jurassicparkle`
-- Make sure `(.vpx)` `(.vbs)` and `(.ini)` are all named the same.
 - Create the folder `pupvideos`.
 - Download the puppack `PUPPACK jurassic Pro.zip` from the same table link listed above.
 - Extract from the zip the folder `jurassic Pro` and place this folder in `pupvideos`.

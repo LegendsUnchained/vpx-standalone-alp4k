@@ -23,10 +23,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-mastersoftheuniverse.elf
-- Download the table zip (which also contains directb2s), extract and copy these two files to external/vpx-mastersoftheuniverse
-- Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
 - MUSIC: Also in the table zip, there is a "Music heman" folder. Extract, then rename this folder to "Music" and copy the contents to external/vpx-mastersoftheuniverse
 - MUSIC: The Music folder will then look like this: external/vpx-mastersoftheuniverse/Music (music files in Music)
 - "By the power of Grayskull, I have the power!" - He-Man transforming

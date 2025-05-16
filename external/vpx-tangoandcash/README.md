@@ -28,10 +28,5 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-tangoandcash.elf
-- Download the table and directb2s versions listed above, extract them (if necessary) and copy them into vpx-tangoandcash
-- Rom file (barra_l1.zip) stays in zip folder, place zip file in vpx-tangoandcash/pinmame/roms
-- Make sure (.vpx) (.direct2b2s) (.vbs) and (.ini) are all named the same. 
 - Go fire up your Vpin and enjoy!
 - "Rambo? Rambo's a p*ssy!" ---Ray Tango     "I don't know about you, but I have an aversion to getting F.U.B.A.R..." ---Gabriel Cash 

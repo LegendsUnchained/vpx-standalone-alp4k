@@ -24,9 +24,4 @@
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-devilsdare.elf`
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `external/vpx-devilsdare`
-- Place ROM zip file into `vpx-devilsdare/pinmame/roms` folder. DO NOT UNZIP!
-- Make sure `(.vpx)`, `(.directb2s)` and `(.ini)` are all named the same.
 

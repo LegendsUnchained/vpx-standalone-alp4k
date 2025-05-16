@@ -23,10 +23,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-depechemode.elf
-- Download the table and directb2s listed above, extract (if necessary) and copy them to external/vpx-depechemode
 - Select/Copy Music Folder (D.Mode) and move to external/vpx-depechemode/music
-- Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
-- Use the rom inside Desktop Rom folder. The ROM zip file gets copied to vpx-depechemode/pinmame/roms (Do not unzip)
 - "Here is a plea from my heart to you. Nobody knows me as well as you do." - Depeche Mode

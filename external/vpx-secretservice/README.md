@@ -24,9 +24,4 @@
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-secretservice.elf
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-secretservice
-- Make sure the (.vpx), (.directb2s), and (.ini) files are all named the "exact" same
-- Place ssvc_a26.zip in the external/vpx-secretservice/pinmame/roms folder. *Do Not unzip*
 - "Baby you're the best!"

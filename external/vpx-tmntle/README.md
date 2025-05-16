@@ -24,13 +24,6 @@
 
 ## Instructions
 
-- Copy the contents of this repo folder
-- Download the table and backglass listed above, extract (if necessary)
-- Download the Rom file **DO NOT UNZIP**
-- Open Table manager on your device and select add a table
-- Add the .png,.vpx,.ini,.directb2s and.vbs to the appropriate postions
-- Select add table
-- Once added you can close out and enjoy the table
 
 **Optional**
 - If you want a green dmd, run the table one time, back out and open table manager, on your device navigate to the vpx-tmntle/pinmame/ini folder and open the tmnt_104.ini file. Change red to 127, green to 255 and blue to 0. Save and exit.

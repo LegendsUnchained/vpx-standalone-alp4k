@@ -25,10 +25,6 @@
 ---
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-agraffiti.elf
-- Download the table and directb2s listed above, extract (if necessary) and copy them to external/vpx-agraffiti
-- Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
 - Unzip Audio Files.zip. Copy AG and AGSounds to vpx-agraffiti/Music
 - If you downloaded the soundtrack (AG.ZIP) from Mega: Unzip AG.zip. Copy and Replace AG folder in vpx-agraffiti/Music 
 - Follow directions on VPUniverse if you want music. Otherwise, leave music turned off

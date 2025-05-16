@@ -25,9 +25,4 @@
 ---
 
 ## Instructions
-- Copy the **vpx-aceventura** folder to the `external` directory of your USB drive
-- Add your personalized launcher.elf and rename it to **vpx-aceventura.elf**
-- Download and extract the **VPX** and **DIRECTB2S** files ONLY, and copy them into the **vpx-aceventura** folder
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same -- No need to rename VPReg.ini
-- Download the **ROM** version listed above and copy it into `\vpx-aceventura\pinmame\roms` (DO NOT UNZIP)
 - "May I ass you a few questions?"

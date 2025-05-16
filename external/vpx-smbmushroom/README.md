@@ -25,9 +25,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-smbmush.elf
-- Download the table and directb2s versions listed above and copy them into this folder
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-- Place ROM zip file into vpx-smbmushroom/pinmame/roms folder. DO NOT UNZIP!
 

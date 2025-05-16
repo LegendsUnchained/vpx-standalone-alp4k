@@ -32,12 +32,7 @@ It should already be in: (`vpx-beetlejuicemovie/pinmame/nvram`). If not or you h
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-beetlejuicemovie.elf`
-- Download the table and directb2s zips above, extract them and copy into `/external/vpx-beetlejuicemovie`
-- Make sure (`.vpx`) (`.direct2b2s`) (`.vbs`) and (`.ini`) are all named the same
 - Open the Music file and copy `BeetleJuice.mp3` into the music folder on your USB drive
-- ROM file (`strngsci.zip`) stays in zip folder, place zip file in `vpx-beetlejuicemovie/pinmame/roms`
 - Verify that (strngsci.nv) file is located in (`vpx-beetlejuicemovie/pinmame/nvram`). If not then download the NVRAM pack and extract it from there
 > "It's Showtime!" 
 > ---Beetlejuice

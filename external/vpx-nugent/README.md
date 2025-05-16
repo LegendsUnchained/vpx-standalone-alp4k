@@ -35,10 +35,5 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-nugent.elf
-- Download the table & backglass zips above, extract (if necessary) and copy to external/vpx-nugent
-- Place the ROM zip (nugent.zip) in the /vpx-nugent/pinmame/roms folder. (Do not un-zip!)
-- Make sure (.vpx), (.direct2b2s), and (.ini) are all named the same
 - "Wango Tango!"
 

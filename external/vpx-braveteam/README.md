@@ -31,9 +31,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy this repo folder into the "external" folder on your USB drive
-- Add your personalized launcher.elf and rename it to vpx-braveteam.elf
-- Download the table and directb2s versions listed above, extract them (if necessary) and copy them to external/vpx-braveteam
-- Make sure any (.vpx), and (.directb2s) files are all named the same
-- Download the ROM listed above and place it in vpx-braveteam/pinmame/roms. Do not unzip!
 - "It's just the way I live my life. I grip it and I rip it." -Hansel McDonald, Zoolander

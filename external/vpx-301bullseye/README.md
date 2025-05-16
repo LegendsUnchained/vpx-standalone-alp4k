@@ -25,11 +25,6 @@
 ---
 
 ## Instructions
-- Copy this repo folder into the "external" folder on your USB drive
-- Add your personalized launcher.elf and rename it to vpx-301bullseye.elf
-- Download the table and directb2s versions listed above, extract them (if necessary) and copy them to external/vpx-301bullseye
-- Make sure any (.vpx), (.directb2s), and (.ini) files are all named the same
-- Download the ROM listed above and copy it to vpx-301bullseye\pinmame\roms. DO NOT UNZIP!
 - Bullseye!
 
 ## Notes

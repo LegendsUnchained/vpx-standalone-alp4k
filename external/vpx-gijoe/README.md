@@ -27,12 +27,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-gijoe.elf
-- Download the table and directb2s listed above, extract (if necessary) and copy them to external/vpx-gijoe
 - Select/Copy GI JOE Folder and move to music folder
-- The ROM zip file gets copied to vpx-gijoe/pinmame/roms (Do not unzip)
-- Open nvram folder and Select/Copy playboyb.nv and move to external/vpx-gijoe/pinmame/nvram
-- Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
 - "Now you know. And knowing is half the battle" - Duke
 

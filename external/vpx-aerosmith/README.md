@@ -25,11 +25,7 @@
 ---
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-aerosmith.elf
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-aerosmith
 - Download the PupPack, copy the contents of the music folder into external/vpx-aerosmith/Music/Aerosmith/
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - Do NOT rename VPReg.ini file
 
 ## Notes

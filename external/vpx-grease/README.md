@@ -51,11 +51,6 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-grease.elf
-- Download the table and directb2s files above, extract (if necessary) and copy/move into /external/vpx-grease
 - Extract and open (Grease.zip), place folder into vpx-grease/Music/Grease
-- Download the rom (elvis.zip) which stays in zip folder, place zip file in vpx-grease/pinmame/roms
 - If using the Alt Color, download and rename grease.cRZ file to elvis.cRZ and place it in vpx-grease/pinmame/altcolor/elvis
-- Make sure (.vpx), (.directb2s), (.vbs) and (.ini) files are all named the same
 - "Why, this car is auto-matic. It's system-matic. Its hyyyyydro-matic. Why, it's greased lightning!" - Danny Zuko

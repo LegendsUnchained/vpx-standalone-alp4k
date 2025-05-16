@@ -27,9 +27,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-robot.elf
-- Download the table and directb2s versions listed above. Extract (if necessary) and copy them into the external/vpx-robot folder.
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same.
-- Place the ROM (.zip) file into vpx-robot/pinmame/roms folder. DO NOT UNZIP!
 - "Challenge the robot from Zaccaria!" 

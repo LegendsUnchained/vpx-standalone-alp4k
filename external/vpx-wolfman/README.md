@@ -25,8 +25,3 @@
 ---
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-wolfman.elf
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into the external/vpx-wolfman folder
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-- Rename downloaded ROM file to wolfman.zip and place into vpx-wolfman/pinmame/roms folder. DO NOT UNZIP!

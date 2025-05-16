@@ -25,13 +25,8 @@
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-icefever.elf`
 - This VPX has a mod to theme the game with any of the 32 NHL teams
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `external/vpx-icefever`
 - From the "Ice Fever  (Gottlieb 1985) NHL Mod3.0.zip" file use the "Ice Fever  (Gottlieb 1985) NHL Mod Widescreen 2 screen.directb2s" file as the backglass
-- Make sure `(.vpx)` `(.directb2s)` and `(.ini)` are all named the same.
-- Place icefever.zip rom file in the external/vpx-icefever/pinmame/roms folder. *Do Not unzip*!
 
 ## Important Info
 

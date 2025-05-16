@@ -27,9 +27,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-magiccastle.elf
-- Download the table and directb2s versions listed above. Extract (if necessary) and copy them into the external/vpx-magiccastle folder.
-- Make sure (.vpx), (.directb2s), (.vbs), and (.ini) files are all named the same.
-- Place the ROM (.zip) file into vpx-magiccastle/pinmame/roms folder. DO NOT UNZIP!
 - "Welcome to Zaccaria's magic castle!" 

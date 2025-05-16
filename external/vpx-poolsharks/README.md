@@ -26,9 +26,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-poolsharks.elf
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into external/vpx-poolsharks
-- Make sure the (.vpx), and (.directb2s) files are all named the "exact" same
-- Place pool_l7.zip in the external/vpx-poolsharks/pinmame/roms folder *Do Not unzip*
 - "Don't trust a pool shark"

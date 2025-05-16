@@ -25,11 +25,5 @@
 ---
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-amazingspidermansse.elf
-- Download the table zip above, extract it and copy Amazing Spiderman (Gottlieb 1980) Sinister Six Edition v1.1.vpx
-- and Amazing Spiderman (Gottlieb 1980) Sinister Six Edition v1.0.directb2s to vpx-amazingspidermansse.
-- Place ROM file (spidermn.zip) into vpx-amazingspidermansse/pinmame/roms -- Do NOT unzip!
-- Make sure (.vpx) (.direct2b2s) and (.ini) are all named the same. 
 - "My Vpin Sense is tingling!" --- Spider-Man
 

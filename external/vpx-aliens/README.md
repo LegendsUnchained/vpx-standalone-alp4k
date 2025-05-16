@@ -25,11 +25,6 @@
 ---
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-aliens.elf
-- Download the table and directb2s versions listed above, extract and copy them to external/vpx-aliens
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-- Place sorcr_l2.zip in the external/vpx-aliens/pinmame/roms folder. *Do Not unzip*!
 - Place Music Folder in the vpx-aliens folder
 - "Game Over Man, Game Over!"
 

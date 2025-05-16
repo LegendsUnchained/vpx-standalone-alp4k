@@ -35,10 +35,5 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-rollergames.elf
-- Download the table & backglass zips above, extract them and copy then to the /vpx-rollergames folder
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-- Place the ROM zip (rollr_l2.zip) in the external/vpx-rollergames/pinmame/roms folder. (do not un-zip!)
 - "I want my ROCK... and ROLLERGAMES!!!"
 

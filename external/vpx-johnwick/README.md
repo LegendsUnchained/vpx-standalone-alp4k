@@ -43,10 +43,7 @@
 </table>
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-johnwick.elf`
 - Download `JohnWick 1.3(BABAYAGA Pinball edition) VPX 10.8.rar` listed above and extract only the vpx file into `vpx-johnwick`. **Make sure you download the 10.8 version and not the 10.7 version**
-- Make sure `(.vpx)` `(.vbs)` and `(.ini)` are all named the same.
 - Download the puppack `JWPUP.rar` from link listed above.
 - Create the folder `pupvideos` within the `external/vpx-johnwick`
 - Extract the folder `johnwick` from the puppack archive, and put it in the `pupvideos` folder.

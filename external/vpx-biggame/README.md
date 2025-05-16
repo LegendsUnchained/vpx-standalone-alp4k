@@ -32,9 +32,4 @@ Minimum VPX Standalone build: 10.8.0-2042-1431983
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-biggame.elf
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-biggame
-- Make sure (.vpx), (.directb2s), (.vbs) and (.ini) files are all named the same
-- The ROM zip file gets copied to vpx-biggame/pinmame/roms (Do not unzip!)
 - "So big: it's making pinball history." 🐯

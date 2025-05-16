@@ -25,8 +25,4 @@
 ---
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-abracadabra.elf
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-abracadabra
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - "Abra Ca Dabra, B! "

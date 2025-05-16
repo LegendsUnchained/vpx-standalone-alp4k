@@ -30,10 +30,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-tenaciousd.elf
-- Download the table and directb2s listed above, extract (if necessary) and copy them to external/vpx-tenaciousd
 - Select/Copy Music Folder (tenD) and move to external/vpx-tenaciousd/music
-- Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
-- The ROM zip file gets copied to vpx-tenaciousd/pinmame/roms (Do not unzip)
 - "What do you want, 'Non-Rocker'? This line is reserved for 'Rockers Only', so I can't really talk to you right now!" - JB

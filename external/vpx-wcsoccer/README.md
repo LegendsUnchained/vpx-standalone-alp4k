@@ -24,8 +24,3 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-wcsoccer.elf`
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into the `vpx-wcsoccer`
-- Make sure `(.vpx)` `(.direct2b2s)` and `(.ini)` are all named the same
-- Rom file (`wcsoccer.zip`) stays in zip folder, place zip file in `vpx-wcsoccer/pinmame/roms`

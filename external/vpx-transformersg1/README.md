@@ -24,11 +24,6 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-transformersg1.elf
-- Download the (.vpx) file and copy/move (Transformers G1 (Generation One) Pinball (TBA 2018).vpx) into vpx-transformersg1
-- Copy/move (Transformers G1 (Generation One) Pinball (TBA 2018).directb2s) into vpx-transformersg1
 - Place Music Folder ---> vpx-transformersg1
-- Make sure (.vpx) (.direct2b2s) and (.ini) are all named the same. 
 - Go fire up your Vpin and enjoy!
 - "Your knowledge is only overshadowed by your stupidity!" ---Megatron

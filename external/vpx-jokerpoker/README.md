@@ -36,10 +36,5 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-jokerpoker.elf
-- Download the table & backglass files above, extract them (if necessary) and copy to the external/vpx-jokerpoker folder
-- Place the ROM zip (jokrpokr.zip) in the /vpx-jokerpoker/pinmame/roms folder. (Do not un-zip!)
-- Make sure (.vpx), (.direct2b2s) and (.ini) are all named the same
 - "A BRIGHT NEW SNAPPY playing card game from the EXPERTS of PLAYER APPEAL." ~ D. Gottlieb & Co.
 

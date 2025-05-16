@@ -35,8 +35,4 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-r911.elf
-- Download the table, and directb2s versions listed above, extract them, and copy them into this folder
-- Download the ROM, and place it into the /vpx-r911/pinmame/roms folder. Do NOT UNZIP!
-- If you're loking for Shatner, he's not here! 🚑
+- If you're looking for Shatner, he's not here! 🚑

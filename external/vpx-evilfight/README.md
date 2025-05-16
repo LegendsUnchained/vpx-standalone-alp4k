@@ -27,8 +27,3 @@
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-evilfight.elf`
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-evilfight`
-- Rom file (evlfight.zip) stays in zip folder, place zip file in `vpx-evilfight/pinmame/roms`
-- Make sure `(.vpx)` `(.directb2s)` and `(.ini)` are all named the same.

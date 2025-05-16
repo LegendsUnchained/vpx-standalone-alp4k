@@ -28,10 +28,5 @@ Minimum VPX Standalone build: 10.8.0-2026-3b68d7c
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-frontier.elf`
-- Download the table and directb2s versions listed above and copy them into this folder
-- Make sure the vpx, directb2s, and ini files are all named the "exact" same
-- Place `frontier.zip` in the `external/vpx-frontier/pinmame/roms` folder *Do Not unzip*
 - "Brings pinball out of the wilderness"
 

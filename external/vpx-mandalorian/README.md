@@ -23,8 +23,4 @@
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-mandalorian.elf`
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-mandalorian`
-- Make sure `(.vpx)` and `(.direct2b2s)` files are all named the same. Do NOT rename `VPReg.ini` file.
 - This is the way!

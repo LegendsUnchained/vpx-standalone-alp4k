@@ -26,9 +26,4 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-rollerdisco.elf
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-rollerdisco
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-- Download the ROM pack listed above, unzip it, and locate roldisco.zip. Place roldisco.zip into vpx-rollerdisco/pinmame/roms folder. DO NOT UNZIP!
 - Ah! Ah! Ah! Ah! Stayin' Aliiiiiiii-iiiiiiiii-iiiiiiiive!

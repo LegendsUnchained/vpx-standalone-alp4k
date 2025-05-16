@@ -25,7 +25,3 @@
 ---
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-aceofspeed.elf
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-aceofspeed
-- The ROM zip file gets copied to vpx-aceofspeed/pinmame/roms (Do not unzip)

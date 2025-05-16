@@ -38,12 +38,6 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-beastmaster.elf
-- Download the table, and directb2s, extract them and copy/place them into vpx-beastmaster
-- Make sure (.vpx) (.direct2b2s) and (.ini) are all named the same
-- Open (ROM) Folder, (blakpyra.zip) stays in zip folder, place zip file in vpx-beastmaster/pinmame/roms
-- Open (ROM) Folder, (blakpyra.nv) place (.nv) file in vpx-beastmaster/pinmame/nvram
 - Open (BM_music), Place (Beastmaster.mp3) into ---> vpx-beastmaster/music
 - "Life is a circle. I am sure we will meet again, my friend!"  ---Dar
 

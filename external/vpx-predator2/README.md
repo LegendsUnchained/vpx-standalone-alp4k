@@ -26,11 +26,6 @@
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-predator2.elf`
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-predator2`
 - Select/Copy Music Folder and move to `vpx-predator2`
-- Rom file (wrlok_l3.zip) stays in zip folder, place zip file in `vpx-predator2/pinmame/roms`
-- Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same.
 - "He's on Safari. The lions, the tigers, the bears... oh my!" - Peter Keyes
 

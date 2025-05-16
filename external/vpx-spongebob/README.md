@@ -26,9 +26,5 @@
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-spongebob.elf`
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-spongebob.elf`
-- Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same.
 - Be sure to copy the "SpongebobDMD" folder to vpx-spongebob as well as this creates the DMD.
 - "I'm Ready, I'm Ready, I'm Ready!"

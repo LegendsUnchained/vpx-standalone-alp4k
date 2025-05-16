@@ -33,13 +33,7 @@ Minimum VPX Standalone build: 10.8.0-2042-1431983
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive.
-- Add your personalized launcher.elf and rename it to vpx-fallout.elf
-- Download the "Fallout Vault Edition 2.0 (LTek 2024).zip" file and only extract the "Fallout Vault Edition 2.0 (LTek 2024).vpx" to the vpx-fallout folder.
 - Extract "Fallout.FlexDMD" folder from the zip to the vpx-fallout folder.
-- Copy the "ROM/swrds_l2.zip" rom file (do not extract) from the zip to vpx-fallout/pinmame/rom folder.
-- Download the directb2s "Fallout Vault Edition (LTek 2024).zip" version listed above and extract the .directb2s file it to the vpx-fallout folder
-- Make sure (.vpx) (.directb2s) (.vbs) and (.ini) are all named the same.
 - Download "Fallout MUSIC ONLY Pup for NON-PUP Users.rar" puppack listed above.
 - In your vpx-fallout folder, create a new folder named pupvideos.
 - Extract "fallout" folder from the puppack zip into the pupvideos folder you created.

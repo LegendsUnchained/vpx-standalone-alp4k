@@ -35,9 +35,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-memlane.elf
-- Download the table & backglass zips above, extract them and copy to the external/vpx-memlane folder
-- Place the ROM zip (memlane.zip) in the /vpx-memlane/pinmame/roms folder. (Do not un-zip!)
-- Make sure (.vpx), (.direct2b2s), and (.ini) are all named the same
 - "Peachy keen, jellybean." ~ Rizzo

@@ -25,8 +25,3 @@
 ---
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-america1492.elf
-- Download the table and directb2s listed above, extract (if necessary) and copy to external/vpx-america1492
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-- The ROM zip file gets copied to vpx-america1492/pinmame/roms (Do not unzip)

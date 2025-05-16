@@ -25,10 +25,5 @@
 ---
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-airwolf.elf
-- Download the table and directb2s listed above, extract (if necessary) and copy them to external/vpx-airwolf
 - Select/Copy Music Folder and move to external/vpx-airwolf
-- Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
-- The ROM zip file gets copied to vpx-airwolf/pinmame/roms (Do not unzip)
 - "Sometimes, Hawke, you amaze even me. Good luck!" - Archangel

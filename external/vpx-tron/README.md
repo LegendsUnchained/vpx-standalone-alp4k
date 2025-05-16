@@ -31,11 +31,6 @@ Minimum VPX Standalone build: 10.8.0-2042-1431983
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-tron.elf
-- Download the table and directb2s listed above, extract (if necessary) and copy all contents to external/vpx-tron
 - Copy the TRON folder into Music
 - Copy panther7.nv from "match enabled vram" to vpx-tron/pinmame/nvram
-- The ROM zip file gets copied to vpx-tron/pinmame/roms (do not unzip)
-- Make sure (.vpx), (.directb2s), (.vbs) and (.ini) files are all named the same
 - "End of Line"

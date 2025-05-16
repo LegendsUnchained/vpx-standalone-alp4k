@@ -29,10 +29,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-cosmicgunfight.elf
-- Download the table and directb2s versions listed above, extract them and copy them to /external/vpx-cosmicgunfight
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-- Place csmic_l1.zip in the external/vpx-cosmicgunfight/pinmame/roms folder. *Do Not unzip*!
 - "Nothing like a good gunfight, in space."
 

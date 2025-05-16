@@ -21,9 +21,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-capersville.elf
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-capersville
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - "Yes, I am afraid of death. But for a humble secret agent, it's an everyday thing, like whiskey. And I've been drinking all my life." -Lemmy Caution, Alphaville
 

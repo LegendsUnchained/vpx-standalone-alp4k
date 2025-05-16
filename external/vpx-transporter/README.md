@@ -30,9 +30,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 ## Instructions
 
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-transporter.elf
-- Download the table and directb2s versions listed above, extract and copy them to external/vpx-transporter
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
-- Place ROM zip file (tsptr_l3) into vpx-transporter/pinmame/roms folder. DO NOT UNZIP!
 - Mayday, mayday, mayday! 🆘

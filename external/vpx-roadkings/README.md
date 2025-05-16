@@ -24,11 +24,6 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-roadkings.elf`
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-roadkings` folder
-- Place ROM zip file into `vpx-roadkings/pinmame/roms` folder. DO NOT UNZIP!
-- Make sure `(.vpx)`, `(.directb2s)` and `(.ini)` are all named the same.
 
 ---
 

@@ -38,10 +38,4 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-laserwar.elf
-- Download the table & backglass zips above, extract them and copy LaserWar(DataEast1987)wVRRoomv2.0.vpx
-- and Laser War (Data East 1987) alt2 full dmd.directb2s to the /vpx-laserwar folder
-- Place the ROM zip (lwar_a83.zip) in the external/vpx-laserwar/pinmame/roms folder. (Do not un-zip!)
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
 - "Knowing is half the battle... the other half is red and blue (& yellow) lasers!"

@@ -29,10 +29,5 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-ironmaiden.elf
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-ironmaiden
-- Make sure the (.vpx), (.directb2s), and (.ini) files are all named the "exact" same
-- Place ironmaid.zip ROM in the external/vpx-ironmaiden/pinmame/roms folder. *Do Not unzip!*
 - "Survive the Iron Maiden"
 

@@ -25,10 +25,6 @@
 ---
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-acharliebrownchristmas.elf
-- Download the table vpx file, and the directb2s file and copy to vpx-acharliebrownchristmas
-- Make sure (.vpx) (.direct2b2s) (.vbs) and (.ini) are all named the same. 
 - Download the music (Charlie Brown.zip) above, extract it and place the files into vpx-acharliebrownchristmas/Charlie Brown
 - "Look, Charlie, let's face it. We all know that Christmas is a big commercial racket. It's run by a big eastern syndicate, you know." - Lucy Van Pelt
 

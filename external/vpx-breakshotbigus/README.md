@@ -25,12 +25,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-breakshotbigus.elf`
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-breakshotbigus` folder
 - Download the color DMD zip, extract and copy the .cRZ file of your choice to path: `vpx-breakshotbigus/pinmame/altcolor/bsv103`
-- Place ROM zip file into `vpx-breakshotbigus/pinmame/roms` folder. DO NOT UNZIP!
-- Make sure `(.vpx)` `(.directb2s)` and `(.ini)` are all named the same.
 - Included nvram is set to Free Play.
 
 ---

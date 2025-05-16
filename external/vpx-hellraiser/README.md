@@ -43,10 +43,6 @@
 </table>
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-hellraiser.elf`
-- Download `Hellraiser 1.2.vpx` listed above and put it into `vpx-hellraiser`.
-- Make sure `(.vpx)` `(.vbs)` and `(.ini)` are all named the same.
 - Download the puppack `Hellraiser1.0.1.rar` from the link listed above.
 - Create the folder `pupvideos` within the `external/vpx-hellraiser`
 - Extract the folder `Hellraiser` from the puppack archive, and put it in the `pupvideos` folder.

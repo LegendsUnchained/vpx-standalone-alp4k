@@ -28,9 +28,5 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-thefog.elf
-- Download the table and directb2s zip above, extract them and copy/move files into /external/vpx-thefog
 - Unzip (Music) Folder. Open folder (1349664621_FogThe-Music) place (fog) folder in vpx-thefog/music
-- Make sure (.vpx), (.direct2b2s), (.vbs) and (.ini) are all named the same
 - Stevie Wayne - "To the ships at sea who can hear my voice, look across the water, into the darkness. Look for the fog."

@@ -30,12 +30,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-sfiimod.elf
-- Download the table and directb2s versions listed above, extract and copy them into this folder (vpx-sfiimod)
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - Download alt sound file and unzip. place the folder (sfight2) into the vpx-sfiimod.zip\pinmame\altsound folder 
-- Place ROM zip file into vpx-sfiimod/pinmame/roms folder. DO NOT UNZIP!
 
 -I complied this table for all of you out of my love for the original machine. This is designed to be a stand alone on the same machine as your original table but as a new version! Enjoy! Hadouken!
   

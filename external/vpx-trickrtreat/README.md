@@ -18,9 +18,5 @@ Minimum VPX Standalone build: 10.8.0-2006-6d603fb
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 
 ## Instructions 
-- Copy the **vpx-trickrtreat** folder to the `external` directory of your USB drive
-- Add your personalized launcher.elf and rename it to **vpx-trickrtreat**
-- Download and extract the **VPX** and **DIRECTB2S** files ONLY, and copy them into the **vpx-trickrtreat** folder
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same. Do NOT rename the VPReg.ini file
 - "Poison, Drowning, Claw, Or Knife. So Many Ways To Take A Life"
 
