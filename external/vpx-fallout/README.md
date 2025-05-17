@@ -33,16 +33,14 @@ Minimum VPX Standalone build: 10.8.0-2042-1431983
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive.
-- Add your personalized launcher.elf and rename it to vpx-fallout.elf
-- Download the "Fallout Vault Edition 2.0 (LTek 2024).zip" file and only extract the "Fallout Vault Edition 2.0 (LTek 2024).vpx" to the vpx-fallout folder.
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - Extract "Fallout.FlexDMD" folder from the zip to the vpx-fallout folder.
-- Copy the "ROM/swrds_l2.zip" rom file (do not extract) from the zip to vpx-fallout/pinmame/rom folder.
-- Download the directb2s "Fallout Vault Edition (LTek 2024).zip" version listed above and extract the .directb2s file it to the vpx-fallout folder
-- Make sure (.vpx) (.directb2s) (.vbs) and (.ini) are all named the same.
 - Download "Fallout MUSIC ONLY Pup for NON-PUP Users.rar" puppack listed above.
 - In your vpx-fallout folder, create a new folder named pupvideos.
 - Extract "fallout" folder from the puppack zip into the pupvideos folder you created.
 - __Make sure you copied the pinmame/nvram/swrds_l2.nv from the repo otherwise the table does not start.__
 - With the left direction you can display the nuka rules and with the right direction you can change the music track.
 - Drink a nuka cola.
+

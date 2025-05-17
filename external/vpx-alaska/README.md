@@ -25,10 +25,10 @@
 ---
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-alaska.elf`
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-alaska`
-- Make sure `(.vpx)` `(.directb2s)` `(.vbs)` and `(.ini)` are all named the same.
+
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 
 ## NOTE
 - The directb2s file has a graphic bug in displaying scores. To overcome it, my .vbs inserts a kludge to start every game with a score of 1 point, and subtract it when the game ends. I'm very open to other solutions, just edit as needed.
