@@ -32,23 +32,10 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
+- Make sure to use the Table Manager to install this table.
+- Instructions can be found on the wiki [Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - Open Charlies-Angels-Gottlieb-1978-iDig-Complete-rEMix, Place Music Folder "Charlie" ---> vpx-charliesangelsremix\music\EM\.
 - Go fire up your Vpin and enjoy!
 - "Good Morning Vpins!" ---Charlie Townsend
-
-**The Complete Remix is an ALL-IN-ONE that replaces any previous versions**
-and contains three different sound modes to select from.
-
-The Complete rEMix Version Includes:
-
-Version 1 All NEW 70's TV Show Edition **Default**
-(True to the original TV series featuring callouts and sfx from the show with an all new 70's cop show soundtrack.)
-Version 2 The Original iDigrEMix Vol. 1 
-(This is the original rEMix with music inspired by the film series)
-Version 3 JPSalas Original Table 
-(Original Table with NO mods applied.)
-**The table defaults to Version 1**
-I have included 2 folders which include a (.vbs) script that will change the soundtrack to either version 2 or version 3.
-Simply open the folder of your choice and copy the (.vbs) and place it ---> vpx-charliesangelsremix with your (.vpx).
-
 

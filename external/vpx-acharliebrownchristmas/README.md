@@ -25,6 +25,10 @@
 ---
 
 ## Instructions
+
+- Make sure to use the Table Manager to install this table.
+- Instructions can be found on the wiki [Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - Download the music (Charlie Brown.zip) above, extract it and place the files into vpx-acharliebrownchristmas/Charlie Brown
 - "Look, Charlie, let's face it. We all know that Christmas is a big commercial racket. It's run by a big eastern syndicate, you know." - Lucy Van Pelt
 

@@ -24,5 +24,9 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
+- Make sure to use the Table Manager to install this table.
+- Instructions can be found on the wiki [Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - Use the Metallica Pro 1.80 Game Code link to download the ROM
 - Rename `MTL180LE.BIN` to `mtl180h.bin`, then zip it to `mtl_180h.zip`
+

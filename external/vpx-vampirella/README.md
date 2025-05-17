@@ -31,7 +31,11 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
+- Make sure to use the Table Manager to install this table.
+- Instructions can be found on the wiki [Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - This table has 4 different playfield images. They are randomized by default
 - Change Line 75 in the VBS to pick a specific playfield
-- Change x to 0, 1, 2, or 3. Table1.Image = playfieldImages(x) 
+- Change x to 0, 1, 2, or 3. Table1.Image = playfieldImages(x)
 - PICK C(2)
+

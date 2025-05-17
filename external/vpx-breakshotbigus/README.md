@@ -25,11 +25,10 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
+- Make sure to use the Table Manager to install this table.
+- Instructions can be found on the wiki [Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - Download the color DMD zip, extract and copy the .cRZ file of your choice to path: `vpx-breakshotbigus/pinmame/altcolor/bsv103`
 - Included nvram is set to Free Play.
-
 ---
 
-**MD5**: 7ec9dae23d329e520624b7fdcfbd022d
-
-**Tested by:** Shaver
