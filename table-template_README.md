@@ -18,6 +18,7 @@
 
 ## Status 
 **Minimum VPX Standalone build:** {vpx-standalone-build-#}
+
 | Table | Playfield | Controls | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |-----------|----------|-----------|-----|--------------|-----|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | {fps} |
