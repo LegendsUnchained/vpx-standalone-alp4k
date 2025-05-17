@@ -27,8 +27,8 @@
 
 ## Instructions
 
-<!-- NOTE: DO NOT REMOVE OR EDIT THE FOLLOWING 3 STANDARD INSTRUCTIONS -->
+<!-- IMPORTANT! DO NOT REMOVE OR EDIT THE FOLLOWING 3 STANDARD INSTRUCTIONS! -->
 - Install this table through the Table Manager, using the `Add Table` > `Manual` page
 - If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
 - If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
-<!-- ADD EXTRA INSTRUCTIONS BELOW, DONT FORGET A FUN TAGLINE! i.e. "Baywatch will be right back!" -->
+<!-- ADD ANY EXTRA INSTRUCTIONS BELOW, THEN DELETE THIS NOTE. DONT FORGET A FUN TAGLINE! i.e. "Baywatch will be right back!" -->
