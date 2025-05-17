@@ -32,8 +32,8 @@ It should already be in: (`vpx-beetlejuicemovie/pinmame/nvram`). If not or you h
 
 ## Instructions
 
-- Make sure to use the Table Manager to install this table.
-- Instructions can be found on the wiki [Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
 - If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - Open the Music file and copy `BeetleJuice.mp3` into the music folder on your USB drive
 - Verify that (strngsci.nv) file is located in (`vpx-beetlejuicemovie/pinmame/nvram`). If not then download the NVRAM pack and extract it from there
