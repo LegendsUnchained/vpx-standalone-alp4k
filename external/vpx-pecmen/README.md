@@ -8,7 +8,7 @@
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
 | **VPX** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=17051) | 5.5.0 | [jpsalas](https://www.vpforums.org/index.php?showuser=277) |
-| **B2S** | `Kung Fu (LTD do Brasil 1975).directb2s` included in VPX link |
+| **B2S** | `Mr. & Mre. Pec-Men (LTD do Brasil 1983).directb2s` included in VPX link |
 | **ROM** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=471) | n/a | [destruk](https://www.vpforums.org/index.php?showuser=5) |
 
 **Tested by:** [Curt](https://github.com/Old-Cyrus)
