@@ -1,0 +1,15 @@
+---
+backglassAuthorsOverride:
+  - ""
+fps: 55
+tableVPSId: "UsLxAHL3"
+testers:
+  - "mcap10"
+  - "mrandromeda"
+vpxVPSId: "GAY3-_fB"
+vpxChecksum: "32DEB719188FD73C7888CC90020E59CC"
+romUrlOverride: "https://pinballnirvana.com/forums/resources/victory.2562/"
+romChecksum: "811678EFF1D36A36324AAF533EC2643E"
+romVersionOverride: "victory"
+applyFixes:
+  - "bass"
