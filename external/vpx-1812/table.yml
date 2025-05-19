@@ -11,7 +11,7 @@ romVersionOverride: "clas1812"
 romNotes: "clas1812"
 romChecksum: "2f18dfe70b1b742f324db41b85b201fa"
 fps: 51
-tagline: "The name is Zomb B. and I'm your host! Revive my friends to score the most!"
+tagline: "The name is Zomb B. and I'm your host!"
 testers:
   - "Boris"
 applyFixes: 
