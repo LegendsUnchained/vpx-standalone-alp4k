@@ -1,0 +1,18 @@
+---
+tableVPSId: "hCFbHPQd"
+vpxVPSId: "87kGZfZY"
+vpxChecksum: "a8a4e2e5dfed8452b1909b3fa889076d"
+tableNotes: "El Dorado City of Gold (Gottlieb 1984).zip"
+backglassVPSId: "gbheO0bS"
+backglassChecksum: "097fd8823b16c3d3bf5932d78ab3dbc4"
+backglassNotes: "El Dorado City of Gold (Premier 1984).rar"
+romUrlOverride: "https://pinballnirvana.com/forums/resources/eldorado.1766/"
+romVersionOverride: "eldorado"
+romNotes: "eldorado"
+romChecksum: "e34b448c09df6ce647afb471c32a5e0a"
+fps: 60
+tagline: "El Dorado! The city of gold!"
+testers:
+  - "Boris"
+applyFixes: 
+    - "bass"
