@@ -20,7 +20,7 @@
 **Minimum VPX Standalone build:** {vpx-standalone-build-#}
 
 | Backglass | DMD | ROM Required | Has Puppack | FPS |
-|-----------|----------|-----------|-----|--------------|-----|-----|-----|
+|-----------|-----|-----|-----|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | {fps} |
 
 ---
