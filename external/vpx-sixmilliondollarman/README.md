@@ -30,12 +30,9 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-sixmilliondollarman.elf
-- Download the table zip above, extract it and copy (Six Million Dollar Man, The (Bally 1978) Sound MOD v2.3.zip) into vpx-sixmilliondollarman
-- Select one of the (.directb2s) files and copy only one (Six Million Dollar Man, The (Bally 1978) D-MOD v1.1.directb2s) into vpx-sixmilliondollarman
-- Or if you choose Night Mod (Six Million Dollar Man, The (Bally 1978) N-MOD v1.1.directb2s) into vpx-sixmilliondollarman
-- Rom file (smmanc.zip) stays in zip folder, place zip file in vpx-sixmilliondollarman/pinmame/roms
-- Make sure (.vpx) (.direct2b2s) and (.ini) are all named the same. 
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - Go fire up your Vpin and enjoy!
 - "Gentlemen, we can rebuild him. We have the technology." ---Oscar Goldman
+

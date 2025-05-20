@@ -18,10 +18,10 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 
 ## Instructions 
-- Copy the **vpx-texaschainsawmassacre** folder to the `external` directory of your USB drive
-- Add your personalized launcher.elf and rename it to **vpx-texaschainsawmassacre**
-- Download and extract the **VPX** and **DIRECTB2S** files ONLY, and copy them into the **vpx-texaschainsawmassacre** folder
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same]
-- The table .zip includes a link in its 'Music' folder to download music. The downloaded .mp3 should be placed in a folder called "music" in the **vpx-texaschainsawmassacre** folder. 
-- Download the **ROM** version listed above and copy it into `\vpx-texaschainsawmassacre\pinmame\roms` (DO NOT UNZIP)
+
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
+- The table .zip includes a link in its 'Music' folder to download music. The downloaded .mp3 should be placed in a folder called "music" in the **vpx-texaschainsawmassacre** folder.
 - "Who will survive, and what will be left of them?"
+
