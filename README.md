@@ -184,8 +184,8 @@ Links to these products on Amazon are through affiliate links.
 ## All Tested Tables
 
 
-| Table | Playfield | Controls | Backglass | DMD | ROM Required | Has Puppack | FPS |
-|:------|:---------:|:--------:|:---------:|:---:|:------------:|:---:|:---:|
+| Table | Backglass | DMD | ROM Required | Has Puppack | FPS |
+|:------|:---------:|:---:|:------------:|:---:|:---:|
 | [1-2-3 (Talleres de Llobregat 1973)](external/vpx-123) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [4 Aces (Williams 1970)](external/vpx-4aces) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [24 (Stern 2009)](external/vpx-24) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 54 |
