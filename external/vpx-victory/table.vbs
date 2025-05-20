@@ -174,7 +174,7 @@ Sub Victory_Init
 		.ShowDMDOnly=1
 		.ShowFrame=0
 		.HandleMechanics=0
-		.Hidden=0
+		.Hidden=1
 		.SolMask(0) = 0
 	On Error Resume Next
 		.Run GetPlayerHWnd
