@@ -9,8 +9,8 @@
 |-----------|--------|----------|--------------|
 | **VPX** | [{website}]({link}) | {version} | [{author}]({link}) |
 | **B2S** | [{website}]({link}) | {version} | [{author}]({link}) |
-| **DMD** | [{website}]({link}) | {version} | [{author}]({link}) |
 | **ROM** | [{website}]({link}) | {version} | [{author}]({link}) |
+| **PUPPACK** | [{website}]({link}) | {version} | [{author}]({link}) |
 
 **Tested by:** [{tester}]
 
@@ -19,9 +19,9 @@
 ## Status 
 **Minimum VPX Standalone build:** {vpx-standalone-build-#}
 
-| Table | Playfield | Controls | Backglass | DMD | ROM Required | Has Puppack | FPS |
-|-----------|----------|-----------|-----|--------------|-----|-----|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | :x: | {fps} |
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | {fps} |
 
 ---
 
