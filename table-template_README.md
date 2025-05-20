@@ -9,8 +9,8 @@
 |-----------|--------|----------|--------------|
 | **VPX** | [{website}]({link}) | {version} | [{author}]({link}) |
 | **B2S** | [{website}]({link}) | {version} | [{author}]({link}) |
-| **DMD** | [{website}]({link}) | {version} | [{author}]({link}) |
 | **ROM** | [{website}]({link}) | {version} | [{author}]({link}) |
+| **PUPPACK** | [{website}]({link}) | {version} | [{author}]({link}) |
 
 **Tested by:** [{tester}]
 
