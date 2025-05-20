@@ -18,15 +18,17 @@
 
 ## Status 
 **Minimum VPX Standalone build:** {vpx-standalone-build-#}
+
 | Table | Playfield | Controls | Backglass | DMD | ROM Required | Has Puppack | FPS |
-|-----------|----------|-----------|-----|--------------|-----|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | {fps} |
+|-----------|----------|-----------|-----|--------------|-----|-----|-----|
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | :x: | {fps} |
 
 ---
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-{tablename}.elf`
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into `vpx-{tablename}`
-- Rom file (FILENAME.zip) stays in zip folder, place zip file in `vpx-{tablename}/pinmame/roms`
-- Make sure `(.vpx)` `(.directb2s)` `(.vbs)` and `(.ini)` are all named the same.
+
+<!-- IMPORTANT! DO NOT REMOVE OR EDIT THE FOLLOWING 3 STANDARD INSTRUCTIONS! -->
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
+<!-- ADD ANY EXTRA INSTRUCTIONS BELOW, THEN DELETE THIS NOTE. DONT FORGET A FUN TAGLINE! i.e. "Baywatch will be right back!" -->

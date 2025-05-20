@@ -26,8 +26,8 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Add your personalized launcher.elf and rename it to vpx-playboy1978.elf
-- Download the vpx and directb2s files above, extract (if necessary) and copy to /external/vpx-playboy1978
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
-- Place ROM zip file into vpx-playboy1978/pinmame/roms folder. DO NOT UNZIP!
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - Party like Hef. 👯‍♂️
+

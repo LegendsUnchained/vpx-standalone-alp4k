@@ -26,12 +26,9 @@
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-mask.elf`
-- Download the table and included directb2s at the VPX link above.
-- Copy the `.vpx` file, and the `MASK 2scr.directb2s` file both into `vpx-mask`
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - Select/Copy `MASK` Folder and move to `vpx-mask/music`
-- Rom file (fpwr2_l2.zip) stays in zip folder, place zip file in `vpx-mask/pinmame/roms`
-- Make sure `(.vpx)` `(.direct2b2s)` `(.vbs)` and `(.ini)` are all named the same.
 - "Let's roll, team!" - Matt Trakker
 
