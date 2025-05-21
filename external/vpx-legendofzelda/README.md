@@ -5,7 +5,7 @@ Tested by: kaoticBPR
 ![Table Preview](../../images/vpx-legend-of-zelda-preview.jpg)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 4.3.1  
+Version: 5.5.0 (v55_VPX8)
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=11608)
 
 DirectB2S
