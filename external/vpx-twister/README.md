@@ -2,7 +2,6 @@
 
 ![Table Preview](../../images/vpx-twister.png)
 
-
 <br>
 
 ## *️⃣  Table Statistics

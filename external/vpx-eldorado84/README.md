@@ -1,6 +1,6 @@
-# Class of 1812 (Gottlieb 1991)
+# El Dorado (Gottlieb 1975)
 
-![Table Preview](../../images/vpx-1812.png)
+![Table Preview](../../images/vpx-eldorado84.png)
 
 <br>
 
@@ -8,7 +8,7 @@
 
 |  Backglass | DMD | ROM Required | FPS | 
 |-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | 51 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 
 <br>
 
@@ -32,9 +32,9 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`Class of 1812`**
+4.  Find and select this table from the dropdown menu: **`El Dorado`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *"The name is Zomb B. and I'm your host!"*
+6. *"El Dorado! The city of gold!"*
 
 <br>
 
