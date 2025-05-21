@@ -1,4 +1,4 @@
-# El Dorado (Gottlieb 1975)
+# El Dorado City of Gold (Gottlieb 1975)
 
 ![Table Preview](../../images/vpx-eldorado84.png)
 
@@ -32,7 +32,7 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`El Dorado`**
+4.  Find and select this table from the dropdown menu: **`El Dorado City of Gold`**
 5.  Follow the on-screen instructions to download and upload the required files
 6. *"El Dorado! The city of gold!"*
 
