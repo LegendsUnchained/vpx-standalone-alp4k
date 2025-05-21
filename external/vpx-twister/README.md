@@ -2,42 +2,60 @@
 
 ![Table Preview](../../images/vpx-twister.png)
 
-Author: [UnclePaulie](https://vpuniverse.com/profile/16685-unclepaulie/)  
+<br>
 
-Tested by: Bla1ze
+## *️⃣  Table Statistics
 
-Version: 2.0.0
+|  Backglass | DMD | ROM Required | FPS | 
+|-----------|-----|--------------|-----|
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 
-Download: [VP Universe](https://vpuniverse.com/files/file/7453-twister-sega-1996-with-vr-room/)
+<br>
 
-DirectB2S
+**VPXS 4KP Testers:**
+  - Bla1ze
+  - OminousOsie 🌸
 
-Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
+<br>
 
-Version: 2.0
+---
 
-Download: [VP Universe](https://vpuniverse.com/files/file/12219-twister-sega-1996-b2s-full-dmd/)
+<br>
 
-ROM
+## ❇️ Available in the Wizard! 🪄✨
 
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1065)
+<br>
 
-SHA: 39c063b1c58d6e127db702284dfad3b3a6ccb89f
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
 
-MD5: 8435fda49c4dfc2d82b9b361e8aa1155
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Twister`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"Everybody underground... now!"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - TechZombie
+</pre>
 
 
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-1983-a764013
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
-
-## Instructions
-
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
-- Everybody underground... now! 🌪
-
+<br>
+<br>
+<br>
+<br>
+<br>
