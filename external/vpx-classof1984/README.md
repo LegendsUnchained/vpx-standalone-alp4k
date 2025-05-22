@@ -27,11 +27,9 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-classof1984.elf
-- Download the table and directb2s listed above, extract (if necessary) and copy them from (Backglass Version) folder to external/vpx-classof1984
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - Select/Copy Music Folder and move to external/vpx-classof1984
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-- The ROM zip file gets copied to vpx-classof1984/pinmame/roms (Do not unzip)
 - " I'ma gonna kill yo', sucka! No one messes around wit' my man, Leroy. I'm gonna cut you, white-meat." - Joo Joo
 

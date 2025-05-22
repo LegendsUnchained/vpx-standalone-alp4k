@@ -42,16 +42,15 @@
 </table>
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-punkpark.elf`
-- Download `PunkPark_v1.02.vpx` listed above and it into `vpx-punkpark`
-- Make sure `(.vpx)` `(.vbs)` and `(.ini)` are all named the same.
+
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - Download `Media And PupPack.zip` from the same link listed above.
 - Create the folder `pupvideos` within the `external/vpx-punkpark`
 - Extract the folder `Punk_Park` zip, and put it in the `pupvideos`
 - Unzip the `use_these_pup_files.zip` and place them inside the `pupvideos/Punk_Park` folder, and overwrite files if prompted.
 - "I won't quit skating until I am physically unable" - Tony Hawk
-
 ---
 
 ## Info

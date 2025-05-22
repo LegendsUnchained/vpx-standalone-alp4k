@@ -30,12 +30,11 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-cheechandchong.elf
-- Download the table and directb2s versions listed above, extract and copy them into this folder
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same - Do NOT rename altsound.ini
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - Open the table folder and place the folder che_cho in vpx-cheechandchong/pinmame/altsound
 - Move the altsound.ini into the folder che_cho in vpx-cheechandchong/pinmame/altsound/che_cho
 - A prompt will ask if you want to replace the existing file altsound.ini select yes and replace it.
-- Rom file stays in zip folder, place zip file in vpx-cheechandchong/pinmame/roms
 - Chong: "You wanna get high man?"  Cheech: "Does Howdy Doody got wooden balls man?"
+

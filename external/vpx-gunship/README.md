@@ -42,12 +42,13 @@
 </table>
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-gunship.elf`
-- Download from the table link the files: `GUNSHIP.vpx`, `Gunshippuppack.zip` and `MEDIA-pack.zip`
-- Copy the table `GUNSHIP.vpx` into `vpx-gunship`
-- Make sure `(.vpx)` `(.vbs)` and `(.ini)` are all named the same.
+
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
+- Download `MEDIA-pack.zip`
 - Extract from the `MEDIA-pack.zip` the rom file `lostwrld.zip` and place the zip file in `vpx-gunship/pinmame/roms`
 - Create the folder `pupvideos` and extract from `Gunshippuppack.zip` the `Gunship` folder into `pupvideos`.
 - Unzip the `use_these_pup_files.zip` and place them inside the `pupvideos/Gunship` folder, and overwrite files if prompted.
 - "Taste Like Venom" - GUNSHIP
+

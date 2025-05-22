@@ -27,9 +27,10 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-inhabitinmars
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - Download folder called Inhabiting Mars, unzip,  and copy the vpx from the table folder (Inhabiting Mars RC 4) and backglass from the Backglasses folder (Inhabiting MARS (Original 2023) full dmd) into external/vpx-inhabitinmars
-- Make sure (.vpx) (.vbs) (.directb2s) and (.ini) are all named the same. Do NOT rename VPReg.ini
 - This table is very unique and works in a very odd way. If you never played orbiter 1 then you might get overwhelmed by its oddity.
-- Its uniqueness lies in the special gravity where the ball pushes and pulls away from pop bumpers and even goes all the way around the flippers.  
+- Its uniqueness lies in the special gravity where the ball pushes and pulls away from pop bumpers and even goes all the way around the flippers.
+

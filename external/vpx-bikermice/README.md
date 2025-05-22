@@ -48,11 +48,10 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-bikermice.elf
-- Download table, unzip, open, and copy the vpx into external/vpx-bikermice
-- Do not copy .ini use one in repo folder that is already there
-- Make sure (.vpx) (.vbs) and (.ini) are all named the same
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - In vpx-bikermice root folder make folder called pupvideos - copy Biker Mice folder from table download in to the pupvideos folder and rename it bikermicefrommars
 - From your vpx-bikermice folder, unzip the use_these_pup_files.zip and place them inside the pupvideos/bikermicefrommars folder, and overwrite files if prompted
 - Guys, let me tell you something. In this wild and woolly universe of ours, there's only three things you can count on: You brains, your bros... and your bike!
+

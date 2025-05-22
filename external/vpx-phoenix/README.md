@@ -37,10 +37,9 @@ Minimum VPX Standalone build: 10.8.0-2042-1431983
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-phoenix.elf
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them to external/vpx-phoenix
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-- The ROM zip file gets copied to pinmame/roms (Do not unzip!)
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - If using the Alt Color, download and create an altcolor folder inside the pinmame folder. Unzip the ""Williams System 4&6 Serum pack" file and copy the phnix_l1 folder to the altcolor folder.
 - The fiery Phoenix! 🔥
+

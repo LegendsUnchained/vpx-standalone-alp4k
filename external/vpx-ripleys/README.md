@@ -27,9 +27,8 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-ripleys.elf
-- Download the table and directb2s versions listed above and copy them to external/vpx-ripleys
-- Make sure (.vpx), and (.directb2s) files are all named the same
-- Place ROM file (which remains as a .zip) into "vpx-ripleys/pinmame/roms"
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - "I have traveled to the world's farthest corners and seen the most incredible things."
+

@@ -32,8 +32,8 @@ Minimum VPX Standalone build: 10.8.0-2022-f17c1a3
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-pulpfiction.elf
-- Download the zip file listed above and extract it in the vpx-pulpfiction directory (it will create the packpulp3.1 directory)
-- From the packpulp3.1 directory, move the table (.vpx) and backglass (.directb2s) to the vpx-pulpfiction directory
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - Enjoy the Royale with Cheese!
+
