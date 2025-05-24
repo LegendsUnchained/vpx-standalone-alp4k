@@ -44,10 +44,10 @@
 ---
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-tombraider.elf`
-- Download the table from above link and copy it into `vpx-tombraider`
-- Make sure `(.vpx)` `(.vbs)` and `(.ini)` are all named the same.
+
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - Create the folder `pupvideos` within the `external/vpx-tombraider`
 - Download `Tomb Raider (2025).zip` from the same link above
 - Extract the folder `Tomb_Raider` from the archive, and put it in the `pupvideos` folder.

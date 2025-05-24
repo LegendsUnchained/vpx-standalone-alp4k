@@ -31,12 +31,11 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-vampirella.elf
-- Download the table and directb2s listed above, extract (if necessary) and copy to external/vpx-vampirella
-- Make sure (.vpx), (.directb2s), (.vbs) and (.ini) files are all named the same
-- The ROM zip file gets copied to vpx-vampirella/pinmame/roms (Do not unzip)
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - This table has 4 different playfield images. They are randomized by default
 - Change Line 75 in the VBS to pick a specific playfield
-- Change x to 0, 1, 2, or 3. Table1.Image = playfieldImages(x) 
+- Change x to 0, 1, 2, or 3. Table1.Image = playfieldImages(x)
 - PICK C(2)
+

@@ -25,8 +25,8 @@
 ---
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-wolfman.elf
-- Download the table and directb2s versions listed above, extract (if necessary) and copy them into the external/vpx-wolfman folder
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-- Rename downloaded ROM file to wolfman.zip and place into vpx-wolfman/pinmame/roms folder. DO NOT UNZIP!
+
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
+

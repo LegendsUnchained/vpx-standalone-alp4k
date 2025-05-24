@@ -2,7 +2,7 @@
 backglassVPSId: "6Sxc91L9Da"
 backglassChecksum: "8d6c216a67a1e4607b2a170f68a3a23e"
 backglassNotes: "Download version 2.0"
-fps: 54
+fps: 60
 romVPSId: "D0YlH0CH"
 romChecksum: "8435fda49c4dfc2d82b9b361e8aa1155"
 tableVPSId: "8uhquNv2"
@@ -13,6 +13,5 @@ testers:
 vpxVPSId: "YXlaXmTu"
 vpxChecksum: "bc24be7e4e6eeca743b7f5d47e947841"
 tableNotes: "Download version 3.0"
-enabled: false
 applyFixes:
   - "bass"

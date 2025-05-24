@@ -25,10 +25,10 @@
 ---
 
 ## Instructions
-- Copy this repo folder into the "external" folder on your USB drive
-- Add your personalized launcher.elf and rename it to vpx-alice1948.elf
-- Download the table and directb2s versions listed above, extract them (if necessary) and copy them to external/vpx-alice1948
-- Make sure any (.vpx), (.directb2s), and (.ini) files are all named the same
+
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 
 ## Notes
 - Push right on the control panel to load a ball from the hopper.

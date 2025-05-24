@@ -25,9 +25,9 @@
 ---
 
 ## Instructions
-- Copy the **vpx-aceventura** folder to the `external` directory of your USB drive
-- Add your personalized launcher.elf and rename it to **vpx-aceventura.elf**
-- Download and extract the **VPX** and **DIRECTB2S** files ONLY, and copy them into the **vpx-aceventura** folder
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same -- No need to rename VPReg.ini
-- Download the **ROM** version listed above and copy it into `\vpx-aceventura\pinmame\roms` (DO NOT UNZIP)
+
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - "May I ass you a few questions?"
+
