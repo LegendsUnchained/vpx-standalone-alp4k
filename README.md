@@ -475,10 +475,7 @@ Links to these products on Amazon are through affiliate links.
 | [Gremlins (Original 2022)](external/vpx-gremlins) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
 | [Guardians of the Galaxy Trilogy (Original 2023)](external/vpx-gogtrilogy) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Guns N' Roses (Data East 1994)](external/vpx-gnr) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
-<<<<<<< HEAD
-| [Guns'N Roses LE (Remix)](external/vpx-gunsle) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
-=======
->>>>>>> 971a64ca04c50cd4ef33628946113ebcaa71db30
+| [Guns'N Roses LE (Remix)](external/vpx-gunsle) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
 | [Gunship pinball music table (Original 2023)](external/vpx-gunship) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 | [Hall & Oates (Original 2025)](external/vpx-hallandoates) | :white_check_mark: | :x: | :white_check_mark: | :x: | 45 |
 | [Halloween 1978-1981 (Original 2022)](external/vpx-halloween) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
