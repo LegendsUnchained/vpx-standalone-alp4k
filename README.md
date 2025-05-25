@@ -628,7 +628,7 @@ Links to these products on Amazon are through affiliate links.
 | [North Star (Gottlieb 1964)](external/vpx-northstar) | :white_check_mark: | :x: | :x: | :x: | 52 |
 | [Nosferatu 1922 (Original 2023)](external/vpx-nosferatu) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Nugent (Stern 1978)](external/vpx-nugent) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
-| [O Gacho (LTD do Brasil 1975)](external/vpx-ogaucho) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
+| [O Gaucho (LTD do Brasil 1975)](external/vpx-ogaucho) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Odisea Paris-Dakar (Pepyer 1984)](external/vpx-odisea) | :white_check_mark: | :x: | :white_check_mark: | :x: | 42 |
 | [Old Chicago (Bally 1976)](external/vpx-oldchicago) | :white_check_mark: | :x: | :x: | :x: | 58 |
 | [Old Coney Island (Game Plan 1979)](external/vpx-oldconeyisland) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
