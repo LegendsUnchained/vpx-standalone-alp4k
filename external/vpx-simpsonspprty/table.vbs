@@ -1103,47 +1103,47 @@ End Sub
 '	ninuzzu's	FLIPPER SHADOWS
 '*****************************************
 
-sub FlipperTimer_Timer()
-    lfs.RotZ = LeftFlipper.CurrentAngle
-  rfs.RotZ = RightFlipper.CurrentAngle
-    FlipperRSh1.RotZ = RightFlipper2.currentangle
-End Sub
+'sub FlipperTimer_Timer()
+   ' lfs.RotZ = LeftFlipper.CurrentAngle
+ ' rfs.RotZ = RightFlipper.CurrentAngle
+  '  FlipperRSh1.RotZ = RightFlipper2.currentangle
+'End Sub
 
 '*****************************************
 '	ninuzzu's	BALL SHADOW
 '*****************************************
-Dim BallShadow
-BallShadow = Array (BallShadow1,BallShadow2,BallShadow3,BallShadow4,BallShadow5,BallShadow6)
+'Dim BallShadow
+'BallShadow = Array (BallShadow1,BallShadow2,BallShadow3,BallShadow4,BallShadow5,BallShadow6)
 
-Sub BallShadowUpdate_timer()
-    Dim BOT, b
-    BOT = GetBalls
+'Sub BallShadowUpdate_timer()
+   ' Dim BOT, b
+   ' BOT = GetBalls
     ' hide shadow of deleted balls
-    If UBound(BOT)<(tnob-1) Then
-        For b = (UBound(BOT) + 1) to (tnob-1)
-            BallShadow(b).visible = 0
-        Next
-    End If
+   ' If UBound(BOT)<(tnob-1) Then
+     '   For b = (UBound(BOT) + 1) to (tnob-1)
+       '   '  BallShadow(b).visible = 0
+       ' Next
+    'End If
     ' exit the Sub if no balls on the table
-    If UBound(BOT) = -1 Then Exit Sub
+   ' If UBound(BOT) = -1 Then Exit Sub
     ' render the shadow for each ball
-    For b = 0 to UBound(BOT)
-		BallShadow(b).X = BOT(b).X
-		ballShadow(b).Y = BOT(b).Y + 10                       
-        If BOT(b).Z > 20 and BOT(b).Z < 200 Then
-            BallShadow(b).visible = 1
-        Else
-            BallShadow(b).visible = 0
-        End If
-if BOT(b).z > 30 Then 
-ballShadow(b).height = BOT(b).Z - 20
-ballShadow(b).opacity = 80
-Else
-ballShadow(b).height = BOT(b).Z - 24
-ballShadow(b).opacity = 80
-End If
-    Next	
-End Sub
+   ' For b = 0 to UBound(BOT)
+	'	BallShadow(b).X = BOT(b).X
+	'	ballShadow(b).Y = BOT(b).Y + 10                       
+      '  If BOT(b).Z > 20 and BOT(b).Z < 200 Then
+      '      BallShadow(b).visible = 1
+      '  Else
+      '      BallShadow(b).visible = 0
+     '   End If
+'if BOT(b).z > 30 Then 
+'ballShadow(b).height = BOT(b).Z - 20
+'ballShadow(b).opacity = 80
+'Else
+'ballShadow(b).height = BOT(b).Z - 24
+'ballShadow(b).opacity = 80
+'End If
+  '  Next	
+'End Sub
 
 
 
