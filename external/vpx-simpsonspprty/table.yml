@@ -1,0 +1,20 @@
+---
+backglassBundled: "true"
+backglassNotes: "Wizard will install backglass"
+backglassChecksum: "76918113A0203A1B8FC1FA147F9B2B25"
+fps: 50
+romVPSId: "BJan0_7-"
+romNotes: "Download simpprty.zip"
+romChecksum: "5B50F95CA27EC06812B9BE2126922517"
+tableVPSId: "qfbl4Ee0"
+tableNotes: "Download Simpsons Pinball Party (Stern 2003)4.0"
+tagline: "D'oh!"
+testers:
+  - "Bla1ze"
+  - "pointdablame"
+  - "Mar3nBu"
+vpxVPSId: "3EE1X7uW"
+vpxChecksum: "90B033A6C012418A3B4091102EAEA825"
+applyFixes:
+  - "bass"
+
