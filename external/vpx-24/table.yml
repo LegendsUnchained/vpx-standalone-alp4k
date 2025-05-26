@@ -1,17 +1,20 @@
 ---
 backglassVPSId: "_SWGA7jJeW"
 backglassChecksum: "947426bdecec0938dd987dbc58125674"
+backglassNotes: "Download 24 (Stern 2009).zip"
 coloredROMVPSId: "aIWgsQ7Po0"
 coloredROMChecksum: "1DE5904599E29E0FA52FE3FDD774F8B8"
-fps: 54
+fps: 60
 romVPSId: "GhBaghhT"
 romChecksum: "B8E13521877C048CD8F198A3CBA105F8"
+romNotes: "Download twenty4_150.zip"
 tableVPSId: "P15WeTaO"
+tableNotes: "Download 24 (Stern 2009)_Bigus(MOD)3.0.vpx.zip"
 tagline: "The following takes place between 6 A.M. and 7 A.M"
 testers:
   - "Bla1ze"
   - "OminousOsie"
 vpxVPSId: "6T98rAIp"
-vpxChecksum: "8DC5DDF640BC04608094D9A0EC76FFD5"
+vpxChecksum: "4DC00F4F27F64EABC0E4AB2E07525B31"
 applyFixes:
   - "bass"
