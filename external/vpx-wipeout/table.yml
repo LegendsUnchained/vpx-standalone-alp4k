@@ -1,0 +1,19 @@
+---
+tableVPSId: "b31KZ92B"
+vpxVPSId: "eahB14sy"
+vpxChecksum: "b866c873d66323803be0dad4299758c9"
+tableNotes: "Wipe Out (Premier 1993) 1.1.0.zip"
+#backglassVPSId: ""
+#backglassChecksum: ""
+#backglassNotes: ""
+romUrlOverride: "https://pinballnirvana.com/forums/resources/wipeout.2596/"
+romVersionOverride: "wipeout"
+romNotes: "wipeout.zip"
+romChecksum: "a192a69c51e0f57318b5ddd18152d321"
+fps: 58
+tagline: "The ski lift is now open!"
+testers:
+  - "Boris"
+applyFixes: 
+  - "bass"
+
