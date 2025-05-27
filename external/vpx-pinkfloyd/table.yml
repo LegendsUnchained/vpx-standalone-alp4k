@@ -24,5 +24,6 @@ mainNotes: >-
   can be done about it. But it doesn't happen too often.
 vpxVPSId: "qV3Z3oQ8md"
 vpxChecksum: "e6df3800f7c9286fa195e84034da683a"
+enabled: false
 applyFixes:
   - "bass"
