@@ -52,7 +52,7 @@ Links to these products on Amazon are through affiliate links.
 | Table | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |:------|:---------:|:---:|:------------:|:---:|:---:|
 | [1-2-3 (Talleres de Llobregat 1973)](external/vpx-123) | :white_check_mark: | :x: | :x: | :x: | 60 |
-| [24 (Stern 2009)](external/vpx-24) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 54 |
+| [24 (Stern 2009)](external/vpx-24) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Aaron Spelling (Data East 1992)](external/vpx-aaronspelling) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Addams Family, The (Bally 1992)](external/vpx-taf) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
 | [Adventures of Rocky and Bullwinkle and Friends (Data East - 1993)](external/vpx-aorab) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
@@ -721,7 +721,7 @@ Links to these products on Amazon are through affiliate links.
 | [Shrek (Stern 2008)](external/vpx-shrek) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 35 |
 | [Silverball Mania (Bally 1978)](external/vpx-silverballmania) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Simpsons, The (Data East 1990)](external/vpx-thesimpsons) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 35 |
-| [Simpsons Pinball Party, The (Stern 2003)](external/vpx-simpsonspprty) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 37 |
+| [Simpsons Pinball Party, The (Stern 2003)](external/vpx-simpsonspprty) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Sir Lancelot (Peyper 1994)](external/vpx-sirlancelot) | :white_check_mark: | :x: | :white_check_mark: | :x: | 45 |
 | [Six Million Dollar Man, The (Sound Mod) (Bally 1978)](external/vpx-sixmilliondollarman) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55
 | [Skateball (Bally 1980)](external/vpx-skateball) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
