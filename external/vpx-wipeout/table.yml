@@ -3,9 +3,8 @@ tableVPSId: "b31KZ92B"
 vpxVPSId: "eahB14sy"
 vpxChecksum: "b866c873d66323803be0dad4299758c9"
 tableNotes: "Wipe Out (Premier 1993) 1.1.0.zip"
-#backglassVPSId: ""
-#backglassChecksum: ""
-#backglassNotes: ""
+# yamllint disable-line rule:line-length
+backglassImageOverride: "https://vpuniverse.com/screenshots/monthly_2022_08/2095406267_WipeOut(Premier1993).thumb.png.621a3669112525537772c669175fd1b6.png"
 romUrlOverride: "https://pinballnirvana.com/forums/resources/wipeout.2596/"
 romVersionOverride: "wipeout"
 romNotes: "wipeout.zip"
@@ -16,4 +15,3 @@ testers:
   - "Boris"
 applyFixes: 
   - "bass"
-
