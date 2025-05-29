@@ -1,7 +1,6 @@
 ---
-backglassVPSId: "yGXSbW2IVx"
-backglassChecksum: "10EDB496B86011B7E996B2F4B1C15335"
-backglassNotes: "Download version 1.0.0"
+# yamllint disable-line rule:line-length
+backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/gQRBUSML_b2s_1698248771391.webp"
 fps: 55
 romVPSId: "AFalPfjb"
 romChecksum: "A207505B54EC80F1B0E9B87BCBEE562E"
