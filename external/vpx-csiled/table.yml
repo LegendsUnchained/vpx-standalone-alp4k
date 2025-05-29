@@ -2,12 +2,12 @@
 backglassVPSId: "yGXSbW2IVx"
 backglassChecksum: "10EDB496B86011B7E996B2F4B1C15335"
 backglassNotes: "Download version 1.0.0"
-fps: 60
+fps: 55
 romVPSId: "AFalPfjb"
 romChecksum: "A207505B54EC80F1B0E9B87BCBEE562E"
 romNotes: "Download version 1.00"
 tableVPSId: "gQRBUSML"
-tableNotes: "Download "
+tableNotes: "Download version 1.00"
 tagline: "Last stop.... the morgue!"
 testers:
   - "Bla1ze"
