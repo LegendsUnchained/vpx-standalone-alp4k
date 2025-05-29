@@ -1,7 +1,7 @@
 ---
 # yamllint disable-line rule:line-length
 backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/gQRBUSML_b2s_1698248771391.webp"
-fps: 55
+fps: 54
 romVPSId: "AFalPfjb"
 romChecksum: "A207505B54EC80F1B0E9B87BCBEE562E"
 romNotes: "Download version 1.00"
