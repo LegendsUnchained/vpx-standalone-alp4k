@@ -15,6 +15,7 @@ testers:
   - "Kaoticbpr"
   - "OminousOsie"
 vpxVPSId: "_N9Usy6Q"
+enabled: false
 vpxChecksum: "FAC4E8171AD1A55680FF41AE7FD34A28"
 applyFixes:
   - "bass"
