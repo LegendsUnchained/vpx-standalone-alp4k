@@ -826,6 +826,7 @@ Links to these products on Amazon are through affiliate links.
 | [Transporter: The Rescue (Bally 1989)](external/vpx-transporter) | :white_check_mark: | :x: | :white_check_mark: | :x: | 30 |
 | [Tri Zone (Williams 1979)](external/vpx-trizone) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 51 |
 | [Trick 'r Treat (Original 2023)](external/vpx-trickrtreat) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
+| [Trick Shooter (LTD do Brasil 1980)](external/vpx-trickshooter) | :white_check_mark: | :white_check_mark: | :hite_check_mark: | :x: | 60 |
 | [Triple X (Williams 1973)](external/vpx-triplex) | :white_check_mark: | :x: | :x: | :x: | 45 |
 | [Tron Classic (Original 2022)](external/vpx-tron) | :white_check_mark: | :x: | :white_check_mark: | :x: | 45 |
 | [Truck Stop (Bally 1988)](external/vpx-truckstop) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 38 |
