@@ -12,4 +12,4 @@
 
 // Pages
 :page-getting-started: xref:gettingstarted.adoc
-:page-joining-beta: xref:joingingthebeta.adoc
+:page-joining-beta: xref:joiningthebeta.adoc
