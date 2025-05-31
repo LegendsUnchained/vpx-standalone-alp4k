@@ -29,3 +29,6 @@ VPinballX_*-alp4k
 !/external/*/pinmame/roms/.gitkeep
 .venv
 __pycache__
+
+.idea
+

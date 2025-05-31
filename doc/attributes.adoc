@@ -1,0 +1,15 @@
+////
+ An asciidoc attribute reference contains a simple way to reference commonly used
+ urls, text, pages, etc.  You can set the attribute here, include this file
+ at the top of your document file, and then use the attribute in your document.
+ Updating the entry here, will update the entry where ever you reference it in
+ your documents.   This way you only have one place to
+////
+
+// Common URLs
+:discord-mox-gameroom-url: https://discord.com/invite/moxsgameroom
+:vpx-4k-wiki-url:  https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B00%5D-%F0%9F%92%9A-VPXS-4KP-Project
+
+// Pages
+:page-getting-started: xref:gettingstarted.adoc
+:page-joining-beta: xref:joingingthebeta.adoc
