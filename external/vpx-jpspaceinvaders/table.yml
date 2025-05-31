@@ -1,0 +1,22 @@
+---
+backglassVPSId: "uL7VTmOSFQ"
+backglassChecksum: "BBEF6F8F1C297B0B535E44DB8947A3F1"
+backglassNotes: "Download version 1.0.0"
+fps: 60
+romVPSId: "Pk5H-8Qj"
+romChecksum: "21BF5D6129C271193F25900DD3E9F7EC"
+romNotes: "Download 'spaceinb.zip'"
+tableVPSId: "0JuaX_LC"
+tableNotes: "Download v55_VPX8.zip"
+tagline: >- 
+  Bally was sued over the game's artwork
+  resemblance to designs by H. R. Giger.
+  A settlement was reached, and Fox was 
+  given 3 machines to promote 'Aliens'!
+testers:
+  - "shavendave"
+  - "OminousOsie"
+vpxVPSId: "uvNi1DbR"
+vpxChecksum: "B8E0B2B5B556EFCB520A1A8A25CAA5EC"
+applyFixes:
+  - "bass"
