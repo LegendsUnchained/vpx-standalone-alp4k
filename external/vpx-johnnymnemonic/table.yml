@@ -1,0 +1,19 @@
+---
+# yamllint disable-line rule:line-length
+backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/529c44b2c08c9de492d3ec05714aecca_b2s_1638093698646.webp"
+fps: 60
+romVPSId: "0ASY_8FR"
+romChecksum: "8942EFD4F6187817A3DA231FFEA7D746"
+romNotes: "Download jm_12r.zip"
+tableVPSId: "-SbeVjPA"
+tableNotes: "Download version 2.1"
+tagline: "Hit me!"
+mainNotes: "Glove forward and back are set to the left and right nudge buttons."
+testers:
+  - "Bla1ze"
+  - "Reboot"
+  - "OminousOsie"
+vpxVPSId: "gwAsaJWx"
+vpxChecksum: "03D3876845A520CFEB75DA2DD847D1BC"
+applyFixes:
+  - "bass"
