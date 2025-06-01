@@ -1,6 +1,6 @@
 # Trick Shooter (LTD do Brasil 1980)
 
-![Table Preview](../../images/vpx-trickshooter-table.jpeg)
+![Table Preview](../../images/vpx-trickshooter-table.jpg)
 
 ---
 
