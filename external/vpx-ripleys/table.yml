@@ -1,0 +1,20 @@
+---
+backglassVPSId: "ktyjU-4Y"
+backglassChecksum: "0092FA141A8F069A7D7C8BB3FA8E47B7"
+backglassNotes: "Download version 2.0"
+fps: 60
+romVPSId: "H55zvdt4"
+romChecksum: "555BD09C06F23116DAB1ABF943C17A39"
+romNotes: "Download version 3.20"
+tableVPSId: "MBiAY_Tg"
+tableNotes: "Download v55_VPX8.zip"
+tagline: >-
+  I have traveled to the world's farthest
+  corners and seen the most incredible things.
+testers:
+  - "Kaoticbpr"
+  - "OminousOsie"
+vpxVPSId: "_N9Usy6Q"
+vpxChecksum: "FAC4E8171AD1A55680FF41AE7FD34A28"
+applyFixes:
+  - "bass"

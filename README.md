@@ -176,7 +176,7 @@ Links to these products on Amazon are through affiliate links.
 | [Viper Night Drivin' (Sega 1998)](external/vpx-vipernight) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 54 |
 | [Vortex (Taito do Brasil 1981)](external/vpx-vortex) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Wipe Out (Gottlieb 1993)](external/vpx-wipeout) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 55 |
-| [Whirlwind (Williams 1990)](external/vpx-wwind) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 32 |
+| [Whirlwind (Williams 1990)](external/vpx-wwind) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 51 |
 | [Who Dunnit (Bally 1995)](external/vpx-whodunnit) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
 | [Who's Tommy Pinball Wizard, The (Data East 1994)](external/vpx-tommy) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Whoa Nellie! Big Juicy Melons (Stern 2015)](external/vpx-whoanellie) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
@@ -608,6 +608,7 @@ Links to these products on Amazon are through affiliate links.
 | [Motordome (Bally 1986)](external/vpx-motordome) | :white_check_mark: | :x: | :white_check_mark: | :x: | 55 |
 | [Mousin' Around! (Bally 1989)](external/vpx-mousin) | :white_check_mark: | :x: | :white_check_mark: | :x: | 32 |
 | [Mr. and Mrs. Pac-Man (Bally 1982)](external/vpx-mrandmrspacman) | :white_check_mark: | :x: | :white_check_mark: | :x: | 45 |
+| [Mr. and Mrs. Pec-Men (LTD do Brasil 1980)](external/vpx-pecmen) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Mr. Black - JP (Taito do Brasil 1984)](external/vpx-jpmrblack) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Mustang (Bullitt LE) (Stern 2014)](external/vpx-mustangbullitt) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 37 |
 | [Mustang (Stern 2014)](external/vpx-mustang) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 33 |
@@ -827,6 +828,7 @@ Links to these products on Amazon are through affiliate links.
 | [Transporter: The Rescue (Bally 1989)](external/vpx-transporter) | :white_check_mark: | :x: | :white_check_mark: | :x: | 30 |
 | [Tri Zone (Williams 1979)](external/vpx-trizone) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 51 |
 | [Trick 'r Treat (Original 2023)](external/vpx-trickrtreat) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
+| [Trick Shooter (LTD do Brasil 1980)](external/vpx-trickshooter) | :white_check_mark: | :white_check_mark: | :hite_check_mark: | :x: | 60 |
 | [Triple X (Williams 1973)](external/vpx-triplex) | :white_check_mark: | :x: | :x: | :x: | 45 |
 | [Tron Classic (Original 2022)](external/vpx-tron) | :white_check_mark: | :x: | :white_check_mark: | :x: | 45 |
 | [Truck Stop (Bally 1988)](external/vpx-truckstop) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 38 |
@@ -850,7 +852,7 @@ Links to these products on Amazon are through affiliate links.
 | [Water World (Gottlieb 1995)](external/vpx-waterworld) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 46 |
 | [Wayne's World (Original 2020)](external/vpx-waynesworld) | :white_check_mark: | :x: | :white_check_mark: | :x: | 50 |
 | [Wheel of Fortune (Stern 2007)](external/vpx-wof) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 37 |
-| [Whirlwind (Williams 1990)](external/vpx-wwind) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 32 |
+| [Whirlwind (Williams 1990)](external/vpx-wwind) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 51 |
 | [White Water (Williams 1993)](external/vpx-whitewater) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
 | [Who Dunnit (Bally 1995)](external/vpx-whodunnit) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
 | [Whoa Nellie! Big Juicy Melons (Stern 2015)](external/vpx-whoanellie) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
