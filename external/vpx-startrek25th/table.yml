@@ -1,0 +1,18 @@
+---
+backglassVPSId: "3fzeZlNp6L"
+backglassChecksum: "277B6FEA72C61D5A5532BFAB2BB51E65"
+backglassNotes: "Download version v2.0"
+fps: 50
+romVPSId: "8EMC0hkm"
+romChecksum: "AD16FEDAFDDC7FDC81291797112F09B5"
+romNotes: "Download trek_201.zip"
+tableVPSId: "P12wTlyY"
+tableNotes: "Download version 1.1"
+tagline: ""
+testers:
+  - "Bla1ze"
+  - "OminousOsie"
+vpxVPSId: "wQP0C59OiN"
+vpxChecksum: "B65B4E02E5269BD5BA113EDA7BC90E2D"
+applyFixes:
+  - "bass"
