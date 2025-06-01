@@ -666,6 +666,7 @@ Links to these products on Amazon are through affiliate links.
 | [Playboy 35th Anniversary - Marilyn Edition (Data East 1989)](external/vpx-playboy35m) | :white_check_mark: | :x: | :white_check_mark: | :x: | 50 |
 | [Pokemon, JPs (Original 2016)](external/vpx-jps-pokemon) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Polar Explorer - JP (Taito do Brasil 1983)](external/vpx-jppolarexplorer) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
+| [Police Force (Williams 1989)](external/vpx-policeforce) | :white_check_mark: | :x: | :white_check_mark: | :x: | 50 |
 | [Poltergeist (Original 2022)](external/vpx-poltergeist) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Pool Sharks (Bally 1990)](external/vpx-poolsharks) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Popeye Saves The Earth (Bally 1994)](external/vpx-popeye) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 35 |
