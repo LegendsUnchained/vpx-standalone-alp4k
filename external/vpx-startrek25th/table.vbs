@@ -35,7 +35,7 @@ SetLUT 'LUT
 
 Const lob = 0	'locked balls on start; might need some fiddling depending on how your locked balls are done
 Const DynamicBallShadowsOn = 0		'0 = no dynamic ball shadow ("triangles" near slings and such), 1 = enable dynamic ball shadow
-Const AmbientBallShadowOn = 1		'0 = Static shadow under ball ("flasher" image, like JP's)
+Const AmbientBallShadowOn = 0		'0 = Static shadow under ball ("flasher" image, like JP's)
 '									'1 = Moving ball shadow ("primitive" object, like ninuzzu's) - This is the only one that shows up on the pf when in ramps and fades when close to lights!
 '									'2 = flasher image shadow, but it moves like ninuzzu's
 
