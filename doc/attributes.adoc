@@ -8,8 +8,15 @@
 
 // Common URLs
 :discord-mox-gameroom-url: https://discord.com/invite/moxsgameroom
-:vpx-4k-wiki-url:  https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B00%5D-%F0%9F%92%9A-VPXS-4KP-Project
 
 // Pages
-:page-getting-started: xref:gettingstarted.adoc
-:page-joining-beta: xref:joiningthebeta.adoc
+:page-getting-started: xref:beginner/gettingstarted.adoc
+:page-joining-beta: xref:beginner/joiningthebeta.adoc
+:page-table-manager-wizard: xref:beginner/tablemanager.adoc
+:page-vpx4kproject: xref:beginner/vpx4pproject.adoc
+:page-tablemanagerother: xref:intermediate/tablemanagerother.adoc
+:page-tableinstall: xref:intermediate/tableinstallfaq.adoc
+:page-table-settings: xref:intermediate/tablesettings.adoc
+:page-table-customization: xref:intermediate/tablecustomization.adoc
+:page-pup-pack: xref:advanced/puppackinstall.adoc
+:page-new-table: xref:advanced/newtable.adoc
