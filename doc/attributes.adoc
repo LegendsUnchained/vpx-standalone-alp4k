@@ -13,7 +13,7 @@
 :page-getting-started: xref:beginner/gettingstarted.adoc
 :page-joining-beta: xref:beginner/joiningthebeta.adoc
 :page-table-manager-wizard: xref:beginner/tablemanager.adoc
-:page-vpx4kproject: xref:beginner/vpx4pproject.adoc
+:page-vpx4kproject: xref:beginner/vpx4kpproject.adoc
 :page-tablemanagerother: xref:intermediate/tablemanagerother.adoc
 :page-tableinstall: xref:intermediate/tableinstallfaq.adoc
 :page-table-settings: xref:intermediate/tablesettings.adoc
