@@ -8,11 +8,12 @@ romChecksum: "AD16FEDAFDDC7FDC81291797112F09B5"
 romNotes: "Download trek_201.zip"
 tableVPSId: "P12wTlyY"
 tableNotes: "Download version 1.1"
-tagline: ""
+tagline: "Scotty Here!"
 testers:
   - "Bla1ze"
   - "OminousOsie"
 vpxVPSId: "wQP0C59OiN"
 vpxChecksum: "B65B4E02E5269BD5BA113EDA7BC90E2D"
+enabled: false # Osie: Disabled till new bundle is released
 applyFixes:
   - "bass"

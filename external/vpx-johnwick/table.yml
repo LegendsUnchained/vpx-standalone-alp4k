@@ -17,5 +17,5 @@ testers:
   - "mrandromeda"
   - "OminousOsie"
 vpxchecksum: "f89b694a79c893d93251279ddae39b1e"
-enabled: false
+enabled: false # Osie: Disabled due to lack of feedback in TM. Takes a long time to install
 vpxVPSId: "VG0a5Acwiy"
