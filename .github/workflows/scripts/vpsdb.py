@@ -1,9 +1,10 @@
-import requests
-import sys
 import json
+import sys
+from pathlib import Path
+
+import requests
 import yaml
 
-from pathlib import Path
 
 class VPSDB:
     def __init__(
@@ -35,6 +36,14 @@ class VPSDB:
                 for altColorFile in table["altColorFiles"]:
                     if altColorFile.get("id") == id:
                         return altColorFile
+        return None
+
+    def get_altsound_by_id(self, id):
+        for table in self.tables:
+            if "altSoundFiles" in table:
+                for altSoundFile in table["altSoundFiles"]:
+                    if altSoundFile.get("id") == id:
+                        return altSoundFile
         return None
 
     def get_backglass_by_id(self, id):
@@ -85,19 +94,22 @@ def get_table_meta(files, warn_on_error=True):
         print(f"Processing {folder_name}")
         with open(table_yaml, "r") as table_data:
             data = yaml.safe_load(table_data)
-        
-        tableVPSId = data.get("tableVPSId")
-        vpxVPSId = data.get("vpxVPSId")
+
+        altSoundVPSId = data.get("altSoundVPSId")
         backglassVPSId = data.get("backglassVPSId")
-        romVPSId = data.get("romVPSId")
         coloredROMVPSId = data.get("coloredROMVPSId")
+        romVPSId = data.get("romVPSId")
+        tableVPSId = data.get("tableVPSId")
         tutorialVPSId = data.get("tutorialVPSId")
+        vpxVPSId = data.get("vpxVPSId")
 
         backglassChecksum = data.get("backglassChecksum")
         coloredROMChecksum = data.get("coloredROMChecksum")
         romChecksum = data.get("romChecksum")
         vpxChecksum = data.get("vpxChecksum")
 
+        if altSoundChecksum:
+            altSoundChecksum = altSoundChecksum.lower()
         if backglassChecksum:
             backglassChecksum = backglassChecksum.lower()
         if coloredROMChecksum:
@@ -108,22 +120,22 @@ def get_table_meta(files, warn_on_error=True):
             vpxChecksum = vpxChecksum.lower()
 
         table_meta = {
-            "name": data.get("tableNameOverride"),
             "applyFixes": data.get("applyFixes"),
+            "backglassAuthors": data.get("backglassAuthorsOverride"),
             "backglassBundled": data.get("backglassBundled"),
             "backglassChecksum": backglassChecksum,
             "backglassFileUrl": data.get("backglassUrlOverride"),
-            "backglassAuthors": data.get("backglassAuthorsOverride"),
-            "backglassNotes": data.get("backglassNotes"),
             "backglassImage": data.get("backglassImageOverride"),
+            "backglassNotes": data.get("backglassNotes"),
             "coloredROMBundled": data.get("coloredROMBundled"),
             "coloredROMChecksum": coloredROMChecksum,
-            "coloredROMNotes": data.get("coloredROMNotes"),
             "coloredROMFileUrl": data.get("coloredROMUrlOverride"),
+            "coloredROMNotes": data.get("coloredROMNotes"),
             "coloredROMVersion": data.get("coloredROMVersionOverride"),
             "enabled": data.get("enabled"),
             "fps": data.get("fps"),
             "mainNotes": data.get("mainNotes"),
+            "name": data.get("tableNameOverride"),
             "pupArchiveRoot": data.get("pupArchiveRoot"),
             "pupChecksum": data.get("pupChecksum"),
             "pupFileUrl": data.get("pupFileUrl"),
@@ -132,14 +144,13 @@ def get_table_meta(files, warn_on_error=True):
             "pupVersion": data.get("pupVersion"),
             "romBundled": data.get("romBundled"),
             "romChecksum": romChecksum,
-            "romNotes": data.get("romNotes"),
             "romFileUrl": data.get("romUrlOverride"),
+            "romNotes": data.get("romNotes"),
             "romVersion": data.get("romVersionOverride"),
             "tableChecksum": vpxChecksum,
             "tableNotes": data.get("tableNotes"),
             "tagline": data.get("tagline"),
             "testers": data.get("testers"),
-            "enabled": data.get("enabled")
         }
         if tableVPSId:
             table = vpsdb.get_table(tableVPSId)
@@ -154,10 +165,10 @@ def get_table_meta(files, warn_on_error=True):
             table_meta["designers"] = table.get("designers", [])
             table_meta["image"] = table.get("imgUrl", "")
             table_meta["manufacturer"] = table.get("manufacturer", "")
-            
+
             if not table_meta["name"]:
                 table_meta["name"] = table.get("name", "")
-                
+
             table_meta["players"] = table.get("players", 0)
             table_meta["type"] = table.get("type", "")
             table_meta["version"] = table.get("version", "")
@@ -199,7 +210,9 @@ def get_table_meta(files, warn_on_error=True):
                 table_meta["backglassImage"] = backglass.get("imgUrl", "")
                 table_meta["backglassVersion"] = backglass.get("version", "")
             else:
-                print(f"{error_prefix}: Backglass id {backglassVPSId} not found in VPSDB")
+                print(
+                    f"{error_prefix}: Backglass id {backglassVPSId} not found in VPSDB"
+                )
                 if warn_on_error:
                     print(f"WARNING: Skipping {folder_name}")
                     continue
@@ -223,6 +236,27 @@ def get_table_meta(files, warn_on_error=True):
                 else:
                     sys.exit(1)
 
+        if altSoundVPSId:
+            altSound = vpsdb.get_altsound_by_id(altSoundVPSId)
+            if altSound:
+                print(f"Parsing alt sound {altSoundVPSId} for {folder_name}")
+                table_meta["altSoundAuthors"] = altSound.get("authors", [])
+                table_meta["altSoundComment"] = altSound.get("comment", "")
+                table_meta["altSoundFileUrl"] = altSound.get("urls", [])[0].get(
+                    "url", ""
+                )
+                if not table_meta["altSoundVersion"]:
+                    table_meta["altSoundVersion"] = altSound.get("version", "")
+            else:
+                print(
+                    f"{error_prefix}: Alt sound id {altSoundVPSId} not found in VPSDB"
+                )
+                if warn_on_error:
+                    print(f"WARNING: Skipping {folder_name}")
+                    continue
+                else:
+                    sys.exit(1)
+
         if coloredROMVPSId:
             coloredROM = vpsdb.get_altcolor_by_id(coloredROMVPSId)
             if coloredROM:
@@ -236,7 +270,9 @@ def get_table_meta(files, warn_on_error=True):
                 if not table_meta["coloredROMVersion"]:
                     table_meta["coloredROMVersion"] = coloredROM.get("version", "")
             else:
-                print(f"{error_prefix}: Colored ROM id {coloredROMVPSId} not found in VPSDB")
+                print(
+                    f"{error_prefix}: Colored ROM id {coloredROMVPSId} not found in VPSDB"
+                )
                 if warn_on_error:
                     print(f"WARNING: Skipping {folder_name}")
                     continue
@@ -261,4 +297,3 @@ def get_table_meta(files, warn_on_error=True):
         tables[folder_name] = table_meta
 
     return tables
-
