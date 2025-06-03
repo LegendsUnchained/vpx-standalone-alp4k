@@ -2,7 +2,7 @@
 
 ![Table Preview](../../images/vpx-dune.png)
 
-T<br>
+<br>
 
 ## *️⃣  Table Statistics
 
