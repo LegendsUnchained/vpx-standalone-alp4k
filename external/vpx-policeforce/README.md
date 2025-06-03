@@ -1,6 +1,6 @@
-# DUNE
+﻿# Police Force (Williams 1989)
 
-![Table Preview](../../images/vpx-dune.png)
+![Table Preview](../../images/vpx-policeforce-preview.jpeg)
 
 <br>
 
@@ -8,15 +8,12 @@
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 50 |
 
 <br>
 
 **VPXS 4KP Testers:**
   - Bla1ze
-  - OminousOsie
-  - evilwraith
-  - Silentkat
 
 <br>
 
@@ -35,9 +32,9 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`DUNE`**
+4.  Find and select this table from the dropdown menu: **`Police Force`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *"You were not born to the spice as we were!"*
+6. *"You'll never take me alive, copper!"*
 
 <br>
 
