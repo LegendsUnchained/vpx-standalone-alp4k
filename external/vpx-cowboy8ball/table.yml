@@ -1,0 +1,24 @@
+---
+backglassVPSId: "qD8HcbYQ"
+backglassChecksum: "D1F7A5BFA86EF33A1645890D046A4161"
+backglassAuthorsOverride:
+  - "JPSalas"
+backglassBundled: true
+backglassNotes: "Download 'Cowboy Eight Ball.directb2s.zip'"
+fps: 50
+romChecksum: "EF2CA30BFF024AE6F809D5CD4CB8C1C3"
+romNotes: "Download 'cowboy3p.zip'"
+romBundled: true
+romVersionOverride: "cowboy3p"
+tableNotes: "Download v55_VPX8.zip"
+tableVPSId: "LNd_JUn_"
+tagline: "A Brazilian copy of Bally's 1981 'Eight Ball Deluxe'!"
+testers:
+  - "Curt"
+  - "OminousOsie"
+  - "CoffeeAtJoes"
+vpxVPSId: "LAxl5M9f"
+vpxChecksum: "7A8E53EDE8C67451E6AA12220C9175D7"
+enabled: false # Osie: Saving for the 11 June Wiz Wed
+applyFixes:
+  - "bass"
