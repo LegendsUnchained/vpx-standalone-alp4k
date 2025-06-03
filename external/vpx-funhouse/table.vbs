@@ -343,7 +343,7 @@ Sub Table1_KeyDown(ByVal keycode)
 			StopSound "arcade"
 			BGSounds = 0
 		Else
-			PlaySound "arcade", 0
+			PlaySound "arcade", -1
 			BGSounds = 1
 		End If
 	End If
