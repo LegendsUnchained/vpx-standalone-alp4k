@@ -1,91 +1,139 @@
-= AsciiDoc Article Title
-Firstname Lastname <author@asciidoctor.org>
-3.0, July 29, 2022: AsciiDoc article template
-:toc:
+= VPXS 4KP Project
+:toc: left
 :icons: font
-:url-quickref: https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/
 
-Content entered directly below the header but before the first section heading is called the preamble.
+== What is *VPX Standalone for 4KP*?
 
-== First level heading
+*VPX Standalone for 4KP* (VPXS or VPXS 4KP for short) is a community
+driven project to get VPX tables running directly on the AtGames Legends
+4KP pinball machine, using only a USB drive!
 
-This is a paragraph with a *bold* word and an _italicized_ word.
 
-.Image caption
-image::image-file-name.png[I am the image alt text.]
+The main goals of the project:
 
-This is another paragraph.footnote:[I am footnote text and will be displayed at the bottom of the article.]
+* _Get VPXS tables running, and optimised, for the 4KP!_
+* _Build supporting tools that make it as easy as possible for the average person to install VPX tables!_
+* _Build a lovely supporting community alongside the project!_
 
-=== Second level heading
+== How does it work?
 
-.Unordered list title
-* list item 1
-** nested list item
-*** nested nested list item 1
-*** nested nested list item 2
-* list item 2
+For you, it will be simply a case of copying the `Table Manager' folder
+onto your USB, plugging it in, and then using the Wizard to install
+tables!
 
-This is a paragraph.
+But if you would like a more in-depth explanation of how this all works
+then:
 
-.Example block title
-====
-Content in an example block is subject to normal substitutions.
-====
-
-.Sidebar title
-****
-Sidebars contain aside text and are subject to normal substitutions.
-****
-
-==== Third level heading
-
-[#id-for-listing-block]
-.Listing block title
-----
-Content in a listing block is subject to verbatim substitutions.
-Listing block content is commonly used to preserve code input.
-----
-
-===== Fourth level heading
-
-.Table title
-|===
-|Column heading 1 |Column heading 2
-
-|Column 1, row 1
-|Column 2, row 1
-
-|Column 1, row 2
-|Column 2, row 2
-|===
-
-====== Fifth level heading
-
-[quote,firstname lastname,movie title]
 ____
-I am a block quote or a prose excerpt.
-I am subject to normal substitutions.
+AtGames Legends 4KP has a subset of features called `Advanced Features'.
+One of those features allows you to run external applications on the
+4KP. Alongside that, recently the VPX developer community has released
+`VPX Standalone', a version of VPX that can be ran on any device.
+(https://github.com/vpinball/vpinball/tree/master/standalone[Link to
+VPXS project]) Leveraging the 4KP’s external applications functionality,
+and VPX Standalone’s ability to run on any device, we have found a way
+to get a VPX Standalone build running via a USB drive!
 ____
 
-[verse,firstname lastname,poem title and more]
-____
-I am a verse block.
-  Indents and endlines are preserved in verse blocks.
-____
+== Why isn’t this public yet?
 
-== First level heading
+The point of the project is not to simply _**run VPX tables on the 4KP**_.
+The goal is to vastly simplify how difficult it is to get a VPX table
+running for everyday users.
 
-TIP: There are five admonition labels: Tip, Note, Important, Caution and Warning.
+Anyone who’s tried it knows just how insanely hard it is to get VPX
+running nicely on OTG, and even harder to _keep_ it running nicely
 
-// I am a comment and won't be rendered.
+We are building supporting tools like the Table Manager and Wizard to
+specifically make it almost "Fool Proof" to install a VPX table, and one
+that is tweaked specifically for the 4KP with the best FPS, POV, and bug
+fixes.
 
-. ordered list item
-.. nested ordered list item
-. ordered list item
+Having a library of tables, that can all be installed in ~30 seconds or
+less, with no VPX knowledge needed. _That’s_ the goal!
 
-The text at the end of this sentence is cross referenced to <<_third_level_heading,the third level heading>>
+== Can this replace my OTG PC / Buying Native 4KP Tables?
 
-== First level heading
+VPXS does not run tables as well as a dedicated gaming PC will. VPXS
+does not run tables as well as the native tables will run.
 
-This is a link to the https://docs.asciidoctor.org/home/[Asciidoctor documentation].
-This is an attribute reference {url-quickref}[that links this text to the AsciiDoc Syntax Quick Reference].
+A lot of tables run great, but the 4KP does not have the power that a
+gaming PC will have, and VPXS is a new software with its own quirks.
+
+If you want a perfect full VPX experience, and every table playable and
+running at 60FPS (max framerate of the 4KP)… VPXS will not be able to
+replace your full PC or replace the native tables provided by AtGames.
+
+This project is for those that want to get fun tables added to their 4KP
+without needing the technical knowledge, or hardware, that setting up a
+OTG PC VPX requires.
+
+Running VPXS from USB is really convenient, the Table Manager makes
+adding tables really easy, and there are hundreds of tables that run
+well.
+
+This is the **everyman** solution to VPX gameplay on the 4KP.
+
+== So what exactly are we building here?
+
+There are 3 components to VPXs on the 4KP:
+
+* VPX Standalone
+* Legends Unchained Launcher
+* Legends Unchained Table Manager
+
+=== VPX Standalone
+VPX Standalone, as mentioned earlier, is a version of VPX
+that can run on any device. It can be found here: +
+https://github.com/vpinball/vpinball/tree/master/standalone[VPXS
+GitHub]. +
+ +
+*VPXS is not developed by us.* +
+ +
+We take no credit for this application, we are simply using what the talented developers over at
+VPX have made!
+
+=== Legends Unchained
+Launcher Legends Unchained Launcher, is an application
+that runs on the 4KP, and effectively tells the 4KP to start VPX. This
+application was developed by us! You can find a tutorial on how to
+create your own General Loader app if you are curious here: +
+https://wagnerstechtalk.com/algl/[Wagner Tutorial]
+
+=== Legends Unchained Table Manager
+Legends Unchained Table Manager, is an
+application that runs on the 4KP, that starts a local website on your
+home network. Navigating to the website on your own PC/Mobile gives you
+tools to edit files on your USB, add new VPX tables, and other
+utilities. Table Manager is also developed by us! New features are being
+added constantly.
+
+== What security is in place to protect the VPX community?
+
+The safety of the VPX community is taken extremely seriously within this
+project. Below are just a few of the ways we are taking security into
+consideration:
+
+* When you join the beta, your 4KPs UUID must be
+provided. This prevents reselling of the USB drives as they will not run
+on unauthorised machines.
+* The applications contain further DRM measures to further prevent reselling of USB drives.
+* Tables are added to the USB via a **Table Manager** application that is run directly from
+the 4KP. This means that the USB storage can be encrypted, and direct
+editing of the files via a PC prohibited.
+* Direct links, to safe trusted websites, are used for all table file download links. MD5 Hashes
+are commonly provided for Rom files so that those a little more
+technically minded can confirm you have the correct file.
+* The Table Manager Wizard uses the
+https://virtualpinballspreadsheet.github.io/[Virtual Pinball
+Spreadsheet] to get even safer direct links
+* Table authors are given credit on every table added to the repository
+
+== Do I have to pay?
+
+_**Do not pay for this software!**_
+
+VPX Standalone and the Legends Unchained Launcher are free!
+
+If you like what we’re doing, consider making a donation of any amount
+to St. Jude at https://www.stjude.org/give.html.

@@ -134,6 +134,7 @@ This article contains:
 Here you can further customise your tables! +
 +
 This article contains:
+
 - _How to change the DMD colours!_
 - _How to add a DMD image!_
 - _How to add button instructions while loading!_
