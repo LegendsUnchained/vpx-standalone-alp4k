@@ -14,6 +14,7 @@
 
 **VPXS 4KP Testers:**
   - Bla1ze
+  - pointdablame
   - OminousOsie
   - evilwraith
   - Silentkat
