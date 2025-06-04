@@ -7,10 +7,12 @@ pupFileUrl: >-
   https://vpuniverse.com/files/file/15778-gunship-pinball-music-table-with-pup-pack/
 pupRequired: true
 pupVersion: "Gunship"
+pupNotes: "Download 'Gunshippuppack.zip'"
 romBundled: true
 romChecksum: "409B7AE76497BB47CF66D6705F92C3EC"
 romNotes: "'lostwrld.zip' | Found in MEDIA-pack.zip"
-romVPSId: "JwZTQN48Oh"
+romVPSId: "OW53xAVz9d"
+romVersionOverride: "lostwrld"
 tableVPSId: "hlt30iI0jz"
 tableNotes: "Download version 1.1.0"
 tagline: >- 
