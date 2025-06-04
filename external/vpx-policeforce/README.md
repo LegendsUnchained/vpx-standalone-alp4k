@@ -1,6 +1,6 @@
 ﻿# Police Force (Williams 1989)
 
-![Table Preview](../../images/vpx-policeforce-preview.jpg)
+![Table Preview](../../images/police-force-preview.jpg)
 
 <br>
 
