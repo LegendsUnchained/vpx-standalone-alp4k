@@ -125,7 +125,7 @@ Links to these products on Amazon are through affiliate links.
 | [Guns N' Roses (Data East 1994)](external/vpx-gnr) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
 | [Hardbody (Bally 1987)](external/vpx-hardbody) | :white_check_mark: | :x: | :white_check_mark: | :x: | 48 |
 | [Independence Day (Sega 1996)](external/vpx-id4) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
-| [Indiana Jones - The Last Movie (original 2023)](external/vpx-indylastmovie) | :white_check_mark: | :white_check_mark: | :x: | :x: | 55 |
+| [Indiana Jones - The Last Movie (Original 2023)](external/vpx-indylastmovie) | :white_check_mark: | :white_check_mark: | :x: | :x: | 55 |
 | [Indiana Jones - The Pinball Adventure (Williams 1993)](external/vpx-indianajonestpa) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 56 |
 | [James Bond 007 (Stern 2022)](external/vpx-jamesbond007) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [James Cameron's Avatar (Stern 2010)](external/vpx-avatar) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 52 |
@@ -515,7 +515,7 @@ Links to these products on Amazon are through affiliate links.
 | [Incredible Hulk (Gottlieb 1979)](external/vpx-incrediblehulk) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Independence Day (Sega 1996)](external/vpx-id4) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
 | [Indiana Jones - JP (Stern 2008)](external/vpx-indianajones) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 57 |
-| [Indiana Jones - The Last Movie (original 2023)](external/vpx-indylastmovie) | :white_check_mark: | :white_check_mark: | :x: | :x: | 55 |
+| [Indiana Jones - The Last Movie (Original 2023)](external/vpx-indylastmovie) | :white_check_mark: | :white_check_mark: | :x: | :x: | 55 |
 | [Indiana Jones - The Pinball Adventure (Williams 1993)](external/vpx-indianajonestpa) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 56 |
 | [Indianapolis 500 (Bally 1995)](external/vpx-indy500) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
 | [Inhabiting Mars (original 2023)](external/vpx-inhabitinmars) | :white_check_mark: | :white_check_mark: | :x: | :x: | 43 |
