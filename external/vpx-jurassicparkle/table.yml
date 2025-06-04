@@ -10,6 +10,7 @@ pupFileUrl: >-
 pupRequired: true
 pupVersion: "jurassic Pro"
 pupNotes: "Download 'PUPPACK jurassic Pro.zip'"
+tableNameOverride: "Jurassic Park Pro LE"
 tableVPSId: "jVK492fx"
 tableNotes: "Download version 4.2 | Found in 'Pack Jurassic Park Pro Le 4.02.zip'"
 tagline: "An adventure 65 million years in the making"
