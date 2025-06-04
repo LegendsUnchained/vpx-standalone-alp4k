@@ -103,6 +103,7 @@ def get_table_meta(files, warn_on_error=True):
         tutorialVPSId = data.get("tutorialVPSId")
         vpxVPSId = data.get("vpxVPSId")
 
+        altSoundChecksum = data.get("altSoundChecksum")
         backglassChecksum = data.get("backglassChecksum")
         coloredROMChecksum = data.get("coloredROMChecksum")
         romChecksum = data.get("romChecksum")
@@ -120,6 +121,7 @@ def get_table_meta(files, warn_on_error=True):
             vpxChecksum = vpxChecksum.lower()
 
         table_meta = {
+            "altSoundChecksum": altSoundChecksum,
             "applyFixes": data.get("applyFixes"),
             "backglassAuthors": data.get("backglassAuthorsOverride"),
             "backglassBundled": data.get("backglassBundled"),
@@ -142,6 +144,7 @@ def get_table_meta(files, warn_on_error=True):
             "pupNotes": data.get("pupNotes"),
             "pupRequired": data.get("pupRequired"),
             "pupVersion": data.get("pupVersion"),
+            "pupArchiveFormat": data.get("pupArchiveFormat"),
             "romBundled": data.get("romBundled"),
             "romChecksum": romChecksum,
             "romFileUrl": data.get("romUrlOverride"),
