@@ -1,0 +1,21 @@
+---
+backglassVPSId: "Kfx7QBZ7ti"
+backglassChecksum: "76B789BD61DDE4996695D3148EC30414"
+backglassNotes: "'Fleetwood.directb2s' | Found in the 'Media pack.zip' download"
+backglassBundled: true
+romChecksum: "8743ADCF5D4F643E8D6F2279AD4778B8"
+romNotes: "'dollyptb.zip' | Found in the 'Media pack.zip' download"
+romBundled: true
+fps: 52
+tableVPSId: "2w21KV6ckm"
+tagline: >- 
+  "I can still hear you sayin' you
+  would never break the chain"
+testers:
+ - "OminousOsie"
+vpxVPSId: "eaN4GYizH6"
+vpxChecksum: "EB6675A47D66941038344F95C8256846"
+vpxNotes: "Download version 1.0.0"
+enabled: false # Osie: Needs music!
+applyFixes:
+  - "bass"
