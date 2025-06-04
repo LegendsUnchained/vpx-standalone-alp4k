@@ -1,4 +1,4 @@
-# DUNE
+# DUNE (Original 2024)
 
 ![Table Preview](../../images/vpx-dune.png)
 
@@ -14,6 +14,7 @@
 
 **VPXS 4KP Testers:**
   - Bla1ze
+  - pointdablame
   - OminousOsie
   - evilwraith
   - Silentkat
