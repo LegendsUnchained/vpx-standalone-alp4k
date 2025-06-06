@@ -128,6 +128,9 @@ image::../images/4kpsettings2.png[]
 While you await your beta invite, there are some items that you can do to prepare ahead of time.
 
 === _Purchase Compatible USB_
+// This information is in Joining the Beta and in the Getting Started Docs
+// Should consider having it in one or the other but not both places.  If we need
+// it in both places, then extract to a seperate file and include the file where appropriate
 
 You can purchase your USB so you are ready!
 
