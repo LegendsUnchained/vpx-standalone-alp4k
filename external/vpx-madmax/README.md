@@ -10,8 +10,8 @@
 | **VPX** | [vpuniverse](https://vpuniverse.com/files/file/7663-mad-max-fury-road-dof/) | 1.5 | Balutito, 32assassin, Francisco666 |
 | **B2S** | [vpuniverse](https://vpuniverse.com/files/file/14720-mad-max-fury-road-full-dmd/) | 1.0.0 |  |
 | **ROM** | [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=1065) | twst_405 | Destruk |
-| **SERUM** | [N/A](N/A) | N/A | N/A |
-| **PUPPACK** | [N/A](N/A) | N/A | N/A |
+| **SERUM** | [N/A](#) | N/A | N/A |
+| **PUPPACK** | [N/A](#) | N/A | N/A |
 
 **Tested by:** Ominous Osie 🌸
 
