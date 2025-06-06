@@ -5,7 +5,7 @@
 ---
 
 ## Files
-| File Type | Link | Version | Author | 
+| File Type | Link | Version | Author(s) | 
 |-----------|--------|----------|--------------|
 | **VPX** | [vpuniverse](https://vpuniverse.com/files/file/7663-mad-max-fury-road-dof/) | 1.5 | Balutito, 32assassin, Francisco666 |
 | **B2S** | [vpuniverse](https://vpuniverse.com/files/file/14720-mad-max-fury-road-full-dmd/) | 1.0.0 |  |
