@@ -1,0 +1,14 @@
+---
+backglassBundled: "true"
+backglassChecksum: "F21C3821ED8117C81D186883A1656214"
+backglassNotes: "extract from Knightrider.zip"
+fps: 50
+tableVPSId: "S1vj0FjT"
+tagline: "One man can make a difference"
+testers:
+  - "Silentkat"
+vpxVPSId: "4VNt6aLoWD"
+vpxChecksum: "9FBE86F6AD064D55CC6FEBADBE8CD3DC"
+tableNotes: "Download KnightRider.vpx"
+applyFixes:
+  - "bass"
