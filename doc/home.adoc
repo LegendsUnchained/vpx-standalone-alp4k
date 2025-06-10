@@ -157,3 +157,15 @@ This article contains:
 - _Video guides!_
 - _Text guides!_
 - _Useful resources!_
+* {page-add-wizard-table}[Adding a Table to the Wizard]
+- _Wizard Files (.yml)_
+- _Quickhash (Checksums / Hash / MD5)_
+- _Visual Pinball Spreadsheet_
+- _How to do GitHub Releases_
+
+* {page-vbs-pup-guide}[VBS & PUP Developer Guides]
+- _Were to find existing fixes_
+- _How to find error messages_
+- _Pup Pack Common Issues and Fixes_
+
+

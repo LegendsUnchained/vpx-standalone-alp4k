@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.16">
-<title>Welcome to the VPXS 4KP Project!</title>
+<title>VBS &amp; PUP Developer Guides</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -440,378 +440,373 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Welcome to the VPXS 4KP Project!</h1>
+<h1>VBS &amp; PUP Developer Guides</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_getting_started">Getting Started</a></li>
-<li><a href="#_community_rules_and_guidelines">Community Rules and Guidelines!</a></li>
-<li><a href="#_just_joined_the_beta">Just Joined The Beta?</a>
+<li><a href="#_vb_script_developer_guide">VB Script Developer Guide</a>
 <ul class="sectlevel2">
-<li><a href="#_beginner_guides">Beginner Guides</a></li>
-<li><a href="#_intermediate_guides">Intermediate Guides</a></li>
-<li><a href="#_advanced_guides">Advanced Guides</a></li>
+<li><a href="#_has_someone_already_fixed_this"><em>Has someone already fixed this?</em></a></li>
+<li><a href="#_further_documentation"><em>Further Documentation</em></a></li>
+<li><a href="#_basics"><em>Basics</em></a>
+<ul class="sectlevel3">
+<li><a href="#_how_to_find_error_messages"><em>How to find error messages</em></a></li>
+<li><a href="#_line_1_error_message"><em>Line 1 Error Message</em></a></li>
+<li><a href="#_variables_declared_after_usage"><em>Variables declared after usage</em></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_pup_pack_developer_guide"><em>Pup Pack Developer Guide</em></a>
+<ul class="sectlevel2">
+<li><a href="#_missing_features_and_bugs"><em>Missing features and bugs</em></a>
+<ul class="sectlevel3">
+<li><a href="#_general"><em>General</em></a></li>
+<li><a href="#_missing_functions"><em>Missing functions</em></a></li>
+<li><a href="#_no_transparent_background"><em>No transparent background</em></a></li>
+<li><a href="#_multiple_sounds_playing"><em>Multiple sounds playing</em></a></li>
+<li><a href="#_triggers_on_screens_which_are_off"><em>Triggers on screens which are off</em></a></li>
+<li><a href="#_conflict_vbscriptscreens_file"><em>Conflict vbscript/screens file</em></a></li>
+<li><a href="#_triggers_skip_same_priority"><em>Triggers skip same priority</em></a></li>
+<li><a href="#_label_font_scaled_wrong"><em>Label font scaled wrong</em></a></li>
+<li><a href="#_label_animations"><em>Label animations</em></a></li>
+<li><a href="#_screen_z_order"><em>Screen z-order</em></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="_vb_script_developer_guide">VB Script Developer Guide</h2>
 <div class="sectionbody">
-<div class="imageblock">
+<div class="sect2">
+<h3 id="_has_someone_already_fixed_this"><em>Has someone already fixed this?</em></h3>
+<div class="paragraph">
+<p>Before trying to fix anything, its worth double-checking if this script
+has already been fixed.</p>
+</div>
+<div class="paragraph">
+<p>We are not the only community using VPXS, and others also document and
+fix VBS scripts.</p>
+</div>
+<div class="paragraph">
+<p>The biggest being the JSM repository:
+<a href="https://github.com/jsm174/vpx-standalone-scripts">jsm174/vpx-standalone-scripts</a></p>
+</div>
+<div class="paragraph">
+<p>Check there first!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_further_documentation"><em>Further Documentation</em></h3>
+<div class="paragraph">
+<p>Further to JSMs fantastic repository, there are also further
+documentation available directly on the vpx standalone reposioty:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Common VPXS VBS Script Issues:
+<a href="https://github.com/vpinball/vpinball/blob/master/standalone/docs/vbscript.md">/master/standalone/docs/vbscript</a></p>
+</li>
+<li>
+<p>Command Reference Guide:
+<a href="https://github.com/vpinball/vpinball/blob/master/docs/CommandReference.txt">/master/docs/CommandReference</a></p>
+</li>
+<li>
+<p>Object Reference Guide:
+<a href="https://github.com/vpinball/vpinball/blob/master/docs/Script%20API%20Reference.md">/master/docs/Script
+API Reference</a></p>
+</li>
+<li>
+<p>All Documents/Script Guides:
+<a href="https://github.com/vpinball/vpinball/tree/master/docs">/master/docs</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_basics"><em>Basics</em></h3>
+<div class="paragraph">
+<p>VBS (Visual Basic Script) is used to program our VPXS pinball tables.</p>
+</div>
+<div class="paragraph">
+<p>There are however many issues that pop up when trying to run tables
+specifically on VPX Standalone that are not present when running on VPX.</p>
+</div>
+<div class="paragraph">
+<p>That means you often have to correct common `mistakes' to get tables
+running on VPXS.</p>
+</div>
+<div class="sect3">
+<h4 id="_how_to_find_error_messages"><em>How to find error messages</em></h4>
+<div class="paragraph">
+<p>Unfortunately we never really get accurate or useful error message.</p>
+</div>
+<div class="paragraph">
+<p>But we do get the line that errored, which is pretty useful.</p>
+</div>
+<div class="paragraph">
+<p>After a table has crashed, check the <code>vpinball.log</code> for the error
+messages.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_line_1_error_message"><em>Line 1 Error Message</em></h4>
+<div class="paragraph">
+<p>If you see an error message on <code>Line 1' in your `vpinball.log</code> file,
+that does not mean that the error was actually on line 1.</p>
+</div>
+<div class="paragraph">
+<p>What that means is that the error was in an `Executed' section of code.</p>
+</div>
+<div class="paragraph">
+<p>This could be either:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Execute '{code here}'</code><br>
+<em>and / or</em></p>
+</li>
+<li>
+<p><code>GlobalExecute '{code here}'</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_variables_declared_after_usage"><em>Variables declared after usage</em></h4>
+<div class="paragraph">
+<p>Probably the single most common issue is variables being declared after
+they are used.</p>
+</div>
+<div class="paragraph">
+<p>VBS when ran in VPX does not care where the variables are declared, so
+you can have them declared at the bottom of the script if you want.</p>
+</div>
+<div class="paragraph">
+<p>VPXS however is more picky, you need to declare the variables <strong><em>before</em></strong>
+you use them. So it&#8217;s a good idea to have all, or most, variable
+declarations at the top of the VBS script.</p>
+</div>
+<div class="paragraph">
+<p>For more information:
+<a href="https://github.com/vpinball/vpinball/blob/master/standalone/docs/vbscript.md#declaration-and-definition-issues">master/standalone/docs/vbscript.md
+- declaration-and-definition-issues</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pup_pack_developer_guide"><em>Pup Pack Developer Guide</em></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_missing_features_and_bugs"><em>Missing features and bugs</em></h3>
+<div class="paragraph">
+<p>This is a very technical deep dive into missing features in the
+standalone puppack implementation. It assumes you have already deep
+knowledge of the pinup player system, and you have an advanced knowledge
+of table vbscripts. You can read some documentation (not everything is
+documented) here: <a href="https://nailbuster.com/wikipinup/doku.php?id=pup_dmd" class="bare">https://nailbuster.com/wikipinup/doku.php?id=pup_dmd</a></p>
+</div>
+<div class="paragraph">
+<p>Keep in mind: A simple puppack you can get mostly running, but the for
+most puppacks it can be a lot of work and time-consuming to get it to
+work. If in the future features are added or bugs are fixed in
+standalone it can break your working puppacks (because of workarounds)
+and you have to adapt it again. Also, the problem for standalone is that
+the windows pinup player is not open source so its more difficult to
+emulate (reverse engineering). Depending on the situation you can make
+different workarounds, but sometimes it is simply not possible to create
+an acceptable solution (it is often trial and error).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A puppack will impact the framerate, depending on the complexity it can
+be from 5 fps to around 15 fps.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_general"><em>General</em></h4>
+<div class="paragraph">
+<p>The system is very flexible and has a lot of options and therefore it is
+complex. If an option or feature is not implemented a message is logged
+in the table log file. Look for the text ``Not implemented'' in the log
+what is not implemented. This will give you an idea how much
+functionality you are missing and if it worth your time to get it to
+work.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_missing_functions"><em>Missing functions</em></h4>
+<div class="paragraph">
+<p>The following functions called from the vbscript on the pindisplay
+object (CreateObject(``PinUpPlayer.PinDisplay'')) are not implemented
+yet. These are used rare, the most used functions are implemented.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>playlistplay</p>
+</li>
+<li>
+<p>play</p>
+</li>
+<li>
+<p>playpause</p>
+</li>
+<li>
+<p>playresume</p>
+</li>
+<li>
+<p>setAspect</p>
+</li>
+<li>
+<p>setVolume</p>
+</li>
+<li>
+<p>SetLength</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_no_transparent_background"><em>No transparent background</em></h4>
+<div class="paragraph">
+<p>A pup screen always has a black background, but this can also be
+transparent (can generate performance issues?). This is a big problem
+when also the B2S is used, you get blinking instead of two screens
+laying on top of each other. When you have the following construction in
+screens there are two problems:</p>
+</div>
+<div class="exampleblock">
 <div class="content">
-<img src="https://github.com/user-attachments/assets/50cbef85-6e34-4b37-84fc-a8ea194007bf" alt="bg">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_getting_started">Getting Started</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>The project primarily lives on Discord. Join in the conversation
-there!<br>
-<a href="https://discord.com/invite/moxsgameroom">Mox’s Game Room Server</a></p>
-</li>
-<li>
-<p>For more information on the project as a whole, check out this
-page:<br>
-<a href="beginner/vpx4kpproject.html">VPXS 4KP Project</a></p>
-</li>
-<li>
-<p>If you would like to join the beta, follow the steps on this guide:<br>
-<a href="beginner/joiningthebeta.html">Joining the Beta</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_community_rules_and_guidelines">Community Rules and Guidelines!</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><strong><em>READ ALL INSTRUCTIONS… TWICE!</em></strong><br>
-Make sure to take the time to fully ready through the wiki and other support threads too.</p>
-</li>
-<li>
-<p><strong><em>DO NOT SHARE FILES!</em></strong><br>
-<strong>DO NOT</strong> share any <code>VPXS Launcher</code> files,
-<code>Table Manager</code> files, <code>.vpx</code> files, <code>.directb2s</code> files, <code>.c7z</code> serum
-files, <code>puppack</code> files, or <code>ROM</code> files with anyone. Doing so will
-trigger the DRM and ban your account along with anyone you share files
-with. Download files from official sources. The README links and the
-Wizard download button links will point to official sources. <strong>DO NOT</strong>
-share invite codes, if you do the entire invite chain gets banned.
-Seriously, <strong>DON’T DO IT</strong>. There are no warnings, no second chances… once
-banned, it cannot be reversed.</p>
-</li>
-<li>
-<p><strong><em>BE RESPECTFUL!</em></strong><br>
-Everyone here is doing this in their spare time
-and aren’t getting paid so be nice to one another. Please be respectful
-if you get a message from the mods that you didn’t expect. There is
-always a reason, make sure to listen.</p>
-</li>
-<li>
-<p><strong><em>BE PATIENT!</em></strong><br>
-Participate as often as possible. This is the only
-way to get Beta access. <strong>DO NOT</strong> ask for a Beta Invite and / or ask when
-VPXS GL will be released!! Listen to the advice given to you, retry
-installs if something goes wrong, don’t rush through setup. Your
-problems are not everyone else’s problems. People are here to help, but
-helping you is not everyone’s priority.</p>
-</li>
-<li>
-<p><strong><em>DO NOT DM OR @mention PEOPLE!</em></strong><br>
-<strong>DO NOT</strong> DM people directly asking for help unless you are asked to do so. If you are stuck, read
-through the Wiki one more time, and then ask for help in
-<code>#general-vpx-chat</code> or <code>💬 vpx-beta-support</code>. If you are a Beta tester
-using the <code>💬 vpx-beta-support</code> channel, the please be sure to read the
-``How To Get Support'' post before submitting. It may take a while to
-get a response, so please remember to be patient.</p>
-</li>
-<li>
-<p><strong><em>HAVE FUN!</em></strong><br>
-The fun is <em>mandatory</em>! Once in the Beta,
-participate in the optional weekly tournaments, share your successes,
-and enjoy!</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-<div class="title">Breaking the Rules</div>
 <div class="paragraph">
-<p>Breaking the rules may result in a ban from the beta._* You may not
-receive another warning. Bans cannot be challenged.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="title">Being Banned!</div>
-<div class="paragraph">
-<p>Being banned from the Mox Discord Server will also result in a Beta
-ban_* Do not break any of Discords T&amp;C’s. Follow the Mox Discord server
-rules found in the <code>🪧 Server Guide</code></p>
-</div>
-</td>
-</tr>
-</table>
+<p>ScreenNum,ScreenDes,PlayList,PlayFile,Loopit,Active,Priority,CustomPos<br>
+2,Backglass,,,0,off,,<br>
+11,"Backglass 2",bg,"Movie.mp4",0,ForceOn,,"2,19.5,17,60.9,58.5"</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_just_joined_the_beta">Just Joined The Beta?</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Congratulations on joining!</p>
 </div>
 <div class="paragraph">
-<p>This document and proceeding articles are your go-to place for all VPXS 4KP info!</p>
+<p>The backglass is turned off, but there is an extra screen 11 with custom
+position on screen 2 with forceon option. At the moment because in
+standalone the backglass is turned off everything is not displayed. This
+is incorrect, because of forceon screen 11 should be shown on a
+transparent backglass. This is a problem for example in Star Tours and
+in Tom and Jerry table/puppack combination. This can be fixed to replace
+off with show for screen 2, but then you have a black background.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_multiple_sounds_playing"><em>Multiple sounds playing</em></h4>
+<div class="paragraph">
+<p>There is a bug in the playstop function. Sometimes, e.g. a background
+music is playing on a musiconly screen, when this function is called the
+music is not stopped, but keeps playing and when the loop option is set,
+this plays forever. This can also be the case when there is a stop
+trigger. If this is called from the script a workaround can be to
+disable the loop and force to play a sound with zero volume (fix used in
+Space Cadet Galaxy Edition).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_triggers_on_screens_which_are_off"><em>Triggers on screens which are off</em></h4>
+<div class="paragraph">
+<p>A trigger on a screen which is turned off, is sometimes still played.
+For instance there is a topper screen which is turned off (this has to
+do with the different display layout you find in puppacks), but the
+media is still started. Solution is to remove the screens which are
+turned off and remove the triggers for this screen. But remember a
+screen can be turned on from the script, and then it should not be
+removed, unless it is a screen which should not be used anyway
+(e.g. topper) but then also the script code has to be removed.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_conflict_vbscriptscreens_file"><em>Conflict vbscript/screens file</em></h4>
+<div class="paragraph">
+<p>Sometimes there is a screens.pup file but the same screens numbers are
+also created from the script. This gives in standalone a conflict and is
+handled wrong. The script should overrule the screens.pup. Workaround is
+to combine the options from the script in the screens.pup file and
+remove the script calls.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_triggers_skip_same_priority"><em>Triggers skip same priority</em></h4>
+<div class="paragraph">
+<p>In triggers, you have the option SkipSamePrty which means that if the new
+media has the same or lower priority as the currently playing media then
+the new one is skipped. This is for when there are multiple triggers to
+determine which one has to play and is the most important. At the moment
+the problem is in standalone that this should only be done if there is
+media playing, but in standalone this is also done if there is no media
+playing. This means you are missing triggers. A workaround is to remove
+the option, but then you get to many or the wrong one is playing. A
+better workaround is to play around with the priorities, but this is a
+lot of trial and error. You also have to play the table a lot to test the
+triggers. I sometimes change the script to trigger the events
+quicker/more easy.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_label_font_scaled_wrong"><em>Label font scaled wrong</em></h4>
+<div class="paragraph">
+<p>Sometimes it works, sometimes it does not. When a text is displayed with
+LabelSet function on a screen, which has a custom position,width and
+height, sometimes the font size is wrong. A scaling factor has to be
+applied. I have not found out yet when it works and when not. Workaround
+is to apply the font scaling factor (have to calculated by hand) in the
+script for all the LabelInit calls for this screen.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_label_animations"><em>Label animations</em></h4>
+<div class="paragraph">
+<p>A label can also have animations (e.g. blinking or motion) this is done
+with a labelset with the option mt:1. This is not supported at the
+moment (and diffcult to emulate). For example:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>PuPlayer.LabelSet 2,"Service","Blinking text", 1,"\{'mt':1,'at':1,'fq':150,'len':1}"</p>
+</div>
+</div>
 </div>
 <div class="paragraph">
-<p><em>… But it can be a little daunting</em></p>
+<p>These options are discarded but if the text is totally displayed wrong
+you have to change mt:1 into mt:2, and you probably have to add options
+(see mt:2 example above) to correct it. Of course, you are missing the
+animation.</p>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_screen_z_order"><em>Screen z-order</em></h4>
 <div class="paragraph">
-<p>Let me run through the various sections of the guides.</p>
+<p>This is important for the order in which the screens lay on top of each
+other. There are screen options ForceBack (set it to the back), ForceOn
+(always on top, always visible) and ForcePop (always on top, but only
+shown if media is played). There are more. Standalone sometimes messes
+up what should be in front/back. The only workaround is to play with the
+different options in the screen definitions to try to get it in the
+correct order.</p>
 </div>
-<div class="sect2">
-<h3 id="_beginner_guides">Beginner Guides</h3>
-<div class="paragraph">
-<p>These pages should get you off the ground and playing your first VPXS tables!</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="beginner/gettingstarted.html">Getting Started</a><br>
-This page runs through the basics of getting your
-USB ready for the VPXS 4KP beta.<br>
-<br>
-This article contains:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Video guides!</em></p>
-</li>
-<li>
-<p><em>Text guides!</em></p>
-</li>
-<li>
-<p><em>Basic information on the Table Manager!</em></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><a href="beginner/tablemanager.html">Table Manager ‐ Wizard</a><br>
-This page teaches you how to use the Wizard to install VPXS tables!<br>
-<br>
-This article contains:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>What is the `Wizard'?</em></p>
-</li>
-<li>
-<p><em>How do I install a VPXS table?</em></p>
-</li>
-<li>
-<p><em>Help! Something went wrong!</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_intermediate_guides">Intermediate Guides</h3>
-<div class="paragraph">
-<p>These pages should be read once you are a little more familiar with your USB, and have successfully installed some Wizard tables!</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="intermediate/tablemanagerother.html">TM ‐ Other Features</a><br>
-Here you can learn about the other features
-built into the Table Manager, and even how to manually install tables!<br>
-<br>
-This article contains:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Table has missing sounds? BASS fix it!</em></p>
-</li>
-<li>
-<p><em>How do I get the .VBS file?</em></p>
-</li>
-<li>
-<p><em>How do use the `Add Table - Manual' page!</em></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><a href="intermediate/tableinstallfaq.html">Table Install FAQs</a><br>
-This article is to help you diagnose and resolve any issues you are having with your tables.<br>
-<br>
-This article contains:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Help conveniently divided between Table / Backglass / DMD categories!</em></p>
-</li>
-<li>
-<p><em>Guides on how to change the volume!</em></p>
-</li>
-<li>
-<p><em>Fix for your DMD getting cut off the left side!</em></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><a href="intermediate/tablesettings.html">Table .ini file (Table Settings)</a><br>
-This page contains all the information you need to tweak your table settings!<br>
-<br>
-This article contains:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>How to increase FPS or Resolution!</em></p>
-</li>
-<li>
-<p><em>How to remap buttons!</em></p>
-</li>
-<li>
-<p><em>How to make the DMD fullscreen!</em></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><a href="intermediate/tablecustomization.html">Extra Table Customization</a><br>
-Here you can further customise your tables!<br></p>
-<div class="paragraph">
-<p>This article contains:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><em>How to change the DMD colours!</em></p>
-</li>
-<li>
-<p><em>How to add a DMD image!</em></p>
-</li>
-<li>
-<p><em>How to add button instructions while loading!</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_advanced_guides">Advanced Guides</h3>
-<div class="paragraph">
-<p>These pages are for VPXS users with some decent hours under their belt, and should only be attempted once you are very comfortable with
-VPXS and how it all works.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="advanced/puppackinstall.html">Pup Pack ‐ Manual Install</a><br>
-This page runs through how to manually install a pup pack to your table!<br>
-<br>
-This article contains:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>A warning!!</em></p>
-</li>
-<li>
-<p><em>An overview on how pup packs work!</em></p>
-</li>
-<li>
-<p><em>An in depth guide on installing the pup pack for Deadpool!</em></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><a href="advanced/newtable.html">Add a New Table to the Repo</a><br>
-Finally, once you are ready, this page explains how to add your own tables to our repository!<br>
-<br>
-This article contains:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Video guides!</em></p>
-</li>
-<li>
-<p><em>Text guides!</em></p>
-</li>
-<li>
-<p><em>Useful resources!</em></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><a href="advance/wizardtable.html">Adding a Table to the Wizard</a></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Wizard Files (.yml)</em></p>
-</li>
-<li>
-<p><em>Quickhash (Checksums / Hash / MD5)</em></p>
-</li>
-<li>
-<p><em>Visual Pinball Spreadsheet</em></p>
-</li>
-<li>
-<p><em>How to do GitHub Releases</em></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><a href="advance/vbspupguide.html">VBS &amp; PUP Developer Guides</a></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Were to find existing fixes</em></p>
-</li>
-<li>
-<p><em>How to find error messages</em></p>
-</li>
-<li>
-<p><em>Pup Pack Common Issues and Fixes</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
 </div>
 </div>
 </div>
@@ -819,7 +814,7 @@ This article contains:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-06-09 20:53:13 -0400
+Last updated 2025-06-09 20:12:27 -0400
 </div>
 </div>
 </body>

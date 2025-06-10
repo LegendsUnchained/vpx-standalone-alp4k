@@ -20,3 +20,5 @@
 :page-table-customization: xref:intermediate/tablecustomization.adoc
 :page-pup-pack: xref:advanced/puppackinstall.adoc
 :page-new-table: xref:advanced/newtable.adoc
+:page-vbs-pup-guide: xref:advance/vbspupguide.adoc
+:page-add-wizard-table: xref:advance/wizardtable.adoc

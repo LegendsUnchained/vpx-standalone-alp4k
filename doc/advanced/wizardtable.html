@@ -5,7 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.16">
-<title>Welcome to the VPXS 4KP Project!</title>
+<meta name="author" content="Firstname Lastname">
+<title>AsciiDoc Article Title</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -438,388 +439,220 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article toc2 toc-left">
+<body class="article">
 <div id="header">
-<h1>Welcome to the VPXS 4KP Project!</h1>
-<div id="toc" class="toc2">
+<h1>AsciiDoc Article Title</h1>
+<div class="details">
+<span id="author" class="author">Firstname Lastname</span><br>
+<span id="email" class="email"><a href="mailto:author@asciidoctor.org">author@asciidoctor.org</a></span><br>
+<span id="revnumber">version 3.0,</span>
+<span id="revdate">July 29, 2022</span>
+<br><span id="revremark">AsciiDoc article template</span>
+</div>
+<div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_getting_started">Getting Started</a></li>
-<li><a href="#_community_rules_and_guidelines">Community Rules and Guidelines!</a></li>
-<li><a href="#_just_joined_the_beta">Just Joined The Beta?</a>
+<li><a href="#_first_level_heading">First level heading</a>
 <ul class="sectlevel2">
-<li><a href="#_beginner_guides">Beginner Guides</a></li>
-<li><a href="#_intermediate_guides">Intermediate Guides</a></li>
-<li><a href="#_advanced_guides">Advanced Guides</a></li>
+<li><a href="#_second_level_heading">Second level heading</a></li>
 </ul>
 </li>
+<li><a href="#_first_level_heading_2">First level heading</a></li>
+<li><a href="#_first_level_heading_3">First level heading</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>Content entered directly below the header but before the first section heading is called the preamble.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_first_level_heading">First level heading</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is a paragraph with a <strong>bold</strong> word and an <em>italicized</em> word.</p>
+</div>
 <div class="imageblock">
 <div class="content">
-<img src="https://github.com/user-attachments/assets/50cbef85-6e34-4b37-84fc-a8ea194007bf" alt="bg">
+<img src="image-file-name.png" alt="I am the image alt text.">
+</div>
+<div class="title">Figure 1. Image caption</div>
+</div>
+<div class="paragraph">
+<p>This is another paragraph.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</div>
+<div class="sect2">
+<h3 id="_second_level_heading">Second level heading</h3>
+<div class="ulist">
+<div class="title">Unordered list title</div>
+<ul>
+<li>
+<p>list item 1</p>
+<div class="ulist">
+<ul>
+<li>
+<p>nested list item</p>
+<div class="ulist">
+<ul>
+<li>
+<p>nested nested list item 1</p>
+</li>
+<li>
+<p>nested nested list item 2</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>list item 2</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This is a paragraph.</p>
+</div>
+<div class="exampleblock">
+<div class="title">Example 1. Example block title</div>
+<div class="content">
+<div class="paragraph">
+<p>Content in an example block is subject to normal substitutions.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Sidebar title</div>
+<div class="paragraph">
+<p>Sidebars contain aside text and are subject to normal substitutions.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_third_level_heading">Third level heading</h4>
+<div id="id-for-listing-block" class="listingblock">
+<div class="title">Listing block title</div>
+<div class="content">
+<pre>Content in a listing block is subject to verbatim substitutions.
+Listing block content is commonly used to preserve code input.</pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_fourth_level_heading">Fourth level heading</h5>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Table title</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column heading 1</th>
+<th class="tableblock halign-left valign-top">Column heading 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Column 1, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Column 2, row 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Column 2, row 2</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect5">
+<h6 id="_fifth_level_heading">Fifth level heading</h6>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>I am a block quote or a prose excerpt.
+I am subject to normal substitutions.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; firstname lastname<br>
+<cite>movie title</cite>
+</div>
+</div>
+<div class="verseblock">
+<pre class="content">I am a verse block.
+  Indents and endlines are preserved in verse blocks.</pre>
+<div class="attribution">
+&#8212; firstname lastname<br>
+<cite>poem title and more</cite>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_getting_started">Getting Started</h2>
+<h2 id="_first_level_heading_2">First level heading</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>The project primarily lives on Discord. Join in the conversation
-there!<br>
-<a href="https://discord.com/invite/moxsgameroom">Mox’s Game Room Server</a></p>
-</li>
-<li>
-<p>For more information on the project as a whole, check out this
-page:<br>
-<a href="beginner/vpx4kpproject.html">VPXS 4KP Project</a></p>
-</li>
-<li>
-<p>If you would like to join the beta, follow the steps on this guide:<br>
-<a href="beginner/joiningthebeta.html">Joining the Beta</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_community_rules_and_guidelines">Community Rules and Guidelines!</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><strong><em>READ ALL INSTRUCTIONS… TWICE!</em></strong><br>
-Make sure to take the time to fully ready through the wiki and other support threads too.</p>
-</li>
-<li>
-<p><strong><em>DO NOT SHARE FILES!</em></strong><br>
-<strong>DO NOT</strong> share any <code>VPXS Launcher</code> files,
-<code>Table Manager</code> files, <code>.vpx</code> files, <code>.directb2s</code> files, <code>.c7z</code> serum
-files, <code>puppack</code> files, or <code>ROM</code> files with anyone. Doing so will
-trigger the DRM and ban your account along with anyone you share files
-with. Download files from official sources. The README links and the
-Wizard download button links will point to official sources. <strong>DO NOT</strong>
-share invite codes, if you do the entire invite chain gets banned.
-Seriously, <strong>DON’T DO IT</strong>. There are no warnings, no second chances… once
-banned, it cannot be reversed.</p>
-</li>
-<li>
-<p><strong><em>BE RESPECTFUL!</em></strong><br>
-Everyone here is doing this in their spare time
-and aren’t getting paid so be nice to one another. Please be respectful
-if you get a message from the mods that you didn’t expect. There is
-always a reason, make sure to listen.</p>
-</li>
-<li>
-<p><strong><em>BE PATIENT!</em></strong><br>
-Participate as often as possible. This is the only
-way to get Beta access. <strong>DO NOT</strong> ask for a Beta Invite and / or ask when
-VPXS GL will be released!! Listen to the advice given to you, retry
-installs if something goes wrong, don’t rush through setup. Your
-problems are not everyone else’s problems. People are here to help, but
-helping you is not everyone’s priority.</p>
-</li>
-<li>
-<p><strong><em>DO NOT DM OR @mention PEOPLE!</em></strong><br>
-<strong>DO NOT</strong> DM people directly asking for help unless you are asked to do so. If you are stuck, read
-through the Wiki one more time, and then ask for help in
-<code>#general-vpx-chat</code> or <code>💬 vpx-beta-support</code>. If you are a Beta tester
-using the <code>💬 vpx-beta-support</code> channel, the please be sure to read the
-``How To Get Support'' post before submitting. It may take a while to
-get a response, so please remember to be patient.</p>
-</li>
-<li>
-<p><strong><em>HAVE FUN!</em></strong><br>
-The fun is <em>mandatory</em>! Once in the Beta,
-participate in the optional weekly tournaments, share your successes,
-and enjoy!</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock warning">
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="title">Breaking the Rules</div>
-<div class="paragraph">
-<p>Breaking the rules may result in a ban from the beta._* You may not
-receive another warning. Bans cannot be challenged.</p>
-</div>
+There are five admonition labels: Tip, Note, Important, Caution and Warning.
 </td>
 </tr>
 </table>
 </div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="title">Being Banned!</div>
-<div class="paragraph">
-<p>Being banned from the Mox Discord Server will also result in a Beta
-ban_* Do not break any of Discords T&amp;C’s. Follow the Mox Discord server
-rules found in the <code>🪧 Server Guide</code></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>ordered list item</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>nested ordered list item</p>
+</li>
+</ol>
 </div>
-</td>
-</tr>
-</table>
+</li>
+<li>
+<p>ordered list item</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The text at the end of this sentence is cross referenced to <a href="#_third_level_heading">the third level heading</a></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_just_joined_the_beta">Just Joined The Beta?</h2>
+<h2 id="_first_level_heading_3">First level heading</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Congratulations on joining!</p>
-</div>
-<div class="paragraph">
-<p>This document and proceeding articles are your go-to place for all VPXS 4KP info!</p>
-</div>
-<div class="paragraph">
-<p><em>… But it can be a little daunting</em></p>
-</div>
-<div class="paragraph">
-<p>Let me run through the various sections of the guides.</p>
-</div>
-<div class="sect2">
-<h3 id="_beginner_guides">Beginner Guides</h3>
-<div class="paragraph">
-<p>These pages should get you off the ground and playing your first VPXS tables!</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="beginner/gettingstarted.html">Getting Started</a><br>
-This page runs through the basics of getting your
-USB ready for the VPXS 4KP beta.<br>
-<br>
-This article contains:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Video guides!</em></p>
-</li>
-<li>
-<p><em>Text guides!</em></p>
-</li>
-<li>
-<p><em>Basic information on the Table Manager!</em></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><a href="beginner/tablemanager.html">Table Manager ‐ Wizard</a><br>
-This page teaches you how to use the Wizard to install VPXS tables!<br>
-<br>
-This article contains:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>What is the `Wizard'?</em></p>
-</li>
-<li>
-<p><em>How do I install a VPXS table?</em></p>
-</li>
-<li>
-<p><em>Help! Something went wrong!</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_intermediate_guides">Intermediate Guides</h3>
-<div class="paragraph">
-<p>These pages should be read once you are a little more familiar with your USB, and have successfully installed some Wizard tables!</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="intermediate/tablemanagerother.html">TM ‐ Other Features</a><br>
-Here you can learn about the other features
-built into the Table Manager, and even how to manually install tables!<br>
-<br>
-This article contains:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Table has missing sounds? BASS fix it!</em></p>
-</li>
-<li>
-<p><em>How do I get the .VBS file?</em></p>
-</li>
-<li>
-<p><em>How do use the `Add Table - Manual' page!</em></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><a href="intermediate/tableinstallfaq.html">Table Install FAQs</a><br>
-This article is to help you diagnose and resolve any issues you are having with your tables.<br>
-<br>
-This article contains:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Help conveniently divided between Table / Backglass / DMD categories!</em></p>
-</li>
-<li>
-<p><em>Guides on how to change the volume!</em></p>
-</li>
-<li>
-<p><em>Fix for your DMD getting cut off the left side!</em></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><a href="intermediate/tablesettings.html">Table .ini file (Table Settings)</a><br>
-This page contains all the information you need to tweak your table settings!<br>
-<br>
-This article contains:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>How to increase FPS or Resolution!</em></p>
-</li>
-<li>
-<p><em>How to remap buttons!</em></p>
-</li>
-<li>
-<p><em>How to make the DMD fullscreen!</em></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><a href="intermediate/tablecustomization.html">Extra Table Customization</a><br>
-Here you can further customise your tables!<br></p>
-<div class="paragraph">
-<p>This article contains:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><em>How to change the DMD colours!</em></p>
-</li>
-<li>
-<p><em>How to add a DMD image!</em></p>
-</li>
-<li>
-<p><em>How to add button instructions while loading!</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_advanced_guides">Advanced Guides</h3>
-<div class="paragraph">
-<p>These pages are for VPXS users with some decent hours under their belt, and should only be attempted once you are very comfortable with
-VPXS and how it all works.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="advanced/puppackinstall.html">Pup Pack ‐ Manual Install</a><br>
-This page runs through how to manually install a pup pack to your table!<br>
-<br>
-This article contains:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>A warning!!</em></p>
-</li>
-<li>
-<p><em>An overview on how pup packs work!</em></p>
-</li>
-<li>
-<p><em>An in depth guide on installing the pup pack for Deadpool!</em></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><a href="advanced/newtable.html">Add a New Table to the Repo</a><br>
-Finally, once you are ready, this page explains how to add your own tables to our repository!<br>
-<br>
-This article contains:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Video guides!</em></p>
-</li>
-<li>
-<p><em>Text guides!</em></p>
-</li>
-<li>
-<p><em>Useful resources!</em></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><a href="advance/wizardtable.html">Adding a Table to the Wizard</a></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Wizard Files (.yml)</em></p>
-</li>
-<li>
-<p><em>Quickhash (Checksums / Hash / MD5)</em></p>
-</li>
-<li>
-<p><em>Visual Pinball Spreadsheet</em></p>
-</li>
-<li>
-<p><em>How to do GitHub Releases</em></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><a href="advance/vbspupguide.html">VBS &amp; PUP Developer Guides</a></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Were to find existing fixes</em></p>
-</li>
-<li>
-<p><em>How to find error messages</em></p>
-</li>
-<li>
-<p><em>Pup Pack Common Issues and Fixes</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
+<p>This is a link to the <a href="https://docs.asciidoctor.org/home/">Asciidoctor documentation</a>.
+This is an attribute reference <a href="https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/">that links this text to the AsciiDoc Syntax Quick Reference</a>.</p>
 </div>
 </div>
 </div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. I am footnote text and will be displayed at the bottom of the article.
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-06-09 20:53:13 -0400
+Version 3.0<br>
+Last updated 2025-06-09 20:49:43 -0400
 </div>
 </div>
 </body>
