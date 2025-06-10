@@ -17,6 +17,5 @@ testers:
   - "CoffeeAtJoes"
 vpxVPSId: "MwtLDVb00M"
 vpxChecksum: "020A7E1B7751A2D356CB84AA998D6F94"
-enabled: false # Osie: Saving for the 11 June Wiz Wed
 applyFixes:
   - "bass"

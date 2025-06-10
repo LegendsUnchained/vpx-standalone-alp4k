@@ -1,21 +1,22 @@
-# O Gaucho (LTD do Brasil 1975)
+# Nascar, JP's (Stern 2005)
 
-![Table Preview](../../images/vpx-ogaucho-preview.jpg)
+![Table Preview](../../images/vpx-nascar.png)
 
 <br>
 
 ## *️⃣  Table Statistics
 
-| Backglass | DMD | ROM Required | Has Puppack | FPS |
-|-----------|-----|-----|-----|-----|
-| ✅ | ❌ | ❌ | ❌ | 60 |
+| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
+|-----------|----------|-----------|-----|--------------|-----|
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 
 <br>
 
 **VPXS 4KP Testers:**
-  - Curt
-  - Ominous Osie 🌸
-  - CoffeeAtJoes
+  - Bla1ze
+  - OminousOsie
+  - evilwraith
+  - Silentkat
 
 <br>
 
@@ -34,9 +35,9 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`O Gaucho (LTD do Brasil 1975)`**
+4.  Find and select this table from the dropdown menu: **`Nascar, JP's`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *"In Portuguese, gaúcho means a cowboy of mixed European and indigenous descent from southern Brazil or Argentina's Pampas region."*
+6. *"You're off to the races 🏁 - JP STYLE!"*
 
 <br>
 
@@ -54,9 +55,10 @@ __*We hope you enjoy!!*__
 - mrandromeda      - SScorpio         - TechZombie
 </pre>
 
+<br>
+<br>
+<br>
+<br>
+<br>
 
-<br>
-<br>
-<br>
-<br>
-<br>
+
