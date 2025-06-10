@@ -134,6 +134,7 @@ Links to these products on Amazon are through affiliate links.
 | [Jurassic Park (Data East 1993)](external/vpx-jurassicpark) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 45 |
 | [King Kong (Data East 1990)](external/vpx-kingkong) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [KISS (Bally 1979)](external/vpx-kissbally) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Knight Rider (Original 2021)](external/vpx-knightrider) | :white_check_mark: | :x: | :x: | :x: | 50 |
 | [Last Action Hero (Data East 1993)](external/vpx-lastactionhero) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Lord of the Rings, JP's The (Original 2017)](external/vpx-lordoftherings) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Lost World Jurassic Park, JP's The (Sega 1997)](external/vpx-thelostworldjp) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 47 |
