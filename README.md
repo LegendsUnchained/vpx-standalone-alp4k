@@ -576,6 +576,7 @@ Links to these products on Amazon are through affiliate links.
 | [Mac's Galaxy (MAC 1986)](external/vpx-macgalaxy) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Mac Jungle (MAC 1987)](external/vpx-macjungle) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Machine - Bride of Pin-bot, The (Williams 1991)](external/vpx-bop) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 43 |
+| [Mad Max - Fury Road (Original 2021)](external/vpx-madmax) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Mad Race - JP (Playmatic 1985)](external/vpx-jpmadrace) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Magic Castle (Zaccaria 1984)](external/vpx-magiccastle) | :white_check_mark: | :x: | :white_check_mark: | :x: | 52 |
 | [Mandalorian, The (Stern 2021)](external/vpx-mandalorian) | :white_check_mark: | :white_check_mark: | :x: | :x: | 49 |

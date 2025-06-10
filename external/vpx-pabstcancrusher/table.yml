@@ -1,0 +1,16 @@
+---
+backglassVPSId: "7TdYREbUKW"
+backglassChecksum: "B24417EBCD3EFCDB9F600BE665BF2962"
+backglassNotes: "Download version 1.0.0"
+fps: 50
+tableVPSId: "3wWmd7Gt"
+tagline: "Craft beer? Not here! 🍻"
+testers:
+  - "Bla1ze"
+  - "OminousOsie"
+vpxVPSId: "e05D7rZxSi"
+vpxChecksum: "D1E83DB07E38A218DDC702D57D653114"
+vpxNotes: "Download version 1.24"
+enabled: false # Osie: Needs music!
+applyFixes:
+  - "bass"

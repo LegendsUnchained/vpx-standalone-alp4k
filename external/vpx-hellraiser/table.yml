@@ -1,0 +1,20 @@
+---
+backglassAuthorsOverride:
+  - ""
+fps: 50
+pupChecksum: "6DE77436C19D088D9E701E26CB57D138"
+pupFileUrl: >-
+  https://vpuniverse.com/files/file/11763-hellraiser/
+pupRequired: true
+pupVersion: "Hellraiser"
+pupArchiveFormat: "rar"
+tableVPSId: "PMy7n4X4vv"
+tableNotes: "Download version 1.2"
+tagline: >-
+  "No tears, please. It's a waste of good suffering." - Pinhead
+testers:
+  - "mrandromeda"
+  - "OminousOsie"
+vpxchecksum: "E078164E637B8C6BF66FEBB71D2A020C"
+enabled: false # Osie: Disabled needs pupArchiveRoot adding as pup is 'Hellraiser1.0.1.rar\Hellraiser1.0.1\HellRaiser'
+vpxVPSId: "1Dbo7GYl4P"
