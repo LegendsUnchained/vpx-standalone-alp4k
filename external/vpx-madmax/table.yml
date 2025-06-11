@@ -1,0 +1,17 @@
+---
+backglassVPSId: "-mb6PDrNrh"
+backglassChecksum: "4045A41913852139BBBA32ABF1FE7721"
+backglassNotes: "Download version 1.0.0"
+fps: 60
+romVPSId: "G-RbO6WLOd"
+romChecksum: "8435FDA49C4DFC2D82B9B361E8AA1155"
+romNotes: "Download twst_405.zip"
+tableNotes: "Download version 1.5"
+tableVPSId: "LA86f0Tg"
+tagline: "Witness me!!!!!!"
+testers:
+  - "OminousOsie"
+vpxVPSId: "kvE46l3j"
+vpxChecksum: "825047B0F3E06C242481A02352B0E7E1"
+applyFixes:
+  - "bass"

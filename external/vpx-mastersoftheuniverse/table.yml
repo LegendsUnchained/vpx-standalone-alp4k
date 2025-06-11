@@ -2,6 +2,7 @@
 backglassVPSId: "g9ZMfhVFhz"
 backglassChecksum: "65D670F98FEB0A989DD6F28F1F808512"
 backglassNotes: "Bundled with VPX"
+backglassBundled: true
 fps: 54
 tableVPSId: "Ua8rVDhy"
 tagline: "By the power of Grayskull, I have the power!"

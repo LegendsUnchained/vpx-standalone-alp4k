@@ -13,6 +13,5 @@ testers:
   - "OminousOsie"
 vpxVPSId: "f15731PImN"
 vpxChecksum: "1761C4CEDE9B9F25F57C9476D8EDE48D"
-enabled: false # Osie: Saving for the 11 June Wiz Wed
 applyFixes:
   - "bass"
