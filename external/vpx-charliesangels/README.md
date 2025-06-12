@@ -1,6 +1,6 @@
 # Charlie's Angels (Gottlieb 1978)
 
-![Table Preview](vpx-charliesangels-table.jpeg?raw=true)
+![Table Preview](../../images/vpx-charliesangels-table.jpg)
 
 ---
 
