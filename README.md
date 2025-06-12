@@ -331,6 +331,7 @@ Links to these products on Amazon are through affiliate links.
 | [Central Park (Gottlieb 1966)](external/vpx-centralpark) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Champion Pub, The (Williams 1998)](external/vpx-champpub) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 45 |
 | [Charlie Brown Christmas, A (Original 2023)](external/vpx-acharliebrownchristmas) | :white_check_mark: | :x: | :x: | :x: | 60 |
+| [Charlie's Angels, JP's v5.5 (Gottlieb 1978)](external/vpx-charliesangels) | :white_check_mark: |:x: | :white_check_mark: | :x: | 60 |
 | [Charlie's Angels (Gottlieb 1978)](external/vpx-charliesangelsremix) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 57 |
 | [Checkpoint (Data East 1991)](external/vpx-checkpoint) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 35 |
 | [Cheech & Chong: Road-Trip'pin (Bally 2021)](external/vpx-cheechandchong) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 45 |
