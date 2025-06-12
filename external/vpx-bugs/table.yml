@@ -1,4 +1,6 @@
 ---
+applyFixes: 
+  - "bass"
 backglassVPSId: "wkH-3-oW_e"
 backglassChecksum: "D0EFBBB84A5DC5629B6B17F380BF78F2"
 backglassNotes: "Download version 1.0.0"
