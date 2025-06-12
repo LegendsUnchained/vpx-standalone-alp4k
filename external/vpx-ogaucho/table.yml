@@ -6,8 +6,7 @@ backglassChecksum: "66B83743E8CE7DDBB5EA4383267108F1"
 backglassAuthorsOverride:
   - "JPSalas"
 backglassBundled: true
-backglassNotes: "Download 'O Gaucho (LTD do Brasil 1975).directb2s2s'"
-enabled: false # Osie: Batch for next week
+backglassNotes: "Download 'O Gaucho (LTD do Brasil 1975).directb2s'"
 fps: 60
 tableNotes: "Download v55_VPX8.zip"
 tableVPSId: "7Ptva-BnAT"
