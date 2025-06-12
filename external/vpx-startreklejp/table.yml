@@ -1,0 +1,17 @@
+---
+applyFixes:
+  - "bass"
+backglassVPSId: "dHl2rxjA"
+backglassChecksum: "6FF8AACFE6CC23996BEA5085A99624EA"
+backglassNotes: "Download version 1.0.0"
+enabled: false # Osie: Rom is the stern game code, can't check sum it
+fps: 60
+romVPSId: "S9-_ZgvO"
+romChecksum: ""
+tableVPSId: "xP5horYc"
+tagline: ""
+testers:
+  - "OminousOsie"
+vpxVPSId: "5nBoxs6g"
+vpxChecksum: "E605CEDB4A2B37C0EBE384ABBDEF6522"
+tableNotes: "Download v55_VPX8.zip"
