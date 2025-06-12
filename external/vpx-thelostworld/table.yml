@@ -1,4 +1,6 @@
 ---
+applyFixes:
+  - "bass"
 backglassVPSId: "yoOQCG70LN"
 backglassChecksum: "633d99e0951d3972f3b27f5acbb37ae4"
 fps: 58
