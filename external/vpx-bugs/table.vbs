@@ -132,7 +132,7 @@ VRRoom = 0
 'SIDE RAILS 
 '   Hide Side Rails = 0
 '   Show Side Rails = 1
-SideRails = 1
+SideRails = 0
 
 
 'PLAYFIELD SHADOW INTENSITY (adds additional visual depth) 
