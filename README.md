@@ -85,7 +85,9 @@ Links to these products on Amazon are through affiliate links.
 | [Congo (Williams 1995)](external/vpx-congo) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Cosmic (Taito do Brasil 1980)](external/vpx-cosmic) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Count-Down (Gottlieb 1979)](external/vpx-countdownjp) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
+| [Cowboy Eight Ball (LTD do Brasil 1981)](external/vpx-cowboy8ball) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Creature from the Black Lagoon (Bally 1992)](external/vpx-cftbl) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 50 |
+| [CSI (Stern 2008)](external/vpx-csiled) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 54 | 
 | [Deadpool, JP's (Original 2021)](external/vpx-deadpool) | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Demolition Man (Williams 1994)](external/vpx-demoman) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Devil Riders (Zaccaria 1984)](external/vpx-devilriders) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
@@ -132,11 +134,14 @@ Links to these products on Amazon are through affiliate links.
 | [Johnny Mnemonic (Williams 1995)](external/vpx-johnnymnemonic) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Judge Dredd (Bally 1993)](external/vpx-judgedredd) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 53 |
 | [Jurassic Park (Data East 1993)](external/vpx-jurassicpark) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 45 |
+| [Jurassic Park Pro LE (Original 2022)](external/vpx-jurassicparkle) | :white_check_mark: |:white_check_mark: | :x: | :white_check_mark: | 58 |
 | [King Kong (Data East 1990)](external/vpx-kingkong) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [KISS (Bally 1979)](external/vpx-kissbally) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Knight Rider (Original 2021)](external/vpx-knightrider) | :white_check_mark: | :x: | :x: | :x: | 50 |
 | [Last Action Hero (Data East 1993)](external/vpx-lastactionhero) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Lord of the Rings, JP's The (Original 2017)](external/vpx-lordoftherings) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Lost World Jurassic Park, JP's The (Sega 1997)](external/vpx-thelostworldjp) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 47 |
+| [Mad Max - Fury Road (Original 2021)](external/vpx-madmax) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Mary Shelley's Frankenstein (Sega 1995)](external/vpx-maryshelleyfrank) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Mata Hari (Bally 1978)](external/vpx-matahari) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Machine - Bride of Pin-bot, The (Williams 1991)](external/vpx-bop) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 43 |
@@ -147,6 +152,7 @@ Links to these products on Amazon are through affiliate links.
 | [Monster Bash (Williams 1998)](external/vpx-monsterbashreskin) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 47 |
 | [Mousin' Around! (Bally 1989)](external/vpx-mousin) | :white_check_mark: | :x: | :white_check_mark: | :x: | 32 |
 | [Nascar (Stern 2005)](external/vpx-nascar) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
+| [Nascar - JP's (Original 2015)](external/vpx-nascar) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [NBA Fastbreak (Bally 1997)](external/vpx-nbafastbreak) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [No Fear - Dangerous Sports (Williams 1995)](external/vpx-nofear) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Pennant Fever (Williams 1984)](external/vpx-pennantfever) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
@@ -166,6 +172,7 @@ Links to these products on Amazon are through affiliate links.
 | [Sopranos, The (Stern 2005)](external/vpx-sopranos) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [South Park (Sega 1999)](external/vpx-southpark) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 45 |
 | [Space Cadet, JP's - Galaxy Edition (Original 2021)](external/vpx-spacecadetge) | :white_check_mark: | :x: | :x: | :white_check_mark: | 52 |
+| [Space Invaders - JP (Bally 1980)](external/vpx-jpspaceinvaders) | :white_check_mark: | :x: | :white_check_mark: | :x: | 55 |
 | [Spider-Man Vault Edition (Stern 2016)](external/vpx-spidermanve) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 40 |
 | [Star Wars (Data East 1992)](external/vpx-starwars) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Star Wars Trilogy (Sega 1997)](external/vpx-starwarstrilogy) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
@@ -351,7 +358,7 @@ Links to these products on Amazon are through affiliate links.
 | [Creature From The Black Lagoon - BW Edition (1992)](external/vpx-creaturebw) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 40 | 
 | [Creepshow (Original 2022)](external/vpx-creepshow) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 42 |
 | [Criterium 77 (Taito do Brasil 1977)](external/vpx-criterium77) | :white_check_mark: | :x: | :x: | :x: | 60 |
-| [CSI - LED Mod (Stern 2008)](external/vpx-csiled) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 54 | 
+| [CSI (Stern 2008)](external/vpx-csiled) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 54 | 
 | [Cue Ball Wizard (Gottlieb 1992)](external/vpx-cueball) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 33 |
 | [Cuphead Original (Original 2019)](external/vpx-cupheadoriginal) | :white_check_mark: | :x: | :x: | :x: | 47 |
 | [Cuphead Pro (Original 2020)](external/vpx-cuphead) | :white_check_mark: | :x: | :x: | :x: | 34 |
@@ -486,7 +493,7 @@ Links to these products on Amazon are through affiliate links.
 | [Guardians of the Galaxy Trilogy (Original 2023)](external/vpx-gogtrilogy) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Guns N' Roses (Data East 1994)](external/vpx-gnr) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
 | [Guns'N Roses LE (Remix)](external/vpx-gunsle) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
-| [Gunship pinball music table (Original 2023)](external/vpx-gunship) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
+| [Gunship pinball music table (Original 2023)](external/vpx-gunship) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Hall & Oates (Original 2025)](external/vpx-hallandoates) | :white_check_mark: | :x: | :white_check_mark: | :x: | 45 |
 | [Halloween 1978-1981 (Original 2022)](external/vpx-halloween) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
 | [Halloween MM Edition (Original 2023)](external/vpx-halloweenmm) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
@@ -544,7 +551,7 @@ Links to these products on Amazon are through affiliate links.
 | [Junk Yard (Williams 1996)](external/vpx-junkyard) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
 | [Junkyard Cats (Bailey 2012)](external/vpx-junkyardcats) | :white_check_mark: | :white_check_mark: | :x: | :x: | 54 |
 | [Jurassic Park (Data East 1993)](external/vpx-jurassicpark) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 45 |
-| [Jurassic Park Pro LE (Stern 2019)](external/vpx-jurassicparkle) | :white_check_mark: |:white_check_mark: | :x: | :white_check_mark: | 50 |
+| [Jurassic Park Pro LE (Original 2022)](external/vpx-jurassicparkle) | :white_check_mark: |:white_check_mark: | :x: | :white_check_mark: | 58 |
 | [Kill Bill (Original 2022)](external/vpx-killbill) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Killer Instinct (Original 2024)](external/vpx-killerinstinct) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 44 |
 | [KING Donkey Kong (Original 2023)](external/vpx-kingdonkeykong) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
@@ -576,6 +583,7 @@ Links to these products on Amazon are through affiliate links.
 | [Mac's Galaxy (MAC 1986)](external/vpx-macgalaxy) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Mac Jungle (MAC 1987)](external/vpx-macjungle) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Machine - Bride of Pin-bot, The (Williams 1991)](external/vpx-bop) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 43 |
+| [Mad Max - Fury Road (Original 2021)](external/vpx-madmax) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Mad Race - JP (Playmatic 1985)](external/vpx-jpmadrace) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Magic Castle (Zaccaria 1984)](external/vpx-magiccastle) | :white_check_mark: | :x: | :white_check_mark: | :x: | 52 |
 | [Mandalorian, The (Stern 2021)](external/vpx-mandalorian) | :white_check_mark: | :white_check_mark: | :x: | :x: | 49 |
@@ -621,6 +629,7 @@ Links to these products on Amazon are through affiliate links.
 | [Mystery Castle (Alvin G 1993)](external/vpx-mysterycastle) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
 | [Mystic, JPs (Bally 1980)](external/vpx-jpmystic) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Nascar (Stern 2005)](external/vpx-nascar) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
+| [Nascar - JP's (Original 2015)](external/vpx-nascar) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [NBA Mac (MAC 1986)](external/vpx-nbamac) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [NBA Fastbreak (Bally 1997)](external/vpx-nbafastbreak) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Nemesis (Peyper 1986)](external/vpx-nemesis) | :white_check_mark: | :x: | :white_check_mark: | :x: | 50 |
@@ -749,7 +758,7 @@ Links to these products on Amazon are through affiliate links.
 | [South Park (Sega 1999)](external/vpx-southpark) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 45 |
 | [Space Cadet (Maxis 1995)](external/vpx-spacecadet) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Space Cadet, JP's - Galaxy Edition (Original 2021)](external/vpx-spacecadetge) | :white_check_mark: | :x: | :x: | :white_check_mark: | 52 |
-| [Space Invaders - JP (Bally 1979)](external/vpx-jpspaceinvaders) | :white_check_mark: | :x: | :white_check_mark: | :x: | 55 |
+| [Space Invaders - JP (Bally 1980)](external/vpx-jpspaceinvaders) | :white_check_mark: | :x: | :white_check_mark: | :x: | 55 |
 | [Space Jam (Sega 1996)](external/vpx-spacejam) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 36 |
 | [Space Mission (Williams 1976)](external/vpx-spacemission) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Space Oddity (Original 2022)](external/vpx-spaceoddity) | :white_check_mark: | :x: | :white_check_mark: | :x: | 37 |

@@ -1,0 +1,13 @@
+applyFixes: 
+  - "bass"
+backglassChecksum: "E2E649C67A7AEAAA5F61A8608F68A89E"
+backglassNotes: "Backglass contained in Clock B2S, Wheel, POV.zip"
+backglassVPSId: "xjZiQ1JnxT"
+enabled: false # Osie: Batch for next week
+fps: 60
+tableNotes: "Download all 4 rar files, extract from the file marked part 1. You will need 7zip or WinRAR."
+tableVPSId: "rtgqNfZHKc"
+testers: 
+  - "evilwraith"
+vpxChecksum: "65814BF76AF8660DF52A461AC95397DF"
+vpxVPSId: "STKj6XJEoc"

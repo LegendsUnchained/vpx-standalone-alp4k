@@ -12,9 +12,9 @@ Download: [VP Universe](https://vpuniverse.com/files/file/21020-the-pabst-can-cr
 
 DirectB2S
 
-Author: [MachWon](https://vpuniverse.com/profile/70146-machwon/) 
+Author: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) 
 
-Download: [Mega](https://mega.nz/file/nhh3DIIa#FOATCPz5nYEcW3uQ-ptb2IPSVwbslvCBoQ7_Z-UX-Ks)
+Download: [vpuniverse](https://vpuniverse.com/files/file/23810-pabst-can-crusherstern-2016-b2s/)
 
 ## Status 
 
