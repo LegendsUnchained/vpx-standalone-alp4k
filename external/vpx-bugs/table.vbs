@@ -118,8 +118,8 @@ GIColorBlue      =  143
 
 
 'SHADOW OPTIONS
-Const DynamicBallShadowsOn = 1		'0 = no dynamic ball shadow ("triangles" near slings and such), 1 = enable dynamic ball shadow
-Const AmbientBallShadowOn = 1		'0 = Static shadow under ball ("flasher" image, like JP's)
+Const DynamicBallShadowsOn = 0		'0 = no dynamic ball shadow ("triangles" near slings and such), 1 = enable dynamic ball shadow
+Const AmbientBallShadowOn = 0		'0 = Static shadow under ball ("flasher" image, like JP's)
 									'1 = Moving ball shadow ("primitive" object, like ninuzzu's) - This is the only one that shows up on the pf when in ramps and fades when close to lights!
 '									'2 = flasher image shadow, but it moves like ninuzzu's
 
@@ -137,7 +137,7 @@ SideRails = 1
 
 'PLAYFIELD SHADOW INTENSITY (adds additional visual depth) 
 'Usable range is 0 (lighter) - 100 (darker) 	 	
-ShadowIntensity = 1
+ShadowIntensity = 0.5
 
 
 '----- General Sound Options -----
