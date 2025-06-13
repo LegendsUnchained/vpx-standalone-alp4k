@@ -8,8 +8,8 @@
 | File Type | Link | Version | Author(s) | 
 |-----------|--------|----------|--------------|
 | **VPX** | [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=18795) | 1.2 | Bigus1, Edizzle, Dark |
-| **B2S** | [{b2sWebsite}]({b2sLink}) | {b2sVersion} | {b2sAuthor} |
-| **ROM** | [{romWebsite}]({romLink}) | {romVersion} | {romAuthor} |
+| **B2S** | [vpuniverse](https://vpuniverse.com/files/file/20374-the-lost-world-jurassic-park-sega-1997-b2s-full-dmd/) | v2.0 | hauntfreaks |
+| **ROM** | [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=1075) | jplstw22 | destruk |
 | **SERUM** | [N/A](#) | N/A | N/A |
 | **PUPPACK** | [N/A](#) | N/A | N/A |
 
