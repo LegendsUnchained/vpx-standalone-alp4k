@@ -1,0 +1,20 @@
+---
+applyFixes: 
+  - "bass"
+backglassVPSId: "4HpNfDMq"
+backglassChecksum: "F0EADE0ECF57112407C4A9D9A943442B"
+backglassNotes: "Download version 1.01"
+enabled: false # Osie: yml built in a batch, just needs testing
+fps: 60
+romUrlOverride: "https://pinballnirvana.com/forums/resources/eldorado.1766/"
+romVersionOverride: "eldorado"
+romChecksum: "E34B448C09DF6CE647AFB471C32A5E0A"
+romNotes: "Download eldorado.zip"
+tableNotes: "Download v55_VPX8.zip"
+tableVPSId: "pmYQ11-U"
+tagline: "The Good, the Ugly, and the Bad"
+testers:
+  - "psybocilin"
+  - "OminousOsie"
+vpxVPSId: "EPqSRnCC"
+vpxChecksum: "B6C5A93C30A7693074481AE2509287E3"

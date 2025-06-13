@@ -3,7 +3,6 @@ applyFixes:
   - "bass"
 backglassAuthorsOverride:
   - ""
-enabled: false # Osie: Batch for next week
 fps: 50
 pupChecksum: "D9476309192011F5F720E142984BBBB3"
 pupFileUrl: >-
