@@ -1,5 +1,5 @@
 ---
-backglassBundled: "true"
+backglassBundled: true
 backglassNotes: "Wizard will install backglass"
 backglassChecksum: "3CB46E0DEEE83B2BF3B9BB2CFDADE91C"
 fps: 50
