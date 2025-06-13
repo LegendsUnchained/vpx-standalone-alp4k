@@ -1,0 +1,19 @@
+---
+applyFixes: 
+  - "bass"
+backglassBundled: true
+backglassVPSId: "sGNvMGFmFo"
+backglassChecksum: "9AC4E54435996670BF39A6B915231B15"
+backglassNotes: "Download v5_VPX8.directb2s.zip (3.58 MB)"
+enabled: false # Osie: yml built in a batch, just needs testing
+fps: 60
+tableNotes: "Download v55_VPX8.zip (8.15 MB)"
+tableVPSId: "pYUzDR_B_L"
+tagline: >-
+  Carnival in Rio de Janeiro, Brazil, is an annual event full
+  of festivities, samba school parades, street blocks and other events.
+testers:
+  - "Curt"
+  - "OminousOsie"
+vpxVPSId: "sGNvMGFmFo"
+vpxChecksum: "95FB01A8A1EB65907198AAE51D0280BA"

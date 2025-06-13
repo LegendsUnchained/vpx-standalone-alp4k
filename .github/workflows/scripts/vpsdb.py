@@ -108,6 +108,7 @@ def get_table_meta(files, warn_on_error=True):
         coloredROMChecksum = data.get("coloredROMChecksum")
         romChecksum = data.get("romChecksum")
         vpxChecksum = data.get("vpxChecksum")
+        pupChecksum = data.get("pupChecksum")
 
         if altSoundChecksum:
             altSoundChecksum = altSoundChecksum.lower()
@@ -119,6 +120,8 @@ def get_table_meta(files, warn_on_error=True):
             romChecksum = romChecksum.lower()
         if vpxChecksum:
             vpxChecksum = vpxChecksum.lower()
+        if pupChecksum:
+            pupChecksum = pupChecksum.lower()
 
         table_meta = {
             "altSoundChecksum": altSoundChecksum,
@@ -139,7 +142,7 @@ def get_table_meta(files, warn_on_error=True):
             "mainNotes": data.get("mainNotes"),
             "name": data.get("tableNameOverride"),
             "pupArchiveRoot": data.get("pupArchiveRoot"),
-            "pupChecksum": data.get("pupChecksum"),
+            "pupChecksum": pupChecksum,
             "pupFileUrl": data.get("pupFileUrl"),
             "pupNotes": data.get("pupNotes"),
             "pupRequired": data.get("pupRequired"),

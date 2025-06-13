@@ -1,0 +1,21 @@
+---
+applyFixes: 
+  - "bass"
+backglassVPSId: "Wa_52tLV"
+backglassChecksum: "1780AFBF576A59ECC035104B1C4ECE35"
+backglassNotes: "Download version 1.0"
+enabled: false # Osie: yml built in a batch, just needs testing
+fps: 60
+romVPSId: "AYg8Ljzs"
+romChecksum: "7C4CFC17CCCD4F983C82714B71BF1C7E"
+romNotes: "Download ind250cc.zip"
+tableNotes: "Download v55_VPX8.zip"
+tableVPSId: "bafGvcae"
+tagline: >-
+  "250 cc" is a motorcycle racing-themed pinball
+  machine released by the Spanish manufacturer Inder in 1992
+testers:
+  - "Boris"
+  - "OminousOsie"
+vpxVPSId: "Gw5kOfmC"
+vpxChecksum: "F8F71FE56C0348F4AC92925EA41E7CFA"
