@@ -139,7 +139,7 @@ Links to these products on Amazon are through affiliate links.
 | [KISS (Bally 1979)](external/vpx-kissbally) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Last Action Hero (Data East 1993)](external/vpx-lastactionhero) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Lord of the Rings, JP's The (Original 2017)](external/vpx-lordoftherings) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
-| [Lost World Jurassic Park, JP's The (Sega 1997)](external/vpx-thelostworldjp) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 47 |
+| [Lost World Jurassic Park, JP's The (Original 2020)](external/vpx-thelostworldjp) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Mad Max - Fury Road (Original 2021)](external/vpx-madmax) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Mary Shelley's Frankenstein (Sega 1995)](external/vpx-maryshelleyfrank) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Mata Hari (Bally 1978)](external/vpx-matahari) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
@@ -578,7 +578,8 @@ Links to these products on Amazon are through affiliate links.
 | [Lord of the Rings, JP's The (Original 2017)](external/vpx-lordoftherings) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Lost in Space Bigus (MOD) 2.0 (Sega 1998)](external/vpx-lostinspace) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Lost World (Bally 1978)](external/vpx-lostworld) | :white_check_mark: | :x: | :white_check_mark: | :x: | 56 |
-| [Lost World Jurassic Park, JP's The (Sega 1997)](external/vpx-thelostworldjp) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 47 |
+| [Lost World Jurassic Park, JP's The (Original 2020)](external/vpx-thelostworldjp) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
+| [Lost World Jurassic Park, The (Sega 1997)](external/vpx-thelostworld) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 58 |
 | [Lucky Seven (Williams 1978)](external/vpx-luckyseven) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Mac's Galaxy (MAC 1986)](external/vpx-macgalaxy) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Mac Jungle (MAC 1987)](external/vpx-macjungle) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
