@@ -1,0 +1,20 @@
+---
+applyFixes: 
+  - "bass"
+backglassBundled: true
+backglassVPSId: "QwyBW9SK"
+backglassChecksum: "1D42F80FA449A6945FD449B4280ED20F"
+backglassNotes: "Included with VPX File"
+enabled: false # Osie: yml built in a batch, just needs testing
+fps: 60
+romVPSId: "WKX9sn35"
+romChecksum: "49C6CBD694C77C33D1F4F743BD818BEC"
+romNotes: "Download attila.zip"
+tableNotes: "Download 'Attila The Hun (Game Plan 1984)a.zip'"
+tableVPSId: "kuQiQhLd"
+tagline: "Scholars believe that Attila died from a nosebleed! Google it!"
+testers:
+  - "Mox"
+  - "OminousOsie"
+vpxVPSId: "YIPTzaeg"
+vpxChecksum: "FE8FF70494B8445AAA73A29C6EEE079B"

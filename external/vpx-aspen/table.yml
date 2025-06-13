@@ -1,0 +1,18 @@
+---
+applyFixes: 
+  - "bass"
+backglassBundled: true
+backglassVPSId: "UsGwFqhSs0"
+backglassChecksum: "9F1DD5A39F5631CCC96622B68B7D5A56"
+backglassNotes: "Download 'Aspen (Brunswick 1979).directb2s.zip'"
+enabled: false # Osie: yml built in a batch, just needs testing
+fps: 60
+tableNotes: "Download v55_VPX8.zip"
+tableVPSId: "R6RD69ks"
+tagline: >-
+  "Experience the fast downhill action of the colorburst playfield!"
+testers:
+  - "Boris"
+  - "OminousOsie"
+vpxVPSId: "6Fv2Qcc-m8"
+vpxChecksum: "737E74C374C2D78AD7B17E23F9B08F9F"
