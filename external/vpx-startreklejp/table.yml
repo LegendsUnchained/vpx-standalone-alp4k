@@ -7,7 +7,7 @@ backglassNotes: "Download version 1.0.0"
 enabled: false # Osie: Rom is the stern game code, can't check sum it
 fps: 60
 romVPSId: "S9-_ZgvO"
-romChecksum: ""
+#romChecksum: ""
 tableVPSId: "xP5horYc"
 tagline: ""
 testers:
