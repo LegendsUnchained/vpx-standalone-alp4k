@@ -2,6 +2,7 @@
 backglassVPSId: "COTVD8l6EG"
 backglassChecksum: "7F36A37F006D77A3CB19FDBA52663ECE"
 backglassNotes: "Download version 1"
+enabled: false # Osie: Batch for next week
 fps: 60
 romVPSId: "EGZA2LmN"
 romChecksum: "2DD99073912E74D12B4FE85DCB40BC00"
