@@ -4,6 +4,7 @@ applyFixes:
 backglassVPSId: "peJfbx-3Zo"
 backglassChecksum: "3ECC27ABABD4FB2C0441882B2DA0BB30"
 backglassNotes: "Download version 1.0.0"
+enabled: false # Osie: yml built in a batch, just needs testing
 fps: 60
 tableNotes: "Download version 1.0.0"
 tableVPSId: "1Q0n5I4_sy"
