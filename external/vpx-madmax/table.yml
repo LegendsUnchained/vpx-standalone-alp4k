@@ -1,4 +1,6 @@
 ---
+applyFixes:
+  - "bass"
 backglassVPSId: "-mb6PDrNrh"
 backglassChecksum: "4045A41913852139BBBA32ABF1FE7721"
 backglassNotes: "Download version 1.0.0"
@@ -11,7 +13,6 @@ tableVPSId: "LA86f0Tg"
 tagline: "Witness me!!!!!!"
 testers:
   - "OminousOsie"
+  - "evilwraith"
 vpxVPSId: "kvE46l3j"
 vpxChecksum: "825047B0F3E06C242481A02352B0E7E1"
-applyFixes:
-  - "bass"

@@ -1,10 +1,13 @@
 ---
+applyFixes:
+  - "bass"
 backglassVPSId: "MwtLDVb00M"
 backglassChecksum: "66B83743E8CE7DDBB5EA4383267108F1"
 backglassAuthorsOverride:
   - "JPSalas"
 backglassBundled: true
 backglassNotes: "Download 'O Gaucho (LTD do Brasil 1975).directb2s2s'"
+enabled: false # Osie: Batch for next week
 fps: 60
 tableNotes: "Download v55_VPX8.zip"
 tableVPSId: "7Ptva-BnAT"
@@ -17,5 +20,3 @@ testers:
   - "CoffeeAtJoes"
 vpxVPSId: "MwtLDVb00M"
 vpxChecksum: "020A7E1B7751A2D356CB84AA998D6F94"
-applyFixes:
-  - "bass"
