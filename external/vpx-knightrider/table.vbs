@@ -103,7 +103,7 @@ Const DynamicBallShadowsOn = 0		'0 = no dynamic ball shadow, 1 = enable dynamic 
 
 '----- Others Options -----
 Const UltraDMDUpdateTime	= 5000	'UltraDMD update time (msec).  Increase value if you encounter stutter with UltraDMD on
-Const UseUltraDMD = 1				'0 = Don't use UltraDMD, 1=Use it
+Const UseUltraDMD = 0				'0 = Don't use UltraDMD, 1=Use it
 Const UseBGB2S = 0					'0 = Don't use B2S, 1=Use it (0 = Displaying Multiplayer Scores on the PUPDMD)
 
 ' Define any Constants
@@ -283,7 +283,7 @@ Sub Table1_Init()
 	If UseUltraDMD > 0 Then LoadUltraDMD
 
     ' freeplay or coins
-    bFreePlay = True 'we want coins
+    bFreePlay = False 'we want coins
 
     'if bFreePlay = false Then DOF 125, DOFOn
 
