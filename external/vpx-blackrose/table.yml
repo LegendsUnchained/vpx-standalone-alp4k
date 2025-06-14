@@ -1,0 +1,17 @@
+---
+backglassVPSId: "0Htk9ITwd6"
+backglassChecksum: "8ABEE56C90A6406A465219F3EEBA90FA"
+backglassNotes: "Download Black Rose (Bally 1992) full dmd.zip"
+fps: 50
+romVPSId: "JIPLPq0j"
+romChecksum: "E21364CA118FFBF3D2AA9F46FBE05B6B"
+romNotes: "Download br_l4.zip"
+tableVPSId: "qQNywC8u"
+tagline: "Give 'em a taste of iron, boys"
+testers:
+  - "Bla1ze"
+vpxVPSId: "zUJ07JKe"
+vpxChecksum: "BC5EFFB90F8D1AD5A54464A544F6E6D4"
+vpxNotes: "Download version 1.4"
+applyFixes:
+  - "bass"

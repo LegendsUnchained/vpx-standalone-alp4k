@@ -1,31 +1,60 @@
 # Black Rose (Bally 1992)
 
-![Table Preview](../../images/vpx-blackrose.png)
+![Table Preview](../../images/zUJ07JKe-preview.webp)
 
-Authors: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)
-Version: 1.4
-Download: [VP Universe](https://vpuniverse.com/files/file/7935-black-rose-bally-1992-vpw-mod/)
+<br>
 
-DirectB2S
+## *️⃣  Table Statistics
 
-Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
-Version: 2.0
-Download: [VP Universe](https://vpuniverse.com/files/file/12224-black-rose-bally-1992-b2s-with-full-dmd/)
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ✅ | ✅ | ❌ | 50 |
 
-ROM
+<br>
 
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=256)
+**VPXS 4KP Testers:**
+  - Bla1ze
 
-## Status 
+<br>
 
-Minimum VPX Standalone build: 10.8.0-1989-a764013
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
+---
 
-## Instructions
+<br>
 
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
+## ❇️ Available in the Wizard! 🪄✨
 
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Black Rose (Bally 1992)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"Give 'em a taste of iron, boys"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - TechZombie
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
