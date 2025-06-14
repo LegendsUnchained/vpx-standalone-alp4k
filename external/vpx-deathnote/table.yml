@@ -1,0 +1,17 @@
+---
+applyFixes: 
+  - "bass"
+backglassBundled: true
+backglassVPSId: "S0RzPJWZdQ"
+backglassChecksum: "20315936E0C3CDA9F5E75D2309B0AA9E"
+backglassNotes: "Included with VPX file"
+enabled: false # Osie: Easy table for wizard release. YML built - Just needs simple stuff (POV/ Free Play/ Artwork)
+fps: 60
+tableNotes: "Download v1.2"
+tableVPSId: "GIqTUmQnGn"
+tagline: "I will become the god of the new world!!"
+testers:
+  - "evilwraith"
+  - "OminousOsie"
+vpxVPSId: "S0RzPJWZdQ"
+vpxChecksum: "4ABA5534FB8E3D3D3EA2F407B151566B"
