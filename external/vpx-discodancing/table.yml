@@ -1,0 +1,22 @@
+---
+applyFixes: 
+  - "bass"
+backglassBundled: true
+backglassVPSId: "M-PZA7l6LZ"
+backglassChecksum: "73396F83AC4E19E70E3B7EEB88E0CBFE"
+backglassNotes: "Download 'Disco Dancing.directb2s.zip'"
+enabled: false # Osie: Easy table for wizard release. YML built - Just needs simple stuff (POV/ Free Play/ Artwork)
+fps: 60
+romBundled: true
+romVPSId: "3ukBNGX9zq"
+romChecksum: "A2453167160FA50A024B96CF8C5E0C93"
+romNotes: "Download 'discodan.zip'"
+romVersionOverride: "discodan"
+tableNotes: "Download v55_VPX8.zip"
+tableVPSId: "uEICxkSaR8"
+tagline: "Disco Will Never Die!"
+testers:
+  - "Curt"
+  - "OminousOsie"
+vpxVPSId: "3ukBNGX9zq"
+vpxChecksum: "442127F7797CF96936547043176AE075"
