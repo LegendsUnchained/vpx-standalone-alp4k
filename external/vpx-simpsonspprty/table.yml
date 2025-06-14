@@ -1,7 +1,6 @@
 ---
-backglassBundled: true
-backglassNotes: "Wizard will install backglass"
-backglassChecksum: "76918113A0203A1B8FC1FA147F9B2B25"
+applyFixes:
+  - "bass"
 fps: 50
 romVPSId: "BJan0_7-"
 romNotes: "Download simpprty.zip"
@@ -15,6 +14,3 @@ testers:
   - "Mar3nBu"
 vpxVPSId: "3EE1X7uW"
 vpxChecksum: "90B033A6C012418A3B4091102EAEA825"
-applyFixes:
-  - "bass"
-
