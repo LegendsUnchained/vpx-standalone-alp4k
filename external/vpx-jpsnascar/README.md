@@ -1,6 +1,6 @@
 # NASCAR, JP's (Original 2015)
 
-![Table Preview](../../images/kvE46l3j-preview.webp)
+![Table Preview](../../images/mqN6b0Ls-preview.webp)
 
 <br>
 
