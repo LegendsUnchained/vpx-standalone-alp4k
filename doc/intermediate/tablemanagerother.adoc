@@ -32,6 +32,7 @@ Then close the table manager, restart your 4KP, load table
 manager back up, and do the other updates.
 ====
 
+[[base-fix-table]]
 == _BASS Fix Table_
 
 Occasionally, a table will have `BASS' errors (seen in the vpinball.log

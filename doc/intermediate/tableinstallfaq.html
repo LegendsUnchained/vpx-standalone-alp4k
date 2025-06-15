@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.16">
-<meta name="author" content="Firstname Lastname">
-<title>AsciiDoc Article Title</title>
+<title>Table Install FAQ</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -438,222 +437,576 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/github.min.css">
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
-<h1>AsciiDoc Article Title</h1>
-<div class="details">
-<span id="author" class="author">Firstname Lastname</span><br>
-<span id="email" class="email"><a href="mailto:author@asciidoctor.org">author@asciidoctor.org</a></span><br>
-<span id="revnumber">version 3.0,</span>
-<span id="revdate">July 29, 2022</span>
-<br><span id="revremark">AsciiDoc article template</span>
-</div>
-<div id="toc" class="toc">
+<h1>Table Install FAQ</h1>
+<div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_first_level_heading">First level heading</a>
+<li><a href="#_table_faqs">Table FAQs:</a>
 <ul class="sectlevel2">
-<li><a href="#_second_level_heading">Second level heading</a></li>
+<li><a href="#_table_has_missing_sounds_bass_errors_in_vpinball_log">Table has Missing Sounds / BASS Errors in vpinball.log</a></li>
+<li><a href="#_table_manager_easy_method">Table Manager (Easy Method)</a></li>
+<li><a href="#_windows_advanced_method">Windows (Advanced Method)</a></li>
 </ul>
 </li>
-<li><a href="#_first_level_heading_2">First level heading</a></li>
-<li><a href="#_first_level_heading_3">First level heading</a></li>
+<li><a href="#_table_wont_start_i_can_add_coins_but_no_lights">Table Won’t Start - I Can Add Coins But No Lights</a></li>
+<li><a href="#_increase_lower_volume">Increase / Lower Volume</a></li>
+<li><a href="#_configure_nudge_buttons_as_magnasave">Configure nudge buttons as magnasave</a></li>
+<li><a href="#_plunger_is_weak">Plunger is weak</a>
+<ul class="sectlevel2">
+<li><a href="#_how_do_i_add_altsound_altcolor">How do I add altsound / altcolor?</a></li>
+</ul>
+</li>
+<li><a href="#_backglass_faqs">Backglass FAQs:</a>
+<ul class="sectlevel2">
+<li><a href="#_i_want_to_display_the_backglass_at_the_appropriate_aspect_ratio">I want to display the backglass at the appropriate aspect ratio</a></li>
+<li><a href="#_part_of_my_backglass_is_missing">Part of my backglass is missing</a></li>
+<li><a href="#_fulldmd_is_not_working">FullDMD is not working</a></li>
+</ul>
+</li>
+<li><a href="#_dmd_faqs">DMD FAQs:</a>
+<ul class="sectlevel2">
+<li><a href="#_the_dmd_lags_or_doesnt_update_sometimes_or_if_the_table_has_a_pup_pack">The DMD lags or doesn’t update sometimes or if the table has a PuP-Pack</a></li>
+<li><a href="#_i_want_to_hide_the_dmd_as_it_is_duplicated_on_the_backglass">I want to hide the DMD as it is duplicated on the backglass</a></li>
+<li><a href="#_how_to_add_a_custom_dmd_image_to_an_empty_dmd">How to add a custom DMD image to an empty DMD</a></li>
+<li><a href="#_my_dmd_is_cut_off_on_the_left_side">My DMD is cut off on the left side</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>Content entered directly below the header but before the first section heading is called the preamble.</p>
-</div>
-</div>
-</div>
 <div class="sect1">
-<h2 id="_first_level_heading">First level heading</h2>
+<h2 id="_table_faqs">Table FAQs:</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_table_has_missing_sounds_bass_errors_in_vpinball_log">Table has Missing Sounds / BASS Errors in vpinball.log</h3>
 <div class="paragraph">
-<p>This is a paragraph with a <strong>bold</strong> word and an <em>italicized</em> word.</p>
+<p>This is caused by stereo sounds that we need to re-encode to mono, and
+you are likely to encounter this on most tables. A series of scripts can
+be used to address and resolve this.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="image-file-name.png" alt="I am the image alt text.">
-</div>
-<div class="title">Figure 1. Image caption</div>
-</div>
-<div class="paragraph">
-<p>This is another paragraph.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
 </div>
 <div class="sect2">
-<h3 id="_second_level_heading">Second level heading</h3>
-<div class="ulist">
-<div class="title">Unordered list title</div>
-<ul>
-<li>
-<p>list item 1</p>
-<div class="ulist">
-<ul>
-<li>
-<p>nested list item</p>
-<div class="ulist">
-<ul>
-<li>
-<p>nested nested list item 1</p>
-</li>
-<li>
-<p>nested nested list item 2</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>list item 2</p>
-</li>
-</ul>
+<h3 id="_table_manager_easy_method">Table Manager (Easy Method)</h3>
+<div class="paragraph">
+<p>You can fix the BASS errors in the Table Manager.</p>
 </div>
 <div class="paragraph">
-<p>This is a paragraph.</p>
+<p>Full instructions here:
+<a href="tablemanagerother.html#base-fix-table">TM - BASS Fix Table</a></p>
 </div>
-<div class="exampleblock">
-<div class="title">Example 1. Example block title</div>
-<div class="content">
+</div>
+<div class="sect2">
+<h3 id="_windows_advanced_method">Windows (Advanced Method)</h3>
 <div class="paragraph">
-<p>Content in an example block is subject to normal substitutions.</p>
+<p>Download the Powershell scripts found
+<a href="https://github.com/LegendsUnchained/vpx-standalone-alp4k/tree/main/scripts/Windows/audio">here</a>
+to your computer.</p>
 </div>
-</div>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="title">Sidebar title</div>
 <div class="paragraph">
-<p>Sidebars contain aside text and are subject to normal substitutions.</p>
+<p><code>download-apps.ps1</code> will download the required <code>vpxtool.exe</code> and
+<code>ffmpeg.exe</code> and unpack them for you.</p>
 </div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_third_level_heading">Third level heading</h4>
-<div id="id-for-listing-block" class="listingblock">
-<div class="title">Listing block title</div>
-<div class="content">
-<pre>Content in a listing block is subject to verbatim substitutions.
-Listing block content is commonly used to preserve code input.</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_fourth_level_heading">Fourth level heading</h5>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Table title</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Column heading 1</th>
-<th class="tableblock halign-left valign-top">Column heading 2</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Column 1, row 1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Column 2, row 1</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Column 1, row 2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Column 2, row 2</p></td>
-</tr>
-</tbody>
-</table>
-<div class="sect5">
-<h6 id="_fifth_level_heading">Fifth level heading</h6>
-<div class="quoteblock">
-<blockquote>
 <div class="paragraph">
-<p>I am a block quote or a prose excerpt.
-I am subject to normal substitutions.</p>
-</div>
-</blockquote>
-<div class="attribution">
-&#8212; firstname lastname<br>
-<cite>movie title</cite>
-</div>
-</div>
-<div class="verseblock">
-<pre class="content">I am a verse block.
-  Indents and endlines are preserved in verse blocks.</pre>
-<div class="attribution">
-&#8212; firstname lastname<br>
-<cite>poem title and more</cite>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_first_level_heading_2">First level heading</h2>
-<div class="sectionbody">
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-There are five admonition labels: Tip, Note, Important, Caution and Warning.
-</td>
-</tr>
-</table>
+<p><code>convertto-mono.ps1</code> will take in a vpx filename as a parameter, extract
+the table, and convert any stereo table audio to mono. The original file
+will be renamed with extension `.original' and the new fixed file will
+be renamed correctly.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>ordered list item</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>nested ordered list item</p>
-</li>
-</ol>
-</div>
+<p>Make a new directory and copy in both scripts.</p>
 </li>
 <li>
-<p>ordered list item</p>
+<p>Copy the vpx file you want to convert to the directory</p>
+</li>
+<li>
+<p>Open a powershell terminal and navigate to the directory</p>
+</li>
+<li>
+<p>Run ./download-apps.ps1 to download the required apps</p>
+</li>
+<li>
+<p>Run ./converrto-mono.ps1 -table <code>vpx</code> (after -table start typing the
+name and tab should autocomplete the file name)</p>
+</li>
+<li>
+<p>All done! Copy over the new vpx file over to your usb and replace the
+original. The filenames should match up and ask you to replace.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>The text at the end of this sentence is cross referenced to <a href="#_third_level_heading">the third level heading</a></p>
+<p>Alternatively, <code>convert-all.ps1</code> will detect all present vpx files in a
+directory and convert them in a batch. Place it in the same folder as
+<code>converrto-mono.ps1</code> and all the vpx files you’d like to convert, then
+execute <code>./convert-all.ps1</code> with no parameters. It will do the rest.</p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_first_level_heading_3">First level heading</h2>
+<h2 id="_table_wont_start_i_can_add_coins_but_no_lights">Table Won’t Start - I Can Add Coins But No Lights</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This is a link to the <a href="https://docs.asciidoctor.org/home/">Asciidoctor documentation</a>.
-This is an attribute reference <a href="https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/">that links this text to the AsciiDoc Syntax Quick Reference</a>.</p>
+<p>This is always a ROM issue.</p>
+</div>
+<div class="paragraph">
+<p>Run through the below troubleshooting steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>You are missing a ROM</strong> Please re-install the table and make sure to
+include the ROM zip file or add it manually into the
+<code>/external/vpx-table/pinmame/roms</code> folder</p>
+</li>
+<li>
+<p><strong>The ROM is incorrectly named</strong> Sometimes we see ROM zip files called
+<code>romname (1).zip</code> etc. It is very important that the rom name is
+correct. You can manually update the ROM name in the
+<code>/external/vpx-table/pinmame/roms</code> folder</p>
+</li>
+<li>
+<p><strong>The ROM file has been unzipped</strong> The ROM files must <strong>never</strong> be
+unzipped. Please reinstall with the correctly zipped ROM file.</p>
+</li>
+<li>
+<p><strong>The cGameName variable in the <code>.vbs</code> is wrong</strong> If you are adding a
+table yourself, you might use the correct ROM but the table <code>.vbs</code> is
+using a ROM alias. That means that the <code>cGameName</code> variable in the
+<code>.vbs</code> is the wrong name. Updating it in the <code>.vbs</code> will correct it.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_increase_lower_volume">Increase / Lower Volume</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To update the volume, you’ll need a USB keyboard.</p>
 </div>
-<div id="footnotes">
+<div class="paragraph">
+<p>If you need one, this one works great! Rii RK707 Keyboard/Game
+Controller <a href="https://amzn.to/4fqC1oC">Amazon US</a> |
+<a href="https://www.amazon.co.uk/Rii-Multifunctional-Controller-Rechargeable-Vibration/dp/B0DHS43GW2/ref=sr_1_5?crid=T404AU16RBHE&amp;dib=eyJ2IjoiMSJ9.ymfNMwmi9yWN1gZzs5NQuQ.rx0G0a0Zq1flLEXDpP2qRvBoNG_wXuO0MISNd-GxrI0&amp;dib_tag=se&amp;keywords=%28Backlit+Version%29Rii+RK707+3+in+1+Multifunctional+2.4GHz+Wireless+Portable+Game+Controller&amp;qid=1741954502&amp;sprefix=backlit+version+rii+rk707+3+in+1+multifunctional+2.4ghz+wireless+portable+game+controller+%2Caps%2C81&amp;sr=8-5">Amazon
+UK</a> |
+<a href="https://www.amazon.ca/Rii-Multifunctional-Controller-Rechargeable-Vibration/dp/B07STY21PS/ref=sr_1_1?crid=BMQNFLSCUUU3&amp;dib=eyJ2IjoiMSJ9.aiStKTCkp2jQ2ST8VLR44qIEx4AVQTEyaMGT-EfYG6QAYnJMipmnFfbgdJQHIQNRoxm4Xk-Ul3bLVcrwhFiFP4d5kLnhRnnKmGaecUDE3hPaL97GLOfEOUBlkyX8OCbCYggz9_-vBtPSns9uFGr5cAj9R7MRxkJFYOkKzria8NDHSVxoS-Xm0x-eByQA2AdMBjJu34Yq0NT8Cy8LPtDGDhCdSkybSLaLTzrwqNRx5Lvuka3umY1kmzCMWnJzJKSpKuX-4gidNu2ZO0LCHgadTGBRqh_l2K9TiNMeIjFEy4WyXseziqCmqP-cwC19cM35tf53BVa8HvhWxblCwGgqz4ih3HDUHDG8LICz2BZhNWwEhYYj0tFGBUrNS4-d_UVrHOA_YTvrOWdDfpIgBjdecSARY2G593TLvdqa51_hpafTzWXO1cPUPZejEeXlnwrE.nmfWGVYUiSUqE4yMKNAdnkc4WsCtQS2pqiSaRuD_TQI&amp;dib_tag=se&amp;keywords=Backlit+Version+Rii+RK707+3+in+1+Multifunctional+2.4GHz+Wireless+Portable+Game+Controller&amp;qid=1741954574&amp;sprefix=backlit+version+rii+rk707+3+in+1+multifunctional+2+4ghz+wireless+portable+game+controller%2Caps%2C111&amp;sr=8-1">Amazon
+CA</a></p>
+</div>
+<div class="paragraph">
+<p>As well as the below guides, there is also a list of guides on altering
+the volume on different tables here:
+<a href="https://www.vpforums.org/index.php?app=tutorials&amp;cat=9">vpforum
+tutorials</a></p>
+</div>
 <hr>
-<div class="footnote" id="_footnotedef_1">
-<a href="#_footnoteref_1">1</a>. I am footnote text and will be displayed at the bottom of the article.
+<div class="paragraph">
+<p><strong>Bally / Midway / Williams:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Press END key to open coin door.</p>
+</li>
+<li>
+<p>Using the 8 and 9 keys, adjust the volume. The 8 key will
+lower the volume, while the 9 key will raise the volume.</p>
+</li>
+<li>
+<p>You may have to press END key to close the coin door.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>There may be tables where the coin door is already open when
+the table loads, so you may not have to perform step 1. However, you
+will not get notification that the door is open. To check to see if the
+door is open, press either the 7 or 0 key. If the message appears to
+open the coin door to use the buttons, then press the end key to open
+the door.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>Capcom:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Press 7 to enter menu system.</p>
+</li>
+<li>
+<p>Using the shift keys, cycle through the menus until you see
+Set Volume</p>
+</li>
+<li>
+<p>Press 1 to select that menu</p>
+</li>
+<li>
+<p>Using the shift keys, adjust the volume. Left Shift Key lowers
+the volume, Right Shift Key raises the volume</p>
+</li>
+<li>
+<p>To exit the menu system, press the 7 key once.</p>
+</li>
+</ol>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>Data East / Early Segas:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Press 7 to enter the audits and adjustments menu</p>
+</li>
+<li>
+<p>Continue to press 7 until you see Expand Adjustments (or
+Expand Adjusts) in the DMD</p>
+</li>
+<li>
+<p>Press 1 to change option to Yes</p>
+</li>
+<li>
+<p>Continue to press 7 until you see Volume Adjustment or
+Background Music Volume in the DMD</p>
+</li>
+<li>
+<p>Press 1 to adjust the volume percentage. You can either set it
+to OFF, or to 25%, 50%, 75%, 100%</p>
+</li>
+<li>
+<p>Either continually press 7 to go through all the menu options
+to reset the table and save changes, or press F3.</p>
+</li>
+</ol>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>Sega / Stern:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Using the 8 and 9 keys, adjust the volume.</p>
+</li>
+<li>
+<p>The 9 key lowers the volume, the 8 key raises the volume (You
+may have to press the 9 key first to be able to adjust the volume)</p>
+</li>
+</ol>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>Alvin G tables:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Using the 9 and 0 (zero) keys, adjust the volume. The 0 key
+lowers the volume, the 9 key raises the volume</p>
+</li>
+<li>
+<p>Wait until you see GAME OVER in DMD to play with the new
+settings</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>For these tables, this procedure will work if you use the ROM
+based sound. If you use the emulated sound that is included with these
+tables, you will NOT be able to adjust the volume</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configure_nudge_buttons_as_magnasave">Configure nudge buttons as magnasave</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Rebind the left and right nudge buttons using the following
+configuration in the ini:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ini hljs" data-lang="ini">[Player]
+JoyLTiltKey                     = 0
+JoyRTiltKey                     = 0
+JoyLMagnaSave                   = 14
+JoyRMagnaSave                   = 15</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/external/vpx-grandlizard/table.ini">Example</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_plunger_is_weak">Plunger is weak</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Adjust the strength of the plunger object in the script:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-vbscript hljs" data-lang="vbscript">Plunger.MechStrength = 150</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You may need a different name than <code>Plunger</code> depending on how the table
+is built. Look for the plunger object on the playfield.</p>
+</div>
+<div class="paragraph">
+<p>If you need to increase the strength of an auto-plunger then you can do
+something similar in the vbs:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-vbscript hljs" data-lang="vbscript">dim plungerIM
+Set plungerIM = New cvpmImpulseP  ' &lt;-- Just example to look out for
+
+plungerIM.Strength = 75   ' &lt;-- Change strength here!</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_how_do_i_add_altsound_altcolor">How do I add altsound / altcolor?</h3>
+<div class="paragraph">
+<p>Alts, sound and color, always go:
+vpx-tablename/pinmame/alt(color/sound)/romname</p>
+</div>
+<div class="paragraph">
+<p>In order to use an AltSound it needs to be enabled in the tablename.ini
+under the Standalone header. If [Standalone] does not exist, please
+create it.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ini hljs" data-lang="ini">[Standalone]
+AltSound = 1</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_backglass_faqs">Backglass FAQs:</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_i_want_to_display_the_backglass_at_the_appropriate_aspect_ratio">I want to display the backglass at the appropriate aspect ratio</h3>
+<div class="paragraph">
+<p>Add configuration to override the b2s size in the ini:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ini hljs" data-lang="ini">[Standalone]
+B2SBackglassX = 5400
+B2SBackglassWidth = 1201</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Open the b2s in an editing tool
+(e.g. <a href="https://github.com/vpinball/b2s-designer">B2SBackglassDesigner</a>) to
+determine the correct sizes. Center the image using a <code>1920</code> width.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/main/external/vpx-frontier/table.ini">Example</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_part_of_my_backglass_is_missing">Part of my backglass is missing</h3>
+<div class="paragraph">
+<p>Try turning on the b2s grill by adding the following to the ini:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ini hljs" data-lang="ini">[Standalone]
+B2SHideGrill = 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_fulldmd_is_not_working">FullDMD is not working</h3>
+<div class="paragraph">
+<p>Try adding the following to the ini:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ini hljs" data-lang="ini">[Standalone]
+B2SHideB2SDMD              = 0
+B2SHideB2SBackglass        = 0
+B2SHideDMD                 = 0
+B2SDMDRotation             = 1
+PinMAMEWindow              = 0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The key here is PinMAMEWindow = 0. That’s what’s been hiding the B2SDMD.</p>
+</div>
+<div class="paragraph">
+<p>The last 2 lines are 100% required</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dmd_faqs">DMD FAQs:</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_the_dmd_lags_or_doesnt_update_sometimes_or_if_the_table_has_a_pup_pack">The DMD lags or doesn’t update sometimes or if the table has a PuP-Pack</h3>
+<div class="paragraph">
+<p>For the DMD try turning backglass threading off. It may impact
+performance, but can improve stability. If the table has a PuP-Pack,
+enabling this option is essential; otherwise, the table may begin to
+stutter and hang.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ini hljs" data-lang="ini">[Standalone]
+WindowRenderMode = 0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/LegendsUnchained/vpx-standalone-alp4k/blob/25c3813a14473b1e4173565f2ff064aa2fa64448/external/vpx-jpmetallica/JP&#8217;s%20Metallica%20Pro%20(Stern%202013).ini#L2">Example</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_i_want_to_hide_the_dmd_as_it_is_duplicated_on_the_backglass">I want to hide the DMD as it is duplicated on the backglass</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This will not work on every table. If it doesn’t work then
+there’s nothing you can do.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>First, you will need to edit the VBS file. So if you haven’t got one yet
+for this table - make sure to extract it via the
+<a href="https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B03%5D-Table-Manager#extract-vbs-file">Extract
+VBS file tool</a></p>
+</div>
+<div class="paragraph">
+<p>Next, open the VBS file, search for <code>Table1_Init</code> (or similar)</p>
+</div>
+<div class="paragraph">
+<p>And add the line <code>.hidden = 1</code> to the list of settings for that tables
+initialization.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../images/table_faq_dmd_backglass.png" alt="table faq dmd backglass"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_how_to_add_a_custom_dmd_image_to_an_empty_dmd">How to add a custom DMD image to an empty DMD</h3>
+<div class="paragraph">
+<p>If your DMD is empty (i.e. the table uses backglass scoring) then you
+will see the default `Legends Unchained' logo as the image.</p>
+</div>
+<div class="paragraph">
+<p>If you would like to replace this with another image, just add a
+<code>dmd.png</code> file to your <code>external/vpx-table</code> folder!</p>
+</div>
+<div class="paragraph">
+<p>The <code>dmd.png</code> image must: - Be lowercase - An Image size of 1920 x 1200
+- Live right on the <code>vpx-table</code> folder root:
+<code>external/vpx-table/dmd.png</code></p>
+</div>
+<div class="paragraph">
+<p>Be sure to check the repo folders for a <code>dmd.png</code> file you can add to
+your table!</p>
+</div>
+<div class="paragraph">
+<p><em>Examples:</em></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../images/table_faq_empty_dmd.jpg" alt="table faq empty dmd"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_my_dmd_is_cut_off_on_the_left_side">My DMD is cut off on the left side</h3>
+<div class="paragraph">
+<p><code>DMDLeftOffset</code> and <code>DMDRightOffset</code> can be defined under <code>[Standalone]</code>
+with pixel values.</p>
+</div>
+<div class="paragraph">
+<p>First of all, you need a <code>Default_VPinballX.ini</code> in the root of your USB
+drive.</p>
+</div>
+<div class="paragraph">
+<p>In the Table Manager, create a new file called <code>Default_VPinballX.ini</code>
+directly in the root of the drive.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../images/table_faq_dmd_cutoff.png" alt="table faq dmd cutoff"></span></p>
+</div>
+<div class="paragraph">
+<p>Once you have your default ini, add the below lines to the top of the
+file, directly under <code>[Standalone]</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ini hljs" data-lang="ini">[Standalone]
+DMDLeftOffset = 15
+DMDRightOffset = 0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This will make your DMD image start 15 pixels further to the right.</p>
+</div>
+<div class="paragraph">
+<p>Edit this value until you are happy on your machine!</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 3.0<br>
-Last updated 2025-05-31 23:28:38 -0400
+Last updated 2025-06-15 19:55:33 -0400
 </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/languages/ini.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/languages/vbscript.min.js"></script>
+<script>
+if (!hljs.initHighlighting.called) {
+  hljs.initHighlighting.called = true
+  ;[].slice.call(document.querySelectorAll('pre.highlight > code')).forEach(function (el) { hljs.highlightBlock(el) })
+}
+</script>
 </body>
 </html>
