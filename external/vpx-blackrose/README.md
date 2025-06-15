@@ -1,6 +1,6 @@
 # Black Rose (Bally 1992)
 
-![Table Preview](../../images/zUJ07JKe-preview.webp)
+![Table Preview](../../images/vpx-blackrose.png)
 
 <br>
 
