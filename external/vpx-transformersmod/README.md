@@ -49,7 +49,7 @@ __*We hope you enjoy!!*__
 - n-i-x            - Mox              - Lloydbraun
 - Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
 - Bla1ze           - evilwraith       - Silentkat        
-- mrandromeda      - SScorpio         - TechZombie
+- mrandromeda      - SScorpio         - pointdablame
 </pre>
 
 <br>

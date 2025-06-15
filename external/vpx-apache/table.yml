@@ -4,7 +4,7 @@ applyFixes:
 backglassVPSId: "Q9Wxt1m8"
 backglassChecksum: "0049B3B34AD915C72898D73456E2087C"
 backglassNotes: "Download 'Apache! EM (Taito do Brasil 1978) v55_VPX8.directb2s.zip'"
-enabled: false # Osie: yml built in a batch, just needs testing
+enabled: false # Osie: Easy table for wizard release. YML built - Just needs simple stuff (POV/ Free Play/ Artwork)
 fps: 60
 tableNotes: "Download 'Apache! EM (Taito do Brasil 1978) v55_VPX8.zip'"
 tableVPSId: "7ptpBtAd"

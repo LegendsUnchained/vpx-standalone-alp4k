@@ -5,7 +5,6 @@ backglassBundled: true
 backglassVPSId: "QcrLSEu8cS"
 backglassChecksum: "AF84A01FA6D090F1391F6D0D377BB12F"
 backglassNotes: "Found in the same .rar as the VPX file"
-enabled: false # Osie: yml built in a batch, just needs testing
 fps: 60
 tableNotes: "Download v4.0.0"
 tableVPSId: "Yb7wHXAcQV"
