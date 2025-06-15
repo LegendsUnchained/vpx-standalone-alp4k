@@ -1,0 +1,16 @@
+---
+applyFixes: 
+  - "bass"
+backglassVPSId: "3G2D9qS6X7"
+backglassChecksum: "9C3191B576EDD5B07522F4A1498ED036"
+backglassNotes: "Download v1.0.0"
+enabled: false # Osie: Easy table for wizard release. YML built - Just needs simple stuff (POV/ Free Play/ Artwork)
+fps: 60
+tableNotes: "Download v1.1"
+tableVPSId: "2v0eTaJ5"
+tagline: "A lightning storm of scoring action and profit power in a 4-player flipper!"
+testers:
+  - "evilwraith"
+  - "OminousOsie"
+vpxVPSId: "V1EMmCe9"
+vpxChecksum: "6819012B64D6AFF0E0D8F3CB9DED16EC"
