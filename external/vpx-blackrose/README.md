@@ -14,7 +14,7 @@
 
 **VPXS 4KP Testers:**
   - Bla1ze
-  - OminousOsie
+  - OminousOsie 🌸
   - pointdablame
 
 <br>
