@@ -437,6 +437,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/github.min.css">
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
@@ -693,13 +694,11 @@ when also the B2S is used, you get blinking instead of two screens
 laying on top of each other. When you have the following construction in
 screens there are two problems:</p>
 </div>
-<div class="exampleblock">
+<div class="listingblock">
 <div class="content">
-<div class="paragraph">
-<p>ScreenNum,ScreenDes,PlayList,PlayFile,Loopit,Active,Priority,CustomPos<br>
-2,Backglass,,,0,off,,<br>
-11,"Backglass 2",bg,"Movie.mp4",0,ForceOn,,"2,19.5,17,60.9,58.5"</p>
-</div>
+<pre class="highlightjs highlight"><code class="language-vbscript hljs" data-lang="vbscript">ScreenNum,ScreenDes,PlayList,PlayFile,Loopit,Active,Priority,CustomPos +
+2,Backglass,,,0,off,, +
+11,"Backglass 2",bg,"Movie.mp4",0,ForceOn,,"2,19.5,17,60.9,58.5"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -782,11 +781,9 @@ script for all the LabelInit calls for this screen.</p>
 with a labelset with the option mt:1. This is not supported at the
 moment (and diffcult to emulate). For example:</p>
 </div>
-<div class="exampleblock">
+<div class="listingblock">
 <div class="content">
-<div class="paragraph">
-<p>PuPlayer.LabelSet 2,"Service","Blinking text", 1,"\{'mt':1,'at':1,'fq':150,'len':1}"</p>
-</div>
+<pre class="highlightjs highlight"><code class="language-vbscript hljs" data-lang="vbscript">PuPlayer.LabelSet 2,"Service","Blinking text", 1,"\{'mt':1,'at':1,'fq':150,'len':1}"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -814,8 +811,16 @@ correct order.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-06-09 20:12:27 -0400
+Last updated 2025-06-15 19:02:50 -0400
 </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/languages/vbscript.min.js"></script>
+<script>
+if (!hljs.initHighlighting.called) {
+  hljs.initHighlighting.called = true
+  ;[].slice.call(document.querySelectorAll('pre.highlight > code')).forEach(function (el) { hljs.highlightBlock(el) })
+}
+</script>
 </body>
 </html>

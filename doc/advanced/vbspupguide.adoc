@@ -1,4 +1,7 @@
 = VBS & PUP Developer Guides
+:source-highlighter: highlightjs
+:source-language: vbscript
+:highlightjs-languages: vbscript
 :toc: left
 :toclevels: 4
 :icons: font
@@ -140,11 +143,12 @@ when also the B2S is used, you get blinking instead of two screens
 laying on top of each other. When you have the following construction in
 screens there are two problems:
 
-====
+[source,vbscript]
+....
 ScreenNum,ScreenDes,PlayList,PlayFile,Loopit,Active,Priority,CustomPos +
 2,Backglass,,,0,off,, +
 11,"Backglass 2",bg,"Movie.mp4",0,ForceOn,,"2,19.5,17,60.9,58.5"
-====
+....
 
 The backglass is turned off, but there is an extra screen 11 with custom
 position on screen 2 with forceon option. At the moment because in
@@ -213,9 +217,10 @@ A label can also have animations (e.g. blinking or motion) this is done
 with a labelset with the option mt:1. This is not supported at the
 moment (and diffcult to emulate). For example:
 
-====
+[source,vbscript]
+....
 PuPlayer.LabelSet 2,"Service","Blinking text", 1,"\{'mt':1,'at':1,'fq':150,'len':1}"
-====
+....
 
 These options are discarded but if the text is totally displayed wrong
 you have to change mt:1 into mt:2, and you probably have to add options
