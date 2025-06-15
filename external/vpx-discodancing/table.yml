@@ -8,7 +8,6 @@ backglassNotes: "Download 'Disco Dancing.directb2s.zip'"
 enabled: false # Osie: Easy table for wizard release. YML built - Just needs simple stuff (POV/ Free Play/ Artwork)
 fps: 60
 romBundled: true
-romVPSId: "3ukBNGX9zq"
 romChecksum: "A2453167160FA50A024B96CF8C5E0C93"
 romNotes: "Download 'discodan.zip'"
 romVersionOverride: "discodan"
