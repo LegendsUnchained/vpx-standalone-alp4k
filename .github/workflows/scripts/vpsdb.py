@@ -241,7 +241,6 @@ def get_table_meta(files, warn_on_error=True):
                 table_meta["pupAuthors"] = pup.get("authors", [])
                 table_meta["pupComment"] = pup.get("comment", "")
                 table_meta["pupFileUrl"] = pup.get("urls", [])[0].get("url", "")
-                table_meta["pupVersion"] = rom.get("version", "")
             else:
                 print(f"{error_prefix}: PUP PACK id {pupVPSId} not found in VPSDB")
                 if warn_on_error:
