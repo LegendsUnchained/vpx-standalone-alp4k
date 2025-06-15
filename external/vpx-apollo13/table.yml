@@ -16,8 +16,9 @@ tagline: "Houston, we have a problem!"
 testers:
   - "mcap"
   - "OminousOsie"
+  - "evilwraith"
 vpxVPSId: "HbdKg_2Deu"
-vpxChecksum: "6ca238fa4fc4c85a993cb9f9a240ea40"
-tableNotes: "Download version 1.0"
+vpxChecksum: "B3E7BCEAB50C4D62514C2B2DB2ECA0FE"
+tableNotes: "Download version 1.1"
 applyFixes:
   - "bass"

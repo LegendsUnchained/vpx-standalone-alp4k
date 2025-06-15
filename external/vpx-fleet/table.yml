@@ -1,0 +1,15 @@
+---
+backglassBundled: true
+backglassVPSId: "ZCG_9d7csg"
+backglassChecksum: "96DBDB0FA7E90ACE775668085AB0687F"
+backglassNotes: "Backglass included with table."
+fps: 60
+tableVPSId: "2GTQfKUQFn"
+tagline: "War."
+testers:
+  - "evilwraith"
+vpxVPSId: "y8DI9oqQgG"
+vpxChecksum: "90F32CD7D69B74A5E2B95A94C1520BC6"
+applyFixes:
+  - "bass"
+enabled: false

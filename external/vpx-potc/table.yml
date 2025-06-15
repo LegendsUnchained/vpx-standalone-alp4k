@@ -1,4 +1,6 @@
 ---
+applyFixes:
+  - "bass"
 fps: 55
 romVPSId: "PRebrQRQ"
 romNotes: "Download potc_600as"
@@ -11,5 +13,4 @@ testers:
   - "CoffeeAtJoes"
 vpxVPSId: "rOx6ED7h"
 vpxChecksum: "E5579122D8F31D188FFF65906BFBDF24"
-applyFixes:
-  - "bass"
+
