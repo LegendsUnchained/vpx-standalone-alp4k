@@ -1,0 +1,16 @@
+---
+applyFixes: 
+  - "bass"
+backglassVPSId: "ttWKF9jq3y"
+backglassChecksum: "F48E869D8DC379CAC84ECA8F08B10B57"
+backglassNotes: "Download v1.0"
+enabled: false # Osie: Easy table for wizard release. YML built - Just needs simple stuff (POV/ Free Play/ Artwork)
+fps: 60
+tableNotes: "Download v1.2"
+tableVPSId: "tG1SQbct"
+tagline: "Another World, Another Time... In the Age of Wonder"
+testers:
+  - "evilwraith"
+  - "OminousOsie"
+vpxVPSId: "3W46guJa"
+vpxChecksum: "8171AA1673221F9D5D992B3A072FB0C7"
