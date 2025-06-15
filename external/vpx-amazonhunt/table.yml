@@ -4,7 +4,7 @@ applyFixes:
 backglassVPSId: "iTSvh7ww"
 backglassChecksum: "9BD065B5E97D14DA99B2348FE76381A0"
 backglassNotes: "Download version 2.0"
-enabled: false # Osie: yml built in a batch, just needs testing
+enabled: false # Osie: Easy table for wizard release. YML built - Just needs simple stuff (POV/ Free Play/ Artwork)
 fps: 60
 romUrlOverride: "https://pinballnirvana.com/forums/resources/amazonh.1524/"
 romVersionOverride: "amazonh"

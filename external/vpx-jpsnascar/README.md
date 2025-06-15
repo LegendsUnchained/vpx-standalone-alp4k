@@ -1,6 +1,6 @@
 # NASCAR, JP's (Original 2015)
 
-![Table Preview](../../images/kvE46l3j-preview.webp)
+![Table Preview](../../images/mqN6b0Ls-preview.webp)
 
 <br>
 
@@ -52,7 +52,7 @@ __*We hope you enjoy!!*__
 - n-i-x            - Mox              - Lloydbraun
 - Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
 - Bla1ze           - evilwraith       - Silentkat        
-- mrandromeda      - SScorpio         - TechZombie
+- mrandromeda      - SScorpio         - pointdablame
 </pre>
 
 
