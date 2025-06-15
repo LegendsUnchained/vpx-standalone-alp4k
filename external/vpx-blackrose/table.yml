@@ -1,6 +1,8 @@
 ---
 applyFixes:
   - "bass"
+backglassBundled: true
+backglassNotes: "Wizard will install backglass"
 fps: 50
 romChecksum: "E21364CA118FFBF3D2AA9F46FBE05B6B"
 romNotes: "Download br_l4.zip"
