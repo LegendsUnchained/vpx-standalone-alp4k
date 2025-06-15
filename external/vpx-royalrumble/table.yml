@@ -1,18 +1,20 @@
 ---
-backglassVPSId: "9ofZ5nrPpK"
-backglassChecksum: "8BFAA01CA0D025113AEFC9A546DD15B9"
-fps: 48
-romVPSId: "3juj-Z36"
-romChecksum: "363CE8166104EB8B21897AFE67D627AD"
-tableVPSId: "oswLU1El"
-tagline: "GET BACK INTO THE RING.. IT'S TIME FOR THE WWF ROYAL RUMBLE!"
-testers:
-  - "Bla1ze"
-vpxVPSId: "MbInzTSL"
-vpxChecksum: "E6D5C1114F61EC758D14455B262B548E"
-mainNotes: >-
-  Note: There is a ROM/switch issue that means that
-  the ROM incorrectly believes the coin door is open.
-  Just ignore it and hit start!
 applyFixes:
-  - "bass"
+  - bass
+backglassChecksum: 8BFAA01CA0D025113AEFC9A546DD15B9
+backglassNotes: Download version v2.0
+backglassVPSId: 9ofZ5nrPpK
+fps: 48
+mainNotes: >-
+  Note: There is a ROM/switch issue that means that the ROM incorrectly believes
+  the coin door is open. Just ignore it and hit start!
+romChecksum: 363CE8166104EB8B21897AFE67D627AD
+romNotes: Download wwfr_106.zip
+romVPSId: 3juj-Z36
+tableVPSId: oswLU1El
+tagline: GET BACK INTO THE RING.. IT'S TIME FOR THE WWF ROYAL RUMBLE!
+testers:
+  - Bla1ze
+vpxChecksum: 4249030FEDD8424EA8CB1E481C362549
+vpxNotes: Download version 5.0
+vpxVPSId: MbInzTSL
