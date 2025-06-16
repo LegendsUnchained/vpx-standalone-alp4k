@@ -59,22 +59,25 @@ def get_latest_commit_hash(repo_path, folder_path):
         return None
 
 
-def process_title(title):
+def process_title(title, manufacturer, year):
     """
     Transforms a title for proper sorting, moving leading "The" to the end,
     and handling optional "JP's" or "JPs" prefixes, moving them after the comma
     when 'The' is not present.
     """
+    name = ""
     match_the = re.match(r"^(JP'?s\s*)?(The)\s+(.+)$", title)
     match_jps = re.match(r"^(JP'?s)\s+(.+)$", title)
 
     if match_the and match_the.group(2):
         prefix = match_the.group(1) or ""
-        return f"{match_the.group(3)}, {prefix}{match_the.group(2)}"
+        name = f"{match_the.group(3)}, {prefix}{match_the.group(2)}"
     elif match_jps:
-        return f"{match_jps.group(2)}, {match_jps.group(1)}"
+        name = f"{match_jps.group(2)}, {match_jps.group(1)}"
     else:
-        return title
+        name = title
+        
+    return f"{name} ({manufacturer} {year})"
 
 def upload_release_asset(github_token, repo_name, release_tag, file_path, clobber=True):
     """Uploads a file as a release asset."""
@@ -152,7 +155,7 @@ if __name__ == "__main__":
             exit(1)
 
         # Apply field processing
-        tables[table]["name"] = process_title(tables[table]["name"])
+        tables[table]["name"] = process_title(tables[table]["name"], tables[table]["manufacturer"], tables[table]["year"])
 
     for table in tables_to_remove:
         del tables[table]

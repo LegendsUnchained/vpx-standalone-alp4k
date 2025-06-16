@@ -1,0 +1,19 @@
+---
+applyFixes: 
+  - "bass"
+backglassBundled: true
+backglassVPSId: "QcrLSEu8cS"
+backglassChecksum: "AF84A01FA6D090F1391F6D0D377BB12F"
+backglassNotes: "Found in the same .rar as the VPX file"
+fps: 60
+tableNotes: "Download v4.0.0"
+tableVPSId: "Yb7wHXAcQV"
+tagline: >-
+  Astérix: You listen to me! We ran, we did the javelin,
+  we did wrestling, we did the fountain of the priestesses,
+  the mage from Egypt, the cook of the Titans, the crocodiles!
+testers:
+  - "evilwraith"
+  - "OminousOsie"
+vpxVPSId: "QcrLSEu8cS"
+vpxChecksum: "36B83ACD229DB68B6331B1F88D92309D"

@@ -98,13 +98,51 @@ def check_checksums(meta):
     """
     print("Checking checksums...")
     for table, table_meta in meta.items():
+        if "tableChecksum" not in table_meta or table_meta["tableChecksum"] is None:
+            print(f"ERROR: vpxChecksum field not found in table: {table}")
+            sys.exit(1)
+
+        if (
+            "backglassFileUrl" in table_meta
+            and table_meta["backglassFileUrl"] is not None
+        ) and (
+            "backglassChecksum" not in table_meta
+            or table_meta["backglassChecksum"] is None
+        ):
+            print(f"ERROR: backglassChecksum field not found in table: {table}")
+            sys.exit(1)
+
+        if (
+            "coloredROMFileUrl" in table_meta
+            and table_meta["coloredROMFileUrl"] is not None
+        ) and (
+            "coloredROMChecksum" not in table_meta
+            or table_meta["coloredROMChecksum"] is None
+        ):
+            print(f"ERROR: coloredROMChecksum field not found in table: {table}")
+            sys.exit(1)
+
+        if ("pupFileUrl" in table_meta and table_meta["pupFileUrl"] is not None) and (
+            "pupChecksum" not in table_meta or table_meta["pupChecksum"] is None
+        ):
+            print(f"ERROR: pupChecksum field not found in table: {table}")
+            sys.exit(1)
+
+        if ("romFileUrl" in table_meta and table_meta["romFileUrl"] is not None) and (
+            "romChecksum" not in table_meta or table_meta["romChecksum"] is None
+        ):
+            print(f"ERROR: romChecksum field not found in table: {table}")
+            sys.exit(1)
+
         for checksum_type in [
             "backglassChecksum",
             "coloredROMChecksum",
+            "pupChecksum",
             "romChecksum",
-            "vpxChecksum",
+            "tableChecksum",
         ]:
             if checksum_type not in table_meta or table_meta[checksum_type] is None:
+                # We checked if it's required above, so we can skip it here
                 continue
 
             if not isinstance(table_meta[checksum_type], str):
@@ -184,15 +222,10 @@ def check_overrides(meta):
             sys.exit(1)
 
         if "romVPSId" in meta and meta["romVPSId"] is not None:
-            print(
-                f"ERROR: romVPSId is not allowed with romUrlOverride"
-            )
+            print(f"ERROR: romVPSId is not allowed with romUrlOverride")
             sys.exit(1)
 
-        if (
-            "romVersionOverride" not in meta
-            or meta["romVersionOverride"] is None
-        ):
+        if "romVersionOverride" not in meta or meta["romVersionOverride"] is None:
             print(
                 f"ERROR: romUrlOverride defined and romVersionOverride field not found"
             )

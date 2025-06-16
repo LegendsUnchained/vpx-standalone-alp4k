@@ -1,0 +1,20 @@
+---
+backglassVPSId: "_er2n10hiQ"
+backglassChecksum: "B93CB0F0942FF54FDBD684EE84637AE9"
+backglassNotes: "Download Nascar (Stern 2005).zip"
+fps: 55
+romVPSId: "pE1eVHhRRL"
+romChecksum: "328E83DCA300153030D4EE803FC90DE2"
+romNotes: "Download nascar.zip"
+tableNotes: "Download v55_VPX8.zip"
+tableVPSId: "wdUEBhIi"
+tagline: "You're off to the races 🏁 - JP STYLE!"
+testers:
+ - "Bla1ze"
+ - "OminousOsie"
+ - "evilwraith"
+ - "Silentkat"
+vpxVPSId: "mqN6b0Ls"
+vpxChecksum: "8D4AB3349CD525B1CACB18AC6DEBE925"
+applyFixes:
+  - "bass"

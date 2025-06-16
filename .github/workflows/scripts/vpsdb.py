@@ -54,6 +54,14 @@ class VPSDB:
                         return b2sFile
         return self.get_tablefile_by_id(id)
 
+    def get_pup_by_id(self, id):
+        for table in self.tables:
+            if "pupPackFiles" in table:
+                for pupPackFile in table["pupPackFiles"]:
+                    if pupPackFile.get("id") == id:
+                        return pupPackFile
+        return None
+        
     def get_rom_by_id(self, id):
         for table in self.tables:
             if "romFiles" in table:
@@ -98,6 +106,7 @@ def get_table_meta(files, warn_on_error=True):
         altSoundVPSId = data.get("altSoundVPSId")
         backglassVPSId = data.get("backglassVPSId")
         coloredROMVPSId = data.get("coloredROMVPSId")
+        pupVPSId = data.get("pupVPSId")
         romVPSId = data.get("romVPSId")
         tableVPSId = data.get("tableVPSId")
         tutorialVPSId = data.get("tutorialVPSId")
@@ -108,6 +117,7 @@ def get_table_meta(files, warn_on_error=True):
         coloredROMChecksum = data.get("coloredROMChecksum")
         romChecksum = data.get("romChecksum")
         vpxChecksum = data.get("vpxChecksum")
+        pupChecksum = data.get("pupChecksum")
 
         if altSoundChecksum:
             altSoundChecksum = altSoundChecksum.lower()
@@ -119,6 +129,8 @@ def get_table_meta(files, warn_on_error=True):
             romChecksum = romChecksum.lower()
         if vpxChecksum:
             vpxChecksum = vpxChecksum.lower()
+        if pupChecksum:
+            pupChecksum = pupChecksum.lower()
 
         table_meta = {
             "altSoundChecksum": altSoundChecksum,
@@ -139,7 +151,7 @@ def get_table_meta(files, warn_on_error=True):
             "mainNotes": data.get("mainNotes"),
             "name": data.get("tableNameOverride"),
             "pupArchiveRoot": data.get("pupArchiveRoot"),
-            "pupChecksum": data.get("pupChecksum"),
+            "pupChecksum": pupChecksum,
             "pupFileUrl": data.get("pupFileUrl"),
             "pupNotes": data.get("pupNotes"),
             "pupRequired": data.get("pupRequired"),
@@ -222,6 +234,21 @@ def get_table_meta(files, warn_on_error=True):
                 else:
                     sys.exit(1)
 
+        if pupVPSId:
+            pup = vpsdb.get_pup_by_id(pupVPSId)
+            if pup:
+                print(f"Parsing PUP PACK {pupVPSId} for {folder_name}")
+                table_meta["pupAuthors"] = pup.get("authors", [])
+                table_meta["pupComment"] = pup.get("comment", "")
+                table_meta["pupFileUrl"] = pup.get("urls", [])[0].get("url", "")
+            else:
+                print(f"{error_prefix}: PUP PACK id {pupVPSId} not found in VPSDB")
+                if warn_on_error:
+                    print(f"WARNING: Skipping {folder_name}")
+                    continue
+                else:
+                    sys.exit(1)
+                    
         if romVPSId:
             rom = vpsdb.get_rom_by_id(romVPSId)
             if rom:

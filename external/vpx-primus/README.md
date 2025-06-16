@@ -8,7 +8,7 @@
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
 | **VPX** | [vpuniverse](https://vpuniverse.com/files/file/23528-primus-stern-2018-mw-mod/) | 1.21 | [machwon](https://vpuniverse.com/profile/70146-machwon/) |
-| **B2S** | [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=14890) | 1.1 | [Drummer72](https://www.vpforums.org/index.php?showuser=146320) |
+| **B2S** | [vpuniverse](https://vpuniverse.com/files/file/23565-primus-stern-2018-b2s/) | 1.0 | [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
 
 **Tested by:** [OminousOsie]
 

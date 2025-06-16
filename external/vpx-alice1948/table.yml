@@ -1,0 +1,17 @@
+---
+applyFixes: 
+  - "bass"
+backglassBundled: true
+backglassVPSId: "aE0MrrW6W3"
+backglassChecksum: "ECE0EE9060A11417B1A515E9603589FF"
+backglassNotes: "Download 'Alice in Wonderland (Gottlieb 1948).directb2s.zip'"
+fps: 60
+mainNotes: "Press right on the control panel to load a ball from the hopper"
+tableNotes: "Download v55_VPX8.zip"
+tableVPSId: "9kjJEqftU6"
+tagline: "We're all mad here!"
+testers:
+  - "Boris"
+  - "OminousOsie"
+vpxVPSId: "EQParLHs3z"
+vpxChecksum: "F97F13428CF80482326D03A7ABD90CB0"

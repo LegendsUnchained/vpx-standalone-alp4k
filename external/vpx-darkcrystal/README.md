@@ -8,7 +8,7 @@
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
 | **VPX** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=15008) | 1.2 | [wpilot](https://www.vpforums.org/index.php?showuser=135549) |
-| **B2S & DMD** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=15023) |  | [Greynurse](https://www.vpforums.org/index.php?showuser=100711) |
+| **B2S & DMD** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=15026) |  | [karensbeast](https://www.vpforums.org/index.php?showuser=68034) |
 | **ROM** | none |  |  |
 
 **Tested by:** [evilwraith]

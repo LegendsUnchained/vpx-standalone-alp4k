@@ -4,6 +4,7 @@ backglassChecksum: "c9460f41a8c3e9c661b0b53f53bedc6d"
 backglassNotes: "Download version 1.0.0"
 fps: 54
 romVPSId: "z1PEadkF"
+enabled: false
 romChecksum: "2bc7d3e396f4e97a5adb79d06854fcf6"
 tableVPSId: "jCico0Uk"
 tagline: >-
@@ -14,6 +15,5 @@ testers:
 vpxVPSId: "zsger8U0"
 vpxChecksum: "0fdad873884e9affa3265c8085ead3c6"
 tableNotes: "Download version 3.0"
-enabled: false
 applyFixes:
   - "bass"

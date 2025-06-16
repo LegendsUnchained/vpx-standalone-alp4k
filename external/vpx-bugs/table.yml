@@ -1,0 +1,19 @@
+---
+applyFixes: 
+  - "bass"
+backglassVPSId: "rGcWjO7s"
+backglassChecksum: "D603935269337486F9758372610F0D9D"
+backglassNotes: "Download version 3.0"
+fps: 45
+romVPSId: "BY7oYFTL"
+romChecksum: "970D59CAD33064953F538147A4298A9E"
+romNotes: "Download bbnny_l2.zip"
+tableNotes: "Download version 2.3b"
+tableVPSId: "jlbVAlAr"
+tagline: "That's all folks!"
+testers:
+  - "Bla1ze"
+  - "OminousOsie"
+  - "CoffeeAtJoes"
+vpxVPSId: "3OLIeQ_W"
+vpxChecksum: "4924B1B1E9339A93865F4725D2DDD3BD"
