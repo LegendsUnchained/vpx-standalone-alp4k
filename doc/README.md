@@ -55,3 +55,20 @@ Linux based systems.
 
 Use any text editor you like.  Many IDE's support AsciiDoctor syntax with content assistance.  
 Find your favorite IDE or Text Editor and it probably has a plugin that works with AsciiDoctor files.
+
+## How can I preveiew the files as generated HTML?
+
+You will need to install the AsciiDoctor program for your particular OS platform.  Supported platforms include:
+
+* Linux/Ubuntu
+* Mac
+* Windows
+
+After installation, you can follow the instructions here for converting the files:
+
+https://docs.asciidoctor.org/asciidoctor/latest/get-started/
+
+Run the asciidoctor program against all the adoc files except the attributes.adoc file.  This is just
+used to hold some macros to make cross-referencing other pages easier.
+
+

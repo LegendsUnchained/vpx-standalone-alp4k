@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.16">
-<meta name="author" content="Firstname Lastname">
-<title>AsciiDoc Article Title</title>
+<title>Table Customization</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -438,222 +437,212 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/github.min.css">
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
-<h1>AsciiDoc Article Title</h1>
-<div class="details">
-<span id="author" class="author">Firstname Lastname</span><br>
-<span id="email" class="email"><a href="mailto:author@asciidoctor.org">author@asciidoctor.org</a></span><br>
-<span id="revnumber">version 3.0,</span>
-<span id="revdate">July 29, 2022</span>
-<br><span id="revremark">AsciiDoc article template</span>
-</div>
-<div id="toc" class="toc">
+<h1>Table Customization</h1>
+<div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_first_level_heading">First level heading</a>
+<li><a href="#_dmd_customisation">DMD Customisation</a>
 <ul class="sectlevel2">
-<li><a href="#_second_level_heading">Second level heading</a></li>
+<li><a href="#_colour_dmd">Colour DMD</a>
+<ul class="sectlevel3">
+<li><a href="#_full_colour_rom_serum_files">Full Colour ROM / Serum Files</a></li>
+<li><a href="#_change_the_colour_from_orange">Change the Colour from Orange</a></li>
 </ul>
 </li>
-<li><a href="#_first_level_heading_2">First level heading</a></li>
-<li><a href="#_first_level_heading_3">First level heading</a></li>
+<li><a href="#_how_to_add_a_custom_dmd_image_to_an_empty_dmd">How to add a custom DMD image to an empty DMD</a></li>
+</ul>
+</li>
+<li><a href="#_loading_screen">Loading Screen</a>
+<ul class="sectlevel2">
+<li><a href="#_button_labels">Button Labels</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>Content entered directly below the header but before the first section heading is called the preamble.</p>
-</div>
-</div>
-</div>
 <div class="sect1">
-<h2 id="_first_level_heading">First level heading</h2>
+<h2 id="_dmd_customisation">DMD Customisation</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>This is a paragraph with a <strong>bold</strong> word and an <em>italicized</em> word.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="image-file-name.png" alt="I am the image alt text.">
-</div>
-<div class="title">Figure 1. Image caption</div>
-</div>
-<div class="paragraph">
-<p>This is another paragraph.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
-</div>
 <div class="sect2">
-<h3 id="_second_level_heading">Second level heading</h3>
-<div class="ulist">
-<div class="title">Unordered list title</div>
-<ul>
-<li>
-<p>list item 1</p>
-<div class="ulist">
-<ul>
-<li>
-<p>nested list item</p>
-<div class="ulist">
-<ul>
-<li>
-<p>nested nested list item 1</p>
-</li>
-<li>
-<p>nested nested list item 2</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>list item 2</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>This is a paragraph.</p>
-</div>
-<div class="exampleblock">
-<div class="title">Example 1. Example block title</div>
-<div class="content">
-<div class="paragraph">
-<p>Content in an example block is subject to normal substitutions.</p>
-</div>
-</div>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="title">Sidebar title</div>
-<div class="paragraph">
-<p>Sidebars contain aside text and are subject to normal substitutions.</p>
-</div>
-</div>
-</div>
+<h3 id="_colour_dmd">Colour DMD</h3>
 <div class="sect3">
-<h4 id="_third_level_heading">Third level heading</h4>
-<div id="id-for-listing-block" class="listingblock">
-<div class="title">Listing block title</div>
-<div class="content">
-<pre>Content in a listing block is subject to verbatim substitutions.
-Listing block content is commonly used to preserve code input.</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_fourth_level_heading">Fourth level heading</h5>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Table title</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Column heading 1</th>
-<th class="tableblock halign-left valign-top">Column heading 2</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Column 1, row 1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Column 2, row 1</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Column 1, row 2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Column 2, row 2</p></td>
-</tr>
-</tbody>
-</table>
-<div class="sect5">
-<h6 id="_fifth_level_heading">Fifth level heading</h6>
-<div class="quoteblock">
-<blockquote>
+<h4 id="_full_colour_rom_serum_files">Full Colour ROM / Serum Files</h4>
 <div class="paragraph">
-<p>I am a block quote or a prose excerpt.
-I am subject to normal substitutions.</p>
+<p>VPXS currently is only compatible with `Serum' colour ROM files.</p>
 </div>
-</blockquote>
-<div class="attribution">
-&#8212; firstname lastname<br>
-<cite>movie title</cite>
+<div class="paragraph">
+<p>All the serum files can be found here:
+<a href="https://vpuniverse.com/files/category/173-serum-dmd-colorizations/">VP
+Universe - Serums</a></p>
 </div>
+<div class="paragraph">
+<p>If you are adding a table via the Table Manager, their will be a input
+for `Serum'.</p>
 </div>
-<div class="verseblock">
-<pre class="content">I am a verse block.
-  Indents and endlines are preserved in verse blocks.</pre>
-<div class="attribution">
-&#8212; firstname lastname<br>
-<cite>poem title and more</cite>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_first_level_heading_2">First level heading</h2>
-<div class="sectionbody">
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-There are five admonition labels: Tip, Note, Important, Caution and Warning.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>If you are adding a serum file to a table that you already have
+installed on your USB:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>ordered list item</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>nested ordered list item</p>
-</li>
-</ol>
-</div>
+<p>Open Table Manager</p>
 </li>
 <li>
-<p>ordered list item</p>
+<p>Browse to the <code>vpx-table</code> folder via the `USB Root' tab.</p>
+</li>
+<li>
+<p>In the <code>pinmame</code> folder, add or navigate to a folder called <code>altcolor</code></p>
+</li>
+<li>
+<p>In the <code>altcolor</code> folder, add a folder with the same name as your rom.
+You can find the rom name via <code>external/vpx-table/pinmame/roms</code></p>
+</li>
+<li>
+<p>In the folder that has the same name as the rom, add your <code>.cRZ</code> file.
+This should also have the same name as the rom.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>The text at the end of this sentence is cross referenced to <a href="#_third_level_heading">the third level heading</a></p>
+<p>An example on the <code>Creature From The Black Lagoon' table:
+`external/vpx-24/pinmame/altcolor/cftbl_l4/cftbl_l4.cRZ</code></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../images/table_customization_serum.gif" alt="table customization serum"></span></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_change_the_colour_from_orange">Change the Colour from Orange</h4>
+<div class="paragraph">
+<p>The default orange on standard ROM games can be updated via a config
+file!</p>
+</div>
+<div class="paragraph">
+<p>If you installed your table via the wizard, you should already have the
+coloured dmd.</p>
+</div>
+<div class="paragraph">
+<p>If you manually installed the table, then you can update your ROM colour
+by going to:</p>
+</div>
+<div class="paragraph">
+<p><code>external/vpx-table/pinmame/ini/romname.ini</code></p>
+</div>
+<div class="paragraph">
+<p>And in that file, update the <code>dmd_red</code>, <code>dmd_green</code>, and <code>dmd_blue</code>
+colours. Each of these RGB can be a value between 0-255.</p>
+</div>
+<div class="paragraph">
+<p>An example is Godzilla, in the file
+<code>external/vpx-godzilla/pinmame/ini/godzilla.ini</code> I have changed the RGB
+to green:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ini hljs" data-lang="ini">[settings]
+cheat=0
+sound=1
+dmd_red=7
+dmd_green=168
+dmd_blue=36</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Which then looks like this:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../images/table_customization_change_color.gif" alt="table customization change color"></span></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_how_to_add_a_custom_dmd_image_to_an_empty_dmd">How to add a custom DMD image to an empty DMD</h3>
+<div class="paragraph">
+<p>If your DMD is empty (i.e. the table uses backglass scoring) then you
+will see the default `Legends Unchained' logo as the image.</p>
+</div>
+<div class="paragraph">
+<p>If you would like to replace this with another image, just add a
+<code>dmd.png</code> file to your <code>external/vpx-table</code> folder!</p>
+</div>
+<div class="paragraph">
+<p>The <code>dmd.png</code> image must:
+- Be lowercase
+- An Image size of 1920 x 1200
+- Live right on the <code>vpx-table</code> folder root: <code>external/vpx-table/dmd.png</code></p>
+</div>
+<div class="paragraph">
+<p>Be sure to check the repo folders for a <code>dmd.png</code> file you can add to
+your table!</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../images/table_customization_empty_dmd.jpg" alt="table customization empty dmd"></span></p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_first_level_heading_3">First level heading</h2>
+<h2 id="_loading_screen">Loading Screen</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_button_labels">Button Labels</h3>
 <div class="paragraph">
-<p>This is a link to the <a href="https://docs.asciidoctor.org/home/">Asciidoctor documentation</a>.
-This is an attribute reference <a href="https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/">that links this text to the AsciiDoc Syntax Quick Reference</a>.</p>
+<p>You can change the button labels that appear during the tables loading
+screen via a file!</p>
+</div>
+<div class="paragraph">
+<p>All you need to do is add a <code>launcher.cfg</code> file to the root of your
+<code>vpx-table</code> folder.</p>
+</div>
+<div class="paragraph">
+<p>The <code>launcher.cfg</code> file looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ini hljs" data-lang="ini">[buttonLabels]
+dpadUp = "Up"
+dpadDown = "Down"
+dpadLeft = "Left"
+dpadRight = "Right"
+leftFlipper = "Left Flipper"
+rightFlipper = "Right Flipper"
+leftNudge = "Left Nudge"
+rightNudge = "Right Nudge"
+nudge = "Nudge"
+start = "Start"
+menu = "Menu"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>So for deadpool, we added a <code>launcher.cfg</code> file to
+<code>external/vpx-deadpool</code>, and edited it like so:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../images/table_customization_button_lables.jpg" alt="table customization button lables"></span></p>
 </div>
 </div>
 </div>
-</div>
-<div id="footnotes">
-<hr>
-<div class="footnote" id="_footnotedef_1">
-<a href="#_footnoteref_1">1</a>. I am footnote text and will be displayed at the bottom of the article.
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 3.0<br>
-Last updated 2025-05-31 23:36:35 -0400
+Last updated 2025-06-15 20:34:46 -0400
 </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/languages/ini.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/languages/vbscript.min.js"></script>
+<script>
+if (!hljs.initHighlighting.called) {
+  hljs.initHighlighting.called = true
+  ;[].slice.call(document.querySelectorAll('pre.highlight > code')).forEach(function (el) { hljs.highlightBlock(el) })
+}
+</script>
 </body>
 </html>

@@ -1,91 +1,123 @@
-= AsciiDoc Article Title
-Firstname Lastname <author@asciidoctor.org>
-3.0, July 29, 2022: AsciiDoc article template
-:toc:
+= Table Customization
+:toc: left
 :icons: font
-:url-quickref: https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/
+:toclevels: 4
+:source-highlighter: highlight.js
+:highlightjs-languages: ini,vbscript
 
-Content entered directly below the header but before the first section heading is called the preamble.
+== DMD Customisation
 
-== First level heading
+=== Colour DMD
 
-This is a paragraph with a *bold* word and an _italicized_ word.
+==== Full Colour ROM / Serum Files
 
-.Image caption
-image::image-file-name.png[I am the image alt text.]
+VPXS currently is only compatible with `Serum' colour ROM files.
 
-This is another paragraph.footnote:[I am footnote text and will be displayed at the bottom of the article.]
+All the serum files can be found here:
+https://vpuniverse.com/files/category/173-serum-dmd-colorizations/[VP
+Universe - Serums]
 
-=== Second level heading
+If you are adding a table via the Table Manager, their will be a input
+for `Serum'.
 
-.Unordered list title
-* list item 1
-** nested list item
-*** nested nested list item 1
-*** nested nested list item 2
-* list item 2
+If you are adding a serum file to a table that you already have
+installed on your USB:
 
-This is a paragraph.
+[arabic]
+. Open Table Manager
+. Browse to the `vpx-table` folder via the `USB Root' tab.
+. In the `pinmame` folder, add or navigate to a folder called `altcolor`
+. In the `altcolor` folder, add a folder with the same name as your rom.
+You can find the rom name via `external/vpx-table/pinmame/roms`
+. In the folder that has the same name as the rom, add your `.cRZ` file.
+This should also have the same name as the rom.
 
-.Example block title
-====
-Content in an example block is subject to normal substitutions.
-====
+An example on the `Creature From The Black Lagoon' table:
+`external/vpx-24/pinmame/altcolor/cftbl_l4/cftbl_l4.cRZ`
 
-.Sidebar title
-****
-Sidebars contain aside text and are subject to normal substitutions.
-****
+image:../images/table_customization_serum.gif[]
 
-==== Third level heading
+==== Change the Colour from Orange
 
-[#id-for-listing-block]
-.Listing block title
-----
-Content in a listing block is subject to verbatim substitutions.
-Listing block content is commonly used to preserve code input.
-----
+The default orange on standard ROM games can be updated via a config
+file!
 
-===== Fourth level heading
+If you installed your table via the wizard, you should already have the
+coloured dmd.
 
-.Table title
-|===
-|Column heading 1 |Column heading 2
+If you manually installed the table, then you can update your ROM colour
+by going to:
 
-|Column 1, row 1
-|Column 2, row 1
+`external/vpx-table/pinmame/ini/romname.ini`
 
-|Column 1, row 2
-|Column 2, row 2
-|===
+And in that file, update the `dmd_red`, `dmd_green`, and `dmd_blue`
+colours. Each of these RGB can be a value between 0-255.
 
-====== Fifth level heading
+An example is Godzilla, in the file
+`external/vpx-godzilla/pinmame/ini/godzilla.ini` I have changed the RGB
+to green:
 
-[quote,firstname lastname,movie title]
-____
-I am a block quote or a prose excerpt.
-I am subject to normal substitutions.
-____
+[source,ini]
+....
+[settings]
+cheat=0
+sound=1
+dmd_red=7
+dmd_green=168
+dmd_blue=36
+....
 
-[verse,firstname lastname,poem title and more]
-____
-I am a verse block.
-  Indents and endlines are preserved in verse blocks.
-____
+Which then looks like this:
 
-== First level heading
+image:../images/table_customization_change_color.gif[]
 
-TIP: There are five admonition labels: Tip, Note, Important, Caution and Warning.
+=== How to add a custom DMD image to an empty DMD
 
-// I am a comment and won't be rendered.
+If your DMD is empty (i.e. the table uses backglass scoring) then you
+will see the default `Legends Unchained' logo as the image.
 
-. ordered list item
-.. nested ordered list item
-. ordered list item
+If you would like to replace this with another image, just add a
+`dmd.png` file to your `external/vpx-table` folder!
 
-The text at the end of this sentence is cross referenced to <<_third_level_heading,the third level heading>>
+The `dmd.png` image must:
+- Be lowercase
+- An Image size of 1920 x 1200
+- Live right on the `vpx-table` folder root: `external/vpx-table/dmd.png`
 
-== First level heading
+Be sure to check the repo folders for a `dmd.png` file you can add to
+your table!
 
-This is a link to the https://docs.asciidoctor.org/home/[Asciidoctor documentation].
-This is an attribute reference {url-quickref}[that links this text to the AsciiDoc Syntax Quick Reference].
+image:../images/table_customization_empty_dmd.jpg[]
+
+== Loading Screen
+
+=== Button Labels
+
+You can change the button labels that appear during the tables loading
+screen via a file!
+
+All you need to do is add a `launcher.cfg` file to the root of your
+`vpx-table` folder.
+
+The `launcher.cfg` file looks like this:
+
+[source,ini]
+....
+[buttonLabels]
+dpadUp = "Up"
+dpadDown = "Down"
+dpadLeft = "Left"
+dpadRight = "Right"
+leftFlipper = "Left Flipper"
+rightFlipper = "Right Flipper"
+leftNudge = "Left Nudge"
+rightNudge = "Right Nudge"
+nudge = "Nudge"
+start = "Start"
+menu = "Menu"
+....
+
+So for deadpool, we added a `launcher.cfg` file to
+`external/vpx-deadpool`, and edited it like so:
+
+image:../images/table_customization_button_lables.jpg[]
