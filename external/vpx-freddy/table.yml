@@ -1,4 +1,6 @@
 ---
+applyFixes:
+  - "bass"
 fps: 57
 romUrlOverride: "https://pinballnirvana.com/forums/resources/freddy.1835/"
 romVersionOverride: "freddy"
@@ -12,5 +14,3 @@ testers:
 vpxVPSId: "4diBoDyZ"
 vpxChecksum: "4C738DA5F67E549705B2CFC05C3D9411"
 vpxNotes: "Download version 1.0"
-applyFixes:
-  - "bass"
