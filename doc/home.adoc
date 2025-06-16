@@ -1,0 +1,171 @@
+include::attributes.adoc[]
+
+
+= Welcome to the VPXS 4KP Project!
+:icons: font
+:toc: left
+
+image::https://github.com/user-attachments/assets/50cbef85-6e34-4b37-84fc-a8ea194007bf[bg]
+
+== Getting Started
+
+* The project primarily lives on Discord. Join in the conversation
+there! +
+{discord-mox-gameroom-url}[Mox’s Game Room Server]
+* For more information on the project as a whole, check out this
+page: +
+{page-vpx4kproject}[VPXS 4KP Project]
+* If you would like to join the beta, follow the steps on this guide: +
+{page-joining-beta}[Joining the Beta]
+
+== Community Rules and Guidelines!
+
+* *_READ ALL INSTRUCTIONS… TWICE!_* +
+Make sure to take the time to fully ready through the wiki and other support threads too.
+* *_DO NOT SHARE FILES!_* +
+*DO NOT* share any `VPXS Launcher` files,
+`Table Manager` files, `.vpx` files, `.directb2s` files, `.c7z` serum
+files, `puppack` files, or `ROM` files with anyone. Doing so will
+trigger the DRM and ban your account along with anyone you share files
+with. Download files from official sources. The README links and the
+Wizard download button links will point to official sources. *DO NOT*
+share invite codes, if you do the entire invite chain gets banned.
+Seriously, *DON’T DO IT*. There are no warnings, no second chances… once
+banned, it cannot be reversed.
+* *_BE RESPECTFUL!_* +
+Everyone here is doing this in their spare time
+and aren’t getting paid so be nice to one another. Please be respectful
+if you get a message from the mods that you didn’t expect. There is
+always a reason, make sure to listen.
+* *_BE PATIENT!_* +
+Participate as often as possible. This is the only
+way to get Beta access. *DO NOT* ask for a Beta Invite and / or ask when
+VPXS GL will be released!! Listen to the advice given to you, retry
+installs if something goes wrong, don’t rush through setup. Your
+problems are not everyone else’s problems. People are here to help, but
+helping you is not everyone’s priority.
+* *_DO NOT DM OR @mention PEOPLE!_* +
+*DO NOT* DM people directly asking for help unless you are asked to do so. If you are stuck, read
+through the Wiki one more time, and then ask for help in
+`#general-vpx-chat` or `💬 vpx-beta-support`. If you are a Beta tester
+using the `💬 vpx-beta-support` channel, the please be sure to read the
+``How To Get Support'' post before submitting. It may take a while to
+get a response, so please remember to be patient.
+* *_HAVE FUN!_* +
+The fun is _mandatory_! Once in the Beta,
+participate in the optional weekly tournaments, share your successes,
+and enjoy!
+
+[WARNING]
+.Breaking the Rules
+====
+Breaking the rules may result in a ban from the beta._* You may not
+receive another warning. Bans cannot be challenged.
+====
+
+[IMPORTANT]
+.Being Banned!
+====
+Being banned from the Mox Discord Server will also result in a Beta
+ban_* Do not break any of Discords T&C’s. Follow the Mox Discord server
+rules found in the `🪧 Server Guide`
+====
+
+== Just Joined The Beta?
+
+Congratulations on joining!
+
+This document and proceeding articles are your go-to place for all VPXS 4KP info!
+
+_… But it can be a little daunting_
+
+Let me run through the various sections of the guides.
+
+=== Beginner Guides
+
+These pages should get you off the ground and playing your first VPXS tables!
+
+* {page-getting-started}[Getting Started] +
+This page runs through the basics of getting your
+USB ready for the VPXS 4KP beta. +
+ +
+This article contains:
+- _Video guides!_
+- _Text guides!_
+- _Basic information on the Table Manager!_
+* {page-table-manager-wizard}[Table Manager ‐ Wizard] +
+This page teaches you how to use the Wizard to install VPXS tables! +
+ +
+This article contains:
+- _What is the `Wizard'?_
+- _How do I install a VPXS table?_
+- _Help! Something went wrong!_
+
+=== Intermediate Guides
+
+These pages should be read once you are a little more familiar with your USB, and have successfully installed some Wizard tables!
+
+* {page-tablemanagerother}[TM ‐ Other Features] +
+Here you can learn about the other features
+built into the Table Manager, and even how to manually install tables! +
+ +
+This article contains:
+- _Table has missing sounds? BASS fix it!_
+- _How do I get the .VBS file?_
+- _How do use the `Add Table - Manual' page!_
+
+* {page-tableinstall}[Table Install FAQs] +
+This article is to help you diagnose and resolve any issues you are having with your tables. +
+ +
+This article contains:
+- _Help conveniently divided between Table / Backglass / DMD categories!_
+- _Guides on how to change the volume!_
+- _Fix for your DMD getting cut off the left side!_
+
+* {page-table-settings}[Table .ini file (Table Settings)] +
+This page contains all the information you need to tweak your table settings! +
+ +
+This article contains:
+- _How to increase FPS or Resolution!_
+- _How to remap buttons!_
+- _How to make the DMD fullscreen!_
+
+* {page-table-customization}[Extra Table Customization] +
+Here you can further customise your tables! +
++
+This article contains:
+
+- _How to change the DMD colours!_
+- _How to add a DMD image!_
+- _How to add button instructions while loading!_
+
+=== Advanced Guides
+These pages are for VPXS users with some decent hours under their belt, and should only be attempted once you are very comfortable with
+VPXS and how it all works.
+
+* {page-pup-pack}[Pup Pack ‐ Manual Install] +
+This page runs through how to manually install a pup pack to your table! +
+ +
+This article contains:
+- _A warning!!_
+- _An overview on how pup packs work!_
+- _An in depth guide on installing the pup pack for Deadpool!_
+* {page-new-table}[Add a New Table to the Repo] +
+Finally, once you are ready, this page explains how to add your own tables to our repository! +
+ +
+This article contains:
+- _Video guides!_
+- _Text guides!_
+- _Useful resources!_
+* {page-add-wizard-table}[Adding a Table to the Wizard]
+- _Wizard Files (.yml)_
+- _Quickhash (Checksums / Hash / MD5)_
+- _Visual Pinball Spreadsheet_
+- _How to do GitHub Releases_
+
+* {page-vbs-pup-guide}[VBS & PUP Developer Guides]
+- _Were to find existing fixes_
+- _How to find error messages_
+- _Pup Pack Common Issues and Fixes_
+
+
