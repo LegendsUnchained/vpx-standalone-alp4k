@@ -6,7 +6,7 @@ on:
 
 jobs:
   create_zips_and_manifest:
-    runs-on: [ubuntu-latest, self-hosted]
+    runs-on: [wraithdesktop, ubuntu-latest ]
 
     steps:
       - name: Checkout code
