@@ -1,12 +1,11 @@
 ---
 applyFixes:
   - "bass"
-enabled: true
 fps: 60
 tagline: "Tish, mi amor..."
 testers:
   - "evilwraith"
-tableVPSID: "id3psEgciP"
+tableVPSId: "id3psEgciP"
 vpxChecksum: "D249431A14FA6154B9039C2FA1E921A2"
 vpxVPSId: "vQjLGEld0D"
 backglassVPSId: "agRjCO8K"
