@@ -4,7 +4,7 @@ applyFixes:
 fps: 60
 enabled: true
 pupArchiveFormat: "zip"
-pupArchiveRoot: "puppack/futurama"
+pupArchiveRoot: "puppack/"
 pupBundled: "true"
 pupChecksum: "1D3C30870C322EF8884CA899ABC92F31"
 pupFileUrl: >-
