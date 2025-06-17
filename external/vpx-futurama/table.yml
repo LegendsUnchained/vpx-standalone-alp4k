@@ -1,6 +1,7 @@
-...
+---
 applyFixes: 
   - "bass"
+fps: 60
 enabled: "true"
 pupArchiveFormat: "zip"
 pupArchiveRoot: >-
