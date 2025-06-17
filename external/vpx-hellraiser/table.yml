@@ -2,12 +2,12 @@
 backglassAuthorsOverride:
   - ""
 fps: 50
-pupArchiveRoot: "Hellraiser1.0.1/HellRaiser/"
+pupArchiveRoot: "/Hellraiser1.0.1/HellRaiser/"
 pupChecksum: "6DE77436C19D088D9E701E26CB57D138"
 pupFileUrl: >-
   https://vpuniverse.com/files/file/11763-hellraiser/
 pupRequired: true
-pupVersion: "Hellraiser"
+pupVersion: "HellRaiser"
 pupArchiveFormat: "rar"
 tableVPSId: "PMy7n4X4vv"
 tableNotes: "Download version 1.2"
