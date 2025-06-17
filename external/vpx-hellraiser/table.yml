@@ -2,8 +2,7 @@
 backglassAuthorsOverride:
   - ""
 fps: 50
-pupArchiveRoot: >-
-  "/Hellraiser1.0.1/Hellraiser"
+pupArchiveRoot: "Hellraiser1.0.1/Hellraiser"
 pupChecksum: "6DE77436C19D088D9E701E26CB57D138"
 pupFileUrl: >-
   https://vpuniverse.com/files/file/11763-hellraiser/
@@ -18,5 +17,5 @@ testers:
   - "mrandromeda"
   - "OminousOsie"
 vpxchecksum: "E078164E637B8C6BF66FEBB71D2A020C"
-enabled: true # Osie: Disabled needs pupArchiveRoot adding as pup is 'Hellraiser1.0.1.rar\Hellraiser1.0.1\HellRaiser'
+enabled: true
 vpxVPSId: "1Dbo7GYl4P"
