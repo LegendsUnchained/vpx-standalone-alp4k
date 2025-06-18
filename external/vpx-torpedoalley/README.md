@@ -2,32 +2,60 @@
 
 ![Table Preview](../../images/vpx-torpedo-alley-preview.jpg)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author(s) | 
-|-----------|--------|----------|--------------|
-| **VPX** | [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=14289) | 3.1 | Bigus1, Dozer, Dboyrecords |
-| **B2S** | [vpuniverse](https://vpuniverse.com/files/file/3633-torpedo-alley-data-east-1988/) | 3.0 |  |
-| **ROM** | [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=816) | torp_e21 | Destruk |
-| **SERUM** | [N/A](#) | N/A | N/A |
-| **PUPPACK** | [N/A](#) | N/A | N/A |
-
-**Tested by:** Bla1ze, kaoticBPR
-
----
-
-## Status 
+## *️⃣  Table Statistics
 
 | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |-----------|-----|-----|-----|-----|
 | ✅ | ✅ | ✅ | ❌ | 60 |
 
+<br>
+
+**VPXS 4KP Testers:**
+  - Bla1ze
+  - kaoticBPR
+
+<br>
+
 ---
 
-## Instructions
+<br>
 
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
-- Dive! Dive! Dive! Dive! Aye Aye
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Torpedo Alley (Data East 1988)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"Dive! Dive! Dive! Dive! Aye Aye"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
