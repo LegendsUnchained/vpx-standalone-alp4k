@@ -1,51 +1,62 @@
-# Bugs Bunny Birthday Ball (Bally 1991)
+# Bugs Bunny's Birthday Ball (Bally 1990)
 
 ![Table Preview](../../images/vpx-bugs.png)
 
-Author: [wrd1972](https://vpuniverse.com/profile/7788-wrd1972/) 
+<br>
 
-Tested by: Bla1ze
+## *️⃣  Table Statistics
 
-Version: 2.3b
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ✅ | ✅ | ❌ | 45 |
 
-Download: [VP Universe](https://vpuniverse.com/files/file/14364-bugs-bunnys-birthday-ball-bally-1991/)
+<br>
 
-DirectB2S
+**VPXS 4KP Testers:**
+  - Bla1ze
+  - Ominous Osie 🌸
+  - CoffeeAtJoes
 
-Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
+<br>
 
-Version: 1.0.0
+---
 
-Download: [VP Universe](https://vpuniverse.com/files/file/17218-bugs-bunny-birthday-ball-bally-1989-alt-b2s-with-full-dmd/)
+<br>
 
-ROM
+## ❇️ Available in the Wizard! 🪄✨
 
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=954)
+<br>
 
-SHA: c2eeb0d4100a0e82af91e9d8eb50a34e69a1710d
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
 
-MD5: 970d59cad33064953f538147a4298a9e
+### How to install:
 
-Alt Color
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Bugs Bunny's Birthday Ball (Bally 1990)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"That's all folks!"*
 
-Author: [ebor](https://vpuniverse.com/profile/29168-ebor/)  
+<br>
 
-Version: 1.0.0
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
 
-Download: [VP Universe](https://vpuniverse.com/files/file/15841-bugs-bunny-birthday-ball-bally-1991-dmd-64-colors-serum-format/)
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
 
 
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-1983-a764013
-| Playfield | Controls | Backglass | DMD | FPS | 
-|-----------|----------|-----------|-----|----------|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
-
-## Instructions
-
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
-- That's all folks!
-
+<br>
+<br>
+<br>
+<br>
+<br>
