@@ -1,6 +1,6 @@
 # Torpedo Alley (Data East 1988)
 
-![Table Preview](../../images/{previewImageName})
+![Table Preview](../../images/vpx-torpedo-alley-preview.jpg)
 
 ---
 
