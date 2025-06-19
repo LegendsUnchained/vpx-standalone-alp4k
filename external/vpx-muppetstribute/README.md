@@ -7,9 +7,9 @@
 ## Files
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
-| **VPX** | [vpuniverse]( https://vpuniverse.com/files/file/11444-muppets-tribute/) | {version} | [iceman 2022]({link}) |
-| **B2S** | [vpuniverse](https://vpuniverse.com/files/file/11444-muppets-tribute/) | {version} | [{iceman 2022}]({link}) |
-| **ROM** | [{vpuniverse}](https://vpuniverse.com/files/file/1484-nautiluszip/) | {version} | [{author}]({link}) |
+| **VPX** | [vpuniverse]( https://vpuniverse.com/files/file/11444-muppets-tribute/) |  | [iceman 2022]() |
+| **B2S** | [vpuniverse](https://vpuniverse.com/files/file/11444-muppets-tribute/) |  | [{iceman 2022}]() |
+| **ROM** | [{vpuniverse}](https://vpuniverse.com/files/file/1484-nautiluszip/) |  | [vpustaff]() |
 
 
 **Tested by:** [{Marine50}]
