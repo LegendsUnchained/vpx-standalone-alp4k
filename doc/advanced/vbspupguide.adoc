@@ -1,0 +1,238 @@
+= VBS & PUP Developer Guides
+:source-highlighter: highlightjs
+:source-language: vbscript
+:highlightjs-languages: vbscript
+:toc: left
+:toclevels: 4
+:icons: font
+
+== VB Script Developer Guide
+
+=== _Has someone already fixed this?_
+
+Before trying to fix anything, its worth double-checking if this script
+has already been fixed.
+
+We are not the only community using VPXS, and others also document and
+fix VBS scripts.
+
+The biggest being the JSM repository:
+https://github.com/jsm174/vpx-standalone-scripts[jsm174/vpx-standalone-scripts]
+
+Check there first!
+
+=== _Further Documentation_
+
+Further to JSMs fantastic repository, there are also further
+documentation available directly on the vpx standalone reposioty:
+
+* Common VPXS VBS Script Issues:
+https://github.com/vpinball/vpinball/blob/master/standalone/docs/vbscript.md[/master/standalone/docs/vbscript]
+* Command Reference Guide:
+https://github.com/vpinball/vpinball/blob/master/docs/CommandReference.txt[/master/docs/CommandReference]
+* Object Reference Guide:
+https://github.com/vpinball/vpinball/blob/master/docs/Script%20API%20Reference.md[/master/docs/Script
+API Reference]
+* All Documents/Script Guides:
+https://github.com/vpinball/vpinball/tree/master/docs[/master/docs]
+
+
+=== _Basics_
+
+VBS (Visual Basic Script) is used to program our VPXS pinball tables.
+
+There are however many issues that pop up when trying to run tables
+specifically on VPX Standalone that are not present when running on VPX.
+
+That means you often have to correct common `mistakes' to get tables
+running on VPXS.
+
+==== _How to find error messages_
+
+Unfortunately we never really get accurate or useful error message.
+
+But we do get the line that errored, which is pretty useful.
+
+After a table has crashed, check the `vpinball.log` for the error
+messages.
+
+==== _Line 1 Error Message_
+
+If you see an error message on `Line 1' in your `vpinball.log` file,
+that does not mean that the error was actually on line 1.
+
+What that means is that the error was in an `Executed' section of code.
+
+This could be either:
+
+- `Execute '{code here}'` +
+ _and / or_
+- `GlobalExecute '{code here}'`
+
+
+==== _Variables declared after usage_
+
+Probably the single most common issue is variables being declared after
+they are used.
+
+VBS when ran in VPX does not care where the variables are declared, so
+you can have them declared at the bottom of the script if you want.
+
+VPXS however is more picky, you need to declare the variables *_before_*
+you use them. So it's a good idea to have all, or most, variable
+declarations at the top of the VBS script.
+
+For more information:
+https://github.com/vpinball/vpinball/blob/master/standalone/docs/vbscript.md#declaration-and-definition-issues[master/standalone/docs/vbscript.md
+- declaration-and-definition-issues]
+
+== _Pup Pack Developer Guide_
+
+=== _Missing features and bugs_
+
+This is a very technical deep dive into missing features in the
+standalone puppack implementation. It assumes you have already deep
+knowledge of the pinup player system, and you have an advanced knowledge
+of table vbscripts. You can read some documentation (not everything is
+documented) here: https://nailbuster.com/wikipinup/doku.php?id=pup_dmd
+
+Keep in mind: A simple puppack you can get mostly running, but the for
+most puppacks it can be a lot of work and time-consuming to get it to
+work. If in the future features are added or bugs are fixed in
+standalone it can break your working puppacks (because of workarounds)
+and you have to adapt it again. Also, the problem for standalone is that
+the windows pinup player is not open source so its more difficult to
+emulate (reverse engineering). Depending on the situation you can make
+different workarounds, but sometimes it is simply not possible to create
+an acceptable solution (it is often trial and error).
+
+[NOTE]
+====
+A puppack will impact the framerate, depending on the complexity it can
+be from 5 fps to around 15 fps.
+====
+
+==== _General_
+
+The system is very flexible and has a lot of options and therefore it is
+complex. If an option or feature is not implemented a message is logged
+in the table log file. Look for the text ``Not implemented'' in the log
+what is not implemented. This will give you an idea how much
+functionality you are missing and if it worth your time to get it to
+work.
+
+==== _Missing functions_
+
+The following functions called from the vbscript on the pindisplay
+object (CreateObject(``PinUpPlayer.PinDisplay'')) are not implemented
+yet. These are used rare, the most used functions are implemented.
+
+* playlistplay
+* play
+* playpause
+* playresume
+* setAspect
+* setVolume
+* SetLength
+
+==== _No transparent background_
+
+A pup screen always has a black background, but this can also be
+transparent (can generate performance issues?). This is a big problem
+when also the B2S is used, you get blinking instead of two screens
+laying on top of each other. When you have the following construction in
+screens there are two problems:
+
+[source,vbscript]
+....
+ScreenNum,ScreenDes,PlayList,PlayFile,Loopit,Active,Priority,CustomPos +
+2,Backglass,,,0,off,, +
+11,"Backglass 2",bg,"Movie.mp4",0,ForceOn,,"2,19.5,17,60.9,58.5"
+....
+
+The backglass is turned off, but there is an extra screen 11 with custom
+position on screen 2 with forceon option. At the moment because in
+standalone the backglass is turned off everything is not displayed. This
+is incorrect, because of forceon screen 11 should be shown on a
+transparent backglass. This is a problem for example in Star Tours and
+in Tom and Jerry table/puppack combination. This can be fixed to replace
+off with show for screen 2, but then you have a black background.
+
+==== _Multiple sounds playing_
+
+There is a bug in the playstop function. Sometimes, e.g. a background
+music is playing on a musiconly screen, when this function is called the
+music is not stopped, but keeps playing and when the loop option is set,
+this plays forever. This can also be the case when there is a stop
+trigger. If this is called from the script a workaround can be to
+disable the loop and force to play a sound with zero volume (fix used in
+Space Cadet Galaxy Edition).
+
+==== _Triggers on screens which are off_
+
+A trigger on a screen which is turned off, is sometimes still played.
+For instance there is a topper screen which is turned off (this has to
+do with the different display layout you find in puppacks), but the
+media is still started. Solution is to remove the screens which are
+turned off and remove the triggers for this screen. But remember a
+screen can be turned on from the script, and then it should not be
+removed, unless it is a screen which should not be used anyway
+(e.g. topper) but then also the script code has to be removed.
+
+==== _Conflict vbscript/screens file_
+
+Sometimes there is a screens.pup file but the same screens numbers are
+also created from the script. This gives in standalone a conflict and is
+handled wrong. The script should overrule the screens.pup. Workaround is
+to combine the options from the script in the screens.pup file and
+remove the script calls.
+
+==== _Triggers skip same priority_
+
+In triggers, you have the option SkipSamePrty which means that if the new
+media has the same or lower priority as the currently playing media then
+the new one is skipped. This is for when there are multiple triggers to
+determine which one has to play and is the most important. At the moment
+the problem is in standalone that this should only be done if there is
+media playing, but in standalone this is also done if there is no media
+playing. This means you are missing triggers. A workaround is to remove
+the option, but then you get to many or the wrong one is playing. A
+better workaround is to play around with the priorities, but this is a
+lot of trial and error. You also have to play the table a lot to test the
+triggers. I sometimes change the script to trigger the events
+quicker/more easy.
+
+==== _Label font scaled wrong_
+
+Sometimes it works, sometimes it does not. When a text is displayed with
+LabelSet function on a screen, which has a custom position,width and
+height, sometimes the font size is wrong. A scaling factor has to be
+applied. I have not found out yet when it works and when not. Workaround
+is to apply the font scaling factor (have to calculated by hand) in the
+script for all the LabelInit calls for this screen.
+
+==== _Label animations_
+
+A label can also have animations (e.g. blinking or motion) this is done
+with a labelset with the option mt:1. This is not supported at the
+moment (and diffcult to emulate). For example:
+
+[source,vbscript]
+....
+PuPlayer.LabelSet 2,"Service","Blinking text", 1,"\{'mt':1,'at':1,'fq':150,'len':1}"
+....
+
+These options are discarded but if the text is totally displayed wrong
+you have to change mt:1 into mt:2, and you probably have to add options
+(see mt:2 example above) to correct it. Of course, you are missing the
+animation.
+
+==== _Screen z-order_
+
+This is important for the order in which the screens lay on top of each
+other. There are screen options ForceBack (set it to the back), ForceOn
+(always on top, always visible) and ForcePop (always on top, but only
+shown if media is played). There are more. Standalone sometimes messes
+up what should be in front/back. The only workaround is to play with the
+different options in the screen definitions to try to get it in the
+correct order.
