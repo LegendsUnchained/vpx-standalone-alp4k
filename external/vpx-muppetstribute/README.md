@@ -7,9 +7,9 @@
 ## Files
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
-| **VPX** | [{vpuniverse}]({Muppets Tribute - VPX - Pinball Tables - Virtual Pinball Universe}) | {version} | [{iceman 2022}]({link}) |
-| **B2S** | [{vpuniverse}]({Muppets Tribute - VPX - Pinball Tables - Virtual Pinball Universe }) | {version} | [{iceman 2022}]({link}) |
-| **ROM** | [{vpuniverse}]({nautilus.zip - PinMAME Roms - Virtual Pinball Universe}) | {version} | [{author}]({link}) |
+| **VPX** | [vpuniverse]( https://vpuniverse.com/files/file/11444-muppets-tribute/) | {version} | [iceman 2022]({link}) |
+| **B2S** | [vpuniverse](https://vpuniverse.com/files/file/11444-muppets-tribute/) | {version} | [{iceman 2022}]({link}) |
+| **ROM** | [{vpuniverse}](https://vpuniverse.com/files/file/1484-nautiluszip/) | {version} | [{author}]({link}) |
 
 
 **Tested by:** [{Marine50}]
