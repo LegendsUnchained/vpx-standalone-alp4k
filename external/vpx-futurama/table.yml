@@ -2,11 +2,11 @@
 applyFixes: 
   - "bass"
 fps: 60
-
 pupArchiveFormat: "zip"
 pupArchiveRoot: "puppack/futurama"
-pupBundled: "true"
 pupChecksum: "1D3C30870C322EF8884CA899ABC92F31"
+pupFileUrl: >-
+  https://vpuniverse.com/files/file/18010-futurama-original-2024/
 pupNotes: "Download Futurama PuP and media pack.zip"
 pupRequired: true
 tableVPSId: "k_w8Y3slND"
