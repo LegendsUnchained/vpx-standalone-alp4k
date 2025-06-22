@@ -1,0 +1,21 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "141CE9C12AAC8ED5F36AD9A547AA4121"
+backglassVPSId: "noFcDXGBg1"
+fps: 60
+mainNotes: "This a modified version of the JPSalas Diablo Pinball that uses a PUP and animated gifs in place to the video DMD."
+pupArchiveFormat: "zip"
+pupArchiveRoot: "pupvideos/diablo"
+pupChecksum: "394212D531F8EC9FEBC32304BF363313"
+pupFileUrl: "https://bit.ly/3HSR6Tv"
+pupNotes: "Custom PUP Audio for the 4kp. Download both diablo Audio PUP.zip and Diablo.UltraDMD.zip."
+pupRequired: true
+pupVersion: "1.0"
+tableNotes: "Download Diablo Pinball v55_VPX8.zip only."
+tableVPSId: "pfpSUvBN"
+tagline: "'Stay awhile and listen...'"
+testers:
+  - "evilwraith"
+vpxChecksum: "648FA0AEF3B842DFD826EBCBAF927ACB"
+vpxVPSId: "W2O2IpMHYf"
