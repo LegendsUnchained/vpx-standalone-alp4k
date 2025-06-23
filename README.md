@@ -191,7 +191,6 @@ Links to these products on Amazon are through affiliate links.
 
 ## All Tested Tables
 
-
 | Table | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |:------|:---------:|:---:|:------------:|:---:|:---:|
 | [1-2-3 (Talleres de Llobregat 1973)](external/vpx-123) | :white_check_mark: | :x: | :x: | :x: | 60 |
