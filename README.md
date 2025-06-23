@@ -199,6 +199,7 @@ Links to these products on Amazon are through affiliate links.
 | [24 (Stern 2009)](external/vpx-24) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 54 |
 | [250cc (Inder 1992)](external/vpx-250cc) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [301 Bullseye (Grand Products 1986)](external/vpx-301bullseye) | :white_check_mark: | :x: | :white_check_mark: | :x: | 57 |
+| [2001: A Space Odyssey (Original 2025)](external/vpx-2001odyssey) | :white_check_mark: | :white_check_mark: | :x: | :x: | 48 |
 | [Aaron Spelling (Data East 1992)](external/vpx-aaronspelling) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Abra Ca Dabra (Gottlieb 1975)](external/vpx-abracadabra) | :white_check_mark: | :x: | :x: | :x: | 49 |
 | [Ace High (Gottlieb 1957)](external/vpx-acehigh) | :white_check_mark: | :x: | :x: | :x: | 60 |
