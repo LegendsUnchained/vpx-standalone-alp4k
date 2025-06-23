@@ -1,6 +1,8 @@
 ' Drakor / IPD No. 4569 / Taito / 1979 / 4 Players
 ' VPX8 - version by JPSalas 2020, version 5.5.0
 
+' VPXS - addtional fixes by evilwraith
+
 Option Explicit
 Randomize
 
@@ -19,8 +21,8 @@ Dim bsTrough, dtbank1, dtbank2, bsLeftSaucer, LeftMagnet,  x
 Const cGameName = "drakor"
 
 Const UseSolenoids = 2
-Const UseLamps = 1
-Const UseGI = 1
+Const UseLamps = 0
+Const UseGI = 0
 Const UseSync = 0 'set it to 1 if the table runs too fast
 Const HandleMech = 0
 Const vpmhidden = 1 'hide the vpinmame window
@@ -129,10 +131,8 @@ End Sub
 
 Sub table1_Paused:Controller.Pause = 1:End Sub
 Sub table1_unPaused:Controller.Pause = 0:End Sub
-Sub table1_exit
-	'NVramPatchExit
-	Controller.stop
-End Sub
+Sub table1_exit:Controller.stop:End Sub
+
 '**********
 ' Keys
 '**********
@@ -610,7 +610,7 @@ Sub LampTimer_Timer()
     End If
     UpdateLeds
     UpdateLamps
-    'NVramPatchKeyCheck
+'    NVramPatchKeyCheck
 End Sub
 
 Sub UpdateLamps()
@@ -1068,3 +1068,100 @@ End Sub
 Sub OnBallBallCollision(ball1, ball2, velocity)
     PlaySound("fx_collide"), 0, Csng(velocity) ^2 / 2000, Pan(ball1), 0, Pitch(ball1), 0, 0, AudioFade(ball1)
 End Sub
+
+' =============================================================================================================
+'                 NVram patch for Taito do Brasil tables by Pmax65
+'
+' NVramPatchExit	' Must be placed before the Controler.Stop statement into the Table1_Exit Sub
+' NVramPatchLoad	' Must be placed before the VPinMAME controller initialization
+' NVramPatchKeyCheck' Must be placed in the lamptimer timer
+' =============================================================================================================
+
+Const GameOverLampID = 149 ' set this constant to the ID number of the game-over lamp
+
+Sub NVramPatchExit
+    If LampState(GameOverLampID)Then
+'        Kill GetNVramPath + "\" + cGameName + ".nvb"
+        Do
+            LampTimer_Timer          ' This loop is needed to avoid the NVram reset (losing the hi-score and credits)
+        Loop Until LampState(20) = 1 ' when the game is over but the match procedure isn't still ended
+    End If
+End Sub
+'Dim NVramPatchCoinCnt
+
+'Function GetNVramPath()
+'    Dim WshShell
+'    Set WshShell = CreateObject("WScript.Shell")
+'    GetNVramPath = WshShell.RegRead("HKCU\Software\Freeware\Visual PinMame\globals\nvram_directory")
+'End function
+'
+'Function FileExists(FileName)
+'    DIM FSO
+'    FileExists = False
+'    Set FSO = CreateObject("Scripting.FileSystemObject")
+'    FileExists = FSO.FileExists(FileName)
+'    Set FSO = Nothing
+'End Function
+
+'Sub Kill(FileName)
+'    Dim ObjFile, FSO
+'    On Error Resume Next
+'    Set FSO = CreateObject("Scripting.FileSystemObject")
+'    Set ObjFile = FSO.GetFile(FileName)
+'    ObjFile.Delete
+'    On Error Goto 0
+'    Set FSO = Nothing
+'End Sub
+
+'Sub Copy(SourceFileName, DestFileName)
+'    Dim FSO
+'    On Error Resume Next
+'    Set FSO = CreateObject("Scripting.FileSystemObject")
+'    FSO.CopyFile SourceFileName, DestFileName, True
+'    On Error Goto 0
+'    Set FSO = Nothing
+'End Sub
+
+'Sub NVramPatchLoad
+'    NVramPatchCoinCnt = 0
+'    If FileExists(GetNVramPath + "\" + cGameName + ".nvb")Then
+'        Copy GetNVramPath + "\" + cGameName + ".nvb", GetNVramPath + "\" + cGameName + ".nv"
+'    Else
+'        Copy GetNVramPath + "\" + cGameName + ".nv", GetNVramPath + "\" + cGameName + ".nvb"
+'    End If
+'End Sub
+
+'Sub NVramPatchExit
+'    If LampState(GameOverLampID)Then
+''        Kill GetNVramPath + "\" + cGameName + ".nvb"
+'        Do
+'            LampTimer_Timer          ' This loop is needed to avoid the NVram reset (losing the hi-score and credits)
+'        Loop Until LampState(20) = 1 ' when the game is over but the match procedure isn't still ended
+'    End If
+'End Sub
+
+' =============================================================================================================
+' To completely erase the NVram file keep the Start Game button pushed while inserting
+' two coins into the first coin slit (this resets the high scores too)
+' =============================================================================================================
+
+'Sub NVramPatchKeyCheck
+'    If Controller.Switch(swStartButton)then
+'        If Controller.Switch(swCoin1)then
+'            If NVramPatchCoinCnt = 2 Then
+'                Controller.Stop
+'                Kill GetNVramPath + "\" + cGameName + ".nv"
+'                Kill GetNVramPath + "\" + cGameName + ".nvb"
+'                QuitPlayer 2
+'            Else
+'                NVramPatchCoinCnt = 1
+'            End If
+'        Else
+'            If NVramPatchCoinCnt = 1 Then
+'                NVramPatchCoinCnt = 2
+'            End If
+'        End If
+'    Else
+'        NVramPatchCoinCnt = 0
+'    End If
+'End Sub
