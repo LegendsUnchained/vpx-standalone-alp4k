@@ -1,7 +1,8 @@
 ' Drakor / IPD No. 4569 / Taito / 1979 / 4 Players
 ' VPX8 - version by JPSalas 2020, version 5.5.0
-
-' VPXS - addtional fixes by evilwraith
+' VPXS fixes by evilwraith
+' Fixed table lamps not resetting when starting a new game.
+' NVRAM persistent state issues still exist, will need addressing in PinMAME code.
 
 Option Explicit
 Randomize
@@ -1079,7 +1080,7 @@ End Sub
 
 Const GameOverLampID = 149 ' set this constant to the ID number of the game-over lamp
 
-Sub NVramPatchExit
+Sub LampReset
     If LampState(GameOverLampID)Then
 '        Kill GetNVramPath + "\" + cGameName + ".nvb"
         Do
