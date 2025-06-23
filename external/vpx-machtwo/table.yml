@@ -8,7 +8,7 @@ fps: 60
 romChecksum: "432C874559E1B82A4A7B00926B0528ED"
 romNotes: "Download mach2.zip"
 romUrlOverride: "https://pinballnirvana.com/forums/resources/mach2.2055/"
-romVersionOverride: "mach2.zip"
+romVersionOverride: "mach2"
 tableNotes: "Download version 1.1"
 tableVPSId: "VXjOK2S53j"
 tagline: "Are you ready for Mach 2.0.... two?"
