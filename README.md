@@ -149,6 +149,7 @@ Links to these products on Amazon are through affiliate links.
 | [Lost World Jurassic Park, The (Sega 1997)](external/vpx-thelostworld) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 58 |
 | [Machine - Bride of Pin-bot, The (Williams 1991)](external/vpx-bop) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 43 |
 | [Mad Max - Fury Road (Original 2021)](external/vpx-madmax) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Mach 2.0 Two (Spinball S.A.L. 1995)](external/vpx-machtwo) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Mary Shelley's Frankenstein (Sega 1995)](external/vpx-maryshelleyfrank) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Mata Hari (Bally 1978)](external/vpx-matahari) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Medieval Madness (Williams 1997)](external/vpx-mm) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 40 |
@@ -202,7 +203,7 @@ Links to these products on Amazon are through affiliate links.
 | [Whoa Nellie! Big Juicy Melons (Stern 2015)](external/vpx-whoanellie) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Wipe Out (Gottlieb 1993)](external/vpx-wipeout) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Wrath of Olympus, JP's (Original 2022)](external/vpx-wrath) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
-| [WWF Royal Rumble (Data East 1994)](external/vpx-royalrumble) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
+| [WWF Royal Rumble (Data East 1994)](external/vpx-royalrumble) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
 | [X-Files (Sega 1997)](external/vpx-xfileshanibal) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [X-Men Wolverine LE (Stern 2012)](external/vpx-xmen) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Young Frankenstein (Original 2021)](external/vpx-youngfrankenstein) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 35 |
@@ -303,7 +304,7 @@ Links to these products on Amazon are through affiliate links.
 | [Black Knight (Williams 1980)](external/vpx-blackknight) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Black Knight 2000 (Williams 1989)](external/vpx-blackknight2000) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 46 |
 | [Black Pyramid (Bally 1984)](external/vpx-blackpyramid) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
-| [Black Rose (Bally 1992)](external/vpx-blackrose) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 35 |
+| [Black Rose (Bally 1992)](external/vpx-blackrose) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Blackout (Williams 1980)](external/vpx-blackout) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 30 |
 | [Blood Machines (VPW Original 2022)](external/vpx-bloodmachines) | :white_check_mark: | :white_check_mark: | :x: | :x: | 27 |
 | [BMX (Bally 1983)](external/vpx-bmx) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
@@ -846,7 +847,7 @@ Links to these products on Amazon are through affiliate links.
 | [Tom & Jerry (Original 2018)](external/vpx-tomjerry) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 30 |
 | [Tomb Raider (Original 2025)](external/vpx-tombraider) | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 50 |
 | [Tornado Rally (Original 2024)](external/vpx-tornadorally) | :white_check_mark: | :x: | :x: | :x: | 40 |
-| [Torpedo Alley (Data East 1988)](external/vpx-torpedoalley) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 32 |
+| [Torpedo Alley (Data East 1988)](external/vpx-torpedoalley) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Trailer Park Boys - Pin-Ballers (Clairvius 2024)](external/vpx-trailerparkboys) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Transformers G1 Generation One (Original 2018)](external/vpx-transformersg1) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Transformers (Pro) [Marcade Mod] (Original 2025)](external/vpx-transformersmod) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
