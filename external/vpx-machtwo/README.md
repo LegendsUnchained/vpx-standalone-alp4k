@@ -1,6 +1,6 @@
-# Torpedo Alley (Data East 1988)
+# Mach 2.0 Two (Spinball S.A.L. 1995)
 
-![Table Preview](../../images/vpx-torpedo-alley-preview.jpg)
+![Table Preview](../../images/mach2-preview.png)
 
 <br>
 
@@ -14,7 +14,7 @@
 
 **VPXS 4KP Testers:**
   - Bla1ze
-  - kaoticBPR
+  - pointdablame
 
 <br>
 
@@ -33,9 +33,9 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`Torpedo Alley (Data East 1988)`**
+4.  Find and select this table from the dropdown menu: **`Mach 2.0 Two (Spinball S.A.L. 1995)`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *"Dive! Dive! Dive! Dive! Aye Aye"*
+6. *"Are you ready for Mach 2.0.... two?"*
 
 <br>
 
