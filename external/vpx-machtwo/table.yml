@@ -1,0 +1,19 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "02D183D504A33D20EA3E385C4EF51507"
+backglassNotes: "Download version 1.0.0"
+backglassVPSId: "jLc1XgWX1j"
+fps: 60
+romChecksum: "432C874559E1B82A4A7B00926B0528ED"
+romNotes: "Download mach2.zip"
+romUrlOverride: "https://pinballnirvana.com/forums/resources/mach2.2055/"
+romVersionOverride: "mach2"
+tableNotes: "Download version 1.1"
+tableVPSId: "VXjOK2S53j"
+tagline: "Are you ready for Mach 2.0.... two?"
+testers:
+  - "Bla1ze"
+  - "pointdablame"
+vpxChecksum: "C40607A54BA52FA7EC138CCA4CF7013E"
+vpxVPSId: "M2USRO02b9"
