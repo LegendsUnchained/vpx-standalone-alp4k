@@ -115,7 +115,7 @@ Sub Table1_Init
 	If Err Then MsgBox Err.Description
 	On Error Goto 0
 
-PlaySound "Dexter Music",-1,0.5
+PlaySound "Dexter Music",-1,0.1
 PlaySound "Dexter Intro",-0 
 
 	PinMAMETimer.Interval=PinMAMEInterval
