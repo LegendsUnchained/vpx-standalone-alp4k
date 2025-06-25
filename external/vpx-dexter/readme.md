@@ -15,6 +15,7 @@
 **VPXS 4KP Testers:**
   - rocjr73
   - Ominous Osie 🌸
+  - CoffeeAtJoes
 
 <br>
 

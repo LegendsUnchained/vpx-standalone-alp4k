@@ -15,6 +15,8 @@
 **VPXS 4KP Testers:**
   - Boris
   - Ominous Osie 🌸
+  - CoffeeAtJoes
+  - PointDaBlame
 
 <br>
 
