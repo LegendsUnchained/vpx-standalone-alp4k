@@ -5,7 +5,6 @@ backglassBundled: true
 backglassVPSId: "aE0MrrW6W3"
 backglassChecksum: "ECE0EE9060A11417B1A515E9603589FF"
 backglassNotes: "Download 'Alice in Wonderland (Gottlieb 1948).directb2s.zip'"
-enabled: false # Osie: Easy table for wizard release. YML built - Just needs simple stuff (POV/ Free Play/ Artwork)
 fps: 60
 mainNotes: "Press right on the control panel to load a ball from the hopper"
 tableNotes: "Download v55_VPX8.zip"
@@ -14,5 +13,7 @@ tagline: "We're all mad here!"
 testers:
   - "Boris"
   - "OminousOsie"
+  - "CoffeeAtJoes"
+  - "PointDaBlame"
 vpxVPSId: "EQParLHs3z"
 vpxChecksum: "F97F13428CF80482326D03A7ABD90CB0"
