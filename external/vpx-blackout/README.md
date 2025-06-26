@@ -2,9 +2,9 @@
 
 ![Table Preview](../../images/vpx-blackout.png)
 
-Authors: [unclewilly](https://www.vpforums.org/index.php?showuser=12)
+Authors: [32assassin](https://www.vpforums.org/index.php?showuser=77712)
 Version: 1.3
-Download: [vpforums](https://www.vpforums.org/index.php?s=50af10719051bb9819a689fdf3cb2a3e&app=downloads&showfile=18393)
+Download: [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=11676)
 
 DirectB2S
 
@@ -22,7 +22,7 @@ ROM Name and version: blkou_l1.zip
 Minimum VPX Standalone build: 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 30 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 
 ## Instructions
 
