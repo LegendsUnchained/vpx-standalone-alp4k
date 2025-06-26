@@ -710,7 +710,7 @@ End Sub
 '****************************************
 
 Sub ResetForNewGame()
-    'debug.print "ResetForNewGame"
+    debug.print "ResetForNewGame"
     Dim i
 
     bGameInPLay = True
@@ -756,7 +756,7 @@ Sub ResetForNewGame()
 End Sub
 
 Sub FirstBall
-    'debug.print "FirstBall"
+    debug.print "FirstBall"
     ' reset table for a new ball, rise droptargets ++
     ResetForNewPlayerBall()
     CreateNewBall()
@@ -767,7 +767,7 @@ End Sub
 ' (Re-)init table for a new ball or player
 
 Sub ResetForNewPlayerBall()
-    'debug.print "ResetForNewPlayerBall"
+    debug.print "ResetForNewPlayerBall"
     AddScore 0
 
     ' reset multiplier to 1x
@@ -781,7 +781,7 @@ End Sub
 ' Crete new ball
 
 Sub CreateNewBall()
-    'debug.print "CreateNewBall"
+    debug.print "CreateNewBall"
     BallRelease.CreateSizedBallWithMass BallSize / 2, BallMass
     BallsOnPlayfield = BallsOnPlayfield + 1
     UpdateBallInPlay
@@ -792,7 +792,7 @@ End Sub
 ' player lost the ball
 
 Sub EndOfBall()
-    'debug.print "EndOfBall"
+    debug.print "EndOfBall"
     'Dim AwardPoints, TotalBonus, ii
     'AwardPoints = 0
     'TotalBonus = 0
@@ -838,7 +838,7 @@ End Sub
 ' After bonus count go to the next step
 '
 Sub EndOfBall2()
-    'debug.print "EndOfBall2"
+    debug.print "EndOfBall2"
 
     Tilted = False
     Tilt = 0
@@ -850,7 +850,7 @@ Sub EndOfBall2()
 
     ' win extra ball?
     If(ExtraBallsAwards(CurrentPlayer)> 0) Then
-        'debug.print "Extra Ball"
+        debug.print "Extra Ball"
 
         ' if so then give it
         ExtraBallsAwards(CurrentPlayer) = ExtraBallsAwards(CurrentPlayer) - 1
@@ -889,7 +889,7 @@ Sub EndOfBall2()
 End Sub
 
 Sub EndOfBallComplete()
-    'debug.print "EndOfBallComplete"
+    debug.print "EndOfBallComplete"
     Dim NextPlayer
 
     ' other players?
@@ -903,7 +903,7 @@ Sub EndOfBallComplete()
         NextPlayer = CurrentPlayer
     End If
 
-    'debug.print "Next Player = " & NextPlayer
+    debug.print "Next Player = " & NextPlayer
 
     ' end of game?
     If((BallsRemaining(CurrentPlayer) <= 0) AND(BallsRemaining(NextPlayer) <= 0) ) Then
@@ -931,7 +931,7 @@ End Sub
 ' Called at the end of the game
 
 Sub EndOfGame()
-    'debug.print "EndOfGame"
+    debug.print "EndOfGame"
     bGameInPLay = False
     bJustStarted = False
     If B2SOn then
@@ -1284,19 +1284,19 @@ End Sub
 '*************************
 
 Sub AwardExtraBall()
-    'If NOT bExtraBallWonThisBall Then
+    If NOT bExtraBallWonThisBall Then
     PlaySound SoundFXDOF("fx_knocker", 300, DOFPulse, DOFknocker)
     DOF 230, DOFPulse
     ExtraBallsAwards(CurrentPlayer) = ExtraBallsAwards(CurrentPlayer) + 1
-    'bExtraBallWonThisBall = True
+    bExtraBallWonThisBall = True
     EBReel.SetValue ExtraBallsAwards(CurrentPlayer)
     LiExtraBall.State = 1
     If B2SOn Then
         Controller.B2SSetScorePlayer5 ExtraBallsAwards(CurrentPlayer)
     End If
-'Else
+Else
 '    Addscore 5000
-'END If
+End If
 End Sub
 
 Sub AwardSpecial()
@@ -1958,13 +1958,13 @@ End Sub
 Sub tg1_Hit
     PlaySoundAtBall SoundFXDOF("fx_target", 115, DOFPulse, DOFBell)
     If Tilted Then Exit Sub
-    If Light007.State Then
+    If Light007.State = 1 Then
         AddScore 50000
     Else
         AddScore 5000
     End If
 
-    If Light004.State Then
+    If Light004.State = 1 Then
         AwardExtraBall
         Light004.State = 0
     End If
@@ -1973,13 +1973,13 @@ End Sub
 Sub tg2_Hit
     PlaySoundAtBall SoundFXDOF("fx_target", 116, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
-    If Light008.State Then
+    If Light008.State = 1 Then
         AddScore 50000
     Else
         AddScore 5000
     End If
 
-    If Light003.State Then
+    If Light003.State = 1 Then
         AddBonusMultiplier 1
         Light003.State = 0
     End If
