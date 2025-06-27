@@ -5,7 +5,6 @@ backglassBundled: true
 backglassVPSId: "t0ENUlSOzX"
 backglassChecksum: "647D36CF569FC74C0C900024A7E66CAB"
 backglassNotes: "Included in VPX Download"
-enabled: false # Osie: Easy table for wizard release. YML built - Just needs simple stuff (POV/ Free Play/ Artwork)
 fps: 60
 romUrlOverride: "https://pinballnirvana.com/forums/resources/dvlsdre.1744/"
 romVersionOverride: "dvlsdre"
@@ -19,5 +18,6 @@ tagline: >-
 testers:
   - "rocjr73"
   - "OminousOsie"
+  - "CoffeeAtJoes"
 vpxVPSId: "X9el-XgPFm"
 vpxChecksum: "7C1B9F129A6DFA12D540E8F591541FF3"

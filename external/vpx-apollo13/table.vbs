@@ -20,16 +20,12 @@ On Error Goto 0
 Const UseVPMModSol = 1
 
 Dim  varhidden, UseVPMColoredDMD, bgsko, preLoad8Balls
-	bgsko=0
-If Table1.ShowDT = false then
-Ramp032.visible = 0:Ramp033.visible = 0
-    UseVPMColoredDMD = false
-	varhidden=1
-Else
-	Ramp032.visible = 0:Ramp033.visible = 0
-    UseVPMColoredDMD = true
-	varhidden=0
-End If
+
+bgsko=0
+Ramp032.visible = 0
+Ramp033.visible = 0
+UseVPMColoredDMD = true
+varhidden=0
 
 ' ***********************************************************************************************
 ' OPTIONS
