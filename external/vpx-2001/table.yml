@@ -4,9 +4,9 @@ applyFixes:
 fps: 52
 pupArchiveFormat: "rar"
 pupArchiveRoot: "HAL9000"
-pupChecksum: "33CBACDD9144AED7BCD2D87EF8EEE9CA"
+pupChecksum: "37AF67AD2D0D62966CE55B227B6D1875"
 pupRequired: true
-pupVersion: "1.0"
+pupVersion: "1.1"
 pupVPSId: "ifIOeaxK0W"
 tableNotes: "Download 2001_SpaceOdyssey_Pup Table file.zip"
 tableVPSId: "0IDqTPkR_4"
