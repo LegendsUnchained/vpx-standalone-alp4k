@@ -12,7 +12,7 @@
 | **ROM** | [vpuniverse](https://vpuniverse.com/files/file/1484-nautiluszip/) |  | [vpustaff]() |
 
 
-**Tested by:** [{Marine50}]
+**Tested by:** [Marine50]
 
 ---
 
