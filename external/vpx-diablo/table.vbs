@@ -1457,14 +1457,11 @@ Sub EndOfGame()
     ' terminate all Mode - eject locked balls
     ' most of the Mode/timers terminate at the end of the ball
     ' show game over on the DMD
-    
     DMD "game-over.gif", "", "", 11000
     PuPEvent 325
-
     ' set any lights for the attract mode
     GiOff
-    StartAttractMode
-    
+    vpmTimer.addTimer 11000, "StartAttractMode '"
 ' you may wish to light any Game Over Light you may have
 End Sub
 
@@ -1613,7 +1610,6 @@ Sub swPlungerRest_UnHit()
 End Sub
 
 ' swPlungerRest timer to show the "launch ball" if the player has not shot the ball during 6 seconds
-
 Sub swPlungerRest_Timer
     PuPEvent 343
     DMD "start.gif", "", "", 17000
@@ -2444,7 +2440,6 @@ End Sub
 Sub ShowTableInfo
     Dim i
     'info goes in a loop only stopped by the credits and the startkey
-    pupevent 300
     If Score(1)Then
         DMD "black.jpg", "PLAYER 1", Score(1), 3000
     End If
@@ -2461,8 +2456,6 @@ Sub ShowTableInfo
     'coins or freeplay
     If bFreePlay Then
         DMD "black.jpg", " ", "FREE PLAY", 2000
-        pupevent 344
-        vpmTimer.addTimer 500, "PuPEvent 327 '"
         DMD "intro-freeplay.gif", "", "", 63000
 		
     Else
@@ -2472,10 +2465,7 @@ Sub ShowTableInfo
             DMD "black.jpg", "CREDITS " &credits, "INSERT COIN", 2000
         End If
         DMD "intro-coins.gif", "", "", 65000
-        pupevent 344
-        vpmTimer.addTimer 500, "PuPEvent 326 '"
     End If
-    pupevent 300
     DMD "black.jpg", "HIGHSCORES", "1> " & HighScoreName(0) & " " & FormatNumber(HighScore(0), 0, , , -1), 3000
     DMD "black.jpg", "HIGHSCORES", "2> " & HighScoreName(1) & " " & FormatNumber(HighScore(1), 0, , , -1), 3000
     DMD "black.jpg", "HIGHSCORES", "3> " & HighScoreName(2) & " " & FormatNumber(HighScore(2), 0, , , -1), 3000
@@ -2483,11 +2473,17 @@ Sub ShowTableInfo
 End Sub
 
 Sub StartAttractMode()
+    pupevent 300
     bAttractMode = True
     UltraDMDTimer.Enabled = 1
     StartLightSeq
     ShowTableInfo
     StartRainbow aLights
+      If bFreePlay Then
+        vpmTimer.addTimer 1500, "PuPEvent 327 '"
+    Else
+        vpmTimer.addTimer 1500, "PuPEvent 326 '"
+    End If
 End Sub
 
 Sub StopAttractMode()
@@ -2497,6 +2493,7 @@ Sub StopAttractMode()
     LightSeqFlasher.StopPlay
     StopRainbow
     ResetAllLightsColor
+    pupevent 300
 'StopSong
 End Sub
 
