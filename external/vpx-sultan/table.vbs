@@ -2170,3 +2170,13 @@ End Sub
 Sub Trigger001_Hit
     DOF 220, DOFPulse
 End sub
+
+Const GameOverLampID = 260 ' set this constant to the ID number of the game-over lamp
+
+Sub LampReset
+    If LampState(GameOverLampID)Then
+        Do
+            LampTimer_Timer          ' This loop is needed to avoid the NVram reset (losing the hi-score and credits)
+        Loop Until LampState(20) = 1 ' when the game is over but the match procedure isn't still ended
+    End If
+End Sub
