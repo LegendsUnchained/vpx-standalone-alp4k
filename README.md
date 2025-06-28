@@ -815,6 +815,7 @@ Links to these products on Amazon are through affiliate links.
 | [Strikes and Spares (Bally 1978)](external/vpx-strikes) | :white_check_mark: | :x: | :white_check_mark: | :x: | 42 |
 | [Student Prince (Williams 1968)](external/vpx-studentprince) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Summer Time (Williams 1972)](external/vpx-summertime) | :white_check_mark: | :x: | :x: | :x: | 60 |
+| [Sultan (Taito do Brasil 1979)](external/vpx-sultan) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Super Mario Galaxy. (original 2021)](external/vpx-mariogalaxy) | :white_check_mark: | :white_check_mark: | :x: | :x: | 58 
 | [Super Mario Bros. (Gottlieb 1992)](external/vpx-supermario) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 38 |
 | [Super Mario Bros. Mushroom World (Premier 1992)](external/vpx-smbmushroom) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
