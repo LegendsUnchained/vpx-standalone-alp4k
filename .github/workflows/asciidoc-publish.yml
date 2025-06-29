@@ -4,8 +4,6 @@ on:
   push:
     # before merge change branches to main
     branches: [dac_asciidoc_pages]
-  pull_request:
-    branches: [main]
 
 jobs:
   build:
