@@ -1,0 +1,23 @@
+name: Github Pages Publish
+
+on:
+  push:
+    # before merge change branches to main
+    branches: [dac_asciidoc_pages]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: asciidoctor-ghpages
+        continue-on-error: true
+        uses: manoelcampos/asciidoctor-ghpages-action@v2.3.0
+        with:
+          pdf_build: false
+          adoc_file_ext: .adoc
+          source_dir: doc/
+          slides_build: false
+          ebook_main_adoc_file: Home

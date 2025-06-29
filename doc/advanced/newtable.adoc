@@ -1,0 +1,150 @@
+include::../attributes.adoc[]
+
+= Add a New Table to the Repo
+:toc: left
+:icons: font
+:show-youtube-video:
+
+== Video Guides
+
+=== Adding a table to the repository - Start to Finish
+
+ifdef::show-youtube-video[]
+++++
+<style>
+.youtube-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+.youtube-container iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>
+<div class="youtube-container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ngTW_oqcLY0"
+    title="YouTube video player" frameborder="0"
+    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+</div>
+++++
+endif::show-youtube-video[]
+
+https://www.youtube.com/watch?v=ngTW_oqcLY0[YouTube Tutorial (Ominous Osie)]
+
+This tutorial is for slightly more advanced users of the VPXs 4KP beta.
+Once you’ve added a new table to your USB and tested it, this will help
+you in adding that table to the main repository!
+
+Git downloads: https://git-scm.com/downloads/win[Windows] |
+https://git-scm.com/downloads/mac[Mac]
+
+Git Desktop downloads: https://desktop.github.com/download/[Windows] |
+https://desktop.github.com/download/[Mac (link at the bottom right)]
+
+VPXs Git Repo:
+https://github.com/LegendsUnchained/vpx-standalone-alp4k[Repo]
+
+Spreadsheet:
+https://docs.google.com/spreadsheets/d/1YBW6Nih8Bsv3ItOTvjND4qxfh6YR3Wzx6FlUenbT660/edit?usp=sharing[Google
+Docs]
+
+=== How to Branch - Make Multiple PRs At Once
+ifdef::show-youtube-video[]
+++++
+<style>
+.youtube-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+.youtube-container iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>
+<div class="youtube-container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/jSyuO22nOUE"
+    title="YouTube video player" frameborder="0"
+    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+</div>
+++++
+endif::show-youtube-video[]
+
+https://www.youtube.com/watch?v=jSyuO22nOUE[YouTube Tutorial (Ominous Osie)]
+
+This tutorial is for slightly more advanced users of the VPXS 4KP beta,
+this one goes through branching - so that you can add multiple tables at
+once!
+
+== Text Guides
+
+=== Finding a table image wheel
+
+There is a massive list of pre-made VPX table wheel images that can be
+found here:
+
+- https://mega.nz/folder/K0x3iBYL#lWAAxZfJ0aA_8PLbIcVIkQ[Bla1ze - Pre-made
+GL Wheel images (MEGA)]
+- https://drive.google.com/drive/u/0/folders/1C4mptmF94NKMvGRwY6Ev48nQWZPV1Sn3[pointdablame - Pre-made GL Wheel images (Google Drive)]
+
+=== How to add a table preview to your readme
+
+To add the image, first go to the VPX table download page, and download
+the preview image from there.
+
+Next, copy that into the `+/images+` folder in the root of your local
+fork of the repo, and give it an appropriate name like
+`+vpx-[table]-preview.png+` etc
+
+Lastly, go into the README.md file in the vpx-table folder for this
+table and update the preview image link:
+
+`+![Table Preview](../../images/vpx-[table]-preview.png)+`
+
+=== File naming for the repo
+
+The repo has specific naming requirements in order to work with the
+Legends Unchained Table Manager.
+
+Please ensure your files are named:
+
+[width="100%",cols="^33%,^29%,^38%",options="header",]
+|===
+|File Name |Required |Description
+|launcher.png | ✅ |The image used by the AtGames
+Launcher UI
+
+|table.yml | ✅ |Wizard config YAML
+
+|backglass.png | ❌ |Backglass image to use during loading
+
+|dmd.png | ❌ |DMD image to use during loading and as a static image for
+tables without a DMD
+
+|launcher.cfg | ❌ |Any launcher configs like button labels
+
+|nvram.nv | ❌ |NVRAM file needed for the table to initialize (should
+not have high-scores from play)
+
+|playfield.png | ❌ |Playfield image to use during loading
+
+|table.ini | ❌ |VPX settings to overried to use the table
+
+|table.vbs | ❌ |VBS file to use instead of the one built-in to the VPX
+
+|VPReg.ini | ❌ |Registry emulation file. If high scores are in the
+file, ensure the following initials are used JSM, CTH, NIX, VPX
+|===
