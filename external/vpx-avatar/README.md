@@ -54,9 +54,24 @@ __*We hope you enjoy!!*__
 - mrandromeda      - SScorpio         - pointdablame
 </pre>
 
+<br>
+
+---
 
 <br>
-<br>
-<br>
-<br>
-<br>
+
+## ➕ Optional Extras
+
+> All optional extras can be added to the table after the Wizard installation via:
+> -  Clicking `"Go to table"` directly after wizard installation
+> -  Navigate to the table folder using the `USB Root` tab.
+
+###  Instructions (DMD loading screens) - Optional
+
+The instructions must be a PNG.  Instructions can be set to display to the DMD.  Avatar already has a backglass.png so the dmd is the only place free.  These instructions should be installed to the DMD.
+
+1. Download the instructions 'Avatar (Stern 2010) Media Pack' from [VP Universe](https://vpuniverse.com/files/file/4896-avatar-stern-2010-media-pack/?do=download) (by [CarneyPriest](https://vpuniverse.com/profile/1146-carnypriest/))
+2. Extract the `James Cameron's Avatar (Stern 2010).png` file from the `Instruction Cards` directory in the `James Cameron's Avatar (Stern 2010) HPMP.zip`.
+3. Copy the file to `dmd.png`.
+4. Place the file(s) in the `external/vpx-avatar` directory.
+5. Launch the table and the instructions will load onto either the DMD or the backglass while the table is launched.
