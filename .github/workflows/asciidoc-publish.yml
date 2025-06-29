@@ -22,5 +22,4 @@ jobs:
           adoc_file_ext: .adoc
           source_dir: doc/
           slides_build: false
-
-
+          ebook_main_adoc_file: Home
