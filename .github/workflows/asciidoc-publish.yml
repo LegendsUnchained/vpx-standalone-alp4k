@@ -20,7 +20,7 @@ jobs:
         with:
           pdf_build: false
           adoc_file_ext: .adoc
-          source_dir: docs/
+          source_dir: doc/
           slides_build: false
 
 
