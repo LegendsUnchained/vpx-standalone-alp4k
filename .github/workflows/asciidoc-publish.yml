@@ -14,8 +14,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
       - name: asciidoctor-ghpages
+        continue-on-error: true
         uses: manoelcampos/asciidoctor-ghpages-action@v2.3.0
         with:
           pdf_build: false
