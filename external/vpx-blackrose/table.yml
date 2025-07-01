@@ -1,0 +1,17 @@
+---
+applyFixes:
+  - "bass"
+backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/0Htk9ITwd6_1722849149532.webp"
+fps: 50
+romChecksum: "E21364CA118FFBF3D2AA9F46FBE05B6B"
+romNotes: "Download br_l4.zip"
+romVPSId: "JIPLPq0j"
+tableVPSId: "qQNywC8u"
+tagline: "Give 'em a taste of iron, boys"
+testers:
+  - "Bla1ze"
+  - "OminousOsie"
+  - "pointdablame"
+vpxChecksum: "BC5EFFB90F8D1AD5A54464A544F6E6D4"
+vpxNotes: "Download version 1.4"
+vpxVPSId: "zUJ07JKe"
