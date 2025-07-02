@@ -1,0 +1,16 @@
+---
+applyFixes:
+  - "bass"
+fps: 52
+pupArchiveFormat: "rar"
+pupArchiveRoot: "HAL9000"
+pupChecksum: "37AF67AD2D0D62966CE55B227B6D1875"
+pupRequired: true
+pupVPSId: "ifIOeaxK0W"
+tableNotes: "Download 2001_SpaceOdyssey_Pup Table file.zip"
+tableVPSId: "0IDqTPkR_4"
+tagline: "'I'm afraid I can't do that, Dave...'"
+testers:
+  - "The entire 4kp team"
+vpxChecksum: "302387655C7E87D2E5D5400B0E152C1A"
+vpxVPSId: "iGEvF6towb"
