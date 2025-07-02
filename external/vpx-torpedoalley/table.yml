@@ -3,7 +3,6 @@ applyFixes:
 backglassChecksum: "1C15273B11AC9D9D6F05AA9F31251B2E"
 backglassNotes: "Download version v3.0"
 backglassVPSId: "ftuKlhtBM_"
-enabled: false
 fps: 60
 romChecksum: "72D73FD984C96EE4ED3F9AC9B81BA477"
 romNotes: "Download torp_e21.zip"
@@ -14,5 +13,6 @@ tagline: "Dive! Dive! Dive! Dive! Aye Aye"
 testers:
   - "Bla1ze"
   - "kaoticBPR"
+  - "CoffeeAtJoes"
 vpxChecksum: "8C1EE4768000B632C2ACCF087E08C15D"
 vpxVPSId: "GgJ00Ad0"

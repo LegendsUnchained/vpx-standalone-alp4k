@@ -89,6 +89,7 @@ Links to these products on Amazon are through affiliate links.
 | [Central Park (Gottlieb 1966)](external/vpx-centralpark) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Champion Pub, The (Williams 1998)](external/vpx-champpub) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 45 |
 | [Class of 1812 (Gottlieb 1991)](external/vpx-1812) | :white_check_mark: | :x: | :white_check_mark: | :x: | 51 |
+| [Cleopatra (Gottlieb 1977)](external/vpx-cleopatra) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Congo (Williams 1995)](external/vpx-congo) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Cosmic (Taito do Brasil 1980)](external/vpx-cosmic) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Count-Down (Gottlieb 1979)](external/vpx-countdownjp) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
@@ -106,6 +107,7 @@ Links to these products on Amazon are through affiliate links.
 | [Dolly Parton (Bally 1979)](external/vpx-dolly) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Doom Eternal (Original 2022)](external/vpx-doometernal) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Dragon Ball Super Saiyan Edition (Original 2025)](external/vpx-dbsse) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
+| [Dragon Ball Z Budokai (Original 2023)](external/vpx-dbzbudokai) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Drakor (Taito do Brasil 1979)](external/vpx-drakor) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [DUNE (Original 2024)](external/vpx-dune) | :white_check_mark: | :white_check_mark: | :x: | :x: | 50 |
 | [Earthshaker (Williams 1989)](external/vpx-earthshaker) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
@@ -198,6 +200,7 @@ Links to these products on Amazon are through affiliate links.
 | [Taxi (Williams 1988)](external/vpx-taxi) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Terminator 2 - JP's (Original 2020)](external/vpx-t2jp) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Terminator 2 - Judgment Day (Williams 1991)](external/vpx-t2) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 42 |
+| [Torpedo Alley (Data East 1988)](external/vpx-torpedoalley) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Transformers (Pro) [Marcade Mod] (Original 2025)](external/vpx-transformersmod) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Twister (Sega 1996)](external/vpx-twister) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Victory (Gottlieb 1987)](external/vpx-victory) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 55 |
@@ -600,6 +603,7 @@ Links to these products on Amazon are through affiliate links.
 | [Lucky Seven (Williams 1978)](external/vpx-luckyseven) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Mac's Galaxy (MAC 1986)](external/vpx-macgalaxy) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Mac Jungle (MAC 1987)](external/vpx-macjungle) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
+| [Mach 2.0 Two (Spinball S.A.L. 1995)](external/vpx-machtwo) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Machine - Bride of Pin-bot, The (Williams 1991)](external/vpx-bop) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 43 |
 | [Mad Max - Fury Road (Original 2021)](external/vpx-madmax) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Mad Race - JP (Playmatic 1985)](external/vpx-jpmadrace) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |

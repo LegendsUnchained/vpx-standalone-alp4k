@@ -1,6 +1,7 @@
 ---
 applyFixes: 
   - "bass"
+enabled: false # Osie: Needs new TM version with better pup support
 fps: 60
 pupArchiveFormat: "zip"
 pupArchiveRoot: "puppack/futurama"
