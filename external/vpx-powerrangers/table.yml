@@ -1,9 +1,9 @@
 ---
 applyFixes:
   - "bass"
+backglassBundled: true
 backglassChecksum: "A64F71B8D34EFD8325C6D6087C83FAE4"
 backglassNotes: "Included with table download"
-backglassVPSId: "65Ezy3Lk9m"
 fps: 45
 tableNotes: "Download Version 1.2"
 tableVPSId: "9L3tkzCYrc"
