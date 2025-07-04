@@ -3,25 +3,6 @@
 '             Table Re-Theme of JP's DeadPool
 ' ****************************************************************
 
-'On the DOF website put Exxx
-'101 Left Flipper
-'102 Right Flipper
-'103 Left Slingshot
-'104 Right Slingshot
-'105
-'106
-'107 Center Bumper
-'108 Right Bumper
-'109 Left Bumper
-'110
-'111 Command Center
-'118
-'119 Reset Drop Targets
-'120 AutoFire
-'122 Knocker
-'123 Ball Release
-
-
 Option Explicit
 Randomize 
 
@@ -39,11 +20,11 @@ Const RampRollVolume = 0.5 			'Level of ramp rolling volume. Value between 0 and
 
 Const BallSize = 50
 Const BallMass = 1
-Const tnob = 7
-Const lob = 0
+Const tnob = 9
+Const lob = 3
 
-Const AmbientBallShadowOn = 1
-Const DynamicBallShadowsOn = 1
+Const AmbientBallShadowOn = 0
+Const DynamicBallShadowsOn = 0
 Const RubberizerEnabled = 1
 Const TargetBouncerEnabled = 0 		'0 = normal standup targets, 1 = bouncy targets
 Const TargetBouncerFactor = 0.7 	'Level of bounces. Recommmended value of 0.7
@@ -179,7 +160,7 @@ End Sub
 
 ' Define any Constants
 Const cGameName = "powerrangers"
-Const myVersion = "1.0.0"
+Const myVersion = "1.2.0"
 Const MaxPlayers = 4          ' from 1 to 4
 Const BallSaverTime = 20      ' in seconds of the first ball
 Const MaxMultiplier = 5       ' limit playfield multiplier
@@ -279,7 +260,7 @@ LoadLUT
     DMD_Init
 
     ' freeplay or coins
-    bFreePlay = False 'we want coins
+    bFreePlay = True 'we want coins
 
     if bFreePlay Then DOF 125, DOFOn
 
@@ -306,6 +287,7 @@ LoadLUT
     bInstantInfo = False
     ' set any lights for the attract mode
     GiOff
+	Gi008.State = 0
     StartAttractMode
 
     ' Start the RealTime timer
@@ -415,6 +397,7 @@ PlaySound ("Coin_In_1"), 0, CoinSoundLevel, 0, 0.25
         If keycode = LeftTiltKey Then CheckTilt 'only check the tilt during game
         If keycode = RightTiltKey Then CheckTilt
         If keycode = CenterTiltKey Then CheckTilt
+		If keycode = MechanicalTilt Then CheckTilt
 
         If keycode = LeftFlipperKey Then SolLFlipper 1 : FlipperActivate LeftFlipper, RFPress:InstantInfoTimer.Enabled = True:RotateLaneLights 1:UpdateGates 1
         If keycode = RightFlipperKey Then SolRFlipper 1 :FlipperActivate RightFlipper, RFPress:InstantInfoTimer.Enabled = True:RotateLaneLights 0
@@ -1152,6 +1135,7 @@ Sub DisableTable(Enabled)
     If Enabled Then
         'turn off GI and turn off all the lights
         GiOff
+		Gi008.State = 0
         LightSeqTilt.Play SeqAllOff
         'Disable slings, bumpers etc
         LeftFlipper.RotateToStart
@@ -1166,6 +1150,7 @@ Sub DisableTable(Enabled)
     Else
         'turn back on GI and the lights
         GiOn
+		Gi008.State = 1
         LightSeqTilt.StopPlay
         Bumper1.Threshold = 1
         Bumper2.Threshold = 1
@@ -1292,6 +1277,7 @@ Sub GIUpdateTimer_Timer
         OldGiState = Ubound(tmp)
         If UBound(tmp) = 2 Then '-1 means no balls, 0 is the first captive ball, 1 is the second captive ball...)
             GiOff                ' turn off the gi if no active balls on the table, we could also have used the variable ballsonplayfield.
+			Gi008.State = 0
         Else
             Gion
         End If
@@ -1472,6 +1458,7 @@ Sub ResetForNewGame()
     'resets the score display, and turn off attract mode
     StopAttractMode
     GiOn
+	Gi008.State = 1
 
     TotalGamesPlayed = TotalGamesPlayed + 1
     CurrentPlayer = 1
@@ -1768,6 +1755,7 @@ Sub EndOfGame()
 
     ' set any lights for the attract mode
     GiOff
+	Gi008.State = 0
     StartAttractMode
 ' you may wish to light any Game Over Light you may have
 End Sub
@@ -3771,9 +3759,15 @@ Sub UpdateLights
     If MorphCount> 0 then
         MorphLight.State = 2
 		FlasherCoin.visible = 1
+        If MorphCount <= 3 then 
+	    DOF 200, DOFOn: DOF 201, DOFOff 'White Fire button
+	Else 
+	    DOF 200, DOFOff: DOF 201, DOFOn 'Red Fire button
+	End If
     Else
         MorphLight.State = 0
 		FlasherCoin.visible = 0
+	DOF 200, 0: DOF 201, 0	'Fire button off
     End If
     If bMorphinGridMBSJackpot Then
         SetLightColor li058, teal, 2
@@ -4239,8 +4233,10 @@ Sub CheckMORPH
         For i = 1 to 4:DINO(CurrentPlayer, i) = 0:Next
         If MorphCount> 3 Then
             SetLightColor MorphLight, red, 2
+	    DOF 200, DOFOff: DOF 201, DOFOn
         Else
             SetLightColor MorphLight, white, 2
+	    DOF 200, DOFOn: DOF 201, DOFOff
         End If
     End If
 End Sub
@@ -4644,7 +4640,7 @@ Sub Target001_Hit 'lower A
             Mega(CurrentPlayer, 1) = 1
             CheckMega
         Case 1 'Putty Patrol
-            If LifeLeft(CurrentPlayer, 1)> 6 Then
+            If LifeLeft(CurrentPlayer, 1)> 0 Then
                 Addscore PinkValue
                 PlaySound "sfx_putty_shatter"
                 CheckBattle
@@ -4664,7 +4660,7 @@ Sub Target002_Hit 'G
             Mega(CurrentPlayer, 2) = 1
             CheckMega
         Case 1 'Putty Patrol
-            If LifeLeft(CurrentPlayer, 1)> 6 Then
+            If LifeLeft(CurrentPlayer, 1)> 0 Then
                 Addscore PinkValue
                 PlaySound "sfx_putty_shatter"
                 CheckBattle
@@ -4684,7 +4680,7 @@ Sub Target003_Hit 'E
             Mega(CurrentPlayer, 3) = 1
             CheckMega
         Case 1 'Putty Patrol
-            If LifeLeft(CurrentPlayer, 1)> 6 Then
+            If LifeLeft(CurrentPlayer, 1)> 0 Then
                 Addscore PinkValue
                 PlaySound "sfx_putty_shatter"
                 CheckBattle
@@ -4704,7 +4700,7 @@ Sub Target004_Hit 'M
             Mega(CurrentPlayer, 4) = 1
             CheckMega
         Case 1 'Putty Patrol
-            If LifeLeft(CurrentPlayer, 1)> 6 Then
+            If LifeLeft(CurrentPlayer, 1)> 0 Then
                 Addscore PinkValue
                 PlaySound "sfx_putty_shatter"
                 CheckBattle
@@ -4724,6 +4720,8 @@ Sub CheckMega
         Flashforms flasher012, 800, 50, 1
         DOF 128, DOFPulse
         Addscore 250000
+		li061.State = 0
+		li068.State = 0
         li056.State = 2
         li070.BlinkInterval = 300:li070.State = 2
         bBattleready = True
@@ -4749,7 +4747,7 @@ Sub Target005_Hit 'D
             Zord(CurrentPlayer, 1) = 1
             CheckZord
         Case 1 'Putty Patrol
-            If LifeLeft(CurrentPlayer, 1)> 6 Then
+            If LifeLeft(CurrentPlayer, 1)> 0 Then
                 Addscore PinkValue
 				PlaySound "sfx_putty_shatter"
                 CheckBattle
@@ -4769,7 +4767,7 @@ Sub Target006_Hit 'R
             Zord(CurrentPlayer, 2) = 1
             CheckZord
         Case 1 'Putty Patrol
-            If LifeLeft(CurrentPlayer, 1)> 6 Then
+            If LifeLeft(CurrentPlayer, 1)> 0 Then
                 Addscore PinkValue
 				PlaySound "sfx_putty_shatter"
                 CheckBattle
@@ -4789,7 +4787,7 @@ Sub Target007_Hit 'O
             Zord(CurrentPlayer, 3) = 1
             CheckZord
         Case 1 'Putty Patrol
-            If LifeLeft(CurrentPlayer, 1)> 6 Then
+            If LifeLeft(CurrentPlayer, 1)> 0 Then
                 Addscore PinkValue
 				PlaySound "sfx_putty_shatter"
                 CheckBattle
@@ -4809,7 +4807,7 @@ Sub Target008_Hit 'Z
             Zord(CurrentPlayer, 4) = 1
             CheckZord
         Case 1 'Putty Patrol
-            If LifeLeft(CurrentPlayer, 1)> 6 Then
+            If LifeLeft(CurrentPlayer, 1)> 0 Then
                 Addscore PinkValue
 				PlaySound "sfx_putty_shatter"
                 CheckBattle
@@ -5184,7 +5182,7 @@ Sub CommandCenter_Hit
     Flashforms flasher012, 800, 50, 0
     DOF 128, DOFPulse
     ' check modes
-    If bChooseBattle Then Exit Sub 'do nothing if you already are selecing a battle, due to multiball
+    If bChooseBattle Then Exit Sub 'do nothing if you already are selecting a battle, due to multiball
     If bMegaZordMBSJackpot Then
         SuperJackpot(CurrentPlayer) = MegaZordMBJackpot(CurrentPlayer) * 6
         AwardSuperJackpot
@@ -5204,6 +5202,8 @@ Sub CommandCenter_Hit
     If bEndBattleJackpot Then
         bEndBattleJackpot = False
         Jackpot(CurrentPlayer) = 3000000:AwardJackpot
+        li068.State = 0
+        li061.State = 0
     End If
     If li041.State Then 'Blaster jackpot
         li041.State = 0
@@ -5304,7 +5304,7 @@ Sub StopRitaMB 'stop the Rita Multiball
 End Sub
 
 '**************
-'   SWORD
+'   Power Sword
 '***************
 
 Sub SwordEffect(n)
@@ -5392,14 +5392,16 @@ End Sub
 ' values 0: not started, 1 finished, 2 ready to start
 ' 7 Battles
 ' 5 Battles to choose
-' complete 3 to battle Zedd
-' complete 5 to battle Ooze
+' complete 5 to battle Zedd
+' complete 6 to battle Ooze
 
 Sub StartChooseBattle
     If NOT bChooseBattle Then
         DMD " CHOOSE YOUR BATTLE", "", "", eNone, eNone, eNone, 2000, True, "vo_chooseyourbattle"
         bChooseBattle = True
-        If BattlesWon(CurrentPlayer)> 2 Then BattlesToChoose = 6
+        If BattlesWon(CurrentPlayer)> 2 Then BattlesToChoose = 4
+        If BattlesWon(CurrentPlayer)> 3 Then BattlesToChoose = 5
+        If BattlesWon(CurrentPlayer)> 4 Then BattlesToChoose = 6
         If BattlesWon(CurrentPlayer)> 5 Then BattlesToChoose = 7
         vpmtimer.addtimer 2000, "UpdateDMDBattle '"
     End If
@@ -5427,12 +5429,61 @@ Sub UpdateDMDBattle
     tmp = ShowLife(LifeLeft(CurrentPlayer, Battlenr))
     Select Case Battlenr
         Case 1:DMDFlush:DMD "PUTTY PATROL", tmp, "d_putty", eNone, eNone, eNone, 10000, True, "vo_puttypatrol"
+		Gi009.State = 1 'Putty
+		Gi042.State = 0 'Scorpina
+		Gi073.State = 0 'Goldar
+		Gi074.State = 0 'Green Ranger
+		Gi078.State = 0 'Rita
+		Gi079.State = 0 'Zedd
+		Gi080.State = 0 'Ooze
         case 2:DMDFlush:DMD "SCORPINA", tmp, "d_scorpina", eNone, eNone, eNone, 10000, True, "vo_scorpina"
+		Gi009.State = 0 'Putty
+		Gi042.State = 1 'Scorpina
+		Gi073.State = 0 'Goldar
+		Gi074.State = 0 'Green Ranger
+		Gi078.State = 0 'Rita
+		Gi079.State = 0 'Zedd
+		Gi080.State = 0 'Ooze
         Case 3:DMDFlush:DMD "GOLDAR", tmp, "d_goldar", eNone, eNone, eNone, 10000, True, "vo_goldar"
+		Gi009.State = 0 'Putty
+		Gi042.State = 0 'Scorpina
+		Gi073.State = 1 'Goldar
+		Gi074.State = 0 'Green Ranger
+		Gi078.State = 0 'Rita
+		Gi079.State = 0 'Zedd
+		Gi080.State = 0 'Ooze
         Case 4:DMDFlush:DMD "GREEN RANGER", tmp, "d_greenranger", eNone, eNone, eNone, 10000, True, "vo_greenranger"
+		Gi009.State = 0 'Putty
+		Gi042.State = 0 'Scorpina
+		Gi073.State = 0 'Goldar
+		Gi074.State = 1 'Green Ranger
+		Gi078.State = 0 'Rita
+		Gi079.State = 0 'Zedd
+		Gi080.State = 0 'Ooze
         Case 5:DMDFlush:DMD "RITA REPULSA", tmp, "d_rita", eNone, eNone, eNone, 10000, True, "vo_rita"
+		Gi009.State = 0 'Putty
+		Gi042.State = 0 'Scorpina
+		Gi073.State = 0 'Goldar
+		Gi074.State = 0 'Green Ranger
+		Gi078.State = 1 'Rita
+		Gi079.State = 0 'Zedd
+		Gi080.State = 0 'Ooze
         Case 6:DMDFlush:DMD "LORD ZEDD", tmp, "d_zedd", eNone, eNone, eNone, 10000, True, "vo_zedd"
+		Gi009.State = 0 'Putty
+		Gi042.State = 0 'Scorpina
+		Gi073.State = 0 'Goldar
+		Gi074.State = 0 'Green Ranger
+		Gi078.State = 0 'Rita
+		Gi079.State = 1 'Zedd
+		Gi080.State = 0 'Ooze
         Case 7:DMDFlush:DMD "IVAN OOZE", tmp, "d_ooze", eNone, eNone, eNone, 10000, True, "vo_ooze"
+		Gi009.State = 0 'Putty
+		Gi042.State = 0 'Scorpina
+		Gi073.State = 0 'Goldar
+		Gi074.State = 0 'Green Ranger
+		Gi078.State = 0 'Rita
+		Gi079.State = 0 'Zedd
+		Gi080.State = 1 'Ooze
     End Select
 End Sub
 
@@ -5450,24 +5501,28 @@ Sub StartBattle(n)
     ChangeSong
     Select Case Battle(CurrentPlayer, 0)
         Case 1 'Putty Patrol
-            DMD "SHOOT MZ TARGETS TO", "ATTACK PUTTY PATROL", "d_putty", eNone, eNone, eNone, 3000, True, "vo_shoot-putty"
-            If LifeLeft(CurrentPlayer, 1)> 6 Then
-                LightSeqDPtargets.Play SeqRandom, 40, , 4000
-            Else
-                BattleLights(2) = 2:BattleLights(5) = 2
-            End If
+            DMD "    SHOOT MZ TARGETS", "", "d_putty", eNone, eNone, eNone, 3000, True, "vo_shoot-putty"
+                LightSeqMZtargets.Play SeqDownOn, 50, 2
+				Gi008.State = 0
+				Gi009.State = 1
             OpenGates
         Case 2 'Scorpina
-            DMD "SHOOT YELLOW SHOTS", "TO ATTACK SCORPINA", "d_scorpina", eNone, eNone, eNone, 3000, True, "vo_shoot-scorpina"
+            DMD "  SHOOT YELLOW SHOTS", "", "d_scorpina", eNone, eNone, eNone, 3000, True, "vo_shoot-scorpina"
+				Gi008.State = 0
+				Gi042.State = 1
             BattleLights(4) = 2
             OpenGates
         Case 3 'Goldar
-            DMD "SHOOT POP BUMPERS", "TO ATTACK GOLDAR", "d_goldar", eNone, eNone, eNone, 3000, True, "vo_shoot-goldar"
+            DMD "   SHOOT POP BUMPERS", "", "d_goldar", eNone, eNone, eNone, 3000, True, "vo_shoot-goldar"
             BattleLights(1) = 2:BattleLights(6) = 2
-            li001.State = 2
+			Gi075.State = 2
+			Gi076.State = 2
+			Gi077.State = 2
+			Gi008.State = 0
+			Gi073.State = 1
             CloseGates
         Case 4 'Green Ranger
-            DMD "SHOOT GREEN SHOTS TO", "ATTACK GREEN RANGER", "d_greenranger", eNone, eNone, eNone, 3000, True, "vo_shoot-greenranger"
+            DMD "   SHOOT GREEN SHOTS", "", "d_greenranger", eNone, eNone, eNone, 3000, True, "vo_shoot-greenranger"
             Select case RndNbr(6)
                 Case 1:BattleLights(1) = 2:BattleLights(2) = 2
                 Case 2:BattleLights(2) = 2:BattleLights(4) = 2
@@ -5476,11 +5531,13 @@ Sub StartBattle(n)
                 Case 5:BattleLights(6) = 2:BattleLights(3) = 2
                 Case 6:BattleLights(3) = 2:BattleLights(1) = 2
             End Select
+			Gi008.State = 0
+			Gi074.State = 1
             OpenGates
         Case 5 'Rita
-            DMD "SHOOT BLUE SHOTS", "TO ATTACK RITA", "d_rita", eNone, eNone, eNone, 3000, True, "vo_shoot-rita"
+            DMD "    SHOOT BLUE SHOTS", "", "d_rita", eNone, eNone, eNone, 3000, True, "vo_shoot-rita"
             For each x in aArrows
-                SetLightColor x, blue, 1
+                SetLightColor x, darkblue, 1
             Next
             BattleLights(1) = 1
             BattleLights(2) = 1
@@ -5496,21 +5553,27 @@ Sub StartBattle(n)
                 Case 5:BattleLights(5) = 2
                 Case 6:BattleLights(6) = 2
             End Select
+			Gi008.State = 0
+			Gi078.State = 1
             OpenGates
         Case 6 'Zedd
-            DMD "SHOOT RED SHOTS", "TO ATTACK LORD ZEDD", "d_zedd", eNone, eNone, eNone, 3000, True, "vo_shoot-zedd"
+            DMD "     SHOOT RED SHOTS", "", "d_zedd", eNone, eNone, eNone, 3000, True, "vo_shoot-zedd"
             AddMultiball 2
             BattleLights(2) = 2
             BattleLights(5) = 2
+			Gi008.State = 0
+			Gi079.State = 1
             OpenGates
         Case 7 'Ooze
-            DMD "SHOOT FLASHING SHOTS", "TO ATTACK IVAN OOZE", "d_ooze", eNone, eNone, eNone, 3000, True, "vo_shoot-ooze"
+            DMD "SHOOT FLASHING SHOTS", "", "d_ooze", eNone, eNone, eNone, 3000, True, "vo_shoot-ooze"
             Select case RndNbr(4)
                 Case 1:BattleLights(1) = 2
                 Case 2:BattleLights(4) = 2
                 Case 3:BattleLights(6) = 2
                 Case 4:BattleLights(3) = 2
             End Select
+			Gi008.State = 0
+			Gi080.State = 1
             AddMultiball 1
             OpenGates
             OozeTimer.Interval = 120 + YellowValue
@@ -5520,34 +5583,26 @@ Sub StartBattle(n)
     vpmtimer.addtimer 3000, "KickBallOut '"
 End Sub
 
-Sub LightSeqDPtargets_PlayDone()
-    LightSeqDPtargets.Play SeqRandom, 40, , 4000
+Sub LightSeqMZtargets_PlayDone()
+    LightSeqMZtargets.Play SeqDownOn, 50, 2
 End Sub
 
 Sub CheckBattle                                     'called after each target or lane hit to change lights and check for the end of the battle
-DMD "", "", "d_bam", eNone, eNone, eBlink, 1000, True, "sfx19"
+DMD "", "", "d_bam", eNone, eNone, eBlink, 500, True, "sfx19"
     Select Case Battle(CurrentPlayer, 0)
         Case 1                                      'Putty Patrol
             LifeLeft(CurrentPlayer, 1) = LifeLeft(CurrentPlayer, 1)- AttackPower * BlackValue
             If LifeLeft(CurrentPlayer, 1) <= 0 Then 'life is empty, then enable the kicker to finish the battle
                 TurnOffArrows
-                SetLightColor li056, red, 2
+                LightSeqMZtargets.StopPlay
+                SetLightColor li068, red, 2
                 WinBattle
-            ElseIF LifeLeft(CurrentPlayer, 1) <7 Then 'end the target hits and start the lane hits
-                LightSeqDPtargets.StopPlay
-                If BattleLights(3) = 2 Then
-                    TurnOffArrows
-                    BattleLights(2) = 2:BattleLights(5) = 2
-                Else
-                    TurnOffArrows
-                    BattleLights(1) = 2:BattleLights(4) = 2:BattleLights(6) = 2
-                End If
             End If
         Case 2                                      'Scorpina
             LifeLeft(CurrentPlayer, 2) = LifeLeft(CurrentPlayer, 2)- AttackPower * BlackValue
             If LifeLeft(CurrentPlayer, 2) <= 0 Then 'life is empty, then enable the kicker to finish the battle
                 TurnOffArrows
-                SetLightColor li056, red, 2
+                SetLightColor li068, red, 2
                 WinBattle
             ElseIF LifeLeft(CurrentPlayer, 2) <8 Then
                 BattleLights(2) = 2:BattleLights(4) = 2:BattleLights(5) = 2
@@ -5558,14 +5613,14 @@ DMD "", "", "d_bam", eNone, eNone, eBlink, 1000, True, "sfx19"
             LifeLeft(CurrentPlayer, 3) = LifeLeft(CurrentPlayer, 3)-(AttackPower / 4) * BlackValue
             If LifeLeft(CurrentPlayer, 3) <= 0 Then 'life is empty, then enable the kicker to finish the battle
                 TurnOffArrows
-                SetLightColor li056, red, 2
+                SetLightColor li068, red, 2
                 WinBattle
             End If
         Case 4                                      'Green Ranger
             LifeLeft(CurrentPlayer, 4) = LifeLeft(CurrentPlayer, 4)- AttackPower * BlackValue
             If LifeLeft(CurrentPlayer, 4) <= 0 Then 'life is empty, then enable the kicker to finish the battle
                 TurnOffArrows
-                SetLightColor li056, red, 2
+                SetLightColor li068, red, 2
                 WinBattle
             ElseIF LifeLeft(CurrentPlayer, 4) <10 Then 'change the green arrow
                 TurnOffArrows
@@ -5582,11 +5637,11 @@ DMD "", "", "d_bam", eNone, eNone, eBlink, 1000, True, "sfx19"
             LifeLeft(CurrentPlayer, 5) = LifeLeft(CurrentPlayer, 5)- AttackPower * BlackValue
             If LifeLeft(CurrentPlayer, 5) <= 0 Then 'life is empty, then enable the kicker to finish the battle
                 turnOffarrows
-                SetLightColor li056, red, 2
+                SetLightColor li068, red, 2
                 WinBattle
-            ElseIF LifeLeft(CurrentPlayer, 5) <10 Then 'change the red blinking arrow
+            ElseIF LifeLeft(CurrentPlayer, 5) <10 Then 'change the Blue blinking arrow
                 For each x in aArrows
-                    SetLightColor x, blue, 1
+                    SetLightColor x, darkblue, 1
                 Next
                 BattleLights(1) = 1
                 BattleLights(2) = 1
@@ -5607,20 +5662,18 @@ DMD "", "", "d_bam", eNone, eNone, eBlink, 1000, True, "sfx19"
             LifeLeft(CurrentPlayer, 6) = LifeLeft(CurrentPlayer, 6)- AttackPower * BlackValue
             If LifeLeft(CurrentPlayer, 6) <= 0 Then 'life is empty, then enabled the kicker to finish the battle
                 turnOffarrows
-                SetLightColor li056, red, 2
+                SetLightColor li068, red, 2
                 WinBattle
-            ElseIF LifeLeft(CurrentPlayer, 5) <3 Then 'enable superjackpot at the Blue Ranger target
-                li069.State = 2
-            ElseIF LifeLeft(CurrentPlayer, 5) <7 Then 'enable superjackpot at the Blue Ranger target
+            ElseIF LifeLeft(CurrentPlayer, 6) <3 Then 'enable superjackpot at the Blue Ranger target
                 li069.State = 2
             End If
         Case 7                                      'Ooze
             LifeLeft(CurrentPlayer, 7) = LifeLeft(CurrentPlayer, 7)- AttackPower * BlackValue
             If LifeLeft(CurrentPlayer, 7) <= 0 Then 'life is empty, then enabled the kicker to finish the battle
                 turnOffarrows
-                SetLightColor li056, red, 2
+                SetLightColor li068, red, 2
                 WinBattle
-            ElseIF LifeLeft(CurrentPlayer, 7) <10 Then 'change the darkblue blinking arrow
+            ElseIF LifeLeft(CurrentPlayer, 7) <10 Then 'change the purple blinking arrow
                 TurnOffArrows
                 Select case RndNbr(4)
                     Case 1:BattleLights(1) = 2
@@ -5632,32 +5685,45 @@ DMD "", "", "d_bam", eNone, eNone, eBlink, 1000, True, "sfx19"
     End Select
 End Sub
 
-Sub StopBattle 'stops the battle, mostly when you loose the ball, it can be continued
+Sub StopBattle 'stops the battle, mostly when you lose the ball, it can be continued
     bEndBattleJackpot = False
     TurnOffArrows
     li056.State = 0
     li070.State = 0
+    li061.State = 0
+    li068.State = 0
     DMDScoreNow
     Select Case Battle(CurrentPlayer, 0)
         Case 1 'Putty Patrol
-            LightSeqDPtargets.StopPlay
+            LightSeqMZtargets.StopPlay
+			Gi009.State = 0
             Battle(CurrentPlayer, 1) = 0
         Case 2 'Scorpina
+			Gi042.State = 0
             Battle(CurrentPlayer, 2) = 0
         Case 3 'Goldar
+			Gi073.State = 0
+			Gi075.State = 0
+			Gi076.State = 0
+			Gi077.State = 0			
             Battle(CurrentPlayer, 3) = 0
         Case 4 'Green Ranger
+			Gi074.State = 0
             Battle(CurrentPlayer, 4) = 0
         Case 5 'Rita
+			Gi078.State = 0
             Battle(CurrentPlayer, 5) = 0
         Case 6 'Zedd
+			Gi079.State = 0
             Battle(CurrentPlayer, 6) = 0
         Case 7 'Ooze
+			Gi080.State = 0
             Battle(CurrentPlayer, 7) = 0
             ResetForNewRound
             OozeTimer.Enabled = 0
     End Select
     ResetTeamUps
+	Gi008.State = 1
     Battle(CurrentPlayer, 0) = 0
     CloseGates
 End Sub
@@ -5668,37 +5734,50 @@ Sub WinBattle
     Select Case Battle(CurrentPlayer, 0)
         Case 1 'Putty Patrol
             Battle(CurrentPlayer, 1) = 1
-            DMD "    PUTTY PATROL", "          DEFEATED", "d_putty", eBlink, eNone, eNone, 2000, False, "vo_puttydefeated"
+            DMD "      PUTTY PATROL", "          DEFEATED", "d_putty", eNone, eNone, eNone, 2000, False, "vo_puttydefeated"
+			Gi009.State = 0
         Case 2 'Scorpina
             Battle(CurrentPlayer, 2) = 1
-            DMD "    SCORPINA", "          DEFEATED", "d_scorpina", eBlink, eNone, eNone, 2000, False, "vo_scorpinadefeated"
+            DMD "          SCORPINA", "          DEFEATED", "d_scorpina", eNone, eNone, eNone, 2000, False, "vo_scorpinadefeated"
+			Gi042.State = 0
         Case 3 'Goldar
             Battle(CurrentPlayer, 3) = 1
-            li001.State = 0
-            DMD "  GOLDAR", "          DEFEATED", "d_goldar", eBlink, eNone, eNone, 2000, False, "vo_goldardefeated"
+			Gi075.State = 0
+			Gi076.State = 0
+			Gi077.State = 0
+            DMD "            GOLDAR", "          DEFEATED", "d_goldar", eNone, eNone, eNone, 2000, False, "vo_goldardefeated"
+			Gi073.State = 0
         Case 4 'Green Ranger
             Battle(CurrentPlayer, 4) = 1
-            DMD "   GREEN RANGER", "          DEFEATED", "d_greenranger", eBlink, eNone, eNone, 2000, False, "vo_greenrangerdefeated"
+            DMD "      GREEN RANGER", "          DEFEATED", "d_greenranger", eNone, eNone, eNone, 2000, False, "vo_greenrangerdefeated"
+			Gi074.State = 0
         Case 5 'Rita
             Battle(CurrentPlayer, 5) = 1
-            DMD "  RITA REPULSA", "          DEFEATED", "d_rita", eBlink, eNone, eNone, 2000, False, "vo_ritadefeated"
+            DMD "      RITA REPULSA", "          DEFEATED", "d_rita", eNone, eNone, eNone, 2000, False, "vo_ritadefeated"
+			Gi078.State = 0
         Case 6 'Zedd
             Battle(CurrentPlayer, 6) = 1
-            DMD "    LORD ZEDD", "          DEFEATED", "d_zedd", eBlink, eNone, eNone, 2000, False, "vo_zedddefeated"
+            DMD "         LORD ZEDD", "          DEFEATED", "d_zedd", eNone, eNone, eNone, 2000, False, "vo_zedddefeated"
+			Gi079.State = 0
         Case 7 'Ooze
             Jackpot(CurrentPlayer) = 1000000 * BattlesWon(CurrentPlayer)
             Battle(CurrentPlayer, 7) = 1
-            DMD "   IVAN OOZE", "          DEFEATED", "d_ooze", eBlink, eNone, eNone, 2000, False, "vo_oozedefeated"
+            DMD "         IVAN OOZE", "          DEFEATED", "d_ooze", eNone, eNone, eNone, 2000, False, "vo_oozedefeated"
+			Gi080.State = 0
             OozeTimer.Enabled = 0
             ResetForNewRound
             'turn on the Special light
             li039.State = 2
     End Select
     ResetTeamUps
+	Gi008.State = 1
     Battle(CurrentPlayer, 0) = 0
     bEndBattleJackpot = True
-    DMD "SHOOT COMMAND CENTER", "FOR EXTRA JACKPOT", "", eBlink, eNone, eNone, 2500, True, "vo_shootcommand"
-    li070.BlinkInterval = 300:li070.State = 2
+    DMD "SHOOT COMMAND CENTER", "     FOR JACKPOT", "", eNone, eNone, eNone, 2500, True, "vo_shootcommand"
+        Flashforms flasher012, 800, 50, 1
+        DOF 128, DOFPulse
+        li068.State = 2
+        li061.BlinkInterval = 300:li061.State = 2
     CloseGates
     ChangeSong
 End Sub
@@ -5952,7 +6031,7 @@ Sub MorphinGridMBCheckHits
     End If
 End Sub
 
-Sub StopMorphinGridMB 'when loose last multiball
+Sub StopMorphinGridMB 'when lose last multiball
     bMorphinGridMB = False
     bMorphinGridMBSJackpot = False
     ChangeSong
