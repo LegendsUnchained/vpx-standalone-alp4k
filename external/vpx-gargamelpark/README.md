@@ -3,13 +3,13 @@
 ![Table Preview](../../images/vpx-gargamelpark.png)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 4.0.2  
+Version: 5.5  
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=11883)
 
 DirectB2S
 
-Authors: [haggi](https://www.vpforums.org/index.php?showuser=1220)  
-Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=16933)
+Authors: [hauntfreaks](https://www.vpforums.org/index.php?showuser=73849)  
+Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=11884)
 
 ROM
 
@@ -27,7 +27,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- Install this table through the Table Manager, using the `Add Table` > `Wizard` page
+- If you need help, more infomation found on the wiki: [Table Manager - Wizard](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B03%5D-%F0%9F%92%9A-Table-Manager-%E2%80%90-Wizard)
 - If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 
