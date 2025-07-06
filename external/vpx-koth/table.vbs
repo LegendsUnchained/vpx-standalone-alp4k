@@ -252,8 +252,8 @@ Dim BallRollVolume		  'Level of ball rolling volume. Value between 0 and 1
 Dim RampRollVolume		  'Level of ramp rolling volume. Value between 0 and 1
 
 '----- Shadow Options -----
-Const DynamicBallShadowsOn = 1	  '0 = no dynamic ball shadow ("triangles" near slings and such), 1 = enable dynamic ball shadow
-Const AmbientBallShadowOn = 1	   '0 = Static shadow under ball ("flasher" image, like JP's), 1 = Moving ball shadow ("primitive" object, like ninuzzu's) - This is the only one that behaves like a true shadow!, 2 = flasher image shadow, but it moves like ninuzzu's
+Const DynamicBallShadowsOn = 0	  '0 = no dynamic ball shadow ("triangles" near slings and such), 1 = enable dynamic ball shadow
+Const AmbientBallShadowOn = 0	   '0 = Static shadow under ball ("flasher" image, like JP's), 1 = Moving ball shadow ("primitive" object, like ninuzzu's) - This is the only one that behaves like a true shadow!, 2 = flasher image shadow, but it moves like ninuzzu's
 
 ' Do not change anything below this line unless you know what the fuck you are doing
 
@@ -1731,7 +1731,7 @@ Sub RollingUpdate()
 	' stop the sound of deleted balls
 	For b = UBound(BOT) + 1 To tnob - 1
 		' Comment the next line if you are not implementing Dyanmic Ball Shadows
-		If AmbientBallShadowOn = 0 Then BallShadowA(b).visible = 0
+'		If AmbientBallShadowOn = 0 Then BallShadowA(b).visible = 0
 		rolling(b) = False
 		StopSound("BallRoll_" & b)
 	Next
@@ -1769,16 +1769,16 @@ Sub RollingUpdate()
 		
 		' "Static" Ball Shadows
 		' Comment the next If block, if you are not implementing the Dynamic Ball Shadows
-		If AmbientBallShadowOn = 0 Then
-			If BOT(b).Z > 30 Then
-				BallShadowA(b).height = BOT(b).z - BallSize / 4		'This is technically 1/4 of the ball "above" the ramp, but it keeps it from clipping the ramp
-			Else
-				BallShadowA(b).height = 0.1
-			End If
-			BallShadowA(b).Y = BOT(b).Y + offsetY
-			BallShadowA(b).X = BOT(b).X + offsetX
-			BallShadowA(b).visible = 1
-		End If
+'		If AmbientBallShadowOn = 0 Then
+'			If BOT(b).Z > 30 Then
+'				BallShadowA(b).height = BOT(b).z - BallSize / 4		'This is technically 1/4 of the ball "above" the ramp, but it keeps it from clipping the ramp
+'			Else
+'				BallShadowA(b).height = 0.1
+'			End If
+'			BallShadowA(b).Y = BOT(b).Y + offsetY
+'			BallShadowA(b).X = BOT(b).X + offsetX
+'			BallShadowA(b).visible = 1
+'		End If
 	Next
 End Sub
 
@@ -9654,6 +9654,7 @@ End If
 
 	PuPlayer.LabelNew pDMD,"CurrScore",         dmddef,5,cWhite   ,0,1,1, 50,88.5,1,0
 	PuPlayer.LabelNew pDMD,"CurrName",	             dmddef,5,cWhite   ,0,0,0,50,79.5,1,0
+	PuPlayer.LabelNew pDMD,"Position1Name",	             dmddef,5,cBlack   ,0,0,0,0,89,1,0
 	PuPlayer.LabelNew pDMD,"Position1Score",	             dmddef,5,cBlack   ,0,0,1,33,79.5,1,0
 	PuPlayer.LabelNew pDMD,"Position2Name",	             dmddef,5,cBlack   ,0,0,0,20,89,1,0
 	PuPlayer.LabelNew pDMD,"Position2Score",	             dmddef,5,cBlack  ,0,0,1,20,94,1,0
