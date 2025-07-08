@@ -1,34 +1,63 @@
-# DUNE
+# DUNE (Original 2024)
 
 ![Table Preview](../../images/vpx-dune.png)
 
-Author: [ZandysArcade](https://vpuniverse.com/profile/57949-zandysarcade/) 
+<br>
 
-Tested by: Bla1ze 
+## *️⃣  Table Statistics
 
-Version: 1.40
-
-Download: [VP Universe](https://vpuniverse.com/files/file/19580-dune/)
-
-DirectB2S
-
-Included in table download
-
-ROM
-
-None needed
-
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-1983-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 
-## Instructions
+<br>
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-dune.elf
-- Download the table and directb2s versions listed above and copy them into this folder
-- Make sure the vpx, directb2s, and ini files are all named the "exact" same
-- You were not born to the spice as we were.
+**VPXS 4KP Testers:**
+  - Bla1ze
+  - pointdablame
+  - OminousOsie
+  - evilwraith
+  - Silentkat
+
+<br>
+
+---
+
+<br>
+
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`DUNE`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"You were not born to the spice as we were!"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+<br>
+<br>
+<br>
+<br>
+<br>

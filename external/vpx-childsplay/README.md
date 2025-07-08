@@ -33,7 +33,9 @@
         <strong>⚠️ WARNING ⚠️</strong>
       </div>
       <div style="padding: 12px 12px 12px 12px;">
-        Manually added puppacks are not supported by the VPXS 4KP team<br>We will not be able to help you diagnose issues until this puppack is in the Wizard
+        Manually added puppacks are not supported by the VPXS 4KP team<br>
+		We will not be able to help you diagnose issues until this puppack is in the Wizard<br>
+		You can however find a guide here on the wiki to help you install it yourself: <a href="https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B08%5D-%E2%9D%A4%EF%B8%8F-Pup-Pack-%E2%80%90-Manual-Install">❤️ Pup Pack ‐ Manual Install</a>
       </div>
     </td>
   </tr>
@@ -41,11 +43,11 @@
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-childsplay.elf`
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - Download the table with pup file `Child's Play.zip` version listed above.
 - Extract from the zip the table `Childs Play (Original 2018) Joe Picasso.vpx` and copy it into `vpx-childsplay`
-- Make sure `(.vpx)` `(.vbs)` and `(.ini)` are all named the same.
 - Create the folder `pupvideos`.
 - Extract from the zip the folder `PupPack/Fast_Draw_1975` and place this folder in `pupvideos`.
 - Unzip the `use_these_pup_files.zip` and place them inside the `pupvideos/Fast_Draw_1975` folder, and overwrite files if prompted.

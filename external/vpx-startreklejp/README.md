@@ -14,7 +14,7 @@ Download: [VP Universe](https://vpuniverse.com/files/file/12975-star-trek-enterp
 
 ROM
 
-Download: [Stern - st_162h](https://sternpinball.com/?post_type=game_code&s=trek)
+Download: [Stern - st_162h](https://sternpinball.com/?post_type=game_code&s=trek%20LE)
 
 ## Status 
 
@@ -26,9 +26,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-startreklejp.elf
-- Download the table and directb2s versions listed above, extract (if necessary) and copy to external/vpx-startreklejp
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-- Download st_162h rom above, then zip it and name the zip file st_162h.zip
-- Place ROM zip file into vpx-startreklejp/pinmame/roms folder. DO NOT UNZIP!
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
+- Download `Star Trek LE 1.62.0 Game Code`, then zip `STLE0162.bin` and name it `st_162h.zip`

@@ -31,10 +31,8 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-maverick.elf
-- Download the table and directb2s versions listed above, extract them (if necessary) and copy them into vpx-maverick
-- Rom file (mav_402.zip) stays in zip folder, place zip file in vpx-maverick/pinmame/roms
-- Make sure (.vpx), (.directb2s), and (.vbs) files are all named the same
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - Maverick: My old pappy always used to say, "there is no more deeply satisfying religious experience... than cheatin' on a cheater."
 

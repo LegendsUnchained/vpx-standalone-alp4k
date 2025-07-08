@@ -1,31 +1,61 @@
-# Asterix The Twelve Tasks (Original 2022)
+# Asterix the Twelve Tasks (Original 2022)
 
 ![Table Preview](../../images/vpx-asterix.png)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author |
-|:---------:|:----:|:-------:|:------:|
-| VPX | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=16674) | 4.0 | [Balanica](https://www.vpforums.org/index.php?showuser=154639) |
-| B2S | Included with VPX | N/A | N/A |
-| DMD | N/A | N/A | N/A |
-| ROM | N/A | N/A | N/A |
+## *️⃣  Table Statistics
 
-**Tested by:** [evilwraith]
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ❌ | ❌ | ❌ | 60 |
 
----
+<br>
 
-## Status 
-**Minimum VPX Standalone build:** 10.8.0-1989-a764013
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+**VPXS 4KP Testers:**
+  - evilwraith
+  - Ominous Osie 🌸
+
+<br>
 
 ---
 
-## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-asterix.elf
-- Download the table and directb2s listed above, extract (if necessary) and copy to external/vpx-asterix
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+<br>
+
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Asterix the Twelve Tasks (Original 2022)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"Astérix: You listen to me! We ran, we did the javelin, we did wrestling, we did the fountain of the priestesses, the mage from Egypt, the cook of the Titans, the crocodiles!"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

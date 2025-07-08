@@ -2,32 +2,61 @@
 
 ![Table Preview](../../images/vpx-cowboy8ball-preview.jpg)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author | 
-|-----------|--------|----------|--------------|
-| **VPX** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=15012) | 5.5.0 | [jpsalas](https://www.vpforums.org/index.php?showuser=277) |
-| **B2S** | `Cowboy Eight Ball.directb2s.zip` Included in VPX link |
-| **ROM** | `cowboy3p.zip` Included in VPX link |
+## *️⃣  Table Statistics
 
-**Tested by:** [Curt](https://github.com/Old-Cyrus)
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ✅ | ✅ | ❌ | 50 |
 
----
+<br>
 
-## Status 
-**Minimum VPX Standalone build:** 10.8.0-1989-a764013
+**VPXS 4KP Testers:**
+  - Curt
+  - Ominous Osie 🌸
+  - CoffeeAtJoes
 
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
+<br>
 
 ---
 
-## Instructions
+<br>
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-cowboy8ball.elf`
-- Download the table and directb2s versions listed above, extract, and copy them into `vpx-cowboy8ball`
-- Rom file `(cowboy3p.zip)` stays in zip folder, place zip file in `vpx-cowboy8ball/pinmame/roms`
-- Make sure `(.vpx)` `(.directb2s)` `(.vbs)` and `(.ini)` are all named the same.
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Cowboy Eight Ball (LTD do Brasil 1981)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"A Brazilian copy of Bally's 1981 'Eight Ball Deluxe'!"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

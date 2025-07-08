@@ -12,9 +12,9 @@ Download: [VP Universe](https://vpuniverse.com/files/file/21020-the-pabst-can-cr
 
 DirectB2S
 
-Author: [MachWon](https://vpuniverse.com/profile/70146-machwon/) 
+Author: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) 
 
-Download: [Mega](https://mega.nz/file/nhh3DIIa#FOATCPz5nYEcW3uQ-ptb2IPSVwbslvCBoQ7_Z-UX-Ks)
+Download: [vpuniverse](https://vpuniverse.com/files/file/23810-pabst-can-crusherstern-2016-b2s/)
 
 ## Status 
 
@@ -25,9 +25,9 @@ Minimum VPX Standalone build: 10.8.0-1983-a764013
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-pabstcancrusher.elf
-- Download the table and directb2s versions listed above and copy them into this folder
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - Rename the included "Music Folder" to Music and move the contents to vpx-pabstcancrusher
 - Craft beer? Not here! 🍻
 

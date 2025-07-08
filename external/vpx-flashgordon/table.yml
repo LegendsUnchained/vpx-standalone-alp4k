@@ -1,0 +1,21 @@
+---
+applyFixes: 
+  - "bass"
+backglassBundled: true
+backglassVPSId: "9FZTLkgG"
+backglassChecksum: "7D3C6471DA87C6427A76C65491E87BCF"
+backglassNotes: "Download 'Flash Gordon (Bally 1981) Blacksad B2S.zip'"
+enabled: false # Osie: Needs some optimising
+fps: 35
+romVPSId: "HFE2u_HS"
+romChecksum: "B61D06317759F9B04211E31A1499A850"
+romNotes: "Download flashgdn.zip"
+tableNotes: "Download version 2.0.2"
+tableVPSId: "18iwweY9"
+tagline: >-
+  "Klytus, I'm Boooored" --Emperor Ming
+testers:
+  - "TechZombie"
+  - "OminousOsie"
+vpxVPSId: "M1FFYDXz"
+vpxChecksum: "993ADACA537C20E788FE8D09E9B8EE3B"

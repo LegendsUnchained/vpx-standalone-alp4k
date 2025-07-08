@@ -343,7 +343,7 @@ Sub Table1_KeyDown(ByVal keycode)
 			StopSound "arcade"
 			BGSounds = 0
 		Else
-			PlaySound "arcade",-1
+			PlaySound "arcade", -1
 			BGSounds = 1
 		End If
 	End If
@@ -473,17 +473,17 @@ End Sub
 
 Sub SolLFlipper(Enabled)
      If Enabled Then
-         PlaySound SoundFX("fx_Flipperup",DOFContactors):LeftFlipper.RotateToEnd:LeftFlipper1.RotateToEnd
+         PlaySound SoundFX("fx_Flipperup",DOFContactors), 0, 1, -0.5, 0:LeftFlipper.RotateToEnd:LeftFlipper1.RotateToEnd
      Else
-         PlaySound SoundFX("fx_Flipperdown",DOFContactors):LeftFlipper.RotateToStart:LeftFlipper1.RotateToStart
+         PlaySound SoundFX("fx_Flipperdown",DOFContactors), 0, 1, -0.5, 0:LeftFlipper.RotateToStart:LeftFlipper1.RotateToStart
      End If
   End Sub
   
 Sub SolRFlipper(Enabled)
      If Enabled Then
-         PlaySound SoundFX("fx_Flipperup",DOFContactors):RightFlipper.RotateToEnd
+         PlaySound SoundFX("fx_Flipperup",DOFContactors), 0, 1, 0.5, 0:RightFlipper.RotateToEnd
      Else
-         PlaySound SoundFX("fx_Flipperdown",DOFContactors):RightFlipper.RotateToStart
+         PlaySound SoundFX("fx_Flipperdown",DOFContactors), 0, 1, 0.5, 0:RightFlipper.RotateToStart
      End If
 End Sub
 
@@ -505,7 +505,7 @@ End Sub
 
 '***Wind Tunnel Hole***
 Sub subwayenter_hit()
-	PlaySound "Fx_subwayenter"
+	PlaySound "Fx_subwayenter", 0, 1, -0.3, 0.05 ' Fix the Mirror sound Coming from Right instead of left
 End Sub
 
 Sub sw44_hit()
@@ -515,7 +515,7 @@ End Sub
 
 '****Trap Door***
 Sub TrigSub1_hit
-Playsound "fx_subway"
+Playsound "fx_subway", 0, 1, 0.2, 0.05  ' Fix the Trapdoor sound Coming from far Right instead of center right 
 End Sub
 
 Sub TrigSub2_hit
@@ -570,7 +570,7 @@ Dim lockdir
 
 Sub MBRelease(enabled)
 	If enabled then
-		PlaySound SoundFX("fx_lock_exit",DOFContactors)
+		PlaySound SoundFX("fx_lock_exit",DOFContactors), 0, 1, -0.7, 0.05  ' Fix the Multiball sound Coming from Right instead of left
 		WaSw28.IsDropped = 1
 		flipper1.rotatetoend
 		MoveLock.enabled = 1
@@ -598,7 +598,7 @@ Sub Sw28_UnHit:Controller.Switch(28) = 0:End Sub
 '******** Step Gate Diverter
 Sub SolFlipperDiverter(enabled)
      If Enabled Then
-         PlaySound SoundFX("fx_divRR",DOFContactors)
+         PlaySound SoundFX("fx_divRR",DOFContactors), 0, 1, -1.0, 0.05   ' Fix the steps gate sound Coming from Right instead of left
 		StepGate2.RotateToEnd
      Else
 		StepGate2.RotateToStart
@@ -631,7 +631,7 @@ Dim LStep, RStep
 
 Sub LeftSlingShot_Slingshot
 	vpmTimer.PulseSw 41
-    PlaySound SoundFX("fx_slingshotL",DOFContactors), 0, 1, 0.05, 0.05
+    PlaySound SoundFX("fx_slingshotL",DOFContactors), 0, 1, -0.05, 0.05  ' Fix the slingshots being swapped on vpxs
     LSling.Visible = 0
     LSling1.Visible = 1
     sling2.TransZ = -20
@@ -649,7 +649,7 @@ End Sub
 
 Sub RightSlingShot_Slingshot
 	vpmTimer.PulseSw 53
-    PlaySound SoundFX("fx_slingshotR",DOFContactors),0,1,-0.05,0.05
+    PlaySound SoundFX("fx_slingshotR",DOFContactors),0, 1, 0.05, 0.05   ' Fix the slingshots being swapped on vpxs
     RSling.Visible = 0
     RSling1.Visible = 1
     sling1.TransZ = -20
@@ -1007,13 +1007,13 @@ Sub sw75_Hit:Controller.Switch(75) = 1 : PlaySound "fx_sensor" : End Sub
 Sub sw75_UnHit:Controller.Switch(75) = 0:End Sub
 
 '***Standup Targets***
-Sub sw17_Hit:vpmTimer.PulseSw(17):Playsound SoundFX("fx_target",DOFContactors):End Sub
+Sub sw17_Hit:vpmTimer.PulseSw(17):Playsound SoundFX("fx_target",DOFContactors), 0, 1, -1.0, 0.05:End Sub  ' Fix Ramp Target Location
 Sub sw31_Hit:vpmTimer.PulseSw(31):Playsound SoundFX("fx_target",DOFContactors):End Sub
 Sub sw32_Hit:vpmTimer.PulseSw(32):Playsound SoundFX("fx_target",DOFContactors):End Sub
 Sub sw34_Hit:vpmTimer.PulseSw(34):Playsound SoundFX("fx_target",DOFContactors):End Sub
 Sub sw37_Hit:vpmTimer.PulseSw(37):Playsound SoundFX("fx_target",DOFContactors):End Sub
-Sub sw54_Hit:vpmTimer.PulseSw(54):Playsound SoundFX("fx_target",DOFContactors):End Sub
-Sub sw64_Hit:vpmTimer.PulseSw(64):Playsound SoundFX("fx_target",DOFContactors):End Sub
+Sub sw54_Hit:vpmTimer.PulseSw(54):Playsound SoundFX("fx_target",DOFContactors), 0, 1, -0.5, 0.05:End Sub  ' Fix Ramp Target Location
+Sub sw64_Hit:vpmTimer.PulseSw(64):Playsound SoundFX("fx_target",DOFContactors), 0, 1, -0.3, 0.05:End Sub  ' Fix Ramp Target Location
 
 '***Ramp Triggers***
 Sub sw15_Hit:vpmTimer.PulseSw(15):PlaySound "fx_sensor":End Sub 'Step Lights Frenczy
@@ -1734,47 +1734,6 @@ Sub OnBallBallCollision(ball1, ball2, velocity)
 	PlaySound("fx_collide"), 0, Csng(velocity) ^2 / 2000, AudioPan(ball1), 0, Pitch(ball1), 0, 0, AudioFade(ball1)
 End Sub
 
- '**********************
-'Flipper Shadows
-'***********************
-Sub RealTime_Timer
-  lfs.RotZ = LeftFlipper.CurrentAngle
-  rfs.RotZ = RightFlipper.CurrentAngle
-BallShadowUpdate
-End Sub
-
-
-Sub BallShadowUpdate()
-Dim BallShadow
-BallShadow = Array (BallShadow1,BallShadow2,BallShadow3,BallShadow4,BallShadow5,BallShadow6)
-    Dim BOT, b
-    BOT = GetBalls
-    ' hide shadow of deleted balls
-    If UBound(BOT)<(tnob-1) Then
-        For b = (UBound(BOT) + 1) to (tnob-1)
-            BallShadow(b).visible = 0
-        Next
-    End If
-    ' exit the Sub if no balls on the table
-    If UBound(BOT) = -1 Then Exit Sub
-    ' render the shadow for each ball
-    For b = 0 to UBound(BOT)
-		BallShadow(b).X = BOT(b).X
-		ballShadow(b).Y = BOT(b).Y + 10                       
-        If BOT(b).Z > 20 and BOT(b).Z < 200 Then
-            BallShadow(b).visible = 1
-        Else
-            BallShadow(b).visible = 0
-        End If
-if BOT(b).z > 30 Then 
-ballShadow(b).height = BOT(b).Z - 20
-ballShadow(b).opacity = 110
-Else
-ballShadow(b).height = BOT(b).Z - 24
-ballShadow(b).opacity = 90
-End If
-    Next	
-End Sub
 
 Sub BallHitSound(dummy):PlaySound "ball_bounce":End Sub
 

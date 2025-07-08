@@ -22,6 +22,8 @@ Const UseVPMModSol = 1
 Dim  varhidden, UseVPMColoredDMD, bgsko, preLoad8Balls
 
 bgsko=0
+Ramp032.visible = 0
+Ramp033.visible = 0
 UseVPMColoredDMD = true
 varhidden=0
 
@@ -1442,8 +1444,7 @@ if l63.state = 0 then Primitive047.blenddisablelighting = 0.1
 		f72.visible = Controller.Lamp(72)
 	End If
 	sw41Prim.Rotx = sw41.CurrentAngle-90
-    LFLogo.RotY = LeftFlipper.CurrentAngle
-    RFlogo.RotY = RightFlipper.CurrentAngle
+
 
 '        Controller.Lamp(110)   'Controls GI
 '		 Controller.Lamp(111) 'Prim and Ball GI Updates
@@ -1484,17 +1485,17 @@ Sub pUpdateLED()
 	nummb=led0.state+led1.state*2+led2.state*2+led3.state*3+led4.state*4+led5.state+led6.state-3
 	mbl=1
 	Select Case nummb
-       Case 1:mb.image= "pf1 apollo13"
-        Case 8:mb.image= "pf2 apollo13"
-        Case 6:mb.image= "pf3 apollo13"
-        Case 3:mb.image= "pf4 apollo13"
-        Case 5:mb.image= "pf5 apollo13"
-        Case 9:mb.image= "pf6 apollo13"
-        Case 2:mb.image= "pf7 apollo13"
-        Case 11:mb.image= "pf8 apollo13"
-        Case 7:mb.image= "pf9 apollo13"
-        Case 10:mb.image= "pf0 apollo13"
-		Case Else  : mbl=0:	mb.image="pf00 apollo13"
+        Case 1:mbf.imageA= "pf1 apollo13":mbf.imageB= "pf1 apollo13"
+        Case 8:mbf.imageA= "pf2 apollo13":mbf.imageB= "pf2 apollo13"
+        Case 6:mbf.imageA= "pf3 apollo13":mbf.imageB= "pf3 apollo13"
+        Case 3:mbf.imageA= "pf4 apollo13":mbf.imageB= "pf4 apollo13"
+        Case 5:mbf.imageA= "pf5 apollo13":mbf.imageB= "pf5 apollo13"
+        Case 9:mbf.imageA= "pf6 apollo13":mbf.imageB= "pf6 apollo13"
+        Case 2:mbf.imageA= "pf7 apollo13":mbf.imageB= "pf7 apollo13"
+        Case 11:mbf.imageA= "pf8 apollo13":mbf.imageB= "pf8 apollo13"
+        Case 7:mbf.imageA= "pf9 apollo13":mbf.imageB= "pf9 apollo13"
+        Case 10:mbf.imageA= "pf0 apollo13":mbf.imageB= "pf0 apollo13"
+		Case Else  : mbl=0:mbf.imageA="pf00 apollo13":mbf.imageB="pf00 apollo13"
 	End Select
 	mb.state=mbl
 End Sub
@@ -1741,6 +1742,8 @@ Sub RollingTimer_Timer()
             PlaySound "fx_ball_drop" & b, 0, ABS(BOT(b).velz)/17, AudioPan(BOT(b)), 0, Pitch(BOT(b)), 1, 0, AudioFade(BOT(b))
         End If
     Next
+    LFLogo.RotY = LeftFlipper.CurrentAngle
+    RFlogo.RotY = RightFlipper.CurrentAngle
 End Sub
 
 '**********************

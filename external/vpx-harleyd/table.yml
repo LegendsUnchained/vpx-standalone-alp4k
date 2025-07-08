@@ -1,0 +1,18 @@
+---
+backglassVPSId: "qevYdcn8gm"
+backglassChecksum: "edf005ec52dda2eb18ff60aaa1f233d0"
+backglassNotes: "Download version 1.0.0"
+fps: 54
+romVPSId: "-XgDH4d3tp"
+romChecksum: "8e6453e95f91bfc774479b4ebef92a02"
+tableVPSId: "4jP_7ljN"
+tagline: "Born to be Wild"
+testers:
+  - "kaoticBPR"
+  - "OminousOsie"
+vpxVPSId: "eoovupCgVg"
+vpxChecksum: "a9045c51caaed6e898317dab8b87c972"
+tableNotes: "Download version 1.12"
+enabled: false
+applyFixes:
+  - "bass"

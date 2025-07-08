@@ -1,0 +1,19 @@
+---
+applyFixes: 
+  - "bass"
+backglassBundled: true
+backglassVPSId: "3O_4BiCNAE"
+backglassChecksum: "1E49788FF47865D29A5E69021F1939EB"
+backglassNotes: "Download 'Alaska (Interflip 1978) b2s 1.0.zip'"
+enabled: false # Osie: Easy table for wizard release. YML built - Just needs simple stuff (POV/ Free Play/ Artwork)
+fps: 60
+tableNotes: "Download version 1.1"
+tableVPSId: "fJJ_7OYJqy"
+tagline: >-
+  Feel the cold pleasure of a great play in this new
+  electronic machine, that will take you to the world of Eskimos and polar bears
+testers:
+  - "Curt"
+  - "OminousOsie"
+vpxVPSId: "3O_4BiCNAE"
+vpxChecksum: "0227610548CDA0CB38B63E9F5013C24E"

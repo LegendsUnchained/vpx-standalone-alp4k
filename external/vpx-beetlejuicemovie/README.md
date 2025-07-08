@@ -32,12 +32,11 @@ It should already be in: (`vpx-beetlejuicemovie/pinmame/nvram`). If not or you h
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-beetlejuicemovie.elf`
-- Download the table and directb2s zips above, extract them and copy into `/external/vpx-beetlejuicemovie`
-- Make sure (`.vpx`) (`.direct2b2s`) (`.vbs`) and (`.ini`) are all named the same
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - Open the Music file and copy `BeetleJuice.mp3` into the music folder on your USB drive
-- ROM file (`strngsci.zip`) stays in zip folder, place zip file in `vpx-beetlejuicemovie/pinmame/roms`
 - Verify that (strngsci.nv) file is located in (`vpx-beetlejuicemovie/pinmame/nvram`). If not then download the NVRAM pack and extract it from there
-> "It's Showtime!" 
+> "It's Showtime!"
 > ---Beetlejuice
+

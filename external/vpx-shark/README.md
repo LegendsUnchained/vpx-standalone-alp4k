@@ -2,38 +2,60 @@
 
 ![Table Preview](../../images/vpx-shark.jpg)
 
-Table
+<br>
 
-Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 5.5.0  
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=13164)
+## *️⃣  Table Statistics
 
-DirectB2S
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ✅ | ✅ | ❌ | 60 |
 
-Authors: [Manbearpig](https://vpuniverse.com/profile/32743-manbearpig/)  
-Version: 1  
-Download: [VP Universe](https://vpuniverse.com/files/file/12178-shark-taito-1982-b2s-full-dmd/)
+<br>
 
-ROM
+**VPXS 4KP Testers:**
+  - Boris
+  - Ominous Osie 🌸
 
-Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)  
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=572)
+<br>
 
-Tested by: Boris
+---
 
-## Status 
+<br>
 
-Minimum VPX Standalone build: 10.8.0-1989-a764013
+## ❇️ Available in the Wizard! 🪄✨
 
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
+<br>
 
-## Instructions
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
 
-- Copy this repo folder into the "external" folder on your USB drive
-- Add your personalized launcher.elf and rename it to vpx-shark.elf
-- Download the table and directb2s versions listed above, extract them (if necessary) and copy them to external/vpx-shark
-- Make sure any (.vpx), (.directb2s), (.vbs), and (.ini) files are all named the same
-- Download the ROM file listed above and place it in vpx-shark/pinmame/roms. Do not unzip! 
-- "Fast as a shark, he'll cut out of the dark!" -Accept 'Fast As A Shark'
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Shark (Taito do Brasil 1982)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *""Fast as a shark, he'll cut out of the dark!" -Accept 'Fast As A Shark'"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

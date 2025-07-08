@@ -33,20 +33,23 @@
         <strong>⚠️ WARNING ⚠️</strong>
       </div>
       <div style="padding: 12px 12px 12px 12px;">
-        Manually added puppacks are not supported by the VPXS 4KP team<br>We will not be able to help you diagnose issues until this puppack is in the Wizard
+        Manually added puppacks are not supported by the VPXS 4KP team<br>
+		We will not be able to help you diagnose issues until this puppack is in the Wizard<br>
+		You can however find a guide here on the wiki to help you install it yourself: <a href="https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B08%5D-%E2%9D%A4%EF%B8%8F-Pup-Pack-%E2%80%90-Manual-Install">❤️ Pup Pack ‐ Manual Install</a>
       </div>
     </td>
   </tr>
 </table>
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to `vpx-ramboflb.elf`
-- Download from the table link the zips: `Rambo_Nfozzy_3.5.rar`, `RAMBO_720p.rar` and `Rambo_extravideos.rar`
-- Extract from `Rambo_Nfozzy_3.5.rar` the table `Rambo_Nfozzy_3.5.vpx` and copy it into `vpx-ramboflb`
-- Make sure `(.vpx)` `(.vbs)` and `(.ini)` are all named the same.
+
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
+- Download from the table link the zips: `RAMBO_720p.rar` and `Rambo_extravideos.rar`
 - Create the folder `pupvideos` and extract from `RAMBO_720p.rar` the `Rambo` folder into `pupvideos`. **Do not use the vpx from this archive.**.
 - Extract from `Rambo_extravideos.rar` the content from inside the `Rambo_extravideos` folder and place them inside the `pupvideos/Rambo` folder, and overwrite files if prompted.
 - Unzip the `use_these_pup_files.zip` and place them inside the `pupvideos/Rambo` folder, and overwrite files if prompted.
 - **Do not use the sound fix tool from the table manager, this does not work on this table.**
 - "Nothing is over! Nothing!"
+

@@ -1,0 +1,18 @@
+---
+tableVPSId: "Y-_IF4hA"
+vpxVPSId: "5BP4FGZI"
+vpxChecksum: "cf310b938bd88f3ac1a324e884bf3c10"
+tableNotes: "Underwater (Recel 1976) v55_VPX8.zip"
+backglassVPSId: "Vf6iHhO5"
+backglassChecksum: "d258cbb60f2a0b1dfd4d39b1079a14d6"
+backglassNotes: "Underwater (Recel 1976) db2s.zip"
+#romUrlOverride: ""
+#romVersionOverride: ""
+#romNotes: """
+#romChecksum: ""
+mainNotes: "Known issue: Scoring reels misaligned"
+enabled: false
+fps: 60
+tagline: "Dive! Dive!"
+testers:
+  - "Boris"

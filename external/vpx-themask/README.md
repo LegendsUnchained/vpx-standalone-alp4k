@@ -35,10 +35,9 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-themask.elf
-- Download the table zip above, extract and copy .vpx and .directb2s into /external/vpx-themask
-- Open the Rom folder, the rom (lortium.zip) stays in zip folder, place zip file in vpx-themask/pinmame/roms
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - Place (The Mask) folder in vpx-themask/Music
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
 - "SSSSomebody Stop Me!" - The Mask
+

@@ -2,39 +2,61 @@
 
 ![Table Preview](../../images/vpx-gilligansisland.png)
 
-Author: [TastyWasps](https://vpuniverse.com/profile/44724-tastywasps/)  
-Version: Gilligan's Island (Bally 1991) v1.46.vpx  
-Download: [VPUniverse](https://vpuniverse.com/files/file/16602-gilligans-island-bally-1991/)
+<br>
 
-DirectB2S
-
-Author: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
-Version: Gilligan's Island (Bally 1991) b2s with full dmd.zip  
-Download: [VPUniverse](https://vpuniverse.com/files/file/16596-gilligans-island-bally-1991-b2s-with-full-dmd/)
-
-ROM
-
-Author: [destruk](https://www.vpforums.org/index.php?showuser=5)  
-Version: gi_l9.zip  
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1180)
-
-Tested by:
-[TechZombie]
-
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-1983-b84441e
+## *️⃣  Table Statistics
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
 
-## Instructions
+<br>
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-gilligansisland.elf
-- Download the table and directb2s versions listed above, extract them (if necessary) and copy them into external/vpx-gilligansisland
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
-- Place ROM file (gi_l9.zip) in vpx-gilligansisland/pinmame/roms folder - DO NOT UNZIP!
-- "Gilligan, when they were passing out the brains, you weren't at the end of the line. YOU WERE ON VACATION!" --Skipper
+**VPXS 4KP Testers:**
+  - Bla1ze
+  - mcap
+  - CoffeeAtJoes
 
+<br>
+
+---
+
+<br>
+
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Gilligan's Island`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"It's a Jungle out there!"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

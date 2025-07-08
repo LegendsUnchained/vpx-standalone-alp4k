@@ -51,7 +51,7 @@ __*We hope you enjoy!!*__
 - n-i-x            - Mox              - Lloydbraun
 - Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
 - Bla1ze           - evilwraith       - Silentkat        
-- mrandromeda      - SScorpio         - TechZombie
+- mrandromeda      - SScorpio         - pointdablame
 </pre>
 
 <br>
@@ -76,7 +76,9 @@ __*We hope you enjoy!!*__
         <strong>⚠️ WARNING ⚠️</strong>
       </div>
       <div style="padding: 12px 12px 12px 12px;">
-        Manually added puppacks are not supported by the VPXS 4KP team<br>We will not be able to help you diagnose issues until this puppack is in the Wizard
+        Manually added puppacks are not supported by the VPXS 4KP team<br>
+		We will not be able to help you diagnose issues until this puppack is in the Wizard<br>
+		You can however find a guide here on the wiki to help you install it yourself: <a href="https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B08%5D-%E2%9D%A4%EF%B8%8F-Pup-Pack-%E2%80%90-Manual-Install">❤️ Pup Pack ‐ Manual Install</a>
       </div>
     </td>
   </tr>

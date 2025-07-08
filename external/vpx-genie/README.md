@@ -2,38 +2,61 @@
 
 ![Table Preview](../../images/vpx-genie.jpg)
 
-Authors: [bord](https://vpuniverse.com/profile/9265-bord/)  
-Version: 2.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/8711-genie-gottlieb-1979/)
+<br>
 
-DirectB2S
-
-Authors: [Wildman](https://vpuniverse.com/profile/5-wildman/)  
-Download: [VPUniverse](https://vpuniverse.com/files/file/3053-genie-gottlieb-1979/)
-
-ROM
-
-Download Name: -NEW FIXED ROMS for VPinMAME v3.6.0-963 BETA -FIX.zip  
-Download: [Pinball Nirvana](https://pinballnirvana.com/forums/resources/new-fixed-roms-for-vpinmame-v3-6-0-963-beta.8379/)
-
-Tested by: evilwraith
-
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-1989-a764013
+## *️⃣  Table Statistics
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 40 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 
-## Instructions
+<br>
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-genie.elf
-- Download the table and directb2s listed above, extract (if necessary) and copy them to external/vpx-genie
-- Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
-- Unzip -NEW FIXED ROMS for VPinMAME v3.6.0-963 BETA -FIX.zip from the ROM download link
-- Open the unzipped folder. The ROM is in the Gottlieb_Sys1_newroms folder
-- Copy the genie.zip rom file to vpx-genie\pinmame\roms (Do not unzip)!
-- Dream of Genie!
+**VPXS 4KP Testers:**
+  - evilwraith
+  - CoffeeAtJoes
+  - Boris
 
+<br>
+
+---
+
+<br>
+
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Genie`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"Your wish is my command!"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

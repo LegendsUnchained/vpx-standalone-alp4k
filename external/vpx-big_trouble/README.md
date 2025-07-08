@@ -50,7 +50,7 @@ __*We hope you enjoy!!*__
 - n-i-x            - Mox              - Lloydbraun
 - Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
 - Bla1ze           - evilwraith       - Silentkat        
-- mrandromeda      - SScorpio         - TechZombie
+- mrandromeda      - SScorpio         - pointdablame
 </pre>
 
 <br>
@@ -75,7 +75,9 @@ __*We hope you enjoy!!*__
         <strong>⚠️ WARNING ⚠️</strong>
       </div>
       <div style="padding: 12px 12px 12px 12px;">
-        Manually added puppacks are not supported by the VPXS 4KP team<br>We will not be able to help you diagnose issues until this puppack is in the Wizard
+        Manually added puppacks are not supported by the VPXS 4KP team<br>
+		We will not be able to help you diagnose issues until this puppack is in the Wizard<br>
+		You can however find a guide here on the wiki to help you install it yourself: <a href="https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B08%5D-%E2%9D%A4%EF%B8%8F-Pup-Pack-%E2%80%90-Manual-Install">❤️ Pup Pack ‐ Manual Install</a>
       </div>
     </td>
   </tr>
@@ -92,6 +94,18 @@ __*We hope you enjoy!!*__
 6.  Place them inside the `pupvideos/BigTrouble` folder, and overwrite files if prompted.  **This is necessary otherwise it does not work**
 7. Enjoy this amazing table with extra sounds and videos! 
 
+###  Instructions (Backglass/DMD loading screens) - Optional
+
+The instructions must be a PNG.  Instructions can be set to display to either the DMD or the Backglass.  Depending on the instructions and resolution, they may look better on one or the other.  See the recommendation below where these instructions display best.
+
+1. Download the instructions 'BTiLC Instruction Card.png' from [VP Universe](https://vpuniverse.com/files/file/11322-big-trouble-in-little-china-instruction-card/?do=download) (by [timhobbs](https://vpuniverse.com/profile/50233-timhobbs/))
+2. Copy the file to either `dmd.png` or `backglass.png`.
+3. Place the file(s) in the `external/vpx-big_trouble` directory.
+4. Launch the table and the instructions will load onto either the dmd or the backglass while the table is launched.
+
+**Recommendation:**
+
+These instructions look best on the DMD.
 
 <br>
 <br>

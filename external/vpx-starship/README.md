@@ -2,39 +2,60 @@
 
 ![Table Preview](../../images/vpx-starship.png)
 
-Tested by: Bla1ze
+<br>
 
-Author: [VPinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)  
-Version: 2.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/13893-starship-troopers-sega-1997-vpw-mod/)
-
-DirectB2S
-
-Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
-Version: 1.0.1  
-Download: [VP Universe](https://vpuniverse.com/files/file/13888-starship-troopers-sega-1996-b2s-with-full-dmd/)
-
-ROM
-
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=7349)
-
-SHA: 0d5dae565952b380d4979dfecd85b2445a1b692c
-
-MD5: ac756e2ab3643c1743b53ef6e51dfafe
-
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-1983-a764013
+## *️⃣  Table Statistics
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 35 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 54 |
 
-## Instructions
+<br>
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-starship.elf
-- Download the table, and directb2s versions listed above, extract them and copy them into this folder
-- Make sure (.vpx), (.directb2s), (.ini) and (.vbs) files are all named the same
-- Place ROM into /vpx-starship/pinmame/roms folder. DO NOT UNZIP!
-- The only good bug is a dead bug! 🐜
+**VPXS 4KP Testers:**
+  - Bla1ze
+  - OminousOsie 🌸
+
+<br>
+
+---
+
+<br>
+
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Starship Troopers`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"The only good bug is a dead bug!"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

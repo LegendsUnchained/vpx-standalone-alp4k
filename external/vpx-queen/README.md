@@ -34,7 +34,9 @@ Minimum VPX Standalone build: 10.8.0-2042-1431983
         <strong>⚠️ WARNING ⚠️</strong>
       </div>
       <div style="padding: 12px 12px 12px 12px;">
-        Manually added puppacks are not supported by the VPXS 4KP team<br>We will not be able to help you diagnose issues until this puppack is in the Wizard
+        Manually added puppacks are not supported by the VPXS 4KP team<br>
+		We will not be able to help you diagnose issues until this puppack is in the Wizard<br>
+		You can however find a guide here on the wiki to help you install it yourself: <a href="https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B08%5D-%E2%9D%A4%EF%B8%8F-Pup-Pack-%E2%80%90-Manual-Install">❤️ Pup Pack ‐ Manual Install</a>
       </div>
     </td>
   </tr>
@@ -42,10 +44,9 @@ Minimum VPX Standalone build: 10.8.0-2042-1431983
 
 ## Instructions
 
-- Copy the contents of this repo folder to your USB drive.
-- Add your personalized launcher.elf and rename it to vpx-queen.elf
-- Download the "queen wembley3.5.zip" file and only extract the "Queen show must go on.vpx.vpx" to the vpx-queen folder.
-- Make sure (.vpx) (.vbs) and (.ini) are all named the same.
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - Extract "Queen show must go on.UltraDMD" folder from the zip to the vpx-queen folder.
 - In your vpx-queen folder, create a new folder named music.
 - Extract "wembley" folder from the zip into the music folder you created.
@@ -54,3 +55,4 @@ Minimum VPX Standalone build: 10.8.0-2042-1431983
 - From your vpx-queen folder, unzip the use_these_pup_files.zip and place them inside the pupvideos/QUEEN_original_2022 folder, and overwrite files if prompted.
 - When you start a game, before you launch a ball, you can choose your song with the right flipper.
 - Enjoy and we will rock you.
+

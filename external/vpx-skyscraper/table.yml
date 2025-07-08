@@ -1,0 +1,15 @@
+---
+applyFixes:
+  - "bass"
+enabled: false
+backglassBundled: true
+backglassChecksum: "E739A9D066B8AEDA6312508ACB981700"
+backglassNotes: "Use the 2 screen b2s linked from the comments."
+backglassUrlOverride: "https://vpuniverse.com/files/file/25742-skyscraper-bally-1934/?tab=comments#findComment-90715"
+fps: 60
+tableVPSId: "GQVgQ-sou9"
+tagline: "'This building is Kong-proof' - an old-timey architect probably"
+testers:
+  - "evilwraith"
+vpxChecksum: "7C29C26FD7133940E36657F14428B187"
+vpxVPSId: "fzOMz7rlhz"

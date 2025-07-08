@@ -1,29 +1,60 @@
-# Indiana Jones the Last Movie (original 2023)
+# Indiana Jones - The Last Movie (Original 2023)
 
 ![Table Preview](../../images/vpx-indylastmovie-preview.jpg)
 
-A## Files
-| File Type | Link | Version | Author | 
-|-----------|--------|----------|--------------|
-| **VPX** | [VP Universe](https://vpuniverse.com/files/file/14905-indiana-jones-the-last-movie/) | 3.0 | [marty02](https://vpuniverse.com/profile/16531-marty02/)
-| **B2S** | [VP Universe](https://vpuniverse.com/files/file/14961-indiana-jones-the-last-movie-alternate-b2s/) | 1.0 | [topper2k](https://vpuniverse.com/profile/32127-topper2k/)
-| **DMD** | N/A | N/A | N/A |
-| **ROM** | N/A | N/A | N/A |
+<br>
 
-
-Tested by: Silentkat 
-
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-1989-a764013
+## *️⃣  Table Statistics
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 
-## Instructions
+<br>
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-indylastmovie.elf
-- Download the table, directb2s and listed above (use the separate link for the backglass. Don't use the one that came with the table), extract and copy them into this folder vpx-indylastmovie
-- Make sure (.vpx), (.directb2s), (.ini) files are all named the same
+**VPXS 4KP Testers:**
+  - Silentkat
+
+<br>
+
+---
+
+<br>
+
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Indiana Jones - The Last Movie`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"Snakes. Why’d it have to be snakes?"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

@@ -4,6 +4,14 @@
 
 <br>
 
+## *️⃣  Table Statistics
+
+| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
+|-----------|----------|-----------|-----|--------------|-----|
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 57 |
+
+<br>
+
 **VPXS 4KP Testers:**
   - Bla1ze
   - mcap
@@ -25,9 +33,9 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`Freddy A Nightmare on Elm Street`**
+4.  Find and select this table from the dropdown menu: **`Freddy - A Nightmare on Elm Street`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *"One, Two, Freddy's coming for you!"*
+6. *"1....2... Freddy's coming for you!"*
 
 <br>
 
@@ -42,7 +50,7 @@ __*We hope you enjoy!!*__
 - n-i-x            - Mox              - Lloydbraun
 - Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
 - Bla1ze           - evilwraith       - Silentkat        
-- mrandromeda      - SScorpio         - TechZombie
+- mrandromeda      - SScorpio         - pointdablame
 </pre>
 
 
@@ -51,4 +59,3 @@ __*We hope you enjoy!!*__
 <br>
 <br>
 <br>
-

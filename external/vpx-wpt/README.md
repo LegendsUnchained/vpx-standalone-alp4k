@@ -12,7 +12,7 @@
 | DMD | N/A | N/A | N/A |
 | ROM | [Stern](https://sternpinball.com/game/world-poker-tour/) | wpt_140a.zip | N/A |
 
-**Tested by:** [evilwraith]
+**Tested by:** [evilwraith & reboot]
 
 ---
 
@@ -20,14 +20,15 @@
 Minimum VPX Standalone build: 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 36 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
 
 ---
 
 ## Instructions
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-wpt.elf
-- Download the table and directb2s listed above, extract (if necessary) and copy to external/vpx-wpt
-- Make sure (.vpx), (.directb2s), and (.ini) files are all named the same
+
+- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
+- Copy over the backglass.png into the vpx-wpt folder in the table manager
 - Rename the ROM zip file to wpt_140a.zip
-- The ROM zip file gets copied to vpx-wpt/pinmame/roms (Do not unzip)
+

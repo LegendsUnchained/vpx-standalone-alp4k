@@ -1,0 +1,15 @@
+---
+applyFixes:
+  - "bass"
+backglassVPSId: "yoOQCG70LN"
+backglassChecksum: "633d99e0951d3972f3b27f5acbb37ae4"
+fps: 58
+romVPSId: "MwNXNR5C"
+romChecksum: "c1f08d90e478e14f7a6c99ea66d5a67b"
+tableVPSId: "jpyrfVNTmc"
+tagline: "Do you want running, do you want screaming, do you want PINBALLS??"
+testers:
+  - "OminousOsie"
+vpxVPSId: "Btk9uVOUDd"
+vpxChecksum: "815D229020C3570833269C959E2B20A1"
+tableNotes: "Download version 1.2"

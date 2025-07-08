@@ -1385,7 +1385,7 @@ Sub UpdateLamps
  End Sub
 
 Sub SetModLamp(nr, value)
-	Debug.Print "SetModLamp " & nr & ": " & value
+	'Debug.Print "SetModLamp " & nr & ": " & value
 	FadingLevel(nr) = value
 End Sub
 
