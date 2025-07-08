@@ -1,4 +1,4 @@
-# {Muppets Tribute} ({Original} {1984})
+# Muppets Tribute (Original 2022)
 
 ![Table Preview](../../images/MuppetsTribute-preview.png)
 
@@ -17,11 +17,11 @@
 ---
 
 ## Status 
-**Minimum VPX Standalone build:** {10.8.0-1989-a764013}
+**Minimum VPX Standalone build:** 10.8.0-1989-a764013
 
 | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |-----------|-----|-----|-----|-----|
-| :white_check_mark: | :x: | :white_check_mark: | :x: | {58} |
+| :white_check_mark: | :x: | :white_check_mark: | :x: | 58 |
 
 ---
 
