@@ -31,7 +31,7 @@ On Error Goto 0
 
 '----- FlexDMD Options -----
 Dim UseFlexDMD:UseFlexDMD = 1		' 1 = on, 0 = off (replacement for external DMD, includes 'WILLIAMS' letter status)
-Const FlexColour = 5				' 0 = mid blue, 1 = cyan, 2 = red, 3 = yellow, 4 = Green, 5 = blue, 6 = white
+Const FlexColour = 2				' 0 = mid blue, 1 = cyan, 2 = red, 3 = yellow, 4 = Green, 5 = blue, 6 = white
 
 
 '----- General Sound Options -----
