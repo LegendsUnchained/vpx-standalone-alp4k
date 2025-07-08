@@ -1,6 +1,6 @@
 # Sinbad (Gottlieb 1978)
 
-![Table Preview](vpx-sinbad-table.png?raw=true)
+![Table Preview](../../images/vpx-sinbad-table.png)
 
 ---
 
