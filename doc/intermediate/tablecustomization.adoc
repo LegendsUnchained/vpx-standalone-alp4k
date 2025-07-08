@@ -1,0 +1,123 @@
+= Table Customization
+:toc: left
+:icons: font
+:toclevels: 4
+:source-highlighter: highlight.js
+:highlightjs-languages: ini,vbscript
+
+== DMD Customisation
+
+=== Colour DMD
+
+==== Full Colour ROM / Serum Files
+
+VPXS currently is only compatible with `Serum' colour ROM files.
+
+All the serum files can be found here:
+https://vpuniverse.com/files/category/173-serum-dmd-colorizations/[VP
+Universe - Serums]
+
+If you are adding a table via the Table Manager, their will be a input
+for `Serum'.
+
+If you are adding a serum file to a table that you already have
+installed on your USB:
+
+[arabic]
+. Open Table Manager
+. Browse to the `vpx-table` folder via the `USB Root' tab.
+. In the `pinmame` folder, add or navigate to a folder called `altcolor`
+. In the `altcolor` folder, add a folder with the same name as your rom.
+You can find the rom name via `external/vpx-table/pinmame/roms`
+. In the folder that has the same name as the rom, add your `.cRZ` file.
+This should also have the same name as the rom.
+
+An example on the `Creature From The Black Lagoon' table:
+`external/vpx-24/pinmame/altcolor/cftbl_l4/cftbl_l4.cRZ`
+
+image:../images/table_customization_serum.gif[]
+
+==== Change the Colour from Orange
+
+The default orange on standard ROM games can be updated via a config
+file!
+
+If you installed your table via the wizard, you should already have the
+coloured dmd.
+
+If you manually installed the table, then you can update your ROM colour
+by going to:
+
+`external/vpx-table/pinmame/ini/romname.ini`
+
+And in that file, update the `dmd_red`, `dmd_green`, and `dmd_blue`
+colours. Each of these RGB can be a value between 0-255.
+
+An example is Godzilla, in the file
+`external/vpx-godzilla/pinmame/ini/godzilla.ini` I have changed the RGB
+to green:
+
+[source,ini]
+....
+[settings]
+cheat=0
+sound=1
+dmd_red=7
+dmd_green=168
+dmd_blue=36
+....
+
+Which then looks like this:
+
+image:../images/table_customization_change_color.gif[]
+
+=== How to add a custom DMD image to an empty DMD
+
+If your DMD is empty (i.e. the table uses backglass scoring) then you
+will see the default `Legends Unchained' logo as the image.
+
+If you would like to replace this with another image, just add a
+`dmd.png` file to your `external/vpx-table` folder!
+
+The `dmd.png` image must:
+- Be lowercase
+- An Image size of 1920 x 1200
+- Live right on the `vpx-table` folder root: `external/vpx-table/dmd.png`
+
+Be sure to check the repo folders for a `dmd.png` file you can add to
+your table!
+
+image:../images/table_customization_empty_dmd.jpg[]
+
+== Loading Screen
+
+=== Button Labels
+
+You can change the button labels that appear during the tables loading
+screen via a file!
+
+All you need to do is add a `launcher.cfg` file to the root of your
+`vpx-table` folder.
+
+The `launcher.cfg` file looks like this:
+
+[source,ini]
+....
+[buttonLabels]
+dpadUp = "Up"
+dpadDown = "Down"
+dpadLeft = "Left"
+dpadRight = "Right"
+leftFlipper = "Left Flipper"
+rightFlipper = "Right Flipper"
+leftNudge = "Left Nudge"
+rightNudge = "Right Nudge"
+nudge = "Nudge"
+start = "Start"
+menu = "Menu"
+....
+
+So for deadpool, we added a `launcher.cfg` file to
+`external/vpx-deadpool`, and edited it like so:
+
+image:../images/table_customization_button_lables.jpg[]

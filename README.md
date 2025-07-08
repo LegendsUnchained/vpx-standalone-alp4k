@@ -1,4 +1,4 @@
-# vpx-standalone-alp4k
+﻿# vpx-standalone-alp4k
 Settings and configs for VPX Standalone on the AtGames ALP 4K Pinball
 
 ## Paying for the Legends Unchained Loader
@@ -165,6 +165,7 @@ Links to these products on Amazon are through affiliate links.
 | [Mission Impossible (Original 2022)](external/vpx-missionimp) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Monster Bash (Williams 1998)](external/vpx-monsterbashreskin) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 47 |
 | [Mousin' Around! (Bally 1989)](external/vpx-mousin) | :white_check_mark: | :x: | :white_check_mark: | :x: | 32 |
+| [Muppets Tribute! (Original 1984)](external/vpx-muppetstribute) | :white_check_mark: | :x: | :white_check_mark: | :x: | 58 |
 | [Nascar (Stern 2005)](external/vpx-nascar) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Nascar - JP's (Original 2015)](external/vpx-jpsnascar) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [NBA Fastbreak (Bally 1997)](external/vpx-nbafastbreak) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
@@ -297,6 +298,7 @@ Links to these products on Amazon are through affiliate links.
 | [Beverly Hills Cop (Original 2019)](external/vpx-beverlyhillscop) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 57 |
 | [Big Bang Bar (Capcom 1996)](external/vpx-bigbangbar) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Big Buck Hunter Pro (Stern 2010)](external/vpx-bigbuckhunter) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Big Deal (Williams 1963)](external/vpx-bigdeal) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Big Game (Stern 1980)](external/vpx-biggame) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Big Horse (Maresa 1975)](external/vpx-bighorse) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Big House (Gottlieb 1989)](external/vpx-bighouse) | :white_check_mark: | :x: | :white_check_mark: | :x: | 32 |
@@ -347,6 +349,7 @@ Links to these products on Amazon are through affiliate links.
 | [Centaur (Bally 1981)](external/vpx-centaur) | :white_check_mark: | :x: | :white_check_mark: | :x: | 52 |
 | [Centigrade 37 (Gottlieb 1977)](external/vpx-centigrade37) | :white_check_mark: | :x: | :x: | :x: | 43 |
 | [Central Park (Gottlieb 1966)](external/vpx-centralpark) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Cerberus (Playmatic 1983)](external/vpx-cerberus) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Champion Pub, The (Williams 1998)](external/vpx-champpub) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 45 |
 | [Charlie Brown Christmas, A (Original 2023)](external/vpx-acharliebrownchristmas) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Charlie's Angels, JP's v5.5 (Gottlieb 1978)](external/vpx-charliesangels) | :white_check_mark: |:x: | :white_check_mark: | :x: | 60 |
@@ -767,6 +770,7 @@ Links to these products on Amazon are through affiliate links.
 | [Silverball Mania (Bally 1978)](external/vpx-silverballmania) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Simpsons, The (Data East 1990)](external/vpx-thesimpsons) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 35 |
 | [Simpsons Pinball Party, The (Stern 2003)](external/vpx-simpsonspprty) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
+| [Sinbad (Gottlieb 1978)](external/vpx-sinbad) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Sir Lancelot (Peyper 1994)](external/vpx-sirlancelot) | :white_check_mark: | :x: | :white_check_mark: | :x: | 45 |
 | [Six Million Dollar Man, The (Sound Mod) (Bally 1978)](external/vpx-sixmilliondollarman) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55
 | [Skateball (Bally 1980)](external/vpx-skateball) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
