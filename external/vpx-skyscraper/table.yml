@@ -1,7 +1,6 @@
 ---
 applyFixes:
   - "bass"
-enabled: false
 backglassBundled: true
 backglassChecksum: "E739A9D066B8AEDA6312508ACB981700"
 backglassNotes: "Use the 2 screen b2s linked from the comments."
