@@ -1,6 +1,6 @@
-# Mighty Morphin Power Rangers (Original 2024)
+#  2001 - A Space Odyssey (Original 2025)
 
-![Table Preview](../../images/vpx-powerrangers.png)
+![Table Preview](../../images/iGEvF6towb-preview.webp)
 
 <br>
 
@@ -8,12 +8,12 @@
 
 | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |-----------|-----|-----|-----|-----|
-| ✅ | ❌ | ❌ | ❌ | 45 |
+| ❌ | ❌ | ❌ | ✅ | 52 |
 
 <br>
 
 **VPXS 4KP Testers:**
-  - Silentkat
+  - The entire 4kp team
 
 <br>
 
@@ -32,9 +32,9 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`Mighty Morphin Power Rangers (Original 2024)`**
+4.  Find and select this table from the dropdown menu: **` 2001 - A Space Odyssey (Original 2025)`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *"It's Morphin Time!"*
+6. *"'I'm afraid I can't do that, Dave...'"*
 
 <br>
 
