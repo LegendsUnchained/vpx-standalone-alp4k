@@ -1,33 +1,60 @@
-# Gargamel Park, JPs (Orginal 2016)
+# Gargamel Park (Original 2016)
 
 ![Table Preview](../../images/vpx-gargamelpark.png)
 
-Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 5.5  
-Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=11883)
+<br>
 
-DirectB2S
+## *️⃣  Table Statistics
 
-Authors: [hauntfreaks](https://www.vpforums.org/index.php?showuser=73849)  
-Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=11884)
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ❌ | ❌ | ❌ | 60 |
 
-ROM
+<br>
 
-None
+**VPXS 4KP Testers:**
+  - evilwraith
 
-Tested by: evilwraith
+<br>
 
-## Status 
+---
 
-Minimum VPX Standalone build: 10.8.0-1989-a764013
+<br>
 
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+## ❇️ Available in the Wizard! 🪄✨
 
-## Instructions
+<br>
 
-- Install this table through the Table Manager, using the `Add Table` > `Wizard` page
-- If you need help, more infomation found on the wiki: [Table Manager - Wizard](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B03%5D-%F0%9F%92%9A-Table-Manager-%E2%80%90-Wizard)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
 
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Gargamel Park (Original 2016)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"'Formerly known as Blue Man Group.'"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
