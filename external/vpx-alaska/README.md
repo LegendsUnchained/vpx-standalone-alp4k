@@ -2,33 +2,61 @@
 
 ![Table Preview](../../images/vpx-alaska-preview.jpg)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author |
-|:---------:|:----:|:-------:|:------:|
-| VPX | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=16800) | 1.1 | [jejepinball](https://www.vpforums.org/index.php?s=3b0a5c7e845216cee68c2f1ca3da5281&app=core&module=search&do=user_activity&search_app=downloads&mid=108032) |
-| B2S | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=16800) | 1.0 | 7he S4ge  |
-| DMD | N/A | N/A | N/A |
-| ROM | N/A | N/A | N/A |
+## *️⃣  Table Statistics
 
-**Tested by:** [Curt]
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ❌ | ❌ | ❌ | 60 |
 
----
+<br>
 
-## Status 
-**Minimum VPX Standalone build:** 10.8.0-1989-a764013
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
+**VPXS 4KP Testers:**
+  - Curt
+  - Ominous Osie 🌸
+  - pointdablame
+
+<br>
 
 ---
 
-## Instructions
+<br>
 
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
+## ❇️ Available in the Wizard! 🪄✨
 
-## NOTE
-- The directb2s file has a graphic bug in displaying scores. To overcome it, my .vbs inserts a kludge to start every game with a score of 1 point, and subtract it when the game ends. I'm very open to other solutions, just edit as needed.
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Alaska (Interflip 1978)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"Feel the cold pleasure of a great play in this new electronic machine, that will take you to the world of Eskimos and polar bears"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

@@ -4,7 +4,6 @@ applyFixes:
 backglassVPSId: "iuyKhYEo"
 backglassChecksum: "43DCB060FC6D3A7C3E0A143D4443478E"
 backglassNotes: "Download v1.0"
-enabled: false # Osie: Easy table for wizard release. YML built - Just needs simple stuff (POV/ Free Play/ Artwork)
 fps: 60
 romVPSId: "oIofzNVL"
 romChecksum: "1F4C9DFF8929CA6DB1F58CE872DF09BF"
