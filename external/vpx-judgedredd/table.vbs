@@ -1,6 +1,8 @@
 Option Explicit
 Randomize
 
+Const UseVpmModSol = True
+
 '************************************
 '******* Standard definitions *******
 '************************************
@@ -34,7 +36,7 @@ Const SCoin        = "Coin"
 ' Options
 ' Volume devided by - lower gets higher sound
 
-Const VolDiv = 2000    ' Lower number, louder ballrolling/collition sound
+Const VolDiv = 400    ' Lower number, louder ballrolling/collition sound
 Const VolCol = 10      ' Ball collition divider ( voldiv/volcol )
 
 ' The rest of the values are multipliers
@@ -208,18 +210,18 @@ SolCallBack(13)	= "JDTrough"
 'SolCallBack(15)	= "vpmSolSound ""WrongSound"","
 'SolCallBack(16)	= "vpmSolSound ""WrongSound"","
 
-SolCallBack(17)	= "fF17"     	'"SetLamp 100,"     'Judge Fire
-SolCallBack(18)	= "fF18"			'"SetLamp 101,"     'Judge Fear
-SolCallBack(19)	= "fF19"			'"SetLamp 102,"     'Judge Death
-SolCallBack(20)	= "fF20"			'"SetLamp 103,"     'Judge Mortis
-SolCallBack(21)	= "LRF"
-SolCallBack(22)	= "RRF"
-SolCallBack(23) = "Flash23"
+SolModCallBack(17)	= "fF17"     	'"SetLamp 100,"     'Judge Fire
+SolModCallBack(18)	= "fF18"			'"SetLamp 101,"     'Judge Fear
+SolModCallBack(19)	= "fF19"			'"SetLamp 102,"     'Judge Death
+SolModCallBack(20)	= "fF20"			'"SetLamp 103,"     'Judge Mortis
+SolModCallBack(21)	= "LRF"
+SolModCallBack(22)	= "RRF"
+SolModCallBack(23) = "Flash23"
 
-SolCallBack(24)	= "U_Globe_Flash"
-SolCallBack(25) = "Flash25"
-SolCallBack(26)	= "Globe_Flash"
-SolCallBack(27) = "Flash27"
+SolModCallBack(24)	= "U_Globe_Flash"
+SolModCallBack(25) = "Flash25"
+SolModCallBack(26)	= "Globe_Flash"
+SolModCallBack(27) = "Flash27"
 
 SolCallback(sURFlipper) = "SolFlipper RightFlipper2,Nothing,"
 SolCallback(sULFlipper) = "SolFlipper LeftFlipper2,Nothing,"
@@ -531,9 +533,9 @@ Sub RollingTimer_Timer()
       If BallVel(BOT(b) ) > 1 Then
         rolling(b) = True
         if BOT(b).z < 30 Then ' Ball on playfield
-          PlaySound("fx_ballrolling" & b), -1, Vol(BOT(b) ), AudioPan(BOT(b) ), 0, Pitch(BOT(b) ), 1, 0, AudioFade(BOT(b) )
+          PlaySound("fx_ballrolling" & b), -1, Vol(BOT(b) )/12, AudioPan(BOT(b) ), 0, Pitch(BOT(b) ), 1, 0, AudioFade(BOT(b) )
         Else ' Ball on raised ramp
-          PlaySound("fx_ballrolling" & b), -1, Vol(BOT(b) )*.5, AudioPan(BOT(b) ), 0, Pitch(BOT(b) )+50000, 1, 0, AudioFade(BOT(b) )
+          PlaySound("fx_ballrolling" & b), -1, Vol(BOT(b) )/12, AudioPan(BOT(b) ), 0, Pitch(BOT(b) )+50000, 1, 0, AudioFade(BOT(b) )
         End If
       Else
         If rolling(b) = True Then
@@ -626,7 +628,7 @@ Sub Rubbers_Hit(idx)
   dim finalspeed
   finalspeed=SQR(activeball.velx * activeball.velx + activeball.vely * activeball.vely)
   If finalspeed > 20 then
-    PlaySound "fx_rubber2", 0, Vol(ActiveBall), Pan(ActiveBall), 0, Pitch(ActiveBall), 1, 0, AudioFade(ActiveBall)
+    PlaySound "fx_rubber2", 0, Vol(ActiveBall)*5, Pan(ActiveBall), 0, Pitch(ActiveBall), 1, 0, AudioFade(ActiveBall)
   End if
   If finalspeed >= 6 AND finalspeed <= 20 then
     RandomSoundRubber()
@@ -637,7 +639,7 @@ Sub Posts_Hit(idx)
   dim finalspeed
   finalspeed=SQR(activeball.velx * activeball.velx + activeball.vely * activeball.vely)
   If finalspeed > 16 then
-    PlaySound "fx_rubber2", 0, Vol(ActiveBall), Pan(ActiveBall), 0, Pitch(ActiveBall), 1, 0, AudioFade(ActiveBall)
+    PlaySound "fx_rubber2", 0, Vol(ActiveBall)*5, Pan(ActiveBall), 0, Pitch(ActiveBall), 1, 0, AudioFade(ActiveBall)
   End if
   If finalspeed >= 6 AND finalspeed <= 16 then
     RandomSoundRubber()
@@ -646,9 +648,9 @@ End Sub
 
 Sub RandomSoundRubber()
   Select Case Int(Rnd*3)+1
-    Case 1 : PlaySound "rubber_hit_1", 0, Vol(ActiveBall), Pan(ActiveBall), 0, Pitch(ActiveBall), 1, 0, AudioFade(ActiveBall)
-    Case 2 : PlaySound "rubber_hit_2", 0, Vol(ActiveBall), Pan(ActiveBall), 0, Pitch(ActiveBall), 1, 0, AudioFade(ActiveBall)
-    Case 3 : PlaySound "rubber_hit_3", 0, Vol(ActiveBall), Pan(ActiveBall), 0, Pitch(ActiveBall), 1, 0, AudioFade(ActiveBall)
+    Case 1 : PlaySound "rubber_hit_1", 0, Vol(ActiveBall)*5, Pan(ActiveBall), 0, Pitch(ActiveBall), 1, 0, AudioFade(ActiveBall)
+    Case 2 : PlaySound "rubber_hit_2", 0, Vol(ActiveBall)*5, Pan(ActiveBall), 0, Pitch(ActiveBall), 1, 0, AudioFade(ActiveBall)
+    Case 3 : PlaySound "rubber_hit_3", 0, Vol(ActiveBall)*5, Pan(ActiveBall), 0, Pitch(ActiveBall), 1, 0, AudioFade(ActiveBall)
   End Select
 End Sub
 
@@ -662,9 +664,9 @@ End Sub
 
 Sub RandomSoundFlipper()
   Select Case Int(Rnd*3)+1
-    Case 1 : PlaySound "flip_hit_1", 0, Vol(ActiveBall), Pan(ActiveBall), 0, Pitch(ActiveBall), 1, 0, AudioFade(ActiveBall)
-    Case 2 : PlaySound "flip_hit_2", 0, Vol(ActiveBall), Pan(ActiveBall), 0, Pitch(ActiveBall), 1, 0, AudioFade(ActiveBall)
-    Case 3 : PlaySound "flip_hit_3", 0, Vol(ActiveBall), Pan(ActiveBall), 0, Pitch(ActiveBall), 1, 0, AudioFade(ActiveBall)
+    Case 1 : PlaySound "flip_hit_1", 0, Vol(ActiveBall)*5, Pan(ActiveBall), 0, Pitch(ActiveBall), 1, 0, AudioFade(ActiveBall)
+    Case 2 : PlaySound "flip_hit_2", 0, Vol(ActiveBall)*5, Pan(ActiveBall), 0, Pitch(ActiveBall), 1, 0, AudioFade(ActiveBall)
+    Case 3 : PlaySound "flip_hit_3", 0, Vol(ActiveBall)*5, Pan(ActiveBall), 0, Pitch(ActiveBall), 1, 0, AudioFade(ActiveBall)
   End Select
 End Sub
 
@@ -830,146 +832,73 @@ Sub Vukraiseballtimer2_Timer()
   End If
 End Sub
 
- Sub Globe_Flash(enabled)
-   If enabled Then
-     gflashup = 1:Globe_Flash_Up.enabled = 1
-   else
-     gflashdown = 1:Globe_Flash_Down.enabled = 1
-   End If
+ Sub Globe_Flash(m)
+   m = m/32
+   FDW.state = m/2
+   Nipple.blenddisablelighting = m*2 +0.5
  End Sub
 
-Sub U_Globe_Flash(enabled)
-  If enabled Then
-    FDW1.state = 1
-  else
-    FDW1.state = 0
-  End If
+Sub U_Globe_Flash(m)
+  m = m/255
+    FDW1.state = m
 End Sub
 
-Sub LRF(enabled)
-  If enabled Then
-    F21.state = 1
-    F21a.state = 1
-    F21b.state = 1
-    F21c.state = 1
-F21d.state = 1
-    F21e.state = 1
-  else
-    F21.state = 0
-    F21a.state = 0
-    F21b.state = 0
-    F21c.state = 0
-F21d.state = 0
-    F21e.state = 0
-  End If
+Sub LRF(m)
+  m = m/255
+    F21.state = m
+    F21a.state = m
+    F21b.state = m
+    F21c.state = m
+F21d.state = m
+    F21e.state = m
 End Sub
 
-Sub RRF(enabled)
-  If enabled Then
-    F22.state = 1
-    F22a.state = 1
-    F22b.state = 1
-    F22c.state = 1
- F22d.state = 1
-    F22e.state = 1
-  else
-    F22.state = 0
-    F22a.state = 0
-    F22b.state = 0
-    F22c.state = 0
-F22d.state = 0
-    F22e.state = 0
-  End If
+Sub RRF(m)
+  m = m/255
+    F22.state = m
+    F22a.state = m
+    F22b.state = m
+    F22c.state = m
+ F22d.state = m
+    F22e.state = m
 End Sub
 
-Sub Flash23(enabled)
-  If enabled Then
-    F23.state = 1
-  else
-    F23.state = 0
-  End If
+Sub Flash23(m)
+  m = m/255
+    F23.state = m
 End Sub
 
-Sub Flash27(enabled)
-  If enabled Then
-    F27.state = 1
-  else
-    F27.state = 0
-  End If
+Sub Flash27(m)
+  m = m/255
+    F27.state = m
 End Sub
 
-Sub Flash25(enabled)
-  If enabled Then
-    F25.state = 1
-    F25a.state = 1
-    F25b.state = 1
-  else
-    F25.state = 0
-    F25a.state = 0
-    F25b.state = 0
-  End If
+Sub Flash25(m)
+  m = m/255
+    F25.state = m
+    F25a.state = m
+    F25b.state = m
 End Sub
 
-Sub FF17(enabled)
-  If enabled Then
-    F17.state = 1
-  else
-    F17.state = 0
-  End If
+Sub FF17(m)
+  m = m/255
+    F17.state = m
 End Sub
 
-Sub FF18(enabled)
-  If enabled Then
-    F18.state = 1
-  else
-    F18.state = 0
-  End If
+Sub FF18(m)
+  m = m/255
+    F18.state = m
 End Sub
 
-Sub FF19(enabled)
-  If enabled Then
-    F19.state = 1
-  else
-    F19.state = 0
-  End If
+Sub FF19(m)
+  m = m/255
+    F19.state = m
+
 End Sub
 
-Sub FF20(enabled)
-  If enabled Then
-    F20.state = 1
-  else
-    F20.state = 0
-  End If
-End Sub
-
-Dim gflashup
-
-Sub Globe_Flash_Up_Timer()
-  FDW.state = 1
-  Select Case gflashup
-    Case 1:Nipple.Image = "Deadworld":gflashup = 2
-    Case 2:Nipple.Image = "Deadworld_R1":gflashup = 3
-    Case 3:Nipple.Image = "Deadworld_R2":gflashup = 4
-    Case 4:Nipple.Image = "Deadworld_R3":gflashup = 5
-    Case 5:Nipple.Image = "Deadworld_R4":gflashup = 6
-    Case 6:Nipple.Image = "Deadworld_R5":gflashup = 7
-    Case 7:Nipple.Image = "Deadworld_Red":me.enabled = 0
-  End Select
-End Sub
-
-Dim gflashdown
-
-Sub Globe_Flash_Down_Timer()
-  FDW.state = 0
-  Select Case gflashdown
-    Case 1:Nipple.Image = "Deadworld_Red":gflashdown = 2
-    Case 2:Nipple.Image = "Deadworld_R5":gflashdown = 3
-    Case 3:Nipple.Image = "Deadworld_R4":gflashdown = 4
-    Case 4:Nipple.Image = "Deadworld_R3":gflashdown = 5
-    Case 5:Nipple.Image = "Deadworld_R2":gflashdown = 6
-    Case 6:Nipple.Image = "Deadworld_R1":gflashdown = 7
-    Case 7:Nipple.Image = "Deadworld":me.enabled = 0
-  End Select
+Sub FF20(m)
+  m = m/255
+    F20.state = m
 End Sub
 
 'END SOLENOIDS
