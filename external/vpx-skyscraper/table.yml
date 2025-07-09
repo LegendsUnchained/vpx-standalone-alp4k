@@ -1,15 +1,18 @@
 ---
 applyFixes:
   - "bass"
-enabled: false
-backglassBundled: true
+# yamllint disable-line rule:line-length
+backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/pnx-rMf7uR_1749636467160.webp"
 backglassChecksum: "E739A9D066B8AEDA6312508ACB981700"
-backglassNotes: "Use the 2 screen b2s linked from the comments."
-backglassUrlOverride: "https://vpuniverse.com/files/file/25742-skyscraper-bally-1934/?tab=comments#findComment-90715"
+backglassNotes: "Direct Download"
+# yamllint disable-line rule:line-length
+backglassUrlOverride: "https://vpuniverse.com/applications/core/interface/file/attachment.php?id=60633&key=1e04abb9b7c1b8946332fdd87cb18d8d"
 fps: 60
 tableVPSId: "GQVgQ-sou9"
-tagline: "'This building is Kong-proof' - an old-timey architect probably"
+tagline: >-
+  "This building is Kong-proof" - an old-timey architect probably
 testers:
   - "evilwraith"
-vpxChecksum: "7C29C26FD7133940E36657F14428B187"
+  - "CoffeeAtJoes"
+vpxChecksum: "1A642C3A0A77E73098FE93A4E3A5C60A"
 vpxVPSId: "fzOMz7rlhz"
