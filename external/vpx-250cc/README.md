@@ -1,32 +1,62 @@
-# 250cc (Inder, 1992)
+# 250 cc (Inder 1992)
 
 ![Table Preview](../../images/vpx-250cc.jpg)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author |
-|:---------:|:----:|:-------:|:------:|
-| VPX | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14252) | 5.5.0 | [jpsalas](https://www.vpforums.org/index.php?s=543a5ca562cc33a89debe8ace8834f1e&showuser=277) |
-| B2S | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=7697) | 1.0 | [Piggei](https://www.vpforums.org/index.php?app=downloads&showfile=7697) |
-| DMD | N/A | N/A | N/A |
-| ROM | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=431) | N/A | N/A |
+## *️⃣  Table Statistics
 
-**Tested by:** [Boris]
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ✅ | ✅ | ❌ | 60 |
 
----
+<br>
 
-## Status 
-**Minimum VPX Standalone build:** 10.8.0-1989-a764013
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
+**VPXS 4KP Testers:**
+  - Boris
+  - Ominous Osie 🌸
+  - pointdablame
+
+<br>
 
 ---
 
-## Instructions
+<br>
 
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
+## ❇️ Available in the Wizard! 🪄✨
 
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`250 cc (Inder 1992)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *""250 cc" is a motorcycle racing-themed pinball machine released by the Spanish manufacturer Inder in 1992"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

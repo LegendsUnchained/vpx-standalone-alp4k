@@ -5,7 +5,6 @@ backglassBundled: true
 backglassVPSId: "NZXXtTMgoJ"
 backglassChecksum: "0C6011FCB50129F9F5E06BEC9A0929CE"
 backglassNotes: "Download 'Ace High (Gottlieb 1957) JP_VPX8.directb2s.zip'"
-enabled: false # Osie: Easy table for wizard release. YML built - Just needs simple stuff (POV/ Free Play/ Artwork)
 fps: 60
 mainNotes: "Press right on the control panel to load a ball from the hopper"
 tableNotes: "Download v55_VPX8.zip"
@@ -14,5 +13,6 @@ tagline: "Amusement Pinballs, as American as Baseball and Hot Dogs!"
 testers:
   - "Boris"
   - "OminousOsie"
+  - "pointdablame"
 vpxVPSId: "TOF-LubuVs"
 vpxChecksum: "4C7204204A2523C88076F22ADD91D9CB"
