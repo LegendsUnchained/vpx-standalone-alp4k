@@ -5,6 +5,7 @@ applyFixes:
 backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/pnx-rMf7uR_1749636467160.webp"
 backglassChecksum: "E739A9D066B8AEDA6312508ACB981700"
 backglassNotes: "Direct Download"
+# yamllint disable-line rule:line-length
 backglassUrlOverride: "https://vpuniverse.com/applications/core/interface/file/attachment.php?id=60633&key=1e04abb9b7c1b8946332fdd87cb18d8d"
 fps: 60
 tableVPSId: "GQVgQ-sou9"
