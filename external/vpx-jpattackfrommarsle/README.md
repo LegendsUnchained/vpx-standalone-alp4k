@@ -1,4 +1,4 @@
-# Attack from Mars, JP's (Bally 1995)
+# Attack from Mars LE, JP's (Chicago Gaming Company 2017)
 
 ![Table Preview](../../images/vpx-jpattackfrommarsle.jpg)
 
