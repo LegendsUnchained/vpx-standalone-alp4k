@@ -600,7 +600,7 @@ Sub ResetForNewGame()
     PlayersPlayingGame = 1
     bOnTheFirstBall = True
     For i = 1 To MaxPlayers
-        Score(i) = 1
+        
         ExtraBallsAwards(i) = 0
         Special1Awarded(i) = False
         Special2Awarded(i) = False
@@ -635,6 +635,8 @@ Sub FirstBall
     ResetForNewPlayerBall()
     ' crea una bola nueva en la zona del plunger
     CreateNewBall()
+    AddScore 1
+    AddScore -1
 End Sub
 
 ' (Re-)inicializa la mesa para una bola nueva, tanto si has perdido la bola, oe le toca el turno al otro jugador
@@ -782,7 +784,7 @@ Sub EndOfBall2()
 
         ' ¿Es ésta la última bola?
         If(BallsRemaining(CurrentPlayer) <= 0)Then
-        AddScore -1
+
             ' miramos si la puntuación clasifica como el Highscore
             CheckHighScore()
         End If
