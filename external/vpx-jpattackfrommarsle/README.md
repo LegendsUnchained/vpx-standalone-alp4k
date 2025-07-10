@@ -7,7 +7,7 @@
 ## Files
 | File Type | Link | Version | Author |
 |:---------:|:----:|:-------:|:------:|
-| VPX | [VP Universe](https://www.vpforums.org/index.php?app=downloads&showfile=11603) | LEv552_VPX8 | [jpsalas](https://www.vpforums.org/index.php?showuser=277) |
+| VPX | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=11603) | LEv552_VPX8 | [jpsalas](https://www.vpforums.org/index.php?showuser=277) |
 | B2S | [VP Universe](https://vpuniverse.com/files/file/12165-attack-from-mars-bally-1995-b2s-with-full-dmd/) | 1.0 | [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
 | DMD | [VP Universe](https://vpuniverse.com/files/file/19896-attack-from-mars-serum-colorization/) | 2.0 | [KRAKEN](https://vpuniverse.com/profile/35517-kraken/) |
 | ROM | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=1340) | afm_113b.zip | [destruk](https://www.vpforums.org/index.php?showuser=5) |
