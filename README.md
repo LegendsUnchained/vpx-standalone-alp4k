@@ -278,6 +278,7 @@ Links to these products on Amazon are through affiliate links.
 | [Atlantis (Gottlieb 1975)](external/vpx-atlantisgottlieb) | :white_check_mark: | :white_check_mark: | :x: | :x: | 44 |
 | [Attack & Revenge from Mars (Original 2015)](external/vpx-attackandrevengefrommars) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
 | [Attack from Mars (Bally 1995)](external/vpx-attackfrommars) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 30 |
+| [Attack from Mars LE, JP's (Bally 1995)](external/vpx-jpattackfrommarsle) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Attack of the Killer Tomatoes (MusicMOD) (Iceman 2023)](external/vpx-attackofthekillertomatoes) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Attila The Hun (Game Plan 1984)](external/vpx-atilla) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Austin Powers (Stern 2001)](external/vpx-austinpowers) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 35 |
