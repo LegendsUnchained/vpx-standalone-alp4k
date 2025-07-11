@@ -1,6 +1,6 @@
 # Sultan (Taito do Brasil 1979)
 
-![Table Preview](vpx-sultan-table.jpg?raw=true)
+![Table Preview](../../images/vpx-sultan-table.jpg?raw=true)
 
 ---
 
