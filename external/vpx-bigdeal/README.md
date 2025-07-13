@@ -1,5 +1,5 @@
 # Big Deal (Williams 1963)
-![Table Preview](vpx-bigdeal-table.png?raw=true)
+![Table Preview](../../images/vpx-bigdeal-table.png?raw=true)
 
 ---
 
