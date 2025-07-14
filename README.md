@@ -570,6 +570,7 @@ Links to these products on Amazon are through affiliate links.
 | [James Bond 007 (Stern 2022)](external/vpx-jamesbond007) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [James Cameron's Avatar (Stern 2010)](external/vpx-avatar) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 52 |
 | [Jaws (Balutito MOD) (Original 2013)](external/vpx-jaws) | :white_check_mark: | :white_check_mark: | :x: | :x: | 45 |
+| [Jaws 50th Anniversary tribute (Original 2013)](external/vpx-jawsmarty) | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 50 |
 | [Jet Spin (Gottlieb 1977)](external/vpx-jetspin) | :white_check_mark: | :x: | :x: | :x: | 58 |
 | [Jimi Hendrix (Original 2021)](external/vpx-jimihendrix) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Joe Bar Team (ZXR 2019)](external/vpx-joebarteam) | :white_check_mark: | :x: | :white_check_mark: | :x: | 52 |
