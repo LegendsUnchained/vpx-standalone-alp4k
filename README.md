@@ -600,7 +600,7 @@ Links to these products on Amazon are through affiliate links.
 | [Laser Cue (Williams 1984)](external/vpx-lasercue) | :white_check_mark: | :x: | :white_check_mark: | :x: | 33 |
 | [Laser War (Data East 1987)](external/vpx-laserwar) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 29 |
 | [Last Action Hero (Data East 1993)](external/vpx-lastactionhero) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
-| [Last Starfighter, The (Taito, 1983)](external/vpx-thelaststarfighter) | :white_check_mark: | :x: | :white_check_mark: | :x: | 52 |
+| [Last Starfighter, The (Taito, 1983)](external/vpx-thelaststarfighter) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Legend - A Pinball Adventure (Original 2023)](external/vpx-legend) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 54 |
 | [Legend of Zelda, The (Original 2015)](external/vpx-legendofzelda) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Leprechaun King, The (Original 2019)](external/vpx-theleprechaunking) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
