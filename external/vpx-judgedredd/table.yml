@@ -11,7 +11,7 @@ tagline: "I never broke the law, I AM THE LAW!"
 testers:
   - "Bla1ze"
 vpxVPSId: "wJZPSTmW"
-vpxChecksum: "410354B7DB1C0A9D3B579770B5E29332"
-vpxNotes: "Download version 3.1"
+vpxChecksum: "ECA099E147DFE3334EFDE86764E97B0D"
+tableNotes: "Download version 4.0"
 applyFixes:
   - "bass"
