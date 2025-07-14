@@ -15,7 +15,7 @@ Please use version 3.0 of the table, NOT the newest 3.2. On the download page:
 - Next to the text where "With version 3.0" appears, click `Download`
 - Both B2S and mini-Pup come in the download with VPX
 - To use with B2S, use the included B2S file, and DO NOT use the `.vbs`
-- To use with mini-Pup (performance hit is negligible), create a `pupvideos` folder in the same folder with your `.vpx` file, and move the contents of `Backglass_PUP/JAWS_50Th_Anniversary/` into the new pupvideos folder. DO NOT use the `.vbs` file found here.
+- To use with mini-Pup (performance hit is negligible), create a `pupvideos` folder in the same folder with your `.vpx` file, and move the contents of `Backglass_PUP/JAWS_50Th_Anniversary/` into the new pupvideos folder. DO NOT use the `.directb2s` file found here.
 
 **Tested by:** [Curt](https://github.com/Old-Cyrus)
 
