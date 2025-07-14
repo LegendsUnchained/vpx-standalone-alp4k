@@ -1,0 +1,20 @@
+---
+applyFixes: 
+  - "bass"
+backglassBundled: true
+backglassVPSId: "fi-U29u2"
+backglassChecksum: "98064D12FF87A26610C8A81F85819BF7"
+backglassNotes: "Included in VPX zip"
+fps: 60
+mainNotes: "Press right on the control panel to load a ball from the hopper"
+tableNotes: "Download version 2.1 beta"
+tableVPSId: "fi-U29u2"
+tagline: >-
+  The first table to have player-controlled flippers!
+  This innovation transformed pinball from a game of chance, into a game of skill!
+testers:
+  - "ricardoHoarH"
+  - "OminousOsie"
+  - "CoffeeAtJoes"
+vpxVPSId: "s393znjkK1"
+vpxChecksum: "3289CFA2F8717A8451371ABD72AE816C"
