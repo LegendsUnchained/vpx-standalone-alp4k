@@ -1,0 +1,16 @@
+---
+applyFixes:
+  - "bass"
+# yamllint disable-line rule:line-length
+backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/65Ezy3Lk9m_1725356016568.webp"
+backglassBundled: true
+backglassChecksum: "A64F71B8D34EFD8325C6D6087C83FAE4"
+backglassNotes: "Included with table download"
+fps: 45
+tableNotes: "Download Version 1.2"
+tableVPSId: "9L3tkzCYrc"
+tagline: "It's Morphin Time!"
+testers:
+  - "Silentkat"
+vpxChecksum: "87F768B071708050236A51955C32189A"
+vpxVPSId: "mgUCsU9tAl"

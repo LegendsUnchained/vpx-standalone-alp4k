@@ -4,7 +4,6 @@ applyFixes:
 backglassVPSId: "cVcPBgMnKO"
 backglassChecksum: "49EBC0B0371FE86E1FBB427A37CE6731"
 backglassNotes: "Download v1.0.0"
-enabled: false # Osie: Easy table for wizard release. YML built - Just needs simple stuff (POV/ Free Play/ Artwork)
 fps: 60
 tableNotes: "Download v1.0.0"
 tableVPSId: "AUgcZGihwC"

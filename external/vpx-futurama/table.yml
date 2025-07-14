@@ -1,0 +1,22 @@
+---
+applyFixes: 
+  - "bass"
+enabled: false # Osie: Needs new TM version with better pup support
+fps: 60
+pupArchiveFormat: "zip"
+pupArchiveRoot: "puppack/futurama"
+pupChecksum: "1D3C30870C322EF8884CA899ABC92F31"
+pupFileUrl: >-
+  https://vpuniverse.com/files/file/18010-futurama-original-2024/
+pupNotes: "Download Futurama PuP and media pack.zip"
+pupRequired: true
+tableVPSId: "k_w8Y3slND"
+tableNotes: "Download Futurama (Original 2024) v1.2.1.zip"
+tagline: "Good news, everyone!"
+testers: 
+  - "Bla1ze"
+  - "Mar3nBu"
+  - "mrandromeda"
+  - "evilwraith"
+vpxChecksum: "157A4740B8F80EB2809E0B61CA8D2F0B"
+vpxVPSId: "GzUJtTjUKM"

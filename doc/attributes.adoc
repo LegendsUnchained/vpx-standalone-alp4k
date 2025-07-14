@@ -1,0 +1,24 @@
+////
+ An asciidoc attribute reference contains a simple way to reference commonly used
+ urls, text, pages, etc.  You can set the attribute here, include this file
+ at the top of your document file, and then use the attribute in your document.
+ Updating the entry here, will update the entry where ever you reference it in
+ your documents.   This way you only have one place to
+////
+
+// Common URLs
+:discord-mox-gameroom-url: https://discord.com/invite/moxsgameroom
+
+// Pages
+:page-getting-started: xref:beginner/gettingstarted.adoc
+:page-joining-beta: xref:beginner/joiningthebeta.adoc
+:page-table-manager-wizard: xref:beginner/tablemanager.adoc
+:page-vpx4kproject: xref:beginner/vpx4kpproject.adoc
+:page-tablemanagerother: xref:intermediate/tablemanagerother.adoc
+:page-tableinstall: xref:intermediate/tableinstallfaq.adoc
+:page-table-settings: xref:intermediate/tablesettings.adoc
+:page-table-customization: xref:intermediate/tablecustomization.adoc
+:page-pup-pack: xref:advanced/puppackinstall.adoc
+:page-new-table: xref:advanced/newtable.adoc
+:page-vbs-pup-guide: xref:advanced/vbspupguide.adoc
+:page-add-wizard-table: xref:advanced/wizardtable.adoc
