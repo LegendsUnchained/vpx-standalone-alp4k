@@ -3,6 +3,7 @@ applyFixes:
   - "bass"
 backglassBundled: true
 backglassChecksum: "B9A9E82AF13C2B6DF293CC366F070F28"
+backglassNotes: "Use the bundled backglass from the table zip"
 backglassVPSId: "fvc5FJSEiH"
 fps: 55
 mainNotes: "Table based on Walkyrie, music based on Macross Delta."
