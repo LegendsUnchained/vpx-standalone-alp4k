@@ -14,6 +14,7 @@ Option Explicit
 ' 1.0 - initial release
 ' 	  - chamged trough to midpoint of outhole and scored balls (like real game)
 '	  - added invis ramp to tilter to help settle ball after tilt
+' 1.1 - fixed missing walls on some pins. Tuned wall around skyscraper.
 '
 ' todo: 
 ' 
@@ -50,6 +51,7 @@ Dim CurrentWarnings : CurrentWarnings = 0
 Dim IsTilted : IsTilted = False
 Dim TiltWarningTime
 Dim tiltball 
+
 Const StandardBallsPerGame = 10
 Dim BallsPerGame : BallsPerGame = StandardBallsPerGame
 Dim Score, BIP, BallsPlayed, BallsCollected, HighScore, DefaultHighScore
@@ -71,7 +73,7 @@ Dim IsBallInBallReleaseKicker : IsBallInBallReleaseKicker = False
 
 dim isRedSpecial : isRedSpecial = False
 dim isGreenSpecial : isGreenSpecial = False
-'Const StandardBallsPerGame = 10
+
 
 ' DOF CODES
 Const DOFElevator = 110
@@ -684,11 +686,11 @@ Dim PI
 PI = 4 * Atn(1)
 
 Function dSin(degrees)
-	dSin = Sin(degrees * Pi / 180)
+	dsin = Sin(degrees * Pi / 180)
 End Function
 
 Function dCos(degrees)
-	dCos = Cos(degrees * Pi / 180)
+	dcos = Cos(degrees * Pi / 180)
 End Function
 
 Function Atn2(dy, dx)
@@ -1135,7 +1137,7 @@ Sub BallControlTimer_Timer()
 		ElseIf BCdown = 1 Then
 			ControlActiveBall.vely =  BCvel*BCboost
 		Else
-			ControlActiveBall.vely = BCyveloffset
+			ControlActiveBall.vely = bcyveloffset
 		End If
 	End If
 End Sub
@@ -1841,11 +1843,11 @@ Sub Table1_OptionEvent(ByVal eventId)
 		DisableStaticPreRendering = True
 	End If
 
-	TableSlope = Table1.Option("Slope", 1, 10, 1, 4, 0)
+    TableSlope = Table1.Option("Slope", 1, 10, 0.5, 4, 0)
 	Table1.SlopeMin = TableSlope
 
 	TiltSensitivity = Table1.Option("Tilt Sensitivity", 1, 10, 1, 7, 0)
-	MaxBallsInShooterLane = Table1.Option("Max Balls in Lane", 1, 5, 1, 2, 0)
+    MaxBallsInShooterLane = Table1.Option("Max Balls in Lane", 1, 5, 1, 2, 0)
 	BallBrightnessModifier = Table1.Option("Ball Brightness", 0, 1, .01, 1, 1)
 	PlayElevatorSound = Table1.Option("Elevator Sound", 0, 1, 1, 1, 0, Array("Off","On"))
 	WheelDragModifier = Table1.Option("Wheel Drag", .01, 1, .01, .50, 1)
@@ -1854,8 +1856,6 @@ Sub Table1_OptionEvent(ByVal eventId)
 
 	' Room brightness
 	'	LightLevel = Table1.Option("Table Brightness (Ambient Light Level)", 0, 1, 0.01, .5, 1)
-	Dim NightDay
-	NightDay = 70 ' Default value, or set this from an option if available
 	LightLevel = NightDay/100
 	SetRoomBrightness LightLevel 
 
@@ -2168,10 +2168,8 @@ dim WheelFreeSpin : WheelFreeSpin = cInitialFreeSpin
 sub StartWheel
 	IsWheelDone = False
 	'add some randomness
-	RandomFactor = (Rnd * 0.001)
-	'RandomFactor = ((100-1+1)*Rnd+1) / 100000
-
-	WheelFreeSpin = Int((120-25+1)*Rnd+25) ' free spin between 25-120 iterations for randomness
+	RandomFactor = ((100-1+1)*Rnd+1) / 100000
+	WheelFreeSpin = ((120-25+1)*Rnd+25) ' free spin between 25-120 interations for randomness
 
 	'these numbers need to be =< 1 otherwise wheel speeds up 
 	LargeDragCoefficient = (cLargeDragCoefficientBase - RandomFactor)-(WheelDragModifier/200)
