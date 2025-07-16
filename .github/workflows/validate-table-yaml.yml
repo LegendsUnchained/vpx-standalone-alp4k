@@ -1,7 +1,10 @@
 name: Validate table.yml
 
 on:
-  pull_request:
+  push:
+    branches:
+      - 'wraithmain'
+      - 'releases/**'
     paths:
       - '**table.yml'
 
