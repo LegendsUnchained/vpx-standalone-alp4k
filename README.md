@@ -420,7 +420,7 @@ Links to these products on Amazon are through affiliate links.
 | [Frontier (Bally 1980)](external/vpx-frontier) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Full Metal Jacket (Original 2022)](external/vpx-fullmetaljacket) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Future Spa (Bally 1979)](external/vpx-futurespa) | :white_check_mark: | :x: | :white_check_mark: | :x: | 57 |
-| [GalÃ¡xia (LTD do Brasil 1975)](external/vpx-galaxia) | :white_check_mark: | :x: | :x: | :x: | 60 |
+| [Galáxia (LTD do Brasil 1975)](external/vpx-galaxia) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Galaxy (Stern 1980)](external/vpx-galaxy) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 42 |
 | [Gamatron (Pinstar 1985)](external/vpx-gamatron) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Gemini 2000 (Taito do Brasil 1982)](external/vpx-gemini2000) | :white_check_mark: | :x: | :white_check_mark: | :x: | 55 |
