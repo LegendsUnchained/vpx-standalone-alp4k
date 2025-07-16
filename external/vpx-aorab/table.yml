@@ -9,7 +9,8 @@ tagline: "Hey, Rocky! Watch me pull a rabbit out of my hat!"
 testers:
   - "Bla1ze"
   - "OminousOsie"
-vpxVPSId: "Yw5N-AQlOq"
-vpxChecksum: 4dd18cb1102d5bfab90980115fa97532
+  - "evilwraith"
+vpxVPSId: "ncBxxDuBlr"
+vpxChecksum: "3DBE27B8595333F8B789B2ECA44CF4D8"
 applyFixes:
   - "bass"

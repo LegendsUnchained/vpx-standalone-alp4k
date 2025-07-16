@@ -1,6 +1,6 @@
-# Attack from Mars, JP's (Bally 1995)
+# Walkyria (Joctronic 1986)
 
-![Table Preview](../../images/vpx-jpattackfrommars-preview.png)
+![Table Preview](../../images/L0OZJWWk-preview.webp)
 
 <br>
 
@@ -13,9 +13,8 @@
 <br>
 
 **VPXS 4KP Testers:**
-  - kingargyle
-  - Ominous Osie 🌸
   - evilwraith
+  - CoffeeAtJoes
 
 <br>
 
@@ -34,9 +33,9 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`Attack from Mars, JP's (Bally 1995)`**
+4.  Find and select this table from the dropdown menu: **`Walkyria (Joctronic 1986)`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *"No time for tea! Blast those Martians!"*
+6. *"'WE RIDE!'"*
 
 <br>
 
