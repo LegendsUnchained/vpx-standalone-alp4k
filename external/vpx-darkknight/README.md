@@ -1,4 +1,4 @@
-# Batman (Stern 2008)
+# Batman - The Dark Knight (Stern 2008)
 
 ![Table Preview](../../images/vpx-darkknight.png)
 
