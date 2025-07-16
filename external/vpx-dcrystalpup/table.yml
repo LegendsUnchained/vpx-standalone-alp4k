@@ -1,0 +1,16 @@
+---
+applyFixes:
+  - "bass"
+fps: 45
+pupArchiveFormat: "rar"
+pupChecksum: "5ff2d75b16d0e4234cce72d53c5b9ce8"
+pupNotes: "Download Dark Crystal Pup 2.0.rar from table link "
+pupRequired: true
+pupVersion: "2.0.0"
+tableNotes: "Download Version 2.0.0"
+tableVPSId: "tG1SQbct"
+tagline: "A thousand years ago, this land was green and good - until the Crystal cracked"
+testers:
+  - "SIlentkat"
+vpxChecksum: "0fec162ea73c233c1a1f746ffe06cb89"
+vpxVPSId: "BE5Ntvix1W"
