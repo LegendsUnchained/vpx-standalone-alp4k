@@ -683,7 +683,7 @@ Links to these products on Amazon are through affiliate links.
 | [Stars (Stern 1978)](external/vpx-stars) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
 | [Stingray (Stern 1977)](external/vpx-stingray) | :white_check_mark: | :x: | :white_check_mark: | :x: | 47 |
 | [Strange Science (Bally 1986)](external/vpx-strangescience) | :white_check_mark: | :x: | :white_check_mark: | :x: | 36 |
-| [Stranger Things â€“ Stranger Edition (Original 2018)](external/vpx-strangerthings) | :white_check_mark: | :white_check_mark: | :x: | :x: | 45 |
+| [Stranger Things - Stranger Edition (Original 2018)](external/vpx-strangerthings) | :white_check_mark: | :white_check_mark: | :x: | :x: | 45 |
 | [Street Fighter 2 JP's Felsir Mod (original 2021)](external/vpx-sfiimod) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Strike (Zaccaria 1978)](external/vpx-strike) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Strikes and Spares (Bally 1978)](external/vpx-strikes) | :white_check_mark: | :x: | :white_check_mark: | :x: | 42 |
