@@ -1,0 +1,17 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "32E5CC26DD00BC6DAFF642D4BDE53600"
+backglassNotes: "Use Fireball Classic (Bally 1984) D.directb2s"
+backglassVPSId: "M8v3MebLYV"
+fps: 60
+romChecksum: "92A12D4E32BA2A229B174AECE6630DDF"
+romNotes: "Download fbclass.zip"
+romVPSId: "0SYynqlOeR"
+tableNotes: "Download Fireball Classic (Bally 1984) 1.2"
+tableVPSId: "EniVKNm0Vq"
+tagline: "'Not to be confused with Fireball Cinnamon Whisky'"
+testers:
+  - "evilwraith"
+vpxChecksum: "9DD2D8F43A4C2F83D860D8D956390CA2"
+vpxVPSId: "uzPhhqXVa7"
