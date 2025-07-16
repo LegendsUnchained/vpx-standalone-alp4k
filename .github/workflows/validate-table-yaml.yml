@@ -1,6 +1,7 @@
 name: Validate table.yml
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - 'wraithmain'
