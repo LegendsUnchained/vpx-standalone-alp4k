@@ -1,6 +1,6 @@
-# Attack from Mars, JP's (Bally 1995)
+# Dark Crystal Pinball, The (Original 2020)
 
-![Table Preview](../../images/vpx-jpattackfrommars-preview.png)
+![Table Preview](../../images/BE5Ntvix1W-preview.webp)
 
 <br>
 
@@ -8,14 +8,14 @@
 
 | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |-----------|-----|-----|-----|-----|
-| ✅ | ✅ | ✅ | ❌ | 60 |
+| ❌ | ❌ | ❌ | ✅ | 45 |
 
 <br>
 
 **VPXS 4KP Testers:**
-  - kingargyle
-  - Ominous Osie 🌸
+  - Silentkat
   - evilwraith
+  - Mox
 
 <br>
 
@@ -34,9 +34,9 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`Attack from Mars, JP's (Bally 1995)`**
+4.  Find and select this table from the dropdown menu: **`Dark Crystal Pinball, The (Original 2020)`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *"No time for tea! Blast those Martians!"*
+6. *"A thousand years ago, this land was green and good - until the Crystal cracked"*
 
 <br>
 

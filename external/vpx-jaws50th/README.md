@@ -1,30 +1,60 @@
-# Jaws 50th Anniversary (Original by marty02 2025)
+# Jaws (Original 2025)
 
-![Table Preview](../../images/vpx-jaws50th-table.png?raw=true)
+![Table Preview](../../images/vpx-jaws50th-table.png)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author | 
-|-----------|--------|----------|--------------|
-| **VPX** | [VPUniverse](https://vpuniverse.com/files/file/25943-jaws_50th_anniversary/) | 3.2 | [marty02](https://vpuniverse.com/profile/16531-marty02/) |
-| **B2S** | [VPUniverse](https://vpuniverse.com/files/file/26027-jaws-50th-stern-2025-b2s-full-dmd/) | 1.0 | [HauntFreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
-
----
-
-## Status 
-**Minimum VPX Standalone build:** 10.8.0-5b941e6
+## *️⃣  Table Statistics
 
 | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |-----------|-----|-----|-----|-----|
-| :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 52 |
+| ✅ | ❌ | ❌ | ❌ | 52 |
+
+<br>
+
+**VPXS 4KP Testers:**
+  - evilwraith
+
+<br>
 
 ---
 
-## Instructions
+<br>
 
-- Install this table through the Table Manager, using the `Add Table` > `Wizard` page
-- If you need help, more information can be found on the wiki: [Table Manager ‐ Wizard](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B03%5D-%F0%9F%92%9A-Table-Manager-%E2%80%90-Wizard)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
+## ❇️ Available in the Wizard! 🪄✨
 
-- "You're gonna need a bigger boat."
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Jaws (Original 2025)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"'Just when you thought it was safe...'"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

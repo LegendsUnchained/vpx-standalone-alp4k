@@ -4,12 +4,12 @@ backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/
 backglassBundled: true
 backglassChecksum: "96DBDB0FA7E90ACE775668085AB0687F"
 backglassNotes: "Backglass included in table zip"
-enabled: false
 fps: 60
 tableVPSId: "2GTQfKUQFn"
 tagline: "War."
 testers:
   - "evilwraith"
+  - "CoffeeAtJoes"
 vpxVPSId: "y8DI9oqQgG"
 vpxChecksum: "90F32CD7D69B74A5E2B95A94C1520BC6"
 applyFixes:
