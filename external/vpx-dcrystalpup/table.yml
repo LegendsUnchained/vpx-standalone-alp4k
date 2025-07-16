@@ -4,9 +4,12 @@ applyFixes:
 fps: 45
 pupArchiveFormat: "rar"
 pupChecksum: "5ff2d75b16d0e4234cce72d53c5b9ce8"
+pupFileUrl: >-
+  https://vpuniverse.com/files/file/15270-dark-crystal-pup-table-marcade-mod/
 pupNotes: "Download Dark Crystal Pup 2.0.rar from table link "
 pupRequired: true
 pupVersion: "2.0.0"
+pupVPSId: "epKM_FbKHI"
 tableNotes: "Download Version 2.0.0"
 tableVPSId: "tG1SQbct"
 tagline: "A thousand years ago, this land was green and good - until the Crystal cracked"
