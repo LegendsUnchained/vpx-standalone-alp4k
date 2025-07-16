@@ -33,7 +33,7 @@
 '
 '
 'Batman - The Dark Knight - IPDB No. 5307
-'© Stern 2008
+'Â© Stern 2008
 'VPX recreation by tom tower & ninuzzu
 'Thanks to Lord Hiryu for the playfield texture
 'Thanks to DJRobX for coding the Joker
@@ -41,6 +41,11 @@
 
 Option Explicit
 Randomize
+
+Const UseVPMModSol = True
+
+Const cSingleLFlip = 0
+Const cSingleRFlip = 0
 
 '******************************************************************************************
 '* CUSTOMIZABLE OPTIONS 			
@@ -70,10 +75,10 @@ On Error Goto 0
 
 ' Internal DMD in Desktop Mode, using a textbox (must be called before LoadVPM)
 Dim DesktopMode:DesktopMode = Table1.ShowDT
-Dim UseVPMDMD:UseVPMDMD = DesktopMode
+'Dim UseVPMDMD:UseVPMDMD = DesktopMode
 
 ' Standard Options
-Const UseVPMModSol = 1, UseSolenoids = 1, UseLamps = 0, UseSync = 0, HandleMech = 1, SSolenoidOn = "fx_solenoid", SSolenoidOff = "", SCoin = "fx_Coin"
+Const UseSolenoids = 1, UseLamps = 0, UseSync = 0, HandleMech = 1, SSolenoidOn = "fx_solenoid", SSolenoidOff = "", SCoin = "fx_Coin"
 
 ' Rom Name
 Const cGameName = "bdk_294"
@@ -97,7 +102,7 @@ Sub Table1_Init
 		.ShowDMDOnly = 1
 		.ShowFrame = 0
 		.HandleMechanics = 0
-		.Hidden = DesktopMode	'Hide VPM DMD in Desktop Mode
+		.Hidden = 0   'DesktopMode	'Hide VPM DMD in Desktop Mode
 		On Error Resume Next
 		.Run GetPlayerHWnd
 		If Err Then MsgBox Err.Description
@@ -118,7 +123,7 @@ Sub Table1_Init
     With bsTrough
 		.Size = 4
 		.InitSwitches Array(21, 20, 19, 18)
-		.InitExit BallRelease, 70, 15
+		.InitExit BallRelease, 90, 10
 		.InitEntrySounds "fx_drain", SoundFX(SSolenoidOn,DOFContactors), SoundFX(SSolenoidOn,DOFContactors)
 		.InitExitSounds  SoundFX(SSolenoidOn,DOFContactors), SoundFX("Ballrelease",DOFContactors)
 		.Balls = 4
@@ -205,8 +210,9 @@ Sub Table1_Init
 	'Init Other Stuff
 	InitLights:InitOptions
 	Rails.visible = DesktopMode
+    WaitHere.isdropped=1
 	Dim i: For i=1 to 5:CraneHit(i).IsDropped = 1:Next
-	For i = 0 to 4 : dropping(i) = False : Next
+	
 
 	' Fast Flips
 	On Error Resume Next 
@@ -312,6 +318,19 @@ Sub LampTimer_Timer()
         Next
     End If
     UpdateLamps
+	UpdateJokerLighting
+End Sub
+
+Sub UpdateJokerLighting
+	If LampState(79) Then	
+		cilin.image = "JokerMotor_ON"
+		Joker.image = "joker_tex_ON"
+		Joker.DisableLighting = 0.05	
+	Else	
+		cilin.image = "JokerMotor"
+		Joker.image = "joker_tex"
+		Joker.DisableLighting = 0	
+	End If
 End Sub
 
 Sub UpdateLamps
@@ -402,27 +421,19 @@ Sub UpdateLamps
 	FadeLamp 80,  l80a			'scarecrow
 	FadeLamp 80,  l80b			'scarecrow
 	FadeLamp 86,  l86
-	FadeLamp 87,  l87
-	FadeLamp 88,  l88
+	FadeLamp 87,  l87 
+End Sub
 
 	'Flashers
-	FadeLamp 179,  F19a
-	FadeLamp 179,  F19b
-	FadeLamp 181,  F21
-	FadeLamp 182,  F22
-	FadeLamp 182,  F22a
-	FadeLamp 182,  F22b
-	FadeLamp 182,  F22c
-	FadeLamp 183,  F23
-	FadeLamp 185,  F25a
-	FadeLamp 185,  F25b
-	FadeLamp 187,  F27
-	FadePrim 187,  LDome, 10
-	FadeLamp 189,  F29
-	FadePrim 189,  RDome, 10
-	FadeLamp 192,  F32
-	FadeLamp 192,  F32a
-End Sub
+Sub	SetLamp179(m):m = m/255:F19a.state = m:F19b.state = m:End Sub
+Sub	SetLamp181(m):m = m/255:F21.state = m:End Sub
+Sub	SetLamp182(m):m = m/255:F22.state = m:F22a.state = m:F22b.state = m:F22c.state = m: End Sub
+Sub	SetLamp183(m):m = m/255:F23.state = m:End Sub
+Sub	SetLamp185(m):m = m/255:F25a.state = m:F25b.state = m:End Sub  
+Sub	SetLamp187(m):m = m/255:F27.state = m:F27a.state = m:LDome.BlendDisableLighting = m*3:End Sub
+Sub	SetLamp189(m):m = m/255:F29.state = m:F29a.state = m:RDome.BlendDisableLighting = m*3:End Sub
+Sub	SetLamp192(m):m = m/255:F32.state = m:F32a.state = m:End Sub  
+
 
 ' Not Modulated lights and flashers
 Sub FadeLamp(nr, object)
@@ -485,19 +496,19 @@ SolCallback(15)= "SolLFlipper"						'Left Flipper
 SolCallback(16)= "SolRFlipper"						'Right Flipper
 'SolCallback(17)= ""							'Left Sling
 'SolCallback(18)= ""							'Right Sling
-SolCallBack(19)= "SetLamp 179,"						'Flasher:ScareCrow Home Insert
-SolCallBack(21)= "SetLamp 181,"						'Flasher:BackPanel
-SolCallBack(22)= "SetLamp 182,"						'Flasher:Joker (x3)
-SolCallBack(23)= "SetLamp 183,"						'Flasher:Scarecrow
-SolCallBack(24)= "vpmSolSound SoundFX(""fx_knocker"",DOFKnocker),"					'Knocker
-SolCallBack(25)= "SetLamp 185,"						'Flasher:Pop Bumpers  (x3)
+SolModCallBack(19)= "SetLamp179"						'Flasher:ScareCrow Home Insert
+SolModCallBack(21)= "SetLamp181"						'Flasher:BackPanel
+SolModCallBack(22)= "SetLamp182"						'Flasher:Joker (x3)
+SolModCallBack(23)= "SetLamp183"						'Flasher:Scarecrow
+'SolCallBack(24)= "vpmSolSound SoundFX(""fx_knocker"",DOFKnocker),"					'Knocker
+SolModCallBack(25)= "SetLamp185"						'Flasher:Pop Bumpers  (x3)
 'SolCallBack(26)= ""							'Joker Motor
-SolCallBack(27)= "SetLamp 187,"						'Flasher:Left SlingShot
+SolModCallBack(27)= "SetLamp187"						'Flasher:Left SlingShot
 'SolCallBack(28)= ""							'ScareCrow Motor Relay
-SolCallBack(29)= "SetLamp 189,"						'Flasher:Right SlingShot
+SolModCallBack(29)= "SetLamp189"						'Flasher:Right SlingShot
 'SolCallBack(30)= ""							'Joker Motor Relay
 'SolCallBack(31)= ""							'ScareCrow Motor
-SolCallback(32)= "SetLamp 192,"						'Flasher:BatMobile Crash (x2)
+SolModCallback(32)= "SetLamp192"						'Flasher:BatMobile Crash (x2)
 
 '************************************************************************
 '						FLIPPERS
@@ -594,25 +605,23 @@ End Sub
 '************************************************************************
 
 Const Pi=3.1415926535
-Dim fakeBall, RampDir, RampPos
-ReDim BatRampRadius(4), dropping(4)
+
+Dim BatRampRadius:BatRampRadius = SQR((LowerTrack.X - Sw64.X)^2 + (LowerTrack.Y - Sw64.Y)^2)
+
+Dim myBall, fakeBall, RampDir, RampPos
 
 Sub sw64_Hit: If ActiveBall.VelY<0 Then Controller.Switch(64) = 1 :End If: End Sub
-Sub Trigger1_hit: PlaysoundAt "fx_rrturn", Trigger1: If ActiveBall.VelX<0 And ActiveBall.VelX>-5 Then ActiveBall.VelX = -8 :End If : End Sub
+
+Sub Trigger1_hit : Set myBall= ActiveBall:PlaysoundAt "fx_rrturn", Trigger1:If ActiveBall.VelX<0 And ActiveBall.VelX>-5 Then ActiveBall.VelX = -10 :End If : End Sub
 
 Sub SolBatRamp(enabled)
 	If Enabled Then
-		CheckBalls
-		RampPos=10:RampDir=-1: MoveBatRamp.Enabled=1
+		RampPos=10:RampDir=-1: MoveBatRamp.Enabled=1 
 		PlaysoundAt SoundFX("DiverterOn", DOFContactors), BatMobile
 	Else
-		Dim b:For b = 0 to 3
-			If dropping(b) = True Then
-				dropping(b) = False
-			End If
-		Next
+		If NOT IsEmpty(myBall) Then myBall= Empty
 		RampPos=0:RampDir=1: MoveBatRamp.Enabled=1
-		PlaysoundAt SoundFX("DiverterOff", DOFContactors), BatMobile
+		PlaysoundAt SoundFX("DiverterOff", DOFContactors), BatMobile        
 	End If
 End Sub
 
@@ -625,28 +634,10 @@ Sub MoveBatRamp_timer
 	DecalDropRamp.RotX = RampPos
 	DecalSide.RotX = RampPos
 	BatMobile.RotX = RampPos
-    Dim BOT, b
-    BOT = GetBalls
-	For b = 0 to 3
-		If dropping(b) = True Then
-			BOT(b).Y = LowerTrack.Y - BatRampRadius(b) * cos (RampPos * Pi/180)
-			BOT(b).Z = 135 + BatRampRadius(b) * sin (RampPos * Pi/180) + 25
-		End If
-	Next
-End Sub
-
-Sub CheckBalls()
-    Dim BOT, b
-    BOT = GetBalls
-	' exit the Sub if no balls on the table
-    If UBound(BOT) = -1 Then Exit Sub
-    ' check if there are balls on the batramp
-    For b = 0 to UBound(BOT)
-        If BOT(b).X< 85 and BOT(b).Z> 50 Then
-			dropping(b) = True
-			BatRampRadius(b) = SQR((LowerTrack.X - BOT(b).X)^2 + (LowerTrack.Y - BOT(b).Y)^2)
-        End If
-    Next
+	If NOT IsEmpty(myBall) Then
+		myBall.Y = LowerTrack.Y - BatRampRadius * cos (RampPos * Pi/180)
+		myBall.Z = 135 + BatRampRadius * sin (RampPos * Pi/180) + 25
+	End If
 End Sub
 
 Sub DropTheBall(n)
@@ -657,14 +648,10 @@ Sub DropTheBall(n)
 			Set fakeBall = BallDestroy.createball : fakeBall.visible = 0 : BallDestroy.kick 0,20
 			MoveBatMobile.enabled= 1
 		Case 1
-			Dim BOT, b
-			BOT = GetBalls
-			For b = 0 to 3
-				If dropping(b) = True Then
-					BOT(b).VelZ = 10
-				End If
-			Next
-			Controller.Switch(64) = 0
+			If NOT IsEmpty(myBall) Then
+				myBall.VelZ=5
+				Controller.Switch(64) = 0
+			End If
 			RampUp.collidable=0
 			RampDown.collidable=1
 			Set fakeBall = BallMake.createball : fakeBall.visible = 0 : BallMake.kick 180,1
@@ -673,7 +660,11 @@ Sub DropTheBall(n)
 End Sub
 
 Sub MoveBatMobile_timer
-	BatMobile. TransY = -BallMake.Y + fakeBall.Y
+	If Not(IsEmpty(fakeBall)) Then
+BatMobile. TransY = (-BallMake.Y + fakeBall.Y)-145
+Else
+BatMobile. TransY = -BallMake.Y
+End If
 End Sub
 
 Sub BallMake_hit : MoveBatMobile.Enabled=0 :  Me.DestroyBall : fakeBall = Empty : End Sub
@@ -790,6 +781,9 @@ Sub sw38_hit:vpmtimer.PulseSw 38: PlaySoundAt SoundFX("fx_target",DOFTargets), A
 Sub sw48_hit:vpmtimer.PulseSw 48: PlaySoundAt SoundFX("fx_target",DOFTargets), ActiveBall:End Sub
 Sub sw49_hit:vpmtimer.PulseSw 49: PlaySoundAt SoundFX("fx_target",DOFTargets), ActiveBall:End Sub
 
+'Center Ramp Enter
+Sub sw13_hit:vpmtimer.pulsesw 13: PlaySoundAt "fx_gate4",ActiveBall:End Sub
+
 'Rollovers
 Sub sw7_hit:Controller.switch(7) = 1: PlaySoundAt "fx_sensor",ActiveBall:End Sub
 Sub sw7_unhit:Controller.switch(7) = 0: End Sub
@@ -814,9 +808,6 @@ Sub sw29_unhit:Controller.switch(29) = 0: End Sub
 
 Sub sw33_hit:Controller.switch(33) = 1: PlaySoundAt "fx_sensor",ActiveBall:End Sub
 Sub sw33_unhit:Controller.switch(33) = 0: End Sub
-
-'Center Ramp Enter
-Sub sw13_hit:vpmtimer.pulsesw 13: PlaySoundAt "fx_gate4",ActiveBall:End Sub
 
 'Bumpers
 Sub sw30_hit:vpmtimer.pulsesw 30:PlaySoundAt SoundFX("LeftJet",DOFContactors), ActiveBall:End Sub
@@ -845,6 +836,7 @@ Sub sw27_slingshot
 End Sub
 
 Sub sw26_Timer
+sw26.Timerinterval = 20
 	Select Case LStep
 		Case 3:LSLing2.Visible = 0:LSLing1.Visible = 1:sling1.TransZ = -10
 		Case 4:LSLing1.Visible = 0:LSLing.Visible = 1:sling1.TransZ = 0:Me.TimerEnabled = 0
@@ -853,6 +845,7 @@ Sub sw26_Timer
 End Sub
 
 Sub sw27_Timer
+sw27.Timerinterval = 20
 	Select Case RStep
 		Case 3:RSLing2.Visible = 0:RSLing1.Visible = 1:sling2.TransZ = -10
 		Case 4:RSLing1.Visible = 0:RSLing.Visible = 1:sling2.TransZ = 0:Me.TimerEnabled = 0
@@ -987,8 +980,8 @@ Sub ScareLock_Hit : PlaysoundAt "RightHole", Activeball : End Sub
 Sub ShooterEnd_Hit:If ActiveBall.Z > 30  Then Me.TimerInterval=100:Me.TimerEnabled=1:End If:End Sub			'ball is flying
 Sub ShooterEnd_Timer(): Me.TimerEnabled=0 : PlaySoundAt "fx_BallDrop", ShooterEnd : End Sub
 
-Sub LWREnter_Hit : PlaySoundAt "fx_wireramp_enter",LWREnter:	End Sub
-Sub LWRExit_hit:StopSound "fx_wireramp_enter":PlaysoundAt "fx_wireramp_exit", ActiveBall:Me.TimerInterval=200:Me.TimerEnabled=1:ActiveBall.VelY=1:End Sub
+Sub LWREnter_Hit: PlaySoundAt "fx_wireramp_enter",LWREnter:End Sub
+Sub LWRExit_hit:StopSound "fx_wireramp_enter":PlaysoundAt "fx_wireramp_exit", ActiveBall:Me.TimerInterval=200:Me.TimerEnabled=1:ActiveBall.VelY=1:WaitHere.isdropped=1:End Sub
 Sub LWRExit_timer:Me.TimerEnabled=0:PlaysoundAt "fx_BallDrop",LWRExit:End Sub
 
 Sub RWREnter_Hit(): PlaySoundAt "fx_wireramp_enter",RWREnter:	End Sub
@@ -1000,8 +993,9 @@ Sub RWRExit_timer:Me.TimerEnabled=0:PlaysoundAt "fx_BallDrop",RWRExit:End Sub
 Sub RREnter_Hit():If ActiveBall.VelY < 0 Then PlaySoundAt "fx_rrenter", ActiveBall:End If:End Sub			'ball is going up
 Sub RREnter_UnHit():If ActiveBall.VelY > 0 Then StopSound "fx_rrenter":End If:End Sub						'ball is going down
 
-Sub BREnter_Hit():PlaySoundAt "fx_brenter",		BREnter:		End Sub
-Sub BRREnter1_Hit():PlaySoundAt "fx_brbump",	BREnter1:		End Sub
+Sub BREnter_Hit():PlaySoundAt "fx_brenter",	BREnter:End Sub
+Sub BRREnter1_Hit():PlaySoundAt "fx_brbump", BREnter1:End Sub
+Sub WHtr_Hit:WaitHere.isdropped=0:End Sub
 
 ' *********************************************************************
 ' 						Real Time Updates
@@ -1064,7 +1058,7 @@ Sub RollingSoundUpdate()
     For b = fakeballs to UBound(BOT)
         If BallVel(BOT(b) ) > 1 AND BOT(b).z < 30 Then
 			rolling(b-fakeballs) = True
-			PlaySound("fx_ballrolling" & b-fakeballs), -1, Vol(BOT(b) )*0.25, Pan(BOT(b) ), 0, Pitch(BOT(b) ), 1, 0, AudioFade(BOT(b) )
+			PlaySound("fx_ballrolling" & b-fakeballs), -1, Vol(BOT(b) )*2, Pan(BOT(b) ), 0, Pitch(BOT(b) ), 1, 0, AudioFade(BOT(b) )
 		Else
             If rolling(b-fakeballs) = True Then
                 StopSound("fx_ballrolling" & b-fakeballs)
@@ -1088,17 +1082,20 @@ Sub BallShadowUpdate()
     If UBound(BOT) = fakeballs-1 Then Exit Sub
 
 	' render the shadow for each ball
-    For b = fakeballs to UBound(BOT)
-		If BOT(b).X < Table1.Width/2 Then
-			BallShadow(b-fakeballs).X = ((BOT(b).X) - (Ballsize/6) + ((BOT(b).X - (Table1.Width/2))/10)) + 10
+    For b = fakeballs to UBound(BOT)		
+			BallShadow(b-fakeballs).X = BOT(b).X		
+	    BallShadow(b-fakeballs).Y = BOT(b).Y + 10
+        If BOT(b).Z > 20 and BOT(b).Z < 200 Then
+            BallShadow(b).visible = 1
+        Else
+            BallShadow(b).visible = 0
+        End If
+		If BOT(b).Z > 30 Then
+			BallShadow(b-fakeballs).height = BOT(b).Z - 20
+            BallShadow(b-fakeballs).opacity = 90
 		Else
-			BallShadow(b-fakeballs).X = ((BOT(b).X) + (Ballsize/6) + ((BOT(b).X - (Table1.Width/2))/10)) - 10
-		End If
-	    BallShadow(b-fakeballs).Y = BOT(b).Y + 20
-		If BOT(b).Z > 20 Then
-			BallShadow(b-fakeballs).visible = 1
-		Else
-			BallShadow(b-fakeballs).visible = 0
+			BallShadow(b-fakeballs).height = BOT(b).Z - 24
+            BallShadow(b-fakeballs).opacity = 80
 		End If
 	Next
 End Sub
