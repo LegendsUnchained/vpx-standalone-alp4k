@@ -4,7 +4,6 @@ applyFixes:
 fps: 45
 pupArchiveFormat: "RAR"
 pupArchiveRoot: "DarkCrystal"
-pupBundled: true
 pupChecksum: "5ff2d75b16d0e4234cce72d53c5b9ce8"
 pupFileUrl: "https://vpuniverse.com/files/file/15270-dark-crystal-pup-table-marcade-mod/"
 pupNotes: "Download Dark Crystal Pup 2.0.rar from table link"
