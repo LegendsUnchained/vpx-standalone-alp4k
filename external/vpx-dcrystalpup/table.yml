@@ -1,6 +1,8 @@
 ---
 applyFixes:
   - "bass"
+# yamllint disable-line rule:line-length
+backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/tG1SQbct_b2s_1662131084845.webp"
 fps: 45
 pupArchiveFormat: "rar"
 pupArchiveRoot: "Dark Crystal Pup 2.0/DarkCrystal"
