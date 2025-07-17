@@ -4,7 +4,7 @@ Tested by: kaoticBPR
 ![Table Preview](../../images/vpx-defender.png)
 
 Authors: [VpinWorkshop](https://vpuniverse.com/profile/40692-vpinworkshop/)
-Version: 1.3
+Version: 1.4
 Download: [vpforums](https://vpuniverse.com/files/file/9456-defender-williams-1982-vpw/)
 
 DirectB2S
@@ -23,7 +23,7 @@ Rom Name: dfndr_l4.zip
 Minimum VPX Standalone build: 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 32 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 38|
 
 ## Instructions
 
