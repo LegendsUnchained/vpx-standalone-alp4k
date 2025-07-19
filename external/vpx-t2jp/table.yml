@@ -1,12 +1,10 @@
 ---
-backglassAuthorsOverride:
-  - ""
 fps: 60
+pupArchiveRoot: "t2_l8"
 pupChecksum: "b939687ca882d009da709bfcd0ae383a"
 pupFileUrl: >-
   https://vpuniverse.com/files/file/22604-terminator-2-pup-pack-and-full-dmd/
 pupRequired: true
-pupVersion: "t2_l8"
 romVPSId: "IWVOy5e8"
 romChecksum: "f4d3810b45efbae942176c8ba5e1002c"
 tableVPSId: "gyhULWKc"
