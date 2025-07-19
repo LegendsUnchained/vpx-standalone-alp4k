@@ -1,24 +1,22 @@
 ---
+applyFixes:
+  - "bass"
+backglassChecksum: "1D3362C0A007F7EF919DB67FA000B637"
+backglassNotes: "Download Scared Stiff (Bally 1996).zip"
 backglassVPSId: "TKLkMxeygg"
-backglassChecksum: "e74d92206c53ab861f885fc0d9fbfb8e"
-backglassNotes: "Download: Scared Stiff (Bally 1996) full dmd.directb2s"
-coloredROMVPSId: "y6jvHx5FHg"
 coloredROMChecksum: "5a56fa0076e4a9835f94dadd0f54b690"
-coloredROMNotes: "Download version v1.1.zip"
-fps: 40
+coloredROMNotes: "Download Scared-stiff v1.1.zip"
+coloredROMVPSId: "y6jvHx5FHg"
+fps: 50
 romChecksum: "7070f077ce5a97ad61e36a9fff68fc42"
-romUrlOverride: "https://vpuniverse.com/files/file/1200-scared-stiff-15/"
-romVersionOverride: "ss_15"
-romNotes: "Download 'ss_15.zip'"
+romNotes: "Download ss_15.zip"
+romVPSId: "ExfbF1xeXo"
+tableNotes: "Download version 3.0"
 tableVPSId: "EC_7xF96"
 tagline: "Turn out the lights... it's time to get Scared Stiff!"
 testers:
   - "Bla1ze"
   - "Sscorpio"
   - "CoffeeAtJoes"
-vpxVPSId: "VfopIX1N"
 vpxChecksum: "7c832b732c25bd96457aed1923faad75"
-tableNotes: "Download version 3.0"
-mainNotes: "Download Colored ROM v1.1"
-applyFixes:
-  - "bass"
+vpxVPSId: "VfopIX1N"
