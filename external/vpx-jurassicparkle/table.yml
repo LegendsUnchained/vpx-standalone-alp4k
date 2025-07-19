@@ -16,7 +16,7 @@ tagline: "An adventure 65 million years in the making"
 testers:
   - "mrandromeda"
   - "OminousOsie"
-vpxchecksum: "61E6132D7F90FA796B6F6D5BC849A781"
+vpxChecksum: "61E6132D7F90FA796B6F6D5BC849A781"
 vpxVPSId: "M1xaS4sTX2"
 applyFixes:
   - "bass"
