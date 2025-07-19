@@ -1,7 +1,7 @@
 ---
 applyFixes: 
   - "bass"
-fps: 60
+fps: 35
 pupArchiveFormat: "zip"
 pupArchiveRoot: "puppack/futurama"
 pupChecksum: "1D3C30870C322EF8884CA899ABC92F31"
