@@ -1,8 +1,9 @@
 ---
-backglassAuthorsOverride:
-  - ""
 fps: 60
+pupArchiveRoot: "johnwick"
 pupChecksum: "ded551244d29b3f43a53535b9884b34a"
+pupFileUrl: >-
+  https://vpuniverse.com/files/file/16523-john-wick-babayaga-pinball-edition/
 pupVPSId: "Kxy-gnG6p6"
 pupRequired: true
 pupVersion: "johnwick"

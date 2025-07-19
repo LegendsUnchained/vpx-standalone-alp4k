@@ -1,6 +1,4 @@
 ---
-backglassAuthorsOverride:
-  - ""
 fps: 52
 pupChecksum: "d22f46b5ca0c978dd8abc7948200f4d8"
 pupFileUrl: >-
@@ -21,6 +19,6 @@ testers:
   - "mrandromeda"
   - "OminousOsie"
 vpxVPSId: "_KkJPEqB"
-vpxchecksum: "bc2f2a15440cc9e0759d3969f04b4fb4"
+vpxChecksum: "bc2f2a15440cc9e0759d3969f04b4fb4"
 applyFixes:
   - "bass"
