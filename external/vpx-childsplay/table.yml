@@ -16,7 +16,7 @@ tagline: >-
 testers:
   - "mrandromeda"
   - "OminousOsie"
-vpxchecksum: "e6ad57ec95f0bafba2755cc5221455c3"
+vpxChecksum: "e6ad57ec95f0bafba2755cc5221455c3"
 vpxVPSId: "BP2fWpYJ1T"
 enabled: false # Osie: We need the 'pupArchiveRoot' yml field implemented
 applyFixes:
