@@ -12,7 +12,7 @@ coloredROMVPSId: "B82eMKSnmb"
 coloredROMChecksum: "3cf33f0e04b14e27be85ffb812cb1cb2"
 coloredROMNotes: "Download version 1.0.0"
 tableVPSId: "W_p2sxKM"
-tableNotes: "Download version 3.1"
+tableNotes: "Download version 3.2"
 tagline: >-
   "The War For Pandora Begins Now!"
 testers:
@@ -20,6 +20,6 @@ testers:
   - "mrandromeda"
   - "OminousOsie"
 vpxVPSId: "_KkJPEqB"
-vpxChecksum: "bc2f2a15440cc9e0759d3969f04b4fb4"
+vpxChecksum: "C0A68A9BC49A2A77239FF89CE81C7FC6"
 applyFixes:
   - "bass"
