@@ -14,6 +14,6 @@ testers:
   - "mrandromeda"
   - "OminousOsie"
 vpxVPSId: "d70mjMQg"
-vpxChecksum: "C07B2E59624C03D9E271C9F17F3AE730"
+vpxChecksum: "BB008B6D495573824F366F14BB6713ED"
 applyFixes:
   - "bass"

@@ -1,6 +1,8 @@
   Option Explicit
     Randomize
 
+Const UseVpmModSol = True
+
 On Error Resume Next
 ExecuteGlobal GetTextFile("controller.vbs")
 If Err Then MsgBox "You need the controller.vbs in order to run this table, available in the vp10 package"
@@ -13,11 +15,11 @@ Dim DesktopMode: DesktopMode = Table.ShowDT
 If DesktopMode = True Then 'Show Desktop components
 Ramp16.visible=1
 Ramp15.visible=1
-Primitive2.visible=1
+'Primitive2.visible=1
 Else
 Ramp16.visible=0
 Ramp15.visible=0
-Primitive2.visible=0
+'Primitive2.visible=0
 End if
 
 '********************
@@ -47,6 +49,8 @@ End if
     
 
   Sub Table_Init
+InitVpmFFlipsSam
+   vpmInit Me
 	UpPost.Isdropped=true
 	With Controller
 		.GameName = cGameName
@@ -112,47 +116,15 @@ End if
         .CreateEvents "plungerIM"
     End With
 
-'SW49.isdropped=1:SW50.isdropped=1:SW51.isdropped=1
-
-'DivPos=0
-
 TBPos=28:TBTimer.Enabled=0:TBDown=1:Controller.Switch(52) = 1:Controller.Switch(53) = 0
 
- ' Drop Bank
-    'Init3Bank
-	'DropBank
-
-   'Rollovers
-	Targets_Down
-
-'   Spinning Disk
-
-     'Set turntable = New cvpmTurnTable
-     'With turntable
-         '.InitTurnTable spinningdisk,180
-         '.CreateEvents "turntable"
-         '.SpinCW = 1
-         '.spinUp = 100
-         '.SpinDown = 40
-
-     'End With
-
-' 	Init Recognizer
 	recognizer.transx = -30
 	recognizer.rotz=1
 
-	vpmMapLights Collection1
-    'sw7b.IsDropped = 1
-    'sw8b.IsDropped = 1
-    'sw48b.IsDropped = 1
-    'sw13b.IsDropped = 1
-	'Init3Bank
-
-
   End Sub
 
-   Sub Table_Paused:Controller.Pause = 1:End Sub
-   Sub Table_unPaused:Controller.Pause = 0:End Sub
+Sub Table_Paused:Controller.Pause = 1:End Sub
+Sub Table_unPaused:Controller.Pause = 0:End Sub
 
  
 '*****Keys
@@ -192,9 +164,9 @@ SolCallback(5)="SolDiscMotor"' spinning disk
 SolCallback(6) = "TBMove"
 SolCallback(7) = "orbitpost"
 'SolCallback(8) = "shaker"
-SolCallback(9) = "SetLamp 139,"
-SolCallback(10) = "SetLamp 140,"
-SolCallback(11) = "SetLamp 141,"
+SolModCallback(9) = "SetLamp139"
+SolModCallback(10) = "SetLamp140"
+SolModCallback(11) = "SetLamp141"
 'SolCallback(12) = "upperleftflipper"
 'SolCallback(13) = "leftslingshot"
 'SolCallback(14) = "rightslingshot"
@@ -203,22 +175,40 @@ SolCallback(15) = "SolLFlipper"
 SolCallback(16) = "SolRFlipper"
 
 'Flashers
-SolCallback(17) = "SetLamp 117,"    'flash zen
-SolCallback(18) = "SetLamp 118,"'flash videogame
-SolCallback(19) = "setlamp 119,"    'flash right domes x2
-SolCallback(20) = "SetLamp 120,"  'LE apron left
-SolCallback(21) = "SetLamp 121,"   'LE apron right
+SolModCallback(17) = "SetLamp117"    'flash zen
+SolModCallback(18) = "SetLamp118"'flash videogame
+SolModCallback(19) = "setlamp119"    'flash right domes x2
+'SolModCallback(20) = "SetLamp120"  'LE apron left
+'SolModCallback(21) = "SetLamp121"   'LE apron right
 'SolCallback(22) = "discdirrelay"  'LE disc direction relay
 SolCallback(23) = "recogrelay"    'LE recognizer
 
-SolCallback(25) = "setlamp 125,"'flash left domes
-SolCallback(26) = "SetLamp 126,"'flash disc left 
-SolCallback(27) = "SetLamp 127,"'flash disc right
-SolCallback(28) = "SetLamp 128,"'flash backpanel x2
-SolCallback(29) = "SetLamp 129,"'flash recognizer
+SolModCallback(25) = "setlamp125"'flash left domes
+SolModCallback(26) = "SetLamp126"'flash disc left 
+SolModCallback(27) = "SetLamp127"'flash disc right
+SolModCallback(28) = "SetLamp128"'flash backpanel x2
+SolModCallback(29) = "SetLamp129"'flash recognizer
 SolCallback(30) = "SetLamp 130,"'disc motor relay
-SolCallback(31) = "SetLamp 131,"'flash red disc left x2
-SolCallback(32) = "SetLamp 132,"'LE flash red disc x2
+SolModCallback(31) = "SetLamp131"'flash red disc left x2
+SolModCallback(32) = "SetLamp132"'LE flash red disc x2
+
+'Flashers
+
+Sub SetLamp119(m):m = m/255:f119a.state = m:f119b.state = m:f119c.state = m:f119d.state = m:f119e.state = m:f119f.state = m:Primitive8.blenddisablelighting = m*2 +0.05:Primitive10.blenddisablelighting = m*2 +0.05:End Sub
+Sub SetLamp125(m):m = m/255:f125a.state = m:f125b.state = m:f125c.state = m:f125d.state = m:f125e.state = m:f125f.state = m:Primitive7.blenddisablelighting = m*2 +0.05:Primitive9.blenddisablelighting = m*2 +0.05:End Sub
+Sub SetLamp128(m):m = m/255:f128a.state = m:f128b.state = m:f128c.state = m:f128d.state = m:f128e.state = m:f128f.state = m:Primitive4.blenddisablelighting = m*2 +0.05:Primitive5.blenddisablelighting = m*2 +0.05:End Sub
+Sub SetLamp131(m):m = m/255:f131a.state = m:f131b.state = m:End Sub
+Sub SetLamp132(m):m = m/255:f132a.state = m:f132b.state = m:End Sub
+Sub SetLamp139(m):m = m/255:f9.state = m:f9a.state = m:End Sub
+Sub SetLamp140(m):m = m/255:f10.state = m:f10a.state = m:End Sub
+Sub SetLamp141(m):m = m/255:f11.state = m:f11a.state = m:End Sub
+Sub SetLamp117(m):m = m/255:f117.state = m:End Sub
+Sub SetLamp118(m):m = m/255:f118.state = m:End Sub
+Sub SetLamp126(m):m = m/255:f126.state = m:End Sub
+Sub SetLamp127(m):m = m/255:f127.state = m:End Sub
+Sub SetLamp129(m):m = m/255:f129.state = m:recognizer.blenddisablelighting = m +0.1:End Sub
+'Sub SetLamp120(m):m = m/255:f120.state = m:End Sub
+'Sub SetLamp121(m):m = m/255:f121.state = m:End Sub
 
 
 Dim XLocation,XDir,T(4),ZRot
@@ -301,16 +291,7 @@ Sub orbitpost(Enabled)
 		ttDisc1.InitTurnTable Disc1Trigger, 8
 		ttDisc1.SpinCW = False
 		ttDisc1.CreateEvents "ttDisc1"
-	'Set ttDisc2 = New myTurnTable
-		'ttDisc2.InitTurnTable Disc2Trigger, 8
-		'ttDisc2.SpinCW = True
-		'ttDisc2.CreateEvents "ttDisc2"
-	'Set ttDisc3 = New myTurnTable
-		'ttDisc3.InitTurnTable Disc3Trigger, 6
-		'ttDisc3.SpinCW = False
-		'ttDisc3.CreateEvents "ttDisc3"
 
-'Switches
 
 Sub sw01_Hit:DTBank4.Hit 4:End Sub
 Sub sw02_Hit:DTBank4.Hit 3:End Sub
@@ -355,14 +336,6 @@ Sub sw46_Hit:Controller.Switch(46) = 1:PlaySound "rollover":End Sub
 Sub sw46_UnHit:Controller.Switch(46) = 0:End Sub
 Sub sw48_Hit:Me.TimerEnabled = 1:sw48p.TransX = -2:vpmTimer.PulseSw 48:PlaySound SoundFX("fx_target",DOFContactors):End Sub
 Sub sw48_Timer:Me.TimerEnabled = 0:sw48p.TransX = 0:End Sub
-'Sub sw49_Hit:vpmTimer.PulseSw 49:Me.TimerEnabled = 1:PlaySound SoundFX("fx_target",DOFContactors):End Sub
-'Sub sw49_Timer:Me.TimerEnabled = 0:End Sub
-'Sub sw50_Hit:vpmTimer.PulseSw 50:Me.TimerEnabled = 1:PlaySound SoundFX("fx_target",DOFContactors):End Sub
-'Sub sw50_Timer:Me.TimerEnabled = 0:End Sub
-'Sub sw51_Hit:vpmTimer.PulseSw 51:Me.TimerEnabled = 1:PlaySound SoundFX("fx_target",DOFContactors):End Sub
-'Sub sw51_Timer:Me.TimerEnabled = 0:End Sub
- 'Sub sw52:End Sub
- 'Sub sw53:End Sub
 
 'Arcade Scoop
  Dim aBall, aZpos
@@ -424,9 +397,6 @@ Sub DiscsTimer_Timer()
 	End If
 	' rotate discs
 	Disc1.RotAndTra2 = 360 - discAngle
-	'Disc2.RotAndTra2 = discAngle
-	'Disc3.RotAndTra2 = 360 - discAngle
-	' maybe change rotation angle to stop the timer
 	If stopDiscs Then
 		stepAngle = stepAngle - 0.1
 		If stepAngle <= 0 Then
@@ -528,38 +498,6 @@ Class myTurnTable
 		End If
 	End Property
 End Class
-
-'*****************************************************************************************
-'*******************   Spinning disk animation        ************************************
-'*****************************************************************************************
-
- 'Dim Turn,I
-
-
-    'I=0
-'Turn=Array(w1,w2,w3,w4,w5,w6,w7,w8,w9,w10,w11,w12)
-
-     'Sub TTTimer_Timer
-		 'If I=0 then I=1 'ensure I is always positive
-		 'If I<0 then I=1 'ensure I is always positive
-		 'If I>11 then I=0
-	     'Turn(I).IsDropped=1
-	     'I=I+1
-	     'If I>11 Then I=0
-	     'Turn(I).IsDropped=0
-
-     'End Sub 
-
-
-  'Flasher Subs
-
- Sub Targets_Down()
- 'sw7b.isdropped=0:sw8b.isdropped=0:sw48b.isdropped=0:sw13b.isdropped=0
- End Sub
-
- 
-
-
   
 Sub SolLFlipper(Enabled)
      If Enabled Then
@@ -581,24 +519,20 @@ Sub SolRFlipper(Enabled)
      End If
  End Sub   
 
-
  'Drains and Kickers
 Dim BallCount:BallCount = 0
    Sub Drain_Hit():PlaySound "Drain"
 	'ClearBallID
 	BallCount = BallCount - 1
 	bsTrough.AddBall Me
-	If BallCount = 0 then GIOff
-   End Sub
+	   End Sub
    Sub sw11_UnHit()
 	'NewBallID
 	End Sub
    Sub BallRelease_UnHit()
 	'NewBallID
-		BallCount = BallCount + 1
-		GIOn
+		BallCount = BallCount + 1		
 	End Sub
-
 
 '***Slings and rubbers
 
@@ -773,59 +707,14 @@ NFadeL 62, l62
 NFadeL 63, l63
 NFadeL 64, l64
 
-
-'Flashers
-
-NFadeL 117, F117
-
-NFadeL 118, f118
-
-NFadeLm 119, f119a
-NFadeLm 119, f119b
-NFadeLm 119, f119c
-NFadeLm 119, f119d
-NFadeLm 119, f119e
-NFadeLm 119, f119f
-
-'NFadeL 120, f120
-
-'NFadeL 121, f121
-
-NFadeLm 125, f125a
-NFadeLm 125, f125b
-NFadeLm 125, f125c
-NFadeLm 125, f125d
-NFadeLm 125, f125e
-NFadeLm 125, f125f
-
-NFadeL 126, F126
-
-NFadeL 127,F127 
-
-NFadeLm 128, f128a
-NFadeLm 128, f128b
-NFadeLm 128, f128c
-NFadeLm 128, f128d
-NFadeLm 128, f128e
-NFadeLm 128, f128f
-
-NFadeL 129, f129
-NFadeLm 129, f129a
-
-NFadeLm 131, f131a
-NFadeLm 131, f131b
-
-NFadeLm 132, f132a
-NFadeLm 132, f132b
-
-NFadeLm 139, f9
-NFadeL 139, f9a
-NFadeLm 140, f10
-NFadeL 140, f10a
-NFadeLm 141, f11
-NFadeL 141, f11a
-
+evleft.color = RGB(LampState(106), LampState(105), LampState(104))
+evright.color = RGB(LampState(103), LampState(102), LampState(101))
+Primitive2.color = RGB(LampState(106), LampState(105), LampState(104))
+Primitive1.color = RGB(LampState(106), LampState(105), LampState(104))
+lr1.color = RGB(LampState(106), LampState(105), LampState(104))
+rr1.color = RGB(LampState(103), LampState(102), LampState(101))
 End Sub
+
 
 Sub FadePrim(nr, pri, a, b, c, d)
     Select Case FadingLevel(nr)
@@ -888,16 +777,6 @@ Sub SetFlash(nr, stat)
     FlashState(nr) = ABS(stat)
 End Sub
 
-Sub FlasherTimer_Timer()
-'Flash 3, fire
-'
-'Flash 80, f80
-'Flash 119, f119
-'Flash 120, f120 'right ramp flash
-'Flash 129, f29 'left loop / spinner flash
-'Flash 131, f31 'vengeance flash
- End Sub
-
 '*********************************************************************
 '* TARGETBANK TARGETS Taken from AFM written by Groni ****************
 '*********************************************************************
@@ -908,9 +787,6 @@ SW49P.X=442.9411
 SW49P.Y=449.8546
 Me.TimerEnabled = 1
 PlaySound SoundFX("fx_target",DOFContactors)
-'If Ballresting = True Then
- 'DPBall.VelY = ActiveBall.VelY * 3
-'End If
 End Sub
 
 Sub SW49_Timer:SW49P.X=442.6875:SW49P.Y=453.3662:Me.TimerEnabled = 0:End Sub
@@ -921,9 +797,6 @@ SW50P.X=448.6911
 SW50P.Y=449.8546
 Me.TimerEnabled = 1
 PlaySound SoundFX("fx_target",DOFContactors)
-'If Ballresting = True Then
- 'DPBall.VelY = ActiveBall.VelY * 3
-'End If
 End Sub
 
 Sub SW50_Timer:SW50P.X=448.4375:SW50P.Y=453.3662:Me.TimerEnabled = 0:End Sub
@@ -934,9 +807,6 @@ SW51P.X=454.0661
 SW51P.Y=449.8546
 Me.TimerEnabled = 1
 PlaySound SoundFX("fx_target",DOFContactors)
-'If Ballresting = True Then
- 'DPBall.VelY = ActiveBall.VelY * 3
-'End If
 End Sub
 
 Sub SW51_Timer:SW51P.X=453.8125:SW51P.Y=453.3662:Me.TimerEnabled = 0:End Sub
@@ -957,7 +827,7 @@ End Sub
 
 Sub TBTimer_Timer()	
 Select Case TBPos
-Case 0: MotorBank.Z=-20:SW49P.Z=-20:SW50P.Z=-20:SW51P.Z=-20:TBPos=0:TBDown=0:TBTimer.Enabled=0:Controller.Switch(52) = 0:Controller.Switch(53) = 1::SW49.isdropped=0:SW50.isdropped=0:SW51.isdropped=0:DPWall.isdropped=0:DPWall1.isdropped=1
+Case 0: MotorBank.Z=-20:SW49P.Z=-20:SW50P.Z=-20:SW51P.Z=-20:TBPos=0:TBDown=0:TBTimer.Enabled=0:Controller.Switch(52) = 0:Controller.Switch(53) = 1:
 Case 1: MotorBank.Z=-22:SW49P.Z=-22:SW50P.Z=-22:SW51P.Z=-22
 Case 2: MotorBank.Z=-24:SW49P.Z=-24:SW50P.Z=-24:SW51P.Z=-24
 Case 3: MotorBank.Z=-26:SW49P.Z=-26:SW50P.Z=-26:SW51P.Z=-26
@@ -979,7 +849,7 @@ Case 18: MotorBank.Z=-56:SW49P.Z=-56:SW50P.Z=-56:SW51P.Z=-56
 Case 19: MotorBank.Z=-58:SW49P.Z=-58:SW50P.Z=-58:SW51P.Z=-58
 Case 20: MotorBank.Z=-60:SW49P.Z=-60:SW50P.Z=-60:SW51P.Z=-60
 Case 21: MotorBank.Z=-62:SW49P.Z=-62:SW50P.Z=-62:SW51P.Z=-62
-Case 22: MotorBank.Z=-64:SW49P.Z=-64:SW50P.Z=-64:SW51P.Z=-64
+Case 22: MotorBank.Z=-64:SW49P.Z=-64:SW50P.Z=-64:SW51P.Z=-64:SW49.isdropped=0:SW50.isdropped=0:SW51.isdropped=0:DPWall.isdropped=0:DPWall1.isdropped=1
 Case 23: MotorBank.Z=-66:SW49P.Z=-66:SW50P.Z=-66:SW51P.Z=-66
 Case 24: MotorBank.Z=-68:SW49P.Z=-68:SW50P.Z=-68:SW51P.Z=-68
 Case 25: MotorBank.Z=-70:SW49P.Z=-70:SW50P.Z=-70:SW51P.Z=-70
@@ -993,85 +863,6 @@ If TBDown=0 then TBPos=TBPos+1
 If TBDown=1 then TBPos=TBPos-1
 End Sub
 
- '******************
- 'Motor Bank Up Down
- '******************
-  'dim DropADir 
-  'dim DropAPos 
- 
-  'DropADir = 1 
-
-'Sub Init3Bank()
-	'DropAPos = 0
- 	'Controller.Switch(53) = 1
-'End Sub
-
-'Sub RiseBank 
-    'If DropAPos <= 0 Then Exit Sub
-	'DropADir = 1
-	'DropAPos = 36
-	'DropAa.TimerEnabled = 1
-    'PlaySound SoundFX("motor2")
-'End Sub
-
-'Sub DropBank
-    'If DropAPos >= 36 Then Exit Sub
-	'DropADir = -1
-	'DropAPos = 0
-	'DropAa.TimerEnabled = 1
-    'PlaySound SoundFX("motor2")
-'End Sub
-
-'Animations
-  'Sub DropAa_Timer()	
-  'Select Case DropAPos
-        'Case 0: backbank.z=36:swp49.z=36:swp50.z=36:swp51.z=36:Controller.Switch(52) = 0:Controller.Switch(53) = 1:sw49.IsDropped = 0:sw50.IsDropped = 0:sw51.IsDropped = 0:banklsidehelp.IsDropped = 0:banklsidehelp1.IsDropped = 0
-				 'If DropADir = 1 then
-					'DropAa.TimerEnabled = 0
-				 'else
-			     'end if        
-        'Case 1: backbank.z=23:swp49.z=23:swp50.z=23:swp51.z=23:Controller.Switch(52) = 0:Controller.Switch(53) = 0:banklsidehelp1.IsDropped = 1
-        'Case 2: backbank.z=21:swp49.z=21:swp50.z=21:swp51.z=21:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-        'Case 3: backbank.z=19:swp49.z=19:swp50.z=19:swp51.z=19:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-        'Case 4: backbank.z=17:swp49.z=17:swp50.z=17:swp51.z=17:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-        'Case 5: backbank.z=15:swp49.z=15:swp50.z=15:swp51.z=15:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-        'Case 6: backbank.z=13:swp49.z=13:swp50.z=13:swp51.z=13:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-        'Case 7: backbank.z=11:swp49.z=11:swp50.z=11:swp51.z=11:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-        'Case 8: backbank.z=9:swp49.z=9:swp50.z=9:swp51.z=9:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-        'Case 9: backbank.z=7:swp49.z=7:swp50.z=7:swp51.z=7:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-        'Case 10: backbank.z=5:swp49.z=5:swp50.z=5:swp51.z=5:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-        'Case 11: backbank.z=3:swp49.z=3:swp50.z=3:swp51.z=3:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-        'Case 12: backbank.z=1:swp49.z=1:swp50.z=1:swp51.z=1:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-        'Case 13: backbank.z=-1:swp49.z=-1:swp50.z=-1:swp51.z=-1:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-        'Case 14: backbank.z=-3:swp49.z=-3:swp50.z=-3:swp51.z=-3:Controller.Switch(52) = 0:Controller.Switch(53) = 0        
-        'Case 15: backbank.z=-5:swp49.z=-5:swp50.z=-5:swp51.z=-5:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-        'Case 16: backbank.z=-7:swp49.z=-7:swp50.z=-7:swp51.z=-7:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-        'Case 17: backbank.z=-9:swp49.z=-9:swp50.z=-9:swp51.z=-9:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-        'Case 18: backbank.z=-11:swp49.z=-11:swp50.z=-11:swp51.z=-11:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-        'Case 19: backbank.z=-13:swp49.z=-13:swp50.z=-13:swp51.z=-13:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-        'Case 20: backbank.z=-15:swp49.z=-15:swp50.z=-15:swp51.z=-15:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-        'Case 21: backbank.z=-17:swp49.z=-17:swp50.z=-17:swp51.z=-17:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-        'Case 22: backbank.z=-19:swp49.z=-19:swp50.z=-19:swp51.z=-19:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-        'Case 23: backbank.z=-21:swp49.z=-21:swp50.z=-21:swp51.z=-21:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-        'Case 24: backbank.z=-23:swp49.z=-23:swp50.z=-23:swp51.z=-23:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-		'Case 25: backbank.z=-25:swp49.z=-25:swp50.z=-25:swp51.z=-25:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-		'Case 26: backbank.z=-27:swp49.z=-27:swp50.z=-27:swp51.z=-27:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-		'Case 27: backbank.z=-29:swp49.z=-29:swp50.z=-29:swp51.z=-29:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-		'Case 28: backbank.z=-31:swp49.z=-31:swp50.z=-31:swp51.z=-31:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-		'Case 29: backbank.z=-33:swp49.z=-33:swp50.z=-33:swp51.z=-33:Controller.Switch(52) = 0:Controller.Switch(53) = 0
-		'Case 30: backbank.z=-36:swp49.z=-36:swp50.z=-36:swp51.z=-36:Controller.Switch(52) = 1:Controller.Switch(53) = 0:sw49.IsDropped = 1:sw50.IsDropped = 1:sw51.IsDropped = 1:banklsidehelp.IsDropped = 1
-				 'If DropADir = 1 then
-				 'else
-					'DropAa.TimerEnabled = 0
-			     'end if
-'End Select
-	'If DropADir = 1 then
-		'If DropApos>0 then DropApos=DropApos-1
-	'else
-		'If DropApos<36 then DropApos=DropApos+1
-	'end if
-
-  'End Sub
 
 Sub ShooterLane_Hit()
 	Controller.Switch(23)=1
@@ -1106,7 +897,6 @@ Sub Table_exit()
 	Controller.Stop
 End Sub
 
-
 Sub RLS_Timer()
               RampGate1.RotZ = -(Spinner4.currentangle)
               RampGate2.RotZ = -(Spinner1.currentangle)
@@ -1140,34 +930,6 @@ Sub PrimT_Timer
 	if sw02.IsDropped = True then sw2up = False else sw2up = True
 	if sw03.IsDropped = True then sw3up = False else sw3up = True
 	if sw04.IsDropped = True then sw4up = False else sw4up = True
-
-
-If LampState(85) = 0 and LampState(84) = 0 and LampState(83) = 0 then evleft.Material = "EVOff":Primitive18.blenddisablelighting = 0.2:Primitive39.blenddisablelighting = 0
-If LampState(85) = 0 and LampState(84) = 0 and LampState(83) = 1 then evleft.Material = "EVBlue"
-If LampState(85) = 0 and LampState(84) = 1 and LampState(83) = 0 then evleft.Material = "EVGreen"
-If LampState(85) = 0 and LampState(84) = 1 and LampState(83) = 1 then evleft.Material = "EVLightBlue":Primitive18.blenddisablelighting = 1.3:Primitive39.blenddisablelighting = 0.7
-If LampState(85) = 1 and LampState(84) = 0 and LampState(83) = 0 then evleft.Material = "EVRed"
-If LampState(85) = 1 and LampState(84) = 0 and LampState(83) = 1 then evleft.Material = "EVPurple"
-If LampState(85) = 1 and LampState(84) = 1 and LampState(83) = 0 then evleft.Material = "EVYellow"
-If LampState(85) = 1 and LampState(84) = 1 and LampState(83) = 1 then evleft.Material = "EVWhite"
-
-If LampState(83) = 0 and LampState(84) = 0 and LampState(85) = 0 then evright.Material = "EVOff":Primitive17.blenddisablelighting = 0.2:Primitive6.blenddisablelighting = 0
-If LampState(83) = 0 and LampState(84) = 0 and LampState(85) = 1 then evright.Material = "EVBlue"
-If LampState(83) = 0 and LampState(84) = 1 and LampState(85) = 0 then evright.Material = "EVGreen"
-If LampState(83) = 0 and LampState(84) = 1 and LampState(85) = 1 then evright.Material = "EVLightBlue"
-If LampState(83) = 1 and LampState(84) = 0 and LampState(85) = 0 then evright.Material = "EVRed"
-If LampState(83) = 1 and LampState(84) = 0 and LampState(85) = 1 then evright.Material = "EVPurple"
-If LampState(83) = 1 and LampState(84) = 1 and LampState(85) = 0 then evright.Material = "EVYellow":Primitive17.blenddisablelighting = 1.3:Primitive6.blenddisablelighting = 0.3
-If LampState(83) = 1 and LampState(84) = 1 and LampState(85) = 1 then evright.Material = "EVWhite"
-
-
-if l28a.State = 1 then f28a.visible = 1 else f28a.visible = 0
-if l28a.State = 1 then f28b.visible = 1 else f28b.visible = 0
-if l28a.State = 1 then f28c.visible = 1 else f28c.visible = 0
-if l29a.State = 1 then f29a.visible = 1 else f29a.visible = 0
-if l29a.State = 1 then f29b.visible = 1 else f29b.visible = 0
-if l29a.State = 1 then f29c.visible = 1 else f29c.visible = 0
-
 End Sub
 
 
@@ -1195,25 +957,26 @@ Sub sw4T_Timer()
 	If sw4p.z >= -45 then sw4up = False
 End Sub
 
-Sub GIOn
+Set GiCallBack = GetRef("UpdateGi")
+
+Sub UpdateGi(nr,enabled)
+If enabled Then
 	dim bulb
-	for each bulb in Collection1
+	for each bulb in GI
 	bulb.state = 1
 	next
+Table.colorgradeimage = "ColorGradeLUT256x16_ConSat"
 Primitive11.blenddisablelighting = 0.7
 Primitive22.blenddisablelighting = 8
-End Sub
-
-Sub GIOff
-	dim bulb
-	for each bulb in Collection1
+Else
+	for each bulb in GI
 	bulb.state = 0
 	next
+Table.colorgradeimage = "ColorGrade_4"
 Primitive11.blenddisablelighting = 0.2
 Primitive22.blenddisablelighting = 0
-End Sub
-
- 'Sub RightSlingShot_Timer:Me.TimerEnabled = 0:End Sub
+End If
+End Sub 
  
 ' *********************************************************************
 '                      Supporting Ball & Sound Functions
