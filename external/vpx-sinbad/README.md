@@ -1,4 +1,4 @@
-# Sinbad (Gottlieb 1978)
+﻿# Sinbad (Gottlieb 1978)
 
 ![Table Preview](../../images/vpx-sinbad-table.png)
 
@@ -27,7 +27,7 @@
 ## Instructions
 
 - Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If you need help, more information found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
 - If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - If you're remembering this table as having two flippers, you want the South American clone--Taito's "Sultan" from 1979. (It also plays 5 balls!)
 - "So Scheherazade began."

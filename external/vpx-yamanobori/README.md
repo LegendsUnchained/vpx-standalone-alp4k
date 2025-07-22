@@ -1,4 +1,4 @@
-# Yamanobori - (KOMAYA 1981)
+﻿# Yamanobori - (KOMAYA 1981)
 
 ![Table Preview](../../images/vpx-yamanobori.jpg)
 
@@ -27,7 +27,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 ## Instructions
 
 - Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If you need help, more information found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
 - If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - This is NOT a traditional pinball game. Use your right flipper to move forward, use your left flipper to move back. To see how to play [watch this](https://www.youtube.com/watch?v=n1Z6CPgGka0)
 
