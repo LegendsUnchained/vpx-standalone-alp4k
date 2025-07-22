@@ -18,5 +18,6 @@ testers:
   - "Mox"
   - "Silentkat"
   - "CoffeeAtJoes"
+  - "bofgi"
 applyFixes:
   - "bass"
