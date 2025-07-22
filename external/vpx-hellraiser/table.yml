@@ -1,6 +1,5 @@
 ---
-enabled: false
-fps: 50
+fps: 55
 pupArchiveRoot: "Hellraiser1.0.1/HellRaiser"
 pupChecksum: "6DE77436C19D088D9E701E26CB57D138"
 pupFileUrl: >-
