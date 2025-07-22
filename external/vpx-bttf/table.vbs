@@ -1418,7 +1418,7 @@ End Sub
 Sub KickBallUp(Enabled)
 	Playsoundat SoundFX("Solenoid",DOFContactors),sw29
 	sw29.timerenabled = 1
- 	sw29.Kick 0,165,1.50
+ 	sw29.Kick 0,165,1.53
 	Controller.Switch(29) = 0
 	If WobblePlastic = 1 then
 		PlasticWobbling = 1
