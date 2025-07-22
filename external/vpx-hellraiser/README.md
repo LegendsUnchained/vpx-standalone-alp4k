@@ -1,4 +1,4 @@
-# Hellraiser (Original 2022)
+﻿# Hellraiser (Original 2022)
 
 ![Table Preview](../../images/vpx-hellraiser-preview.jpg)
 
@@ -45,7 +45,7 @@
 ## Instructions
 
 - Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If you need help, more information found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
 - If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - Download the puppack `Hellraiser1.0.1.rar` from the link listed above.
 - Create the folder `pupvideos` within the `external/vpx-hellraiser`

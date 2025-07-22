@@ -1,4 +1,4 @@
-# Biker Mice From Mars
+﻿# Biker Mice From Mars
 
 ![Table Preview](../../images/vpx-bikermice-preview.png)
 
@@ -49,7 +49,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 ## Instructions
 
 - Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If you need help, more information found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
 - If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - In vpx-bikermice root folder make folder called pupvideos - copy Biker Mice folder from table download in to the pupvideos folder and rename it bikermicefrommars
 - From your vpx-bikermice folder, unzip the use_these_pup_files.zip and place them inside the pupvideos/bikermicefrommars folder, and overwrite files if prompted

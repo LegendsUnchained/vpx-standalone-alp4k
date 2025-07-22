@@ -1,4 +1,4 @@
-# Blood Machines (Original 2022)
+﻿# Blood Machines (Original 2022)
 
 ![Table Preview](../../images/vpx-bloodmachines.png)
 
@@ -28,7 +28,7 @@
 ## Instructions
 
 - Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If you need help, more information found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
 - If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - Be sure to upload the "BloodMachinesDMD" folder to vpx-bloodmachines
 - In order to fully enjoy the table and play it as it was designed to be played, you will need to [purchase the awesome soundtrack by Carpenter Brut (about £5/$5/5e)](https://carpenterbrut.bandcamp.com/album/blood-machines-ost) and place the MP3s in: vpx-bloodmachines/Music/BLOOD MACHINES OST
