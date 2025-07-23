@@ -23,7 +23,7 @@ Author: [destruk](https://www.vpforums.org/index.php?showuser=5)
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=584)
 
 Tested by:
-[TechZombie]
+[TechZombie],[kingargyle]
 
 ## Status 
 
@@ -31,7 +31,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 53 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 58 |
 
 ## Instructions
 - You can use VPU Remix or VPX Tools to apply the table.dif file, you must apply the dif before you upload the VPX
