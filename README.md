@@ -212,7 +212,7 @@ Links to these products on Amazon are through affiliate links.
 | [Space Invaders - JP (Bally 1980)](external/vpx-jpspaceinvaders) | :white_check_mark: | :x: | :white_check_mark: | :x: | 55 |
 | [Spider-Man Vault Edition (Stern 2016)](external/vpx-spidermanve) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 40 |
 | [Star Wars (Data East 1992)](external/vpx-starwars) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
-| [Star Wars Trilogy (Sega 1997)](external/vpx-starwarstrilogy) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |[Star Wars Trilogy (Sega 1997)](external/vpx-starwarstrilogy) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Star Wars Trilogy (Sega 1997)](external/vpx-starwarstrilogy) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Starship Troopers (Sega 1997)](external/vpx-starship) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 54 |
 | [Street Fighter II, JP's (Gottlieb 1993)](external/vpx-sfii) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Tales from the Crypt (Data East 1993)](external/vpx-tftc) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 45 |
