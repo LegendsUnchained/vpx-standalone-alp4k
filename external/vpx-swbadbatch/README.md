@@ -1,4 +1,4 @@
-﻿# Star Wars The Bad Batch 
+﻿# Star Wars - The Bad Batch (Original 2022)
 
 ![Table Preview](../../images/vpx-badbatch.jpg)
 
@@ -9,7 +9,6 @@ Download: [VP Universe](https://vpuniverse.com/files/file/11961-star-wars-the-ba
 
 DirectB2S
 Authors [LoadedWeapon](https://www.vpforums.org/index.php?showuser=60392)  
-
 Star Wars-The Bad Batch 1
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=17234)  
 
