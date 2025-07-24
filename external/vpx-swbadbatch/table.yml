@@ -1,0 +1,19 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "0EBE8352FAD899F29C9706A8062A897B"
+backglassNotes: "Download Star Wars-The Bad Batch.zip"
+backglassVPSId: "ne_kL2Av_K"
+fps: 60
+mainNotes: "Optional: download BadBatch.mp3 from the VPX download page, place in a folder named Music in vpx-swbadbatch directory. "
+romChecksum: "02DB1548C6621BD25CFE5979153DF726"
+romNotes: "Download gamatron.zip"
+romVPSId: "J5adDSpS-_"
+tableNotes: "Download BadBatch_v1.1.vpx"
+tableVPSId: "J2gHbyA6wO"
+tagline: "'We're gonna die we're gonna die we...aren't gonna die!'"
+testers:
+  - "Mr- Blue"
+  - "evilwraith"
+vpxChecksum: "F14B716DB7F74E528FC4429C0063EB41"
+vpxVPSId: "0DHpnJGRkX"

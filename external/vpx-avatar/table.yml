@@ -1,4 +1,6 @@
 ---
+# yamllint disable-line rule:line-length
+backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/94082334064a08967b786dfde48f5c22_b2s_1638093208799.webp"
 fps: 52
 pupArchiveRoot: "avr_200"
 pupChecksum: "d22f46b5ca0c978dd8abc7948200f4d8"
