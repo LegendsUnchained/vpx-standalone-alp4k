@@ -99,10 +99,10 @@ Sub table1_Init
         vpmTimer.AddTimer 2000, "Controller.SolMask(0)=&Hffffffff'" 'ignore all solenoids - then add the Timer to renable all the solenoids after 2 seconds
         Controller.Run GetPlayerHWnd
         On Error Goto 0
-        If playBGM = 1
+        If playBGM = True Then
 		PlayMusic "BadBatchTheme.mp3"
-        End If
 		vpmTimer.addTimer 270000, "ReplayMusic '"
+        End If
     End With
 
 ' Rails
