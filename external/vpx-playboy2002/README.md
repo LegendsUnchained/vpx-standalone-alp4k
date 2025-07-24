@@ -8,7 +8,7 @@
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
 
 <br>
 
@@ -51,7 +51,7 @@ __*We hope you enjoy!!*__
 - n-i-x            - Mox              - Lloydbraun
 - Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
 - Bla1ze           - evilwraith       - Silentkat        
-- mrandromeda      - SScorpio         - TechZombie
+- mrandromeda      - SScorpio         - pointdablame
 </pre>
 
 

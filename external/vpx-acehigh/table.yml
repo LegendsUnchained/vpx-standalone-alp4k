@@ -1,0 +1,18 @@
+---
+applyFixes: 
+  - "bass"
+backglassBundled: true
+backglassVPSId: "NZXXtTMgoJ"
+backglassChecksum: "0C6011FCB50129F9F5E06BEC9A0929CE"
+backglassNotes: "Download 'Ace High (Gottlieb 1957) JP_VPX8.directb2s.zip'"
+fps: 60
+mainNotes: "Press right on the control panel to load a ball from the hopper"
+tableNotes: "Download v55_VPX8.zip"
+tableVPSId: "FDc21ZJEP9"
+tagline: "Amusement Pinballs, as American as Baseball and Hot Dogs!"
+testers:
+  - "Boris"
+  - "OminousOsie"
+  - "pointdablame"
+vpxVPSId: "TOF-LubuVs"
+vpxChecksum: "4C7204204A2523C88076F22ADD91D9CB"

@@ -1,0 +1,19 @@
+---
+applyFixes: 
+  - "bass"
+backglassVPSId: "A8A5XMJY"
+backglassChecksum: "7BFEA172E9142343069E8F9F7A9E3F4F"
+backglassNotes: "Download v2.1"
+enabled: false # Osie: Easy table for wizard release. YML built - Just needs simple stuff (POV/ Free Play/ Artwork)
+fps: 60
+romVPSId: "OxFTUDXe"
+romChecksum: "1AE6AF87104163631BC19DF55C6002AD"
+romNotes: "Download elektra.zip"
+tableNotes: "Download v1.0"
+tableVPSId: "tT-FJX5A"
+tagline: "A Three Level Electrifying Experience!"
+testers:
+  - "Shaver"
+  - "OminousOsie"
+vpxVPSId: "7Dtj7cbj"
+vpxChecksum: "79E4F4493EF464AEA6ABBC98B8F464A9"

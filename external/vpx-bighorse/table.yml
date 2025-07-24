@@ -1,0 +1,19 @@
+---
+applyFixes: 
+  - "bass"
+backglassBundled: true
+backglassVPSId: "SWmqz_QM"
+backglassChecksum: "08EB00F1F20447BFA46982238D455DD1"
+backglassNotes: "Download 'Big Horse (Maresa 1975).directb2s.zip'"
+enabled: false # Osie: Easy table for wizard release. YML built - Just needs simple stuff (POV/ Free Play/ Artwork)
+fps: 60
+tableNotes: "Download v55_VPX8.zip"
+tableVPSId: "2HTZbOMS"
+tagline: >-
+  Fun Fact: The Trojan Horse was a horse because they believed it would please
+  Athena (goddess of wisdom and strength) and grant the Greeks good luck!
+testers:
+  - "Boris"
+  - "OminousOsie"
+vpxVPSId: "SWmqz_QM"
+vpxChecksum: "C2C2CD16344A8E3CDDC81194869EABC0"

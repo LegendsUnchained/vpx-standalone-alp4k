@@ -1,0 +1,16 @@
+---
+# yamllint disable-line rule:line-length
+backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/b1aOOuWXWd_1747192351197.webp"
+backglassBundled: true
+backglassChecksum: "96DBDB0FA7E90ACE775668085AB0687F"
+backglassNotes: "Backglass included in table zip"
+fps: 60
+tableVPSId: "2GTQfKUQFn"
+tagline: "War."
+testers:
+  - "evilwraith"
+  - "CoffeeAtJoes"
+vpxVPSId: "y8DI9oqQgG"
+vpxChecksum: "90F32CD7D69B74A5E2B95A94C1520BC6"
+applyFixes:
+  - "bass"

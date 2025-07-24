@@ -1,0 +1,21 @@
+---
+applyFixes: 
+  - "bass"
+backglassVPSId: "xNs1RD-E"
+backglassChecksum: "963DBC5ABE37DA71D54FFFD8156D0221"
+backglassNotes: "Download version 2.0"
+fps: 60
+romChecksum: "517EE749BFC5C2FF16C84A54375EBA4D"
+romUrlOverride: "https://vpuniverse.com/files/file/1597-cleopatra/"
+romVersionOverride: "cleoptra"
+romNotes: "Use 'cleoptra.zip'"
+tableNotes: "Download version 1.0.B"
+tableVPSId: "rz1xr4bm"
+tagline: "Fun Fact: Cleopatra was in Rome when Caesar was killed!"
+testers:
+  - "psybocilin"
+  - "OminousOsie"
+  - "evilwraith"
+  - "pointdablame"
+vpxVPSId: "BfR8VwhE"
+vpxChecksum: "0706BA2A21EADE9DD3572B39166D0F9B"

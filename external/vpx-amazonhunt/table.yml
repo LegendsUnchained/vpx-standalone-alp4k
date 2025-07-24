@@ -1,0 +1,19 @@
+---
+applyFixes: 
+  - "bass"
+backglassVPSId: "iTSvh7ww"
+backglassChecksum: "9BD065B5E97D14DA99B2348FE76381A0"
+backglassNotes: "Download version 2.0"
+fps: 60
+romUrlOverride: "https://pinballnirvana.com/forums/resources/amazonh.1524/"
+romVersionOverride: "amazonh"
+romChecksum: "7A628D0EA28F43E1915BD84FD968F2F5"
+romNotes: "Download amazonh"
+tableNotes: "Download version 1.6"
+tableVPSId: "akXwGqgk"
+tagline: "A Jungle of FUN!"
+testers:
+  - "Mox"
+  - "OminousOsie"
+vpxVPSId: "5nZWcwTL"
+vpxChecksum: "D973CC3A3FA21BD6D356E430AF2F1926"

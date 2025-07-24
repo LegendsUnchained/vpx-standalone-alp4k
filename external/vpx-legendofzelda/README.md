@@ -1,11 +1,11 @@
-# The Legend of Zelda (Original 2015)
+﻿# The Legend of Zelda (Original 2015)
 
 Tested by: kaoticBPR
 
 ![Table Preview](../../images/vpx-legend-of-zelda-preview.jpg)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 4.3.1  
+Version: 5.5.0 (v55_VPX8)
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=11608)
 
 DirectB2S
@@ -30,7 +30,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 ## Instructions
 
 - Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If you need help, more information found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
 - If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - "Defeat Ganondolf, unite the triforce, save Princess Zelda"
 

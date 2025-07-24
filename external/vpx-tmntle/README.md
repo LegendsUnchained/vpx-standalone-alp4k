@@ -1,4 +1,4 @@
-# T.M.N.T. - Remix (Original 2024)
+﻿# T.M.N.T. - Remix (Original 2024)
 
 ![Table Preview](../../images/vpx-tmntle-preview.png)
 
@@ -25,7 +25,7 @@
 ## Instructions
 
 - Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If you need help, more information found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
 - If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - If you want a green dmd, run the table one time, back out and open table manager, on your device navigate to the vpx-tmntle/pinmame/ini folder and open the tmnt_104.ini file. Change red to 127, green to 255 and blue to 0. Save and exit.
 - "Wise man say: Forgveness is divine, but never pay full price for late pizza."

@@ -1,0 +1,23 @@
+---
+backglassVPSId: "AkKF7ZKJbc"
+backglassChecksum: "49727165253BD2293F6FF7DBD6415A16"
+backglassNotes: "Download version 1.0.0"
+coloredROMVPSId: "Z55ymmVdyU"
+coloredROMChecksum: "3DFEAE424498483ADB8F9DD203E15D39"
+coloredROMNotes: "Download version 2.0 - Use Purist Edition"
+fps: 60
+romVPSId: "uXfojkj3"
+romChecksum: "7550943E9E7D9ADFE6BED395B4179ACD"
+romNotes: "Download version 1.13B"
+tableNameOverride: "Attack from Mars, JP's"
+tableVPSId: "9Paf7-CL"
+tableNotes: "Download Attack from Mars v552_VPX8.zip"
+tagline: "No time for tea! Blast those Martians!"
+testers:
+  - "kingargyle"
+  - "OminousOsie"
+  - "evilwraith"
+vpxVPSId: "1bCrozNZ"
+vpxChecksum: "E40A93E0A979437DA2A7E4E64CB996EC"
+applyFixes:
+  - "bass"

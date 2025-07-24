@@ -1,38 +1,61 @@
-# CSI (Stern 2008) - LED Mod 
+# CSI (Stern 2008)
 
 ![Table Preview](../../images/vpx-csiled.png)
 
-Author: [Ejse83](https://vpuniverse.com/profile/53365-ejse83/)  
-Version: 1.00  
-Download: [VP Universe](https://vpuniverse.com/files/file/21552-csi-stern-2008_vpx_100-ejse83-led-mod/)
+<br>
 
-DirectB2S
+## *️⃣  Table Statistics
 
-Author: [marcobus2005](https://vpuniverse.com/profile/53087-marcobus2005/)  
-Version: 1.0.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/16053-csi-stern-2008-backglass-with-full-dmd/)
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ❌ | ✅ | ✅ | ❌ | 54 |
 
-ROM (csi_240)
+<br>
 
-Download: [VP Universe](https://vpuniverse.com/files/file/3413-csi-crime-scene-investigation-v24/)
+**VPXS 4KP Testers:**
+  - Bla1ze
+  - Ominous Osie 🌸
 
-SHA: 6180acdb68895474e26aaad1cfd61a5f675f3659  
-MD5: a207505b54ec80f1b0e9b87bcbee562e
+<br>
 
-## Status 
+---
 
-Tested by: Bla1ze
+<br>
 
-Minimum VPX Standalone build: 10.8.0-1983-a764013
+## ❇️ Available in the Wizard! 🪄✨
 
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
+<br>
 
-## Instructions
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
 
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
-- Last stop.... the morgue! 💀
+### How to install:
 
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`CSI (Stern 2008)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"Last stop.... the morgue!"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

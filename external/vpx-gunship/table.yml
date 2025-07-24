@@ -1,0 +1,27 @@
+---
+applyFixes:
+  - "bass"
+backglassAuthorsOverride:
+  - ""
+fps: 50
+pupArchiveRoot: "Gunship"
+pupChecksum: "D9476309192011F5F720E142984BBBB3"
+pupFileUrl: >-
+  https://vpuniverse.com/files/file/15778-gunship-pinball-music-table-with-pup-pack/
+pupRequired: true
+pupVersion: "Gunship"
+pupNotes: "Download 'Gunshippuppack.zip'"
+romBundled: true
+romChecksum: "409B7AE76497BB47CF66D6705F92C3EC"
+romNotes: "'lostwrld.zip' | Found in MEDIA-pack.zip"
+romVersionOverride: "lostwrld"
+tableVPSId: "hlt30iI0jz"
+tableNotes: "Download version 1.1.0"
+tagline: >- 
+  Guys, let me tell you something. In this wild and woolly universe of ours,
+  there's only three things you can count on: You brains, your bros... and your bike!
+testers:
+  - "Silentkat"
+  - "OminousOsie"
+vpxChecksum: "42CEF73BF543E959B8C1AF83184DEC78"
+vpxVPSId: "OW53xAVz9d"

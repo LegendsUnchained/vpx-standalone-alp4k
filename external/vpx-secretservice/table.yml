@@ -1,0 +1,18 @@
+backglassVPSId: "PwqX_hEJj0"
+backglassChecksum: "6539AE88DBB0803FB423DBB1376449C9"
+backglassNotes: "Download Secret Service (Data East 1988).zip"
+fps: 60
+romVPSId: "isjwMKkG"
+romChecksum: "E88AA3691877E360F7525635514A2288"
+romNotes: "Download ssvc_a26.zip"
+tableVPSId: "iucHeoQX"
+tagline: "Baby you're the best!"
+testers:
+  - "Bla1ze"
+  - "Dioskilos"
+  - "CoffeeAtJoes"
+vpxVPSId: "IjRjkwv9Se"
+vpxChecksum: "16123B2F5B22DBEBE9AD26C0588273EF"
+tableNotes: "Download version 1.1"
+applyFixes:
+  - "bass"
