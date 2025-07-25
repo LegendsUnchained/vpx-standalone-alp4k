@@ -1,4 +1,4 @@
-﻿# Star Wars - The Bad Batch (Original 2022)
+﻿# Star Wars - The Bad Batch (Retheme)
 
 ![Table Preview](../../images/vpx-badbatch.jpg)
 
