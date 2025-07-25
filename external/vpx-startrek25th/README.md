@@ -1,6 +1,6 @@
 ﻿# Star Trek 25th Anniversary (Data East 1991)
 
-Tested By: kaoticBPR
+Tested By: kaoticBPR, kingargyle
 
 ![Table Preview](../../images/vpx-startrek25th.png)
 
@@ -25,7 +25,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
 
 ## Instructions
 
