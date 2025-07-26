@@ -1,10 +1,9 @@
 ---
-backglassAuthorsOverride:
-  - ""
 fps: 55
-pupChecksum: "af446e36d9f8d90c26d61e1c268ececb"
+pupArchiveRoot: "playboys"
+pupChecksum: "AF446E36D9F8D90C26D61E1C268ECECB"
 pupFileUrl: >-
-  https://mega.nz/file/KFZWVLII#bb5WWzSx8ZmYc2-9C4uDwkbaPe2cU33ZbKDFpSQVEJk
+  https://mega.nz/file/YIpSVC6T#sv7ZjtKMSoS-z4s8M8G3KnTsi5VaWE_epDuSxpGAv1U
 pupRequired: true
 pupVersion: "playboys"
 romVPSId: "MevPuI-6"
