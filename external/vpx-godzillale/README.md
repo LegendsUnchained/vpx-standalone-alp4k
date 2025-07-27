@@ -7,11 +7,11 @@
 ## Files
 | File Type | Link | Version | Author |
 |-----------|--------|----------|--------------|
-| **VPX** | [VPUniverse](https://vpuniverse.com/files/file/12338-godzilla-sega-stern-mash-up-v30/) | 3.0 | [{hauntfreaks}](https://vpuniverse.com/profile/5216-hauntfreaks/) |
+| **VPX** | [VPUniverse](https://vpuniverse.com/files/file/8449-godzilla-limited-edition/) | 2.6 | [{marty02}](https://vpuniverse.com/profile/16531-marty02/) |
 | **B2S** | [VPUniverse}](https://vpuniverse.com/files/file/12334-godzilla-sega-stern-mash-up-b2s-with-full-dmd/) | 2.0.0 | [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
 | **ROM** | [{VPForums}](https://www.vpforums.org/index.php?app=downloads&showfile=241) | 2.05 | [destruk](https://www.vpforums.org/index.php?showuser=5) |
 
-**Tested by:** Mar3nBu,kingargyle,bogfi
+**Tested by:** Mar3nBu,kingargyle,bogfi,evilwraith
 
 ---
 
