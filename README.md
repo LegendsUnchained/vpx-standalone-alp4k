@@ -429,7 +429,7 @@ Links to these products on Amazon are through affiliate links.
 | [Getaway, The - High Speed II (Williams 1992)](external/vpx-getaway) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 42 |
 | [Ghostbusters Slimer 5.0.0 - JP (Original 2017)](external/vpx-slimerjp) | :white_check_mark: | :white_check_mark: | :x: | :x: | 55 |
 | [Godfather, The (Original 2024)](external/vpx-godfather) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
-| [Godzilla LE (Sega - Stern Mashup) (Original 2021)](external/vpx-godzillale) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 39 |
+| [Godzilla LE (Sega - Stern Mashup) (Original 2021)](external/vpx-godzillale) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Goin' Nuts (Gottlieb 1983)](external/vpx-goinnuts) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 40 |
 | [Gold Ball (Bally 1983)](external/vpx-goldball) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 44 |
 | [Gold Wing (Original 2017)](external/vpx-goldwing) | :white_check_mark: | :x: | :x: | :x: | 60 |
