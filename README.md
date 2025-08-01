@@ -191,7 +191,7 @@ Links to these products on Amazon are through affiliate links.
 | [O Gaucho (LTD do Brasil 1975)](external/vpx-ogaucho) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Pennant Fever (Williams 1984)](external/vpx-pennantfever) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Pharaoh - Dead Rise (Original 2019)](external/vpx-pharoahdr) | :white_check_mark: | :x: | :white_check_mark: | :x: | 48 |
-| [Pin-Bot (Williams 1986)](external/vpx-pinbot) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
+| [Pin-Bot (Williams 1986)](external/vpx-pinbot) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 52 |
 | [Pink Floyd (Original 2022)](external/vpx-pinkfloyd) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 42 |
 | [Pirates of the Caribbean (Stern 2006)](external/vpx-potc) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Playboy (Stern 2002)](external/vpx-playboy2002) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
