@@ -81,7 +81,7 @@ Const ballmass = 1.7
 
 
 'VR definitions
-'Do not chnage the next lines
+'Do not change the next lines
 Dim CurrentMinute ' for VR clock 
 Dim xoff,yoff,zoff,xrot,zscale, xcen,ycen, ix, xx, yy, xobj
 Dim DisplayColor : DisplayColor = RGB(255,88,32)
