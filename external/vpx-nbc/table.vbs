@@ -687,7 +687,7 @@ End Sub
 
 
 
-GameTimer.interval = 13
+GameTimer.interval = 20
 Sub GameTimer_Timer
 	Dim tmp
 	RollingUpdate

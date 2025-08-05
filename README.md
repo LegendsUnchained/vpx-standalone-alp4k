@@ -557,7 +557,7 @@ Links to these products on Amazon are through affiliate links.
 | [Night Moves (International Concepts 1989)](external/vpx-nightmoves) | :white_check_mark: | :x: | :white_check_mark: | :x: | 47 |
 | [Night of the Living Dead '68, Pinvention's (Original 2021)](external/vpx-nightofthelivingdeadpin) | :white_check_mark: | :x: | :x: | :x: | 38 |
 | [Night of the Living Dead '68 Grunge Mod (Original 2018)](external/vpx-nightofthelivingdeadgrunge) | :white_check_mark: | :x: | :x: | :x: | 45 |
-| [Nightmare Before Christmas (Original 2024)](external/vpx-nbc) | :white_check_mark: | :white_check_mark: | :x: | :x: | 30 |
+| [Nightmare Before Christmas (Original 2024)](external/vpx-nbc) | :white_check_mark: | :white_check_mark: | :x: | :x: | 39 |
 | [Night Rider (Bally 1977)](external/vpx-nightrider) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Nine Ball (Stern 1980)](external/vpx-nineball) | :white_check_mark: | :x: | :white_check_mark: | :x: | 45 |
 | [Nip-It (Bally 1973)](external/vpx-nipit) | :white_check_mark: | :white_check_mark: | :x: | :x: | 54 |

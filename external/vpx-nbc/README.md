@@ -12,7 +12,7 @@
 | **DMD** | N/A | N/A | N/A |
 | **ROM** | N/A | N/A | N/A |
 
-**Tested by:** [Bla1ze]
+**Tested by:** [Bla1ze],[kingargyle]
 
 ---
 
@@ -20,7 +20,7 @@
 **Minimum VPX Standalone build:** 10.8.0-1983-b84441e
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 30 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 39 |
 
 ---
 
