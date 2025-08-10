@@ -1,0 +1,19 @@
+---
+applyFixes:
+  - "bass"
+backglassBundled: true
+backglassChecksum: "92A14959DFD41DD13F90ABF8F9773E14"
+backglassNotes: "Included with table"
+backglassVPSId: "0nXQaHopjh"
+fps: 45
+romChecksum: "75547B3487AC21689BAA28DF54EAAE8B"
+romNotes: "Download pstlpkr.zip"
+romUrlOverride: "https://www.vpforums.org/index.php?app=downloads&showfile=404"
+romVPSId: "agWzKaeNAW"
+tableNotes: "Download Pistol Poker (Alvin G. and Company 1993)_V1.3.vpx.zip"
+tableVPSId: "45n8rfvr1S"
+tagline: "'Ace in the Hole' 'Hey, phrasing...'"
+testers:
+  - "evilwraith"
+vpxChecksum: "A639F982246980FCB0B2744C982BE9EC"
+vpxVPSId: "Qg6G4hlP9u"
