@@ -1,0 +1,16 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "27AEADB4F24CA77C9BF95A675AA36339"
+backglassNotes: "Download the 7-digit version"
+backglassVPSId: "O843tUTa5R"
+fps: 40
+romChecksum: "AFEB7DC9BE8D567F246CDC821ACEF15B"
+romNotes: "Download hh7.zip"
+romUrlOverride: "https://pinballnirvana.com/forums/resources/hh7.1934/"
+tableVPSId: "q0RmE-GZ"
+tagline: "'G-g-g-g-GHOSTS?!' - Scooby Doo and Shaggy"
+testers:
+  - "evilwraith"
+vpxChecksum: "6687FEFB8DF69CEFD80585A7C5454C79"
+vpxVPSId: "TscqlNWDQz"
