@@ -750,7 +750,7 @@ Links to these products on Amazon are through affiliate links.
 | [Water World (Gottlieb 1995)](external/vpx-waterworld) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 46 |
 | [Wayne's World (Original 2020)](external/vpx-waynesworld) | :white_check_mark: | :x: | :white_check_mark: | :x: | 50 |
 | [Wheel of Fortune (Stern 2007)](external/vpx-wof) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 37 |
-| [White Water (Williams 1993)](external/vpx-whitewater) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
+| [White Water (Williams 1993)](external/vpx-whitewater) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Wild West (Original 2024)](external/vpx-wildwest) | :white_check_mark: | :white_check_mark: | :x: | :x: | 55 |
 | [Willy Wonka Pro (Original 2020)](external/vpx-wonka) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Willy's Wonderland (Original 2021)](external/vpx-willyswonderland) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
