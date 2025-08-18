@@ -8,13 +8,14 @@
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 58 |
 
 <br>
 
 **VPXS 4KP Testers:**
   - KaoticBPR
   - OminousOsie 🌸
+  - kingargyle
 
 <br>
 

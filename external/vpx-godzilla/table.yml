@@ -2,7 +2,7 @@
 backglassVPSId: "7KE8QhZmDY"
 backglassChecksum: "395C48FD5341A62DE0FD20FB5B992669"
 backglassNotes: "Download version 2.5"
-fps: 48
+fps: 58
 romVPSId: "Q-UunvKK"
 romChecksum: "bb53c6e3c70060579851c70ffc22846f"
 tableVPSId: "fGz4ZrUb"
@@ -10,6 +10,7 @@ tagline: "Size DOES matter!"
 testers:
   - "KaoticBPR"
   - "OminousOsie"
+  - "kingargyle"
 vpxVPSId: "agV0wfgx"
 vpxChecksum: "1960efa0b0eb32ffc9cc3fe25a36666f"
 applyFixes:
