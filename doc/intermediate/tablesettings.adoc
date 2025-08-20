@@ -31,6 +31,7 @@ BackBufferScale = 0.5
 
 [Player]
 MaxTexDimension = 3072
+AAFactor = 0.90
 FXAA = 1
 ....
 
@@ -63,7 +64,20 @@ If set to 1, then tables will display in 4K.
 0.5 is the default we use for VPX standalone.
 
 _Setting this setting, to one of the values above that is below 0.5, is
-a really good way to gain additional FPS._
+an excellent way to gain additional FPS._
+
+=== [AAFactor] - Supersampling - Turbo charge FPS/reduce latency
+`AAFactor` is a form of Supersampling anti-aliasing.
+
+While Supersampling is generally used to increase the fidelity and resolution of graphic images, it can also be used to render at a reduced resolution than your monitor can support, and then upscale to your monitors' resolution.  With VPXS this can improve latency and FPS output for many tables.
+
+Many tables can get up to a 10 FPS boost by setting the AAFactor.  By default, VPinball will try to pick the closest it can, it helps to guide it in many cases.  Values can range from 0.50 to 2.00.  Numbers higher than 1.00 will increase the resolution but at the cost of FPS.  Numbers below 1.0 will provide more FPS but at the cost of some fidelity.   It is not recommended to go below 0.90 for a table as you start to make the playfield blurry and loose resolution.  The ALP4k does not do well with values higher than 1.0.
+
+- 0.5, 0.75, 0.90, 0.95: VPinball will render at less than your display resolution and upscale
+- 1.0: Disable Supersampling anti-aliasing (Default)
+- 1.25, 1.33, 1.5, 1.75, 2.0: VPinball will render at greater than your display resolution and downscale to improve image quality.
+
+This, in combination with BackBufferScale, FXAA, and MaxTexDimension can let you maintain good fidelity and obtain every last drop of fps from a table.   In many cases you can run at least one BackBufferScale higher than without it.  There is no magic number or setting that will fit all tables, each is going to be unique.
 
 === [MaxTexDimension] - How to set max resolution
 
@@ -76,12 +90,18 @@ would otherwise.
 
 === [FXAA] - How to set anti aliasing
 
-`FXAA` is the anti aliasing. the below list are the available settings:
-- 0 - Disabled - 1 - Fast FXAA - 2 - Standard FXAA - 3 - Quality FXAA -
-4 - Fast NFAA - 5 - Standard DLLA - 6 - Quality SMAA
+`FXAA` is the antialiasing. the below list are the available settings:
 
-Note: Some tables actually run _better_ with FXAA set to 1 rather then
-0! So make sure to double check which setting is the fastest on the
+- 0 - Disabled
+- 1 - Fast FXAA
+- 2 - Standard FXAA
+- 3 - Quality FXAA
+- 4 - Fast NFAA
+- 5 - Standard DLLA
+- 6 - Quality SMAA
+
+Note: Some tables actually run _better_ with FXAA set to 1 rather than
+0! So make sure to double-check which setting is the fastest on the
 table you are testing.
 
 == _POV_
