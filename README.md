@@ -87,6 +87,7 @@ Links to these products on Amazon are through affiliate links.
 | [Black Knight (Williams 1980)](external/vpx-blackknight) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Black Knight 2000 (Williams 1989)](external/vpx-blackknight2000) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 46 |
 | [Black Pyramid (Bally 1984)](external/vpx-blackpyramid) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Black Magic 4 (Recel 1980)](external/vpx-blackmagic4) | :white_check_mark: |:x: | :x: | :x: | 60 |
 | [Black Rose (Bally 1992)](external/vpx-blackrose) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Bram Stoker's Dracula (Williams 1993)](external/vpx-bsdracula) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Bugs Bunny's Birthday Ball (Bally 1990)](external/vpx-bugs) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
