@@ -6,12 +6,14 @@ romChecksum: "68a0d9b3221137ed2d7015a7c4094ca2"
 romVersionOverride: "jupk_600"
 fps: 36
 tableVPSId: "i47o-Nvr"
+tablenotes: "Download version 2.0"
 tagline: "Welcome... to Jurassic Park!"
 testers:
   - "mcap"
   - "OminousOsie"
   - "CoffeeAtJoes"
+  - "kingargyle"
 vpxVPSId: "a4IeNxW1"
-vpxChecksum: "7623cab2ec75901e46a4067e1c37d5cf"
+vpxChecksum: "202A0FA0FF0869776026B182CEB8A029"
 applyFixes:
   - "bass"
