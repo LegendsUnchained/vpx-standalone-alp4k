@@ -275,7 +275,7 @@ Links to these products on Amazon are through affiliate links.
 | [Attack from Mars (Bally 1995)](external/vpx-attackfrommars) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 30 |
 | [Attack of the Killer Tomatoes (MusicMOD) (Iceman 2023)](external/vpx-attackofthekillertomatoes) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Attila The Hun (Game Plan 1984)](external/vpx-atilla) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
-| [Austin Powers (Stern 2001)](external/vpx-austinpowers) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 35 |
+| [Austin Powers (Stern 2001)](external/vpx-austinpowers) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Bad Cats (Williams 1989)](external/vpx-badcats) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Bad Girls (Gottlieb 1988)](external/vpx-badgirls) | :white_check_mark: |:x: | :white_check_mark: | :x: | 50 |
 | [Balls-A-Poppin (Bally 1956)](external/vpx-ballsapoppin) | :white_check_mark: | :x: | :x: | :x: | 52 |
