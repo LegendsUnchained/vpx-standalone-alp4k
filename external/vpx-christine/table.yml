@@ -1,0 +1,16 @@
+---
+backglassBundled: true
+backglassChecksum: "095A0E6333E62C470D2115F81872D875"
+backglassNotes: "Included with table download"
+fps: 60
+romBundled: true
+romChecksum: "D631076325A51E518A14F4510772BEBB"
+romNotes: "Download dragon.zip"
+romUrlOverride: "https://vpuniverse.com/files/file/1698-dragon/"
+tableVPSId: "nb55OEzc"
+tagline: "Body by Buick, soul by Anti-Chrysler"
+testers:
+  - "evilwraith"
+  - "Old-Cyrus"
+vpxChecksum: "718FCC42B734560B683EB3847D944054"
+vpxVPSId: "9ciUIvCG"
