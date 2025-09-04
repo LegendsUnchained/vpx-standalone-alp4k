@@ -1,4 +1,4 @@
-﻿# vpx-standalone-alp4k
+# vpx-standalone-alp4k
 Settings and configs for VPX Standalone on the AtGames ALP 4K Pinball
 
 ## Paying for the Legends Unchained Loader
@@ -379,6 +379,7 @@ Links to these products on Amazon are through affiliate links.
 | [Ducktales - Quest For Money (Original 2020)](external/vpx-ducktales) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Duke Nukem 3D (Original 2020)](external/vpx-dukenukem3d) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Dungeons & Dragons (Bally 1987)](external/vpx-dungeonsndragons) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
+| [Eclipse (Gottlieb 1982)](external/vpx-eclipse) | :white_check_mark: | :x: | :white_check_mark: | :x: | 45 |
 | [Eight Ball Champ (Bally 1985)](external/vpx-eightballchamp) | :white_check_mark: | :x: | :white_check_mark: | :x: | 51 |
 | [Eight Ball Deluxe (Bally 1981)](external/vpx-eightballdeluxe) | :white_check_mark: |:x: | :white_check_mark: | :x: | 45 |
 | [Eight Ball, JPs (Bally 1977)](external/vpx-jpeightball) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
