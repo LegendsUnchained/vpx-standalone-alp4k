@@ -4,7 +4,6 @@ applyFixes:
 backglassChecksum: "5AE9E1DE1DD473B14B132D8121654F20"
 backglassVPSId: "A2zMJ7PnRB"
 fps: 60
-romBundled: true
 romChecksum: "46E6F39472FE5310F07C459064CCE4F0"
 romNotes: "Use the zip link"
 romUrlOverride: "https://archive.org/details/hulk_20240824"
