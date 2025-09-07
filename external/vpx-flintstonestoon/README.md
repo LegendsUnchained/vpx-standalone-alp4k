@@ -1,6 +1,6 @@
 # Flintstones Toon Mod (reskin of The Flintstones, Williams 1994)
 
-![Table Preview](../images/vpx-flintstonestoon-table.png?raw=true)
+![Table Preview](../../images/vpx-flintstonestoon-table.png?raw=true)
 
 ---
 
