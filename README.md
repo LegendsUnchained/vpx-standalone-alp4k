@@ -337,7 +337,7 @@ Links to these products on Amazon are through affiliate links.
 | [Cheech & Chong: Road-Trip'pin (Bally 2021)](external/vpx-cheechandchong) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 45 |
 | [Cheetah (Stern 1980)](external/vpx-cheetah) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 40 |
 | [Child's Play (Original 2018)](external/vpx-childsplay) | :white_check_mark: |:x: | :x: | :white_check_mark: | 50 |
-| [Christine (2019 Re-skin of Gottlieb's Dragon, 1978)](external/vpx-childsplay) | :white_check_mark: |:x: | :white_check_mark: | :x: | 50 |
+| [Christine (2019 Re-skin of Gottlieb's Dragon, 1978)](external/vpx-christine) | :white_check_mark: |:x: | :white_check_mark: | :x: | 50 |
 | [Chrono Trigger (JPSalas' Pokemon Re-Theme (Original 2022)](external/vpx-chrono) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Circus (Gottlieb 1980)](external/vpx-circus) | :white_check_mark: | :x: | :white_check_mark: | :x: | 38 |
 | [Cirqus Voltaire (Bally 1997)](external/vpx-cirqus) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 37 |

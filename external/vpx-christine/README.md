@@ -1,6 +1,6 @@
 # Christine (re-skin of Dragon, Gottlieb 1978)
 
-![Table Preview](vpx-christine-table.png?raw=true)
+![Table Preview](../../images/vpx-christine-table.png?raw=true)
 
 ---
 
