@@ -1,6 +1,6 @@
 # Dragon (Interflip 1977)
 
-![Table Preview](../../vpx-dragoni-table.jpg?raw=true)
+![Table Preview](../../images/vpx-dragoni-table.jpg?raw=true)
 
 ---
 
