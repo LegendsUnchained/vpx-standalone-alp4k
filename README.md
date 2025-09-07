@@ -1,4 +1,4 @@
-﻿# vpx-standalone-alp4k
+# vpx-standalone-alp4k
 Settings and configs for VPX Standalone on the AtGames ALP 4K Pinball
 
 ## Paying for the Legends Unchained Loader
@@ -411,6 +411,7 @@ Links to these products on Amazon are through affiliate links.
 | [Flash Gordon (Sound Mod) (Bally 1981)](external/vpx-flashgordonsm) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 35 |
 | [Flashman - JP (Sportmatic 1984)](external/vpx-jpflashman) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Fleetwood Mac (Original 2024)](external/vpx-fleetwood) | :white_check_mark: | :x: | :white_check_mark: | :x: | 52 |
+| [Flintstones Cartoon Mod (Williams 1994)](external/vpx-flintstonestoon) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 42 |
 | [Flipper Football (Capcom 1996)](external/vpx-flipperfootball) | :white_check_mark: | :x: | :white_check_mark: | :x: | 50 |
 | [Fog, The (Original 2022)](external/vpx-thefog) | :white_check_mark: | :x: | :x: | :x: | 52 |
 | [Football, JPs (Taito do Brasil 1979)](external/vpx-jpfootball) | :white_check_mark: | :x: | :x: | :x: | 60 |
