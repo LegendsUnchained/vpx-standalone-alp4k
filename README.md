@@ -375,7 +375,7 @@ Links to these products on Amazon are through affiliate links.
 | [Dr. Jekyll and Mr. Hyde (Original 2022)](external/vpx-drjekyllandmrhyde) | :white_check_mark: | :x: | :white_check_mark: | :x: | 45 |
 | [Dracula (Stern 1979)](external/vpx-dracula) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 53 |
 | [Dragon (Gottlieb 1978)](external/vpx-dragong) | :white_check_mark: | :x: | :white_check_mark: | :x: | 50 |
-| [Dragon (Interflip 1977)](external/vpx-dragoni) | :white_check_mark: | :x: | :wx: | :x: | 50 |
+| [Dragon (Interflip 1977)](external/vpx-dragoni) | :white_check_mark: | :x: | :x: | :x: | 50 |
 | [Dragon Ball Z (Original 2018)](external/vpx-dbz) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Ducktales - Quest For Money (Original 2020)](external/vpx-ducktales) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Duke Nukem 3D (Original 2020)](external/vpx-dukenukem3d) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
