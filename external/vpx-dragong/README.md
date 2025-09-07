@@ -1,6 +1,6 @@
 # Dragon (Gottlieb 1978)
 
-![Table Preview](vpx-dragong-table.jpg?raw=true)
+![Table Preview](../../vpx-dragong-table.jpg?raw=true)
 
 ---
 
