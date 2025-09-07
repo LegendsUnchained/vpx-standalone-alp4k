@@ -1,6 +1,6 @@
 # Duotron (Gottlieb 1974)
 
-![Table Preview](vpx-duotron-table.png?raw=true)
+![Table Preview](../../images/vpx-duotron-table.png?raw=true)
 
 ---
 
