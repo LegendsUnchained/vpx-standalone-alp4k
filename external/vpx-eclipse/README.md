@@ -1,6 +1,6 @@
 # Eclipse (Gottlieb 1982)
 
-![Table Preview](vpx-eclipse-table.jpg?raw=true)
+![Table Preview](../../images/vpx-eclipse-table.jpg?raw=true)
 
 ---
 
