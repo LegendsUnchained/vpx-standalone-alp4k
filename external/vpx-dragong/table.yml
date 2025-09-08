@@ -4,7 +4,7 @@ applyFixes:
 backglassChecksum: "2BDAFA1F3289A0D353208B3E6E92A545"
 backglassVPSId: "fMx08pkxjV"
 fps: 60
-romBundled: true
+romNotes: "Download dragon.zip"
 romChecksum: "D631076325A51E518A14F4510772BEBB"
 romUrlOverride: "https://vpuniverse.com/files/file/1698-dragon/"
 tableVPSId: "XPpvhsC3"
