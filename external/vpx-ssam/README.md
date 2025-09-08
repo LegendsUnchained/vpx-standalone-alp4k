@@ -3,7 +3,7 @@
 ![Table Preview](../../images/vpx-serious-sam-preview.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 5.5.0 
+Version: 6.0.0 
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=13094)
 
 DirectB2S
@@ -18,7 +18,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 51 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 53 |
 
 ## Instructions
 
