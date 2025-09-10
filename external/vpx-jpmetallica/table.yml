@@ -17,7 +17,7 @@ tagline: "Ride the lightning!"
 testers:
   - "mcap"
 vpxVPSId: "P-R9a8GPd1"
-vpxChecksum: "678b32aec435373e336c619b879de48d"
+vpxChecksum: "EAC6F11782700CCE383ECC7E90BC099B"
 enabled: false
 applyFixes:
   - "bass"

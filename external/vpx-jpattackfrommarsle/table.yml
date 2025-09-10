@@ -11,7 +11,7 @@ romChecksum: "7550943E9E7D9ADFE6BED395B4179ACD"
 romNotes: "Download version 1.13B"
 tableNameOverride: "Attack from Mars LE, JP's"
 tableVPSId: "9Paf7-CL"
-tableNotes: "Download 'Attack from Mars LE v552_VPX8.zip'"
+tableNotes: "Download 'Attack from Mars LE v600.zip'"
 tagline: "Blow the saucer out of the sky!!"
 tableManufacturerOverride: "Chicago Gaming Company"
 tableYearOverride: 2017
@@ -19,6 +19,6 @@ testers:
   - "BrianCK"
   - "OminousOsie"
 vpxVPSId: "1bCrozNZ"
-vpxChecksum: "96FF3118D98A1A56A3A9961EA66A0A24"
+vpxChecksum: "C3D02F892BF01300FFCB9295F4999C34"
 applyFixes:
   - "bass"
