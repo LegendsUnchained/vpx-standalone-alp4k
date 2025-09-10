@@ -4,7 +4,7 @@ applyFixes:
 backglassChecksum: "3BB8CB7D35F8555B70D5085CD0EDB9EC"
 backglassVPSId: "QRgOTgVTFK"
 enabled: false
-fps: "60"
+fps: 60
 mainNotes: "Placeholder yml"
 romChecksum: "CF79F034D68FC1B09EA74E4A1E73CA16"
 romVPSId: "Cunwzfmn"
