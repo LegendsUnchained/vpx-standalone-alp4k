@@ -1,0 +1,14 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "180B0AAE665C622552AFCFA7102BD41B"
+backglassVPSId: "aN66t62--W"
+fps: 60
+romChecksum: "4A72C16FF7BEB795C877F6483AC8E56F"
+romVPSId: "DWGritU4L2"
+tableVPSId: "C_hjfS6C"
+tagline: "'Licensed to kill gophers by the government of the United Nations. A man, free to kill gophers at will.'"
+testers:
+  - "evilwraith"
+vpxChecksum: "DCA606B575DB0C8F5DFD0F3B75E45B71"
+vpxVPSId: "P8VZtnGS"
