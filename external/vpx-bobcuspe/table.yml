@@ -1,0 +1,14 @@
+---
+applyFixes:
+  - "bass"
+backglassBundled: true
+backglassChecksum: "AB4AF0466BD9B5F85953AA7CA678326A"
+fps: 60
+romChecksum: "5B1623F9A662809461917CC78C85D80E"
+romVPSId: "oRjwaQMyq0"
+tableVPSId: "0RtVShGUU9"
+tagline: "'Radical empathy is punk as hell'"
+testers:
+  - "evilwraith"
+vpxChecksum: "F9A341843EA8667C7837021E32677783"
+vpxVPSId: "mFMtQFfnE4"
