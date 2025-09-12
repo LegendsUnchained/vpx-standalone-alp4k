@@ -1,6 +1,6 @@
 ' 4 Aces / IPD No. 928 / March 12, 1970 / 2 Players
 ' Williams Electronics, Incorporated (1967-1985) [Trade Name: Williams]
-' VPX8 table by jpsalas & Halen on the graphics & db2s. version 5.5.0
+' VPX8 table by jpsalas & Halen on the graphics & db2s. version 6.0.0
 
 Option Explicit
 Randomize
@@ -54,7 +54,6 @@ Const TableName = "fouraces" ' file name to save highscores and other variables
 Const cGameName = "fouraces" ' B2S name
 Const MaxPlayers = 2         ' 2 players can play
 Const MaxMultiplier = 2      ' limit bonus multiplier
-Const BallsPerGame = 5       ' 3 or 5
 Const FreePlay = True       ' Free play or coins
 Const Special1 = 3200        ' extra ball or credit
 Const Special2 = 4500
@@ -152,9 +151,6 @@ Sub Table1_Init()
         Next
     End If
     If credits> 0 then:DOF 200, DOFOn
-
-    ' Load table color
-    LoadLut
 End Sub
 
 '******
@@ -167,11 +163,6 @@ Sub Table1_KeyDown(ByVal Keycode)
         CollectInitials(keycode)
         Exit Sub
     End If
-
-    If KeyCode = keyRules Then RulesCard.Visible = 1
-
-    If keycode = LeftMagnaSave Then bLutActive = True:SetLUTLine "Color LUT image " & table1.ColorGradeImage
-    If keycode = RightMagnaSave AND bLutActive Then NextLUT:End If
 
     ' add coins
     If Keycode = AddCreditKey OR Keycode = AddCreditKey2 Then
@@ -248,10 +239,6 @@ Sub Table1_KeyUp(ByVal keycode)
     If EnteringInitials then
         Exit Sub
     End If
-
-    If KeyCode = keyRules Then RulesCard.Visible = 0
-
-    If keycode = LeftMagnaSave Then bLutActive = False:HideLUT
 
     If bGameInPlay AND NOT Tilted Then
         ' teclas de los flipers
@@ -349,15 +336,15 @@ Dim LLiveCatchTimer
 Dim RLiveCatchTimer
 Dim LiveCatchSensivity
 
-FlipperPower = 5000
-FlipperElasticity = 0.85
-FullStrokeEOS_Torque = 0.3 ' EOS Torque when flipper hold up ( EOS Coil is fully charged. Ampere increase due to flipper can't move or when it pushed back when "On". EOS Coil have more power )
-LiveStrokeEOS_Torque = 0.2 ' EOS Torque when flipper rotate to end ( When flipper move, EOS coil have less Ampere due to flipper can freely move. EOS Coil have less power )
+FlipperPower = 3600
+FlipperElasticity = 0.6
+FullStrokeEOS_Torque = 0.6 ' EOS Torque when flipper hold up ( EOS Coil is fully charged. Ampere increase due to flipper can't move or when it pushed back when "On". EOS Coil have more power )
+LiveStrokeEOS_Torque = 0.3 ' EOS Torque when flipper rotate to end ( When flipper move, EOS coil have less Ampere due to flipper can freely move. EOS Coil have less power )
 
 LeftFlipper.EOSTorqueAngle = 10
 RightFlipper.EOSTorqueAngle = 10
 
-SOSTorque = 0.1
+SOSTorque = 0.2
 SOSAngle = 6
 
 LiveCatchSensivity = 10
@@ -434,13 +421,10 @@ Sub GiOff 'apaga las luces GI
     Next
 End Sub
 
-Dim GiIntensity
-GiIntensity = 1               'can be used by the LUT changing to increase the GI lights when the table is darker
-
 Sub ChangeGiIntensity(factor) 'changes the intensity scale
     Dim bulb
     For each bulb in aGiLights
-        bulb.IntensityScale = GiIntensity * factor
+        bulb.IntensityScale = factor
     Next
 End Sub
 
@@ -1594,80 +1578,6 @@ Sub CollectInitials(keycode)
 End Sub
 ' End GNMOD
 
-'************************************
-'       LUT - Darkness control
-' 10 normal level & 10 warmer levels
-'************************************
-
-Dim bLutActive, LUTImage
-
-Sub LoadLUT
-    Dim x
-    bLutActive = False
-    x = LoadValue(cGameName, "LUTImage")
-    If(x <> "") Then LUTImage = x Else LUTImage = 0
-    UpdateLUT
-End Sub
-
-Sub SaveLUT
-    SaveValue cGameName, "LUTImage", LUTImage
-End Sub
-
-Sub NextLUT:LUTImage = (LUTImage + 1) MOD 22:UpdateLUT:SaveLUT:SetLUTLine "Color LUT image " & table1.ColorGradeImage:End Sub
-
-Sub UpdateLUT
-    Select Case LutImage
-        Case 0:table1.ColorGradeImage = "LUT0"
-        Case 1:table1.ColorGradeImage = "LUT1"
-        Case 2:table1.ColorGradeImage = "LUT2"
-        Case 3:table1.ColorGradeImage = "LUT3"
-        Case 4:table1.ColorGradeImage = "LUT4"
-        Case 5:table1.ColorGradeImage = "LUT5"
-        Case 6:table1.ColorGradeImage = "LUT6"
-        Case 7:table1.ColorGradeImage = "LUT7"
-        Case 8:table1.ColorGradeImage = "LUT8"
-        Case 9:table1.ColorGradeImage = "LUT9"
-        Case 10:table1.ColorGradeImage = "LUT10"
-        Case 11:table1.ColorGradeImage = "LUT Warm 0"
-        Case 12:table1.ColorGradeImage = "LUT Warm 1"
-        Case 13:table1.ColorGradeImage = "LUT Warm 2"
-        Case 14:table1.ColorGradeImage = "LUT Warm 3"
-        Case 15:table1.ColorGradeImage = "LUT Warm 4"
-        Case 16:table1.ColorGradeImage = "LUT Warm 5"
-        Case 17:table1.ColorGradeImage = "LUT Warm 6"
-        Case 18:table1.ColorGradeImage = "LUT Warm 7"
-        Case 19:table1.ColorGradeImage = "LUT Warm 8"
-        Case 20:table1.ColorGradeImage = "LUT Warm 9"
-        Case 21:table1.ColorGradeImage = "LUT Warm 10"
-    End Select
-End Sub
-
-' New LUT postit
-Sub SetLUTLine(String)
-    Dim Index
-    Dim xFor
-    Index = 1
-    LUBack.imagea = "PostItNote"
-    String = CL2(String)
-    For xFor = 1 to 40
-        Eval("LU" &xFor).imageA = GetHSChar(String, Index)
-        Index = Index + 1
-    Next
-End Sub
-
-Sub HideLUT
-    SetLUTLine ""
-    LUBack.imagea = "PostitBL"
-End Sub
-
-Function CL2(NumString) 'center line
-    Dim Temp, TempStr
-    If Len(NumString)> 40 Then NumString = Left(NumString, 40)
-    Temp = (40 - Len(NumString) ) \ 2
-    TempStr = Space(Temp) & NumString & Space(Temp)
-    CL2 = TempStr
-End Function
-
 '***********************************************************************
 ' *********************************************************************
 '  *********     G A M E  C O D E  S T A R T S  H E R E      *********
@@ -2178,4 +2088,56 @@ Sub Trigger002_Hit
             AddRBonus 1
         End If
     End If
+End Sub
+
+'*********************************
+' Table Options F12 User Options
+'*********************************
+' Table1.Option arguments are: 
+' - option name, minimum value, maximum value, step between valid values, default value, unit (0=None, 1=Percent), an optional array of literal strings
+
+Dim LUTImage, BallsPerGame
+
+Sub Table1_OptionEvent(ByVal eventId)
+    Dim x, y
+
+    'LUT
+    LutImage = Table1.Option("Select LUT", 0, 21, 1, 0, 0, Array("Normal 0", "Normal 1", "Normal 2", "Normal 3", "Normal 4", "Normal 5", "Normal 6", "Normal 7", "Normal 8", "Normal 9", "Normal 10", _
+        "Warm 0", "Warm 1", "Warm 2", "Warm 3", "Warm 4", "Warm 5", "Warm 6", "Warm 7", "Warm 8", "Warm 9", "Warm 10") )
+    UpdateLUT
+
+    ' Cabinet rails
+    x = Table1.Option("Cabinet Rails", 0, 1, 1, 1, 0, Array("Hide", "Show") )
+    For each y in aRails:y.visible = x:next
+
+    ' Balls per Game
+    x = Table1.Option("Balls per Game", 0, 1, 1, 1, 0, Array("3 Balls", "5 Balls") )
+    If x = 1 Then BallsPerGame = 5 Else BallsPerGame = 3
+End Sub
+
+Sub UpdateLUT
+    Select Case LutImage
+        Case 0:table1.ColorGradeImage = "LUT0"
+        Case 1:table1.ColorGradeImage = "LUT1"
+        Case 2:table1.ColorGradeImage = "LUT2"
+        Case 3:table1.ColorGradeImage = "LUT3"
+        Case 4:table1.ColorGradeImage = "LUT4"
+        Case 5:table1.ColorGradeImage = "LUT5"
+        Case 6:table1.ColorGradeImage = "LUT6"
+        Case 7:table1.ColorGradeImage = "LUT7"
+        Case 8:table1.ColorGradeImage = "LUT8"
+        Case 9:table1.ColorGradeImage = "LUT9"
+        Case 10:table1.ColorGradeImage = "LUT10"
+        Case 11:table1.ColorGradeImage = "LUT Warm 0"
+        Case 12:table1.ColorGradeImage = "LUT Warm 1"
+        Case 13:table1.ColorGradeImage = "LUT Warm 2"
+        Case 14:table1.ColorGradeImage = "LUT Warm 3"
+        Case 15:table1.ColorGradeImage = "LUT Warm 4"
+        Case 16:table1.ColorGradeImage = "LUT Warm 5"
+        Case 17:table1.ColorGradeImage = "LUT Warm 6"
+        Case 18:table1.ColorGradeImage = "LUT Warm 7"
+        Case 19:table1.ColorGradeImage = "LUT Warm 8"
+        Case 20:table1.ColorGradeImage = "LUT Warm 9"
+        Case 21:table1.ColorGradeImage = "LUT Warm 10"
+    End Select
 End Sub
