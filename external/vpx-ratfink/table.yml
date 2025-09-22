@@ -1,0 +1,15 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "E51E8A98D267D97797A7F6EB1D118C49"
+backglassVPSId: "bDfLEkPWsu"
+fps: 60
+romChecksum: "34BD55E0DC97C309C56BEABAFC606A19"
+romNotes: "Download stest.zip"
+romUrlOverride: "https://www.vpforums.org/index.php?app=downloads&showfile=575"
+tableVPSId: "gZwuBmOi5F"
+tagline: "'Table go VROOM!'"
+testers:
+  - "evilwraith"
+vpxChecksum: "E663EB1F3D98FC823031939D6AD26EC5"
+vpxVPSId: "nya-dnobhA"
