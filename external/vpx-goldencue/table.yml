@@ -2,7 +2,7 @@
 backglassVPSId: "aKAU92HIYe"
 backglassChecksum: "4bbd4e71ec5ce89563f38f78be5d6ca0"
 backglassNotes: "Download version 1.0.0"
-fps: 54
+fps: 60
 romVPSId: "LmiEEC7cOd"
 romChecksum: "9246873bcb2218f0e6ee5d2b9a6ea74c"
 tableVPSId: "I_hPHP6Kta"
@@ -10,9 +10,9 @@ tagline: "Learn from the best, Kelly Packard"
 testers:
   - "kaoticBPR"
   - "OminousOsie"
+  - "evilwraith"
 vpxVPSId: "8hOnTBtR_w"
 vpxChecksum: "558c983d24d4187909740f52aa274409"
 tableNotes: "Download 'Golden Cue (Sega 1998)-v1.4.zip'"
-enabled: false
 applyFixes:
   - "bass"
