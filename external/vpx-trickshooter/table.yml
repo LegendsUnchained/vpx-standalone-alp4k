@@ -10,7 +10,7 @@ romChecksum: "DB720515080EA2725AA609F6B0D211E9"
 romNotes: "Download 'tricksht.zip'"
 romBundled: true
 romVersionOverride: "tricksht"
-tableNotes: "Download v55_VPX8.zip"
+tableNotes: "Download v600.zip"
 tableVPSId: "dATFxT-tFL"
 tagline: "The backglass and playfield resembles Game Plan's 1983 'Sharp Shooter II'!"
 testers:
@@ -18,7 +18,7 @@ testers:
   - "OminousOsie"
   - "CoffeeAtJoes"
 vpxVPSId: "cN_hykCey3"
-vpxChecksum: "935AE07930D722B18F3EDBE358939E21"
+vpxChecksum: "A8D2E6ADCC58AEDEEA717D13637A9A1A"
 enabled: false # Osie: Batch for next week
 applyFixes:
   - "bass"

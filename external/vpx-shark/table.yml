@@ -6,7 +6,7 @@ fps: 60
 romVPSId: "EGZA2LmN"
 romChecksum: "2DD99073912E74D12B4FE85DCB40BC00"
 romNotes: "Download sharkt.zip"
-tableNotes: "Download v55_VPX8.zip"
+tableNotes: "Download v600.zip"
 tableVPSId: "_tKtV9Te"
 mainNotes: >-
   Note: There is a VPXS/NVRAM bug that means if you quit mid game,
@@ -17,4 +17,4 @@ testers:
   - "Boris"
   - "OminousOsie"
 vpxVPSId: "m4VJeoKZ"
-vpxChecksum: "A6158071798FB030211216EBC3AAD77E"
+vpxChecksum: "7B39B27DECF17A591E140A2F6B45F2E9"
