@@ -15,6 +15,7 @@
 **VPXS 4KP Testers:**
   - T3chZombie
   - OminousOsie 🌸
+  - kingargyle
 
 <br>
 
