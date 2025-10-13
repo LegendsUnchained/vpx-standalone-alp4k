@@ -7,6 +7,7 @@ fps: 60
 romNotes: "Download dragon.zip"
 romChecksum: "D631076325A51E518A14F4510772BEBB"
 romUrlOverride: "https://vpuniverse.com/files/file/1698-dragon/"
+romVersionOverride: "dragon"
 tableVPSId: "XPpvhsC3"
 testers:
   - "evilwraith"
