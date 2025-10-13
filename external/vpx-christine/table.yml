@@ -6,6 +6,7 @@ fps: 60
 romChecksum: "D631076325A51E518A14F4510772BEBB"
 romNotes: "Download dragon.zip"
 romUrlOverride: "https://vpuniverse.com/files/file/1698-dragon/"
+romVersionOverride: 1
 tableVPSId: "nb55OEzc"
 tagline: "Body by Buick, soul by Anti-Chrysler"
 testers:
