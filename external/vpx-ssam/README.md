@@ -1,9 +1,9 @@
-﻿# Serious Sam (Original 2017)
+# Serious Sam (Original 2017)
 
 ![Table Preview](../../images/vpx-serious-sam-preview.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 4.3.0  
+Version: 6.0.0 
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=13094)
 
 DirectB2S
@@ -18,7 +18,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 47 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 53 |
 
 ## Instructions
 

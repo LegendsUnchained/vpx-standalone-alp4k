@@ -13,5 +13,5 @@ testers:
   - "mcap"
   - "evilwraith"
 vpxVPSId: "ChQLTP9w"
-vpxChecksum: "0AC85739532A19D00707B30FDB97061E"
-tableNotes: "Version 5.5.0"
+vpxChecksum: "6AEA9505968CD41F128205C7C4638326"
+tableNotes: "Version 6.0.0"

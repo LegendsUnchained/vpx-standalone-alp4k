@@ -1,6 +1,6 @@
 ---
-backglassVPSId: "6g1eEfMtd9"
-backglassChecksum: "0a4da343e92eb0c69633d55146e80904"
+backglassVPSId: "_Ienxw_6cb"
+backglassChecksum: "C87953D426DF991990C8068FF787CB56"
 fps: 55
 romVPSId: "GSq8PW4s"
 romChecksum: "f2571fc419f9ec584b8e74ef6c6ff771"
@@ -11,5 +11,5 @@ testers:
   - "OminousOsie"
   - "CoffeeAtJoes"
 vpxVPSId: "sD53cbKdgn"
-vpxChecksum: "985b7b2a5a21af8a31c6826feac14f5b"
-tableNotes: "Download 'Banzai Run (Williams 1988) v55_VPX8.zip'"
+vpxChecksum: "A706AD1A55559E8C8916263EB86237AD"
+tableNotes: "Download 'Banzai Run (Williams 1988) v600.zip'"

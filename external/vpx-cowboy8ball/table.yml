@@ -10,7 +10,7 @@ romChecksum: "EF2CA30BFF024AE6F809D5CD4CB8C1C3"
 romNotes: "Download 'cowboy3p.zip'"
 romBundled: true
 romVersionOverride: "cowboy3p"
-tableNotes: "Download v55_VPX8.zip"
+tableNotes: "Download v600.zip"
 tableVPSId: "LNd_JUn_"
 tagline: "A Brazilian copy of Bally's 1981 'Eight Ball Deluxe'!"
 testers:
@@ -18,6 +18,6 @@ testers:
   - "OminousOsie"
   - "CoffeeAtJoes"
 vpxVPSId: "LAxl5M9f"
-vpxChecksum: "7A8E53EDE8C67451E6AA12220C9175D7"
+vpxChecksum: "AEA4DB15345E2A6A91ED5C806C6F88AE"
 applyFixes:
   - "bass"

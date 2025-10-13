@@ -7,11 +7,11 @@ backglassChecksum: "1A044A38FC41119AD183704079ACD528"
 backglassNotes: "Download 'Big Star (Williams 1972) v4.3.directb2s.zip'"
 enabled: false # Osie: Easy table for wizard release. YML built - Just needs simple stuff (POV/ Free Play/ Artwork)
 fps: 60
-tableNotes: "Download v55_VPX8.zip"
+tableNotes: "Download v600.zip"
 tableVPSId: "MwQahqI_"
 tagline: "his is the add-a-ball version of Super Star!"
 testers:
   - "Boris"
   - "OminousOsie"
 vpxVPSId: "QTG8aid1"
-vpxChecksum: "1EE910F0CD5F429D6E8BF348DF7F7418"
+vpxChecksum: "D9B5D087E34327284332B53352CF4F9C"

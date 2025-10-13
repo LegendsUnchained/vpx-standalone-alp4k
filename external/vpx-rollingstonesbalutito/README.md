@@ -7,7 +7,7 @@
 ## Files
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
-| **VPX** | [VP Forums](https://vpuniverse.com/files/file/7880-the-rolling-stones-stern-balutito-mod/) | 1.0.0 | [balutito](https://vpuniverse.com/profile/36070-balutito/) |
+| **VPX** | [VP Forums](https://vpuniverse.com/files/file/24384-rolling-stones-the-stern-2011-balutitomod-20/) | 1.0.0 | [balutito](https://vpuniverse.com/profile/36070-balutito/) |
 | **B2S** | [VP Universe](https://vpuniverse.com/files/file/13120-rolling-stones-limited-edition-stern-2011-b2s-with-full-dmd/) | 1.0.0 | [ryguy417](https://vpuniverse.com/profile/31096-ryguy417/) |
 | **ROM** | [VP Forums](https://vpuniverse.com/files/file/3392-rolling-stones-the-limited-edition-v11/) | rsn_110h | [VPUStaff](https://vpuniverse.com/profile/50-vpustaff/) |
 
