@@ -15,12 +15,12 @@ Const SSolenoidOn="solon",SSolenoidOff="soloff",SFlipperOn="FlipperUp",SFlipperO
 Set LampCallback=GetRef("UpdateMultipleLamps")
 
 Sub SolLeftF(Enabled)
-If Enabled Then PlaySound"LeftFlipper"
+If Enabled Then PlaySound "LeftFlipper"
 vpmSolFlipper LeftFlipper,nothing,Enabled
 End Sub
 
 Sub SolRightF(Enabled)
-If Enabled Then PlaySound"RightFlipper"
+If Enabled Then PlaySound "RightFlipper"
 vpmSolFlipper RightFlipper,nothing,Enabled
 End Sub
 
@@ -245,7 +245,7 @@ End Sub
 
 Sub Table1_KeyUp(ByVal KeyCode)
     If vpmKeyUp(KeyCode) Then Exit Sub  
-    If KeyCode=PlungerKey Then PlaySound"Plunger":Plunger.Fire
+    If KeyCode=PlungerKey Then PlaySound "Plunger":Plunger.Fire
 End Sub  
 
 Sub Table1_KeyDown(ByVal KeyCode)
@@ -266,15 +266,15 @@ Sub LeftSlingshot_Slingshot:vpmTimer.PulseSw(2):F5.duration 1,200,0:End Sub 	'sw
 Sub BumperBlue_Hit:vpmTimer.PulseSw(3):End Sub 				'switch 3
 Sub BumperYellowRight_Hit:vpmTimer.PulseSw(4):End Sub 		'switch 4
 Sub BumperYellowLeft_Hit:vpmTimer.PulseSw(5):End Sub 		'switch 5
-Sub Wall64_Slingshot:vpmTimer.PulseSw(7):PlaySound "fx_rubber2":End Sub
-Sub Wall78_Slingshot:vpmTimer.PulseSw(7):PlaySound "fx_rubber2":End Sub
-Sub Wall105_Slingshot:vpmTimer.PulseSw(7):PlaySound "fx_rubber2":End Sub
-Sub Wall107_Slingshot:vpmTimer.PulseSw(7):PlaySound "fx_rubber2":End Sub
-Sub Wall139_Slingshot:vpmTimer.PulseSw(7):PlaySound "fx_rubber2":End Sub
-Sub Wall140_Slingshot:vpmTimer.PulseSw(7):PlaySound "fx_rubber2":End Sub
-Sub Wall153_Slingshot:vpmTimer.PulseSw(7):PlaySound "fx_rubber2":End Sub
-Sub Wall154_Slingshot:vpmTimer.PulseSw(7):PlaySound "fx_rubber2":End Sub
-Sub Wall155_Slingshot:vpmTimer.PulseSw(7):PlaySound "fx_rubber2":End Sub
+Sub Wall64_Slingshot:vpmTimer.PulseSw(7):PlaySoundAtBall "fx_rubber2":End Sub
+Sub Wall78_Slingshot:vpmTimer.PulseSw(7):PlaySoundAtBall "fx_rubber2":End Sub
+Sub Wall105_Slingshot:vpmTimer.PulseSw(7):PlaySoundAtBall "fx_rubber2":End Sub
+Sub Wall107_Slingshot:vpmTimer.PulseSw(7):PlaySoundAtBall "fx_rubber2":End Sub
+Sub Wall139_Slingshot:vpmTimer.PulseSw(7):PlaySoundAtBall "fx_rubber2":End Sub
+Sub Wall140_Slingshot:vpmTimer.PulseSw(7):PlaySoundAtBall "fx_rubber2":End Sub
+Sub Wall153_Slingshot:vpmTimer.PulseSw(7):PlaySoundAtBall "fx_rubber2":End Sub
+Sub Wall154_Slingshot:vpmTimer.PulseSw(7):PlaySoundAtBall "fx_rubber2":End Sub
+Sub Wall155_Slingshot:vpmTimer.PulseSw(7):PlaySoundAtBall "fx_rubber2":End Sub
 Sub Drain_Hit:Drain.DestroyBall:bsTrough.EntrySol_On:bsTrough.AddBall 0:Playsound "fx_drain": End Sub 					'Switch 8 28/29/30 Trough
  Sub SolBallEntry(Enabled)
  	If Enabled Then
@@ -522,7 +522,7 @@ End Function
 '***********************************************
 
 Const tnob = 5   'total number of balls
-Const lob = 2     'number of locked balls
+Const lob = 1     'number of locked balls
 Const maxvel = 45 'max ball velocity
 ReDim rolling(tnob)
 InitRolling
@@ -605,7 +605,7 @@ Sub Rubbers_Hit(idx)
  	dim finalspeed
   	finalspeed=SQR(activeball.velx * activeball.velx + activeball.vely * activeball.vely)
  	If finalspeed > 20 then 
-		PlaySound "fx_rubber2", 0, Vol(ActiveBall)*8, AudioPan(ActiveBall), 0, Pitch(ActiveBall), 1, 0, AudioFade(ActiveBall)
+		PlaySoundAtBall "fx_rubber2"
 	End if
 	If finalspeed >= 6 AND finalspeed <= 20 then
  		RandomSoundRubber()
@@ -614,9 +614,9 @@ End Sub
 
 Sub RandomSoundRubber()
 	Select Case Int(Rnd*3)+1
-		Case 1 : PlaySound "rubber_hit_1"
-		Case 2 : PlaySound "rubber_hit_2"
-		Case 3 : PlaySound "rubber_hit_3"
+		Case 1 : PlaySoundAtBall "rubber_hit_1"
+		Case 2 : PlaySoundAtBall "rubber_hit_2"
+		Case 3 : PlaySoundAtBall "rubber_hit_3"
 	End Select
 End Sub
 
@@ -630,8 +630,8 @@ End Sub
 
 Sub RandomSoundFlipper()
 	Select Case Int(Rnd*3)+1
-		Case 1 : PlaySound "flip_hit_1"
-		Case 2 : PlaySound "flip_hit_2"
-		Case 3 : PlaySound "flip_hit_3"
+		Case 1 : PlaySoundAtBall "flip_hit_1"
+		Case 2 : PlaySoundAtBall "flip_hit_2"
+		Case 3 : PlaySoundAtBall "flip_hit_3"
 	End Select
 End Sub
