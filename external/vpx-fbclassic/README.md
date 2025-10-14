@@ -1,6 +1,6 @@
-# Fireball II (Bally 1981)
+# Fireball Classic (Bally 1985)
 
-![Table Preview](../../images/PYN3jDqp-preview.webp)
+![Table Preview](../../images/uzPhhqXVa7-preview.webp)
 
 <br>
 
@@ -33,9 +33,9 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`Fireball II (Bally 1981)`**
+4.  Find and select this table from the dropdown menu: **`Fireball Classic (Bally 1985)`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *"'From the makers of Fireball, Fireball Classic, and New Fireball'"*
+6. *"'Not to be confused with Fireball Cinnamon Whisky'"*
 
 <br>
 
