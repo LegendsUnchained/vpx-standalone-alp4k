@@ -88,8 +88,9 @@ Links to these products on Amazon are through affiliate links.
 | [Black Knight (Williams 1980)](external/vpx-blackknight) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Black Knight 2000 (Williams 1989)](external/vpx-blackknight2000) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 46 |
 | [Black Pyramid (Bally 1984)](external/vpx-blackpyramid) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
-| [Black Magic 4 (Recel 1980)](external/vpx-blackmagic4) | :white_check_mark: |:x: | :x: | :x: | 60 |
+| [Black Magic 4 (Recel 1980)](external/vpx-blackmagic4) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Black Rose (Bally 1992)](external/vpx-blackrose) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 50 |
+| [Bob Cuspe (Original 2025)](external/vpx-bobcuspe) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Bram Stoker's Dracula (Williams 1993)](external/vpx-bsdracula) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Bugs Bunny's Birthday Ball (Bally 1990)](external/vpx-bugs) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
 | [Cactus Canyon (Bally 1998)](external/vpx-cactuscanyon) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
@@ -129,6 +130,9 @@ Links to these products on Amazon are through affiliate links.
 | [Family Guy (Stern 2007)](external/vpx-familyguy) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Fathom (Bally 1981)](external/vpx-fathom) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 38 |
 | [Fifth Element, The (Original 2022)](external/vpx-fifthelement) | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
+| [Fireball (Bally 1972)](external/vpx-fireball) | :white_check_mark: | :x: | :x: | :x: | 60 |
+| [Fireball Classic (Bally 1985)](external/vpx-fbclassic) | :white_check_mark: | :x: | :x: | :x: | 60 |
+| [Fireball II (Bally 1981)](external/vpx-fireballii) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Firepower (Williams 1980)](external/vpx-firepower) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 56 |
 | [Firepower II (Williams 1983)](external/vpx-firepower2) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Fish Tales (Williams 1992)](external/vpx-fishtales) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
@@ -405,8 +409,6 @@ Links to these products on Amazon are through affiliate links.
 | [Fire Action - JP (Taito do Brasil 1980)](external/vpx-jpfireaction) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Fire Action de Luxe - JP (Taito do Brasil 1983)](external/vpx-jpfireactiondeluxe) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Fire! (Williams 1987)](external/vpx-fire) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
-| [Fireball (Bally 1972)](external/vpx-fireball) | :white_check_mark: | :x: | :x: | :x: | 60 |
-| [Fireball II (Bally 1981)](external/vpx-fireballii) | :white_check_mark: | :x: | :white_check_mark: | :x: | 55 |
 | [Five Nights at Freddy's (Original 2021)](external/vpx-fivenightatfreddys) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
 | [Flash (Williams 1979)](external/vpx-flash) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Flash Gordon (Bally 1981)](external/vpx-flashgordon) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 35 |

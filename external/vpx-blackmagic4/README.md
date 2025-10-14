@@ -14,6 +14,7 @@
 
 **VPXS 4KP Testers:**
   - evilwraith
+  - pointdablame
 
 <br>
 

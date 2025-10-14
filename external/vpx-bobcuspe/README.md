@@ -1,6 +1,6 @@
-# Fireball II (Bally 1981)
+# Bob Cuspe (Original 2025)
 
-![Table Preview](../../images/PYN3jDqp-preview.webp)
+![Table Preview](../../images/mFMtQFfnE4-preview.webp)
 
 <br>
 
@@ -14,7 +14,6 @@
 
 **VPXS 4KP Testers:**
   - evilwraith
-  - CoffeeAtJoes
 
 <br>
 
@@ -33,9 +32,9 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`Fireball II (Bally 1981)`**
+4.  Find and select this table from the dropdown menu: **`Bob Cuspe (Original 2025)`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *"'From the makers of Fireball, Fireball Classic, and New Fireball'"*
+6. *"'Radical empathy is punk as hell'"*
 
 <br>
 
