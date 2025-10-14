@@ -1,6 +1,6 @@
-# Golden Cue (Sega 1998)
+# Harley-Davidson (Sega 1999)
 
-![Table Preview](../../images/vpx-harleyd.png)
+![Table Preview](../../images/eoovupCgVg-preview.webp)
 
 <br>
 
@@ -8,7 +8,7 @@
 
 | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |-----------|-----|-----|-----|-----|
-| ✅ | ✅ | ✅ | ❌ | 60 |
+| ✅ | ✅ | ✅ | ❌ | 54 |
 
 <br>
 
@@ -34,9 +34,9 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`Golden Cue (Sega 1998)`**
+4.  Find and select this table from the dropdown menu: **`Harley-Davidson (Sega 1999)`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *"Learn from the best, Kelly Packard"*
+6. *"Born to be Wild"*
 
 <br>
 
