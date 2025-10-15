@@ -598,6 +598,8 @@ Sub Table1_Init()
         .CreateEvents "plungerIM"
     End With
 
+    plungerIM.Strength = 75
+     
     Set cbRight = New cvpmCaptiveBall
     With cbRight
         .InitCaptive CapTrigger1, CapWall1, Array(CapKicker1, CapKicker1a), 0

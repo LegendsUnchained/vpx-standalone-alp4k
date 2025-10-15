@@ -1,8 +1,16 @@
 ---
+applyFixes:
+  - "bass"
+backglassChecksum: "37882072E0D6437A4EF33649D7EAE266"
+backglassNotes: "Download Willow Non-Pup Edition Marty02.directb2s"
 backglassVPSId: "po8oFKWGgh"
+backglassBundled: true
 fps: 60
+tableNotes: "Download Willow Non-Pup Edition Marty02.vpx"
 tableVPSId: "tSF0RzoF8K"
 tagline: "Adventure doesn't come any bigger than this."
 testers:
   - "fAthAwg"
+  - "OminousOsie"
+vpxChecksum: "F548359C3ECECA210104606ECA635989"
 vpxVPSId: "6Hk8Z5Qo2g"
