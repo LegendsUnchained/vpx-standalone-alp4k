@@ -42,7 +42,7 @@ Dim usePUP: Dim cPuPPack: Dim PuPlayer: Dim PUPStatus: PUPStatus=false ' dont ed
 
 '*************************** PuP Settings for this table ********************************
 
-usePUP   = false               ' enable Pinup Player functions for this table
+usePUP   = False               ' enable Pinup Player functions for this table
 cPuPPack = "willow"    ' name of the PuP-Pack / PuPVideos folder for this table
 
 '//////////////////// PINUP PLAYER: STARTUP & CONTROL SECTION //////////////////////////
@@ -107,7 +107,7 @@ Const MaxMultiballs = 5  ' max number of balls during multiballs
 ' Use FlexDMD if in FS mode
 Dim UseFlexDMD
 If Table1.ShowDT = True then
-    UseFlexDMD = False
+    UseFlexDMD = True
 Else
     UseFlexDMD = True
 End If
@@ -598,8 +598,7 @@ Sub Table1_Init()
         .CreateEvents "plungerIM"
     End With
 
-    plungerIM.Strength = 75
-     
+	plungerIM.Strength = 75					   
     Set cbRight = New cvpmCaptiveBall
     With cbRight
         .InitCaptive CapTrigger1, CapWall1, Array(CapKicker1, CapKicker1a), 0
@@ -5201,7 +5200,6 @@ Sub SelectBattle 'select a new random battle if none is active
                 loop
                 Battle(CurrentPlayer, NewBattle) = 2
                 Light26.State = 2
-                Light26a.State = 2
                 UpdateBattleLights
         End Select
     'debug.print "newbatle " & newbattle
@@ -5233,7 +5231,6 @@ End Sub
 Sub StartBattle
     Battle(CurrentPlayer, 0) = NewBattle
     Light26.State = 0
-    Light26a.State = 0
     ChangeSong
     PlaySound "Fx_countdown"
     EnableBallsaver 15 'start a 15 seconds ball saver
