@@ -119,6 +119,8 @@ Links to these products on Amazon are through affiliate links.
 | [Doctor Who (Bally 1992)](external/vpx-doctorwho) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 51 |
 | [Dolly Parton (Bally 1979)](external/vpx-dolly) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Doom Eternal (Original 2022)](external/vpx-doometernal) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
+| [Dragon (Interflip 1977)](external/vpx-dragoni) | :white_check_mark: | :x: | :x: | :x: | 60 |
+| [Dragon (SS) (Gottlieb 1978)](external/vpx-dragong) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Dragon Ball Super Saiyan Edition (Original 2025)](external/vpx-dbsse) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Dragon Ball Z Budokai (Original 2023)](external/vpx-dbzbudokai) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Drakor (Taito do Brasil 1979)](external/vpx-drakor) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
@@ -168,6 +170,7 @@ Links to these products on Amazon are through affiliate links.
 | [James Bond 007 (Stern 2022)](external/vpx-jamesbond007) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [James Cameron's Avatar (Stern 2010)](external/vpx-avatar) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 52 |
 | [Jaws (Original 2025)](external/vpx-jaws50th) | :white_check_mark: | :x: | :x: | :x: | 52 |
+| [John Carpenter's Christine (Original 2019)](external/vpx-christine) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Johnny Mnemonic (Williams 1995)](external/vpx-johnnymnemonic) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Judge Dredd (Bally 1993)](external/vpx-judgedredd) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 53 |
 | [Jurassic Park (Data East 1993)](external/vpx-jurassicpark) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 45 |
