@@ -1,6 +1,40 @@
 ' O Gaucho by LTD do Brasil from 1975
-' vpx8 table by jpsalas & Halen v 6.0.0
+' vpx8 table by jpsalas & Halen v 6.0.1
 ' based on the FP table by Exegeta & RoAtaguile
+
+'DOF Some Solenoid Config by Outhere
+'101 Left Flipper
+'102 Right Flipper
+'103 Left Slingshot
+'104 Right Slingshot
+'105 
+'106 
+'107 Bumper Left
+'108 Bumper Right
+'109 Bumper Center
+'110 
+'111 
+'112 
+'113 
+'114 
+'115 
+'116 
+'117 
+'118 
+'119 
+'120 BallRelease
+'121 
+'122 Knocker
+'123 
+'124 
+'125 
+'126 
+'128 
+'129 
+'130 
+'131 Chime
+'132 Chime
+
 
 Option Explicit
 Randomize
@@ -1670,7 +1704,7 @@ End Sub
 
 Sub Bumper001_Hit 'left bumper
     If Tilted Then Exit Sub
-    PlaySoundAt "fx_bumper", bumper001
+    PlaySoundAt SoundFXDOF("fx_bumper", 107, DOFPulse, DOFContactors), bumper001
     AddScore 100
  AddTargetMulti 1
     Lbumper1a.Duration 1, 100, 0
@@ -1679,7 +1713,7 @@ End Sub
 
 Sub Bumper002_Hit 'center bumper
     If Tilted Then Exit Sub
-    PlaySoundAt "fx_bumper", Bumper002
+    PlaySoundAt SoundFXDOF("fx_bumper", 108, DOFPulse, DOFContactors), Bumper002
     AddScore 100
  AddTargetMulti 1
     Lbumper2a.Duration 1, 100, 0
@@ -1688,7 +1722,7 @@ End Sub
 
 Sub Bumper003_Hit 'right bumper
     If Tilted Then Exit Sub
-    PlaySoundAt "fx_bumper", Bumper003
+    PlaySoundAt SoundFXDOF("fx_bumper", 109, DOFPulse, DOFContactors), Bumper003
     AddScore 100
  AddTargetMulti 1
     Lbumper3a.Duration 1, 100, 0
@@ -1702,7 +1736,7 @@ Dim LStep, RStep
 
 Sub LeftSlingShot_Slingshot
     If Tilted Then Exit Sub
-    PlaySoundAt "fx_slingshot", Lemk
+    PlaySoundAt SoundFXDOF("fx_slingshot", 103, DOFPulse, DOFContactors), Lemk
     LeftSling004.Visible = 1
     Lemk.RotX = 26
     LStep = 0
@@ -1722,7 +1756,7 @@ End Sub
 
 Sub RightSlingShot_Slingshot
     If Tilted Then Exit Sub
-    PlaySoundAt "fx_slingshot", Remk
+    PlaySoundAt SoundFXDOF("fx_slingshot", 104, DOFPulse, DOFContactors), Remk
     RightSling004.Visible = 1
     Remk.RotX = 26
     RStep = 0
