@@ -1,19 +1,30 @@
-# Trailer Park Boys - Pin-Ballers (Original 2024)
+# City Hunter (Original 2025)
 
-![Table Preview](../../images/W6YLM398ZC-preview.webp)
+![Table Preview](../../images/vpx-cityhunterpup.png)
 
-<br>
+---
 
-## *️⃣  Table Statistics
+## Files
+| File Type | Link | Version | Author | 
+|-----------|--------|----------|--------------|
+| **VPX** | [VPUniverse](https://vpuniverse.com/files/file/26187-city-hunter-original-2025/) |
+| **PUP** | [VPUniverse](https://vpuniverse.com/files/file/26187-city-hunter-original-2025/) |
+| **ROM** | none |  |  |
 
-| Backglass | DMD | ROM Required | Has Puppack | FPS |
-|-----------|-----|-----|-----|-----|
-| ✅ | ✅ | ❌ | ❌ | 55 |
 
-<br>
+## Status 
 
-**VPXS 4KP Testers:**
-  - Silentkat
+Minimum VPX Standalone build: 10.8.0-1989-a764013
+
+| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
+|-----------|----------|-----------|-----|--------------|-----|
+| :white_check_mark: | :x: | :x: | :x: | :x: | 45 |
+
+
+**Tested by:** [Silentkat]
+
+---
+
 
 <br>
 
