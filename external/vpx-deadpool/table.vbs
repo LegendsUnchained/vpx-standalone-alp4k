@@ -77,7 +77,6 @@ Sub LoadCoreFiles
             PUPStatus=true
         End If
     End If
-End Sub				   
 End Sub
 
 ' Define any Constants
