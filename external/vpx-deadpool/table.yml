@@ -9,9 +9,8 @@ testers:
   - "SilentKat"
   - "evilwraith"
 tableNotes: "Download 'v600.zip'"
-pupArchiveRoot: "DPpuppack2.0/jpsdeadpool/"
+pupArchiveRoot: "DPpuppack2.0/jpsdeadpool"
 pupChecksum: "A79C1F5B36F55466626BA07900F2B438"
 pupFileUrl: "https://vpuniverse.com/files/file/7368-deadpool-table-v512-puppack-20/"
 pupNotes: "Download DPpuppack2.0.7z only"
 pupArchiveFormat: "7z"
-pupRequired: false
