@@ -1,6 +1,6 @@
 ---
 tableVPSId: "nu50f2Mg"
-vpxChecksum: "9491f49be6cb3befb6d5c878da088149"
+vpxChecksum: "33626ABA34DCB678D7CB9B0A6CB1C6D1"
 vpxVPSId: "FsGFGZC_"
 backglassChecksum: "89b766eb02bba0457b4a87c96ff48d83"
 backglassVPSId: "4gJnSY7GHx"
@@ -9,4 +9,9 @@ tagline: "MAXIMUM EFFORT!"
 testers:
   - "n-i-x"
   - "SilentKat"
-tableNotes: "Download 'v55_VPX8.zip'"
+tableNotes: "Download 'v600.zip'"
+pupArchiveRoot: "DPpuppack2.0/jpsdeadpool/"
+pupChecksum: "A79C1F5B36F55466626BA07900F2B438"
+pupFileUrl: "https://vpuniverse.com/files/file/7368-deadpool-table-v512-puppack-20/"
+pupNotes: "Download DPpuppack2.0.7z only"
+pupRequired: true
