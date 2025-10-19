@@ -1,29 +1,15 @@
 ' ****************************************************************
 '                       VISUAL PINBALL X
 '               JPSalas GhostBusters Slimer Pinball
-'                         Version 5.5.0
+'                         Version 6.0.1
 ' ****************************************************************
 'DOF by Arngrim
 
 Option Explicit
 Randomize
 
-'FlexDMD in high or normal quality
-'change it to True if you have an LCD screen, 256x64
-'or False if you have a real DMD at 128x32 in size
-Const FlexDMDHighQuality = True
-
 Const BallSize = 50    ' 50 is the normal size
 Const BallMass = 1     ' 1 is normal ball
-Const SongVolume = 0.3 ' 1 is full volume. Value is from 0 to 1
-
-' Use FlexDMD if in FS mode
-Dim UseFlexDMD
-If Table1.ShowDT = True then
-    UseFlexDMD = False
-Else
-    UseFlexDMD = True
-End If
 
 ' Load the core.vbs for supporting Subs and functions
 LoadCoreFiles
@@ -40,11 +26,10 @@ End Sub
 ' Define any Constants
 Const cGameName = "jp_ghostbusters"
 Const TableName = "slimer"
-Const myVersion = "5.5.0"
+Const myVersion = "6.01"
 Const MaxPlayers = 4
 Const BallSaverTime = 15 'in seconds
 Const MaxMultiplier = 12 'limit to 12x in this game
-Const BallsPerGame = 3   ' 3 or 5
 Const MaxMultiballs = 5  ' max number of balls during multiballs
 
 ' Define Global Variables
@@ -148,9 +133,6 @@ Sub Table1_Init()
     ' initalise the DMD display
     DMD_Init
 
-    ' freeplay or coins
-    bFreePlay = True ' coins yes or no?
-
     ' initialse any other flags
     bOnTheFirstBall = False
     bBallInPlungerLane = False
@@ -171,9 +153,6 @@ Sub Table1_Init()
     bJustStarted = True
     bInstantInfo = False
     EndOfGame()
-
-    ' Load table color
-    LoadLut
 End Sub
 
 '******
@@ -186,15 +165,12 @@ Sub Table1_KeyDown(ByVal Keycode)
         Exit Sub
     End If
 
-    If keycode = LeftMagnaSave Then bLutActive = True: SetLUTLine "Color LUT image " & table1.ColorGradeImage
-    If keycode = RightMagnaSave AND bLutActive Then NextLUT:End If
-
     If Keycode = AddCreditKey OR Keycode = AddCreditKey2 Then
         Credits = Credits + 1
         DOF 140, DOFOn
         If(Tilted = False)Then
             DMDFlush
-            DMD "_", CL(1, "CREDITS " & Credits), "", eNone, eNone, eNone, 500, True, "fx_coin"
+            DMD "_", CL("CREDITS " & Credits), "", eNone, eNone, eNone, 500, True, "fx_coin"
             If NOT bGameInPlay Then ShowTableInfo
         End If
     End If
@@ -229,18 +205,18 @@ Sub Table1_KeyDown(ByVal Keycode)
                     PlayersPlayingGame = PlayersPlayingGame + 1
                     TotalGamesPlayed = TotalGamesPlayed + 1
                     DMDFlush
-                    DMD "_", CL(1, PlayersPlayingGame & " PLAYERS"), "", eNone, eBlink, eNone, 500, True, "gb_fanfare1"
+                    DMD "_", CL(PlayersPlayingGame & " PLAYERS"), "", eNone, eBlink, eNone, 500, True, "gb_fanfare1"
                 Else
                     If(Credits > 0)then
                         PlayersPlayingGame = PlayersPlayingGame + 1
                         TotalGamesPlayed = TotalGamesPlayed + 1
                         Credits = Credits - 1
-                        DMD "_", CL(1, PlayersPlayingGame & " PLAYERS"), "", eNone, eBlink, eNone, 500, True, "gb_fanfare1"
+                        DMD "_", CL(PlayersPlayingGame & " PLAYERS"), "", eNone, eBlink, eNone, 500, True, "gb_fanfare1"
                     Else
                         ' Not Enough Credits to start a game.
                         DOF 140, DOFOff
                         DMDFlush
-                        DMD CL(0, "CREDITS " & Credits), CL(1, "INSERT COIN"), "", eNone, eBlink, eNone, 500, True, ""
+                        DMD CL("CREDITS " & Credits), CL("INSERT COIN"), "", eNone, eBlink, eNone, 500, True, ""
                     End If
                 End If
             End If
@@ -262,7 +238,7 @@ Sub Table1_KeyDown(ByVal Keycode)
                         ' Not Enough Credits to start a game.
                         DOF 140, DOFOff
                         DMDFlush
-                        DMD CL(0, "CREDITS " & Credits), CL(1, "INSERT COIN"), "", eNone, eBlink, eNone, 500, True, ""
+                        DMD CL("CREDITS " & Credits), CL("INSERT COIN"), "", eNone, eBlink, eNone, 500, True, ""
                         ShowTableInfo
                     End If
                 End If
@@ -277,8 +253,6 @@ Sub Table1_KeyUp(ByVal keycode)
 		bInstantInfo = False
         Exit Sub
     End If
-
-   	If keycode = LeftMagnaSave Then bLutActive = False: HideLUT
 
     If keycode = PlungerKey Then
 		Playsoundat"fx_plunger", plunger
@@ -311,14 +285,14 @@ Sub InstantInfoTimer_Timer
     InstantInfoTimer.Enabled = False
     bInstantInfo = True
     Jackpot = 1000000 + Round(Score(CurrentPlayer) / 10, 0)
-    DMD CL(0, "INSTANT INFO"), "", "", eNone, eNone, eNone, 800, False, ""
-    DMD CL(0, "JACKPOT VALUE"), CL(1, FormatScore(Jackpot)), "", eNone, eNone, eNone, 800, False, ""
-    DMD CL(0, "SUPERJACKPOT"), CL(1, FormatScore(SuperJackpot)), "", eNone, eNone, eNone, 800, False, ""
-    DMD CL(0, "PKE LEVEL"), CL(1, FormatScore(PKELevel)), "", eNone, eNone, eNone, 800, False, ""
-    DMD CL(0, "PKE MULTIPLIER"), CL(1, PKEMult), "", eNone, eNone, eNone, 800, False, ""
-    DMD CL(0, "GHOSTS CAUGHT"), CL(1, Ghosts(CurrentPlayer) + GhostsHundreds(CurrentPlayer) * 100), "", eNone, eNone, eNone, 800, False, ""
-    DMD CL(0, "BONUS MULTIPLIER"), CL(1, BonusMultiplier(CurrentPlayer)), "", eNone, eNone, eNone, 800, False, ""
-    DMD CL(0, "FIRESTATION HIT"), CL(1, FormatScore(SpinnerValue * SpinnerLevel)), "", eNone, eNone, eNone, 800, False, ""
+    DMD CL("INSTANT INFO"), "", "", eNone, eNone, eNone, 800, False, ""
+    DMD CL("JACKPOT VALUE"), CL(FormatScore(Jackpot)), "", eNone, eNone, eNone, 800, False, ""
+    DMD CL("SUPERJACKPOT"), CL(FormatScore(SuperJackpot)), "", eNone, eNone, eNone, 800, False, ""
+    DMD CL("PKE LEVEL"), CL(FormatScore(PKELevel)), "", eNone, eNone, eNone, 800, False, ""
+    DMD CL("PKE MULTIPLIER"), CL(PKEMult), "", eNone, eNone, eNone, 800, False, ""
+    DMD CL("GHOSTS CAUGHT"), CL(Ghosts(CurrentPlayer) + GhostsHundreds(CurrentPlayer) * 100), "", eNone, eNone, eNone, 800, False, ""
+    DMD CL("BONUS MULTIPLIER"), CL(BonusMultiplier(CurrentPlayer)), "", eNone, eNone, eNone, 800, False, ""
+    DMD CL("FIRESTATION HIT"), CL(FormatScore(SpinnerValue * SpinnerLevel)), "", eNone, eNone, eNone, 800, False, ""
 End Sub
 
 Sub EndFlipperStatus
@@ -394,15 +368,15 @@ Dim LLiveCatchTimer
 Dim RLiveCatchTimer
 Dim LiveCatchSensivity
 
-FlipperPower = 5000
-FlipperElasticity = 0.8
-FullStrokeEOS_Torque = 0.3 	' EOS Torque when flipper hold up ( EOS Coil is fully charged. Ampere increase due to flipper can't move or when it pushed back when "On". EOS Coil have more power )
-LiveStrokeEOS_Torque = 0.2	' EOS Torque when flipper rotate to end ( When flipper move, EOS coil have less Ampere due to flipper can freely move. EOS Coil have less power )
+FlipperPower = 3600
+FlipperElasticity = 0.6
+FullStrokeEOS_Torque = 0.6 ' EOS Torque when flipper hold up ( EOS Coil is fully charged. Ampere increase due to flipper can't move or when it pushed back when "On". EOS Coil have more power )
+LiveStrokeEOS_Torque = 0.3 ' EOS Torque when flipper rotate to end ( When flipper move, EOS coil have less Ampere due to flipper can freely move. EOS Coil have less power )
 
 LeftFlipper.EOSTorqueAngle = 10
 RightFlipper.EOSTorqueAngle = 10
 
-SOSTorque = 0.1
+SOSTorque = 0.2
 SOSAngle = 6
 
 LiveCatchSensivity = 10
@@ -506,14 +480,14 @@ Sub CheckTilt                                    'Called when table is nudged
     Tilt = Tilt + TiltSensitivity                'Add to tilt count
     TiltDecreaseTimer.Enabled = True
     If(Tilt > TiltSensitivity)AND(Tilt < 15)Then 'show a warning
-        DMD "_", CL(1, "CAREFUL"), "", eNone, eBlinkFast, eNone, 500, True, ""
+        DMD "_", CL("CAREFUL"), "", eNone, eBlinkFast, eNone, 500, True, ""
     End if
     If Tilt > 15 Then 'If more that 15 then TILT the table
         Tilted = True
         'display Tilt
         DMDFlush
-        DMD "", CL(1, "TILT"), "", eNone, eBlink, eNone, 100, False, ""
-        DMD CL(0, "TILT"), "", "", eNone, eBlink, eNone, 100, False, ""
+        DMD "", CL("TILT"), "", eNone, eBlink, eNone, 100, False, ""
+        DMD CL("TILT"), "", "", eNone, eBlink, eNone, 100, False, ""
         DisableTable True
         TiltRecoveryTimer.Enabled = True 'start the Tilt delay to check for all the balls to be drained
     End If
@@ -1142,7 +1116,7 @@ Sub EndOfBall()
         'Lane Bonus
         AwardPoints = LaneBonus * 1000
         TotalBonus = AwardPoints
-        DMD CL(0, FormatScore(AwardPoints)), CL(1, "LANE BONUS"), "", eBlink, eNone, eNone, 800, False, "gb_bonus1"
+        DMD CL(FormatScore(AwardPoints)), CL("LANE BONUS"), "", eBlink, eNone, eNone, 800, False, "gb_bonus1"
 
         'Number of modes completed
         AwardPoints = 0
@@ -1151,17 +1125,17 @@ Sub EndOfBall()
         Next
         AwardPoints = AwardPoints * 325130
         TotalBonus = TotalBonus + AwardPoints
-        DMD CL(0, FormatScore(AwardPoints)), CL(1, "MODES COMPLETED"), "", eBlink, eNone, eNone, 800, False, "gb_bonus2"
+        DMD CL(FormatScore(AwardPoints)), CL("MODES COMPLETED"), "", eBlink, eNone, eNone, 800, False, "gb_bonus2"
 
         'Number of Ghosts Caught
         AwardPoints = (Ghosts(CurrentPlayer) + GhostsHundreds(CurrentPlayer) * 100) * 25130
         TotalBonus = TotalBonus + AwardPoints
-        DMD CL(0, FormatScore(AwardPoints)), CL(1, "GHOSTS CAUGHT"), "", eBlink, eNone, eNone, 800, False, "gb_bonus3"
+        DMD CL(FormatScore(AwardPoints)), CL("GHOSTS CAUGHT"), "", eBlink, eNone, eNone, 800, False, "gb_bonus3"
 
         'Amount of PKE Collected
         AwardPoints = PKELevel * 350
         TotalBonus = TotalBonus + AwardPoints
-        DMD CL(0, FormatScore(AwardPoints)), CL(1, "PKE COLLECTED"), "", eBlink, eNone, eNone, 800, False, "gb_bonus4"
+        DMD CL(FormatScore(AwardPoints)), CL("PKE COLLECTED"), "", eBlink, eNone, eNone, 800, False, "gb_bonus4"
 
         ' handle the bonus held
         If bBonusHeld Then
@@ -1172,7 +1146,7 @@ Sub EndOfBall()
             End If
             bBonusHeld = False
         End If
-        DMD CL(0, FormatScore(TotalBonus)), CL(1, "TOTAL BONUS X " &BonusMultiplier(CurrentPlayer)), "", eBlink, eNone, eNone, 1000, True, "gb_bonus5"
+        DMD CL(FormatScore(TotalBonus)), CL("TOTAL BONUS X " &BonusMultiplier(CurrentPlayer)), "", eBlink, eNone, eNone, 1000, True, "gb_bonus5"
         AddScore TotalBonus
         BonusHeldPoints(CurrentPlayer) = TotalBonus 'in case the player get the Bonus Held
 
@@ -1207,7 +1181,7 @@ Sub EndOfBall2()
         End If
 
         ' You may wish to do a bit of a song AND dance at this point
-        DMD "_", CL(1, ("EXTRA BALL")), "_", eNone, eBlink, eNone, 1000, True, "vo_extraball"
+        DMD "_", CL(("EXTRA BALL")), "_", eNone, eBlink, eNone, 1000, True, "vo_extraball"
 
         ' Create a new ball in the shooters lane
         CreateNewBall()
@@ -1282,7 +1256,7 @@ Sub EndOfBallComplete()
         ' play a sound if more than 1 player
         If PlayersPlayingGame > 1 Then
             PlaySound "vo_player" &CurrentPlayer
-            DMD "", CL(1, "PLAYER " &CurrentPlayer), "", eNone, eNone, eNone, 800, True, ""
+            DMD "", CL("PLAYER " &CurrentPlayer), "", eNone, eNone, eNone, 800, True, ""
         End If
     End If
 End Sub
@@ -1357,7 +1331,7 @@ Sub Drain_Hit()
             ' we kick the ball with the autoplunger
             bAutoPlunger = True
             ' you may wish to put something on a display or play a sound at this point
-            DMD "_", CL(1, "BALL SAVED"), "_", eNone, eBlinkfast, eNone, 800, True, ""
+            DMD "_", CL("BALL SAVED"), "_", eNone, eBlinkfast, eNone, 800, True, ""
         Else
             ' cancel any multiball if on last ball (ie. lost all other balls)
             If(BallsOnPlayfield = 1)Then
@@ -1554,7 +1528,7 @@ End Sub
 
 Sub AwardExtraBall()
     If NOT bExtraBallWonThisBall Then
-        DMD "_", CL(1, ("EXTRA BALL WON")), "_", eNone, eBlink, eNone, 1000, True, SoundFXDOF("fx_Knocker", 122, DOFPulse, DOFKnocker)
+        DMD "_", CL(("EXTRA BALL WON")), "_", eNone, eBlink, eNone, 1000, True, SoundFXDOF("fx_Knocker", 122, DOFPulse, DOFKnocker)
         ExtraBallsAwards(CurrentPlayer) = ExtraBallsAwards(CurrentPlayer) + 1
         bExtraBallWonThisBall = True
         GiEffect 1
@@ -1563,7 +1537,7 @@ Sub AwardExtraBall()
 End Sub
 
 Sub AwardSpecial()
-    DMD "_", CL(1, ("EXTRA GAME WON")), "_", eNone, eBlink, eNone, 1000, True, SoundFXDOF("fx_Knocker", 122, DOFPulse, DOFKnocker)
+    DMD "_", CL(("EXTRA GAME WON")), "_", eNone, eBlink, eNone, 1000, True, SoundFXDOF("fx_Knocker", 122, DOFPulse, DOFKnocker)
     Credits = Credits + 1
     DOF 140, DOFOn
     GiEffect 1
@@ -1584,7 +1558,7 @@ Sub AwardJackpot() 'award a normal jackpot, double or triple jackpot
     Dim tmp
     tmp = "vo_jackpot" & INT(RND * 4 + 1)
     Jackpot = 1000000 + Round(Score(CurrentPlayer) / 10, 0)
-    DMD CL(0, FormatScore(Jackpot)), CL(1, ("JACKPOT")), "", eBlinkFast, eBlinkFast, eNone, 1000, True, tmp
+    DMD CL(FormatScore(Jackpot)), CL(("JACKPOT")), "", eBlinkFast, eBlinkFast, eNone, 1000, True, tmp
     AddScore Jackpot
     GiEffect 1
     LightEffect 2
@@ -1593,7 +1567,7 @@ End Sub
 
 Sub AwardDoubleJackpot() 'in this table the jackpot is always 1 million + 10% of your score
     Jackpot = (1000000 + Round(Score(CurrentPlayer) / 10, 0)) * 2
-    DMD CL(0, FormatScore(Jackpot)), CL(1, ("DOUBLE JACKPOT")), "", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_doublejackpot"
+    DMD CL(FormatScore(Jackpot)), CL(("DOUBLE JACKPOT")), "", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_doublejackpot"
     AddScore Jackpot
     GiEffect 1
     LightEffect 2
@@ -1605,7 +1579,7 @@ Sub AwardTripleJackpot() 'in this table the jackpot is always 1 million + 10% of
     Dim tmp
     tmp = "vo_triplejackpot" & INT(RND * 4 + 1)
     Jackpot = (1000000 + Round(Score(CurrentPlayer) / 10, 0)) * 3
-    DMD CL(0, FormatScore(Jackpot)), CL(1, ("TRIPLE JACKPOT")), "", eBlinkFast, eBlinkFast, eNone, 1000, True, tmp
+    DMD CL(FormatScore(Jackpot)), CL(("TRIPLE JACKPOT")), "", eBlinkFast, eBlinkFast, eNone, 1000, True, tmp
     AddScore Jackpot
     GiEffect 1
     LightEffect 2
@@ -1624,7 +1598,7 @@ Sub AwardSuperJackpot()
     Dim tmp
     DOF 133, DOFPulse
     tmp = "vo_superjackpot" & INT(RND * 5 + 1)
-    DMD CL(0, FormatScore(SuperJackpot)), CL(1, ("SUPER JACKPOT")), "", eBlinkFast, eBlinkFast, eNone, 1000, True, tmp
+    DMD CL(FormatScore(SuperJackpot)), CL(("SUPER JACKPOT")), "", eBlinkFast, eBlinkFast, eNone, 1000, True, tmp
     AddScore SuperJackpot
     GiEffect 1
     LightEffect 2
@@ -1633,7 +1607,7 @@ End Sub
 
 Sub AwardDoubleSuperJackpot()
     DOF 134, DOFPulse
-    DMD CL(0, FormatScore(SuperJackpot * 2)), CL(1, ("2X SUPER JACKPOT")), "", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_doublesuperjackpot"
+    DMD CL(FormatScore(SuperJackpot * 2)), CL(("2X SUPER JACKPOT")), "", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_doublesuperjackpot"
     AddScore SuperJackpot * 2
     GiEffect 1
     LightEffect 2
@@ -1642,7 +1616,7 @@ End Sub
 
 Sub AwardTripleSuperJackpot()
     DOF 135, DOFPulse
-    DMD CL(0, FormatScore(SuperJackpot * 3)), CL(1, ("3X SUPER JACKPOT")), "", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_triplesuperjackpot"
+    DMD CL(FormatScore(SuperJackpot * 3)), CL(("3X SUPER JACKPOT")), "", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_triplesuperjackpot"
     AddScore SuperJackpot * 3
     GiEffect 1
     LightEffect 2
@@ -1652,7 +1626,7 @@ End Sub
 Sub AwardSkillshot()
     DOF 131, DOFPulse
     SkillshotValue = (1000000 + Round(Score(CurrentPlayer) / 10, 0)) '10% of the score + 1 million
-    DMD CL(0, FormatScore(SkillshotValue)), CL(1, ("SKILLSHOT")), "", eBlinkFast, eBlink, eNone, 1000, True, "gb_fanfare6"
+    DMD CL(FormatScore(SkillshotValue)), CL(("SKILLSHOT")), "", eBlinkFast, eBlink, eNone, 1000, True, "gb_fanfare6"
     AddScore SkillshotValue
     ResetSkillShotTimer_Timer
     GiEffect 1
@@ -1833,7 +1807,7 @@ Sub HighScoreDisplayName()
     Dim TempBotStr
 
     TempTopStr = "YOUR NAME:"
-    dLine(0) = ExpandLine(TempTopStr, 0)
+    dLine(0) = ExpandLine(TempTopStr)
     DMDUpdate 0
 
     TempBotStr = "    > "
@@ -1853,7 +1827,7 @@ Sub HighScoreDisplayName()
     if(hsCurrentDigit < 2)then TempBotStr = TempBotStr & hsEnteredDigits(2)
 
     TempBotStr = TempBotStr & " <    "
-    dLine(1) = ExpandLine(TempBotStr, 1)
+    dLine(1) = ExpandLine(TempBotStr)
     DMDUpdate 1
 End Sub
 
@@ -1898,7 +1872,9 @@ End Sub
 ' *************************************************************************
 '   JP's Reduced Display Driver Functions (based on script by Black)
 ' only 5 effects: none, scroll left, scroll right, blink and blinkfast
-' 3 Lines, treats all 3 lines as text. 3rd line is just 1 character
+' 3 Lines, treats all 3 lines as text.
+' 1st and 2nd lines are 20 characters long
+' 3rd line is just 1 character
 ' Example format:
 ' DMD "text1","text2","backpicture", eNone, eNone, eNone, 250, True, "sound"
 ' Short names:
@@ -1920,7 +1896,6 @@ Dim deSpeed
 Dim deBlinkSlowRate
 Dim deBlinkFastRate
 
-Dim dCharsPerLine(2)
 Dim dLine(2)
 Dim deCount(2)
 Dim deCountEnd(2)
@@ -1948,7 +1923,7 @@ Sub DMD_Init() 'default/startup values
                 FlexDMD.GameName = cGameName
                 FlexDMD.Run = True
                 Set DMDScene = FlexDMD.NewGroup("Scene")
-                DMDScene.AddActor FlexDMD.NewImage("Back", "VPX.d_bkempty")
+                DMDScene.AddActor FlexDMD.NewImage("Back", "VPX.d_bkborder")
                 DMDScene.GetImage("Back").SetSize FlexDMD.Width, FlexDMD.Height
                 For i = 0 to 40
                     DMDScene.AddActor FlexDMD.NewImage("Dig" & i, "VPX.d_empty&dmd=2")
@@ -1973,7 +1948,7 @@ Sub DMD_Init() 'default/startup values
                 FlexDMD.GameName = cGameName
                 FlexDMD.Run = True
                 Set DMDScene = FlexDMD.NewGroup("Scene")
-                DMDScene.AddActor FlexDMD.NewImage("Back", "VPX.d_bkempty")
+                DMDScene.AddActor FlexDMD.NewImage("Back", "VPX.d_bkborder")
                 DMDScene.GetImage("Back").SetSize FlexDMD.Width, FlexDMD.Height
                 For i = 0 to 40
                     DMDScene.AddActor FlexDMD.NewImage("Dig" & i, "VPX.d_empty&dmd=2")
@@ -1991,18 +1966,19 @@ Sub DMD_Init() 'default/startup values
                 FlexDMD.UnlockRenderThread
             End If
         End If
+    Else
+        digitgrid.Visible = True
+        For i = 0 to 40
+            Digits(i).Visible = True
+        Next
     End If
-
     Dim i, j
     DMDFlush()
     deSpeed = 20
-    deBlinkSlowRate = 5
-    deBlinkFastRate = 2
-    dCharsPerLine(0) = 20 'characters lower line
-    dCharsPerLine(1) = 20 'characters top line
-    dCharsPerLine(2) = 1  'characters back line
+    deBlinkSlowRate = 10
+    deBlinkFastRate = 5
     For i = 0 to 2
-        dLine(i) = Space(dCharsPerLine(i) )
+        dLine(i) = Space(20)
         deCount(i) = 0
         deCountEnd(i) = 0
         deBlinkCycle(i) = 0
@@ -2010,6 +1986,7 @@ Sub DMD_Init() 'default/startup values
         dqbFlush(i) = True
         dqSound(i) = ""
     Next
+    dLine(2) = " "
     For i = 0 to 2
         For j = 0 to 64
             dqText(i, j) = ""
@@ -2035,8 +2012,8 @@ End Sub
 Sub DMDScore()
     Dim tmp, tmp1, tmp2
     if(dqHead = dqTail)Then
-        tmp = FL(0, "PL " & CurrentPlayer, FormatScore(Score(Currentplayer)))
-        tmp1 = FL(1, "o " & Ghosts(CurrentPlayer) + GhostsHundreds(CurrentPlayer) * 100, " BALL " & Balls)
+        tmp = FL("PL " & CurrentPlayer, FormatScore(Score(Currentplayer)))
+        tmp1 = FL("o " & Ghosts(CurrentPlayer) + GhostsHundreds(CurrentPlayer) * 100, " BALL " & Balls)
         tmp2 = ""
     End If
     DMD tmp, tmp1, tmp2, eNone, eNone, eNone, 25, True, ""
@@ -2054,7 +2031,7 @@ Sub DMD(Text0, Text1, Text2, Effect0, Effect1, Effect2, TimeOn, bFlush, Sound)
             dqText(0, dqTail) = "_"
         Else
             dqEffect(0, dqTail) = Effect0
-            dqText(0, dqTail) = ExpandLine(Text0, 0)
+            dqText(0, dqTail) = ExpandLine(Text0)
         End If
 
         if(Text1 = "_") Then
@@ -2062,7 +2039,7 @@ Sub DMD(Text0, Text1, Text2, Effect0, Effect1, Effect2, TimeOn, bFlush, Sound)
             dqText(1, dqTail) = "_"
         Else
             dqEffect(1, dqTail) = Effect1
-            dqText(1, dqTail) = ExpandLine(Text1, 1)
+            dqText(1, dqTail) = ExpandLine(Text1)
         End If
 
         if(Text2 = "_") Then
@@ -2088,7 +2065,6 @@ Sub DMDHead()
     deCount(0) = 0
     deCount(1) = 0
     deCount(2) = 0
-    DMDEffectTimer.Interval = deSpeed
 
     For i = 0 to 2
         Select Case dqEffect(i, dqHead)
@@ -2104,6 +2080,7 @@ Sub DMDHead()
     if(dqSound(dqHead) <> "") Then
         PlaySound(dqSound(dqHead) )
     End If
+    DMDEffectTimer.Interval = deSpeed
     DMDEffectTimer.Enabled = True
 End Sub
 
@@ -2144,11 +2121,11 @@ Sub DMDProcessEffectOn()
                 case eNone:
                     Temp = dqText(i, dqHead)
                 case eScrollLeft:
-                    Temp = Right(dLine(i), dCharsPerLine(i) - 1)
+                    Temp = Right(dLine(i), 19)
                     Temp = Temp & Mid(dqText(i, dqHead), deCount(i), 1)
                 case eScrollRight:
-                    Temp = Mid(dqText(i, dqHead), (dCharsPerLine(i) + 1) - deCount(i), 1)
-                    Temp = Temp & Left(dLine(i), dCharsPerLine(i) - 1)
+                    Temp = Mid(dqText(i, dqHead), 21 - deCount(i), 1)
+                    Temp = Temp & Left(dLine(i), 19)
                 case eBlink:
                     BlinkEffect = True
                     if((deCount(i) MOD deBlinkSlowRate) = 0) Then
@@ -2158,7 +2135,10 @@ Sub DMDProcessEffectOn()
                     if(deBlinkCycle(i) = 0) Then
                         Temp = dqText(i, dqHead)
                     Else
-                        Temp = Space(dCharsPerLine(i) )
+                        Temp = Space(20)
+                        If i = 2 then
+                            Temp = ""
+                        End If
                     End If
                 case eBlinkFast:
                     BlinkEffect = True
@@ -2169,8 +2149,14 @@ Sub DMDProcessEffectOn()
                     if(deBlinkCycle(i) = 0) Then
                         Temp = dqText(i, dqHead)
                     Else
-                        Temp = Space(dCharsPerLine(i) )
+                        Temp = Space(20)
+                        If i = 2 then
+                            Temp = ""
+                        End If
                     End If
+                case eLongScrollLeft:
+                    Temp = Right(dLine(i), 19)
+                    Temp = Temp & Mid(dqText(i, dqHead), deCount(i), 1)
             End Select
 
             if(dqText(i, dqHead) <> "_") Then
@@ -2198,15 +2184,15 @@ Sub DMDProcessEffectOn()
     End If
 End Sub
 
-Function ExpandLine(TempStr, id) 'id is the number of the dmd line
+Function ExpandLine(TempStr)
     If TempStr = "" Then
-        TempStr = Space(dCharsPerLine(id) )
+        TempStr = Space(20)
     Else
-        if(Len(TempStr)> Space(dCharsPerLine(id) ) ) Then
-            TempStr = Left(TempStr, Space(dCharsPerLine(id) ) )
+        if Len(TempStr)> Space(20) Then
+            TempStr = Left(TempStr, Space(20) )
         Else
-            if(Len(TempStr) <dCharsPerLine(id) ) Then
-                TempStr = TempStr & Space(dCharsPerLine(id) - Len(TempStr) )
+            if(Len(TempStr) <20) Then
+                TempStr = TempStr & Space(20 - Len(TempStr) )
             End If
         End If
     End If
@@ -2221,34 +2207,35 @@ Function FormatScore(ByVal Num) 'it returns a string with commas (as in Black's 
 
     For i = Len(NumString) -3 to 1 step -3
         if IsNumeric(mid(NumString, i, 1) ) then
-            NumString = left(NumString, i-1) & chr(asc(mid(NumString, i, 1) ) + 48) & right(NumString, Len(NumString) - i)
+            NumString = left(NumString, i-1) & chr(asc(mid(NumString, i, 1) ) + 128) & right(NumString, Len(NumString) - i)
         end if
     Next
     FormatScore = NumString
 End function
 
-Function CL(id, NumString)
+Function FL(NumString1, NumString2) 'Fill line
     Dim Temp, TempStr
-    Temp = (dCharsPerLine(id) - Len(NumString) ) \ 2
+    If Len(NumString1) + Len(NumString2) <20 Then
+        Temp = 20 - Len(NumString1) - Len(NumString2)
+        TempStr = NumString1 & Space(Temp) & NumString2
+        FL = TempStr
+    End If
+End Function
+
+Function CL(NumString) 'center line
+    Dim Temp, TempStr
+    If Len(NumString)> 20 Then NumString = Left(NumString, 20)
+    Temp = (20 - Len(NumString) ) \ 2
     TempStr = Space(Temp) & NumString & Space(Temp)
     CL = TempStr
 End Function
 
-Function RL(id, NumString)
+Function RL(NumString) 'right line
     Dim Temp, TempStr
-    Temp = dCharsPerLine(id) - Len(NumString)
+    If Len(NumString)> 20 Then NumString = Left(NumString, 20)
+    Temp = 20 - Len(NumString)
     TempStr = Space(Temp) & NumString
     RL = TempStr
-End Function
-
-Function FL(id, aString, bString) 'fill line
-    Dim tmp, tmpStr
-	aString = LEFT(aString, dCharsPerLine(id))
-	bString = LEFT(bString, dCharsPerLine(id))
-    tmp = dCharsPerLine(id)- Len(aString)- Len(bString)
-	If tmp <0 Then tmp = 0
-    tmpStr = aString & Space(tmp) & bString
-    FL = tmpStr
 End Function
 
 '**************
@@ -2257,7 +2244,7 @@ End Function
 
 Sub DMDUpdate(id)
     Dim digit, value
-	If UseFlexDMD Then FlexDMD.LockRenderThread
+    If UseFlexDMD Then FlexDMD.LockRenderThread
     Select Case id
         Case 0 'top text line
             For digit = 0 to 19
@@ -2268,19 +2255,20 @@ Sub DMDUpdate(id)
                 DMDDisplayChar mid(dLine(1), digit -19, 1), digit
             Next
         Case 2 ' back image - back animations
-            If dLine(2) = "" OR dLine(2) = " " Then dLine(2) = "d_bkempty"
+            If dLine(2) = "" OR dLine(2) = " " Then dLine(2) = "d_bkborder"
             Digits(40).ImageA = dLine(2)
-			If UseFlexDMD Then DMDScene.GetImage("Back").Bitmap = FlexDMD.NewImage("", "VPX." & dLine(2) & "&dmd=2").Bitmap
+            If UseFlexDMD Then DMDScene.GetImage("Back").Bitmap = FlexDMD.NewImage("", "VPX." & dLine(2) & "&dmd=2").Bitmap
     End Select
-	If UseFlexDMD Then FlexDMD.UnlockRenderThread
+    If UseFlexDMD Then FlexDMD.UnlockRenderThread
 End Sub
 
 Sub DMDDisplayChar(achar, adigit)
     If achar = "" Then achar = " "
     achar = ASC(achar)
     Digits(adigit).ImageA = Chars(achar)
-	If UseFlexDMD Then DMDScene.GetImage("Dig" & adigit).Bitmap = FlexDMD.NewImage("", "VPX." & Chars(achar) & "&dmd=2&add").Bitmap
+    If UseFlexDMD Then DMDScene.GetImage("Dig" & adigit).Bitmap = FlexDMD.NewImage("", "VPX." & Chars(achar) & "&dmd=2&add").Bitmap
 End Sub
+
 
 '****************************
 ' JP's new DMD using flashers
@@ -2343,21 +2331,51 @@ Sub DMDInit
     Chars(88) = "d_x"       'X
     Chars(89) = "d_y"       'Y
     Chars(90) = "d_z"       'Z
-    'Chars(94) = ""     '^
-    'Chars(95) = ""     '_
-    Chars(96) = "d_0a"  '0.
-    Chars(97) = "d_1a"  '1. 'a
-    Chars(98) = "d_2a"  '2. 'b
-    Chars(99) = "d_3a"  '3. 'c
-    Chars(100) = "d_4a" '4. 'd
-    Chars(101) = "d_5a" '5. 'e
-    Chars(102) = "d_6a" '6. 'f
-    Chars(103) = "d_7a" '7. 'g
-    Chars(104) = "d_8a" '8. 'h
-    Chars(105) = "d_9a" '9  'i
+    Chars(94) = "d_up"        '^
+    'Chars(95) = ""         '_
+    'Chars(96) = ""
+    'Chars(97) = ""  'a
+    'Chars(98) = ""  'b
+    'Chars(99) = ""  'c
+    'Chars(100) = "" 'd
+    'Chars(101) = "" 'e
+    'Chars(102) = "" 'f
+    'Chars(103) = "" 'g
+    'Chars(104) = "" 'h
+    'Chars(105) = "" 'i
+    'Chars(106) = "" 'j
+    'Chars(107) = "" 'k
+    'Chars(108) = "" 'l
+    'Chars(109) = "" 'm
+    'Chars(110) = "" 'n
+    Chars(111) = "d_o2" 'o 'ghost
     Chars(112) = "d_p2" 'p 'p dark
     Chars(113) = "d_k2" 'q 'k dark
     Chars(114) = "d_e2" 'r 'e dark
+    'Chars(115) = "" 's
+    'Chars(116) = "" 't
+    'Chars(117) = "" 'u
+    'Chars(118) = "" 'v
+    'Chars(119) = "" 'w
+    'Chars(120) = "" 'x
+    'Chars(121) = "" 'y
+    'Chars(122) = "" 'z
+    'Chars(123) = "" '{
+    'Chars(124) = "" '|
+    'Chars(125) = "" '}
+    'Chars(126) = "" '~
+    'used in the FormatScore function
+    Chars(176) = "d_0a" '0.
+    Chars(177) = "d_1a" '1.
+    Chars(178) = "d_2a" '2.
+    Chars(179) = "d_3a" '3.
+    Chars(180) = "d_4a" '4.
+    Chars(181) = "d_5a" '5.
+    Chars(182) = "d_6a" '6.
+    Chars(183) = "d_7a" '7.
+    Chars(184) = "d_8a" '8.
+    Chars(185) = "d_9a" '9.
+
     ' bumper images
     BumpS(0)  = "TOBIN SPIRIT GUIDE"
     BumpS(1)  = "  START TERROR DOG"
@@ -2453,36 +2471,36 @@ Sub ShowTableInfo
     Dim tmp
     'info goes in a loop only stopped by the credits and the startkey
     If Score(1)Then
-        DMD CL(0, "LAST SCORE"), CL(1, "PLAYER1 " &FormatScore(Score(1))), "", eNone, eNone, eNone, 3000, False, ""
+        DMD CL("LAST SCORE"), CL("PLAYER1 " &FormatScore(Score(1))), "", eNone, eNone, eNone, 3000, False, ""
     End If
     If Score(2)Then
-        DMD CL(0, "LAST SCORE"), CL(1, "PLAYER2 " &FormatScore(Score(2))), "", eNone, eNone, eNone, 3000, False, ""
+        DMD CL("LAST SCORE"), CL("PLAYER2 " &FormatScore(Score(2))), "", eNone, eNone, eNone, 3000, False, ""
     End If
     If Score(3)Then
-        DMD CL(0, "LAST SCORE"), CL(1, "PLAYER3 " &FormatScore(Score(3))), "", eNone, eNone, eNone, 3000, False, ""
+        DMD CL("LAST SCORE"), CL("PLAYER3 " &FormatScore(Score(3))), "", eNone, eNone, eNone, 3000, False, ""
     End If
     If Score(4)Then
-        DMD CL(0, "LAST SCORE"), CL(1, "PLAYER4 " &FormatScore(Score(4))), "", eNone, eNone, eNone, 3000, False, ""
+        DMD CL("LAST SCORE"), CL("PLAYER4 " &FormatScore(Score(4))), "", eNone, eNone, eNone, 3000, False, ""
     End If
-    DMD "", CL(1, "GAME OVER"), "", eNone, eBlink, eNone, 2000, False, ""
+    DMD "", CL("GAME OVER"), "", eNone, eBlink, eNone, 2000, False, ""
     If bFreePlay Then
-        DMD CL(0, "FREE PLAY"), CL(1, "PRESS START"), "", eNone, eBlink, eNone, 2000, False, ""
+        DMD CL("FREE PLAY"), CL("PRESS START"), "", eNone, eBlink, eNone, 2000, False, ""
     Else
         If Credits > 0 Then
-            DMD CL(0, "CREDITS " & Credits), CL(1, "PRESS START"), "", eNone, eBlink, eNone, 2000, False, ""
+            DMD CL("CREDITS " & Credits), CL("PRESS START"), "", eNone, eBlink, eNone, 2000, False, ""
         Else
-            DMD CL(0, "CREDITS " & Credits), CL(1, "INSERT COIN"), "", eNone, eBlink, eNone, 2000, False, ""
+            DMD CL("CREDITS " & Credits), CL("INSERT COIN"), "", eNone, eBlink, eNone, 2000, False, ""
         End If
     End If
     DMD "         JPSALAS", "          PRESENTS", "d_jppresents", eNone, eNone, eNone, 3000, False, "" 'jpsalas presents
     DMD "", "", "title", eNone, eNone, eNone, 4000, False, "" 'title
-    DMD CL(0, "HIGHSCORES"), Space(dCharsPerLine(1)), "", eScrollLeft, eScrollLeft, eNone, 20, False, ""
-    DMD CL(0, "HIGHSCORES"), "", "", eBlinkFast, eNone, eNone, 1000, False, ""
-    DMD CL(0, "HIGHSCORES"), "1> " &HighScoreName(0) & " " &FormatScore(HighScore(0)), "", eNone, eScrollLeft, eNone, 2000, False, ""
+    DMD CL("HIGHSCORES"), Space(20), "", eScrollLeft, eScrollLeft, eNone, 20, False, ""
+    DMD CL("HIGHSCORES"), "", "", eBlinkFast, eNone, eNone, 1000, False, ""
+    DMD CL("HIGHSCORES"), "1> " &HighScoreName(0) & " " &FormatScore(HighScore(0)), "", eNone, eScrollLeft, eNone, 2000, False, ""
     DMD "_", "2> " &HighScoreName(1) & " " &FormatScore(HighScore(1)), "", eNone, eScrollLeft, eNone, 2000, False, ""
     DMD "_", "3> " &HighScoreName(2) & " " &FormatScore(HighScore(2)), "", eNone, eScrollLeft, eNone, 2000, False, ""
     DMD "_", "4> " &HighScoreName(3) & " " &FormatScore(HighScore(3)), "", eNone, eScrollLeft, eNone, 2000, False, ""
-    DMD Space(dCharsPerLine(0)), Space(dCharsPerLine(1)), "", eScrollLeft, eScrollLeft, eNone, 500, False, ""
+    DMD Space(20), Space(20), "", eScrollLeft, eScrollLeft, eNone, 500, False, ""
 End Sub
 
 Sub StartAttractMode(dummy)
@@ -2634,98 +2652,6 @@ Sub RainbowTimer_Timer 'rainbow led light color changing
         Next
     End If
 End Sub
-
-'************************************
-'       LUT - Darkness control
-' 10 normal level & 10 warmer levels 
-'************************************
-
-Dim bLutActive, LUTImage
-
-Sub LoadLUT
-    bLutActive = False
-    x = LoadValue(cGameName, "LUTImage")
-    If(x <> "")Then LUTImage = x Else LUTImage = 0
-    UpdateLUT
-End Sub
-
-Sub SaveLUT
-    SaveValue cGameName, "LUTImage", LUTImage
-End Sub
-
-Sub NextLUT:LUTImage = (LUTImage + 1)MOD 22:UpdateLUT:SaveLUT:SetLUTLine "Color LUT image " & table1.ColorGradeImage:End Sub
-
-Sub UpdateLUT
-    Select Case LutImage
-        Case 0:table1.ColorGradeImage = "LUT0"
-        Case 1:table1.ColorGradeImage = "LUT1"
-        Case 2:table1.ColorGradeImage = "LUT2"
-        Case 3:table1.ColorGradeImage = "LUT3"
-        Case 4:table1.ColorGradeImage = "LUT4"
-        Case 5:table1.ColorGradeImage = "LUT5"
-        Case 6:table1.ColorGradeImage = "LUT6"
-        Case 7:table1.ColorGradeImage = "LUT7"
-        Case 8:table1.ColorGradeImage = "LUT8"
-        Case 9:table1.ColorGradeImage = "LUT9"
-        Case 10:table1.ColorGradeImage = "LUT10"
-        Case 11:table1.ColorGradeImage = "LUT Warm 0"
-        Case 12:table1.ColorGradeImage = "LUT Warm 1"
-        Case 13:table1.ColorGradeImage = "LUT Warm 2"
-        Case 14:table1.ColorGradeImage = "LUT Warm 3"
-        Case 15:table1.ColorGradeImage = "LUT Warm 4"
-        Case 16:table1.ColorGradeImage = "LUT Warm 5"
-        Case 17:table1.ColorGradeImage = "LUT Warm 6"
-        Case 18:table1.ColorGradeImage = "LUT Warm 7"
-        Case 19:table1.ColorGradeImage = "LUT Warm 8"
-        Case 20:table1.ColorGradeImage = "LUT Warm 9"
-        Case 21:table1.ColorGradeImage = "LUT Warm 10"
-    End Select
-End Sub
-
-Dim GiIntensity
-GiIntensity = 1   'can be used by the LUT changing to increase the GI lights when the table is darker
-
-Sub ChangeGiIntensity(factor) 'changes the intensity scale
-    Dim bulb
-    For each bulb in aGiLights
-        bulb.IntensityScale = GiIntensity * factor
-    Next
-End Sub
-
-' New LUT postit
-Function GetHSChar(String, Index)
-    Dim ThisChar
-    Dim FileName
-    ThisChar = Mid(String, Index, 1)
-    FileName = "PostIt"
-    If ThisChar = " " or ThisChar = "" then
-        FileName = FileName & "BL"
-    ElseIf ThisChar = "<" then
-        FileName = FileName & "LT"
-    ElseIf ThisChar = "_" then
-        FileName = FileName & "SP"
-    Else
-        FileName = FileName & ThisChar
-    End If
-    GetHSChar = FileName
-End Function
-
-Sub SetLUTLine(String)
-    Dim Index
-    Dim xFor
-    Index = 1
-    LUBack.imagea="PostItNote"
-    For xFor = 1 to 40
-        Eval("LU" &xFor).imageA = GetHSChar(String, Index)
-        Index = Index + 1
-    Next
-End Sub
-
-Sub HideLUT
-SetLUTLine ""
-LUBack.imagea="PostitBL"
-End Sub
-
 
 '***********************************************************************
 ' *********************************************************************
@@ -2961,17 +2887,17 @@ Sub UpdateSkillShot() 'Updates the DMD & lights with the chosen skillshots
     l67.State = 0
     DMDFlush
     Select Case UpperSkillShot
-        Case 0:DMD CL(0, "   + BONUS X    pqE"), "_", "", eNone, eNone, eNone, 25, False, "":l30.State = 2:l30b.State = 2
-        Case 1:DMD CL(0, "LIT PLAYFIELD X pKr"), "_", "", eNone, eNone, eNone, 25, False, "":l29.State = 2:l29b.State = 2
-        Case 2:DMD CL(0, "+3M SUP.JACKPOT Pqr"), "_", "", eNone, eNone, eNone, 25, False, "":l28.State = 2:l28b.State = 2
+        Case 0:DMD CL("   + BONUS X    pqE"), "_", "", eNone, eNone, eNone, 25, False, "":l30.State = 2:l30b.State = 2
+        Case 1:DMD CL("LIT PLAYFIELD X pKr"), "_", "", eNone, eNone, eNone, 25, False, "":l29.State = 2:l29b.State = 2
+        Case 2:DMD CL("+3M SUP.JACKPOT Pqr"), "_", "", eNone, eNone, eNone, 25, False, "":l28.State = 2:l28b.State = 2
     End Select
     Select Case LowerSkillshot
-        Case 0:DMD "_", CL(1, "^ START MODE"), "", eNone, eNone, eNone, 25, False, "":SetLightColor l60, "blue", 2:LightSeqladder1.Play SeqUpOn, 5, 1
-        Case 1:DMD "_", CL(1, "ADV. SPINNER LEVEL"), "", eNone, eNone, eNone, 25, False, "":SetLightColor l61, "blue", 2
-        Case 2:DMD "_", CL(1, "START ^ MODE"), "", eNone, eNone, eNone, 25, False, "":SetLightColor l62, "blue", 2:LightSeqladder2.Play SeqUpOn, 5, 1
-        Case 3:DMD "_", CL(1, "START MODE ^"), "", eNone, eNone, eNone, 25, False, "":SetLightColor l63, "blue", 2:LightSeqladder3.Play SeqUpOn, 5, 1
-        Case 4:DMD "_", CL(1, "START PKE FRENZY"), "", eNone, eNone, eNone, 25, False, "":SetLightColor l64, "blue", 2
-        Case 5:DMD "_", CL(1, "LIGHT NROESPA"), "", eNone, eNone, eNone, 25, False, "":SetLightColor l67, "blue", 2
+        Case 0:DMD "_", CL("^ START MODE"), "", eNone, eNone, eNone, 25, False, "":SetLightColor l60, "blue", 2:LightSeqladder1.Play SeqUpOn, 5, 1
+        Case 1:DMD "_", CL("ADV. SPINNER LEVEL"), "", eNone, eNone, eNone, 25, False, "":SetLightColor l61, "blue", 2
+        Case 2:DMD "_", CL("START ^ MODE"), "", eNone, eNone, eNone, 25, False, "":SetLightColor l62, "blue", 2:LightSeqladder2.Play SeqUpOn, 5, 1
+        Case 3:DMD "_", CL("START MODE ^"), "", eNone, eNone, eNone, 25, False, "":SetLightColor l63, "blue", 2:LightSeqladder3.Play SeqUpOn, 5, 1
+        Case 4:DMD "_", CL("START PKE FRENZY"), "", eNone, eNone, eNone, 25, False, "":SetLightColor l64, "blue", 2
+        Case 5:DMD "_", CL("LIGHT NROESPA"), "", eNone, eNone, eNone, 25, False, "":SetLightColor l67, "blue", 2
     End Select
 End Sub
 
@@ -3209,7 +3135,7 @@ Sub sw12_Hit() 'left loop
                 BackFlashEffect 1
                 BackOffManHits = BackOffManHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
                 CheckBackOffManHits
                 Exit Sub
             End If
@@ -3218,7 +3144,7 @@ Sub sw12_Hit() 'left loop
                 BackFlashEffect 1
                 WeGotOneHits = WeGotOneHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
                 CheckWeGotOneHits
                 Exit Sub
             End If
@@ -3227,7 +3153,7 @@ Sub sw12_Hit() 'left loop
                 BackFlashEffect 1
                 TheBallroomHits = TheBallroomHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
                 CheckTheBallroomHits
                 Exit Sub
             End If
@@ -3237,7 +3163,7 @@ Sub sw12_Hit() 'left loop
                 l61.State = 0
                 WhoBroughttheDogHits = WhoBroughttheDogHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
                 CheckWhoBroughttheDogHits
                 Exit Sub
             End If
@@ -3247,7 +3173,7 @@ Sub sw12_Hit() 'left loop
                 l61.State = 0
                 SpookCentralHits = SpookCentralHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
                 CheckSpookCentralHits
                 Exit Sub
             End If
@@ -3255,7 +3181,7 @@ Sub sw12_Hit() 'left loop
             If l61.State = 2 Then
                 BackFlashEffect 1
                 GozerianValue = GozerianValue + 1000000
-                DMD CL(0, "GOZERIAN VALUE IS"), CL(1, FormatScore(GozerianValue)), "", eNone, eBlinkFast, eNone, 800, True, ""
+                DMD CL("GOZERIAN VALUE IS"), CL(FormatScore(GozerianValue)), "", eNone, eBlinkFast, eNone, 800, True, ""
                 Exit Sub
             End If
         Case 9
@@ -3314,7 +3240,7 @@ Sub sw11_Hit() 'right loop
             If l63.State = 2 Then
                 SpookedLibrarianHits = SpookedLibrarianHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
                 CheckSpookedHits
                 l66.State = 2 'enable the increase of value of the superjackpot in the spinner
                 Exit Sub
@@ -3323,7 +3249,7 @@ Sub sw11_Hit() 'right loop
             If l63.State = 2 Then
                 BackOffManHits = BackOffManHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
                 CheckBackOffManHits
                 Exit Sub
             End If
@@ -3331,7 +3257,7 @@ Sub sw11_Hit() 'right loop
             If l63.State = 2 Then
                 WeGotOneHits = WeGotOneHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
                 CheckWeGotOneHits
                 Exit Sub
             End If
@@ -3339,7 +3265,7 @@ Sub sw11_Hit() 'right loop
             If l63.State = 2 Then
                 TheBallroomHits = TheBallroomHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
                 CheckTheBallroomHits
                 Exit Sub
             End If
@@ -3348,7 +3274,7 @@ Sub sw11_Hit() 'right loop
                 l63.State = 0
                 WhoBroughttheDogHits = WhoBroughttheDogHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, "gb_terrordog1"
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, "gb_terrordog1"
                 CheckWhoBroughttheDogHits
                 Exit Sub
             End If
@@ -3357,21 +3283,21 @@ Sub sw11_Hit() 'right loop
                 l63.State = 0
                 SpookCentralHits = SpookCentralHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
                 CheckSpookCentralHits
                 Exit Sub
             End If
         Case 8
             If l63.State = 2 Then
                 GozerianValue = GozerianValue + 1000000
-                DMD CL(0, "GOZERIAN VALUE IS"), CL(1, FormatScore(GozerianValue)), "", eNone, eBlinkFast, eNone, 800, True, ""
+                DMD CL("GOZERIAN VALUE IS"), CL(FormatScore(GozerianValue)), "", eNone, eBlinkFast, eNone, 800, True, ""
                 Exit Sub
             End If
         Case 9
             If l63.State = 2 Then
                 SetLightColor l63, "red", 1
-                DMD CL(0, "STAY PUFT"), CL(1, "MARSHMALLOW MAN"), "", eNone, eBlinkFast, eNone, 1000, False, "vo_aimformarsmellowman"
-                DMD "_", CL(1, "MULTIBALL"), "", eNone, eBlinkFast, eNone, 1000, True, ""
+                DMD CL("STAY PUFT"), CL("MARSHMALLOW MAN"), "", eNone, eBlinkFast, eNone, 1000, False, "vo_aimformarsmellowman"
+                DMD "_", CL("MULTIBALL"), "", eNone, eBlinkFast, eNone, 1000, True, ""
                 AddMultiball StayPuftHits
                 Exit Sub
             ElseIf l63.State = 1 Then
@@ -3541,7 +3467,7 @@ Sub LeftRampDone_Hit()
         Case 1
             SpookedLibrarianHits = SpookedLibrarianHits + 1
             AddScore 5000000
-            DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+            DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
             CheckSpookedHits
             l66.State = 2 'enable the increase of value of the superjackpot in the spinner
             Exit Sub
@@ -3549,7 +3475,7 @@ Sub LeftRampDone_Hit()
             If l62.State = 2 Then
                 BackOffManHits = BackOffManHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
                 CheckBackOffManHits
                 Exit Sub
             End If
@@ -3557,7 +3483,7 @@ Sub LeftRampDone_Hit()
             If l62.State = 2 Then
                 WeGotOneHits = WeGotOneHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
                 CheckWeGotOneHits
                 Exit Sub
             End If
@@ -3566,14 +3492,14 @@ Sub LeftRampDone_Hit()
                 HeSlimedMeHits = HeSlimedMeHits + 1
                 CheckHeSlimedMeHits
                 HeSlimedMeValue = HeSlimedMeValue + 1000000
-                DMD CL(0, FormatScore(HeSlimedMeValue)), CL(1, "SLIMER JACKPOT"), "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(HeSlimedMeValue)), CL("SLIMER JACKPOT"), "", eBlinkFast, eNone, eNone, 800, True, ""
                 Exit Sub
             End If
         Case 5
             If l62.State = 2 Then
                 TheBallroomHits = TheBallroomHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
                 CheckTheBallroomHits
                 Exit Sub
             End If
@@ -3582,7 +3508,7 @@ Sub LeftRampDone_Hit()
                 l62.State = 0
                 WhoBroughttheDogHits = WhoBroughttheDogHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
                 CheckWhoBroughttheDogHits
                 Exit Sub
             End If
@@ -3593,14 +3519,14 @@ Sub LeftRampDone_Hit()
                 End If
                 SpookCentralHits = SpookCentralHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
                 CheckSpookCentralHits
                 Exit Sub
             End If
         Case 8
             If l62.State = 2 Then
                 SetLightColor l65, "red", 2
-                DMD "", CL(1, "GOZERIAN IS LIT"), "", eNone, eBlinkFast, eNone, 800, True, "vo_fireatgozer"
+                DMD "", CL("GOZERIAN IS LIT"), "", eNone, eBlinkFast, eNone, 800, True, "vo_fireatgozer"
                 Exit Sub
             End If
         Case 9
@@ -3670,7 +3596,7 @@ Sub RightRampDone_Hit()
         tmp = "gb_terrordog" &INT(RND * 3 + 1)
         FlashEffect 1
         AddScore TerrorDogAward
-        DMD CL(0, FormatScore(TerrorDogAward)), CL(1, "TERROR DOG AWARD"), "", eBlinkFast, eNone, eNone, 800, True, tmp
+        DMD CL(FormatScore(TerrorDogAward)), CL("TERROR DOG AWARD"), "", eBlinkFast, eNone, eNone, 800, True, tmp
         TerrorDogAward = TerrorDogAward + 500000
     End If
     FlashForms ContainerFlasher001, 1000, 40, 0:FlashForms ContainerFlasher002, 1000, 40, 0:DOF 204, DOFPulse
@@ -3679,7 +3605,7 @@ Sub RightRampDone_Hit()
             If l64.State = 2 Then
                 BackOffManHits = BackOffManHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
                 CheckBackOffManHits
                 Exit Sub
             End If
@@ -3687,7 +3613,7 @@ Sub RightRampDone_Hit()
             If l64.State = 2 Then
                 WeGotOneHits = WeGotOneHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
                 CheckWeGotOneHits
                 Exit Sub
             End If
@@ -3695,7 +3621,7 @@ Sub RightRampDone_Hit()
             If l64.State = 2 Then
                 TheBallroomHits = TheBallroomHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
                 CheckTheBallroomHits
                 Exit Sub
             End If
@@ -3704,14 +3630,14 @@ Sub RightRampDone_Hit()
                 l64.State = 0
                 SpookCentralHits = SpookCentralHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
                 CheckSpookCentralHits
                 Exit Sub
             End If
         Case 8
             If l64.State = 2 Then
                 SetLightColor l65, "red", 2
-                DMD "", CL(1, "GOZERIAN IS LIT"), "", eNone, eBlinkFast, eNone, 800, True, "vo_fireatgozerthegozerian"
+                DMD "", CL("GOZERIAN IS LIT"), "", eNone, eBlinkFast, eNone, 800, True, "vo_fireatgozerthegozerian"
                 Exit Sub
             End If
         Case 9
@@ -3734,7 +3660,7 @@ Sub RightRampDone_Hit()
         Exit Sub
     End If
     If l54.State = 1 Then 'PKE Frenzy is active.
-        DMD CL(0, FormatScore(PKELevel * PKEMult)), CL(1, "PKE JACKPOT"), "", eBlinkFast, eNone, eNone, 800, True, "gb_fanfare7"
+        DMD CL(FormatScore(PKELevel * PKEMult)), CL("PKE JACKPOT"), "", eBlinkFast, eNone, eNone, 800, True, "gb_fanfare7"
         AddScore PKELevel * PKEMult
         IncreasePKEMult
     End If
@@ -3914,7 +3840,7 @@ End Sub
 Sub AwardProtonPack()
     l10.State = 0
     AddScore PKELevel * PKEMult
-    DMD CL(0, FormatScore(PKELevel * PKEMult)), CL(1, "PROTON PACK COLLECTED"), "", eBlinkFast, eNone, eNone, 1500, True, "gb_protonpack"
+    DMD CL(FormatScore(PKELevel * PKEMult)), CL("PROTON PACK COLLECTED"), "", eBlinkFast, eNone, eNone, 1500, True, "gb_protonpack"
     Flasheffect 1
     l68.State = 1
     l73.State = 0
@@ -3936,7 +3862,7 @@ Sub Target4_Hit()
     If l36.State = 2 Then
         l36.State = 1
         Multiplier2x = 2
-        DMD "PLAYFIELD MULTIPLIER", CL(1, "IS NOW " & Multiplier3x * Multiplier2x & " X"), "", eNone, eBlinkFast, eNone, 1500, True, "gb_fanfare6"
+        DMD "PLAYFIELD MULTIPLIER", CL("IS NOW " & Multiplier3x * Multiplier2x & " X"), "", eNone, eBlinkFast, eNone, 1500, True, "gb_fanfare6"
         TwoXTimerExpired.Enabled = 0:TwoXTimerExpired.Enabled = 1
         TwoXTimerBlink.Enabled = 0:TwoXTimerBlink.Enabled = 1
     End If
@@ -3951,7 +3877,7 @@ Sub Target5_Hit()
     If l37.State = 2 Then
         l37.State = 1
         Multiplier3x = 3
-        DMD "PLAYFIELD MULTIPLIER", CL(1, "IS " & Multiplier3x * Multiplier2x & " X"), "", eNone, eBlinkFast, eNone, 1500, True, "gb_fanfare6"
+        DMD "PLAYFIELD MULTIPLIER", CL("IS " & Multiplier3x * Multiplier2x & " X"), "", eNone, eBlinkFast, eNone, 1500, True, "gb_fanfare6"
         ThreeXTimerExpired.Enabled = 0:ThreeXTimerExpired.Enabled = 1
         ThreeXTimerExpired.Enabled = 0:ThreeXTimerExpired.Enabled = 1
     End If
@@ -4054,7 +3980,7 @@ Sub Target7_Hit()
                 DOF 212, DOFPulse
                 BackOffManHits = BackOffManHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
                 CheckBackOffManHits
                 Exit Sub
             End If
@@ -4065,7 +3991,7 @@ Sub Target7_Hit()
                 DOF 212, DOFPulse
                 TheBallroomHits = TheBallroomHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
                 CheckTheBallroomHits
                 Exit Sub
             End If
@@ -4075,7 +4001,7 @@ Sub Target7_Hit()
                 FlashForMs LeftRampDome2a, 1500, 50, 0
                 DOF 212, DOFPulse
                 GozerianHits = GozerianHits + 1
-                DMD CL(0, FormatScore(GozerianValue)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(GozerianValue)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
                 Addscore GozerianValue
                 CheckGozerianHits
                 Exit Sub
@@ -4095,7 +4021,7 @@ Sub Target7_Hit()
     If l76.State = 2 Then 'Gozer Hurry Up is active
         GozerHurryUpExpired_Timer
         AddScore GozerAward
-        DMD CL(0, FormatScore(GozerAward)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+        DMD CL(FormatScore(GozerAward)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
         Exit Sub
     Else
         AddScore 5000
@@ -4116,7 +4042,7 @@ Sub Target8_Hit()
         tmp = "gb_terrordog" &INT(RND * 3 + 1)
         FlashEffect 1
         AddScore TerrorDogAward
-        DMD CL(0, FormatScore(TerrorDogAward)), "TERROR DOG AWARD", "", eBlinkFast, eNone, eNone, 800, True, tmp
+        DMD CL(FormatScore(TerrorDogAward)), "TERROR DOG AWARD", "", eBlinkFast, eNone, eNone, 800, True, tmp
         TerrorDogAward = TerrorDogAward + 500000
     Else
         FlashForms TerrorDogFlasher, 800, 40, 0
@@ -4164,7 +4090,7 @@ Sub Target10_Hit()
             If l59.State = 2 Then
                 TheBallroomHits = TheBallroomHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
                 CheckTheBallroomHits
                 Exit Sub
             End If
@@ -4236,7 +4162,7 @@ Sub LeftScoop_Hit()
             If l60.State = 2 Then
                 BackOffManHits = BackOffManHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, "gb_blast1"
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, "gb_blast1"
                 CheckBackOffManHits 'the ball will exit from the CheckBackOffManHits routine
                 Exit Sub
             End If
@@ -4244,7 +4170,7 @@ Sub LeftScoop_Hit()
             If l60.State = 2 Then
                 TheBallroomHits = TheBallroomHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, "gb_blast2"
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, "gb_blast2"
                 CheckTheBallroomHits
                 vpmtimer.addtimer 1000, "FlashLeftScoop '"
                 vpmtimer.addtimer 2000, "LeftScoopExit '"
@@ -4260,7 +4186,7 @@ Sub LeftScoop_Hit()
             Case 1:tmp = "vo_balladded"
             Case 2:tmp = "vo_balladded2"
         End Select
-        DMD CL(0, "ADD-A-BALL"), "", "", eBlinkFast, eNone, eNone, 800, True, tmp
+        DMD CL("ADD-A-BALL"), "", "", eBlinkFast, eNone, eNone, 800, True, tmp
         l57.State = 0
     End If
     If l58.State = 2 Then ' give tobin Award
@@ -4323,62 +4249,62 @@ Sub TobinMysteryAward() 'n is the number of awards it will give you
                 DMD "TOBINS SPIRIT GUIDE", "   +3X BONUS X", "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
                 AddBonusMultiplier 3
             Case 1, 34, 47: ' +100 PKE Level
-                DMD "TOBINS SPIRIT GUIDE", CL(1, "+100 PKE LEVEL"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
+                DMD "TOBINS SPIRIT GUIDE", CL("+100 PKE LEVEL"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
                 PKELevel = PKELevel + 100
             Case 2, 35: ' +300 PKE Level
-                DMD "TOBINS SPIRIT GUIDE", CL(1, "+300 PKE LEVEL"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
+                DMD "TOBINS SPIRIT GUIDE", CL("+300 PKE LEVEL"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
                 PKELevel = PKELevel + 300
             Case 3, 36: ' +1M Super Jackpot Value
-                DMD "TOBINS SPIRIT GUIDE", CL(1, "+1M SUPER JACKPOT"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
+                DMD "TOBINS SPIRIT GUIDE", CL("+1M SUPER JACKPOT"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
                 AddSuperJackpot 1000000
             Case 4, 37: ' +10M Super Jackpot Value
-                DMD "TOBINS SPIRIT GUIDE", CL(1, "+10M SUPER JACKPOT"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
+                DMD "TOBINS SPIRIT GUIDE", CL("+10M SUPER JACKPOT"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
                 AddSuperJackpot 10000000
             Case 5, 20, 38, 48, 45: ' Big Points
-                DMD "TOBINS SPIRIT GUIDE", CL(1, "BIG POINTS"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
+                DMD "TOBINS SPIRIT GUIDE", CL("BIG POINTS"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
                 tmp2 = INT(RND * 9 + 1) * 100000
                 AddScore tmp2
             Case 6, 39, 49: ' Bigger Points
-                DMD "TOBINS SPIRIT GUIDE", CL(1, "BIGGER POINTS"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
+                DMD "TOBINS SPIRIT GUIDE", CL("BIGGER POINTS"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
                 tmp2 = INT(RND * 9 + 1) * 100000 + 1000000
                 AddScore tmp2
             Case 7, 40: ' Biggest Points
-                DMD "TOBINS SPIRIT GUIDE", CL(1, "BIGGEST POINTS"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
+                DMD "TOBINS SPIRIT GUIDE", CL("BIGGEST POINTS"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
                 tmp2 = INT(RND * 9 + 1) * 100000 + 2000000
                 AddScore tmp2
             Case 8, 30: ' Bonus Held
-                DMD "TOBINS SPIRIT GUIDE", CL(1, "BONUS HELD"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
+                DMD "TOBINS SPIRIT GUIDE", CL("BONUS HELD"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
                 bBonusHeld = True
             Case 9, 41: ' Bump Spinner Value
-                DMD "TOBINS SPIRIT GUIDE", CL(1, "BUMP SPINNER LEVEL"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
+                DMD "TOBINS SPIRIT GUIDE", CL("BUMP SPINNER LEVEL"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
                 SpinnerLevel = SpinnerLevel + 2
             Case 10: ' Capture X Ghosts ???
                 tmp2 = INT(RND * 9 + 1)
-                DMD "TOBINS SPIRIT GUIDE", CL(1, "CAPTURED " &tmp2& " GHOSTS"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
+                DMD "TOBINS SPIRIT GUIDE", CL("CAPTURED " &tmp2& " GHOSTS"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
                 CatchGhost tmp2
             Case 11, 27: ' Give Light Storage Facility
                 StorageLights 1
             Case 12, 42: ' Increase Spinner Value
-                DMD "TOBINS SPIRIT GUIDE", CL(1, "+ SPINNER VALUE"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
+                DMD "TOBINS SPIRIT GUIDE", CL("+ SPINNER VALUE"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
                 SpinnerValue = SpinnerValue + 1000
             Case 13: ' Light 2x Playfield Multiplier
-                DMD "TOBINS SPIRIT GUIDE", CL(1, "2X IS LIT"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
+                DMD "TOBINS SPIRIT GUIDE", CL("2X IS LIT"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
                 Enable2XMultiplier
             Case 14: ' Light Extra Ball
-                DMD "TOBINS SPIRIT GUIDE", CL(1, "EXTRABALL IS LIT"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_extraballislit"
+                DMD "TOBINS SPIRIT GUIDE", CL("EXTRABALL IS LIT"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_extraballislit"
                 l53.State = 2
             Case 15: ' Light Negative Reinforcement
-                DMD "TOBINS SPIRIT GUIDE", CL(1, "NROEA IS LIT"), "",eNone, eBlinkFast, eNone, 1000, True, "vo_nroespa"
+                DMD "TOBINS SPIRIT GUIDE", CL("NROEA IS LIT"), "",eNone, eBlinkFast, eNone, 1000, True, "vo_nroespa"
                 l24.State = 2
             Case 16, 43: ' Light One Ghost
-                DMD "TOBINS SPIRIT GUIDE", CL(1, "LIT ONE GHOST"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
+                DMD "TOBINS SPIRIT GUIDE", CL("LIT ONE GHOST"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
                 LitRandomGhost
             Case 17, 44: ' Light Two Ghosts
-                DMD "TOBINS SPIRIT GUIDE", CL(1, "LIT TWO GHOSTS"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
+                DMD "TOBINS SPIRIT GUIDE", CL("LIT TWO GHOSTS"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
                 LitRandomGhost
                 LitRandomGhost
             Case 18: ' Light Modes
-                DMD "TOBINS SPIRIT GUIDE", CL(1, "LIT MODES"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
+                DMD "TOBINS SPIRIT GUIDE", CL("LIT MODES"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
                 LitNextModes
             Case 19: ' Light Super Jackpot
                 DMD "TOBINS SPIRIT GUIDE", "SUPERJACKPOT IS LIT", "",eNone, eBlinkFast, eNone, 1000, True, "vo_getthesuperjackpot"
@@ -4386,17 +4312,17 @@ Sub TobinMysteryAward() 'n is the number of awards it will give you
                 SetLightColor l62, "red", 2
                 l55.State = 2
             Case 21, 46: ' Spot GHOST
-                DMD "TOBINS SPIRIT GUIDE", CL(1, "SPOT GHOST"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
+                DMD "TOBINS SPIRIT GUIDE", CL("SPOT GHOST"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
                 GhostTargetHits = 5
                 LitGhostLetter
             Case 22: ' Start Brothers
-                DMD "TOBINS SPIRIT GUIDE", CL(1, "SCOLERI BROTHERS"), "",eNone, eBlinkFast, eNone, 1000, True, ""
+                DMD "TOBINS SPIRIT GUIDE", CL("SCOLERI BROTHERS"), "",eNone, eBlinkFast, eNone, 1000, True, ""
                 StartScoleriBrothers
             Case 23: ' Start Gozer Hurry Up
-                DMD "TOBINS SPIRIT GUIDE", CL(1, "GOZER HURRY UP"), "",eNone, eBlinkFast, eNone, 1000, True, "vo_aimatgozer"
+                DMD "TOBINS SPIRIT GUIDE", CL("GOZER HURRY UP"), "",eNone, eBlinkFast, eNone, 1000, True, "vo_aimatgozer"
                 StartGozerHurryUp
             Case 24: ' Start Loopin Supers
-                DMD "TOBINS SPIRIT GUIDE", CL(1, "LOOPIN SUPERS"), "",eNone, eBlinkFast, eNone, 1000, True, ""
+                DMD "TOBINS SPIRIT GUIDE", CL("LOOPIN SUPERS"), "",eNone, eBlinkFast, eNone, 1000, True, ""
                 StartLoopinSupers
             Case 25: ' Start PKE Frenzy
                 StartPKEfrenzy
@@ -4404,10 +4330,10 @@ Sub TobinMysteryAward() 'n is the number of awards it will give you
                 DMD "TOBINS SPIRIT GUIDE", "MULTIPLIERS ARE LIT", "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
                 Enable2XMultiplier:Enable3XMultiplier
             Case 28: ' Start Terror Dog Hurry Up
-                DMD "TOBINS SPIRIT GUIDE", CL(1, "TERROR DOG"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
+                DMD "TOBINS SPIRIT GUIDE", CL("TERROR DOG"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
                 StartTerrorDog
             Case 29: ' Symmetrical Book Stacking
-                DMD "TOBINS SPIRIT GUIDE", CL(1, "BOOK STACKING"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
+                DMD "TOBINS SPIRIT GUIDE", CL("BOOK STACKING"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare6"
                 AdvanceSymmetricalBook
             Case 21: ' Award Special
                 AwardSpecial
@@ -4435,44 +4361,44 @@ Sub LibrarianAward() 'similar to Tobin's award, but only gives one award - do no
     tmp = INT(RND * 20)
     Select Case tmp
         Case 0, 1: ' +100 PKE Level
-            DMD " LIBRARIANS AWARD", CL(1, "+100 PKE LEVEL"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare7"
+            DMD " LIBRARIANS AWARD", CL("+100 PKE LEVEL"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare7"
             PKELevel = PKELevel + 100
         Case 2, 3: ' +1M Super Jackpot Value
-            DMD " LIBRARIANS AWARD", CL(1, "+1M SUPER JACKPOT"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare7"
+            DMD " LIBRARIANS AWARD", CL("+1M SUPER JACKPOT"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare7"
             AddSuperJackpot 1000000
         Case 4, 5: ' Big Points
-            DMD " LIBRARIANS AWARD", CL(1, "BIG POINTS"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare7"
+            DMD " LIBRARIANS AWARD", CL("BIG POINTS"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare7"
             tmp2 = INT(RND * 5 + 1) * 100000
             AddScore tmp2
         Case 6, 7: ' Bigger Points
-            DMD " LIBRARIANS AWARD", CL(1, "BIGGER POINTS"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare7"
+            DMD " LIBRARIANS AWARD", CL("BIGGER POINTS"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare7"
             tmp2 = INT(RND * 5 + 5) * 100000
             AddScore tmp2
         Case 8: ' Bonus Held
-            DMD " LIBRARIANS AWARD", CL(1, "BONUS HELD"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare7"
+            DMD " LIBRARIANS AWARD", CL("BONUS HELD"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare7"
             bBonusHeld = True
         Case 9: ' Bump Spinner Value
-            DMD " LIBRARIANS AWARD", CL(1, "BUMP SPINNER LEVEL"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare7"
+            DMD " LIBRARIANS AWARD", CL("BUMP SPINNER LEVEL"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare7"
             SpinnerLevel = SpinnerLevel + 2
         Case 10: ' Capture X Ghosts ???
             tmp2 = INT(RND * 4 + 1)
-            DMD " LIBRARIANS AWARD", CL(1, "CAPTURED " &tmp2& " GHOSTS"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare7"
+            DMD " LIBRARIANS AWARD", CL("CAPTURED " &tmp2& " GHOSTS"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare7"
             CatchGhost tmp2
         Case 11, 12: ' Increase Spinner Value
-            DMD " LIBRARIANS AWARD", CL(1, "+ SPINNER VALUE"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare7"
+            DMD " LIBRARIANS AWARD", CL("+ SPINNER VALUE"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare7"
             SpinnerValue = SpinnerValue + 1000
         Case 13: ' Light 2x Playfield Multiplier
-            DMD " LIBRARIANS AWARD", CL(1, "2X IS LIT"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare7"
+            DMD " LIBRARIANS AWARD", CL("2X IS LIT"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare7"
             Enable2XMultiplier
         Case 14, 15, 16: ' Light One Ghost
-            DMD " LIBRARIANS AWARD", CL(1, "LIT ONE GHOST"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare7"
+            DMD " LIBRARIANS AWARD", CL("LIT ONE GHOST"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare7"
             LitRandomGhost
         Case 17: ' Light Two Ghosts
-            DMD " LIBRARIANS AWARD", CL(1, "LIT TWO GHOSTS"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare7"
+            DMD " LIBRARIANS AWARD", CL("LIT TWO GHOSTS"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare7"
             LitRandomGhost
             LitRandomGhost
         Case 18, 19: ' Spot GHOST
-            DMD " LIBRARIANS AWARD", CL(1, "SPOT GHOST"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare7"
+            DMD " LIBRARIANS AWARD", CL("SPOT GHOST"), "", eNone, eBlinkFast, eNone, 1000, True, "gb_fanfare7"
             GhostTargetHits = 5
             LitGhostLetter
     End Select
@@ -4495,7 +4421,7 @@ Sub RightScoop_Hit()
         If l67.State = 2 Then
             AwardSkillshot
             'LIGHT NROESPA
-            DMD "", CL(1, "NROEA IS LIT"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_nroespa"
+            DMD "", CL("NROEA IS LIT"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_nroespa"
             l24.State = 2
         Else
             ResetSkillShotTimer_Timer
@@ -4509,21 +4435,21 @@ Sub RightScoop_Hit()
         Case 1
             SpookedLibrarianHits = SpookedLibrarianHits + 1
             AddScore 5000000
-            DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+            DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
             CheckSpookedHits
             l66.State = 2 'enable the increase of value of the superjackpot in the spinner
         Case 2
             If l67.State = 2 Then
                 BackOffManHits = BackOffManHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
                 CheckBackOffManHits
             End If
         Case 5
             If l67.State = 2 Then
                 TheBallroomHits = TheBallroomHits + 1
                 AddScore 5000000
-                DMD CL(0, FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
+                DMD CL(FormatScore(5000000)), "", "", eBlinkFast, eNone, eNone, 800, True, ""
                 CheckTheBallroomHits
             End If
     End Select
@@ -4589,7 +4515,7 @@ Sub SlimerHitCheck
         SlimerHits = 0
         SlimerDefeats = SlimerDefeats + 1
         If SlimerDefeats >= 2 Then ' get the Ghost Trap
-            DMD "", CL(1, "GHOST TRAP COLLECTED"), "", eNone, eBlink, eNone, 800, True, ""
+            DMD "", CL("GHOST TRAP COLLECTED"), "", eNone, eBlink, eNone, 800, True, ""
             SlimerDefeats = 0
             LightEffect 2
             l69.State = 1
@@ -4923,7 +4849,7 @@ Sub CatchGhost(n)
 
     ElseIf Ghosts(CurrentPlayer) >= 60 AND l3.State = 0 Then
         l3.State = 1
-        DMD CL(0,"STARTING"), CL(1, "LOOPIN SUPERS"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_60ghostscaught"
+        DMD CL(0,"STARTING"), CL("LOOPIN SUPERS"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_60ghostscaught"
         StartLoopinSupers ' Starts Loopin Supers
 
     ElseIf Ghosts(CurrentPlayer) >= 50 AND l56.State = 0 Then
@@ -4931,11 +4857,11 @@ Sub CatchGhost(n)
 
     ElseIf Ghosts(CurrentPlayer) >= 49 AND l53.State = 0 Then
         l53.State = 2
-        DMD "", CL(1, "EXTRA BALL IS LIT"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_extraballislit" ' Lights Extra Ball
+        DMD "", CL("EXTRA BALL IS LIT"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_extraballislit" ' Lights Extra Ball
 
     ElseIf Ghosts(CurrentPlayer) >= 40 AND l2.State = 0 Then
         l2.State = 1
-        DMD "", CL(1, "NROEA IS LIT"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_40ghostscaught" ' Lights Negative Reinforcement (at right saucer/scoop)
+        DMD "", CL("NROEA IS LIT"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_40ghostscaught" ' Lights Negative Reinforcement (at right saucer/scoop)
         l24.State = 2
 
     ElseIf Ghosts(CurrentPlayer) >= 30 AND l56.State = 0 Then
@@ -4944,7 +4870,7 @@ Sub CatchGhost(n)
     ElseIf Ghosts(CurrentPlayer) >= 20 AND l1.State = 0 Then
         l1.State = 1
         l58.State = 2
-        DMD "TOBINS SPIRIT GUIDE", CL(1, "IS LIT"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_20ghostscaught" ' Lights Tobin's Spirit Guide (at left scoop)
+        DMD "TOBINS SPIRIT GUIDE", CL("IS LIT"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_20ghostscaught" ' Lights Tobin's Spirit Guide (at left scoop)
         vpmtimer.addtimer 2000, "PlaySound""vo_tobinspiritguideislit"" '"
 
     ElseIf Ghosts(CurrentPlayer) >= 10 AND l56.State = 0 Then
@@ -5034,7 +4960,7 @@ Sub StartPKEfrenzy()
     PKEMult = 8
     l54.State = 1
     SetLightColor l64, "red", 2
-    DMD CL(0, "STARTING"), CL(1, "PKE FRENZY"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_startedpkefrenzy"
+    DMD CL("STARTING"), CL("PKE FRENZY"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_startedpkefrenzy"
     PKEMultTimer.Enabled = 1
     PKETimerExpired.Enabled = 1
 End Sub
@@ -5094,7 +5020,7 @@ End Sub
 ' Gi lights go bananas during the mode
 
 Sub StartMassHysteriaMultiball()
-    DMD CL(0, "MASS HYSTERIA"), CL(1, "MULTIBALL"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_masshysteriamultiball"
+    DMD CL("MASS HYSTERIA"), CL("MULTIBALL"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_masshysteriamultiball"
     bMassHysteria = True
     bJackpot = True
     SetLightColor l62, "red", 2
@@ -5123,17 +5049,17 @@ Sub StorageLock_Hit()
             Case 1
                 FlashForms ContainerFlasher1, 800, 40, 1
                 FlashForms ContainerFlasher2, 800, 40, 1
-                DMD "", CL(1, "BALL 1 LOCKED"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_ball1locked"
+                DMD "", CL("BALL 1 LOCKED"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_ball1locked"
                 waittime = 1000
             Case 2
                 FlashForms ContainerFlasher3, 800, 40, 1
                 FlashForms ContainerFlasher4, 800, 40, 1
-                DMD "", CL(1, "BALL 2 LOCKED"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_ball2locked"
+                DMD "", CL("BALL 2 LOCKED"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_ball2locked"
                 waittime = 1000
             Case 3
                 FlashForms ContainerFlasher5, 800, 40, 1
                 FlashForms ContainerFlasher6, 800, 40, 1
-                DMD "", CL(1, "BALL 3 LOCKED"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_ball3locked"
+                DMD "", CL("BALL 3 LOCKED"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_ball3locked"
                 StartSFM
                 waittime = 2000
         End Select
@@ -5143,7 +5069,7 @@ Sub StorageLock_Hit()
 End Sub
 
 Sub StartSFM() 'Multiball
-    DMD "", CL(1, "SF MULTIBALL"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_storagemultiball"
+    DMD "", CL("SF MULTIBALL"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_storagemultiball"
     BallsInLock = 0
     l56.State = 0
     bStorageMultiball = True
@@ -5162,7 +5088,7 @@ End Sub
 Sub StorageLights(stat)
     Dim lamp
     If stat then
-        DMD "", CL(1, "STORAGE IS LIT"), "", eNone, eBlinkFast, eNone, 1500, True, "vo_storageislit"
+        DMD "", CL("STORAGE IS LIT"), "", eNone, eBlinkFast, eNone, 1500, True, "vo_storageislit"
         FlashEffect 1
         For each lamp in aStorageLights
             lamp.State = 2
@@ -5350,9 +5276,9 @@ Sub AdvanceSymmetricalBook()
         SymmetricalBookStep = 1
     End If
     Select Case SymmetricalBookStep
-        Case 1:DMD "", CL(1, "SCOLERI BROTHERS"), "", eNone, eBlinkFast, eNone, 1500, True, "":StartScoleriBrothers
-        Case 2, 3:DMD "", CL(1, "TERROR DOG"), "", eNone, eBlinkFast, eNone, 1500, True, "gb_fanfare6":StartTerrorDog
-        Case 4:DMD "", CL(1, "GOZER HURRY UP"), "", eNone, eBlinkFast, eNone, 1500, True, "vo_aimforgozer":StartGozerHurryUp
+        Case 1:DMD "", CL("SCOLERI BROTHERS"), "", eNone, eBlinkFast, eNone, 1500, True, "":StartScoleriBrothers
+        Case 2, 3:DMD "", CL("TERROR DOG"), "", eNone, eBlinkFast, eNone, 1500, True, "gb_fanfare6":StartTerrorDog
+        Case 4:DMD "", CL("GOZER HURRY UP"), "", eNone, eBlinkFast, eNone, 1500, True, "vo_aimforgozer":StartGozerHurryUp
     End Select
 End Sub
 
@@ -5529,7 +5455,7 @@ End Sub
 ' then increase the super jackpot base value based upon the number of spins that occur.
 
 Sub StartSpookedLibrarian()
-    DMD " SPOOKED LIBRARIAN", CL(1, "STARTED"), "", eNone, eBlinkFast, eNone, 1500, True, "vo_spookedlibrarian"
+    DMD " SPOOKED LIBRARIAN", CL("STARTED"), "", eNone, eBlinkFast, eNone, 1500, True, "vo_spookedlibrarian"
     ' reset the count each time you start the mode
     SpookedLibrarianHits = 0
     'turn on The mode lights, in blue color
@@ -5552,7 +5478,7 @@ End Sub
 
 Sub CheckSpookedHits()
     If SpookedLibrarianHits > 2 Then '3 or more hits completes the mode
-        DMD " SPOOKED LIBRARIAN", CL(1, "COMPLETED"), "", eNone, eBlinkFast, eNone, 1500, True, ""
+        DMD " SPOOKED LIBRARIAN", CL("COMPLETED"), "", eNone, eBlinkFast, eNone, 1500, True, ""
         Congratulation:FlashEffect 1
         Modes(0) = 0
         Modes(1) = 1 'completed
@@ -5585,7 +5511,7 @@ End Sub
 'hit any of the lit shots 5 times, end with the left scoop
 
 Sub StartBackOffMan()
-    DMD CL(0, "BACK OFF MAN"), CL(1, "STARTED"), "", eNone, eBlinkFast, eNone, 1500, True, "vo_backoffman"
+    DMD CL("BACK OFF MAN"), CL("STARTED"), "", eNone, eBlinkFast, eNone, 1500, True, "vo_backoffman"
     ' reset the count each time you start the mode
     BackOffManHits = 0
     CheckBackOffManHits
@@ -5614,7 +5540,7 @@ Sub CheckBackOffManHits() 'check nr of hits + update arrow lights
         Case 4:l65.State = 0:SetLightcolor l61, "blue", 2:SetLightcolor l62, "blue", 2
         Case 5:l61.State = 0:l62.State = 0:SetLightcolor l60, "blue", 2 'leftscoop
         Case 6:                                                         'complete the mode
-            DMD CL(0, "BACK OFF MAN"), CL(1, "COMPLETED"), "", eNone, eBlinkFast, eNone, 1500, True, ""
+            DMD CL("BACK OFF MAN"), CL("COMPLETED"), "", eNone, eBlinkFast, eNone, 1500, True, ""
             Congratulation:FlashEffect 1
             l60.State = 0
             Modes(0) = 0
@@ -5634,7 +5560,7 @@ End Sub
 ' you need to do this twice (2 shots to the left and two shots to the right
 
 Sub StartWeGotOne()
-    DMD CL(0, "WE GOT ONE!"), CL(1, "STARTED"), "", eNone, eBlinkFast, eNone, 1000, True, ""
+    DMD CL("WE GOT ONE!"), CL("STARTED"), "", eNone, eBlinkFast, eNone, 1000, True, ""
     If RND < 0.5 Then
         PlaySound "vo_wegotone"
     Else
@@ -5660,7 +5586,7 @@ Sub CheckWeGotOneHits() 'check nr of hits + update arrow lights
         Case 2:l63.State = 0:l64.State = 0:SetLightcolor l61, "blue", 2:SetLightcolor l62, "blue", 2
         Case 3:l61.State = 0:l62.State = 0:SetLightcolor l63, "blue", 2:SetLightcolor l64, "blue", 2
         Case 4: 'complete the mode
-            DMD CL(0, "WE GOT ONE!"), CL(1, "COMPLETED"), "", eNone, eBlinkFast, eNone, 1500, True, ""
+            DMD CL("WE GOT ONE!"), CL("COMPLETED"), "", eNone, eBlinkFast, eNone, 1500, True, ""
             Congratulation:FlashEffect 1
             l61.State = 0:l62.State = 0
             l63.State = 0:l64.State = 0
@@ -5682,7 +5608,7 @@ End Sub
 ' note: You can continue to build the jackpot up via the left ramp throughout the mode, even if Slimer is up.
 
 Sub StartHeSlimedMe()
-    DMD CL(0, "HE SLIMED ME!"), CL(1, "STARTED"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_heslimedme"
+    DMD CL("HE SLIMED ME!"), CL("STARTED"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_heslimedme"
     ' reset the count each time you start the mode
     HeSlimedMeHits = 0
     SetLightcolor l62, "green", 2
@@ -5699,17 +5625,17 @@ End Sub
 Sub CheckHeSlimedMeHits()
     If HeSlimedMeHits = 3 Then
         SlimerMoveUp
-        DMD CL(0, "FIRE AT SLIMER"), CL(1, "IS " & FormatScore(HeSlimedMeValue)), "", eNone, eBlinkFast, eNone, 800, True, "vo_fireatslimer"
+        DMD CL("FIRE AT SLIMER"), CL("IS " & FormatScore(HeSlimedMeValue)), "", eNone, eBlinkFast, eNone, 800, True, "vo_fireatslimer"
     End If
 End Sub
 
 Sub CompleteHeSlimedMe()
     SlimerMoveDown
 
-    DMD CL(0, "HE SLIMED ME!"), CL(1, "COMPLETED"), "", eNone, eBlinkFast, eNone, 800, False, ""
+    DMD CL("HE SLIMED ME!"), CL("COMPLETED"), "", eNone, eBlinkFast, eNone, 800, False, ""
     Congratulation:FlashEffect 1
     AddScore HeSlimedMeValue
-    DMD "_", CL(1, FormatScore(HeSlimedMeValue)), "", eNone, eBlinkFast, eNone, 800, True, ""
+    DMD "_", CL(FormatScore(HeSlimedMeValue)), "", eNone, eBlinkFast, eNone, 800, True, ""
     l62.State = 0
     Modes(0) = 0
     Modes(4) = 1 'completed
@@ -5726,7 +5652,7 @@ End Sub
 ' Hit 6 random shots around the playfield, end with the left ramp
 
 Sub StartTheBallroom()
-    DMD CL(0, "THE BALLROOM"), CL(1, "STARTED"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_theballroom"
+    DMD CL("THE BALLROOM"), CL("STARTED"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_theballroom"
     ' reset the count each time you start the mode
     TheBallroomHits = 0
     CheckTheBallroomHits 'turn on the first light
@@ -5745,7 +5671,7 @@ Sub CheckTheBallroomHits()
         Case 0, 1, 2, 3, 4, 5:TheBallroomLight tmp
         Case 6:TheBallroomLight 7
         Case 7 'complete the mode
-            DMD CL(0, "THE BALLROOM"), CL(1, "COMPLETED"), "", eNone, eBlinkFast, eNone, 800, True, ""
+            DMD CL("THE BALLROOM"), CL("COMPLETED"), "", eNone, eBlinkFast, eNone, 800, True, ""
             Congratulation:FlashEffect 1
             Modes(0) = 0
             Modes(5) = 1
@@ -5779,7 +5705,7 @@ End Sub
 ' Shoot each orbit and left ramp to run away from the Terror Dog and complete the mode.
 
 Sub StartWhoBroughttheDog()
-    DMD "WHO BROUGHT THE DOG", CL(1, "STARTED"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_okwhobroughtthedog"
+    DMD "WHO BROUGHT THE DOG", CL("STARTED"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_okwhobroughtthedog"
     ' reset the count each time you start the mode
     WhoBroughttheDogHits = 0
     SetLightColor l61, "yellow", 2
@@ -5797,10 +5723,10 @@ End Sub
 
 Sub CheckWhoBroughttheDogHits()
     If WhoBroughttheDogHits = 3 Then
-        DMD "WHO BROUGHT THE DOG", CL(1, "COMPLETED"), "", eNone, eBlinkFast, eNone, 800, False, ""
+        DMD "WHO BROUGHT THE DOG", CL("COMPLETED"), "", eNone, eBlinkFast, eNone, 800, False, ""
         Congratulation:FlashEffect 1
         AddScore 6000000
-        DMD "_", CL(1, FormatScore(6000000)), "", eNone, eBlinkFast, eNone, 800, True, ""
+        DMD "_", CL(FormatScore(6000000)), "", eNone, eBlinkFast, eNone, 800, True, ""
         Modes(0) = 0
         Modes(6) = 1
         UpdateModeLights
@@ -5819,7 +5745,7 @@ End Sub
 ' Collecting all 4 shots ends the mode.
 
 Sub StartSpookCentral()
-    DMD CL(0, "SPOOK CENTRAL"), CL(1, "STARTED"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_spookedcentral"
+    DMD CL("SPOOK CENTRAL"), CL("STARTED"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_spookedcentral"
     ' reset the count each time you start the mode
     SpookCentralHits = 0
     SetLightColor l62, "amber", 2
@@ -5845,10 +5771,10 @@ Sub CheckSpookCentralHits()
             SetLightColor l63, "amber", 2
             SetLightColor l64, "amber", 2
         Case 8
-            DMD CL(0, "SPOOK CENTRAL"), CL(1, "COMPLETED"), "", eNone, eBlinkFast, eNone, 800, False, ""
+            DMD CL("SPOOK CENTRAL"), CL("COMPLETED"), "", eNone, eBlinkFast, eNone, 800, False, ""
             Congratulation:FlashEffect 1
             AddScore 6000000
-            DMD "_", CL(1, FormatScore(6000000)), "", eNone, eBlinkFast, eNone, 800, True, ""
+            DMD "_", CL(FormatScore(6000000)), "", eNone, eBlinkFast, eNone, 800, True, ""
             Modes(0) = 0
             Modes(7) = 1
             UpdateModeLights
@@ -5867,7 +5793,7 @@ End Sub
 'then hit the Gozer target to collect.
 
 Sub StartGozerian()
-    DMD CL(0, "GOZER THE GOZERIAN"), CL(1, "STARTED"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_gozerthegozerian"
+    DMD CL("GOZER THE GOZERIAN"), CL("STARTED"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_gozerthegozerian"
     ' reset the count each time you start the mode
     GozerianHits = 0
     SetLightColor l61, "yellow", 2
@@ -5889,7 +5815,7 @@ Sub CheckGozerianHits()
     Select Case GozerianHits
         Case 1:PlaySound "1moreshot"
         Case 2
-            DMD CL(0, "GOZER THE GOZERIAN"), CL(1, "COMPLETED"), "", eNone, eBlinkFast, eNone, 1500, True, ""
+            DMD CL("GOZER THE GOZERIAN"), CL("COMPLETED"), "", eNone, eBlinkFast, eNone, 1500, True, ""
             Congratulation:FlashEffect 1
             Modes(0) = 0
             Modes(8) = 1
@@ -5916,7 +5842,7 @@ StayPuftHits = 0
 StayPuftMultiballHits = 0
 
 Sub StartStayPuft()
-    DMD CL(0, "MARSHMALLOW MAN"), CL(1, "STARTED"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_staypuft"
+    DMD CL("MARSHMALLOW MAN"), CL("STARTED"), "", eNone, eBlinkFast, eNone, 1000, True, "vo_staypuft"
     ' reset the count each time you start the mode
     StayPuftHits = 0
     SetLightColor l61, "white", 2
@@ -5938,13 +5864,13 @@ End Sub
 Sub CheckStayPuftHits()
     FlashForMs StayPuftFlasher, 1500, 40, 0
     Select Case StayPuftMultiballHits
-        Case 1:DMD "_", CL(1, "5 MORE SHOTS"), "", eNone, eBlinkFast, eNone, 800, True, "5moreshots"
-        Case 3:DMD "_", CL(1, "4 MORE SHOTS"), "", eNone, eBlinkFast, eNone, 800, True, "4moreshots"
-        Case 4:DMD "_", CL(1, "3 MORE SHOTS"), "", eNone, eBlinkFast, eNone, 800, True, "3moreshots"
-        Case 5:DMD "_", CL(1, "2 MORE SHOTS"), "", eNone, eBlinkFast, eNone, 800, True, "2moreshots"
-        Case 6:DMD "_", CL(1, "1 MORE SHOTS"), "", eNone, eBlinkFast, eNone, 800, True, "1moreshot"
+        Case 1:DMD "_", CL("5 MORE SHOTS"), "", eNone, eBlinkFast, eNone, 800, True, "5moreshots"
+        Case 3:DMD "_", CL("4 MORE SHOTS"), "", eNone, eBlinkFast, eNone, 800, True, "4moreshots"
+        Case 4:DMD "_", CL("3 MORE SHOTS"), "", eNone, eBlinkFast, eNone, 800, True, "3moreshots"
+        Case 5:DMD "_", CL("2 MORE SHOTS"), "", eNone, eBlinkFast, eNone, 800, True, "2moreshots"
+        Case 6:DMD "_", CL("1 MORE SHOTS"), "", eNone, eBlinkFast, eNone, 800, True, "1moreshot"
         Case 7
-            DMD CL(0, "MARSHMALLOW MAN"), CL(1, "COMPLETED"), "", eNone, eBlinkFast, eNone, 1500, True, ""
+            DMD CL("MARSHMALLOW MAN"), CL("COMPLETED"), "", eNone, eBlinkFast, eNone, 1500, True, ""
             Congratulation:FlashEffect 1
             Modes(0) = 0
             Modes(9) = 1
@@ -6083,4 +6009,92 @@ Sub StopAreYouaGod() ' called after the multiball, reset all the gear lights and
         SetLightColor ii, "white", 0
     Next
     StopRainbow
+End Sub
+
+'*********************************
+' Table Options F12 User Options
+'*********************************
+' Table1.Option arguments are: 
+' - option name, minimum value, maximum value, step between valid values, default value, unit (0=None, 1=Percent), an optional array of literal strings
+
+Dim LUTImage, BallsPerGame, UseFlexDMD, OldUseFlex, FlexDMDHighQuality, SongVolume
+UseFlexDMD = False 'initialize variable
+OldUseFlex = False
+
+Sub Table1_OptionEvent(ByVal eventId)
+    Dim x, y
+
+    'LUT
+    LutImage = Table1.Option("Select LUT", 0, 21, 1, 0, 0, Array("Normal 0", "Normal 1", "Normal 2", "Normal 3", "Normal 4", "Normal 5", "Normal 6", "Normal 7", "Normal 8", "Normal 9", "Normal 10", _
+        "Warm 0", "Warm 1", "Warm 2", "Warm 3", "Warm 4", "Warm 5", "Warm 6", "Warm 7", "Warm 8", "Warm 9", "Warm 10") )
+    UpdateLUT
+
+    ' Desktop DMD
+    x = Table1.Option("DMD Type", 0, 1, 1, 1, 0, Array("Desktop DMD", "FlexDMD") )
+    If UseFlexDMD AND x = 0 Then FlexDMD.Run = False
+    If X then UseFlexDMD = True Else UseFlexDMD = False
+
+    ' FlexDMD Quality
+    x = Table1.Option("FlexDMD Quality", 0, 1, 1, 1, 0, Array("Low", "High") )
+    If x Then FlexDMDHighQuality = True Else FlexDMDHighQuality = False
+    If OldUseFlex <> UseFlexDMD Then
+        DMD_Init
+        If NOT bGameInPlay Then ShowTableInfo
+        OldUseFlex = UseFlexDMD 
+    End If   
+
+    ' Cabinet rails
+    x = Table1.Option("Cabinet Rails", 0, 1, 1, 1, 0, Array("Hide", "Show") )
+    For each y in aRails:y.visible = x:next
+
+    ' Side Blades
+    x = Table1.Option("Side Blades", 0, 1, 1, 1, 0, Array("Hide", "Show") )
+    For each y in aSideBlades:y.SideVisible = x:next
+
+    ' Balls per Game
+    x = Table1.Option("Balls per Game", 0, 1, 1, 0, 0, Array("3 Balls", "5 Balls") )
+    If x = 1 Then BallsPerGame = 5 Else BallsPerGame = 3
+
+    ' FreePlay
+    x = Table1.Option("Free Play", 0, 1, 1, 0, 0, Array("No", "Yes") )
+    If x then bFreePlay = True Else bFreePlay = False
+
+    ' Music  On/Off
+    x = Table1.Option("Music", 0, 1, 1, 1, 0, Array("OFF", "ON") )
+    If x Then bMusicOn = True Else bMusicOn = False
+
+    ' Music Volume
+    SongVolume = Table1.Option("Music Volume", 0, 1, 0.1, 0.3, 0)
+    If bMusicOn Then
+        PlaySound Song, -1, SongVolume, , , , 1, 0
+    Else
+        StopSound Song
+    End If
+End Sub
+
+Sub UpdateLUT
+    Select Case LutImage
+        Case 0:table1.ColorGradeImage = "LUT0"
+        Case 1:table1.ColorGradeImage = "LUT1"
+        Case 2:table1.ColorGradeImage = "LUT2"
+        Case 3:table1.ColorGradeImage = "LUT3"
+        Case 4:table1.ColorGradeImage = "LUT4"
+        Case 5:table1.ColorGradeImage = "LUT5"
+        Case 6:table1.ColorGradeImage = "LUT6"
+        Case 7:table1.ColorGradeImage = "LUT7"
+        Case 8:table1.ColorGradeImage = "LUT8"
+        Case 9:table1.ColorGradeImage = "LUT9"
+        Case 10:table1.ColorGradeImage = "LUT10"
+        Case 11:table1.ColorGradeImage = "LUT Warm 0"
+        Case 12:table1.ColorGradeImage = "LUT Warm 1"
+        Case 13:table1.ColorGradeImage = "LUT Warm 2"
+        Case 14:table1.ColorGradeImage = "LUT Warm 3"
+        Case 15:table1.ColorGradeImage = "LUT Warm 4"
+        Case 16:table1.ColorGradeImage = "LUT Warm 5"
+        Case 17:table1.ColorGradeImage = "LUT Warm 6"
+        Case 18:table1.ColorGradeImage = "LUT Warm 7"
+        Case 19:table1.ColorGradeImage = "LUT Warm 8"
+        Case 20:table1.ColorGradeImage = "LUT Warm 9"
+        Case 21:table1.ColorGradeImage = "LUT Warm 10"
+    End Select
 End Sub
