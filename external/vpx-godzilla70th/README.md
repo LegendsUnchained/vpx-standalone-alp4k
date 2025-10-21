@@ -1,6 +1,6 @@
-# Trailer Park Boys - Pin-Ballers (Original 2024)
+# Godzilla 70th Anniversary Premium  (Original 2024)
 
-![Table Preview](../../images/W6YLM398ZC-preview.webp)
+![Table Preview](../../images/PBBcAzNnwr-preview.png)
 
 <br>
 
@@ -8,12 +8,12 @@
 
 | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |-----------|-----|-----|-----|-----|
-| ✅ | ✅ | ❌ | ❌ | 55 |
+| ✅ | ✅ | ✅ | ❌ | 50 |
 
 <br>
 
 **VPXS 4KP Testers:**
-  - Silentkat
+  - Silentkat,Evilwrath
 
 <br>
 
@@ -32,9 +32,9 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`Trailer Park Boys - Pin-Ballers (Original 2024)`**
+4.  Find and select this table from the dropdown menu: **`Godzilla Remix (Limited Edition)  (Original 2021)`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *"What comes around is all around"*
+6. *"Size does matter!"*
 
 <br>
 

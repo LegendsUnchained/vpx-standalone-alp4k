@@ -100,6 +100,7 @@ Links to these products on Amazon are through affiliate links.
 | [Centigrade 37 (Gottlieb 1977)](external/vpx-centigrade37) | :white_check_mark: | :x: | :x: | :x: | 43 |
 | [Central Park (Gottlieb 1966)](external/vpx-centralpark) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Champion Pub, The (Williams 1998)](external/vpx-champpub) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 45 |
+| [City Hunter (Original 2025)](external/vpx-cityhunterpup) | :x: |:white_check_mark: | :: | :white_check_mark: | 45 |
 | [Class of 1812 (Gottlieb 1991)](external/vpx-1812) | :white_check_mark: | :x: | :white_check_mark: | :x: | 51 |
 | [Cleopatra (Gottlieb 1977)](external/vpx-cleopatra) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Congo (Williams 1995)](external/vpx-congo) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
@@ -152,6 +153,7 @@ Links to these products on Amazon are through affiliate links.
 | [Gilligan's Island (Bally 1991)](external/vpx-gilligansisland) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Gladiators (Gottlieb 1993)](external/vpx-gladiators) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Godzilla (Sega 1998)](external/vpx-godzilla) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 58 |
+| [Godzilla 70th Anniversary Premium  (Original 2024)](external/vpx-godzilla70th) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Gold Wings (Gottlieb 1986)](external/vpx-goldwings) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Golden Cue (Sega 1998)](external/vpx-goldencue) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Goldeneye (Sega 1996)](external/vpx-goldeneye) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
@@ -232,6 +234,7 @@ Links to these products on Amazon are through affiliate links.
 | [Terminator 2 - JP's (Original 2020)](external/vpx-t2jp) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Terminator 2 - Judgment Day (Williams 1991)](external/vpx-t2) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 42 |
 | [Torpedo Alley (Data East 1988)](external/vpx-torpedoalley) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Trailer Park Boys - Pin-Ballers (Original 2024)](external/vpx-trailerparkboys) | :white_check_mark: | :white_check_mark: | :x: | :x: | 55 |
 | [Transformers (Pro) [Marcade Mod] (Original 2025)](external/vpx-transformersmod) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Twister (Sega 1996)](external/vpx-twister) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Victory (Gottlieb 1987)](external/vpx-victory) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 55 |
