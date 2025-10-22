@@ -1,7 +1,7 @@
 ---
-backglassVPSId: "xgnjlqBR"
-backglassChecksum: "633e14818b7715806ada30432fcf95c9"
-backglassNotes: "Download 'BP-Bally-1984-Authentic-B2S.zip'"
+backglassVPSId: "VwSOAhUnsx"
+backglassChecksum: "A0EE0D39BF278BEFCFD5601CCD866F36"
+backglassNotes: "Download 'Black Pyramid (Bally 1984).zip'"
 fps: 60
 romVPSId: "L3dw6Xer"
 romChecksum: "d793bdf0e8d3df4d216c2f635f1d1b37"
@@ -12,5 +12,5 @@ testers:
   - "OminousOsie"
   - "CoffeeAtJoes"
 vpxVPSId: "1R3boWEA"
-vpxChecksum: "8b4f298303cbb60ca62460f81a3568d3"
-tableNotes: "Download 'Black Pyramid (Bally 1984) v55_VPX8.zip'"
+vpxChecksum: "E7E30E9055BF8446273D2DBD2112507F"
+tableNotes: "Download 'Black Pyramid (Bally 1984) v600.zip'"
