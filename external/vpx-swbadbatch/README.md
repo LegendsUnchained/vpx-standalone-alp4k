@@ -1,39 +1,84 @@
-﻿# Star Wars - The Bad Batch (Original 2022)
+# Star Wars - The Bad Batch (Original 2022)
 
 ![Table Preview](../../images/vpx-badbatch.jpg)
 
-Authors: [topper2k](https://vpuniverse.com/profile/32127-topper2k/)  
-Version: 1.1
-BadBatch_v1.1.vpx 
-Download: [VP Universe](https://vpuniverse.com/files/file/11961-star-wars-the-bad-batch/)
+<br>
 
-DirectB2S
-Authors [LoadedWeapon](https://www.vpforums.org/index.php?showuser=60392)  
-Star Wars-The Bad Batch 1
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=17234)  
+## *️⃣  Table Statistics
 
-ROM
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=726)    
-ROM Name and version: Gamatron (Pinstar) - ROM - gamatron.zip
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ✅ | ✅ | ❌ | 60 |
+
+<br>
+
+**VPXS 4KP Testers:**
+  - evilwraith
+  - pointdablame
+  - Mr-Blue
+
+<br>
+
+---
+
+<br>
+
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Star Wars - The Bad Batch (Original 2022)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"''We're gonna die we're gonna die we're...gonna...be fine? We're gonna be fine.''"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+<br>
+
+---
+
+<br>
+
+## ➕ Optional Extras
+
+> All optional extras can be added to the table after the Wizard installation via: 
+> -  Clicking `"Go to table"` directly after wizard installation
+> -  Navigate to the table folder using the `USB Root` tab.
+
+<br>
+<br>
+
+### 🔊 Music:
+
+1. Download `BadBatch.mp3` from the VPX download page
+2. Place in a folder named `Music` in `vpx-swbadbatch` directory.
+3. Open the vbs and change `Dim playBGM: playBGM = 0` to `Dim playBGM: playBGM = 1` on Line 17.
+4. Enjoy this amazing table with extra music! 
 
 
-**Tested by:** [Mr-Blue]
-
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-1983-b84441e
-
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 59 |
-
-## Instructions
-
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more information found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
-- Music: The song is on the page [VP Universe](https://vpuniverse.com/files/file/11961-star-wars-the-bad-batch/) where the table is. A little bit hidden on the right side. 
-- Download it and name it `BadBatchTheme.mp3`. 
-- Go to your vpx-swbadbatch folder and create a folder called `music`.
-- Drop your mp3 in there.
-
+<br>
+<br>
+<br>
+<br>
+<br>

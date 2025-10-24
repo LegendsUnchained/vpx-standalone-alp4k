@@ -100,6 +100,7 @@ Links to these products on Amazon are through affiliate links.
 | [Centigrade 37 (Gottlieb 1977)](external/vpx-centigrade37) | :white_check_mark: | :x: | :x: | :x: | 43 |
 | [Central Park (Gottlieb 1966)](external/vpx-centralpark) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Champion Pub, The (Williams 1998)](external/vpx-champpub) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 45 |
+| [Chrono Trigger (Original 2022)](external/vpx-chrono) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [City Hunter (Original 2025)](external/vpx-cityhunterpup) | :x: |:white_check_mark: | :: | :white_check_mark: | 45 |
 | [Class of 1812 (Gottlieb 1991)](external/vpx-1812) | :white_check_mark: | :x: | :white_check_mark: | :x: | 51 |
 | [Cleopatra (Gottlieb 1977)](external/vpx-cleopatra) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
@@ -153,7 +154,7 @@ Links to these products on Amazon are through affiliate links.
 | [Gilligan's Island (Bally 1991)](external/vpx-gilligansisland) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Gladiators (Gottlieb 1993)](external/vpx-gladiators) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Godzilla (Sega 1998)](external/vpx-godzilla) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 58 |
-| [Godzilla 70th Anniversary Premium  (Original 2024)](external/vpx-godzilla70th) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
+| [Godzilla Remix (Limited Edition)  (Original 2021)](external/vpx-godzilla70th) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Gold Wings (Gottlieb 1986)](external/vpx-goldwings) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Golden Cue (Sega 1998)](external/vpx-goldencue) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Goldeneye (Sega 1996)](external/vpx-goldeneye) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
@@ -210,6 +211,7 @@ Links to these products on Amazon are through affiliate links.
 | [Playboy (Stern 2002)](external/vpx-playboy2002) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 | [Police Force (Williams 1989)](external/vpx-policeforce) | :white_check_mark: | :x: | :white_check_mark: | :x: | 50 |
 | [Quicksilver (Stern 1980)](external/vpx-quicksilver) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 49 |
+| [Rat Fink (Original 2025)](external/vpx-ratfink) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Ripley's Believe it or Not! (Stern 2004)](external/vpx-ripleys) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Road Runner (Atari 1979)](external/vpx-roadrunner) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [RollerGames (Williams 1990)](external/vpx-rollergames) | :white_check_mark: | :x: | :white_check_mark: | :x: | 50 |
@@ -225,6 +227,7 @@ Links to these products on Amazon are through affiliate links.
 | [Space Invaders - JP (Bally 1980)](external/vpx-jpspaceinvaders) | :white_check_mark: | :x: | :white_check_mark: | :x: | 55 |
 | [Spider-Man Vault Edition (Stern 2016)](external/vpx-spidermanve) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 40 |
 | [Star Wars (Data East 1992)](external/vpx-starwars) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Star Wars - The Bad Batch (Original 2022)](external/vpx-swbadbatch) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:  | 60 |
 | [Star Wars Trilogy (Sega 1997)](external/vpx-starwarstrilogy) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Starship Troopers (Sega 1997)](external/vpx-starship) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 54 |
 | [Street Fighter II, JP's (Gottlieb 1993)](external/vpx-sfii) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
@@ -350,7 +353,6 @@ Links to these products on Amazon are through affiliate links.
 | [Cheech & Chong: Road-Trip'pin (Bally 2021)](external/vpx-cheechandchong) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 45 |
 | [Cheetah (Stern 1980)](external/vpx-cheetah) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 40 |
 | [Child's Play (Original 2018)](external/vpx-childsplay) | :white_check_mark: |:x: | :x: | :white_check_mark: | 50 |
-| [Chrono Trigger (JPSalas' Pokemon Re-Theme (Original 2022)](external/vpx-chrono) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Circus (Gottlieb 1980)](external/vpx-circus) | :white_check_mark: | :x: | :white_check_mark: | :x: | 38 |
 | [Cirqus Voltaire (Bally 1997)](external/vpx-cirqus) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 37 |
 | [City Slicker (Bally 1987)](external/vpx-cityslicker) | :white_check_mark: | :x: | :white_check_mark: | :x: | 32 |
@@ -690,7 +692,6 @@ Links to these products on Amazon are through affiliate links.
 | [Star Trek LE (Stern 2013)](external/vpx-startrekle) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 35 |
 | [Star Trek LE - JPs (Original 2020)](external/vpx-startreklejp) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Star Wars Episode 1 (Original 2023)](external/vpx-starwarsepisode1) | :white_check_mark: | :x: | :white_check_mark: | :x: | 48 |
-| [Star Wars - The Bad Batch (Original 2022)](external/vpx-swbadbatch) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:  | 59 |
 | [Stargate (Gottlieb 1995)](external/vpx-stargate) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
 | [Stars (Stern 1978)](external/vpx-stars) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
 | [Stingray (Stern 1977)](external/vpx-stingray) | :white_check_mark: | :x: | :white_check_mark: | :x: | 47 |

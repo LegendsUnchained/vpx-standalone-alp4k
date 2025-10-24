@@ -54,46 +54,6 @@ __*We hope you enjoy!!*__
 - mrandromeda      - SScorpio         - pointdablame
 </pre>
 
-<br>
-
----
-
-<br>
-
-## ➕ Optional Extras
-
-> All optional extras can be added to the table after the Wizard installation via: 
-> -  Clicking `"Go to table"` directly after wizard installation
-> -  Navigate to the table folder using the `USB Root` tab.
-
-<br>
-<br>
-
-<table>
-  <tr>
-    <td style="background-color: #FFDDDD; padding: 0; border-left: 4px solid #FF0000;">
-      <div style="padding: 8px 12px; background-color: #FFCCCB; font-weight: bold;font-size: 20px;">
-        <strong>⚠️ WARNING ⚠️</strong>
-      </div>
-      <div style="padding: 12px 12px 12px 12px;">
-        Manually added puppacks are not supported by the VPXS 4KP team<br>
-		We will not be able to help you diagnose issues until this puppack is in the Wizard<br>
-		You can however find a guide here on the wiki to help you install it yourself: <a href="https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B08%5D-%E2%9D%A4%EF%B8%8F-Pup-Pack-%E2%80%90-Manual-Install">❤️ Pup Pack ‐ Manual Install</a>
-      </div>
-    </td>
-  </tr>
-</table>
-
-### 🎦 Puppack (Backglass Videos/Music):
-
-1.  Download the puppack `DPpuppack2.0.7z` from [VP Universe](https://vpuniverse.com/files/file/7368-deadpool-table-v512-puppack-20/) (by [TeamTuga](https://vpuniverse.com/profile/31843-teamtuga/))
-2.  Create the folder `pupvideos` within the `external/vpx-deadpool` folder in the Table Manager
-3.  Extract the folder `jpsdeadpool` from the puppack zip, and put it in the `pupvideos`. 
-4.  You should now have `external/vpx-deadpool/pupvideos/jpsdeadpool/{puppack files}`
-5.  Unzip the `use_these_pup_files.zip` from the `external/vpx-deadpool` folder in the [repository](https://github.com/LegendsUnchained/vpx-standalone-alp4k/tree/main/external/vpx-deadpool)
-6.  Place them inside the `pupvideos/jpsdeadpool` folder, and overwrite files if prompted.  **This is necessary otherwise it does not work**
-7. Enjoy this amazing table with extra sounds and videos! 
-
 
 <br>
 <br>
