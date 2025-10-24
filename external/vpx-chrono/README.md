@@ -1,38 +1,61 @@
-﻿# Chrono Trigger (JPSalas' Pokemon Re-Theme)
+# Chrono Trigger (Original 2022)
 
 ![Table Preview](../../images/vpx-chrono.png)
 
-Author(s): [Chug](https://vpuniverse.com/profile/50524-chug/)  
+<br>
 
-Version:  Chrono Trigger (cHuG_Mod_1.17)
+## *️⃣  Table Statistics
 
-Download:  [VP Universe](https://vpuniverse.com/files/file/11064-chrono-trigger-mod-nfozzy-physics-fleep-sounds-lut-dof/)
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ❌ | ❌ | ❌ | 60 |
 
-DirectB2S
+<br>
 
-Authors: [davadruix](https://vpuniverse.com/profile/22190-davadruix/)
+**VPXS 4KP Testers:**
+  - evilwraith
+  - Coffee Joe
 
-Version: Chrono Trigger MOD (Backglass) 
+<br>
 
-Download: [VP Universe](https://vpuniverse.com/files/file/13545-chrono-trigger-mod-backglass/)
+---
 
-ROM: None Needed
+<br>
 
-Tested by:
-[CoffeeAtJoes]
+## ❇️ Available in the Wizard! 🪄✨
 
-## Status 
+<br>
 
-Minimum VPX Standalone build: 10.8.0-1983-b84441e
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
 
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+### How to install:
 
-## Instructions
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Chrono Trigger (Original 2022)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"'Machines aren't capable of evil. Humans make them that way.' - Lucca"*
 
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more information found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
-- "Aquire The Ultimate Weapons! Defeat Lavos! Save The Future!"
+<br>
 
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

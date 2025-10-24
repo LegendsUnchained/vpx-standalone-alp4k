@@ -1,6 +1,6 @@
-# City Hunter (Original 2025)
+# Rat Fink (Original 2025)
 
-![Table Preview](../../images/vpx-cityhunterpup.png)
+![Table Preview](../../images/nya-dnobhA-preview.webp)
 
 <br>
 
@@ -8,12 +8,14 @@
 
 | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |-----------|-----|-----|-----|-----|
-| ❌ | ❌ | ❌ | ✅ | 45 |
+| ✅ | ✅ | ✅ | ❌ | 60 |
 
 <br>
 
 **VPXS 4KP Testers:**
-  - Silentkat
+  - evilwraith
+  - Bla1ze
+  - CoffeeAtJoes
 
 <br>
 
@@ -32,9 +34,9 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`City Hunter (Original 2025)`**
+4.  Find and select this table from the dropdown menu: **`Rat Fink (Original 2025)`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *"Don't Trust Anyone, Don't Love Anyone"*
+6. *"'Table go VROOM!'"*
 
 <br>
 
