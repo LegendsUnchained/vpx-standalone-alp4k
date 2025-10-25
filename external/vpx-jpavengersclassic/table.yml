@@ -1,0 +1,16 @@
+---
+tableVPSId: "Ws7aL7yM"
+vpxVPSId: "u2JkAJ_T"
+vpxChecksum: "324BE7712F84BC6449882586D399773C"
+backglassVPSId: "qxmpiq2p"
+backglassChecksum: "9D8758DD0F063AEE90D7A7C79BBE03F5"
+backglassNotes: "Download 'JP's Avengers LE (Stern - 2012).rar'"
+romVPSId: "olV01dSQ"
+romChecksum: "AC1E7C2A5CB369A1AB739A9FF39CD782"
+romNotes: "Download 'avs_170h.zip'"
+fps: 59
+testers:
+  - "mcap"
+  - "SilentKat"
+  - "OminousOsie"
+tableNotes: "Download 'JP's Avengers Classic LE (Stern - 2012) v600.zip'"
