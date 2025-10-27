@@ -5,12 +5,11 @@ backglassAuthorsOverride:
   - ""
 fps: 50
 pupArchiveRoot: "Gunship"
+pupBundled: true
 pupChecksum: "D9476309192011F5F720E142984BBBB3"
-pupFileUrl: >-
-  https://vpuniverse.com/files/file/15778-gunship-pinball-music-table-with-pup-pack/
 pupRequired: true
 pupVersion: "Gunship"
-pupNotes: "Download 'Gunshippuppack.zip'"
+pupNotes: "Download 'Gunshippuppack.zip' from VPX link"
 romBundled: true
 romChecksum: "409B7AE76497BB47CF66D6705F92C3EC"
 romNotes: "'lostwrld.zip' | Found in MEDIA-pack.zip"
