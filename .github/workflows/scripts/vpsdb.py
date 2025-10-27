@@ -151,6 +151,7 @@ def get_table_meta(files, warn_on_error=True):
             "mainNotes": data.get("mainNotes"),
             "name": data.get("tableNameOverride"),
             "pupArchiveRoot": data.get("pupArchiveRoot"),
+            "pupBundled": data.get("pupBundled"),
             "pupChecksum": pupChecksum,
             "pupFileUrl": data.get("pupFileUrl"),
             "pupNotes": data.get("pupNotes"),

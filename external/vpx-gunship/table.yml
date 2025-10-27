@@ -4,9 +4,8 @@ applyFixes:
 backglassAuthorsOverride:
   - ""
 fps: 50
+pupBundled: true
 pupChecksum: "D9476309192011F5F720E142984BBBB3"
-pupFileUrl: >-
-  https://vpuniverse.com/files/file/15778-gunship-pinball-music-table-with-pup-pack/
 pupRequired: true
 pupVersion: "Gunship"
 pupNotes: "Download 'Gunshippuppack.zip'"
