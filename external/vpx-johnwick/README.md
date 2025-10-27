@@ -1,4 +1,4 @@
-# John Wick (Original 2023)
+﻿# John Wick (Original 2023)
 
 ![Table Preview](../../images/vpx-johnwick-preview.jpg)
 
@@ -45,7 +45,7 @@
 ## Instructions
 
 - Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If you need help, more information found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
 - If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - Download `JohnWick 1.3(BABAYAGA Pinball edition) VPX 10.8.rar` listed above and extract only the vpx file into `vpx-johnwick`. **Make sure you download the 10.8 version and not the 10.7 version**
 - Download the puppack `JWPUP.rar` from link listed above.

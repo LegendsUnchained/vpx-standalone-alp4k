@@ -5,6 +5,7 @@ backglassAuthorsOverride:
   - ""
 fps: 50
 pupBundled: true
+pupArchiveRoot: "Gunship"
 pupChecksum: "D9476309192011F5F720E142984BBBB3"
 pupRequired: true
 pupVersion: "Gunship"

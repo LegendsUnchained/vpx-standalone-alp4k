@@ -1,4 +1,4 @@
-# NFL (Stern 2001)
+﻿# NFL (Stern 2001)
 
 ![Table Preview](../../images/vpx-nfl.png).png.0bd475ec060ebc167cfd8aace76f7de2.png)
 
@@ -27,7 +27,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 ## Instructions
 
 - Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If you need help, more information found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
 - If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - "Take your team to the superbowl"
 

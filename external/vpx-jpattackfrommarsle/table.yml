@@ -1,0 +1,24 @@
+---
+backglassVPSId: "AkKF7ZKJbc"
+backglassChecksum: "49727165253BD2293F6FF7DBD6415A16"
+backglassNotes: "Download version 1.0.0"
+coloredROMVPSId: "Z55ymmVdyU"
+coloredROMChecksum: "3DFEAE424498483ADB8F9DD203E15D39"
+coloredROMNotes: "Download version 2.0 - Use Purist Edition"
+fps: 60
+romVPSId: "uXfojkj3"
+romChecksum: "7550943E9E7D9ADFE6BED395B4179ACD"
+romNotes: "Download afm_113b.zip"
+tableNameOverride: "Attack from Mars LE, JP's"
+tableVPSId: "9Paf7-CL"
+tableNotes: "Download 'Attack from Mars LE (Midway 1995) v600.zip'"
+tagline: "Blow the saucer out of the sky!!"
+tableManufacturerOverride: "Chicago Gaming Company"
+tableYearOverride: 2017
+testers:
+  - "BrianCK"
+  - "OminousOsie"
+vpxVPSId: "1bCrozNZ"
+vpxChecksum: "C3D02F892BF01300FFCB9295F4999C34"
+applyFixes:
+  - "bass"

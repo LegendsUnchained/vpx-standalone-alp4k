@@ -1,0 +1,20 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "E51E8A98D267D97797A7F6EB1D118C49"
+backglassVPSId: "bDfLEkPWsu"
+backglassBundled: true
+backglassNotes: "Download 'Rat Fink (Original 2025).directb2s.zip'"
+fps: 60
+romChecksum: "34BD55E0DC97C309C56BEABAFC606A19"
+romNotes: "Download stest.zip"
+romVPSId: "3jKy9JCJ"
+tableVPSId: "gZwuBmOi5F"
+tableNotes: "Download 'Rat Fink (Original 2025) v101.zip'"
+tagline: "'Table go VROOM!'"
+testers:
+  - "evilwraith"
+  - "Bla1ze"
+  - "CoffeeAtJoes"
+vpxChecksum: "028CEED2666C4C159A1F8AFC18FC4190"
+vpxVPSId: "nya-dnobhA"

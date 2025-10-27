@@ -30,8 +30,8 @@ Const Epileptikdof = False
 ' Knocker - 300
 ' Chimes - 301/302/303
 
-' Valores Constantes de las fisicas de los flippers - se usan en la creacion de las bolas, tienen que cargarse antes del core.vbs
-Const BallSize = 25 ' el radio de la bola. el tamano normal es 50 unidades de VP
+' Valores Constantes de las físicas de los flippers - se usan en la creación de las bolas, tienen que cargarse antes del core.vbs
+Const BallSize = 25 ' el radio de la bola. el tamaño normal es 50 unidades de VP
 Const BallMass = 1  ' la pesadez de la bola, este valor va de acuerdo a la fuerza de los flippers y el plunger
 
 ' Carga el core.vbs para poder usas sus funciones, sobre todo el vpintimer.addtimer
@@ -46,18 +46,14 @@ Sub LoadCoreFiles
     If Err Then MsgBox "Can't open controller.vbs"
 End Sub
 
-' Valores que se pueden cambiar
-Const Tiempo = 30 '30 seconds, 20 seconds o 10 seconds
-
 ' Valores Constants
 Const TableName = "TlD_123" ' se usa para cargar y grabar los highscore y creditos
 Const cGameName = "TlD_123" ' para el B2S
 Const MaxPlayers = 1        ' de 1 a 4
 Const MaxMultiplier = 5     ' limita el bonus multiplicador a 5
-Const BallsPerGame = 5      ' normalmente 3 o 5
-Const Special1 = 80000      ' puntuacion a obtener para partida extra
-Const Special2 = 90000      ' puntuacion a obtener para partida extra
-Const Special3 = 100000     ' puntuacion a obtener para partida extra
+Const Special1 = 80000      ' puntuación a obtener para partida extra
+Const Special2 = 90000      ' puntuación a obtener para partida extra
+Const Special3 = 100000     ' puntuación a obtener para partida extra
 
 ' Variables Globales
 Dim PlayersPlayingGame
@@ -72,7 +68,7 @@ Dim Special2Awarded(4)
 Dim Special3Awarded(4)
 Dim Score(4)
 Dim HighScore
-' Dim Match
+Dim Match
 Dim Tilt
 Dim TiltSensitivity
 Dim Tilted
@@ -85,7 +81,7 @@ Dim x
 Dim LastSwitchHit
 Dim BallsOnPlayfield
 
-' Variables de tipo Boolean (verdadero o falso, True o False)
+' Variables de tipo Boolean (verdadero ó falso, True ó False)
 Dim bAttractMode
 Dim bFreePlay
 Dim bGameInPlay
@@ -108,12 +104,12 @@ Sub Table1_Init()
     VPObjects_Init
     LoadEM
 
-    ' Carga los valores grabados highscore y creditos
-    Credits = 0
+    ' Carga los valores grabados highscore y créditos
     Loadhs
+
     UpdateCredits
 
-    ' Juego libre o con monedas: si es True entonces no se usaran monedas
+    ' Juego libre o con monedas: si es True entonces no se usarán monedas
     bFreePlay = True 'queremos monedas
 
     ' Inicialiar las variables globales de la mesa
@@ -126,7 +122,7 @@ Sub Table1_Init()
     Tilt = 0
     TiltSensitivity = 6
     Tilted = False
-    ' Match = 0
+    Match = 0
     bJustStarted = True
     Add10 = 0
     Add100 = 0
@@ -152,8 +148,6 @@ Sub Table1_Init()
             x.Visible = 0
         Next
     End If
-
-   LoadLUT
 End Sub
 
 '******
@@ -166,15 +160,12 @@ Sub Table1_KeyDown(ByVal Keycode)
         Exit Sub
     End If
 
-    If keycode = LeftMagnaSave Then bLutActive = True: SetLUTLine "Color LUT image " & table1.ColorGradeImage
-    If keycode = RightMagnaSave AND bLutActive Then NextLUT
-
-    ' anade monedas
+    ' añade monedas
     If Keycode = AddCreditKey OR Keycode = AddCreditKey2 Then
         If(Tilted = False)Then
             AddCredits 1
             PlaySound "fx_coin"
-            ' DOF 200, DOFOn
+            DOF 200, DOFOn
         End If
     End If
 
@@ -187,7 +178,7 @@ Sub Table1_KeyDown(ByVal Keycode)
     ' Funcionamiento normal de los flipers y otras teclas durante el juego
 
     If bGameInPlay AND NOT Tilted Then
-       '  If Credits = 0 Then DOF 200, DOFOff
+        If Credits = 0 Then DOF 200, DOFOff
         ' teclas de la falta
         If keycode = LeftTiltKey Then Nudge 90, 5:PlaySound "fx_nudge", 0, 1, -0.1, 0.25:CheckTilt
         If keycode = RightTiltKey Then Nudge 270, 5:PlaySound "fx_nudge", 0, 1, 0.1, 0.25:CheckTilt
@@ -212,9 +203,9 @@ Sub Table1_KeyDown(ByVal Keycode)
                         Credits = Credits - 1
                         UpdateCredits
                         UpdateBallInPlay
-                    ' Else
-                   '  DOF 200, DOFOff
-                    ' no hay suficientes creditos para empezar el juego.
+                    Else
+                    DOF 200, DOFOff
+                    ' no hay suficientes créditos para empezar el juego.
                     'PlaySound "so_nocredits"
                     End If
                 End If
@@ -251,8 +242,6 @@ Sub Table1_KeyUp(ByVal keycode)
         Exit Sub
     End If
 
-    If keycode = LeftMagnaSave Then bLutActive = False: HideLUT
-
     If bGameInPlay AND NOT Tilted Then
         ' teclas de los flipers
         If keycode = LeftFlipperKey Then SolLFlipper 0
@@ -282,81 +271,6 @@ End Sub
 Sub table1_Exit
     Savehs
 'Controller.Stop
-End Sub
-
-'************************************
-'       LUT - Darkness control
-' 10 normal level & 10 warmer levels 
-'************************************
-
-Dim bLutActive, LUTImage
-
-Sub LoadLUT
-    bLutActive = False
-    x = LoadValue(cGameName, "LUTImage")
-    If(x <> "")Then LUTImage = x Else LUTImage = 0
-    UpdateLUT
-End Sub
-
-Sub SaveLUT
-    SaveValue cGameName, "LUTImage", LUTImage
-End Sub
-
-Sub NextLUT:LUTImage = (LUTImage + 1)MOD 22:UpdateLUT:SaveLUT:SetLUTLine "Color LUT image " & table1.ColorGradeImage:End Sub
-
-Sub UpdateLUT
-    Select Case LutImage
-        Case 0:table1.ColorGradeImage = "LUT0"
-        Case 1:table1.ColorGradeImage = "LUT1"
-        Case 2:table1.ColorGradeImage = "LUT2"
-        Case 3:table1.ColorGradeImage = "LUT3"
-        Case 4:table1.ColorGradeImage = "LUT4"
-        Case 5:table1.ColorGradeImage = "LUT5"
-        Case 6:table1.ColorGradeImage = "LUT6"
-        Case 7:table1.ColorGradeImage = "LUT7"
-        Case 8:table1.ColorGradeImage = "LUT8"
-        Case 9:table1.ColorGradeImage = "LUT9"
-        Case 10:table1.ColorGradeImage = "LUT10"
-        Case 11:table1.ColorGradeImage = "LUT Warm 0"
-        Case 12:table1.ColorGradeImage = "LUT Warm 1"
-        Case 13:table1.ColorGradeImage = "LUT Warm 2"
-        Case 14:table1.ColorGradeImage = "LUT Warm 3"
-        Case 15:table1.ColorGradeImage = "LUT Warm 4"
-        Case 16:table1.ColorGradeImage = "LUT Warm 5"
-        Case 17:table1.ColorGradeImage = "LUT Warm 6"
-        Case 18:table1.ColorGradeImage = "LUT Warm 7"
-        Case 19:table1.ColorGradeImage = "LUT Warm 8"
-        Case 20:table1.ColorGradeImage = "LUT Warm 9"
-        Case 21:table1.ColorGradeImage = "LUT Warm 10"
-    End Select
-End Sub
-
-Dim GiIntensity
-GiIntensity = 1   'can be used by the LUT changing to increase the GI lights when the table is darker
-
-Sub ChangeGiIntensity(factor) 'changes the intensity scale
-    Dim bulb
-    For each bulb in aGiLights
-        bulb.IntensityScale = GiIntensity * factor
-    Next
-End Sub
-
-' New LUT postit
-
-Sub SetLUTLine(String)
-    Dim Index
-    Dim xFor
-    Index = 1
-    LUBack.imagea="PostItNote"
-    For xFor = 1 to 40
-        Eval("LU" &xFor).imageA = GetHSChar(String, Index)
-        Index = Index + 1
-    Next
-End Sub
-
-Sub HideLUT
-SetLUTLine ""
-LUBack.imagea="PostitBL"
 End Sub
 
 '********************
@@ -414,15 +328,15 @@ Dim LLiveCatchTimer
 Dim RLiveCatchTimer
 Dim LiveCatchSensivity
 
-FlipperPower = 5000
-FlipperElasticity = 0.8
-FullStrokeEOS_Torque = 0.3 	' EOS Torque when flipper hold up ( EOS Coil is fully charged. Ampere increase due to flipper can't move or when it pushed back when "On". EOS Coil have more power )
-LiveStrokeEOS_Torque = 0.2	' EOS Torque when flipper rotate to end ( When flipper move, EOS coil have less Ampere due to flipper can freely move. EOS Coil have less power )
+FlipperPower = 3600
+FlipperElasticity = 0.6
+FullStrokeEOS_Torque = 0.6 ' EOS Torque when flipper hold up ( EOS Coil is fully charged. Ampere increase due to flipper can't move or when it pushed back when "On". EOS Coil have more power )
+LiveStrokeEOS_Torque = 0.3 ' EOS Torque when flipper rotate to end ( When flipper move, EOS coil have less Ampere due to flipper can freely move. EOS Coil have less power )
 
 LeftFlipper.EOSTorqueAngle = 10
 RightFlipper.EOSTorqueAngle = 10
 
-SOSTorque = 0.1
+SOSTorque = 0.2
 SOSAngle = 6
 
 LiveCatchSensivity = 10
@@ -507,9 +421,9 @@ End Sub
 'el "timer" TiltDecreaseTimer resta .01 de la variable "Tilt" cada ronda
 
 Sub CheckTilt                     'esta rutina se llama cada vez que das un golpe a la mesa
-    Tilt = Tilt + TiltSensitivity 'anade un valor al contador "Tilt"
+    Tilt = Tilt + TiltSensitivity 'añade un valor al contador "Tilt"
     TiltDecreaseTimer.Enabled = True
-    If Tilt > 15 Then             'Si la variable "Tilt" es mas de 15 entonces haz falta
+    If Tilt > 15 Then             'Si la variable "Tilt" es más de 15 entonces haz falta
         Tilted = True
         TiltReel.SetValue 1       'muestra Tilt en la pantalla
         If B2SOn then
@@ -563,7 +477,7 @@ Sub TiltRecoveryTimer_Timer()
         EndOfBall()
         TiltRecoveryTimer.Enabled = False
     End If
-' de lo contrario esta rutina continua hasta que todas las bolas se han colado
+' de lo contrario esta rutina continúa hasta que todas las bolas se han colado
 End Sub
 
 '***************************************************************
@@ -708,7 +622,7 @@ End Sub
 
 '***************************************
 ' Sonidos de las colecciones de objetos
-' como metales, gomas, plasticos, etc
+' como metales, gomas, plásticos, etc
 '***************************************
 
 Sub aMetals_Hit(idx):PlaySoundAtBall "fx_MetalHit":End Sub
@@ -721,8 +635,8 @@ Sub aWoods_Hit(idx):PlaySoundAtBall "fx_Woodhit":End Sub
 
 '************************************************************************************************************************
 ' Solo para VPX 10.2 y posteriores.
-' FlashForMs hara parpadear una luz o un flash por unos milisegundos "TotalPeriod" cada tantos milisegundos "BlinkPeriod"
-' Cuando el "TotalPeriod" haya terminado, la luz o el flasher se pondra en el estado especificado por el valor "FinalState"
+' FlashForMs hará parpadear una luz o un flash por unos milisegundos "TotalPeriod" cada tantos milisegundos "BlinkPeriod"
+' Cuando el "TotalPeriod" haya terminado, la luz o el flasher se pondrá en el estado especificado por el valor "FinalState"
 ' El valor de "FinalState" puede ser: 0=apagado, 1=encendido, 2=regreso al estado anterior
 '************************************************************************************************************************
 
@@ -738,11 +652,11 @@ Sub FlashForMs(MyLight, TotalPeriod, BlinkPeriod, FinalState)
     ElseIf TypeName(MyLight) = "Flasher" Then ' la luz es del tipo "flash"
         Dim steps
         ' Store all blink information
-        steps = Int(TotalPeriod / BlinkPeriod + .5) 'numero de encendidos y apagados que hay que ejecutar
+        steps = Int(TotalPeriod / BlinkPeriod + .5) 'número de encendidos y apagados que hay que ejecutar
         If FinalState = 2 Then                      'guarda el estado actual del flash
             FinalState = ABS(MyLight.Visible)
         End If
-        MyLight.UserValue = steps * 10 + FinalState 'guarda el numero de parpadeos
+        MyLight.UserValue = steps * 10 + FinalState 'guarda el número de parpadeos
 
         ' empieza los parpadeos y crea la rutina que se va a ejecutar como un timer que se va a ejecutar los parpadeos
         MyLight.TimerInterval = BlinkPeriod
@@ -786,7 +700,7 @@ Sub ResetForNewGame()
     Bonus = 0
     UpdateBallInPlay
 
-   ' Clear_Match
+    Clear_Match
 
     ' inicializa otras variables
     Tilt = 0
@@ -794,8 +708,8 @@ Sub ResetForNewGame()
     ' inicializa las variables del juego
     Game_Init()
 
-    ' ahora puedes empezar una musica si quieres
-    ' empieza la rutina "Firstball" despues de una pequena pausa
+    ' ahora puedes empezar una música si quieres
+    ' empieza la rutina "Firstball" despues de una pequeña pausa
     vpmtimer.addtimer 2000, "FirstBall '"
     If Credits = 0 Then DOF 200, DOFOff
 End Sub
@@ -815,7 +729,7 @@ End Sub
 
 Sub ResetForNewPlayerBall()
     'debug.print "ResetForNewPlayerBall"
-    ' Se asegura que los marcadores estan activados para el jugador de turno
+    ' Se asegura que los marcadores están activados para el jugador de turno
     AddScore 0
 
     ' ajusta el multiplicador del bonus multiplier a 1X (si hubiese multiplicador en la mesa)
@@ -829,10 +743,10 @@ End Sub
 ' Crea una bola nueva en la mesa
 
 Sub CreateNewBall()
-    ' crea una bola nueva basada en el tamano y la masa de la bola especificados al principio del script
+    ' crea una bola nueva basada en el tamaño y la masa de la bola especificados al principio del script
     BallRelease.CreateSizedBallWithMass BallSize, BallMass
 
-    ' incrementa el numero de bolas en el tablero, ya que hay que contarlas
+    ' incrementa el número de bolas en el tablero, ya que hay que contarlas
     BallsOnPlayfield = BallsOnPlayfield + 1
 
     ' actualiza las luces del backdrop
@@ -843,7 +757,7 @@ Sub CreateNewBall()
     BallRelease.Kick 90, 4
 End Sub
 
-' El jugador ha perdido su bola, y ya no hay mas bolas en juego
+' El jugador ha perdido su bola, y ya no hay más bolas en juego
 ' Empieza a contar los bonos
 
 Sub EndOfBall()
@@ -851,11 +765,11 @@ Sub EndOfBall()
     Dim AwardPoints, TotalBonus, ii
     AwardPoints = 0
     TotalBonus = 0
-    ' La primera se ha perdido. Desde aqui ya no se puede aceptar mas jugadores
+    ' La primera se ha perdido. Desde aquí ya no se puede aceptar más jugadores
     bOnTheFirstBall = False
 
     ' solo recoge los bonos si no hay falta
-    ' el sistema del la falta se encargara de nuevas bolas o del fin de la partida
+    ' el sistema del la falta se encargará de nuevas bolas o del fin de la partida
 
     If NOT Tilted Then
         If DoubleBonus = 2 Then
@@ -864,25 +778,25 @@ Sub EndOfBall()
             BonusCountTimer.Interval = 250
         End If
         BonusCountTimer.Enabled = 1
-    Else 'Si hay falta simplemente espera un momento y va directo a la segunta parte despues de perder la bola
+    Else 'Si hay falta simplemente espera un momento y va directo a la segunta parte después de perder la bola
         vpmtimer.addtimer 400, "EndOfBall2 '"
     End If
 End Sub
 
-Sub BonusCountTimer_Timer 'anade los bonos y actualiza las luces
+Sub BonusCountTimer_Timer 'añade los bonos y actualiza las luces
     'debug.print "BonusCount_Timer"
     If Bonus > 0 Then
         Bonus = Bonus -1
         AddScore 1000 * DoubleBonus
         UpdateBonusLights
     Else
-        ' termina la cuenta de los bonos y continua con el fin de bola
+        ' termina la cuenta de los bonos y continúa con el fin de bola
         BonusCountTimer.Enabled = 0
         vpmtimer.addtimer 1000, "EndOfBall2 '"
     End If
 End Sub
 
-Sub UpdateBonusLights 'enciende o apaga las luces de los bonos segun la variable "Bonus"
+Sub UpdateBonusLights 'enciende o apaga las luces de los bonos según la variable "Bonus"
     Select Case Bonus
         Case 0:li2.State = 0:li3.State = 0:li4.State = 0:li5.State = 0:li6.State = 0:li7.State = 0:li8.State = 0:li9.State = 0:li10.State = 0:li11.State = 0
         Case 1:li2.State = 1:li3.State = 0:li4.State = 0:li5.State = 0:li6.State = 0:li7.State = 0:li8.State = 0:li9.State = 0:li10.State = 0:li11.State = 0
@@ -904,11 +818,11 @@ Sub UpdateBonusLights 'enciende o apaga las luces de los bonos segun la variable
 End Sub
 
 ' La cuenta de los bonos ha terminado. Mira si el jugador ha ganado bolas extras
-' y si no mira si es el ultimo jugador o la ultima bola
+' y si no mira si es el último jugador o la última bola
 '
 Sub EndOfBall2()
     'debug.print "EndOfBall2"
-    ' si hubiese falta, quitala, y pon la cuenta a cero de la falta para el proximo jugador, o bola
+    ' si hubiese falta, quítala, y pon la cuenta a cero de la falta para el próximo jugador, ó bola
 
     Tilted = False
     Tilt = 0
@@ -918,14 +832,14 @@ Sub EndOfBall2()
     end if
     DisableTable False 'activa de nuevo los bumpers y los slingshots
 
-    ' ha ganado el jugador una bola extra
+    ' ¿ha ganado el jugador una bola extra?
     If(ExtraBallsAwards(CurrentPlayer) > 0)Then
         'debug.print "Extra Ball"
 
-        ' si entonces se la das al jugador
+        ' sí? entonces se la das al jugador
         ExtraBallsAwards(CurrentPlayer) = ExtraBallsAwards(CurrentPlayer)- 1
 
-        ' si no hay mas bolas apaga la luz de jugar de nuevo
+        ' si no hay más bolas apaga la luz de jugar de nuevo
         If(ExtraBallsAwards(CurrentPlayer) = 0)Then
         'LightShootAgain.State = 0
         'If B2SOn then
@@ -933,7 +847,7 @@ Sub EndOfBall2()
         'end if
         End If
 
-' aqui se podria poner algun sonido de bola extra o alguna luz que parpadee
+' aquí se podría poner algún sonido de bola extra o alguna luz que parpadee
 
 ' En esta mesa hacemos la bola extra igual como si fuese la siguente bola, haciendo un reset de las variables y dianas
         ResetForNewPlayerBall()
@@ -944,15 +858,15 @@ Sub EndOfBall2()
 
         BallsRemaining(CurrentPlayer) = BallsRemaining(CurrentPlayer)- 1
 
-        ' Es esta la ultima bola
+        ' ¿Es ésta la última bola?
         If(BallsRemaining(CurrentPlayer) <= 0)Then
 
-            ' miramos si la puntuacion clasifica como el Highscore
+            ' miramos si la puntuación clasifica como el Highscore
             CheckHighScore()
         End If
 
-        ' esta no es la ultima bola para este jugador
-        ' y si hay mas de un jugador continua con el siguente
+        ' ésta no es la última bola para éste jugador
+        ' y si hay más de un jugador continúa con el siguente
         EndOfBallComplete()
     End If
 End Sub
@@ -966,11 +880,11 @@ Sub EndOfBallComplete()
 
     'debug.print "EndOfBall - Complete"
 
-    ' hay otros jugadores
+    ' ¿hay otros jugadores?
     If(PlayersPlayingGame > 1)Then
         ' entonces pasa al siguente jugador
         NextPlayer = CurrentPlayer + 1
-        ' vamos a pasar del ultimo jugador al primero
+        ' ¿vamos a pasar del último jugador al primero?
         ' (por ejemplo del jugador 4 al no. 1)
         If(NextPlayer > PlayersPlayingGame)Then
             NextPlayer = 1
@@ -981,13 +895,13 @@ Sub EndOfBallComplete()
 
     'debug.print "Next Player = " & NextPlayer
 
-    ' Hemos llegado al final del juego (todas las bolas se han jugado de todos los jugadores)
+    ' ¿Hemos llegado al final del juego? (todas las bolas se han jugado de todos los jugadores)
     If((BallsRemaining(CurrentPlayer) <= 0)AND(BallsRemaining(NextPlayer) <= 0))Then
 
-        ' aqui se empieza la loteria, normalmente cuando se juega con monedas
-      '  If bFreePlay = False Then
-       '     Verification_Match
-        'End If
+        ' aquí se empieza la lotería, normalmente cuando se juega con monedas
+        If bFreePlay = False Then
+            Verification_Match
+        End If
 
         ' ahora se pone la mesa en el modo de final de juego
         EndOfGame()
@@ -998,7 +912,7 @@ Sub EndOfBallComplete()
         ' nos aseguramos de que el backdrop muestra el jugador actual
         AddScore 0
 
-        ' hacemos un reset del la mesa para el siguente jugador (o bola)
+        ' hacemos un reset del la mesa para el siguente jugador (ó bola)
         ResetForNewPlayerBall()
 
         ' y sacamos una bola
@@ -1006,7 +920,7 @@ Sub EndOfBallComplete()
     End If
 End Sub
 
-' Esta funcion se llama al final del juego
+' Esta función se llama al final del juego
 
 Sub EndOfGame()
     'debug.print "EndOfGame"
@@ -1018,7 +932,7 @@ Sub EndOfGame()
         Controller.B2SSetPlayerUp 0
         Controller.B2SSetCanPlay 0
     end if
-    ' asegurate de que los flippers estan en modo de reposo
+    ' asegúrate de que los flippers están en modo de reposo
     SolLFlipper 0
     SolRFlipper 0
     DOF 250, DOFPulse
@@ -1027,7 +941,7 @@ Sub EndOfGame()
     StartAttractMode
 End Sub
 
-' Esta funcion calcula el no de bolas que quedan
+' Esta función calcula el no de bolas que quedan
 Function Balls
     Dim tmp
     tmp = BallsPerGame - BallsRemaining(CurrentPlayer) + 1
@@ -1038,7 +952,7 @@ Function Balls
     End If
 End Function
 
-' Esta funcion calcula el Highscore y te da una partida gratis si has conseguido el Highscore
+' Esta función calcula el Highscore y te da una partida gratis si has conseguido el Highscore
 Sub CheckHighscore
     Dim playertops, si, sj, i, stemp, stempplayers
     For i = 1 to 4
@@ -1073,46 +987,46 @@ End Sub
 '  Match - Loteria
 '******************
 
-'Sub IncreaseMatch
-'     Match = (Match + 10)MOD 100
-' End Sub
+Sub IncreaseMatch
+    Match = (Match + 10)MOD 100
+End Sub
 
-'Sub Verification_Match()
-'    PlaySound "fx_match"
-'    Display_Match
-'    If(Score(CurrentPlayer)MOD 100) = Match Then
-'        PlaySound SoundFXDOF ("fx_knocker", 300, DOFPulse, DOFKnocker)
-'        DOF 230, DOFPulse
-'        AddCredits 1
-'        DOF 200, DOFOn
-'    End If
-'End Sub
+Sub Verification_Match()
+    PlaySound "fx_match"
+    Display_Match
+    If(Score(CurrentPlayer)MOD 100) = Match Then
+        PlaySound SoundFXDOF ("fx_knocker", 300, DOFPulse, DOFKnocker)
+        DOF 230, DOFPulse
+        AddCredits 1
+        DOF 200, DOFOn
+    End If
+End Sub
 
-'Sub Clear_Match()
-'    MatchReel.SetValue 0
-'    If B2SOn then
- '       Controller.B2SSetMatch 0
- '   end if
-'End Sub
+Sub Clear_Match()
+    MatchReel.SetValue 0
+    If B2SOn then
+        Controller.B2SSetMatch 0
+    end if
+End Sub
 
-'Sub Display_Match()
-'    MatchReel.SetValue(Match \ 10) + 1
-'    If B2SOn then
-'        If Match = 0 then
-'            Controller.B2SSetMatch 100
-'        else
-'            Controller.B2SSetMatch Match
-'        end if
-'    end if
-'End Sub
+Sub Display_Match()
+    MatchReel.SetValue(Match \ 10) + 1
+    If B2SOn then
+        If Match = 0 then
+            Controller.B2SSetMatch 100
+        else
+            Controller.B2SSetMatch Match
+        end if
+    end if
+End Sub
 
 ' *********************************************************************
 '                      Drain / Plunger Functions
 ' *********************************************************************
 
 ' has perdido la bola ;-( mira cuantas bolas hay en el tablero.
-' si solamente hay una entonces reduce el numero de bola y mira si es la ultima para finalizar el juego
-' si hay mas de una, significa que hay multiball, entonces continua con la partida
+' si solamente hay una entonces reduce el número de bola y mira si es la última para finalizar el juego
+' si hay más de una, significa que hay multiball, entonces continua con la partida
 '
 Sub Drain_Hit()
     ' destruye la bola
@@ -1124,24 +1038,24 @@ Sub Drain_Hit()
     PlaySoundAt "fx_drain", Drain
     DOF 232, DOFPulse
 
-    'si hay falta el sistema de tilt se encargara de continuar con la siguente bola/jugador
+    'si hay falta el sistema de tilt se encargará de continuar con la siguente bola/jugador
     If Tilted Then
         StopEndOfBallMode
     End If
 
-    ' si estas jugando y no hay falta
+    ' si estás jugando y no hay falta
     If(bGameInPLay = True)AND(Tilted = False)Then
 
-        ' esta el salva bolas activado
+        ' ¿está el salva bolas activado?
         If(bBallSaverActive = True)Then
 
-            ' si, pues creamos una bola
+            ' ¿sí?, pues creamos una bola
             CreateNewBall()
         Else
-            ' es esta la ultima bola en juego
+            ' ¿es ésta la última bola en juego?
             If(BallsOnPlayfield = 0)Then
                 StopEndOfBallMode
-                vpmtimer.addtimer 500, "EndOfBall '" 'hacemos una pequena pausa anter de continuar con el fin de bola
+                vpmtimer.addtimer 500, "EndOfBall '" 'hacemos una pequeña pausa anter de continuar con el fin de bola
                 Exit Sub
             End If
         End If
@@ -1152,8 +1066,8 @@ Sub swPlungerRest_Hit()
     bBallInPlungerLane = True
 End Sub
 
-' La bola ha sido disparada, asi que cambiamos la variable, que en esta mesa se usa solo para que el sonido del disparador cambie segun hay alli una bola o no
-' En otras mesas podra usarse para poner en marcha un contador para salvar la bola
+' La bola ha sido disparada, así que cambiamos la variable, que en esta mesa se usa solo para que el sonido del disparador cambie según hay allí una bola o no
+' En otras mesas podrá usarse para poner en marcha un contador para salvar la bola
 
 Sub swPlungerRest_UnHit()
     bBallInPlungerLane = False
@@ -1163,13 +1077,13 @@ End Sub
 '               Funciones para la cuenta de los puntos
 ' *********************************************************************
 
-' Anade puntos al jugador, hace sonar las campanas y actualiza el backdrop
+' Añade puntos al jugador, hace sonar las campanas y actualiza el backdrop
 
 Sub AddScore(Points)
     If Tilted Then Exit Sub
     Select Case Points
         Case 10, 100, 1000
-            ' anade los puntos a la variable del actual jugador
+            ' añade los puntos a la variable del actual jugador
             Score(CurrentPlayer) = Score(CurrentPlayer) + points
             ' actualiza los contadores
             UpdateScore points
@@ -1195,7 +1109,7 @@ Sub AddScore(Points)
             AddScore1000Timer.Enabled = TRUE
     End Select
 
-    ' ' aqui se puede hacer un chequeo si el jugador ha ganado alguna puntuacion alta y darle un credito o bola extra
+    ' ' aquí se puede hacer un chequeo si el jugador ha ganado alguna puntuación alta y darle un crédito ó bola extra
     If Score(CurrentPlayer) >= Special1 AND Special1Awarded(CurrentPlayer) = False Then
         AwardSpecial
         Special1Awarded(CurrentPlayer) = True
@@ -1214,7 +1128,7 @@ End Sub
 'TIMER DE 10, 100 y 1000 PUNTOS
 '******************************
 
-' hace sonar las campanillas segun los puntos
+' hace sonar las campanillas según los puntos
 
 Sub AddScore10Timer_Timer()
     if Add10 > 0 then
@@ -1250,11 +1164,11 @@ End Sub
 ' ESTA MESA NO USA BONOS
 
 ' avanza el bono y actualiza las luces
-' Los bonos estan limitados a 1500 puntos
+' Los bonos están limitados a 1500 puntos
 
 Sub AddBonus(bonuspoints)
     If(Tilted = False)Then
-        ' anade los bonos al jugador actual
+        ' añade los bonos al jugador actual
         Bonus = Bonus + bonuspoints
         If Bonus > 15 Then
             Bonus = 15
@@ -1267,7 +1181,7 @@ End Sub
 '***********************************************************************************
 '        Score reels - puntuaciones - y actualiza otras luces del backdrop
 '***********************************************************************************
-'esta es al rutina que actualiza la puntuacion del jugador
+'esta es al rutina que actualiza la puntuación del jugador
 
 Sub UpdateScore(playerpoints)
     Select Case CurrentPlayer
@@ -1315,7 +1229,7 @@ Sub UpdateCredits
     end if
 End Sub
 
-Sub UpdateBallInPlay 'actualiza los marcadores de las bolas, el numero de jugador y el numero total de jugadores
+Sub UpdateBallInPlay 'actualiza los marcadores de las bolas, el número de jugador y el número total de jugadores
     Select Case Balls
         Case 0:BallDisplay.ImageA = "Ballnr0"
         Case 1:BallDisplay.ImageA = "Ballnr1"
@@ -1468,7 +1382,7 @@ Sub Savehs
     Dim ScoreFile
     Dim xx
     Set FileObj = CreateObject("Scripting.FileSystemObject")
-    If Not FileObj.FolderExists(UserDirectory) then
+    If Not FileObj.FolderExists(UserDirectory)then
         Exit Sub
     End If
     Set ScoreFile = FileObj.CreateTextFile(UserDirectory & TableName& ".txt", True)
@@ -1489,17 +1403,17 @@ End Sub
 ' Actualizaciones en tiempo real
 '****************************************
 ' se usa sobre todo para hacer animaciones o sonidos que cambian en tiempo real
-' como por ejemplo para sincronizar los flipers, puertas o molinillos con primitivas
+' como por ejemplo para sincronizar los flipers, puertas ó molinillos con primitivas
 
 Sub GameTimer_Timer
     RollingUpdate 'actualiza el sonido de la bola rodando
-' y tambien algunas animaciones, sobre todo de primitivas
+' y también algunas animaciones, sobre todo de primitivas
 
 End Sub
 
 '***********************************************************************
 ' *********************************************************************
-'            Aqui empieza el codigo particular a la mesa
+'            Aquí empieza el código particular a la mesa
 ' (hasta ahora todas las rutinas han sido muy generales para todas las mesas)
 ' (y hay muy pocas rutinas que necesitan cambiar de mesa a mesa)
 ' *********************************************************************
@@ -1522,11 +1436,11 @@ End Sub
 
 Sub Game_Init() 'esta rutina se llama al principio de un nuevo juego
 
-'Empezar alguna musica, si hubiera musica en esta mesa
+'Empezar alguna música, si hubiera música en esta mesa
 
 'iniciar variables, en esta mesa hay muy pocas variables ya que usamos las luces, y el UserValue de las dianas
 
-'iniciar algun timer
+'iniciar algún timer
 
 'Iniciar algunas luces
 'TurnOffPlayfieldLights()
@@ -1537,11 +1451,11 @@ Sub StopEndOfBallMode()     'this sub is called after the last ball is drained
 
 End Sub
 
-Sub ResetNewBallVariables() 'inicia las variable para una bola o jugador nuevo
+Sub ResetNewBallVariables() 'inicia las variable para una bola ó jugador nuevo
 
 End Sub
 
-Sub ResetNewBallLights()    'enciende o apaga las luces para una bola nueva
+Sub ResetNewBallLights()    'enciende ó apaga las luces para una bola nueva
     li5.State = 1           'dianas centrales
     li6.State = 1
     li7.State = 1
@@ -1559,16 +1473,16 @@ End Sub
 ' *********************************************************************
 '       Eventos de la mesa - choque de la bola contra dianas
 '
-' En cada diana u objeto con el que la bola choque habra que hacer:
-' - sonar un sonido fisico
-' - hacer algun movimiento, si es necesario
-' - anadir alguna puntuacion
+' En cada diana u objeto con el que la bola choque habrá que hacer:
+' - sonar un sonido físico
+' - hacer algún movimiento, si es necesario
+' - añadir alguna puntuación
 ' - encender/apagar una luz
-' - hacer algun chequeo para ver si el jugador ha completado algo
+' - hacer algún chequeo para ver si el jugador ha completado algo
 ' *********************************************************************
 
 ' la bola choca contra los Slingshots
-' hacemos una animacion manual de los slingshots usando gomas
+' hacemos una animación manual de los slingshots usando gomas
 Dim LStep, RStep
 
 Sub LeftSlingShot_Slingshot
@@ -1581,9 +1495,9 @@ Sub LeftSlingShot_Slingshot
     Lemk.RotX = 26
     LStep = 0
     LeftSlingShot.TimerEnabled = True
-    ' anade algunos puntos
+    ' añade algunos puntos
     AddScore 10
-' anade algun efecto a la mesa
+' añade algún efecto a la mesa
 
 End Sub
 
@@ -1606,9 +1520,9 @@ Sub RightSlingShot_Slingshot
     Remk.RotX = 26
     RStep = 0
     RightSlingShot.TimerEnabled = True
-    ' anade algunos puntos
+    ' añade algunos puntos
     AddScore 10
-' anade algun efecto a la mesa
+' añade algún efecto a la mesa
 
 End Sub
 
@@ -1628,56 +1542,56 @@ End Sub
 Sub RubberBand4_Hit
     If Tilted Then Exit Sub
     LastSwitchHit = "RubberBand4"
-    ' anade 10 puntos
+    ' añade 10 puntos
     AddScore 10
 End Sub
 
 Sub RubberBand14_Hit
     If Tilted Then Exit Sub
     LastSwitchHit = "RubberBand14"
-    ' anade 10 puntos
+    ' añade 10 puntos
     AddScore 10
 End Sub
 
 Sub RubberBand6_Hit
     If Tilted Then Exit Sub
     LastSwitchHit = "RubberBand6"
-    ' anade 10 puntos
+    ' añade 10 puntos
     AddScore 10
 End Sub
 
 Sub RubberBand7_Hit
     If Tilted Then Exit Sub
     LastSwitchHit = "RubberBand7"
-    ' anade 10 puntos
+    ' añade 10 puntos
     AddScore 10
 End Sub
 
 Sub RubberBand8_Hit
     If Tilted Then Exit Sub
     LastSwitchHit = "RubberBand8"
-    ' anade 10 puntos
+    ' añade 10 puntos
     AddScore 10
 End Sub
 
 Sub RubberBand9_Hit
     If Tilted Then Exit Sub
     LastSwitchHit = "RubberBand9"
-    ' anade 10 puntos
+    ' añade 10 puntos
     AddScore 10
 End Sub
 
 Sub RubberBand10_Hit
     If Tilted Then Exit Sub
     LastSwitchHit = "RubberBand10"
-    ' anade 10 puntos
+    ' añade 10 puntos
     AddScore 10
 End Sub
 
 Sub RubberBand11_Hit
     If Tilted Then Exit Sub
     LastSwitchHit = "RubberBand11"
-    ' anade 10 puntos
+    ' añade 10 puntos
     AddScore 10
 End Sub
 
@@ -1698,7 +1612,7 @@ Sub Bumper1_Hit
     PlaySoundAt SoundFXDOF ("fx_Bumper",105,DOFPulse,DOFContactors), bumper1
     DOF 207, DOFPulse
     If Epileptikdof = True Then DOF 202, DOFPulse End If
-    ' anade algunos puntos
+    ' añade algunos puntos
     AddScore 10 + 90 * LightBumper1.State
     LastSwitchHit = "bumper1"
 End Sub
@@ -1708,7 +1622,7 @@ Sub Bumper2_Hit
     PlaySoundAt SoundFXDOF ("fx_Bumper",107,DOFPulse,DOFContactors), bumper2
     DOF 208, DOFPulse
     If Epileptikdof = True Then DOF 202, DOFPulse End If
-    ' anade algunos puntos
+    ' añade algunos puntos
     AddScore 10 + 90 * LightBumper2.State
     LastSwitchHit = "bumper2"
 End Sub
@@ -1718,7 +1632,7 @@ Sub Bumper3_Hit
     PlaySoundAt SoundFXDOF ("fx_Bumper",108,DOFPulse,DOFContactors), bumper3
     DOF 209, DOFPulse
     If Epileptikdof = True Then DOF 202, DOFPulse End If
-    ' anade algunos puntos
+    ' añade algunos puntos
     AddScore 10 + 90 * LightBumper3.State
     LastSwitchHit = "bumper3"
 End Sub
@@ -1728,7 +1642,7 @@ Sub Bumper4_Hit
     PlaySoundAt SoundFXDOF ("fx_Bumper",109,DOFPulse,DOFContactors), bumper4
     DOF 210, DOFPulse
     If Epileptikdof = True Then DOF 202, DOFPulse End If
-    ' anade algunos puntos
+    ' añade algunos puntos
     AddScore 10 + 90 * LightBumper4.State
     LastSwitchHit = "bumper4"
 End Sub
@@ -1738,9 +1652,9 @@ Sub Bumper5_Hit
     PlaySoundAt SoundFXDOF ("fx_Bumper",106,DOFPulse,DOFContactors), bumper5
     DOF 211, DOFPulse
     If Epileptikdof = True Then DOF 202, DOFPulse End If
-    ' anade algunos puntos
+    ' añade algunos puntos
     AddScore 100 + 900 * LightBumper5.State
-'    IncreaseMatch 'es lo unico que aumenta el valor de la loteria.
+    IncreaseMatch 'es lo único que aumenta el valor de la lotería.
     LastSwitchHit = "bumper5"
 End Sub
 
@@ -1757,7 +1671,7 @@ Sub Trigger5_Hit
     AddScore 100
     LastSwitchHit = "trigger5"
     li10.State = 0
-    'check
+    'check?
     CheckTopLights
 End Sub
 
@@ -1768,7 +1682,7 @@ Sub Trigger6_Hit
     AddScore 100
     LastSwitchHit = "trigger6"
     li11.State = 0
-    'check
+    'check?
     CheckTopLights
 End Sub
 
@@ -1779,7 +1693,7 @@ Sub Trigger7_Hit
     AddScore 100
     LastSwitchHit = "trigger7"
     li12.State = 0
-    'check
+    'check?
     CheckTopLights
 End Sub
 
@@ -1791,7 +1705,7 @@ Sub Trigger8_Hit
     DOF 225, DOFPulse
     AddScore 500
     LastSwitchHit = "trigger8"
-    'check
+    'check?
     If li8.State Then
         AwardSpecial
         ResetAdvance
@@ -1804,7 +1718,7 @@ Sub Trigger9_Hit
     DOF 226, DOFPulse
     AddScore 500
     LastSwitchHit = "trigger9"
-    'check
+    'check?
     If li9.State Then
         AwardSpecial
         ResetAdvance
@@ -1819,7 +1733,7 @@ Sub Trigger1_Hit
     DOF 227, DOFPulse
     LastSwitchHit = "trigger1"
     AddScore 1000
-    'check
+    'check?
     If li1.State Then
         AwardSpecial
         StopSpecialTimer
@@ -1835,7 +1749,7 @@ Sub Trigger4_Hit
     DOF 228, DOFPulse
     AddScore 1000
     LastSwitchHit = "trigger4"
-    'check
+    'check?
     If li2.State Then
         AwardSpecial
         StopSpecialTimer
@@ -1853,7 +1767,7 @@ Sub Trigger2_Hit
     DOF 229, DOFPulse
     AddScore 500
     LastSwitchHit = "trigger2"
-'check
+'check?
 End Sub
 
 Sub Trigger3_Hit
@@ -1862,7 +1776,7 @@ Sub Trigger3_Hit
     DOF 231, DOFPulse
     LastSwitchHit = "trigger3"
     AddScore 500
-'check
+'check?
 End Sub
 
 Sub CheckTopLights 'luces 123 encienden los bumper y el special de los outlanes, y empieza el timer de 30 segundos
@@ -2254,3 +2168,60 @@ Sub CollectInitials(keycode)
     End If
 End Sub
 ' End GNMOD
+
+'*********************************
+' Table Options F12 User Options
+'*********************************
+' Table1.Option arguments are: 
+' - option name, minimum value, maximum value, step between valid values, default value, unit (0=None, 1=Percent), an optional array of literal strings
+
+Dim LUTImage, BallsPerGame, Tiempo
+
+Sub Table1_OptionEvent(ByVal eventId)
+    Dim x, y
+
+    'LUT
+    LutImage = Table1.Option("Select LUT", 0, 21, 1, 0, 0, Array("Normal 0", "Normal 1", "Normal 2", "Normal 3", "Normal 4", "Normal 5", "Normal 6", "Normal 7", "Normal 8", "Normal 9", "Normal 10", _
+        "Warm 0", "Warm 1", "Warm 2", "Warm 3", "Warm 4", "Warm 5", "Warm 6", "Warm 7", "Warm 8", "Warm 9", "Warm 10") )
+    UpdateLUT
+
+    ' Cabinet rails
+    x = Table1.Option("Cabinet Rails", 0, 1, 1, 1, 0, Array("Hide", "Show") )
+    For each y in aRails:y.visible = x:next
+
+    ' Balls per Game
+    x = Table1.Option("Balls per Game", 0, 1, 1, 1, 0, Array("3 Balls", "5 Balls") )
+    If x = 1 Then BallsPerGame = 5 Else BallsPerGame = 3
+
+    ' Game Time
+    x = Table1.Option("Game Time", 1, 3, 1, 3, 0, Array("10 Seconds", "20 Seconds","30 Seconds") )
+    Tiempo = x * 10
+
+End Sub
+
+Sub UpdateLUT
+    Select Case LutImage
+        Case 0:table1.ColorGradeImage = "LUT0"
+        Case 1:table1.ColorGradeImage = "LUT1"
+        Case 2:table1.ColorGradeImage = "LUT2"
+        Case 3:table1.ColorGradeImage = "LUT3"
+        Case 4:table1.ColorGradeImage = "LUT4"
+        Case 5:table1.ColorGradeImage = "LUT5"
+        Case 6:table1.ColorGradeImage = "LUT6"
+        Case 7:table1.ColorGradeImage = "LUT7"
+        Case 8:table1.ColorGradeImage = "LUT8"
+        Case 9:table1.ColorGradeImage = "LUT9"
+        Case 10:table1.ColorGradeImage = "LUT10"
+        Case 11:table1.ColorGradeImage = "LUT Warm 0"
+        Case 12:table1.ColorGradeImage = "LUT Warm 1"
+        Case 13:table1.ColorGradeImage = "LUT Warm 2"
+        Case 14:table1.ColorGradeImage = "LUT Warm 3"
+        Case 15:table1.ColorGradeImage = "LUT Warm 4"
+        Case 16:table1.ColorGradeImage = "LUT Warm 5"
+        Case 17:table1.ColorGradeImage = "LUT Warm 6"
+        Case 18:table1.ColorGradeImage = "LUT Warm 7"
+        Case 19:table1.ColorGradeImage = "LUT Warm 8"
+        Case 20:table1.ColorGradeImage = "LUT Warm 9"
+        Case 21:table1.ColorGradeImage = "LUT Warm 10"
+    End Select
+End Sub

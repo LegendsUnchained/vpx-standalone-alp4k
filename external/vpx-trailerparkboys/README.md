@@ -1,29 +1,60 @@
-# Trailer Park Boys
+# Trailer Park Boys - Pin-Ballers (Original 2024)
 
-![Table Preview](../../images/vpx-trailerparkboys.png)
+![Table Preview](../../images/W6YLM398ZC-preview.webp)
 
-Authors: [clairvius](https://vpuniverse.com/profile/16134-clairvius/)  
-Version: 1.0.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/20407-trailer-park-boys-pin-ballers-clairvius-2024/)  
+<br>
 
-DirectB2S
+## *️⃣  Table Statistics
 
-Authors: [clairvius](https://vpuniverse.com/profile/16134-clairvius/)  
-Version: 1.0.0  
-Download: INCLUDED IN TABLE DOWNLOAD  
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ✅ | ❌ | ❌ | 55 |
+
+<br>
+
+**VPXS 4KP Testers:**
+  - Silentkat
+
+<br>
+
+---
+
+<br>
+
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Trailer Park Boys - Pin-Ballers (Original 2024)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"What comes around is all around"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
 
 
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-1989-a764013
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
-
-## Instructions
-
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
-- Here's what I know, Rick. If you love something, let it go. If it comes back to you, you own it. If it doesn't, you don't own it.
-
+<br>
+<br>
+<br>
+<br>
+<br>

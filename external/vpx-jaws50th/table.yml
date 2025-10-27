@@ -1,0 +1,14 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "2FBC05BEA381AFD3104629A385362267"
+backglassNotes: "Do not use the one bundled with the table"
+backglassVPSId: "hMQ8cVN0K9"
+fps: 52
+tableNotes: "Download version 3.2"
+tableVPSId: "iGKrUAk0Pi"
+tagline: "'Just when you thought it was safe...'"
+testers:
+  - "evilwraith"
+vpxChecksum: "4AA048FAE267C79FDD66EC94BB5176B9"
+vpxVPSId: "DJwGB6g1ra"

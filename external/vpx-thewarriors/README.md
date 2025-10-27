@@ -1,4 +1,4 @@
-# Warriors, The (1979) Edition 2023 Reskin (Iceman 2023)
+﻿# Warriors, The (1979) Edition 2023 Reskin (Iceman 2023)
 
 ![Table Preview](../../images/vpx-thewarriors.png)
 
@@ -34,7 +34,7 @@ Minimum VPX Standalone build: 10.8.0-1983-b84441e
 ## Instructions
 
 - Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If you need help, more information found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
 - If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - Extract music.zip and place (music) folder in vpx-thewarriors
 - [clicking beer bottles together] Waaaarrrrrriiiorsss, come out to pla-ay! - Luther
