@@ -1,5 +1,7 @@
 ---
 fps: 60
+backglassImageOverride: >-
+  https://vpuniverse.com/screenshots/monthly_2023_02/Capture2.PNG.3b40b00980fdd5c742f56d751f23a100.PNG
 pupArchiveRoot: "t2_l8"
 pupChecksum: "b939687ca882d009da709bfcd0ae383a"
 pupFileUrl: >-
