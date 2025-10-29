@@ -1632,15 +1632,15 @@ End Sub
 Sub AwardJackpot() 'award a normal jackpot
     If bLilDPMB Then
         Select case RndNbr(4)
-            Case 1:DMD CL(0, FormatScore(Jackpot(CurrentPlayer) ) ), CL(1, "LILDP JACKPOT"), "bkborder", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_lildp_jackpot1" : pupevent 807
-            Case 2:DMD CL(0, FormatScore(Jackpot(CurrentPlayer) ) ), CL(1, "LILDP JACKPOT"), "bkborder", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_lildp_jackpot2" : pupevent 807
-            Case 3:DMD CL(0, FormatScore(Jackpot(CurrentPlayer) ) ), CL(1, "LILDP JACKPOT"), "bkborder", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_lildp_jackpot3" : pupevent 807
-            Case 4:DMD CL(0, FormatScore(Jackpot(CurrentPlayer) ) ), CL(1, "LILDP JACKPOT"), "bkborder", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_lildp_jackpot4" : pupevent 807
+            Case 1:DMD CL(0, FormatScore(Jackpot(CurrentPlayer) ) ), CL(1, "LILDP JACKPOT"), "bkborder", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_lildp_jackpot1" : pupevent 817
+            Case 2:DMD CL(0, FormatScore(Jackpot(CurrentPlayer) ) ), CL(1, "LILDP JACKPOT"), "bkborder", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_lildp_jackpot2" : pupevent 817
+            Case 3:DMD CL(0, FormatScore(Jackpot(CurrentPlayer) ) ), CL(1, "LILDP JACKPOT"), "bkborder", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_lildp_jackpot3" : pupevent 817
+            Case 4:DMD CL(0, FormatScore(Jackpot(CurrentPlayer) ) ), CL(1, "LILDP JACKPOT"), "bkborder", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_lildp_jackpot4" : pupevent 817
         End Select
         LightEffect 4
         GiEffect 4
     Else
-        DMD CL(0, FormatScore(Jackpot(CurrentPlayer) ) ), CL(1, "JACKPOT"), "bkborder", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_Jackpot"  : pupevent 807
+        DMD CL(0, FormatScore(Jackpot(CurrentPlayer) ) ), CL(1, "JACKPOT"), "bkborder", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_Jackpot"  : pupevent 817
         LightEffect 2
         GiEffect 2
     End If
