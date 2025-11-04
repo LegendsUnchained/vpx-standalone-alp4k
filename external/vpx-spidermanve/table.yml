@@ -1,7 +1,8 @@
 ---
-backglassVPSId: "JZN1nlsWkY"
 backglassChecksum: "06fe139b4f6fa05eca9706a5b95526e9"
 backglassNotes: "Use '3-SCR.directB2S' from the download"
+# yamllint disable-line rule:line-length
+backglassUrlOverride: "https://www.vpforums.org/index.php?app=downloads&showfile=15011"
 fps: 40
 romVPSId: "AWiQu3VK"
 romChecksum: "676b70c9a67ceca4a607e9a076358e80"
