@@ -1,4 +1,4 @@
-# Godzilla 70th Anniversary Premium  (Original 2024)
+# Godzilla Remix (Limited Edition)  (Original 2021)
 
 ![Table Preview](../../images/PBBcAzNnwr-preview.png)
 
@@ -13,7 +13,8 @@
 <br>
 
 **VPXS 4KP Testers:**
-  - Silentkat,Evilwrath
+  - Silentkat
+  - Evilwrath
 
 <br>
 

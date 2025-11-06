@@ -153,6 +153,7 @@ def get_table_meta(files, warn_on_error=True):
             "manufacturer": data.get("tableManufacturerOverride"),
             "year": data.get("tableYearOverride"),
             "pupArchiveRoot": data.get("pupArchiveRoot"),
+            "pupBundled": data.get("pupBundled"),
             "pupChecksum": pupChecksum,
             "pupFileUrl": data.get("pupFileUrl"),
             "pupNotes": data.get("pupNotes"),
