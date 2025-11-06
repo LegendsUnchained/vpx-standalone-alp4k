@@ -226,6 +226,7 @@ Links to these products on Amazon are through affiliate links.
 | [Space Cadet, JP's - Galaxy Edition (Original 2021)](external/vpx-spacecadetge) | :white_check_mark: | :x: | :x: | :white_check_mark: | 52 |
 | [Space Invaders - JP (Bally 1980)](external/vpx-jpspaceinvaders) | :white_check_mark: | :x: | :white_check_mark: | :x: | 55 |
 | [Spider-Man Vault Edition (Stern 2016)](external/vpx-spidermanve) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 40 |
+| [Star Wars (Burger 2025)](external/vpx-starwarsburger) | :white_check_mark: | :white_check_mark: | :x: | :x: | 40 |
 | [Star Wars (Data East 1992)](external/vpx-starwars) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Star Wars - The Bad Batch (Original 2022)](external/vpx-swbadbatch) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:  | 60 |
 | [Star Wars Trilogy (Sega 1997)](external/vpx-starwarstrilogy) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
