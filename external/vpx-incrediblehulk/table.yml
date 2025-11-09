@@ -7,6 +7,7 @@ fps: 60
 romChecksum: "46E6F39472FE5310F07C459064CCE4F0"
 romNotes: "Use the zip link"
 romUrlOverride: "https://archive.org/details/hulk_20240824"
+romVersionOverride: "hulk"
 tableNotes: "Download version 1.34"
 tableVPSId: "VrMnwhl6"
 tagline: "'Don't make me angry. You won't like me when I'm angry.'"
