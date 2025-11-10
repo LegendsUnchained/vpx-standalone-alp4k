@@ -5,6 +5,7 @@ backglassVPSId: "l-kOn09CQf"
 fps: 60
 romChecksum: "96F2911EE5139A63459AF3E6686C5B9E"
 romNotes: "Download jack2opn.zip"
+romVersionOverride: "jack2opn"
 romUrlOverride: "https://vpuniverse.com/files/file/1097-jack2opnzip/"
 tableVPSId: "IlZh5lUD"
 tableNotes: "Download 'Jacks to Open (Mylstar 1984) v600.vpx.zip'"
