@@ -1,6 +1,6 @@
-# Getaway - High Speed II, The (Williams 1992)
+# Star Wars (Original 2025)
 
-![Table Preview](../../images/YoXfmzDV-preview.webp)
+![Table Preview](../../images/fqUNoSi3hg-preview.webp)
 
 <br>
 
@@ -8,13 +8,13 @@
 
 | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |-----------|-----|-----|-----|-----|
-| ✅ | ✅ | ✅ | ❌ | 55 |
+| ✅ | ❌ | ❌ | ❌ | 40 |
 
 <br>
 
 **VPXS 4KP Testers:**
   - Silentkat
-  - OminousOsie
+  - Wraith
 
 <br>
 
@@ -33,9 +33,9 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`Getaway - High Speed II, The (Williams 1992)`**
+4.  Find and select this table from the dropdown menu: **`Star Wars (Original 2025)`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *"Shift into High Gear!"*
+6. *"The Force is strong with this one."*
 
 <br>
 
