@@ -1,0 +1,19 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "21BFB14E9A33DC985C1E7B815CEB3A4E"
+backglassNotes: "Download 'Hollywood Heat (Premier 1986).zip'"
+backglassVPSId: "npSCd09PtF"
+fps: 60
+romChecksum: "0CFC469FDD84759EDC29EB6B63F5188C"
+romNotes: "Download 'hlywoodh.zip'"
+romUrlOverride: "https://vpuniverse.com/files/file/1331-hlywoodhzip/"
+romVersionOverride: "hlywoodh"
+romVPSId: "RdGADa90"
+tableNotes: "Download 'Hollywood Heat (Gottlieb 1986) v1.4.vpx'"
+tableVPSId: "8aVmENVL"
+tagline: "'The heat is on'"
+testers:
+  - "Wraith"
+vpxChecksum: "E2BA21BDCBF2B46B29427C742DBEA445"
+vpxVPSId: "D1hAJ8aRwV"
