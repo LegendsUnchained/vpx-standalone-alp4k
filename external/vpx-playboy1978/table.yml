@@ -1,0 +1,18 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "5286B0A24FB6111E2D8266133A4DB749"
+backglassNotes: "Download Playboy (Bally 1978).zip"
+backglassVPSId: "STc6gm15Dz"
+fps: 52
+romChecksum: "90810C525E3B78EA87EBBFA7D54228C1"
+romNotes: "Download playboyb.zip"
+romVPSId: "vReHOmteHm"
+tableNotes: "Download Version 5.0.1"
+tableVPSId: "4TmYoWjO"
+testers:
+  - "Wraith"
+  - "B-Woo"
+  - "CoffeeAtJoes"
+vpxChecksum: "39097EEE8822A0B7F9648B65BCC96495"
+vpxVPSId: "JuIPymmp0J"

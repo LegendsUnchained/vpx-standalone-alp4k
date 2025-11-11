@@ -1,21 +1,8 @@
 '+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 '                                                          +
 '		            PLAYBOY (BALLY 1978)                   +
-'      originally built by: HiRez00 & Apophis  in 2023     +
-' ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ +
-' Teisen ajustments:                                       +
-' * Replaced some PF inserts                               +
-' * Adjusted the lighting to a less white                  +
-' * Adjusted the fixed targets with transparency           +
-' * Adjusted the drop targets with transparency            +
-' * Changed the upper arch wire and metal adjustments      +
-' * Adjusted the materials and several small adjustments   +
+'         New VPX 10.7 Build by: HiRez00 & Apophis         +
 '                                                          +
-' DGrimmReaper:                                            +
-' * All the VR assets                                      +
-'                                                          +
-' HauntFreaks:                                             +
-' * Small adjustments                                      +
 '+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Option Explicit
@@ -130,23 +117,6 @@ Else
     Primitive13.visible=0
 End if
 
-'----- VR Room Auto-Detect -----
-Const VRTest = 0
-Dim VRRoom, VR_Obj, VRMode
-
-If RenderingMode = 2 or VRTest = 1 Then
-    Ramp16.visible=0
-    Ramp15.visible=0
-    Primitive13.visible=0
-	VRMode = True
-	For Each VR_Obj in VRCabinet : VR_Obj.Visible = 1 : Next
-	For Each VR_Obj in VRMinimalRoom : VR_Obj.Visible = 1 : Next
-Else
-	VRMode = False
-	For Each VR_Obj in VRCabinet : VR_Obj.Visible = 0 : Next
-	For Each VR_Obj in VRMinimalRoom : VR_Obj.Visible = 0 : Next
-End If
-
 Set LampCallback		= GetRef("UpdateMultipleLamps")
 
 
@@ -168,8 +138,6 @@ Sub FrameTimer_Timer() 'The frame timer interval should be -1, so executes at th
 	InitFrameTime = gametime	'Count frametime
 	FlipperVisualUpdate		 'update flipper shadows and primitives
 	If DynamicBallShadowsOn Or AmbientBallShadowOn Then DynamicBSUpdate 'update ball shadows
-	If VRMode Then VRdisplaytimer
-	If DesktopMode Then DTdisplaytimer
 End Sub
 
 
@@ -334,8 +302,6 @@ Sub Table1_Init
 		xx.visible = False
 	Next
 
-	If VRMode Then setup_backglass
-
 End Sub
 
 
@@ -349,35 +315,7 @@ End Sub
 'Plunger code
 '**********************************************************************************************************
 
-Sub TimerPlunger_Timer
-  If VR_Primary_plunger.Y < 2233 then
-  		VR_Primary_plunger.Y = VR_Primary_plunger.Y + 5
-  End If
-End Sub
-
-Sub TimerPlunger2_Timer
- 'debug.print plunger.position
-  VR_Primary_plunger.Y = 2098 + (5* Plunger.Position) -20
-End Sub
-
 Sub Table1_KeyDown(ByVal KeyCode)
-
-	If KeyCode = PlungerKey Then
-		TimerPlunger.Enabled = True
-		TimerPlunger2.Enabled = False
-		VR_Primary_plunger.Y = 2098
-	End If
-
-	If keycode = LeftFlipperKey Then 
-		VRFlipperButtonLeft.X = VRFlipperButtonLeft.X +6
-	End If
-
-	If keycode = RightFlipperKey Then
-		VRFlipperButtonRight.X = VRFlipperButtonRight.X -6
-	End if
-	If Keycode = StartGameKey Then	
-		VR_StartButton.y = VR_StartButton.y -5
-	End If
 
 	If keycode = LeftFlipperKey and DMDMenuON=1 then DMDMenuSelect
 	If keycode = RightFlipperKey and DMDMenuON=1 then DMDMenu
@@ -425,25 +363,6 @@ Sub Table1_KeyDown(ByVal KeyCode)
 End Sub
 
 Sub Table1_KeyUp(ByVal KeyCode)
-
-	If Keycode = StartGameKey Then		
-		VR_StartButton.y = VR_StartButton.y +5
-	End If
-	If keycode = PlungerKey Then 
-		Plunger.Fire:PlaySound"plunger"
-		TimerPlunger.Enabled = False
-		TimerPlunger2.Enabled = True
-		VR_Primary_plunger.Y = 2098
-	End If
-
-	If keycode = LeftFlipperKey Then 
-		VRFlipperButtonLeft.X = VRFlipperButtonLeft.X -6
-	End If
-
-	If keycode = RightFlipperKey Then
-		VRFlipperButtonRight.X = VRFlipperButtonRight.X +6
-	End If
-
 	If keycode = LeftFlipperKey Then FlipperDeActivate LeftFlipper, LFPress
 	If keycode = RightFlipperKey Then FlipperDeActivate RightFlipper, RFPress
     If keycode = LeftMagnaSave Then bLutActive = False
@@ -622,7 +541,7 @@ Set Digits(29) = e1
 Set Digits(30) = e2
 Set Digits(31) = e3
 
-Sub DTDisplayTimer
+Sub LedTimer_Timer()
     On Error Resume Next
     Dim ChgLED, ii, jj, chg, stat
     ChgLED = Controller.ChangedLEDs(&HFF, &HFFFF)
@@ -760,25 +679,6 @@ Sub UpdateMultipleLamps
         DT_Ball.visible=True
 	End If
    End If
-
-	If VRMode = True Then
-		If Controller.Lamp(11) = 0 Then: BGL11.visible=0: else: BGL11.visible=1 'Shoot Again
-		If Controller.Lamp(13) = 0 Then: BGLit.visible=0: else: BGLit.visible=1 'Lit
-		If Controller.Lamp(14) = 0 Then: BGL14.visible=0: else: BGL14.visible=1 '1 Player
-		If Controller.Lamp(15) = 0 Then: BGL15.visible=0: else: BGL15.visible=1 'P1
-		If Controller.Lamp(27) = 0 Then: BGL27.visible=0: else: BGL27.visible=1 'Match
-		If Controller.Lamp(29) = 0 Then: BGL29.visible=0: else: BGL29.visible=1 'High Score to Date
-		If Controller.Lamp(30) = 0 Then: BGL30.visible=0: else: BGL30.visible=1  '2 Players
-		If Controller.Lamp(31) = 0 Then: BGL31.visible=0: else: BGL31.visible=1 'P2
-		If Controller.Lamp(45) = 0 Then: BGL45.visible=0: else: BGL45.visible=1 'Game Over
-		If Controller.Lamp(45) = 0 Then: BGIL45.visible=1: else: BGIL45.visible=0 'BIP
-		If Controller.Lamp(46) = 0 Then: BGL46.visible=0: else: BGL46.visible=1 '3 Players
-		If Controller.Lamp(47) = 0 Then: BGL47.visible=0: else: BGL47.visible=1 'P3
-		If Controller.Lamp(61) = 0 Then: BGL61.visible=0: else: BGL61.visible=1 'Tilt
-		If Controller.Lamp(62) = 0 Then: BGL62.visible=0: else: BGL62.visible=1 '4 Players
-		If Controller.Lamp(63) = 0 Then: BGL63.visible=0: else: BGL63.visible=1 'P4
-	End If
-
  End Sub
 
 
@@ -2192,11 +2092,11 @@ Dim DT1, DT2, DT3, DT4, DT5
 '				   Values for animate: 1 - bend target (hit to primary), 2 - drop target (hit to secondary), 3 - brick target (high velocity hit to secondary), -1 - raise target 
 '   isDropped:  Boolean which determines whether a drop target is dropped. Set to false if they are initially raised, true if initially dropped.
 
-Set DT1 = (New DropTarget).init(sw1, sw1a, sw1p, 1, 0, False)
-Set DT2 = (New DropTarget).init(sw2, sw2a, sw2p, 2, 0, False)
-Set DT3 = (New DropTarget).init(sw3, sw3a, sw3p, 3, 0, False)
-Set DT4 = (New DropTarget).init(sw4, sw4a, sw4p, 4, 0, False)
-Set DT5 = (New DropTarget).init(sw5, sw5a, sw5p, 5, 0, False)
+Set DT1 = (new DropTarget)(sw1, sw1a, sw1p, 1, 0, False)
+Set DT2 = (new DropTarget)(sw2, sw2a, sw2p, 2, 0, False)
+Set DT3 = (new DropTarget)(sw3, sw3a, sw3p, 3, 0, False)
+Set DT4 = (new DropTarget)(sw4, sw4a, sw4p, 4, 0, False)
+Set DT5 = (new DropTarget)(sw5, sw5a, sw5p, 5, 0, False)
 
 Dim DTArray
 DTArray = Array(DT1, DT2, DT3, DT4, DT5)
@@ -3706,9 +3606,9 @@ End Sub
 '******************************************************
 
 Sub colorgi
-	If colornow=1 Then Dim x:For each x in GI_a:x.color=RGB(255,170,85):x.intensity=4: Next: For each x in GI_b:x.color=RGB(255,204,153):x.intensity=50: gi032.intensity=10: gi033.intensity=10: gi034.intensity=10: GI_Bumper_1.intensity=100: GI_Bumper_1a.intensity=5: GI_Bumper_2.intensity=100: GI_Bumper_2a.intensity=5: GI_Bumper_3.intensity=100: GI_Bumper_3a.intensity=5: Next: Exit Sub
-    If colornow=2 Then Dim z:For each z in GI_a:z.color=RGB(255,102,204):z.intensity=4: Next: For each z in GI_b:z.color=RGB(255,102,204):z.intensity=50: gi032.intensity=10: gi033.intensity=10: gi034.intensity=10: GI_Bumper_1.intensity=100: GI_Bumper_1a.intensity=5: GI_Bumper_2.intensity=100: GI_Bumper_2a.intensity=5: GI_Bumper_3.intensity=100: GI_Bumper_3a.intensity=5: Next: Exit Sub
-    If colornow=3 Then Dim y:For each y in GI_a:y.color=RGB(255,255,255):y.intensity=4: Next: For each y in GI_b:y.color=RGB(255,255,255):y.intensity=50: gi032.intensity=10: gi033.intensity=10: gi034.intensity=10: GI_Bumper_1.intensity=100: GI_Bumper_1a.intensity=5: GI_Bumper_2.intensity=100: GI_Bumper_2a.intensity=5: GI_Bumper_3.intensity=100: GI_Bumper_3a.intensity=5: Next
+	If colornow=1 Then Dim x:For each x in GI_a:x.color=RGB(255,204,153):x.intensity=4: Next: For each x in GI_b:x.color=RGB(255,204,153):x.intensity=50: gi032.intensity=10: gi033.intensity=10: gi034.intensity=10: GI_Bumper_1.intensity=40: GI_Bumper_2.intensity=40: GI_Bumper_3.intensity=40: Next: Exit Sub
+    If colornow=2 Then Dim z:For each z in GI_a:z.color=RGB(255,102,204):z.intensity=4: Next: For each z in GI_b:z.color=RGB(255,102,204):z.intensity=50: gi032.intensity=10: gi033.intensity=10: gi034.intensity=10: GI_Bumper_1.intensity=40: GI_Bumper_2.intensity=40: GI_Bumper_3.intensity=40: Next: Exit Sub
+    If colornow=3 Then Dim y:For each y in GI_a:y.color=RGB(255,255,255):y.intensity=4: Next: For each y in GI_b:y.color=RGB(255,255,255):y.intensity=50: gi032.intensity=10: gi033.intensity=10: gi034.intensity=10: GI_Bumper_1.intensity=40: GI_Bumper_2.intensity=40: GI_Bumper_3.intensity=40: Next
 End Sub
 
 '******************************************************
@@ -3918,210 +3818,4 @@ Sub CloseDMDMenu
      Select_Box.imageA=""
 End Sub
 
-'******************************
-' Setup Backglass
-'******************************
 
-Dim xoff,yoff1, yoff2, yoff3, yoff4, yoff5,zoff,xrot,zscale, xcen,ycen
-
-Sub setup_backglass()
-
-	xoff = -20
-	yoff1 = 116 ' this is where you adjust the forward/backward position for player 1 score
-	yoff2 = 116 ' this is where you adjust the forward/backward position for player 2 score
-	yoff3 = 101 ' this is where you adjust the forward/backward position for player 3 score
-	yoff4 = 101 ' this is where you adjust the forward/backward position for player 4 score
-	yoff5 = 116 ' this is where you adjust the forward/backward position for credits and ball in play
-	zoff = 699
-	xrot = -90
-
-	center_digits()
-
-end sub
-
-Sub center_digits()
-	Dim ix, xx, yy, yfact, xfact, xobj
-
-	zscale = 0.0000001
-
-	xcen = (130 /2) - (92 / 2)
-	ycen = (780 /2 ) + (203 /2)
-
-	for ix = 0 to 6
-		For Each xobj In VRDigits(ix)
-
-			xx = xobj.x  
-				
-			xobj.x = (xoff - xcen) + xx
-			yy = xobj.y ' get the yoffset before it is changed
-			xobj.y = yoff1 
-
-			If (yy < 0.) then
-				yy = yy * -1
-			end if
-
-			xobj.height = (zoff - ycen) + yy - (yy * (zscale))
-			xobj.rotx = xrot
-		Next
-	Next
-
-	for ix = 7 to 13
-		For Each xobj In VRDigits(ix)
-
-			xx = xobj.x  
-				
-			xobj.x = (xoff - xcen) + xx
-			yy = xobj.y ' get the yoffset before it is changed
-			xobj.y = yoff2 
-
-			If (yy < 0.) then
-				yy = yy * -1
-			end if
-
-			xobj.height = (zoff - ycen) + yy - (yy * (zscale))
-			xobj.rotx = xrot
-		Next
-	Next
-
-	for ix = 14 to 20
-		For Each xobj In VRDigits(ix)
-
-			xx = xobj.x  
-				
-			xobj.x = (xoff - xcen) + xx
-			yy = xobj.y ' get the yoffset before it is changed
-			xobj.y = yoff3 
-
-			If (yy < 0.) then
-				yy = yy * -1
-			end if
-
-			xobj.height = (zoff - ycen) + yy - (yy * (zscale))
-			xobj.rotx = xrot
-		Next
-	Next
-
-	for ix = 21 to 27
-		For Each xobj In VRDigits(ix)
-
-			xx = xobj.x  
-				
-			xobj.x = (xoff - xcen) + xx
-			yy = xobj.y ' get the yoffset before it is changed
-			xobj.y = yoff4 
-
-			If (yy < 0.) then
-				yy = yy * -1
-			end if
-
-			xobj.height = (zoff - ycen) + yy - (yy * (zscale))
-			xobj.rotx = xrot
-		Next
-	Next
-
-	for ix = 28 to 31
-		For Each xobj In VRDigits(ix)
-
-			xx = xobj.x  
-				
-			xobj.x = (xoff - xcen) + xx
-			yy = xobj.y ' get the yoffset before it is changed
-			xobj.y = yoff5 
-
-			If (yy < 0.) then
-				yy = yy * -1
-			end if
-
-			xobj.height = (zoff - ycen) + yy - (yy * (zscale))
-			xobj.rotx = xrot
-		Next
-	Next
-end sub
-
-Dim VRDigits(32)
-VRDigits(0) = Array(LED1x0,LED1x1,LED1x2,LED1x3,LED1x4,LED1x5,LED1x6)
-VRDigits(1) = Array(LED2x0,LED2x1,LED2x2,LED2x3,LED2x4,LED2x5,LED2x6)
-VRDigits(2) = Array(LED3x0,LED3x1,LED3x2,LED3x3,LED3x4,LED3x5,LED3x6)
-VRDigits(3) = Array(LED4x0,LED4x1,LED4x2,LED4x3,LED4x4,LED4x5,LED4x6)
-VRDigits(4) = Array(LED5x0,LED5x1,LED5x2,LED5x3,LED5x4,LED5x5,LED5x6)
-VRDigits(5) = Array(LED6x0,LED6x1,LED6x2,LED6x3,LED6x4,LED6x5,LED6x6)
-VRDigits(6) = Array(LED7x0,LED7x1,LED7x2,LED7x3,LED7x4,LED7x5,LED7x6)
-
-VRDigits(7) = Array(LED8x0,LED8x1,LED8x2,LED8x3,LED8x4,LED8x5,LED8x6)
-VRDigits(8) = Array(LED9x0,LED9x1,LED9x2,LED9x3,LED9x4,LED9x5,LED9x6)
-VRDigits(9) = Array(LED10x0,LED10x1,LED10x2,LED10x3,LED10x4,LED10x5,LED10x6)
-VRDigits(10) = Array(LED11x0,LED11x1,LED11x2,LED11x3,LED11x4,LED11x5,LED11x6)
-VRDigits(11) = Array(LED12x0,LED12x1,LED12x2,LED12x3,LED12x4,LED12x5,LED12x6)
-VRDigits(12) = Array(LED13x0,LED13x1,LED13x2,LED13x3,LED13x4,LED13x5,LED13x6)
-VRDigits(13) = Array(LED14x0,LED14x1,LED14x2,LED14x3,LED14x4,LED14x5,LED14x6)
-
-VRDigits(14) = Array(LED1x000,LED1x001,LED1x002,LED1x003,LED1x004,LED1x005,LED1x006)
-VRDigits(15) = Array(LED1x100,LED1x101,LED1x102,LED1x103,LED1x104,LED1x105,LED1x106)
-VRDigits(16) = Array(LED1x200,LED1x201,LED1x202,LED1x203,LED1x204,LED1x205,LED1x206)
-VRDigits(17) = Array(LED1x300,LED1x301,LED1x302,LED1x303,LED1x304,LED1x305,LED1x306)
-VRDigits(18) = Array(LED1x400,LED1x401,LED1x402,LED1x403,LED1x404,LED1x405,LED1x406)
-VRDigits(19) = Array(LED1x500,LED1x501,LED1x502,LED1x503,LED1x504,LED1x505,LED1x506)
-VRDigits(20) = Array(LED1x600,LED1x601,LED1x602,LED1x603,LED1x604,LED1x605,LED1x606)
-
-VRDigits(21) = Array(LED2x000,LED2x001,LED2x002,LED2x003,LED2x004,LED2x005,LED2x006)
-VRDigits(22) = Array(LED2x100,LED2x101,LED2x102,LED2x103,LED2x104,LED2x105,LED2x106)
-VRDigits(23) = Array(LED2x200,LED2x201,LED2x202,LED2x203,LED2x204,LED2x205,LED2x206)
-VRDigits(24) = Array(LED2x300,LED2x301,LED2x302,LED2x303,LED2x304,LED2x305,LED2x306)
-VRDigits(25) = Array(LED2x400,LED2x401,LED2x402,LED2x403,LED2x404,LED2x405,LED2x406)
-VRDigits(26) = Array(LED2x500,LED2x501,LED2x502,LED2x503,LED2x504,LED2x505,LED2x506)
-VRDigits(27) = Array(LED2x600,LED2x601,LED2x602,LED2x603,LED2x604,LED2x605,LED2x606)
-
-
-VRDigits(28) = Array(LEDax300,LEDax301,LEDax302,LEDax303,LEDax304,LEDax305,LEDax306)
-VRDigits(29) = Array(LEDbx400,LEDbx401,LEDbx402,LEDbx403,LEDbx404,LEDbx405,LEDbx406)
-VRDigits(30) = Array(LEDcx500,LEDcx501,LEDcx502,LEDcx503,LEDcx504,LEDcx505,LEDcx506)
-VRDigits(31) = Array(LEDdx600,LEDdx601,LEDdx602,LEDdx603,LEDdx604,LEDdx605,LEDdx606)
-
-dim DisplayColor
-
-DisplayColor =  RGB(255,40,1)
-
-Sub VRDisplayTimer
-    Dim ChgLED, ii, jj, num, chg, stat, obj, b, x
-    ChgLED=Controller.ChangedLEDs(&Hffffffff, &Hffffffff)
-    If Not IsEmpty(ChgLED)Then
-       For ii=0 To UBound(chgLED)
-          num=chgLED(ii, 0) : chg=chgLED(ii, 1) : stat=chgLED(ii, 2)
-			if (num < 32) then
-              For Each obj In VRDigits(num)
-'                   If chg And 1 Then obj.visible=stat And 1
-				   If chg And 1 Then FadeDisplay obj, stat And 1	
-                   chg=chg\2 : stat=stat\2
-              Next
-			Else
-			       end if
-        Next
-    End If
- End Sub
-
-Sub FadeDisplay(object, onoff)
-	If OnOff = 1 Then
-		object.color = DisplayColor
-		Object.Opacity = 12
-	Else
-		Object.Color = RGB(1,1,1)
-		Object.Opacity = 8
-	End If
-End Sub
-
-
-Sub InitDigits()
-	dim tmp, x, obj
-	for x = 0 to uBound(VRDigits)
-		if IsArray(VRDigits(x) ) then
-			For each obj in VRDigits(x)
-				obj.height = obj.height + 18
-				FadeDisplay obj, 0
-			next
-		end If
-	Next
-End Sub
-
-If VRMode Then
-	InitDigits
-End If

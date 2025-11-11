@@ -1,0 +1,18 @@
+---
+applyFixes:
+  - "bass"
+backglassBundled: true
+backglassChecksum: "40C4BAEFC422C340EA52F66A638607C5"
+backglassNotes: "Download 'Playboy (Bally 1978) B2S.zip', use 'Playboy (Bally 1978) 4.0.directB2S'"
+fps: 52
+romChecksum: "90810C525E3B78EA87EBBFA7D54228C1"
+romNotes: "Download playboyb.zip"
+romVPSId: "vReHOmteHm"
+tableNameOverride: "Playboy (Bally 1978) Definitive Edition"
+tableNotes: "Download 'Playboy (Bally 1978) VPX Table.zip'. use 'Playboy (Bally 1978) 4.0.vpx'"
+tableVPSId: "4TmYoWjO"
+testers:
+  - "Wraith"
+  - "CoffeeAtJoes"
+vpxChecksum: "828BA312735FC19DF9CCAE6551FCFC45"
+vpxVPSId: "QTmGXiYi"
