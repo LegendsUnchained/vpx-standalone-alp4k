@@ -190,7 +190,7 @@ Links to these products on Amazon are through affiliate links.
 | [Mach 2.0 Two (Spinball S.A.L. 1995)](external/vpx-machtwo) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Mary Shelley's Frankenstein (Sega 1995)](external/vpx-maryshelleyfrank) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Mata Hari (Bally 1978)](external/vpx-matahari) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
-| [Medieval Madness (Williams 1997)](external/vpx-mm) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 40 |
+| [Medieval Madness (Williams 1997)](external/vpx-mm) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 51 |
 | [Megadeth (Original 2023)](external/vpx-megadeth) | :white_check_mark: | :white_check_mark: | :x: | :x: | 52 |
 | [Meteor (Taito do Brasil 1979)](external/vpx-meteort) | :white_check_mark: | :x: | :white_check_mark: | :x: | 58 |
 | [Mighty Morphin Power Rangers (Original 2024)](external/vpx-powerrangers) | :white_check_mark: | :white_check_mark: | :x: | :x: | 45 |
