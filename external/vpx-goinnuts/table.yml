@@ -1,0 +1,17 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "60A44115C8D99325F1063129F66C6574"
+backglassNotes: "Download version 3.1.0"
+backglassVPSId: "A2Z4hwTR"
+fps: 60
+romChecksum: "177A9DEE09250643E5024481ABF1C5F2"
+romNotes: "Download 'goinnuts.zip'"
+romUrlOverride: "https://vpuniverse.com/files/file/969-goinnutszip/"
+romVersionOverride: "goinnuts"
+tableNotes: "Download version 2.0.0"
+tableVPSId: "F898-Sq-"
+testers:
+  - "evilwraith"
+vpxChecksum: "0D4346338474854C1910BC203201AF69"
+vpxVPSId: "HpvVv4ON"
