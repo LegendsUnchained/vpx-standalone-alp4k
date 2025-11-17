@@ -1,6 +1,6 @@
-# Playboy (Bally 1978) Definitive Edition Nude (Bally 1978)
+# Jacks Open (Gottlieb 1977)
 
-![Table Preview](../../images/vpx-playboy1978.png)
+![Table Preview](../../images/B6zfjYU4Iv-preview.webp)
 
 <br>
 
@@ -8,13 +8,13 @@
 
 | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |-----------|-----|-----|-----|-----|
-| ✅ | ✅ | ✅ | ❌ | 52 |
+| ✅ | ❌ | ❌ | ❌ | 60 |
 
 <br>
 
 **VPXS 4KP Testers:**
-  - Wraith
-  - CoffeeAtJoes
+  - evilwraith
+  - pointdablame
 
 <br>
 
@@ -33,7 +33,7 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`Playboy (Bally 1978) Definitive Edition Nude (Bally 1978)`**
+4.  Find and select this table from the dropdown menu: **`Jacks Open (Gottlieb 1977)`**
 5.  Follow the on-screen instructions to download and upload the required files
 6. *""*
 
