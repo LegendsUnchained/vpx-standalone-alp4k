@@ -1,8 +1,41 @@
-' ****************************************************************
+' ***************************************************************
 '             VISUAL PINBALL X script for 10.7 and lateriser
 '                Willow Script MARTY & JPSalas
 '                          Version 3.0
 ' ****************************************************************
+
+'DOF Solenoid
+'101 Left Flipper
+'102 Right Flipper
+'103 Left Slingshot
+'104 Right Slingshot
+'105 
+'106 
+'107 Bumper Left
+'108 Bumper Right
+'109 Bumper Center
+'110 ReleaseLockedBall
+'111 sub Timerkael_timer
+'112 Kbumper1.kicker
+'113 
+'114 
+'115 
+'116 
+'117 PlungerIM.AutoFire
+'118 
+'119 PyramidExit
+'120 
+'121 
+'122 Knocker
+'123 BallRelease
+'124 
+'125 
+'126 
+'127 
+'128 
+'129 
+'130 
+'137 KsaveR.kick
 
 
 Option Explicit
@@ -42,8 +75,8 @@ Dim usePUP: Dim cPuPPack: Dim PuPlayer: Dim PUPStatus: PUPStatus=false ' dont ed
 
 '*************************** PuP Settings for this table ********************************
 
-usePUP   = False               ' enable Pinup Player functions for this table
-cPuPPack = "willow"    ' name of the PuP-Pack / PuPVideos folder for this table
+usePUP   = False              ' enable Pinup Player functions for this table
+cPuPPack = "willowpup"    ' name of the PuP-Pack / PuPVideos folder for this table
 
 '//////////////////// PINUP PLAYER: STARTUP & CONTROL SECTION //////////////////////////
 
@@ -96,12 +129,12 @@ dim spinner
 Const FlexDMDHighQuality = True
 
 ' Define any Constants
-Const cGameName = "willow"
+Const cGameName = "willowpup"
 Const myVersion = ""
 Const MaxPlayers = 1     ' from 1 to 4
 Const BallSaverTime = 20 ' in seconds
 Const MaxMultiplier = 5  ' limit to 5x in this game, both bonus multiplier and playfield multiplier
-Const BallsPerGame = 3   ' usually 3 or 5
+Const BallsPerGame = 5   ' usually 3 or 5
 Const MaxMultiballs = 5  ' max number of balls during multiballs
 
 ' Use FlexDMD if in FS mode
@@ -444,6 +477,7 @@ end sub
 sub Timersaveball_timer
 	Timersaveball.enabled=0
 	KsaveR.kick 0, 50
+    DOF 137, DOFPulse
     Lightsave.state = 0
     Lightsave1.state = 0
     Tclosesave.enabled = 1
@@ -462,6 +496,7 @@ End Sub
 
 Sub RiseRamp
     MetalRamp_Flipper.RotateToEnd 
+    DOF 151, DOFPulse
     Ramp1.Collidable = 1
     RcrocoUP.Collidable = 0
     RcrocoUP1.Collidable = 0
@@ -473,6 +508,7 @@ End Sub
 
 Sub LowerRamp
     MetalRamp_Flipper.RotateToStart
+    DOF 152, DOFPulse
     Ramp1.Collidable = 0
     RcrocoUP.Collidable = 0
     RcrocoUP1.Collidable = 0
@@ -481,6 +517,7 @@ End Sub
 
 Sub RiseRamp1
     MetalRamp_Flipper1.RotateToEnd 
+    DOF 153, DOFPulse
     'Ramphouse.Collidable = 1
     'Ramphouse1.Collidable = 0
     bRampIsUp1 = True
@@ -488,6 +525,7 @@ End Sub
 
 Sub LowerRamp1
     MetalRamp_Flipper1.RotateToStart
+    DOF 154, DOFPulse
     'Ramphouse.Collidable = 0
     'Ramphouse.Collidable = 0
     bRampIsUp1 = False
@@ -512,6 +550,7 @@ end sub
 
 sub Timerbump_timer
 	Kbumper1.kick 90, 5
+    DOF 112, DOFPulse
     PlaySound ""
     Timerbump.Enabled = 0
 end sub
@@ -559,6 +598,7 @@ end sub
 
 sub Timerkael_timer
 	Kexitramp.kick 160, 10
+    DOF 111, DOFPulse
     PlaySound ""
     Timerkael.Enabled = 0
     Texitramp.Enabled = 1
@@ -580,7 +620,7 @@ Sub Table1_Init()
     LoadEM
     Dim i
     Randomize
-
+    
 	'CaptiveKick.createball
 	'CaptiveKick.kick 0,0
 
@@ -598,7 +638,6 @@ Sub Table1_Init()
         .CreateEvents "plungerIM"
     End With
 
-	plungerIM.Strength = 75					   
     Set cbRight = New cvpmCaptiveBall
     With cbRight
         .InitCaptive CapTrigger1, CapWall1, Array(CapKicker1, CapKicker1a), 0
@@ -662,6 +701,9 @@ Sub Table1_Init()
     ' Load table color
     LoadLut
 	Glowball_Init 'Start Glowballs
+    
+    StartWillAnimation
+
 End Sub
 
 '******************
@@ -3867,7 +3909,7 @@ End Sub
 
 Sub Bumper1_Hit
     If NOT Tilted Then
-        PlaySoundAt SoundFXDOF("fx_bumper", 109, DOFPulse, DOFContactors), Bumper1
+        PlaySoundAt SoundFXDOF("fx_bumper", 107, DOFPulse, DOFContactors), Bumper1
         DOF 138, DOFPulse
         FlashForMs FbumpD, 500, 50, 0
         FlashForMs FbumpG, 500, 50, 0
@@ -3889,7 +3931,7 @@ End Sub
 
 Sub Bumper2_Hit
     If NOT Tilted Then
-        PlaySoundAt SoundFXDOF("fx_bumper", 109, DOFPulse, DOFContactors), Bumper1
+        PlaySoundAt SoundFXDOF("fx_bumper", 108, DOFPulse, DOFContactors), Bumper1
         DOF 138, DOFPulse
         FlashForMs FbumpD, 500, 50, 0
         FlashForMs FbumpG, 500, 50, 0
@@ -4324,7 +4366,7 @@ Sub spinner1_Spin
     If Tilted Then Exit Sub
     Addscore spinnervalue(CurrentPlayer)
     PlaySoundAt "fx_spinner", spinner1
-    'DOF 136, DOFPulse
+    DOF 136, DOFPulse
     Select Case Battle(CurrentPlayer, 0)
         Case 1
             Addscore 3000
@@ -4336,7 +4378,7 @@ End Sub
 Sub spinner2_Spin
     If Tilted Then Exit Sub
     PlaySoundAt "fx_spinner", spinner2
-    'DOF 124, DOFPulse
+    DOF 124, DOFPulse
     Addscore spinnervalue(CurrentPlayer)
     Select Case Battle(CurrentPlayer, 0)
         Case 1
@@ -4349,7 +4391,7 @@ End Sub
 Sub spinner3_Spin
     If Tilted Then Exit Sub
     PlaySoundAt "fx_spinner", spinner2
-    'DOF 124, DOFPulse
+    DOF 124, DOFPulse
     Addscore spinnervalue(CurrentPlayer)
     Select Case Battle(CurrentPlayer, 0)
         Case 1
@@ -4503,6 +4545,7 @@ Sub ReleaseLockedBall 'release locked ball
     'lockpost.isdropped = 1:PlaySoundAt SoundFXDOF("fx_solenoid", 142, DOFPulse, DOFContactors), lock
     DOF 121, DOFPulse
     lock.kick 200, 12
+    DOF 110, DOFPulse
     PlaySoundAt "fx_clock", lock
     FlashForMs f10, 1000, 50, 0
     FlashForMs f10a, 1000, 50, 0
@@ -5714,3 +5757,84 @@ Sub holotimer_timer
     night.imageA = "night" &i2
     i2 = (i2 + 1) MOD 10   
 End Sub
+
+
+
+'Moster Animation ZandysArcade-----------
+
+'==========================================
+' EXTRA 3D SWAY (optional gentle rotation)
+'==========================================
+
+Dim MyPl, SwayStep, SwayDir
+MyPl = Round(4 * Atn(1), 6) / 90
+SwayStep = 0
+
+Sub Sways_Timer()
+    SwayDir = Sin(SwayStep * MyPl)
+    SwayStep = (SwayStep + 1) Mod 360
+
+    Dim rotY : rotY = SwayDir * 2   ' sway intensity
+
+    wil001.RotY = rotY
+    wil002.RotY = rotY
+    wil003.RotY = rotY
+    wil004.RotY = rotY
+    wil005.RotY = rotY
+    wil006.RotY = rotY
+    wil007.RotY = rotY
+    wil008.RotY = rotY
+End Sub
+
+'====================================
+' SERPENT HEADS — 8-FRAME VISIBILITY LOOP (Continuous)
+'====================================
+
+Dim CountrWil
+
+Sub WillTimer_Timer()
+    '--- Frame counter ---
+    CountrWil = CountrWil + 1 : If CountrWil > 8 Then CountrWil = 1 : End If
+
+    '--- Hide all frames first ---
+    wil001.Visible = False
+    wil002.Visible = False
+    wil003.Visible = False
+    wil004.Visible = False
+    wil005.Visible = False
+    wil006.Visible = False
+    wil007.Visible = False
+    wil008.Visible = False
+
+    '--- Show the active frame ---
+    Select Case CountrWil
+        Case 1: wil001.Visible = True
+        Case 2: wil002.Visible = True
+        Case 3: wil003.Visible = True
+        Case 4: wil004.Visible = True
+        Case 5: wil005.Visible = True
+        Case 6: wil006.Visible = True
+        Case 7: wil007.Visible = True
+        Case 8: wil008.Visible = True
+    End Select
+End Sub
+
+
+'------------------------------------
+' Stop the animation (kept but commented)
+'------------------------------------
+Sub WillTimerStop_Timer()
+    'WillTimer.Enabled = False
+    'CountrWil = 0
+End Sub
+
+
+'------------------------------------
+' Start continuous animation
+'------------------------------------
+Sub StartWillAnimation()
+    CountrWil = 0
+    WillTimer.Interval = 200  ' smaller = faster animation (try 200–250)
+    WillTimer.Enabled = True
+End Sub
+
