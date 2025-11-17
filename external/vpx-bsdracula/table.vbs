@@ -85,9 +85,9 @@ Dim mMagnet, dtLDrop, bsCastleLock, x, bumper1, bumper2, bumper3, plungerIM
 On Error Resume Next
 Dim i
 For i=0 To 127
-  If IsObject(eval("L" & i)) Then
+    If IsObject(eval("L" & i)) Then
     Execute "Set Lights(" & i & ")  = L" & i
-  End If
+    End If
 Next
  
 Lights(58)=Array(L58,L58A)
