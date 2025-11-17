@@ -7,7 +7,7 @@ romVPSId: "Pk5H-8Qj"
 romChecksum: "21BF5D6129C271193F25900DD3E9F7EC"
 romNotes: "Download 'spaceinb.zip'"
 tableVPSId: "0JuaX_LC"
-tableNotes: "Download v55_VPX8.zip"
+tableNotes: "Download 'Space Invaders (Bally 1980) v600.vpx'"
 tagline: >- 
   Bally was sued over the game's artwork
   resemblance to designs by H. R. Giger.
@@ -18,6 +18,6 @@ testers:
   - "OminousOsie"
   - "CoffeeAtJoes"
 vpxVPSId: "uvNi1DbR"
-vpxChecksum: "B8E0B2B5B556EFCB520A1A8A25CAA5EC"
+vpxChecksum: "6DFDD15952079F5E8388559C5E429214"
 applyFixes:
   - "bass"

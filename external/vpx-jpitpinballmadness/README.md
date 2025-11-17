@@ -3,7 +3,7 @@
 ![Table Preview](../../images/vpx-itpinballmadness.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?s=543a5ca562cc33a89debe8ace8834f1e&showuser=277)  
-Version: 55_VPX8  
+Version: v600_VPX8  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=16880)
 
 DirectB2S  
