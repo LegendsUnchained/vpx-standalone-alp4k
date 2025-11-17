@@ -1,0 +1,19 @@
+# Main dependencies
+pygithub==2.8.1
+requests==2.32.5
+PyYAML==6.0.2
+GitPython==3.1.45
+
+# Sub-dependencies (usually installed automatically, but listed for completeness)
+PyNaCl>=1.4.0
+PyJWT>=2.4.0
+typing-extensions>=4.5.0
+urllib3>=1.26.0
+charset-normalizer>=2,<4
+idna>=2.5,<4
+certifi>=2017.4.17
+gitdb>=4.0.1,<5
+smmap>=3.0.1,<6
+cryptography>=3.4.0
+cffi>=2.0.0
+pycparser
