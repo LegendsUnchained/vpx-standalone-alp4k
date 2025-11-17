@@ -1,38 +1,60 @@
-﻿# Hollywood Heat (Gottlieb 1986)
+# Hollywood Heat (Gottlieb 1986)
 
-![Table Preview](../../images/vpx-hollywoodheat.jpg)
+![Table Preview](../../images/D1hAJ8aRwV-preview.webp)
 
-Author(s): [BorgDog](https://vpuniverse.com/profile/5088-borgdog/)  
-Version:  2115183029_HollywoodHeat(Gottlieb1986) 1.0  
-Download:  [VP Universe](https://vpuniverse.com/files/file/6299-hollywood-heat-gottlieb-1986/)
+<br>
 
-DirectB2S
+## *️⃣  Table Statistics
 
-Authors: [Walterwhite](https://vpuniverse.com/profile/17464-walterwhite/)  
-Version: Hollywood Heat 3 Screen Full DMD 1.0.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/11052-hollywood-heat-3-screen-full-dmd/)
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ✅ | ✅ | ❌ | 60 |
 
-ROM: hlywoodh
+<br>
 
-Authors: [Rock-ola](https://pinballnirvana.com/forums/members/rock-ola.1/)  
-Version: hlywoodh.zip  
-Download: [Pinball Nirvana](https://pinballnirvana.com/forums/resources/hlywoodh.1942/)
+**VPXS 4KP Testers:**
+  - Wraith
 
-Tested by:  
-[CoffeeAtJoes]
+<br>
 
-## Status 
+---
 
-Minimum VPX Standalone build: 10.8.0-1983-b84441e
+<br>
 
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 45 |
+## ❇️ Available in the Wizard! 🪄✨
 
-## Instructions
+<br>
 
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more information found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
-- "The Heat is on!"
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
 
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Hollywood Heat (Gottlieb 1986)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"'The heat is on'"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
