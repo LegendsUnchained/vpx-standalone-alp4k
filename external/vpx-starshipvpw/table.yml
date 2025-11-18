@@ -1,0 +1,20 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "8417e975fab9300a2217c635ff1fd3f4"
+backglassNotes: "Starship Troopers (Sega 1996) full dmd.directb2s"
+backglassVPSId: "fx1kFVe7Be"
+fps: 52
+mainNotes: "Starship Troopers VPinWorkshop edition. Enabled for PuP Pack."
+romChecksum: "ac756e2ab3643c1743b53ef6e51dfafe"
+romVPSId: "CwAwf-gs"
+tableNameOverride: "Starship Troopers VPW (Sega 1997)"
+tableNotes: "Starship Troopers (Sega 1997) v2.1.1.vpx"
+tableVPSId: "JU4EAhCe"
+tagline: "Would you like to know more?"
+testers:
+  - "Bla1ze"
+  - "Ominous Osie"
+  - "Khrymsyn"
+vpxChecksum: "cd32c4ee58a245a4a94cc577b450d564"
+vpxVPSId: "DbFuVTNKWt"

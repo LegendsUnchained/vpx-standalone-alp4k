@@ -1,0 +1,27 @@
+ScreenNum,Folder,Des,AlphaSort,RestSeconds,Volume,Priority
+0,Attract,,0,30,100,0
+0,Backglass,,0,30,100,0
+0,FullDMD,,0,30,100,0
+0,PupCapture,,0,30,100,0
+0,PupOverlay,,0,30,100,0
+0,PupAlpha,,0,30,100,0
+0,PupAlphas,,0,30,100,0
+0,"Game Over",,0,30,100,0
+0,"Ball Lost",,0,30,100,0
+0,VUK,,0,30,100,0
+0,"Ball Saved",,0,30,100,0
+0,"Extra Ball",,0,30,100,0
+0,"Shoot Again",,0,30,100,0
+0,"Brain Bug",,0,30,100,0
+0,Bugs,,0,30,100,0
+0,Orbit,,0,30,100,0
+0,LFAR,,0,30,100,0
+0,"Recon Award",,0,30,100,0
+0,"Bonus X",,0,30,100,0
+0,"Lane Skill Shot",,0,30,100,0
+0,Klendathu,,0,30,100,0
+0,ST,,0,30,100,0
+0,"Screen Options",,0,30,100,0
+0,Misc,,0,30,100,0
+0,Planet,,0,30,100,0
+0,Plunger,,0,30,100,0

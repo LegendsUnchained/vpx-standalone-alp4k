@@ -1,0 +1,104 @@
+ID,Active,Descript,Trigger,ScreenNum,PlayList,PlayFile,Volume,Priority,Length,Counter,RestSeconds,Loop,Defaults
+1,1,Startup,D0,20,Backglass,Backglass.mp4,,2,,,,SetBG,0
+3,1,Startup2,D0,14,Backglass,Federal Network.mp4,,2,,,,SetBG,0
+31,1,Startup3,D0,7,Backglass,Roughnecks.mp4,,2,,,,SetBG,0
+5,1,PupAlphas,D0,11,PupAlphas,MainBackGlass3screen.png,,2,,,,SetBG,0
+7,1,Attract,D1,13,Attract,Attract.mp4,50,1,,,,,0
+11,1,Attract Stop,D2,13,Attract,Attract.mp4,,4,,,,StopFile,0
+9,1,Attract2,D3,13,Attract,Attract.mp4,60,2,,,,,0
+15,1,Attract2 Stop,D2,13,Attract,Attract.mp4,,6,,,,StopFile,0
+17,1,Game Over,D4,13,Game Over,Game Over.mp4,50,7,,,,,0
+18,1,Game Over Stop,D2,13,Game Over,Game Over.mp4,,8,,,,StopFile,0
+20,1,VUK,,,,,,,,,,,0
+21,1,Squad Leader,D5,13,VUK,Squad Leader.mp4,50,3,,,,,0
+22,1,Corporal,D6,13,VUK,Corporal.mp4,50,3,,,,,0
+23,1,Sergeant,D7,13,VUK,Sergeant.mp4,50,3,,,,,0
+24,1,Lieutenant,D8,13,VUK,Lieutenant.mp4,50,3,,,,,0
+26,1,Extra Ball,D9,13,Extra Ball,Extra Ball.mp4,50,4,,,,,0
+27,1,Ball Lost,D10,13,Ball Lost,Ball Lost.mp4,50,6,,,,,0
+28,1,Ball Saved,D11,13,Ball Saved,Ball Saved.mp4,50,7,,,,,0
+29,1,Shoot Again,D12,13,Shoot Again,Shoot Again.mp4,50,7,,,,,0
+33,1,Bugs,,0,,,,,,,,,0
+34,1,Warrior,D13,13,Bugs,Warrior Bug.mp4,50,3,,,1,,0
+69,1,Warrior2,D36,13,Bugs,Warrior Bug.mp4,50,3,,,1,,0
+35,1,Hopper,D14,13,Bugs,Hopper Bug.mp4,50,3,,,1,,0
+112,1,Hopper2,D64,13,Bugs,Hopper Bug.mp4,50,3,,,1,,0
+36,1,Plasma,D15,13,Bugs,Plasma Bug.mp4,50,3,,,1,,0
+114,1,Plasma2,D65,13,Bugs,Plasma Bug.mp4,50,3,,,1,,0
+37,1,Tanker,D16,13,Bugs,Tanker Bug.mp4,50,3,,,1,,0
+115,1,Tnaker2,D66,13,Bugs,Tanker Bug.mp4,50,3,,,1,,0
+38,1,Brain Bug,D17,13,Brain Bug,,50,4,,,,,0
+40,1,Orbit,,,,,,,,,,,0
+41,1,Orbit,D18,13,Orbit,Orbit.mp4,50,3,,,,,0
+42,1,Orbit Multiball,D19,13,Orbit,Orbit Multiball.mp4,50,3,,,360,,0
+43,1,OM Jackpot,D20,13,Orbit,Orbit Multiball Jackpot.mp4,50,4,,,,,0
+45,1,O,D21,13,Orbit,O.mp4,50,3,,,,,0
+46,1,ON,D22,13,Orbit,ON.mp4,50,3,,,,,0
+47,1,Lock1,D23,13,Orbit,Lock 1.mp4,50,3,,,,,0
+50,1,T,D24,13,Orbit,T.mp4,50,3,,,,,0
+51,1,TW,D25,13,Orbit,TW.mp4,50,3,,,,,0
+53,1,LFAR,,,,,,,,,,,0
+54,1,LFAR MB,D26,13,LFAR,LFAR Multiball.mp4,50,3,,,,,0
+55,1,LFAR Jackpot,D27,13,LFAR,LFAR Jackpot.mp4,50,4,,,,,0
+56,1,LFAR Super Jackpot,D28,13,LFAR,LFAR Super Jackpot.mp4,50,5,,,,,0
+58,1,Recon,,,,,,,,,,,0
+59,1,Psychic Test,D29,13,Recon Award,RA Psychic Test.mp4,50,4,,,10,,0
+61,1,Spot Species,D30,13,Recon Award,RA Spot Species.mp4,50,4,,,10,,0
+62,1,Recon Bounty,D31,13,Recon Award,RA Recon Bounty.mp4,50,4,,,10,,0
+63,1,Bonus Hold,D32,13,Recon Award,RA Bonus Hold.mp4,50,4,,,10,,0
+64,1,Ground Attack,D33,13,Recon Award,RA Ground Attack.mp4,50,4,,,10,,0
+79,1,GA Stop,D42,13,Recon Award,RA Ground Attack.mp4,,,,,,StopFile,0
+66,1,Orbits Lit,D34,13,Recon Award,RA Orbits Lit.mp4,50,3,,,10,,0
+67,1,Super Pops,D35,13,Recon Award,RA Super Pops.mp4,50,4,,,10,,0
+71,1,All Scores Doubled,D37,13,Recon Award,RA All Scores Doubled.mp4,50,4,,,10,,0
+72,1,Spot Planet,D38,13,Recon Award,RA Spot Planet.mp4,50,3,,,10,,0
+74,1,MB Ready,D39,13,Recon Award,RA Multiball Ready.mp4,50,4,,,10,,0
+77,1,Air Attack,D40,13,Recon Award,RA Air Attack.mp4,50,2,,,10,,0
+75,1,AA Stop,D41,13,Recon Award,RA Air Attack.mp4,,5,,,,StopFile,0
+81,1,Ramp Hurry-Up,D43,13,Recon Award,RA Ramp Hurry-Up.mp4,50,4,,,10,,0
+117,1,Ramp HU Jackpot,D67,13,Misc,Jackpot.mp4,50,5,,,1,,0
+82,1,Nuke Chase,D44,13,Recon Award,RA Nuke Chase.mp4,50,4,,,60,,0
+84,1,Orbit Multiball,D46,13,Recon Award,RA Orbit Multiball.mp4,50,2,,,10,,0
+85,1,Multiball,D47,13,Recon Award,RA Multiball.mp4,50,2,,,10,,0
+91,1,25000000,D48,13,Recon Award,RA 25 Mil.mp4,50,4,,,10,,0
+88,1,Special Lit,D,13,Recon Award,,50,2,,,10,,0
+87,1,Extra Ball Lit,D,13,Recon Award,,50,4,,,10,,0
+93,1,Lane Skill Shot,D49,13,Lane Skill Shot,Lane Skill Shot.mp4,50,3,,,1,,0
+94,1,Bonus X,,,,,,,,,,,0
+95,1,Bonus 2X,D50,13,Bonus X,Bonus 2X.mp4,50,2,,,1,,0
+96,1,Bonus 3X,D51,13,Bonus X,Bonus 3X.mp4,50,2,,,600,,0
+97,1,Bonus 4X,D52,13,Bonus X,Bonus 4X.mp4,50,2,,,185,,0
+98,1,Bonus 5X,D53,13,Bonus X,Bonus 5X.mp4,50,2,,,185,,0
+99,1,Bonus 6X,D54,13,Bonus X,Bonus 6X.mp4,50,2,,,185,,0
+100,1,Bonus 7X,D55,13,Bonus X,Bonus 7X.mp4,50,3,,,185,,0
+101,1,Bonus 8X,D56,13,Bonus X,Bonus 8X.mp4,50,3,,,185,,0
+102,1,Bonus 9X,D57,13,Bonus X,Bonus 9X.mp4,50,3,,,185,,0
+103,1,Bonus 10X,D58,13,Bonus X,Bonus 10X.mp4,50,3,,,185,,0
+107,1,Plunger,D60,13,Plunger,Shoot the Ball.mp4,50,3,,,20,,0
+108,1,Starship,D61,13,ST,Starship1.mp4,50,5,,,4,,0
+109,1,Troopers,D62,13,ST,Troopers1.mp4,50,5,,,4,,0
+110,1,Starship Troopers,D63,13,ST,Starship Troopers.mp4,50,5,,,4,,0
+119,1,Planet,,,,,,,,,,,0
+120,1,Planet Multiball,D68,15,Planet,Planet Multiball.mp4,50,6,,,13,,0
+164,1,PM Over,D74,15,Planet,Planet Multiball.mp4,,7,,,,StopPlayer,0
+125,1,Antilles,D69,13,Planet,Antilles.mp4,50,7,,,1,,0
+126,1,Zegema Beach,D70,13,Planet,Zegema Beach.mp4,50,7,,,1,,0
+127,1,Dantana,D71,13,Planet,Dantana.mp4,50,7,,,1,,0
+128,1,Tango Urilla,D72,13,Planet,Tango Urilla.mp4,50,7,,,1,,0
+129,1,P,D73,13,Planet,Planet P.mp4,50,7,,,1,,0
+121,1,PM Nuke 1,D75,13,Planet,PM Nuke 1M.mp4,50,6,,,1,,0
+138,1,PM Nuke 2.5,D76,13,Planet,PM Nuke 2.5M.mp4,50,6,,,1,,0
+143,1,PM Nuke 4,D77,13,Planet,PM Nuke 4M.mp4,50,6,,,1,,0
+148,1,PM Nuke 7,D78,13,Planet,PM Nuke 7M.mp4,50,6,,,1,,0
+153,1,PM Nuke 12,D79,13,Planet,PM Nuke 12M.mp4,50,6,,,1,,0
+122,1,PMSN 10,D80,13,Planet,PM Super Nuke 10M.mp4,50,7,,,1,,0
+131,1,PMSN 25,D81,13,Planet,PM Super Nuke 25M.mp4,50,7,,,1,,0
+132,1,PMSN 40,D82,13,Planet,PM Super Nuke 40M.mp4,50,7,,,1,,0
+133,1,PMSN 70,D83,13,Planet,PM Super Nuke 70M.mp4,50,7,,,1,,0
+123,1,PM Awesomw,D84,13,Planet,Awesome.mp4,50,8,,,1,,0
+155,1,Klendathu Complete,D85,13,Klendathu,Klendathu Conquered.mp4,50,5,,,1,,0
+157,1,Planet Zegema Beach,D86,13,Planet,Zegema Beach.mp4,50,4,,,10,,0
+159,1,Planet Dantana,D87,13,Planet,Dantana.mp4,50,5,,,10,,0
+161,1,Planet Tango Urilla,D88,13,Planet,Tango Urilla.mp4,50,6,,,10,,0
+162,1,Planet P,D89,13,Planet,Planet P.mp4,50,7,,,10,,0
+105,1,Planet Klendathu,D59,13,Klendathu,Klendathu.mp4,50,4,,,10,,0
