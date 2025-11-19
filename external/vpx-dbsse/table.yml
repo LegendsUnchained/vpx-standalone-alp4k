@@ -1,14 +1,15 @@
 ---
 tableVPSId: "8La5MBsFtN"
 tableNameOverride: "Dragon Ball: Super Saiyan Edition"
-vpxChecksum: "1093282534F10775AE67E073EFC08D00"
+tableNotes: "Download 'Dragon Ball Super Saiyan Edition_1.3.3.vpx'"
+vpxChecksum: "940027ADACCC9C45F45896161AF8E6EA"
 vpxVPSId: "Nvm6jNTSXu"
 backglassBundled: true
 backglassVPSId: "Nvm6jNTSXu"
 backglassChecksum: "30DCDFE206ED88BAAF5353376947C03D"
 backglassNotes: >-
-  Download 'Media Pack 1.2.zip' from VPX page and extract 
-  'Dragon Ball Super Saiyan Edition_1.2.directb2s' file
+  Download 'Media Pack 1.3.3.zip' from VPX page and extract 
+  'Dragon Ball Super Saiyan Edition_1.3.3.directb2s' file
 fps: 60
 tagline: "Fight You? No... I Wanna Kill You."
 testers:
