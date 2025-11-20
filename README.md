@@ -92,6 +92,7 @@ Links to these products on Amazon are through affiliate links.
 | [Black Rose (Bally 1992)](external/vpx-blackrose) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Bob Cuspe (Original 2025)](external/vpx-bobcuspe) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Bram Stoker's Dracula (Williams 1993)](external/vpx-bsdracula) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
+| [Bram Stoker's Dracula BLOOD EDITION (Original 2025)](external/vpx-dracblood) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Bugs Bunny's Birthday Ball (Bally 1990)](external/vpx-bugs) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
 | [Cactus Canyon (Bally 1998)](external/vpx-cactuscanyon) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Cat Burglars (Original 2024)](external/vpx-catburglars) | :white_check_mark: | :x: | :x: | :x: | 60 |
