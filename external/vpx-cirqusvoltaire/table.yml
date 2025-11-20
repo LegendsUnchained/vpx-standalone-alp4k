@@ -1,0 +1,18 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "734333da21e723b28c46041761030821"
+backglassNotes: "Download Version 1"
+backglassVPSId: "YwbkKMT9T-"
+fps: 50
+romChecksum: "612613e00db9e7815a74767682ad9b2e"
+romNotes: "Download ROM - cv_20hc.zip"
+romUrlOverride: "https://www.vpforums.org/index.php?app=downloads&showfile=5834"
+romVersionOverride: "ROM - cv_20hc.zip"
+tableNotes: "Cirqus Voltaire (Bally 1997)_Bigus(MOD) 3.0"
+tableVPSId: "amqQVZGq"
+tagline: "Electrifying Excitement!"
+testers:
+  - "SIlentkat"
+vpxChecksum: "a26297edb5daac4b46f1f68acdf06e03"
+vpxVPSId: "guQp-qpZgQ"

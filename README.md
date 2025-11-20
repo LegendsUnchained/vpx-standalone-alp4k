@@ -102,6 +102,7 @@ Links to these products on Amazon are through affiliate links.
 | [Central Park (Gottlieb 1966)](external/vpx-centralpark) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Champion Pub, The (Williams 1998)](external/vpx-champpub) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 45 |
 | [Chrono Trigger (Original 2022)](external/vpx-chrono) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
+| [Cirqus Voltaire (Bally 1997)](external/vpx-cirqusvoltaire) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [City Hunter (Original 2025)](external/vpx-cityhunterpup) | :x: |:white_check_mark: | :: | :white_check_mark: | 45 |
 | [Class of 1812 (Gottlieb 1991)](external/vpx-1812) | :white_check_mark: | :x: | :white_check_mark: | :x: | 51 |
 | [Cleopatra (Gottlieb 1977)](external/vpx-cleopatra) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
@@ -356,7 +357,6 @@ Links to these products on Amazon are through affiliate links.
 | [Cheetah (Stern 1980)](external/vpx-cheetah) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 40 |
 | [Child's Play (Original 2018)](external/vpx-childsplay) | :white_check_mark: |:x: | :x: | :white_check_mark: | 50 |
 | [Circus (Gottlieb 1980)](external/vpx-circus) | :white_check_mark: | :x: | :white_check_mark: | :x: | 38 |
-| [Cirqus Voltaire (Bally 1997)](external/vpx-cirqus) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 37 |
 | [City Slicker (Bally 1987)](external/vpx-cityslicker) | :white_check_mark: | :x: | :white_check_mark: | :x: | 32 |
 | [Class of 1984 (Original 2024)](external/vpx-classof1984) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Clock of Eternal Fog (Original 2024)](external/vpx-clockofetfog) | :white_check_mark: | :x: | :x: | :x: | 60 |
