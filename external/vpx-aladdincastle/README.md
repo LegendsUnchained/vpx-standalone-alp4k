@@ -1,6 +1,6 @@
 # Aladdin's Castle (Bally 1976)
 
-![Table Preview](../../images/vpx-aladdincastle.png?raw=true)
+![Table Preview](../../images/vpx-aladdincastle-table.png?raw=true)
 
 ---
 
