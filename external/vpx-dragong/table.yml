@@ -1,0 +1,18 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "2BDAFA1F3289A0D353208B3E6E92A545"
+backglassVPSId: "fMx08pkxjV"
+fps: 60
+romNotes: "Download dragon.zip"
+romChecksum: "D631076325A51E518A14F4510772BEBB"
+romUrlOverride: "https://vpuniverse.com/files/file/1698-dragon/"
+romVersionOverride: "dragon"
+tagline: "*Startling* Beauty AND The Beast Graphics!"
+tableVPSId: "XPpvhsC3"
+testers:
+  - "evilwraith"
+  - "Curt"
+  - "CoffeeAtJoes"
+vpxChecksum: "EF20EA154457E2FB6D5C54FA33100326"
+vpxVPSId: "CCGbRcqwTx"

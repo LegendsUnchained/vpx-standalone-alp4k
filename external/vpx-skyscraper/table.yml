@@ -1,0 +1,17 @@
+---
+applyFixes:
+  - "bass"
+backglassBundled: True
+# yamllint disable-line rule:line-length
+backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/pnx-rMf7uR_1749636467160.webp"
+backglassChecksum: "E739A9D066B8AEDA6312508ACB981700"
+backglassNotes: "Included with table download. Use the 2-screen version."
+fps: 60
+tableVPSId: "GQVgQ-sou9"
+tagline: >-
+  "This building is Kong-proof" - an old-timey architect probably
+testers:
+  - "evilwraith"
+  - "CoffeeAtJoes"
+vpxChecksum: "3A4CB0AD3BCB686F649893756567DB9A"
+vpxVPSId: "fzOMz7rlhz"

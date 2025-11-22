@@ -1,7 +1,8 @@
 ---
-backglassAuthorsOverride:
-  - ""
-fps: 50
+# yamllint disable-line rule:line-length
+backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/undefined_b2s_1665578424738.webp"
+fps: 55
+pupArchiveRoot: "Hellraiser1.0.1/HellRaiser"
 pupChecksum: "6DE77436C19D088D9E701E26CB57D138"
 pupFileUrl: >-
   https://vpuniverse.com/files/file/11763-hellraiser/
@@ -15,6 +16,6 @@ tagline: >-
 testers:
   - "mrandromeda"
   - "OminousOsie"
-vpxchecksum: "E078164E637B8C6BF66FEBB71D2A020C"
-enabled: false # Osie: Disabled needs pupArchiveRoot adding as pup is 'Hellraiser1.0.1.rar\Hellraiser1.0.1\HellRaiser'
+  - "evilwraith"
+vpxChecksum: "E078164E637B8C6BF66FEBB71D2A020C"
 vpxVPSId: "1Dbo7GYl4P"

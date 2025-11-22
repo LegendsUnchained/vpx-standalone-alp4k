@@ -1,5 +1,5 @@
 ' ****************************************************************
-'             JP's Deadpool for VISUAL PINBALL X 10.8
+'           JP's Deadpool v6.00 for VISUAL PINBALL X 10.8
 ' ****************************************************************
 'On the DOF website put Exxx
 'DOF some updating by outhere
@@ -25,27 +25,6 @@ Randomize
 
 Const BallSize = 50 ' 50 is the normal size used in the core.vbs, VP kicker routines uses this value divided by 2
 Const BallMass = 1  ' standard ball mass in JP's VPX Physics 3.0
-
-'************ USER OPTIONS *********************************
-
-Const SongVolume = 0.2 ' 1 is full volume, but I set it quite low to listen better to the other sounds :)
-
-'FlexDMD in high or normal quality
-'change it to True if you have an LCD screen, 256x64
-'or False if you have a real DMD at 128x32 in size
-Const FlexDMDHighQuality = true
-
-'********* END OF USER OPTIONS ******************************
-
-' Define any Constants
-Const cGameName = "jpsdeadpool"
-Const myVersion = "5.5.0"
-Const MaxPlayers = 4          ' from 1 to 4
-Const BallSaverTime = 20      ' in seconds of the first ball
-Const MaxMultiplier = 5       ' limit playfield multiplier
-Const MaxBonusMultiplier = 50 'limit Bonus multiplier
-Const BallsPerGame = 5        ' usually 3 or 5
-Const MaxMultiballs = 6       ' max number of balls during multiballs
 
 Dim usePUP: Dim cPuPPack: Dim PuPlayer: Dim PUPStatus: PUPStatus=false ' dont edit this line!!!
 
@@ -77,7 +56,6 @@ Sub pupevent(EventNum)
     PuPlayer.B2SData "E"&EventNum,1  'send event to Pup-Pack
 End Sub
 
-
 ' Load the core.vbs for supporting Subs and functions
 LoadCoreFiles
 
@@ -88,8 +66,7 @@ Sub LoadCoreFiles
     ExecuteGlobal GetTextFile("controller.vbs")
     If Err Then MsgBox "Can't open controller.vbs"
     On Error Goto 0
-
-    If usePUP=true then
+	    If usePUP=true then
         ' Check if puppack is installed
         Dim fso
         Set fso = CreateObject("Scripting.FileSystemObject")
@@ -102,14 +79,14 @@ Sub LoadCoreFiles
     End If
 End Sub
 
-
-' Use FlexDMD if in FS mode
-Dim UseFlexDMD
-If Table1.ShowDT = True then
-    UseFlexDMD = false
-Else
-    UseFlexDMD = True
-End If
+' Define any Constants
+Const cGameName = "jpsdeadpool"
+Const myVersion = "6.0.0"
+Const MaxPlayers = 4          ' from 1 to 4
+Const BallSaverTime = 20      ' in seconds of the first ball
+Const MaxMultiplier = 5       ' limit playfield multiplier
+Const MaxBonusMultiplier = 50 'limit Bonus multiplier
+Const MaxMultiballs = 6       ' max number of balls during multiballs
 
 ' Define Global Variables
 Dim PlayersPlayingGame
@@ -172,8 +149,7 @@ Sub Table1_Init()
     Dim i
     Randomize
 
-    PuPStart() 'Check for PuP - If found, then start Pinup Player / PuP-Pack
-
+    PuPStart() 'Check for PuP - If found, then start Pinup Player / PuP-Pack																			
     'Impulse Plunger as autoplunger
     Const IMPowerSetting = 45 ' Plunger Power
     Const IMTime = 0.5        ' Time in seconds for Full Plunge
@@ -194,9 +170,6 @@ Sub Table1_Init()
 
     ' Initalise the DMD display
     DMD_Init
-
-    ' freeplay or coins
-    bFreePlay = True 'we want coins
 
     if bFreePlay Then DOF 125, DOFOn
 
@@ -226,9 +199,7 @@ Sub Table1_Init()
     ChangeGiIntensity 1
     GiOff
     StartAttractMode
-    pupevent 800
-    ' Load table color
-    LoadLut
+    pupevent 800			
 End Sub
 
 ' Realtime LILDP animations
@@ -280,9 +251,6 @@ Sub Table1_KeyDown(ByVal Keycode)
     If keycode = RightTiltKey Then Nudge 270, 6:PlaySound "fx_nudge", 0, 1, 0.1, 0.25
     If keycode = CenterTiltKey Then Nudge 0, 7:PlaySound "fx_nudge", 0, 1, 1, 0.25
     If keycode = MechanicalTilt Then CheckTilt 'original & EM tables
-
-    If keycode = LeftMagnaSave Then bLutActive = True:SetLUTLine "Color LUT image " & table1.ColorGradeImage
-    If keycode = RightMagnaSave AND bLutActive Then NextLUT:End If
     If Keycode = AddCreditKey OR Keycode = AddCreditKey2 Then
         Credits = Credits + 1
         if bFreePlay = False Then DOF 125, DOFOn
@@ -351,7 +319,6 @@ Sub Table1_KeyDown(ByVal Keycode)
             If(bFreePlay = True) Then
                 If(BallsOnPlayfield = 0) Then
                     ResetForNewGame()
-                    pupevent 801
                 End If
             Else
                 If(Credits> 0) Then
@@ -372,9 +339,6 @@ Sub Table1_KeyDown(ByVal Keycode)
 End Sub
 
 Sub Table1_KeyUp(ByVal keycode)
-
-    If keycode = LeftMagnaSave Then bLutActive = False:HideLUT
-
     If keycode = PlungerKey Then
         Plunger.Fire
         PlaySoundAt "fx_plunger", plunger
@@ -496,15 +460,15 @@ Dim LLiveCatchTimer
 Dim RLiveCatchTimer
 Dim LiveCatchSensivity
 
-FlipperPower = 5000
-FlipperElasticity = 0.8
-FullStrokeEOS_Torque = 0.3 ' EOS Torque when flipper hold up ( EOS Coil is fully charged. Ampere increase due to flipper can't move or when it pushed back when "On". EOS Coil have more power )
-LiveStrokeEOS_Torque = 0.2 ' EOS Torque when flipper rotate to end ( When flipper move, EOS coil have less Ampere due to flipper can freely move. EOS Coil have less power )
+FlipperPower = 3600
+FlipperElasticity = 0.6
+FullStrokeEOS_Torque = 0.6 ' EOS Torque when flipper hold up ( EOS Coil is fully charged. Ampere increase due to flipper can't move or when it pushed back when "On". EOS Coil have more power )
+LiveStrokeEOS_Torque = 0.3 ' EOS Torque when flipper rotate to end ( When flipper move, EOS coil have less Ampere due to flipper can freely move. EOS Coil have less power )
 
 LeftFlipper.EOSTorqueAngle = 10
 RightFlipper.EOSTorqueAngle = 10
 
-SOSTorque = 0.1
+SOSTorque = 0.2
 SOSAngle = 6
 
 LiveCatchSensivity = 10
@@ -682,7 +646,7 @@ Sub ChangeSong
 End Sub
 
 Sub RandomTitleTrack
-    If usePUP Then Exit Sub
+	If usePUP Then Exit Sub					   
     dim b
     b = RndNbr(5)
     Select Case b
@@ -770,6 +734,13 @@ Sub GiOff
     Fi004.Visible = 0
     Fi005.Visible = 0
     Fi006.Visible = 0
+End Sub
+
+Sub ChangeGiIntensity(scale) 'changes the intensity scale, 1 = normal
+    Dim bulb
+    For each bulb in aGiLights
+        bulb.IntensityScale = scale
+    Next
 End Sub
 
 ' GI, light & flashers sequence effects
@@ -1184,7 +1155,7 @@ Sub EndOfBall2()
     ' if were tilted, reset the internal tilted flag (this will also
     ' set TiltWarnings back to zero) which is useful if we are changing player LOL
     Tilted = False
-    pupevent 806
+	pupevent 806			
     Tilt = 0
     DisableTable False 'enable again bumpers and slingshots
 
@@ -1311,7 +1282,7 @@ Sub EndOfGame()
     ' set any lights for the attract mode
     GiOff
     StartAttractMode
-    pupevent 880
+	pupevent 880			
 ' you may wish to light any Game Over Light you may have
 End Sub
 
@@ -1661,15 +1632,15 @@ End Sub
 Sub AwardJackpot() 'award a normal jackpot
     If bLilDPMB Then
         Select case RndNbr(4)
-            Case 1:DMD CL(0, FormatScore(Jackpot(CurrentPlayer) ) ), CL(1, "LILDP JACKPOT"), "bkborder", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_lildp_jackpot1" : pupevent 807
-            Case 2:DMD CL(0, FormatScore(Jackpot(CurrentPlayer) ) ), CL(1, "LILDP JACKPOT"), "bkborder", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_lildp_jackpot2" : pupevent 807
-            Case 3:DMD CL(0, FormatScore(Jackpot(CurrentPlayer) ) ), CL(1, "LILDP JACKPOT"), "bkborder", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_lildp_jackpot3" : pupevent 807
-            Case 4:DMD CL(0, FormatScore(Jackpot(CurrentPlayer) ) ), CL(1, "LILDP JACKPOT"), "bkborder", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_lildp_jackpot4" : pupevent 807
+            Case 1:DMD CL(0, FormatScore(Jackpot(CurrentPlayer) ) ), CL(1, "LILDP JACKPOT"), "bkborder", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_lildp_jackpot1" : pupevent 817
+            Case 2:DMD CL(0, FormatScore(Jackpot(CurrentPlayer) ) ), CL(1, "LILDP JACKPOT"), "bkborder", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_lildp_jackpot2" : pupevent 817
+            Case 3:DMD CL(0, FormatScore(Jackpot(CurrentPlayer) ) ), CL(1, "LILDP JACKPOT"), "bkborder", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_lildp_jackpot3" : pupevent 817
+            Case 4:DMD CL(0, FormatScore(Jackpot(CurrentPlayer) ) ), CL(1, "LILDP JACKPOT"), "bkborder", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_lildp_jackpot4" : pupevent 817
         End Select
         LightEffect 4
         GiEffect 4
     Else
-        DMD CL(0, FormatScore(Jackpot(CurrentPlayer) ) ), CL(1, "JACKPOT"), "bkborder", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_Jackpot" : pupevent 807
+        DMD CL(0, FormatScore(Jackpot(CurrentPlayer) ) ), CL(1, "JACKPOT"), "bkborder", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_Jackpot"  : pupevent 817
         LightEffect 2
         GiEffect 2
     End If
@@ -1689,7 +1660,7 @@ End Sub
 
 Sub AwardSuperMegaJackpot() 'award a SuperMegalodon Jackpot
     MegaSuperJValue = MegaJackpot(CurrentPlayer) * MegaSuperJCount
-    DMD CL(0, FormatScore(MegaSuperJValue) ), "MEGALODON SUPJACKPOT", "d_megalodon", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_superjackpot" : pupevent 819
+    DMD CL(0, FormatScore(MegaSuperJValue) ), "MEGALODON SUPJACKPOT", "d_megalodon", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_superjackpot"  : pupevent 819
     DOF 126, DOFPulse
     AddScore MegaSuperJValue
     LightEffect 2
@@ -1697,7 +1668,7 @@ Sub AwardSuperMegaJackpot() 'award a SuperMegalodon Jackpot
 End Sub
 
 Sub AwardSuperJackpot()
-    DMD CL(0, FormatScore(SuperJackpot(CurrentPlayer) ) ), CL(1, "SUPER JACKPOT"), "bkborder", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_superjackpot" : pupevent 820
+    DMD CL(0, FormatScore(SuperJackpot(CurrentPlayer) ) ), CL(1, "SUPER JACKPOT"), "bkborder", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_superjackpot"  : pupevent 820
     DOF 126, DOFPulse
     AddScore SuperJackpot(CurrentPlayer)
     LightEffect 2
@@ -1949,97 +1920,6 @@ Sub SortHighscore
     Next
 End Sub
 
-'************************************
-'       LUT - Darkness control
-' 10 normal level & 10 warmer levels
-'************************************
-
-Dim bLutActive, LUTImage
-
-Sub LoadLUT
-    bLutActive = False
-    x = LoadValue(cGameName, "LUTImage")
-    If(x <> "") Then LUTImage = x Else LUTImage = 0
-    UpdateLUT
-End Sub
-
-Sub SaveLUT
-    SaveValue cGameName, "LUTImage", LUTImage
-End Sub
-
-Sub NextLUT:LUTImage = (LUTImage + 1) MOD 22:UpdateLUT:SaveLUT:SetLUTLine "Color LUT image " & table1.ColorGradeImage:End Sub
-
-Sub UpdateLUT
-    Select Case LutImage
-        Case 0:table1.ColorGradeImage = "LUT0"
-        Case 1:table1.ColorGradeImage = "LUT1"
-        Case 2:table1.ColorGradeImage = "LUT2"
-        Case 3:table1.ColorGradeImage = "LUT3"
-        Case 4:table1.ColorGradeImage = "LUT4"
-        Case 5:table1.ColorGradeImage = "LUT5"
-        Case 6:table1.ColorGradeImage = "LUT6"
-        Case 7:table1.ColorGradeImage = "LUT7"
-        Case 8:table1.ColorGradeImage = "LUT8"
-        Case 9:table1.ColorGradeImage = "LUT9"
-        Case 10:table1.ColorGradeImage = "LUT10"
-        Case 11:table1.ColorGradeImage = "LUT Warm 0"
-        Case 12:table1.ColorGradeImage = "LUT Warm 1"
-        Case 13:table1.ColorGradeImage = "LUT Warm 2"
-        Case 14:table1.ColorGradeImage = "LUT Warm 3"
-        Case 15:table1.ColorGradeImage = "LUT Warm 4"
-        Case 16:table1.ColorGradeImage = "LUT Warm 5"
-        Case 17:table1.ColorGradeImage = "LUT Warm 6"
-        Case 18:table1.ColorGradeImage = "LUT Warm 7"
-        Case 19:table1.ColorGradeImage = "LUT Warm 8"
-        Case 20:table1.ColorGradeImage = "LUT Warm 9"
-        Case 21:table1.ColorGradeImage = "LUT Warm 10"
-    End Select
-End Sub
-
-Dim GiIntensity
-GiIntensity = 1               'can be used by the LUT changing to increase the GI lights when the table is darker
-
-Sub ChangeGiIntensity(factor) 'changes the intensity scale
-    Dim bulb
-    For each bulb in aGiLights
-        bulb.IntensityScale = GiIntensity * factor
-    Next
-End Sub
-
-' New LUT postit
-Function GetHSChar(String, Index)
-    Dim ThisChar
-    Dim FileName
-    ThisChar = Mid(String, Index, 1)
-    FileName = "PostIt"
-    If ThisChar = " " or ThisChar = "" then
-        FileName = FileName & "BL"
-    ElseIf ThisChar = "<" then
-        FileName = FileName & "LT"
-    ElseIf ThisChar = "_" then
-        FileName = FileName & "SP"
-    Else
-        FileName = FileName & ThisChar
-    End If
-    GetHSChar = FileName
-End Function
-
-Sub SetLUTLine(String)
-    Dim Index
-    Dim xFor
-    Index = 1
-    LUBack.imagea = "PostItNote"
-    For xFor = 1 to 40
-        Eval("LU" &xFor).imageA = GetHSChar(String, Index)
-        Index = Index + 1
-    Next
-End Sub
-
-Sub HideLUT
-    SetLUTLine ""
-    LUBack.imagea = "PostitBL"
-End Sub
-
 ' *************************************************************************
 '   JP's Reduced Display Driver Functions (based on script by Black)
 ' only 5 effects: none, scroll left, scroll right, blink and blinkfast
@@ -2136,6 +2016,11 @@ Sub DMD_Init() 'default/startup values
                 FlexDMD.UnlockRenderThread
             End If
         End If
+    Else
+        digitgrid.Visible = True
+        For i = 0 to 40
+            Digits(i).Visible = True
+        Next
     End If
 
     Dim i, j
@@ -2601,7 +2486,7 @@ Sub DMDInit
     Chars(89) = "d_y"      'Y
     Chars(90) = "d_z"      'Z
     Chars(94) = "d_up"     '^
-    '    Chars(95) = '_
+    'Chars(95) = ""        '_
     Chars(96) = "d_0a"        '0.
     Chars(97) = "d_1a"        '1. 'a
     Chars(98) = "d_2a"        '2. 'b
@@ -2618,21 +2503,21 @@ Sub DMDInit
     Chars(109) = "d_LifeLoff" 'm
     Chars(110) = "d_LifeMoff" 'n
     Chars(111) = "d_LifeRoff" 'o
-    Chars(112) = ""           'p
-    Chars(113) = ""           'q
-    Chars(114) = ""           'r
-    Chars(115) = ""           's
-    Chars(116) = ""           't
-    Chars(117) = ""           'u
-    Chars(118) = ""           'v
-    Chars(119) = ""           'w
-    Chars(120) = ""           'x
-    Chars(121) = ""           'y
-    Chars(122) = ""           'z
-    Chars(123) = ""           '{
-    Chars(124) = ""           '|
-    Chars(125) = ""           '}
-    Chars(126) = ""           '~
+    'Chars(112) = ""           'p
+    'Chars(113) = ""           'q
+    'Chars(114) = ""           'r
+    'Chars(115) = ""           's
+    'Chars(116) = ""           't
+    'Chars(117) = ""           'u
+    'Chars(118) = ""           'v
+    'Chars(119) = ""           'w
+    'Chars(120) = ""           'x
+    'Chars(121) = ""           'y
+    'Chars(122) = ""           'z
+    'Chars(123) = ""           '{
+    'Chars(124) = ""           '|
+    'Chars(125) = ""           '}
+    'Chars(126) = ""           '~
 End Sub
 
 '********************************************************************************************
@@ -3621,7 +3506,7 @@ Sub Bumper1_Hit
     If bSkillShotReady Then ResetSkillShotTimer_Timer
     PlaySoundAt SoundFXDOF("fx_bumper", 107, DOFPulse, DOFContactors), Bumper1
     DOF 138, DOFPulse
-    pupevent 879
+    pupevent 879			
     FlashForms Flasher008, 1500, 75, 0
     LilDPShake 1
     ' add some points
@@ -3828,7 +3713,7 @@ Sub Trigger001_Hit
     Addscore 5000
     Boom(CurrentPlayer, 1) = 1
     CheckBOOM
-    pupevent 877
+	pupevent 877			
 End Sub
 
 Sub Trigger002_Hit
@@ -3839,7 +3724,7 @@ Sub Trigger002_Hit
     Addscore 1000
     Boom(CurrentPlayer, 2) = 1
     CheckBOOM
-    pupevent 877
+	pupevent 877			
 End Sub
 
 Sub Trigger003_Hit
@@ -3850,7 +3735,7 @@ Sub Trigger003_Hit
     Addscore 1000
     Boom(CurrentPlayer, 3) = 1
     CheckBOOM
-    pupevent 877
+	pupevent 877			
 End Sub
 
 Sub Trigger004_Hit
@@ -3861,7 +3746,7 @@ Sub Trigger004_Hit
     Addscore 5000
     Boom(CurrentPlayer, 4) = 1
     CheckBOOM
-    pupevent 877
+	pupevent 877			
 End Sub
 
 Sub CheckBOOM
@@ -4869,7 +4754,7 @@ Sub HellHouse_Hit
     End If
     If bMechSuitMBLight(CurrentPlayer) Then 'Start Mech Suit Multiball
         StartMechSuitMB
-        pupevent 838
+		pupevent 838			
         Exit Sub
     End If
     If bBattleReady AND bMechSuitMBStarted = False then
@@ -4907,7 +4792,7 @@ Sub StartDisco
     discolight.visible = 1
     DiscoTimer.Enabled = 1
     bDiscoEnabled = True
-    pupevent 844
+	pupevent 844			
 End Sub
 
 Sub StopDisco
@@ -5708,7 +5593,7 @@ Sub Lock_Hit
                 bLockEnabled = False
                 SwordEffect 0
                 bNinjaMB = True
-                pupevent 825
+				pupevent 825			
                 ChangeSong
                 NinjaMBJackpot(CurrentPlayer) = 500000 + 50000 * NinjaStars(CurrentPLayer)
                 'Turn On the Ninja Jacpot Arrows in a teal color
@@ -5948,3 +5833,92 @@ Sub ChooseMysteryAward
 End Sub
 
 'DMD "                    ", "                    ", "", eNone, eNone, eNone, 1000, True, ""
+
+
+'*********************************
+' Table Options F12 User Options
+'*********************************
+' Table1.Option arguments are: 
+' - option name, minimum value, maximum value, step between valid values, default value, unit (0=None, 1=Percent), an optional array of literal strings
+
+Dim LUTImage, BallsPerGame, UseFlexDMD, OldUseFlex, FlexDMDHighQuality, SongVolume
+UseFlexDMD = False 'initialize variable
+OldUseFlex = False
+
+Sub Table1_OptionEvent(ByVal eventId)
+    Dim x, y
+
+    'LUT
+    LutImage = Table1.Option("Select LUT", 0, 21, 1, 0, 0, Array("Normal 0", "Normal 1", "Normal 2", "Normal 3", "Normal 4", "Normal 5", "Normal 6", "Normal 7", "Normal 8", "Normal 9", "Normal 10", _
+        "Warm 0", "Warm 1", "Warm 2", "Warm 3", "Warm 4", "Warm 5", "Warm 6", "Warm 7", "Warm 8", "Warm 9", "Warm 10") )
+    UpdateLUT
+
+    ' Desktop DMD
+    x = Table1.Option("DMD Type", 0, 1, 1, 1, 0, Array("Desktop DMD", "FlexDMD") )
+    If UseFlexDMD AND x = 0 Then FlexDMD.Run = False
+    If X then UseFlexDMD = True Else UseFlexDMD = False
+
+    ' FlexDMD Quality
+    x = Table1.Option("FlexDMD Quality", 0, 1, 1, 1, 0, Array("Low", "High") )
+    If x Then FlexDMDHighQuality = True Else FlexDMDHighQuality = False
+    If OldUseFlex <> UseFlexDMD Then
+        DMD_Init
+        If NOT bGameInPlay Then ShowTableInfo
+        OldUseFlex = UseFlexDMD 
+    End If
+
+    ' Cabinet rails
+    x = Table1.Option("Cabinet Rails", 0, 1, 1, 1, 0, Array("Hide", "Show") )
+    For each y in aRails:y.visible = x:next
+
+    ' Side Blades
+    x = Table1.Option("Side Blades", 0, 1, 1, 1, 0, Array("Hide", "Show") )
+    For each y in aSideBlades:y.SideVisible = x:next
+
+    ' Balls per Game
+    x = Table1.Option("Balls per Game", 0, 1, 1, 0, 0, Array("3 Balls", "5 Balls") )
+    If x = 1 Then BallsPerGame = 5 Else BallsPerGame = 3
+
+    ' FreePlay
+    x = Table1.Option("Free Play", 0, 1, 1, 0, 0, Array("No", "Yes") )
+    If x then bFreePlay = True Else bFreePlay = False
+
+    ' Music  On/Off
+    x = Table1.Option("Music", 0, 1, 1, 1, 0, Array("OFF", "ON") )
+    If x Then bMusicOn = True Else bMusicOn = False
+
+    ' Music Volume
+    SongVolume = Table1.Option("Music Volume", 0, 1, 0.1, 0.2, 0)
+    If bMusicOn Then
+        ChangeSong
+    Else
+        StopSound Song
+    End If
+End Sub
+
+Sub UpdateLUT
+    Select Case LutImage
+        Case 0:table1.ColorGradeImage = "LUT0"
+        Case 1:table1.ColorGradeImage = "LUT1"
+        Case 2:table1.ColorGradeImage = "LUT2"
+        Case 3:table1.ColorGradeImage = "LUT3"
+        Case 4:table1.ColorGradeImage = "LUT4"
+        Case 5:table1.ColorGradeImage = "LUT5"
+        Case 6:table1.ColorGradeImage = "LUT6"
+        Case 7:table1.ColorGradeImage = "LUT7"
+        Case 8:table1.ColorGradeImage = "LUT8"
+        Case 9:table1.ColorGradeImage = "LUT9"
+        Case 10:table1.ColorGradeImage = "LUT10"
+        Case 11:table1.ColorGradeImage = "LUT Warm 0"
+        Case 12:table1.ColorGradeImage = "LUT Warm 1"
+        Case 13:table1.ColorGradeImage = "LUT Warm 2"
+        Case 14:table1.ColorGradeImage = "LUT Warm 3"
+        Case 15:table1.ColorGradeImage = "LUT Warm 4"
+        Case 16:table1.ColorGradeImage = "LUT Warm 5"
+        Case 17:table1.ColorGradeImage = "LUT Warm 6"
+        Case 18:table1.ColorGradeImage = "LUT Warm 7"
+        Case 19:table1.ColorGradeImage = "LUT Warm 8"
+        Case 20:table1.ColorGradeImage = "LUT Warm 9"
+        Case 21:table1.ColorGradeImage = "LUT Warm 10"
+    End Select
+End Sub

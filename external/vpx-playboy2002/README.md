@@ -8,7 +8,7 @@
 
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 
 <br>
 
@@ -16,7 +16,7 @@
   - mcap
   - SilentKat
   - OminousOsie 🌸
-
+  - Reboot
 <br>
 
 ---

@@ -1,46 +1,63 @@
-# Lost in Space (Sega 1998) Bigus(MOD) 2.0
+# Lost in Space (Sega 1998)
 
 ![Table Preview](../../images/vpx-lostinspace-preview.jpg)
 
-Table
+<br>
 
-Author: [bigus1](https://www.vpforums.org/index.php?showuser=107629)  
-Filename:  Lost in Space (Sega 1998)_Bigus(MOD)2.0.vpx.zip  
-VPX Version: (Version 2.0) Lost in Space (Sega 1998)_Bigus(MOD)2.0.vpx  
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=14812)
+## *️⃣  Table Statistics
 
-Backglass
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ✅ | ✅ | ❌ | 54 |
 
-Author: [hauntfreaks](https://www.vpforums.org/index.php?showuser=73849)  
-Filename: Lost In Space (Sega 1998).rar  
-directb2s Version: (Version 1.0.0) Lost In Space (Sega 1998).directb2s  
-Download: [VPUniverse](https://vpuniverse.com/files/file/19526-lost-in-space-sega-1998-b2s-full-dmd/?tab=comments)
+<br>
 
-ROM
+**VPXS 4KP Testers:**
+  - TechZombie
+  - Ominous Osie 🌸
+  - Wraith
+  - B-Woo
 
-Author: [destruk](https://www.vpforums.org/index.php?showuser=5)  
-Lost in Space - ROM  
-Filename: lostspc.zip  
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=183)
+<br>
 
-MD5: 2BC7D3E396F4E97A5ADB79D06854FCF6  
-SHA-1: 9E83FF68E8843A139FF878870C27E8DBBE8C4347
-  
-Tested by:  
-[TechZombie]
+---
 
-## Status 
+<br>
 
-Minimum VPX Standalone build: 10.8.0-1983-b84441e
+## ❇️ Available in the Wizard! 🪄✨
 
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
+<br>
 
-## Instructions
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
 
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
-- "Danger, Will Robinson! Danger!" - Robot
+### How to install:
 
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Lost in Space (Sega 1998)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *""Danger, Will Robinson! Danger!" - Robot"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

@@ -1,6 +1,40 @@
 ' O Gaucho by LTD do Brasil from 1975
-' vpx8 table by jpsalas & Halen v 5.5.0
+' vpx8 table by jpsalas & Halen v 6.0.1
 ' based on the FP table by Exegeta & RoAtaguile
+
+'DOF Some Solenoid Config by Outhere
+'101 Left Flipper
+'102 Right Flipper
+'103 Left Slingshot
+'104 Right Slingshot
+'105 
+'106 
+'107 Bumper Left
+'108 Bumper Right
+'109 Bumper Center
+'110 
+'111 
+'112 
+'113 
+'114 
+'115 
+'116 
+'117 
+'118 
+'119 
+'120 BallRelease
+'121 
+'122 Knocker
+'123 
+'124 
+'125 
+'126 
+'128 
+'129 
+'130 
+'131 Chime
+'132 Chime
+
 
 Option Explicit
 Randomize
@@ -26,7 +60,6 @@ Const TableName = "ogaucho" ' file name to save highscores and other variables
 Const cGameName = "ogaucho" ' B2S name
 Const MaxPlayers = 2        ' 1 to 4 can play
 Const MaxMultiplier = 2     ' limit bonus multiplier
-Const BallsPerGame = 5      ' 3 or 5
 Const FreePlay = True      ' Free play or coins
 Const Special1 = 79000      ' extra ball or credit
 Const Special2 = 120000
@@ -125,9 +158,6 @@ Sub Table1_Init()
 
     ' Start the RealTime timer
     RealTime.Enabled = 1
-
-    ' Load table color
-    LoadLut
 End Sub
 
 '*******************
@@ -148,9 +178,6 @@ Sub Table1_KeyDown(ByVal Keycode)
         CollectInitials(keycode)
         Exit Sub
     End If
-
-    If keycode = LeftMagnaSave Then bLutActive = True: SetLUTLine "Color LUT image " & table1.ColorGradeImage
-    If keycode = RightMagnaSave AND bLutActive Then NextLUT
 
     ' add coins
     If Keycode = AddCreditKey OR Keycode = AddCreditKey2 Then
@@ -233,8 +260,6 @@ Sub Table1_KeyUp(ByVal keycode)
     If EnteringInitials then
         Exit Sub
     End If
-
-    If keycode = LeftMagnaSave Then bLutActive = False: HideLUT
 
     If bGameInPlay AND NOT Tilted Then
         ' teclas de los flipers
@@ -322,15 +347,15 @@ Dim LLiveCatchTimer
 Dim RLiveCatchTimer
 Dim LiveCatchSensivity
 
-FlipperPower = 5000
-FlipperElasticity = 0.8
-FullStrokeEOS_Torque = 0.3 	' EOS Torque when flipper hold up ( EOS Coil is fully charged. Ampere increase due to flipper can't move or when it pushed back when "On". EOS Coil have more power )
-LiveStrokeEOS_Torque = 0.2	' EOS Torque when flipper rotate to end ( When flipper move, EOS coil have less Ampere due to flipper can freely move. EOS Coil have less power )
+FlipperPower = 3600
+FlipperElasticity = 0.6
+FullStrokeEOS_Torque = 0.6 ' EOS Torque when flipper hold up ( EOS Coil is fully charged. Ampere increase due to flipper can't move or when it pushed back when "On". EOS Coil have more power )
+LiveStrokeEOS_Torque = 0.3 ' EOS Torque when flipper rotate to end ( When flipper move, EOS coil have less Ampere due to flipper can freely move. EOS Coil have less power )
 
 LeftFlipper.EOSTorqueAngle = 10
 RightFlipper.EOSTorqueAngle = 10
 
-SOSTorque = 0.1
+SOSTorque = 0.2
 SOSAngle = 6
 
 LiveCatchSensivity = 10
@@ -1606,80 +1631,6 @@ Sub CollectInitials(keycode)
 End Sub
 ' End GNMOD
 
-'************************************
-'       LUT - Darkness control
-' 10 normal level & 10 warmer levels 
-'************************************
-
-Dim bLutActive, LUTImage
-
-Sub LoadLUT
-    bLutActive = False
-    x = LoadValue(cGameName, "LUTImage")
-    If(x <> "")Then LUTImage = x Else LUTImage = 0
-    UpdateLUT
-End Sub
-
-Sub SaveLUT
-    SaveValue cGameName, "LUTImage", LUTImage
-End Sub
-
-Sub NextLUT:LUTImage = (LUTImage + 1)MOD 22:UpdateLUT:SaveLUT:SetLUTLine "Color LUT image " & table1.ColorGradeImage:End Sub
-
-Sub UpdateLUT
-    Select Case LutImage
-        Case 0:table1.ColorGradeImage = "LUT0"
-        Case 1:table1.ColorGradeImage = "LUT1"
-        Case 2:table1.ColorGradeImage = "LUT2"
-        Case 3:table1.ColorGradeImage = "LUT3"
-        Case 4:table1.ColorGradeImage = "LUT4"
-        Case 5:table1.ColorGradeImage = "LUT5"
-        Case 6:table1.ColorGradeImage = "LUT6"
-        Case 7:table1.ColorGradeImage = "LUT7"
-        Case 8:table1.ColorGradeImage = "LUT8"
-        Case 9:table1.ColorGradeImage = "LUT9"
-        Case 10:table1.ColorGradeImage = "LUT10"
-        Case 11:table1.ColorGradeImage = "LUT Warm 0"
-        Case 12:table1.ColorGradeImage = "LUT Warm 1"
-        Case 13:table1.ColorGradeImage = "LUT Warm 2"
-        Case 14:table1.ColorGradeImage = "LUT Warm 3"
-        Case 15:table1.ColorGradeImage = "LUT Warm 4"
-        Case 16:table1.ColorGradeImage = "LUT Warm 5"
-        Case 17:table1.ColorGradeImage = "LUT Warm 6"
-        Case 18:table1.ColorGradeImage = "LUT Warm 7"
-        Case 19:table1.ColorGradeImage = "LUT Warm 8"
-        Case 20:table1.ColorGradeImage = "LUT Warm 9"
-        Case 21:table1.ColorGradeImage = "LUT Warm 10"
-    End Select
-End Sub
-
-Dim GiIntensity
-GiIntensity = 1   'can be used by the LUT changing to increase the GI lights when the table is darker
-
-Sub ChangeGiIntensity(factor) 'changes the intensity scale
-    Dim bulb
-    For each bulb in aGiLights
-        bulb.IntensityScale = GiIntensity * factor
-    Next
-End Sub
-
-' New LUT postit
-Sub SetLUTLine(String)
-    Dim Index
-    Dim xFor
-    Index = 1
-    LUBack.imagea="PostItNote"
-    For xFor = 1 to 40
-        Eval("LU" &xFor).imageA = GetHSChar(String, Index)
-        Index = Index + 1
-    Next
-End Sub
-
-Sub HideLUT
-    SetLUTLine ""
-    LUBack.imagea="PostitBL"
-End Sub
-
 '***********************************************************************
 ' *********************************************************************
 '  *********     G A M E  C O D E  S T A R T S  H E R E      *********
@@ -1753,7 +1704,7 @@ End Sub
 
 Sub Bumper001_Hit 'left bumper
     If Tilted Then Exit Sub
-    PlaySoundAt "fx_bumper", bumper001
+    PlaySoundAt SoundFXDOF("fx_bumper", 107, DOFPulse, DOFContactors), bumper001
     AddScore 100
  AddTargetMulti 1
     Lbumper1a.Duration 1, 100, 0
@@ -1762,7 +1713,7 @@ End Sub
 
 Sub Bumper002_Hit 'center bumper
     If Tilted Then Exit Sub
-    PlaySoundAt "fx_bumper", Bumper002
+    PlaySoundAt SoundFXDOF("fx_bumper", 108, DOFPulse, DOFContactors), Bumper002
     AddScore 100
  AddTargetMulti 1
     Lbumper2a.Duration 1, 100, 0
@@ -1771,7 +1722,7 @@ End Sub
 
 Sub Bumper003_Hit 'right bumper
     If Tilted Then Exit Sub
-    PlaySoundAt "fx_bumper", Bumper003
+    PlaySoundAt SoundFXDOF("fx_bumper", 109, DOFPulse, DOFContactors), Bumper003
     AddScore 100
  AddTargetMulti 1
     Lbumper3a.Duration 1, 100, 0
@@ -1785,7 +1736,7 @@ Dim LStep, RStep
 
 Sub LeftSlingShot_Slingshot
     If Tilted Then Exit Sub
-    PlaySoundAt "fx_slingshot", Lemk
+    PlaySoundAt SoundFXDOF("fx_slingshot", 103, DOFPulse, DOFContactors), Lemk
     LeftSling004.Visible = 1
     Lemk.RotX = 26
     LStep = 0
@@ -1805,7 +1756,7 @@ End Sub
 
 Sub RightSlingShot_Slingshot
     If Tilted Then Exit Sub
-    PlaySoundAt "fx_slingshot", Remk
+    PlaySoundAt SoundFXDOF("fx_slingshot", 104, DOFPulse, DOFContactors), Remk
     RightSling004.Visible = 1
     Remk.RotX = 26
     RStep = 0
@@ -1954,4 +1905,56 @@ Sub CheckTargets
         t2 = 0
         t3 = 0
     End If
+End Sub
+
+'*********************************
+' Table Options F12 User Options
+'*********************************
+' Table1.Option arguments are: 
+' - option name, minimum value, maximum value, step between valid values, default value, unit (0=None, 1=Percent), an optional array of literal strings
+
+Dim LUTImage, BallsPerGame
+
+Sub Table1_OptionEvent(ByVal eventId)
+    Dim x, y
+
+    'LUT
+    LutImage = Table1.Option("Select LUT", 0, 21, 1, 0, 0, Array("Normal 0", "Normal 1", "Normal 2", "Normal 3", "Normal 4", "Normal 5", "Normal 6", "Normal 7", "Normal 8", "Normal 9", "Normal 10", _
+        "Warm 0", "Warm 1", "Warm 2", "Warm 3", "Warm 4", "Warm 5", "Warm 6", "Warm 7", "Warm 8", "Warm 9", "Warm 10") )
+    UpdateLUT
+
+    ' Cabinet rails
+    x = Table1.Option("Cabinet Rails", 0, 1, 1, 1, 0, Array("Hide", "Show") )
+    For each y in aRails:y.visible = x:next
+
+    ' Balls per Game
+    x = Table1.Option("Balls per Game", 0, 1, 1, 1, 0, Array("3 Balls", "5 Balls") )
+    If x = 1 Then BallsPerGame = 5 Else BallsPerGame = 3
+End Sub
+
+Sub UpdateLUT
+    Select Case LutImage
+        Case 0:table1.ColorGradeImage = "LUT0"
+        Case 1:table1.ColorGradeImage = "LUT1"
+        Case 2:table1.ColorGradeImage = "LUT2"
+        Case 3:table1.ColorGradeImage = "LUT3"
+        Case 4:table1.ColorGradeImage = "LUT4"
+        Case 5:table1.ColorGradeImage = "LUT5"
+        Case 6:table1.ColorGradeImage = "LUT6"
+        Case 7:table1.ColorGradeImage = "LUT7"
+        Case 8:table1.ColorGradeImage = "LUT8"
+        Case 9:table1.ColorGradeImage = "LUT9"
+        Case 10:table1.ColorGradeImage = "LUT10"
+        Case 11:table1.ColorGradeImage = "LUT Warm 0"
+        Case 12:table1.ColorGradeImage = "LUT Warm 1"
+        Case 13:table1.ColorGradeImage = "LUT Warm 2"
+        Case 14:table1.ColorGradeImage = "LUT Warm 3"
+        Case 15:table1.ColorGradeImage = "LUT Warm 4"
+        Case 16:table1.ColorGradeImage = "LUT Warm 5"
+        Case 17:table1.ColorGradeImage = "LUT Warm 6"
+        Case 18:table1.ColorGradeImage = "LUT Warm 7"
+        Case 19:table1.ColorGradeImage = "LUT Warm 8"
+        Case 20:table1.ColorGradeImage = "LUT Warm 9"
+        Case 21:table1.ColorGradeImage = "LUT Warm 10"
+    End Select
 End Sub

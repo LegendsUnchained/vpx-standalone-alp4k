@@ -2,6 +2,7 @@
 backglassVPSId: "t0x_fkVach"
 backglassChecksum: "938edf1853a9ad443bcce8f402b410d3"
 backglassNotes: "Found in the table download"
+backglassBundled: true
 fps: 50
 romVPSId: "shk3YZ7d2f"
 romChecksum: "8bcefbd013dcccff3a377d1d22db51a7"

@@ -1,0 +1,17 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "96C88E0FDF9A22D9AE1A2D7436DB0C0F"
+backglassNotes: "Download Version 1.1"
+backglassVPSId: "wWiC4hDnN8"
+fps: 50
+romChecksum: "29FDE8A4D84A217E6B7634F3B98F1CA0"
+romNotes: "Download rollr_l2"
+romVPSId: "NKbeSfO7"
+tableNotes: "Download Version 1.1"
+tableVPSId: "3pfPL4cb"
+tagline: "Go for the wall!"
+testers:
+  - Silentkat,CoffeeAtJoes
+vpxChecksum: "A8CD947D69050E5FA2443158976A84CB"
+vpxVPSId: "kCoP1uiyme"

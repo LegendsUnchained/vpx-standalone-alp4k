@@ -1,43 +1,61 @@
-The Incredible Hulk (Gottlieb 1979)
+# Incredible Hulk, The (Gottlieb 1979)
 
 ![Table Preview](../../images/vpx-incrediblehulk.jpg)
 
-Author: [STYX](https://www.vpforums.org/index.php?s=4f52c8e7de16f297b60b17013bd01932&app=core&module=search&do=user_activity&search_app=downloads&mid=62551)  
+<br>
 
-Tested by: Dr_Wraith
+## *️⃣  Table Statistics
 
-Version: 1.31
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ✅ | ✅ | ❌ | 60 |
 
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=18278)
+<br>
 
-DirectB2S
+**VPXS 4KP Testers:**
+  - Wraith
+  - pointdablame
 
-Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
+<br>
 
-Version: 1.0.0
+---
 
-Download: [VP Universe](https://vpuniverse.com/files/file/15947-the-incredible-hulk-gottlieb-1979-b2s/)
+<br>
 
-ROM
+## ❇️ Available in the Wizard! 🪄✨
 
-Download: [Internet Archive](https://archive.org/details/hulk_20240824)
+<br>
 
-SHA: CAEA94ABD2E627D9F4A57494016549B705300DEB
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
 
-MD5: FAC1DF81F93B43F5B93A5E11EED079E9
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Incredible Hulk, The (Gottlieb 1979)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"'Don't make me angry. You won't like me when I'm angry.'"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
 
 
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-2026-3b68d7c
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
-
-## Instructions
-
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more infomation found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
-- "Don't Make Me Hungry. You Wouldn't Like Me When I'm Hungry." 🐾
-
+<br>
+<br>
+<br>
+<br>
+<br>

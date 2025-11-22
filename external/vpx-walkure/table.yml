@@ -1,0 +1,18 @@
+---
+applyFixes:
+  - "bass"
+backglassBundled: true
+backglassChecksum: "B9A9E82AF13C2B6DF293CC366F070F28"
+backglassNotes: "Included in VPX zip"
+backglassVPSId: "fvc5FJSEiH"
+fps: 55
+mainNotes: "Table based on Walkyrie, music based on Macross Delta."
+romChecksum: "3BBE56AF04DDE85B31491CFB4077EDE3"
+romVPSId: "z8vIEMDTRP"
+tableVPSId: "AJWvsrsaip"
+tagline: "'If we get the transient facts, then we feel the Info High!'"
+testers:
+  - "evilwraith"
+  - "CoffeeAtJoes"
+vpxChecksum: "9475BFBDF48BB41EC179463BE76761D0"
+vpxVPSId: "36AJ0UrccW"

@@ -1,0 +1,19 @@
+---
+applyFixes:
+  - "bass"
+# yamllint disable-line rule:line-length
+backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/iGEvF6towb_1750718876329.webp"
+fps: 52
+pupArchiveFormat: "rar"
+pupArchiveRoot: "HAL9000"
+pupChecksum: "37AF67AD2D0D62966CE55B227B6D1875"
+pupRequired: true
+pupVPSId: "ifIOeaxK0W"
+pupNotes: "Download 'HAL9000.rar'"
+tableNotes: "Download '2001_SpaceOdyssey_Pup Table file.zip'"
+tableVPSId: "0IDqTPkR_4"
+tagline: "'I'm afraid I can't do that, Dave...'"
+testers:
+  - "The entire 4kp team"
+vpxChecksum: "2497811C4F52C72BB9339005BDF462A3"
+vpxVPSId: "iGEvF6towb"

@@ -1,0 +1,20 @@
+---
+applyFixes: 
+  - "bass"
+backglassBundled: true
+backglassVPSId: "qGo_EE4Sr3"
+backglassChecksum: "90C3A8F9CF09BD1C318FFAF07CF30CD9"
+backglassNotes: "Included in VPX zip"
+fps: 60
+romVPSId: "g9nn-JNx6q"
+romChecksum: "4ECC29454ADF313620F6342B36B6B301"
+romNotes: "Download flash_l1.zip"
+tableNotes: "Download v1.2"
+tableVPSId: "Aifl54Zy"
+tagline: "Some days, you just can't get rid of a bomb!"
+testers:
+  - "Curt"
+  - "OminousOsie"
+  - "CoffeeAtJoes"
+vpxVPSId: "uM7VnH7n"
+vpxChecksum: "7F18278326EE54C1528AD9BB07172B40"
