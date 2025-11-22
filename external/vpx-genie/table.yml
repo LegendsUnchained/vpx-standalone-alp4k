@@ -8,11 +8,12 @@ tagline: "Your wish is my command!"
 romChecksum: "EEEE91C2C253496C61971C9B6600AD90"
 romUrlOverride: "https://vpuniverse.com/files/file/1184-genie/"
 romVersionOverride: "genie"
+tableNotes: "Download 'Genie (Gottlieb 1979)_Bigus(MOD)3.1.vpx.zip'"
 testers:
   - "evilwraith"
   - "CoffeeAtJoes"
   - "Boris"
 vpxVPSId: "w2f18S9a"
-vpxChecksum: "09FCC93E7317A7E7E36A962F2D09E7C3"
+vpxChecksum: "5B2BE73F95223AEB3884FA3CD0A45688"
 applyFixes:
   - "bass"

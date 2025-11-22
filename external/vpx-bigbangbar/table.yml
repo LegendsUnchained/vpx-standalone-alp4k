@@ -9,11 +9,12 @@ fps: 50
 romVPSId: "Ks3T1Xy7"
 romChecksum: "689548ef14a6dd6550901378c63fa43c"
 tableVPSId: "ZxOdqKhi"
+tableNotes: "Download 'Big Bang Bar (Capcom 1996)_Bigus(MOD)3.0.vpx.zip'"
 tagline: "**Warning:** Mature table, not suitable for children!"
 testers:
   - "mcap"
   - "OminousOsie"
 vpxVPSId: "zL4Mo0At"
-vpxChecksum: "a0461315f909dde832bc8ed247fb14bc"
+vpxChecksum: "B1CA7366A2D0C44EE0E365264A68A0AE"
 applyFixes:
   - "bass"
