@@ -20,7 +20,7 @@
 
 | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |-----------|-----|-----|-----|-----|
-| :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
+| :white_check_mark: | :white_check_mark: | :x: | :x: | 55 |
 
 ---
 
