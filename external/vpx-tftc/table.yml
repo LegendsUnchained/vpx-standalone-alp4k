@@ -8,11 +8,12 @@ romChecksum: "90A891EC520E669DE90C7C766CAA5A26"
 romNotes: "Download - tftc_400.zip"
 tableVPSId: "fXaQ33KC"
 tagline: "Hello, boils and ghouls!"
+tableNotes: "'Tales from the Crypt (Data East 1993)_Bigus(MOD)3.0.vpx.zip'"
 testers:
   - "Boris"
   - "evilwraith"
   - "OminousOsie"
 vpxVPSId: "xkDq6Aub"
-vpxChecksum: "E2B1A42F2953F63ED06DA54D1C3BF2B0"
+vpxChecksum: "8BDC98490EB2B33B7B89E5D5658B699D"
 applyFixes:
   - "bass"
