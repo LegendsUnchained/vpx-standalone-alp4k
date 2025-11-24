@@ -1,7 +1,7 @@
 ---
 backglassAuthorsOverride:
   - ""
-fps: 60
+fps: 55
 romVPSId: "ymxnVQaE"
 romChecksum: "f5fe10836eeb802498c4e6d50ad00d95"
 tableVPSId: "DzsaK6qK"
@@ -12,8 +12,8 @@ testers:
   - "kaoticBPR"
   - "evilwraith"
   - "OminousOsie"
-vpxVPSId: "UFiN1mLE"
-vpxChecksum: "b496a25594a4e887c3a5a35f7b39bfa4"
-tableNotes: "Download version 1.2.2"
+vpxVPSId: "jUntdZLbHh"
+vpxChecksum: "24B13F20332C2DE434543B1CDCAEAF51"
+tableNotes: "Download 'Mary Shelley's Frankenstein (Sega 1995)_Bigus(MOD)2.0.vpx.zip'"
 applyFixes:
   - "bass"
