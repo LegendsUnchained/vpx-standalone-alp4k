@@ -21,16 +21,11 @@ Const UseVPMModSol = 1
 
 Dim  varhidden, UseVPMColoredDMD, bgsko, preLoad8Balls
 
-	bgsko=0
-If Table1.ShowDT = false then
+bgsko=0
 Ramp032.visible = 0
-Ramp033.visible = 0				   
-    UseVPMColoredDMD = true
-	varhidden=1
-Else
-    UseVPMColoredDMD = true
-	varhidden=0
-End If
+Ramp033.visible = 0
+UseVPMColoredDMD = true
+varhidden=0
 
 ' ***********************************************************************************************
 ' OPTIONS
