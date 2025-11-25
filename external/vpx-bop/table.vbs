@@ -70,7 +70,7 @@ Musicsnippet = 0
 'Starfield =1
 'BOP Blades = 2
 'Random = 3
-Sidewalls = 0
+Sidewalls = 2
 
 
 'SIDE RAILS
@@ -154,7 +154,7 @@ Ballshadow = 0
 
 'PLAYFIELD SHADOW INTENSITY (adds additional visual depth)
 'Usable range is 0 (lighter) - 100 (darker)
-shadowopacity = 80
+shadowopacity = 50
 
 
 ' ********************************************************************************
