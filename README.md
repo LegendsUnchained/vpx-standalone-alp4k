@@ -275,6 +275,7 @@ Links to these products on Amazon are through affiliate links.
 | [Airborne (Capcom 1996)](external/vpx-airborne) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 37 |
 | [Airborne Avenger (Atari 1977)](external/vpx-airavenger) | :white_check_mark: | :x: | :white_check_mark: | :x: | 55 |
 | [Airwolf (TBA 2020)](external/vpx-airwolf) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
+| [Aladdin's Castle (Bally 1976)](external/vpx-aladdincastle) | :white_check_mark: | :white_check_mark: | :x: | :x: | 55 |
 | [Algar (Williams 1980)](external/vpx-algar) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Ali (Stern 1980)](external/vpx-ali) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Alien Poker (Williams 1980)](external/vpx-alienpoker) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
