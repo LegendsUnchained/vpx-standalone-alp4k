@@ -1,6 +1,7 @@
 ---
 applyFixes: 
   - "bass"
+backglassBundled: true
 backglassVPSId: "Q9Wxt1m8"
 backglassChecksum: "0049B3B34AD915C72898D73456E2087C"
 backglassNotes: "Download 'Apache! EM (Taito do Brasil 1978) v55_VPX8.directb2s.zip'"

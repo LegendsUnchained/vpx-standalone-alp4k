@@ -7,11 +7,13 @@ romVPSId: "vwDH6y_g"
 romChecksum: "356c7f7c943a5d72ace371c9398ea722"
 romNotes: "Download - bop_l8.zip"
 tableVPSId: "MKZNH4Rl"
+tableNotes: >-
+  "Download 'The Machine - Bride Of Pinbot (Williams 1991)_Bigus(MOD)3.0.vpx.zip'"
 tagline: "My god, she's alive!"
 testers:
   - "Bla1ze"
   - "Boris"
 vpxVPSId: "V1dcVAchIZ"
-vpxChecksum: "120efce1239a49a32f14bf628224bc37"
+vpxChecksum: "8f04921f5df40aa49463b46a61285c73"
 applyFixes:
   - "bass"

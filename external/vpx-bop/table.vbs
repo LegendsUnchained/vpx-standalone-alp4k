@@ -70,7 +70,7 @@ Musicsnippet = 0
 'Starfield =1
 'BOP Blades = 2
 'Random = 3
-Sidewalls = 0
+Sidewalls = 2
 
 
 'SIDE RAILS
@@ -154,7 +154,7 @@ Ballshadow = 0
 
 'PLAYFIELD SHADOW INTENSITY (adds additional visual depth)
 'Usable range is 0 (lighter) - 100 (darker)
-shadowopacity = 80
+shadowopacity = 50
 
 
 ' ********************************************************************************
@@ -317,28 +317,28 @@ Sub Table_KeyDown(ByVal keycode)
      'If Keycode = LeftFlipperKey then SolLFlipper 1
      If keycode = LeftTiltKey Then LeftNudge 80, 1, 20
      If keycode = RightTiltKey Then RightNudge 280, 1, 20
-     If keycode = CenterTiltKey Then CenterNudge 0, 1, 25
+     If keycode = CenterTiltKey Then CenterNudge 0, 1, 25    
 
-    '************************   Start Ball Control 1/3
-        if keycode = 46 then                ' C Key
-            If contball = 1 Then
-                contball = 0
-            Else
-                contball = 1
-            End If
-        End If
-        if keycode = 48 then                'B Key
-            If bcboost = 1 Then
-                bcboost = bcboostmulti
-            Else
-                bcboost = 1
-            End If
-        End If
-        if keycode = 203 then bcleft = 1        ' Left Arrow
-        if keycode = 200 then bcup = 1          ' Up Arrow
-        if keycode = 208 then bcdown = 1        ' Down Arrow
-        if keycode = 205 then bcright = 1       ' Right Arrow
-'    '************************   End Ball Control 1/3
+													  
+												   
+								
+							
+				
+							
+				  
+			  
+												  
+							   
+									  
+				
+						   
+				  
+			  
+															
+														  
+															
+															 
+													 
     If vpmKeyDown(keycode) Then Exit Sub
 End Sub
 
@@ -347,57 +347,57 @@ Sub Table_KeyUp(ByVal keycode)
 
      If keycode = plungerkey then plunger.Fire:PlaySoundAt "Plunger2", plunger
      'If Keycode = RightFlipperKey then SolRFlipper 0
-     'If Keycode = LeftFlipperKey then SolLFlipper 0
+     'If Keycode = LeftFlipperKey then SolLFlipper 0    
 
-    '************************   Start Ball Control 2/3
-    if keycode = 203 then bcleft = 0        ' Left Arrow
-    if keycode = 200 then bcup = 0          ' Up Arrow
-    if keycode = 208 then bcdown = 0        ' Down Arrow
-    if keycode = 205 then bcright = 0       ' Right Arrow
-    '************************   End Ball Control 2/3
+													  
+														
+													  
+														
+														 
+													
      If vpmKeyUp(keycode) Then Exit Sub
 End sub
 
 
 
-'************************   Start Ball Control 3/3
-Sub StartControl_Hit()
-    Set ControlBall = ActiveBall
-    contballinplay = true
-End Sub
+												  
+					  
+								
+						 
+	   
 
-Sub StopControl_Hit()
-    contballinplay = false
-End Sub
+					 
+						  
+	   
 
-Dim bcup, bcdown, bcleft, bcright, contball, contballinplay, ControlBall, bcboost
-Dim bcvel, bcyveloffset, bcboostmulti
+																				 
+									 
 
-bcboost = 1     'Do Not Change - default setting
-bcvel = 4       'Controls the speed of the ball movement
-bcyveloffset = -0.01    'Offsets the force of gravity to keep the ball from drifting vertically on the table, should be negative
-bcboostmulti = 3    'Boost multiplier to ball veloctiy (toggled with the B key)
+												
+														
+																																
+																			   
 
-Sub BallControl_Timer()
-    If Contball and ContBallInPlay then
-        If bcright = 1 Then
-            ControlBall.velx = bcvel*bcboost
-        ElseIf bcleft = 1 Then
-            ControlBall.velx = - bcvel*bcboost
-        Else
-            ControlBall.velx=0
-        End If
+					   
+									   
+						   
+											
+							  
+											  
+			
+							  
+			  
 
-        If bcup = 1 Then
-            ControlBall.vely = -bcvel*bcboost
-        ElseIf bcdown = 1 Then
-            ControlBall.vely = bcvel*bcboost
-        Else
-            ControlBall.vely= bcyveloffset
-        End If
-    End If
-End Sub
-'************************   End Ball Control 3/3
+						
+											 
+							  
+											
+			
+										  
+			  
+		  
+	   
+												
 
  '***Solenoids***
         SolCallback(1) = "kisort"
@@ -1699,8 +1699,8 @@ Sub InitLampsNF()
 		Lampz.FadeSpeedDown(x) = 1/120
 	Next
 	for x = 5 to 28
-		ModLampz.FadeSpeedUp(x) = 1/64
-		ModLampz.FadeSpeedDown(x) = 1/64
+		ModLampz.FadeSpeedUp(x) = 1/128
+		ModLampz.FadeSpeedDown(x) = 1/128
 	Next
 
 
@@ -1828,7 +1828,7 @@ Sub InitLampsNF()
 	Lampz.Callback(47) = "FadeMaterialEyesFiliment pFiliment47, MaterialEyesArray, "
 
 	Lampz.MassAssign(48)= l48
-	Lampz.MassAssign(48)= l48a
+						   
 	Lampz.Callback(48) =         "FadeMaterialMouthBulb pBulb48, MaterialRedArray, "
 	Lampz.Callback(48) = "FadeMaterialMouthFiliment pFiliment48, MaterialRedArray, "
 

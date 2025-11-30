@@ -1,0 +1,19 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "713e9289894c48ff5caf74c87d47f98e"
+backglassNotes: "Download Version v2.0"
+backglassVPSId: "u7fa9sa2XM"
+fps: 55
+romNotes: "Download gw_l5.zip"
+romVPSId: "4lxSLKB7"
+romChecksum: "54806be981bbb3fabe98fb1d5d0c0fb0"
+tableNotes: "Download Version 3.0"
+tableVPSId: "cCV4A6uc"
+tagline: "Shift into High Gear!"
+testers:
+  - "Silentkat"
+  - "OminousOsie"
+vpxVPSId: "YoXfmzDV"
+vpxChecksum: "d2743cc3f2b27c4effb5dbb17c7e9385"
+

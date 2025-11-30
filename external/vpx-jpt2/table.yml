@@ -1,0 +1,23 @@
+---
+fps: 60
+backglassImageOverride: >-
+  https://virtualpinballspreadsheet.github.io/vps-db/img/gyhULWKc_b2s_1689850161155.webp
+pupArchiveRoot: "t2_l8"
+pupChecksum: "b939687ca882d009da709bfcd0ae383a"
+pupNotes: "Download 't2_l8.zip'"
+pupFileUrl: >-
+  https://vpuniverse.com/files/file/22604-terminator-2-pup-pack-and-full-dmd/
+pupRequired: true
+romVPSId: "IWVOy5e8"
+romChecksum: "f4d3810b45efbae942176c8ba5e1002c"
+tableVPSId: "gyhULWKc"
+tableNotes: "Download version v600.zip"
+tagline: "Hasta la vista, baby"
+testers:
+  - "mcap"
+  - "mrandromeda"
+  - "OminousOsie"
+vpxVPSId: "GAqfmxLp"
+vpxChecksum: "F33A70D8ACF57F914C93448F61F7A8E0"
+applyFixes:
+  - "bass"

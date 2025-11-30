@@ -1,0 +1,14 @@
+---
+tableVPSId: "4Rkn0Owa"
+vpxVPSId: "BQ_20OCc"
+vpxChecksum: "63C749DC6E2B1158BF3E9DB81180D115"
+tableNotes: "Download 'JPs Ghostbusters Slimer v602.zip'"
+backglassVPSId: "oPS8YWqV"
+backglassChecksum: "1fa5ca526a3e88c878fbb89e4d356ad4"
+backglassNotes: "Download 'JP Ghostbusters Slimer.rar'"
+backglassAuthorsOverride:
+  - "hauntfreaks"
+fps: 60
+tagline: "Bustin’ makes me feel good!"
+testers:
+  - "Boris"
