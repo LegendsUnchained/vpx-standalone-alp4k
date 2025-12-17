@@ -4,7 +4,7 @@ Randomize
 
 
 Const cGameName = "SexyGirl"
-Const cloneGameName = "playboy"
+Const cloneGameName = "playboyb"
 Const UseSolenoids=1,UseLamps=True,UseGI=0,UseSyn=1,SSolenoidOn="SolOn",SSolenoidOff="Soloff",SFlipperOn="FlipperUpLeft",SFlipperOff="FlipperDown"
 Const SCoin="coin3"
 
@@ -13,7 +13,9 @@ ExecuteGlobal GetTextFile("controller.vbs")
 If Err Then MsgBox "Can't open controller.vbs"
 On Error Goto 0
 
-LoadVPM "01560000","Bally.vbs", 3.36Dim bsTrough, dtDrop, bsSaucer, balls, scount, brain, h, screens(190),plungerIM, xxDim Language
+LoadVPM "01560000","Bally.vbs", 3.36
+Dim bsTrough, dtDrop, bsSaucer, balls, scount, brain, h, screens(190),plungerIM, xx
+Dim Language
 Dim NumOfBalls
 Dim BIP
 
@@ -236,21 +238,68 @@ Sub ChangeTeamb
 	End If
 	If TeamNowb = TotalTeamsb Then TeamNowb = 0
 End Sub
-'*****************************************************
+
+'*****************************************************
 '*                     Solonoids                     *
-'*****************************************************SolCallback(7) = "bsTrough.SolOut"SolCallback(6)     = "vpmSolSound ""Knocker"","'SolCallback(12)      = "vpmSolSound ""Sling"","'SolCallback(14)      = "vpmSolSound ""Sling"","'SolCallback(9)        = "vpmSolSound ""Bumper"","'SolCallback(10)        = "vpmSolSound ""Bumper"","'SolCallback(11)        = "vpmSolSound ""Bumper"","SolCallback(8)      = "bsSaucer.SolOut"SolCallback(13) = "SolTargetReset"SolCallback(19)     	= "solGI"
+'*****************************************************
+SolCallback(7) = "bsTrough.SolOut"
+SolCallback(6)     = "vpmSolSound ""Knocker"","
+'SolCallback(12)      = "vpmSolSound ""Sling"","
+'SolCallback(14)      = "vpmSolSound ""Sling"","
+'SolCallback(9)        = "vpmSolSound ""Bumper"","
+'SolCallback(10)        = "vpmSolSound ""Bumper"","
+'SolCallback(11)        = "vpmSolSound ""Bumper"","
+SolCallback(8)      = "bsSaucer.SolOut"
+SolCallback(13) = "SolTargetReset"
+SolCallback(19)     	= "solGI"
 SolCallback(sLLFlipper) = "solLFlipper"
 SolCallback(sLRFlipper) = "solRFlipper"
-'*****************************************************
+
+'*****************************************************
 '*                    Table Init                     *
-'*****************************************************Sub Table1_Init
- 		With Controller		.GameName = cloneGameName		.SplashInfoLine = "Christmas Pinball (Arkon 1980)" & vbNewLine & " VPX table by Mickey-Lizard" & vbNewLine & "Graphics and Sound MOD by Xenonph v2.0"		.HandleKeyboard = False		.ShowTitle = False		.ShowDMDOnly = True	    .ShowFrame = False
-    Controller.Games("playboy").Settings.Value("sound")=0 		SetBallDip		On Error Resume Next			.Run			.Hidden=1			If Err Then MsgBox Err.Description		On Error Goto 0	End With' ' Main Timer init	PinMAMETimer.Interval = PinMAMEInterval	PinMAMETimer.Enabled = True
+'*****************************************************
+Sub Table1_Init
+ 
+		With Controller
+		.GameName = cloneGameName
+		.SplashInfoLine = "Christmas Pinball (Arkon 1980)" & vbNewLine & " VPX table by Mickey-Lizard" & vbNewLine & "Graphics and Sound MOD by Xenonph v2.0"
+		.HandleKeyboard = False
+		.ShowTitle = False
+		.ShowDMDOnly = True
+	    .ShowFrame = False
+    Controller.Games("playboyb").Settings.Value("sound")=0 
+		SetBallDip
+		On Error Resume Next
+			.Run
+			.Hidden=1
+			If Err Then MsgBox Err.Description
+		On Error Goto 0
+	End With
+' 
+' Main Timer init
+	PinMAMETimer.Interval = PinMAMEInterval
+	PinMAMETimer.Enabled = True
           Dim x
           x = INT(1 * RND(1) )
           Select Case x
           Case 0:PlayMusic"D.Mode\001. Depeche Mode - Enjoy the Silence.mp3":ITrigger.timerinterval=254000:ITrigger.timerenabled=1
-          End Select' Nudging	vpmNudge.TiltSwitch = 7	vpmNudge.Sensitivity = 1	vpmNudge.TiltObj = Array(Bumper1,Bumper2,Bumper3,LeftSlingshot,RightSlingShot)	Set bsTrough = New cvpmBallStack 												' Trough handler	bsTrough.InitSw 0,8,0,0,0,0,0,0	bsTrough.InitKick Kickout, 60, 4	bsTrough.Balls = 1	Set dtDrop = New cvpmDropTarget	dtDrop.InitDrop Array(Target1,Target2,Target3,Target4,Target5),Array(1,2,3,4,5)	'dtDrop.InitSnd "Drop","Reset"	Set bsSaucer = New cvpmBallStack	bsSaucer.InitSaucer GrottoKicker,32,0,20	'bsSaucer.InitExitSnd "Saucer","Saucer"	if Controller.Dip(0)+Controller.Dip(1)+Controller.Dip(2)+Controller.Dip(3)  < 1 then Controller.Pause=true : msgBox "Please select your game options!" & vbNewLine & "You will only have to do this once!" : vpmShowDips : Controller.Pause=false
+          End Select
+
+' Nudging
+	vpmNudge.TiltSwitch = 7
+	vpmNudge.Sensitivity = 1
+	vpmNudge.TiltObj = Array(Bumper1,Bumper2,Bumper3,LeftSlingshot,RightSlingShot)
+	Set bsTrough = New cvpmBallStack 												' Trough handler
+	bsTrough.InitSw 0,8,0,0,0,0,0,0
+	bsTrough.InitKick Kickout, 60, 4
+	bsTrough.Balls = 1
+	Set dtDrop = New cvpmDropTarget
+	dtDrop.InitDrop Array(Target1,Target2,Target3,Target4,Target5),Array(1,2,3,4,5)
+	'dtDrop.InitSnd "Drop","Reset"
+	Set bsSaucer = New cvpmBallStack
+	bsSaucer.InitSaucer GrottoKicker,32,0,20
+	'bsSaucer.InitExitSnd "Saucer","Saucer"
+'	if Controller.Dip(0)+Controller.Dip(1)+Controller.Dip(2)+Controller.Dip(3)  < 1 then Controller.Pause=true : msgBox "Please select your game options!" & vbNewLine & "You will only have to do this once!" : vpmShowDips : Controller.Pause=false
 CheckInstructionCards
 
 Dim DesktopMode:DesktopMode = Table1.ShowDT
@@ -298,7 +347,22 @@ If DesktopMode = False Then
 		Ramp1.visible = False
 End If
 
-End SubSub SetBallDip	With Controller		.Dip(0) = &HE2		'.Dip(0) = &H44		.Dip(2) = &HD1		'.Dip(2) = &HDD		.Dip(3) = &H01		'.Dip(3) = &H01		if balls < 4 then 	' For 3 balls per game			.Dip(1) = &H6A		else 				' For 5 balls per game			.Dip(1) = &HEA		end if	end withEnd Sub
+End Sub
+
+Sub SetBallDip
+	With Controller
+		.Dip(0) = &HE2		'.Dip(0) = &H44
+		.Dip(2) = &HD1		'.Dip(2) = &HDD
+		.Dip(3) = &H01		'.Dip(3) = &H01
+
+		if balls < 4 then 	' For 3 balls per game
+			.Dip(1) = &H6A
+		else 				' For 5 balls per game
+			.Dip(1) = &HEA
+		end if
+	end with
+End Sub
+
 '*****************************************************
 '*                   Drop Targets                    *
 '*****************************************************
@@ -311,9 +375,11 @@ Sub SolTargetReset(enabled)
 	if enabled then	PlaySound SoundFX("Reset",DOFContactors)
 	dtDrop.SolDropUp enabled
 End Sub
-'*****************************************************
+
+'*****************************************************
 '*                Keyboard Handlers                  *
-'*****************************************************Sub Table1_KeyDown(ByVal keycode)
+'*****************************************************
+Sub Table1_KeyDown(ByVal keycode)
 	'If KeyCode = RightMagnaSave Then ChangeTeamb:GiEffect 1
 	If KeyCode = RightMagnaSave Then NextTrack
     If KeyCode = 3 Then colorgi
@@ -433,7 +499,8 @@ Sub Table1_KeyUp(ByVal keycode)
 			  playsound"plungerreleasefree"  
               End If 
 	If vpmKeyUp(KeyCode) Then Exit Sub
-End Sub
+End Sub
+
 
 'PLUNGER TRIGGER
 'Sub Trigger1_Hit()
@@ -850,7 +917,13 @@ Sub KickOut_UnHit :PlaySound SoundFX("ballrelease",DOFContactors):Drain.timerena
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 '                      Switch Handling                         '
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''Sub DropTargetSlingshot_Slingshot : vpmTimer.PulseSwitch 33, 0, 0 : End SubSub Bumper2_Hit : PlaySound SoundFX("Bumper",DOFContactors):vpmTimer.PulseSwitch 38, 0, 0 :PlaySound"CPE05":FlashLevel2 = 1 : FlasherFlash2_Timer: End SubSub Bumper1_Hit : PlaySound SoundFX("Bumper",DOFContactors):vpmTimer.PulseSwitch 39, 0, 0 :PlaySound"CPE06":FlashLevel1 = 1 : FlasherFlash1_Timer: End SubSub Bumper3_Hit : PlaySound SoundFX("Bumper",DOFContactors):vpmTimer.PulseSwitch 40, 0, 0 :PlaySound"CPE07":FlashLevel1 = 1 : FlasherFlash1_Timer:FlashLevel2 = 1 : FlasherFlash2_Timer: End Sub'*****************************************************
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Sub DropTargetSlingshot_Slingshot : vpmTimer.PulseSwitch 33, 0, 0 : End Sub
+Sub Bumper2_Hit : PlaySound SoundFX("Bumper",DOFContactors):vpmTimer.PulseSwitch 38, 0, 0 :PlaySound"CPE05":FlashLevel2 = 1 : FlasherFlash2_Timer: End Sub
+Sub Bumper1_Hit : PlaySound SoundFX("Bumper",DOFContactors):vpmTimer.PulseSwitch 39, 0, 0 :PlaySound"CPE06":FlashLevel1 = 1 : FlasherFlash1_Timer: End Sub
+Sub Bumper3_Hit : PlaySound SoundFX("Bumper",DOFContactors):vpmTimer.PulseSwitch 40, 0, 0 :PlaySound"CPE07":FlashLevel1 = 1 : FlasherFlash1_Timer:FlashLevel2 = 1 : FlasherFlash2_Timer: End Sub
+
+'*****************************************************
 '*                Model And S Targets                *
 '*****************************************************
  Sub sw17_Hit:vpmTimer.PulseSw 17:Me.TimerEnabled = 1:PlaySound SoundFX("Target",DOFContactors):FlashLevel1 = 1 : FlasherFlash1_Timer:FlashLevel2 = 1 : FlasherFlash2_Timer
@@ -930,7 +1003,9 @@ End Sub
 			Case 2:PlaySound"CPE13"
 			Case 3:PlaySound"CPE14"
 			End Select
-End Sub'*****************************************************
+End Sub
+
+'*****************************************************
 '*               Projector Handling                  *
 '*****************************************************
 balls = 3
@@ -984,15 +1059,89 @@ Sub CheckInstructionCards()
 End Sub
 
 
-'*****************************************************
+
+'*****************************************************
 '*                      Lights                       *
-'*****************************************************Set Lights(15)  = Light1Player
+'*****************************************************
+Set Lights(15)  = Light1Player
 Set Lights(31)  = Light2Player
 Set Lights(47)  = Light3Player
 Set Lights(63)  = Light4Player
 Set Lights(13)  = BallInPlayLight
-Lights(1)  = array(Light1k,Light001)Lights(17) = array(Light2k,Light002)Lights(33) = array(Light3k,Light003)Lights(49) = array(Light14k,Light004)Lights(2)  = array(Light15k,Light005)Lights(18) = array(Light16k,Light006)Lights(34) = array(Light17k,Light007)Lights(50) = array(Light18k,Light008)Lights(3)  = array(Light19k,Light009)Lights(19) = array(Light10k,Light010)Set Lights(35) = Light120kSet Lights(55) = Light2XSet Lights(39) = Light3XSet Lights(23) = Light5XSet Lights(4)  = GLightSet Lights(20) = ILightSet Lights(36) = RLightSet Lights(52) = LLightSet Lights(5)  = SLightSet Lights(6)  = KickerGLight1Set Lights(22) = KickerILight1Set Lights(38) = KickerRLight1Set Lights(54) = KickerLLight1Set Lights(7)  = KickerSLight1Set Lights(21) = Kicker25kLightSet Lights(40) = JeanLightSet Lights(8)  = JoyLightSet Lights(24) = LinnLightSet Lights(56) = SusyLightSet Lights(9)  = EvaLightSet Lights(37) = Arrow5kLightSet Lights(57) = ArrowExtraLightSet Lights(41) = ArrowSpecialLightSet Lights(25) = TriggerLightSet Lights(44) = RightOutlaneLightSet Lights(60) = LeftOutlaneLightSet Lights(53) = TargetSpecialLightSet Lights(51) = GirlsSpecialLightSet Lights(43) = ExtraballLightSet Lights(59) = CreditLightSet Lights(45) = GameOverLightSet Lights(11) = ExtraballLight2Set Lights(29) = HighscoreLightSet Lights(27) = MatchLightSet Lights(61) = TiltLightSet LampCallBack = GetRef("UpdateMultipleLamps")Public Sub UpdateMultipleLamps
-If GameOverLight.State = 0 Then   BallInPlayLight.State = 1   Else    BallInPlayLight.State = 0End IfIf 	GameOverLight.State = 1 Then				ProjectorOff()End IfIf 	Light2X.State = 1 Then	ProjectorOn()'Else	'ProjectorOff()       					'mode of operation "B"??End IfIf 	Light3X.State = 1 Then 	ProjectorOn()'Else	'ProjectorOff()							'mode of operation "B"??End IfIf 	Light5X.State = 1 Then	ProjectorOn()'Else	'ProjectorOff()							'mode of operation "B"??End IfEnd Sub
+Lights(1)  = array(Light1k,Light001)
+Lights(17) = array(Light2k,Light002)
+Lights(33) = array(Light3k,Light003)
+Lights(49) = array(Light14k,Light004)
+Lights(2)  = array(Light15k,Light005)
+Lights(18) = array(Light16k,Light006)
+Lights(34) = array(Light17k,Light007)
+Lights(50) = array(Light18k,Light008)
+Lights(3)  = array(Light19k,Light009)
+Lights(19) = array(Light10k,Light010)
+Set Lights(35) = Light120k
+Set Lights(55) = Light2X
+Set Lights(39) = Light3X
+Set Lights(23) = Light5X
+Set Lights(4)  = GLight
+Set Lights(20) = ILight
+Set Lights(36) = RLight
+Set Lights(52) = LLight
+Set Lights(5)  = SLight
+Set Lights(6)  = KickerGLight1
+Set Lights(22) = KickerILight1
+Set Lights(38) = KickerRLight1
+Set Lights(54) = KickerLLight1
+Set Lights(7)  = KickerSLight1
+Set Lights(21) = Kicker25kLight
+Set Lights(40) = JeanLight
+Set Lights(8)  = JoyLight
+Set Lights(24) = LinnLight
+Set Lights(56) = SusyLight
+Set Lights(9)  = EvaLight
+Set Lights(37) = Arrow5kLight
+Set Lights(57) = ArrowExtraLight
+Set Lights(41) = ArrowSpecialLight
+Set Lights(25) = TriggerLight
+Set Lights(44) = RightOutlaneLight
+Set Lights(60) = LeftOutlaneLight
+Set Lights(53) = TargetSpecialLight
+Set Lights(51) = GirlsSpecialLight
+Set Lights(43) = ExtraballLight
+Set Lights(59) = CreditLight
+Set Lights(45) = GameOverLight
+Set Lights(11) = ExtraballLight2
+Set Lights(29) = HighscoreLight
+Set Lights(27) = MatchLight
+Set Lights(61) = TiltLight
+Set LampCallBack = GetRef("UpdateMultipleLamps")
+
+Public Sub UpdateMultipleLamps
+
+If GameOverLight.State = 0 Then
+   BallInPlayLight.State = 1
+   Else 
+   BallInPlayLight.State = 0
+End If
+If 	GameOverLight.State = 1 Then			
+	ProjectorOff()
+End If
+If 	Light2X.State = 1 Then
+	ProjectorOn()
+'Else
+	'ProjectorOff()       					'mode of operation "B"??
+End If
+If 	Light3X.State = 1 Then 
+	ProjectorOn()
+'Else
+	'ProjectorOff()							'mode of operation "B"??
+End If
+If 	Light5X.State = 1 Then
+	ProjectorOn()
+'Else
+	'ProjectorOff()							'mode of operation "B"??
+End If
+End Sub
+
 '*****************************************************
 '*                    GI Lights                      *
 '*****************************************************
@@ -1013,11 +1162,46 @@ End Sub
 '*****************************************************
 '*                Dip Switch Settings                *
 '*****************************************************
-Sub editDips	Dim vpmDips : Set vpmDips = New cvpmDips	With vpmDips		'How to implent projector mode of operation ("A" or "B") to Dips ???		.AddForm  370,500,"Sexy Girl - DIP switch settings"		.AddFrame   2,  5, 115,"Balls per game",32768,Array("3 balls",0,"5 balls",32768)		.AddFrame   2, 53, 115,"Credits Display",&H00080000,Array("On",&H00080000,"Off",0)		.AddFrame   2,102, 115,"Match feature",&H00100000,Array("On",&H00100000,"Off",0)		.AddFrame   2,150, 115,"Drop Target Special",&H00200000,Array("Lit until collected",&H200000,"Lit until ball lost",0)		.AddFrame   2,198, 115,"5 Girls",&H00400000,Array("Held until made",&H400000,"Not held",0)		.AddFrame   2,248, 115,"G && L Triggers",&H20000000,Array("Tied together",&H20000000,"Not tied",0)		.AddFrame   2,298, 115,"I && R Triggers",&H10000000,Array("Tied together",&H10000000,"Not tied",0)		.AddFrame   2,348, 115,"Outlanes",&H00800000,Array("Both lit",&H800000,"Alternating",0)		.AddFrame   2,398, 115,"Sounds-Scoring", &H80, Array("Chime",0,"Noise",&H80)		.AddFrame   2,448, 115,"Sounds-Coin (no credit)",&H80000000,Array("Chime",0,"Noise",&H80000000)		.AddFrame 130,  5, 118,"High Score Award",&H00006000,Array("Replay",&H6000,"Extra Ball",&H4000,"No Award",0)		.AddFrame 130, 75, 118,"Rollover Extra && Special",&H40000000,Array("Hold until made",&H40000000,"Not Held",0)		.AddFrame 130,130, 118,"High game to date",&H00000060,Array("No award",0,"1 credit",&H20,"2 credits",&H40,"3 credits",&H60)		.AddFrame 130,211, 118,"Max. credits",&H00070000,Array("5 credits",0,"10 credits",&H10000,"15 credits",&H20000,"20 credits",&H30000,"25 credits",&H40000,"30 credits",&H50000,"35 credits",&H60000,"40 credits",&H70000)		.AddFrame 130,350, 118,"Coin Slot 2 (Key 3)",&H0F000000,Array("Same as Coin 1",&H0000000,"1/coin",&H1000000,"2/coin",&H2000000,_							   "3/coin",&H3000000,"4/coin",&H4000000,"5/coin",&H5000000,"6/coin",&H6000000,"7/coin",&H7000000,_							   "8/coin",&H8000000)		.AddFrame 260,  5, 90,"Coin Slot 1 (Key 4)",&H000001F,Array("3/2 coins",&H00,"1 coin",&H02,"1/2 coins",&H03,"2/coin",&H04,"2/2 coins",&H05,_							  "3/coin",&H06,"3/2 coins",&H07,"4/coin",&H08,"4/2 coins",&H09,"5/coin",&H0A,"5/2 coins",&H0B,_							  "6/coin",&H0C,"6/2 coins",&H0D,"7/coin",&H0E,"7/2 coins",&H0F)		.AddFrame 260,265, 90,"Coin Slot 3 (Key 5)",&H1F00,Array("3/2 coins",&H0000,"1 coin",&H0200,"1/2 coins",&H0300,"2/coin",&H0400,"2/2 coins",&H05000000,_							  "3/coin",&H0600,"3/2 coins",&H0700,"4/coin",&H0800,"4/2 coins",&H0900,"5/coin",&H0A00,"5/2 coins",&H0B00,_							  "6/coin",&H0C00,"6/2 coins",&H0D00,"7/coin",&H0E00,"7/2 coins",&H0F00)		.ViewDips	End WithEnd SubSet vpmShowDips = GetRef("editDips")
-'**************************************************************************************************************
+
+Sub editDips
+	Dim vpmDips : Set vpmDips = New cvpmDips
+	With vpmDips
+		'How to implent projector mode of operation ("A" or "B") to Dips ???
+		.AddForm  370,500,"Sexy Girl - DIP switch settings"
+		.AddFrame   2,  5, 115,"Balls per game",32768,Array("3 balls",0,"5 balls",32768)
+		.AddFrame   2, 53, 115,"Credits Display",&H00080000,Array("On",&H00080000,"Off",0)
+		.AddFrame   2,102, 115,"Match feature",&H00100000,Array("On",&H00100000,"Off",0)
+		.AddFrame   2,150, 115,"Drop Target Special",&H00200000,Array("Lit until collected",&H200000,"Lit until ball lost",0)
+		.AddFrame   2,198, 115,"5 Girls",&H00400000,Array("Held until made",&H400000,"Not held",0)
+		.AddFrame   2,248, 115,"G && L Triggers",&H20000000,Array("Tied together",&H20000000,"Not tied",0)
+		.AddFrame   2,298, 115,"I && R Triggers",&H10000000,Array("Tied together",&H10000000,"Not tied",0)
+		.AddFrame   2,348, 115,"Outlanes",&H00800000,Array("Both lit",&H800000,"Alternating",0)
+		.AddFrame   2,398, 115,"Sounds-Scoring", &H80, Array("Chime",0,"Noise",&H80)
+		.AddFrame   2,448, 115,"Sounds-Coin (no credit)",&H80000000,Array("Chime",0,"Noise",&H80000000)
+		.AddFrame 130,  5, 118,"High Score Award",&H00006000,Array("Replay",&H6000,"Extra Ball",&H4000,"No Award",0)
+		.AddFrame 130, 75, 118,"Rollover Extra && Special",&H40000000,Array("Hold until made",&H40000000,"Not Held",0)
+		.AddFrame 130,130, 118,"High game to date",&H00000060,Array("No award",0,"1 credit",&H20,"2 credits",&H40,"3 credits",&H60)
+		.AddFrame 130,211, 118,"Max. credits",&H00070000,Array("5 credits",0,"10 credits",&H10000,"15 credits",&H20000,"20 credits",&H30000,"25 credits",&H40000,"30 credits",&H50000,"35 credits",&H60000,"40 credits",&H70000)
+		.AddFrame 130,350, 118,"Coin Slot 2 (Key 3)",&H0F000000,Array("Same as Coin 1",&H0000000,"1/coin",&H1000000,"2/coin",&H2000000,_
+							   "3/coin",&H3000000,"4/coin",&H4000000,"5/coin",&H5000000,"6/coin",&H6000000,"7/coin",&H7000000,_
+							   "8/coin",&H8000000)
+		.AddFrame 260,  5, 90,"Coin Slot 1 (Key 4)",&H000001F,Array("3/2 coins",&H00,"1 coin",&H02,"1/2 coins",&H03,"2/coin",&H04,"2/2 coins",&H05,_
+							  "3/coin",&H06,"3/2 coins",&H07,"4/coin",&H08,"4/2 coins",&H09,"5/coin",&H0A,"5/2 coins",&H0B,_
+							  "6/coin",&H0C,"6/2 coins",&H0D,"7/coin",&H0E,"7/2 coins",&H0F)
+		.AddFrame 260,265, 90,"Coin Slot 3 (Key 5)",&H1F00,Array("3/2 coins",&H0000,"1 coin",&H0200,"1/2 coins",&H0300,"2/coin",&H0400,"2/2 coins",&H05000000,_
+							  "3/coin",&H0600,"3/2 coins",&H0700,"4/coin",&H0800,"4/2 coins",&H0900,"5/coin",&H0A00,"5/2 coins",&H0B00,_
+							  "6/coin",&H0C00,"6/2 coins",&H0D00,"7/coin",&H0E00,"7/2 coins",&H0F00)
+		.ViewDips
+	End With
+End Sub
+Set vpmShowDips = GetRef("editDips")
+
+
+'**************************************************************************************************************
 '*                                             For Ball Rolling                                               *
 '**************************************************************************************************************
-'****************************************
+
+'****************************************
 ' B2B Collision by Steely & Pinball Ken
 '****************************************
 	
@@ -1341,21 +1525,4 @@ Sub DisplayTimer_Timer ' 7-Digit output
 		Next
 	End IF
 End Sub
-Sub Table1_Exit():Controller.Stop:Controller.Games("playboy").Settings.Value("sound")=1:End Sub
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
+Sub Table1_Exit():Controller.Stop:Controller.Games("playboyb").Settings.Value("sound")=1:End Sub
