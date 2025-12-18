@@ -49,9 +49,9 @@ Ramp16.visible=1
 Ramp15.visible=1
 Primitive13.visible=1
 Else
-Ramp16.visible=0
-Ramp15.visible=0
-Primitive13.visible=0
+Ramp16.visible=1
+Ramp15.visible=1
+Primitive13.visible=1
 End if
 
 

@@ -31,10 +31,15 @@ Const VolCol = 10      ' Ball collition divider ( voldiv/volcol )
 'Solenoid Call backs
 '**********************************************************************************************************
 
- SolCallback(5) = "dtRBank.SolDropUp"
- SolCallback(6) = "dtTbank.SolDropUp"
+ SolCallback(5) = "SolBothDrops"
+ SolCallback(6) = ""
  solcallback(8) =  "vpmSolSound SoundFX(""Knocker"",DOFKnocker),"
  solcallback(9) = "bsTrough.SolOut"
+
+Sub SolBothDrops(Enabled)
+    dtTBank.SolDropUp Enabled
+    dtRBank.SolDropUp Enabled
+End Sub
 
 SolCallback(sLRFlipper) = "SolRFlipper"
 SolCallback(sLLFlipper) = "SolLFlipper"
@@ -200,7 +205,7 @@ Sub Bumper2_Hit : vpmTimer.PulseSw(55) : PlaySound SoundFX("fx_bumper1", DOFCont
  
 
  ' Droptargets
- Sub sw0_Dropped :dtTBank.hit 1:End Sub
+ Sub sw0_Dropped:dtTBank.hit 1:End Sub
  Sub sw10_Dropped:dtTBank.hit 2:End Sub
  Sub sw20_Dropped:dtTBank.hit 3:End Sub
  Sub sw30_Dropped:dtTBank.hit 4:End Sub
@@ -477,7 +482,7 @@ End Function
 
 Function DVolMulti(ball,Multiplier) ' Calculates the Volume of the sound based on the ball speed
   DVolMulti = Csng(BallVel(ball) ^2 / 150 ) * Multiplier
-  'debug.print DVolMulti
+  debug.print DVolMulti
 End Function
 
 Function BallRollVol(ball) ' Calculates the Volume of the sound based on the ball speed
@@ -688,35 +693,35 @@ Sub Table1_exit()
 End Sub
 
 '*********** BALL SHADOW *********************************t
-'Dim BallShadow
-'BallShadow = Array (BallShadow1)
+Dim BallShadow
+BallShadow = Array (BallShadow1)
 
-'Sub BallShadowUpdate_timer()
-    'Dim BOT, b
-    'BOT = GetBalls
-    '' hide shadow of deleted balls
-    'If UBound(BOT)<(tnob-1) Then
-        'For b = (UBound(BOT) + 1) to (tnob-1)
-''            BallShadow(b).visible = 0
-        'Next
-    'End If
+Sub BallShadowUpdate_timer()
+    Dim BOT, b
+    BOT = GetBalls
+    ' hide shadow of deleted balls
+    If UBound(BOT)<(tnob-1) Then
+        For b = (UBound(BOT) + 1) to (tnob-1)
+'            BallShadow(b).visible = 0
+        Next
+    End If
     ' exit the Sub if no balls on the table
-    'If UBound(BOT) = -1 Then Exit Sub
-    '' render the shadow for each ball
-    'For b = 0 to UBound(BOT)
-        'If BOT(b).X < Table1.Width/2 Then
-            'BallShadow(b).X = ((BOT(b).X) - (Ballsize/6) + ((BOT(b).X - (Table1.Width/2))/7)) + 10
-        'Else
-            'BallShadow(b).X = ((BOT(b).X) + (Ballsize/6) + ((BOT(b).X - (Table1.Width/2))/7)) - 10
-        'End If
-        'ballShadow(b).Y = BOT(b).Y + 20
-        'If BOT(b).Z > 20 Then
-            'BallShadow(b).visible = 1
-        'Else
-            'BallShadow(b).visible = 0
-        'End If
-    'Next
-'End Sub
+    If UBound(BOT) = -1 Then Exit Sub
+    ' render the shadow for each ball
+    For b = 0 to UBound(BOT)
+        If BOT(b).X < Table1.Width/2 Then
+            BallShadow(b).X = ((BOT(b).X) - (Ballsize/6) + ((BOT(b).X - (Table1.Width/2))/7)) + 10
+        Else
+            BallShadow(b).X = ((BOT(b).X) + (Ballsize/6) + ((BOT(b).X - (Table1.Width/2))/7)) - 10
+        End If
+        ballShadow(b).Y = BOT(b).Y + 20
+        If BOT(b).Z > 20 Then
+            BallShadow(b).visible = 1
+        Else
+            BallShadow(b).visible = 0
+        End If
+    Next
+End Sub
 '***********************************************************
 '******************************************************
 '		FLIPPER CORRECTION SUPPORTING FUNCTIONS
@@ -1102,6 +1107,3 @@ LiveCatch = 8
 
 LFEndAngle = Leftflipper.endangle
 RFEndAngle = RightFlipper.endangle
-
-
-

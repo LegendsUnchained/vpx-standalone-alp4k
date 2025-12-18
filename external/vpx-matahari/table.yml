@@ -1,12 +1,13 @@
 ---
 backglassVPSId: "Opn9fORWsf"
-backglassChecksum: "560113DF6218A058265D4BA2E44A458B"
+backglassChecksum: "fdfc646b05b2aa7192e78ef2d81a38b6"
 fps: 60
 romVPSId: "nVXGpSW4"
 romChecksum: "AD98A8CAB537EF07D05370549653AE1E"
 tableVPSId: "025ojqP4"
 tagline: "My honor is loyalty"
 testers:
+  - "BorisUndead"
   - "kaoticBPR"
   - "SilentKat"
   - "CoffeeAtJoes"
