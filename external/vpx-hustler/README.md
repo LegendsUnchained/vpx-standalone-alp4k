@@ -1,4 +1,4 @@
-﻿# Hustler (LTD do Brasil 1980)
+# Hustler (LTD do Brasil 1980)
 
 ![Table Preview](../../images/vpx-hustler-preview.jpg)
 
@@ -7,7 +7,7 @@
 ## Files
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
-| **VPX** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=14210) | 5.5.0 | [jpsalas](https://www.vpforums.org/index.php?showuser=277) |
+| **VPX** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=14210) | 6.0.0 | [jpsalas](https://www.vpforums.org/index.php?showuser=277) |
 | **B2S** | `Hustler (LTD do Brasil 1980).directb2s.zip` included in VPX link |
 
 **Tested by:** Curt
