@@ -449,7 +449,7 @@ End sub
 
 Sub PlungerGate(enabled)
 	If enabled Then
-		BallLockPrim.Z = 26
+		BallLockPrim.Z = -76
 		BallLockWall.collidable = 0
 		Rubber13.collidable = 0 
 		Playsound SoundFX("solenoid",DOFContactors), 0, 0.25*VolumeDial
@@ -459,7 +459,7 @@ Sub PlungerGate(enabled)
 End Sub
 
 Sub RaiseGate()
-	BallLockPrim.Z = 70
+	BallLockPrim.Z = -20
 	BallLockWall.collidable = 1
 	Rubber13.collidable = 1
 	Playsound SoundFX("solenoid",DOFContactors), 0, 0.25*VolumeDial
@@ -709,10 +709,12 @@ Sub sw33_UnHit
 	sw33off = true
 
     For b = 0 to UBound(BOT)
-	    if inRect(BOT(b).x, BOT(b).y, 374.14, 573, 434.5, 585.5, 421.8, 625, 361, 625) Then sw33off = false
+		if inRect(BOT(b).x, BOT(b).y, 374.14, 573, 434.5, 585.5, 421.8, 625, 361, 625) Then
+			sw33off=false
+		End If
 	Next
 
-    if sw33off then Controller.Switch(33) = 0
+	if sw33off then:Controller.Switch(33) = 0:End If
 End Sub
 
 Sub sw34_Hit:Controller.Switch(34) = 1:PlaySound "sensor",0,2*VolumeDial:End Sub
@@ -1125,10 +1127,10 @@ End Function
 '*** Determines if a Points (px,py) is inside a 4 point polygon A-D in Clockwise/CCW order
 Function InRect(px,py,ax,ay,bx,by,cx,cy,dx,dy)
 	Dim AB, BC, CD, DA
-	AB = (ax*by - ay*bx) + (bx*py - by*px) + (px*ay - py*ax)
-	BC = (bx*cy - by*cx) + (cx*py - cy*px) + (px*by - py*bx)
-	CD = (cx*dy - cy*dx) + (dx*py - dy*px) + (px*cy - py*cx)
-	DA = (dx*ay - dy*ax) + (ax*py - ay*px) + (px*dy - py*dx)
+	AB = (bx*py) - (by*px) - (ax*py) + (ay*px) + (ax*by) - (ay*bx)
+	BC = (cx*py) - (cy*px) - (bx*py) + (by*px) + (bx*cy) - (by*cx)
+	CD = (dx*py) - (dy*px) - (cx*py) + (cy*px) + (cx*dy) - (cy*dx)
+	DA = (ax*py) - (ay*px) - (dx*py) + (dy*px) + (dx*ay) - (dy*ax)
  
 	If (AB <= 0 AND BC <=0 AND CD <= 0 AND DA <= 0) Or (AB >= 0 AND BC >=0 AND CD >= 0 AND DA >= 0) Then
 		InRect = True
