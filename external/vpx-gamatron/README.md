@@ -1,9 +1,9 @@
-﻿# Gamatron (Pinstar 1985)
+# Gamatron (Pinstar 1985)
 
 ![Table Preview](../../images/vpx-gamatron.jpg)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 4.0  
+Version: 6.0.0  
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=15658)
 
 DirectB2S
