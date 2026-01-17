@@ -1,8 +1,8 @@
-﻿# JP's Sands of the Aton (Original 2023)
+# JP's Sands of the Aton (Original 2023)
 ![Table Preview](../../images/vpx-sands-of-the-aton-preview.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 2.0  
+Version: 6.0.0  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=17422)
 
 DirectB2S
