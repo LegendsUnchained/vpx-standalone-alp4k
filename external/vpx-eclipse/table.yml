@@ -1,0 +1,18 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassBundled: true
+backglassChecksum: "b0514cf4c5f37835ff31d50438451a07"
+backglassNotes: "Bundled with table"
+fps: 45
+romChecksum: "c5993e73801f65de27e458e198ce7192"
+romNotes: "No ROM on VPS"
+romUrlOverride: "https://pinballnirvana.com/forums/resources/eclipse.1763/"
+romVersionOverride: "eclipse"
+tableVPSId: "VxVgsHBA"
+tagline: "“Something seems familiar here.'"
+testers:
+  - "Curt"
+vpxChecksum: "14dda5960cc1bc7f15003bf0ecd8f6c8"
+vpxVPSId: "pJQlLh6_"
