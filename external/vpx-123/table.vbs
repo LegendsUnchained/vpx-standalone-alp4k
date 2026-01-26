@@ -1,6 +1,6 @@
 ' 1·2·3... / IPD No. 5247 / 1 Player
 ' Talleres del Llobregat S.A. [Automaticos], of Barcelona,
-' VPX8 table by jpsalas 2024, Version 5.5.0
+' VPX8 table by jpsalas 2026, Version 6.0.1
 
 
 Option Explicit
@@ -132,7 +132,7 @@ Sub Table1_Init()
     EndOfGame
 
     'Enciende las luces GI despues de un segundo
-    vpmtimer.addtimer 1000, "GiOn'"
+    vpmtimer.addtimer 1000, "GiOn '"
 
     ' Quita los laterales y las puntuaciones cuando la mesa se juega en modo FS
     If Table1.ShowDT then
@@ -542,7 +542,7 @@ End Function
 
 Const tnob = 19   'total number of balls
 Const lob = 0     'number of locked balls
-Const maxvel = 32 'max ball velocity
+Const maxvel = 30 'max ball velocity
 ReDim rolling(tnob)
 InitRolling
 
@@ -710,7 +710,7 @@ Sub ResetForNewGame()
 
     ' ahora puedes empezar una música si quieres
     ' empieza la rutina "Firstball" despues de una pequeña pausa
-    vpmtimer.addtimer 2000, "FirstBall'"
+    vpmtimer.addtimer 2000, "FirstBall '"
     If Credits = 0 Then DOF 200, DOFOff
 End Sub
 
@@ -779,7 +779,7 @@ Sub EndOfBall()
         End If
         BonusCountTimer.Enabled = 1
     Else 'Si hay falta simplemente espera un momento y va directo a la segunta parte después de perder la bola
-        vpmtimer.addtimer 400, "EndOfBall2'"
+        vpmtimer.addtimer 400, "EndOfBall2 '"
     End If
 End Sub
 
@@ -792,7 +792,7 @@ Sub BonusCountTimer_Timer 'añade los bonos y actualiza las luces
     Else
         ' termina la cuenta de los bonos y continúa con el fin de bola
         BonusCountTimer.Enabled = 0
-        vpmtimer.addtimer 1000, "EndOfBall2'"
+        vpmtimer.addtimer 1000, "EndOfBall2 '"
     End If
 End Sub
 
@@ -988,13 +988,13 @@ End Sub
 '******************
 
 Sub IncreaseMatch
-    Match = (Match + 10) MOD 100
+    Match = (Match + 10)MOD 100
 End Sub
 
 Sub Verification_Match()
     PlaySound "fx_match"
     Display_Match
-    If (Score(CurrentPlayer) MOD 100) = Match Then
+    If(Score(CurrentPlayer)MOD 100) = Match Then
         PlaySound SoundFXDOF ("fx_knocker", 300, DOFPulse, DOFKnocker)
         DOF 230, DOFPulse
         AddCredits 1
@@ -1004,20 +1004,20 @@ End Sub
 
 Sub Clear_Match()
     MatchReel.SetValue 0
-    If B2SOn Then
+    If B2SOn then
         Controller.B2SSetMatch 0
-    End If
+    end if
 End Sub
 
 Sub Display_Match()
-    MatchReel.SetValue ( (Match \ 10) + 1 )
-    If B2SOn Then
-        If Match = 0 Then
+    MatchReel.SetValue(Match \ 10) + 1
+    If B2SOn then
+        If Match = 0 then
             Controller.B2SSetMatch 100
-        Else
+        else
             Controller.B2SSetMatch Match
-        End If
-    End If
+        end if
+    end if
 End Sub
 
 ' *********************************************************************
@@ -1055,7 +1055,7 @@ Sub Drain_Hit()
             ' ¿es ésta la última bola en juego?
             If(BallsOnPlayfield = 0)Then
                 StopEndOfBallMode
-                vpmtimer.addtimer 500, "EndOfBall'" 'hacemos una pequeña pausa anter de continuar con el fin de bola
+                vpmtimer.addtimer 500, "EndOfBall '" 'hacemos una pequeña pausa anter de continuar con el fin de bola
                 Exit Sub
             End If
         End If
@@ -1789,6 +1789,7 @@ Sub CheckTopLights 'luces 123 encienden los bumper y el special de los outlanes,
             li1.State = 1
             li2.State = 1
             SpecialTimerStep = 9
+            SpecialTimer.Interval = Tiempo * 100
             SpecialTimerStarted = True
             SpecialTimer_Timer
             SpecialTimer.Enabled = 1
@@ -1799,7 +1800,7 @@ End Sub
 Dim SpecialTimerStep
 Dim SpecialTimerStarted
 SpecialTimerStarted = False
-SpecialTimer.Interval = Tiempo * 100
+									
 
 Sub SpecialTimer_Timer
     If SpecialTimerStep = -1 Then
