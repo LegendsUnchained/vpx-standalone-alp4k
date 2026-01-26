@@ -3,6 +3,7 @@ enabled: false
 applyFixes:
   - "bass"
 backglassBundled: true
+backglassNotes: "backless is bundled"
 fps: 60
 mainNotes: "2-player table. The 4-player version is titled 'Eclipse.'"
 tableNotes: "1.01"
