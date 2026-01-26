@@ -1,0 +1,16 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassBundled: true
+backglassChecksum: "b0f19cec9a581628c897c9054f26592a"
+backglassNotes: "Bundled with table"
+backglassVPSId: "GfJ8UZEB9S"
+fps: 60
+mainNotes: "Download all three, merge the two RAR files."
+tableVPSId: "HwFnvic7BM"
+tagline: "'NOT the Australian breakdancer!'"
+testers:
+  - "evilwraith"
+vpxChecksum: "4ab6b60ba91f8f5ee5648a77138f4600"
+vpxVPSId: "ThUwLJj7KJ"

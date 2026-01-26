@@ -1,0 +1,16 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassChecksum: "cff8455fb1031a51352c5e3c75ce9d3f"
+backglassVPSId: "dj4GQ9aQYV"
+fps: 60
+mainNotes: "Jp's version 6.0.0"
+romChecksum: "02db1548c6621bd25cfe5979153df726"
+romVPSId: "dT4IS1pSKD"
+tableVPSId: "Z-5mREtoby"
+tagline: "'Wow! Wow!'"
+testers:
+  - "evilwraith"
+vpxChecksum: "79c0b467940560199d2adcf032c6d3d1"
+vpxVPSId: "u13hTSjuAM"

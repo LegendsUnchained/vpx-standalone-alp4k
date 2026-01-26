@@ -1,0 +1,17 @@
+---
+enabled: false
+backglassChecksum: "9aaba5364495b7aa94fd169f416ce593"
+backglassNotes: "Download and use 2-screen b2s"
+backglassVPSId: "O3YL1YtU2x"
+fps: 60
+romChecksum: "98cdef0228177b1c808e54ea043d99b1"
+romNotes: "VPS has wrong name for ROM, but correct link."
+romVersionOverride: "macjungl"
+romVPSId: "R0nxRZCO"
+tableVPSId: "QBTTMUB7"
+tagline: "'How did Frank Frazetta's lawyers miss this one?'"
+testers:
+  - "Curt"
+vpxChecksum: "b92215e46d65278031c4d2e8699d5714"
+vpxNotes: "Table version 1.1"
+vpxVPSId: "5h8iG1e1"

@@ -1,0 +1,14 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassBundled: true
+backglassChecksum: "51fa221cee325aa8a625c865e8be064a"
+backglassNotes: "B2s is bundled with table"
+fps: 60
+tableVPSId: "OUkF84KSUG"
+tagline: "'Help! Help! Man overboard!'"
+testers:
+  - "Mar3nBu"
+vpxChecksum: "ebab6b9213c0e4dd7857ae3db40d54e0"
+vpxVPSId: "pkDACTJnym"

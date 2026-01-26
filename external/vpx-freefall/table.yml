@@ -1,0 +1,16 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassChecksum: "57274a0a892be849077cfe1e7f5ad681"
+backglassVPSId: "p47K1tB0"
+fps: 60
+romChecksum: "2bb377aedbbd1d142afb0200ff05b563"
+romVPSId: "TbMCx5Zg"
+tableNotes: "README might still point to version 5.5--this is 6.0.0"
+tableVPSId: "SrA6feLw"
+tagline: "'...and this bird you cannot chay-ay-ay-ange'"
+testers:
+  - "psybocilin"
+vpxChecksum: "7d482a5f24068e91cf41a27adc29df0c"
+vpxVPSId: "3nFjYzg0"

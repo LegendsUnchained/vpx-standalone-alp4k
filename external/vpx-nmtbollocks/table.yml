@@ -1,0 +1,15 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassChecksum: "e2b2109a000e649bccf40ae42669f4df"
+backglassNotes: "Choose 2-screen version"
+backglassVPSId: "Y3oYOllQpH"
+fps: 60
+tableNotes: "Only VPU download was tested."
+tableVPSId: "W6M6PuLPIX"
+tagline: "'Anarchy in the U.K.'"
+testers:
+  - "evilwraith"
+vpxChecksum: "9ad322b46ebf15f7eaec0831911b1394"
+vpxVPSId: "lJ1yaizNtr"

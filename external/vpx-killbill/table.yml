@@ -1,0 +1,15 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassChecksum: "a6b091bfb860ae59959faf26622db36d"
+backglassNotes: "Do not use DMD bundled with table"
+backglassVPSId: "x-mc3eUdgA"
+fps: 60
+tableNotes: "English-language version"
+tableVPSId: "vMQ_YzNOI-"
+tagline: "'Here Comes the Bride'"
+testers:
+  - "Bruno15477"
+  - "evilwraith"
+vpxVPSId: "FC2Lf58DrB"

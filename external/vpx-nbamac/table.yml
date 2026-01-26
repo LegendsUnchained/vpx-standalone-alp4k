@@ -1,0 +1,17 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassChecksum: "1b0440d29f01d866872b64780d9275df"
+backglassNotes: "new link"
+backglassVPSId: "SXiXiIPvlJ"
+fps: 60
+romChecksum: "25179a62f40e074c2073ad7b90534ef8"
+romNotes: "new link"
+romVPSId: "-i03sElW"
+tableVPSId: "8IBSLyMO"
+tagline: "'Amazing socks!'"
+testers:
+  - "Curt"
+vpxChecksum: "a4df914657d8f686c5da74d2f6e89b47"
+vpxVPSId: "Fqw4zW_s"

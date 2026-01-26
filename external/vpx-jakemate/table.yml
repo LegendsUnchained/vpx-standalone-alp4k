@@ -1,0 +1,16 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassBundled: true
+backglassChecksum: "f1ca8bf35ccf3035ef3132555465b9ea"
+backglassNotes: "B2S is bundled on VPU"
+backglassVPSId: "hioObaV8zT"
+fps: 60
+tableNotes: "Actually version 2.0.1 (README says 1.00)"
+tableVPSId: "hChOFD7XQW"
+tagline: "Jake my mate!"
+testers:
+  - "chadseverson"
+vpxChecksum: "74570416a22868ed60040f7118c3707f"
+vpxVPSId: "bZX1mrX4dN"
