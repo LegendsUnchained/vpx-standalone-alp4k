@@ -551,6 +551,7 @@ Links to these products on Amazon are through affiliate links.
 | [Miami Vice (Original 2020)](external/vpx-miamivice) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 33 |
 | [Michael Jordan (Data East 1992)](external/vpx-michaeljordan) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
 | [Mickey Mouse in Steamboat Willie (Original 2022)](external/vpx-mickeysbw) | :white_check_mark: | :x: | :x: | :x: | 60 |
+| [Middle Earth (Atari 1978)](external/vpx-middleearth) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Minions (Original 2017)](external/vpx-minions) | :white_check_mark: | :white_check_mark: | :x: | :x: | 30 |
 | [Miraculous (Original 2019)](external/vpx-miraculous) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Monday Night Football (Data East 1989)](external/vpx-mondaynightfootball) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 42 |
