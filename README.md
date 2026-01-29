@@ -287,7 +287,8 @@ Links to these products on Amazon are through affiliate links.
 | [Arena (Gottlieb 1987)](external/vpx-arena1C3S) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
 | [Aspen (Brunswick 1979)](external/vpx-aspen) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [A-Team, The (Original 2023)](external/vpx-theateam) | :white_check_mark: | :white_check_mark: | :x: | :x: | 50 |
-| [Atlantis (Bally 1989)](external/vpx-atlantis) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
+| [Atarians, The (Atari 1976)](external/vpx-atarians) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
+| [Atlantis (Bally 1989)](external/vpx-atlantis) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Atlantis (Gottlieb 1975)](external/vpx-atlantisgottlieb) | :white_check_mark: | :white_check_mark: | :x: | :x: | 44 |
 | [Attack & Revenge from Mars (Original 2015)](external/vpx-attackandrevengefrommars) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
 | [Attack from Mars (Bally 1995)](external/vpx-attackfrommars) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 30 |
