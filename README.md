@@ -676,6 +676,7 @@ Links to these products on Amazon are through affiliate links.
 | [Space Oddity (Original 2022)](external/vpx-spaceoddity) | :white_check_mark: | :x: | :white_check_mark: | :x: | 37 |
 | [Space Patrol - JP (Taito do Brasil 1978)](external/vpx-jpspacepatrol) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Space Rider (Geiger 1980)](external/vpx-spacerider) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
+| [Space Riders (Atari 1978)](external/vpx-spaceriders) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 46 |
 | [Space Shuttle (Taito do Brasil 1982)](external/vpx-spaceshuttletaito) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Space Shuttle (Williams 1984)](external/vpx-spaceshuttle) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
 | [Space Station (Williams 1987)](external/vpx-spacestation) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 38 |
