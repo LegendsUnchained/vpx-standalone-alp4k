@@ -1,0 +1,15 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "77fa33c0e76fb6df62f2514fc9bd5b0d"
+backglassVPSId: "-XaZGM3EXB"
+enabled: false
+fps: 55
+romChecksum: "b03f7147715ca618f294fc33b236a1a2"
+romVPSId: "Mg04jYjM"
+tableVPSId: "SEtRrHK_"
+tagline: "'Never Give Up!'"
+testers:
+  - "Mox"
+vpxChecksum: "d2d4f30b439e8a856764ea9b4b66b287"
+vpxVPSId: "KICM9nRF"

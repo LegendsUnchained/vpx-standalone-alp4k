@@ -1,0 +1,15 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "bc0969c9fc527408cb3ff158ac5bc7ba"
+backglassVPSId: "wcssGvX6"
+enabled: false
+fps: 57
+romChecksum: "1bb79811d329ae6e8b8c9b55bb695160"
+romVPSId: "_wMt4dxe"
+tableVPSId: "ltrFOhE0"
+tagline: "'X never, ever marks the spot!'"
+testers:
+  - "NotListed"
+vpxChecksum: "0794512fc0a5d14fe1cc18e1c8797a35"
+vpxVPSId: "O69JWo8n"

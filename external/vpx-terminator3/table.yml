@@ -1,0 +1,15 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "d8cce6f08f7cf9af4a57f2c3f169e5b8"
+backglassVPSId: "nfCkwbgD-T"
+enabled: false
+fps: 55
+romChecksum: "3607731fdbdbc1e589fb8d6ba498508f"
+romVPSId: "8SvZI6Ex"
+tableVPSId: "j9F71ZEC"
+tagline: "Isn't this Beneath the Planet of the Apes?'"
+testers:
+  - "NoneListed"
+vpxChecksum: "cf6c7e63877e3abfc7f283f5009e8aad"
+vpxVPSId: "ZqAnVIW8"

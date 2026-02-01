@@ -1,0 +1,16 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "387d82f9aa548de45a4190c0645fad72"
+backglassVPSId: "4eKhNd2D"
+enabled: false
+fps: 55
+romChecksum: "bbaa7d180200e84b1d9c4083510d1202"
+romNotes: "7-Digit ROM"
+romVPSId: "9OkBOhxCwx"
+tableVPSId: "mbQ_5HbH"
+tagline: "'In the beginning, it was just pinball.'"
+testers:
+  - "NoneListed"
+vpxChecksum: "af66a81c223048ecbf951043b32b3543"
+vpxVPSId: "PpBbJbVa"

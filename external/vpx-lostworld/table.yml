@@ -1,0 +1,16 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "40c5b74f189ec3bdf305494acacc0bfe"
+backglassVPSId: "0ypI89b2PR"
+enabled: false
+fps: 56
+romChecksum: "409b7ae76497bb47cf66d6705f92c3ec"
+romVPSId: "Z_l2CA5h"
+tableVPSId: "wTM04VLg"
+tagline: "Sorry, wrong Lost World.'"
+testers:
+  - "evilwraith"
+  - "HereForGear"
+vpxChecksum: "21b3aa2ec70c334be8e1e081fa566a7c"
+vpxVPSId: "dXKEOpS4"

@@ -1,0 +1,15 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "1023b550fe63917313358faa6ae7a347"
+backglassVPSId: "g9s6v-lY"
+enabled: false
+fps: 55
+romChecksum: "9eddd9f63bfaf7588d0abea3db033149"
+romVPSId: "QqGcytcb"
+tableVPSId: "VQL0ZO5r"
+tagline: "'Stern's Flight 2000'"
+testers:
+  - "Boris"
+vpxChecksum: "46d4c4e5babe4bc3593398a385d8fe5a"
+vpxVPSId: "xnERF6GU"

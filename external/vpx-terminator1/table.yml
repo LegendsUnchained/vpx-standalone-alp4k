@@ -1,0 +1,15 @@
+---
+applyFixes:
+  - "bass"
+backglassBundled: true
+backglassChecksum: "f5f86c3388c93e9a66367cd3b8a813ee"
+backglassNotes: "B2S is bundled with Table"
+enabled: false
+fps: 58
+tableVPSId: "Iwa8DTGr"
+tagline: "'I'll be back.'"
+testers:
+  - "SilentKat"
+  - "OminousOsie"
+vpxChecksum: "013205fd44ac0277744a20f4cbe2e0fa"
+vpxVPSId: "Psud_ztH"
