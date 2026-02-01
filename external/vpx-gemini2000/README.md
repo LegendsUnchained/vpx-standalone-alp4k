@@ -1,11 +1,11 @@
-﻿# Gemini 2000 (Taito do Brasil 1982)
+# Gemini 2000 (Taito do Brasil 1982)
 
 ![Table Preview](../../images/vpx-gemini2000.jpg)
 
 Table
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 5.5.1  
+Version: 6.0.0  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=13636)
 
 DirectB2S

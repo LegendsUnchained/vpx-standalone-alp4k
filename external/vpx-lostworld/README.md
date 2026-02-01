@@ -1,9 +1,9 @@
-﻿# Lost World (Bally 1978)
+# Lost World (Bally 1978)
 
 ![Table Preview](../../images/vpx-lostworld.jpg) 
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 5.5.1  
+Version: 6.0.0  
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=12941) 
 
 DirectB2S

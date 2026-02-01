@@ -1,9 +1,9 @@
-﻿# Future Spa (Bally 1979)
+# Future Spa (Bally 1979)
 
 ![Table Preview](../../images/vpx-futurespa.png)
 
 Author: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 5.5.0  
+Version: 6.0.0  
 Download: [VP Forums](https://www.vpforums.org/index.php?s=3d4ebfb2462744f6ffd97dbd571fe844&app=downloads&showfile=13112)
 
 DirectB2S

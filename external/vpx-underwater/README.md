@@ -1,4 +1,4 @@
-﻿# Underwater (Recel 1976)
+# Underwater (Recel 1976)
 
 ![Table Preview](../../images/vpx-underwater.jpg)
 
@@ -9,7 +9,7 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 DirectB2S
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 5.5.1  
+Version: 6.0.0 
 Download: [VP Universe](https://www.vpforums.org/index.php?app=downloads&showfile=16114)
 
 ## Status 

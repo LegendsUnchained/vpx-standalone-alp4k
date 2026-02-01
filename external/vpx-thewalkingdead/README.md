@@ -1,9 +1,9 @@
-﻿# JP's The Walking Dead (Stern 2014)
+# JP's The Walking Dead (Stern 2014)
 
 ![Table Preview](../../images/vpx-jps-the-walking-dead-preview.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?s=543a5ca562cc33a89debe8ace8834f1e&showuser=277)  
-Version: 5.5.0  
+Version: 6.0.0 
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=15696)
 
 DirectB2S
