@@ -5,6 +5,7 @@ applyFixes:
 backglassAuthorsOverride:
   - "Spacegoogle"
 backglassChecksum: "6984564d1ad7887010acaa9c1d838c36"
+# yamllint disable-line rule:line-length
 backglassImageOverride: "https://vpuniverse.com/screenshots/monthly_2024_07/20240712_140852.jpg.516c24aa7718b5519ae2a409b9b9ff06.jpg"
 backglassNotes: "This B2S not on VPS"
 # yamllint disable-line rule:line-length
