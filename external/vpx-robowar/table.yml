@@ -1,0 +1,18 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "5bdc7077c10b24c03d7ddda6a405cb7a"
+backglassVPSId: "CEeo7oz_uD"
+enabled: false
+fps: 60
+romChecksum: "6c1eadbd6329e4b382b7a324f0eb9e25"
+romNotes: "No ROM in spreadsheet"
+romUrlOverride: "https://pinballnirvana.com/forums/resources/robowars.2245/"
+romVersionOverride: "robowars"
+tableVPSId: "fkWx6OFg"
+tagline: "'tagline'"
+testers:
+  - "mcap10"
+  - "Curt"
+vpxChecksum: "5e04b4c28b5442611283f1bc49645d3c"
+vpxVPSId: "hklzPs6S"
