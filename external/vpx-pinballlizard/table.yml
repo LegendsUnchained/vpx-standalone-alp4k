@@ -1,0 +1,16 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "504a76e698b4f5ad7872f23fdeb69657"
+backglassNotes: "DO NOT use the bundled B2S"
+backglassVPSId: "ugWBj3JjC0"
+enabled: false
+fps: 60
+romChecksum: "8864630e33ee61a3a26136c579731ff7"
+romVPSId: "86W4Wyj9lI"
+tableVPSId: "863y4Ku2HZ"
+tagline: "'Earth Shaking Footsteps'"
+testers:
+  - "Curt"
+vpxChecksum: "a13974ebcb2ffb30549feaa8972ceb95"
+vpxVPSId: "4Wef9ZDVGs"
