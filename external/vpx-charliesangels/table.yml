@@ -1,0 +1,17 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "fc695aa057c5c0f4d1871d84df1098d0"
+backglassVPSId: "iarZ3vIwrv"
+enabled: false
+fps: 60
+romChecksum: "134d2661711abc5cd1e28c12f5520292"
+romNotes: "Unzip the `-NEW FIXED ROMS for VPinMAME v3.6.0-963 BETA.zip`"
+romUrlOverride: "https://pinballnirvana.com/forums/resources/new-fixed-roms-for-vpinmame-v3-6-0-963-beta.8379/"
+romVersionOverride: "charlies"
+tableVPSId: "513wiTiu"
+tagline: "'Oh, Charlie!'"
+testers:
+  - "Curt"
+vpxChecksum: "86f848f1e826e93dd4ac5f9721f5b93b"
+vpxVPSId: "MVs7K8gB19"
