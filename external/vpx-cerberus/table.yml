@@ -1,0 +1,16 @@
+---
+applyFixes:
+  - "bass"
+backglassBundled: true
+backglassChecksum: "de404542fca2311ae6a2193c14fcd4d0"
+backglassNotes: "Same link as table."
+enabled: false
+fps: 60
+romChecksum: "8a13f8e67608e8fcf92c085f51c0829a"
+romVPSId: "UTjZjMddI_"
+tableVPSId: "c_Lv7XBz-X"
+tagline: "'Don't call me FLUFFY!!'"
+testers:
+  - "Curt"
+vpxChecksum: "bca2492893ac162708770865ef48a530"
+vpxVPSId: "IHc0Cws_ye"
