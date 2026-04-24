@@ -1,0 +1,15 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "06b3a3658a4e9c6ee4d4dff6954ebb2e"
+backglassVPSId: "sd-5KLtO"
+enabled: false
+fps: 57
+romChecksum: "55db2783fccce845deed803c31545e90"
+romVPSId: "VPpaNQP3"
+tableVPSId: "ILvMU6RB"
+tagline: "'Future Spa will awaken your spouse’s ire'"
+testers:
+  - "Mar3nBu"
+vpxChecksum: "f2d00e77336d6dd99bf35a4ab2b5b2d3"
+vpxVPSId: "cWmQ_-7E"

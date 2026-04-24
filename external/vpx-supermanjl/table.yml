@@ -1,0 +1,17 @@
+---
+applyFixes:
+  - "bass"
+backglassBundled: true
+backglassChecksum: "750d98eea65618d5398ea9cbbcaf8658"
+backglassNotes: "Bundled with table, in media folder"
+enabled: false
+fps: 58
+tableVPSId: "K9DgShFA7f"
+tagline: >-
+  'Gathered together from the cosmic reaches of the universe, 
+  here in this great Hall of Justice, are the most powerful 
+  forces of good ever assembled'
+testers:
+  - "evilwraith"
+vpxChecksum: "e1a58bed7b1fae17f219ab9090ab5939"
+vpxVPSId: "eb0Mem1PSt"
