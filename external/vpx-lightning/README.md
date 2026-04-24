@@ -1,9 +1,9 @@
-﻿# Lightning (Stern 1981)
+# Lightning (Stern 1981)
 
 ![Table Preview](../../images/vpx-lightning.jpg)
 
 Authors: [jpsalas](hhttps://www.vpforums.org/index.php?showuser=277)  
-Version: 4.0.1  
+Version: 6.0.0  
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=13028)
 
 DirectB2S
