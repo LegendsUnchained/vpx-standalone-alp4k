@@ -1,9 +1,9 @@
-﻿# Split Second (Stern 1981)
+# Split Second (Stern 1981)
 
 ![Table Preview](../../images/vpx-splitsecond.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 4.0.1  
+Version: 6.0.0  
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=15957)
 
 DirectB2S
