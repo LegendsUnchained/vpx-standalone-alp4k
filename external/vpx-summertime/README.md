@@ -1,9 +1,9 @@
-﻿# Summer Time (Williams 1972) 
+# Summer Time (Williams 1972) 
 
 ![Table Preview](../../images/vpx-summertime.png)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?s=543a5ca562cc33a89debe8ace8834f1e&showuser=277)  
-Version: 5.5.0  
+Version: 6.0.1  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=18650)
 
 DirectB2S
