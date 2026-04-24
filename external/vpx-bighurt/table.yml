@@ -1,0 +1,17 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "B210272690B39C9FE6F4605ACF9D2ACE"
+backglassNotes: "Download 'Big Hurt (premier 1995).zip'"
+backglassVPSId: "IbcnjPqKQn"
+fps: 60
+romChecksum: "20392BF5DA7C349B0154A6978AF09789"
+romNotes: "Download 'bighurt.zip'"
+romUrlOverride: "https://pinballnirvana.com/forums/resources/bighurt.1569/"
+romVersionOverride: "bighurt"
+tableNotes: "Download 'Big Hurt (Gottlieb 1995) LW.zip'"
+tableVPSId: "4IwkdORvo_"
+testers:
+  - "Wraith"
+vpxChecksum: "60AABAA5B4B8E6155BAFD07EC8D1AC67"
+vpxVPSId: "s11IFpCOdr"
