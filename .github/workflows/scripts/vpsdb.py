@@ -169,6 +169,7 @@ def get_table_meta(files, warn_on_error=True):
             "tableNotes": data.get("tableNotes"),
             "tagline": data.get("tagline"),
             "testers": data.get("testers"),
+            "vpsdbId": data.get("tableVPSId"),
         }
         if tableVPSId:
             table = vpsdb.get_table(tableVPSId)

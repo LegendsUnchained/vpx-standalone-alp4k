@@ -150,7 +150,7 @@ Links to these products on Amazon are through affiliate links.
 | [Futurama (Original 2024)](external/vpx-futurama) | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 35 |
 | [Gargamel Park (Orginal 2016)](external/vpx-gargamelpark) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Genie (Gottlieb 1979)](external/vpx-genie) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
-| [Ghostbusters Slimer, JP's (Original 2017)](external/vpx-slimerjp) | :white_check_mark: | :white_check_mark: | :x: | :x: | 55 |
+| [Ghostbusters Slimer, JP's (Original 2017)](external/vpx-jpslimer) | :white_check_mark: | :white_check_mark: | :x: | :x: | 55 |
 | [Gilligan's Island (Bally 1991)](external/vpx-gilligansisland) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Gladiators (Gottlieb 1993)](external/vpx-gladiators) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Godzilla (Sega 1998)](external/vpx-godzilla) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 58 |
