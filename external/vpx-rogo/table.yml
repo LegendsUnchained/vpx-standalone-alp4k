@@ -1,0 +1,15 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "3dc96ae800c0932c9429671d6fb68309"
+backglassNotes: "Not the B2S included with the .vpx"
+backglassVPSId: "NtFvJ8EQuN"
+enabled: false
+fps: 60
+tableVPSId: "It5FEKpT"
+tagline: "'With new lucky horseshoe feature!'"
+testers:
+  - "Curt"
+  - "Wraith"
+vpxChecksum: "3352eb7d156f970da0163e016adb6992"
+vpxVPSId: "3yX6x-fc"
