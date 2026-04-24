@@ -1,0 +1,15 @@
+---
+applyFixes:
+  - "bass"
+backglassChecksum: "04e673b4a0ce40044dac12c5bd5ebfc3"
+backglassVPSId: "L0gYivHH"
+enabled: false
+fps: 60
+romChecksum: "b0f9ca86f9bbbdf95d207bfc18f09410"
+romVPSId: "MkcokqX7"
+tableVPSId: "n0ZY_Wow"
+tagline: "'A Galaxy Full of Entertainment!'"
+testers:
+  - "psybocilin"
+vpxChecksum: "f59fb6f8d016ed3d75e4497a4603be94"
+vpxVPSId: "6POqnbTf"
