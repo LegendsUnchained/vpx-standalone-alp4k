@@ -742,6 +742,7 @@ Links to these products on Amazon are through affiliate links.
 | [Three Angels (Original 2018)](external/vpx-threeangels) | :white_check_mark: | :white_check_mark: | :x: | :x: | 40 |
 | [Thing, The (Balutito MOD) (Original 2019)](external/vpx-thething) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 52 |
 | [Tiki Bob's Atomic Beach Party (Original 2021)](external/vpx-tikibob) | :white_check_mark: | :x: | :white_check_mark: | :x: | 46 |
+| [Time 2000 (Atari 1978)](external/vpx-time2000) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Time Fantasy (Williams 1983)](external/vpx-timefantasy) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 42 |
 | [Time Machine (Zacarria 1983)](external/vpx-timemachinezac) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [TimeLord (Luigi Saves the Universe) (Original 2022)](external/vpx-timelord) | :white_check_mark: | :white_check_mark: | :x: | :x: | 30 |
