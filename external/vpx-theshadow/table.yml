@@ -1,0 +1,17 @@
+---
+applyFixes:
+  - "bass"
+backglassVPSId: "im4smVVWf8"
+backglassChecksum: "E13892B26A5369004C2170B50704A02D"
+backglassNotes: "Download 'The Shadow (Bally 1994).zip'"
+fps: 60
+romVPSId: "M2gmnny1"
+romChecksum: "61E34D56CB2D16E9A686081F582462BB"
+tableVPSId: "bzDWLumS"
+tagline: >-
+  "I'll be there... around every corner... in every empty room... as inevitable as your guilty conscience."
+testers:
+  - "OminousOsie"
+vpxVPSId: "6QyE3RLTxv"
+vpxChecksum: "BBF4A160080F479C2FBAA9E9D9301AF4"
+tableNotes: "Download version 1.0"

@@ -1,6 +1,6 @@
-# Shadow, The (Bally 1994)
+# High Speed (Williams 1986)
 
-![Table Preview](../../images/vpx-theshadow-table.jpg)
+![Table Preview](../../images/p1Ur8qLo-preview.webp)
 
 <br>
 
@@ -32,9 +32,9 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`Shadow, The (Bally 1994)`**
+4.  Find and select this table from the dropdown menu: **`High Speed (Williams 1986)`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *""I'll be there... around every corner... in every empty room... as inevitable as your guilty conscience.""*
+6. *"Outplays and outsmarts all the others!"*
 
 <br>
 

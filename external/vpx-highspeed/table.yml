@@ -1,0 +1,16 @@
+---
+applyFixes:
+  - "bass"
+backglassVPSId: "QyVZrGlZ_B"
+backglassChecksum: "D5E2624CC2A70E009317C65C8B1843A3"
+backglassNotes: "Download version 1.0.0"
+fps: 60
+romVPSId: "dRxhd-zs"
+romChecksum: "555E29582994EBCB5EE8CF42F212EC60"
+tableVPSId: "QaXyjXzr"
+tagline: "Outplays and outsmarts all the others!"
+testers:
+  - "OminousOsie"
+vpxVPSId: "p1Ur8qLo"
+vpxChecksum: "EF45AD997DCA04607ABDCE2A85C85E71"
+tableNotes: "Download version 2.0"
