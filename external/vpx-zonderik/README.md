@@ -1,4 +1,4 @@
-﻿# Zonderik (Belgian Gaming Company 1980) 
+# Zonderik (Belgian Gaming Company 1980) 
 
 ![Table Preview](../../images/vpx-zonderik.jpg)
 
@@ -7,7 +7,7 @@
 ## Files
 | File Type | Link | Version | Author |
 |:---------:|:----:|:-------:|:------:|
-| VPX | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=16943) | 5.5.0 | [jpsalas](https://www.vpforums.org/index.php?showuser=277) |
+| VPX | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=16943) | 6.0.0 | [jpsalas](https://www.vpforums.org/index.php?showuser=277) |
 | B2S | Included with VPX | N/A | N/A |
 | DMD | N/A | N/A | N/A |
 | ROM | [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=742) | N/A | N/A |
