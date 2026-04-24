@@ -1,9 +1,9 @@
-﻿# Motordome (Bally 1986)
+# Motordome (Bally 1986)
 
 ![Table Preview](../../images/vpx-motordome.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 5.5.0  
+Version: 6.0.0  
 Download: [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=16993)
 
 DirectB2S

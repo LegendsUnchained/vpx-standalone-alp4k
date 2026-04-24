@@ -1,9 +1,9 @@
-﻿# JP's Indiana Jones (Stern 2008)
+# JP's Indiana Jones (Stern 2008)
 
 ![Table Preview](../../images/vpx-indianajones.png)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 5.0.1  
+Version: 6.0.0 
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=15560)
 
 DirectB2S
