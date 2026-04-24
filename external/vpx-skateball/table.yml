@@ -1,0 +1,15 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassChecksum: "80015edfe868c23f6a012d80f26e124f"
+backglassVPSId: "_f1vz9Zy3o"
+fps: 60
+romChecksum: "3b1b7818e16607eee0320bd01539e6e8"
+romVPSId: "COZ3WNY_"
+tableVPSId: "inQBnjxk"
+tagline: "'HOT FUN'"
+testers:
+  - "Kaoticbpr"
+vpxChecksum: "40bc9dbe4e9f038906fb8377bbe78937"
+vpxVPSId: "LPXu85AO"

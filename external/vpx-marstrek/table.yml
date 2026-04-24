@@ -1,0 +1,14 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassBundled: true
+backglassChecksum: "b54deffc6006daaaf127e0b36ebbc2e4"
+backglassNotes: "Backglass bundled with table"
+fps: 60
+tableVPSId: "wisBSsn3Tc"
+tagline: "'the first rule of Mars Trek Club is You Do Not Talk About Mars Trek Club.'"
+testers:
+  - "vicpac73"
+vpxChecksum: "0d8ef40e0ced501493dc67da779b1b3e"
+vpxVPSId: "LTCTjTai0i"

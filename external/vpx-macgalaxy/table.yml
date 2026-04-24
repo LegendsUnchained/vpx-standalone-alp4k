@@ -1,0 +1,19 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassChecksum: "bc72134b93f4aa58af923fabea9a9c8e"
+backglassNotes: "use 2-screen B2S"
+backglassVPSId: "dxFLWHZF"
+fps: 60
+romChecksum: "27040343259161bd1b92308cfce3938a"
+romNotes: "Name and Link to ROM file are in error on VPS"
+romUrlOverride: "https://vpuniverse.com/files/file/3971-macs-galaxy/"
+romVersionOverride: "macgalxy"
+tableVPSId: "QzHn1F8T"
+tagline: "'Yesterday, in a Galaxy in your back yard...'"
+testers:
+  - "Curt"
+vpxChecksum: "d2657b333f4772c1de4960437281873a"
+vpxNotes: "Vpin spreadsheet says you need the script, ignore."
+vpxVPSId: "fgrg8hd1"

@@ -1,0 +1,15 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassChecksum: "4aa2c8bcb365adc35684fe1ea90d99eb"
+backglassVPSId: "aiRv1V-4iJ"
+fps: 60
+romChecksum: "6338b605ea6dbdb737cf574992545c10"
+romVPSId: "I7Dkxw5rew"
+tableVPSId: "7-5X-Ixe"
+tagline: "'Not *that* Night Rider!"
+testers:
+  - "evilwraith"
+vpxChecksum: "dfea29fc71f3deee8eab037f1c701d63"
+vpxVPSId: "u5NYxla3"

@@ -1,0 +1,13 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassChecksum: "2109729ee05be3ebfa4f57430ea5bdb1"
+backglassVPSId: "fC26hBQf3f"
+fps: 60
+tableVPSId: "sRKscm_Phy"
+tagline: "'You didn't deal yourself no pat hand.'"
+testers:
+  - "GyroJoe"
+vpxChecksum: "56dbfdeaa9a236d375626575c5b7d29d"
+vpxVPSId: "ZO7h-OlMcP"

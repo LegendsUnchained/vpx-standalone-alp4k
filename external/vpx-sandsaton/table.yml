@@ -1,0 +1,13 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassChecksum: "f01909e19852b3f624684e91a5d1a9d3"
+backglassVPSId: "THpCynTYRT"
+fps: 60
+tableVPSId: "KWr7oeIX5n"
+tagline: "'The Pharaohs were preceded by another civilization that came from the sky...'"
+testers:
+  - "mcap10"
+vpxChecksum: "7aa4db15c729ec2c6d4bf327ab2032e3"
+vpxVPSId: "7TpU6EgObk"

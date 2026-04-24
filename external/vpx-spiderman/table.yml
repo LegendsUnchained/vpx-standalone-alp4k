@@ -1,0 +1,17 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassChecksum: "ef65f0397200a125b3a57db35227d35e"
+backglassNotes: "Not the pairup in VPin spreadsheet"
+backglassVPSId: "5zno3zre"
+fps: 60
+romChecksum: "676b70c9a67ceca4a607e9a076358e80"
+romUrlOverride: "https://vpuniverse.com/files/file/4202-spider-man-vault-edition-v101/"
+romVersionOverride: "smanve_101"
+tableVPSId: "tXARdeGR"
+tagline: "'Does whatever a spider can'"
+testers:
+  - "mcap10"
+vpxChecksum: "af4dba8b9faca10764f0632aa05c3f5a"
+vpxVPSId: "dsBoVTGj"

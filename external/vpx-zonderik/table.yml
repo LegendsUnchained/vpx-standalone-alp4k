@@ -1,0 +1,17 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassBundled: true
+backglassChecksum: "6119601de4adc37b5f1ac88791686b0e"
+backglassNotes: "B2S is bundled with table"
+fps: 60
+romChecksum: "514554cb47ccfa9902993d7f13a2c17c"
+romVersionOverride: "seawitch"
+romVPSId: "wQfM2X-FdT"
+tableVPSId: "3ePJR5Una0"
+tagline: "'Re-skin of Seawitch'"
+testers:
+  - "chadseverson"
+vpxChecksum: "93d34a28c94d6c2f06288031c168910c"
+vpxVPSId: "74eECByxZ4"

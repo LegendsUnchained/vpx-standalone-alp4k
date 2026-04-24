@@ -1,0 +1,14 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassBundled: true
+backglassChecksum: "397bc1a4f5a759de3fd5abf73640df62"
+backglassNotes: "B2S is bundled"
+fps: 60
+tableVPSId: "xVUqpMHM"
+tagline: "“Get yer motor runnin''"
+testers:
+  - "pointdablame"
+vpxChecksum: "ea11b005f2bb728a524632a7c4b2df92"
+vpxVPSId: "qUko3qC8"

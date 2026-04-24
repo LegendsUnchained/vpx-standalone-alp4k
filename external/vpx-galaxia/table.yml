@@ -1,0 +1,15 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassBundled: true
+backglassChecksum: "E69D7798D1BDC2F79F207F685EC21638"
+backglassNotes: "Same link, separate download"
+fps: 60
+mainNotes: "JP's v6.0"
+tableVPSId: "JKjuMFM0Dk"
+tagline: "'Gee, I hope none of this art is copyrighted.'"
+testers:
+  - "Curt"
+vpxChecksum: "F2E5E9D86F9EE0D3F2D373496ED44DE1"
+vpxVPSId: "ntmEJgITsu"

@@ -1,0 +1,17 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassBundled: true
+backglassChecksum: "c3e82bde7e125b7d3add1d7d39aff881"
+backglassNotes: "B2S is bundled"
+fps: 60
+mainNotes: "Re-skin of Serious Sam"
+tableNotes: "English version only"
+tableVPSId: "sirB_LGt7x"
+tagline: "'I'm having a friend for dinner.'"
+testers:
+  - "Bruno15477"
+  - "evilwraith"
+vpxChecksum: "bc3062c7885626f25f534ed4fe680b17"
+vpxVPSId: "mNXhk6gu8D"

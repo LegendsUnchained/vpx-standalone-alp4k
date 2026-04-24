@@ -1,0 +1,15 @@
+---
+enabled: false
+backglassBundled: true
+backglassChecksum: "e4d6999412f5ad4128c9f050381829ec"
+backglassNotes: "Included in table .zip"
+fps: 60
+mainNotes: "Make sure you get the 'Classic' verson."
+romChecksum: "b09ba239c3c5c944901239e99a0fb73d"
+romVPSId: "uqaJQsCE"
+tableVPSId: "yEvOelRa"
+tagline: "'A universe of mystery. A universe of magic. A universe of awesome good...and terrifying evil.'"
+testers:
+  - "Curt"
+vpxChecksum: "f30b6f99cbbbaf95417471bb16b28341"
+vpxVPSId: "or_OYzZF"

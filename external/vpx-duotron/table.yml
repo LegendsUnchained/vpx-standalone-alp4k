@@ -1,0 +1,16 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassBundled: true
+backglassNotes: "backless is bundled"
+backglassChecksum: "4c086752f337e158b8c1e1f8a714138c"
+fps: 60
+mainNotes: "2-player table. The 4-player version is titled 'Eclipse.'"
+tableNotes: "1.01"
+tableVPSId: "DoDyQd5m"
+tagline: "“The original robot uprising.”"
+testers:
+  - "Curt"
+vpxChecksum: "2E7EA27A8ADA40F0F1EF7F043D9E1D2B"
+vpxVPSId: "FzLbqQT6mn"

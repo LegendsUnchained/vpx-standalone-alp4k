@@ -1,0 +1,15 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassChecksum: "97f0fa0bab75814566ede0e6f3ccef04"
+backglassVPSId: "qFNFM1SbPO"
+fps: 60
+romChecksum: "4baebe7ab6ae493a7ca400b967ed6fb8"
+romVPSId: "qkEc-_aT"
+tableVPSId: "W1JOjl6A"
+tagline: "'The Pinball Game That's Electrifying The Industry!' "
+testers:
+  - "evilwraith"
+vpxChecksum: "a08e6bb70dd44d7814f0ad06a865f990"
+vpxVPSId: "5s83IL1A"

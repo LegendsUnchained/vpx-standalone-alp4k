@@ -1,0 +1,15 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassBundled: true
+backglassChecksum: "480d9949dcf7db3e6fae187c4763cefa"
+backglassNotes: "Included in table download"
+fps: 60
+tableNotes: "Make sure you have the 1975 table!"
+tableVPSId: "gkbqFrgRR0"
+tagline: "'Surely, not *everybody* was Kung Fu fighting!!"
+testers:
+  - "Curt"
+vpxChecksum: "8d2c6f592599ea053c773335844dcfda"
+vpxVPSId: "rGntrHV3bg"

@@ -1,0 +1,16 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassChecksum: "5b14885531d6cddaa0a0f53bcfe29739"
+backglassVPSId: "meTrn3u58j"
+fps: 60
+mainNotes: "use 2-screen b2s"
+romChecksum: "3010b0d2ce803a8f704cb5227b3cf6a0"
+romVPSId: "4BVXhN_B"
+tableVPSId: "DRRQiqAW"
+tagline: "'All aboard!'"
+testers:
+  - "Curt"
+vpxChecksum: "b7be86a25717f094947acc27e84db682"
+vpxVPSId: "-FCEF2_X"

@@ -1,0 +1,14 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassBundled: true
+backglassChecksum: "238b642e831479589b4cd468e0d255a8"
+backglassNotes: "Backglass is bundled"
+fps: 60
+tableVPSId: "YqZk5n0Ros"
+tagline: "'The living is easy'"
+testers:
+  - "chadseverson"
+vpxChecksum: "2423a8932d2b646ad2d07380198131ca"
+vpxVPSId: "zpn6Fy09Eg"

@@ -1,0 +1,17 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassChecksum: "37bf1892bfec79bd8026d178cafaea48"
+backglassVPSId: "l1zIt4OsiR"
+fps: 60
+romChecksum: "0b00f373c02b15cdb0369e29bf2e5b82"
+romNotes: "ROM not in spreadsheet"
+romUrlOverride: "https://pinballnirvana.com/forums/resources/rock.2246/"
+romVersionOverride: "rock"
+tableVPSId: "Dl0GyuuP"
+tagline: "“ROCK Will Never Die!”"
+testers:
+  - "vicpac73"
+vpxChecksum: "12ee32aadbf750e816883d7a0a46b2c0"
+vpxVPSId: "quvoRA6I"

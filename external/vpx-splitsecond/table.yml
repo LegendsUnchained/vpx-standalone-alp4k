@@ -1,0 +1,15 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassChecksum: "c7e8bb2925419a7bd0739998faf05ddb"
+backglassVPSId: "CcZP8DC1ew"
+fps: 60
+romChecksum: "8b096f585c2a1730d46735d694887ed9"
+romVPSId: "Er5ZKVnyep"
+tableVPSId: "-1uD97KYfI"
+tagline: "'Fun under the Big Top.'"
+testers:
+  - "evilwraith"
+vpxChecksum: "49ab851f63d0229e51f2f209607ca32c"
+vpxVPSId: "4Ne8jb8t_k"
