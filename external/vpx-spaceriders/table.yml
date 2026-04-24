@@ -1,0 +1,17 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+enabled: false
+fps: 46
+mainNotes: "Static backglass will load from repo"
+romNotes: "ROM in spreadsheet will not work"
+romChecksum: "af179668180ff471d567c87d60324e38"
+romUrlOverride: "https://www.vpforums.org/index.php?app=downloads&showfile=285"
+romVersionOverride: "spcrider"
+tableVPSId: "mEWEUmMsJL"
+tagline: "'Can the greatest romance of your life last only one night?'"
+testers:
+  - "Curt"
+vpxChecksum: "7153de175c8ca141fd5f456d9ae9f5de"
+vpxVPSId: "gcoCsFkPXu"
