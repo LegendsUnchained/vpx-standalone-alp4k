@@ -1,9 +1,9 @@
-﻿# JP's Spider-Man
+# JP's Spider-Man
 
 ![Table Preview](../../images/vpx-jps-spiderman-preview.jpg)
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?s=543a5ca562cc33a89debe8ace8834f1e&showuser=277)  
-Version: 5.0.0  
+Version: 6.0.0  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=13614)
 
 DirectB2S
