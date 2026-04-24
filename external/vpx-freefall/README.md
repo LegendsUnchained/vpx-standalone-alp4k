@@ -1,11 +1,11 @@
-﻿# Freefall (Stern 1981)
+# Freefall (Stern 1981)
 
 ![Table Preview](../../images/vpx-freefall.jpg)
 
 
 Authors: [jpsalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 5.5.0  
-Freefall (Stern 1981) v55_VPX8.vpx  
+Version: 6.0.0  
+Freefall (Stern 1981) v600.vpx  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=12603)
 
 DirectB2S
