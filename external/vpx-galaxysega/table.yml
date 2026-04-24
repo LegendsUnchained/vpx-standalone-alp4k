@@ -1,0 +1,14 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+backglassBundled: true
+backglassChecksum: "9eef8f023727833a834e33373538d1ff"
+backglassNotes: "B2S Bundled with table"
+fps: 60
+tableVPSId: "P_SjStAqsa"
+tagline: "'Is it just me, or does this dude look a little like Dr. Robotnik?'"
+testers:
+  - "Curt"
+vpxChecksum: "ee72ff4b660aa06f26b4e67522bf0686"
+vpxVPSId: "2dgCAfd2TH"
