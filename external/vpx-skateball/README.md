@@ -1,9 +1,9 @@
-﻿# Skate Ball (Bally 1980)
+# Skate Ball (Bally 1980)
 
 ![Table Preview](../../images/vpx-skateball-review.jpg)
 
 Authors: [JPSalas](https://www.vpforums.org/index.php?showuser=277)  
-Version: 4.0.1  
+Version: 6.0.0  
 Download: [VPforums](https://www.vpforums.org/index.php?app=downloads&showfile=13142)
 
 DirectB2S
