@@ -1,4 +1,4 @@
-﻿# Kung Fu (LTD do Brasil 1975)
+# Kung Fu (LTD do Brasil 1975)
 
 ![Table Preview](../../images/vpx-kungfu-preview.jpg)
 
@@ -7,7 +7,7 @@
 ## Files
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
-| **VPX** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=17429) | 5.5.0 | [jpsalas](https://www.vpforums.org/index.php?showuser=277) |
+| **VPX** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=17429) | 6.0.0 | [jpsalas](https://www.vpforums.org/index.php?showuser=277) |
 | **B2S** | `Kung Fu (LTD do Brasil 1975).directb2s` included in VPX link |
 
 
