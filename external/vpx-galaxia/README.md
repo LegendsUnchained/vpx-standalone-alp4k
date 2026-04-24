@@ -1,4 +1,4 @@
-﻿# Galáxia (LTD do Brasil 1975)
+# Galáxia (LTD do Brasil 1975)
 
 ![Table Preview](../../images/vpx-galaxia-preview.jpg)
 
@@ -7,7 +7,7 @@
 ## Files
 | File Type | Link | Version | Author | 
 |-----------|--------|----------|--------------|
-| **VPX** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=17385) | 5.5.0 | [jpsalas](https://www.vpforums.org/index.php?showuser=277}) |
+| **VPX** | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=17385) | 6.0.0 | [jpsalas](https://www.vpforums.org/index.php?showuser=277}) |
 | **B2S** | Included in VPX link |
 | **DMD** | N/A |
 | **ROM** | N/A |
