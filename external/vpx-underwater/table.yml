@@ -10,8 +10,6 @@ backglassNotes: "Underwater (Recel 1976) db2s.zip"
 #romVersionOverride: ""
 #romNotes: """
 #romChecksum: ""
-mainNotes: "Known issue: Scoring reels misaligned"
-enabled: false
 fps: 60
 tagline: "Dive! Dive!"
 testers:
