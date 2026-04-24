@@ -1,0 +1,16 @@
+---
+applyFixes:
+  - "bass"
+backglassBundled: true
+backglassChecksum: "930d3ca8f76d9be260c4c485855c2569"
+backglassNotes: "Available at same link as table."
+enabled: false
+fps: 60
+romChecksum: "2b1ef2f17073f5a94f75bebd9024afbb"
+romVPSId: "jcep11pgGO"
+tableVPSId: "RRod5gPdAb"
+tagline: "*new* VPU source for ROM"
+testers:
+  - "evilwraith"
+vpxChecksum: "242987b924734e91c92f622ad7e5aaf1"
+vpxVPSId: "Nd6o1tTeZe"
