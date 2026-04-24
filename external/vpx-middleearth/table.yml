@@ -1,0 +1,16 @@
+---
+enabled: false
+applyFixes:
+  - "bass"
+fps: 60
+mainNotes: "Static backglass will load from repo"
+romNotes: "ROM in spreadsheet will not work"
+romChecksum: "9ed1a8c37f710f9d7f0f34ded02aff12"
+romUrlOverride: "https://vpuniverse.com/files/file/498-middle-earth/"
+romVersionOverride: "midearth"
+tableVPSId: "7IGfVku1"
+tagline: "'Second Breakfast at Waffle House!'"
+testers:
+  - "Curt"
+vpxChecksum: "06fd79a5f1807b73e52788d7d5f3625f"
+vpxVPSId: "MekNMAi9"
