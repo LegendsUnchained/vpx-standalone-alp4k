@@ -56,10 +56,9 @@ class VPSDB:
 
     def get_diff_by_id(self, id):
         table = self.get_tablefile_by_id(id)
-        print(f"diff {table}")
         if table:
             if "features" in table:
-                if table["features"] == "VPU Patch":
+                if "VPU Patch" in table["features"]:
                     return table
         return None
             
