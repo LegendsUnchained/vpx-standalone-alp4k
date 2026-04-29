@@ -54,6 +54,14 @@ class VPSDB:
                         return b2sFile
         return self.get_tablefile_by_id(id)
 
+    def get_diff_by_id(self, id):
+        table = self.get_tablefile_by_id(id)
+        if table:
+            if "features" in table:
+                if "VPU Patch" in table["features"]:
+                    return table
+        return None
+            
     def get_pup_by_id(self, id):
         for table in self.tables:
             if "pupPackFiles" in table:
@@ -106,15 +114,17 @@ def get_table_meta(files, warn_on_error=True):
         altSoundVPSId = data.get("altSoundVPSId")
         backglassVPSId = data.get("backglassVPSId")
         coloredROMVPSId = data.get("coloredROMVPSId")
+        diffVPSId = data.get("diffVPSId")
         pupVPSId = data.get("pupVPSId")
         romVPSId = data.get("romVPSId")
         tableVPSId = data.get("tableVPSId")
         tutorialVPSId = data.get("tutorialVPSId")
         vpxVPSId = data.get("vpxVPSId")
-
+        
         altSoundChecksum = data.get("altSoundChecksum")
         backglassChecksum = data.get("backglassChecksum")
         coloredROMChecksum = data.get("coloredROMChecksum")
+        diffChecksum = data.get("diffChecksum")
         romChecksum = data.get("romChecksum")
         vpxChecksum = data.get("vpxChecksum")
         pupChecksum = data.get("pupChecksum")
@@ -125,6 +135,8 @@ def get_table_meta(files, warn_on_error=True):
             backglassChecksum = backglassChecksum.lower()
         if coloredROMChecksum:
             coloredROMChecksum = coloredROMChecksum.lower()
+        if diffChecksum:
+            diffChecksum = diffChecksum.lower()
         if romChecksum:
             romChecksum = romChecksum.lower()
         if vpxChecksum:
@@ -146,6 +158,11 @@ def get_table_meta(files, warn_on_error=True):
             "coloredROMFileUrl": data.get("coloredROMUrlOverride"),
             "coloredROMNotes": data.get("coloredROMNotes"),
             "coloredROMVersion": data.get("coloredROMVersionOverride"),
+            "diffAuthors": data.get("diffAuthorsOverride"),
+            "diffFileUrl": data.get("diffUrlOverride"),
+            "diffNotes": data.get("diffNotes"),
+            "diffVersion": data.get("diffVersionOverride"),
+            "diffChecksum": diffChecksum,
             "enabled": data.get("enabled"),
             "fps": data.get("fps"),
             "mainNotes": data.get("mainNotes"),
@@ -242,6 +259,25 @@ def get_table_meta(files, warn_on_error=True):
                 else:
                     sys.exit(1)
 
+        if diffVPSId:
+            diff = vpsdb.get_diff_by_id(diffVPSId)
+            if diff:
+                print(f"Parsing diff {diffVPSId} for {folder_name}")
+
+                if not table_meta["diffAuthors"]:
+                    table_meta["diffAuthors"] = diff.get("authors", [])
+                if not table_meta["diffFileUrl"]:
+                    table_meta["diffFileUrl"] = diff.get("urls", [])[0].get("url", "")
+                if not table_meta["diffVersion"]:
+                    table_meta["diffVersion"] = diff.get("version", "")
+            else:
+                print(f"{error_prefix}: diff id {diffVPSId} not found in VPSDB")
+                if warn_on_error:
+                    print(f"WARNING: Skipping {folder_name}")
+                    continue
+                else:
+                    sys.exit(1)
+            
         if pupVPSId:
             pup = vpsdb.get_pup_by_id(pupVPSId)
             if pup:
