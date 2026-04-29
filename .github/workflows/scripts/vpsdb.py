@@ -269,7 +269,7 @@ def get_table_meta(files, warn_on_error=True):
                 if not table_meta["diffFileUrl"]:
                     table_meta["diffFileUrl"] = diff.get("urls", [])[0].get("url", "")
                 if not table_meta["diffVersion"]:
-                    table_meta["diffVersion"]: diff.get("version", "")
+                    table_meta["diffVersion"] = diff.get("version", "")
             else:
                 print(f"{error_prefix}: diff id {diffVPSId} not found in VPSDB")
                 if warn_on_error:
