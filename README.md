@@ -558,6 +558,7 @@ Links to these products on Amazon are through affiliate links.
 | [Meteor (Stern 1979)](external/vpx-meteor) | :white_check_mark: | :x: | :white_check_mark: | :x: | 42 | 
 | [Metropolis (Original 2022)](external/vpx-metropolis) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 46 |
 | [MF DOOM (GOILL773 2024)](external/vpx-mfdoom) | :white_check_mark: |:white_check_mark: | :x: | :white_check_mark: | 35 |
+| [MF DOOM (GOILL773 2024) FlexDMD version](external/vpx-mfdoomflexdmd) | :white_check_mark: |:white_check_mark: | :x: | :x: | 58 |
 | [Miami Vice (Original 2020)](external/vpx-miamivice) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 33 |
 | [Michael Jordan (Data East 1992)](external/vpx-michaeljordan) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
 | [Mickey Mouse in Steamboat Willie (Original 2022)](external/vpx-mickeysbw) | :white_check_mark: | :x: | :x: | :x: | 60 |
