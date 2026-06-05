@@ -1,0 +1,15 @@
+---
+enabled: False
+applyFixes:
+  - "bass"
+backglassBundled: true
+backglassChecksum: "ca1f82109f7fb287131073d55d3d61a4"
+backglassNotes: "Bundled with table"
+backglassVPSId: "PcJHOPKJDO"
+fps: 50
+tableVPSId: "SWT0OKYOwK"
+tagline: "'And they're off!'"
+testers:
+  - "Curt"
+vpxChecksum: "29c2a965515844c91b009c1ef68dd941"
+vpxVPSId: "7Td-pzgz1D"
