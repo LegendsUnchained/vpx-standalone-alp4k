@@ -788,6 +788,7 @@ Links to these products on Amazon are through affiliate links.
 | [World Joker Tour, JP's (Original 2024)](external/vpx-jpwjt) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
 | [World Poker Tour (Stern 2006)](external/vpx-wpt) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
 | [WOW Monopoly, JPs (Original 2015)](external/vpx-wowmonopoly) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Wuthering Waves (Original 2026)](external/vpx-wutheringwaves) | :x: | :x: | :x: | :white_check_mark: | 57 |
 | [Xenon (Bally 1980)](external/vpx-xenon) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
 | [Xenon - JP (Bally 1980)](external/vpx-jpxenon) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [X Files (TastyWasps) (Sega 1997)](external/vpx-xfiles) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
