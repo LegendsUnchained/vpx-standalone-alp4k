@@ -1,0 +1,18 @@
+---
+enabled: False
+backglassChecksum: "8f9e1451bcbeaee7cb1bdc0473a288d9"
+backglassNotes: "Download version 1.0"
+backglassVPSId: "v8m9wTMfLE"
+fps: 50
+pupChecksum: "28e687ec02b201018ddf6933fcdea027"
+pupFileUrl: "https://mega.nz/file/XMIgnRwC#LmRlA5GjAzxrWdjxl4O87PxqjUldOF4kA-fLoU0odFQ"
+pupNotes: "Housed on .vpx download page"
+pupRequired: true
+tableNameOverride: "Batman '66 Premium (Stern 2016)"
+tableNotes: "Download version 1.1.0"
+tableVPSId: "JyxgU6op0S"
+tagline: "'It's Coming back!'"
+testers:
+  - "Curt"
+vpxChecksum: "8f9e1451bcbeaee7cb1bdc0473a288d9"
+vpxVPSId: "UYz53f4Vy5"
