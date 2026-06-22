@@ -27,7 +27,7 @@
 
 ## Instructions
 
-
+- This table is in EXTREME Beta Condition. Some features are disabled to make it work in standalone, and visuals are compromised to get a functioning DMD. PLEASE feel free to improve the table itself.
 
 - Install this table through the Table Manager, using the `Add Table` > `Manual` page
 - DO NOT install any .ini file included in the table download, use the one provided here.
