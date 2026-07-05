@@ -498,7 +498,7 @@ Links to these products on Amazon are through affiliate links.
 | [Indianapolis 500 (Bally 1995)](external/vpx-indy500) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
 | [Inhabiting Mars (original 2023)](external/vpx-inhabitinmars) | :white_check_mark: | :white_check_mark: | :x: | :x: | 43 |
 | [Iron Maiden (Stern 1981)](external/vpx-ironmaiden) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
-| [Iron Man 2, JP's (Original 2018)](external/vpx-ironman2jp) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Iron Man 2, JP's (Original 2018)](external/vpx-jpironman2) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [IT - Pinball Madness - JP (Original 2022)](external/vpx-itpinballmadness) | :white_check_mark: | :white_check_mark: | :x: | :x: | 59 |
 | [Jack in he Box (Gottlieb 1973)](external/vpx-jackinthebox) | :x:  | :x:  | :x: | :x: | 46 |
 | [Jack Sparrow (Original 2023)](external/vpx-jacksparrow) | :white_check_mark: | :white_check_mark: | :x: | :x: | 55 |
@@ -707,7 +707,7 @@ Links to these products on Amazon are through affiliate links.
 | [Star Trek - The Next Generation (Williams 1993)](external/vpx-startrektng) | :white_check_mark: |:white_check_mark: | :white_check_mark: | :x: | 38 |
 | [Star Trek 25th Anniversary (Data East 1991)](external/vpx-startrek25th) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Star Trek LE (Stern 2013)](external/vpx-startrekle) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 35 |
-| [Star Trek LE - JPs (Original 2020)](external/vpx-startreklejp) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Star Trek LE - JPs (Original 2020)](external/vpx-jpstartrekle) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Star Wars Episode 1 (Original 2023)](external/vpx-starwarsepisode1) | :white_check_mark: | :x: | :white_check_mark: | :x: | 48 |
 | [Stargate (Gottlieb 1995)](external/vpx-stargate) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
 | [Stars (Stern 1978)](external/vpx-stars) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
