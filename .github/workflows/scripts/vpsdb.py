@@ -6,6 +6,22 @@ import requests
 import yaml
 
 
+def normalize_checksums(value):
+    """Normalize a checksum field to a list of lowercased strings.
+
+    Checksum fields may hold multiple acceptable MD5 hashes. Accepts a list
+    (the current format) or a bare string (legacy single-checksum format),
+    and returns a list of lowercased hashes. Returns None when absent or empty
+    so downstream required-checksum checks can test for None.
+    """
+    if value is None:
+        return None
+    if isinstance(value, str):
+        value = [value]
+    normalized = [str(item).lower() for item in value if item]
+    return normalized or None
+
+
 class VPSDB:
     def __init__(
         self, url="https://virtualpinballspreadsheet.github.io/vps-db/db/vpsdb.json"
@@ -121,28 +137,18 @@ def get_table_meta(files, warn_on_error=True):
         tutorialVPSId = data.get("tutorialVPSId")
         vpxVPSId = data.get("vpxVPSId")
         
-        altSoundChecksum = data.get("altSoundChecksum")
-        backglassChecksum = data.get("backglassChecksum")
-        coloredROMChecksum = data.get("coloredROMChecksum")
-        diffChecksum = data.get("diffChecksum")
-        romChecksum = data.get("romChecksum")
-        vpxChecksum = data.get("vpxChecksum")
-        pupChecksum = data.get("pupChecksum")
-
-        if altSoundChecksum:
-            altSoundChecksum = altSoundChecksum.lower()
-        if backglassChecksum:
-            backglassChecksum = backglassChecksum.lower()
-        if coloredROMChecksum:
-            coloredROMChecksum = coloredROMChecksum.lower()
-        if diffChecksum:
-            diffChecksum = diffChecksum.lower()
-        if romChecksum:
-            romChecksum = romChecksum.lower()
-        if vpxChecksum:
-            vpxChecksum = vpxChecksum.lower()
-        if pupChecksum:
-            pupChecksum = pupChecksum.lower()
+        # Checksum fields are lists of acceptable MD5 hashes so a table can
+        # accept more than one valid file. A single string (legacy format) is
+        # tolerated and normalized to a one-element list. Absent/empty stays
+        # None so the required-checksum checks in validate-table-yaml.py keep
+        # working.
+        altSoundChecksum = normalize_checksums(data.get("altSoundChecksum"))
+        backglassChecksum = normalize_checksums(data.get("backglassChecksum"))
+        coloredROMChecksum = normalize_checksums(data.get("coloredROMChecksum"))
+        diffChecksum = normalize_checksums(data.get("diffChecksum"))
+        romChecksum = normalize_checksums(data.get("romChecksum"))
+        vpxChecksum = normalize_checksums(data.get("vpxChecksum"))
+        pupChecksum = normalize_checksums(data.get("pupChecksum"))
 
         table_meta = {
             "altSoundChecksum": altSoundChecksum,
