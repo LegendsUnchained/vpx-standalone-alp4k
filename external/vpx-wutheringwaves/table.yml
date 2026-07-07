@@ -1,0 +1,17 @@
+---
+enabled: False
+fps: 57
+pupArchiveFormat: "RAR"
+pupArchiveRoot: "WuWa"
+pupChecksum: 390a22005cac899ac8bf8aa75d0fc978
+pupFileUrl: "https://vpuniverse.com/files/file/30792-wuthering-waves-table-pup/"
+pupNotes: "Download WuWa.rar from VPX link."
+pupRequired: True
+pupVersion: "1.0.0"
+tableNotes: "Download 'Wuthering Waves (2026) TombGman.vpx' v1.0.0"
+tableVPSId: "Pfyv1wi_Go"
+tagline: "Master the concerto. Summon your echos. [sic]"
+testers:
+  - "Curt"
+vpxChecksum: "163e366d4db97e1fee3ca7a3963882dd"
+vpxVPSId: "ELfdwzW0JN"

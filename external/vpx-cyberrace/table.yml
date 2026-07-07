@@ -1,0 +1,15 @@
+---
+enabled: False
+applyFixes:
+  - "bass"
+backglassChecksum: "d022f3a9e50e10ef686346875c641ec9"
+backglassNotes: "Download version 1.0.0"
+backglassVPSId: "eDRYNQyIJq"
+fps: 40
+tableNotes: "Download version 1.3.8"
+tableVPSId: "KiwC0qVAB9"
+tagline: "'Choose your race rival'"
+testers:
+  - "Curt"
+vpxChecksum: "63b2115e4024a48bb21ed4e37906d69b"
+vpxVPSId: "peImTeYd43"
