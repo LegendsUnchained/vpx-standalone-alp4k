@@ -3,7 +3,7 @@ enabled: False
 fps: 57
 pupArchiveFormat: "RAR"
 pupArchiveRoot: "WuWa"
-pupChecksum: 390a22005cac899ac8bf8aa75d0fc978
+pupChecksum: "390a22005cac899ac8bf8aa75d0fc978"
 pupFileUrl: "https://vpuniverse.com/files/file/30792-wuthering-waves-table-pup/"
 pupNotes: "Download WuWa.rar from VPX link."
 pupRequired: True
