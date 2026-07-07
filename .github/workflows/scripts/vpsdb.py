@@ -163,6 +163,7 @@ def get_table_meta(files, warn_on_error=True):
             "coloredROMChecksum": coloredROMChecksum,
             "coloredROMFileUrl": data.get("coloredROMUrlOverride"),
             "coloredROMNotes": data.get("coloredROMNotes"),
+            "coloredROMPin2DMD": data.get("coloredROMPin2DMD"),
             "coloredROMVersion": data.get("coloredROMVersionOverride"),
             "diffAuthors": data.get("diffAuthorsOverride"),
             "diffFileUrl": data.get("diffUrlOverride"),
