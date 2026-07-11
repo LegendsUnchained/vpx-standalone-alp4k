@@ -1,6 +1,6 @@
 '**********************
 '  Bad Cats(1989)
-' VPX table by unclewilly,Clark Kent, Dark
+' VPX table by unclewilly, Brad1X, Clark Kent, Dark
 ' version 1.0
 '**********************
 

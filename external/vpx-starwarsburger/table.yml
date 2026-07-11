@@ -1,16 +1,14 @@
 ---
-applyFixes:
-  - "bass"
 backglassChecksum: "ebe548166ce78715844a8fcac38f2489"
 backglassNotes: "Download Version 1.0.2"
 backglassVPSId: "e61i_rvGva"
 fps: 40
-tableNotes: "Download Version 1.0.0"
+tableNotes: "Download Version 1.0.3"
 tableVPSId: "8FLutyq5py"
 tagline: "The Force is strong with this one."
 testers:
   - "Silentkat"
   - "Wraith"
 vpxVPSId: "fqUNoSi3hg"
-vpxChecksum: "05e526048d7914822c6dd81f58bf0703"
+vpxChecksum: "FD933442ADF30895080D188425C54F8D"
 

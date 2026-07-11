@@ -200,6 +200,8 @@ Sub Table1_Init()
     GiOff
     StartAttractMode
     pupevent 800			
+
+    ScoreServer_Connect
 End Sub
 
 ' Realtime LILDP animations
@@ -1008,6 +1010,8 @@ Sub ResetForNewGame()
 
     ' you may wish to start some music, play a sound, do whatever at this point
 
+    ScoreServer_Report 1   ' game start
+
     vpmtimer.addtimer 1500, "FirstBall '"
 End Sub
 
@@ -1152,6 +1156,11 @@ End Sub
 ' if not, then check to see if this was the last ball (of the CurrentPlayer)
 '
 Sub EndOfBall2()
+    ' EndOfBall has already added the bonus via AddScore, and BallsRemaining is not decremented until
+    ' below, so this is the one place where the score, player and ball number all describe the ball
+    ' that just drained. Reporting here (rather than from AddScore) keeps it to one message per ball.
+    ScoreServer_Report 2
+
     ' if were tilted, reset the internal tilted flag (this will also
     ' set TiltWarnings back to zero) which is useful if we are changing player LOL
     Tilted = False
@@ -1283,6 +1292,9 @@ Sub EndOfGame()
     GiOff
     StartAttractMode
 	pupevent 880			
+
+    ' CheckHighScore has already run by now, so HighScore()/HighScoreName() are up to date
+    ScoreServer_End
 ' you may wish to light any Game Over Light you may have
 End Sub
 
@@ -5939,4 +5951,62 @@ Sub UpdateLUT
         Case 20:table1.ColorGradeImage = "LUT Warm 9"
         Case 21:table1.ColorGradeImage = "LUT Warm 10"
     End Select
+End Sub
+
+'*****************************************************
+'   ScoreServer  (VPX standalone score broadcasting)
+'
+'   Optional: if the VPinball.ScoreServer object is not
+'   available (e.g. stock VPX), every call below is a
+'   no-op and the table plays exactly as before.
+'
+'   Reports once per ball drain, plus game start/end and
+'   high scores - deliberately NOT from AddScore, which
+'   fires on every bumper hit.
+'*****************************************************
+
+Dim ScoreServer
+
+Sub ScoreServer_Connect()
+    On Error Resume Next
+    Set ScoreServer = CreateObject("VPinball.ScoreServer")
+    On Error Goto 0
+    If Not ScoreServer Is Nothing Then ScoreServer.SetGameName cGameName
+End Sub
+
+' gameState: 1 = game start, 2 = in play, 3 = game end
+Sub ScoreServer_Report(gameState)
+    If ScoreServer Is Nothing Then Exit Sub
+    If PlayersPlayingGame < 1 Then Exit Sub   ' ReDim p(-1) would be a runtime error
+
+    Dim i
+    Dim p()
+    Dim v()
+    ReDim p(PlayersPlayingGame - 1)
+    ReDim v(PlayersPlayingGame - 1)
+    For i = 1 To PlayersPlayingGame
+        p(i - 1) = "Player " & i
+        ' FormatNumber, not CStr: Score() is a Double and CStr would give 1.2345E+10 on a big score
+        v(i - 1) = FormatNumber(Score(i), 0, -1, 0, 0)
+    Next
+
+    ' Balls() is the table's own ball-number function, so we report what its DMD shows
+    ScoreServer.SetGameState PlayersPlayingGame, CurrentPlayer, Balls, gameState
+    ScoreServer.SetScoresArray Join(p, "|"), Join(v, "|")
+End Sub
+
+Sub ScoreServer_HighScores()
+    If ScoreServer Is Nothing Then Exit Sub
+    ScoreServer.SetHighScoresArray _
+        "First Place|Second Place|Third Place|Fourth Place", _
+        HighScoreName(0) & "|" & HighScoreName(1) & "|" & HighScoreName(2) & "|" & HighScoreName(3), _
+        FormatNumber(HighScore(0), 0, -1, 0, 0) & "|" & FormatNumber(HighScore(1), 0, -1, 0, 0) & "|" & _
+        FormatNumber(HighScore(2), 0, -1, 0, 0) & "|" & FormatNumber(HighScore(3), 0, -1, 0, 0)
+End Sub
+
+Sub ScoreServer_End()
+    If ScoreServer Is Nothing Then Exit Sub
+    ScoreServer_Report 3
+    ScoreServer_HighScores
+    ScoreServer.ClearState
 End Sub

@@ -1,7 +1,7 @@
 ---
-backglassVPSId: "rwC63_QvM7"
-backglassChecksum: "9DCB534BA25452F0D7F41C4805BAEB0B"
-backglassNotes: "Download 'Gorgar (Williams 1979).zip'"
+backglassChecksum: "35BF8BEC93257AED617EFB68F5F53D9A"
+backglassNotes: "Download 'Gorgar (Williams 1979) 3k full dmd.zip'"
+backglassVPSId: "ZCesIvacOL"
 fps: 60
 romVPSId: "ln7SaoBc"
 romChecksum: "509078C10929D74BC6900211D1937932"
@@ -15,5 +15,3 @@ testers:
   - "OminousOsie"
 vpxVPSId: "SkFz-Ux6-k"
 vpxChecksum: "a37d54eafb6177e774b156dbb75182d9"
-applyFixes:
-  - "bass"

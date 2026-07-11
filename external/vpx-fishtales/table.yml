@@ -1,7 +1,11 @@
 ---
-backglassAuthorsOverride:
-  - ""
-fps: 50
+fps: 60
+backglassVPSId: "PwZqw3IxKI"
+backglassChecksum: "7B270B3C56172B0B00CC1D9A545E2E40"
+backglassNotes: "Download version 1.0"
+coloredROMVPSId: "ijwZ4BRv"
+coloredROMChecksum: "6574D9D0A954AF349F491F189628C4BA"
+coloredROMNotes: "Download 'FT_2.0.pac'"
 romVPSId: "k3DEd-AK"
 romChecksum: "3FD56DE6F91F04E236D55F7FBDDCAA98"
 romNotes: "Download - ft_l5.zip"
@@ -11,8 +15,6 @@ testers:
   - "evilwraith"
   - "Mox"
   - "OminousOsie"
-vpxVPSId: "JVo8r2us"
-vpxChecksum: "428a9597b90c428c36c36cee6a5625cc"
+vpxVPSId: "9FuFBUxfy8"
+vpxChecksum: "C4562DC0B3B9BA3C1BF8C9F0C726881C"
 tableNotes: "Download version 1.1"
-applyFixes:
-  - "bass"

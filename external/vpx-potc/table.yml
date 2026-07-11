@@ -1,7 +1,11 @@
 ---
-applyFixes:
-  - "bass"
-fps: 55
+backglassChecksum: "CB48BDDE9B9C9B9EE809604E13353465"
+backglassNotes: ""
+backglassVPSId: "aneW70BPl0"
+coloredROMChecksum: "D606D8D8A2215E5E11F0EBA2FB4A5FC3"
+coloredROMNotes: "pal file only"
+coloredROMVPSId: "H8O2wVzh"
+fps: 60
 romVPSId: "PRebrQRQ"
 romNotes: "Download potc_600as"
 romChecksum: "7F2C8108D34A861AA565B70377ADFBDF"

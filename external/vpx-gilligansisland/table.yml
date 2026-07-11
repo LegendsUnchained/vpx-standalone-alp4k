@@ -2,7 +2,7 @@
 backglassVPSId: "62o2b4X_"
 backglassChecksum: "6D7CBF7E5200B2611B495C696DD79B8A"
 backglassNotes: "Download Gilligan's Island (Bally 1991)3scr"
-fps: 50
+fps: 60
 romVPSId: "epgJNgzU"
 romChecksum: "8A211B1E56DCDDEC33AF741401831E2E"
 romNotes: "Download gi_l9"
@@ -14,5 +14,3 @@ testers:
 vpxVPSId: "r1XNdVKv"
 vpxChecksum: "2F297945166E2645B3D3E36107981D37"
 vpxNotes: "Download version 2.0"
-applyFixes:
-  - "bass"

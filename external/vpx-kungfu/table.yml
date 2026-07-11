@@ -1,7 +1,5 @@
 ---
 enabled: false
-applyFixes:
-  - "bass"
 backglassBundled: true
 backglassChecksum: "480d9949dcf7db3e6fae187c4763cefa"
 backglassNotes: "Included in table download"

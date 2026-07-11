@@ -1,6 +1,4 @@
 ---
-applyFixes:
-  - "bass"
 # yamllint disable-line rule:line-length
 backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/65Ezy3Lk9m_1725356016568.webp"
 backglassBundled: true

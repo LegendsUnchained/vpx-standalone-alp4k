@@ -1,9 +1,10 @@
 ---
-applyFixes:
-  - "bass"
-backglassChecksum: "B210272690B39C9FE6F4605ACF9D2ACE"
-backglassNotes: "Download 'Big Hurt (premier 1995).zip'"
-backglassVPSId: "IbcnjPqKQn"
+backglassChecksum: "1E8EF06D0B1B3825603C2C6C90EA0277"
+backglassNotes: "Download 'Version 1.0.0'"
+backglassVPSId: "aYlNsefPgT"
+coloredROMUrlOverride: "https://mrman2k7.synology.me:5001/sharing/1dsJGf3wR"
+coloredROMChecksum: "4E1A61FF3A60D3C490DE12E2E2248F75"
+coloredROMNotes: "This is a mostly complete WIP"
 fps: 60
 romChecksum: "20392BF5DA7C349B0154A6978AF09789"
 romNotes: "Download 'bighurt.zip'"

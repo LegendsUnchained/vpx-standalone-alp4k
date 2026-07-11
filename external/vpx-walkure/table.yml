@@ -1,6 +1,4 @@
 ---
-applyFixes:
-  - "bass"
 backglassBundled: true
 backglassChecksum: "B9A9E82AF13C2B6DF293CC366F070F28"
 backglassNotes: "Included in VPX zip"

@@ -1,7 +1,8 @@
 ---
-backglassAuthorsOverride:
-  - ""
-fps: 50
+backglassVPSId: "hWuAb6Mrcl"
+backglassNotes: "Download 'Bram Stoker's Dracula (Williams 1993).zip'"
+backglassChecksum: "CF2781B02CEE8220545691B558967828"
+fps: 60
 romVPSId: "_UH4Udok"
 romChecksum: "6DDD36020F16A3C39683E7DCF660FFFE"
 romNotes: "Download - drac_l1.zip"
@@ -15,5 +16,3 @@ testers:
 vpxVPSId: "v-WHlY04"
 vpxChecksum: "E85E3DC077B203224C36E947D546BA3A"
 tableNotes: "Download 'Bram Stoker's Dracula (Williams 1993)_Bigus(MOD)3.0.vpx.zip'"
-applyFixes:
-  - "bass"

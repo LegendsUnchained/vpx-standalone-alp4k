@@ -1,0 +1,21 @@
+---
+backglassChecksum: "D96866A2F2170302E8EDDF526E7B5A29"
+backglassNotes: "Use 'The Walking Dead (Stern 2025)LE.directb2s'"
+backglassVPSId: "_NqgJZ1qKE"
+coloredROMChecksum: "0935D57154410DE432139C950E165EBA"
+coloredROMNotes: "twd_160h.pac"
+coloredROMVPSId: "v6DPvEoOex"
+diffChecksum: "92B14B263AB4C6C34FEB3B75D1985ABF"
+diffNotes: "Download 'The Walking Dead (Stern 2025).zip'"
+diffVPSID: "urZKVVQeD5"
+fps: 60
+romChecksum: "BD052AD54E57BDFBA634F343470CAE2C"
+romNotes: "twd_160h.zip"
+romVPSId: "pdHhrTUek_"
+tableNotes: "Download 'VP10-The Walking Dead 1.2.zip'"
+tableVPSId: "wasB0RRz"
+tagline: "Brains."
+testers:
+  - "Wraith"
+vpxChecksum: "4191A4DD5735D7F96C0C3171C9F2444D"
+vpxVPSId: "UjHFQ8iA"

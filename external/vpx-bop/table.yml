@@ -1,8 +1,8 @@
 ---
-backglassVPSId: "8oTJ137H"
-backglassChecksum: "0ec336eaa3b16f5b2fbbd1a14380d416"
-backglassNotes: "The Machine Bride Of Pinbot (Williams 1991)2scr.rar"
-fps: 43
+backglassVPSId: "vZxKzU5OTA"
+backglassChecksum: "EE28BC140A699860DAA63D26E62653F4"
+backglassNotes: "Download 'The Machine Bride Of Pinbot (Williams 1991) fulldmd.directb2s'"
+fps: 55
 romVPSId: "vwDH6y_g"
 romChecksum: "356c7f7c943a5d72ace371c9398ea722"
 romNotes: "Download - bop_l8.zip"
@@ -15,5 +15,3 @@ testers:
   - "Boris"
 vpxVPSId: "V1dcVAchIZ"
 vpxChecksum: "8f04921f5df40aa49463b46a61285c73"
-applyFixes:
-  - "bass"

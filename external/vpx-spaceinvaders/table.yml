@@ -19,5 +19,3 @@ testers:
   - "CoffeeAtJoes"
 vpxVPSId: "uvNi1DbR"
 vpxChecksum: "6DFDD15952079F5E8388559C5E429214"
-applyFixes:
-  - "bass"

@@ -1,7 +1,7 @@
 ---
 # yamllint disable-line rule:line-length
 backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/jVK492fx_b2s_1699628256650.webp"
-fps: 50
+fps: 60
 pupArchiveRoot: "jurassic Pro"
 pupChecksum: "BEA5B84EA32711022CE2B5F34144C1EF"
 pupFileUrl: >-
@@ -18,5 +18,3 @@ testers:
   - "OminousOsie"
 vpxChecksum: "61E6132D7F90FA796B6F6D5BC849A781"
 vpxVPSId: "M1xaS4sTX2"
-applyFixes:
-  - "bass"

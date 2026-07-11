@@ -1,7 +1,9 @@
 ---
 backglassVPSId: "hripfXW8AB"
 backglassChecksum: "D893635A634EF2D0A0F1196A714513E5"
-fps: 51
+coloredROMChecksum: "39A414E4F6335AE56EB33DE77C4BC1F2"
+coloredROMVPSId: "RAXAfH14xP"
+fps: 60
 romVPSId: "hLkQcyX9"
 romChecksum: "D8941885B640395E9D21EC52CBA8779D"
 romNotes: "Download - swtril43.zip"
@@ -12,5 +14,3 @@ testers:
   - "OminousOsie"
 vpxVPSId: "FXFg6iyecu"
 vpxChecksum: "DBD5E0737301BD1856D6669D3740FC88"
-applyFixes:
-  - "bass"

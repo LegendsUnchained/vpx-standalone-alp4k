@@ -2,7 +2,10 @@
 backglassVPSId: "iv6IrMbzGi"
 backglassChecksum: "B6C526ACCB90CDD5072B9CEB4609C36B"
 backglassNotes: "Download version v2.1"
-fps: 53
+coloredROMChecksum: "E7D86B0C56E2B5C92D4BF642D982620F"
+coloredROMNotes: "Download 'Judge_Dredd_By_JPAJMO.pac'"
+coloredROMVPSId: "QYwniVBlnp"
+fps: 57
 romVPSId: "HHn8zD6O"
 romChecksum: "9B34563DAC437408DFB6753965CB5723"
 romNotes: "Download jd_l1"
@@ -13,5 +16,3 @@ testers:
 vpxVPSId: "wJZPSTmW"
 vpxChecksum: "2D79A25CD5FE6616602B930F74430834"
 tableNotes: "Download version 4.1"
-applyFixes:
-  - "bass"

@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import os
-import re
 import sys
 import time
 import json
@@ -55,25 +54,6 @@ def get_latest_commit_hash(repo_path, folder_path):
     except Exception as e:
         print(f"An error occurred: {e}")
         return None
-
-
-def process_title(title, manufacturer, year):
-    """
-    Transforms a title for proper sorting, moving leading "The" to the end,
-    and handling optional "JP's" or "JPs" prefixes, moving them after the comma
-    when 'The' is not present.
-    """
-    name = ""
-    match_the = re.match(r"^(JP'?s\s*)?(The)\s+(.+)$", title)
-    match_jps = re.match(r"^(JP'?s)\s+(.+)$", title)
-    if match_the and match_the.group(2):
-        prefix = match_the.group(1) or ""
-        name = f"{match_the.group(3)}, {prefix}{match_the.group(2)}"
-    elif match_jps:
-        name = f"{match_jps.group(2)}, {match_jps.group(1)}"
-    else:
-        name = title
-    return f"{name} ({manufacturer} {year})"
 
 
 def fetch_existing_manifest(github_token, repo_name, release_tag):
@@ -219,7 +199,7 @@ def process_table(args):
                 new_data = result[1]
                 new_data["repoConfig"] = download_url
                 new_data["configVersion"] = config_version[:7]
-                new_data["name"] = process_title(new_data["name"], new_data["manufacturer"], new_data["year"])
+                new_data["name"] = vpsdb.process_title(new_data["name"], new_data["manufacturer"], new_data["year"])
                 result = (table, new_data)
             else:
                 print(f"Failed to upload asset for {table}")

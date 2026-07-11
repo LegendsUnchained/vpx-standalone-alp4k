@@ -5,7 +5,7 @@ backglassAuthorsOverride:
   - "JPSalas"
 backglassBundled: true
 backglassNotes: "Download 'Cowboy Eight Ball.directb2s.zip'"
-fps: 50
+fps: 60
 romChecksum: "EF2CA30BFF024AE6F809D5CD4CB8C1C3"
 romNotes: "Download 'cowboy3p.zip'"
 romBundled: true
@@ -19,5 +19,3 @@ testers:
   - "CoffeeAtJoes"
 vpxVPSId: "LAxl5M9f"
 vpxChecksum: "AEA4DB15345E2A6A91ED5C806C6F88AE"
-applyFixes:
-  - "bass"

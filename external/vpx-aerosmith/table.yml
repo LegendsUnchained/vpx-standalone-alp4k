@@ -10,5 +10,3 @@ vpxVPSId: "UYsEyTmIhb"
 vpxChecksum: "a73634569a60aeeba033286dec402926"
 tableNotes: "Download Aerosmith (Original 2021) 1.01.zip"
 enabled: false # Osie: Needs music folder
-applyFixes:
-  - "bass"

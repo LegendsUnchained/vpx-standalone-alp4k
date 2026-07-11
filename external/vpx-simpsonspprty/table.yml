@@ -1,7 +1,8 @@
 ---
-applyFixes:
-  - "bass"
-fps: 50
+backglassChecksum: "961B05A4D392E9A1B4983B865729AE9B"
+backglassVPSId: "YicZCnRxhO"
+backglassNotes: "Download version 1.0.0"
+fps: 60
 romVPSId: "BJan0_7-"
 romNotes: "Download simpprty.zip"
 romChecksum: "5B50F95CA27EC06812B9BE2126922517"

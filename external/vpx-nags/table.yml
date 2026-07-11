@@ -1,7 +1,4 @@
 ---
-enabled: False
-applyFixes:
-  - "bass"
 backglassBundled: true
 backglassChecksum: "ca1f82109f7fb287131073d55d3d61a4"
 backglassNotes: "Version 1.00 bundled with table"
@@ -12,5 +9,5 @@ tableVPSId: "SWT0OKYOwK"
 tagline: "'And they're off!'"
 testers:
   - "Curt"
-vpxChecksum: "29c2a965515844c91b009c1ef68dd941"
+vpxChecksum: "FE6DDEB24B0C91538613FAF008422BCF"
 vpxVPSId: "7Td-pzgz1D"

@@ -1,7 +1,5 @@
 ---
 enabled: false
-applyFixes:
-  - "bass"
 fps: 60
 mainNotes: "Static backglass will load from repo"
 romNotes: "ROM in spreadsheet will not work"

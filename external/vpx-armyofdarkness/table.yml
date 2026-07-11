@@ -1,8 +1,8 @@
 ---
 backglassVPSId: "ElxKcuOiQO"
-backglassChecksum: "5F19C8BBA5C228D1B413DA64E2D5BDDD"
-backglassNotes: "Download 'evil dead 3-2S.directb2s'"
-fps: 56
+backglassChecksum: "AD654E189A8A311A6EBDD0D30698FC0E"
+backglassNotes: "Download 'evil dead 3.directb2s'"
+fps: 60
 tableVPSId: "L2nBui8x"
 tagline: >-
   "Look, maybe I didn't say every single little tiny
@@ -13,5 +13,3 @@ testers:
   - "OminousOsie"
 vpxVPSId: "Cul9IFTa"
 vpxChecksum: "BB1764E5F275085331CAA8FB9E01647D"
-applyFixes:
-  - "bass"

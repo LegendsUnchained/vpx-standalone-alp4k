@@ -1,7 +1,5 @@
 ---
 enabled: false
-applyFixes:
-  - "bass"
 backglassAuthorsOverride:
   - "Spacegoogle"
 backglassChecksum: "6984564d1ad7887010acaa9c1d838c36"

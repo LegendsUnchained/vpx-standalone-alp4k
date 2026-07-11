@@ -1,7 +1,10 @@
 ---
 backglassVPSId: "rY8wUQoIY_"
 backglassChecksum: "8D29B7B3EA600B3471DB4130F51EBC48"
-fps: 50
+coloredROMChecksum: "FD10BB79ED4CCBC648C83E30D1ED86E4"
+coloredROMNotes: 'Download "sopranos.cROMc"'
+coloredROMVPSId: "uvIIO1SjvD"
+fps: 60
 romVPSId: "tD819oJaBW"
 romChecksum: "15ECF8C5A7CEE365CAD0BE16EBBED414"
 tableVPSId: "0j2uPCod"
@@ -11,5 +14,3 @@ testers:
   - "OminousOsie"
 vpxVPSId: "Waeu5yEAHY"
 vpxChecksum: "4EE397F6B739AAEA9D9051ED205E6749"
-applyFixes:
-  - "bass"

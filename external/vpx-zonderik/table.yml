@@ -1,7 +1,5 @@
 ---
 enabled: false
-applyFixes:
-  - "bass"
 backglassBundled: true
 backglassChecksum: "6119601de4adc37b5f1ac88791686b0e"
 backglassNotes: "B2S is bundled with table"

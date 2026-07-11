@@ -1,7 +1,5 @@
 ---
 enabled: false
-applyFixes:
-  - "bass"
 enabled: false
 fps: 46
 mainNotes: "Static backglass will load from repo"

@@ -1,9 +1,13 @@
 ---
-applyFixes:
-  - "bass"
 backglassChecksum: "7F7BCF2CDE8D9E8EC0CCD73ACC6CFC9E"
 backglassNotes: "Download v1.0.0"
 backglassVPSId: "gm4jJJzjHE"
+coloredROMChecksum: 
+  - "81805F074DF39B0FF2ACCDD56907A204"
+  - "C58BCF439648B8CF41E13B6A8DA281C3"
+coloredROMPin2DMD: true
+coloredROMNotes: "Download 'Vpin.zip'"
+coloredROMVPSId: "rV6a4F5tRd"
 fps: 60
 romChecksum: "6C9BD12BDF41799D6218D03320B94664"
 romNotes: "Download austin.zip"

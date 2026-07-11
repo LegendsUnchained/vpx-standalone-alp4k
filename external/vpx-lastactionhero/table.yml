@@ -1,7 +1,8 @@
 ---
-backglassVPSId: "0Ujq3GUQev"
-backglassChecksum: "70027AC47175648783786FD39FC3FE38"
-fps: 50
+backglassVPSId: "15Jwb8cez_"
+backglassChecksum: "2F71C5DE2F72B680DAF8B5623E48F0B0"
+backglassNotes: "Download Last Action Hero (Data East 1993) full dmd.zip"
+fps: 60
 romVPSId: "pqzz0v2O"
 romChecksum: "7DA0660206EDF4D5BAB2320FD30D143A"
 tableVPSId: "OHcji-5r"
@@ -15,5 +16,3 @@ testers:
   - "OminousOsie"
 vpxVPSId: "jaSjAX0vTu"
 vpxChecksum: "DFAFEBBDF54DFF044E5C0BAC1FDACFA1"
-applyFixes:
-  - "bass"

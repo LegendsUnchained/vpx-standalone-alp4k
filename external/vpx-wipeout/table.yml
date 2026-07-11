@@ -1,4 +1,11 @@
 ---
+backglassChecksum: "B85A17A6131DB8D149F9EE0BA1377ECB"
+backglassNotes: ""
+backglassVPSId: "yY6Q3FvnHV"
+coloredROMVPSId: "4-rKkJ69T8"
+coloredROMChecksum: "17A99C6CA5E3EC828521C1BBD6DAD7D3"
+coloredROMNotes: "Download and extract 'GLaltcolor.7z'. Use file in 'freddy'"
+coloredROMUrlOverride: "https://vpuniverse.com/files/file/5120-glaltcolor7z/"
 tableVPSId: "b31KZ92B"
 vpxVPSId: "eahB14sy"
 vpxChecksum: "b866c873d66323803be0dad4299758c9"
@@ -9,9 +16,8 @@ romUrlOverride: "https://pinballnirvana.com/forums/resources/wipeout.2596/"
 romVersionOverride: "wipeout"
 romNotes: "wipeout.zip"
 romChecksum: "a192a69c51e0f57318b5ddd18152d321"
-fps: 58
+fps: 60
 tagline: "The ski lift is now open!"
 testers:
   - "Boris"
-applyFixes: 
-  - "bass"
+  - "Wraith"
