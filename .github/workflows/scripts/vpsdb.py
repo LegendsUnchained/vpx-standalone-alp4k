@@ -1,4 +1,5 @@
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -32,6 +33,27 @@ def normalize_dict_list(value):
     if isinstance(value, dict):
         return [value]
     return list(value)
+
+
+def process_title(title, manufacturer, year):
+    """Transform a title for proper sorting, moving a leading "The" to the end,
+    and handling optional "JP's" / "JPs" prefixes, moving them after the comma
+    when 'The' is not present. Returns "<name> (<manufacturer> <year>)".
+
+    Shared by generate-release.py (release manifest) and generate-manifest.py
+    (local preview) so both format the display name identically.
+    """
+    name = ""
+    match_the = re.match(r"^(JP'?s\s*)?(The)\s+(.+)$", title)
+    match_jps = re.match(r"^(JP'?s)\s+(.+)$", title)
+    if match_the and match_the.group(2):
+        prefix = match_the.group(1) or ""
+        name = f"{match_the.group(3)}, {prefix}{match_the.group(2)}"
+    elif match_jps:
+        name = f"{match_jps.group(2)}, {match_jps.group(1)}"
+    else:
+        name = title
+    return f"{name} ({manufacturer} {year})"
 
 
 class VPSDB:
