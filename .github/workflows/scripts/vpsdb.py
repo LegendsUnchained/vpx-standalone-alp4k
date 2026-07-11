@@ -22,6 +22,18 @@ def normalize_checksums(value):
     return normalized or None
 
 
+def normalize_dict_list(value):
+    """Normalize a field that may be a single mapping or a list of mappings
+    into a list of mappings. Absent/None becomes an empty list. Used by the
+    additionalRoms field, which is authored as a list of ROM objects.
+    """
+    if value is None:
+        return []
+    if isinstance(value, dict):
+        return [value]
+    return list(value)
+
+
 class VPSDB:
     def __init__(
         self, url="https://virtualpinballspreadsheet.github.io/vps-db/db/vpsdb.json"
@@ -374,6 +386,56 @@ def get_table_meta(files, warn_on_error=True):
                     continue
                 else:
                     sys.exit(1)
+
+        # Additional ROMs: a list of ROM objects with the same modes as the
+        # primary ROM — VPSID-resolved (authors/comment/url/version from VPSDB,
+        # versionOverride wins), url-override (author supplies url + version), or
+        # bundled (ships inside the table download; no external URL, notes
+        # required). Handled once per entry.
+        additional_roms = []
+        skip_table = False
+        for entry in normalize_dict_list(data.get("additionalRoms")):
+            vps_id = entry.get("vpsId")
+            url_override = entry.get("urlOverride")
+            version_override = entry.get("versionOverride")
+
+            rom_meta = {"checksum": normalize_checksums(entry.get("checksum"))}
+            if vps_id:
+                rom_meta["vpsId"] = vps_id
+            if entry.get("bundled"):
+                rom_meta["bundled"] = True
+            if entry.get("notes"):
+                rom_meta["notes"] = entry.get("notes")
+
+            if vps_id:
+                rom = vpsdb.get_rom_by_id(vps_id)
+                if rom:
+                    print(f"Parsing additional ROM {vps_id} for {folder_name}")
+                    urls = rom.get("urls", [])
+                    rom_meta["authors"] = rom.get("authors", [])
+                    rom_meta["comment"] = rom.get("comment", "")
+                    rom_meta["fileUrl"] = urls[0].get("url", "") if urls else ""
+                    rom_meta["version"] = version_override or rom.get("version", "")
+                else:
+                    print(
+                        f"{error_prefix}: Additional ROM id {vps_id} not found in VPSDB"
+                    )
+                    if warn_on_error:
+                        print(f"WARNING: Skipping {folder_name}")
+                        skip_table = True
+                        break
+                    else:
+                        sys.exit(1)
+            elif url_override:
+                rom_meta["fileUrl"] = url_override
+                rom_meta["version"] = version_override
+
+            additional_roms.append(rom_meta)
+
+        if skip_table:
+            continue
+
+        table_meta["additionalRoms"] = additional_roms or None
 
         tables[folder_name] = table_meta
 

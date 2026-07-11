@@ -23,6 +23,7 @@ image:../images/add_table_yml.png[]
 Here is an example of every field possible: (as of 27 May 2025)
 
 ....
+additionalRoms:              | [Array of Objects]
 applyFixes:                  | [Array]
 backglassAuthorsOverride:    | [Array]
 backglassBundled:            | [Bool]
@@ -843,6 +844,64 @@ Gotchas:
 ------------
 - Same as the checksum, the only real problem seen here is accidently copying the ID from a different component!
   So just double check you pasted the right value :)
+....
+
+....
+########################
+additionalRoms
+########################
+
+Type:
+------------
+Array of Objects (each: vpsId | urlOverride | bundled, checksum, versionOverride, notes)
+
+Description:
+------------
+A list of EXTRA rom files to install alongside the primary rom. Each is copied
+into the table's pinmame/roms folder under its ORIGINAL filename (unlike the
+primary rom, which gets renamed). Each entry has the SAME modes as the primary
+rom:
+
+- VPSID mode: set 'vpsId' and vpsdb resolves the download URL, authors, comment
+  and version from VPS.
+- URL-override mode: set 'urlOverride' (no vpsId) and supply 'versionOverride'.
+- Bundled mode: set 'bundled: true' when the rom ships inside the table download
+  itself. There is no external link; supply 'notes' telling the user where to
+  find it (mirrors romBundled).
+
+Per entry:
+- 'checksum' is required — one MD5 as a string, or several acceptable MD5s as a
+  list (same rule as romChecksum).
+- 'vpsId' and 'urlOverride' are mutually exclusive.
+- 'urlOverride' requires 'versionOverride'.
+- 'bundled' requires 'notes'.
+- 'notes' is optional markdown shown on the wizard row (required when bundled).
+
+vpsdb renders this to an 'additionalRoms' array of resolved objects in the
+manifest ({vpsId?, checksum[], fileUrl?, authors?, version?, comment?, notes?,
+bundled?}), which the wizard uses to offer a download link per rom (hidden when
+bundled) and to validate each uploaded file against any of the checksums.
+
+Example:
+------------
+additionalRoms:
+  - vpsId: "2YD0f8I0Y2"
+    checksum: "8435fda49c4dfc2d82b9b361e8aa1155"
+  - urlOverride: "https://vpuniverse.com/files/file/xxxxx"
+    versionOverride: "extra_rom"
+    checksum:
+      - "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      - "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    notes: "Optional second sound rom"
+  - bundled: true
+    checksum: "cccccccccccccccccccccccccccccccc"
+    notes: "Included in the table zip under /roms"
+
+Gotchas:
+------------
+- One list entry == one rom. Only put multiple hashes under an entry's 'checksum'
+  when they are alternate hashes of the SAME rom.
+- Like romVersionOverride, 'versionOverride' must have no file extension.
 ....
 
 ....

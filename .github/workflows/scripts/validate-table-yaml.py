@@ -138,6 +138,15 @@ def check_checksums(meta):
             print(f"ERROR: romChecksum field not found in table: {table}")
             sys.exit(1)
 
+        additional_roms = table_meta.get("additionalRoms")
+        if additional_roms:
+            for i, rom in enumerate(additional_roms):
+                if not rom.get("checksum"):
+                    print(
+                        f"ERROR: additionalRoms[{i}] missing checksum in table: {table}"
+                    )
+                    sys.exit(1)
+
 
 # Raw table.yml checksum keys. vpsdb renames vpxChecksum -> tableChecksum, so
 # these are the names as authored in table.yml (checked before rendering).
@@ -152,15 +161,42 @@ CHECKSUM_YAML_KEYS = [
 ]
 
 
+def validate_checksum_value(label, value):
+    """Validate one checksum value (one or more acceptable MD5 hashes):
+      - a single hash MUST be a plain string, and
+      - two or more hashes MUST be a list (a single-element list is rejected).
+    Every hash must be a valid MD5. Exits on any violation.
+
+    Args:
+      label: Human-readable field name used in error messages.
+      value: The raw checksum value (string or list of strings).
+
+    Returns:
+      None
+    """
+    if isinstance(value, str):
+        hashes = [value]
+    elif isinstance(value, list):
+        if len(value) < 2:
+            print(f"ERROR: {label} has a single entry; use a string instead of a list")
+            sys.exit(1)
+        hashes = value
+    else:
+        print(f"ERROR: {label} must be a string or a list of strings")
+        sys.exit(1)
+
+    for checksum in hashes:
+        if not isinstance(checksum, str) or not is_md5_hash(checksum.lower()):
+            print(f"ERROR: checksum {checksum} for {label} is not a valid MD5 hash")
+            sys.exit(1)
+
+
 def check_checksum_format(meta):
     """Validates the format of raw table.yml checksum fields.
 
-    A checksum field holds one or more acceptable MD5 hashes:
-      - a single hash MUST be a plain string, and
-      - two or more hashes MUST be a list.
-    A single-element list is rejected (use a string instead). Every hash must
-    be a valid MD5. vpsdb normalizes both forms to a list for the manifest, so
-    this format rule only governs how table.yml is authored.
+    vpsdb normalizes both string and list forms to a list for the manifest, so
+    this format rule only governs how table.yml is authored (see
+    validate_checksum_value for the rule).
 
     Args:
       meta: The raw table.yml content (a single table's parsed dict).
@@ -175,24 +211,69 @@ def check_checksum_format(meta):
         value = meta.get(key)
         if value is None:
             continue
+        validate_checksum_value(key, value)
 
-        if isinstance(value, str):
-            hashes = [value]
-        elif isinstance(value, list):
-            if len(value) < 2:
-                print(
-                    f"ERROR: {key} has a single entry; use a string instead of a list"
-                )
-                sys.exit(1)
-            hashes = value
-        else:
-            print(f"ERROR: {key} must be a string or a list of strings")
+
+def check_additional_roms(meta):
+    """Validates the raw table.yml additionalRoms field (a list of ROM objects).
+
+    Each entry mirrors the primary ROM: checksum required (string or list of
+    MD5s); vpsId xor urlOverride (mutually exclusive); urlOverride requires
+    versionOverride; bundled (bool) requires notes;
+    vpsId/urlOverride/versionOverride/notes must be strings.
+
+    Args:
+      meta: The raw table.yml content (a single table's parsed dict).
+
+    Returns:
+      None
+    """
+    if not isinstance(meta, dict):
+        return
+
+    value = meta.get("additionalRoms")
+    if value is None:
+        return
+    if isinstance(value, dict):
+        value = [value]
+    if not isinstance(value, list):
+        print("ERROR: additionalRoms must be a list of ROM objects")
+        sys.exit(1)
+
+    for i, entry in enumerate(value):
+        label = f"additionalRoms[{i}]"
+        if not isinstance(entry, dict):
+            print(f"ERROR: {label} must be a mapping")
             sys.exit(1)
 
-        for checksum in hashes:
-            if not isinstance(checksum, str) or not is_md5_hash(checksum.lower()):
-                print(f"ERROR: checksum {checksum} for {key} is not a valid MD5 hash")
+        if entry.get("checksum") is None:
+            print(f"ERROR: {label} is missing the required checksum field")
+            sys.exit(1)
+        validate_checksum_value(f"{label}.checksum", entry.get("checksum"))
+
+        for field in ("vpsId", "urlOverride", "versionOverride", "notes"):
+            if entry.get(field) is not None and not isinstance(entry.get(field), str):
+                print(f"ERROR: {label}.{field} must be a string")
                 sys.exit(1)
+
+        if "bundled" in entry and not isinstance(entry.get("bundled"), bool):
+            print(f"ERROR: {label}.bundled must be a boolean")
+            sys.exit(1)
+
+        # A bundled ROM ships in the table download, so authors must document it
+        # (mirrors the primary ROM's romBundled -> romNotes rule).
+        if entry.get("bundled") and entry.get("notes") is None:
+            print(f"ERROR: {label} is bundled but has no notes")
+            sys.exit(1)
+
+        vps_id = entry.get("vpsId")
+        url_override = entry.get("urlOverride")
+        if vps_id is not None and url_override is not None:
+            print(f"ERROR: {label} has both vpsId and urlOverride (mutually exclusive)")
+            sys.exit(1)
+        if url_override is not None and entry.get("versionOverride") is None:
+            print(f"ERROR: {label} has urlOverride but no versionOverride")
+            sys.exit(1)
 
 def check_fixes(meta):
     """Checks if the applyFixes field is valid.
@@ -332,6 +413,7 @@ if __name__ == "__main__":
         # Perform checks on the YAML file content
         check_overrides(table_yaml)
         check_checksum_format(table_yaml)
+        check_additional_roms(table_yaml)
 
     # Render metadata for all files in a single call, then run the meta-level checks
     meta = vpsdb.get_table_meta(files, warn_on_error=False)
