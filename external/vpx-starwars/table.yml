@@ -2,9 +2,20 @@
 backglassVPSId: "iytfp4df0Y"
 backglassChecksum: "B538086E94E72178680868C05C2C3681"
 backglassNotes: "Download Star Wars (Data East 1992) full dmd.zip"
-fps: 60
-romVPSId: "W6tGXpK5fI"
-romChecksum: "3DE4E940376B6027BB96ABAB50A54CF4"
+coloredROMChecksum: 
+  - "49174DA28B175F3519CA51048692B028"
+  - "29EAD0112B6077EA20A1FE8A8AF90EBC"
+coloredROMNotes: ""
+coloredROMPin2DMD: true
+coloredROMVPSId: "pKMTFH1e"
+diffChecksum: "7EA60F1ADA116289479B13C1EBFF75C7"
+diffVPSId: "gDzghIenvG"
+fps: 58
+romVPSId: "DIAr2jWZ"
+romChecksum: "CEB538FF672C976EF449CAD092DDD074"
+additionalRoms:
+  - vpsId: "RCSTKO-_PI"
+    checksum: "C3D5FFDF380A1DE7CB6531D03D97BFC8"
 tableVPSId: "ON5FmcPI"
 tagline: "May the Force be With You!"
 testers:
@@ -12,7 +23,5 @@ testers:
   - "mrandromeda"
   - "Boris"
   - "OminousOsie"
-vpxVPSId: "orDVZFDx8j"
-vpxChecksum: "34E0725DF92466F1351417AEA15A2471"
-applyFixes:
-  - "bass"
+vpxVPSId: "tgFo6ils"
+vpxChecksum: "0FB04C0F6B624DEB082DB91971C8752C"

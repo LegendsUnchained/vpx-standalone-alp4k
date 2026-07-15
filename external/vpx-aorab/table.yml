@@ -10,6 +10,6 @@ testers:
   - "Bla1ze"
   - "OminousOsie"
 vpxVPSId: "Yw5N-AQlOq"
-vpxChecksum: 4dd18cb1102d5bfab90980115fa97532
+vpxChecksum: "4dd18cb1102d5bfab90980115fa97532"
 applyFixes:
   - "bass"

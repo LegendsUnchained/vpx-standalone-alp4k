@@ -1,0 +1,148 @@
+# =============================================================================
+# table.yml — VPX Table Manager wizard config  (SKELETON / EXAMPLE)
+# =============================================================================
+# Copy this file to  external/<vpx-your-table>/table.yml  and fill it in.
+# `vpsdb.py` converts it (plus data pulled from the Virtual Pinball Spreadsheet,
+# "VPS") into the wizard manifest; `validate-table-yaml.py` enforces the rules
+# noted below. Full per-field docs: doc/advanced/wizardtable.adoc
+#
+# Conventions used in this file:
+#   - "REQUIRED"      must be present, or validation fails.
+#   - "[String|List]" checksum fields: ONE md5 -> a plain string; TWO OR MORE
+#                     -> a YAML list. (A single-element list is rejected.)
+#   - Fields marked "# optional" are commented out — uncomment what you need.
+#   - A *VPSId is resolved against VPS to fill in authors, download URL and
+#     version automatically. Use the matching *UrlOverride ONLY when the file
+#     isn't on VPS yet — it is mutually exclusive with the *VPSId and then the
+#     matching *VersionOverride becomes required.
+#   - "bundled" means the file ships inside the table download itself; a bundled
+#     component still requires its *Notes and *Checksum.
+# =============================================================================
+
+
+# --- Table identity (REQUIRED) ----------------------------------------------
+
+# VPS ID of the specific .vpx table file. REQUIRED — without it the table is
+# skipped ("missing VPX file"). Resolves table authors / download URL / version.
+vpxVPSId: "xxxxxxxx"
+
+# MD5 checksum(s) of the .vpx file. REQUIRED. [String|List]
+vpxChecksum: "00000000000000000000000000000000"
+
+# VPS ID of the overall table entry (the game). Resolves name, manufacturer,
+# year, players, type and the preview image. Strongly recommended.
+tableVPSId: "xxxxxxxx"
+
+# Frames-per-second shown on the wizard page. REQUIRED. [Integer]
+fps: 60
+
+# Beta testers who validated and submitted the table. REQUIRED. [List]
+testers:
+  - "your-name"
+
+# Set to false to hide this table from the wizard. [Boolean] (default: shown)
+# enabled: true
+
+
+# --- Table metadata overrides (optional) ------------------------------------
+# Override values resolved from VPS, or supply them when not on VPS.
+
+# tableNameOverride: "Table Name (Manufacturer Year)"   # [String]
+# tableManufacturerOverride: "Williams"                 # [String]
+# tableYearOverride: 1992                               # [Integer]
+# tableNotes: "Markdown notes shown on the VPX row."    # [String]
+# tagline: "The fun one-liner shown on the table card." # [String]
+# mainNotes: "Markdown shown above the file list."      # [String]
+
+
+# --- Primary ROM (optional; include if the table needs a PinMAME ROM) -------
+# Use EITHER romVPSId (on VPS) OR romUrlOverride (+ romVersionOverride).
+# When a ROM is offered or bundled, romChecksum is REQUIRED.
+
+# romVPSId: "xxxxxxxx"              # [String] resolves authors / url / version
+# romUrlOverride: "https://..."     # [String] use INSTEAD of romVPSId (not both)
+# romVersionOverride: "romname"     # [String] REQUIRED with romUrlOverride; the rom name, NO file extension
+# romChecksum: "00000000000000000000000000000000"   # [String|List]
+# romNotes: "Markdown ROM notes."   # [String] REQUIRED when romBundled is true
+# romBundled: false                 # [Boolean] ROM ships inside the table download
+
+
+# --- Additional ROMs (optional) ---------------------------------------------
+# Extra ROM files installed ALONGSIDE the primary ROM and kept under their
+# ORIGINAL names. A YAML list — one item per ROM. Each item has the SAME modes
+# as the primary ROM: vpsId XOR urlOverride; urlOverride requires
+# versionOverride; bundled (ships in the table download) requires notes;
+# checksum is always required.
+# additionalRoms:
+#   - vpsId: "xxxxxxxx"             # [String] resolves url / authors / version
+#     checksum: "00000000000000000000000000000000"   # [String|List] REQUIRED
+#     versionOverride: "romname"    # [String] optional; overrides the resolved version
+#   - urlOverride: "https://..."    # [String] use INSTEAD of vpsId (not both)
+#     versionOverride: "romname"    # [String] REQUIRED with urlOverride
+#     checksum:
+#       - "00000000000000000000000000000000"
+#       - "11111111111111111111111111111111"
+#     notes: "Markdown shown on this ROM's wizard row."   # [String] optional
+#   - bundled: true                 # [Boolean] ships INSIDE the table download (no external URL)
+#     checksum: "00000000000000000000000000000000"   # [String|List] REQUIRED
+#     notes: "Where to find this ROM in the bundle."  # [String] REQUIRED when bundled
+
+
+# --- Backglass / DirectB2S (optional) ---------------------------------------
+# backglassVPSId: "xxxxxxxx"                     # [String]
+# backglassUrlOverride: "https://..."            # [String] use INSTEAD of the VPSId
+# backglassAuthorsOverride:                      # [List] override resolved authors
+#   - "author"
+# backglassImageOverride: "https://..."          # [String] fixes a broken preview image (backglass.png with no VPSId)
+# backglassChecksum: "00000000000000000000000000000000"   # [String|List] required if offered/bundled
+# backglassNotes: "Markdown notes."              # [String] REQUIRED when bundled
+# backglassBundled: false                        # [Boolean]
+
+
+# --- Colored ROM (optional; a pin2dmd .pal/.vni pair OR a single serum file) -
+# coloredROMVPSId: "xxxxxxxx"                     # [String]
+# coloredROMUrlOverride: "https://..."           # [String] use INSTEAD of the VPSId
+# coloredROMVersionOverride: "name"              # [String] required with the UrlOverride
+# coloredROMChecksum:                            # [String|List] pin2dmd lists BOTH files' hashes
+#   - "00000000000000000000000000000000"
+#   - "11111111111111111111111111111111"
+# coloredROMNotes: "Markdown notes."             # [String] REQUIRED when bundled
+# coloredROMBundled: false                       # [Boolean]
+# coloredROMPin2DMD: false                        # [Boolean] true = .pal + .vni pair; false/absent = single serum file
+
+
+# --- PUP pack (optional) ----------------------------------------------------
+# pupVPSId: "xxxxxxxx"                            # [String]
+# pupFileUrl: "https://..."                       # [String] direct download (currently the only way to link a pup)
+# pupChecksum: "00000000000000000000000000000000"   # [String|List] required if pupFileUrl is set
+# pupNotes: "Markdown notes."                     # [String]
+# pupRequired: false                              # [Boolean] the pup is mandatory for this table (e.g. Space Cadet)
+# pupBundled: false                               # [Boolean]
+# pupVersion: "1.0"                               # [String]
+# pupArchiveFormat: "zip"                         # [String] zip | rar | 7z  (default: zip)
+# pupArchiveRoot: "subfolder"                     # [String] path within the archive to the pup root (if nested)
+
+
+# --- Diff / VPU patch (optional) --------------------------------------------
+# diffVPSId: "xxxxxxxx"                           # [String]
+# diffUrlOverride: "https://..."                  # [String] use INSTEAD of the VPSId
+# diffVersionOverride: "name"                     # [String] required with the UrlOverride
+# diffAuthorsOverride:                            # [List] override resolved authors
+#   - "author"
+# diffChecksum: "00000000000000000000000000000000"   # [String|List]
+# diffNotes: "Markdown notes."                    # [String]
+
+
+# --- Alt sound (optional) ---------------------------------------------------
+# altSoundVPSId: "xxxxxxxx"                       # [String] resolves authors / url / version
+# altSoundChecksum: "00000000000000000000000000000000"   # [String|List]
+
+
+# --- Tutorial (optional) ----------------------------------------------------
+# tutorialVPSId: "xxxxxxxx"                       # [String] resolves title / YouTube ID
+
+
+# --- Fixes (optional) -------------------------------------------------------
+# Applies known fixes at install time. Allowed values: bass
+# applyFixes:
+#   - bass
