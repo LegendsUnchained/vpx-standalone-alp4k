@@ -162,6 +162,7 @@ def get_table_meta(files, warn_on_error=True):
             data = yaml.safe_load(table_data)
 
         altSoundVPSId = data.get("altSoundVPSId")
+        altSoundUrlOverride = data.get("altSoundUrlOverride")
         backglassVPSId = data.get("backglassVPSId")
         coloredROMVPSId = data.get("coloredROMVPSId")
         diffVPSId = data.get("diffVPSId")
@@ -185,7 +186,14 @@ def get_table_meta(files, warn_on_error=True):
         pupChecksum = normalize_checksums(data.get("pupChecksum"))
 
         table_meta = {
+            "altSoundAuthors": data.get("altSoundAuthorsOverride"),
+            "altSoundBundled": data.get("altSoundBundled"),
             "altSoundChecksum": altSoundChecksum,
+            "altSoundFileUrl": altSoundUrlOverride,
+            "altSoundNotes": data.get("altSoundNotes"),
+            "altSoundVersion": data.get("altSoundVersionOverride"),
+            "altSoundArchiveFormat": data.get("altSoundArchiveFormat"),
+            "altSoundArchiveRoot": data.get("altSoundArchiveRoot"),
             "applyFixes": data.get("applyFixes"),
             "backglassAuthors": data.get("backglassAuthorsOverride"),
             "backglassBundled": data.get("backglassBundled"),
@@ -355,11 +363,14 @@ def get_table_meta(files, warn_on_error=True):
             altSound = vpsdb.get_altsound_by_id(altSoundVPSId)
             if altSound:
                 print(f"Parsing alt sound {altSoundVPSId} for {folder_name}")
-                table_meta["altSoundAuthors"] = altSound.get("authors", [])
+
+                if not table_meta["altSoundAuthors"]:
+                    table_meta["altSoundAuthors"] = altSound.get("authors", [])
                 table_meta["altSoundComment"] = altSound.get("comment", "")
-                table_meta["altSoundFileUrl"] = altSound.get("urls", [])[0].get(
-                    "url", ""
-                )
+                if not table_meta["altSoundFileUrl"]:
+                    table_meta["altSoundFileUrl"] = altSound.get("urls", [])[0].get(
+                        "url", ""
+                    )
                 if not table_meta["altSoundVersion"]:
                     table_meta["altSoundVersion"] = altSound.get("version", "")
             else:

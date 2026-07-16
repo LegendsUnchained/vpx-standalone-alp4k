@@ -12,5 +12,6 @@ testers:
   - "CoffeeAtJoes"
 vpxVPSId: "2XtND6uteu"
 vpxChecksum: "67812720881aa43441ce7a6c6595b60a"
-applyFixes:
-  - "bass"
+altSoundVPSId: "uh9-lEk7"
+altSoundChecksum: "c4d6e709ef159268fd21692b86ec3f52"
+altSoundArchiveRoot: "cc_13"

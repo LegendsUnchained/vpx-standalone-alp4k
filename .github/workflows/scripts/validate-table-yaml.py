@@ -85,6 +85,29 @@ def check_bundled(meta):
                     print(f"ERROR: romNotes is not a string in table: {table}")
                     sys.exit(1)
 
+        if table_meta.get("altSoundBundled"):
+            if (
+                "altSoundNotes" not in table_meta
+                or table_meta["altSoundNotes"] is None
+            ):
+                print(
+                    f"ERROR: altSoundBundled is True but altSoundNotes is not found in table: {table}"
+                )
+                sys.exit(1)
+
+            if (
+                "altSoundChecksum" not in table_meta
+                or table_meta["altSoundChecksum"] is None
+            ):
+                print(
+                    f"ERROR: altSoundBundled is True but altSoundChecksum is not found in table: {table}"
+                )
+                sys.exit(1)
+
+            if not isinstance(table_meta["altSoundNotes"], str):
+                print(f"ERROR: altSoundNotes is not a string in table: {table}")
+                sys.exit(1)
+
 def check_checksums(meta):
     """Checks that required checksums are present.
 
@@ -124,6 +147,16 @@ def check_checksums(meta):
             or table_meta["coloredROMChecksum"] is None
         ):
             print(f"ERROR: coloredROMChecksum field not found in table: {table}")
+            sys.exit(1)
+
+        if (
+            "altSoundFileUrl" in table_meta
+            and table_meta["altSoundFileUrl"] is not None
+        ) and (
+            "altSoundChecksum" not in table_meta
+            or table_meta["altSoundChecksum"] is None
+        ):
+            print(f"ERROR: altSoundChecksum field not found in table: {table}")
             sys.exit(1)
 
         if ("pupFileUrl" in table_meta and table_meta["pupFileUrl"] is not None) and (
@@ -345,6 +378,24 @@ def check_overrides(meta):
         if "romVersionOverride" not in meta or meta["romVersionOverride"] is None:
             print(
                 f"ERROR: romUrlOverride defined and romVersionOverride field not found"
+            )
+            sys.exit(1)
+
+    if "altSoundUrlOverride" in meta and meta["altSoundUrlOverride"] is not None:
+        if not isinstance(meta["altSoundUrlOverride"], str):
+            print(f"ERROR: altSoundUrlOverride is not a string")
+            sys.exit(1)
+
+        if "altSoundVPSId" in meta and meta["altSoundVPSId"] is not None:
+            print(f"ERROR: altSoundVPSId is not allowed with altSoundUrlOverride")
+            sys.exit(1)
+
+        if (
+            "altSoundVersionOverride" not in meta
+            or meta["altSoundVersionOverride"] is None
+        ):
+            print(
+                f"ERROR: altSoundUrlOverride defined and altSoundVersionOverride field not found"
             )
             sys.exit(1)
 
