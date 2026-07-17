@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "GmTammA02B"
-backglassChecksum: "B931BF99BCDEE2676011FCA6E120A02B"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "B931BF99BCDEE2676011FCA6E120A02B"
+  - "B1C450B4AC1B8EE004D25921894E6937"
 coloredROMChecksum: "7DF598F75BC06F818D6A565D0B0A4A07"
 coloredROMNotes: "Only the pal file"
 coloredROMUrlOverride: "https://mega.nz/file/9dQ3wSDS#_DEW-3SJwI8hwASgFJzDWdGRWdw_dx2t8OE9nHTlK1k"
@@ -14,4 +17,7 @@ tagline: "Don't be shootin' nothin' off Pappy's Porch!"
 testers:
   - "Bla1ze"
 vpxVPSId: "KZfhhA6dcs"
-vpxChecksum: "1824C4C87C6CC8264AF8B58BD3FA3C76"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "1824C4C87C6CC8264AF8B58BD3FA3C76"
+  - "C58862ED2EE4716077321E13E4FC1858"

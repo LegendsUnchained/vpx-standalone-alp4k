@@ -1,7 +1,10 @@
 ---
 backglassBundled: true
 backglassVPSId: "3O_4BiCNAE"
-backglassChecksum: "1E49788FF47865D29A5E69021F1939EB"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "1E49788FF47865D29A5E69021F1939EB"
+  - "AA83812AB8F1EEE7D7F74CDF1D3C0E8E"
 backglassNotes: "Download 'Alaska (Interflip 1978) b2s 1.0.zip'"
 fps: 60
 tableNotes: "Download version 1.1"
@@ -14,4 +17,7 @@ testers:
   - "OminousOsie"
   - "pointdablame"
 vpxVPSId: "3O_4BiCNAE"
-vpxChecksum: "0227610548CDA0CB38B63E9F5013C24E"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "0227610548CDA0CB38B63E9F5013C24E"
+  - "F919242D34C34B4687DB5BBFA6ED4ED6"

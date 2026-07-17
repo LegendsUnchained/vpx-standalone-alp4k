@@ -1,11 +1,17 @@
 ---
 tableVPSId: "q8GzR2bQ"
 vpxVPSId: "PiP6Dgy5"
-vpxChecksum: "982B22473DF5E4D559D5460FBB7CE51E"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "982B22473DF5E4D559D5460FBB7CE51E"
+  - "03EE3E4E1C10FC31229048295C4D5A28"
 tableNotes: "Download  'JP's Friday the 13th v600.zip'"
 backglassBundled: true
 backglassVPSId: "PiP6Dgy5"
-backglassChecksum: "f1e2b37a526a52e5322de396da7d5bbe"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "f1e2b37a526a52e5322de396da7d5bbe"
+  - "E0D584DD20A1FF5E586D9848A55B757D"
 backglassNotes: "Download 'JPs Friday the 13th.directb2s.zip' from VPX page"
 backglassAuthorsOverride:
   - "jpsalas"

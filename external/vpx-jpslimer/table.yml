@@ -1,10 +1,16 @@
 ---
 tableVPSId: "4Rkn0Owa"
 vpxVPSId: "BQ_20OCc"
-vpxChecksum: "63C749DC6E2B1158BF3E9DB81180D115"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "63C749DC6E2B1158BF3E9DB81180D115"
+  - "3076ED2C66BFAEF4086434BA74D9A63D"
 tableNotes: "Download 'JPs Ghostbusters Slimer v602.zip'"
 backglassVPSId: "oPS8YWqV"
-backglassChecksum: "1fa5ca526a3e88c878fbb89e4d356ad4"
+backglassArchiveFormat: "rar"
+backglassChecksum:
+  - "1fa5ca526a3e88c878fbb89e4d356ad4"
+  - "53C866CB8BE797EDD4FE0F237107D455"
 backglassNotes: "Download 'JP Ghostbusters Slimer.rar'"
 backglassAuthorsOverride:
   - "hauntfreaks"

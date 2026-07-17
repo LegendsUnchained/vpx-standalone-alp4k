@@ -12,4 +12,7 @@ testers:
   - "Mox"
   - "OminousOsie"
 vpxVPSId: "Cul9IFTa"
-vpxChecksum: "BB1764E5F275085331CAA8FB9E01647D"
+vpxArchiveFormat: "rar"
+vpxChecksum:
+  - "BB1764E5F275085331CAA8FB9E01647D"
+  - "E5E6BA3C06DE2D5CF6ACBAF9866CBA40"

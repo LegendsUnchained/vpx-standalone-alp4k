@@ -1,6 +1,9 @@
 ---
 backglassBundled: true
-backglassChecksum: "095A0E6333E62C470D2115F81872D875"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "095A0E6333E62C470D2115F81872D875"
+  - "59BC5F0D0CAE2B33EED13DC15D4DEC15"
 # yamllint disable-line rule:line-length
 backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/49e6aaa31c6fe1b38a56537833d23713_table_1638093698263.webp"
 backglassNotes: "Included with table download"
@@ -15,5 +18,8 @@ testers:
   - "evilwraith"
   - "Curt"
   - "CoffeeAtJoes"
-vpxChecksum: "718FCC42B734560B683EB3847D944054"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "718FCC42B734560B683EB3847D944054"
+  - "59BC5F0D0CAE2B33EED13DC15D4DEC15"
 vpxVPSId: "9ciUIvCG"

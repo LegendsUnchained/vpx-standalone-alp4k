@@ -12,5 +12,8 @@ testers:
   - "evilwraith"
   - "Curt"
   - "CoffeeAtJoes"
-vpxChecksum: "EF20EA154457E2FB6D5C54FA33100326"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "EF20EA154457E2FB6D5C54FA33100326"
+  - "2643A92599611DECAE6C6DB25DA4CFEA"
 vpxVPSId: "CCGbRcqwTx"

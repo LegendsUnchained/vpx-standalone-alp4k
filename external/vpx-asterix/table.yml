@@ -1,7 +1,10 @@
 ---
 backglassBundled: true
 backglassVPSId: "QcrLSEu8cS"
-backglassChecksum: "AF84A01FA6D090F1391F6D0D377BB12F"
+backglassArchiveFormat: "rar"
+backglassChecksum:
+  - "AF84A01FA6D090F1391F6D0D377BB12F"
+  - "9536747F7F5E993A5E68636B21414C1F"
 backglassNotes: "Found in the same .rar as the VPX file"
 fps: 60
 tableNotes: "Download v4.0.0"
@@ -14,4 +17,7 @@ testers:
   - "evilwraith"
   - "OminousOsie"
 vpxVPSId: "QcrLSEu8cS"
-vpxChecksum: "36B83ACD229DB68B6331B1F88D92309D"
+vpxArchiveFormat: "rar"
+vpxChecksum:
+  - "36B83ACD229DB68B6331B1F88D92309D"
+  - "9536747F7F5E993A5E68636B21414C1F"

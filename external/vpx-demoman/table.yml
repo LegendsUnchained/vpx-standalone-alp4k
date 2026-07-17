@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "1r1BCxkR3R"
-backglassChecksum: "D5DB12D08659E313E05776EBBBE9EFBF"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "D5DB12D08659E313E05776EBBBE9EFBF"
+  - "A7F57DD15DC81DDEBDB0C9674A0A41C5"
 backglassNotes: "Download 'Demolition Man FullDMD (Williams 1994) v1.1.zip'"
 coloredROMChecksum: "F3A4824F667831A4017201459475E22D"
 coloredROMNotes: ""
@@ -18,4 +21,7 @@ testers:
   - "evilwraith"
   - "Mox"
 vpxVPSId: "l8B0QJLS"
-vpxChecksum: "96704EE99E805E299D754C4C7FB16BB4"
+vpxArchiveFormat: "rar"
+vpxChecksum:
+  - "96704EE99E805E299D754C4C7FB16BB4"
+  - "A141EE408715CF18FABDEC29284239D2"

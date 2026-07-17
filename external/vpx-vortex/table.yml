@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "Re1BWv0R"
-backglassChecksum: "E8760102A925BBD29416F68DB09148B3"
+backglassArchiveFormat: "rar"
+backglassChecksum:
+  - "E8760102A925BBD29416F68DB09148B3"
+  - "3C8C9BB14E561D902BD03A0D45647431"
 fps: 60
 romVPSId: "jdMtZLbl"
 romChecksum: "3B524272CC39B51FB516CBC8DC2139CF"
@@ -12,5 +15,8 @@ testers:
   - "evilwraith"
   - "CoffeeAtJoes"
 vpxVPSId: "KYrNzKyz"
-vpxChecksum: "1E2A5318CB0EF637713755369B8C6108"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "1E2A5318CB0EF637713755369B8C6108"
+  - "520086DECBD82FEA62C8C060BA5E8C84"
 tableNotes: "Download - Vortex (Taito do Brasil - 1981) v600.zip"

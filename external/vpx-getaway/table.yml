@@ -13,5 +13,8 @@ testers:
   - "Silentkat"
   - "OminousOsie"
 vpxVPSId: "YoXfmzDV"
-vpxChecksum: "d2743cc3f2b27c4effb5dbb17c7e9385"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "d2743cc3f2b27c4effb5dbb17c7e9385"
+  - "3365CE3FDA8100D14DF0F5EC908E66FA"
 

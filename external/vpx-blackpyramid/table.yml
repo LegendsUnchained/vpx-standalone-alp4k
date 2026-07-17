@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "VwSOAhUnsx"
-backglassChecksum: "A0EE0D39BF278BEFCFD5601CCD866F36"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "A0EE0D39BF278BEFCFD5601CCD866F36"
+  - "4132C5CF93B3D1CB2310C4C4A56ACEBA"
 backglassNotes: "Download 'Black Pyramid (Bally 1984).zip'"
 fps: 60
 romVPSId: "L3dw6Xer"
@@ -12,5 +15,8 @@ testers:
   - "OminousOsie"
   - "CoffeeAtJoes"
 vpxVPSId: "1R3boWEA"
-vpxChecksum: "E7E30E9055BF8446273D2DBD2112507F"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "E7E30E9055BF8446273D2DBD2112507F"
+  - "E51ED65B30AAC86BC4172C3E01E0AE5A"
 tableNotes: "Download 'Black Pyramid (Bally 1984) v600.zip'"

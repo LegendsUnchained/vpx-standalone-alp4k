@@ -1,5 +1,8 @@
 ---
-backglassChecksum: "204847BF28F390105A3CAA888745C5E0"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "204847BF28F390105A3CAA888745C5E0"
+  - "0EC5CACCA7F0CD6EB5FAF101B1FF0674"
 backglassNotes: "Download version 1.0.0"
 backglassVPSId: "r77FNftqX2"
 fps: 60
@@ -15,5 +18,8 @@ tagline: "Why So Serious?"
 tableNameOverride: "Batman - The Dark Knight"
 testers:
   - "Bla1ze"
-vpxChecksum: "97BFE558346BB5C850C9C322D34778C0"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "97BFE558346BB5C850C9C322D34778C0"
+  - "EEEE8DCD9E1F5FCAB545634D1047E067"
 vpxVPSId: "jcTpw7a2"

@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "WnCuy2PPsE"
-backglassChecksum: "2f36a56535883ed3cc2b07a1ac725ef9"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "2f36a56535883ed3cc2b07a1ac725ef9"
+  - "FA6C3B8A498026DF6746E1EF34FAB502"
 coloredROMVPSId: "v0KM2Iq138"
 coloredROMChecksum: "85023f65f17f4fdf9c98de32776e0ef2"
 fps: 40
@@ -12,5 +15,8 @@ testers:
   - "Bla1ze"
   - "OminousOsie"
 vpxVPSId: "0Qepbg-3mI"
-vpxChecksum: "e05426c7337852471dee18fa4897aae0"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "e05426c7337852471dee18fa4897aae0"
+  - "1593E4FD006C69A8918BC15B800C8AAC"
 mainNotes: "Color ROM Serum file available on VPUniverse!"

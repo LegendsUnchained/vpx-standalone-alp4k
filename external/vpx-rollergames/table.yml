@@ -1,5 +1,8 @@
 ---
-backglassChecksum: "96C88E0FDF9A22D9AE1A2D7436DB0C0F"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "96C88E0FDF9A22D9AE1A2D7436DB0C0F"
+  - "6A9797A324CA94604B863BA7F9B451B8"
 backglassNotes: "Download Version 1.1"
 backglassVPSId: "wWiC4hDnN8"
 fps: 58
@@ -11,5 +14,8 @@ tableVPSId: "3pfPL4cb"
 tagline: "Go for the wall!"
 testers:
   - Silentkat,CoffeeAtJoes
-vpxChecksum: "A8CD947D69050E5FA2443158976A84CB"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "A8CD947D69050E5FA2443158976A84CB"
+  - "16423963F1CE070629928E60A3865D04"
 vpxVPSId: "kCoP1uiyme"

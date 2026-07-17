@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "t2tSRYqYk5"
-backglassChecksum: "762c19e565863d0754ee17de9f650391"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "762c19e565863d0754ee17de9f650391"
+  - "81E5A560D2BCEA1A13ADD63882F6D854"
 backglassNotes: "Download 'Big Bang Bar (Capcom 1996) full dmd.zip'"
 coloredROMVPSId: "63Gi5Mp9me"
 coloredROMChecksum: "B81973B451971453A040B8984A3DA3F3"
@@ -15,4 +18,7 @@ testers:
   - "mcap"
   - "OminousOsie"
 vpxVPSId: "02GK43yX"
-vpxChecksum: "B1CA7366A2D0C44EE0E365264A68A0AE"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "B1CA7366A2D0C44EE0E365264A68A0AE"
+  - "B54CF385D68610238205D49CF69D134D"

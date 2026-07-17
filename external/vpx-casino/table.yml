@@ -1,6 +1,9 @@
 ---
 backglassBundled: true
-backglassChecksum: "524A0813D80F5D6A07F0C5024BD4169C"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "524A0813D80F5D6A07F0C5024BD4169C"
+  - "5741B8ECE987AE660FF71A361B587001"
 backglassNotes: "Download Casino (Williams 1958).directb2s.zip"
 backglassVPSId: "6LSuinxu7-"
 fps: 60
@@ -9,5 +12,8 @@ tableVPSId: "pz1l82m-Sw"
 tagline: "'Roll the dice...'"
 testers:
   - "evilwraith"
-vpxChecksum: "4B90452B5E24270A245AAC79634CE55C"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "4B90452B5E24270A245AAC79634CE55C"
+  - "BD56FDCFF676896981A69A0911024298"
 vpxVPSId: "dBC9KE9OV0"

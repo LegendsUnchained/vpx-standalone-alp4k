@@ -1,5 +1,8 @@
 ---
-backglassChecksum: "DFB9025082E55722E5999BBE68A69717"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "DFB9025082E55722E5999BBE68A69717"
+  - "2C24EABEF392B91AA796CAC01148DBB6"
 backglassNotes: "Download HauntFreaks FullDMD"
 backglassVPSId: "bSD9BBBs_C"
 coloredROMChecksum: "8966B58F31E3209448ECAD6669A46256"
@@ -15,5 +18,8 @@ tableVPSId: "9Z7eDRTt"
 tagline: "'There's more than one way to skin a bad cat.'"
 testers:
   - "evilwraith"
-vpxChecksum: "07E81AE7A29404FF7DD64EEC04DA5382"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "07E81AE7A29404FF7DD64EEC04DA5382"
+  - "7912F9946AFDE9DE559CCCCDBD9DE55E"
 vpxVPSId: "faS5VIwN"

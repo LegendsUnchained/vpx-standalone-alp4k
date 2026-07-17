@@ -1,5 +1,8 @@
 ---
-backglassChecksum: "a2186351e6e789bab97e9bcd560e856f"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "a2186351e6e789bab97e9bcd560e856f"
+  - "2802574896125C7BC9DF748B21605C3A"
 backglassNotes: "Use version full DMD"
 backglassVPSId: "V0dIfYtkj5"
 fps: 60
@@ -13,5 +16,8 @@ tagline: "The blood is the life!"
 testers:
   - "Silentkat"
 vpxVPSId: "KjMMHuiqs4"
-vpxChecksum: "7ed80e1b72ef95d60493f492abac068b"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "7ed80e1b72ef95d60493f492abac068b"
+  - "5077881F7BC295A48BFE77382FBEA9CD"
 

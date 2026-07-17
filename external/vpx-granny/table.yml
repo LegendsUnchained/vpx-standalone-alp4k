@@ -1,5 +1,8 @@
 ---
-backglassChecksum: "8698a938231730deda29f18f8ea690c5"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "8698a938231730deda29f18f8ea690c5"
+  - "8F64026CC4EFBB0C619F52DB3CD0243F"
 backglassVPSId: "x5b2yXrP"
 enabled: false
 fps: 60
@@ -9,5 +12,8 @@ tableVPSId: "CcjhKd_m"
 tableNotes: "Requires granny.vbs in table folder"
 testers:
   - "Wraith"
-vpxChecksum: "f84232e947d499f2f015c0dcde877a8c"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "f84232e947d499f2f015c0dcde877a8c"
+  - "47D177B44AE4514C0C8927B3E88935BF"
 vpxVPSId: "HYJXHFww"

@@ -1,10 +1,16 @@
 ---
 tableVPSId: "u3bADyBV"
 vpxVPSId: "232sR2Et"
-vpxChecksum: "BCBD1FE4718441E1D5E6C373F7A93392"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "BCBD1FE4718441E1D5E6C373F7A93392"
+  - "2D02FF2ACC5D311B33907F47060DBBEE"
 tableNotes: "Download - 211309852_Pinbot(Williams1986)2.1.1VR.zip"
 backglassBundled: true
-backglassChecksum: "5D5DDAAAFBBD2DC529AFA880702060DA"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "5D5DDAAAFBBD2DC529AFA880702060DA"
+  - "2D02FF2ACC5D311B33907F47060DBBEE"
 backglassNotes: "Bundled with VPX"
 backglassAuthorsOverride:
   - "bord"

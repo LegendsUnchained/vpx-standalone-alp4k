@@ -1,6 +1,9 @@
 ---
 backglassBundled: true
-backglassChecksum: "A2E5C8CCAE3E74877B4758ED03D84880"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "A2E5C8CCAE3E74877B4758ED03D84880"
+  - "9DD4C9DC73C39B0ED111352740424054"
 backglassNotes: "Download Black Magic 4 (Recel 1980).directb2s.zip"
 backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/FD7syId0L-_1745159362482.webp"
 fps: 60
@@ -11,5 +14,8 @@ tagline: "'Voodoo? Who do? You do.'"
 testers:
   - "evilwraith"
   - "pointdablame"
-vpxChecksum: "6EFB001EA93E31A3AE25D136B93265B9"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "6EFB001EA93E31A3AE25D136B93265B9"
+  - "B67BEDB10017E2B9E1C878949C14D105"
 vpxVPSId: "FD7syId0L-"

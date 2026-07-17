@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "ywZL6YqLIp"
-backglassChecksum: "51D71B2F49AF28F32197B3D4DF09970F"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "51D71B2F49AF28F32197B3D4DF09970F"
+  - "10295FD3F44066EA2D01FD9B82B87BDA"
 backglassNotes: "Download version 1.0.0"
 fps: 60
 romUrlOverride: "https://pinballnirvana.com/forums/resources/gladiatr.1870/"
@@ -13,4 +16,7 @@ testers:
   - "Mox"
 tableNotes: "Download version 1.1.1"
 vpxVPSId: "x9ANmZ3X"
-vpxChecksum: "3B9404B0AAABCB5725E96E07A2C982D1"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "3B9404B0AAABCB5725E96E07A2C982D1"
+  - "3301E82FB218E1BD2FDB1C1637A0C145"

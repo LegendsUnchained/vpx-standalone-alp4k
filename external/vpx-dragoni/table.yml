@@ -1,5 +1,8 @@
 ---
-backglassChecksum: "1C7004420A199F01322A747800FE6A36"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "1C7004420A199F01322A747800FE6A36"
+  - "FF174F524B5142BC5BDEFA684BE4165A"
 backglassVPSId: "KY8M7mAFhv"
 fps: 60
 tagline: "BECOME A KILLER DRAGON!"
@@ -8,5 +11,8 @@ testers:
   - "evilwraith"
   - "Curt"
   - "CoffeeAtJoes"
-vpxChecksum: "EDCD9293C8D20DA49B620CA8884488D3"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "EDCD9293C8D20DA49B620CA8884488D3"
+  - "CF5BEAE9FF92F58AAE659BE16EA0BCD6"
 vpxVPSId: "yT3PG1xzFm"

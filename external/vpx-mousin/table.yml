@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "gkFcS4tRQG"
-backglassChecksum: "60b282db76ed446a70a32e238b45b121"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "60b282db76ed446a70a32e238b45b121"
+  - "028C43055DD2D6C4844A1A084FA26E02"
 backglassNotes: "Mousin Around (Bally 1989) b2s authentic 2.0"
 fps: 55
 romVPSId: "uTb3zlcm"
@@ -11,7 +14,10 @@ testers:
   - "CoffeeAtJoes"
   - "Sscorpio"
 vpxVPSId: "zfBJdPcA"
-vpxChecksum: "b914bac4ab0a196c2e8b5adae9bbbe8e"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "b914bac4ab0a196c2e8b5adae9bbbe8e"
+  - "72050D4B45648744040503E72CF4A478"
 tableNotes: "Mousin' Around! (Bally 1989) 1.1"
 mainNotes: >-
   Note: There is a known issue regarding the 1-2-3

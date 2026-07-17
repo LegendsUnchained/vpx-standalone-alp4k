@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "yoOQCG70LN"
-backglassChecksum: "633d99e0951d3972f3b27f5acbb37ae4"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "633d99e0951d3972f3b27f5acbb37ae4"
+  - "A73ADCC532CE51A22CDFFEFA671FA284"
 fps: 48
 romVPSId: "MwNXNR5C"
 romChecksum: "c1f08d90e478e14f7a6c99ea66d5a67b"
@@ -10,5 +13,8 @@ testers:
   - "mcap"
   - "OminousOsie"
 vpxVPSId: "dDnr4zRQ"
-vpxChecksum: "184E6FFC7BAF42C886D33E446168432F"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "184E6FFC7BAF42C886D33E446168432F"
+  - "4AC2F4A8E2FD4C31920516FDA71E3C6B"
 tableNotes: "Download v600.zip"

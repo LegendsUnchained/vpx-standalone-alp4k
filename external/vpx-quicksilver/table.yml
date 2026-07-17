@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "eFyhhkS5"
-backglassChecksum: "9716ba7a4552a6f8a9c641e71a90ed7a"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "9716ba7a4552a6f8a9c641e71a90ed7a"
+  - "FC23EEE3BE6759458143C0CBF0C1A443"
 backglassNotes: "Download file 'Quicksilver (Stern 1980).zip'"
 romVPSId: "jHGP1J2T"
 romChecksum: "790d7e4c3194073fc939b0586cc481e2"
@@ -11,4 +14,7 @@ testers:
   - "kaoticBPR"
   - "CoffeeAtJoes"
 vpxVPSId: "ifSoCSVr"
-vpxChecksum: "c94ebeee997098711308245a2939f919"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "c94ebeee997098711308245a2939f919"
+  - "C288B2DCC10989297ABC8D48B1A44D0E"

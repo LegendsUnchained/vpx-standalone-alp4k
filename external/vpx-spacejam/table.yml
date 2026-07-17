@@ -13,5 +13,8 @@ testers:
   - "evilwraith"
   - "B-Woo"
 vpxVPSId: "HAjS8Pm0"
-vpxChecksum: "e41f7ee3ea045db5de713d9ef1a533b2"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "e41f7ee3ea045db5de713d9ef1a533b2"
+  - "47337C8A5F8D397CB4C26B9C03E7D3BE"
 tableNotes: "Download version 1.4"

@@ -1,6 +1,9 @@
 ---
 backglassBundled: true
-backglassChecksum: "AB4AF0466BD9B5F85953AA7CA678326A"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "AB4AF0466BD9B5F85953AA7CA678326A"
+  - "48F962B283A958D4BA18A200C60ED225"
 # yamllint disable-line rule:line-length
 backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/mFMtQFfnE4_1757621847294.webp"
 backglassNotes: "Download Bob Cuspe (Original 2025).directb2s.zip"
@@ -11,5 +14,8 @@ tableVPSId: "0RtVShGUU9"
 tagline: "'Radical empathy is punk as hell'"
 testers:
   - "evilwraith"
-vpxChecksum: "F9A341843EA8667C7837021E32677783"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "F9A341843EA8667C7837021E32677783"
+  - "17AB5770534CC7336648BF0668A495C1"
 vpxVPSId: "mFMtQFfnE4"

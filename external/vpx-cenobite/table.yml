@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "peJfbx-3Zo"
-backglassChecksum: "3ECC27ABABD4FB2C0441882B2DA0BB30"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "3ECC27ABABD4FB2C0441882B2DA0BB30"
+  - "7FCB020703A94EF517B4DE807C2D9CCF"
 backglassNotes: "Download version 1.0.0"
 fps: 60
 tableNotes: "Download version 1.0.0"
@@ -10,4 +13,7 @@ testers:
   - "Bruno15477"
   - "OminousOsie"
 vpxVPSId: "PQ_fKPgxwG"
-vpxChecksum: "B83A4F4185A927B3B98BFA7AB411CD8A"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "B83A4F4185A927B3B98BFA7AB411CD8A"
+  - "ED4EB7A51019DA7A9D1978692E4A30E7"

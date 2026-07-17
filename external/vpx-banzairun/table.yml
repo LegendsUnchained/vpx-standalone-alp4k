@@ -11,5 +11,8 @@ testers:
   - "OminousOsie"
   - "CoffeeAtJoes"
 vpxVPSId: "sD53cbKdgn"
-vpxChecksum: "A706AD1A55559E8C8916263EB86237AD"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "A706AD1A55559E8C8916263EB86237AD"
+  - "A56559C82202CF5AEE1C23AEE482406C"
 tableNotes: "Download 'Banzai Run (Williams 1988) v600.zip'"

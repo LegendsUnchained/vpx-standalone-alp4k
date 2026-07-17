@@ -1,5 +1,8 @@
 ---
-backglassChecksum: "AA96857C96C85072BB20580261B5EB4A"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "AA96857C96C85072BB20580261B5EB4A"
+  - "5D8BBE8E49B760CFECC3E01B15580D39"
 backglassVPSId: "HdSynapg"
 fps: 60
 romChecksum: "3BBE56AF04DDE85B31491CFB4077EDE3"
@@ -9,5 +12,8 @@ tagline: "'WE RIDE!'"
 testers:
   - "evilwraith"
   - "CoffeeAtJoes"
-vpxChecksum: "C17A4C9087BCC5DA8FACEF776D82ED37"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "C17A4C9087BCC5DA8FACEF776D82ED37"
+  - "E9F4EE8A35A94BA181E29F81CBB6C18E"
 vpxVPSId: "L0OZJWWk"

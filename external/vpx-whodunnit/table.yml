@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "c-01hR8h"
-backglassChecksum: "877596E48148FDE7A138B2086494016C"
+backglassArchiveFormat: "rar"
+backglassChecksum:
+  - "877596E48148FDE7A138B2086494016C"
+  - "96C57814C9C71CB5DC9090AEA8931D51"
 fps: 55
 romVPSId: "pzZrWXJf"
 romChecksum: "4F553E84D3A8E649B14467B12C5AB727"

@@ -1,5 +1,8 @@
 ---
-backglassChecksum: "68749E58F595737C6B6506A18863E052"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "68749E58F595737C6B6506A18863E052"
+  - "BC671D740C0FB8C59B9C99681B03BFB7"
 backglassNotes: "Download 'Metallica (Dirty Donny) (Stern 2013).zip'"
 backglassVPSId: "OzBzWPybM3"
 coloredROMChecksum: "692ACC93D3B4AB7112171CB1E6AA4333"
@@ -13,5 +16,8 @@ tableVPSId: "oQwWzztd"
 tagline: "'We're off to Never-Never Land'"
 testers:
   - "Wraith"
-vpxChecksum: "24561EF04FE2B2F915EF1D16AE60815B"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "24561EF04FE2B2F915EF1D16AE60815B"
+  - "DA9FBD01E2EEBB22B585AEAAF06BCF67"
 vpxVPSId: "AVaA_PMI"

@@ -14,5 +14,8 @@ testers:
   - "OminousOsie"
   - "CoffeeAtJoes"
 vpxVPSId: "Q1-_df2D"
-vpxChecksum: "941BCF71AB51DE5E5DD3EBEFE847F8EB"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "941BCF71AB51DE5E5DD3EBEFE847F8EB"
+  - "E8C593A36994BE9E750505ECE5EDB4B0"
 tableNotes: "Download 'v600.zip'"

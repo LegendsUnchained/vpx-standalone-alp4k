@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "t0x_fkVach"
-backglassChecksum: "938edf1853a9ad443bcce8f402b410d3"
+backglassArchiveFormat: "rar"
+backglassChecksum:
+  - "938edf1853a9ad443bcce8f402b410d3"
+  - "1CD6E41B2E6718DD950D9616263326A9"
 backglassNotes: "Found in the table download"
 backglassBundled: true
 fps: 60
@@ -14,5 +17,8 @@ testers:
   - "OminousOsie"
   - "CoffeeAtJoes"
 vpxVPSId: "Q8DOi1_yat"
-vpxChecksum: "8cb873f815f86cc2d94c476e10c2e314"
+vpxArchiveFormat: "rar"
+vpxChecksum:
+  - "8cb873f815f86cc2d94c476e10c2e314"
+  - "1CD6E41B2E6718DD950D9616263326A9"
 tableNotes: "Download 1.01 VR.rar"

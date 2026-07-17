@@ -1,5 +1,8 @@
 ---
-backglassChecksum: "6823B9673B986DD3473EC2902D4C1CAA"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "6823B9673B986DD3473EC2902D4C1CAA"
+  - "B1593F1B00F3295BF39C93204B795BEA"
 backglassNotes: "Download 'Hollywood Heat (Premier 1986) full dmd.zip'"
 backglassVPSId: "TDwdmr5z4j"
 fps: 42

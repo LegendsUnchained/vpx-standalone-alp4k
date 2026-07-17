@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "q0DxJyIGQ1"
-backglassChecksum: "cbb319b7bf952033755d67ca2b027527"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "cbb319b7bf952033755d67ca2b027527"
+  - "EC0C0432D7DB97FB22E0D47F64920049"
 coloredROMChecksum: "2523DA6BBBF76796DA1FE2D0FE3BEB60"
 coloredROMNotes: "Download 'Tommy-v094.pac'"
 coloredROMVPSId: "V_Eg_cFcpB"
@@ -13,4 +16,7 @@ testers:
   - "Bla1ze"
   - "OminousOsie"
 vpxVPSId: "T8COSpvkl-"
-vpxChecksum: "71F92BACAA3A80C7248709B183DF59A1"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "71F92BACAA3A80C7248709B183DF59A1"
+  - "90720DD41369CD6B063E352F32B68ABE"

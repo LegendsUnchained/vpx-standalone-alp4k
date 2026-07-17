@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "-62c-nUf5t"
-backglassChecksum: "E6867A078132A7EEDC38ED9C1144D428"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "E6867A078132A7EEDC38ED9C1144D428"
+  - "B9823A08C45166F726FB02E6FC0DFB55"
 fps: 50
 romVPSId: "d4nESeqt"
 romChecksum: "e1f87e7c99a9889e063049832601b733"
@@ -15,5 +18,8 @@ testers:
   - "mcap"
   - "OminousOsie"
 vpxVPSId: "m78OeFSG"
-vpxChecksum: "ead413c3d1199577bd11e7fe8c5ba2ff"
+vpxArchiveFormat: "rar"
+vpxChecksum:
+  - "ead413c3d1199577bd11e7fe8c5ba2ff"
+  - "7210BCEE152ED6D70F041C2C2D857A36"
 tableNotes: "Download 1.3.rar"

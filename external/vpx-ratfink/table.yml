@@ -1,5 +1,8 @@
 ---
-backglassChecksum: "E51E8A98D267D97797A7F6EB1D118C49"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "E51E8A98D267D97797A7F6EB1D118C49"
+  - "2D53BB0DA156DD2BA81E8CC89ED75B8A"
 backglassVPSId: "bDfLEkPWsu"
 backglassBundled: true
 backglassNotes: "Download 'Rat Fink (Original 2025).directb2s.zip'"
@@ -14,5 +17,8 @@ testers:
   - "evilwraith"
   - "Bla1ze"
   - "CoffeeAtJoes"
-vpxChecksum: "028CEED2666C4C159A1F8AFC18FC4190"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "028CEED2666C4C159A1F8AFC18FC4190"
+  - "8724EA5CAD048257F9C276D18EACD840"
 vpxVPSId: "nya-dnobhA"

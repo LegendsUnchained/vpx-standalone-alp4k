@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "UGRiDKsI"
-backglassChecksum: "55C18C6AFFA8D7687C9A02A2FE8D31F1"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "55C18C6AFFA8D7687C9A02A2FE8D31F1"
+  - "2F406BEA2548571F08EE58A0910CE28B"
 backglassNotes: "Download JPs Wrath of Olympus.directb2s.zip"
 fps: 60
 tableVPSId: "jZeerv9s"
@@ -13,4 +16,7 @@ testers:
   - "Bla1ze"
   - "Boris"
 vpxVPSId: "UGRiDKsI"
-vpxChecksum: "2B6BD6907E776022274965739FF48AEA"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "2B6BD6907E776022274965739FF48AEA"
+  - "C7CF3A1C46035C2B8CF907F733A6D207"

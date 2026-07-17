@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "XNZeF14kkH"
-backglassChecksum: "77e68ba860b8ecd7a5f38ce28fee5039"
+backglassArchiveFormat: "rar"
+backglassChecksum:
+  - "77e68ba860b8ecd7a5f38ce28fee5039"
+  - "A1D2C9BBADDCB40A0A6BB1AFE3A1AC91"
 backglassNotes: "Download 'Hardbody (Bally 1987)mirror.rar'"
 romVPSId: "XpnfFmFR"
 romChecksum: "DA72FA8413CE7A7025FA12A5B6BA2742"
@@ -11,4 +14,7 @@ testers:
   - "CoffeeAtJoes"
   - "Mox"
 vpxVPSId: "E2HKc9Tl"
-vpxChecksum: "F75A9E626587D61A60CC305F1841B57B"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "F75A9E626587D61A60CC305F1841B57B"
+  - "DE9FEA0FCBD9EDB2EB489ECAD6A90C40"

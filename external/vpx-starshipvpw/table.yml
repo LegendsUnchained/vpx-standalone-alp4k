@@ -16,5 +16,8 @@ testers:
   - "Bla1ze"
   - "Ominous Osie"
   - "Khrymsyn"
-vpxChecksum: "1A67B0C4B103F3B1303D7815A1B2AD27"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "1A67B0C4B103F3B1303D7815A1B2AD27"
+  - "006D65A765FAB8F8942277CD1AC277C8"
 vpxVPSId: "DbFuVTNKWt"

@@ -1,7 +1,10 @@
 ---
 backglassBundled: true
 backglassVPSId: "6HSLnLwrwz"
-backglassChecksum: "220DBCCDB4ABEC8AD5B1870098EDFC0F"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "220DBCCDB4ABEC8AD5B1870098EDFC0F"
+  - "EC87309E3FA0D8F67B5FEA0B6BC7ABF6"
 backglassNotes: "Included in VPX download"
 fps: 60
 tableNotes: "Download version 1.0.0"
@@ -13,4 +16,7 @@ testers:
   - "CoffeeAtJoes"
   - "PointDaBlame"
 vpxVPSId: "yApb21FFAI"
-vpxChecksum: "C19328B84AC1F64ED7A971AF9F52C772"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "C19328B84AC1F64ED7A971AF9F52C772"
+  - "EC87309E3FA0D8F67B5FEA0B6BC7ABF6"

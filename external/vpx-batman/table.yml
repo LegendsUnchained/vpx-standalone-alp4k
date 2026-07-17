@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "Fk2Rr23YO5"
-backglassChecksum: "F3D4D80648A3F69DD4198A3A579BD2C6"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "F3D4D80648A3F69DD4198A3A579BD2C6"
+  - "E6AEDD1A358F3E449CDB25E790EDBF78"
 coloredROMChecksum: 
   - "4C42E7C779AD07505738355A94DDFC5F"
   - "5925AC8895E3A8C3E1B12E44BFEE50DE"
@@ -15,4 +18,7 @@ tagline: "Never rub another man's rhubarb."
 testers:
   - "Bla1ze"
 vpxVPSId: "eu0Pp5WO"
-vpxChecksum: "3E19BA591D2DA59DD5834D5FAC852F17"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "3E19BA591D2DA59DD5834D5FAC852F17"
+  - "AF30FC313AB00F77BB8E619F9A14938F"

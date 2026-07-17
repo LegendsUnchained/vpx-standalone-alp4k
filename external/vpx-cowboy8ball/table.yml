@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "qD8HcbYQ"
-backglassChecksum: "D1F7A5BFA86EF33A1645890D046A4161"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "D1F7A5BFA86EF33A1645890D046A4161"
+  - "BAB14C43AEA0E02CB6AB2DB86B050A92"
 backglassAuthorsOverride:
   - "JPSalas"
 backglassBundled: true
@@ -18,4 +21,7 @@ testers:
   - "OminousOsie"
   - "CoffeeAtJoes"
 vpxVPSId: "LAxl5M9f"
-vpxChecksum: "AEA4DB15345E2A6A91ED5C806C6F88AE"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "AEA4DB15345E2A6A91ED5C806C6F88AE"
+  - "1B78C79311D42B954F4C32C4AA7B84DC"

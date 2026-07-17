@@ -1,5 +1,8 @@
 ---
-backglassChecksum: "ebe548166ce78715844a8fcac38f2489"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "ebe548166ce78715844a8fcac38f2489"
+  - "65BC44999ECF51C0C8823B062595FCAD"
 backglassNotes: "Download Version 1.0.2"
 backglassVPSId: "e61i_rvGva"
 fps: 40
@@ -10,5 +13,8 @@ testers:
   - "Silentkat"
   - "Wraith"
 vpxVPSId: "fqUNoSi3hg"
-vpxChecksum: "FD933442ADF30895080D188425C54F8D"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "FD933442ADF30895080D188425C54F8D"
+  - "93642ADFAC29E2093766D3F9EF9A4AA8"
 

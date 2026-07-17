@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "i_vLYPjaCp"
-backglassChecksum: "D0D686A11C92B22C2AC93538A52B9F94"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "D0D686A11C92B22C2AC93538A52B9F94"
+  - "B22129074F878EE9434D1233290A2341"
 backglassNotes: "Download 'Congo (Williams 1995) alt full dmd.zip'"
 fps: 58
 romVPSId: "KB4uqFCo"
@@ -11,5 +14,8 @@ testers:
   - "Bla1ze"
   - "CoffeeAtJoes"
 vpxVPSId: "DuoklEj4"
-vpxChecksum: "F6DB27B0BFD3F65C61ADEDEA99837E3D"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "F6DB27B0BFD3F65C61ADEDEA99837E3D"
+  - "69AF7282FC56697D53C3F9303DE85820"
 tableNotes: "Download 'Congo (Williams 1995)_Bigus(MOD)3.2.vpx.zip'"

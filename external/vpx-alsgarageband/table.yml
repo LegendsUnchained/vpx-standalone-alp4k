@@ -1,10 +1,16 @@
 ---
 tableVPSId: "RGY73iP3"
 backglassVPSId: "NXO6osgNI5"
-backglassChecksum: "05F1C3DDC527ACFEDCE9C712D439DDF5"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "05F1C3DDC527ACFEDCE9C712D439DDF5"
+  - "7CF9C93BA75BCC9CEBD5E62B879E5279"
 backglassNotes: "Download version 1.0.0"
 vpxVPSId: "KSTq26CE"
-vpxChecksum: "7CB4A697364D09F70668B698444243AF"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "7CB4A697364D09F70668B698444243AF"
+  - "C80FD1271117A068F99A19C8C2926473"
 tableNotes: "Download Al's Garage Band... anti(Mod) V2.zip"
 fps: 58
 romVPSId: "67CFP-h2"

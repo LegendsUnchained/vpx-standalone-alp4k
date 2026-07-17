@@ -1,5 +1,8 @@
 ---
-backglassChecksum: "61bdf8573b560f1a640e499f80c0b573"
+backglassArchiveFormat: "7z"
+backglassChecksum:
+  - "61bdf8573b560f1a640e499f80c0b573"
+  - "C05C6D6719458C75423E8F6422DFBD84"
 backglassNotes: "Download Godzilla limited edition 70th B&W flashes"
 backglassVPSId: "_vuwspGwTG"
 backglassBundled: true
@@ -13,5 +16,8 @@ tagline: "Size does matter!"
 testers:
   - "Silentkat"
   - "Evilwrath"
-vpxChecksum: "24e59f78e351292b6d5abec589d07f47"
+vpxArchiveFormat: "7z"
+vpxChecksum:
+  - "24e59f78e351292b6d5abec589d07f47"
+  - "8A2CFFCF8D54FA91FD3805AB2D36906B"
 vpxVPSId: "PBBcAzNnwr"

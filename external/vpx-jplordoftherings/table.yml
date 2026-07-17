@@ -16,4 +16,7 @@ tableNotes: "Download 'JP's Lord of the Rings (Stern 2003) v600'"
 testers:
   - "OminousOsie"
 vpxVPSId: "q8ac-RuR"
-vpxChecksum: "478EAA101AC88F6B062F39ACB055697C"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "478EAA101AC88F6B062F39ACB055697C"
+  - "95570C2A10C928DE7963C7F748BE9A4A"

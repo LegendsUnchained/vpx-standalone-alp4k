@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "gNuw8VtwyD"
-backglassChecksum: "98E31DF4E2D2611724E8ADE864C9C234"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "98E31DF4E2D2611724E8ADE864C9C234"
+  - "ADDEB15F97BEE09ED28ECBB0D845C8B7"
 backglassNotes: "Download - Tales from the Crypt (Data East 1993) full dmd.zip"
 diffVPSId: "TJMo9ycfSP"
 diffChecksum: "63FB81D2AC74D58BAADA16B2791C2FF7"
@@ -16,4 +19,7 @@ testers:
   - "evilwraith"
   - "OminousOsie"
 vpxVPSId: "uVgZUZdK"
-vpxChecksum: "90C2F0103D0817029999F4CBF966EB75"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "90C2F0103D0817029999F4CBF966EB75"
+  - "6221EBC1EA02F9743FC63C892D590597"

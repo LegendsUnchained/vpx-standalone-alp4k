@@ -2,7 +2,10 @@
 # yamllint disable-line rule:line-length
 backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/529c44b2c08c9de492d3ec05714aecca_b2s_1638093698646.webp"
 backglassVPSId: "l7qkHcGJFh"
-backglassChecksum: "9080636EA4D6D2B691846F8A4CD83CE7"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "9080636EA4D6D2B691846F8A4CD83CE7"
+  - "8D98230AFFD73D86843E04684A14E3EE"
 coloredROMChecksum: "1114A0849281B5013CAEBA7FEE14B2D5"
 coloredROMNotes: "Download 'Johnny ver1.2.zip' at the bottom of the page. Use 'jm june 30 2023.pac'"
 coloredROMVPSId: "qz22m48qaU"
@@ -19,4 +22,7 @@ testers:
   - "Reboot"
   - "OminousOsie"
 vpxVPSId: "gwAsaJWx"
-vpxChecksum: "E5CEC87B86DBF87499CE52FD8D8DA303"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "E5CEC87B86DBF87499CE52FD8D8DA303"
+  - "110896ED767AE3CE36179A45445BDB22"

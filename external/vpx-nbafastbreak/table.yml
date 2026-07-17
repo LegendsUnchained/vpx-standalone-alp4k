@@ -14,4 +14,7 @@ tagline: "They Shoot, You Score!"
 testers:
   - "Bla1ze"
 vpxVPSId: "y5saowFC"
-vpxChecksum: "03F38584778625C6A4F59D88CED364F7"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "03F38584778625C6A4F59D88CED364F7"
+  - "9E4C9825FED837F67F0E7326D46893D1"

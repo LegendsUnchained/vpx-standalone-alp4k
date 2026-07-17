@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "hripfXW8AB"
-backglassChecksum: "D893635A634EF2D0A0F1196A714513E5"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "D893635A634EF2D0A0F1196A714513E5"
+  - "C4B8A1CD44C5D609490FF9FCE3502D09"
 coloredROMChecksum: "39A414E4F6335AE56EB33DE77C4BC1F2"
 coloredROMVPSId: "RAXAfH14xP"
 fps: 60
@@ -13,4 +16,7 @@ testers:
   - "Mox"
   - "OminousOsie"
 vpxVPSId: "FXFg6iyecu"
-vpxChecksum: "DBD5E0737301BD1856D6669D3740FC88"
+vpxArchiveFormat: "rar"
+vpxChecksum:
+  - "DBD5E0737301BD1856D6669D3740FC88"
+  - "62F9924622BC8F924A43DF9254D26812"

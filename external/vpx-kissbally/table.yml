@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "4APmUG49"
-backglassChecksum: "0CE3ADC7E83E4F1CCBC81068EE2C28A6"
+backglassArchiveFormat: "rar"
+backglassChecksum:
+  - "0CE3ADC7E83E4F1CCBC81068EE2C28A6"
+  - "99369B7B6638E4178532A639ED5D227B"
 backglassNotes: "Download version 3.0"
 fps: 60
 romVPSId: "B2D3ItDH"
@@ -12,4 +15,7 @@ testers:
   - "SilentKat"
   - "CoffeeAtJoes"
 vpxVPSId: "CLeUeGT6"
-vpxChecksum: "A035EF13D3664774A9E3155D3C945550"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "A035EF13D3664774A9E3155D3C945550"
+  - "0DF8F3916D1C31C819EE81047E5E0792"

@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "1vJe-n8q"
-backglassChecksum: "2d885e64f054472976bbd7f2a109a80c"
+backglassArchiveFormat: "rar"
+backglassChecksum:
+  - "2d885e64f054472976bbd7f2a109a80c"
+  - "5772C018E2D4A21BB61592430C770A42"
 fps: 60
 romVPSId: "upRQOKt5"
 romChecksum: "9c4eed807a09314b09e167ef81eec724"
@@ -13,5 +16,8 @@ testers:
   - "OminousOsie"
   - "CoffeeAtJoes"
 vpxVPSId: "KeJ-pS3E"
-vpxChecksum: "1651E5A27D4F86AD07A4A57062042E1A"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "1651E5A27D4F86AD07A4A57062042E1A"
+  - "9E08DC37D51FB05F2A2E427378D10F7C"
 tableNotes: "Download 'Cosmic (Taito do Brasil - 1980) v600.zip'"

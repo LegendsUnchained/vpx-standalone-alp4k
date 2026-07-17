@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "6p2tjIwLte"
-backglassChecksum: "3BB0FBA943861D6D5DCA4224E53EF2EE"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "3BB0FBA943861D6D5DCA4224E53EF2EE"
+  - "2B9856D9256CA9767D7C4A4481650F94"
 fps: 60
 romUrlOverride: "https://vpuniverse.com/files/file/12824-x-men-pro-xmn_151h/"
 romNotes: "Download version xmn_151h"
@@ -12,4 +15,7 @@ tagline: "Go try that again Bub!"
 testers:
   - "Bla1ze"
 vpxVPSId: "I8tgJEQRO-"
-vpxChecksum: "108CFD1D709D3A248FB7ACFC1559C5DE"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "108CFD1D709D3A248FB7ACFC1559C5DE"
+  - "718E744A6217EF327D9F41A2B1E1EF19"

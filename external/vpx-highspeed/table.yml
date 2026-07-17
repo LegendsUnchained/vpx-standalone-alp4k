@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "QyVZrGlZ_B"
-backglassChecksum: "D5E2624CC2A70E009317C65C8B1843A3"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "D5E2624CC2A70E009317C65C8B1843A3"
+  - "ABEE638D7784BB700589F89D162D51E4"
 backglassNotes: "Download version 1.0.0"
 fps: 60
 romVPSId: "dRxhd-zs"
@@ -10,5 +13,8 @@ tagline: "Outplays and outsmarts all the others!"
 testers:
   - "OminousOsie"
 vpxVPSId: "p1Ur8qLo"
-vpxChecksum: "EF45AD997DCA04607ABDCE2A85C85E71"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "EF45AD997DCA04607ABDCE2A85C85E71"
+  - "824C25634E6DB739D63FF48597239BDC"
 tableNotes: "Download version 2.0"

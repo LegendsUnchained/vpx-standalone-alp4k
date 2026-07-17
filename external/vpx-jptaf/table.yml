@@ -4,10 +4,16 @@ tagline: "Tish, mi amor..."
 testers:
   - "evilwraith"
 tableVPSId: "id3psEgciP"
-vpxChecksum: "6ECF6CB3B6BC83A56D15A8DA1EDB1D70"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "6ECF6CB3B6BC83A56D15A8DA1EDB1D70"
+  - "9FD3BAD43824B720DB3CCA67FB397E20"
 vpxVPSId: "vQjLGEld0D"
 backglassVPSId: "agRjCO8K"
-backglassChecksum: "6D79886639554981FD32185C67F49611"
+backglassArchiveFormat: "rar"
+backglassChecksum:
+  - "6D79886639554981FD32185C67F49611"
+  - "615552475BBD8C12802D87A9403E87BB"
 coloredROMChecksum: "17A15B071D251958108D19F26FFD8E19"
 coloredROMNotes: "Download 'taf_full 2.3.pac'"
 coloredROMVPSId: "kU8oKiCN"

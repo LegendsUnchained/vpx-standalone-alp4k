@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "xgKVaHD7"
-backglassChecksum: "7012400064acadc74b5114e8a6ccc160"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "7012400064acadc74b5114e8a6ccc160"
+  - "25ABA2296801B1E2A46DA6FB98BC2798"
 backglassBundled: true
 backglassNotes: "Included in VPX zip"
 fps: 60
@@ -11,4 +14,7 @@ testers:
   - "Bla1ze"
   - "CoffeeAtJoes"
 vpxVPSId: "xgKVaHD7"
-vpxChecksum: "ba1a9533b418fdfd4d98bf0cf259ae7c"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "ba1a9533b418fdfd4d98bf0cf259ae7c"
+  - "25ABA2296801B1E2A46DA6FB98BC2798"

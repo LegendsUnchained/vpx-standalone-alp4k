@@ -1,5 +1,8 @@
 ---
-backglassChecksum: "14AF676F6A06B29C3C7715485549CA2E"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "14AF676F6A06B29C3C7715485549CA2E"
+  - "4FFE2D3BF95AA24FB20FFC7E2396E8B6"
 backglassNotes: "Download 'the Shining (Burger 2025).zip'"
 backglassVPSId: "Ao3pKJTCqT"
 fps: 45
@@ -9,5 +12,8 @@ tagline: "'Heeeeeeeeerrrrrrre's Johnny!'"
 testers:
   - "Wraith"
   - "Silentkat"
-vpxChecksum: "1D7797DF8C4005B9218AD1A81F5DE1B4"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "1D7797DF8C4005B9218AD1A81F5DE1B4"
+  - "6885960D755B3308F4D2A029BFEED544"
 vpxVPSId: "VkNANt3br1"

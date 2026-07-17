@@ -1,5 +1,8 @@
 ---
-backglassChecksum: "27C710E011EEC95729339C2C44AF1AE7"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "27C710E011EEC95729339C2C44AF1AE7"
+  - "3C583B610B8BC5BD4F50856741B5C8FF"
 backglassVPSId: "AzBZfcxUUy"
 diffChecksum: "FEC3E9E4A7D2ADF1E010517CA9ACF3B8"
 diffVPSId: "GqdNrqlFF5"
@@ -14,5 +17,8 @@ testers:
   - "mcap"
   - "Bla1ze"
   - "CoffeeAtJoes"
-vpxChecksum: "BBD3FF48CAF1AE7CDDD8E8DD2D518326"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "BBD3FF48CAF1AE7CDDD8E8DD2D518326"
+  - "3D73125A45FA16260E94E81E58E89C81"
 vpxVPSId: "Jt3UevJk"

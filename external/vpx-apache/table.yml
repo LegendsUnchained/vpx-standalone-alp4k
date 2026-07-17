@@ -1,7 +1,10 @@
 ---
 backglassBundled: true
 backglassVPSId: "Q9Wxt1m8"
-backglassChecksum: "0049B3B34AD915C72898D73456E2087C"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "0049B3B34AD915C72898D73456E2087C"
+  - "2984120DEADC6181DF3CCE49E525F5A3"
 backglassNotes: "Download 'Apache! EM (Taito do Brasil 1978) v55_VPX8.directb2s.zip'"
 fps: 60
 tableNotes: "Download 'Apache! (Taito do Brasil 1978) v600.zip'"
@@ -11,4 +14,7 @@ testers:
   - "Boris"
   - "OminousOsie"
 vpxVPSId: "Q9Wxt1m8"
-vpxChecksum: "0CA4D816EAC97D69527C668B164B0752"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "0CA4D816EAC97D69527C668B164B0752"
+  - "C83627116D2F9A744AEDC124B12973F5"

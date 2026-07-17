@@ -1,5 +1,8 @@
 ---
-backglassChecksum: "7F7BCF2CDE8D9E8EC0CCD73ACC6CFC9E"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "7F7BCF2CDE8D9E8EC0CCD73ACC6CFC9E"
+  - "2DBFF3609ABB34ECFBBDBBF871ED2B44"
 backglassNotes: "Download v1.0.0"
 backglassVPSId: "gm4jJJzjHE"
 coloredROMChecksum: 
@@ -18,5 +21,8 @@ tagline: "Yeah baby yeah!"
 testers:
   - "Bla1ze"
   - "T3chZombie"
-vpxChecksum: "65B351393D088BB227CDC775D7FA60D9"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "65B351393D088BB227CDC775D7FA60D9"
+  - "F68BD6F1BBC2646DEBD5F72393149C01"
 vpxVPSId: "LMBHaBou"

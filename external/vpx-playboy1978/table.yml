@@ -1,5 +1,8 @@
 ---
-backglassChecksum: "5286B0A24FB6111E2D8266133A4DB749"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "5286B0A24FB6111E2D8266133A4DB749"
+  - "581D24AAC4574A4A22E5F73DDCBA1E5C"
 backglassNotes: "Download Playboy (Bally 1978).zip"
 backglassVPSId: "STc6gm15Dz"
 fps: 52
@@ -12,5 +15,8 @@ testers:
   - "Wraith"
   - "B-Woo"
   - "CoffeeAtJoes"
-vpxChecksum: "39097EEE8822A0B7F9648B65BCC96495"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "39097EEE8822A0B7F9648B65BCC96495"
+  - "0FDAB6631F19E101210CC82DBC58DD34"
 vpxVPSId: "JuIPymmp0J"

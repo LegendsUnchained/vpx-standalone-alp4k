@@ -1,5 +1,8 @@
 ---
-backglassChecksum: "B85A17A6131DB8D149F9EE0BA1377ECB"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "B85A17A6131DB8D149F9EE0BA1377ECB"
+  - "36F0B71AE7629FF049EA3983486107BF"
 backglassNotes: ""
 backglassVPSId: "yY6Q3FvnHV"
 coloredROMVPSId: "4-rKkJ69T8"
@@ -8,7 +11,10 @@ coloredROMNotes: "Download and extract 'GLaltcolor.7z'. Use file in 'freddy'"
 coloredROMUrlOverride: "https://vpuniverse.com/files/file/5120-glaltcolor7z/"
 tableVPSId: "b31KZ92B"
 vpxVPSId: "eahB14sy"
-vpxChecksum: "b866c873d66323803be0dad4299758c9"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "b866c873d66323803be0dad4299758c9"
+  - "AB5384C9925C67272C786BB652D24D50"
 tableNotes: "Wipe Out (Premier 1993) 1.1.0.zip"
 # yamllint disable-line rule:line-length
 backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/b31KZ92B_b2s_1661263797943.webp"

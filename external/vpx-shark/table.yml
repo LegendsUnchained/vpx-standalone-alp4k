@@ -17,4 +17,7 @@ testers:
   - "Boris"
   - "OminousOsie"
 vpxVPSId: "m4VJeoKZ"
-vpxChecksum: "D8687BD734391989600140AE51DE2DC9"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "D8687BD734391989600140AE51DE2DC9"
+  - "B0ECF3CEF4CC93385502D43665B81973"

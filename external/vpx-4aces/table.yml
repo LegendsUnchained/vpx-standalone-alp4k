@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "ajeLQNThhp"
-backglassChecksum: "E8E033B78C4BC16C92BFCDF5EE9C911B"
+backglassArchiveFormat: "7z"
+backglassChecksum:
+  - "E8E033B78C4BC16C92BFCDF5EE9C911B"
+  - "D87BC9CBE0667D33A329460E0A1202F8"
 backglassNotes: "Download version 1.0.1"
 fps: 60
 tableVPSId: "pt56BoJ9UJ"
@@ -10,5 +13,8 @@ testers:
   - "OminousOsie"
   - "CoffeeAtJoes"
 vpxVPSId: "WdhuHU_Jvr"
-vpxChecksum: "55D676E08A224E9297E8103DAADFB110"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "55D676E08A224E9297E8103DAADFB110"
+  - "25463B1BFE9C19E11228EFD3D889F2C8"
 tableNotes: "Download '4 Aces (Williams 1970) v601.zip'"

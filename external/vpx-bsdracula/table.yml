@@ -1,7 +1,10 @@
 ---
 backglassVPSId: "hWuAb6Mrcl"
 backglassNotes: "Download 'Bram Stoker's Dracula (Williams 1993).zip'"
-backglassChecksum: "CF2781B02CEE8220545691B558967828"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "CF2781B02CEE8220545691B558967828"
+  - "E4BEA13E82127129E8C64197ABB1FD81"
 fps: 60
 romVPSId: "_UH4Udok"
 romChecksum: "6DDD36020F16A3C39683E7DCF660FFFE"
@@ -14,5 +17,8 @@ testers:
   - "Boris"
   - "OminousOsie"
 vpxVPSId: "v-WHlY04"
-vpxChecksum: "E85E3DC077B203224C36E947D546BA3A"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "E85E3DC077B203224C36E947D546BA3A"
+  - "35BBE7BA35379FA447D01AA33F06CF00"
 tableNotes: "Download 'Bram Stoker's Dracula (Williams 1993)_Bigus(MOD)3.0.vpx.zip'"

@@ -1,5 +1,8 @@
 ---
-backglassChecksum: "39019464042EA63CC74C9237EC4D66A3"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "39019464042EA63CC74C9237EC4D66A3"
+  - "51B717642EC994CD272D3ACF8C7F2414"
 backglassVPSId: "Byy9_hJ0t8"
 diffChecksum: "C7A5F595045DDD2724A60C2EBF8572F2"
 diffVPSId: "pg96rwqB7T"

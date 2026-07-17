@@ -2,7 +2,10 @@
 backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/0Htk9ITwd6_1722849149532.webp"
 backglassVPSId: "0Htk9ITwd6"
 backglassNotes: "Download version 2.0"
-backglassChecksum: "8ABEE56C90A6406A465219F3EEBA90FA"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "8ABEE56C90A6406A465219F3EEBA90FA"
+  - "1E2F919CE30978313E397AAA6A839FC4"
 fps: 60
 coloredROMVPSId: "QzkheiqdCT"
 coloredROMChecksum: "080DAEDC2CDE85708116E1C994523BDA"
@@ -15,6 +18,9 @@ testers:
   - "Bla1ze"
   - "OminousOsie"
   - "pointdablame"
-vpxChecksum: "BC5EFFB90F8D1AD5A54464A544F6E6D4"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "BC5EFFB90F8D1AD5A54464A544F6E6D4"
+  - "0FB6ACA9C04AD16ADD2DAEC03A6A4EF3"
 vpxNotes: "Download version 1.4"
 vpxVPSId: "zUJ07JKe"

@@ -11,5 +11,8 @@ tableVPSId: "ZhNnPRvbTS"
 tagline: "'Welcome to my world...under glass!'"
 testers:
   - "Wraith"
-vpxChecksum: "46B69C3CD84338BEB5BEEF46C7CB7153"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "46B69C3CD84338BEB5BEEF46C7CB7153"
+  - "079CDB8FD185373BAA570396CD8B2BED"
 vpxVPSId: "_UMEFSmYor"

@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "ejd1kCFi8P"
-backglassChecksum: "b35ad102945cd50c8c6d9f98476c8de1"
+backglassArchiveFormat: "zip"
+backglassChecksum:
+  - "b35ad102945cd50c8c6d9f98476c8de1"
+  - "4F5FF3A5525D0128E1126547B2E384A4"
 backglassNotes: "Download 'FirePower II (Williams 1983) 2scn.zip'"
 fps: 48
 romVPSId: "WibV5jtO"
@@ -12,4 +15,7 @@ testers:
   - "OminousOsie"
   - "CoffeeAtJoes"
 vpxVPSId: "lWs010fjqE"
-vpxChecksum: "4ad305f80ef4a459a688967de7b9c808"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "4ad305f80ef4a459a688967de7b9c808"
+  - "A2C24DCF500400AD452E188C3D401708"
