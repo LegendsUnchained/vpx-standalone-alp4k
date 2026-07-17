@@ -44,6 +44,18 @@ testers:
 # enabled: true
 
 
+# --- NSFW / adult content (optional) ----------------------------------------
+# Author-set adult-content flags. All [Boolean], default false. When a wizard
+# user has NOT enabled NSFW content:
+#   * a table flagged nsfw, vpxNSFW, backglassNSFW or romNSFW is hidden from the
+#     wizard listing entirely (those parts can't be skipped);
+#   * a table with only coloredROMNSFW / altSoundNSFW / pupNSFW / diffNSFW set
+#     still installs, but that component is filtered out of the install.
+# Manage Tables always shows an NSFW chip when any flag is set.
+# nsfw: true            # the whole table is adult content
+# vpxNSFW: true         # the .vpx playfield art is adult (manifest key: tableNSFW)
+
+
 # --- Table metadata overrides (optional) ------------------------------------
 # Override values resolved from VPS, or supply them when not on VPS.
 
@@ -65,6 +77,7 @@ testers:
 # romChecksum: "00000000000000000000000000000000"   # [String|List]
 # romNotes: "Markdown ROM notes."   # [String] REQUIRED when romBundled is true
 # romBundled: false                 # [Boolean] ROM ships inside the table download
+# romNSFW: false                    # [Boolean] ROM content is adult (hides the whole table when NSFW is off)
 
 
 # --- Additional ROMs (optional) ---------------------------------------------
@@ -97,6 +110,7 @@ testers:
 # backglassChecksum: "00000000000000000000000000000000"   # [String|List] required if offered/bundled
 # backglassNotes: "Markdown notes."              # [String] REQUIRED when bundled
 # backglassBundled: false                        # [Boolean]
+# backglassNSFW: false                           # [Boolean] backglass is adult (hides the whole table when NSFW is off)
 
 
 # --- Colored ROM (optional; a pin2dmd .pal/.vni pair OR a single serum file) -
@@ -109,6 +123,7 @@ testers:
 # coloredROMNotes: "Markdown notes."             # [String] REQUIRED when bundled
 # coloredROMBundled: false                       # [Boolean]
 # coloredROMPin2DMD: false                        # [Boolean] true = .pal + .vni pair; false/absent = single serum file
+# coloredROMNSFW: false                           # [Boolean] DMD colorization is adult (filtered out when NSFW is off; table still installs)
 
 
 # --- PUP pack (optional) ----------------------------------------------------
@@ -118,6 +133,7 @@ testers:
 # pupNotes: "Markdown notes."                     # [String]
 # pupRequired: false                              # [Boolean] the pup is mandatory for this table (e.g. Space Cadet)
 # pupBundled: false                               # [Boolean]
+# pupNSFW: false                                  # [Boolean] pup videos are adult (filtered out when NSFW is off; table still installs)
 # pupVersion: "1.0"                               # [String]
 # pupArchiveFormat: "zip"                         # [String] zip | rar | 7z  (default: zip)
 # pupArchiveRoot: "subfolder"                     # [String] path within the archive to the pup root (if nested)
@@ -131,6 +147,7 @@ testers:
 #   - "author"
 # diffChecksum: "00000000000000000000000000000000"   # [String|List]
 # diffNotes: "Markdown notes."                    # [String]
+# diffNSFW: false                                 # [Boolean] the VPU patch adds adult content (filtered out when NSFW is off; table installs unpatched)
 
 
 # --- Alt sound (optional) ---------------------------------------------------
@@ -148,6 +165,7 @@ testers:
 # altSoundBundled: false                          # [Boolean] altsound ships inside the table download
 # altSoundArchiveFormat: "zip"                    # [String] zip | rar | 7z  (default: zip)
 # altSoundArchiveRoot: "subfolder"                # [String] path within the archive to the altsound root (if nested)
+# altSoundNSFW: false                             # [Boolean] altsound is adult (filtered out when NSFW is off; table still installs)
 
 
 # --- Tutorial (optional) ----------------------------------------------------
