@@ -2,8 +2,7 @@
 backglassChecksum: "141CE9C12AAC8ED5F36AD9A547AA4121"
 backglassVPSId: "noFcDXGBg1"
 fps: 60
-tableNotes: >-
-  Download Diablo Pinball Diablo Pinball v600.zip and Diablo.UltraDMD.zip. Extract and move Diablo.UltraDMD to table root after install.
+tableNotes: "Download Diablo Pinball v600.zip and Diablo.UltraDMD.zip. Extract and move Diablo.UltraDMD to table root"
 tableVPSId: "pfpSUvBN"
 tagline: "'Stay awhile and listen...'"
 testers:
