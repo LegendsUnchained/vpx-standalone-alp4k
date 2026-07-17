@@ -1,13 +1,12 @@
 ---
-backglassVPSId: "tOkhRy1ZJK"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "1AC5E66249F4D1E18086C031F7D8DE90"
-  - "84CEDDB9CA231EC4A023053E75248388"
 fps: 60
 coloredROMVPSId: "aBc9oYO2uq"
-coloredROMChecksum: "76EBC44F922C46D56ADF1CD44B2F7957"
-coloredROMNotes: "Download version 2.02"
+coloredROMChecksum: "36592ecc21134c2247f5b36da85382a0"
+coloredROMNotes: "Download version 2.03"
+upArchiveFormat: "zip"
+pupArchiveRoot: "trn_174h"
+pupChecksum: "f64b8241767569cff8f5eb111b7ab967"
+pupVPSId: "HYxuXOnF"
 romVPSId: "o5CeYx43"
 romChecksum: "AD5DC9DD5B6B5CA3430866FF8897A09B"
 tableVPSId: "akYNyhNO"
