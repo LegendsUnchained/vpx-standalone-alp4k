@@ -1,23 +1,21 @@
 ---
-backglassVPSId: "ulmJn9mNE6"
 backglassChecksum: "18fdf34ee41e8cfb58672cfa675a07d4"
+backglassVPSId: "ulmJn9mNE6"
 coloredROMChecksum: "323336DD285312CB49A2E684527E7FC1"
 coloredROMNotes: "Download version 1.0.0"
 coloredROMVPSId: "u-tQIZEs"
-romVPSId: "PVVM6I7jEI"
-romChecksums:
-  - "68a0d9b3221137ed2d7015a7c4094ca2"
-  - "DE03B99E2AB4F8A23C91117126C54975"
-romVersionOverride: "jupk_600"
-romNotes: "jupk_600.zip"
 fps: 60
+romBundled: true
+romChecksum: "68a0d9b3221137ed2d7015a7c4094ca2"
+romNotes: "Download jupk_600.zip"
+romUrlOverride: "https://www.vpforums.org/index.php?app=downloads&showfile=11339"
+romVersionOverride: "jupk_600"
 tableVPSId: "i47o-Nvr"
-tablenotes: "Download version 2.0"
 tagline: "Welcome... to Jurassic Park!"
 testers:
   - "mcap"
   - "OminousOsie"
   - "CoffeeAtJoes"
   - "kingargyle"
-vpxVPSId: "a4IeNxW1"
 vpxChecksum: "202A0FA0FF0869776026B182CEB8A029"
+vpxVPSId: "a4IeNxW1"
