@@ -134,8 +134,20 @@ testers:
 
 
 # --- Alt sound (optional) ---------------------------------------------------
+# An altsound pack is an archive (zip/rar/7z) extracted into the ROM's altsound
+# folder, so a table offering altsound must also install its ROM. Use EITHER
+# altSoundVPSId (on VPS) OR altSoundUrlOverride (+ altSoundVersionOverride).
+# altSoundChecksum is REQUIRED when altsound is offered or bundled.
 # altSoundVPSId: "xxxxxxxx"                       # [String] resolves authors / url / version
+# altSoundUrlOverride: "https://..."              # [String] use INSTEAD of altSoundVPSId (not both)
+# altSoundVersionOverride: "name"                 # [String] REQUIRED with altSoundUrlOverride
+# altSoundAuthorsOverride:                        # [List] override resolved authors
+#   - "author"
 # altSoundChecksum: "00000000000000000000000000000000"   # [String|List]
+# altSoundNotes: "Markdown notes."                # [String] REQUIRED when bundled
+# altSoundBundled: false                          # [Boolean] altsound ships inside the table download
+# altSoundArchiveFormat: "zip"                    # [String] zip | rar | 7z  (default: zip)
+# altSoundArchiveRoot: "subfolder"                # [String] path within the archive to the altsound root (if nested)
 
 
 # --- Tutorial (optional) ----------------------------------------------------

@@ -24,6 +24,15 @@ Here is an example of every field possible: (as of 27 May 2025)
 
 ....
 additionalRoms:              | [Array of Objects]
+altSoundArchiveFormat:       | [String]
+altSoundArchiveRoot:         | [String]
+altSoundAuthorsOverride:     | [Array]
+altSoundBundled:             | [Bool]
+altSoundChecksum:            | [String]
+altSoundNotes:               | [String]
+altSoundUrlOverride:         | [String]
+altSoundVersionOverride:     | [String]
+altSoundVPSId:               | [String]
 applyFixes:                  | [Array]
 backglassAuthorsOverride:    | [Array]
 backglassBundled:            | [Bool]
@@ -65,6 +74,58 @@ vpxVPSId:                    | [String]
 
 Below is each yml field explained, with an example, and any `gotchas'
 that you need to know to use successfully!
+
+....
+########################
+altSound (altSoundVPSId / altSoundUrlOverride / ...)
+########################
+
+Type:
+------------
+Group of fields (see below)
+
+Description:
+------------
+An altsound pack replaces a table's ROM audio with an alternative/orchestral
+sound package. It is distributed as an archive (zip/rar/7z) and is extracted on
+the device into the ROM's altsound folder (pinmame/altsound/<romname>), so a
+table that offers altsound MUST also install its ROM.
+
+Resolve the pack from VPS with altSoundVPSId, OR link it directly with
+altSoundUrlOverride (+ altSoundVersionOverride). altSoundChecksum is required
+whenever altsound is offered or bundled. Fields:
+
+- altSoundVPSId: [String] VPS ID of the altsound file; resolves authors / url /
+  version. Mutually exclusive with altSoundUrlOverride.
+- altSoundUrlOverride: [String] direct download URL, used INSTEAD of
+  altSoundVPSId when the pack isn't on VPS.
+- altSoundVersionOverride: [String] REQUIRED when altSoundUrlOverride is set.
+- altSoundAuthorsOverride: [Array] overrides the VPS-resolved authors.
+- altSoundChecksum: [String|List] MD5(s) of the archive. REQUIRED when offered
+  or bundled. One hash -> a string; two or more -> a YAML list.
+- altSoundNotes: [String] Markdown notes shown on the wizard row. REQUIRED when
+  altSoundBundled is true.
+- altSoundBundled: [Bool] the pack ships inside the table download itself.
+- altSoundArchiveFormat: [String] zip | rar | 7z. Default: zip. Only sets the
+  wizard's file picker filter; extraction auto-detects the real format.
+- altSoundArchiveRoot: [String] path within the archive to the altsound root,
+  when the pack is nested inside a subfolder.
+
+Example:
+------------
+altSoundVPSId: "FfXJriyfGA"
+altSoundChecksum: "00000000000000000000000000000000"
+altSoundNotes: "Download version 1.0.0"
+
+Gotchas:
+------------
+- Altsound needs a ROM. If the table has no rom (romVPSId/romUrlOverride) the
+  install has no romname to extract into and will fail.
+- Like coloredROM, VPS altsound entries have no checksum, so altSoundChecksum
+  always comes from this file.
+- The VPS url is usually a VPUniverse page link, not a direct download — that's
+  expected; the wizard opens it so the user can grab the file.
+....
 
 ....
 ########################
