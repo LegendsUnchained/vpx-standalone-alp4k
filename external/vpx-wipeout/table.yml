@@ -22,7 +22,7 @@ romUrlOverride: "https://pinballnirvana.com/forums/resources/wipeout.2596/"
 romVersionOverride: "wipeout"
 romNotes: "wipeout.zip"
 romChecksum: "a192a69c51e0f57318b5ddd18152d321"
-fps: 60
+fps: 58
 tagline: "The ski lift is now open!"
 testers:
   - "Boris"

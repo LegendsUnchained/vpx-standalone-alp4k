@@ -5,7 +5,7 @@ backglassChecksum:
   - "5A0625FCDEDF001C0608F812984D321F"
 backglassNotes: "Download Version 2.0"
 backglassVPSId: "l-kOn09CQf"
-fps: 60
+fps: 58
 romChecksum: "96F2911EE5139A63459AF3E6686C5B9E"
 romNotes: "Download jack2opn.zip"
 romVersionOverride: "jack2opn"

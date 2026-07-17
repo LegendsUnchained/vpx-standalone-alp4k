@@ -4,7 +4,7 @@ backglassArchiveFormat: "zip"
 backglassChecksum:
   - "9B3C1B7FF58F3259CB704C4D43EE89B8"
   - "8E1CFB2885F16ECFC3FE74FE64B43A5D"
-fps: 55
+fps: 52
 romVPSId: "r639KgLM"
 romChecksum: "478E5CAD11E44424D0B68EB60054B8D8"
 romNotes: "Download - aar_101.zip"

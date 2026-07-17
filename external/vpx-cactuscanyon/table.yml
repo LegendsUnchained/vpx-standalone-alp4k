@@ -4,7 +4,7 @@ backglassArchiveFormat: "zip"
 backglassChecksum:
   - "f57b78558338ec5c0e9ae8b793377f84"
   - "FB0097C697F4B402BEFD736F6B9F2A68"
-fps: 55
+fps: 60
 coloredROMVPSId: "DNraALNUj8"
 coloredROMChecksum: "92B579B4C2975D5D1B5BF4E1E8C4B787"
 coloredROMNotes: "Download 'Cactus_Canyon_Ver_1_5_Final.pac'"

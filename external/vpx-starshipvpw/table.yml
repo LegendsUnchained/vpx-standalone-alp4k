@@ -4,7 +4,7 @@ pupFileUrl: >-
   https://vpuniverse.com/files/file/16710-starship-troopers-english-pup-pack/
 pupArchiveRoot: "startrp2"
 pupRequired: true
-fps: 52
+fps: 55
 mainNotes: "Starship Troopers VPinWorkshop edition. Enabled for PuP Pack."
 romChecksum: "AC756E2AB3643C1743B53EF6E51DFAFE"
 romVPSId: "CwAwf-gs"

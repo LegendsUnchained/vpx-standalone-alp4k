@@ -4,7 +4,7 @@ backglassArchiveFormat: "zip"
 backglassChecksum:
   - "a3e1af9f5ba44177357379583ea31397"
   - "20BD5EF4D37F0F6045631EA82C231216"
-fps: 60
+fps: 58
 coloredROMVPSId: "RPIsO7UnUu"
 coloredROMChecksum: "3492023CDD051898E24F89330CAD73D3"
 coloredROMNotes: "Download Version 2.1.0"

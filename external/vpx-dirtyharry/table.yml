@@ -4,7 +4,7 @@ backglassArchiveFormat: "zip"
 backglassChecksum:
   - "3fad26aa0637c07417ccf590409f22a9"
   - "75AF0F432A923CFA8BBAAE2331EE751B"
-fps: 45
+fps: 60
 romVPSId: "VWLHcMB7"
 romChecksum: "aa79bb455243345aea72a134de4f57cd"
 tableVPSId: "my2RZ_v_"
