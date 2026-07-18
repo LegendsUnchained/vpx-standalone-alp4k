@@ -11,7 +11,7 @@ Randomize
 
 
 
-Const PupScreen = 1	'Aprons  0=Off - 1= On - 2= On High Quality Slow PC 0 or 1
+Const PupScreen = 0	'Aprons  0=Off - 1= On - 2= On High Quality Slow PC 0 or 1
 
 
 '************************************************CHOOSE FPS***********************************************************************

@@ -1,18 +1,21 @@
 ---
-backglassVPSId: "15Jwb8cez_"
 backglassChecksum: "2F71C5DE2F72B680DAF8B5623E48F0B0"
 backglassNotes: "Download Last Action Hero (Data East 1993) full dmd.zip"
+backglassVPSId: "15Jwb8cez_"
+coloredROMChecksum:
+  - "b5ae8ac9adb9664f736c7fb4cc44f0b0"
+  - "568d324b21c61c5674123d0ea248eacf"
+coloredROMPin2DMD: true
+coloredROMVPSId: "agtzTH6R"
 fps: 60
-romVPSId: "pqzz0v2O"
 romChecksum: "7DA0660206EDF4D5BAB2320FD30D143A"
+romVPSId: "pqzz0v2O"
 tableVPSId: "OHcji-5r"
-tagline: >-
-  "Sir, are you a henchman?"   "No, I only go
-  as far as lackey. Anything else?"
+tagline: "'Sir, are you a henchman?'   'No, I only go as far as lackey. Anything else?'"
 testers:
   - "TechZombie"
   - "SilentKat"
   - "CoffeeAtJoes"
   - "OminousOsie"
-vpxVPSId: "jaSjAX0vTu"
 vpxChecksum: "DFAFEBBDF54DFF044E5C0BAC1FDACFA1"
+vpxVPSId: "jaSjAX0vTu"
