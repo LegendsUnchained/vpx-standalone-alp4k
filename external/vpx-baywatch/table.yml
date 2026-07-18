@@ -6,6 +6,7 @@ coloredROMPin2DMD: true
 coloredROMNotes: "Download 'pin2dmd_v.vni' and 'pin2dmd_v.pal'"
 coloredROMVPSId: "wuw5xsFr"
 fps: 60
+pupNSFW: true
 pupArchiveFormat: "zip"
 pupArchiveRoot: "baywatch"
 pupChecksum: "8E8CA8C78C59E099109502F588B74C31"
