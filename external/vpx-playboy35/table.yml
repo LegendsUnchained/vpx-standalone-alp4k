@@ -1,8 +1,5 @@
 ---
-backglassArchiveFormat: "rar"
-backglassChecksum:
-  - "A73315317129D7AF13DE8B479BFEC18B"
-  - "F103FDCD2300896FE9F63CB74F145594"
+backglassChecksum: "A73315317129D7AF13DE8B479BFEC18B"
 backglassVPSId: "74ZLVEt-KN"
 fps: 60
 romChecksum: "5A446C5F9D2C6619C84D9BBBBF4D02D9"
@@ -12,8 +9,5 @@ tableNotes: "Download v600"
 tableVPSId: "YYrA1tjB4i"
 testers:
   - "evilwraith"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "D53F3CB7157D9692A9CADBE56F0F6961"
-  - "233ED883A2A24B429D16BCEA25747478"
+vpxChecksum: "D53F3CB7157D9692A9CADBE56F0F6961"
 vpxVPSId: "xzLojRzc7O"

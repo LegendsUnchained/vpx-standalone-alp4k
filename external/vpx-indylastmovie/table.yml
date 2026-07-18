@@ -8,8 +8,5 @@ tagline: "Snakes. Why’d it have to be snakes?"
 testers:
   - "Silentkat"
 vpxVPSId: "I0ysaAqWSq"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "2939FA94010C503131DC79D9B6B36A5F"
-  - "484166EBB194D60AE0E489866CDAE3CA"
+vpxChecksum: "2939FA94010C503131DC79D9B6B36A5F"
 tableNotes: "Download version 3.0 (ignore .directb2s in zip)"

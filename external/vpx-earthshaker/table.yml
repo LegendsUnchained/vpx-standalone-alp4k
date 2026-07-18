@@ -1,10 +1,7 @@
 ---
 backglassVPSId: "DmmYx5LWbi"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "494783f5c5e5efce18aa1a5ff0ff15b4"
-  - "D7815E534B63168C9F6694C7F619D8E1"
-fps: 60
+backglassChecksum: "494783f5c5e5efce18aa1a5ff0ff15b4"
+fps: 58
 romVPSId: "iAxB54qv"
 romChecksum: "0854daf7ebd8d4591744a26968e5f9e6"
 tableVPSId: "HB-50MQb"
@@ -15,7 +12,4 @@ testers:
   - "OminousOsie"
   - "Wraith"
 vpxVPSId: "crFmm7IfsF"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "A8CBA655AEE3BDF1EDFFC9C5D75513AF"
-  - "538CF338AD74C81F0AD4734DC003BFCF"
+vpxChecksum: "A8CBA655AEE3BDF1EDFFC9C5D75513AF"

@@ -14,8 +14,5 @@ tableNameOverride: "Space Cadet, JP's - Galaxy Edition"
 testers:
   - "mrandromeda"
   - "n-i-x"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "1399D6064EF38CA23EBB44E22DDF52D4"
-  - "59559A3BFA0BCFD0CE1450B140325826"
+vpxChecksum: "1399D6064EF38CA23EBB44E22DDF52D4"
 vpxVPSId: "aHb-SNzjDs"

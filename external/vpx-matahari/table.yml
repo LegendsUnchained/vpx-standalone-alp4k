@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "Opn9fORWsf"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "fdfc646b05b2aa7192e78ef2d81a38b6"
-  - "98E054DACFE823BF989C0C7358B309AA"
+backglassChecksum: "fdfc646b05b2aa7192e78ef2d81a38b6"
 fps: 60
 romVPSId: "nVXGpSW4"
 romChecksum: "AD98A8CAB537EF07D05370549653AE1E"
@@ -16,7 +13,4 @@ testers:
   - "SilentKat"
   - "CoffeeAtJoes"
 vpxVPSId: "yQ0r4Lwj"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "091EDF1F4644579834E799177C87A18F"
-  - "10B865E08A713B232D4A0DF053CF592F"
+vpxChecksum: "091EDF1F4644579834E799177C87A18F"

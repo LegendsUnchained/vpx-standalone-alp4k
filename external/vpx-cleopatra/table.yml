@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "xNs1RD-E"
-backglassArchiveFormat: "rar"
-backglassChecksum:
-  - "963DBC5ABE37DA71D54FFFD8156D0221"
-  - "F189B908F1B0D48AFD18514F5A7BC4D5"
+backglassChecksum: "963DBC5ABE37DA71D54FFFD8156D0221"
 backglassNotes: "Download version 2.0"
 fps: 60
 romChecksum: "517EE749BFC5C2FF16C84A54375EBA4D"
@@ -18,7 +15,4 @@ testers:
   - "OminousOsie"
   - "evilwraith"
 vpxVPSId: "BfR8VwhE"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "0706BA2A21EADE9DD3572B39166D0F9B"
-  - "216EADA805ED5D9A370C41D0257531FE"
+vpxChecksum: "0706BA2A21EADE9DD3572B39166D0F9B"

@@ -1,10 +1,7 @@
 ---
 backglassBundled: true
 backglassVPSId: "fbr-tI8gHs"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "98064D12FF87A26610C8A81F85819BF7"
-  - "EC770BAF11531A15ADB90E4CD21FFE5E"
+backglassChecksum: "98064D12FF87A26610C8A81F85819BF7"
 backglassNotes: "Included in VPX zip"
 fps: 60
 mainNotes: "Press right on the control panel to load a ball from the hopper"
@@ -18,7 +15,4 @@ testers:
   - "OminousOsie"
   - "CoffeeAtJoes"
 vpxVPSId: "s393znjkK1"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "3289CFA2F8717A8451371ABD72AE816C"
-  - "EC770BAF11531A15ADB90E4CD21FFE5E"
+vpxChecksum: "3289CFA2F8717A8451371ABD72AE816C"

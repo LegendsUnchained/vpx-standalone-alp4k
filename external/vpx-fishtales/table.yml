@@ -1,10 +1,7 @@
 ---
 fps: 57
 backglassVPSId: "PwZqw3IxKI"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "7B270B3C56172B0B00CC1D9A545E2E40"
-  - "B631709FC38C6E38442F9425FCB413BA"
+backglassChecksum: "7B270B3C56172B0B00CC1D9A545E2E40"
 backglassNotes: "Download version 1.0"
 coloredROMVPSId: "ijwZ4BRv"
 coloredROMChecksum: "6574D9D0A954AF349F491F189628C4BA"
@@ -19,8 +16,5 @@ testers:
   - "Mox"
   - "OminousOsie"
 vpxVPSId: "9FuFBUxfy8"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "C4562DC0B3B9BA3C1BF8C9F0C726881C"
-  - "4A6BD298C622BD6F0AD39E6485859425"
+vpxChecksum: "C4562DC0B3B9BA3C1BF8C9F0C726881C"
 tableNotes: "Download version 1.1"

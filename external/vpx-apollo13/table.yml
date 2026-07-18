@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "9PF-mqeSsB"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "5B045F40C10DB567CCA7312C2DEC5BF2"
-  - "28A382DB28FDE655346701D06CBA2817"
+backglassChecksum: "5B045F40C10DB567CCA7312C2DEC5BF2"
 backglassNotes: "Download Version 3.0.0"
 coloredROMChecksum: "7608BC5FEB5AA8A597263EC41320EC2E"
 coloredROMVPSId: "FtzgAFNGY7"
@@ -19,8 +16,5 @@ testers:
   - "OminousOsie"
   - "evilwraith"
 vpxVPSId: "HbdKg_2Deu"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "B7BFABC407ACB7BB131336184E7B866F"
-  - "0DB3F228410A63513784170C8B4B8EA7"
+vpxChecksum: "B7BFABC407ACB7BB131336184E7B866F"
 tableNotes: "Download 'Apollo 13 (Sega 1995)_Bigus(MOD)1.2.vpx.zip'"

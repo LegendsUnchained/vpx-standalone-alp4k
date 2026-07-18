@@ -1,8 +1,5 @@
 ---
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "0EBE8352FAD899F29C9706A8062A897B"
-  - "1E34AC07BD38A29E7B87E647C61631F6"
+backglassChecksum: "0EBE8352FAD899F29C9706A8062A897B"
 backglassNotes: "Download Star Wars-The Bad Batch.zip"
 backglassVPSId: "ne_kL2Av_K"
 fps: 60

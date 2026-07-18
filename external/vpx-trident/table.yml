@@ -1,8 +1,5 @@
 ---
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "2434FD36898727D09B6383DE4416B197"
-  - "92767FA2243695985C10B4D3256D3C79"
+backglassChecksum: "2434FD36898727D09B6383DE4416B197"
 backglassNotes: "Download 'Trident (Stern 1979).zip'"
 backglassVPSId: "5nAyw5ura7"
 fps: 60
@@ -14,8 +11,5 @@ tableVPSId: "r5DTwPZy"
 tagline: "'OUTRAGEOUS!' - Aquaman"
 testers:
   - "Wraith"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "EDBDAB0AE0201D3AEB0256047D9D61D5"
-  - "5C11639C208E33B1EC37D8590234C7B1"
+vpxChecksum: "EDBDAB0AE0201D3AEB0256047D9D61D5"
 vpxVPSId: "nuYxSulXdo"

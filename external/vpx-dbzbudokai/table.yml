@@ -10,7 +10,4 @@ testers:
   - "evilwraith"
   - "OminousOsie"
 vpxVPSId: "ehHkc5K5aJ"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "D9E99FA53C6C094E6B502108B9A21569"
-  - "6BE095086EC6A923985629FA12C70C67"
+vpxChecksum: "D9E99FA53C6C094E6B502108B9A21569"

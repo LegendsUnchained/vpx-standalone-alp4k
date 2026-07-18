@@ -6,10 +6,7 @@ vpxChecksum: "BF3A3DD858F29EDA39EC111822F091E9"
 vpxVPSId: "Nvm6jNTSXu"
 backglassBundled: true
 backglassVPSId: "Nvm6jNTSXu"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "30DCDFE206ED88BAAF5353376947C03D"
-  - "29DF76C14E56BD27911EBFC01D220C63"
+backglassChecksum: "30DCDFE206ED88BAAF5353376947C03D"
 backglassNotes: >-
   Download 'Media Pack 1.3.3.zip' from VPX page and extract 
   'Dragon Ball Super Saiyan Edition_1.3.3.directb2s' file

@@ -1,4 +1,6 @@
 ---
+backglassVPSId: "tOkhRy1ZJK"
+backglassChecksum: "1AC5E66249F4D1E18086C031F7D8DE90"
 fps: 60
 coloredROMVPSId: "aBc9oYO2uq"
 coloredROMChecksum: "36592ecc21134c2247f5b36da85382a0"
@@ -17,7 +19,4 @@ testers:
   - "mrandromeda"
   - "OminousOsie"
 vpxVPSId: "d70mjMQg"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "BB008B6D495573824F366F14BB6713ED"
-  - "64CF942A1AB2294CD30F1B0813F5A598"
+vpxChecksum: "BB008B6D495573824F366F14BB6713ED"

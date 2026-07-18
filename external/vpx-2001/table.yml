@@ -13,8 +13,5 @@ tableVPSId: "0IDqTPkR_4"
 tagline: "'I'm afraid I can't do that, Dave...'"
 testers:
   - "The entire 4kp team"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "B3732C6C8E3566AF72CAA60ED9629646"
-  - "6188C5451A22F2D65B2415D33D0419AF"
+vpxChecksum: "B3732C6C8E3566AF72CAA60ED9629646"
 vpxVPSId: "iGEvF6towb"

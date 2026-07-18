@@ -1,8 +1,5 @@
 ---
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "141CE9C12AAC8ED5F36AD9A547AA4121"
-  - "36A16CC2E89465DA339F75CE3E65C7DC"
+backglassChecksum: "141CE9C12AAC8ED5F36AD9A547AA4121"
 backglassVPSId: "noFcDXGBg1"
 fps: 60
 tableNotes: "Download Diablo Pinball v600.zip and Diablo.UltraDMD.zip. Extract and move Diablo.UltraDMD to table root"
@@ -10,8 +7,5 @@ tableVPSId: "pfpSUvBN"
 tagline: "'Stay awhile and listen...'"
 testers:
   - "evilwraith"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "9826A7705E97DE163BD288162B704BA8"
-  - "EAC5BB9FA76AC6715FD220ED2C1C6EF8"
+vpxChecksum: "9826A7705E97DE163BD288162B704BA8"
 vpxVPSId: "W2O2IpMHYf"

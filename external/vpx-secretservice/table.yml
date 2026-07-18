@@ -1,8 +1,5 @@
 backglassVPSId: "PwqX_hEJj0"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "6539AE88DBB0803FB423DBB1376449C9"
-  - "04C7133F72D6E6A73C5732DC653FC951"
+backglassChecksum: "6539AE88DBB0803FB423DBB1376449C9"
 backglassNotes: "Download Secret Service (Data East 1988).zip"
 fps: 60
 romVPSId: "isjwMKkG"
@@ -15,8 +12,5 @@ testers:
   - "Dioskilos"
   - "CoffeeAtJoes"
 vpxVPSId: "IjRjkwv9Se"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "16123B2F5B22DBEBE9AD26C0588273EF"
-  - "AEE287B1EBDF3601E5A52D2500626EB5"
+vpxChecksum: "16123B2F5B22DBEBE9AD26C0588273EF"
 tableNotes: "Download version 1.1"

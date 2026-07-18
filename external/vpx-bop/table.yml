@@ -14,7 +14,4 @@ testers:
   - "Bla1ze"
   - "Boris"
 vpxVPSId: "V1dcVAchIZ"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "8f04921f5df40aa49463b46a61285c73"
-  - "115439E4A38ACF6B7BA7A7E01E4E4BEB"
+vpxChecksum: "8f04921f5df40aa49463b46a61285c73"

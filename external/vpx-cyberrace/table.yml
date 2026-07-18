@@ -1,8 +1,5 @@
 ---
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "d022f3a9e50e10ef686346875c641ec9"
-  - "4EEEC3857FC71D6AF1EF74C9A73332A6"
+backglassChecksum: "d022f3a9e50e10ef686346875c641ec9"
 backglassNotes: "Download version 1.0.0"
 backglassVPSId: "eDRYNQyIJq"
 fps: 40
@@ -11,9 +8,6 @@ tableVPSId: "KiwC0qVAB9"
 tagline: "'Choose your race rival'"
 testers:
   - "Curt"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "8706CEAF0C14DA19AEBFABC43B05BDA3"
-  - "3462A3D1B0C5A51ECA96638BA926E0DF"
+vpxChecksum: "8706CEAF0C14DA19AEBFABC43B05BDA3"
 vpxVPSId: "peImTeYd43"
 enabled: False

@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "K4ZCPFzu"
-backglassArchiveFormat: "rar"
-backglassChecksum:
-  - "0F972CEC601798448407EA44F84A6303"
-  - "501399DC32D15F0F114B626FF015817E"
+backglassChecksum: "0F972CEC601798448407EA44F84A6303"
 backglassNotes: "Download Victory_(Premier_1987)2scr.rar"
 fps: 60
 tableVPSId: "UsLxAHL3"
@@ -11,10 +8,7 @@ testers:
   - "mcap10"
   - "mrandromeda"
 vpxVPSId: "GAY3-_fB"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "32DEB719188FD73C7888CC90020E59CC"
-  - "DDB22A0F9511153533FBCE3AA239B4BB"
+vpxChecksum: "32DEB719188FD73C7888CC90020E59CC"
 romUrlOverride: "https://pinballnirvana.com/forums/resources/victory.2562/"
 romChecksum: "811678EFF1D36A36324AAF533EC2643E"
 romVersionOverride: "victory"

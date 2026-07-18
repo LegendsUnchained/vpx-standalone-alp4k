@@ -1,8 +1,5 @@
 ---
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "35BF8BEC93257AED617EFB68F5F53D9A"
-  - "49536495663BD8C2E8A0365784C4157A"
+backglassChecksum: "35BF8BEC93257AED617EFB68F5F53D9A"
 backglassNotes: "Download 'Gorgar (Williams 1979) 3k full dmd.zip'"
 backglassVPSId: "ZCesIvacOL"
 fps: 60
@@ -17,7 +14,4 @@ testers:
   - "CoffeeAtJoes"
   - "OminousOsie"
 vpxVPSId: "SkFz-Ux6-k"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "a37d54eafb6177e774b156dbb75182d9"
-  - "5777D8913ABFFD7BE5565FA8D7604613"
+vpxChecksum: "a37d54eafb6177e774b156dbb75182d9"

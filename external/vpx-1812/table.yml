@@ -1,16 +1,10 @@
 ---
 tableVPSId: "Iy9S5EqW"
 vpxVPSId: "I-xW52Yp"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "FDD0BBAB66574313C7C40EB0C01AC9D8"
-  - "B9BFCB9BF2BA77189DD15D6A7B0FEFF7"
+vpxChecksum: "FDD0BBAB66574313C7C40EB0C01AC9D8"
 tableNotes: "Download 'Class of 1812 (Gottlieb 1991)_Bigus(MOD)2.0.vpx.zip'"
 backglassVPSId: "slgsJEaJ"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "907a70a1378963f910cb2ff09f3b3796"
-  - "1CD343DCBDCAF007906A86756ABC824E"
+backglassChecksum: "907a70a1378963f910cb2ff09f3b3796"
 backglassNotes: "2088953353_Classof1812(Gottlieb1991).zip"
 romUrlOverride: "https://pinballnirvana.com/forums/resources/clas1812.1668"
 romVersionOverride: "clas1812"

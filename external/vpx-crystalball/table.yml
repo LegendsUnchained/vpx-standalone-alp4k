@@ -1,9 +1,6 @@
 ---
 backglassBundled: true
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "28cdbcf86d55805903b6015cab45c10e"
-  - "CE42703F838E830F34DD5A00EB44B02E"
+backglassChecksum: "28cdbcf86d55805903b6015cab45c10e"
 backglassNotes: "Download the B2S available with VPX"
 fps: 60
 tableNotes: "Download version 6.0.0"
@@ -11,8 +8,5 @@ tableVPSId: "H9itrq1vOS"
 tagline: "¡Final Partida!"
 testers:
   - "Curt"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "40ef4e8ef3781de50e2aa5fe8f7db2c8"
-  - "54DFBB154D9E3A506004BBCC4EFB033D"
+vpxChecksum: "40ef4e8ef3781de50e2aa5fe8f7db2c8"
 vpxVPSId: "XlkcKBd1vm"

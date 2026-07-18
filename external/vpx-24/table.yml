@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "_SWGA7jJeW"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "947426bdecec0938dd987dbc58125674"
-  - "1861E4E877E91563F69A90604537A66C"
+backglassChecksum: "947426bdecec0938dd987dbc58125674"
 backglassNotes: "Download 24 (Stern 2009).zip"
 coloredROMVPSId: "aIWgsQ7Po0"
 coloredROMChecksum: "1DE5904599E29E0FA52FE3FDD774F8B8"
@@ -19,7 +16,4 @@ testers:
   - "Bla1ze"
   - "OminousOsie"
 vpxVPSId: "6T98rAIp"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "4DC00F4F27F64EABC0E4AB2E07525B31"
-  - "335C7E1FE96B4A170AA0DC2499698752"
+vpxChecksum: "4DC00F4F27F64EABC0E4AB2E07525B31"

@@ -1,8 +1,5 @@
 ---
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "a1f72df571a56475a263275f0b5ab837"
-  - "48721E372187EF9AEB3BC7C42F8B89E7"
+backglassChecksum: "a1f72df571a56475a263275f0b5ab837"
 backglassNotes: "Bundled with VPX"
 backglassVPSId: "HlwBrgVRlU"
 backglassBundled: true
@@ -16,7 +13,4 @@ testers:
   - "Bla1ze"
   - "CoffeeAtJoes"
 vpxVPSId: "IPhDfXdVtv"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "11bcd0bf36f3ed1feffa577a9b60fd65"
-  - "48721E372187EF9AEB3BC7C42F8B89E7"
+vpxChecksum: "11bcd0bf36f3ed1feffa577a9b60fd65"

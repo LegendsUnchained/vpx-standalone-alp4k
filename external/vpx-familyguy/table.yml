@@ -10,7 +10,4 @@ testers:
   - "Bla1ze"
   - "Mar3nBu"
 vpxVPSId: "ktQX8dd3"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "EBF4541B8A156FE4BA9E81C4094E90EA"
-  - "4BAADF77B839E001FD4CD7DA3AEAE28F"
+vpxChecksum: "EBF4541B8A156FE4BA9E81C4094E90EA"

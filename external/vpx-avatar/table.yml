@@ -22,7 +22,4 @@ testers:
   - "mrandromeda"
   - "OminousOsie"
 vpxVPSId: "_KkJPEqB"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "C0A68A9BC49A2A77239FF89CE81C7FC6"
-  - "A2837F377C9420C33BA94F7C3CB80B99"
+vpxChecksum: "C0A68A9BC49A2A77239FF89CE81C7FC6"

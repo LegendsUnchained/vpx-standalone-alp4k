@@ -1,8 +1,5 @@
 ---
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "4B59B5A474635149AE3993C9FBD864EA"
-  - "35BE2DB0E7AE8E9A9E76E3DD1E56564F"
+backglassChecksum: "4B59B5A474635149AE3993C9FBD864EA"
 backglassNotes: "Download 'Mary Shelley's Frankenstein (Sega 1995).zip'"
 backglassVPSId: "u-_4eiJxPS"
 coloredROMChecksum: "d7b3920406a5953af97df3a6470f1d3a"

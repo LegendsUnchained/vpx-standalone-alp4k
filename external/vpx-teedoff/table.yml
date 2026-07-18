@@ -1,8 +1,5 @@
 ---
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "180B0AAE665C622552AFCFA7102BD41B"
-  - "B85D18CD6389C03B87FA93F05FDD6C90"
+backglassChecksum: "180B0AAE665C622552AFCFA7102BD41B"
 backglassVPSId: "aN66t62--W"
 coloredROMChecksum: "93D6E7717DF6608BAE3F6AD0B28E1F64"
 coloredROMNotes: "Download and extract 'GLaltcolor.7z'. Use file in 'teedoff3'"
@@ -17,8 +14,5 @@ tableVPSId: "C_hjfS6C"
 tagline: "'Licensed to kill gophers by the government of the United Nations. A man, free to kill gophers at will.'"
 testers:
   - "evilwraith"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "9220B8EAE601E79C2B9106CA55F90079"
-  - "B13F277BBB737823B0684A93BEE7A0DE"
+vpxChecksum: "9220B8EAE601E79C2B9106CA55F90079"
 vpxVPSId: "boSM_rZ9Or"

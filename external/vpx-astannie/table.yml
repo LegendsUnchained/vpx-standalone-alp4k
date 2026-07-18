@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "b60z5C7gXE"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "0FDCE59809F11BC593A3FFC3034F4ED4"
-  - "A37EC07511490A69504910723DB45958"
+backglassChecksum: "0FDCE59809F11BC593A3FFC3034F4ED4"
 fps: 60
 tableVPSId: "nky-bYGY"
 tagline: "She knows when to hold 'em... knows when to fold 'em..."

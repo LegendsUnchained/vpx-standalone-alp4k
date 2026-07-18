@@ -17,8 +17,5 @@ tableVPSId: "wasB0RRz"
 tagline: "Brains."
 testers:
   - "Wraith"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "4191A4DD5735D7F96C0C3171C9F2444D"
-  - "B2B340B7EA96B782CB8237D40A8FD030"
+vpxChecksum: "4191A4DD5735D7F96C0C3171C9F2444D"
 vpxVPSId: "UjHFQ8iA"

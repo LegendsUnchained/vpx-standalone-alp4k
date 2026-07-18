@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "iytfp4df0Y"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "B538086E94E72178680868C05C2C3681"
-  - "60E922BA0BAC3FD5C3C592EB56A61AA7"
+backglassChecksum: "B538086E94E72178680868C05C2C3681"
 backglassNotes: "Download Star Wars (Data East 1992) full dmd.zip"
 coloredROMChecksum: 
   - "49174DA28B175F3519CA51048692B028"
@@ -27,7 +24,4 @@ testers:
   - "Boris"
   - "OminousOsie"
 vpxVPSId: "tgFo6ils"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "0FB04C0F6B624DEB082DB91971C8752C"
-  - "D29E4AC62AA102EEE7935DC8AD294243"
+vpxChecksum: "0FB04C0F6B624DEB082DB91971C8752C"

@@ -16,8 +16,5 @@ testers:
   - "Silentkat"
   - "evilwraith"
   - "Mox"
-vpxArchiveFormat: "rar"
-vpxChecksum:
-  - "0fec162ea73c233c1a1f746ffe06cb89"
-  - "5FF2D75B16D0E4234CCE72D53C5B9CE8"
+vpxChecksum: "0fec162ea73c233c1a1f746ffe06cb89"
 vpxVPSId: "BE5Ntvix1W"

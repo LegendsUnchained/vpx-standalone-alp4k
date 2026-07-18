@@ -12,8 +12,5 @@ tableVPSId: "_B0oL91xUo"
 tagline: "Don't Trust Anyone, Don't Love Anyone"
 testers:
   - "Silentkat"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "848d31fd6efe022ca4e179b1a5689cbe"
-  - "AE7CB64B7A62C2EE321DB23D0FE671DC"
+vpxChecksum: "848d31fd6efe022ca4e179b1a5689cbe"
 vpxVPSId: "WUQkJu9X5Q"

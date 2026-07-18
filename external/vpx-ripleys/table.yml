@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "z3tmoQbcUo"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "10546D619D78B39DFAD8A3A0B681B840"
-  - "8A714E85ABB402828CEF4C407BEA0B07"
+backglassChecksum: "10546D619D78B39DFAD8A3A0B681B840"
 backglassNotes: "Download 'Ripley's Believe It Or Not (Stern 2004).zip'"
 coloredROMChecksum: "5A59A2305722E9862D4A2E113F459EB2"
 coloredROMNotes: ""
@@ -21,7 +18,4 @@ testers:
   - "Kaoticbpr"
   - "OminousOsie"
 vpxVPSId: "K9My93lAbN"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "A68613375E5A7F5366FF641A5960F103"
-  - "E5EEB90343A2E3BEED73F0C10B28E860"
+vpxChecksum: "A68613375E5A7F5366FF641A5960F103"

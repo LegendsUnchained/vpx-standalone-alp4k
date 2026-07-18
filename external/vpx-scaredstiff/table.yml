@@ -1,8 +1,5 @@
 ---
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "1D3362C0A007F7EF919DB67FA000B637"
-  - "1169D374123AC4E174135C6D8C599B79"
+backglassChecksum: "1D3362C0A007F7EF919DB67FA000B637"
 backglassNotes: "Download Scared Stiff (Bally 1996).zip"
 backglassVPSId: "TKLkMxeygg"
 coloredROMChecksum: "911F0B56898C7972A9C8590EFD286C33"
@@ -19,8 +16,5 @@ testers:
   - "Bla1ze"
   - "Sscorpio"
   - "CoffeeAtJoes"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "7c832b732c25bd96457aed1923faad75"
-  - "6B9385BEAB155B282E73C55B4660B40B"
+vpxChecksum: "7c832b732c25bd96457aed1923faad75"
 vpxVPSId: "VfopIX1N"

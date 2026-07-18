@@ -12,8 +12,5 @@ tagline: "'Don't make me angry. You won't like me when I'm angry.'"
 testers:
   - "Wraith"
   - "pointdablame"
-vpxArchiveFormat: "rar"
-vpxChecksum:
-  - "3C554326479202F39C30760AE3A846D5"
-  - "5474FBB21E18B9BC85850659730F6DE8"
+vpxChecksum: "3C554326479202F39C30760AE3A846D5"
 vpxVPSId: "bBFpBE0jtM"

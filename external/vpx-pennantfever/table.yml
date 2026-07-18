@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "prnFmYEK8-"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "04cf395574d9832772c712282207f57a"
-  - "29785AF5A8EC90E7DC97A09A52126BFE"
+backglassChecksum: "04cf395574d9832772c712282207f57a"
 backglassAuthorsOverride:
   - "CoffeeAtJoes"
 backglassNotes: "Download version 1.0"
@@ -19,8 +16,5 @@ testers:
   - "CoffeeAtJoes"
   - "OminousOsie"
 vpxVPSId: "R1GOpnk4"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "9559f3acfb5f56eab7e83944ba42a031"
-  - "CEEAFC24CFB97FCFB361843CA6D42816"
+vpxChecksum: "9559f3acfb5f56eab7e83944ba42a031"
 tableNotes: "Download version 1.0"

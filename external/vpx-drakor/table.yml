@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "m3d930Sx"
-backglassArchiveFormat: "rar"
-backglassChecksum:
-  - "ca02f6b6dfb3b55ffb7ac9be36ff432e"
-  - "9CF3AFC963692430A720F63F7926EC2A"
+backglassChecksum: "ca02f6b6dfb3b55ffb7ac9be36ff432e"
 backglassNotes: "Download Version 2.0"
 fps: 60
 romVPSId: "9UqeCQ1V"
@@ -17,8 +14,5 @@ testers:
   - "OminousOsie"
   - "CoffeeAtJoes"
 vpxVPSId: "YkGaSy1Y"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "F0F8E6D5E074A95785202B1EC21606A3"
-  - "0F24F89C9ED63ABC6046C9EDAB2ABF20"
+vpxChecksum: "F0F8E6D5E074A95785202B1EC21606A3"
 tableNotes: "Download 'v600_VPX8.zip'"

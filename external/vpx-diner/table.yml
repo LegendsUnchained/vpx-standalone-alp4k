@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "w7_rYKRX"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "17a8e4b8980db6302ae83901c9f77c17"
-  - "850824AF21E5E80A192E21AFEC90B865"
+backglassChecksum: "17a8e4b8980db6302ae83901c9f77c17"
 backglassNotes: "Download 'Diner_B2S_2_scr.zip'"
 fps: 60
 romVPSId: "4vpPLYhK"
@@ -16,7 +13,4 @@ testers:
   - "mcap"
   - "OminousOsie"
 vpxVPSId: "9-YJeZ-RkH"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "9e35cec2781eb05b5da3b43e54a8b80a"
-  - "3BAA1CE5D831CFF35E039C0E1EF07E8C"
+vpxChecksum: "9e35cec2781eb05b5da3b43e54a8b80a"

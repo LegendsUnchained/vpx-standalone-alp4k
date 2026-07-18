@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "Gl-EVBjkA5"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "0BB47FC236BC581AC01C84877A7ACD72"
-  - "B1E7ACB9E5D60F61C697E793A79AE957"
+backglassChecksum: "0BB47FC236BC581AC01C84877A7ACD72"
 backglassNotes: "Download version 1.0.0"
 coloredROMChecksum: "17A99C6CA5E3EC828521C1BBD6DAD7D3"
 coloredROMNotes: "Download and extract 'GLaltcolor.7z'. Use file in 'freddy'"
@@ -20,7 +17,4 @@ testers:
   - "Bla1ze"
   - "mcap"
 vpxVPSId: "4diBoDyZ"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "5CEEBBE07F02DD5FEB0C8115ECD694BA"
-  - "0492A0CAD76EEDC8B25525FD04674319"
+vpxChecksum: "5CEEBBE07F02DD5FEB0C8115ECD694BA"

@@ -1,10 +1,7 @@
 ---
 backglassBundled: true
 backglassVPSId: "NZXXtTMgoJ"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "0C6011FCB50129F9F5E06BEC9A0929CE"
-  - "6E92FA3E2A5277AF26BE14959CD111E7"
+backglassChecksum: "0C6011FCB50129F9F5E06BEC9A0929CE"
 backglassNotes: "Download 'Ace High (Gottlieb 1957) JP_VPX8.directb2s.zip'"
 fps: 60
 mainNotes: "Press right on the control panel to load a ball from the hopper"
@@ -16,7 +13,4 @@ testers:
   - "OminousOsie"
   - "pointdablame"
 vpxVPSId: "TOF-LubuVs"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "C1B96608006BD4AF8CD68B2BEB7F2A61"
-  - "7EC639A7298EA30337961572206408E1"
+vpxChecksum: "C1B96608006BD4AF8CD68B2BEB7F2A61"

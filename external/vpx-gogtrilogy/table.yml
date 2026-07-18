@@ -9,7 +9,4 @@ testers:
   - "kaoticBPR"
   - "Mox"
 vpxVPSId: "_3ZHbzlbuv"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "61C6712A91D03CB8555CD43E48D01CE9"
-  - "C653964D5B72F68E778CFDC6198A0E71"
+vpxChecksum: "61C6712A91D03CB8555CD43E48D01CE9"

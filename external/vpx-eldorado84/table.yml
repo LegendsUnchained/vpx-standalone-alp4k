@@ -1,16 +1,10 @@
 ---
 tableVPSId: "hCFbHPQd"
 vpxVPSId: "87kGZfZY"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "a8a4e2e5dfed8452b1909b3fa889076d"
-  - "A0EE294651D1132D52D80AD1EDE6EBD3"
+vpxChecksum: "a8a4e2e5dfed8452b1909b3fa889076d"
 tableNotes: "El Dorado City of Gold (Gottlieb 1984).zip"
 backglassVPSId: "gbheO0bS"
-backglassArchiveFormat: "rar"
-backglassChecksum:
-  - "097fd8823b16c3d3bf5932d78ab3dbc4"
-  - "3F9F03B121D18BC52111EE7CF12D8DC4"
+backglassChecksum: "097fd8823b16c3d3bf5932d78ab3dbc4"
 backglassNotes: "El Dorado City of Gold (Premier 1984).rar"
 romUrlOverride: "https://pinballnirvana.com/forums/resources/eldorado.1766/"
 romVersionOverride: "eldorado"

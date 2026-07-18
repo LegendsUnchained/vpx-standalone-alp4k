@@ -1,8 +1,5 @@
 ---
-backglassArchiveFormat: "rar"
-backglassChecksum:
-  - "8C79E2E9C46881E89AB8DD75BB5ABB59"
-  - "3CFB0E5E891C489A00F63720551A9E4E"
+backglassChecksum: "8C79E2E9C46881E89AB8DD75BB5ABB59"
 backglassVPSId: "iflmZkYG"
 fps: 60
 mainNotes: "It's meant to look like a diorama, so the perspective is weird in a cab."

@@ -17904,8 +17904,7 @@ Sub tmrStats_Timer()
 			txtNames(3)=HighScoreName(4):txtScores(3)=HighScore(4)
 		Elseif tmrStats_idx=2 then 
 '			tmrStats_increment=0.75*4
-			tmrStats.Interval=21		' same scroll speed as 0.75/7ms, 1/3 the script ticks
-			tmrStats_increment=2.25
+			tmrStats.Interval=7
 			rowCount=2.5
 			txtNames(0)=HighScoreName(3):txtScores(0)=HighScore(3)
 			txtNames(1)=HighScoreName(4):txtScores(1)=HighScore(4)
@@ -17914,8 +17913,7 @@ Sub tmrStats_Timer()
 			txtNames(4)=StatName(tmrStats2_idx+2):txtScores(4)=StatScore(tmrStats2_idx+2)
 		Elseif tmrStats_idx=12 then 		' Show last Maiden one
 			rowCount=4
-			tmrStats.Interval=21		' same scroll speed as 0.75/7ms, 1/3 the script ticks
-			tmrStats_increment=2.25
+			tmrStats.Interval=7
 			txtNames(0)=StatName(tmrStats2_idx):txtScores(0)=StatScore(tmrStats2_idx)
 			txtNames(1)=StatName(tmrStats2_idx+1):txtScores(1)=StatScore(tmrStats2_idx+1)
 			txtNames(2)=StatName(tmrStats2_idx+2):txtScores(2)=StatScore(tmrStats2_idx+2)
@@ -17924,8 +17922,7 @@ Sub tmrStats_Timer()
 			txtNames(5)="":txtScores(5)=""
 		Else
 			rowCount=3
-			tmrStats.Interval=21		' same scroll speed as 0.75/7ms, 1/3 the script ticks
-			tmrStats_increment=2.25
+			tmrStats.Interval=7
 			txtNames(0)=StatName(tmrStats2_idx):txtScores(0)=StatScore(tmrStats2_idx)
 			txtNames(1)=StatName(tmrStats2_idx+1):txtScores(1)=StatScore(tmrStats2_idx+1)
 			txtNames(2)=StatName(tmrStats2_idx+2):txtScores(2)=StatScore(tmrStats2_idx+2)

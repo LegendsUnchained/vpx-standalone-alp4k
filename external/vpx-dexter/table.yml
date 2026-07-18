@@ -1,10 +1,7 @@
 ---
 backglassBundled: true
 backglassVPSId: "t0ENUlSOzX"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "647D36CF569FC74C0C900024A7E66CAB"
-  - "70BB24DAEEC105144A26D52CCE71B0C2"
+backglassChecksum: "647D36CF569FC74C0C900024A7E66CAB"
 backglassNotes: "Included in VPX Download"
 fps: 60
 romUrlOverride: "https://pinballnirvana.com/forums/resources/dvlsdre.1744/"
@@ -21,7 +18,4 @@ testers:
   - "OminousOsie"
   - "CoffeeAtJoes"
 vpxVPSId: "X9el-XgPFm"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "7C1B9F129A6DFA12D540E8F591541FF3"
-  - "70BB24DAEEC105144A26D52CCE71B0C2"
+vpxChecksum: "7C1B9F129A6DFA12D540E8F591541FF3"

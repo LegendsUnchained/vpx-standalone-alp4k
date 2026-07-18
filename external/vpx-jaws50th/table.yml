@@ -1,8 +1,5 @@
 ---
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "2FBC05BEA381AFD3104629A385362267"
-  - "73DF92BBA9DDDFC688CF948923718D32"
+backglassChecksum: "2FBC05BEA381AFD3104629A385362267"
 backglassNotes: "Do not use the one bundled with the table"
 backglassVPSId: "hMQ8cVN0K9"
 fps: 55
@@ -11,8 +8,5 @@ tableVPSId: "iGKrUAk0Pi"
 tagline: "'Just when you thought it was safe...'"
 testers:
   - "evilwraith"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "4AA048FAE267C79FDD66EC94BB5176B9"
-  - "68FDEB4B3FBD57348D11F6112D79469A"
+vpxChecksum: "4AA048FAE267C79FDD66EC94BB5176B9"
 vpxVPSId: "DJwGB6g1ra"

@@ -1,10 +1,7 @@
 ---
 backglassVPSId: "sA8BNXIhOL"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "f57b78558338ec5c0e9ae8b793377f84"
-  - "FB0097C697F4B402BEFD736F6B9F2A68"
-fps: 60
+backglassChecksum: "f57b78558338ec5c0e9ae8b793377f84"
+fps: 55
 coloredROMVPSId: "DNraALNUj8"
 coloredROMChecksum: "92B579B4C2975D5D1B5BF4E1E8C4B787"
 coloredROMNotes: "Download 'Cactus_Canyon_Ver_1_5_Final.pac'"
@@ -17,10 +14,7 @@ testers:
   - "OminousOsie"
   - "CoffeeAtJoes"
 vpxVPSId: "Z7qrllPW"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "1E7FF492987F69A180810304F0E9A068"
-  - "A1758BD780E246C9768606A1BE1C6B62"
+vpxChecksum: "1E7FF492987F69A180810304F0E9A068"
 altSoundVPSId: "uh9-lEk7"
 altSoundChecksum: "c4d6e709ef159268fd21692b86ec3f52"
 altSoundArchiveRoot: "cc_13"

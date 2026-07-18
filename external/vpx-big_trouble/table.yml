@@ -13,8 +13,5 @@ testers:
   - "OminousOsie"
   - "kingargyle"
 vpxVPSId: "xxxNFKri-k"
-vpxArchiveFormat: "rar"
-vpxChecksum:
-  - "AD4BAE49CE29B9321B048606A0DF1AE5"
-  - "81D6B30EE17DCC10A43D1ECB1C6FFB11"
+vpxChecksum: "AD4BAE49CE29B9321B048606A0DF1AE5"
 tableNotes: "Download 'Big Trouble 1.8 DOF for puppack.rar'"

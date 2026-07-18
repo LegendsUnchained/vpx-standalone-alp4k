@@ -1,9 +1,6 @@
 ---
 backglassBundled: true
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "F21C3821ED8117C81D186883A1656214"
-  - "ABB06F9E5BAAA0105213EB45FC1BB7D9"
+backglassChecksum: "F21C3821ED8117C81D186883A1656214"
 backglassNotes: "extract from Knightrider.zip"
 fps: 60
 tableVPSId: "S1vj0FjT"

@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "fx1kFVe7Be"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "8417e975fab9300a2217c635ff1fd3f4"
-  - "69A713B86BB244E3D1F674D51BD2C47D"
+backglassChecksum: "8417e975fab9300a2217c635ff1fd3f4"
 backglassNotes: "Download version 1.0.1"
 coloredROMChecksum: "3353C567E4C99191C352D75ED8C9464F"
 coloredROMNotes: "Download 'Starship_Troopers_JPAJMO.pac'"

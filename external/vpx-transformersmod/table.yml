@@ -16,7 +16,4 @@ tableNameOverride: "Transformers (Pro) [Marcade Mod]"
 testers:
   - "Bla1ze"
 vpxVPSId: "zKW4eroF"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "3C13D0A8BF315CE6913A1FB1E02B4AD2"
-  - "1ED1BCB6FB67032CBD531531D944F430"
+vpxChecksum: "3C13D0A8BF315CE6913A1FB1E02B4AD2"

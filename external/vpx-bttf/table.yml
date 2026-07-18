@@ -1,19 +1,13 @@
 ---
 tableVPSId: "43ma3WQK"
 vpxVPSId: "nskyoXPp"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "8b17b3f5c24e74d6f980e57cbd9a6055"
-  - "89B4D98EE7F836A5DA1E34B8A3375291"
+vpxChecksum: "8b17b3f5c24e74d6f980e57cbd9a6055"
 tableNotes: "'Download Back To The Future..._Bigus(MOD)2.3.vpx.zip'"
 coloredROMChecksum: "55477D67645F9647755E65392B2186C6"
 coloredROMNotes: ""
 coloredROMVPSId: "UAXbLu0rGk"
 backglassVPSId: "Ew-EiIMDmw"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "25E03722A56E6F3707A0FA989A184977"
-  - "4599BCE9F709242F4BA1FB27D8086C4E"
+backglassChecksum: "25E03722A56E6F3707A0FA989A184977"
 backglassNotes: "Download 'Back To The Future (Data East 1990) color full dmd.zip'"
 fps: 50
 romVPSId: "kfX9FwKX"

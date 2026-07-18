@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "tBQwi-1k1g"
-backglassArchiveFormat: "rar"
-backglassChecksum:
-  - "2AE9CA443B95F4BE421918AEDDB9D4F0"
-  - "9EEDBB73D4EC4B73271E9DD9C2B54F6F"
+backglassChecksum: "2AE9CA443B95F4BE421918AEDDB9D4F0"
 backglassNotes: "Download Gold Wings (Gottlieb 1986).rar"
 fps: 60
 romUrlOverride: "https://pinballnirvana.com/forums/resources/goldwing.1883/"
@@ -17,8 +14,5 @@ testers:
   - "CoffeeAtJoes"
   - "kaoticBPR"
 vpxVPSId: "eIzj9aFm1H"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "7FF1EB65AA7B21EC657AD32731BF2521"
-  - "5F219EBEE3A37359F4DFFEA5A64999B7"
+vpxChecksum: "7FF1EB65AA7B21EC657AD32731BF2521"
 vpxNotes: "Download Gold Wings (Gottlieb 1986)_Bigus(MOD) 1.1"

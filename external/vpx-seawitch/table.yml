@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "tDAM7jAu"
-backglassArchiveFormat: "rar"
-backglassChecksum:
-  - "1104d5ed2c1620f4e114bca77938e577"
-  - "561B7BFFDD7781BC99BFA5A0C7283CEA"
+backglassChecksum: "1104d5ed2c1620f4e114bca77938e577"
 backglassNotes: "Version: 2.0"
 fps: 60
 romVPSId: "y-qgYEy-"

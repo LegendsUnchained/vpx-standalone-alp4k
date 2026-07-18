@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "3l0Zvt8R__"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "5977d1f16967aa539e5dd3bc5c18ead0"
-  - "2FF82E99745AE99BDE91014D433BD3BA"
+backglassChecksum: "5977d1f16967aa539e5dd3bc5c18ead0"
 backglassNotes: "Download - Centaur (Bally 1981).zip"
 fps: 60
 romVPSId: "ayWJ44_J"
@@ -17,7 +14,4 @@ testers:
   - "Boris"
   - "OminousOsie"
 vpxVPSId: "jafdLbK1"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "8ea5708c07736287d23766f39a51ade6"
-  - "17635DA84A9B3336CCF8D3563D94AFDA"
+vpxChecksum: "8ea5708c07736287d23766f39a51ade6"

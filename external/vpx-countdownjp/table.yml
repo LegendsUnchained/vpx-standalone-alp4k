@@ -1,16 +1,10 @@
 ---
 tableVPSId: "iaC_sSXn"
 vpxVPSId: "Y2PQohyT"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "3230F5FDC49913C971228172EA5EF270"
-  - "F45FAF51CDE8BBCE5AB5FAE8F24C7E81"
+vpxChecksum: "3230F5FDC49913C971228172EA5EF270"
 tableNotes: "Count-Down (Gottlieb 1978) v600.zip"
 backglassVPSId: "HmVKnkoHym"
-backglassArchiveFormat: "rar"
-backglassChecksum:
-  - "721fee8ed63b715c5f669178b3bbbd7f"
-  - "DDA1140555217EF6E2F78906B02AE924"
+backglassChecksum: "721fee8ed63b715c5f669178b3bbbd7f"
 backglassNotes: "Count-Down (Gottlieb 1978).rar"
 romUrlOverride: "https://pinballnirvana.com/forums/resources/new-fixed-roms-for-vpinmame-v3-6-0-963-beta.8379/"
 romVersionOverride: "countdwn"

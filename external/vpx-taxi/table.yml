@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "tFiUMiEW2J"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "4A92D1C01F03695BA590C5D5FFD933B3"
-  - "45F832F68AB876EE9966FFB73202665F"
+backglassChecksum: "4A92D1C01F03695BA590C5D5FFD933B3"
 backglassNotes: "Download 'Taxi (Williams 1988) full dmd.zip'"
 fps: 55
 romChecksum: "D0A883F5671E868620A6640514E3C8E4"
@@ -17,7 +14,4 @@ testers:
   - "OminousOsie"
   - "CoffeeAtJoes"
 vpxVPSId: "D3o3q9sKP1"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "36b86feeb9662549d3bbc7c86b235354"
-  - "35B45EF66059F3132E2B29334D4B7AA3"
+vpxChecksum: "36b86feeb9662549d3bbc7c86b235354"

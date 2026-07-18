@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "Saxn4nV9"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "A76A659BBE590DCDB2006D01A17611A3"
-  - "C0CEA92783DBB54FD7FDE32AEF4C34F1"
+backglassChecksum: "A76A659BBE590DCDB2006D01A17611A3"
 backglassNotes: "Download directb2s.zip"
 fps: 60
 tableVPSId: "HhMnyw53"
@@ -13,8 +10,5 @@ testers:
   - "OminousOsie"
   - "CoffeeAtJoes"
 vpxVPSId: "Saxn4nV9"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "C95CD5EBA529FBD8CBB6686457839678"
-  - "AA1FB6FC58B8980352A528EF7E4E2FC1"
+vpxChecksum: "C95CD5EBA529FBD8CBB6686457839678"
 tableNotes: "Download '123(Talleres de Llobregat 1973) v601.zip'"

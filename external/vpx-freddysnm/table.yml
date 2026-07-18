@@ -11,8 +11,5 @@ tableVPSId: "HcZ8zI6Ua6"
 tagline: "'One, Two, Freddy's coming for you...'"
 testers:
   - "Wraith"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "22009435F91F97B5BFD480E38C1634D7"
-  - "16E02484017C9BA954BAB60FEDD66981"
+vpxChecksum: "22009435F91F97B5BFD480E38C1634D7"
 vpxVPSId: "SY9OhbCQXm"

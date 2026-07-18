@@ -1,9 +1,6 @@
 ---
 backglassBundled: true
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "40C4BAEFC422C340EA52F66A638607C5"
-  - "C396CDA4360F3804E14F447109AEC526"
+backglassChecksum: "40C4BAEFC422C340EA52F66A638607C5"
 backglassNotes: "Download 'Playboy (Bally 1978) B2S.zip', use 'Playboy (Bally 1978) 4.0.directB2S'"
 fps: 60
 romChecksum: "90810C525E3B78EA87EBBFA7D54228C1"
@@ -15,8 +12,5 @@ tableVPSId: "4TmYoWjO"
 testers:
   - "Wraith"
   - "CoffeeAtJoes"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "828BA312735FC19DF9CCAE6551FCFC45"
-  - "6BC40360F6B5FF42A5570793635C8737"
+vpxChecksum: "828BA312735FC19DF9CCAE6551FCFC45"
 vpxVPSId: "QTmGXiYi"

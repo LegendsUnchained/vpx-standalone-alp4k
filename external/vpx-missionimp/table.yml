@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "IzNfqj-xZn"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "db98ac197e0378967ab7a23341bbbe6a"
-  - "A57A89CCD309C673405799F4DAD97639"
+backglassChecksum: "db98ac197e0378967ab7a23341bbbe6a"
 backglassNotes: "Included with table download"
 backglassBundled: true
 fps: 60
@@ -17,8 +14,5 @@ testers:
   - "Sscorpio"
   - "Bla1ze"
 vpxVPSId: "IzNfqj-xZn"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "f920f421782310a701f21d5e921e34ce"
-  - "A57A89CCD309C673405799F4DAD97639"
+vpxChecksum: "f920f421782310a701f21d5e921e34ce"
 tableNotes: "Download Version 2.6"

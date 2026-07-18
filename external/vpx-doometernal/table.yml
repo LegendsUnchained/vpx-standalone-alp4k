@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "D0lRI3trjQ"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "6C727215F758CF6DD21DD9188DABF8FA"
-  - "50F65933E5E1691A2307596A6F1CFF03"
+backglassChecksum: "6C727215F758CF6DD21DD9188DABF8FA"
 backglassNotes: "Download v1.0.0"
 fps: 60
 tableNotes: "Download v1.00"

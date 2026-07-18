@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "7AthvIhxFj"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "6576310D897011B1BF5B45256EB68345"
-  - "393FB0C8B3E69E1C58D8BD05334BB8E9"
+backglassChecksum: "6576310D897011B1BF5B45256EB68345"
 backglassNotes: "Download - Street Fighter II (Gottlieb 1993).zip"
 fps: 60
 coloredROMVPSId: "_R_pi1tqAi"
@@ -19,8 +16,5 @@ testers:
   - "mcap"
   - "evilwraith"
 vpxVPSId: "ChQLTP9w"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "6AEA9505968CD41F128205C7C4638326"
-  - "75004AD49D119B82725B857F35E2A87E"
+vpxChecksum: "6AEA9505968CD41F128205C7C4638326"
 tableNotes: "Version 6.0.0"

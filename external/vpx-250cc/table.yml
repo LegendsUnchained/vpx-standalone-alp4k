@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "Wa_52tLV"
-backglassArchiveFormat: "rar"
-backglassChecksum:
-  - "1780AFBF576A59ECC035104B1C4ECE35"
-  - "DBD0A0E13BA1634E4DD67A50D4EC0D23"
+backglassChecksum: "1780AFBF576A59ECC035104B1C4ECE35"
 backglassNotes: "Download version 1.0"
 fps: 60
 romVPSId: "AYg8Ljzs"
@@ -19,7 +16,4 @@ testers:
   - "OminousOsie"
   - "pointdablame"
 vpxVPSId: "Gw5kOfmC"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "83C1D8B781FAD7A4EAFE70CFC3EC5F3C"
-  - "12487A8ED874BFEE8738B87F1BE8818E"
+vpxChecksum: "83C1D8B781FAD7A4EAFE70CFC3EC5F3C"

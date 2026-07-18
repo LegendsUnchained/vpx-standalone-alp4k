@@ -1,16 +1,10 @@
 ---
 tableVPSId: "Y-_IF4hA"
 vpxVPSId: "5BP4FGZI"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "EC9723A84FAB5D96D13CD5420042C908"
-  - "4CF83437DCA97AB388C8611E5B42F42A"
+vpxChecksum: "EC9723A84FAB5D96D13CD5420042C908"
 tableNotes: "Underwater (Recel 1976) v600.zip"
 backglassVPSId: "Vf6iHhO5"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "d258cbb60f2a0b1dfd4d39b1079a14d6"
-  - "1B572138903446EEEA143CC87E2B6B2D"
+backglassChecksum: "d258cbb60f2a0b1dfd4d39b1079a14d6"
 backglassNotes: "Underwater (Recel 1976) db2s.zip"
 #romUrlOverride: ""
 #romVersionOverride: ""

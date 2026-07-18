@@ -1,10 +1,7 @@
 ---
 backglassBundled: true
 backglassVPSId: "aE0MrrW6W3"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "ECE0EE9060A11417B1A515E9603589FF"
-  - "34841D781FF0670BC47E2BEE36C9E70C"
+backglassChecksum: "ECE0EE9060A11417B1A515E9603589FF"
 backglassNotes: "Download 'Alice in Wonderland (Gottlieb 1948).directb2s.zip'"
 fps: 60
 mainNotes: "Press right on the control panel to load a ball from the hopper"
@@ -17,7 +14,4 @@ testers:
   - "CoffeeAtJoes"
   - "PointDaBlame"
 vpxVPSId: "EQParLHs3z"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "774D400223C623C40B66FBC6DECF65E7"
-  - "A135CC755B369D603C5FE11D0DB8D070"
+vpxChecksum: "774D400223C623C40B66FBC6DECF65E7"

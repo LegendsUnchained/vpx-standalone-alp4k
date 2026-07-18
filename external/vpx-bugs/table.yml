@@ -17,7 +17,4 @@ testers:
   - "OminousOsie"
   - "CoffeeAtJoes"
 vpxVPSId: "3OLIeQ_W"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "4924B1B1E9339A93865F4725D2DDD3BD"
-  - "B40AA3EB7FFED6C2D939460A4E1F14BE"
+vpxChecksum: "4924B1B1E9339A93865F4725D2DDD3BD"

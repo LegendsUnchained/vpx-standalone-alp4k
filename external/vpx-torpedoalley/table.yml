@@ -1,7 +1,4 @@
-backglassArchiveFormat: "rar"
-backglassChecksum:
-  - "1C15273B11AC9D9D6F05AA9F31251B2E"
-  - "179A498714E66A6692D7A6C1A0E1D443"
+backglassChecksum: "1C15273B11AC9D9D6F05AA9F31251B2E"
 backglassNotes: "Download version v3.0"
 backglassVPSId: "ftuKlhtBM_"
 fps: 60
@@ -15,8 +12,5 @@ testers:
   - "Bla1ze"
   - "kaoticBPR"
   - "CoffeeAtJoes"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "8C1EE4768000B632C2ACCF087E08C15D"
-  - "90CEB972154B4408F03C5364A244D427"
+vpxChecksum: "8C1EE4768000B632C2ACCF087E08C15D"
 vpxVPSId: "GgJ00Ad0"

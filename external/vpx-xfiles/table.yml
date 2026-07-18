@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "eCv7EkGM96"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "853D9B7A36F7AC25750C287AE312CC0D"
-  - "6D25FD983463188024A4C6FE8C3CE9C7"
+backglassChecksum: "853D9B7A36F7AC25750C287AE312CC0D"
 coloredROMChecksum: "10F5840B4F387F130FD932BCD03D505B"
 coloredROMNotes: "Download 'xfiles.cROMc'"
 coloredROMVPSId: "7LUZid35oQ"

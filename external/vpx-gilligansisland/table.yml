@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "62o2b4X_"
-backglassArchiveFormat: "rar"
-backglassChecksum:
-  - "6D7CBF7E5200B2611B495C696DD79B8A"
-  - "D7A04B35F2C83FC61476B4B91237B288"
+backglassChecksum: "6D7CBF7E5200B2611B495C696DD79B8A"
 backglassNotes: "Download Gilligan's Island (Bally 1991)3scr"
 fps: 60
 romVPSId: "epgJNgzU"
@@ -15,8 +12,5 @@ testers:
   - "Bla1ze"
   - "TechZombie"
 vpxVPSId: "r1XNdVKv"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "2F297945166E2645B3D3E36107981D37"
-  - "2E7B28D30D4636ECC44F6ADAB3CDEDF5"
+vpxChecksum: "2F297945166E2645B3D3E36107981D37"
 vpxNotes: "Download version 2.0"

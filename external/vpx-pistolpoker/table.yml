@@ -1,9 +1,6 @@
 ---
 backglassBundled: true
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "92A14959DFD41DD13F90ABF8F9773E14"
-  - "E67B6BE0C67302FD5BFDC6DAFE40CED6"
+backglassChecksum: "92A14959DFD41DD13F90ABF8F9773E14"
 backglassNotes: "Included with table"
 backglassVPSId: "0nXQaHopjh"
 fps: 60
@@ -16,8 +13,5 @@ tagline: "'Ace in the Hole' 'Hey, phrasing...'"
 testers:
   - "evilwraith"
   - "pointdablame"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "A639F982246980FCB0B2744C982BE9EC"
-  - "E67B6BE0C67302FD5BFDC6DAFE40CED6"
+vpxChecksum: "A639F982246980FCB0B2744C982BE9EC"
 vpxVPSId: "Qg6G4hlP9u"

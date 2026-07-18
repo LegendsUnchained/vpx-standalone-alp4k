@@ -13,9 +13,6 @@ tableVPSId: "oswLU1El"
 tagline: "GET BACK INTO THE RING.. IT'S TIME FOR THE WWF ROYAL RUMBLE!"
 testers:
   - "Bla1ze"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "4249030FEDD8424EA8CB1E481C362549"
-  - "2A9D7360DD6102FC2EEB26DCB606F1F4"
+vpxChecksum: "4249030FEDD8424EA8CB1E481C362549"
 vpxNotes: "Download version 5.0"
 vpxVPSId: "MbInzTSL"

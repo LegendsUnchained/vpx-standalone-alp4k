@@ -1,10 +1,7 @@
 ---
 backglassBundled: false
 backglassVPSId: "7od4to4A"
-backglassArchiveFormat: "rar"
-backglassChecksum:
-  - "338C882C87E444C127266E758F54E092"
-  - "EE1E6E2418F315C1697861D07DB62DF3"
+backglassChecksum: "338C882C87E444C127266E758F54E092"
 fps: 60
 tableVPSId: "_kvNlmSu"
 tagline: "Your wish is my command!"
@@ -17,7 +14,4 @@ testers:
   - "CoffeeAtJoes"
   - "Boris"
 vpxVPSId: "w2f18S9a"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "5B2BE73F95223AEB3884FA3CD0A45688"
-  - "CB96E4507CDA087586529912B9D33BD9"
+vpxChecksum: "5B2BE73F95223AEB3884FA3CD0A45688"

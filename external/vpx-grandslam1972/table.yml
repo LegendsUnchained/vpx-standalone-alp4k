@@ -2,19 +2,13 @@
 backglassBundled: true
 backglassVPSId: "oZhySmKn_A"
 backglassNotes: "Included with table download"
-backglassArchiveFormat: "rar"
-backglassChecksum:
-  - "8D3A7ACC6E81CDC08766A0F6AB319049"
-  - "0162155ADC633ECCCE17DCC311A809A7"
+backglassChecksum: "8D3A7ACC6E81CDC08766A0F6AB319049"
 fps: 60
 tableVPSId: "duaA4qYH"
 tagline: "PLAY BALL!"
 testers:
   - "evilwraith"
 vpxVPSId: "oZhySmKn_A"
-vpxArchiveFormat: "rar"
-vpxChecksum:
-  - "030E9F2BFF90D21C40789C704B1521E0"
-  - "0162155ADC633ECCCE17DCC311A809A7"
+vpxChecksum: "030E9F2BFF90D21C40789C704B1521E0"
 tableNotes: >-
   Note: You might need to use WinRAR to unzip the file, rather then Windows

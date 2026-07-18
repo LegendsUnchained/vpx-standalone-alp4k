@@ -1,10 +1,7 @@
 ---
 backglassVPSId: "nes_AsX8"
-backglassArchiveFormat: "rar"
-backglassChecksum:
-  - "B5659CCECF6BFD34F44ACB671A72A2E1"
-  - "E3BBAFC0331AD1F894B3FE5DFE6D45E4"
-fps: 52
+backglassChecksum: "B5659CCECF6BFD34F44ACB671A72A2E1"
+fps: 60
 romVPSId: "Ozg_9L9I"
 romChecksum: "34AB43D91EFE0B18E89A7544826BBCA6"
 tableVPSId: "Z3YtSbZm"
@@ -13,7 +10,4 @@ testers:
   - "Bla1ze"
   - "CoffeeAtJoes"
 vpxVPSId: "tOx1WUlj"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "66A638ADF66097A1C6D7E36E6365A527"
-  - "084AA2978C0B2823F38580FA1A01C28D"
+vpxChecksum: "66A638ADF66097A1C6D7E36E6365A527"

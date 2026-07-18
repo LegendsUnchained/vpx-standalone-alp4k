@@ -19,7 +19,4 @@ testers:
   - "Mox"
   - "TechZombie"
 vpxVPSId: "bpo2bAdE"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "F7C1285F3FB1D1C4935C459EB64B5A04"
-  - "EB933A4B3BA3125AC4C0B6AEF1A388D3"
+vpxChecksum: "F7C1285F3FB1D1C4935C459EB64B5A04"

@@ -1,8 +1,5 @@
 ---
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "3E145EEEDFA237029E76369E3CFFFFE3"
-  - "38EC594FD35A4FD7EC73E31E81449599"
+backglassChecksum: "3E145EEEDFA237029E76369E3CFFFFE3"
 backglassNotes: "Download 'Playboy 35th Anniversary (Data East 1989) alt.zip'"
 backglassVPSId: "nervXy1HbT"
 fps: 60
@@ -14,8 +11,5 @@ tableNotes: "Download v600"
 tableVPSId: "YYrA1tjB4i"
 testers:
   - "evilwraith"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "D53F3CB7157D9692A9CADBE56F0F6961"
-  - "233ED883A2A24B429D16BCEA25747478"
+vpxChecksum: "D53F3CB7157D9692A9CADBE56F0F6961"
 vpxVPSId: "xzLojRzc7O"

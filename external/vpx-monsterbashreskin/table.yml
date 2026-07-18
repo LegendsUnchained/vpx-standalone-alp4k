@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "vV2HJCHnGz"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "D628EA78A9DB8D0D7A1B21CDB571449F"
-  - "803FE9AFEFD71464395DE37758323998"
+backglassChecksum: "D628EA78A9DB8D0D7A1B21CDB571449F"
 backglassNotes: "Download 'Monster Bash (Williams 1998) 3k full dmd.zip'"
 coloredROMChecksum: "AED56FA83951DBB8AF8F6EF4F789EF44"
 coloredROMNotes: ""

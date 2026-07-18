@@ -1,8 +1,5 @@
 ---
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "A92D36BD6FD16D937F2FA3130DE2AE6A"
-  - "2A1890646D28CC66E3788E4CC1EFA9C8"
+backglassChecksum: "A92D36BD6FD16D937F2FA3130DE2AE6A"
 backglassNotes: "Download the 7-digit version"
 backglassVPSId: "O843tUTa5R"
 fps: 55
@@ -14,8 +11,5 @@ tableVPSId: "q0RmE-GZ"
 tagline: "'G-g-g-g-GHOSTS?!' - Scooby Doo and Shaggy"
 testers:
   - "evilwraith"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "6687FEFB8DF69CEFD80585A7C5454C79"
-  - "06130B5F3CA3F330989217DCC80C6915"
+vpxChecksum: "6687FEFB8DF69CEFD80585A7C5454C79"
 vpxVPSId: "TscqlNWDQz"

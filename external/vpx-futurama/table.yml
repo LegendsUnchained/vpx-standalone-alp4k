@@ -16,8 +16,5 @@ testers:
   - "mrandromeda"
   - "evilwraith"
   - "CoffeeAtJoes"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "A2D3763C5CEE2D364847CEB439B78B83"
-  - "A6AEC51D8E7434CDC8FD7B68310A030A"
+vpxChecksum: "A2D3763C5CEE2D364847CEB439B78B83"
 vpxVPSId: "GzUJtTjUKM"

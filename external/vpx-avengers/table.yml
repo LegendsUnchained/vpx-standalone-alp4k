@@ -1,10 +1,7 @@
 ---
 backglassVPSId: "5Cu7jSFSJF"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "FBE177A1C8ACE2A3E1929E98F26BA963"
-  - "708B83A7C8D573AE5448D9E37C4D5E80"
-fps: 60
+backglassChecksum: "FBE177A1C8ACE2A3E1929E98F26BA963"
+fps: 55
 romVPSId: "_HrfD9cNY-"
 romChecksum: "E1FD53CE4225F90CB87D546B4984F088"
 tableVPSId: "GIAiwQnX"

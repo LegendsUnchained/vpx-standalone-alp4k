@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "iTSvh7ww"
-backglassArchiveFormat: "rar"
-backglassChecksum:
-  - "9BD065B5E97D14DA99B2348FE76381A0"
-  - "DC0B45B57F3DDD4590C78A0CDC291FB0"
+backglassChecksum: "9BD065B5E97D14DA99B2348FE76381A0"
 backglassNotes: "Download version 2.0"
 fps: 60
 romUrlOverride: "https://pinballnirvana.com/forums/resources/amazonh.1524/"
@@ -17,7 +14,4 @@ testers:
   - "Mox"
   - "OminousOsie"
 vpxVPSId: "5nZWcwTL"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "D973CC3A3FA21BD6D356E430AF2F1926"
-  - "693DC179650EF56ED3478A770D2E93EC"
+vpxChecksum: "D973CC3A3FA21BD6D356E430AF2F1926"

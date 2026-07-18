@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "AkKF7ZKJbc"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "49727165253BD2293F6FF7DBD6415A16"
-  - "D50D342D6A92300B3EE1478D36A91CB0"
+backglassChecksum: "49727165253BD2293F6FF7DBD6415A16"
 backglassNotes: "Download version 1.0.0"
 coloredROMVPSId: "Z55ymmVdyU"
 coloredROMChecksum: "3DFEAE424498483ADB8F9DD203E15D39"
@@ -21,7 +18,4 @@ testers:
   - "OminousOsie"
   - "evilwraith"
 vpxVPSId: "1bCrozNZ"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "95C01C2B96822537D819D4032DCA2487"
-  - "21649D7C0922A7B0D03D455AB07B77B9"
+vpxChecksum: "95C01C2B96822537D819D4032DCA2487"

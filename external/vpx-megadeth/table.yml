@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "t9WZcMFwyU"
-backglassArchiveFormat: "7z"
-backglassChecksum:
-  - "306D2FC70CF4EACCCAAC88E9D535984A"
-  - "76956E0FA3D0247B49D98D5423C7DDBC"
+backglassChecksum: "306D2FC70CF4EACCCAAC88E9D535984A"
 backglassNotes: >-
   Download VPX folder, open 'Backglass' folder, get the
   'MEGADETH_Original_2023.directb2s' file

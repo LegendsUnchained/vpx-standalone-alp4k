@@ -1,8 +1,5 @@
 ---
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "CB48BDDE9B9C9B9EE809604E13353465"
-  - "0E719FDD2D7B76C19851A308AADDFDF2"
+backglassChecksum: "CB48BDDE9B9C9B9EE809604E13353465"
 backglassNotes: ""
 backglassVPSId: "aneW70BPl0"
 coloredROMChecksum: "D606D8D8A2215E5E11F0EBA2FB4A5FC3"
@@ -19,8 +16,5 @@ testers:
   - "Bla1ze"
   - "CoffeeAtJoes"
 vpxVPSId: "rOx6ED7h"
-vpxArchiveFormat: "rar"
-vpxChecksum:
-  - "E5579122D8F31D188FFF65906BFBDF24"
-  - "C68404BA2FF584F0820B8F9234578419"
+vpxChecksum: "E5579122D8F31D188FFF65906BFBDF24"
 

@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "RHVC73TxKs"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "2A0C710705DE657A1061CE1E7B442536"
-  - "DA7916F4F5134BCD18FCB1BFA7438EEE"
+backglassChecksum: "2A0C710705DE657A1061CE1E7B442536"
 coloredROMChecksum: "392E993457DEE0829DCA308C6756A18F"
 coloredROMNotes: "Download 'ID4_2.0.pac'"
 coloredROMVPSId: "ZDZIb8Rp"
@@ -17,7 +14,4 @@ testers:
   - "OminousOsie"
   - "Mox"
 vpxVPSId: "BrZ-RApc"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "16A2F1ED9CF7606D2B94D66D79D9D50B"
-  - "E761D9E2CAD675383F4A8E056AAAFD00"
+vpxChecksum: "16A2F1ED9CF7606D2B94D66D79D9D50B"

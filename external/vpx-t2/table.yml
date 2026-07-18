@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "xHWfrWoj0i"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "0517D601DAA8703B72315DB3B2F9DAFF"
-  - "2F5F2007A51E93B6DABBF352993BF337"
+backglassChecksum: "0517D601DAA8703B72315DB3B2F9DAFF"
 backglassNotes: "Download - Terminator 2 (Williams 1991) full dmd.zip"
 coloredROMChecksum: "7F09F2105EF1E48F870D28B5BE73D286"
 coloredROMNotes: "Download 'Williams Terminator 2 -IPDB2524 - Update 2025 V1_0.pac'"

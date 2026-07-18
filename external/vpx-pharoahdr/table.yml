@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "jfz6IkZR"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "48F3AE4351B056B33667C35B41D157D2"
-  - "D6E857729501754D0E6CF419C9F6F33D"
+backglassChecksum: "48F3AE4351B056B33667C35B41D157D2"
 backglassNotes: "Use 2 screen directb2s file"
 fps: 60
 romVPSId: "_HhiI3s0SJ"
@@ -14,7 +11,4 @@ testers:
   - "Bla1ze"
   - "CoffeeAtJoes"
 vpxVPSId: "oXfqCduB"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "081E3E23D0B279E25C787151F07EE2F7"
-  - "C120179E50876E244CADE88F5D60978A"
+vpxChecksum: "081E3E23D0B279E25C787151F07EE2F7"

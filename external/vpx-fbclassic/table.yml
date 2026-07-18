@@ -1,8 +1,5 @@
 ---
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "32E5CC26DD00BC6DAFF642D4BDE53600"
-  - "58D75621CCCFF3F382B8DD5DCC965BAE"
+backglassChecksum: "32E5CC26DD00BC6DAFF642D4BDE53600"
 backglassNotes: "Use Fireball Classic (Bally 1984) D.directb2s"
 backglassVPSId: "M8v3MebLYV"
 fps: 60
@@ -15,8 +12,5 @@ tagline: "'Not to be confused with Fireball Cinnamon Whisky'"
 testers:
   - "evilwraith"
   - "CoffeeAtJoes"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "9DD2D8F43A4C2F83D860D8D956390CA2"
-  - "0179B5551972189B3311D20BC3DCBDE6"
+vpxChecksum: "9DD2D8F43A4C2F83D860D8D956390CA2"
 vpxVPSId: "uzPhhqXVa7"

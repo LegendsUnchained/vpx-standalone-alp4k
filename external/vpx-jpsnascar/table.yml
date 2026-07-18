@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "_er2n10hiQ"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "B93CB0F0942FF54FDBD684EE84637AE9"
-  - "EDCCCB063DFB2814BB744AAAA2402B6B"
+backglassChecksum: "B93CB0F0942FF54FDBD684EE84637AE9"
 backglassNotes: "Download Nascar (Stern 2005).zip"
 fps: 60
 romVPSId: "pE1eVHhRRL"
@@ -18,7 +15,4 @@ testers:
  - "evilwraith"
  - "Silentkat"
 vpxVPSId: "mqN6b0Ls"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "78351EC2ED5B1B86C4EE109369E18138"
-  - "B11F73F9896C5701C3B9B397D29F4E8E"
+vpxChecksum: "78351EC2ED5B1B86C4EE109369E18138"

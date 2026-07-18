@@ -1,8 +1,5 @@
 ---
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "3A20E06252BFE068E649B28F5C921F40"
-  - "9E00AE4790A5562F3C94734BF915F26B"
+backglassChecksum: "3A20E06252BFE068E649B28F5C921F40"
 backglassNotes: "Download version 1.0.1"
 backglassVPSId: "Cl5ef8WVKD"
 fps: 60
@@ -11,8 +8,5 @@ tableVPSId: "M-QUMdFt"
 tagline: "'40 tokens for $5'"
 testers:
   - "evilwraith"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "793E6A6B41D336721FE5CA0AA862DF40"
-  - "4915F504CF9864E4A3FF768A73A5BF0C"
+vpxChecksum: "793E6A6B41D336721FE5CA0AA862DF40"
 vpxVPSId: "4Cyc3S6QtI"

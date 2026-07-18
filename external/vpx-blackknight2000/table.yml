@@ -1,9 +1,6 @@
 ---
 backglassVPSId: "Z5IzqK_u18"
-backglassArchiveFormat: "zip"
-backglassChecksum:
-  - "E70BB80C3897A1A5A952B6CB427C973C"
-  - "9086E59144D70D78DCAAC47BFE9BC5F7"
+backglassChecksum: "E70BB80C3897A1A5A952B6CB427C973C"
 backglassNotes: "Download Version 1.0.0"
 fps: 60
 romVPSId: "0QsN8wFY"
@@ -16,7 +13,4 @@ testers:
   - "Boris"
   - "Mox"
 vpxVPSId: "RcPhgFiL1b"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "F483CFE702AD17FC42CFFC589037E82E"
-  - "8AA56CDB3E4E48F96C60F6E92532253B"
+vpxChecksum: "F483CFE702AD17FC42CFFC589037E82E"

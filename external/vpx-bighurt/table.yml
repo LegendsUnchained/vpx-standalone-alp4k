@@ -14,8 +14,5 @@ tableNotes: "Download 'Big Hurt (Gottlieb 1995) LW.zip'"
 tableVPSId: "4IwkdORvo_"
 testers:
   - "Wraith"
-vpxArchiveFormat: "zip"
-vpxChecksum:
-  - "60AABAA5B4B8E6155BAFD07EC8D1AC67"
-  - "C3C11AB7F633CF193D870625B5B85404"
+vpxChecksum: "60AABAA5B4B8E6155BAFD07EC8D1AC67"
 vpxVPSId: "s11IFpCOdr"
