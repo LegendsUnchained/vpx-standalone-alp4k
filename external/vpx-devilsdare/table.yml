@@ -1,6 +1,4 @@
 ---
-applyFixes:
-  - "bass"
 backglassChecksum: "b21a94312069c96dd615b12ddd1b049c"
 backglassVPSId: "gzLWtWUMHa"
 enabled: false
@@ -8,6 +6,8 @@ fps: 58
 romChecksum: "f4d90889160fa836e42c71f6fe3f23a6"
 romUrlOverride: "https://pinballnirvana.com/forums/resources/dvlsdre.1744/"
 romVersionOverride: "dvlsdre"
+tableNotes: "Download v1.0.a"
+backglassNotes: "Download v1.0"
 tableVPSId: "X3Hcurxj"
 tagline: "'Satanic Panic! Screaming Fast!'"
 testers:

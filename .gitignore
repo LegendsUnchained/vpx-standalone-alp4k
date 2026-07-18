@@ -31,4 +31,8 @@ VPinballX_*-alp4k
 .venv
 __pycache__
 .idea
+# Local scratch output of generate-test-manifest.py (Manifest Tester inputs)
+/manifest-tester/
 
+/tools
+/reports

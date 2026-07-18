@@ -1,7 +1,5 @@
 ---
-applyFixes: 
-  - "bass"
-fps: 35
+fps: 50
 pupArchiveFormat: "zip"
 pupArchiveRoot: "puppack/futurama"
 pupChecksum: "1D3C30870C322EF8884CA899ABC92F31"
@@ -10,7 +8,7 @@ pupFileUrl: >-
 pupNotes: "Download Futurama PuP and media pack.zip"
 pupRequired: true
 tableVPSId: "k_w8Y3slND"
-tableNotes: "Download Futurama (Original 2024) v1.2.1.zip"
+tableNotes: "Download Futurama (Original 2024) v1.2.2.zip"
 tagline: "Good news, everyone!"
 testers: 
   - "Bla1ze"
@@ -18,5 +16,5 @@ testers:
   - "mrandromeda"
   - "evilwraith"
   - "CoffeeAtJoes"
-vpxChecksum: "157A4740B8F80EB2809E0B61CA8D2F0B"
+vpxChecksum: "A2D3763C5CEE2D364847CEB439B78B83"
 vpxVPSId: "GzUJtTjUKM"

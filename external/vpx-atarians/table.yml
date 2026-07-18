@@ -1,7 +1,5 @@
 ---
 enabled: false
-applyFixes:
-  - "bass"
 backglassChecksum: "05d6ffdc88426cf2ace85f96b546a85d"
 backglassVPSId: "IwROd3tsUk"
 fps: 55
@@ -10,6 +8,7 @@ romChecksum: "5c40d4f9c3f13f2336efac6f5e374b47"
 romNotes: "ROM Bundled with table"
 romVersionOverride: "atarians"
 tableNameOverride: "Atarians, The - Atari (1976)"
+tableNotes: "Download v1.02"
 tableVPSId: "Hb0407JkU3"
 tagline: "'Start Playing With Tomorrow'"
 testers:

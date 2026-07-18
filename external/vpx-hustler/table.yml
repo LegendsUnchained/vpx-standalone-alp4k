@@ -1,7 +1,5 @@
 ---
 enabled: false
-applyFixes:
-  - "bass"
 backglassBundled: true
 backglassChecksum: "c0478a100a1ff5075d939e09c62a2d73"
 backglassNotes: "B2S at same download link"

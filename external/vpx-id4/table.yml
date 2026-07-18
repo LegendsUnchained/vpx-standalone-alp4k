@@ -1,7 +1,10 @@
 ---
 backglassVPSId: "RHVC73TxKs"
 backglassChecksum: "2A0C710705DE657A1061CE1E7B442536"
-fps: 52
+coloredROMChecksum: "392E993457DEE0829DCA308C6756A18F"
+coloredROMNotes: "Download 'ID4_2.0.pac'"
+coloredROMVPSId: "ZDZIb8Rp"
+fps: 60
 romVPSId: "-07X1WLT"
 romChecksum: "1585E6C7650343E51D3CCCBC29E19D48"
 romNotes: "Download - id4.zip"
@@ -12,5 +15,3 @@ testers:
   - "Mox"
 vpxVPSId: "BrZ-RApc"
 vpxChecksum: "16A2F1ED9CF7606D2B94D66D79D9D50B"
-applyFixes:
-  - "bass"

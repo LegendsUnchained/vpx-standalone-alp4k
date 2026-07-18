@@ -1,6 +1,4 @@
 ---
-applyFixes: 
-  - "bass"
 backglassVPSId: "xNs1RD-E"
 backglassChecksum: "963DBC5ABE37DA71D54FFFD8156D0221"
 backglassNotes: "Download version 2.0"
@@ -16,6 +14,5 @@ testers:
   - "psybocilin"
   - "OminousOsie"
   - "evilwraith"
-  - "pointdablame"
 vpxVPSId: "BfR8VwhE"
 vpxChecksum: "0706BA2A21EADE9DD3572B39166D0F9B"

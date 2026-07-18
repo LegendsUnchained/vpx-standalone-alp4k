@@ -13,5 +13,3 @@ vpxVPSId: "WfKXpRx0QT"
 vpxChecksum: "31E0D2E92725CA5657EC7B9DFE6B8F7D"
 vpxNotes: "Download version 1.2.1"
 enabled: false # Osie: Needs music!
-applyFixes:
-  - "bass"

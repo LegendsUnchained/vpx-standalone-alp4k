@@ -9,5 +9,3 @@ testers:
 vpxVPSId: "qcCYQYUoow"
 vpxChecksum: "5F4F5B8C2DD89B13C34D234CEF087C3C"
 enabled: false
-applyFixes:
-  - "bass"

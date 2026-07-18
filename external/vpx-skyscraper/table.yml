@@ -1,11 +1,9 @@
 ---
-applyFixes:
-  - "bass"
 backglassBundled: True
 # yamllint disable-line rule:line-length
 backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/pnx-rMf7uR_1749636467160.webp"
-backglassChecksum: "E739A9D066B8AEDA6312508ACB981700"
-backglassNotes: "Included with table download. Use the 2-screen version."
+backglassChecksum: "0CACCAE9FB4D3A0C2D5C3586DB578321"
+backglassNotes: "Included with table download. Use 'Skyscraper (Bally 1934).directb2s'."
 fps: 60
 tableVPSId: "GQVgQ-sou9"
 tagline: >-

@@ -1,8 +1,11 @@
 ---
-applyFixes:
-  - "bass"
 backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/0Htk9ITwd6_1722849149532.webp"
-fps: 50
+backglassVPSId: "0Htk9ITwd6"
+backglassNotes: "Download version 2.0"
+backglassChecksum: "8ABEE56C90A6406A465219F3EEBA90FA"
+fps: 60
+coloredROMVPSId: "QzkheiqdCT"
+coloredROMChecksum: "080DAEDC2CDE85708116E1C994523BDA"
 romChecksum: "E21364CA118FFBF3D2AA9F46FBE05B6B"
 romNotes: "Download br_l4.zip"
 romVPSId: "JIPLPq0j"

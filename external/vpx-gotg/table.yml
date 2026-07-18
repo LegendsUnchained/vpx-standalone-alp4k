@@ -1,0 +1,14 @@
+---
+fps: 55
+pupArchiveRoot: "gotg_2020"
+pupChecksum: "09AE36A8F6C71D1AF937302454C29C39"
+pupFileUrl: "https://mega.nz/file/DVoQRTrZ#FxQg78RY0W5rgEg2DHnLoUEp78fpm6Zh7lqcGxD7jQ8"
+pupNotes: "Download 'gotg-2.1.0-PupPack.zip'"
+pupRequired: true
+tableNotes: "Download 'GOTG_2.1.1.vpx'"
+tableVPSId: "q86TI2sS"
+tagline: "'I AM GROOT'"
+testers:
+  - "Wraith"
+vpxChecksum: "1536AE3276A0E6CF8B1326E774834564"
+vpxVPSId: "pq6RYRws"

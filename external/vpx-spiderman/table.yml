@@ -1,7 +1,5 @@
 ---
 enabled: false
-applyFixes:
-  - "bass"
 backglassChecksum: "ef65f0397200a125b3a57db35227d35e"
 backglassNotes: "Not the pairup in VPin spreadsheet"
 backglassVPSId: "5zno3zre"

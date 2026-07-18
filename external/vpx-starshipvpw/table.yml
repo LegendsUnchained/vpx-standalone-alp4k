@@ -1,20 +1,20 @@
 ---
-applyFixes:
-  - "bass"
-backglassChecksum: "8417e975fab9300a2217c635ff1fd3f4"
-backglassNotes: "Starship Troopers (Sega 1996) full dmd.directb2s"
-backglassVPSId: "fx1kFVe7Be"
-fps: 52
+pupChecksum: "967B3C0373549ABF407C1766D6830782"
+pupFileUrl: >-
+  https://vpuniverse.com/files/file/16710-starship-troopers-english-pup-pack/
+pupArchiveRoot: "startrp2"
+pupRequired: true
+fps: 55
 mainNotes: "Starship Troopers VPinWorkshop edition. Enabled for PuP Pack."
-romChecksum: "ac756e2ab3643c1743b53ef6e51dfafe"
+romChecksum: "AC756E2AB3643C1743B53EF6E51DFAFE"
 romVPSId: "CwAwf-gs"
-tableNameOverride: "Starship Troopers VPW (Sega 1997)"
-tableNotes: "Starship Troopers (Sega 1997) v2.1.1.vpx"
+tableNameOverride: "Starship Troopers PUP Pack (Sega 1997)"
+tableNotes: "Starship Troopers (Sega 1997) VPW Mod v2.0.vpx.zip"
 tableVPSId: "JU4EAhCe"
 tagline: "Would you like to know more?"
 testers:
   - "Bla1ze"
   - "Ominous Osie"
   - "Khrymsyn"
-vpxChecksum: "cd32c4ee58a245a4a94cc577b450d564"
+vpxChecksum: "1A67B0C4B103F3B1303D7815A1B2AD27"
 vpxVPSId: "DbFuVTNKWt"

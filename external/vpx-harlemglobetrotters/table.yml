@@ -1,13 +1,13 @@
 ---
-applyFixes:
-  - "bass"
 backglassChecksum: "0edd1e72feca51f1b15110f80558ef9e"
+backglassNotes: "Download v1.0.0"
 backglassVPSId: "F80fGxh1N0"
 enabled: false
 fps: 60
 romChecksum: "0edd1e72feca51f1b15110f80558ef9e"
 romNotes: "Also dl hglbtrtr.zip from https://www.vpforums.org/index.php?app=downloads&showfile=696"
 romVPSId: "FFKyimLN"
+tableNotes: "Download v6.0.0"
 tableVPSId: "ZrSKKrc4"
 tagline: "'Who's that mister? Ain't your sister. It's Sweet Georgia Brown!'"
 testers:

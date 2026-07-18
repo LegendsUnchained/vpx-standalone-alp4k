@@ -1,14 +1,17 @@
 ---
 backglassVPSId: "GmTammA02B"
 backglassChecksum: "B931BF99BCDEE2676011FCA6E120A02B"
+coloredROMChecksum: "7DF598F75BC06F818D6A565D0B0A4A07"
+coloredROMNotes: "Only the pal file"
+coloredROMUrlOverride: "https://mega.nz/file/9dQ3wSDS#_DEW-3SJwI8hwASgFJzDWdGRWdw_dx2t8OE9nHTlK1k"
+coloredROMVersionOverride: "bbh_170"
 fps: 60
 romVPSId: "0sK-slY-oy"
 romChecksum: "2A1FEE81A313DA2A3C0E1E6D715ABBF1"
 tableVPSId: "VSq_t7jP"
+tableNotes: "Download Version 4.0"
 tagline: "Don't be shootin' nothin' off Pappy's Porch!"
 testers:
   - "Bla1ze"
 vpxVPSId: "KZfhhA6dcs"
-vpxChecksum: "F93D777711DF834A6DB4308AB4E792F0"
-applyFixes:
-  - "bass"
+vpxChecksum: "1824C4C87C6CC8264AF8B58BD3FA3C76"

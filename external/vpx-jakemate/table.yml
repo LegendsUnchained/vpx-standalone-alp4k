@@ -1,7 +1,5 @@
 ---
 enabled: false
-applyFixes:
-  - "bass"
 backglassBundled: true
 backglassChecksum: "f1ca8bf35ccf3035ef3132555465b9ea"
 backglassNotes: "B2S is bundled on VPU"

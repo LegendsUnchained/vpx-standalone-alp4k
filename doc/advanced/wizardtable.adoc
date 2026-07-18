@@ -23,33 +23,50 @@ image:../images/add_table_yml.png[]
 Here is an example of every field possible: (as of 27 May 2025)
 
 ....
+additionalRoms:              | [Array of Objects]
+altSoundArchiveFormat:       | [String]
+altSoundArchiveRoot:         | [String]
+altSoundAuthorsOverride:     | [Array]
+altSoundBundled:             | [Bool]
+altSoundChecksum:            | [String]
+altSoundNotes:               | [String]
+altSoundNSFW:                | [Bool]
+altSoundUrlOverride:         | [String]
+altSoundVersionOverride:     | [String]
+altSoundVPSId:               | [String]
 applyFixes:                  | [Array]
 backglassAuthorsOverride:    | [Array]
 backglassBundled:            | [Bool]
 backglassChecksum:           | [String]
 backglassImageOverride       | [String]
 backglassNotes:              | [String]
+backglassNSFW:               | [Bool]
 backglassUrlOverride:        | [String]
 backglassVPSId:              | [String]
 coloredROMBundled:           | [Bool]
 coloredROMChecksum:          | [String]
 coloredROMNotes:             | [String]
+coloredROMNSFW:              | [Bool]
 coloredROMUrlOverride:       | [String]
 coloredROMVersionOverride:   | [String]
 coloredROMVPSId:             | [String]
+diffNSFW:                    | [Bool]
 enabled:                     | [Bool]
 fps:                         | [Int]
 mainNotes:                   | [String]
+nsfw:                        | [Bool]
 pupArchiveFormat:            | [String]
 pupArchiveRoot:              | [String]
 pupChecksum:                 | [String]
 pupFileUrl:                  | [String]
 pupNotes:                    | [String]
+pupNSFW:                     | [Bool]
 pupRequired:                 | [Bool]
 pupVersion:                  | [String]
 romBundled:                  | [Bool]
 romChecksum:                 | [String]
 romNotes:                    | [String]
+romNSFW:                     | [Bool]
 romUrlOverride:              | [String]
 romVersionOverride:          | [String]
 romVPSId:                    | [String]
@@ -59,11 +76,113 @@ tableVPSId:                  | [String]
 tagline:                     | [String]
 testers:                     | [Array]
 vpxChecksum:                 | [String]
+vpxNSFW:                     | [Bool]
 vpxVPSId:                    | [String]
 ....
 
 Below is each yml field explained, with an example, and any `gotchas'
 that you need to know to use successfully!
+
+....
+########################
+NSFW / adult content (nsfw / vpxNSFW / backglassNSFW / romNSFW / coloredROMNSFW / altSoundNSFW / pupNSFW / diffNSFW)
+########################
+
+Type:
+------------
+Booleans (default false)
+
+Description:
+------------
+Author-set flags that mark a table, or one of its components, as adult content.
+The wizard has an "enable NSFW content" toggle (off by default); these flags
+control what that toggle hides or filters. They only affect NEW installs and the
+wizard listing — Manage Tables always shows an NSFW chip on any installed table
+that has any flag set.
+
+- nsfw: [Bool] the whole table is adult content.
+- vpxNSFW: [Bool] the .vpx playfield art is adult. Surfaces in the manifest as
+  "tableNSFW" (matching how vpxChecksum becomes tableChecksum).
+- backglassNSFW: [Bool] the backglass is adult.
+- romNSFW: [Bool] the ROM content is adult.
+- coloredROMNSFW: [Bool] the DMD colorization is adult.
+- altSoundNSFW: [Bool] the altsound pack is adult.
+- pupNSFW: [Bool] the pup videos are adult.
+- diffNSFW: [Bool] the VPU patch adds adult content.
+
+When the wizard user has NOT enabled NSFW:
+
+- A table flagged nsfw, vpxNSFW, backglassNSFW or romNSFW is hidden from the
+  wizard listing entirely — those parts can't be skipped, so the whole table is
+  withheld.
+- A table with only coloredROMNSFW, altSoundNSFW, pupNSFW or diffNSFW set still
+  installs, but that component is filtered out of the install (its upload slot /
+  download is not shown and it is not required).
+
+Example:
+------------
+nsfw: true
+# or, per-component:
+pupNSFW: true
+
+Gotchas:
+------------
+- The vpx/playfield flag is authored as vpxNSFW in table.yml but appears as
+  tableNSFW in the generated manifest.
+- These are manual, author-set booleans — they are NOT auto-derived from VPS.
+....
+
+....
+########################
+altSound (altSoundVPSId / altSoundUrlOverride / ...)
+########################
+
+Type:
+------------
+Group of fields (see below)
+
+Description:
+------------
+An altsound pack replaces a table's ROM audio with an alternative/orchestral
+sound package. It is distributed as an archive (zip/rar/7z) and is extracted on
+the device into the ROM's altsound folder (pinmame/altsound/<romname>), so a
+table that offers altsound MUST also install its ROM.
+
+Resolve the pack from VPS with altSoundVPSId, OR link it directly with
+altSoundUrlOverride (+ altSoundVersionOverride). altSoundChecksum is required
+whenever altsound is offered or bundled. Fields:
+
+- altSoundVPSId: [String] VPS ID of the altsound file; resolves authors / url /
+  version. Mutually exclusive with altSoundUrlOverride.
+- altSoundUrlOverride: [String] direct download URL, used INSTEAD of
+  altSoundVPSId when the pack isn't on VPS.
+- altSoundVersionOverride: [String] REQUIRED when altSoundUrlOverride is set.
+- altSoundAuthorsOverride: [Array] overrides the VPS-resolved authors.
+- altSoundChecksum: [String|List] MD5(s) of the archive. REQUIRED when offered
+  or bundled. One hash -> a string; two or more -> a YAML list.
+- altSoundNotes: [String] Markdown notes shown on the wizard row. REQUIRED when
+  altSoundBundled is true.
+- altSoundBundled: [Bool] the pack ships inside the table download itself.
+- altSoundArchiveFormat: [String] zip | rar | 7z. Default: zip. Only sets the
+  wizard's file picker filter; extraction auto-detects the real format.
+- altSoundArchiveRoot: [String] path within the archive to the altsound root,
+  when the pack is nested inside a subfolder.
+
+Example:
+------------
+altSoundVPSId: "FfXJriyfGA"
+altSoundChecksum: "00000000000000000000000000000000"
+altSoundNotes: "Download version 1.0.0"
+
+Gotchas:
+------------
+- Altsound needs a ROM. If the table has no rom (romVPSId/romUrlOverride) the
+  install has no romname to extract into and will fail.
+- Like coloredROM, VPS altsound entries have no checksum, so altSoundChecksum
+  always comes from this file.
+- The VPS url is usually a VPUniverse page link, not a direct download — that's
+  expected; the wizard opens it so the user can grab the file.
+....
 
 ....
 ########################
@@ -843,6 +962,64 @@ Gotchas:
 ------------
 - Same as the checksum, the only real problem seen here is accidently copying the ID from a different component!
   So just double check you pasted the right value :)
+....
+
+....
+########################
+additionalRoms
+########################
+
+Type:
+------------
+Array of Objects (each: vpsId | urlOverride | bundled, checksum, versionOverride, notes)
+
+Description:
+------------
+A list of EXTRA rom files to install alongside the primary rom. Each is copied
+into the table's pinmame/roms folder under its ORIGINAL filename (unlike the
+primary rom, which gets renamed). Each entry has the SAME modes as the primary
+rom:
+
+- VPSID mode: set 'vpsId' and vpsdb resolves the download URL, authors, comment
+  and version from VPS.
+- URL-override mode: set 'urlOverride' (no vpsId) and supply 'versionOverride'.
+- Bundled mode: set 'bundled: true' when the rom ships inside the table download
+  itself. There is no external link; supply 'notes' telling the user where to
+  find it (mirrors romBundled).
+
+Per entry:
+- 'checksum' is required — one MD5 as a string, or several acceptable MD5s as a
+  list (same rule as romChecksum).
+- 'vpsId' and 'urlOverride' are mutually exclusive.
+- 'urlOverride' requires 'versionOverride'.
+- 'bundled' requires 'notes'.
+- 'notes' is optional markdown shown on the wizard row (required when bundled).
+
+vpsdb renders this to an 'additionalRoms' array of resolved objects in the
+manifest ({vpsId?, checksum[], fileUrl?, authors?, version?, comment?, notes?,
+bundled?}), which the wizard uses to offer a download link per rom (hidden when
+bundled) and to validate each uploaded file against any of the checksums.
+
+Example:
+------------
+additionalRoms:
+  - vpsId: "2YD0f8I0Y2"
+    checksum: "8435fda49c4dfc2d82b9b361e8aa1155"
+  - urlOverride: "https://vpuniverse.com/files/file/xxxxx"
+    versionOverride: "extra_rom"
+    checksum:
+      - "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      - "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    notes: "Optional second sound rom"
+  - bundled: true
+    checksum: "cccccccccccccccccccccccccccccccc"
+    notes: "Included in the table zip under /roms"
+
+Gotchas:
+------------
+- One list entry == one rom. Only put multiple hashes under an entry's 'checksum'
+  when they are alternate hashes of the SAME rom.
+- Like romVersionOverride, 'versionOverride' must have no file extension.
 ....
 
 ....

@@ -1,10 +1,8 @@
 ---
-applyFixes:
-  - "bass"
 backglassBundled: true
 backglassChecksum: "5884806C922ACEEA7BE01BB03BC122AE"
 backglassNotes: "Download 'Playboy (Bally 1978) B2S.zip', use 'Playboy (Bally 1978) Nude Mod.directB2S'"
-fps: 52
+fps: 60
 romChecksum: "90810C525E3B78EA87EBBFA7D54228C1"
 romNotes: "Download playboyb.zip"
 romVPSId: "vReHOmteHm"

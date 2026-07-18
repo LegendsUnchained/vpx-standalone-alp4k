@@ -1,9 +1,59 @@
 import json
+import re
 import sys
 from pathlib import Path
 
 import requests
 import yaml
+
+
+def normalize_checksums(value):
+    """Normalize a checksum field to a list of lowercased strings.
+
+    Checksum fields may hold multiple acceptable MD5 hashes. Accepts a list
+    (the current format) or a bare string (legacy single-checksum format),
+    and returns a list of lowercased hashes. Returns None when absent or empty
+    so downstream required-checksum checks can test for None.
+    """
+    if value is None:
+        return None
+    if isinstance(value, str):
+        value = [value]
+    normalized = [str(item).lower() for item in value if item]
+    return normalized or None
+
+
+def normalize_dict_list(value):
+    """Normalize a field that may be a single mapping or a list of mappings
+    into a list of mappings. Absent/None becomes an empty list. Used by the
+    additionalRoms field, which is authored as a list of ROM objects.
+    """
+    if value is None:
+        return []
+    if isinstance(value, dict):
+        return [value]
+    return list(value)
+
+
+def process_title(title, manufacturer, year):
+    """Transform a title for proper sorting, moving a leading "The" to the end,
+    and handling optional "JP's" / "JPs" prefixes, moving them after the comma
+    when 'The' is not present. Returns "<name> (<manufacturer> <year>)".
+
+    Shared by generate-release.py (release manifest) and generate-manifest.py
+    (local preview) so both format the display name identically.
+    """
+    name = ""
+    match_the = re.match(r"^(JP'?s\s*)?(The)\s+(.+)$", title)
+    match_jps = re.match(r"^(JP'?s)\s+(.+)$", title)
+    if match_the and match_the.group(2):
+        prefix = match_the.group(1) or ""
+        name = f"{match_the.group(3)}, {prefix}{match_the.group(2)}"
+    elif match_jps:
+        name = f"{match_jps.group(2)}, {match_jps.group(1)}"
+    else:
+        name = title
+    return f"{name} ({manufacturer} {year})"
 
 
 class VPSDB:
@@ -112,6 +162,7 @@ def get_table_meta(files, warn_on_error=True):
             data = yaml.safe_load(table_data)
 
         altSoundVPSId = data.get("altSoundVPSId")
+        altSoundUrlOverride = data.get("altSoundUrlOverride")
         backglassVPSId = data.get("backglassVPSId")
         coloredROMVPSId = data.get("coloredROMVPSId")
         diffVPSId = data.get("diffVPSId")
@@ -121,31 +172,29 @@ def get_table_meta(files, warn_on_error=True):
         tutorialVPSId = data.get("tutorialVPSId")
         vpxVPSId = data.get("vpxVPSId")
         
-        altSoundChecksum = data.get("altSoundChecksum")
-        backglassChecksum = data.get("backglassChecksum")
-        coloredROMChecksum = data.get("coloredROMChecksum")
-        diffChecksum = data.get("diffChecksum")
-        romChecksum = data.get("romChecksum")
-        vpxChecksum = data.get("vpxChecksum")
-        pupChecksum = data.get("pupChecksum")
-
-        if altSoundChecksum:
-            altSoundChecksum = altSoundChecksum.lower()
-        if backglassChecksum:
-            backglassChecksum = backglassChecksum.lower()
-        if coloredROMChecksum:
-            coloredROMChecksum = coloredROMChecksum.lower()
-        if diffChecksum:
-            diffChecksum = diffChecksum.lower()
-        if romChecksum:
-            romChecksum = romChecksum.lower()
-        if vpxChecksum:
-            vpxChecksum = vpxChecksum.lower()
-        if pupChecksum:
-            pupChecksum = pupChecksum.lower()
+        # Checksum fields are lists of acceptable MD5 hashes so a table can
+        # accept more than one valid file. A single string (legacy format) is
+        # tolerated and normalized to a one-element list. Absent/empty stays
+        # None so the required-checksum checks in validate-table-yaml.py keep
+        # working.
+        altSoundChecksum = normalize_checksums(data.get("altSoundChecksum"))
+        backglassChecksum = normalize_checksums(data.get("backglassChecksum"))
+        coloredROMChecksum = normalize_checksums(data.get("coloredROMChecksum"))
+        diffChecksum = normalize_checksums(data.get("diffChecksum"))
+        romChecksum = normalize_checksums(data.get("romChecksum"))
+        vpxChecksum = normalize_checksums(data.get("vpxChecksum"))
+        pupChecksum = normalize_checksums(data.get("pupChecksum"))
 
         table_meta = {
+            "altSoundAuthors": data.get("altSoundAuthorsOverride"),
+            "altSoundBundled": data.get("altSoundBundled"),
             "altSoundChecksum": altSoundChecksum,
+            "altSoundFileUrl": altSoundUrlOverride,
+            "altSoundNotes": data.get("altSoundNotes"),
+            "altSoundVersion": data.get("altSoundVersionOverride"),
+            "altSoundArchiveFormat": data.get("altSoundArchiveFormat"),
+            "altSoundArchiveRoot": data.get("altSoundArchiveRoot"),
+            "altSoundNSFW": data.get("altSoundNSFW"),
             "applyFixes": data.get("applyFixes"),
             "backglassAuthors": data.get("backglassAuthorsOverride"),
             "backglassBundled": data.get("backglassBundled"),
@@ -153,17 +202,28 @@ def get_table_meta(files, warn_on_error=True):
             "backglassFileUrl": data.get("backglassUrlOverride"),
             "backglassImage": data.get("backglassImageOverride"),
             "backglassNotes": data.get("backglassNotes"),
+            "backglassNSFW": data.get("backglassNSFW"),
             "coloredROMBundled": data.get("coloredROMBundled"),
             "coloredROMChecksum": coloredROMChecksum,
             "coloredROMFileUrl": data.get("coloredROMUrlOverride"),
             "coloredROMNotes": data.get("coloredROMNotes"),
+            "coloredROMPin2DMD": data.get("coloredROMPin2DMD"),
             "coloredROMVersion": data.get("coloredROMVersionOverride"),
+            "coloredROMNSFW": data.get("coloredROMNSFW"),
             "diffAuthors": data.get("diffAuthorsOverride"),
             "diffFileUrl": data.get("diffUrlOverride"),
             "diffNotes": data.get("diffNotes"),
             "diffVersion": data.get("diffVersionOverride"),
             "diffChecksum": diffChecksum,
+            "diffNSFW": data.get("diffNSFW"),
             "enabled": data.get("enabled"),
+            # NSFW/adult-content flags (author-set). "nsfw" is table-wide; the
+            # per-component *NSFW flags let the wizard hide or filter specific
+            # content when the user hasn't opted into NSFW. The vpx/playfield flag
+            # is "vpxNSFW" in table.yml (matching vpxChecksum) but surfaces as
+            # "tableNSFW" in the manifest (matching tableChecksum).
+            "nsfw": data.get("nsfw"),
+            "tableNSFW": data.get("vpxNSFW"),
             "fps": data.get("fps"),
             "mainNotes": data.get("mainNotes"),
             "name": data.get("tableNameOverride"),
@@ -177,11 +237,13 @@ def get_table_meta(files, warn_on_error=True):
             "pupRequired": data.get("pupRequired"),
             "pupVersion": data.get("pupVersion"),
             "pupArchiveFormat": data.get("pupArchiveFormat"),
+            "pupNSFW": data.get("pupNSFW"),
             "romBundled": data.get("romBundled"),
             "romChecksum": romChecksum,
             "romFileUrl": data.get("romUrlOverride"),
             "romNotes": data.get("romNotes"),
             "romVersion": data.get("romVersionOverride"),
+            "romNSFW": data.get("romNSFW"),
             "tableChecksum": vpxChecksum,
             "tableNotes": data.get("tableNotes"),
             "tagline": data.get("tagline"),
@@ -314,11 +376,14 @@ def get_table_meta(files, warn_on_error=True):
             altSound = vpsdb.get_altsound_by_id(altSoundVPSId)
             if altSound:
                 print(f"Parsing alt sound {altSoundVPSId} for {folder_name}")
-                table_meta["altSoundAuthors"] = altSound.get("authors", [])
+
+                if not table_meta["altSoundAuthors"]:
+                    table_meta["altSoundAuthors"] = altSound.get("authors", [])
                 table_meta["altSoundComment"] = altSound.get("comment", "")
-                table_meta["altSoundFileUrl"] = altSound.get("urls", [])[0].get(
-                    "url", ""
-                )
+                if not table_meta["altSoundFileUrl"]:
+                    table_meta["altSoundFileUrl"] = altSound.get("urls", [])[0].get(
+                        "url", ""
+                    )
                 if not table_meta["altSoundVersion"]:
                     table_meta["altSoundVersion"] = altSound.get("version", "")
             else:
@@ -367,6 +432,56 @@ def get_table_meta(files, warn_on_error=True):
                     continue
                 else:
                     sys.exit(1)
+
+        # Additional ROMs: a list of ROM objects with the same modes as the
+        # primary ROM — VPSID-resolved (authors/comment/url/version from VPSDB,
+        # versionOverride wins), url-override (author supplies url + version), or
+        # bundled (ships inside the table download; no external URL, notes
+        # required). Handled once per entry.
+        additional_roms = []
+        skip_table = False
+        for entry in normalize_dict_list(data.get("additionalRoms")):
+            vps_id = entry.get("vpsId")
+            url_override = entry.get("urlOverride")
+            version_override = entry.get("versionOverride")
+
+            rom_meta = {"checksum": normalize_checksums(entry.get("checksum"))}
+            if vps_id:
+                rom_meta["vpsId"] = vps_id
+            if entry.get("bundled"):
+                rom_meta["bundled"] = True
+            if entry.get("notes"):
+                rom_meta["notes"] = entry.get("notes")
+
+            if vps_id:
+                rom = vpsdb.get_rom_by_id(vps_id)
+                if rom:
+                    print(f"Parsing additional ROM {vps_id} for {folder_name}")
+                    urls = rom.get("urls", [])
+                    rom_meta["authors"] = rom.get("authors", [])
+                    rom_meta["comment"] = rom.get("comment", "")
+                    rom_meta["fileUrl"] = urls[0].get("url", "") if urls else ""
+                    rom_meta["version"] = version_override or rom.get("version", "")
+                else:
+                    print(
+                        f"{error_prefix}: Additional ROM id {vps_id} not found in VPSDB"
+                    )
+                    if warn_on_error:
+                        print(f"WARNING: Skipping {folder_name}")
+                        skip_table = True
+                        break
+                    else:
+                        sys.exit(1)
+            elif url_override:
+                rom_meta["fileUrl"] = url_override
+                rom_meta["version"] = version_override
+
+            additional_roms.append(rom_meta)
+
+        if skip_table:
+            continue
+
+        table_meta["additionalRoms"] = additional_roms or None
 
         tables[folder_name] = table_meta
 

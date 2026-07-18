@@ -1,0 +1,15 @@
+---
+fps: 60
+pupArchiveRoot: "zelda"
+pupChecksum: "D9915B5FD239D59C2FFE9E3357F35C9B"
+pupNotes: "Download 'Zelda 6.0 Pup.rar'"
+pupRequired: true
+pupBundled: true
+pupVersion: "zelda"
+tableNotes: "Download '1 Legend of Zelda (Original) LW Pup nFozzy 6.0.vpx'"
+tableVPSId: "XXN9prwF"
+tagline: "'HEY! LISTEN!'"
+testers:
+  - "Wraith"
+vpxChecksum: "48A07125EBBA5E6B6B501C7516131E19"
+vpxVPSId: "bXHeqghM0a"

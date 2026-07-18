@@ -1,11 +1,10 @@
 ---
-applyFixes:
-  - "bass"
 backglassBundled: true
 backglassChecksum: "750d98eea65618d5398ea9cbbcaf8658"
 backglassNotes: "Bundled with table, in media folder"
 enabled: false
 fps: 58
+tableNotes: "Download v3.1"
 tableVPSId: "K9DgShFA7f"
 tagline: >-
   'Gathered together from the cosmic reaches of the universe, 

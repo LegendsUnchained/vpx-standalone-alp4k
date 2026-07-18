@@ -1,12 +1,12 @@
 ---
-applyFixes:
-  - "bass"
 backglassChecksum: "d8cce6f08f7cf9af4a57f2c3f169e5b8"
 backglassVPSId: "nfCkwbgD-T"
 enabled: false
 fps: 55
 romChecksum: "3607731fdbdbc1e589fb8d6ba498508f"
 romVPSId: "8SvZI6Ex"
+tableNotes: "Download v6.0.0"
+backglassNotes: "Download v2.0"
 tableVPSId: "j9F71ZEC"
 tagline: "Isn't this Beneath the Planet of the Apes?'"
 testers:

@@ -1,15 +1,23 @@
 ---
-backglassVPSId: "2VDm1kGl2X"
-backglassChecksum: "269d37c8895d1735f9c5afff0c2b19d2"
-fps: 50
+coloredROMChecksum:
+  - "AEE18DE9735CEA4FCA19C50C395A2384"
+  - "3C5A105F586ED2814F0FBFF8D0EE97D2"
+coloredROMPin2DMD: true
+coloredROMNotes: "Download 'pin2dmd_v.vni' and 'pin2dmd_v.pal'"
+coloredROMVPSId: "wuw5xsFr"
+fps: 60
+pupArchiveFormat: "zip"
+pupArchiveRoot: "baywatch"
+pupChecksum: "8E8CA8C78C59E099109502F588B74C31"
+pupVPSId: "vib9lFzS"
+pupRequired: True
 romVPSId: "Mc8ApoS-"
 romChecksum: "5fdc78f013d65c6e540ff3cd716fb7d0"
+tableNotes: "Download 'Baywatch (Sega 1995) Cabinet.zip'"
 tableVPSId: "xxxuKVp7"
 tagline: "Baywatch will be right back!"
 testers:
   - "Bla1ze"
   - "OminousOsie"
-vpxVPSId: "_2M_7TqS"
-vpxChecksum: "e912e22b4131f0b4adc676c93bde4f96"
-applyFixes:
-  - "bass"
+vpxVPSId: "CT4Kk8pF1z"
+vpxChecksum: "2CCB7D9E2583F2671417AD8F1AD1527A"

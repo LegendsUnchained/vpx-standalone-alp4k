@@ -1,11 +1,10 @@
 ---
 enabled: false
-applyFixes:
-  - "bass"
 backglassBundled: true
 backglassChecksum: "4e9b36ae8621bdabfd0bb52d691e8a23"
 backglassNotes: "B2S is bundled with table"
 fps: 60
+tableNotes: "Download v1.0f"
 tableVPSId: "AGp9hGGb"
 tagline: "'Dimension = Galaxie'"
 testers:

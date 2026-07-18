@@ -1,7 +1,6 @@
 ---
-applyFixes:
-  - "bass"
 backglassChecksum: "6783d29887c41e446c77ec68c016c389"
+backglassNotes: "Download v2.0"
 backglassVPSId: "6Bf9Pr9o0k"
 coloredROMChecksum: "45950d98ae7cdfad1c381e81742d778c"
 coloredROMVPSId: "_t9uEurX0Z"
@@ -9,6 +8,7 @@ enabled: false
 fps: 60
 romChecksum: "95432f7585d7f00f57903ebffc54c103"
 romVPSId: "ETlbkDB-"
+tableNotes: "Download v6.0.0"
 tableVPSId: "-VnzDCQs"
 tagline: "'You ain't nothing but a hound dog!'"
 testers:

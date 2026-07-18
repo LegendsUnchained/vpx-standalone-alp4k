@@ -1,11 +1,9 @@
 ---
-applyFixes:
-  - "bass"
 backglassBundled: true
 backglassChecksum: "92A14959DFD41DD13F90ABF8F9773E14"
 backglassNotes: "Included with table"
 backglassVPSId: "0nXQaHopjh"
-fps: 45
+fps: 60
 romChecksum: "5C16F03FCDFED54DB05E261689150B89"
 romNotes: "Download pstlpkr1.zip"
 romVPSId: "agWzKaeNAW"

@@ -1,6 +1,4 @@
 ---
-applyFixes:
-  - "bass"
 backglassChecksum: "504a76e698b4f5ad7872f23fdeb69657"
 backglassNotes: "DO NOT use the bundled B2S"
 backglassVPSId: "ugWBj3JjC0"
@@ -8,6 +6,8 @@ enabled: false
 fps: 60
 romChecksum: "8864630e33ee61a3a26136c579731ff7"
 romVPSId: "86W4Wyj9lI"
+tableNotes: "Download v1.0.2"
+backglassNotes: "Download v1.0.0"
 tableVPSId: "863y4Ku2HZ"
 tagline: "'Earth Shaking Footsteps'"
 testers:

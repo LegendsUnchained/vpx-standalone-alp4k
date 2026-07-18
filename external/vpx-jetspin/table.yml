@@ -1,10 +1,10 @@
 ---
-applyFixes:
-  - "bass"
 backglassChecksum: "26f623f4d45d7b7708a2a4ae18dc66ff"
 backglassVPSId: "9Zyr5JBjrK"
 enabled: false
 fps: 58
+tableNotes: "Download v1.2.1"
+backglassNotes: "Download v1.0.0"
 tableVPSId: "vjVKOoTG"
 tagline: "a"
 testers:

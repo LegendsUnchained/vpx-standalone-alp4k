@@ -1,10 +1,11 @@
 ---
-applyFixes:
-  - "bass"
 backglassChecksum: "204847BF28F390105A3CAA888745C5E0"
 backglassNotes: "Download version 1.0.0"
 backglassVPSId: "r77FNftqX2"
 fps: 60
+coloredROMUrlOverride: "https://vpuniverse.com/files/file/28135-batman-dark-knight-stern-2008-serum-colorization/"
+coloredROMChecksum: "90B876F1A33AA84785654F53F287B5E8"
+coloredROMNotes: "Download Version 1.0.0"
 romChecksum: "1083E55CEF160E0B010FB22794244D07"
 romNotes: "Download bdk_294"
 romVPSId: "3C8cAXQx"
