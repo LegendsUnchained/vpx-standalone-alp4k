@@ -1,5 +1,9 @@
 ---
+coloredROMVPSId: "0CmueoPUwI"
+coloredROMChecksum: "fb623cf8816ddddd8a59b160952450db"
+coloredROMNotes: "Download version 1.0.1"
 fps: 60
+nsfw: true
 pupArchiveRoot: "playboys"
 pupChecksum: "AF446E36D9F8D90C26D61E1C268ECECB"
 pupFileUrl: >-
@@ -8,9 +12,6 @@ pupRequired: true
 pupVersion: "playboys"
 romVPSId: "MevPuI-6"
 romChecksum: "e0b9ff21c2e91bc2d37ef7733fec9f8d"
-coloredROMVPSId: "0CmueoPUwI"
-coloredROMChecksum: "fb623cf8816ddddd8a59b160952450db"
-coloredROMNotes: "Download version 1.0.1"
 tableVPSId: "4UE5fPs8"
 tableNotes: "Download version 1.1"
 tagline: "**Warning:** 18+ table - not suitable for children!"
