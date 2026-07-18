@@ -1,9 +1,10 @@
 ---
-backglassAuthorsOverride:
-  - ""
+backglassChecksum: "106BBE82BEE6EB3E463F47656BB0DB47"
+backglassNotes: ""
+backglassVPSId: "avma10TPu0"
 coloredROMVPSId: "7gLLWVGnad"
 coloredROMChecksum: "8C4A24D85B7E9677B825336C1AAAB8D4"
-fps: 48
+fps: 55
 romVPSId: "sVGtoVup"
 romChecksum: "821B648A64BFF1D28CF83F81C6BEF5DB"
 romNotes: "Download - gldneye.zip"
@@ -12,8 +13,6 @@ tagline: "Nobody Does It Like Bond!"
 testers:
   - "Mox"
   - "OminousOsie"
-vpxVPSId: "Vk2jsNn2NU"
-vpxChecksum: "2ff5a8f4df4a671b0c62f9017788439d"
-tableNotes: "Download version 2.0"
-applyFixes:
-  - "bass"
+vpxVPSId: "n_4piuthCj"
+vpxChecksum: "B5C0E3837F3FEB5667979BE3109A898D"
+tableNotes: "Download version 1.2"

@@ -2,7 +2,7 @@
 backglassVPSId: "3l0Zvt8R__"
 backglassChecksum: "5977d1f16967aa539e5dd3bc5c18ead0"
 backglassNotes: "Download - Centaur (Bally 1981).zip"
-fps: 38
+fps: 60
 romVPSId: "ayWJ44_J"
 romChecksum: "A4DC0C753D1C1E5F6D573478A7D17CF2"
 romNotes: "Download - centaur.zip"
@@ -15,5 +15,3 @@ testers:
   - "OminousOsie"
 vpxVPSId: "jafdLbK1"
 vpxChecksum: "8ea5708c07736287d23766f39a51ade6"
-applyFixes:
-  - "bass"

@@ -1,7 +1,5 @@
 ---
 enabled: false
-applyFixes:
-  - "bass"
 backglassChecksum: "a6b091bfb860ae59959faf26622db36d"
 backglassNotes: "Do not use DMD bundled with table"
 backglassVPSId: "x-mc3eUdgA"

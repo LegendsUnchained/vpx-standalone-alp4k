@@ -1,16 +1,18 @@
 ---
-backglassVPSId: "agRjCO8K"
-backglassChecksum: "6D79886639554981FD32185C67F49611"
-romVPSId: "viUI43p9"
+backglassChecksum: "ff4cea3889bd2867d53da506e0479b0d"
+backglassVPSId: "xpFExxoIeb"
+coloredROMChecksum: "17A15B071D251958108D19F26FFD8E19"
+coloredROMNotes: "Download 'taf_full 2.3.pac'"
+coloredROMVPSId: "kU8oKiCN"
+enabled: false
+fps: 55
 romChecksum: "C4FC145F32C622CBA37E2360DC226F9A"
 romNotes: "Download - taf_l7.zip"
-fps: 48
+romVPSId: "viUI43p9"
 tableVPSId: "aT_GONvw"
 tagline: "Are they made from real Girl Scouts?"
 testers:
   - "evilwraith"
   - "Bla1ze"
-vpxVPSId: "f5_x-oZT"
-vpxChecksum: "63546A42C2876535DA86BB8F5440DA9E"
-applyFixes:
-  - "bass"
+vpxChecksum: "2F9AD412754DE96E3BF819710E96DCD8"
+vpxVPSId: "Wq40ng8f"

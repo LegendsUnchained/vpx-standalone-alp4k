@@ -1,19 +1,27 @@
 ---
-backglassVPSId: "gNuw8VtwyD"
+altSoundArchiveFormat: "zip"
+altSoundChecksum: "84607dee32b117421534905ea6e00494"
+altSoundVPSId: "z_U1GKNuSy"
 backglassChecksum: "98E31DF4E2D2611724E8ADE864C9C234"
 backglassNotes: "Download - Tales from the Crypt (Data East 1993) full dmd.zip"
-fps: 45
-romVPSId: "2Q1pXHma"
+backglassVPSId: "gNuw8VtwyD"
+coloredROMChecksum:
+  - "55dc1bf9f6337bfee7d72b6783c0aad4"
+  - "2dcf3ada453877b70c2cf8f719d6dbf0"
+coloredROMPin2DMD: true
+coloredROMVPSId: "1IkglzKX"
+diffChecksum: "63FB81D2AC74D58BAADA16B2791C2FF7"
+diffVPSId: "TJMo9ycfSP"
+fps: 58
 romChecksum: "90A891EC520E669DE90C7C766CAA5A26"
 romNotes: "Download - tftc_400.zip"
+romVPSId: "2Q1pXHma"
+tableNotes: "Download 'Tales from the Crypt (Data East 1993) VPW v1.22.zip'"
 tableVPSId: "fXaQ33KC"
 tagline: "Hello, boils and ghouls!"
-tableNotes: "'Tales from the Crypt (Data East 1993)_Bigus(MOD)3.0.vpx.zip'"
 testers:
   - "Boris"
   - "evilwraith"
   - "OminousOsie"
-vpxVPSId: "xkDq6Aub"
-vpxChecksum: "8BDC98490EB2B33B7B89E5D5658B699D"
-applyFixes:
-  - "bass"
+vpxChecksum: "90C2F0103D0817029999F4CBF966EB75"
+vpxVPSId: "uVgZUZdK"

@@ -1,12 +1,12 @@
 ---
-applyFixes:
-  - "bass"
 backglassChecksum: "d670c1786e8f5f98421fd288d1675b33"
 backglassVPSId: "bpU4yDeV"
 enabled: false
 fps: 55
 romChecksum: "7334f34faddb58f15b8589022dcceedc"
 romVPSId: "n6CssK-b"
+tableNotes: "Download v1.3.3"
+backglassNotes: "Download v1.0.0"
 tableVPSId: "UrEARMMt"
 tagline: "'Gorgar's Brother'"
 testers:

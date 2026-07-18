@@ -1,6 +1,9 @@
 ---
 backglassVPSId: "q0DxJyIGQ1"
 backglassChecksum: "cbb319b7bf952033755d67ca2b027527"
+coloredROMChecksum: "2523DA6BBBF76796DA1FE2D0FE3BEB60"
+coloredROMNotes: "Download 'Tommy-v094.pac'"
+coloredROMVPSId: "V_Eg_cFcpB"
 fps: 60
 romVPSId: "tF-yjAbJKZ"
 romChecksum: "bc4c13cafef4891c03ab46d72b3e20f2"
@@ -9,7 +12,5 @@ tagline: "He's a pinball wizard!"
 testers:
   - "Bla1ze"
   - "OminousOsie"
-vpxVPSId: "vvVop8xT"
-vpxChecksum: "56d91226a2cdb0b195d5cb4ddb3bf9af"
-applyFixes:
-  - "bass"
+vpxVPSId: "T8COSpvkl-"
+vpxChecksum: "71F92BACAA3A80C7248709B183DF59A1"

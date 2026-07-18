@@ -1,7 +1,5 @@
 ---
 enabled: false
-applyFixes:
-  - "bass"
 backglassBundled: true
 backglassNotes: "backless is bundled"
 backglassChecksum: "4c086752f337e158b8c1e1f8a714138c"

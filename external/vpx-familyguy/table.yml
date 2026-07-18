@@ -1,7 +1,7 @@
 ---
 backglassVPSId: "iaAGMUuI7g"
 backglassChecksum: "335542E8366FCBF981DA8349A9FB1387"
-fps: 55
+fps: 60
 romVPSId: "WVVO9i6f"
 romChecksum: "515CACB07642990647CDE5BC495C6C48"
 tableVPSId: "qdNbj2SA"
@@ -11,5 +11,3 @@ testers:
   - "Mar3nBu"
 vpxVPSId: "ktQX8dd3"
 vpxChecksum: "EBF4541B8A156FE4BA9E81C4094E90EA"
-applyFixes:
-  - "bass"

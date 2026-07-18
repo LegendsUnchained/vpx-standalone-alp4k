@@ -1,7 +1,11 @@
 ---
-backglassAuthorsOverride:
-  - ""
-fps: 50
+backglassVPSId: "1r1BCxkR3R"
+backglassChecksum: "D5DB12D08659E313E05776EBBBE9EFBF"
+backglassNotes: "Download 'Demolition Man FullDMD (Williams 1994) v1.1.zip'"
+coloredROMChecksum: "F3A4824F667831A4017201459475E22D"
+coloredROMNotes: ""
+coloredROMVPSId: "AweelJjV"
+fps: 60
 romChecksum: "c5ac656613515587aad3c2aaf47eecb9"
 romUrlOverride: "https://www.vpforums.org/index.php?app=downloads&showfile=5537"
 romVersionOverride: "dm_h6b"
@@ -15,5 +19,3 @@ testers:
   - "Mox"
 vpxVPSId: "l8B0QJLS"
 vpxChecksum: "96704EE99E805E299D754C4C7FB16BB4"
-applyFixes:
-  - "bass"

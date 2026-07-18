@@ -2,7 +2,7 @@
 backglassVPSId: "gkFcS4tRQG"
 backglassChecksum: "60b282db76ed446a70a32e238b45b121"
 backglassNotes: "Mousin Around (Bally 1989) b2s authentic 2.0"
-fps: 32
+fps: 55
 romVPSId: "uTb3zlcm"
 romChecksum: "d7c45ffd9826bcb7a5861e614e7f7ae2"
 tableVPSId: "n0QJLWPB"
@@ -17,5 +17,3 @@ mainNotes: >-
   Note: There is a known issue regarding the 1-2-3
   POW! gate motor, it fails to resest occasionally.
   Only occurred once during hours of testing.
-applyFixes:
-  - "bass"

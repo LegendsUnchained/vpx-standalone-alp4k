@@ -1,6 +1,4 @@
 ---
-applyFixes:
-  - "bass"
 backglassBundled: true
 backglassChecksum: "de404542fca2311ae6a2193c14fcd4d0"
 backglassNotes: "Same link as table."
@@ -8,6 +6,7 @@ enabled: false
 fps: 60
 romChecksum: "8a13f8e67608e8fcf92c085f51c0829a"
 romVPSId: "UTjZjMddI_"
+tableNotes: "Download v6.0.0"
 tableVPSId: "c_Lv7XBz-X"
 tagline: "'Don't call me FLUFFY!!'"
 testers:

@@ -20,5 +20,3 @@ testers:
 vpxVPSId: "cN_hykCey3"
 vpxChecksum: "A8D2E6ADCC58AEDEEA717D13637A9A1A"
 enabled: false # Osie: Batch for next week
-applyFixes:
-  - "bass"

@@ -1,12 +1,12 @@
 ---
-applyFixes:
-  - "bass"
 backglassChecksum: "04e673b4a0ce40044dac12c5bd5ebfc3"
 backglassVPSId: "L0gYivHH"
 enabled: false
 fps: 60
 romChecksum: "b0f9ca86f9bbbdf95d207bfc18f09410"
 romVPSId: "MkcokqX7"
+tableNotes: "Download v6.0.0"
+backglassNotes: "Download v2.0"
 tableVPSId: "n0ZY_Wow"
 tagline: "'A Galaxy Full of Entertainment!'"
 testers:

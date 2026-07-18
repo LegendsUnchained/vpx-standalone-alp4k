@@ -6,7 +6,7 @@ tableNotes: "Download 'Central Park (Gottlieb 1966)v1.0.3.zip'"
 backglassVPSId: "MapWXPk9"
 backglassChecksum: "276bace0116e7980484b4c6ebd4cb1f4"
 backglassNotes: "Central Park (Gottlieb 1966) directB2S for tgx release.zip"
-fps: 55
+fps: 60
 testers:
   - "Boris"
 tagline: "7 Bell-ringing features!"

@@ -1,42 +1,60 @@
-﻿# Rescue 911 (Gottlieb, 1994) 
+# Rescue 911 (Gottlieb 1994)
 
-![Table Preview](../../images/vpx-r911.png)
+![Table Preview](../../images/BzkddwC8-preview.webp)
 
-Author: [antisect](https://vpuniverse.com/profile/36923-antisect/) 
+<br>
 
-Tested by: Bla1ze
+## *️⃣  Table Statistics
 
-Version: 1.0.0
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ✅ | ✅ | ❌ | 50 |
 
-Download: [VP Universe](https://vpuniverse.com/files/file/7089-rescue-911-gottlieb-1994/)
+<br>
 
-DirectB2S
+**VPXS 4KP Testers:**
+  - Wraith
 
-Author: [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
+<br>
 
-Version: 1.0.0
+---
 
-Download: [VP Universe](https://vpuniverse.com/files/file/19143-rescue-911-gottlieb-1994-b2s-full-dmd/)
+<br>
 
-ROM
+## ❇️ Available in the Wizard! 🪄✨
 
-Download: [Pinball Nirvana](https://pinballnirvana.com/forums/resources/rescu911.3355/)
+<br>
 
-SHA: 49f2c22645cf78b8cd497fe43643c0f2d31a2c20
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
 
-MD5: c4897d8d8f2af353a980aae47cd7dafd
+### How to install:
 
-## Status 
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Rescue 911 (Gottlieb 1994)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"'Weeeewoooo Weeeeeewoooo'"*
 
-Minimum VPX Standalone build: 10.8.0-1983-a764013
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
+<br>
 
-## Instructions
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
 
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more information found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
-- If you're looking for Shatner, he's not here! 🚑
+<br>
 
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

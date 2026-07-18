@@ -42,7 +42,7 @@ Const cGameName = "cv_20hc" 'arcade rom with credits
 'the 4 color option properly.
 '
 
-Const IntegratedDMDType = 0 '0 = Off / 1 Normal / 2 Color.
+Const IntegratedDMDType = 2 '0 = Off / 1 Normal / 2 Color.
 
 '-------------------------------------------------
 
@@ -50,7 +50,7 @@ Const DMD_Plastic = 0 'Render a plastic cover over the DMD display.
 
 '-------------------------------------------------
 
-Const BackGlassDMD = 1 ' Place a static image on the playfield DMD if you use a 3 screen cab and don't want to use either 
+Const BackGlassDMD = 0 ' Place a static image on the playfield DMD if you use a 3 screen cab and don't want to use either 
                        ' the integrated DMD or the normal DMD positioned on the playfield.
 '-------------------------------------------------
 

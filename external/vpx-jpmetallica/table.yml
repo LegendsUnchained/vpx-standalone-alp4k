@@ -19,5 +19,3 @@ testers:
 vpxVPSId: "P-R9a8GPd1"
 vpxChecksum: "EAC6F11782700CCE383ECC7E90BC099B"
 enabled: false
-applyFixes:
-  - "bass"

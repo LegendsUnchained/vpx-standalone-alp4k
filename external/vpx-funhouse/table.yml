@@ -1,14 +1,18 @@
 ---
-applyFixes:
-  - "bass"
-fps: 45
+backglassChecksum: "27C710E011EEC95729339C2C44AF1AE7"
+backglassVPSId: "AzBZfcxUUy"
+diffChecksum: "FEC3E9E4A7D2ADF1E010517CA9ACF3B8"
+diffVPSId: "GqdNrqlFF5"
+fps: 56
 romChecksum: "EE82A4A235451E36405E3AB90A54DA10"
 romVPSId: "oKy7SY7JKC"
+tableNotes: "Download 'Funhouse (Williams 1990) 2.0b'"
 tableVPSId: "O1-qbuxg"
-tagline: "Hey, Bucko, shoot again!"
+tagline: "'Hey, Bucko, shoot again!'"
 testers:
-  - "Bla1ze"
+  - "Wraith"
   - "mcap"
+  - "Bla1ze"
   - "CoffeeAtJoes"
-vpxVPSId: "I7Vd9HVoHn"
-vpxChecksum: "332CBCE0754D1D203B88CAA26CAE7B5C"
+vpxChecksum: "BBD3FF48CAF1AE7CDDD8E8DD2D518326"
+vpxVPSId: "Jt3UevJk"

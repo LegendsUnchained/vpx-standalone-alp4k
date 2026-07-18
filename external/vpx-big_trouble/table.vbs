@@ -51,23 +51,12 @@ GlowIntensity=15 'Glowblob intensity
 
 Const BallSize = 50    ' 50 is the normal size used in the core.vbs, VP kicker routines uses this value divided by 2
 Const BallMass = 1.7   ' standard ball mass in JP's VPX Physics 3.0.1
-Dim SongVolume: SongVolume = 0.3 ' 1 is full volume, but I set it quite low to listen better the other sounds since I use headphones, adjust to your setup :)
+Const SongVolume = 0.3 ' 1 is full volume, but I set it quite low to listen better the other sounds since I use headphones, adjust to your setup :)
 
 'FlexDMD in high or normal quality
 'change it to True if you have an LCD screen, 256x64
 'or keep it False if you have a real DMD at 128x32 in size
 Const FlexDMDHighQuality = True
-
-'****** PuP Variables ******
-
-Dim usePUP: Dim cPuPPack: Dim PuPlayer: Dim PUPStatus: PUPStatus=false ' dont edit this line!!!
-
-'*************************** PuP Settings for this table ********************************
-
-usePUP   = true               ' enable Pinup Player functions for this table
-cPuPPack = "BigTrouble"    ' name of the PuP-Pack / PuPVideos folder for this table
-
-'//////////////////// PINUP PLAYER: STARTUP & CONTROL SECTION //////////////////////////
 
 ' Load the core.vbs for supporting Subs and functions
 LoadCoreFiles
@@ -79,7 +68,6 @@ Sub LoadCoreFiles
     ExecuteGlobal GetTextFile("controller.vbs")
     If Err Then MsgBox "Can't open controller.vbs"
     On Error Goto 0
-    DetectPup()
 End Sub
 
 ' Define any Constants
@@ -90,12 +78,11 @@ Const MaxMultiplier = 10      ' limit playfield multiplier
 Const MaxBonusMultiplier = 10 'limit Bonus multiplier
 Const BallsPerGame = 3        ' usually 3 or 5
 Const MaxMultiballs = 6       ' max number of balls during multiballs
-Const MusicOn = True ' False if you don't want music
 
 ' Use FlexDMD if in FS mode
 Dim UseFlexDMD
 If Table1.ShowDT = True then
-    UseFlexDMD = True
+    UseFlexDMD = False
 Else
     UseFlexDMD = True
 End If
@@ -237,7 +224,6 @@ Sub Table1_Init()
     LoadLut
 
 	Glowball_Init 'Start Glowballs
-    If (Not usePUP) and MusicOn Then PLaySound "Soundtrack", -1  
 End Sub
 
 '******
@@ -561,11 +547,8 @@ Dim Song
 Song = ""
 
 Sub PlaySong(name)
-    If (usePUP) Then Exit Sub
-
     If bMusicOn Then
         If Song <> name Then
-            Debug.Print "Play song: " & name
             StopSound Song
             Song = name
             PlaySound Song, -1, SongVolume
@@ -574,8 +557,6 @@ Sub PlaySong(name)
 End Sub
 
 Sub ChangeSong
-    If (usePUP) Then Exit Sub
-
     Select Case Mode(CurrentPlayer, 0)
         Case 0:
             iF bMultiBallMode OR bMinotaurMBStarted Then
@@ -597,7 +578,6 @@ End Sub
 
 Sub StopSong(name)
     StopSound name
-    Song = ""
 End Sub
 
 '******************************
@@ -1243,7 +1223,6 @@ Sub Drain_Hit()
 
     ' pretend to knock the ball into the ball storage mech
     PlaySoundAt "fx_drain", Drain
-    DOF 109, DOFPulse
     'if Tilted the end Ball Mode
     If Tilted Then
         StopEndOfBallMode
@@ -1264,6 +1243,7 @@ Sub Drain_Hit()
             ' stop the ballsaver timer during the launch ball saver time, but not during multiballs
             If NOT bMultiBallMode Then
                 DMD "_", CL("BALL SAVED"), "_", eNone, eBlinkfast, eNone, 2500, True, "vo_live_again" : pupevent 811
+            DOF 231, DOFPulse
             'BallSaverTimerExpired_Timer 'enable this line to stop the ballsaver timer
             End If
         Else
@@ -1287,6 +1267,7 @@ Sub Drain_Hit()
 
             ' was that the last ball on the playfield
             If(BallsOnPlayfield = 0)Then
+                DOF 109, DOFPulse
                 ' End Mode and timers
                 'StopSong Song
                 ChangeGi white
@@ -1299,6 +1280,8 @@ Sub Drain_Hit()
             End If
         End If
     End If
+        If(bBallSaverActive = False)Then
+    End If
 End Sub
 
 ' The Ball has rolled out of the Plunger Lane and it is pressing down the trigger in the shooters lane
@@ -1310,11 +1293,12 @@ Sub swPlungerRest_Hit()
     If bPlayIntro Then PlaySound "vo_game_start":bPlayIntro = False
     PlaySoundAt "fx_sensor", swPlungerRest
     bBallInPlungerLane = True
+    If Not bAutoPlunger Then
     DOF 500, DOFOn 'Turn on Ball indicator
     ' turn on Launch light is there is one
     'LaunchLight.State = 2
     ' be sure to update the Scoreboard after the animations, if any
-    'Start the skillshot lights & variables if any
+  End If    'Start the skillshot lights & variables if any
     If bSkillShotReady Then
         PlaySong "mu_plunger"
         UpdateSkillshot()
@@ -1983,9 +1967,9 @@ Sub DMD_Init() 'default/startup values
                 For i = 20 to 39 ' Bottom
                     DMDScene.GetImage("Dig" & i).SetBounds 8 + (i - 20) * 12, 34, 12, 22
                 Next
-                 FlexDMD.LockRenderThread
-                 FlexDMD.Stage.AddActor DMDScene
-                 FlexDMD.UnlockRenderThread
+                FlexDMD.LockRenderThread
+                FlexDMD.Stage.AddActor DMDScene
+                FlexDMD.UnlockRenderThread
             Else
                 FlexDMD.TableFile = Table1.Filename & ".vpx"
                 FlexDMD.RenderMode = 2
@@ -2710,6 +2694,7 @@ Sub ShowTableInfo
 End Sub
 
 Sub StartAttractMode
+    DOF 150, DOFOn
     StartLightSeq
     DMDFlush
     ShowTableInfo
@@ -2717,6 +2702,7 @@ Sub StartAttractMode
 End Sub
 
 Sub StopAttractMode
+    DOF 150, DOFOff
     StopRainbow
     DMDScoreNow
     LightSeqAttract.StopPlay
@@ -3294,6 +3280,7 @@ End Sub
 '*********
 ' in and outlanes
 Sub leftoutlane_Hit
+    DOF 201, DOFPulse
     PLaySoundAt "fx_sensor", leftoutlane
     If Tilted Then Exit Sub
     'score & bonus
@@ -3308,6 +3295,7 @@ Sub leftoutlane_Hit
 End Sub
 
 Sub leftinlane_Hit
+    DOF 202, DOFPulse
     PLaySoundAt "fx_sensor", leftinlane
     If Tilted Then Exit Sub
     'score & bonus
@@ -3321,6 +3309,7 @@ Sub leftinlane_Hit
 End Sub
 
 Sub rightinlane_Hit
+    DOF 203, DOFPulse
     PLaySoundAt "fx_sensor", rightinlane
     If Tilted Then Exit Sub
     'score & bonus
@@ -3334,6 +3323,7 @@ Sub rightinlane_Hit
 End Sub
 
 Sub rightoutlane_Hit
+    DOF 204, DOFPulse
     PLaySoundAt "fx_sensor", rightoutlane
     If Tilted Then Exit Sub
     'score & bonus
@@ -3365,6 +3355,7 @@ End Sub
 ' loops
 
 Sub hurrican_Hit
+    DOF 205, DOFPulse
     PLaySoundAt "fx_sensor", hurrican
     If Tilted Then Exit Sub
     'score & bonus
@@ -3400,6 +3391,7 @@ Sub hurrican_Hit
 End Sub
 
 Sub upperloop1_Hit
+    DOF 206, DOFPulse
     PLaySoundAt "fx_sensor", upperloop1
     If Tilted Then Exit Sub
     'score & bonus
@@ -3424,6 +3416,7 @@ Sub upperloop1_Hit
 End Sub
 
 Sub upperloop2_Hit
+    DOF 207, DOFPulse
     PLaySoundAt "fx_sensor", upperloop2
     If Tilted Then Exit Sub
     'score & bonus
@@ -3441,6 +3434,7 @@ Sub upperloop2_Hit
 End Sub
 
 Sub upperloop3_Hit
+    DOF 208, DOFPulse
     PLaySoundAt "fx_sensor", upperloop3
     If Tilted Then Exit Sub
     'score & bonus
@@ -3458,6 +3452,7 @@ Sub upperloop3_Hit
 End Sub
 
 Sub upperloop4_Hit
+    DOF 209, DOFPulse
     PLaySoundAt "fx_sensor", upperloop4
     If Tilted Then Exit Sub
     'score & bonus
@@ -3494,6 +3489,7 @@ End Sub
 
 'ramps completed
 Sub lramp_Hit
+    DOF 210, DOFPulse
     PLaySoundAt "fx_sensor", lramp
     If Tilted Then Exit Sub
     'score & bonus
@@ -3558,6 +3554,7 @@ Sub lramp_Hit
 End Sub
 
 Sub rramp_Hit
+    DOF 211, DOFPulse
     PLaySoundAt "fx_sensor", rramp
     If Tilted Then Exit Sub
     'score & bonus
@@ -3604,6 +3601,7 @@ Sub rramp_Hit
 End Sub
 
 Sub tramp_Hit
+    DOF 212, DOFPulse
     PLaySoundAt "fx_sensor", tramp
     If Tilted Then Exit Sub
 LTF:RTF
@@ -3628,10 +3626,19 @@ End Sub
 
 'Effect triggers
 
-Sub Trigger001_Hit:LMF:End Sub
-Sub Trigger002_Hit:LBF:End Sub
-Sub Trigger003_Hit:RMF:End Sub
-Sub Trigger004_Hit:RBF:End Sub
+Sub Trigger001_Hit:LMF:
+    DOF 240, DOFPulse
+End Sub
+    DOF 241, DOFPulse
+Sub Trigger002_Hit:LBF:
+    DOF 242, DOFPulse
+End Sub
+Sub Trigger003_Hit:RMF:
+    DOF 243, DOFPulse
+End Sub
+Sub Trigger004_Hit:RBF:
+    DOF 244, DOFPulse
+End Sub
 
 Sub Trigger005_Hit 'hidden entrance to start battle
     DMD "_", CL("HIDDEN SHOT"), "_", eNone, eBlinkFast, eNone, 1500, True, "vo_og-growl"
@@ -3649,6 +3656,7 @@ End Sub
 
 ' kickback targets
 Sub leftkb_Hit 'left lower kickback target
+    DOF 213, DOFPulse
     PLaySoundAtBall SoundFXDOF("fx_Target", 124, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     Addscore 10000
@@ -3669,6 +3677,7 @@ Sub leftkb_Hit 'left lower kickback target
 End Sub
 
 Sub rightkb_Hit 'left upper kickback target
+    DOF 214, DOFPulse
     PLaySoundAtBall SoundFXDOF("fx_Target", 125, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     Addscore 10000
@@ -3691,6 +3700,7 @@ End Sub
 'Pandora's targets
 
 Sub lmyst_Hit 'right upper pandora target
+    DOF 215, DOFPulse
     PLaySoundAtBall SoundFXDOF("fx_Target", 126, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     Addscore 10000
@@ -3711,6 +3721,7 @@ Sub lmyst_Hit 'right upper pandora target
 End Sub
 
 Sub rmyst_Hit 'right lower pandora target
+    DOF 216, DOFPulse
     PLaySoundAtBall SoundFXDOF("fx_Target", 127, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     Addscore 10000
@@ -3733,6 +3744,7 @@ End Sub
 
 ' captive ball
 Sub cball_Hit
+    DOF 244, DOFPulse
     PLaySoundAtBall SoundFXDOF("fx_Target", 119, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     Addscore 75000
@@ -3752,6 +3764,7 @@ End Sub
 
 ' thin targets
 Sub liup1_Hit
+    DOF 217, DOFPulse
     PLaySoundAtBall SoundFXDOF("fx_Target", 142, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     Addscore 10000
@@ -3776,6 +3789,7 @@ Sub liup1_Hit
 End Sub
 
 Sub liup2_Hit
+    DOF 217, DOFPulse
     PLaySoundAtBall SoundFXDOF("fx_Target", 142, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     Addscore 10000
@@ -3800,6 +3814,7 @@ Sub liup2_Hit
 End Sub
 
 Sub liup3_Hit
+    DOF 217, DOFPulse
     PLaySoundAtBall SoundFXDOF("fx_Target", 142, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     Addscore 10000
@@ -3824,6 +3839,7 @@ Sub liup3_Hit
 End Sub
 
 Sub liup4_Hit
+    DOF 217, DOFPulse
     PLaySoundAtBall SoundFXDOF("fx_Target", 142, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     Addscore 10000
@@ -3848,6 +3864,7 @@ Sub liup4_Hit
 End Sub
 
 Sub liup5_Hit
+    DOF 217, DOFPulse
     PLaySoundAtBall SoundFXDOF("fx_Target", 143, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     Addscore 10000
@@ -3872,12 +3889,14 @@ Sub liup5_Hit
 End Sub
 
 Sub TargetLightsAll(stat) 'same as light.state
+    DOF 245, DOFPulse
     For each x in aTargetsAll
         x.State = stat
     Next
 End Sub
 
 Sub TargetLightsThunder(stat) 'same as light.state
+    DOF 246, DOFPulse
     For each x in aTargetsThunder
         x.State = stat
     Next
@@ -3885,6 +3904,7 @@ End Sub
 
 ' Zeus targets
 Sub ztgt_Hit
+    DOF 220, DOFPulse
     PLaySoundAtBall SoundFXDOF("fx_Target", 133, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     Addscore 50000
@@ -3895,6 +3915,7 @@ Sub ztgt_Hit
 End Sub
 
 Sub etgt_Hit
+    DOF 221, DOFPulse
     PLaySoundAtBall SoundFXDOF("fx_Target", 134, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     Addscore 50000
@@ -3905,6 +3926,7 @@ Sub etgt_Hit
 End Sub
 
 Sub utgt_Hit
+    DOF 222, DOFPulse
     PLaySoundAtBall SoundFXDOF("fx_Target", 135, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     Addscore 50000
@@ -3915,6 +3937,7 @@ Sub utgt_Hit
 End Sub
 
 Sub stgt_Hit
+    DOF 223, DOFPulse
     PLaySoundAtBall SoundFXDOF("fx_Target", 136, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     Addscore 50000
@@ -3955,6 +3978,7 @@ End Sub
 '*********
 
 Sub scoop1_Hit 'helmet scoop
+    DOF 224, DOFPulse
     PlaySoundAt "fx_hole_enter", scoop1
     scoop1.Destroyball
     BallsinHole = BallsInHole + 1
@@ -3998,6 +4022,7 @@ Sub scoop1_Hit 'helmet scoop
 End Sub
 
 Sub kickBallOut 'from all the holes
+    DOF 225, DOFPulse
     If BallsinHole > 0 Then
         BallsinHole = BallsInHole - 1
         PlaySoundAt SoundFXDOF("fx_popper", 111, DOFPulse, DOFcontactors), scoopexit
@@ -4013,6 +4038,7 @@ End Sub
 ' hole2 - Start Battle
 
 Sub scoop2_Hit 'Start Battle
+    DOF 226, DOFPulse
     PlaySoundAt "fx_hole_enter", scoop2
     scoop2.Destroyball
     BallsinHole = BallsInHole + 1
@@ -4052,6 +4078,7 @@ End Sub
 'hole3 - HadesTrapdoor
 
 Sub TrapDoorK_Hit 'Hades Battle
+    DOF 227, DOFPulse
     PlaySoundAt "fx_hole_enter", TrapDoorK
     TrapDoorK.Destroyball
     BallsinHole = BallsInHole + 1
@@ -4868,6 +4895,7 @@ End Sub
 ' orbithits + ramphits are 5 or more then light the extra ball
 
 Sub StartMedussaMB
+    DOF 230, DOFPulse
     DMD CL("WILD MAN MULTIBALL"), CL("SHOOT THE LOOPS"), "_", eNone, eNone, eNone, 1500, True, "vo_medusa_multiball" : pupevent 857
     bMedusaMBStarted = True
     ExtraBallHits = 0
@@ -4897,12 +4925,15 @@ End Sub
 
 Sub CheckMinotaurMB
     If BallsInLock(CurrentPlayer) = 1 Then
+    DOF 228, DOFPulse
         DMD "_", CL("BALL 1 LOCKED"), "_", eNone, eNone, eNone, 1500, True, "vo_lock1" : pupevent 858
     End If
     If BallsInLock(CurrentPlayer) = 2 Then
+    DOF 229, DOFPulse
         DMD "_", CL("BALL 2 LOCKED"), "_", eNone, eNone, eNone, 1500, True, "vo_lock2" : pupevent 859
     End If
     If BallsInLock(CurrentPlayer) = 3 Then
+    DOF 230, DOFPulse
         DMD CL("LORDS MULTIBALL"), CL("SHOOT THE HOLES"), "_", eNone, eNone, eNone, 1500, True, "vo_minotaur_multiball" : pupevent 860
         bMinotaurMBStarted = True
         bLockEnabled = False
@@ -4943,6 +4974,7 @@ End Sub
 '**********************
 
 Sub StartZeusMB
+    DOF 230, DOFPulse
     DMD CL("LO PAN MULTIBALL"), "SHOOT THE UPPER RAMP", "_", eNone, eNone, eNone, 1500, True, "vo_zeus_multiball" : pupevent 862
     bZeusMBStarted = True
     AddMultiball 3
@@ -5006,103 +5038,21 @@ Sub aBonusOrbits_Hit(idx):BonusOrbits(CurrentPlayer) = BonusOrbits(CurrentPlayer
 
 
 ' COPY EVERYTHING BELOW TO THE TOP OF YOUR TABLE SCRIPT UNDER OPTION EXPLICIT                             Start Pup Pack
-Function GetRandomSong(playlist)
-    Dim trkpik
-    select case playlist
-        case "MusicMysteryBOX"
-        	trkpik=RndNbr(6)
-            select case trkpik
-                case 1 : GetRandomSong = playlist & "/FuelMyFire.mp3"
-                case 2 : GetRandomSong = playlist & "/Immigrant Song.mp3"
-                case 3 : GetRandomSong = playlist & "/Speed.mp3"
-                case 4 : GetRandomSong = playlist & "/Spin the Black Circle.mp3"
-                case 5 : GetRandomSong = playlist & "/TheBomb.mp3"
-                case 6 : GetRandomSong = playlist & "/Wargasm.mp3"
-            end Select
-        case "Jackburton1music"
-        	trkpik=RndNbr(6)
-            select case trkpik
-                case 1 : GetRandomSong = playlist & "/Kickstart My Heart.mp3"
-                case 2 : GetRandomSong = playlist & "/Kiss Me Deadly.mp3"
-                case 3 : GetRandomSong = playlist & "/Nowhere Fast.mp3"
-                case 4 : GetRandomSong = playlist & "/Overkill.mp3"
-                case 5 : GetRandomSong = playlist & "/Pretend We're Dead.mp3"
-                case 6 : GetRandomSong = playlist & "/Ram Jam.mp3"
-            end Select
-        case "JackBurtonMusic"
-        	trkpik=RndNbr(2)
-            select case trkpik
-                case 1 : GetRandomSong = playlist & "/Bad Reputation.mp3"
-                case 2 : GetRandomSong = playlist & "/Ballcrusher.mp3"
-            end Select
-        case "WildManMultiballMusic"
-        	trkpik=RndNbr(2)
-            select case trkpik
-                case 1 : GetRandomSong = playlist & "/Superbeast.mp3"
-                case 2 : GetRandomSong = playlist & "/SuperChargerHeaven.mp3"
-            end Select
-        case "LordsMultiballmusic"
-        	trkpik=RndNbr(3)
-            select case trkpik
-                case 1 : GetRandomSong = playlist & "/multiball.mp3"
-                case 2 : GetRandomSong = playlist & "/TerritorialPissings.mp3"
-                case 3 : GetRandomSong = playlist & "/VisionThing.mp3"
-            end Select
-        case "EggShenMusic"
-        	trkpik=RndNbr(2)
-            select case trkpik
-                case 1 : GetRandomSong = playlist & "/Ready To Rock.mp3"
-                case 2 : GetRandomSong = playlist & "/Spark in the Dark.mp3"
-            end Select
-    end select
-End Function
 
-Sub PlayPupSong(name)
-    If bMusicOn Then
-        If Song <> name Then
-            Song =  "./pupvideos/" & cPuPPack & "/" & name
-            PlayMusic Song, SongVolume
-        End If
-    End If
-End Sub
+'****** PuP Variables ******
 
-Sub StartDefaultSong()
-    If Song = "" Then
-        PlayPupSong "Music/default.mp3"
-    End If
-End Sub
+Dim usePUP: Dim cPuPPack: Dim PuPlayer: Dim PUPStatus: PUPStatus=false ' dont edit this line!!!
 
-Sub StopPupSong()
-    EndMusic
-    Song = ""
-End Sub
+'*************************** PuP Settings for this table ********************************
 
+usePUP   = true               ' enable Pinup Player functions for this table
+cPuPPack = "BigTrouble"    ' name of the PuP-Pack / PuPVideos folder for this table
 
-Sub Table1_MusicDone
-    If Not usePUP Then Exit Sub
-    If Song <> "" Then
-        PlayMusic Song, SongVolume
-    End If
-End Sub
-
-' Detect if the pup files are installed
-Sub DetectPup()
-    If usePUP=true then
-        ' Check if puppack is installed
-        Dim fso
-        Set fso = CreateObject("Scripting.FileSystemObject")
-        If (fso.FolderExists(".\\pupvideos\\" & cPuPPack)) Then
-            B2SOff=True
-            SongVolume = 1.0
-        Else
-            usePUP=false
-            PUPStatus=true
-        End If
-    End If
-End Sub
+'//////////////////// PINUP PLAYER: STARTUP & CONTROL SECTION //////////////////////////
 
 ' This is used for the startup and control of Pinup Player
-Sub PuPStart()
+
+Sub PuPStart(cPuPPack)
     If PUPStatus=true then Exit Sub
     If usePUP=true then
         Set PuPlayer = CreateObject("PinUpPlayer.PinDisplay")
@@ -5118,76 +5068,6 @@ End Sub
 
 Sub pupevent(EventNum)
     if (usePUP=false or PUPStatus=false) then Exit Sub
-
-    'Catch music events
-    Select Case EventNum
-        Case 800
-            PlayPupSong "Music/default.mp3" ' Trigger: 22,1,"BigTrouble (Default)",E800,4,Music,default.mp3,100,1,,,,SetBG,0
-        Case 802
-            ' Trigger: 629,1,TILT,E802,4,Music,default.mp3,0,6,44,,,normal,0
-            StopPupSong
-            vpmtimer.addtimer 44000, "StartDefaultSong '"
-        Case 803
-            ' Trigger: 326,1,"stop default",E803,4,Music,default.mp3,0,3,10,,,normal,0
-            ' Trigger: 51,1,"STOP Lords of Death",E803,4,Music,lordsofdeath.mp3,,1,,,,StopFile,0
-            ' Trigger: 54,1,"STOP Guardian",E803,4,Music,guardian.mp3,,1,,,,StopFile,0
-            ' Trigger: 71,1,"STOP Wing Kong",E803,4,Music,Wingkong.mp3,,1,,,,StopFile,0
-            ' Trigger: 78,1,"STOP Wild Man",E803,4,Music,wildman.mp3,,1,,,,StopFile,0
-            ' Trigger: 85,1,"STOP Rain",E803,4,Music,rain.mp3,,1,,,,StopFile,0
-            ' Trigger: 88,1,"STOP Thunder",E803,4,Music,thunder.mp3,,1,,,,StopFile,0
-            ' Trigger: 108,1,"STOP Lightning",E803,4,Music,lightning.mp3,,1,,,,StopFile,0
-            ' Trigger: 179,1,"STOP Lo Pan",E803,4,Music,lopan.mp3,,1,,,,StopFile,0
-            ' Trigger: 263,1,"Mystery Stop",E803,4,MusicMysteryBOX,,0,3,10,,,normal,0
-            ' Trigger: 441,1,"Lords of Death STOP",E803,4,LordsMultiballmusic,,0,3,10,,,normal,0
-            ' Trigger: 728,1,"Stop Wildman",E803,4,WildManMultiballMusic,,0,3,10,,,normal,0
-            ' Trigger: 730,1,"Stop EggShen",E803,4,EggShen,,0,3,10,,,normal,0
-            ' Trigger: 732,1,"JAck1 Stop",E803,4,Jackburton1music,,0,3,10,,,normal,0
-            ' Trigger: 734,1,"Jack Stop",E803,4,JackBurtonMusic,,0,3,10,,,normal,0
-            StopPupSong
-            vpmtimer.addtimer 10000, "StartDefaultSong '"
-        Case 805
-            PlayPupSong "Music/BigTroubleILittleChina.mp3" 'Trigger:  94,1,"Game Over",E805,4,Music,BigTroubleILittleChina.mp3,100,1,,,,Loop,0
-        Case 825
-            PlayPupSong GetRandomSong("MusicMysteryBOX") 'Trigger:  262,1,"Mystery Multiball",E825,4,MusicMysteryBOX,,100,2,,,,Loop,0    
-        Case 832
-            PlayPupSong "Music/lordsofdeath.mp3" ' Trigger: 50,1,"Lords of Death",E832,4,Music,lordsofdeath.mp3,100,1,,,,Loop,0
-        Case 833
-            PlayPupSong "Music/guardian.mp3" ' Trigger: 53,1,Guardian,E833,4,Music,guardian.mp3,100,1,,,,Loop,0
-        Case 834
-            PlayPupSong "Music/Wingkong.mp3" ' Trigger: 68,1,"Wing Kong",E834,4,Music,Wingkong.mp3,100,1,,,,Loop,0
-        Case 835
-            PlayPupSong "Music/wildman.mp3" ' Trigger: 77,1,"Wild Man",E835,4,Music,wildman.mp3,100,1,,,,Loop,0
-        Case 837
-            PlayPupSong "Music/rain.mp3" ' Trigger: 84,1,Rain,E837,4,Music,rain.mp3,100,1,,,,Loop,0
-        Case 838
-            PlayPupSong "Music/thunder.mp3" ' Trigger: 87,1,Thunder,E838,4,Music,thunder.mp3,100,1,,,,Loop,0
-        Case 839
-            PlayPupSong "Music/lightning.mp3" ' Trigger: 90,1,Lightning,E839,4,Music,lightning.mp3,100,1,,,,Loop,0
-        Case 840
-            PlayPupSong "Music/lopan.mp3" ' Trigger: 91,1,"Lo Pan",E840,4,Music,lopan.mp3,100,1,,,,Loop,0        
-        Case 841
-            PlayPupSong GetRandomSong("Jackburton1music") ' Trigger: 731,1,"Jack Burton1",E841,4,Jackburton1music,,,2,,,,Loop,0
-        Case 842
-            PlayPupSong GetRandomSong("JackBurtonMusic") ' Trigger: 733,1,"Jack Burton",E842,4,JackBurtonMusic,,,2,,,,Loop,0
-        Case 860
-            PlayPupSong GetRandomSong("WildManMultiballMusic") ' Trigger: 727,1,WildMan,E857,4,WildManMultiballMusic,,,2,,,,Loop,0
-        Case 860
-            PlayPupSong GetRandomSong("LordsMultiballmusic") ' Trigger: 440,1,"Lords Of Death MUltiball",E860,4,LordsMultiballmusic,,,2,,,,Loop,0
-        Case 863
-            PlayPupSong GetRandomSong("EggShenMusic") ' Trigger: 729,1,EggShen,E863,4,EggShenMusic,,,2,,,,Loop,0
-
-        Case 843, 844, 845, 846, 848, 849, 850
-            ' Trigger: 181,1,"Lords Completed",E843,4,Music,lordsofdeath.mp3,,1,,,,StopFile,0
-            ' Trigger: 199,1,"Guardian Completed",E844,4,Music,guardian.mp3,,1,,,,StopFile,0
-            ' Trigger: 216,1,"Wing Kong Completed",E845,4,Music,Wingkong.mp3,,1,,,,StopFile,0
-            ' Trigger: 233,1,"Wild MAn Completed",E846,4,Music,wildman.mp3,,1,,,,StopFile,0
-            ' Trigger: 245,1,"Rain Defeated",E848,4,Music,rain.mp3,,1,,,,StopFile,0
-            ' Trigger: 255,1,"Thunder Defeated",E849,4,Music,thunder.mp3,,1,,,,StopFile,0
-            ' Trigger: 256,1,"Lighting Defeated",E850,4,Music,lightning.mp3,,1,,,,StopFile,0
-            ' Trigger: 260,1,"Lo Pan defeated",E851,4,Music,lopan.mp3,,1,,,,StopFile,0
-            StopPupSong
-            StartDefaultSong()
-    End Select
     PuPlayer.B2SData "E"&EventNum,1  'send event to Pup-Pack
 End Sub
 
@@ -5205,7 +5085,7 @@ End Sub
 
 '************ PuP-Pack Startup **************
 
-PuPStart() 'Check for PuP - If found, then start Pinup Player / PuP-Pack							Finish Start Pup Pack
+PuPStart(cPuPPack) 'Check for PuP - If found, then start Pinup Player / PuP-Pack							Finish Start Pup Pack
 
 '*******************************************************************************************************************************************
 
@@ -5235,11 +5115,11 @@ End If
 if PuPScreen = 0 Then
     pupflasher6.visible=false	
     pupflasher6.TimerEnabled=false
-    'PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 18, ""FN"":12 }"
+    PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 18, ""FN"":12 }"
 End If
 '*********************************************APRON RIGHT********************************
 Sub pupflasher7_Timer()
-	pupflasher7.VideoCapUpdate="PUPSCREEN19"
+		pupflasher7.VideoCapUpdate="PUPSCREEN19"
 end Sub		
 
 If PupScreen = 1 Then
@@ -5263,7 +5143,7 @@ End If
 if PuPScreen = 0 Then
     pupflasher7.visible=false	
     pupflasher7.TimerEnabled=false
-    'PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 19, ""FN"":12 }"
+    PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 19, ""FN"":12 }"
 End If
 
 '**********************************************************************************************************
@@ -5419,8 +5299,4 @@ Sub Glowball_Init
 	If GlowBall Then GraphicsTimer.enabled = True End If
 End Sub
  
-
-
-
-
 

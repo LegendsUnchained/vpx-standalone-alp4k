@@ -1,9 +1,10 @@
 ---
-applyFixes:
-  - "bass"
 backglassVPSId: "yoOQCG70LN"
 backglassChecksum: "633d99e0951d3972f3b27f5acbb37ae4"
-fps: 58
+coloredROMChecksum: "22CC3B96A41B55C064AC3501FF445BD6"
+coloredROMNotes: "Download Version 1.0.0"
+coloredROMVPSId: "BNCtlE-REp"
+fps: 60
 romVPSId: "MwNXNR5C"
 romChecksum: "c1f08d90e478e14f7a6c99ea66d5a67b"
 tableVPSId: "jpyrfVNTmc"

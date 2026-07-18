@@ -11,8 +11,6 @@ testers:
   - "kaoticBPR"
   - "OminousOsie"
   - "evilwraith"
-vpxVPSId: "8hOnTBtR_w"
-vpxChecksum: "558c983d24d4187909740f52aa274409"
-tableNotes: "Download 'Golden Cue (Sega 1998)-v1.4.zip'"
-applyFixes:
-  - "bass"
+vpxVPSId: "-k2koNyQCq"
+vpxChecksum: "BA628C44000941F1AA2A0036B8CA6505"
+tableNotes: "Download 'Golden Cue v1.2 (Sega 1998).zip'"

@@ -1,7 +1,11 @@
 ---
-applyFixes:
-  - "bass"
-fps: 57
+backglassVPSId: "Gl-EVBjkA5"
+backglassChecksum: "0BB47FC236BC581AC01C84877A7ACD72"
+backglassNotes: "Download version 1.0.0"
+coloredROMChecksum: "17A99C6CA5E3EC828521C1BBD6DAD7D3"
+coloredROMNotes: "Download and extract 'GLaltcolor.7z'. Use file in 'freddy'"
+coloredROMUrlOverride: "https://vpuniverse.com/files/file/5120-glaltcolor7z/"
+fps: 58
 romUrlOverride: "https://pinballnirvana.com/forums/resources/freddy.1835/"
 romVersionOverride: "freddy"
 romChecksum: "30D614734072E3FD25475EA9320B2865"
