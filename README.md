@@ -600,8 +600,9 @@ Links to these products on Amazon are through affiliate links.
 | [Metallica Pro, JPs (Stern 2013)](external/vpx-jpmetallica) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Meteor (Stern 1979)](external/vpx-meteor) | :white_check_mark: | :x: | :white_check_mark: | :x: | 42 |
 | [Metropolis (Original 2022)](external/vpx-metropolis) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 46 |
-| [MF DOOM (GOILL773 2024)](external/vpx-mfdoom) | :white_check_mark: | :white_check_mark: | :x: | :x: | 35 |
-| [Miami Vice (TBA 2020)](external/vpx-miamivice) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 37 |
+| [MF DOOM (GOILL773 2024)](external/vpx-mfdoom) | :white_check_mark: |:white_check_mark: | :x: | :white_check_mark: | 35 |
+| [MF DOOM (GOILL773 2024) FlexDMD version](external/vpx-mfdoomflexdmd) | :white_check_mark: |:white_check_mark: | :x: | :x: | 58 |
+| [Miami Vice (Original 2020)](external/vpx-miamivice) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 33 |
 | [Michael Jordan (Data East 1992)](external/vpx-michaeljordan) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
 | [Mickey Mouse in Steamboat Willie](external/vpx-mickeysbw) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Middle Earth (Atari 1978)](external/vpx-middleearth) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
