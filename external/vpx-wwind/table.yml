@@ -1,6 +1,7 @@
 ---
 backglassVPSId: "0DTYgI9lYQ"
-backglassChecksum: "4A075B6067BE608B5A63AC7A438EB027"
+backglassChecksum: "A882ECE4BA906719F0919D8A995CA638"
+backglassNotes: "Download version 2.0"
 fps: 60
 romVPSId: "Zho3rYsp"
 romChecksum: "862EE474E14684FF77D3299914940927"
@@ -14,5 +15,3 @@ testers:
   - "OminousOsie"
 vpxVPSId: "huOWrTMO"
 vpxChecksum: "EB3C5DF7525619A91FD63DDCF11F5B46"
-applyFixes:
-  - "bass"

@@ -1,10 +1,8 @@
 ---
-applyFixes:
-  - "bass"
 backglassChecksum: "a2186351e6e789bab97e9bcd560e856f"
 backglassNotes: "Use version full DMD"
 backglassVPSId: "V0dIfYtkj5"
-fps: 55
+fps: 60
 romNotes: "Download drac_l1.zip"
 romVPSId: "_UH4Udok"
 romChecksum: "6ddd36020f16a3c39683e7dcf660fffe"

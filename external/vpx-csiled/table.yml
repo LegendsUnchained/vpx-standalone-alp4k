@@ -1,7 +1,16 @@
 ---
 # yamllint disable-line rule:line-length
 backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/gQRBUSML_b2s_1698248771391.webp"
-fps: 54
+backglassNotes: "Download version 1.0.0"
+backglassVPSId: "yGXSbW2IVx"
+backglassChecksum: "10EDB496B86011B7E996B2F4B1C15335"
+coloredROMChecksum: 
+  - "18E4A65683C2F5329346C74F1426B840"
+  - "66897F7E564FCF430F9FDBD8CC64BA3A"
+coloredROMPin2DMD: true
+coloredROMNotes: "Download 'pin2dmd.pal and pin2dmd.vni'"
+coloredROMVPSId: "nL1l_9AQ8i"
+fps: 60
 romVPSId: "AFalPfjb"
 romChecksum: "A207505B54EC80F1B0E9B87BCBEE562E"
 romNotes: "Download csi_240.zip"
@@ -13,5 +22,3 @@ testers:
   - "OminousOsie"
 vpxVPSId: "f15731PImN"
 vpxChecksum: "1761C4CEDE9B9F25F57C9476D8EDE48D"
-applyFixes:
-  - "bass"

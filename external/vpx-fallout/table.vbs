@@ -122,7 +122,7 @@ Dim BallRollVolume : BallRollVolume = 0.5   		' 0.1 to 1.0 :: Overall ball rolli
 Dim RampRollVolume : RampRollVolume = 2.0 			' 0.1 to 1.0 :: Overall ramp rolling volume. Value between 1 & 5
 Dim LUTimage : LUTimage = 0
 Dim PuP : PuP = 1
-Dim usePuP : usePUP   = False        ' enable Pinup Player functions for this table
+Dim usePuP : usePUP   = True         ' enable Pinup Player functions for this table
 ' -- LTek's modified Fleep code settings --
 Dim ArchSoundFactor	:ArchSoundFactor = 5.0			' 0.1 to 5.0 :: Ball rolling on Arches, like Loops and Lanes : sound factor / volume multiplier; must not be zero
 Dim RollingSoundFactor : RollingSoundFactor = 1.0	' 0.1 to 5.0 :: Playfield Ball rolling sound factor / volume multiplier; must not be zero 5 max
@@ -184,50 +184,13 @@ Sub Table1_OptionEvent(ByVal eventId)
 
 End Sub
 
-' **** Added Music routines *****
-
-Dim Track(18)
-
-Track(1) =  "./pupvideos/fallout/Nuka-Jukebox/Bing Crosby And The Andrew Sisters,  Pistol Packin' Mama.mp3"
-Track(2) =  "./pupvideos/fallout/Nuka-Jukebox/Diamond City Radio - Atom Bomb Baby.mp3"
-Track(3) =  "./pupvideos/fallout/Nuka-Jukebox/Diamond City Radio - Crawl Out Through the Fallout.mp3"
-Track(4) =  "./pupvideos/fallout/Nuka-Jukebox/Diamond City Radio - Dear Hearts and Gentle People.mp3"
-Track(5) =  "./pupvideos/fallout/Nuka-Jukebox/Diamond City Radio - Right Behind You Baby.mp3"
-Track(6) =  "./pupvideos/fallout/Nuka-Jukebox/Diamond City Radio - Rocket 69.mp3"
-Track(7) =  "./pupvideos/fallout/Nuka-Jukebox/Diamond City Radio - Sixty Minute Man.mp3"
-Track(8) =  "./pupvideos/fallout/Nuka-Jukebox/Diamond City Radio - The Wanderer.mp3"
-Track(9) =  "./pupvideos/fallout/Nuka-Jukebox/Diamond City Radio - Undecided.mp3"
-Track(10) =  "./pupvideos/fallout/Nuka-Jukebox/Diamond City Radio - Uranium Rock.mp3"
-Track(11) =  "./pupvideos/fallout/Nuka-Jukebox/Diamond City Radio - Whole Lotta Shakin' Goin' On.mp3"
-Track(12) =  "./pupvideos/fallout/Nuka-Jukebox/Fallout 3 Soundtrack - Dear Hearts and Gentle People.mp3"
-Track(13) =  "./pupvideos/fallout/Nuka-Jukebox/Fallout 3 Soundtrack - I dont want to set the World on Fire.mp3"
-Track(14) =  "./pupvideos/fallout/Nuka-Jukebox/Fallout 3 Soundtrack - Way Back Home.mp3"
-Track(15) =  "./pupvideos/fallout/Nuka-Jukebox/Fallout New Vegas - Ain't That a Kick in the Head - Dean Martin.mp3"
-Track(16) =  "./pupvideos/fallout/Nuka-Jukebox/Fallout New Vegas - Blue Moon - Frank Sinatra.mp3"
-Track(17) =  "./pupvideos/fallout/Nuka-Jukebox/Fallout New Vegas (Bonus Trailer) - Orange Colored Sky - Nat King Cole.mp3"
-Track(18) =  "./pupvideos/fallout/Nuka-Jukebox/The Five Stars - Atom Bomb Baby (Fallout 4 Gameplay Showcase).mp3"
-
-Sub NextTrack(startSound)
-	Randomize
-	If startSound Then
-		PlayMusic "./pupvideos/fallout/Nuka Sound Effects/" & (INT(RND*6)+1) & ".mp3"
-	else
-		PlayMusic Track(INT(RND*18)+1)
-	End If
-End Sub
-
-Sub Table1_MusicDone
-    NextTrack(0)
-End Sub
-
 '*************************** PuP Settings for this table ********************************
 Dim cPuPPack: Dim PuPlayer
 Dim PUPStatus: PUPStatus = False ' dont edit this line!!!
- ' Dim usePuP : usePUP   = true         ' enable Pinup Player functions for this table
+  'Dim usePuP : usePUP   = true         ' enable Pinup Player functions for this table
 cPuPPack = cGameName    ' name of the PuP-Pack / PuPVideos folder for this table
 '//////////////////// PINUP PLAYER: STARTUP & CONTROL SECTION //////////////////////////
 ' This is used for the startup and control of Pinup Player
-
 Sub PuPStart(cPuPPack)
     If PUPStatus=true then Exit Sub
     If usePUP=true then
@@ -241,10 +204,9 @@ Sub PuPStart(cPuPPack)
         End If
     End If
 End Sub
-
 Sub pupevent(EventNum)
 	if (usePUP=false or PUPStatus=false) then Exit Sub
-    'PuPlayer.B2SData "E"&EventNum,1  'send event to Pup-Pack
+    PuPlayer.B2SData "E"&EventNum,1  'send event to Pup-Pack
 End Sub
 
 ' ******* How to use PUPEvent to trigger / control a PuP-Pack *******
@@ -354,7 +316,7 @@ Sub Table1_Init
 	vpmInit Me
 	If UseFlexDMD Then FlexDMD_Init
 	With Controller
-		.GameName = cROMName
+		.GameName = cGameName
 		If Err Then MsgBox "Can't start Game" & cGameName & vbNewLine & Err.Description : Exit Sub
 		.SplashInfoLine = "Fallout Vault Edition 2.0 (LTek 2024)"
 		.HandleKeyboard=0
@@ -369,7 +331,7 @@ Sub Table1_Init
 
 		If UseFlexDMD Then .Games(cROMname).Settings.Value("showpindmd")=0
 
-        'If usePUP = True Then .Games(cROMname).Settings.Value("showpindmd") = 1  ' uncomment this line when "PuP capture"used but NOT when Controller W triggers or script PuPevent
+    'If usePUP = True Then .Games(cROMname).Settings.Value("showpindmd") = 1  ' uncomment this line when "PuP capture"used but NOT when Controller W triggers or script PuPevent
 		If usePUP = False Then .PuPHide = 1 	' 1 = disable pupb2s plugin, 0 = enable (default)
 
 		If DesktopMode then
@@ -503,10 +465,10 @@ Sub Table1_exit()
 	Controller.Games(cROMname).Settings.Value("showpindmd") = ExternalEnabled		'restore DMD setting
 
 	'Close FlexDMD
-	If Not FlexDMD Is Nothing Then
+	If Not (FlexDMD Is Nothing) Then
 		FlexDMD.Show = False
 		FlexDMD.Run = False
-		FlexDMD = Null
+		Set FlexDMD = Nothing
 	End If
 
 	Controller.Stop		
@@ -771,8 +733,8 @@ Sub Table1_KeyDown(ByVal keycode)
 		Else SoundPlungerPull	' no ball in lane, empty pull back sound
 	End If
 
-        If keycode = StartGameKey and bGameInPlay = false Then Controller.Switch(4) = 1:NextTrack(1):end If
-		If keycode = RightMagnaSave Then NextTrack(0) ' changes music the PuP Pack is playing
+        If keycode = StartGameKey and bGameInPlay = false Then Controller.Switch(4) = 1:pupevent 802:end If
+		If keycode = RightMagnaSave Then pupevent 806 ' changes music the PuP Pack is playing
         If keycode = LeftMagnaSave Then
             If RulesFlasher.visible = False and bGameInPlay = false Then	' Show Rules on PF -only- ball not in play 
                 RulesFlasher.visible = True
@@ -3980,12 +3942,12 @@ Sub FlexDMD_Init() 'default/startup values
 	
 	'setup flex dmd
 	Set FlexDMD = CreateObject("FlexDMD.FlexDMD")
-	If Not FlexDMD is Nothing Then
+	If Not (FlexDMD Is Nothing) Then
 		
 		Dim fso,curdir
 		Set fso = CreateObject("Scripting.FileSystemObject")
-		curDir = fso.GetAbsolutePathName(".")
-		FlexPath = curDir & "\Fallout.FlexDMD\"
+ 		curDir = fso.GetAbsolutePathName(".")
+		FlexPath = curDir & "/Fallout.FlexDMD/"
 
 		FlexDMD.LockRenderThread
 		
@@ -4042,7 +4004,7 @@ Sub FlexDMD_Init() 'default/startup values
 
 			FlexDMD.RenderMode = 2
 			FlexDMD.Width = 256
-			FlexDMD.Height = 65
+			FlexDMD.Height = 64
 			FlexDMD.Clear = True
 			FlexDMD.GameName = cGameName
 			FlexDMD.Run = True
@@ -4114,6 +4076,9 @@ End Sub
 '**********************************************************
 
 Sub FlexDMDTimer_Timer  ' timer enabled at end of FlexDMD_Init
+	If UseFlexDMD = 0 Then Exit Sub
+	If FlexDMD Is Nothing Then Exit Sub
+	If FlexDMDDict Is Nothing Then Exit Sub
 
 	Dim ChgLED, ii, jj, num, stat', obj, b, x, chg
 	ChgLED=Controller.ChangedLEDs(&Hffffffff, &Hffffffff)
@@ -4382,6 +4347,7 @@ End Sub
 Sub UpdateFlexChar(id, value)
 	'map segment code to character in LnChars arrays
 	Dim chr
+	If FlexDMDDict Is Nothing Then Exit Sub
 	if FlexDMDDict.Exists (value) then
 		chr = FlexDMDDict.Item (value)
 

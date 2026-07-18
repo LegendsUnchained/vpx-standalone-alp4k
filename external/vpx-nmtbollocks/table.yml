@@ -1,7 +1,5 @@
 ---
 enabled: false
-applyFixes:
-  - "bass"
 backglassChecksum: "e2b2109a000e649bccf40ae42669f4df"
 backglassNotes: "Choose 2-screen version"
 backglassVPSId: "Y3oYOllQpH"

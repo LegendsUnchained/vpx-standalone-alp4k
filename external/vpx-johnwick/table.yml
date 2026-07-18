@@ -8,6 +8,7 @@ pupVPSId: "Kxy-gnG6p6"
 pupRequired: true
 pupVersion: "johnwick"
 pupArchiveFormat: "rar"
+pupNotes: "Download 'JWPUP.rar'"
 tableVPSId: "7bjYHY-8wv"
 tableNotes: "Download 'JohnWick 1.3(BABAYAGA Pinball edition) VPX 10.8.rar'"
 tagline: >-
@@ -17,5 +18,4 @@ testers:
   - "mrandromeda"
   - "OminousOsie"
 vpxChecksum: "f89b694a79c893d93251279ddae39b1e"
-enabled: false # Osie: Disabled due to lack of feedback in TM. Takes a long time to install
 vpxVPSId: "VG0a5Acwiy"

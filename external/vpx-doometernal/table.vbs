@@ -27,7 +27,7 @@ Randomize
 
 Const BallSize = 50
 Const BallMass = 1.7
-Const FlexDMDHighQuality = False
+Const FlexDMDHighQuality = True
 
 '/////////////////////////////  LOAD CORE.VBS  ////////////////////////////
 

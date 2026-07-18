@@ -2,7 +2,7 @@
 backglassVPSId: "K4ZCPFzu"
 backglassChecksum: "0F972CEC601798448407EA44F84A6303"
 backglassNotes: "Download Victory_(Premier_1987)2scr.rar"
-fps: 55
+fps: 60
 tableVPSId: "UsLxAHL3"
 testers:
   - "mcap10"
@@ -13,5 +13,3 @@ romUrlOverride: "https://pinballnirvana.com/forums/resources/victory.2562/"
 romChecksum: "811678EFF1D36A36324AAF533EC2643E"
 romVersionOverride: "victory"
 tagline: "Are you ready for the Speed, the challenge, the play of victory?!"
-applyFixes:
-  - "bass"

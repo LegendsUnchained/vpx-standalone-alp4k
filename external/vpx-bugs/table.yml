@@ -1,10 +1,11 @@
 ---
-applyFixes: 
-  - "bass"
-backglassVPSId: "rGcWjO7s"
-backglassChecksum: "D603935269337486F9758372610F0D9D"
-backglassNotes: "Download version 3.0"
-fps: 45
+backglassVPSId: "wkH-3-oW_e"
+backglassChecksum: "D0EFBBB84A5DC5629B6B17F380BF78F2"
+backglassNotes: "Download 'Bugs Bunny Birthday Ball (Bally 1989) alt full dmd.zip'"
+coloredROMChecksum: "82FF4EFA437840F3529EC94AA43C3EB6"
+coloredROMNotes: ""
+coloredROMVPSId: "EXzfFhPLa9"
+fps: 52
 romVPSId: "BY7oYFTL"
 romChecksum: "970D59CAD33064953F538147A4298A9E"
 romNotes: "Download bbnny_l2.zip"

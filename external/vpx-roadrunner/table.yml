@@ -13,5 +13,3 @@ testers:
 vpxVPSId: "NsPe5otOh3"
 vpxChecksum: "e6ba0a15f540573ea713abe8b1b7ce4c"
 tableNotes: "Download version 3.0"
-applyFixes:
-  - "bass"

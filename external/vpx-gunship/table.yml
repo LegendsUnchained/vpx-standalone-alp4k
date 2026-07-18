@@ -1,9 +1,7 @@
 ---
-applyFixes:
-  - "bass"
 backglassAuthorsOverride:
   - ""
-fps: 50
+fps: 55
 pupBundled: true
 pupArchiveRoot: "Gunship"
 pupChecksum: "D9476309192011F5F720E142984BBBB3"

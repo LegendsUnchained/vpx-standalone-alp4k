@@ -1,8 +1,9 @@
 ---
-applyFixes:
-  - "bass"
 backglassChecksum: "180B0AAE665C622552AFCFA7102BD41B"
 backglassVPSId: "aN66t62--W"
+coloredROMChecksum: "93D6E7717DF6608BAE3F6AD0B28E1F64"
+coloredROMNotes: "Download and extract 'GLaltcolor.7z'. Use file in 'teedoff3'"
+coloredROMUrlOverride: "https://vpuniverse.com/files/file/5120-glaltcolor7z/"
 fps: 60
 romChecksum: "56548AB42487906DC18A71B31C17461E"
 romUrlOverride: "https://pinballnirvana.com/forums/resources/teedoff3.2468/"

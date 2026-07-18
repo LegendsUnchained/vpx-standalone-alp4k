@@ -1,14 +1,14 @@
 ---
-backglassVPSId: "kaoLtHsb"
-backglassChecksum: "CD9C60B159BFFC4696EBDCBBC33CD704"
-backglassNotes: "Download Version 3.0"
+backglassVPSId: "EYxc7BzLHY"
+backglassChecksum: "05E4A435599464890D7A0D36453DA8F5"
+backglassNotes: "Download Version 4.0"
 romVPSId: "VMV5-Loj"
 romChecksum: "2215E20B0C370B64D3DF34AE17A8BF45"
 romNotes: "Download mm_109c.zip"
 coloredROMVPSId: "i8vJolcLwI"
 coloredROMChecksum: "EDA821AA80192B186C66045B55B4F960"
 coloredROMNotes: "Download Version 1.1.0"
-fps: 48
+fps: 56
 tableVPSId: "-5yMpqSy"
 tableNotes: "Download Version (Real Final)"
 tagline: "Is that a sword in your pocket?"
@@ -19,5 +19,3 @@ testers:
   - "Boris"
 vpxVPSId: "oa2VDRAKIc"
 vpxChecksum: "FDF922977B32CBA3E382511B960F1B32"
-applyFixes:
-  - "bass"

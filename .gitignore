@@ -34,3 +34,5 @@ __pycache__
 # Local scratch output of generate-test-manifest.py (Manifest Tester inputs)
 /manifest-tester/
 
+/tools
+/reports

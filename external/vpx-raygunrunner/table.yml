@@ -1,7 +1,5 @@
 ---
 enabled: false
-applyFixes:
-  - "bass"
 backglassBundled: true
 backglassChecksum: "b0f19cec9a581628c897c9054f26592a"
 backglassNotes: "Bundled with table"

@@ -1,0 +1,13 @@
+---
+backglassChecksum: "8698a938231730deda29f18f8ea690c5"
+backglassVPSId: "x5b2yXrP"
+enabled: false
+fps: 60
+romChecksum: "3abad61a32d8263d62c1dc506e89d7e1"
+romVPSId: "31dUTcr8"
+tableVPSId: "CcjhKd_m"
+tableNotes: "Requires granny.vbs in table folder"
+testers:
+  - "Wraith"
+vpxChecksum: "f84232e947d499f2f015c0dcde877a8c"
+vpxVPSId: "HYJXHFww"

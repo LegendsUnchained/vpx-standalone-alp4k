@@ -1,19 +1,18 @@
 ---
-backglassAuthorsOverride:
-  - ""
-fps: 55
-romVPSId: "ymxnVQaE"
+backglassChecksum: "4B59B5A474635149AE3993C9FBD864EA"
+backglassNotes: "Download 'Mary Shelley's Frankenstein (Sega 1995).zip'"
+backglassVPSId: "u-_4eiJxPS"
+coloredROMChecksum: "d7b3920406a5953af97df3a6470f1d3a"
+coloredROMVPSId: "ESBzYztOfE"
+fps: 60
 romChecksum: "f5fe10836eeb802498c4e6d50ad00d95"
+romVPSId: "ymxnVQaE"
+tableNotes: "Download 'Version 2.0.4'"
 tableVPSId: "DzsaK6qK"
-tagline: >-
-  "I have love in me the likes of which you can scarcely imagine,
-  and rage the likes of which you would not believe"
+tagline: "'I have love in me the likes of which you can scarcely imagine...'"
 testers:
   - "kaoticBPR"
-  - "evilwraith"
+  - "Wraith"
   - "OminousOsie"
-vpxVPSId: "jUntdZLbHh"
-vpxChecksum: "24B13F20332C2DE434543B1CDCAEAF51"
-tableNotes: "Download 'Mary Shelley's Frankenstein (Sega 1995)_Bigus(MOD)2.0.vpx.zip'"
-applyFixes:
-  - "bass"
+vpxChecksum: "1065F803FF8CE6C0823A49F8FECC9576"
+vpxVPSId: "DnPqlT8z0d"

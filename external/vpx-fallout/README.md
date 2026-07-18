@@ -1,46 +1,60 @@
-﻿# Fallout Vault Edition (Original 2024)
+# Fallout - Season One (Original 2024)
+
+![Table Preview](../../images/mUYcb63dvR-preview.webp)
+
+<br>
+
+## *️⃣  Table Statistics
+
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ❌ | ✅ | ✅ | ✅ | 55 |
+
+<br>
+
+**VPXS 4KP Testers:**
 
 
-![Table Preview](../../images/vpx-fallout-preview.jpg)
+<br>
 
-Authors: [LTek](https://vpuniverse.com/profile/67685-ltek/)  
-Version: 2.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/21709-fallout-vault-edition-20-ltek-2024/)
+---
 
-DirectB2S
+<br>
 
-Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
-Version: 1.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/21710-fallout-vault-edition-ltek-2024-b2s-full-dmd/)
+## ❇️ Available in the Wizard! 🪄✨
 
-PUPPack
+<br>
 
-Authors: [GtecArcade](https://vpuniverse.com/profile/57286-gtecarcade/)  
-Version: 2.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/20245-fallout-pup-pack-vault-edition/)
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
 
-ROM
+### How to install:
 
-Included in table download
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Fallout - Season One (Original 2024)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *""*
 
-## Status 
+<br>
 
-Minimum VPX Standalone build: 10.8.0-2042-1431983
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
 
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 45 |
+<br>
 
-## Instructions
+__*We hope you enjoy!!*__
 
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more information found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
-- Extract "Fallout.FlexDMD" folder from the zip to the vpx-fallout folder.
-- Download "Fallout MUSIC ONLY Pup for NON-PUP Users.rar" puppack listed above.
-- In your vpx-fallout folder, create a new folder named pupvideos.
-- Extract "fallout" folder from the puppack zip into the pupvideos folder you created.
-- __Make sure you copied the pinmame/nvram/swrds_l2.nv from the repo otherwise the table does not start.__
-- With the left direction you can display the nuka rules and with the right direction you can change the music track.
-- Drink a nuka cola.
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
 
+
+<br>
+<br>
+<br>
+<br>
+<br>

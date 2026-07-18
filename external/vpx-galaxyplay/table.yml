@@ -1,7 +1,5 @@
 ---
 enabled: false
-applyFixes:
-  - "bass"
 backglassChecksum: "f8065d7c247b78d824a7867251f247c0"
 backglassVPSId: "AcltpYhB"
 fps: 60

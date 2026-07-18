@@ -1,10 +1,14 @@
 ---
+coloredROMChecksum: "10F5840B4F387F130FD932BCD03D505B"
+coloredROMNotes: "Download 'xfiles.cROMc'"
+coloredROMVPSId: "7LUZid35oQ"
+tableNameOverride: "X Files, The Hannibal Mod (Sega 1997)"
 tableVPSId: "ImqfuWt4"
 vpxVPSId: "sj6R53Tf"
 vpxChecksum: "98024cbcd05756e86c2b0da3be8d052b"
 backglassVPSId: "eCv7EkGM96"
 backglassChecksum: "853D9B7A36F7AC25750C287AE312CC0D"
-fps: 55
+fps: 60
 romVPSId: "dnA2C0ua"
 romChecksum: "5AD341CC9C983CFDE8DDBCA479530B6C"
 romNotes: "Download - xfiles.zip"
@@ -13,5 +17,3 @@ testers:
   - "Boris"
   - "CoffeeAtJoes"
   - "OminousOsie"
-applyFixes:
-  - "bass"

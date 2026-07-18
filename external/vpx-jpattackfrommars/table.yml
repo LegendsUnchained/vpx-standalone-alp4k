@@ -19,5 +19,3 @@ testers:
   - "evilwraith"
 vpxVPSId: "1bCrozNZ"
 vpxChecksum: "95C01C2B96822537D819D4032DCA2487"
-applyFixes:
-  - "bass"

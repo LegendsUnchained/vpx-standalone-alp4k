@@ -10,11 +10,9 @@ backglassBundled: true
 # romVPSID:
 # romCheksum:
 # romNotes:
-fps: 51
+fps: 60
 testers:
   - "Boris"
 # tableNotes: ""
 tagline: "Just don’t miss."
-applyFixes:
-  - "bass"
  

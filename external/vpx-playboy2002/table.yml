@@ -1,5 +1,5 @@
 ---
-fps: 55
+fps: 60
 pupArchiveRoot: "playboys"
 pupChecksum: "AF446E36D9F8D90C26D61E1C268ECECB"
 pupFileUrl: >-
@@ -21,5 +21,3 @@ testers:
   - "n-i-x"
 vpxChecksum: "1634db2d565973a6894c354a42ab1da8"
 vpxVPSId: "cqC1LMDt"
-applyFixes:
-  - "bass"
