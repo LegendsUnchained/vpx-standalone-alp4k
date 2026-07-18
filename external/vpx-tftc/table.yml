@@ -1,5 +1,6 @@
 ---
-altSoundArchiveFormat: "zip"
+altSoundArchiveFormat: "rar"
+altSoundArchiveRoot: "tftc_400"
 altSoundChecksum: "84607dee32b117421534905ea6e00494"
 altSoundVPSId: "z_U1GKNuSy"
 backglassChecksum: "98E31DF4E2D2611724E8ADE864C9C234"
