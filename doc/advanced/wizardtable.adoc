@@ -30,6 +30,7 @@ altSoundAuthorsOverride:     | [Array]
 altSoundBundled:             | [Bool]
 altSoundChecksum:            | [String]
 altSoundNotes:               | [String]
+altSoundNSFW:                | [Bool]
 altSoundUrlOverride:         | [String]
 altSoundVersionOverride:     | [String]
 altSoundVPSId:               | [String]
@@ -39,27 +40,33 @@ backglassBundled:            | [Bool]
 backglassChecksum:           | [String]
 backglassImageOverride       | [String]
 backglassNotes:              | [String]
+backglassNSFW:               | [Bool]
 backglassUrlOverride:        | [String]
 backglassVPSId:              | [String]
 coloredROMBundled:           | [Bool]
 coloredROMChecksum:          | [String]
 coloredROMNotes:             | [String]
+coloredROMNSFW:              | [Bool]
 coloredROMUrlOverride:       | [String]
 coloredROMVersionOverride:   | [String]
 coloredROMVPSId:             | [String]
+diffNSFW:                    | [Bool]
 enabled:                     | [Bool]
 fps:                         | [Int]
 mainNotes:                   | [String]
+nsfw:                        | [Bool]
 pupArchiveFormat:            | [String]
 pupArchiveRoot:              | [String]
 pupChecksum:                 | [String]
 pupFileUrl:                  | [String]
 pupNotes:                    | [String]
+pupNSFW:                     | [Bool]
 pupRequired:                 | [Bool]
 pupVersion:                  | [String]
 romBundled:                  | [Bool]
 romChecksum:                 | [String]
 romNotes:                    | [String]
+romNSFW:                     | [Bool]
 romUrlOverride:              | [String]
 romVersionOverride:          | [String]
 romVPSId:                    | [String]
@@ -69,11 +76,61 @@ tableVPSId:                  | [String]
 tagline:                     | [String]
 testers:                     | [Array]
 vpxChecksum:                 | [String]
+vpxNSFW:                     | [Bool]
 vpxVPSId:                    | [String]
 ....
 
 Below is each yml field explained, with an example, and any `gotchas'
 that you need to know to use successfully!
+
+....
+########################
+NSFW / adult content (nsfw / vpxNSFW / backglassNSFW / romNSFW / coloredROMNSFW / altSoundNSFW / pupNSFW / diffNSFW)
+########################
+
+Type:
+------------
+Booleans (default false)
+
+Description:
+------------
+Author-set flags that mark a table, or one of its components, as adult content.
+The wizard has an "enable NSFW content" toggle (off by default); these flags
+control what that toggle hides or filters. They only affect NEW installs and the
+wizard listing — Manage Tables always shows an NSFW chip on any installed table
+that has any flag set.
+
+- nsfw: [Bool] the whole table is adult content.
+- vpxNSFW: [Bool] the .vpx playfield art is adult. Surfaces in the manifest as
+  "tableNSFW" (matching how vpxChecksum becomes tableChecksum).
+- backglassNSFW: [Bool] the backglass is adult.
+- romNSFW: [Bool] the ROM content is adult.
+- coloredROMNSFW: [Bool] the DMD colorization is adult.
+- altSoundNSFW: [Bool] the altsound pack is adult.
+- pupNSFW: [Bool] the pup videos are adult.
+- diffNSFW: [Bool] the VPU patch adds adult content.
+
+When the wizard user has NOT enabled NSFW:
+
+- A table flagged nsfw, vpxNSFW, backglassNSFW or romNSFW is hidden from the
+  wizard listing entirely — those parts can't be skipped, so the whole table is
+  withheld.
+- A table with only coloredROMNSFW, altSoundNSFW, pupNSFW or diffNSFW set still
+  installs, but that component is filtered out of the install (its upload slot /
+  download is not shown and it is not required).
+
+Example:
+------------
+nsfw: true
+# or, per-component:
+pupNSFW: true
+
+Gotchas:
+------------
+- The vpx/playfield flag is authored as vpxNSFW in table.yml but appears as
+  tableNSFW in the generated manifest.
+- These are manual, author-set booleans — they are NOT auto-derived from VPS.
+....
 
 ....
 ########################
