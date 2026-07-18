@@ -1,11 +1,12 @@
 ---
 backglassChecksum: "4ff1bb7e0034230526a760f4080a2b95"
-backglassNotes: "B2S not in spreadsheet"
+backglassNotes: "v1.1 B2S not in spreadsheet"
 backglassUrlOverride: "https://vpuniverse.com/files/file/3093-agents-777-game-plan-1984/"
 enabled: false
 fps: 55
 romChecksum: "3a3fc96092a9d7d4efe01dd21d55a01e"
 romVPSId: "QsBA9v1w"
+tableNotes: "Download v1.0"
 tableVPSId: "c36A48pe"
 tagline: "'Odds are, he won't live to see tomorrow.'"
 testers:

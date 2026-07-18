@@ -5,6 +5,8 @@ enabled: false
 fps: 56
 romChecksum: "409b7ae76497bb47cf66d6705f92c3ec"
 romVPSId: "Z_l2CA5h"
+tableNotes: "Download v6.0.0"
+backglassNotes: "Download v1.0.0"
 tableVPSId: "wTM04VLg"
 tagline: "Sorry, wrong Lost World.'"
 testers:

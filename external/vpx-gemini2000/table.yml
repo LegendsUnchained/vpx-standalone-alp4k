@@ -5,6 +5,8 @@ enabled: false
 fps: 55
 romChecksum: "9eddd9f63bfaf7588d0abea3db033149"
 romVPSId: "QqGcytcb"
+tableNotes: "Download v6.0.0"
+backglassNotes: "Download v3.0"
 tableVPSId: "VQL0ZO5r"
 tagline: "'Stern's Flight 2000'"
 testers:
