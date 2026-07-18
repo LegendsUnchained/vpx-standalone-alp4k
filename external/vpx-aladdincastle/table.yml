@@ -3,6 +3,8 @@ enabled: false
 backglassChecksum: "3a20e06252bfe068e649b28f5c921f40"
 backglassVPSId: "Cl5ef8WVKD"
 fps: 60
+tableNotes: "Download v1.0"
+backglassNotes: "Download v1.01"
 tableVPSId: "M-QUMdFt"
 tagline: "'Open Sesame!'"
 testers:

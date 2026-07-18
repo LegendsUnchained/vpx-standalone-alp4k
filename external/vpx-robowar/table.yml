@@ -7,6 +7,8 @@ romChecksum: "6c1eadbd6329e4b382b7a324f0eb9e25"
 romNotes: "No ROM in spreadsheet"
 romUrlOverride: "https://pinballnirvana.com/forums/resources/robowars.2245/"
 romVersionOverride: "robowars"
+tableNotes: "Download v2.0"
+backglassNotes: "Download v1.1"
 tableVPSId: "fkWx6OFg"
 tagline: "'tagline'"
 testers:

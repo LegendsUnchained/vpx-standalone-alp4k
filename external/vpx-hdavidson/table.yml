@@ -1,10 +1,12 @@
 ---
 backglassChecksum: "c049054a7a343292354d1132dee10e69"
+backglassNotes: "Download v1.0"
 backglassVPSId: "CO1Yme9bqF"
 enabled: false
 fps: 60
 romChecksum: "53ac6796d35dd79be9b1aa375486928d"
 romVPSId: "DS9LaDTe"
+tableNotes: "Download v6.0.1"
 tableVPSId: "QUpU0r4n"
 tagline: "'Born to be wild!'"
 testers:

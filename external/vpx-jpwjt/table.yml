@@ -6,6 +6,7 @@ enabled: false
 fps: 60
 romChecksum: "2b1ef2f17073f5a94f75bebd9024afbb"
 romVPSId: "jcep11pgGO"
+tableNotes: "Download v6.0.0"
 tableVPSId: "RRod5gPdAb"
 tagline: "*new* VPU source for ROM"
 testers:

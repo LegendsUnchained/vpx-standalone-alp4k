@@ -7,6 +7,8 @@ romChecksum: "134d2661711abc5cd1e28c12f5520292"
 romNotes: "Unzip the `-NEW FIXED ROMS for VPinMAME v3.6.0-963 BETA.zip`"
 romUrlOverride: "https://pinballnirvana.com/forums/resources/new-fixed-roms-for-vpinmame-v3-6-0-963-beta.8379/"
 romVersionOverride: "charlies"
+tableNotes: "Download v2.0"
+backglassNotes: "Download v2.0"
 tableVPSId: "513wiTiu"
 tagline: "'Oh, Charlie!'"
 testers:

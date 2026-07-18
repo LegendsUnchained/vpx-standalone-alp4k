@@ -6,6 +6,7 @@ romNotes: "ROM in spreadsheet will not work"
 romChecksum: "9ed1a8c37f710f9d7f0f34ded02aff12"
 romUrlOverride: "https://vpuniverse.com/files/file/498-middle-earth/"
 romVersionOverride: "midearth"
+tableNotes: "Download v1.00"
 tableVPSId: "7IGfVku1"
 tagline: "'Second Breakfast at Waffle House!'"
 testers:

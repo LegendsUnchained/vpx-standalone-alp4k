@@ -5,7 +5,7 @@ backglassAuthorsOverride:
 backglassChecksum: "6984564d1ad7887010acaa9c1d838c36"
 # yamllint disable-line rule:line-length
 backglassImageOverride: "https://vpuniverse.com/screenshots/monthly_2024_07/20240712_140852.jpg.516c24aa7718b5519ae2a409b9b9ff06.jpg"
-backglassNotes: "This B2S not on VPS"
+backglassNotes: "v1.0; This B2S not on VPS"
 # yamllint disable-line rule:line-length
 backglassUrlOverride: "https://vpuniverse.com/files/file/20872-flintstones-cartoon-the-williams1994-v1/"
 backglassVPSId: "ZhTSiBXcAg"
@@ -14,6 +14,7 @@ romChecksum: "9d08dd0c257c7ef1a58c1a09e749f579"
 romNotes: "Alternate link"
 romUrlOverride: "https://www.vpforums.org/index.php?app=downloads&showfile=1286"
 romVersionOverride: "fs_lx5"
+tableNotes: "Download v1.25.8"
 tableVPSId: "Q6mN43lD"
 tagline: "“Yabba-Dabba-Doo!”"
 testers:

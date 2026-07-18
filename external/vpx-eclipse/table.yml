@@ -8,6 +8,7 @@ romChecksum: "c5993e73801f65de27e458e198ce7192"
 romNotes: "No ROM on VPS"
 romUrlOverride: "https://pinballnirvana.com/forums/resources/eclipse.1763/"
 romVersionOverride: "eclipse"
+tableNotes: "Download v1.0.0"
 tableVPSId: "VxVgsHBA"
 tagline: "“Something seems familiar here.'"
 testers:
