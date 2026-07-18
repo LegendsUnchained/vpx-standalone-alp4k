@@ -12,7 +12,6 @@ coloredROMChecksum:
 coloredROMNotes: "Download 'pin2dmd.pal and pin2dmd.vni'"
 coloredROMPin2DMD: true
 coloredROMVPSId: "gO0aW9_jQy"
-enabled: false
 fps: 60
 romChecksum: "916cb17525ce6445e1d8da019fc8c951"
 romVPSId: "toON4K5L"
