@@ -1,13 +1,10 @@
 ---
-backglassChecksum: "D96866A2F2170302E8EDDF526E7B5A29"
-backglassNotes: "Use 'The Walking Dead (Stern 2025)LE.directb2s'"
+backglassChecksum: "7b0e44fc0ff114d4d71cd6a6fecf25b5"
+backglassNotes: "Use 'The Walking Dead (LE) (Stern 2015).zip'"
 backglassVPSId: "_NqgJZ1qKE"
 coloredROMChecksum: "0935D57154410DE432139C950E165EBA"
 coloredROMNotes: "twd_160h.pac"
 coloredROMVPSId: "v6DPvEoOex"
-diffChecksum: "92B14B263AB4C6C34FEB3B75D1985ABF"
-diffNotes: "Download 'The Walking Dead (Stern 2025).zip'"
-diffVPSID: "urZKVVQeD5"
 fps: 57
 romChecksum: "BD052AD54E57BDFBA634F343470CAE2C"
 romNotes: "twd_160h.zip"
