@@ -19,8 +19,8 @@ On Error Goto 0
 
 '##### Choose the ROM, uncomment to use
 
-'Const cGameName = "cv_20h" 'home rom without credits
-Const cGameName = "cv_20hc" 'arcade rom with credits
+Const cGameName = "cv_20h" 'home rom without credits
+'Const cGameName = "cv_20hc" 'arcade rom with credits
 
 '-------------------------------------------------
 
@@ -50,7 +50,7 @@ Const DMD_Plastic = 0 'Render a plastic cover over the DMD display.
 
 '-------------------------------------------------
 
-Const BackGlassDMD = 0 ' Place a static image on the playfield DMD if you use a 3 screen cab and don't want to use either 
+Const BackGlassDMD = 1 ' Place a static image on the playfield DMD if you use a 3 screen cab and don't want to use either 
                        ' the integrated DMD or the normal DMD positioned on the playfield.
 '-------------------------------------------------
 
@@ -100,7 +100,7 @@ Const Prim_Reflect = 1
 
 '1 = On / 0 = Off
 
-Const BrightTube = 0
+Const BrightTube = 1
 
 '-------------------------------------------------
 
@@ -1327,10 +1327,10 @@ End Sub
 ' Lights Array 
 ' -------------------------------------
 ' lights, map all lights on the playfield to the Lights array
-
+On Error Resume Next
 Dim i
 For i=0 To 127
-	Execute "On Error Resume Next:Set Lights(" & i & ")  = L" & i & ":On Error Goto 0"
+	Execute "Set Lights(" & i & ")  = L" & i
 Next
 
 '************
@@ -2396,10 +2396,10 @@ End Sub
 ' **************
 
 ' Side Show holes
-Sub cSSHoles_Hit(idx):SubwayHandler cSSHoles(idx), 46:End Sub
+Sub cSSHoles_Hit(idx):SubwayHandler Me(idx), 46:End Sub
 
 ' Ringmaster holes
-Sub cRMHoles_Hit(idx):SubwayHandler cRMHoles(idx), 47:End Sub
+Sub cRMHoles_Hit(idx):SubwayHandler Me(idx), 47:End Sub
 
 Sub SubwayHandler(aKick, aSwNo)
     'ClearballID
@@ -2419,8 +2419,8 @@ Dim WBall
 
 Sub CreateWildBall()
     
-Set WBall = kicker1.Createsizedball(51):WBall.color = (wbcolor):Wball.image = "powerball4":Wball.UserValue = 666:kicker1.Kick 0, 0   
-WBall.mass = 1.5
+Set WBall = kicker1.Createsizedball(51):WBall.color = (wbcolor):Wball.image = "powerball4":Wball.id = 666:kicker1.Kick 0, 0   
+WBall.mass = 1.5:WBall.bulbintensityscale = 0.2
 End Sub
 
 '***********
@@ -2722,45 +2722,45 @@ End Sub
  '**********************
 'Flipper Shadows
 '***********************
-'Sub RealTime_Timer
- ' lfs.RotZ = LeftFlipper.CurrentAngle
-'  rfs.RotZ = RightFlipper.CurrentAngle
-'BallShadowUpdate
-'End Sub
+Sub RealTime_Timer
+  lfs.RotZ = LeftFlipper.CurrentAngle
+  rfs.RotZ = RightFlipper.CurrentAngle
+BallShadowUpdate
+End Sub
 
 
-'Sub BallShadowUpdate()
-'Dim BallShadow
-'BallShadow = Array (BallShadow1,BallShadow2,BallShadow3,BallShadow4,BallShadow5,BallShadow6,BallShadow7)
- '   Dim BOT, b
- '   BOT = GetBalls
+Sub BallShadowUpdate()
+Dim BallShadow
+BallShadow = Array (BallShadow1,BallShadow2,BallShadow3,BallShadow4,BallShadow5,BallShadow6,BallShadow7)
+    Dim BOT, b
+    BOT = GetBalls
     ' hide shadow of deleted balls
- '   If UBound(BOT)<(tnob-1) Then
- '       For b = (UBound(BOT) + 1) to (tnob-1)
- '           BallShadow(b).visible = 0
-  '      Next
-  '  End If
+    If UBound(BOT)<(tnob-1) Then
+        For b = (UBound(BOT) + 1) to (tnob-1)
+            BallShadow(b).visible = 0
+        Next
+    End If
     ' exit the Sub if no balls on the table
-   ' If UBound(BOT) = -1 Then Exit Sub
+    If UBound(BOT) = -1 Then Exit Sub
     ' render the shadow for each ball
-  '  For b = 0 to UBound(BOT)
-'		BallShadow(b).X = BOT(b).X
-'		ballShadow(b).Y = BOT(b).Y + 10                       
-   '     If BOT(b).Z > 20 and BOT(b).Z < 200 Then
-   '         BallShadow(b).visible = 1
-   '     Else
-   '         BallShadow(b).visible = 0
-   '     End If
-'if BOT(b).z > 30 Then 
-'ballShadow(b).height = BOT(b).Z - 20
-'ballShadow(b).opacity = 110
-'Else
-'ballShadow(b).height = BOT(b).Z - 24
-'ballShadow(b).opacity = 90
-'End If
-'if BOT(b).z < 24 Then BOT(b).velz = BOT(b).velz /20
- '   Next	
-'End Sub
+    For b = 0 to UBound(BOT)
+		BallShadow(b).X = BOT(b).X
+		ballShadow(b).Y = BOT(b).Y + 10                       
+        If BOT(b).Z > 20 and BOT(b).Z < 200 Then
+            BallShadow(b).visible = 1
+        Else
+            BallShadow(b).visible = 0
+        End If
+if BOT(b).z > 30 Then 
+ballShadow(b).height = BOT(b).Z - 20
+ballShadow(b).opacity = 110
+Else
+ballShadow(b).height = BOT(b).Z - 24
+ballShadow(b).opacity = 90
+End If
+if BOT(b).z < 24 Then BOT(b).velz = BOT(b).velz /20
+    Next	
+End Sub
 
 '**********************
 ' Ball Collision Sound
@@ -2854,8 +2854,8 @@ End Sub
 
 Sub NewBCol_Timer()
 WBDes.enabled = 0
-Set WBall = kicker1.Createsizedball(51):WBall.color = (wbcolor):Wball.image = "powerball4":Wball.UserValue = 666:kicker1.Kick 0, 0
-WBall.mass = 1.5
+Set WBall = kicker1.Createsizedball(51):WBall.color = (wbcolor):Wball.image = "powerball4":Wball.id = 666:kicker1.Kick 0, 0
+WBall.mass = 0.6
 me.enabled = 0
 End Sub
 
