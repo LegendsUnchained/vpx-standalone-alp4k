@@ -1,15 +1,18 @@
 ---
-backglassVPSId: "i_vLYPjaCp"
 backglassChecksum: "D0D686A11C92B22C2AC93538A52B9F94"
 backglassNotes: "Download 'Congo (Williams 1995) alt full dmd.zip'"
+backglassVPSId: "i_vLYPjaCp"
+coloredROMChecksum: "3CB9A5B05F13951FB0177DD68C29CB04"
+coloredROMNotes: "Download 'Congo_Ver_2_JPAJMO.zip'"
+coloredROMVPSId: "ff1-5o9sRx"
 fps: 55
-romVPSId: "KB4uqFCo"
 romChecksum: "2EA68F9908142FDCDCCD2FD493FDCC5D"
+romVPSId: "KB4uqFCo"
+tableNotes: "Download 'Congo (Williams 1995)_Bigus(MOD)3.2.vpx.zip'"
 tableVPSId: "0-GeiE03"
 tagline: "The same hieroglyphics over and over. What do they mean?"
 testers:
   - "Bla1ze"
   - "CoffeeAtJoes"
-vpxVPSId: "DuoklEj4"
 vpxChecksum: "F6DB27B0BFD3F65C61ADEDEA99837E3D"
-tableNotes: "Download 'Congo (Williams 1995)_Bigus(MOD)3.2.vpx.zip'"
+vpxVPSId: "DuoklEj4"
