@@ -1,26 +1,26 @@
 ---
-backglassChecksum: '1AC5E66249F4D1E18086C031F7D8DE90'
-backglassVPSId: 'tOkhRy1ZJK'
-coloredROMChecksum: '36592ECC21134C2247F5B36DA85382A0'
-coloredROMNotes: 'Download version 2.03'
-coloredROMVPSId: 'aBc9oYO2uq'
+backglassChecksum: "1AC5E66249F4D1E18086C031F7D8DE90"
+backglassVPSId: "tOkhRy1ZJK"
+coloredROMChecksum: "36592ECC21134C2247F5B36DA85382A0"
+coloredROMNotes: "Download version 2.03"
+coloredROMVPSId: "aBc9oYO2uq"
 fps: 60
-pupArchiveFormat: 'zip'
-pupArchiveRoot: 'trn_174h'
-pupChecksum: 'F64B8241767569CFF8F5EB111B7AB967'
-pupFileUrl: 'https://vpuniverse.com/files/file/6814-tron-legacy-stern-end-of-line-pup-pack/'
-pupNotes: "Download 'Tron Legacy (Stern) - "End of Line" - PuP-Pack'"
+pupArchiveFormat: "zip"
+pupArchiveRoot: "trn_174h"
+pupChecksum: "F64B8241767569CFF8F5EB111B7AB967"
+pupFileUrl: "https://vpuniverse.com/files/file/6814-tron-legacy-stern-end-of-line-pup-pack/"
+pupNotes: "Download 'Tron Legacy (Stern) - End of Line - PuP-Pack'"
 pupRequired: true
-pupVersion: 'Version 1.0.0'
-pupVPSId: 'HYxuXOnF'
-romChecksum: 'AD5DC9DD5B6B5CA3430866FF8897A09B'
-romVPSId: 'o5CeYx43'
-tableNotes: 'Download table version 3.0'
-tableVPSId: 'akYNyhNO'
-tagline: 'Power to the users!'
+pupVersion: "Version 1.0.0"
+pupVPSId: "HYxuXOnF"
+romChecksum: "AD5DC9DD5B6B5CA3430866FF8897A09B"
+romVPSId: "o5CeYx43"
+tableNotes: "Download table version 3.0"
+tableVPSId: "akYNyhNO"
+tagline: "Power to the users!"
 testers:
-  - 'Bla1ze'
-  - 'mrandromeda'
-  - 'OminousOsie'
-vpxChecksum: 'BB008B6D495573824F366F14BB6713ED'
-vpxVPSId: 'd70mjMQg'
+  - "Bla1ze"
+  - "mrandromeda"
+  - "OminousOsie"
+vpxChecksum: "BB008B6D495573824F366F14BB6713ED"
+vpxVPSId: "d70mjMQg"
