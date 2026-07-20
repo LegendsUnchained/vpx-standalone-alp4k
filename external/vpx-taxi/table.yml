@@ -1,17 +1,17 @@
 ---
-backglassVPSId: "tFiUMiEW2J"
 backglassChecksum: "4A92D1C01F03695BA590C5D5FFD933B3"
 backglassNotes: "Download 'Taxi (Williams 1988) full dmd.zip'"
+backglassVPSId: "tFiUMiEW2J"
 fps: 55
 romChecksum: "D0A883F5671E868620A6640514E3C8E4"
-ronVPSId: "y5-dvH5b"
-romNotes: "Download - taxi_l4.zip"
+romNotes: "Download  'taxi_l4.zip'"
+romVPSId: "y5-dvH5b"
+tableNotes: "Download version 2.0"
 tableVPSId: "7eRiA3gK"
 tagline: "Get ready for the taxi everyone's going to be lining up for!"
-tableNotes: "Download version 2.0"
 testers:
   - "Mox"
   - "OminousOsie"
   - "CoffeeAtJoes"
+vpxChecksum: "36B86FEEB9662549D3BBC7C86B235354"
 vpxVPSId: "D3o3q9sKP1"
-vpxChecksum: "36b86feeb9662549d3bbc7c86b235354"
