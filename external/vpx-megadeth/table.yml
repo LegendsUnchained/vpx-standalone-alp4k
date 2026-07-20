@@ -1,16 +1,15 @@
 ---
-backglassVPSId: "t9WZcMFwyU"
+backglassBundled: true
 backglassChecksum: "306D2FC70CF4EACCCAAC88E9D535984A"
 backglassNotes: >-
-  Download VPX folder, open 'Backglass' folder, get the
-  'MEGADETH_Original_2023.directb2s' file
-backglassBundled: true
+  Download Megadeth Megapack archive, open 'Backglass' folder
+  , get the 'MEGADETH_Original_2023.directb2s' file
 fps: 60
+tableNotes: "Download VPX 'Megadeth (original)v.1.4.vpx' file"
 tableVPSId: "RTjNzNHOeW"
 tagline: "Peace sells... but who's buying?"
 testers:
   - "Boris"
   - "Mox"
-vpxVPSId: "t9WZcMFwyU"
 vpxChecksum: "B750B23F2FC4EFAC12BF25645F9BE072"
-tableNotes: "Download VPX 'Megadeth (original)v.1.4.vpx' file"
+vpxVPSId: "t9WZcMFwyU"
