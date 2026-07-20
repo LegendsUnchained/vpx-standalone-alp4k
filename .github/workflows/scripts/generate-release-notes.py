@@ -8,6 +8,8 @@ import sys
 
 import yaml
 
+import vpsdb
+
 from github import Github
 from pathlib import Path
 
@@ -91,7 +93,9 @@ def get_enabled_tables():
     for table_yml in table_yml_files:
         with open(table_yml, "r") as f:
             y = yaml.safe_load(f)
-            if "enabled" in y and not y["enabled"]:
+            # Shared predicate so this matches get_table_meta exactly — only an
+            # explicit `enabled: false` disables (enabled: null/absent = enabled).
+            if vpsdb.is_disabled(y):
                 print(f"Skipping {table_yml} because it is disabled.")
                 continue
 

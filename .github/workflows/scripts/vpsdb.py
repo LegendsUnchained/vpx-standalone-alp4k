@@ -1,10 +1,51 @@
+import collections
 import json
+import os
 import re
 import sys
 from pathlib import Path
 
 import requests
 import yaml
+
+
+def pick_urls(urls):
+    """Return every non-broken download URL, in vpsdb order.
+
+    vpsdb lists one or more mirrors per file and flags dead ones with
+    ``"broken": true``. This returns the usable ones with order preserved, so
+    element 0 is still the primary link. An empty list means nothing is usable —
+    the caller decides whether that skips the table (an essential component) or
+    just drops the field (an optional one). Also fixes the previous unguarded
+    ``urls[0]`` access, which raised IndexError on an empty url list.
+    """
+    return [u["url"] for u in (urls or []) if u.get("url") and not u.get("broken")]
+
+
+def is_disabled(data):
+    """Whether a parsed table.yml is disabled.
+
+    Only an explicit ``enabled: false`` disables a table — ``enabled: null`` or
+    an absent key means enabled. Shared by get_table_meta and
+    generate-release-notes.py so the "is this table on?" test can't drift
+    between them (generate-release-notes previously used truthiness, which wrongly
+    treated ``enabled: null`` as disabled).
+    """
+    return data.get("enabled") is False
+
+
+def as_url_list(value):
+    """Wrap an author-supplied override URL as a one-element list.
+
+    Author overrides (``*UrlOverride`` in table.yml) are single strings; the
+    manifest now carries every URL field as an array of mirrors, so a lone
+    override is normalized to ``[url]``. None/empty stays None.
+    """
+    if not value:
+        return None
+    if isinstance(value, str):
+        return [value]
+    return list(value)
 
 
 def normalize_checksums(value):
@@ -145,13 +186,111 @@ class VPSDB:
         return None
 
 
+def write_summary(tables, skipped, warnings):
+    """Print a run summary and, in CI, append a markdown table to the job
+    summary (GITHUB_STEP_SUMMARY).
+
+    Skips (disabled, broken-link, broken-entry, not-found) and warnings
+    (optional components dropped) are expected outcomes, not errors — this makes
+    them visible instead of buried in interleaved per-table logs. Always prints
+    to stdout so local generate-manifest.py runs benefit too.
+    """
+    included = len(tables)
+    total = included + len(skipped)
+    groups = collections.Counter(s["group"] for s in skipped)
+
+    # Mirror stats, taken from the primary table file.
+    single = multi = max_mirrors = 0
+    for meta in tables.values():
+        urls = meta.get("tableFileUrl")
+        n = len(urls) if isinstance(urls, list) else 0
+        if n > 1:
+            multi += 1
+            max_mirrors = max(max_mirrors, n)
+        elif n == 1:
+            single += 1
+
+    print(
+        f"\nSummary: {total} tables — {included} included, {len(skipped)} skipped "
+        f"({groups.get('broken_link', 0)} broken links, "
+        f"{groups.get('broken_entry', 0)} broken entries, "
+        f"{groups.get('disabled', 0)} disabled, "
+        f"{groups.get('not_found', 0)} not found in VPSDB)"
+    )
+    print(f"         mirrors: {single} single-url, {multi} multi-url (max {max_mirrors})")
+
+    summary_path = os.environ.get("GITHUB_STEP_SUMMARY")
+    if not summary_path:
+        return
+    md = [
+        "## VPSDB manifest\n\n",
+        f"- **{included}** tables included, **{len(skipped)}** skipped\n",
+        f"- broken links: {groups.get('broken_link', 0)} · "
+        f"broken entries: {groups.get('broken_entry', 0)} · "
+        f"disabled: {groups.get('disabled', 0)} · "
+        f"not found: {groups.get('not_found', 0)}\n",
+        f"- mirrors: {single} single-url, {multi} multi-url (max {max_mirrors})\n",
+    ]
+    if skipped:
+        md.append("\n### Skipped\n\n| Table | Reason |\n|---|---|\n")
+        md += [f"| {s['folder']} | {s['message']} |\n" for s in skipped]
+    if warnings:
+        md.append("\n### Warnings\n\n| Table | Detail |\n|---|---|\n")
+        md += [f"| {w['folder']} | {w['message']} |\n" for w in warnings]
+    with open(summary_path, "a") as f:
+        f.write("".join(md))
+
+
 def get_table_meta(files, warn_on_error=True):
     error_prefix = "ERROR"
     if warn_on_error:
         error_prefix = "WARNING"
 
     tables = {}
+    # Structured accounting so the run ends with a summary rather than only
+    # interleaved per-table prints. Broken links and disabled tables are normal,
+    # expected outcomes (not errors) under either warn_on_error mode.
+    skipped = []
+    warnings = []
     vpsdb = VPSDB()
+
+    def skip(folder, group, message):
+        skipped.append({"folder": folder, "group": group, "message": message})
+        print(f"SKIP   {folder}  {message}")
+
+    def warn(folder, message):
+        warnings.append({"folder": folder, "message": message})
+        print(f"WARN   {folder}  {message}")
+
+    # A VPS id declared in table.yml that isn't in VPSDB. Still a hard error in
+    # strict mode (validate-table-yaml); a recorded skip otherwise. The caller
+    # `continue`s after calling this.
+    def not_found(folder, label, vps_id):
+        print(f"{error_prefix}: {label} {vps_id} not found in VPSDB")
+        if not warn_on_error:
+            sys.exit(1)
+        skip(folder, "not_found", f"{label} {vps_id} not found in VPSDB")
+
+    # Resolve a declared component's URL list and decide whether an essential
+    # component with no usable link skips the table. Returns True to keep the
+    # table, False to skip it.
+    #
+    # Precedence is preserved per the original code: most components let VPSDB
+    # win (overwrite any author override), while diff/altSound let the author
+    # override win (override_wins=True). In every case, when VPSDB has no usable
+    # mirror the author override is used as a fallback, and only when neither is
+    # usable is the table skipped.
+    def resolve_essential_urls(folder, table_meta, field, urls, vps_id, override_wins=False):
+        if override_wins and table_meta.get(field):
+            return True  # author override wins; don't touch VPSDB urls
+        picked = pick_urls(urls)
+        if picked:
+            table_meta[field] = picked
+        elif not table_meta.get(field):
+            skip(folder, "broken_link", f"{field}: all urls broken ({vps_id})")
+            return False
+        # else: VPSDB all-broken but an author override exists — keep it.
+        return True
 
     for table_yaml in files:
         path = Path(table_yaml)
@@ -160,6 +299,12 @@ def get_table_meta(files, warn_on_error=True):
         print(f"Processing {folder_name}")
         with open(table_yaml, "r") as table_data:
             data = yaml.safe_load(table_data)
+
+        # Disabled tables are excluded up front, before any VPSDB resolution, so
+        # a disabled table carrying a stale/removed VPS id can never fail the run.
+        if is_disabled(data):
+            skip(folder_name, "disabled", "disabled in table.yml")
+            continue
 
         altSoundVPSId = data.get("altSoundVPSId")
         altSoundUrlOverride = data.get("altSoundUrlOverride")
@@ -189,7 +334,7 @@ def get_table_meta(files, warn_on_error=True):
             "altSoundAuthors": data.get("altSoundAuthorsOverride"),
             "altSoundBundled": data.get("altSoundBundled"),
             "altSoundChecksum": altSoundChecksum,
-            "altSoundFileUrl": altSoundUrlOverride,
+            "altSoundFileUrl": as_url_list(altSoundUrlOverride),
             "altSoundNotes": data.get("altSoundNotes"),
             "altSoundVersion": data.get("altSoundVersionOverride"),
             "altSoundArchiveFormat": data.get("altSoundArchiveFormat"),
@@ -199,19 +344,19 @@ def get_table_meta(files, warn_on_error=True):
             "backglassAuthors": data.get("backglassAuthorsOverride"),
             "backglassBundled": data.get("backglassBundled"),
             "backglassChecksum": backglassChecksum,
-            "backglassFileUrl": data.get("backglassUrlOverride"),
+            "backglassFileUrl": as_url_list(data.get("backglassUrlOverride")),
             "backglassImage": data.get("backglassImageOverride"),
             "backglassNotes": data.get("backglassNotes"),
             "backglassNSFW": data.get("backglassNSFW"),
             "coloredROMBundled": data.get("coloredROMBundled"),
             "coloredROMChecksum": coloredROMChecksum,
-            "coloredROMFileUrl": data.get("coloredROMUrlOverride"),
+            "coloredROMFileUrl": as_url_list(data.get("coloredROMUrlOverride")),
             "coloredROMNotes": data.get("coloredROMNotes"),
             "coloredROMPin2DMD": data.get("coloredROMPin2DMD"),
             "coloredROMVersion": data.get("coloredROMVersionOverride"),
             "coloredROMNSFW": data.get("coloredROMNSFW"),
             "diffAuthors": data.get("diffAuthorsOverride"),
-            "diffFileUrl": data.get("diffUrlOverride"),
+            "diffFileUrl": as_url_list(data.get("diffUrlOverride")),
             "diffNotes": data.get("diffNotes"),
             "diffVersion": data.get("diffVersionOverride"),
             "diffChecksum": diffChecksum,
@@ -232,7 +377,7 @@ def get_table_meta(files, warn_on_error=True):
             "pupArchiveRoot": data.get("pupArchiveRoot"),
             "pupBundled": data.get("pupBundled"),
             "pupChecksum": pupChecksum,
-            "pupFileUrl": data.get("pupFileUrl"),
+            "pupFileUrl": as_url_list(data.get("pupFileUrl")),
             "pupNotes": data.get("pupNotes"),
             "pupRequired": data.get("pupRequired"),
             "pupVersion": data.get("pupVersion"),
@@ -240,7 +385,7 @@ def get_table_meta(files, warn_on_error=True):
             "pupNSFW": data.get("pupNSFW"),
             "romBundled": data.get("romBundled"),
             "romChecksum": romChecksum,
-            "romFileUrl": data.get("romUrlOverride"),
+            "romFileUrl": as_url_list(data.get("romUrlOverride")),
             "romNotes": data.get("romNotes"),
             "romVersion": data.get("romVersionOverride"),
             "romNSFW": data.get("romNSFW"),
@@ -249,29 +394,41 @@ def get_table_meta(files, warn_on_error=True):
             "tagline": data.get("tagline"),
             "testers": data.get("testers"),
             "vpsdbId": data.get("tableVPSId"),
+            # Per-component VPS *file* ids (vpsdbId above is the table/game id).
+            # These name the exact vpsdb file a component was resolved from, so a
+            # broken-link report can point the service at the right file's urls.
+            "tableVpsId": vpxVPSId,
+            "backglassVpsId": backglassVPSId,
+            "romVpsId": romVPSId,
+            "pupVpsId": pupVPSId,
+            "altSoundVpsId": altSoundVPSId,
+            "coloredROMVpsId": coloredROMVPSId,
+            "diffVpsId": diffVPSId,
         }
         if tableVPSId:
             table = vpsdb.get_table(tableVPSId)
             if not table:
-                print(f"{error_prefix}: Table {tableVPSId} not found in VPSDB")
-                if warn_on_error:
-                    print(f"WARNING: Skipping {folder_name}")
-                    continue
-                else:
-                    sys.exit(1)
+                not_found(folder_name, "Table", tableVPSId)
+                continue
+
+            # Entry-level broken: upstream has flagged this whole game as
+            # problematic, so skip it (distinct reason from a dead link).
+            if table.get("broken"):
+                skip(folder_name, "broken_entry", f"vpsdb entry marked broken ({tableVPSId})")
+                continue
 
             table_meta["designers"] = table.get("designers", [])
             table_meta["image"] = table.get("imgUrl", "")
 
             if not table_meta["name"]:
                 table_meta["name"] = table.get("name", "")
-                
+
             if not table_meta["manufacturer"]:
                 table_meta["manufacturer"] = table.get("manufacturer", "")
 
             if not table_meta["year"]:
                 table_meta["year"] = table.get("year", 0)
-                
+
             table_meta["players"] = table.get("players", 0)
             table_meta["type"] = table.get("type", "")
             table_meta["version"] = table.get("version", "")
@@ -282,20 +439,20 @@ def get_table_meta(files, warn_on_error=True):
                 print(f"Parsing table {vpxVPSId} for {folder_name}")
                 table_meta["tableAuthors"] = tableFile.get("authors", [])
                 table_meta["tableComment"] = tableFile.get("comment", "")
-                table_meta["tableFileUrl"] = tableFile.get("urls", [])[0].get("url", "")
                 table_meta["tableImage"] = tableFile.get("imgUrl", "")
                 table_meta["tableVersion"] = tableFile.get("version", "")
-            else:
-                print(f"{error_prefix}: VPX id {vpxVPSId} not found in VPSDB")
-                if warn_on_error:
-                    print(f"WARNING: Skipping {folder_name}")
+                # The vpx table file is always essential.
+                if not resolve_essential_urls(
+                    folder_name, table_meta, "tableFileUrl", tableFile.get("urls"), vpxVPSId
+                ):
                     continue
-                else:
-                    sys.exit(1)
+            else:
+                not_found(folder_name, "VPX id", vpxVPSId)
+                continue
         else:
             print(f"{error_prefix}: Table {folder_name} missing VPX file")
             if warn_on_error:
-                print(f"WARNING: Skipping {folder_name}")
+                skip(folder_name, "not_found", "missing VPX file (no vpxVPSId)")
                 continue
             else:
                 sys.exit(1)
@@ -306,20 +463,15 @@ def get_table_meta(files, warn_on_error=True):
                 print(f"Parsing backglass {backglassVPSId} for {folder_name}")
                 table_meta["backglassAuthors"] = backglass.get("authors", [])
                 table_meta["backglassComment"] = backglass.get("comment", "")
-                table_meta["backglassFileUrl"] = backglass.get("urls", [])[0].get(
-                    "url", ""
-                )
                 table_meta["backglassImage"] = backglass.get("imgUrl", "")
                 table_meta["backglassVersion"] = backglass.get("version", "")
-            else:
-                print(
-                    f"{error_prefix}: Backglass id {backglassVPSId} not found in VPSDB"
-                )
-                if warn_on_error:
-                    print(f"WARNING: Skipping {folder_name}")
+                if not resolve_essential_urls(
+                    folder_name, table_meta, "backglassFileUrl", backglass.get("urls"), backglassVPSId
+                ):
                     continue
-                else:
-                    sys.exit(1)
+            else:
+                not_found(folder_name, "Backglass id", backglassVPSId)
+                continue
 
         if diffVPSId:
             diff = vpsdb.get_diff_by_id(diffVPSId)
@@ -328,49 +480,46 @@ def get_table_meta(files, warn_on_error=True):
 
                 if not table_meta["diffAuthors"]:
                     table_meta["diffAuthors"] = diff.get("authors", [])
-                if not table_meta["diffFileUrl"]:
-                    table_meta["diffFileUrl"] = diff.get("urls", [])[0].get("url", "")
                 if not table_meta["diffVersion"]:
                     table_meta["diffVersion"] = diff.get("version", "")
-            else:
-                print(f"{error_prefix}: diff id {diffVPSId} not found in VPSDB")
-                if warn_on_error:
-                    print(f"WARNING: Skipping {folder_name}")
+                if not resolve_essential_urls(
+                    folder_name, table_meta, "diffFileUrl", diff.get("urls"), diffVPSId,
+                    override_wins=True,
+                ):
                     continue
-                else:
-                    sys.exit(1)
-            
+            else:
+                not_found(folder_name, "diff id", diffVPSId)
+                continue
+
         if pupVPSId:
             pup = vpsdb.get_pup_by_id(pupVPSId)
             if pup:
                 print(f"Parsing PUP PACK {pupVPSId} for {folder_name}")
                 table_meta["pupAuthors"] = pup.get("authors", [])
                 table_meta["pupComment"] = pup.get("comment", "")
-                table_meta["pupFileUrl"] = pup.get("urls", [])[0].get("url", "")
-            else:
-                print(f"{error_prefix}: PUP PACK id {pupVPSId} not found in VPSDB")
-                if warn_on_error:
-                    print(f"WARNING: Skipping {folder_name}")
+                if not resolve_essential_urls(
+                    folder_name, table_meta, "pupFileUrl", pup.get("urls"), pupVPSId
+                ):
                     continue
-                else:
-                    sys.exit(1)
-                    
+            else:
+                not_found(folder_name, "PUP PACK id", pupVPSId)
+                continue
+
         if romVPSId:
             rom = vpsdb.get_rom_by_id(romVPSId)
             if rom:
                 print(f"Parsing ROM {romVPSId} for {folder_name}")
                 table_meta["romAuthors"] = rom.get("authors", [])
                 table_meta["romComment"] = rom.get("comment", "")
-                table_meta["romFileUrl"] = rom.get("urls", [])[0].get("url", "")
                 if not table_meta["romVersion"]:
                     table_meta["romVersion"] = rom.get("version", "")
-            else:
-                print(f"{error_prefix}: ROM id {romVPSId} not found in VPSDB")
-                if warn_on_error:
-                    print(f"WARNING: Skipping {folder_name}")
+                if not resolve_essential_urls(
+                    folder_name, table_meta, "romFileUrl", rom.get("urls"), romVPSId
+                ):
                     continue
-                else:
-                    sys.exit(1)
+            else:
+                not_found(folder_name, "ROM id", romVPSId)
+                continue
 
         if altSoundVPSId:
             altSound = vpsdb.get_altsound_by_id(altSoundVPSId)
@@ -380,21 +529,16 @@ def get_table_meta(files, warn_on_error=True):
                 if not table_meta["altSoundAuthors"]:
                     table_meta["altSoundAuthors"] = altSound.get("authors", [])
                 table_meta["altSoundComment"] = altSound.get("comment", "")
-                if not table_meta["altSoundFileUrl"]:
-                    table_meta["altSoundFileUrl"] = altSound.get("urls", [])[0].get(
-                        "url", ""
-                    )
                 if not table_meta["altSoundVersion"]:
                     table_meta["altSoundVersion"] = altSound.get("version", "")
-            else:
-                print(
-                    f"{error_prefix}: Alt sound id {altSoundVPSId} not found in VPSDB"
-                )
-                if warn_on_error:
-                    print(f"WARNING: Skipping {folder_name}")
+                if not resolve_essential_urls(
+                    folder_name, table_meta, "altSoundFileUrl", altSound.get("urls"), altSoundVPSId,
+                    override_wins=True,
+                ):
                     continue
-                else:
-                    sys.exit(1)
+            else:
+                not_found(folder_name, "Alt sound id", altSoundVPSId)
+                continue
 
         if coloredROMVPSId:
             coloredROM = vpsdb.get_altcolor_by_id(coloredROMVPSId)
@@ -403,20 +547,15 @@ def get_table_meta(files, warn_on_error=True):
                 table_meta["coloredROMAuthors"] = coloredROM.get("authors", [])
                 table_meta["coloredROMComment"] = coloredROM.get("comment", "")
                 table_meta["coloredROMFolder"] = coloredROM.get("folder", "")
-                table_meta["coloredROMFileUrl"] = coloredROM.get("urls", [])[0].get(
-                    "url", ""
-                )
                 if not table_meta["coloredROMVersion"]:
                     table_meta["coloredROMVersion"] = coloredROM.get("version", "")
-            else:
-                print(
-                    f"{error_prefix}: Colored ROM id {coloredROMVPSId} not found in VPSDB"
-                )
-                if warn_on_error:
-                    print(f"WARNING: Skipping {folder_name}")
+                if not resolve_essential_urls(
+                    folder_name, table_meta, "coloredROMFileUrl", coloredROM.get("urls"), coloredROMVPSId
+                ):
                     continue
-                else:
-                    sys.exit(1)
+            else:
+                not_found(folder_name, "Colored ROM id", coloredROMVPSId)
+                continue
 
         if tutorialVPSId:
             tutorial = vpsdb.get_tutorialfile_by_id(tutorialVPSId)
@@ -426,12 +565,10 @@ def get_table_meta(files, warn_on_error=True):
                 table_meta["tutorialTitle"] = tutorial.get("title", "")
                 table_meta["tutorialYouTubeID"] = tutorial.get("youtubeId", "")
             else:
-                print(f"{error_prefix}: Tutorial id {tutorialVPSId} not found in VPSDB")
-                if warn_on_error:
-                    print(f"WARNING: Skipping {folder_name}")
-                    continue
-                else:
-                    sys.exit(1)
+                # The tutorial is a YouTube link, not a download, and is purely
+                # optional — a missing id drops the field and warns rather than
+                # skipping the table.
+                warn(folder_name, f"tutorial id {tutorialVPSId} not found in VPSDB (dropped)")
 
         # Additional ROMs: a list of ROM objects with the same modes as the
         # primary ROM — VPSID-resolved (authors/comment/url/version from VPSDB,
@@ -457,23 +594,39 @@ def get_table_meta(files, warn_on_error=True):
                 rom = vpsdb.get_rom_by_id(vps_id)
                 if rom:
                     print(f"Parsing additional ROM {vps_id} for {folder_name}")
-                    urls = rom.get("urls", [])
                     rom_meta["authors"] = rom.get("authors", [])
                     rom_meta["comment"] = rom.get("comment", "")
-                    rom_meta["fileUrl"] = urls[0].get("url", "") if urls else ""
                     rom_meta["version"] = version_override or rom.get("version", "")
-                else:
-                    print(
-                        f"{error_prefix}: Additional ROM id {vps_id} not found in VPSDB"
-                    )
-                    if warn_on_error:
-                        print(f"WARNING: Skipping {folder_name}")
+                    urls = pick_urls(rom.get("urls"))
+                    if urls:
+                        rom_meta["fileUrl"] = urls
+                    elif not rom_meta.get("bundled"):
+                        # An additional ROM is optional to declare, but once
+                        # declared the table needs it — a non-bundled one with no
+                        # usable link makes the table unusable.
+                        skip(
+                            folder_name,
+                            "broken_link",
+                            f"additionalRom {vps_id}: all urls broken",
+                        )
                         skip_table = True
                         break
-                    else:
+                    # bundled: ships in the table download, no external url needed
+                else:
+                    if not warn_on_error:
+                        print(
+                            f"{error_prefix}: Additional ROM id {vps_id} not found in VPSDB"
+                        )
                         sys.exit(1)
+                    skip(
+                        folder_name,
+                        "not_found",
+                        f"additional ROM {vps_id} not found in VPSDB",
+                    )
+                    skip_table = True
+                    break
             elif url_override:
-                rom_meta["fileUrl"] = url_override
+                rom_meta["fileUrl"] = as_url_list(url_override)
                 rom_meta["version"] = version_override
 
             additional_roms.append(rom_meta)
@@ -485,4 +638,5 @@ def get_table_meta(files, warn_on_error=True):
 
         tables[folder_name] = table_meta
 
+    write_summary(tables, skipped, warnings)
     return tables
