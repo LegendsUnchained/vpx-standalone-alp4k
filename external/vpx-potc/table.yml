@@ -1,20 +1,20 @@
 ---
 backglassChecksum: "CB48BDDE9B9C9B9EE809604E13353465"
-backglassNotes: ""
 backglassVPSId: "aneW70BPl0"
 coloredROMChecksum: "D606D8D8A2215E5E11F0EBA2FB4A5FC3"
-coloredROMNotes: "pal file only"
-coloredROMVPSId: "H8O2wVzh"
+coloredROMNotes: "Download 'pin2dmd.pal'"
+# yamllint disable-line rule:line-length
+coloredROMUrlOverride: "https://montetoncab.fr/leslipdejoane/Pincab/Medias/VPX/rom_color_pour_VPX_4_et_16_couleurs/DMD_Colorisee_patche/DMD_Colorise_16_color/Potc600af/potc_600af/"
+coloredROMVersionOverride: "potc600_as"
 fps: 58
-romVPSId: "PRebrQRQ"
-romNotes: "Download potc_600as"
 romChecksum: "7F2C8108D34A861AA565B70377ADFBDF"
-tableVPSId: "fhehIu6i"
+romNotes: "Download potc_600as"
+romVPSId: "PRebrQRQ"
 tableNotes: "Download version 1.0.0"
+tableVPSId: "fhehIu6i"
 tagline: "But.. why is the rum all gone?"
 testers:
   - "Bla1ze"
   - "CoffeeAtJoes"
-vpxVPSId: "rOx6ED7h"
 vpxChecksum: "E5579122D8F31D188FFF65906BFBDF24"
-
+vpxVPSId: "rOx6ED7h"
