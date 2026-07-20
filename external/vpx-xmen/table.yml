@@ -6,9 +6,13 @@ coloredROMChecksum:
   - "7305071808bbb3ab817b0274ff2c043f"
 coloredROMPin2DMD: true
 coloredROMVPSId: "UySa9Zil"
+coloredROMNotes: "Download 'X-MenBeta.zip'"
 fps: 60
-romChecksum: "9980975C37A1F1ED1D2F3CD2BB6E9826"
-romVPSId: "ZyQybMpZ"
+romChecksum: "D1E0F77A52F99126C2A54520CB4751CA"
+romNotes: "Download 'X-Men LE 1.51 Game Code'"
+romUrlOverride: >-
+    https://wp.sternpinball.com/?post_type=game_code&s=x-men+LE+1.51        
+romVersionOverride: "xmn_151h"
 tableNotes: "Download version 1.3"
 tableVPSId: "FTxECos3"
 tagline: "Go try that again Bub!"
