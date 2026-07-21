@@ -1,21 +1,17 @@
 ---
-backglassVPSId: "z3tmoQbcUo"
 backglassChecksum: "10546D619D78B39DFAD8A3A0B681B840"
 backglassNotes: "Download 'Ripley's Believe It Or Not (Stern 2004).zip'"
+backglassVPSId: "z3tmoQbcUo"
 coloredROMChecksum: "5A59A2305722E9862D4A2E113F459EB2"
-coloredROMNotes: ""
 coloredROMVPSId: "jwXC_1pvvj"
 fps: 60
-romVPSId: "H55zvdt4"
 romChecksum: "555BD09C06F23116DAB1ABF943C17A39"
 romNotes: "Download version 3.20"
+romVPSId: "H55zvdt4"
 tableVPSId: "MBiAY_Tg"
-tableNotes: "Download v600.zip"
-tagline: >-
-  I have traveled to the world's farthest
-  corners and seen the most incredible things.
+tagline: "I have traveled to the world's farthest corners and seen the most incredible things."
 testers:
   - "Kaoticbpr"
   - "OminousOsie"
-vpxVPSId: "K9My93lAbN"
-vpxChecksum: "A68613375E5A7F5366FF641A5960F103"
+vpxChecksum: "146E0C62CF6C86ABDC66EA1738F2DF8D"
+vpxVPSId: "_N9Usy6Q"
