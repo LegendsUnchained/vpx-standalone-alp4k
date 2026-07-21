@@ -1,10 +1,11 @@
 ---
 fps: 60
+pupArchiveFormat: "rar"
 pupArchiveRoot: "zelda"
+pupBundled: true
 pupChecksum: "D9915B5FD239D59C2FFE9E3357F35C9B"
 pupNotes: "Download 'Zelda 6.0 Pup.rar'"
 pupRequired: true
-pupBundled: true
 pupVersion: "zelda"
 tableNotes: "Download '1 Legend of Zelda (Original) LW Pup nFozzy 6.0.vpx'"
 tableVPSId: "XXN9prwF"
