@@ -239,13 +239,9 @@ def main():
 
     # Discover tables from table.yml files
     files = find_table_yml()
+    # Disabled tables are now excluded inside get_table_meta (before VPSDB
+    # resolution), so no post-filter is needed here.
     tables = vpsdb.get_table_meta(files)
-
-    # Remove disabled tables before processing
-    tables_to_remove = [table for table, data in tables.items() if data.get("enabled") is False]
-    for table in tables_to_remove:
-        print(f"Skipping disabled table: {table}")
-        del tables[table]
 
     # Load previous manifest (if any) to enable unchanged-skip
     prev_manifest = fetch_existing_manifest(github_token, repo_name, release_tag)
