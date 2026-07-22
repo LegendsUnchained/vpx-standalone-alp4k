@@ -285,6 +285,7 @@ Links to these products on Amazon are through affiliate links.
 | [The Champion Pub (Williams 1998)](external/vpx-champpub) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [The Simpsons Pinball Party (Stern 2003)](external/vpx-simpsonspprty) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Torpedo Alley (Data East 1988)](external/vpx-torpedoalley) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Total Nuclear Annihilation (Spooky Pinball 2017)](external/vpx-tna) | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Trailer Park Boys - Pin-Ballers (Original 2024)](external/vpx-trailerparkboys) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Transformers (Pro) [Marcade Mod] (Original 2025)](external/vpx-transformersmod) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 58 |
 | [Trident (Stern 1979)](external/vpx-trident) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
