@@ -1,0 +1,18 @@
+---
+backglassBundled: true
+backglassChecksum: "836D6E3BF3C0A090EC5B5C2B2830F6C6"
+backglassNotes: "Extract Fireworks Mania.directb2s from the Fireworks Mania.zip"
+enabled: false
+fps: 60
+mainNotes: >-
+  Download Fireworks Mania.zip. Extract Fireworks Mania.FlexDMD and Music to table root. There are 2 music choices.
+  Extract the 1 song choice you want into the Music folder
+tableVPSId: "Dzlzp9Yn-y"
+tagline: "Celebrate .vpxs with a Fireworks Display! 🎆 🎇"
+testers:
+  - "pbw23"
+  - "MissleToad"
+  - "pointdablame"
+ 
+vpxChecksum: "0A2540F318D45B17CCFD8D0214B755C7"
+vpxVPSId: "5d4Q57t_9u"
