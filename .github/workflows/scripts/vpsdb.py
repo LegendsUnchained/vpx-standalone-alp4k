@@ -190,8 +190,8 @@ def write_summary(tables, skipped, warnings):
     """Print a run summary and, in CI, append a markdown table to the job
     summary (GITHUB_STEP_SUMMARY).
 
-    Skips (disabled, broken-link, broken-entry, not-found) and warnings
-    (optional components dropped) are expected outcomes, not errors — this makes
+    Skips (disabled, broken-link, not-found) and warnings (optional components
+    dropped) are expected outcomes, not errors — this makes
     them visible instead of buried in interleaved per-table logs. Always prints
     to stdout so local generate-manifest.py runs benefit too.
     """
@@ -213,7 +213,6 @@ def write_summary(tables, skipped, warnings):
     print(
         f"\nSummary: {total} tables — {included} included, {len(skipped)} skipped "
         f"({groups.get('broken_link', 0)} broken links, "
-        f"{groups.get('broken_entry', 0)} broken entries, "
         f"{groups.get('disabled', 0)} disabled, "
         f"{groups.get('not_found', 0)} not found in VPSDB)"
     )
@@ -226,7 +225,6 @@ def write_summary(tables, skipped, warnings):
         "## VPSDB manifest\n\n",
         f"- **{included}** tables included, **{len(skipped)}** skipped\n",
         f"- broken links: {groups.get('broken_link', 0)} · "
-        f"broken entries: {groups.get('broken_entry', 0)} · "
         f"disabled: {groups.get('disabled', 0)} · "
         f"not found: {groups.get('not_found', 0)}\n",
         f"- mirrors: {single} single-url, {multi} multi-url (max {max_mirrors})\n",
@@ -411,11 +409,14 @@ def get_table_meta(files, warn_on_error=True):
                 not_found(folder_name, "Table", tableVPSId)
                 continue
 
-            # Entry-level broken: upstream has flagged this whole game as
-            # problematic, so skip it (distinct reason from a dead link).
-            if table.get("broken"):
-                skip(folder_name, "broken_entry", f"vpsdb entry marked broken ({tableVPSId})")
-                continue
+            # NOTE: do NOT skip on the entry-level `broken` flag. VPSDB sets it on
+            # the whole game when ANY of its files has an issue, so it does not
+            # mean the specific file we link to is dead — skipping on it drops
+            # tables whose referenced files are perfectly fine (e.g. totan/batman/
+            # spacecadet, whose entries are broken but whose linked tableFile works).
+            # A table is dropped only when a component we actually reference has no
+            # usable mirror — resolve_essential_urls / pick_urls handle that by
+            # filtering the per-url `broken` flags on the files we resolve.
 
             table_meta["designers"] = table.get("designers", [])
             table_meta["image"] = table.get("imgUrl", "")
