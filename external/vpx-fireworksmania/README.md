@@ -1,6 +1,6 @@
 # Fireworks Mania (Orignial 2026)
 
-![Table Preview](../../images/vpx-fireworksmania-preview)
+![Table Preview](../../images/vpx-fireworksmania-preview.png)
 
 <br>
 
