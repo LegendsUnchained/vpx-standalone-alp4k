@@ -47,3 +47,40 @@ jobs:
 
       - name: Update Release notes (optional)
         run: python .github/workflows/scripts/generate-release-notes.py
+
+      - name: Regenerate README table listings
+        id: readme_gen
+        run: |
+          # On a release run, rewrite README.md in place and stage the change.
+          # On a manual workflow_dispatch run, only print what would change
+          # (dry-run) so operators can review before committing.
+          if [ "${{ github.event_name }}" = "release" ]; then
+            python .github/workflows/scripts/generate-readme-tables.py
+          else
+            echo "workflow_dispatch: dry-run only (no README write, no commit)."
+            python .github/workflows/scripts/generate-readme-tables.py --check
+          fi
+
+      - name: Commit README updates
+        if: github.event_name == 'release'
+        run: |
+          if [ -z "$(git status --porcelain README.md)" ]; then
+            echo "No README changes to commit."
+            exit 0
+          fi
+          DEFAULT_BRANCH="${{ github.event.repository.default_branch }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin "$DEFAULT_BRANCH"
+          git checkout -B "$DEFAULT_BRANCH" "origin/$DEFAULT_BRANCH"
+          # Reapply the regenerated README on top of the default branch so the
+          # commit lands cleanly even though the workflow runs at the release
+          # tag ref rather than on the branch tip.
+          python .github/workflows/scripts/generate-readme-tables.py
+          if [ -z "$(git status --porcelain README.md)" ]; then
+            echo "No README changes after rebasing onto $DEFAULT_BRANCH."
+            exit 0
+          fi
+          git add README.md
+          git commit -m "chore: regenerate README table listings [skip ci]"
+          git push origin "HEAD:$DEFAULT_BRANCH"
