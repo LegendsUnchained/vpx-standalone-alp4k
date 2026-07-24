@@ -27,7 +27,7 @@ SHA: 62fbce4a3fb29064152a8db185f8d1c7aa2bf7a4
 MD5: c2d933edd72fd8bdf52a8df9985549f6
 
 
-## Status 
+## *️⃣  Table Statistics
 
 Minimum VPX Standalone build: 10.8.0-1983-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
