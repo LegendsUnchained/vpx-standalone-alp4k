@@ -2,6 +2,7 @@ name: Create External Folder Releases and Manifest
 
 permissions:
   contents: write
+  pull-requests: write
 
 on:
   release:
@@ -68,7 +69,7 @@ jobs:
             python .github/workflows/scripts/generate-readme-tables.py --check
           fi
 
-      - name: Commit README updates
+      - name: Open PR for README updates
         if: github.event_name == 'release'
         run: |
           if [ -z "$(git status --porcelain README.md)" ]; then
@@ -76,13 +77,14 @@ jobs:
             exit 0
           fi
           DEFAULT_BRANCH="${{ github.event.repository.default_branch }}"
+          PR_BRANCH="chore/regenerate-readme-tables"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin "$DEFAULT_BRANCH"
-          git checkout -B "$DEFAULT_BRANCH" "origin/$DEFAULT_BRANCH"
-          # Reapply the regenerated README on top of the default branch so the
-          # commit lands cleanly even though the workflow runs at the release
-          # tag ref rather than on the branch tip.
+          # Base the PR branch on the current tip of the default branch so the
+          # diff is limited to the regenerated README, even though this workflow
+          # runs at the release tag ref.
+          git checkout -B "$PR_BRANCH" "origin/$DEFAULT_BRANCH"
           python .github/workflows/scripts/generate-readme-tables.py
           if [ -z "$(git status --porcelain README.md)" ]; then
             echo "No README changes after rebasing onto $DEFAULT_BRANCH."
@@ -90,4 +92,19 @@ jobs:
           fi
           git add README.md
           git commit -m "chore: regenerate README table listings [skip ci]"
-          git push origin "HEAD:$DEFAULT_BRANCH"
+          # Force-push so the branch always mirrors the latest regeneration and
+          # any previously opened PR just picks up new commits instead of
+          # accumulating stale ones.
+          git push --force origin "HEAD:$PR_BRANCH"
+          # Reuse an existing open PR for this branch if there is one; otherwise
+          # open a new one against the protected default branch.
+          EXISTING_PR=$(gh pr list --head "$PR_BRANCH" --base "$DEFAULT_BRANCH" --state open --json number --jq '.[0].number' || true)
+          if [ -n "$EXISTING_PR" ]; then
+            echo "Existing PR #$EXISTING_PR updated with new README regeneration commit."
+          else
+            gh pr create \
+              --base "$DEFAULT_BRANCH" \
+              --head "$PR_BRANCH" \
+              --title "chore: regenerate README table listings" \
+              --body "Automated regeneration of the Wizard Tables and Manual Install Tables sections in README.md, triggered by release \`${GITHUB_REF_NAME}\`."
+          fi
