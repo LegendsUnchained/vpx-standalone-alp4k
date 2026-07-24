@@ -26,7 +26,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v5
         with:
+          # Full commit graph is required so generate-release.py can call
+          # git.iter_commits(paths=..., max_count=1) per external folder.
+          # A blobless partial clone keeps all commits + tree objects but
+          # skips historical blob content, cutting the initial transfer
+          # dramatically as external/ grows. Blobs for the current tip are
+          # fetched on demand when the release script reads folder files.
           fetch-depth: 0
+          filter: blob:none
           submodules: false
           lfs: false
 
