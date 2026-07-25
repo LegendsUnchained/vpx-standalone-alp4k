@@ -712,7 +712,8 @@ Links to these products on Amazon are through affiliate links.
 | [Skate Ball (Bally 1980)](external/vpx-skateball) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Skylab (Williams 1974)](external/vpx-skylab) | :white_check_mark: | :x: | :x: | :x: | 55 |
 | [Soccer Kings (Zaccaria 1982)](external/vpx-socrking) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
-| [solar City (Gottlieb 1976)](external/vpx-solarcity) | :white_check_mark: | :x: | :x: | :x: | 52 |
+| [Solar City (Gottlieb 1976)](external/vpx-solarcity) | :white_check_mark: | :x: | :x: | :x: | 52 |
+| [Solar Fire (Williams 1981)](external/vpx-solarfire) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 52 |
 | [Sorcerer (Williams 1985)](external/vpx-jpsorcerer) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Sorcerer (Williams 1985)](external/vpx-sorcerer) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 43 |
 | [Sound Stage  Chicago Coin 1976](external/vpx-soundstage) | :white_check_mark: | :x: | :x: | :x: | N/A |
