@@ -1,4 +1,75 @@
-
+'Fish Tales (Williams 1992)
+'https://www.ipdb.org/machine.cgi?id=861
+'Version 1.0
+'
+'VPW Fishermen
+'=============
+'Blender Toolkit: Benji, fluffhead
+'Physics/Scripting: rothbauerw, fluffhead
+'Artwork: Brad1X (playfield, apron, and decal redraws), Hauntfreaks (backglass)
+'VR Room: Rawd and DaRdog81
+'VR Backglass: leojreimroc
+'
+'Blender advice, Flipper and Plastic Ramp rebuilds: tomate
+'Editor and scripting assistance, tuning and clean-up: apophis, Sixtoe
+'Physics calibrations, flipper measurements, and testing: JLou
+'Other contributions: sheltemke, iaakki, Schlabber34, bord, redbone, Steely
+'
+'3D modeling and assets (plastics and playfield scans and touch-up): g5k
+'3D modeling: 3rdaxis
+'Artwork assistance: EBisLit
+'Playfield Scan: Clarkkent
+'Table references: Kevv
+'Previous authors: Pinball58, Skitso
+'
+'Testers: Studlygoorite, PinstratsDan, geradg, Primetime5k, DGrimmReaper, Wylte, RIK, somatik, passion4pins, JLou, Dazz, BountyBob, HauntFreaks, redbone, DarthVito, Robby King Pin, CalleVesterdahl, Colvert, HayJay, TastyWasps
+'
+'All options are in the Tweak Menu (F12):
+'
+'
+'=== TABLE OF CONTENTS  ===
+'You can quickly jump to a section by searching the four letter tag (ZXXX)
+'
+'	ZCON: Constants and Global Variables
+'	ZLOA: Load Stuff
+'	ZVLM: VLM Arrays
+'	ZTIM: Main Timers
+'	ZINI: Table Initialization
+' 	ZOPT: Table Options
+' 	ZBRI: Room Brightness
+'	ZKEY: Key Press Handling
+'	ZSOL: Solenoids
+'	ZAUT: AutoPlunger
+'	ZCAT: Catapult
+'	ZVUK: VUK (Caster Club)
+'	ZGAT: Gate Solenoid and Gates
+'	ZKNO: Knocker
+'	ZDRN: Drain, Trough, and Ball Release
+'	ZFIS: Fish Finder Saucer
+'	ZDTA: Drop Targets
+'	ZSTA: Stand-up Targets
+'	ZREE: Reel
+'	ZFLP: Flippers
+'	ZFTR: Flipper Tricks
+'	ZNFF: Flipper Corrections
+'	ZBMP: Bumpers
+'	ZSLG: Slingshots
+'	ZSSC: Slingshot Corrections
+'	ZSWI: Switches
+'	ZSPI: Spinner
+'	ZGII: GI
+'	ZPWM: PWM Flasher Stuff
+'	ZBOU: VPW TargetBouncer 
+' 	ZMAT: General Math Functions
+' 	ZDMP: Rubber Dampeners
+' 	ZBRL: Ball Rolling and Drop Sounds
+'	ZABS: Ambient ball shadows
+'	ZRRL: Ramp Rolling SFX
+'	ZSFX: Mechanical Sound effects
+' 	ZVRR: VR Room & Animations
+' 	ZLVL:  Animated Level
+'
+'************************************************************************************************
 
 Option Explicit
 Randomize
@@ -19,10 +90,6 @@ Const BallMass = 1
 
 Dim tablewidth: tablewidth = FishTales.width
 Dim tableheight: tableheight = FishTales.height
-
-' Pre-computed constants for BSUpdate (eliminates per-frame division)
-Dim BS_halfTable: BS_halfTable = tablewidth / 2
-Dim BS_ambientDiv: BS_ambientDiv = BallSize / AmbientMovement
   
 Dim DesktopMode: DesktopMode = FishTales.ShowDT
 Dim UseVPMDMD
@@ -35,6 +102,11 @@ Const lob = 1 ' total number of locked balls
 
 Dim FTBall1, FTBall2, FTBall3, FTCapBall
 Dim gBOT
+
+' Pre-computed constants for BSUpdate (eliminates per-frame division)
+Dim BS_halfTable: BS_halfTable = tablewidth / 2
+Dim BS_ambientDiv: BS_ambientDiv = BallSize / AmbientMovement
+
 ' OPT: last-known positions for ST/DT groups — skip LM primitive writes when unchanged
 Dim lastST(5)  : Dim i_st  : For i_st  = 0 To 5 : lastST(i_st)   = -99999 : Next
 Dim lastDTz(0) : Dim lastDTrx(0) : Dim lastDTry(0)
@@ -339,7 +411,7 @@ Sub FishTales_Init
 	End With
 
 	' Main Timer init
-	PinMAMETimer.Interval = 2  ' OPT Rule8: UseVPMModSol=2 sets PinMAMEInterval=-2 (sub-frame); force 2ms positive
+	PinMAMETimer.Interval = 2  ' OPT: UseVPMModSol=2 sets PinMAMEInterval=-2 (sub-frame); force 2ms positive
 	PinMAMETimer.Enabled = True
 
 	vpmMapLights AllLamps
@@ -391,7 +463,7 @@ Dim BallRollVolume : BallRollVolume = 0.5   	'Level of ball rolling volume. Valu
 Dim RampRollVolume : RampRollVolume = 0.5 		'Level of ramp rolling volume. Value between 0 and 1
 Dim OutlaneDifficulty : OutlaneDifficulty = 1	'Easy - 0, Medium - 1 (default), Hard - 2 
 Dim FlipperTricksOpt : FlipperTricksOpt = 1		'Easy (Keyboard & Gamepad) - 0, Standard (Optimal for leaf switches) - 1 (default)
-Dim RenderProbeOpt : RenderProbeOpt = 2			'0 - No Refraction (best performance), 1 - Roughness 0 (improved performance), 2 - Ramp Only Full (balanced), 3 - Full Refraction (best visuals)
+Dim RenderProbeOpt : RenderProbeOpt = 2			'No Refraction Probes (best performance) - 0, Refraction Probes with Roughness '0' (improved performance) - 1, Full Refraction Probes (best visual)
 Dim RampDecals : RampDecals = 1					'No Ramp Decals, 1 - Ramp Decals (default)
 Dim ReflOpt : ReflOpt = 1						'0 = no reflections, 1 - static reflections (bake maps only), 2 - dynamic reflections (bake maps and light maps) 
 Dim SBZScale : SBZScale = 1						'Z scale of the side blades between 1 and 2 applied in cabinet mode only
@@ -415,7 +487,7 @@ Sub FishTales_OptionEvent(ByVal eventId)
 	If eventId = 1 And Not dspTriggered Then dspTriggered = True : DisableStaticPreRendering = True : End If
 
 
-	RenderProbeOpt = FishTales.Option("Refraction Probe Setting", 0, 3, 1, 2, 0, Array("No Refraction (best performance)", "Roughness 0 (improved performance)", "Ramp Only Full (balanced)", "Full Refraction (best visuals)"))
+	RenderProbeOpt = FishTales.Option("Refraction Probe Setting", 0, 2, 1, 2, 0, Array("No Refraction (best performance)", "Refraction with Roughnes '0' (improved performance)", "Full Refraction (best visuals)"))
 	SetRenderProbes RenderProbeOpt
 	RampDecals = FishTales.Option("Ramp Cover Decals", 0, 1, 1, 1, 0, Array("No Decals", "Show Decals"))
 	SetRampDecals RampDecals
@@ -487,14 +559,6 @@ Sub SetRenderProbes(Opt)
 				BM_Bumpers.RefractionProbe = "Bumpers0"
 				BM_BumperEdges.RefractionProbe = "Bumpers0"
 			Case 2:
-				BM_Ramp.RefractionProbe = "Plastic"
-				BM_RampEdges.RefractionProbe = "PlasticEdges0"
-				BM_Bumpers.RefractionProbe = ""
-				BM_BumperEdges.RefractionProbe = ""
-
-				BM_Bumpers.Material = "VLM.Bake.BumpOut_HO"
-				BM_BumperEdges.Material = "VLM.Bake.BumpOut_HO"
-			Case 3:
 				BM_Ramp.RefractionProbe = "Plastic"
 				BM_RampEdges.RefractionProbe = "PlasticEdges"
 				BM_Bumpers.RefractionProbe = "Bumpers"
@@ -1027,7 +1091,7 @@ Sub UpdateDropTargets
 	tz = sw48p.transz : rx = sw48p.rotx : ry = sw48p.roty
 	If tz <> lastDTz(0) Or rx <> lastDTrx(0) Or ry <> lastDTry(0) Then
 		lastDTz(0)=tz : lastDTrx(0)=rx : lastDTry(0)=ry
-		For each BP in BP_sw48 : BP.transz=tz : BP.rotx=rx : BP.roty=ry : Next
+		For each BP in BP_sw48: BP.transz = tz: BP.rotx = rx: BP.roty = ry: Next
 	End If
 End Sub
 
@@ -1496,13 +1560,13 @@ End Function
 '	ZREE: Fishing Reel
 '*******************************************
 
-Dim ReelPosition, ReelStop
+Dim ReelPosition ', ReelStop
 ReelPosition = 330
 
 Sub ReelMotor(enabled)
  	If enabled Then 
 		lastReelTime = 0
-		ReelStop = 0
+		'ReelStop = 0
  		ReelTimer.enabled=1
 		SoundMotor 1, reel
 		ReelEnter1.enabled = False
@@ -1511,8 +1575,10 @@ Sub ReelMotor(enabled)
 		ReelBlock.collidable = True
  	Else
 		SoundMotor 0, reel
-		ReelStop = 1
+		'ReelStop = 1
 		ReelTimer.enabled=0
+ 		ReelPosition = (Int((ReelPosition + 10) / 60) * 60 + 20) Mod 360
+ 		BallOut()
  	End If
 End Sub
 	
@@ -1616,10 +1682,10 @@ Sub RotateReel()
 	Next
 	StringSticker.rotx = reel.rotx
 
-	If ReelStop = 1 Then
-		BallOut()
-		'debug.print "Stop"
-	End If
+'	If ReelStop = 1 Then
+'		BallOut()
+'		'debug.print "Stop"
+'	End If
 
 End Sub
 
@@ -2447,20 +2513,23 @@ End Sub
 
 Dim Bumpers : Bumpers = Array(Bumper1, Bumper2, Bumper3)
 
-Sub AnimateBumperSkirts
+Sub AnimateBumperSkirts  
 	Dim r, g, s, x, y, b, tz, ubGBOT, brx, bry, bsx, bsy
 	ubGBOT = UBound(gBOT)
+	' Animate Bumper switch (experimental)
 	For r = 0 To 2
 		g = 10000.
 		brx = Bumpers(r).x
 		bry = Bumpers(r).y
 		For s = 0 To ubGBOT
-			bsx = gBOT(s).x
-			bsy = gBOT(s).y
-			x = brx - bsx
-			y = bry - bsy
-			b = x * x + y * y
-			If b < g Then g = b
+			If r<3 OR (r=3 and gBOT(s).z < 0)  Then  'deal with lower pf bumper
+				bsx = gBOT(s).x
+				bsy = gBOT(s).y
+				x = brx - bsx
+				y = bry - bsy
+				b = x * x + y * y
+				If b < g Then g = b
+			End If
 		Next
 		tz = 4
 		If g < 6400 Then
@@ -2853,6 +2922,7 @@ Sub UpdateGI2(no, level)
 			StringSticker.blenddisablelighting = (0.5 - 0.2)*gistep + 0.2
 
 			Dim nbcolor, c, gs2 : gs2 = gistep*gistep  ' OPT Rule1: cache gistep^2
+	
 			If LightLevel >= 0.5 Then
 				nbcolor = (0.4 * BallColor * gs2) + (0.6 * Ballcolor)
 			ElseIf LightLevel >= 0.2 Then
@@ -3197,13 +3267,13 @@ Set cor = New CoRTracker
 
 Class CoRTracker
 	Public ballvel, ballvelx, ballvely
-
+	
 	Private Sub Class_Initialize  ' OPT Rule5: fixed-size init
 		ReDim ballvel(tnob)
 		ReDim ballvelx(tnob)
 		ReDim ballvely(tnob)
 	End Sub
-
+	
 	Public Sub Update()	'tracks in-ball-velocity
 		' OPT Rule5: single-pass, ReDim Preserve only when needed
 		Dim b, bid
@@ -3260,7 +3330,8 @@ Sub RollingUpdate()
 				rolling(b) = False
 			End If
 		End If
-
+		
+		' Ball Drop Sounds
 		If bvz < -1 And bz < 55 And bz > 27 Then
 			If DropCount(b) >= 5 Then
 				DropCount(b) = 0
@@ -3271,7 +3342,7 @@ Sub RollingUpdate()
 				End If
 			End If
 		End If
-
+		
 		If DropCount(b) < 5 Then
 			DropCount(b) = DropCount(b) + 1
 		End If
@@ -3608,6 +3679,7 @@ End Sub
 
 ' WRemoveBall (BallId)
 Sub WRemoveBall(ID) 'This subroutine is called from the RampRollUpdate subroutine and is used to remove and stop the ball rolling sounds
+	'   Debug.Print "In WRemoveBall() + Remove ball from loop array"
 	Dim ballcount
 	ballcount = 0
 	Dim x
@@ -3619,9 +3691,10 @@ Sub WRemoveBall(ID) 'This subroutine is called from the RampRollUpdate subroutin
 			StopSound RampLoopStr(x)
 			StopSound WireLoopStr(x)
 		End If
+		'if RampBalls(x,1) = Not IsEmpty(Rampballs(x,1) then ballcount = ballcount + 1
 		If Not IsEmpty(Rampballs(x,1)) Then ballcount = ballcount + 1
 	Next
-	If BallCount = 0 Then RampBalls(0,0) = False
+	If BallCount = 0 Then RampBalls(0,0) = False	'if no balls in queue, disable timer update
 End Sub
 
 Sub RampRoll_Timer()
@@ -3633,9 +3706,9 @@ Sub RampRollUpdate()	'Timer update
 	For x = 1 To UBound(RampBalls)
 		rlStr = RampLoopStr(x)
 		wlStr = WireLoopStr(x)
-		If Not IsEmpty(RampBalls(x,1)) Then
+		If Not IsEmpty(RampBalls(x,1) ) Then
 			Set rBall = RampBalls(x,0)
-			If BallVel(rBall) > 1 Then
+			If BallVel(rBall) > 1 Then ' if ball is moving, play rolling sound
 				If RampType(x) Then
 					PlaySound rlStr, -1, VolPlayfieldRoll(rBall) * RampRollVolume * VolumeDial, AudioPan(rBall), 0, BallPitchV(rBall), 1, 0, AudioFade(rBall)
 					StopSound wlStr
@@ -3648,7 +3721,7 @@ Sub RampRollUpdate()	'Timer update
 				StopSound rlStr
 				StopSound wlStr
 			End If
-			If rBall.Z < 30 And RampBalls(x, 2) > RampMinLoops Then
+			If rBall.Z < 30 And RampBalls(x, 2) > RampMinLoops Then	'if ball is on the PF, remove  it
 				StopSound rlStr
 				StopSound wlStr
 				Wremoveball RampBalls(x,1)
@@ -3863,11 +3936,13 @@ End Function
 Function AudioPan(tableobj) ' Calculates the pan for a tableobj based on the X position on the table. "table1" is the name of the table
 	Dim tmp, at, t2, t4, t8
 	tmp = tableobj.x * 2 / tablewidth - 1
+	
 	If tmp > 7000 Then
 		tmp = 7000
-	ElseIf tmp < -7000 Then
-		tmp = -7000
+	ElseIf tmp <  - 7000 Then
+		tmp =  - 7000
 	End If
+	
 	If tmp > 0 Then  ' OPT Rule1: ^10→squaring chain
 		at=tmp  : t2=at*at : t4=t2*t2 : t8=t4*t4 : AudioPan = CSng(t8*t2)
 	Else
@@ -4511,15 +4586,11 @@ Randomize
 
 'Initialize VR Room ****************************************************************************************************
 Sub SetVRRoom
-	Dim showFishingScene
-
 	If RenderingMode = 2 or (DesktopMode and VRDesktop = 1) Then
 		ShowVR = True
 	Else
 		ShowVR = False
 	End If
-
-	showFishingScene = (VRRoom = 1 and ShowVR)
 
 	'Topper
 	For each thing in VRTopper: Thing.Visible = Topper and showvr: Next
@@ -4539,7 +4610,7 @@ Sub SetVRRoom
 	For each thing in VRbackglassLow: Thing.Visible = ShowVR: Next	
 
 	'VR Room
-	If showFishingScene Then 
+	If VRRoom = 1 and ShowVR Then 
 		InitAnimations
 		aWater1.PlayLoop
 		aWater2.PlayLoop
@@ -4564,12 +4635,6 @@ Sub SetVRRoom
 	End If
 
 	For each thing in VRDock: Thing.Visible = VRRoom and ShowVR: Next
-	' The fishing scene was only gated by the VRDock collection, which is brittle if
-	' table objects are moved out of that collection. Force the animated room actors
-	' to follow the same visibility state so they cannot keep rendering while hidden.
-	For each thing in Array(NewWater, NewWater2, FarWaterNew, VR_Trout, VR_Trout2, NewFish, NewFishFins, Fish2, VR_TurtleNew, VR_Dog, VRBat, VR_Fisherman, VR_Crab, CrabShadow, VRStar000, VRGenLightRed, VRGenLightGreen, VRPorchlight, Moon)
-		thing.Visible = showFishingScene
-	Next
 	ShootingStarTimer.enabled = VRRoom and ShowVR
 	SmokeTimer.enabled = VRRoom and ShowVR
 	TroutTimer.enabled = VRRoom and ShowVR
@@ -5416,4 +5481,99 @@ Sub NudgeAnim() 'Call from GameTimer
 End Sub
 
 
-
+'=============
+' Version Log
+'=============
+'
+'  0  - Skitso - complete redraw of playfield, improved plastics textures, remade all inserts, GI and flashers, 
+'  82 - fluffhead35 - nfozzy flipper physics 
+'  83 - fluffhead35 - nfozzy rubber dampeners 
+'  83a - fluffhead35 - nfozzy slingshots 
+'  84 - fluffhead35 - Fleep Sound Package 
+'  85 - fluffhead35 - Added more sound triggers for ramps and random metal sounds, Set material physics,Set Playfield Physics, Fixing some rubber Posts and walls to be more in aline.
+'  86 - fluffhead35 - Added WireRamp Sound Loop Logic, New sounds for WireRampExit. Changed Center Ramp Primitive to not be collidable, Added other hit sounds, Added flippercoilrampup  script option
+'  87 - Skitso - improved inserts and GI, tweaked few plastic, primitive + apron texture brightness values and DL for more depth
+'  88 - fluffhead35 - changed all posts and pegs to be hit event of .5, set bumpers (force, hit, scatter), slingshot (hit threshold, force, threshold), and gates (elacticity, friction) settings to values in nFozzy physics doc
+'  89 - fluffhead35 - added CheckLiveCatch to Left and Right Flipper Collide.  Went throught all objects on table and fixed some material settings.
+'*************************************************************************************************************************************************************
+' .90 - fluffhead35 - stripped down the table to just collidables and lights in preperation for toolkit.  Added PWM callbacks for led flashers
+' .91a - fluffhead35 - Started to align table and removed some objects not necessary on the table anymore.  Cleaned up script. Add missing insert light.
+' .91b - fluffhead35 - Started working on ramps to align, adjusting nfozzy physics on table. aligning inserts.removing some unneeded plastics.
+' .92  - fluffhead35 - Added some sleeves to the physics layer.  Adjusted upper lane plastics.
+' .92a - fluffhead35 - Updated the nfozzy and fleep sound logic and removed flipper endpoints
+' .92b - fluffhead35 - Adding physical through
+' .93  - fluffhead35 - updated materials to be correct and removed a few unnecessary walls.  Put all materials in correct collections.  Fixed the flipper trigger areas.  Adjusted Hit Thresholds on objects.
+' 0.010 - rothbauerw - rewrote reel code, start script clean-up and reorg, begin overhaul of fleep sounds, clean-up of physical trough, apron, and plunger lane physics
+' 0.011 - rothbauerw - continued work on fleep sounds overhaul, more script updates, update ball shadows, update rolling sounds, update ramp rolling sounds, ramp physics
+' 0.012 - rothbauerw - continued work on ramp physics and sounds, solenoid updates, drop targets, general overhaul
+' 0.013 - rothbauerw - review and updates to flippers, spinner, bumpers, and slings. Added stand-up targets. Switch clean-up and animation. Complete Ramp Sounds
+' 0.014 - rothbauerw - adjusted flipper triggers
+' 0.015 - Benji - VLM active material addded to 'parts' prims. Removed probe from 'stretch the truth plastic for now. sorted its depth bias better.
+' 0.016 - rothbauerw - adjusted wall66, adjusted table physics properties, small adjustment to stand-up target secondary wall locations, disabled ambient occlusion, sc sp reflections, and bloom strength to 0
+' 0.017 - rothbauerw - re-contoured the boat ramp inner walls
+' 0.018 - rothbauerw - more adjustments to the boat ramp alignment, added in walls at top of boat ramp to protect against stuck balls.
+' 0.019 - rothbauerw - Adjusted "LIE" rollover switches. Adjusted strength of top right saucer kick out.
+' 0.020 - apophis - Hooked up GI lightmaps to GI strings. Dynamic shadows not set up yet. Set up table options including room brightness. Enabeld playfield reflections. 
+' 0.021 - benji - Lots of blender updates. VPX changes to various transparent materials. Major graphical/rendering mistakes being fixed in next batch.
+' 0.022 - benji - More blender updates. GI Split and GI top/bottom light names assigned (top and split GI currently not working)
+' 0.023 - benji - More blender fixex. GI still not working. Bumper probes added and material tweaked.
+' 0.024 - apophis - Fixed GI lightmap assignments. Enabled raytraced GI shadows. Set BP_Playfield material to active. 
+' 0.025 - rothbauerw - added playfield mesh and playfield under walls, adjusted kickers for playfield mesh, cleaned up unused images. Adjusted ramp heights. Set BM_MiniPF to 'Hide Parts Behind" and BM_Ramp to depth bias '0', hid VP bumper parts.
+' 0.026 - benji - New 50% batch. Needs to be animated: visible sling arm states added, visible sling arms added, and sw33 switch added to right ramp exit.  Details added to ramp exits. Known issue: playfield text being baked onto insert trays.
+' 0.027 - rothbauerw - finalized VP ramps to align with primitive ramps. Animated bumpers and slings. Tried to address visual issues with the fishing rod plastic and boat ramp plastic, but still exist.
+' 0.028 - benji - transparency tweaks
+' 0.029 - rothbauerw - fixed ramp rolling sounds, animated micro switches, tweaked drop target physics.
+' 0.030 - benji - tweaks to bumpers and depth bias, materials etc.
+' 0.031 - rothbauerw - fixed ramp rolling sounds (again), added option for outlane post difficulty
+' 0.032 - Benji - Blender fixes and updates. Lots of material depth bias/transparency fixes. New bumper separated meshes and probe assigned. probe removed from fishing rod. Playfield BM UnderPF depth bias fixed for better text rendering.
+' 0.033 - Rawd - Added VRRoom
+' 0.034 - Benji - Blender fixes and updates.
+' 0.035 - rothbauerw - merged in 0.031 changes, removed target relocation from animations, fixed visible VP Wall on ramp, adjusted physic rails from captive ball, added VR Room skyline, VR Room clean-up, Reel animation for new objects
+' 0.036 - Benji - Blender updates: Inserts material tweaked to remove most unwanted glossy anamolies. Flasher 18 & 27 reassigned. 
+' 0.037 - rothbauerw - added shadows and bdl to reel
+' 0.038 - Sixtoe - Walls Layer : Filled in a lot of holes, tidied up some areas, moved 4 objects to "new layer 0" as I don't think they're used.
+' 0.039 - rothbauerw - small tweak to right orbit wall, tweaked the reel shadows, removed objects in "new layer 0", removed scatter from drop target physics, add some mass back to drop target physics, adjusted VR Speaker Grill, adjusted fishing ramp exit to kick to left flipper
+' 0.040 - Benji - Blender updates: 50%  render ratio like last time, but lower noise ratio so many artifacts are cleared up. handfull of misassigned lights re-mapped. Room light fixed (i would still like the darkest setting to be darker if someone could help with that).  
+' 0.041 - rothbauerw - adjusted reel shadows again with brighter render, updated flipper trajectory to late 80's early 90's, fixed desktop background and added dmd, extended range of table brightness option, disabled topper sound when not in VR,  
+' 0.042 - rothbauerw - added fix for standalone, added playfield reflections, added option to view VR Room in desktop
+' 0.043 - rothbauerw - fix for "Type mismatch: 'UpdateSubRef'" error
+' 0.044 - Rawd,Leojreimroc - VR Backglass and Topper lighting updates, backglass image from HauntFreaks
+' 0.045 - rothbauerw - general script clean-up, shortened flippers (used hack for visuals), adjusted flipper angles, moved flipper triggers to 27 vp units from flippers, adjusted velocity curve to make backhands weaker, added velcoef to polarity correction, adjusted left orbit to feed base of left flipper, added LUT options, fixed Jackpot insert, decreased spinner dampening 
+' 0.046 - rothbauerw - fixed 'white static' in Fishing Scnene, disabled LUT selection for Fishing Scene, more flipper physics tweaks.
+' 0.051 - rothbauerw - animated level, flipper shadows, ramp decal option, updated flipper size and physics (final), disabled some ramp and reel LM's in script, re-aligned reel
+' 0.053 - rothbauerw - add catapult animation, re-added scoretext for desktop dmd, fix for flipper correction code, changed default table brightness to 25% 
+' 0.054 - Benji - New Blender Batch.Added tomates new lightning flippers with new/correct measures. Added more ramp support hardware. Remodeled all metal wireforms/ramps and uV unwrapped them all. Added ramp decal covers (Roth added option in menu for them). Reworked plastic ramp bevels for better refraction effect.Known Issues: borked texture on flippers.Couple metal ramp supports improperly uv unwrapped'
+' 0.055 - rothbauerw - corrected flipper scaling, adjusted left and right nudge amplitude for animated level, tweaks to flipper physcis, lowered sleeve friction, set reel position in script 
+' 0.056 - Benji - updated blender batch with fixed flippers, fix to reel postion, fix to misc wire ramp anomalies.
+' 0.057 - rothbauerw - fix VR Room brightness bug
+' 0.058 - Benji - Flipper shadows removed, random screw removed from reel. Sticker fixed on Reel.
+' 0.059 - rothbauerw - Fix for setbackglass bug on set options, set default LUT for VR Room and removed VR Room Brightness adjustment, VR Room adjustments for TonyMcMapFace Tonemapper, VR Cab alignment fixes
+' 0.060 - Rawd - Re-sized Cast Plunger - more accurate to real sizing - under apron wood/light blocker added. - Updated cabinet metals (I made the coin door black). - Small movement on the Primary start button (it got nudged just a hair somehow)
+' 0.061 - rothbauerw - updated coloring for DT DMD, added dynamic reflections option (including lightmaps)
+' 0.062 - rothbauerw - reimported VR Room environmental sounds, disabled debug statements
+' 0.063 - rothbauerw - reduced sensitivity for drop target, added backwall light blocker
+' 0.064 - rothbauerw - fixed depth bias for rear cabinet legs and a few other items
+' 0.065 - rothbauerw - updated EOS Torque from 0.275 to 0.375, adjusted check for cradle from 55 vp units to 57
+' 0.066 - Rawd - VR update - Added Generator, fixed hole in cabin, added new crab animation sequence
+' 0.067 - rothbauerw - added option to increase z-scale of side blades for cabinet users
+' 0.068 - rothbauerw - added ball brightness adjustments with room brightness and ball brightness override option, also adjust brightness of ball with bottom GI state, added generator sound and option
+' 0.069 - rothbauerw - added mp3 generator sound, adjusted custom ball brightness range, elminated correction for when the ball isn't on or near the flipper when flipped, most impactful to rolling backhands.
+' 0.070 - rothbauerw - adjusted right orbit and trigger for better feed for long cast
+' 0.071 - rothbauerw - added an option for easier flipper tricks for keyboard and gamepad users
+' 0.072 - Benji - New 6k blender batch with various fixes. Up and Down flippers rendered. Name is BM_FlipperLDown. Changed name of existing prims in script to the updated name  but all flippers need to be added to script and animated/faded during flip. 
+' 0.073 - rothbauerw - animated up and down flipper renders, re-added generator and water VR sounds
+' 0.074 - rothbauerw - added reflections probe to playfield, removed VR Room Brightness code, visual improvments to the animated Level
+' 0.075 - rothbauerw - more animated level improvements
+' 0.077 - rothbauerw - updated reflection strength and added second playfield object for dynamic refelctions with lower reflection strength.
+' RC3 - rothbauerw - added option for adjusting render probes and increased speed of bumper rings
+' 1.0 Release
+' 1.0.1 - apophis - Updates for UseVPMModSol=2 : Removed InitPWM sub, Updated UpdateGI2 and FlashXX subs for new physics output, set all light fader models to None.
+' 1.0.2 - apophis - Fixed timers causing stutters. Fixed nbcolor overflow bug.
+' 1.0.3 - apophis - Updated fishing reel code (thanks Rothbauerw). Updated solenoid handling to not use core.vbs.
+' 1.0.4 - apophis - Revert back to sol callback arrays as they now has a better solution integrated in VPX.
+' 1.0.5 - rothbauerw - fixed reel switches for tween method
+' 1.0.6 - rothbauerw - fix for reel interval -1 resulting in ball no locking from time to time
+' 1.0.7 - apophis - Updated DisableStaticPreRendering functionality to be compatible with VPX 10.8.1 API
+' 1.0.8 - apophis - Added desktop DMD visibility option
+' 1.1 Release
+' 1.1.1 - apophis - Added reel fix (thanks gjupp!).
