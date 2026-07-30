@@ -7,11 +7,11 @@ fps: 60
 romChecksum: "82C2024F1F3084E0C2BD662C7DFA2ADF"
 romNotes: "l2"
 romVPSId: "Lr00GYFq"
-tableNotes: "Download version 3.0.2"
+tableNotes: "Download version 3.0.3"
 tableVPSId: "YukAF3rV"
 tagline: "I see sunspots!"
 testers:
   - "Curt"
 tutorialVPSId: "RujbrpCcDv"
-vpxChecksum: "1DA3D4DE051E99C829D037354DBDD225"
+vpxChecksum: "dee33d2a195642db499ad231c8589d54"
 vpxVPSId: "ca_SduCCTT"

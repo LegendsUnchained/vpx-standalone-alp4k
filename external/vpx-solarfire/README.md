@@ -7,7 +7,7 @@
 ## Files
 | File Type | Link | Version | Author(s) | 
 |-----------|--------|----------|--------------|
-| **VPX** | [vpuniverse](https://vpuniverse.com/files/file/11244-solar-fire-williams-1981-w-vr-room/) | 3.0.2 | UnclePaulie, Goldchicco, Wylte |
+| **VPX** | [vpuniverse](https://vpuniverse.com/files/file/11244-solar-fire-williams-1981-w-vr-room/) | 3.0.3 | UnclePaulie, Goldchicco, Wylte |
 | **B2S** | [vpuniverse](https://vpuniverse.com/files/file/7900-solar-fire-williams-1981/) | 1.0.0 | Wildman |
 | **ROM** | [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=799) | solar_l2 | Destruk |
 | **SERUM** | [N/A](#) | N/A | N/A |
