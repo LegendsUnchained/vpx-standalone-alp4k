@@ -34,6 +34,9 @@ The following hardware has been verified to work with the Legends Unchained Load
 Links to these products on Amazon are through affiliate links.
 
 #### Flash Drives
+- [Amazon Basics 128GB USB Flash Drive](https://amzn.to/4w0KmX0)
+- [Amazon Basics 256GB USB Flash Drive](https://amzn.to/4pPivYq)
+- [Amazon Basics 512GB USB Flash Drive](https://amzn.to/4bqSrgn)
 - [Kingston DataTraveler Max 256GB](https://amzn.to/42Ygu1k)
 - [Kingston DataTraveler Max 512GB](https://amzn.to/3ECtzFi)
 - [Samsung FIT 256GB Flash Drive](https://amzn.to/3ymA382)
