@@ -255,7 +255,7 @@ Links to these products on Amazon are through affiliate links.
 | [Seawitch, JP's (Stern 1980)](external/vpx-jpseawitch) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Seawitch, JP's (Stern 1980)](external/vpx-seawitch) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Secret Service (Data East 1988)](external/vpx-secretservice) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
-| [Sexy Girl Nude Mod (Arkon 1980) (Arkon 1980)](external/vpx-sexygirlnude) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Sexy Girl Nude Mod (Arkon 1980)](external/vpx-sexygirlnude) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Shadow, The (Bally 1994)](external/vpx-theshadow) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Shark (Taito do Brasil 1982)](external/vpx-shark) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Sharkey's Shootout (Stern 2000)](external/vpx-sharkeys) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
