@@ -1,36 +1,60 @@
-﻿# Super Mario Bros. (Gottlieb 1992)
+# Super Mario Bros. (Gottlieb 1992)
 
-![Table Preview](../../images/vpx-supermario.png)
+![Table Preview](../../images/tL02_KcmfI-preview.webp)
 
-Author: [Gedankekojote97](https://vpuniverse.com/profile/42203-gedankekojote97/)  
-Version: 1.1  
-Download: [VP Universe](https://vpuniverse.com/files/file/10223-super-mario-brothers-mod-nfozzy-fleep-sounds-lut/)
+<br>
 
-DirectB2S
+## *️⃣  Table Statistics
 
-Author: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
-Version: 1.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/18004-super-mario-bros-gottlieb-1992-b2s-with-full-dmd/)
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ✅ | ✅ | ❌ | 60 |
 
-ROM
+<br>
 
-Download: [Pinball Nirvana](https://pinballnirvana.com/forums/resources/smb3.2317/)
+**VPXS 4KP Testers:**
+  - MissleToad
 
-SHA: 0430b932b0f388d12ddcff736406f1b445b0c820
-MD5: 5bbbf451cdf5353b7b5d69ba17da8825
+<br>
 
-## Status 
+---
 
-Minimum VPX Standalone build: 10.8.0-1989-a764013
+<br>
 
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 38 |
+## ❇️ Available in the Wizard! 🪄✨
 
-## Instructions
+<br>
 
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more information found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
-- Unzip "NEW ROMS for VPinMAME v3.5 FINAL.zip"; open the folder; use "smb3.zip" as the rom
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
 
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Super Mario Bros. (Gottlieb 1992)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"It's-a me, Mario!"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
