@@ -9,6 +9,7 @@ backglassVPSId: "gNuw8VtwyD"
 coloredROMChecksum:
   - "55dc1bf9f6337bfee7d72b6783c0aad4"
   - "2dcf3ada453877b70c2cf8f719d6dbf0"
+coloredROMNotes: "Download - TFTC_ColorDMD_1.1.pal and  TFTC_ColorDMD_1.1.vni"
 coloredROMPin2DMD: true
 coloredROMVPSId: "1IkglzKX"
 diffChecksum: "63FB81D2AC74D58BAADA16B2791C2FF7"
