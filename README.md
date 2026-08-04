@@ -325,7 +325,7 @@ Links to these products on Amazon are through affiliate links.
 |:------|:---------:|:---:|:------------:|:---:|:---:|
 | [301 Bullseye (Grand Products 1986)](external/vpx-301bullseye) | :white_check_mark: | :x: | :white_check_mark: | :x: | 57 |
 | [A Real American Hero - Operation P.I.N.B.A.L.L. (Original 2017)](external/vpx-gijoe) | :white_check_mark: | :x: | :white_check_mark: | :x: | 52 |
-| [Abra Ca Dabra (Gottlieb 1975)](external/vpx-abracadabra) | :white_check_mark: | :x: | :x: | :x: | 49 |
+| [Abra Ca Dabra (Gottlieb 1975)](external/vpx-abracadabra) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Ace of Speed (Original 2019)](external/vpx-aceofspeed) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 30 |
 | [Ace Ventura Pet Detective (TBA 2019)](external/vpx-aceventura) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Addams Family, The (Bally 1992)](external/vpx-taf) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
