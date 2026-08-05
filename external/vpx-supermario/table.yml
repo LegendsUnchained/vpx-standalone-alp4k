@@ -13,6 +13,7 @@ romVersionOverride: "smb3"
 tagline: "It's-a me, Mario!"
 testers:
   - "MissleToad"
+  - "Wraith"
 tableVPSId: "fM3IOgUK"
 vpxChecksum: "0D8DCC33353BA7ED8FC611489FA7E2C6"
 vpxVPSId: "lzcdTBAV"
