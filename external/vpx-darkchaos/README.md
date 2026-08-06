@@ -14,7 +14,7 @@
 
 **VPXS 4KP Testers:**
   - MissleToad
-  - pb223
+  - Pbw23
   - Wraith
 
 <br>
