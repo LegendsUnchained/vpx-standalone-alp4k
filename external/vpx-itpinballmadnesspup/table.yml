@@ -1,7 +1,6 @@
 ---
 fps: 60
 pupArchiveFormat: "rar"
-pupArchiveRoot: "IT_pinballmadness/it_pinballmadness/"
 pupBundled: true
 pupChecksum: "438030BEBE8DA03EF62B721BCAA18847"
 pupNotes: "use the .rar archive"
