@@ -1,10 +1,10 @@
 ---
 fps: 60
 pupArchiveFormat: "rar"
-pupArchiveRoot: "IT_pinballmadness"
+pupArchiveRoot: "pupvideos"
 pupBundled: true
 pupChecksum: "438030BEBE8DA03EF62B721BCAA18847"
-pupNotes: "use the .rar archive or 'it_pinball_madness' folder"
+pupNotes: "use the .rar archive"
 pupRequired: true
 pupVersion: "1.0.0"
 tableNameOverride: "IT Pinball Madness 1.0 (puppack)"
