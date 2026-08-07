@@ -129,8 +129,8 @@ End Sub
 Const cGameName = "goonies"
 Const TableName = "The_Goonies"
 Const myVersion = "1.4"
-Const MaxPlayers = 4      ' from 1 to 4
-Const BallSaverTime = 10  ' in seconds
+Const MaxPlayers = 1      ' from 1 to 4
+Const BallSaverTime = 15  ' in seconds
 Const BallsPerGame = 3    ' usually 3 or 5
 
 '///////////////////////-----General Sound Options-----///////////////////////
@@ -154,7 +154,7 @@ Const AmbientBallShadowOn = 0		'0 = Static shadow under ball ("flasher" image, l
 Const enablePupPack		= False
 Const enablePupDMD      = False ' Enable PupPack must be true if this is set to true
 
-Const enableFlexDmd		= True  
+Const enableFlexDmd		= True
 
 Const enableEyeColors	= True
 Const enableRampColors	= True
@@ -165,7 +165,7 @@ DisableLUTSelector = 0  ' Disables the ability to change LUT option with magna s
 '----- VR Room Options and Auto-Detect -----
 Dim VRRoom, VR_Obj
 
-VRRoom = 1 '1 = 360 Sphere, 0 = Minimal Room
+VRRoom = 0 '1 = 360 Sphere, 0 = Minimal Room
 If RenderingMode = 2 Then
 
 	sidewalls.visible = 0
@@ -12092,7 +12092,9 @@ Sub RollingUpdate()
 
 	' stop the sound of deleted balls
 	For b = UBound(BOT) + 1 to tnob
-		If AmbientBallShadowOn = 0 Then BallShadowA(b).visible = 0
+		' LINUX/VPXS STANDALONE FIX: BallShadowA0-A10 flasher objects don't exist on
+		' this table build (see Part C notes below); guarded out to prevent crash.
+		' If AmbientBallShadowOn = 0 Then BallShadowA(b).visible = 0
 		rolling(b) = False
 		StopSound("BallRoll_" & b)
 	Next
@@ -12136,16 +12138,20 @@ Sub RollingUpdate()
 		End If
 
 		' "Static" Ball Shadows
-		If AmbientBallShadowOn = 0 Then
-			If BOT(b).Z > 30 Then
-				BallShadowA(b).height=BOT(b).z - BallSize/4		'This is technically 1/4 of the ball "above" the ramp, but it keeps it from clipping
-			Else
-				BallShadowA(b).height=BOT(b).z - BallSize/2 + 5
-			End If
-			BallShadowA(b).Y = BOT(b).Y + Ballsize/5 + fovY
-			BallShadowA(b).X = BOT(b).X
-			BallShadowA(b).visible = 1
-		End If
+		' LINUX/VPXS STANDALONE FIX: BallShadowA0-A10 flasher objects don't exist on
+		' this table build, so this whole block is guarded out to prevent a runtime
+		' crash. The table still has real BallShadow0-9 primitives (used by
+		' DynamicBSUpdate's AmbientBallShadowOn=1 mode), just not the flasher variant.
+		' If AmbientBallShadowOn = 0 Then
+		' 	If BOT(b).Z > 30 Then
+		' 		BallShadowA(b).height=BOT(b).z - BallSize/4		'This is technically 1/4 of the ball "above" the ramp, but it keeps it from clipping
+		' 	Else
+		' 		BallShadowA(b).height=BOT(b).z - BallSize/2 + 5
+		' 	End If
+		' 	BallShadowA(b).Y = BOT(b).Y + Ballsize/5 + fovY
+		' 	BallShadowA(b).X = BOT(b).X
+		' 	BallShadowA(b).visible = 1
+		' End If
 	Next
 End Sub
 
@@ -13325,10 +13331,18 @@ currentShadowCount = Array (0,0,0,0,0,0,0,0,0,0,0,0)
 ' *** Trim or extend these to match the number of balls/primitives/flashers on the table!
 dim objrtx1(10), objrtx2(10)
 dim objBallShadow(10)
-Dim BallShadowA
-BallShadowA = Array (BallShadowA0,BallShadowA1,BallShadowA2,BallShadowA3,BallShadowA4,BallShadowA5,BallShadowA6,BallShadowA7,BallShadowA8,BallShadowA9,BallShadowA10)
+' LINUX/VPXS STANDALONE FIX: none of the BallShadowA0-A10 flasher objects this table's
+' dynamic ambient-shadow system expects exist on this build (nor do RtxBallShadow0-10 /
+' RtxBall2Shadow0-10, which DynamicBSInit below also references via Eval; only the plain
+' BallShadow0-9 primitives are present). The comment above ("Copy in the BallShadowA
+' flasher set...") suggests this feature was never finished for this table export.
+' BallShadowA compile-time array and its runtime init are both disabled below rather
+' than patched piecemeal, since three separate object families in this one routine are
+' missing. Regular ball shadows from the BallShadow0-9 primitives are unaffected.
+' Dim BallShadowA
+' BallShadowA = Array (BallShadowA0,BallShadowA1,BallShadowA2,BallShadowA3,BallShadowA4,BallShadowA5,BallShadowA6,BallShadowA7,BallShadowA8,BallShadowA9,BallShadowA10)
 
-DynamicBSInit
+' DynamicBSInit
 
 sub DynamicBSInit()
 	Dim iii
