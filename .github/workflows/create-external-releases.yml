@@ -69,6 +69,9 @@ jobs:
             python .github/workflows/scripts/generate-readme-tables.py --check
           fi
 
+      - name: Table Manager Achievements Config
+        run: gh release upload ${{ github.ref_name }} tm-config/achievements.json
+        
       - name: Open PR for README updates
         if: github.event_name == 'release'
         run: |
