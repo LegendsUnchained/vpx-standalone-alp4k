@@ -1,6 +1,6 @@
-# Super Mario Bros. (Gottlieb 1992)
+# Four Million B.C. (Bally 1971)
 
-![Table Preview](../../images/tL02_KcmfI-preview.webp)
+![Table Preview](../../images/oGQExHwR-preview.webp)
 
 <br>
 
@@ -8,12 +8,12 @@
 
 | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |-----------|-----|-----|-----|-----|
-| ✅ | ✅ | ✅ | ❌ | 60 |
+| ✅ | ❌ | ❌ | ❌ | 60 |
 
 <br>
 
 **VPXS 4KP Testers:**
-  - MissleToad
+  - Wraith
 
 <br>
 
@@ -32,9 +32,9 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`Super Mario Bros. (Gottlieb 1992)`**
+4.  Find and select this table from the dropdown menu: **`Four Million B.C. (Bally 1971)`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *"It's-a me, Mario!"*
+6. *""*
 
 <br>
 

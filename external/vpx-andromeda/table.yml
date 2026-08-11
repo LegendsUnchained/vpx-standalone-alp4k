@@ -1,15 +1,16 @@
 ---
+backglassChecksum: "4E74B8FC6BAAAEC5503253F40BED1BF9"
+backglassNotes: "Download Version 2.5"
 backglassVPSId: "pWHcrS_kz1"
-backglassChecksum: "edc1c8de8f0e9338b81a0798e125c75a"
 fps: 59
+romChecksum: "BA1A504968C88AB22A817F4C898D1717"
 romVPSId: "b9JkQ2zQ"
-romChecksum: "ba1a504968c88ab22a817f4c898d1717"
+tableNotes: "Download v600.zip"
 tableVPSId: "uiEUziXx"
 tagline: "First of a new generation of multiple ball pin games!!"
 testers:
   - "Curt"
   - "OminousOsie"
   - "CoffeeAtJoes"
-vpxVPSId: "z7q3NjkJ"
 vpxChecksum: "93FF4B4E31CF5D4EAA746D592860D5DD"
-tableNotes: "Download v600.zip"
+vpxVPSId: "z7q3NjkJ"
