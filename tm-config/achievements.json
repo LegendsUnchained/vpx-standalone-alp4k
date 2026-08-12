@@ -588,9 +588,9 @@
       "icon": "casino",
       "rarity": "common",
       "displayOrder": 370,
-      "label": "They tend to multiply!",
+      "label": "They Tend to Multiply!",
       "description": "Play 2 versions of Jurassic Park, The Lost World",
-      "remainingText": "{count} played",
+      "remainingText": "{count} left to play",
       "conditions": {
         "specificTablesPlayed": [
           "Lost World Jurassic Park, The (Sega 1997)",
@@ -621,7 +621,7 @@
       "rarity": "rare",
       "displayOrder": 390,
       "label": "SEEGAAAAA",
-      "description": "Play 10 Unique Sega Tables",
+      "description": "Play 10 unique Sega tables",
       "remainingText": "{count} left to go",
       "conditions": {
         "specificManufacturers": [
@@ -638,7 +638,7 @@
       "displayOrder": 400,
       "label": "Panic at Malibu Pier",
       "description": "Play Baywatch on 95 minutes",
-      "remainingText": "hasn't happened yet",
+      "remainingText": "{count}m best attempt",
       "conditions": {
         "sessionMinLengthMinutes": 95,
         "specificTablesPlayed": [
@@ -653,7 +653,7 @@
       "rarity": "legendary",
       "displayOrder": 410,
       "label": "We ❤︎ The VPX Community!",
-      "description": "Play 20 Original Tables",
+      "description": "Play 20 Original tables",
       "remainingText": "{count} left to play",
       "conditions": {
         "specificManufacturers": [
@@ -669,13 +669,13 @@
       "rarity": "impossible",
       "displayOrder": 420,
       "label": "Stern Believer",
-      "description": "Play 50 Hours on Stern Tables",
+      "description": "Play 50 hours on Stern tables",
       "remainingText": "{hours}h left",
       "conditions": {
+        "minutesPlayed": 3000,
         "specificManufacturers": [
           "Stern"
-        ],
-        "minutesPlayed": 3000
+        ]
       }
     }
   ]
