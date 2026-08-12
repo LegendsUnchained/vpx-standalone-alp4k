@@ -1,6 +1,6 @@
 # Burner (Original 2026)
 
-![Table Preview](FilthTribeFTP/vpx-standalone-alp4k/images/vpx-burner-preview.webp)
+![Table Preview](../../images/vpx-burner-preview.webp)
 
 <br>
 
