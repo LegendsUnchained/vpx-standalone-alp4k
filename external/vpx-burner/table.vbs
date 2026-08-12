@@ -1,11 +1,12 @@
-' ********************************************************
+' **********************************************************
 '                     BURNER
 '            for VISUAL PINBALL X 10.8
 '        Uses FlexDMD for cabinet / FS mode
 '            table by jpsalas - 2026
 '            graphics by hassanchop
 ' all the user options are in the F12 user settings menu
-' ********************************************************
+' custom high score edits reflecting VPXS initials by Filth
+' **********************************************************
 
 Option Explicit
 Randomize
