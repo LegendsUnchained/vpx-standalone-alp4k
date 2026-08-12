@@ -1,6 +1,6 @@
 # Fire! (Williams 1987)
 
-![Table Preview](../../images/ktsncxrf86-preview.webp)
+![Table Preview](../../images/14Plx957XL-preview.webp)
 
 <br>
 
