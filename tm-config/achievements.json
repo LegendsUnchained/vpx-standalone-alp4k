@@ -605,8 +605,8 @@
       "rarity": "uncommon",
       "displayOrder": 380,
       "label": "9-Day Meltdown",
-      "description": "Play TNA once a day for 9 days",
-      "remainingText": "{count} days left",
+      "description": "Play TNA everyday, for a 9 days streak",
+      "remainingText": "{count} days best",
       "conditions": {
         "specificTablesPlayed": [
           "Total Nuclear Annihilation (Spooky Pinball 2017)"
