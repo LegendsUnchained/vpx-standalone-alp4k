@@ -1546,21 +1546,21 @@ End Sub
 Sub Loadhs
     Dim x
     x = LoadValue(MyTable, "HighScore1")
-    If(x <> "") Then HighScore(0) = CDbl(x) Else HighScore(0) = 1500000 End If
+    If(x <> "") Then HighScore(0) = CDbl(x) Else HighScore(0) = 1500000 End If    'changed original default hs initials to VPXS team related
     x = LoadValue(MyTable, "HighScore1Name")
-    If(x <> "") Then HighScoreName(0) = x Else HighScoreName(0) = "JSM" End If
+    If(x <> "") Then HighScoreName(0) = x Else HighScoreName(0) = "JSM" End If    'originally "AAA"
     x = LoadValue(MyTable, "HighScore2")
     If(x <> "") then HighScore(1) = CDbl(x) Else HighScore(1) = 1400000 End If
     x = LoadValue(MyTable, "HighScore2Name")
-    If(x <> "") then HighScoreName(1) = x Else HighScoreName(1) = "NIX" End If
+    If(x <> "") then HighScoreName(1) = x Else HighScoreName(1) = "NIX" End If    'originally "BBB"
     x = LoadValue(MyTable, "HighScore3")
     If(x <> "") then HighScore(2) = CDbl(x) Else HighScore(2) = 1300000 End If
     x = LoadValue(MyTable, "HighScore3Name")
-    If(x <> "") then HighScoreName(2) = x Else HighScoreName(2) = "WTH" End If
+    If(x <> "") then HighScoreName(2) = x Else HighScoreName(2) = "CTH" End If    'originally "CCC"
     x = LoadValue(MyTable, "HighScore4")
     If(x <> "") then HighScore(3) = CDbl(x) Else HighScore(3) = 1200000 End If
     x = LoadValue(MyTable, "HighScore4Name")
-    If(x <> "") then HighScoreName(3) = x Else HighScoreName(3) = "OSI" End If
+    If(x <> "") then HighScoreName(3) = x Else HighScoreName(3) = "WTH" End If    'originally "DDD"
     x = LoadValue(MyTable, "Credits")
     If(x <> "") then Credits = CInt(x) Else Credits = 0
     x = LoadValue(MyTable, "TotalGamesPlayed")
@@ -1581,10 +1581,10 @@ Sub Savehs
 End Sub
 
 Sub Reseths
-    HighScoreName(0) = "JSM"
-    HighScoreName(1) = "NIX"
-    HighScoreName(2) = "WTH"
-    HighScoreName(3) = "OSI"
+    HighScoreName(0) = "JSM"    'originally "AAA"
+    HighScoreName(1) = "NIX"    'originally "BBB"
+    HighScoreName(2) = "CTH"    'originally "CCC"
+    HighScoreName(3) = "WTH"    'originally "DDD"
     HighScore(0) = 1500000
     HighScore(1) = 1400000
     HighScore(2) = 1300000
