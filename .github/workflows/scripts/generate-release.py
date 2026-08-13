@@ -3,6 +3,7 @@ import os
 import sys
 import time
 import json
+import hashlib
 import shutil
 import tempfile
 import threading
@@ -14,6 +15,15 @@ import git
 from github import Github, Auth
 from github.GithubException import GithubException
 from pathlib import Path
+
+
+def md5sum(file_path, chunk_size=1024 * 1024):
+    """Return the lowercase MD5 digest of a release asset on disk."""
+    digest = hashlib.md5()
+    with open(file_path, "rb") as asset:
+        for chunk in iter(lambda: asset.read(chunk_size), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def find_table_yml(base_dir="external"):
@@ -191,6 +201,7 @@ def process_table(args):
         try:
             shutil.make_archive(zip_base, "zip", external_path)
             zip_path = zip_base + ".zip"
+            repo_config_checksum = md5sum(zip_path)
             print(f"Uploading {zip_path} to GitHub...")
             download_url = upload_release_asset(
                 github_token, repo_name, release, asset_index, index_lock, zip_path
@@ -198,6 +209,9 @@ def process_table(args):
             if download_url:
                 new_data = result[1]
                 new_data["repoConfig"] = download_url
+                # Hash the exact bytes passed to upload_release_asset so clients
+                # can detect truncated or otherwise corrupted downloads.
+                new_data["repoConfigChecksum"] = repo_config_checksum
                 new_data["configVersion"] = config_version[:7]
                 new_data["name"] = vpsdb.process_title(new_data["name"], new_data["manufacturer"], new_data["year"])
                 result = (table, new_data)
@@ -256,7 +270,13 @@ def main():
         prev_short = ""
         if isinstance(prev_manifest, dict):
             prev_short = (prev_manifest.get(table, {}) or {}).get("configVersion", "")
-        if short and short == prev_short:
+        prev_checksum = ""
+        if isinstance(prev_manifest, dict):
+            prev_checksum = (prev_manifest.get(table, {}) or {}).get("repoConfigChecksum", "")
+        # A checksum-less entry is deliberately rebuilt even when its config is
+        # unchanged. This backfills manifests published before config bundle
+        # verification was introduced.
+        if short and short == prev_short and prev_checksum:
             unchanged_tables.append(table)
         else:
             changed_tables[table] = data
