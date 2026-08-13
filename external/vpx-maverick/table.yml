@@ -2,9 +2,6 @@
 backglassChecksum: "6B155EE1206269D1D1F3C3300C3CA084"
 backglassNotes: "Download Maverick (Data East 1994) b2s with full dmd"
 backglassVPSId: "uUey4vEpCR"
-coloredROMChecksum: "07B2DBA62B6A4A5BF16E5F0A36E77BBB"
-coloredROMNotes: "Download Virt_pin2dmd.pal"
-coloredROMVPSId: "Pz0z6dUVrX"
 diffAuthorsOverride:
   - "capnclaw"
 diffChecksum: "EB2264B23E3D2CEDB161E2C11F57CA6A"
