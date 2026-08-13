@@ -16,6 +16,7 @@
   - MissleToad
   - Pbw23
   - Wraith
+  - Coffee Joe
 
 <br>
 
