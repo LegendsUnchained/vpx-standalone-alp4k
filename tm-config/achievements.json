@@ -569,7 +569,7 @@
     {
       "id": "villa-diodati",
       "category": "osies-list",
-      "icon": "bolt",
+      "icon": "nightlight",
       "rarity": "common",
       "displayOrder": 360,
       "label": " Villa Diodati",
@@ -589,7 +589,7 @@
       "rarity": "common",
       "displayOrder": 370,
       "label": "They Tend to Multiply!",
-      "description": "Play 2 versions of Jurassic Park, The Lost World",
+      "description": "Play 2 versions of  The Lost World, Jurassic Park",
       "remainingText": "{count} left to play",
       "conditions": {
         "specificTablesPlayed": [
@@ -605,7 +605,7 @@
       "rarity": "uncommon",
       "displayOrder": 380,
       "label": "9-Day Meltdown",
-      "description": "Play TNA everyday, for a 9 days streak",
+      "description": "Play Total Nuclear Annihilation everyday, for a 9 days streak",
       "remainingText": "{count} days best",
       "conditions": {
         "specificTablesPlayed": [
@@ -637,7 +637,7 @@
       "rarity": "epic",
       "displayOrder": 400,
       "label": "Panic at Malibu Pier",
-      "description": "Play Baywatch on 95 minutes",
+      "description": "Play Baywatch for 95 minutes in one session",
       "remainingText": "{count}m best attempt",
       "conditions": {
         "sessionMinLengthMinutes": 95,
