@@ -638,7 +638,7 @@
       "displayOrder": 400,
       "label": "Panic at Malibu Pier",
       "description": "Play Baywatch for 95 minutes in one session",
-      "remainingText": "{count}m best attempt",
+      "remainingText": "{count}m left on best attempt",
       "conditions": {
         "sessionMinLengthMinutes": 95,
         "specificTablesPlayed": [
