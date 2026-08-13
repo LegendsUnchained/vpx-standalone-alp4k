@@ -295,8 +295,15 @@ def build_section(rows: list[dict]) -> str:
     return TABLE_HEADER + "\n".join(body_lines) + "\n"
 
 
-def replace_section(text: str, header: str, section_body: str, *, terminate_at_next_header: bool) -> str:
-    """Replace the block from ``header`` (a line like ``## Foo``) up to (but not
+def replace_section(
+    text: str,
+    header_prefix: str,
+    section_header: str,
+    section_body: str,
+    *,
+    terminate_at_next_header: bool,
+) -> str:
+    """Replace the block from a section header (a line like ``## Foo``) up to (but not
     including) the next ``## `` heading — or to EOF when
     ``terminate_at_next_header`` is False.
 
@@ -309,13 +316,14 @@ def replace_section(text: str, header: str, section_body: str, *, terminate_at_n
     lines = text.splitlines(keepends=True)
     start = None
     for i, line in enumerate(lines):
-        if line.rstrip() == header.rstrip() or line.rstrip().startswith(header):
-            # Accept "## Wizard Tables" and "## Wizard Tables " (trailing space).
-            if line.strip() == header.strip():
+        if line.rstrip() == header_prefix.rstrip() or line.rstrip().startswith(header_prefix):
+            # Accept historical headings without counts and current headings with
+            # counts, e.g. "## Wizard Tables" and "## Wizard Tables (272)".
+            if line.strip().startswith(header_prefix.strip()):
                 start = i
                 break
     if start is None:
-        raise ValueError(f"Section header not found in README: {header!r}")
+        raise ValueError(f"Section header not found in README: {header_prefix!r}")
 
     end = len(lines)
     if terminate_at_next_header:
@@ -324,8 +332,8 @@ def replace_section(text: str, header: str, section_body: str, *, terminate_at_n
                 end = j
                 break
 
-    # Preserve the existing header line exactly (spacing and all).
-    header_line = lines[start]
+    # Normalize the heading text each run so counts stay accurate.
+    header_line = section_header + "\n"
 
     # Body: blank line, table, blank line, "<br>", blank line before next ##
     # (or just table for the final section that runs to EOF).
@@ -362,16 +370,20 @@ def render_readme(current_text: str) -> tuple[str, list[dict], list[dict]]:
 
     wizard_rows = sort_rows([r for r in all_rows if r["wizard"]])
     manual_rows = sort_rows([r for r in all_rows if not r["wizard"]])
+    wizard_header = f"{WIZARD_HEADER} ({len(wizard_rows)})"
+    manual_header = f"{MANUAL_HEADER} ({len(manual_rows)})"
 
     new_text = replace_section(
         current_text,
         WIZARD_HEADER,
+        wizard_header,
         build_section(wizard_rows),
         terminate_at_next_header=True,
     )
     new_text = replace_section(
         new_text,
         MANUAL_HEADER,
+        manual_header,
         build_section(manual_rows),
         terminate_at_next_header=False,
     )

@@ -1,35 +1,60 @@
-﻿# Dungeons & Dragons (Bally 1987)
+# Dungeons & Dragons (Bally 1987)
 
-![Table Preview](../../images/vpx-dungeonsndragons.png)
+![Table Preview](../../images/QrU6V1UoUr-preview.webp)
 
-Authors: [siggi](https://vpuniverse.com/profile/8779-siggi/)  
-Version: 1.0.0  
-Download: [VPUniverse](https://vpuniverse.com/files/file/19244-dungeons-dragons-bally-1987-siggis-mod/)
+<br>
 
-DirectB2S
+## *️⃣  Table Statistics
 
-Authors: [wildman](https://vpuniverse.com/profile/5-wildman/)  
-Version: 2.0  
-Download: [VP Universe](https://vpuniverse.com/files/file/2620-dungeons-and-dragons-bally-1987/)
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ✅ | ✅ | ❌ | 60 |
 
-ROM
+<br>
 
-Download: [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=718)  
-Rom Name: dungdrag.zip
+**VPXS 4KP Testers:**
+  - Wraith
 
-Tested by: kaoticBPR
+<br>
 
-## Status 
+---
 
-Minimum VPX Standalone build: 10.8.0-1989-a764013
+<br>
 
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 48 |
+## ❇️ Available in the Wizard! 🪄✨
 
-## Instructions
+<br>
 
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more information found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
 
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Dungeons & Dragons (Bally 1987)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *""*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

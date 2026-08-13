@@ -50,6 +50,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r .github/workflows/scripts/requirements.txt
 
+      - name: Full table.yml validation (release gate)
+        run: |
+          echo "Running full table.yml validation across external/ with VPSDB checks..."
+          python .github/workflows/scripts/validate-table-yaml.py
+
       - name: Generate changed zips only
         run: python .github/workflows/scripts/generate-release.py
 
@@ -80,7 +85,11 @@ jobs:
             exit 0
           fi
           DEFAULT_BRANCH="${{ github.event.repository.default_branch }}"
-          PR_BRANCH="chore/regenerate-readme-tables"
+          SAFE_TAG=$(echo "${GITHUB_REF_NAME}" | tr '[:upper:]' '[:lower:]' | sed -E 's#[^a-z0-9._-]+#-#g; s#^-+##; s#-+$##')
+          if [ -z "$SAFE_TAG" ]; then
+            SAFE_TAG="release-${GITHUB_RUN_ID}"
+          fi
+          PR_BRANCH="chore/regenerate-readme-tables-${SAFE_TAG}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin "$DEFAULT_BRANCH"
@@ -95,10 +104,14 @@ jobs:
           fi
           git add README.md
           git commit -m "chore: regenerate README table listings [skip ci]"
-          # Force-push so the branch always mirrors the latest regeneration and
-          # any previously opened PR just picks up new commits instead of
-          # accumulating stale ones.
-          git push --force origin "HEAD:$PR_BRANCH"
+          # Repository rules may disallow force-push, so use a release-scoped
+          # branch and a normal push.
+          if ! git push origin "HEAD:$PR_BRANCH"; then
+            ALT_BRANCH="${PR_BRANCH}-${GITHUB_RUN_ID}"
+            echo "::warning::Push to ${PR_BRANCH} failed; retrying with ${ALT_BRANCH}."
+            git push origin "HEAD:$ALT_BRANCH"
+            PR_BRANCH="$ALT_BRANCH"
+          fi
           # Reuse an existing open PR for this branch if there is one; otherwise
           # open a new one against the protected default branch. Retry a few
           # times to ride out transient GitHub GraphQL failures.
