@@ -606,7 +606,7 @@
       "displayOrder": 380,
       "label": "9-Day Meltdown",
       "description": "Play Total Nuclear Annihilation everyday, for a 9 days streak",
-      "remainingText": "{count} days best",
+      "remainingText": "{count} days left on best streak",
       "conditions": {
         "specificTablesPlayed": [
           "Total Nuclear Annihilation (Spooky Pinball 2017)"
