@@ -1,32 +1,61 @@
-﻿# Airborne (Capcom 1996)
+# Airborne (Capcom 1996)
 
-![Table Preview](../../images/vpx-airborne.png)
+![Table Preview](../../images/um2mEgU3gx-preview.webp)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author |
-|:---------:|:----:|:-------:|:------:|
-| VPX | [vpforums](https://vpuniverse.com/files/file/14791-airborne-capcom-1996/) | 1.0 | [versins77](https://vpuniverse.com/profile/29661-versins77/) |
-| B2S | [VP Universe](https://vpuniverse.com/files/file/2184-airbornecapcom1996/) | 2.0 | [wildman](https://vpuniverse.com/profile/5-wildman/) |
-| DMD | N/A | N/A | N/A |
-| ROM | [vpforums](https://vpuniverse.com/files/file/1281-airborne-capcom-1996-abv106/) | abv106.zip | N/A |
+## *️⃣  Table Statistics
 
-**Tested by:** [kaoticBPR]
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ✅ | ✅ | ❌ | 60 |
 
----
+<br>
 
-## Status
-**Minimum VPX Standalone build:** 10.8.0-1989-a764013
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 37 |
+**VPXS 4KP Testers:**
+  - Bla1ze
+  - Wraith
+
+<br>
 
 ---
 
-## Instructions
+<br>
 
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more information found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
+## ❇️ Available in the Wizard! 🪄✨
 
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Airborne (Capcom 1996)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"Pilot, you're cleared for takeoff!"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
