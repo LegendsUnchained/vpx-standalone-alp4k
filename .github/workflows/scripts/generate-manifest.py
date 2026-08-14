@@ -4,9 +4,10 @@
 Uses the exact same VPSDB resolution the release uses (vpsdb.get_table_meta), so
 the output matches what a release would produce for the resolved metadata — but
 WITHOUT touching GitHub: no release, no asset upload, no git history required.
-The two release-only fields the manifest gains at publish time (`repoConfig`, the
-asset download URL, and `configVersion`, the table folder's commit hash) are
-intentionally absent here — everything else is byte-for-byte what ships.
+The three release-only fields the manifest gains at publish time (`repoConfig`,
+the asset download URL; `repoConfigChecksum`, its MD5; and `configVersion`, the
+table folder's commit hash) are intentionally absent here — everything else is
+byte-for-byte what ships.
 
 Use it to preview / review the JSON a table.yml renders to before opening or
 merging a PR.
