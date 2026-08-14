@@ -1,6 +1,6 @@
-# Airborne (Capcom 1996)
+# Dark Chaos (Original 2025)
 
-![Table Preview](../../images/um2mEgU3gx-preview.webp)
+![Table Preview](../../images/ePSwAxXZi6-preview.webp)
 
 <br>
 
@@ -8,13 +8,15 @@
 
 | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |-----------|-----|-----|-----|-----|
-| ✅ | ✅ | ✅ | ❌ | 60 |
+| ✅ | ❌ | ❌ | ❌ | 60 |
 
 <br>
 
 **VPXS 4KP Testers:**
-  - Bla1ze
+  - MissleToad
+  - Pbw23
   - Wraith
+  - Coffee Joe
 
 <br>
 
@@ -33,9 +35,9 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`Airborne (Capcom 1996)`**
+4.  Find and select this table from the dropdown menu: **`Dark Chaos (Original 2025)`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *"Pilot, you're cleared for takeoff!"*
+6. *"Prepare yourself for the looming Dark Chaos"*
 
 <br>
 

@@ -1,4 +1,3 @@
-import json
 import re
 import sys
 import yaml
@@ -475,6 +474,5 @@ if __name__ == "__main__":
     check_fps(meta)
     check_testers(meta)
 
-    j = json.dumps(meta, indent=4)
-    print(j)
+    print(f"Validation passed for {len(files)} table.yml file(s).")
     sys.exit(0)
