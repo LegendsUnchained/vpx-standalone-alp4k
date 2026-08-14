@@ -1,18 +1,19 @@
 ---
-backglassVPSId: "t2tSRYqYk5"
-backglassChecksum: "762c19e565863d0754ee17de9f650391"
+backglassChecksum: "762C19E565863D0754EE17DE9F650391"
 backglassNotes: "Download 'Big Bang Bar (Capcom 1996) full dmd.zip'"
-coloredROMVPSId: "63Gi5Mp9me"
+backglassVPSId: "t2tSRYqYk5"
 coloredROMChecksum: "B81973B451971453A040B8984A3DA3F3"
 coloredROMNotes: "Download 'bbb109 2.0 cROMc.rar'"
+coloredROMVPSId: "63Gi5Mp9me"
 fps: 60
+nsfw: true
+romChecksum: "689548EF14A6DD6550901378C63FA43C"
 romVPSId: "Ks3T1Xy7"
-romChecksum: "689548ef14a6dd6550901378c63fa43c"
-tableVPSId: "ZxOdqKhi"
 tableNotes: "Download 'Big Bang Bar (Capcom 1996)_Bigus(MOD)3.0.vpx.zip'"
+tableVPSId: "ZxOdqKhi"
 tagline: "**Warning:** Mature table, not suitable for children!"
 testers:
   - "mcap"
   - "OminousOsie"
-vpxVPSId: "02GK43yX"
 vpxChecksum: "B1CA7366A2D0C44EE0E365264A68A0AE"
+vpxVPSId: "02GK43yX"
