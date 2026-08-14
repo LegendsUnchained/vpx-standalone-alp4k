@@ -1,0 +1,23 @@
+---
+backglassChecksum: "147A65768A2144F7E139397A795724DF"
+backglassNotes: "Download - Super Mario Brothers MW (Premier1992).zip"
+backglassVPSId: "jFg5TNDfbA"
+coloredROMChecksum:
+  - "7EFED7904C7F82B4D64801E091BC0678"
+  - "1EDD59FC2B3FF85E7A80FD540AA426F4"
+coloredROMNotes: "Download - SMBMW.pal & SMBMW.vni"
+coloredROMPin2DMD: true
+coloredROMVPSId: "f3xxBNMCL-"
+fps: 60
+romChecksum: "AFAFCA672215A770F69EE8DD0198F920"
+romNotes: "Download - smbmush.zip"
+romUrlOverride: "https://pinballnirvana.com/forums/resources/smbmush.2318/"
+romVersionOverride: "smbmush"
+tableNotes: "Download - Super Mario Bros. Mushroom World (Premier 1992) v1.0.4i.vpx"
+tableVPSId: "WC_n7c7q"
+tagline: "It's me Mario. How many tickets can you win?"
+testers:
+  - "MissleToad"
+  - "Wraith"
+vpxChecksum: "153B20C5659DA35DA784C5A6CE94B92B"
+vpxVPSId: "zVFKTgg6Dn"
