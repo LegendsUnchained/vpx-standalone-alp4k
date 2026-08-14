@@ -8,12 +8,13 @@
 
 | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |-----------|-----|-----|-----|-----|
-| ✅ | ✅ | ✅ | ❌ | 58 |
+| ✅ | ✅ | ✅ | ❌ | 60 |
 
 <br>
 
 **VPXS 4KP Testers:**
   - Bla1ze
+  - MissileToad
 
 <br>
 
