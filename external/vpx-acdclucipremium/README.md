@@ -33,5 +33,6 @@
   1) Download 'AC/DC LE 1.70.0 Game Code' from the provided link
   2) Zip up the downloaded 'ACD170LE.BIN' file
   3) Rename that zip file to 'acd_170h.zip'
+- ⚡🍈🍈👙WARNING⚡Default Playfield image has NSFW images.  You can disable this in the .vbs under 'TABLE OPTIONS'
 - If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
 - It's a long way to the top if you wanna rock n' roll!
