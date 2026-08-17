@@ -61,6 +61,7 @@ Links to these products on Amazon are through affiliate links.
 | [4 Aces (Williams 1970)](external/vpx-4aces) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Aaron Spelling (Data East 1992)](external/vpx-aaronspelling) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 52 |
 | [Ace High (Gottlieb 1957)](external/vpx-acehigh) | :white_check_mark: | :x: | :x: | :x: | 60 |
+| [AC/DC (LUCI Premium) (Stern 2013)](external/vpx-acdclucipremium) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Addams Family, JP's (Bally 1992)](external/vpx-jptaf) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Adventures of Rocky and Bullwinkle and Friends (Data East 1993)](external/vpx-aorab) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Al's Garage Band Goes on a World Tour (Gottlieb 1992)](external/vpx-alsgarageband) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
