@@ -14,8 +14,22 @@ jobs:
         uses: actions/checkout@v5
         with:
           # No git-history diffing is needed in this workflow; changed files are
-          # resolved through the PR Files API.
+          # resolved through the PR Files API. On pull_request runs, check out
+          # the head commit directly to avoid fetching GitHub's synthesized
+          # pull/<n>/merge ref, which can occasionally stall for large repos.
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
           fetch-depth: 1
+
+      - name: Checkout diagnostics
+        run: |
+          echo "event=${{ github.event_name }}"
+          echo "repository=${{ github.event.pull_request.head.repo.full_name || github.repository }}"
+          echo "ref=${{ github.event.pull_request.head.sha || github.sha }}"
+          echo "git_commit=$(git rev-parse HEAD)"
+          echo "git_remote=$(git remote get-url origin)"
+          git count-objects -vH
+          du -sh .git
 
       - name: Set up Python
         uses: actions/setup-python@v6
