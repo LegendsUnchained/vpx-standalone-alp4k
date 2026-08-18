@@ -1,5 +1,6 @@
 /external/*/*.*
 !/external/*/launcher.cfg
+!/external/*/buttons.ini
 !/external/*/launcher.png
 !/external/*/nvram.nv
 !/external/*/README.md
