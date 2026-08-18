@@ -1,6 +1,6 @@
 # Dexter (Original 2022)
 
-![Table Preview](../../images/vpx-dexter.png)
+![Table Preview](../../images/X9el-XgPFm-preview.webp)
 
 <br>
 
