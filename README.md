@@ -332,6 +332,7 @@ Links to these products on Amazon are through affiliate links.
 | [Abra Ca Dabra (Gottlieb 1975)](external/vpx-abracadabra) | :white_check_mark: | :x: | :x: | :x: | 49 |
 | [Ace of Speed (Original 2019)](external/vpx-aceofspeed) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 30 |
 | [Ace Ventura Pet Detective (TBA 2019)](external/vpx-aceventura) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
+| [AC/DC (LUCI Premium) (Stern 2013)](external/vpx-acdclucipremium) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Addams Family, The (Bally 1992)](external/vpx-taf) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Aerosmith (Pro) (Stern/Tribute 2017)](external/vpx-aerosmith) | :white_check_mark: | :white_check_mark: | :x: | :x: | 44 |
 | [Agents 777 (Game Plan 1984)](external/vpx-agents777) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
