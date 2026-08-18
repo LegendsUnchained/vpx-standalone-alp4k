@@ -131,10 +131,12 @@ Launcher UI
 
 |backglass.png | ❌ |Backglass image to use during loading
 
+|buttons.ini | ❌ |Custom launcher button labels
+
 |dmd.png | ❌ |DMD image to use during loading and as a static image for
 tables without a DMD
 
-|launcher.cfg | ❌ |Any launcher configs like button labels
+|launcher.cfg | ❌ |Legacy copy of `buttons.ini` during the launcher rollout
 
 |nvram.nv | ❌ |NVRAM file needed for the table to initialize (should
 not have high-scores from play)

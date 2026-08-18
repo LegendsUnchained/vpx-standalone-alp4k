@@ -20,8 +20,9 @@ Please ensure your files are named:
 | launcher.png | :white_check_mark: | The image used by the AtGames Launcher UI (500px x 750px)|
 | table.yml | :white_check_mark: | Wizard config YAML |
 | backglass.png | :x: | Backglass image to use during loading |
+| buttons.ini | :x: | Custom launcher button labels |
 | dmd.png | :x: | DMD image to use during loading and as a static image for tables without a DMD |
-| launcher.cfg | :x: | Any launcher configs like button labels |
+| launcher.cfg | :x: | Legacy copy of `buttons.ini` during the launcher rollout |
 | nvram.nv | :x: | NVRAM file needed for the table to initialize (should not have high-scores from play) |
 | playfield.png | :x: | Playfield image to use during loading |
 | table.ini | :x: | VPX settings to overried to use the table |

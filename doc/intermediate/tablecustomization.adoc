@@ -96,10 +96,10 @@ image:../images/table_customization_empty_dmd.jpg[]
 You can change the button labels that appear during the tables loading
 screen via a file!
 
-All you need to do is add a `launcher.cfg` file to the root of your
+All you need to do is add a `buttons.ini` file to the root of your
 `vpx-table` folder.
 
-The `launcher.cfg` file looks like this:
+The `buttons.ini` file looks like this:
 
 [source,ini]
 ....
@@ -117,7 +117,8 @@ start = "Start"
 menu = "Menu"
 ....
 
-So for deadpool, we added a `launcher.cfg` file to
-`external/vpx-deadpool`, and edited it like so:
+So for deadpool, we added a `buttons.ini` file to `external/vpx-deadpool`,
+and edited it like so. While older launchers remain in the fleet, keep an
+identical `launcher.cfg` copy beside it for compatibility.
 
 image:../images/table_customization_button_lables.jpg[]
