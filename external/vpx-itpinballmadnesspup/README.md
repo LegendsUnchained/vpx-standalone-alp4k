@@ -1,6 +1,6 @@
-# Maverick (Data East 1994)
+# It Pinball Madness (Original 2022)
 
-![Table Preview](../../images/FQIed3Gh-preview.webp)
+![Table Preview](../../images/cUrUo1Y7dL-preview.webp)
 
 <br>
 
@@ -8,13 +8,13 @@
 
 | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |-----------|-----|-----|-----|-----|
-| ✅ | ✅ | ✅ | ❌ | 60 |
+| ❌ | ❌ | ❌ | ✅ | 60 |
 
 <br>
 
 **VPXS 4KP Testers:**
-  - Bla1ze
-  - MissleToad
+  - pinballwizard2023
+  - Curt
 
 <br>
 
@@ -33,9 +33,9 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`Maverick (Data East 1994)`**
+4.  Find and select this table from the dropdown menu: **`IT Pinball Madness 1.0 (puppack)`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *"Ante Up!"*
+6. *""Hello, Georgie.""*
 
 <br>
 
