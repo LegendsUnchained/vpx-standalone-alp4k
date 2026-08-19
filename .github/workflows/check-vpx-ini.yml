@@ -9,30 +9,70 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Get changed table.ini files from PR
+        id: changed-files
+        uses: actions/github-script@v8
         with:
-          fetch-depth: 50 # Adjust this value as needed
+          script: |
+            const pr = context.payload.pull_request;
+            const files = await github.paginate(github.rest.pulls.listFiles, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pr.number,
+              per_page: 100,
+            });
+
+            const iniFiles = files
+              .map((f) => f.filename)
+              .filter((name) => name.endsWith('table.ini'));
+
+            const sparsePaths = [
+              '.github/workflows/scripts/check-table-ini.py',
+              'Default_VPinballX.ini',
+              ...iniFiles,
+            ];
+
+            core.setOutput('table_files', iniFiles.join('\n'));
+            core.setOutput('sparse_paths', sparsePaths.join('\n'));
+            core.info(`Found ${iniFiles.length} changed table.ini file(s).`);
+
+      - name: Checkout code
+        if: steps.changed-files.outputs.table_files != ''
+        uses: actions/checkout@v5
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: ${{ steps.changed-files.outputs.sparse_paths }}
+          sparse-checkout-cone-mode: false
+
+      - name: Checkout diagnostics
+        if: steps.changed-files.outputs.table_files != ''
+        run: |
+          echo "event=${{ github.event_name }}"
+          echo "repository=${{ github.event.pull_request.head.repo.full_name || github.repository }}"
+          echo "ref=${{ github.event.pull_request.head.sha || github.sha }}"
+          echo "git_commit=$(git rev-parse HEAD)"
+          echo "git_remote=$(git remote get-url origin)"
+          git count-objects -vH
+          du -sh .git
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        if: steps.changed-files.outputs.table_files != ''
+        uses: actions/setup-python@v6
         with:
-          python-version: '3.x'
-
-      - name: Get changed table.ini files
-        id: changed-files
-        run: |
-          CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep -w 'table\.ini$')
-          echo "CHANGED_FILES=$(echo "$CHANGED_FILES" | tr '\n' ',')" >> $GITHUB_OUTPUT
+          python-version: '3.11'
   
       - name: Check table.ini files
         run: |
-          if [[ -n "${{ steps.changed-files.outputs.CHANGED_FILES }}" ]]; then
-            IFS=',' read -ra FILES <<< "${{ steps.changed-files.outputs.CHANGED_FILES }}"
-            for file in "${FILES[@]}"; do
-              echo "Checking \"$file\""
-              python .github/workflows/scripts/check-table-ini.py "$file" "Default_VPinballX.ini"
-            done
-          else
+          if [[ -z "${{ steps.changed-files.outputs.table_files }}" ]]; then
             echo "No table.ini files were changed."
+            exit 0
           fi
+
+          mapfile -t FILES < <(printf '%s\n' "${{ steps.changed-files.outputs.table_files }}" | sed '/^$/d')
+          for file in "${FILES[@]}"; do
+            echo "Checking \"$file\""
+            python .github/workflows/scripts/check-table-ini.py "$file" "Default_VPinballX.ini"
+          done

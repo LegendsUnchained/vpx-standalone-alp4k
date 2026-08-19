@@ -64,6 +64,19 @@ def normalize_checksums(value):
     return normalized or None
 
 
+def as_str_list(value):
+    """Normalize a field that may be a single string or a list of strings into a
+    list of strings. Absent/empty becomes None so the manifest simply omits it.
+    Used by vpxExtractExtra, which is authored as a list of archive paths.
+    """
+    if value is None:
+        return None
+    if isinstance(value, str):
+        value = [value]
+    normalized = [str(item) for item in value if item]
+    return normalized or None
+
+
 def normalize_dict_list(value):
     """Normalize a field that may be a single mapping or a list of mappings
     into a list of mappings. Absent/None becomes an empty list. Used by the
@@ -327,6 +340,7 @@ def get_table_meta(files, warn_on_error=True):
         romChecksum = normalize_checksums(data.get("romChecksum"))
         vpxChecksum = normalize_checksums(data.get("vpxChecksum"))
         pupChecksum = normalize_checksums(data.get("pupChecksum"))
+        specialDMDChecksum = normalize_checksums(data.get("specialDMDChecksum"))
 
         table_meta = {
             "altSoundAuthors": data.get("altSoundAuthorsOverride"),
@@ -387,6 +401,34 @@ def get_table_meta(files, warn_on_error=True):
             "romNotes": data.get("romNotes"),
             "romVersion": data.get("romVersionOverride"),
             "romNSFW": data.get("romNSFW"),
+            # Special DMD (UltraDMD / FlexDMD): the DMD content folder a
+            # table's script loads at run time, installed into the ROOT of the
+            # table folder. VPS has no category for these, so there is no id to
+            # resolve — every field is authored here and passed through.
+            #
+            # specialDMDFileUrl is an OVERRIDE only: the pack is normally one of
+            # the files on the table's own download page, so with no override the
+            # wizard sends the user to the table's mirrors. When
+            # specialDMDBundled is set the folder is inside the table download
+            # itself and there is nothing to link at all — the wizard uploads
+            # that archive (vpxArchiveFormat) and the device unpacks the folder
+            # named by specialDMDArchiveRoot out of it.
+            "specialDMDArchiveFormat": data.get("specialDMDArchiveFormat"),
+            "specialDMDArchiveRoot": data.get("specialDMDArchiveRoot"),
+            "specialDMDBundled": data.get("specialDMDBundled"),
+            "specialDMDChecksum": specialDMDChecksum,
+            "specialDMDFileUrl": as_url_list(data.get("specialDMDUrlOverride")),
+            "specialDMDNotes": data.get("specialDMDNotes"),
+            "specialDMDNSFW": data.get("specialDMDNSFW"),
+            "specialDMDType": data.get("specialDMDType"),
+            "specialDMDVersion": data.get("specialDMDVersion"),
+            # vpxArchiveFormat means the table installs from the archive the
+            # author published rather than a bare .vpx: the wizard's upload slot
+            # takes only that format, and the cabinet unpacks the .vpx (picked by
+            # checksum) plus every folder listed in vpxExtractExtra - run-time
+            # media like "Music" that the table loads from its own folder.
+            "vpxArchiveFormat": data.get("vpxArchiveFormat"),
+            "vpxExtractExtra": as_str_list(data.get("vpxExtractExtra")),
             "tableChecksum": vpxChecksum,
             "tableNotes": data.get("tableNotes"),
             "tagline": data.get("tagline"),
