@@ -1,0 +1,17 @@
+---
+fps: 60
+pupArchiveFormat: "zip"
+pupArchiveRoot: "DarkestDungeon"
+pupBundled: true
+pupChecksum: "BECBC9BBDCAF4E2E9DF76A81321F9098"
+pupNotes: "Download 'DarkestDungeon-PuP-v3.06.zip'"
+pupRequired: true
+pupVersion: "DarkestDungeon"
+tableVPSId: "9B6KqxBypv"
+testers:
+  - "miku"
+  - "Wraith"
+  - "Missile Toad"
+  - "Slientkat"
+vpxChecksum: "3A1D9D4A29999AA232B2CFC12F8DB70A"
+vpxVPSId: "8neiKBTNGj"
