@@ -7,8 +7,11 @@ tagline: "Winter is coming"
 testers:
   - "OminousOsie"
 tutorialVPSId: "BOcv-YauhF"
-vpxChecksum: "F9EA13104146577A502E4DB0E6B5ECA0"
+vpxChecksum: 
 vpxVPSId: "Xv2JtB8_a1"
 vpxExtractExtra:
   - "gameofthrones.FlexDMD"
 vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "F9EA13104146577A502E4DB0E6B5ECA0"
+  - "B302EA93F7840DBBC61C30E43D819389"
