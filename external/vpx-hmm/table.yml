@@ -1,5 +1,5 @@
 ---
-backglassChecksum: "ACF493CB059B25F2158A1F42F8B23B31"
+backglassChecksum: "9BB09EFB46117AE848E1944179FD2240"
 backglassNotes: "Download Heavy Metal Meltdown (Bally 1987).zip (v2.0)"
 backglassVPSId: "o_ssxWjzDq"
 fps: 60
@@ -11,6 +11,7 @@ tableVPSId: "8FRYLJJn"
 tagline: "Heavy! Metal! Meltdown!"
 testers:
   - "Bla1ze"
+  - "pinballwizard2023"
 tutorialVPSId: "MbI5UgvZA1"
 vpxChecksum: "7147863A30735712326A5333A667D7D2"
 vpxVPSId: "JxURfn7klC"
