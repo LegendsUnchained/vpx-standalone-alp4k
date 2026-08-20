@@ -15,7 +15,7 @@ Dim usePUP: Dim cPuPPack: Dim PuPlayer: Dim PUPStatus: PUPStatus=false ' dont ed
 usePUP   = True               ' enable Pinup Player functions for this table
 cPuPPack = "dollyptb"    ' name of the PuP-Pack / PuPVideos folder for this table
 
-Dim showDollyBust = False
+Const showDollyBust = False
 
 '//////////////////// PINUP PLAYER: STARTUP & CONTROL SECTION //////////////////////////
 
