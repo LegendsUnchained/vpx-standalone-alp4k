@@ -2,40 +2,59 @@
 
 ![Table Preview](../../images/UYz53f4Vy5-preview.webp)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author(s) | 
-|-----------|--------|----------|--------------|
-| **VPX** | [vpuniverse](https://vpuniverse.com/files/file/6868-batman-66-stern-tribute%C2%A0/) | 1.1.0 | Daphishbowl, Mr H, MPT3k |
-| **B2S** | [vpuniverse](https://vpuniverse.com/files/file/6949-batman-66-stern-2016-b2s/) | 1.0.0 | HauntFreaks |
-| **ROM** | [N/A](#) | N/A | N/A |
-| **PUPPACK** | [mega](https://mega.nz/file/XMIgnRwC#LmRlA5GjAzxrWdjxl4O87PxqjUldOF4kA-fLoU0odFQ) |  | Daphishbowl |
-
-**Tested by:** Curt
-
----
-
-## Status 
+## *️⃣  Table Statistics
 
 | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |-----------|-----|-----|-----|-----|
-| ✅ | ✅ | ❌ | ✅ | 55 |
+| ✅ | ❌ | ❌ | ✅ | 60 |
+
+<br>
+
+**VPXS 4KP Testers:**
+  - Curt
+
+<br>
 
 ---
 
-## Instructions
+<br>
 
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- REQUIRES VPinballX_GL-10.8.0-3abac0f bundle
-- There will be occasional freeze-ups, and framerate during multi ball drops severely, but it is playable.
-- The 2-screen and 3-screen PuPs both have different graphic bugs. These instructions are for 2 screens, but feel free to try 3.
-- Click `GO TO TABLE` after adding, and the TM will open to the table folder. At that time:
-  - Create a folder titled `pupvideos` in the 4KP table folder
-  - unzip the PuP File on your computer 
-  - In the folder `b66_orig/PuP-Pack_Options/Option 2 - 2 Screen - 16x9`, copy the files `playlists.pup`, `screens.pup`, and `triggers.pup`
-  - Paste these files into the top-level `b66_orig` folder, replacing the copies that are there.
-  - Upload the `b66_orig` folder on your computer to the `pupvideos` folder on your 4KP
-- If you need help, more information can be found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+## ❇️ Available in the Wizard! 🪄✨
 
-- 'Holy battering ballsaves! It's coming back!'
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Batman '66 Premium (Stern 2016) (Stern 2016)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"'It's Coming back!'"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

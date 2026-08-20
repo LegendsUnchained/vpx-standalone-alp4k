@@ -1,9 +1,8 @@
 ---
-enabled: False
 backglassChecksum: "8f9e1451bcbeaee7cb1bdc0473a288d9"
 backglassNotes: "Download version 1.0"
 backglassVPSId: "v8m9wTMfLE"
-fps: 50
+fps: 60
 pupChecksum: "28e687ec02b201018ddf6933fcdea027"
 pupFileUrl: "https://mega.nz/file/XMIgnRwC#LmRlA5GjAzxrWdjxl4O87PxqjUldOF4kA-fLoU0odFQ"
 pupNotes: "Housed on .vpx download page"
