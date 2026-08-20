@@ -13,7 +13,7 @@ testers:
   - "OminousOsie"
 vpxVPSId: "eqkRAG7dls"
 vpxChecksum: "B70C9E60C6CD1F1B639E30362467B1A3"
-vpxArchiveFormat: "7z"                   
+'vpxArchiveFormat: "7z"                   
 tableNotes: "Download 'Dolly V1.7z'"
 pupBundled: true
 pupChecksum: "9E75467CBD0599C6531E422505CD0B67"
