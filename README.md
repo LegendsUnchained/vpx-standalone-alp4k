@@ -193,6 +193,7 @@ Links to these products on Amazon are through affiliate links.
 | [Hardbody (Bally 1987)](external/vpx-hardbody) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Harley-Davidson (Sega 1999)](external/vpx-harleyd) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 58 |
 | [Haunted House (Gottlieb 1982)](external/vpx-hauntedhouse) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
+| [Heavy Metal Meltdown (Bally 1987)](external/vpx-hmm) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Hellraiser (Original 2022)](external/vpx-hellraiser) | :x: | :x: | :x: | :white_check_mark: | 60 |
 | [High Speed (Williams 1986)](external/vpx-highspeed) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Hollywood Heat (Gottlieb 1986)](external/vpx-hollywoodheat) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
