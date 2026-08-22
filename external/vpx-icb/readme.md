@@ -14,6 +14,8 @@
 
 **VPXS 4KP Testers:**
   - Bla1ze
+  - MissleToad
+  - pinballwizard2023
 
 <br>
 
