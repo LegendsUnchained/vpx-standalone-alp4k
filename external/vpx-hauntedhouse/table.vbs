@@ -668,10 +668,10 @@ Sub HH_KeyDown(ByVal keycode)
 	End If
 
 	If FlipperKeyMod = 1 then
-		If keycode = LeftMagnaSave then
+		If keycode = LeftMagnaSave Or keycode = StagedLeftFlipperKey then
 			SolLUFlipper 1
 		End If
-		If keycode = RightMagnaSave then
+		If keycode = RightMagnaSave Or keycode = StagedRightFlipperKey then
 			SolRUFlipper 1
 		End If
 	End If
@@ -691,10 +691,10 @@ Sub HH_KeyUp(ByVal keycode)
 	If keycode = RightMagnaSave And Not bInOptions Then bOptionsMagna = False
 
 	If FlipperKeyMod = 1 then
-		If keycode = LeftMagnaSave then
+		If keycode = LeftMagnaSave Or keycode = StagedLeftFlipperKey then
 			SolLUFlipper 0
 		End If
-		If keycode = RightMagnaSave then
+		If keycode = RightMagnaSave Or keycode = StagedRightFlipperKey then
 			SolRUFlipper 0
 		End If
 	End If
@@ -5045,7 +5045,7 @@ Dim LowerGIColor : LowerGIColor = 1		' 0=Random, 1=Normal, 2=Red, 3=Orange, 4=Gr
 Dim BumperLightColor : BumperLightColor = 1 ' 0=Random, 1=Normal, 2=Red, 3=Orange, 4=Green, 5=Blue, 6=Purple
 Dim CCPosts : CCPosts = 0					' Color changing posts (only for two post top left of Table), 0=Not changing, 1=Color changing
 Dim BallMod : BallMod = 0					' 0=Normal Ball, 1=Marbled ball Green / Red, 2=Marbled ball Green / Yellow, 3 to 11 = Glowball
-Dim FlipperKeyMod : FlipperKeyMod = 1		' 1 = Standard flipper buttons (normal main lower and upper manga ), 2=LazyMan flippers (only normal button for all flippers)
+Dim FlipperKeyMod : FlipperKeyMod = 1		' 1 = Standard flipper buttons (lower on flipper keys; upper on magnasave OR the VPX staged flipper keys), 2=LazyMan flippers (only normal button for all flippers)
 Dim InstCards : InstCards = 0				' 0 = Standard , 1=Mod1, 2=Mod2 3Ball, 3=Mod2 5ball
 Dim InfoCard : InfoCard = 1				' 0 = Dont show, 1 = Show
 Dim Dust : Dust = 1						' 0 = Dont show, 1 = Show
