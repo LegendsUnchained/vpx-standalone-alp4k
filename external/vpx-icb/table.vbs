@@ -44,17 +44,17 @@ Const singlebeer = 0 'Set to 1 to disable the logo changing option during game p
 'Beer colors are 1 golden, 2 brown, 3 black
 
 Const beer1= "ICB" :Const beer1color = 1
-Const beer2= "modelo"  :Const beer2color = 1
-Const beer3= "old style" :Const beer3color = 1
+Const beer2= "molson"  :Const beer2color = 1
+Const beer3= "moosehead" :Const beer3color = 1
 Const beer4= "guinness" :Const beer4color = 3
-Const beer5= "sam adams" :Const beer5color = 1
+Const beer5= "yuengling" :Const beer5color = 1
 Const beer6= "AW" :Const beer6color = 2
 Dim currentbeer
 	currentbeer=1
 
 
 
-Const UseFlexDMD = 1    ' 1 is on, 0 is off
+Const UseFlexDMD = 0    ' 1 is on, 0 is off
 Dim FlexDMD		' the flex dmd display
 
 '-------------------------------
@@ -72,7 +72,7 @@ Const ResetHighScore = 0		'Delete Highscore - remove again after Reset
 Const FreePlay = 1				'FreePlay	
 
 Const ReverseRodKeys = 0		'switch Flipper and MagnaSave keys
-Const DoubleTap = 1				'use this if You have no MagnaSave buttons, a double tap on the Flipper buttons will activate the down movement
+Const DoubleTap = 0				'use this if You have no MagnaSave buttons, a double tap on the Flipper buttons will activate the down movement
 Const DoubleTapTime = 120		'Max. interval in ms for the Double Tap to register. Please set this to the minimal interval, You can live with
 
 
