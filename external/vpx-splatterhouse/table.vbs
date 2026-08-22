@@ -179,14 +179,14 @@ Dim ii
 
 	Timer14.enabled=1
 
-
+    ScoreR1.Visible = False
 	Ball1.Visible = False
 	Ball2.Visible = False
 	Ball3.Visible = False
 	Ball4.Visible = False
 	Ball5.Visible = False
 	GameoverR.Visible = False
-
+    
 
 '    NewBallDelay = 0
  '   Special = False
@@ -202,6 +202,7 @@ Dim ii
     loadhs
     CreditReel.Setvalue Credits
     ScoreReel1.SetValue Score
+    ScoreReel1.ResetToZero
     'StartShake
     GameTimer.Enabled = 1
     ' reset VP objects
@@ -264,7 +265,7 @@ End Sub
 Sub FlexTimer_Timer()
 	FlexDMD.LockRenderThread
 	With FlexDMD.Stage
-		.GetLabel("Score").Text = Right(FormatNumber(Score + 10000000, 0, -1, 0, -1),9) 
+		.GetLabel("Score").Text = Right(FormatNumber(score, 0, -1, 0, -1), 9)
 		.GetLabel("Ball").Text = "Ball " & CStr(Ball)
 		.GetLabel("Credit").Text = "Credits " & CStr(Credits)
 	End With
