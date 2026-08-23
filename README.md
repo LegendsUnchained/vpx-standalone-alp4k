@@ -575,7 +575,7 @@ Links to these products on Amazon are through affiliate links.
 | [JP's Terminator 3 (Stern 2003)](external/vpx-terminator3) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [JP's The Walking Dead (Stern 2014)](external/vpx-thewalkingdead) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Jumanji (Original 2023)](external/vpx-jumanji) | :white_check_mark: | :white_check_mark: | :x: | :x: | 48 |
-| [Jungle Lord (Williams 1981)](external/vpx-junglelord) | :white_check_mark: | :x: | :white_check_mark: | :x: | 30 |
+| [Jungle Lord (Williams 1981)](external/vpx-junglelord) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Junk Yard Williams 1996](external/vpx-junkyard) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
 | [Junkyard Cats (Bailey 2012)](external/vpx-junkyardcats) | :white_check_mark: | :x: | :x: | :x: | 54 |
 | [Kill Bill (Original 2022)](external/vpx-killbill) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
