@@ -439,7 +439,7 @@ Links to these products on Amazon are through affiliate links.
 | [Cue Ball Wizard (Gottlieb 1992)](external/vpx-cueball) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 33 |
 | [Cuphead Original (D.Goblett & Co 2019)](external/vpx-cupheadoriginal) | :white_check_mark: | :white_check_mark: | :x: | :x: | 47 |
 | [Cuphead Pro (Original 2020)](external/vpx-cuphead) | :white_check_mark: | :x: | :x: | :x: | 34 |
-| [Cyber Race (Original 2023)](external/vpx-cyberrace) | :white_check_mark: | :white_check_mark: | :x: | :x: | 40 |
+| [Cyber Race (Original 2023)](external/vpx-cyberrace) | :white_check_mark: | :white_check_mark: | :x: | :x: | 43 |
 | [Cybernaut (Bally 1985)](external/vpx-cybernaut) | :white_check_mark: | :x: | :white_check_mark: | :x: | 45 |
 | [Daredevil and The Defenders (Original 2024)](external/vpx-daredevil) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Dark Crystal, The (Original 2020)](external/vpx-darkcrystal) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
