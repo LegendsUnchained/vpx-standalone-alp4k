@@ -1,0 +1,17 @@
+---
+enabled: false
+backglassChecksum: "9CE679BD6B941308E4C844B658DE941D"
+backglassNotes: "Use Laroullas Heavy Metal (Rowamet 1983) ).directb2s"
+backglassVPSId: "5e7dLIDWR5"
+fps: 60
+romChecksum: "B09BA239C3C5C944901239E99A0FB73D"
+romNotes: "Use heavymetl.zip"
+romVPSId: "uqaJQsCE"
+tableNameOverride: "Heavy Metal Fantasy Table (Mod) (Rowamet 1983)"
+tableNotes: "Use Heavy Metal (Rowamet 1983)  4.0.vpx"
+tableVPSId: "yEvOelRa"
+tagline: "'From one war to another, my influence is always present.'"
+testers:
+  - "Curt"
+vpxChecksum: "FE65D834265EA34E271F01043041F4D2"
+vpxVPSId: "or_OYzZF"

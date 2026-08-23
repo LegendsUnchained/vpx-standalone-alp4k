@@ -533,6 +533,7 @@ Links to these products on Amazon are through affiliate links.
 | [Harley-Davidson (Bally 1991)](external/vpx-hdavidson) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Harry Potter and the Goblet of Fire (Original 2020)](external/vpx-hpgof) | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 35 |
 | [Heavy Metal [Classic] (Rowamet 1983)](external/vpx-heavymetalclassic) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
+| [Heavy Metal [Fantasy Table] (Rowamet 1983)](external/vpx-heavymetalfantasy) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Hellboy Pinball](external/vpx-hellboy) | :white_check_mark: | :white_check_mark: | :x: | :x: | 40 |
 | [High Roller Casino (Stern 2001)](external/vpx-highrollercasino) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
 | [Highlander (TBA 2019)](external/vpx-highlander) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
