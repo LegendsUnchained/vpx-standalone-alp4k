@@ -1,6 +1,12 @@
 ---
 backglassChecksum: "EB37C7760616089CE3E36D2AE56452DF"
 backglassVPSId: "Tq9w-QZkLW"
+diffAuthorsOverride:
+  - "capnclaw"
+diffChecksum: "5F632B5FB7B917B85CFC0B868A90A2F2"
+diffNotes: "Download Hook (Data East 1992) Sideblade Mod.zip"
+diffUrlOverride: "https://vpuniverse.com/files/file/23824-hook-data-east-1992-side-blade-mod/"
+diffVersionOverride: "1.0.0"
 fps: 60
 romChecksum: "DE40276085818FD55A2BC13BAC30EF23"
 romNotes: "Download hook_501.zip"
