@@ -39,6 +39,9 @@
 5. Unzip the `HEAVY METAL DMD.zip' file that you got from the DMD link above
 6. Using Table Manager, upload the `HvyMtl.DMD` folder on your computer into the `vpx-heavymetalfantasy` folder in your vpxs drive
 -----
-7. Using Table Manager, upload the `alias.txt` folder from the repo into the `pinmame` folder in `vpx-heavymetalfantasy`
+
+-----
+7. In the pinmame folder, create a blank text file, alias.txt.
+8. Edit alias.txt, and add this as the only line: HeavyMetal,heavymtl
 
 - "From one war to another, my influence is always present."
