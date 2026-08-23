@@ -1,13 +1,14 @@
 ---
-backglassChecksum: "d022f3a9e50e10ef686346875c641ec9"
+backglassChecksum: "D022F3A9E50E10EF686346875C641EC9"
 backglassNotes: "Download version 1.0.0"
 backglassVPSId: "eDRYNQyIJq"
-fps: 40
-tableNotes: "Download version 1.3.8"
+fps: 53
+mainNotes: "FlexDMD"
+tableNotes: "Download CyberRace-1.3.8.vpx"
 tableVPSId: "KiwC0qVAB9"
-tagline: "'Choose your race rival'"
+tagline: "'Choose your race opponent'"
 testers:
   - "Curt"
+  - "Wraith"
 vpxChecksum: "8706CEAF0C14DA19AEBFABC43B05BDA3"
 vpxVPSId: "peImTeYd43"
-enabled: False
