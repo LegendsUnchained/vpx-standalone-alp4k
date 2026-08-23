@@ -2460,50 +2460,17 @@ Dim DT25, DT26, DT27, DT29, DT30, DT31, DT33, DT34, DT35, DT36, DT37
 '	Values for annimate: 1 - bend target (hit to primary), 2 - drop target (hit to secondary), 3 - brick target (high velocity hit to secondary), -1 - raise target 
 
 
-Class DropTarget
-  Private m_primary, m_secondary, m_prim, m_sw, m_animate, m_isDropped
-
-  Public Property Get Primary(): Set Primary = m_primary: End Property
-  Public Property Let Primary(input): Set m_primary = input: End Property
-
-  Public Property Get Secondary(): Set Secondary = m_secondary: End Property
-  Public Property Let Secondary(input): Set m_secondary = input: End Property
-
-  Public Property Get Prim(): Set Prim = m_prim: End Property
-  Public Property Let Prim(input): Set m_prim = input: End Property
-
-  Public Property Get Sw(): Sw = m_sw: End Property
-  Public Property Let Sw(input): m_sw = input: End Property
-
-  Public Property Get Animate(): Animate = m_animate: End Property
-  Public Property Let Animate(input): m_animate = input: End Property
-
-  Public Property Get IsDropped(): IsDropped = m_isDropped: End Property
-  Public Property Let IsDropped(input): m_isDropped = input: End Property
-
-  Public default Function init(primary, secondary, prim, sw, animate, isDropped)
-    Set m_primary = primary
-    Set m_secondary = secondary
-    Set m_prim = prim
-    m_sw = sw
-    m_animate = animate
-    m_isDropped = isDropped
-
-    Set Init = Me
-  End Function
-End Class
-
-Set DT25 = (new DropTarget)(sw25, sw25a, sw25p, 25, 0, false)
-Set DT26 = (new DropTarget)(sw26, sw26a, sw26p, 26, 0, false)
-Set DT27 = (new DropTarget)(sw27, sw27a, sw27p, 27, 0, false)
-Set DT29 = (new DropTarget)(sw29, sw29a, sw29p, 29, 0, false)
-Set DT30 = (new DropTarget)(sw30, sw30a, sw30p, 30, 0, false)
-Set DT31 = (new DropTarget)(sw31, sw31a, sw31p, 31, 0, false)
-Set DT33 = (new DropTarget)(sw33, sw33a, sw33p, 33, 0, false)
-Set DT34 = (new DropTarget)(sw34, sw34a, sw34p, 34, 0, false)
-Set DT35 = (new DropTarget)(sw35, sw35a, sw35p, 35, 0, false)
-Set DT36 = (new DropTarget)(sw36, sw36a, sw36p, 36, 0, false)
-Set DT37 = (new DropTarget)(sw37, sw37a, sw37p, 37, 0, false)
+DT25 = Array(sw25, sw25a, sw25p, 25, 0)
+DT26 = Array(sw26, sw26a, sw26p, 26, 0)
+DT27 = Array(sw27, sw27a, sw27p, 27, 0)
+DT29 = Array(sw29, sw29a, sw29p, 29, 0)
+DT30 = Array(sw30, sw30a, sw30p, 30, 0)
+DT31 = Array(sw31, sw31a, sw31p, 31, 0)
+DT33 = Array(sw33, sw33a, sw33p, 33, 0)
+DT34 = Array(sw34, sw34a, sw34p, 34, 0)
+DT35 = Array(sw35, sw35a, sw35p, 35, 0)
+DT36 = Array(sw36, sw36a, sw36p, 36, 0)
+DT37 = Array(sw37, sw37a, sw37p, 37, 0)
 
 
 
@@ -2538,9 +2505,9 @@ Sub DTHit(switch)
 	i = DTArrayID(switch)
 
 	PlayTargetSound
-	DTArray(i).animate =  DTCheckBrick(Activeball,DTArray(i).prim)
-	If DTArray(i).animate = 1 or DTArray(i).animate = 3 or DTArray(i).animate = 4 Then
-		DTBallPhysics Activeball, DTArray(i).prim.rotz, DTMass
+	DTArray(i)(4) =  DTCheckBrick(Activeball,DTArray(i)(2))
+	If DTArray(i)(4) = 1 or DTArray(i)(4) = 3 or DTArray(i)(4) = 4 Then
+		DTBallPhysics Activeball, DTArray(i)(2).rotz, DTMass
 	End If
 	DoDTAnim
 End Sub
@@ -2549,7 +2516,7 @@ Sub DTRaise(switch)
 	Dim i
 	i = DTArrayID(switch)
 
-	DTArray(i).animate = -1
+	DTArray(i)(4) = -1
 	DoDTAnim
 End Sub
 
@@ -2557,14 +2524,14 @@ Sub DTDrop(switch)
 	Dim i
 	i = DTArrayID(switch)
 
-	DTArray(i).animate = 1
+	DTArray(i)(4) = 1
 	DoDTAnim
 End Sub
 
 Function DTArrayID(switch)
 	Dim i
 	For i = 0 to uBound(DTArray) 
-		If DTArray(i).sw = switch Then DTArrayID = i:Exit Function 
+		If DTArray(i)(3) = switch Then DTArrayID = i:Exit Function 
 	Next
 End Function
 
@@ -2619,7 +2586,7 @@ End Function
 Sub DoDTAnim()
 	Dim i
 	For i=0 to Ubound(DTArray)
-		DTArray(i).animate = DTAnimate(DTArray(i).primary,DTArray(i).secondary,DTArray(i).prim,DTArray(i).sw,DTArray(i).animate)
+		DTArray(i)(4) = DTAnimate(DTArray(i)(0),DTArray(i)(1),DTArray(i)(2),DTArray(i)(3),DTArray(i)(4))
 	Next
 End Sub
 
@@ -2813,31 +2780,6 @@ End Function
 '		STAND-UP TARGET INITIALIZATION
 '******************************************************
 
-Class StandupTarget
-  Private m_primary, m_prim, m_sw, m_animate
-
-  Public Property Get Primary(): Set Primary = m_primary: End Property
-  Public Property Let Primary(input): Set m_primary = input: End Property
-
-  Public Property Get Prim(): Set Prim = m_prim: End Property
-  Public Property Let Prim(input): Set m_prim = input: End Property
-
-  Public Property Get Sw(): Sw = m_sw: End Property
-  Public Property Let Sw(input): m_sw = input: End Property
-
-  Public Property Get Animate(): Animate = m_animate: End Property
-  Public Property Let Animate(input): m_animate = input: End Property
-
-  Public default Function init(primary, prim, sw, animate)
-    Set m_primary = primary
-    Set m_prim = prim
-    m_sw = sw
-    m_animate = animate
-
-    Set Init = Me
-  End Function
-End Class
-
 'Define a variable for each stand-up target
 
 Dim ST17, ST18, ST19
@@ -2858,9 +2800,9 @@ Dim ST17, ST18, ST19
 
 
 
-Set ST17 = (new StandupTarget)(sw17, psw17,17, 0)
-Set ST18 = (new StandupTarget)(sw18, psw18,18, 0)
-Set ST19 = (new StandupTarget)(sw19, psw19,19, 0)
+ST17 = Array(sw17, psw17,17, 0)
+ST18 = Array(sw18, psw18,18, 0)
+ST19 = Array(sw19, psw19,19, 0)
 
 Dim STArray
 STArray = Array(ST17, ST18, ST19)
@@ -2882,10 +2824,10 @@ Sub STHit(switch)
 	i = STArrayID(switch)
 
 	PlayTargetSound
-	STArray(i).animate =  STCheckHit(Activeball,STArray(i).primary)
+	STArray(i)(3) =  STCheckHit(Activeball,STArray(i)(0))
 
-	If STArray(i).animate <> 0 Then
-		DTBallPhysics Activeball, STArray(i).primary.orientation, STMass
+	If STArray(i)(3) <> 0 Then
+		DTBallPhysics Activeball, STArray(i)(0).orientation, STMass
 	End If
 	DoSTAnim
 End Sub
@@ -2893,7 +2835,7 @@ End Sub
 Function STArrayID(switch)
 	Dim i
 	For i = 0 to uBound(STArray) 
-		If STArray(i).sw = switch Then STArrayID = i:Exit Function 
+		If STArray(i)(2) = switch Then STArrayID = i:Exit Function 
 	Next
 End Function
 
@@ -2922,7 +2864,7 @@ End Function
 Sub DoSTAnim()
 	Dim i
 	For i=0 to Ubound(STArray)
-		STArray(i).animate = STAnimate(STArray(i).primary,STArray(i).prim,STArray(i).sw,STArray(i).animate)
+		STArray(i)(3) = STAnimate(STArray(i)(0),STArray(i)(1),STArray(i)(2),STArray(i)(3))
 	Next
 End Sub
 
