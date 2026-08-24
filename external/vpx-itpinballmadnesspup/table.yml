@@ -1,0 +1,18 @@
+---
+fps: 60
+pupArchiveFormat: "rar"
+pupBundled: true
+pupChecksum: "438030BEBE8DA03EF62B721BCAA18847"
+pupNotes: "use the .rar archive"
+pupArchiveRoot: "IT_pinballmadness/it_pinball_madness"
+pupRequired: true
+pupVersion: "1.0.0"
+tableNameOverride: "IT Pinball Madness 1.0 (puppack)"
+tableNotes: "Use 'IT Pinball Madness 1.0 (puppack).vpx'"
+tableVPSId: "cUrUo1Y7dL"
+tagline: "'Hello, Georgie.'"
+testers:
+  - "pinballwizard2023"
+  - "Curt"
+vpxChecksum: "A2F5E34B6DD00182B669E31B839CD713"
+vpxVPSId: "MgOMEOxx3l"
