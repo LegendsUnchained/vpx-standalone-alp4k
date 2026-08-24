@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for helping improve Table Manager. Reports opened from an error toast include links to the current Table Manager and browser-console logs automatically.
+        Thanks for helping improve Table Manager. Reports opened from an error toast automatically include links to the current and previous Table Manager session logs and the browser-console log.
 
   - type: checkboxes
     id: checklist
@@ -93,7 +93,7 @@ body:
     id: diagnostics
     attributes:
       label: Automatically collected diagnostics
-      description: Table Manager adds links to lu-tablemanager.log and the browser-console log here. Please leave them in the report; they are public with the issue.
+      description: Table Manager adds links to the current lu-tablemanager.log, the previous session's lu-tablemanager.log.1, and the browser-console log here. Please leave them in the report; they are public with the issue.
       placeholder: Open this form from an error toast to collect the diagnostic logs automatically.
 
   - type: upload
