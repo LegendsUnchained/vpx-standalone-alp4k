@@ -1,4 +1,4 @@
-# Batman '66 Premium (Stern 2016)
+# Batman '66 Premium
 
 ![Table Preview](../../images/UYz53f4Vy5-preview.webp)
 
