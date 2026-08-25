@@ -10,7 +10,7 @@ fps: 60
 romChecksum: "9F604CD406898A8271E27C6BB707CB8D"
 romNotes: "Download - sprk_103.zip"
 romVPSId: "9WjKJMcq"
-tableNotes: "Version 1.1"
+tableNotes: "Version 1.1.2"
 tableVPSId: "FkkA7R0w"
 tagline: "So come on down to South Park, and meet some friends of mine."
 testers:
@@ -18,5 +18,5 @@ testers:
   - "Sscorpio"
   - "OminousOsie"
   - "Wraith"
-vpxChecksum: "1C4552AEDB57C718BA1BC298BAD5F145"
+vpxChecksum: "73E92754D32F4136F749F545974446CC"
 vpxVPSId: "u7LAlVHhmV"

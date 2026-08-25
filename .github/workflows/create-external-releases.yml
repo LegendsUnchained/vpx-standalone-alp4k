@@ -38,6 +38,19 @@ jobs:
           submodules: false
           lfs: false
 
+      - name: Checkout diagnostics
+        run: |
+          echo "event=${{ github.event_name }}"
+          echo "repository=${{ github.repository }}"
+          echo "ref=${{ github.ref }}"
+          echo "sha=${{ github.sha }}"
+          echo "git_commit=$(git rev-parse HEAD)"
+          echo "git_remote=$(git remote get-url origin)"
+          echo "promisor=$(git config --local --get remote.origin.promisor || true)"
+          echo "partialclonefilter=$(git config --local --get remote.origin.partialclonefilter || true)"
+          git count-objects -vH
+          du -sh .git
+
       - name: Set up Python 3.11 (with pip cache)
         uses: actions/setup-python@v6
         with:

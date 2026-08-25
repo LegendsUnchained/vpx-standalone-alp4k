@@ -380,7 +380,7 @@
           "Godzilla (Sega 1998)",
           [
             "Lost World Jurassic Park, The (Sega 1997)",
-            "Lost World Jurassic Park, JP's The (Sega 1997)"
+            "Lost World Jurassic Park, JP's The (Original 2020)"
           ]
         ]
       }
@@ -578,7 +578,11 @@
       "conditions": {
         "specificTablesPlayed": [
           "Mary Shelley's Frankenstein (Sega 1995)",
-          "Bram Stoker's Dracula (Williams 1993)"
+          [
+            "Bram Stoker's Dracula (Williams 1993)",
+            "Bram Stoker's Dracula - BLOOD EDITION (Williams 1993)",
+            "Bram Stoker's Dracula - BLOOD EDITION (Original 2025)"
+          ]
         ]
       }
     },
@@ -594,7 +598,10 @@
       "conditions": {
         "specificTablesPlayed": [
           "Lost World Jurassic Park, The (Sega 1997)",
-          "Lost World Jurassic Park, JP's The (Sega 1997)"
+          [
+            "Lost World Jurassic Park, JP's The (Original 2020)",
+            "Lost World Jurassic Park, JP's The (Sega 1997)"
+          ]
         ]
       }
     },

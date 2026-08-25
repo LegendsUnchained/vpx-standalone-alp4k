@@ -1,3 +1,5 @@
+import base64
+import binascii
 import collections
 import json
 import os
@@ -62,6 +64,75 @@ def normalize_checksums(value):
         value = [value]
     normalized = [str(item).lower() for item in value if item]
     return normalized or None
+
+
+def as_str_list(value):
+    """Normalize a field that may be a single string or a list of strings into a
+    list of strings. Absent/empty becomes None so the manifest simply omits it.
+    Used by vpxExtractExtra, which is authored as a list of archive paths.
+    """
+    if value is None:
+        return None
+    if isinstance(value, str):
+        value = [value]
+    normalized = [str(item) for item in value if item]
+    return normalized or None
+
+
+def decode_archive_passwords(value):
+    """Decode table.yml ``vpxMagic`` values for the wizard manifest.
+
+    ``vpxMagic`` is authored as one or more Base64-encoded UTF-8 passwords.
+    The manifest carries the decoded candidates as ``archivePassword`` so Table
+    Manager can try them in order before asking the user. A bare string is
+    tolerated for compatibility, though the documented form is a YAML list.
+    """
+    if value is None:
+        return None
+    encoded_values = [value] if isinstance(value, str) else value
+    if not isinstance(encoded_values, list):
+        raise ValueError("vpxMagic must be a string or list of Base64 strings")
+
+    passwords = []
+    for index, encoded in enumerate(encoded_values):
+        if not isinstance(encoded, str) or not encoded:
+            raise ValueError(
+                f"vpxMagic item {index + 1} must be a non-empty Base64 string"
+            )
+        try:
+            password = base64.b64decode(encoded, validate=True).decode("utf-8")
+        except (binascii.Error, UnicodeDecodeError) as exc:
+            raise ValueError(
+                f"vpxMagic item {index + 1} is not valid Base64-encoded UTF-8"
+            ) from exc
+        if not password:
+            raise ValueError(f"vpxMagic item {index + 1} decodes to an empty password")
+        if password not in passwords:
+            passwords.append(password)
+
+    return passwords or None
+
+
+def pick_manifest_image(table):
+    """Return the game preview image used by the VPS website.
+
+    Prefer the game-level ``imgUrl``. When VPS has no image at that level, use
+    the first backglass preview with an ``imgUrl``. This is intentionally
+    separate from ``tableImage``, which is the selected VPX file's playfield
+    preview.
+    """
+    image = table.get("imgUrl")
+    if image:
+        return image
+
+    return next(
+        (
+            backglass.get("imgUrl")
+            for backglass in (table.get("b2sFiles") or [])
+            if isinstance(backglass, dict) and backglass.get("imgUrl")
+        ),
+        "",
+    )
 
 
 def normalize_dict_list(value):
@@ -327,8 +398,10 @@ def get_table_meta(files, warn_on_error=True):
         romChecksum = normalize_checksums(data.get("romChecksum"))
         vpxChecksum = normalize_checksums(data.get("vpxChecksum"))
         pupChecksum = normalize_checksums(data.get("pupChecksum"))
+        specialDMDChecksum = normalize_checksums(data.get("specialDMDChecksum"))
 
         table_meta = {
+            "archivePassword": decode_archive_passwords(data.get("vpxMagic")),
             "altSoundAuthors": data.get("altSoundAuthorsOverride"),
             "altSoundBundled": data.get("altSoundBundled"),
             "altSoundChecksum": altSoundChecksum,
@@ -387,6 +460,34 @@ def get_table_meta(files, warn_on_error=True):
             "romNotes": data.get("romNotes"),
             "romVersion": data.get("romVersionOverride"),
             "romNSFW": data.get("romNSFW"),
+            # Special DMD (UltraDMD / FlexDMD): the DMD content folder a
+            # table's script loads at run time, installed into the ROOT of the
+            # table folder. VPS has no category for these, so there is no id to
+            # resolve — every field is authored here and passed through.
+            #
+            # specialDMDFileUrl is an OVERRIDE only: the pack is normally one of
+            # the files on the table's own download page, so with no override the
+            # wizard sends the user to the table's mirrors. When
+            # specialDMDBundled is set the folder is inside the table download
+            # itself and there is nothing to link at all — the wizard uploads
+            # that archive (vpxArchiveFormat) and the device unpacks the folder
+            # named by specialDMDArchiveRoot out of it.
+            "specialDMDArchiveFormat": data.get("specialDMDArchiveFormat"),
+            "specialDMDArchiveRoot": data.get("specialDMDArchiveRoot"),
+            "specialDMDBundled": data.get("specialDMDBundled"),
+            "specialDMDChecksum": specialDMDChecksum,
+            "specialDMDFileUrl": as_url_list(data.get("specialDMDUrlOverride")),
+            "specialDMDNotes": data.get("specialDMDNotes"),
+            "specialDMDNSFW": data.get("specialDMDNSFW"),
+            "specialDMDType": data.get("specialDMDType"),
+            "specialDMDVersion": data.get("specialDMDVersion"),
+            # vpxArchiveFormat means the table installs from the archive the
+            # author published rather than a bare .vpx: the wizard's upload slot
+            # takes only that format, and the cabinet unpacks the .vpx (picked by
+            # checksum) plus every folder listed in vpxExtractExtra - run-time
+            # media like "Music" that the table loads from its own folder.
+            "vpxArchiveFormat": data.get("vpxArchiveFormat"),
+            "vpxExtractExtra": as_str_list(data.get("vpxExtractExtra")),
             "tableChecksum": vpxChecksum,
             "tableNotes": data.get("tableNotes"),
             "tagline": data.get("tagline"),
@@ -419,7 +520,7 @@ def get_table_meta(files, warn_on_error=True):
             # filtering the per-url `broken` flags on the files we resolve.
 
             table_meta["designers"] = table.get("designers", [])
-            table_meta["image"] = table.get("imgUrl", "")
+            table_meta["image"] = pick_manifest_image(table)
 
             if not table_meta["name"]:
                 table_meta["name"] = table.get("name", "")
