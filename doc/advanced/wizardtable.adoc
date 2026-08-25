@@ -87,12 +87,42 @@ testers:                     | [Array]
 vpxArchiveFormat:            | [String]
 vpxChecksum:                 | [String]
 vpxExtractExtra:             | [Array]
+vpxMagic:                    | [Array]
 vpxNSFW:                     | [Bool]
 vpxVPSId:                    | [String]
 ....
 
 Below is each yml field explained, with an example, and any `gotchas'
 that you need to know to use successfully!
+
+....
+########################
+vpxMagic
+########################
+
+Type:
+------------
+Array of Base64 strings
+
+Description:
+------------
+Passwords to try, in order, when a wizard download is an encrypted archive.
+Each item is a Base64-encoded UTF-8 password. vpsdb.py decodes the values into
+the generated manifest's `archivePassword` array; Table Manager tries those
+candidates silently before showing its password prompt. Only the candidate that
+successfully unlocks an uploaded PUP archive is sent to the cabinet extractor.
+
+Example:
+------------
+vpxMagic:
+  - "anBncg==" # jpgr
+
+Gotchas:
+------------
+- Base64 is only obfuscation. The generated manifest is public and contains the
+  decoded password values.
+- Invalid Base64, non-UTF-8 values, and empty passwords fail manifest generation.
+....
 
 ....
 ########################
@@ -1555,4 +1585,3 @@ so for the cool kids, its:
 
 You can see that name in `Your Profile`, it's the same name you sent to
 the Legends Unchained bot, and it's the name in the repo fork url!
-

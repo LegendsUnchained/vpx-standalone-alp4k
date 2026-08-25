@@ -43,6 +43,13 @@ testers:
 # Set to false to hide this table from the wizard. [Boolean] (default: shown)
 # enabled: true
 
+# Password candidates for encrypted downloads, tried in order before Table
+# Manager asks the user. Each item is a Base64-encoded UTF-8 password; vpsdb.py
+# decodes these into the manifest's archivePassword list. Base64 is obfuscation,
+# not encryption.
+# vpxMagic:
+#   - "anBncg=="                              # "jpgr"
+
 
 # --- NSFW / adult content (optional) ----------------------------------------
 # Author-set adult-content flags. All [Boolean], default false. When a wizard
