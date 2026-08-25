@@ -77,6 +77,28 @@ def as_str_list(value):
     return normalized or None
 
 
+def pick_manifest_image(table):
+    """Return the game preview image used by the VPS website.
+
+    Prefer the game-level ``imgUrl``. When VPS has no image at that level, use
+    the first backglass preview with an ``imgUrl``. This is intentionally
+    separate from ``tableImage``, which is the selected VPX file's playfield
+    preview.
+    """
+    image = table.get("imgUrl")
+    if image:
+        return image
+
+    return next(
+        (
+            backglass.get("imgUrl")
+            for backglass in (table.get("b2sFiles") or [])
+            if isinstance(backglass, dict) and backglass.get("imgUrl")
+        ),
+        "",
+    )
+
+
 def normalize_dict_list(value):
     """Normalize a field that may be a single mapping or a list of mappings
     into a list of mappings. Absent/None becomes an empty list. Used by the
@@ -461,7 +483,7 @@ def get_table_meta(files, warn_on_error=True):
             # filtering the per-url `broken` flags on the files we resolve.
 
             table_meta["designers"] = table.get("designers", [])
-            table_meta["image"] = table.get("imgUrl", "")
+            table_meta["image"] = pick_manifest_image(table)
 
             if not table_meta["name"]:
                 table_meta["name"] = table.get("name", "")
