@@ -1,3 +1,5 @@
+import base64
+import binascii
 import collections
 import json
 import os
@@ -75,6 +77,62 @@ def as_str_list(value):
         value = [value]
     normalized = [str(item) for item in value if item]
     return normalized or None
+
+
+def decode_archive_passwords(value):
+    """Decode table.yml ``vpxMagic`` values for the wizard manifest.
+
+    ``vpxMagic`` is authored as one or more Base64-encoded UTF-8 passwords.
+    The manifest carries the decoded candidates as ``archivePassword`` so Table
+    Manager can try them in order before asking the user. A bare string is
+    tolerated for compatibility, though the documented form is a YAML list.
+    """
+    if value is None:
+        return None
+    encoded_values = [value] if isinstance(value, str) else value
+    if not isinstance(encoded_values, list):
+        raise ValueError("vpxMagic must be a string or list of Base64 strings")
+
+    passwords = []
+    for index, encoded in enumerate(encoded_values):
+        if not isinstance(encoded, str) or not encoded:
+            raise ValueError(
+                f"vpxMagic item {index + 1} must be a non-empty Base64 string"
+            )
+        try:
+            password = base64.b64decode(encoded, validate=True).decode("utf-8")
+        except (binascii.Error, UnicodeDecodeError) as exc:
+            raise ValueError(
+                f"vpxMagic item {index + 1} is not valid Base64-encoded UTF-8"
+            ) from exc
+        if not password:
+            raise ValueError(f"vpxMagic item {index + 1} decodes to an empty password")
+        if password not in passwords:
+            passwords.append(password)
+
+    return passwords or None
+
+
+def pick_manifest_image(table):
+    """Return the game preview image used by the VPS website.
+
+    Prefer the game-level ``imgUrl``. When VPS has no image at that level, use
+    the first backglass preview with an ``imgUrl``. This is intentionally
+    separate from ``tableImage``, which is the selected VPX file's playfield
+    preview.
+    """
+    image = table.get("imgUrl")
+    if image:
+        return image
+
+    return next(
+        (
+            backglass.get("imgUrl")
+            for backglass in (table.get("b2sFiles") or [])
+            if isinstance(backglass, dict) and backglass.get("imgUrl")
+        ),
+        "",
+    )
 
 
 def normalize_dict_list(value):
@@ -343,6 +401,7 @@ def get_table_meta(files, warn_on_error=True):
         specialDMDChecksum = normalize_checksums(data.get("specialDMDChecksum"))
 
         table_meta = {
+            "archivePassword": decode_archive_passwords(data.get("vpxMagic")),
             "altSoundAuthors": data.get("altSoundAuthorsOverride"),
             "altSoundBundled": data.get("altSoundBundled"),
             "altSoundChecksum": altSoundChecksum,
@@ -461,7 +520,7 @@ def get_table_meta(files, warn_on_error=True):
             # filtering the per-url `broken` flags on the files we resolve.
 
             table_meta["designers"] = table.get("designers", [])
-            table_meta["image"] = table.get("imgUrl", "")
+            table_meta["image"] = pick_manifest_image(table)
 
             if not table_meta["name"]:
                 table_meta["name"] = table.get("name", "")
