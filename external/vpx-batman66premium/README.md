@@ -1,4 +1,4 @@
-# Batman '66 Premium
+# Batman '66 Premium (Stern 2016)
 
 ![Table Preview](../../images/UYz53f4Vy5-preview.webp)
 
@@ -32,7 +32,7 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`Batman '66 Premium (Stern 2016) (Stern 2016)`**
+4.  Find and select this table from the dropdown menu: **`Batman '66 Premium (Stern 2016)`**
 5.  Follow the on-screen instructions to download and upload the required files
 6. *"'It's Coming back!'"*
 
