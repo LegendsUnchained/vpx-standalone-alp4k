@@ -197,6 +197,7 @@ Links to these products on Amazon are through affiliate links.
 | [Hellraiser (Original 2022)](external/vpx-hellraiser) | :x: | :x: | :x: | :white_check_mark: | 60 |
 | [High Speed (Williams 1986)](external/vpx-highspeed) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Hollywood Heat (Gottlieb 1986)](external/vpx-hollywoodheat) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
+| [Hook (Data East 1992)](external/vpx-hook) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Humpty Dumpty (Gottlieb 1947)](external/vpx-humptydumpty) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Ice Cold Beer (Taito 1983)](external/vpx-icb) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Incredible Hulk, The (Gottlieb 1979)](external/vpx-incrediblehulk) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
@@ -537,7 +538,6 @@ Links to these products on Amazon are through affiliate links.
 | [High Roller Casino (Stern 2001)](external/vpx-highrollercasino) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
 | [Highlander (TBA 2019)](external/vpx-highlander) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [HIPHOP](external/vpx-hiphop) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 59 |
-| [Hook (Data East 1992)](external/vpx-hook) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 35 |
 | [Horrorburg JP_VPX8](external/vpx-horrorburg) | :white_check_mark: | :white_check_mark: | :x: | :x: | 57 |
 | [Hot Ball (Taito do Brasil 1979)](external/vpx-jphotball) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Hurricane - Balutito Mod 2.0](external/vpx-hurricane) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
