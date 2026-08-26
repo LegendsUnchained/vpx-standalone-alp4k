@@ -1,18 +1,21 @@
 ---
-enabled: False
-backglassChecksum: "8f9e1451bcbeaee7cb1bdc0473a288d9"
-backglassNotes: "Download version 1.0"
+backglassChecksum: "788809D740EA5AB8E9317D5A64619BBA"
+backglassNotes: "Batman 66 (stern 2016) b2s.zip"
 backglassVPSId: "v8m9wTMfLE"
-fps: 50
-pupChecksum: "28e687ec02b201018ddf6933fcdea027"
+fps: 60
+pupArchiveFormat: "zip"
+pupArchiveRoot: "b66_orig-1.1.0-PupPack"
+pupChecksum: "28E687EC02B201018DDF6933FCDEA027"
 pupFileUrl: "https://mega.nz/file/XMIgnRwC#LmRlA5GjAzxrWdjxl4O87PxqjUldOF4kA-fLoU0odFQ"
-pupNotes: "Housed on .vpx download page"
+pupNotes: "Link to PUP also provided on vpx page"
 pupRequired: true
-tableNameOverride: "Batman '66 Premium (Stern 2016)"
-tableNotes: "Download version 1.1.0"
+pupVersion: "1.1.0"
+tableNameOverride: "Batman '66 Premium"
+tableNotes: "Download Batman66_1.1.0.vpx"
 tableVPSId: "JyxgU6op0S"
 tagline: "'It's Coming back!'"
 testers:
   - "Curt"
-vpxChecksum: "8f9e1451bcbeaee7cb1bdc0473a288d9"
+tutorialVPSId: "mLeZv3Jp1y"
+vpxChecksum: "8F9E1451BCBEAEE7CB1BDC0473A288D9"
 vpxVPSId: "UYz53f4Vy5"
