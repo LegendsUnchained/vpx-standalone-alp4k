@@ -63,6 +63,7 @@ pupNotes:                    | [String]
 pupNSFW:                     | [Bool]
 pupRequired:                 | [Bool]
 pupVersion:                  | [String]
+postInstallRename:           | [Array of Objects]
 romBundled:                  | [Bool]
 romChecksum:                 | [String]
 romNotes:                    | [String]
@@ -1395,6 +1396,42 @@ Gotchas:
 ------------
 - Same as the checksum, the only real problem seen here is accidently copying the ID from a different component!
   So just double check you pasted the right value :)
+....
+
+....
+########################
+postInstallRename
+########################
+
+Type:
+------------
+Array of Objects (each: source, destination)
+
+Description:
+------------
+An ordered list of files or folders to rename after Table Manager finishes
+installing and extracting the table. `source` and `destination` are exact paths
+relative to the installed table root. A destination can include subfolders;
+Table Manager creates missing destination parent folders.
+
+For a folder, name the folder itself. Its entire contents and all subfolders move
+with it, so no glob is needed or supported.
+
+Example:
+------------
+postInstallRename:
+  - source: "file1.ext"
+    destination: "renamed/file.ext"
+  - source: "folder1"
+    destination: "assets/renamedFolder"
+
+Gotchas:
+------------
+- Rules run in the order listed.
+- Paths must stay under the installed table root and must not begin or end with
+  `/`. Absolute paths, `..`, backslashes, symbolic-link escapes, and glob
+  characters are rejected.
+- `destination` is the exact new path, not just a containing folder.
 ....
 
 === _YML PR Issues_
