@@ -1,0 +1,93 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Table YAML: Create Python environment",
+      "type": "process",
+      "command": "python3",
+      "args": [
+        "-m",
+        "venv",
+        ".venv"
+      ],
+      "windows": {
+        "command": "python",
+        "args": [
+          "-m",
+          "venv",
+          ".venv"
+        ]
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "hide": true
+    },
+    {
+      "label": "Table YAML: Install pre-commit package",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "pip",
+        "install",
+        "pre-commit"
+      ],
+      "windows": {
+        "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe"
+      },
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Table YAML: Create Python environment"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "hide": true
+    },
+    {
+      "label": "Table YAML: Set up pre-commit hook",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "pre_commit",
+        "install"
+      ],
+      "windows": {
+        "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe"
+      },
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Table YAML: Install pre-commit package"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Table YAML: Validate staged files",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "pre_commit",
+        "run"
+      ],
+      "windows": {
+        "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    }
+  ]
+}

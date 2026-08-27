@@ -29,6 +29,50 @@ Please ensure your files are named:
 | table.vbs | :x: | VBS file to use instead of the one built-in to the VPX |
 | VPReg.ini | :x: | Registry emulation file. If high scores are in the file, ensure the following initials are used JSM, CTH, NIX, VPX |
 
+### Validate table.yml before committing
+
+This repository includes a pre-commit hook that runs the same table metadata
+validation and YAML linting used by GitHub Actions.
+
+Python 3.11 or newer is required to run the validator locally:
+
+- **Windows:** Install Python using the
+  [Python Install Manager](https://docs.python.org/3/using/windows.html#python-install-manager),
+  available from python.org or the Microsoft Store. Confirm that `python` works
+  in a new terminal.
+- **macOS:** Install the current Python 3 universal installer from
+  [python.org](https://www.python.org/downloads/macos/). Confirm that `python3`
+  works in a new terminal.
+- **Linux:** Install Python 3 and its `venv` package using your distribution's
+  package manager. Confirm that `python3` works in a terminal.
+
+Then create an isolated environment and install the hook once for this clone.
+On Windows, run:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install pre-commit
+.\.venv\Scripts\python.exe -m pre_commit install
+```
+
+On macOS or Linux, run:
+
+```sh
+python3 -m venv .venv
+.venv/bin/python -m pip install pre-commit
+.venv/bin/python -m pre_commit install
+```
+
+In VS Code, after installing Python, you can instead run **Tasks: Run Task** and select
+**Table YAML: Set up pre-commit hook**. The
+**Table YAML: Validate staged files** task runs the checks without committing.
+
+The hook runs only when a `table.yml` file is staged. The metadata validator
+uses VPSDB, so an internet connection is required when it runs. Once installed,
+the same hook runs for commits made from the command line, VS Code Source
+Control, or GitHub Desktop. Do not bypass the hook after a validation failure;
+fix the reported `table.yml` error and commit again.
+
 ## Recommended Hardware
 The following hardware has been verified to work with the Legends Unchained Loader. Other products may work, but these are known to work well. If you find additional compatible hardware, please let us know and we'll add it to the list!
 
