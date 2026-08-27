@@ -230,3 +230,16 @@ testers:
 # Applies known fixes at install time. Allowed values: bass
 # applyFixes:
 #   - bass
+
+
+# --- Post-install renames (optional) ----------------------------------------
+# Ordered exact-path moves performed after every table file/folder has been
+# installed or extracted. Both paths are relative to the installed table root;
+# destination parent folders are created automatically. To move a folder and
+# its complete subtree, name the folder itself. Paths must not begin or end with
+# `/`; globs, absolute paths, `..`, and backslashes are not supported.
+# postInstallRename:
+#   - source: "file1.ext"
+#     destination: "renamed/file.ext"
+#   - source: "folder1"
+#     destination: "assets/renamedFolder"

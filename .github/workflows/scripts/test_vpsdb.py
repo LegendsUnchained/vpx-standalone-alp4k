@@ -48,6 +48,9 @@ class DecodeArchivePasswordsTest(unittest.TestCase):
                 "vpxMagic:\n"
                 "  - d3Jvbmc=\n"
                 "  - anBncg==\n"
+                "postInstallRename:\n"
+                '  - source: "Music"\n'
+                '    destination: "assets/Music"\n'
             )
 
             with patch.object(vpsdb, "VPSDB", return_value=FakeVPSDB()):
@@ -57,6 +60,60 @@ class DecodeArchivePasswordsTest(unittest.TestCase):
             meta["vpx-password-fixture"]["archivePassword"],
             ["wrong", "jpgr"],
         )
+        self.assertEqual(
+            meta["vpx-password-fixture"]["postInstallRename"],
+            [{"source": "Music", "destination": "assets/Music"}],
+        )
+
+
+class PostInstallRenameTest(unittest.TestCase):
+    def test_normalizes_ordered_relative_file_and_folder_moves(self):
+        value = [
+            {"source": "file1.ext", "destination": "renamed/file.ext"},
+            {"source": "folder1", "destination": "assets/renamedFolder"},
+        ]
+        self.assertEqual(vpsdb.normalize_post_install_renames(value), value)
+
+    def test_absent_and_empty_values_stay_absent(self):
+        self.assertIsNone(vpsdb.normalize_post_install_renames(None))
+        self.assertIsNone(vpsdb.normalize_post_install_renames([]))
+
+    def test_rejects_invalid_rule_shapes(self):
+        invalid_values = [
+            {"source": "file", "destination": "renamed"},
+            ["file", "renamed"],
+            [{"source": "file"}],
+            [{"source": "file", "destination": "renamed", "extra": True}],
+        ]
+        for value in invalid_values:
+            with self.subTest(value=value):
+                with self.assertRaises(ValueError):
+                    vpsdb.normalize_post_install_renames(value)
+
+    def test_rejects_unsafe_paths_and_globs(self):
+        invalid_paths = [
+            "/absolute",
+            "folder/",
+            "../outside",
+            "folder/../../outside",
+            r"folder\windows",
+            "*.vpx",
+            "folder/[ab]",
+            ".",
+        ]
+        for path in invalid_paths:
+            for field in ("source", "destination"):
+                with self.subTest(path=path, field=field):
+                    rule = {"source": "source", "destination": "renamed"}
+                    rule[field] = path
+                    with self.assertRaises(ValueError):
+                        vpsdb.normalize_post_install_renames([rule])
+
+    def test_rejects_same_normalized_path(self):
+        with self.assertRaisesRegex(ValueError, "same path"):
+            vpsdb.normalize_post_install_renames(
+                [{"source": "folder/../file", "destination": "file"}]
+            )
 
 
 if __name__ == "__main__":
