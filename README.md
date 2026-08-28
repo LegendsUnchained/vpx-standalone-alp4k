@@ -6,6 +6,43 @@ The Legends Unchained Loader is not for sale. You are not permitted to distribut
 
 If you'd like to contribute to the development of the Legends Unchained Launcher, Legends Unchained Table Manager and VPX Standalone on the ALP 4K devices, we ask that you [make a donation to St. Jude](https://www.stjude.org/give.html) in any amount you choose.
 
+## Team Favorites
+
+[`team_favorites.json`](team_favorites.json) backs the **Team Favorites** page in the
+Table Manager's Add Tables wizard — a curated "start here" list, shown as one card per
+team member. It is read straight from this repo (latest release tag, falling back to
+`main`), so an edit here reaches cabinets without a Table Manager release.
+
+The file is a plain array. To add yourself, append an entry:
+
+```json
+[
+  {
+    "member": "n-i-x",
+    "avatar": "https://cdn.discordapp.com/avatars/<user-id>/<avatar-hash>.png",
+    "role": "Lead Developer",
+    "tables": ["vpx-deadpool", "vpx-spacecadetge", "vpx-pennantfever"]
+  }
+]
+```
+
+| Field | Required | Description |
+|:-----:|:--------:|:-----------:|
+| `member` | :white_check_mark: | Display name shown on the card |
+| `tables` | :white_check_mark: | Folder names under `external/`, **not** table display names |
+| `role` | :x: | Free text shown under the name, e.g. "Lead Developer" |
+| `avatar` | :x: | Image URL; a person icon is shown when empty or unreachable |
+
+Each table's box art is its own `external/<name>/launcher.png`, and its display name,
+manufacturer and year come from the wizard manifest — so nothing but the folder name
+needs repeating here. A table that isn't in the manifest (renamed, or removed) is
+silently skipped, and a member left with no resolvable tables drops off the page.
+
+Tables already on the cabinet get an "Installed" badge. An adult-content table is
+listed with an "NSFW" badge but can't be clicked through to an install unless the
+viewer has enabled NSFW content in the wizard, so it is a fine pick — just expect
+most people to see it greyed out.
+
 ## Contributing
 This repo is public and accepts Pull Requests for new table configs and updates to existing configs.
 
@@ -19,14 +56,18 @@ Please ensure your files are named:
 |:---------:|:--------:|:-----------:|
 | launcher.png | :white_check_mark: | The image used by the AtGames Launcher UI (500px x 750px)|
 | table.yml | :white_check_mark: | Wizard config YAML |
+| alias.txt | :x: | PinMAME ROM set aliases, installed to the table's `pinmame` folder. Maps the ROM set the table script asks for onto one that is actually installed |
 | backglass.png | :x: | Backglass image to use during loading |
 | buttons.ini | :x: | Custom launcher button labels |
 | dmd.png | :x: | DMD image to use during loading and as a static image for tables without a DMD |
 | launcher.cfg | :x: | Legacy copy of `buttons.ini` during the launcher rollout |
 | nvram.nv | :x: | NVRAM file needed for the table to initialize (should not have high-scores from play) |
+| pinmame.ini | :x: | PinMAME per-ROM settings (DMD tint, sound, cheat). Installed to the table's `pinmame/ini` folder renamed to `<romVersion>.ini`, so the table must also have a ROM |
 | playfield.png | :x: | Playfield image to use during loading |
+| table.dif | :x: | VPUPatch diff. Applied to the downloaded `.vpx` with `vpxtool patch` before install, for tables whose author publishes a patch rather than a whole table |
 | table.ini | :x: | VPX settings to overried to use the table |
 | table.vbs | :x: | VBS file to use instead of the one built-in to the VPX |
+| use_these_pup_files.zip | :x: | Replacement PUP pack files. Extracted over the installed pack's folder under `pupvideos`, so it only applies to tables whose `table.yml` sets `pupRequired` or `pupBundled` |
 | VPReg.ini | :x: | Registry emulation file. If high scores are in the file, ensure the following initials are used JSM, CTH, NIX, VPX |
 
 ### Validate table.yml before committing
