@@ -43,6 +43,13 @@ testers:
 # Set to false to hide this table from the wizard. [Boolean] (default: shown)
 # enabled: true
 
+# Password candidates for encrypted downloads, tried in order before Table
+# Manager asks the user. Each item is a Base64-encoded UTF-8 password; vpsdb.py
+# decodes these into the manifest's archivePassword list. Base64 is obfuscation,
+# not encryption.
+# vpxMagic:
+#   - "anBncg=="                              # "jpgr"
+
 
 # --- NSFW / adult content (optional) ----------------------------------------
 # Author-set adult-content flags. All [Boolean], default false. When a wizard
@@ -223,3 +230,16 @@ testers:
 # Applies known fixes at install time. Allowed values: bass
 # applyFixes:
 #   - bass
+
+
+# --- Post-install renames (optional) ----------------------------------------
+# Ordered exact-path moves performed after every table file/folder has been
+# installed or extracted. Both paths are relative to the installed table root;
+# destination parent folders are created automatically. To move a folder and
+# its complete subtree, name the folder itself. Paths must not begin or end with
+# `/`; globs, absolute paths, `..`, and backslashes are not supported.
+# postInstallRename:
+#   - source: "file1.ext"
+#     destination: "renamed/file.ext"
+#   - source: "folder1"
+#     destination: "assets/renamedFolder"

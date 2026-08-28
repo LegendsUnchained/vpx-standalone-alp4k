@@ -1,15 +1,16 @@
 ---
+backglassChecksum: "79E612A1B9D0BD25BBA50D349DE7FCC4"
+backglassNotes: "Download 'Victory_(Premier_1987)3scr.rar'"
 backglassVPSId: "K4ZCPFzu"
-backglassChecksum: "0F972CEC601798448407EA44F84A6303"
-backglassNotes: "Download Victory_(Premier_1987)2scr.rar"
 fps: 60
+romChecksum: "811678EFF1D36A36324AAF533EC2643E"
+romNotes: "Download 'victory.zip'"
+romUrlOverride: "https://pinballnirvana.com/forums/resources/victory.2562/"
+romVersionOverride: "victory"
 tableVPSId: "UsLxAHL3"
+tagline: "Are you ready for the Speed, the challenge, the play of victory?!"
 testers:
   - "mcap10"
   - "mrandromeda"
+vpxChecksum: "A629D0C581C3B0C2751156352DBCA573"
 vpxVPSId: "GAY3-_fB"
-vpxChecksum: "32DEB719188FD73C7888CC90020E59CC"
-romUrlOverride: "https://pinballnirvana.com/forums/resources/victory.2562/"
-romChecksum: "811678EFF1D36A36324AAF533EC2643E"
-romVersionOverride: "victory"
-tagline: "Are you ready for the Speed, the challenge, the play of victory?!"

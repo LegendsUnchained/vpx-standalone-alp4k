@@ -63,6 +63,7 @@ pupNotes:                    | [String]
 pupNSFW:                     | [Bool]
 pupRequired:                 | [Bool]
 pupVersion:                  | [String]
+postInstallRename:           | [Array of Objects]
 romBundled:                  | [Bool]
 romChecksum:                 | [String]
 romNotes:                    | [String]
@@ -87,12 +88,42 @@ testers:                     | [Array]
 vpxArchiveFormat:            | [String]
 vpxChecksum:                 | [String]
 vpxExtractExtra:             | [Array]
+vpxMagic:                    | [Array]
 vpxNSFW:                     | [Bool]
 vpxVPSId:                    | [String]
 ....
 
 Below is each yml field explained, with an example, and any `gotchas'
 that you need to know to use successfully!
+
+....
+########################
+vpxMagic
+########################
+
+Type:
+------------
+Array of Base64 strings
+
+Description:
+------------
+Passwords to try, in order, when a wizard download is an encrypted archive.
+Each item is a Base64-encoded UTF-8 password. vpsdb.py decodes the values into
+the generated manifest's `archivePassword` array; Table Manager tries those
+candidates silently before showing its password prompt. Only the candidate that
+successfully unlocks an uploaded PUP archive is sent to the cabinet extractor.
+
+Example:
+------------
+vpxMagic:
+  - "anBncg==" # jpgr
+
+Gotchas:
+------------
+- Base64 is only obfuscation. The generated manifest is public and contains the
+  decoded password values.
+- Invalid Base64, non-UTF-8 values, and empty passwords fail manifest generation.
+....
 
 ....
 ########################
@@ -1367,6 +1398,42 @@ Gotchas:
   So just double check you pasted the right value :)
 ....
 
+....
+########################
+postInstallRename
+########################
+
+Type:
+------------
+Array of Objects (each: source, destination)
+
+Description:
+------------
+An ordered list of files or folders to rename after Table Manager finishes
+installing and extracting the table. `source` and `destination` are exact paths
+relative to the installed table root. A destination can include subfolders;
+Table Manager creates missing destination parent folders.
+
+For a folder, name the folder itself. Its entire contents and all subfolders move
+with it, so no glob is needed or supported.
+
+Example:
+------------
+postInstallRename:
+  - source: "file1.ext"
+    destination: "renamed/file.ext"
+  - source: "folder1"
+    destination: "assets/renamedFolder"
+
+Gotchas:
+------------
+- Rules run in the order listed.
+- Paths must stay under the installed table root and must not begin or end with
+  `/`. Absolute paths, `..`, backslashes, symbolic-link escapes, and glob
+  characters are rejected.
+- `destination` is the exact new path, not just a containing folder.
+....
+
 === _YML PR Issues_
 
 We have YML validation that runs whenever you make a PR that contains an
@@ -1555,4 +1622,3 @@ so for the cool kids, its:
 
 You can see that name in `Your Profile`, it's the same name you sent to
 the Legends Unchained bot, and it's the name in the repo fork url!
-
