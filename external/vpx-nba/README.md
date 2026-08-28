@@ -14,6 +14,7 @@
 
 **VPXS 4KP Testers:**
   - Filth
+  - Wraith
 
 <br>
 
