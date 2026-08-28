@@ -13,7 +13,14 @@ Table Manager's Add Tables wizard — a curated "start here" list, shown as one 
 team member. It is read straight from this repo (latest release tag, falling back to
 `main`), so an edit here reaches cabinets without a Table Manager release.
 
-The file is a plain array. To add yourself, append an entry:
+The file is a plain array, and **cards are shown in file order** — there is no
+sorting on the device, so the order here is the order players see. Add yourself
+in the appropriate place rather than always at the end: entries whose role is
+*only* `Wizard` go last, after everyone else. A compound role that happens to
+contain the word (`Wizard Wrangler / Community Manager`) is not one of these and
+sits with the rest.
+
+An entry looks like:
 
 ```json
 [
