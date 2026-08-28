@@ -308,6 +308,23 @@ def check_additional_roms(meta):
             print(f"ERROR: {label} has urlOverride but no versionOverride")
             sys.exit(1)
 
+
+def check_post_install_rename(meta):
+    """Validate raw table.yml postInstallRename rules.
+
+    vpsdb uses the same normalizer while rendering the manifest. Running it on
+    the raw YAML first gives authors a concise validation error before any VPSDB
+    lookup or release generation starts.
+    """
+    if not isinstance(meta, dict) or meta.get("postInstallRename") is None:
+        return
+    try:
+        vpsdb.normalize_post_install_renames(meta.get("postInstallRename"))
+    except ValueError as error:
+        print(f"ERROR: {error}")
+        sys.exit(1)
+
+
 # Special-DMD packs the wizard knows how to label. specialDMDType is only a
 # display string, but it is validated against this list so a typo doesn't reach a
 # cabinet as a mislabelled row. Add to it when a new DMD format is supported.
@@ -627,6 +644,7 @@ if __name__ == "__main__":
         check_overrides(table_yaml)
         check_checksum_format(table_yaml)
         check_additional_roms(table_yaml)
+        check_post_install_rename(table_yaml)
 
     # Render metadata for all files in a single call, then run the meta-level checks
     meta = vpsdb.get_table_meta(files, warn_on_error=False)

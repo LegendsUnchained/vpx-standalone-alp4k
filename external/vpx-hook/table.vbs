@@ -117,9 +117,16 @@ Const CabinetMode = 0
 
 'You can change LUT option within game with left and right CTRL keys
 Dim LUTset, DisableLUTSelector, LutToggleSound
-LUTset = 8
+LUTset = 4                       ' default if nothing stored yet
+Dim tmpLUT
+On Error Resume Next
+tmpLUT = LoadValue("Hook_501", "LUTset")
+On Error Goto 0
+If IsNumeric(tmpLUT) Then
+	If CInt(tmpLUT) >= 0 And CInt(tmpLUT) <= 10 Then LUTset = CInt(tmpLUT)
+End If
 DisableLUTSelector = 0  ' Disables the ability to change LUT option with magna saves in game when set to 1
-
+Table1.ColorGradeImage = "LUT" & LUTset & "_" & 8 - 1
 
 '******************************************************
 ' 						OPTIONS
@@ -821,6 +828,9 @@ Sub Table1_Exit() : Controller.Pause = False : Controller.Stop() : End Sub
 
 Sub SetLUT  'AXS
 	Table1.ColorGradeImage = "LUT" & LUTset & "_" & 8 - 1
+	On Error Resume Next
+	SaveValue "Hook_501", "LUTset", LUTset
+	On Error Goto 0
 end sub 
 
 Sub LUTBox_Timer

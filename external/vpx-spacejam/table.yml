@@ -1,17 +1,16 @@
 ---
-backglassVPSId: "Cu7Wm1bjxA"
-backglassChecksum: "9c87a44775307e9b4f0a29fea6bd0389"
+backglassChecksum: "9C87A44775307E9B4F0A29FEA6BD0389"
 backglassNotes: "Download version 2.0"
+backglassVPSId: "Cu7Wm1bjxA"
 fps: 56
+romChecksum: "7749A2F0739DD73BBE68350F28EF0941"
 romVPSId: "dFDjrnqe"
-romChecksum: "7749a2f0739dd73bbe68350f28ef0941"
 tableVPSId: "nrzNYtRn"
 tagline: "Defeat the Monstars"
 testers:
   - "kaoticBPR"
   - "OminousOsie"
-  - "evilwraith"
+  - "Wraith"
   - "B-Woo"
-vpxVPSId: "HAjS8Pm0"
-vpxChecksum: "e41f7ee3ea045db5de713d9ef1a533b2"
-tableNotes: "Download version 1.4"
+vpxChecksum: "9D7D474D55D40FA8EFDDDCC718E19C66"
+vpxVPSId: "-vXO0tBKty"

@@ -2,31 +2,59 @@
 
 ![Table Preview](../../images/peImTeYd43-preview.webp)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author(s) | 
-|-----------|--------|----------|--------------|
-| **VPX** | [vpuniverse](https://vpuniverse.com/files/file/17837-cyberrace-flux-original-2023/) | 1.3.8 | Flux, Karl Casey, Sixtoe |
-| **B2S** | [vpuniverse](https://vpuniverse.com/files/file/17823-cyberrace-original-2023-b2s/) | 1.0.0 |  |
-
-**Tested by:** Curt
-
----
-
-## Status 
+## *️⃣  Table Statistics
 
 | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |-----------|-----|-----|-----|-----|
-| ✅ | ✅ | ❌ | ❌ | 40 |
+| ✅ | ❌ | ❌ | ❌ | 53 |
+
+<br>
+
+**VPXS 4KP Testers:**
+  - Curt
+
+<br>
 
 ---
 
-## Instructions
+<br>
 
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more information can be found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- Click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
-- BASS Fix requires approximately 40 minutes. Be patient!
-- Copy 'Music' and 'CyberRaceDMD' folders from the table download folder to vpx-cyberrace on your drive
-- 'Choose your race rival' --if plunger does not activate, use Joypad/stick UP
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Cyber Race (Original 2023)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"'Choose your race opponent'"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
