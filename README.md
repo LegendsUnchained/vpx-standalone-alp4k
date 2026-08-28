@@ -56,14 +56,18 @@ Please ensure your files are named:
 |:---------:|:--------:|:-----------:|
 | launcher.png | :white_check_mark: | The image used by the AtGames Launcher UI (500px x 750px)|
 | table.yml | :white_check_mark: | Wizard config YAML |
+| alias.txt | :x: | PinMAME ROM set aliases, installed to the table's `pinmame` folder. Maps the ROM set the table script asks for onto one that is actually installed |
 | backglass.png | :x: | Backglass image to use during loading |
 | buttons.ini | :x: | Custom launcher button labels |
 | dmd.png | :x: | DMD image to use during loading and as a static image for tables without a DMD |
 | launcher.cfg | :x: | Legacy copy of `buttons.ini` during the launcher rollout |
 | nvram.nv | :x: | NVRAM file needed for the table to initialize (should not have high-scores from play) |
+| pinmame.ini | :x: | PinMAME per-ROM settings (DMD tint, sound, cheat). Installed to the table's `pinmame/ini` folder renamed to `<romVersion>.ini`, so the table must also have a ROM |
 | playfield.png | :x: | Playfield image to use during loading |
+| table.dif | :x: | VPUPatch diff. Applied to the downloaded `.vpx` with `vpxtool patch` before install, for tables whose author publishes a patch rather than a whole table |
 | table.ini | :x: | VPX settings to overried to use the table |
 | table.vbs | :x: | VBS file to use instead of the one built-in to the VPX |
+| use_these_pup_files.zip | :x: | Replacement PUP pack files. Extracted over the installed pack's folder under `pupvideos`, so it only applies to tables whose `table.yml` sets `pupRequired` or `pupBundled` |
 | VPReg.ini | :x: | Registry emulation file. If high scores are in the file, ensure the following initials are used JSM, CTH, NIX, VPX |
 
 ### Validate table.yml before committing
