@@ -15,10 +15,13 @@ team member. It is read straight from this repo (latest release tag, falling bac
 
 The file is a plain array, and **cards are shown in file order** — there is no
 sorting on the device, so the order here is the order players see. Add yourself
-in the appropriate place rather than always at the end: entries whose role is
-*only* `Wizard` go last, after everyone else. A compound role that happens to
-contain the word (`Wizard Wrangler / Community Manager`) is not one of these and
-sits with the rest.
+in the appropriate place rather than always at the end.
+
+`role` is a `/`-separated list of roles, and **anyone holding the `Wizard` role
+goes last**, after everyone else. Match whole values, not substrings:
+`Wizard / PUP Sorcerer` holds it and belongs at the end, while
+`Wizard Wrangler / Community Manager` does not — `Wizard Wrangler` is a role in
+its own right.
 
 An entry looks like:
 
@@ -37,7 +40,7 @@ An entry looks like:
 |:-----:|:--------:|:-----------:|
 | `member` | :white_check_mark: | Display name shown on the card |
 | `tables` | :white_check_mark: | Folder names under `external/`, **not** table display names |
-| `role` | :x: | Free text shown under the name, e.g. "Lead Developer" |
+| `role` | :x: | Roles held, `/`-separated, shown under the name — e.g. "Lead Developer" or "Wizard / PUP Sorcerer". Holding `Wizard` decides ordering, see above |
 | `avatar` | :x: | Image URL; a person icon is shown when empty or unreachable |
 
 Each table's box art is its own `external/<name>/launcher.png`, and its display name,

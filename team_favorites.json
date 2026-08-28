@@ -68,5 +68,15 @@
       "vpx-tommy",
       "vpx-sopranos"
     ]
+  },
+  {
+    "member": "Silentkat",
+    "avatar": "https://cdn.discordapp.com/avatars/542903512959549470/520a604ebbfd0b78ee3c3848f35676f6.png",
+    "role": "Wizard / PUP Sorcerer",
+    "tables": [
+      "vpx-dcrystalpup",
+      "vpx-2001",
+      "vpx-deadpool"
+    ]
   }
 ]
