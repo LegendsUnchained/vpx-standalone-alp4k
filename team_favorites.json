@@ -40,13 +40,13 @@
     ]
   },
   {
-    "member": "Bla1ze",
-    "avatar": "https://cdn.discordapp.com/avatars/488775261534289920/5f73c634780b6ff8172319ae8eb91890.png",
-    "role": "Wizard",
+    "member": "'Coffee' Joe",
+    "avatar": "https://cdn.discordapp.com/avatars/735556812862128158/40ccbffae4b299b34e99967ea97a1bf3.png",
+    "role": "Art Department Head",
     "tables": [
-      "vpx-bigbangbar",
-      "vpx-tommy",
-      "vpx-sopranos"
+      "vpx-mousin",
+      "vpx-hardbody",
+      "vpx-cftbl"
     ]
   },
   {
@@ -57,6 +57,16 @@
       "vpx-sopranos",
       "vpx-spacecadetge",
       "vpx-tna"
+    ]
+  },
+  {
+    "member": "Bla1ze",
+    "avatar": "https://cdn.discordapp.com/avatars/488775261534289920/5f73c634780b6ff8172319ae8eb91890.png",
+    "role": "Wizard",
+    "tables": [
+      "vpx-bigbangbar",
+      "vpx-tommy",
+      "vpx-sopranos"
     ]
   }
 ]
