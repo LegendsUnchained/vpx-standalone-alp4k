@@ -6,6 +6,43 @@ The Legends Unchained Loader is not for sale. You are not permitted to distribut
 
 If you'd like to contribute to the development of the Legends Unchained Launcher, Legends Unchained Table Manager and VPX Standalone on the ALP 4K devices, we ask that you [make a donation to St. Jude](https://www.stjude.org/give.html) in any amount you choose.
 
+## Team Favorites
+
+[`team_favorites.json`](team_favorites.json) backs the **Team Favorites** page in the
+Table Manager's Add Tables wizard — a curated "start here" list, shown as one card per
+team member. It is read straight from this repo (latest release tag, falling back to
+`main`), so an edit here reaches cabinets without a Table Manager release.
+
+The file is a plain array. To add yourself, append an entry:
+
+```json
+[
+  {
+    "member": "n-i-x",
+    "avatar": "https://cdn.discordapp.com/avatars/<user-id>/<avatar-hash>.png",
+    "role": "Lead Developer",
+    "tables": ["vpx-deadpool", "vpx-spacecadetge", "vpx-pennantfever"]
+  }
+]
+```
+
+| Field | Required | Description |
+|:-----:|:--------:|:-----------:|
+| `member` | :white_check_mark: | Display name shown on the card |
+| `tables` | :white_check_mark: | Folder names under `external/`, **not** table display names |
+| `role` | :x: | Free text shown under the name, e.g. "Lead Developer" |
+| `avatar` | :x: | Image URL; a person icon is shown when empty or unreachable |
+
+Each table's box art is its own `external/<name>/launcher.png`, and its display name,
+manufacturer and year come from the wizard manifest — so nothing but the folder name
+needs repeating here. A table that isn't in the manifest (renamed, or removed) is
+silently skipped, and a member left with no resolvable tables drops off the page.
+
+Tables already on the cabinet get an "Installed" badge. An adult-content table is
+listed with an "NSFW" badge but can't be clicked through to an install unless the
+viewer has enabled NSFW content in the wizard, so it is a fine pick — just expect
+most people to see it greyed out.
+
 ## Contributing
 This repo is public and accepts Pull Requests for new table configs and updates to existing configs.
 
