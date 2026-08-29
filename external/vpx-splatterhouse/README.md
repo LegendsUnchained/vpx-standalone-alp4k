@@ -1,34 +1,60 @@
 # Splatterhouse (Original 2023)
 
-![Table Preview](../../images/vpx-splatterhouse.png)
+![Table Preview](../../images/YFZxzQg7By-preview.webp)
 
-Authors: [spookyMoulder](https://pinballnirvana.com/forums/members/spookymoulder.24371/)  
-Filename: Splatterhouse 1.52.vpx  
-Download: [Pinball Nirvana](https://pinballnirvana.com/forums/resources/splatterhouse-original.8071/)
+<br>
 
-DirectB2S
+## *️⃣  Table Statistics
 
-Authors: [roccodimarco](https://vpuniverse.com/profile/15135-roccodimarco/)  
-Filename: Splatterhouse.directb2s  
-Download: [VP Universe](https://vpuniverse.com/files/file/14131-splatterhouse-backglass/)
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ❌ | ❌ | ❌ | 60 |
 
-No Rom Needed
+<br>
 
-Tested by: TechZombie
+**VPXS 4KP Testers:**
+  - Ominous Osie 🌸
 
-## Status 
+<br>
 
-Minimum VPX Standalone build: 10.8.0-1989-a764013
+---
 
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+<br>
 
-## Instructions
+## ❇️ Available in the Wizard! 🪄✨
 
-- Copy the contents of this repo folder to your USB drive
-- Add your personalized launcher.elf and rename it to vpx-splatterhouse.elf
-- Download the table and directb2s listed above, extract (if necessary) and copy them to external/vpx-splatterhouse
-- Make sure (.vpx), (.directb2s), (.ini), and (.vbs) files are all named the same
-- "Ohh,a twist top." - Terror Mask
+<br>
 
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Splatterhouse (Original 2023)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *""*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

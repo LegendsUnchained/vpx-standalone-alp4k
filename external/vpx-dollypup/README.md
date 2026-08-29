@@ -1,21 +1,19 @@
-﻿# Dolly Parton (Bally 1979)
+# Dolly Parton (Pup Pack) (Bally 1979)
 
-![Table Preview](../../images/vpx-dolly-parton-preview.jpg)
+![Table Preview](../../images/eqkRAG7dls-preview.webp)
 
 <br>
 
 ## *️⃣  Table Statistics
 
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ✅ | ✅ | ✅ | 60 |
 
 <br>
 
 **VPXS 4KP Testers:**
-  - evilwraith
-  - OminousOsie 🌸
-  - CoffeeAtJoes
+  - Ominous Osie 🌸
 
 <br>
 
@@ -34,9 +32,9 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`Dolly Parton`**
+4.  Find and select this table from the dropdown menu: **`Dolly Parton (Pup Pack) (Bally 1979)`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *"I'm not offended by all the dumb blonde jokes because I know I'm not dumb... and I also know that I'm not blonde." - Dolly Parton*
+6. *""I'm not offended by all the dumb blonde jokes because I know I'm not dumb... and I also know that I'm not blonde." - Dolly Parton"*
 
 <br>
 
@@ -53,6 +51,7 @@ __*We hope you enjoy!!*__
 - Bla1ze           - evilwraith       - Silentkat        
 - mrandromeda      - SScorpio         - pointdablame
 </pre>
+
 
 <br>
 <br>
