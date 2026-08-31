@@ -1,0 +1,19 @@
+repos:
+  - repo: local
+    hooks:
+      - id: validate-table-yaml
+        name: Validate table.yml metadata
+        entry: python .github/workflows/scripts/validate-table-yaml.py
+        language: python
+        additional_dependencies:
+          - PyYAML==6.0.2
+          - requests==2.32.5
+        files: '(^|/)table\.yml$'
+
+      - id: lint-table-yaml
+        name: Lint table.yml
+        entry: yamllint -c .yamllint
+        language: python
+        additional_dependencies:
+          - yamllint
+        files: '(^|/)table\.yml$'

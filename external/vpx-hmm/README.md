@@ -1,23 +1,22 @@
-﻿# Flash (Williams 1979)
+# Heavy Metal Meltdown (Bally 1987)
 
-![Table Preview](../../images/vpx-flash1979-preview.jpg)
+![Table Preview](../../images/JxURfn7klC-preview.webp)
 
 <br>
 
 ## *️⃣  Table Statistics
 
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ✅ | ✅ | ❌ | 60 |
 
 <br>
 
 **VPXS 4KP Testers:**
-  - PBW23
-  - kaoticBPR
-  - shaver
-  
-  <br>
+  - Bla1ze
+  - pinballwizard2023
+
+<br>
 
 ---
 
@@ -34,9 +33,9 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`Flash`**
+4.  Find and select this table from the dropdown menu: **`Heavy Metal Meltdown (Bally 1987)`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *"Hot Voltage Action!""*
+6. *"Heavy! Metal! Meltdown!"*
 
 <br>
 
@@ -54,9 +53,9 @@ __*We hope you enjoy!!*__
 - mrandromeda      - SScorpio         - pointdablame
 </pre>
 
+
 <br>
 <br>
 <br>
- <br>
- <br>
- 
+<br>
+<br>
