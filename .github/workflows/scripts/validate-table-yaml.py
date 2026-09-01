@@ -189,6 +189,7 @@ CHECKSUM_YAML_KEYS = [
     "diffChecksum",
     "pupChecksum",
     "romChecksum",
+    "specialDMDChecksum",
     "vpxChecksum",
 ]
 
@@ -306,6 +307,185 @@ def check_additional_roms(meta):
         if url_override is not None and entry.get("versionOverride") is None:
             print(f"ERROR: {label} has urlOverride but no versionOverride")
             sys.exit(1)
+
+
+def check_post_install_rename(meta):
+    """Validate raw table.yml postInstallRename rules.
+
+    vpsdb uses the same normalizer while rendering the manifest. Running it on
+    the raw YAML first gives authors a concise validation error before any VPSDB
+    lookup or release generation starts.
+    """
+    if not isinstance(meta, dict) or meta.get("postInstallRename") is None:
+        return
+    try:
+        vpsdb.normalize_post_install_renames(meta.get("postInstallRename"))
+    except ValueError as error:
+        print(f"ERROR: {error}")
+        sys.exit(1)
+
+
+# Special-DMD packs the wizard knows how to label. specialDMDType is only a
+# display string, but it is validated against this list so a typo doesn't reach a
+# cabinet as a mislabelled row. Add to it when a new DMD format is supported.
+SPECIAL_DMD_TYPES = ["UltraDMD", "FlexDMD"]
+
+ARCHIVE_FORMATS = ["zip", "rar", "7z"]
+
+
+def check_vpx_archive(meta):
+    """Checks the table-archive fields (vpxArchiveFormat / vpxExtractExtra).
+
+    Setting vpxArchiveFormat means the table installs from the archive the author
+    published rather than from a bare .vpx: the wizard's upload slot then accepts
+    only that archive, and the cabinet unpacks the .vpx and any folders the table
+    needs out of it. A table needs this whenever something it loads at run time
+    is a FOLDER - an UltraDMD/FlexDMD pack, a music folder - because an upload
+    slot can only carry files.
+
+    Two consequences are checked here:
+      * vpxChecksum must list at least two hashes. It stays an unordered set of
+        accepted hashes, as everywhere else; it just has to contain both the
+        archive's MD5 (which is what admits the upload) and the .vpx's (which is
+        what picks the table out of the archive, since a download often carries
+        several cuts).
+      * vpxExtractExtra is only meaningful with it, and each entry must be a
+        relative path inside the archive.
+
+    Args:
+      meta: The table metadata.
+
+    Returns:
+      None
+    """
+    print("Checking table archive...")
+    for table, table_meta in meta.items():
+        archive_format = table_meta.get("vpxArchiveFormat")
+        extras = table_meta.get("vpxExtractExtra")
+
+        if archive_format is not None and archive_format not in ARCHIVE_FORMATS:
+            print(
+                f"ERROR: vpxArchiveFormat '{archive_format}' is not one of "
+                f"{', '.join(ARCHIVE_FORMATS)} in table: {table}"
+            )
+            sys.exit(1)
+
+        if archive_format is None:
+            if extras:
+                print(
+                    f"ERROR: vpxExtractExtra needs vpxArchiveFormat - there is no archive "
+                    f"to extract from without it in table: {table}"
+                )
+                sys.exit(1)
+            continue
+
+        if len(table_meta.get("tableChecksum") or []) < 2:
+            print(
+                f"ERROR: vpxArchiveFormat is set but vpxChecksum lists one hash - it must "
+                f"list the table archive's MD5 as well as the .vpx's in table: {table}"
+            )
+            sys.exit(1)
+
+        for path in extras or []:
+            if not isinstance(path, str) or not path.strip():
+                print(f"ERROR: vpxExtractExtra has an empty entry in table: {table}")
+                sys.exit(1)
+            if path.startswith("/") or ".." in Path(path).parts:
+                print(
+                    f"ERROR: vpxExtractExtra entry '{path}' must be a relative path inside "
+                    f"the archive in table: {table}"
+                )
+                sys.exit(1)
+
+
+def check_special_dmd(meta):
+    """Checks the special-DMD (UltraDMD / FlexDMD) fields.
+
+    The pack reaches a cabinet in one of two shapes, with different rules:
+
+      * standalone - the pack is its own archive, so specialDMDChecksum is
+        required. specialDMDUrlOverride is optional: with no override the wizard
+        sends the user to the table's own download page, where the pack usually
+        sits beside the table.
+      * bundled - the folder is inside the table download, so there is no
+        separate file to hash. It therefore requires vpxArchiveFormat, which
+        turns the install into an archive install (see check_vpx_archive), and
+        specialDMDArchiveRoot names the folder the cabinet unpacks out of it. A
+        specialDMDChecksum here would cover nothing, so it is rejected rather
+        than quietly ignored.
+
+    specialDMDType is required either way - it is the label the wizard row and
+    the upload slot carry. specialDMDNSFW works in both shapes: a standalone pack
+    is filtered out by not uploading it, and a bundled one by telling the cabinet
+    not to unpack that folder from the table archive.
+
+    Args:
+      meta: The table metadata.
+
+    Returns:
+      None
+    """
+    print("Checking special DMD...")
+    dmd_fields = (
+        "specialDMDArchiveFormat",
+        "specialDMDArchiveRoot",
+        "specialDMDChecksum",
+        "specialDMDFileUrl",
+        "specialDMDNotes",
+        "specialDMDType",
+        "specialDMDVersion",
+    )
+
+    for table, table_meta in meta.items():
+        bundled = bool(table_meta.get("specialDMDBundled"))
+        if not bundled and not any(table_meta.get(f) is not None for f in dmd_fields):
+            continue
+
+        dmd_type = table_meta.get("specialDMDType")
+        if dmd_type is None:
+            print(f"ERROR: specialDMDType field not found in table: {table}")
+            sys.exit(1)
+        if dmd_type not in SPECIAL_DMD_TYPES:
+            print(
+                f"ERROR: specialDMDType '{dmd_type}' is not one of "
+                f"{', '.join(SPECIAL_DMD_TYPES)} in table: {table}"
+            )
+            sys.exit(1)
+
+        fmt_value = table_meta.get("specialDMDArchiveFormat")
+        if fmt_value is not None and fmt_value not in ARCHIVE_FORMATS:
+            print(
+                f"ERROR: specialDMDArchiveFormat '{fmt_value}' is not one of "
+                f"{', '.join(ARCHIVE_FORMATS)} in table: {table}"
+            )
+            sys.exit(1)
+
+        if bundled:
+            if table_meta.get("specialDMDArchiveRoot") is None:
+                print(
+                    f"ERROR: specialDMDBundled is True but specialDMDArchiveRoot "
+                    f"(the folder to unpack from the table archive) is not found in table: {table}"
+                )
+                sys.exit(1)
+
+            if table_meta.get("vpxArchiveFormat") is None:
+                print(
+                    f"ERROR: specialDMDBundled is True but vpxArchiveFormat is not found in table: {table}"
+                )
+                sys.exit(1)
+
+            if table_meta.get("specialDMDChecksum") is not None:
+                print(
+                    f"ERROR: specialDMDBundled is True, so the folder has no file to hash - "
+                    f"put the table archive's MD5 in vpxChecksum instead of specialDMDChecksum "
+                    f"in table: {table}"
+                )
+                sys.exit(1)
+
+        elif table_meta.get("specialDMDChecksum") is None:
+            print(f"ERROR: specialDMDChecksum field not found in table: {table}")
+            sys.exit(1)
+
 
 def check_fixes(meta):
     """Checks if the applyFixes field is valid.
@@ -464,12 +644,15 @@ if __name__ == "__main__":
         check_overrides(table_yaml)
         check_checksum_format(table_yaml)
         check_additional_roms(table_yaml)
+        check_post_install_rename(table_yaml)
 
     # Render metadata for all files in a single call, then run the meta-level checks
     meta = vpsdb.get_table_meta(files, warn_on_error=False)
 
     check_bundled(meta)
     check_checksums(meta)
+    check_vpx_archive(meta)
+    check_special_dmd(meta)
     check_fixes(meta)
     check_fps(meta)
     check_testers(meta)

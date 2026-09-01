@@ -1,0 +1,106 @@
+name: Table Manager Bug Report
+description: Report a problem with Legends Unchained Table Manager.
+title: "[Table Manager bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Table Manager. Reports opened from an error toast automatically include links to the current and previous Table Manager session logs and the browser-console log.
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please verify these before submitting the report.
+      options:
+        - label: This is a Table Manager bug report, not a support question or a table-specific problem.
+          required: true
+        - label: I searched the [existing issues](https://github.com/LegendsUnchained/vpx-standalone-alp4k/issues?q=is%3Aissue) for this problem.
+          required: true
+        - label: I am running the latest Table Manager version offered on my selected update track, or the problem is preventing me from updating.
+          required: true
+
+  - type: input
+    id: table-manager-version
+    attributes:
+      label: Table Manager version
+      description: This is filled in automatically when the report is opened from an error toast.
+      placeholder: "Example: 3.0.0-12"
+    validations:
+      required: true
+
+  - type: input
+    id: current-path
+    attributes:
+      label: Current page path
+      description: The Table Manager page where the error appeared. Error-toast reports include the path without the cabinet IP address or hostname.
+      placeholder: "Example: /tables/wizard"
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: Browser
+      description: Filled in automatically for error-toast reports.
+      placeholder: Browser name and version
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Clearly describe what you were trying to do when the problem occurred.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: What actually happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Reproduction steps
+      description: Explain how someone starting from the Table Manager dashboard can reproduce the problem.
+      placeholder: |
+        1. Open ...
+        2. Select ...
+        3. See the error ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: error-message
+    attributes:
+      label: Error message
+      description: The error-toast message is inserted here automatically.
+      placeholder: Paste the exact error text if this was not opened from an error toast.
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Automatically collected diagnostics
+      description: Table Manager adds links to the current lu-tablemanager.log, the previous session's lu-tablemanager.log.1, and the browser-console log here. Please leave them in the report; they are public with the issue.
+      placeholder: Open this form from an error toast to collect the diagnostic logs automatically.
+
+  - type: upload
+    id: additional-files
+    attributes:
+      label: Additional files
+      description: Optionally add screenshots, videos, or other files that help demonstrate the problem.
+    validations:
+      required: false
+      accept: ".png,.jpg,.jpeg,.gif,.webp,.mp4,.mov,.webm,.log,.txt,.zip"

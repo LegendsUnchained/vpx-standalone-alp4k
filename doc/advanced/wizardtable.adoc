@@ -63,6 +63,7 @@ pupNotes:                    | [String]
 pupNSFW:                     | [Bool]
 pupRequired:                 | [Bool]
 pupVersion:                  | [String]
+postInstallRename:           | [Array of Objects]
 romBundled:                  | [Bool]
 romChecksum:                 | [String]
 romNotes:                    | [String]
@@ -74,8 +75,20 @@ tableNameOverride:           | [String]
 tableNotes:                  | [String]
 tableVPSId:                  | [String]
 tagline:                     | [String]
+specialDMDArchiveFormat:     | [String]
+specialDMDArchiveRoot:       | [String]
+specialDMDBundled:           | [Bool]
+specialDMDChecksum:          | [String]
+specialDMDNotes:             | [String]
+specialDMDNSFW:              | [Bool]
+specialDMDType:              | [String]
+specialDMDUrlOverride:       | [String]
+specialDMDVersion:           | [String]
 testers:                     | [Array]
+vpxArchiveFormat:            | [String]
 vpxChecksum:                 | [String]
+vpxExtractExtra:             | [Array]
+vpxMagic:                    | [Array]
 vpxNSFW:                     | [Bool]
 vpxVPSId:                    | [String]
 ....
@@ -85,7 +98,36 @@ that you need to know to use successfully!
 
 ....
 ########################
-NSFW / adult content (nsfw / vpxNSFW / backglassNSFW / romNSFW / coloredROMNSFW / altSoundNSFW / pupNSFW / diffNSFW)
+vpxMagic
+########################
+
+Type:
+------------
+Array of Base64 strings
+
+Description:
+------------
+Passwords to try, in order, when a wizard download is an encrypted archive.
+Each item is a Base64-encoded UTF-8 password. vpsdb.py decodes the values into
+the generated manifest's `archivePassword` array; Table Manager tries those
+candidates silently before showing its password prompt. Only the candidate that
+successfully unlocks an uploaded PUP archive is sent to the cabinet extractor.
+
+Example:
+------------
+vpxMagic:
+  - "anBncg==" # jpgr
+
+Gotchas:
+------------
+- Base64 is only obfuscation. The generated manifest is public and contains the
+  decoded password values.
+- Invalid Base64, non-UTF-8 values, and empty passwords fail manifest generation.
+....
+
+....
+########################
+NSFW / adult content (nsfw / vpxNSFW / backglassNSFW / romNSFW / coloredROMNSFW / altSoundNSFW / pupNSFW / diffNSFW / specialDMDNSFW)
 ########################
 
 Type:
@@ -109,15 +151,16 @@ that has any flag set.
 - altSoundNSFW: [Bool] the altsound pack is adult.
 - pupNSFW: [Bool] the pup videos are adult.
 - diffNSFW: [Bool] the VPU patch adds adult content.
+- specialDMDNSFW: [Bool] the UltraDMD/FlexDMD pack is adult.
 
 When the wizard user has NOT enabled NSFW:
 
 - A table flagged nsfw, vpxNSFW, backglassNSFW or romNSFW is hidden from the
   wizard listing entirely — those parts can't be skipped, so the whole table is
   withheld.
-- A table with only coloredROMNSFW, altSoundNSFW, pupNSFW or diffNSFW set still
-  installs, but that component is filtered out of the install (its upload slot /
-  download is not shown and it is not required).
+- A table with only coloredROMNSFW, altSoundNSFW, pupNSFW, diffNSFW or
+  specialDMDNSFW set still installs, but that component is filtered out of the
+  install (its upload slot / download is not shown and it is not required).
 
 Example:
 ------------
@@ -1158,6 +1201,96 @@ Gotchas:
 
 ....
 ########################
+specialDMD (specialDMDType / specialDMDBundled / ...)
+########################
+
+Type:
+------------
+Group of fields (see below)
+
+Description:
+------------
+A "special DMD" is the DMD content folder a table's script loads at run time —
+an UltraDMD or FlexDMD pack, e.g. "MyTable.UltraDMD". It is installed into the
+ROOT of the table folder, beside the installed .vpx, because that is where the
+script looks for it. specialDMDType says which of the two it is and is the label
+the wizard puts on the row and the upload slot; it is REQUIRED whenever any
+specialDMD field is set, and must be exactly "UltraDMD" or "FlexDMD".
+
+VPS has no file category for these packs, so nothing is resolved from it: there
+is no specialDMDVPSId, no resolved authors or version, and no "report broken
+link" button on the row.
+
+There are TWO shapes, and they have different rules.
+
+STANDALONE — the pack is its own archive. It is normally just another file on
+the table's own download page, so specialDMDUrlOverride is an OVERRIDE only:
+leave it unset and the wizard points the user at the table's mirrors.
+specialDMDChecksum is REQUIRED, and the wizard verifies the upload against it.
+
+- specialDMDType: [String] REQUIRED. "UltraDMD" or "FlexDMD".
+- specialDMDChecksum: [String|List] MD5(s) of the pack archive. REQUIRED here.
+  One hash -> a string; two or more -> a YAML list.
+- specialDMDUrlOverride: [String] only when the pack is NOT on the table's own
+  download page.
+- specialDMDVersion: [String] version shown on the wizard row.
+- specialDMDNotes: [String] Markdown notes shown on the wizard row.
+- specialDMDArchiveFormat: [String] zip | rar | 7z. Default: zip. Only sets the
+  wizard's file picker filter; extraction auto-detects the real format.
+- specialDMDArchiveRoot: [String] the folder INSIDE the archive to install. Leave
+  it unset when the archive already holds the pack folder at its top level.
+- specialDMDNSFW: [Bool] the pack is adult content (filtered out when the
+  wizard's NSFW toggle is off; the table still installs).
+
+BUNDLED — the folder is inside the table download itself. An upload slot can
+only carry files, never a folder, so the wizard uploads the WHOLE table archive
+and the cabinet unpacks both halves from it: the .vpx, picked by MD5, and the
+folder named by specialDMDArchiveRoot.
+
+- specialDMDBundled: [Bool] true.
+- specialDMDArchiveRoot: [String] REQUIRED. The folder to unpack from the table
+  archive, e.g. "MyTable.FlexDMD". The install fails if the archive has no such
+  folder.
+- vpxArchiveFormat: [String] REQUIRED — this is an archive install. See the
+  "vpxArchiveFormat / vpxExtractExtra" section below for it and the two-hash
+  vpxChecksum it brings with it.
+- specialDMDChecksum: NOT allowed here — a folder has no single hash, and the
+  archive's hash belongs in vpxChecksum.
+- specialDMDNSFW: works here as it does for a standalone pack. The table archive
+  is still uploaded and the table still installs; the cabinet is simply told not
+  to unpack the folder.
+
+Example:
+------------
+# standalone
+specialDMDType: "UltraDMD"
+specialDMDChecksum: "00000000000000000000000000000000"
+specialDMDArchiveRoot: "MyTable.UltraDMD"
+
+# bundled in the table download
+specialDMDType: "FlexDMD"
+specialDMDBundled: true
+specialDMDArchiveRoot: "MyTable.FlexDMD"
+vpxArchiveFormat: "zip"
+vpxChecksum:                             # order does not matter
+  - "00000000000000000000000000000000"   # the table archive
+  - "11111111111111111111111111111111"   # the .vpx inside it
+
+Gotchas:
+------------
+- specialDMDArchiveRoot names the FOLDER itself, not its parent. The folder is
+  recreated under that name in the table folder, however deeply the archive
+  nested it.
+- For a bundled pack, testers must upload the archive they downloaded — not the
+  .vpx they extracted from it. The wizard's slot only accepts the archive, and
+  the "wrong" hash (the .vpx's) is in vpxChecksum too, so both are accepted at
+  upload time; the cabinet then fails a .vpx-only upload with a clear error.
+- Once a pack is declared it is required, the same way altsound is. There is no
+  specialDMDRequired.
+....
+
+....
+########################
 vpxChecksum
 ########################
 
@@ -1182,6 +1315,67 @@ Gotchas:
 
 ....
 ########################
+vpxArchiveFormat / vpxExtractExtra
+########################
+
+Type:
+------------
+String / Array
+
+Description:
+------------
+Set vpxArchiveFormat when the table must be installed from the ARCHIVE the
+author published rather than from a bare .vpx. A table needs that whenever
+something it loads at run time is a FOLDER — an UltraDMD/FlexDMD pack, a music
+folder — because a wizard upload slot can only carry files, never a folder.
+
+The wizard's vpx slot then accepts only that archive (a .vpx is refused), and the
+cabinet unpacks, in one pass: the .vpx, picked by MD5; every folder listed in
+vpxExtractExtra; and, for a bundled pack, specialDMDArchiveRoot. Each folder is
+recreated in the ROOT of the table folder under its own name, with everything
+below it intact.
+
+- vpxArchiveFormat: [String] zip | rar | 7z.
+- vpxExtractExtra: [Array] extra folders to install into the table root. Each is
+  a relative path inside the archive; a single folder may be written as a plain
+  string. Requires vpxArchiveFormat.
+- vpxChecksum: [List] with vpxArchiveFormat set this must list BOTH the archive's
+  MD5 and the .vpx's. As everywhere else it is an unordered set of accepted
+  hashes, so list them in either order: one of them lets the upload through, and
+  one of them picks the .vpx out of the archive (a download often carries several
+  .vpx cuts).
+
+Example:
+------------
+# an archive laid out as
+#   MyTable v1.2.vpx
+#   Music/MFDOOM/Attract1.mp3
+#   Music/MFDOOM/Attract2.mp3
+vpxArchiveFormat: "zip"
+vpxExtractExtra:
+  - "Music"
+vpxChecksum:                             # order does not matter
+  - "00000000000000000000000000000000"   # the table archive
+  - "11111111111111111111111111111111"   # the .vpx inside it
+
+# installs as
+#   <table folder>/vpx-mytable.vpx
+#   <table folder>/Music/MFDOOM/Attract1.mp3
+#   <table folder>/Music/MFDOOM/Attract2.mp3
+
+Gotchas:
+------------
+- Every folder asked for must be in the archive. A missing one fails the install
+  (naming it) rather than quietly producing a table with no music — so check the
+  spelling and case against the archive listing.
+- Each entry names the FOLDER, not its parent and not its contents: "Music"
+  installs <table>/Music/..., and "Media/Music" also installs <table>/Music/...
+- Testers must upload the archive they downloaded, not the .vpx they extracted
+  from it. The slot only offers the archive.
+....
+
+....
+########################
 vpxVPSId
 ########################
 
@@ -1202,6 +1396,42 @@ Gotchas:
 ------------
 - Same as the checksum, the only real problem seen here is accidently copying the ID from a different component!
   So just double check you pasted the right value :)
+....
+
+....
+########################
+postInstallRename
+########################
+
+Type:
+------------
+Array of Objects (each: source, destination)
+
+Description:
+------------
+An ordered list of files or folders to rename after Table Manager finishes
+installing and extracting the table. `source` and `destination` are exact paths
+relative to the installed table root. A destination can include subfolders;
+Table Manager creates missing destination parent folders.
+
+For a folder, name the folder itself. Its entire contents and all subfolders move
+with it, so no glob is needed or supported.
+
+Example:
+------------
+postInstallRename:
+  - source: "file1.ext"
+    destination: "renamed/file.ext"
+  - source: "folder1"
+    destination: "assets/renamedFolder"
+
+Gotchas:
+------------
+- Rules run in the order listed.
+- Paths must stay under the installed table root and must not begin or end with
+  `/`. Absolute paths, `..`, backslashes, symbolic-link escapes, and glob
+  characters are rejected.
+- `destination` is the exact new path, not just a containing folder.
 ....
 
 === _YML PR Issues_
@@ -1392,4 +1622,3 @@ so for the cool kids, its:
 
 You can see that name in `Your Profile`, it's the same name you sent to
 the Legends Unchained bot, and it's the name in the repo fork url!
-

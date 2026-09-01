@@ -6,6 +6,53 @@ The Legends Unchained Loader is not for sale. You are not permitted to distribut
 
 If you'd like to contribute to the development of the Legends Unchained Launcher, Legends Unchained Table Manager and VPX Standalone on the ALP 4K devices, we ask that you [make a donation to St. Jude](https://www.stjude.org/give.html) in any amount you choose.
 
+## Team Favorites
+
+[`team_favorites.json`](team_favorites.json) backs the **Team Favorites** page in the
+Table Manager's Add Tables wizard — a curated "start here" list, shown as one card per
+team member. It is read straight from this repo (latest release tag, falling back to
+`main`), so an edit here reaches cabinets without a Table Manager release.
+
+The file is a plain array, and **cards are shown in file order** — there is no
+sorting on the device, so the order here is the order players see. Add yourself
+in the appropriate place rather than always at the end.
+
+`role` is a `/`-separated list of roles, and **anyone holding the `Wizard` role
+goes last**, after everyone else. Match whole values, not substrings:
+`Wizard / PUP Sorcerer` holds it and belongs at the end, while
+`Wizard Wrangler / Community Manager` does not — `Wizard Wrangler` is a role in
+its own right.
+
+An entry looks like:
+
+```json
+[
+  {
+    "member": "n-i-x",
+    "avatar": "https://cdn.discordapp.com/avatars/<user-id>/<avatar-hash>.png",
+    "role": "Lead Developer",
+    "tables": ["vpx-deadpool", "vpx-spacecadetge", "vpx-pennantfever"]
+  }
+]
+```
+
+| Field | Required | Description |
+|:-----:|:--------:|:-----------:|
+| `member` | :white_check_mark: | Display name shown on the card |
+| `tables` | :white_check_mark: | Folder names under `external/`, **not** table display names |
+| `role` | :x: | Roles held, `/`-separated, shown under the name — e.g. "Lead Developer" or "Wizard / PUP Sorcerer". Holding `Wizard` decides ordering, see above |
+| `avatar` | :x: | Image URL; a person icon is shown when empty or unreachable |
+
+Each table's box art is its own `external/<name>/launcher.png`, and its display name,
+manufacturer and year come from the wizard manifest — so nothing but the folder name
+needs repeating here. A table that isn't in the manifest (renamed, or removed) is
+silently skipped, and a member left with no resolvable tables drops off the page.
+
+Tables already on the cabinet get an "Installed" badge. An adult-content table is
+listed with an "NSFW" badge but can't be clicked through to an install unless the
+viewer has enabled NSFW content in the wizard, so it is a fine pick — just expect
+most people to see it greyed out.
+
 ## Contributing
 This repo is public and accepts Pull Requests for new table configs and updates to existing configs.
 
@@ -19,14 +66,63 @@ Please ensure your files are named:
 |:---------:|:--------:|:-----------:|
 | launcher.png | :white_check_mark: | The image used by the AtGames Launcher UI (500px x 750px)|
 | table.yml | :white_check_mark: | Wizard config YAML |
+| alias.txt | :x: | PinMAME ROM set aliases, installed to the table's `pinmame` folder. Maps the ROM set the table script asks for onto one that is actually installed |
 | backglass.png | :x: | Backglass image to use during loading |
+| buttons.ini | :x: | Custom launcher button labels |
 | dmd.png | :x: | DMD image to use during loading and as a static image for tables without a DMD |
-| launcher.cfg | :x: | Any launcher configs like button labels |
+| launcher.cfg | :x: | Legacy copy of `buttons.ini` during the launcher rollout |
 | nvram.nv | :x: | NVRAM file needed for the table to initialize (should not have high-scores from play) |
+| pinmame.ini | :x: | PinMAME per-ROM settings (DMD tint, sound, cheat). Installed to the table's `pinmame/ini` folder renamed to `<romVersion>.ini`, so the table must also have a ROM |
 | playfield.png | :x: | Playfield image to use during loading |
+| table.dif | :x: | VPUPatch diff. Applied to the downloaded `.vpx` with `vpxtool patch` before install, for tables whose author publishes a patch rather than a whole table |
 | table.ini | :x: | VPX settings to overried to use the table |
 | table.vbs | :x: | VBS file to use instead of the one built-in to the VPX |
+| use_these_pup_files.zip | :x: | Replacement PUP pack files. Extracted over the installed pack's folder under `pupvideos`, so it only applies to tables whose `table.yml` sets `pupRequired` or `pupBundled` |
 | VPReg.ini | :x: | Registry emulation file. If high scores are in the file, ensure the following initials are used JSM, CTH, NIX, VPX |
+
+### Validate table.yml before committing
+
+This repository includes a pre-commit hook that runs the same table metadata
+validation and YAML linting used by GitHub Actions.
+
+Python 3.11 or newer is required to run the validator locally:
+
+- **Windows:** Install Python using the
+  [Python Install Manager](https://docs.python.org/3/using/windows.html#python-install-manager),
+  available from python.org or the Microsoft Store. Confirm that `python` works
+  in a new terminal.
+- **macOS:** Install the current Python 3 universal installer from
+  [python.org](https://www.python.org/downloads/macos/). Confirm that `python3`
+  works in a new terminal.
+- **Linux:** Install Python 3 and its `venv` package using your distribution's
+  package manager. Confirm that `python3` works in a terminal.
+
+Then create an isolated environment and install the hook once for this clone.
+On Windows, run:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install pre-commit
+.\.venv\Scripts\python.exe -m pre_commit install
+```
+
+On macOS or Linux, run:
+
+```sh
+python3 -m venv .venv
+.venv/bin/python -m pip install pre-commit
+.venv/bin/python -m pre_commit install
+```
+
+In VS Code, after installing Python, you can instead run **Tasks: Run Task** and select
+**Table YAML: Set up pre-commit hook**. The
+**Table YAML: Validate staged files** task runs the checks without committing.
+
+The hook runs only when a `table.yml` file is staged. The metadata validator
+uses VPSDB, so an internet connection is required when it runs. Once installed,
+the same hook runs for commits made from the command line, VS Code Source
+Control, or GitHub Desktop. Do not bypass the hook after a validation failure;
+fix the reported `table.yml` error and commit again.
 
 ## Recommended Hardware
 The following hardware has been verified to work with the Legends Unchained Loader. Other products may work, but these are known to work well. If you find additional compatible hardware, please let us know and we'll add it to the list!
@@ -50,7 +146,7 @@ Links to these products on Amazon are through affiliate links.
 <br>
 
 
-## Wizard Tables 
+## Wizard Tables (282)
 
 | Table | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |:------|:---------:|:---:|:------------:|:---:|:---:|
@@ -59,18 +155,20 @@ Links to these products on Amazon are through affiliate links.
 | [24 (Stern 2009)](external/vpx-24) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [250 cc (Inder 1992)](external/vpx-250cc) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [4 Aces (Williams 1970)](external/vpx-4aces) | :white_check_mark: | :x: | :x: | :x: | 60 |
-| [Aaron Spelling (Data East 1992)](external/vpx-aaronspelling) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 52 |
+| [Aaron Spelling (Data East 1992)](external/vpx-aaronspelling) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
+| [Abra Ca Dabra (Gottlieb 1975)](external/vpx-abracadabra) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Ace High (Gottlieb 1957)](external/vpx-acehigh) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Addams Family, JP's (Bally 1992)](external/vpx-jptaf) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Addams Family, The (Bally 1992)](external/vpx-taf) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Adventures of Rocky and Bullwinkle and Friends (Data East 1993)](external/vpx-aorab) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
-| [Al's Garage Band Goes on a World Tour (Gottlieb 1992)](external/vpx-alsgarageband) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Airborne (Capcom 1996)](external/vpx-airborne) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Al's Garage Band Goes on a World Tour (Gottlieb 1992)](external/vpx-alsgarageband) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Aladdin's Castle (Bally 1976)](external/vpx-acastle) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Alaska (Interflip 1978)](external/vpx-alaska) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Ali (JP's, Stern 1980)](external/vpx-alijp) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Alice in Wonderland (Gottlieb 1948)](external/vpx-alice1948) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Amazon Hunt (Gottlieb 1983)](external/vpx-amazonhunt) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
-| [Andromeda (Game Plan 1985)](external/vpx-andromeda) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
+| [Andromeda (Game Plan 1985)](external/vpx-andromeda) | :white_check_mark: | :x: | :white_check_mark: | :x: | 59 |
 | [Apache! (Taito do Brasil 1978)](external/vpx-apache) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Apollo 13 (Sega 1995)](external/vpx-apollo13) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Asterix the Twelve Tasks (Original 2022)](external/vpx-asterix) | :white_check_mark: | :x: | :x: | :x: | 60 |
@@ -78,7 +176,7 @@ Links to these products on Amazon are through affiliate links.
 | [Attack from Mars LE, JP's (Chicago Gaming Company 2017)](external/vpx-jpattackfrommarsle) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Attack from Mars, JP's (Bally 1995)](external/vpx-jpattackfrommars) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Austin Powers (Stern 2001)](external/vpx-austinpowers) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
-| [Avengers Pro (Stern 2012)](external/vpx-avengers) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Avengers Pro (Stern 2012)](external/vpx-avengers) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Avengers, JP's The (Stern 2012)](external/vpx-jpavengersclassic) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Baby Pac-Man (Bally 1982)](external/vpx-babypacman) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Back to the Future: The Pinball (Data East 1990)](external/vpx-bttf) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
@@ -97,19 +195,19 @@ Links to these products on Amazon are through affiliate links.
 | [Black Knight 2000 (Williams 1989)](external/vpx-blackknight2000) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Black Magic 4 (Recel 1980)](external/vpx-blackmagic4) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Black Pyramid (Bally 1980)](external/vpx-blackpyramid) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
-| [Black Rose (Bally 1992)](external/vpx-blackrose) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
+| [Black Rose (Bally 1992)](external/vpx-blackrose) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Bob Cuspe (Original 2025)](external/vpx-bobcuspe) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Bond 60th (Stern 2022)](external/vpx-jamesbond007) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Bram Stoker's Dracula (Williams 1993)](external/vpx-bsdracula) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Bram Stoker's Dracula - BLOOD EDITION (Original 2025)](external/vpx-dracblood) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Bugs Bunny's Birthday Ball (Bally 1990)](external/vpx-bugs) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 52 |
 | [Burner (Original 2026)](external/vpx-burner) | :white_check_mark: | :x: | :x: | :x: | 60 |
-| [Cactus Canyon (Bally 1998)](external/vpx-cactuscanyon) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Cactus Canyon (Bally 1998)](external/vpx-cactuscanyon) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Casino (Williams 1958)](external/vpx-casino) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Cat Burglars (Original 2024)](external/vpx-catburglars) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Cenobite (Original 2023)](external/vpx-cenobite) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Centaur (Bally 1981)](external/vpx-centaur) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
-| [Centigrade 37 (Gottlieb 1977)](external/vpx-centigrade37) | :white_check_mark: | :x: | :x: | :x: | 58 |
+| [Centigrade 37 (Gottlieb 1977)](external/vpx-centigrade37) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Central Park (Gottlieb 1966)](external/vpx-centralpark) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Chrono Trigger (Original 2022)](external/vpx-chrono) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Cirqus Voltaire (Bally 1997)](external/vpx-cirqusvoltaire) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
@@ -124,17 +222,18 @@ Links to these products on Amazon are through affiliate links.
 | [Creature from the Black Lagoon (Bally 1992)](external/vpx-cftbl) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Crystal-Ball (Talleres del Llobregat 1970)](external/vpx-crystalball) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [CSI (Stern 2008)](external/vpx-csiled) | :x: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Cyber Race (Original 2023)](external/vpx-cyberrace) | :white_check_mark: | :x: | :x: | :x: | 53 |
+| [Dark Chaos (Original 2025)](external/vpx-darkchaos) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Dark Crystal Pinball, The (Original 2020)](external/vpx-dcrystalpup) | :x: | :x: | :x: | :white_check_mark: | 60 |
 | [Deadpool, JPs (Original 2021)](external/vpx-deadpool) | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Demolition Man (Williams 1994)](external/vpx-demoman) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
-| [Devil Riders (Zaccaria 1984)](external/vpx-devilriders) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Devil Riders (Zaccaria 1984)](external/vpx-devilriders) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 58 |
 | [Dexter (Original 2022)](external/vpx-dexter) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Diablo 2 (Original 2026)](external/vpx-diablo2) | :white_check_mark: | :x: | :x: | :x: | 60 |
-| [Diablo Pinball (Original 2017)](external/vpx-diablo) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Diner (Williams 1990)](external/vpx-diner) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Dirty Harry (Williams 1995)](external/vpx-dirtyharry) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Disney TRON Legacy Limited Edition (Stern 2011)](external/vpx-tronlegacy) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
-| [Doctor Who (Bally 1992)](external/vpx-doctorwho) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 58 |
+| [Doctor Who (Bally 1992)](external/vpx-doctorwho) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Dolly Parton (Bally 1979)](external/vpx-dolly) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Doom Eternal (Original 2022)](external/vpx-doometernal) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Dragon (Interflip 1977)](external/vpx-dragoni) | :white_check_mark: | :x: | :x: | :x: | 60 |
@@ -143,10 +242,12 @@ Links to these products on Amazon are through affiliate links.
 | [Dragon Ball: Super Saiyan Edition (Original 2025)](external/vpx-dbsse) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Drakor (Taito do Brasil 1979)](external/vpx-drakor) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [DUNE (Original 2024)](external/vpx-dune) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
-| [Earthshaker (Williams 1989)](external/vpx-earthshaker) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Dungeons & Dragons (Bally 1987)](external/vpx-dungeonsndragons) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Earthshaker (Williams 1989)](external/vpx-earthshaker) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 58 |
 | [El Dorado City of Gold (Gottlieb 1975)](external/vpx-eldorado84) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Elvira and the Party Monsters (Bally 1989)](external/vpx-partymonsters) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Evil Dead 3 Army of Darkness (Original 2020)](external/vpx-armyofdarkness) | :white_check_mark: | :x: | :x: | :x: | 60 |
-| [F-14 Tomcat (Williams 1987)](external/vpx-f14tomcat) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
+| [F-14 Tomcat (Williams 1987)](external/vpx-f14tomcat) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Family Guy (Stern 2007)](external/vpx-familyguy) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Fathom (Bally 1981)](external/vpx-fathom) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 57 |
 | [Fifth Element, The (Original 2022)](external/vpx-fifthelement) | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
@@ -156,11 +257,12 @@ Links to these products on Amazon are through affiliate links.
 | [Fireball II (Bally 1981)](external/vpx-fireballii) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Firepower (Williams 1980)](external/vpx-firepower) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Firepower II (Williams 1983)](external/vpx-firepower2) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
-| [Fireworks Mania (Orignial 2026)](external/vpx-fireworksmania) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Fish Tales (Williams 1992)](external/vpx-fishtales) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 57 |
+| [Flash (Williams 1979)](external/vpx-flash) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Flight 2000 (Stern 1980)](external/vpx-flight2000) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Flintstones, The (Williams 1994)](external/vpx-flintstones) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Fortnite (Original 2024)](external/vpx-fortnite) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
+| [Four Million B.C. (Bally 1971)](external/vpx-fourmillionbc) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Frank Thomas' Big Hurt (Gottlieb 1995)](external/vpx-bighurt) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Freddy A Nightmare on Elm Street (Gottlieb 1994)](external/vpx-freddy) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 58 |
 | [Freddy's Nightmares (Original 2025)](external/vpx-freddysnm) | :x: | :x: | :x: | :white_check_mark: | 55 |
@@ -174,29 +276,35 @@ Links to these products on Amazon are through affiliate links.
 | [Gilligan's Island (Bally 1991)](external/vpx-gilligansisland) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Gladiators (Gottlieb 1993)](external/vpx-gladiators) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Godzilla (Sega 1998)](external/vpx-godzilla) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
-| [Godzilla Remix (Limited Edition)  (Original 2021)](external/vpx-godzilla70th) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Godzilla Remix (Limited Edition) (Original 2021)](external/vpx-godzilla70th) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Goin' Nuts (Gottlieb 1983)](external/vpx-goinnuts) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Gold Wings (Gottlieb 1986)](external/vpx-goldwings) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Golden Cue (Sega 1998)](external/vpx-goldencue) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Goldeneye (Sega 1996)](external/vpx-goldeneye) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Gorgar (Williams 1979)](external/vpx-gorgar) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Grand Slam (Gottlieb 1972)](external/vpx-grandslam1972) | :white_check_mark: | :x: | :x: | :x: | 60 |
+| [Granny and the Gators (Bally 1984)](external/vpx-granny) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Guardians of the Galaxy (Pro) (Stern 2017)](external/vpx-gotg) | :x: | :x: | :x: | :white_check_mark: | 55 |
 | [Guardians of the Galaxy trilogy (Original 2023)](external/vpx-gogtrilogy) | :white_check_mark: | :white_check_mark: | :x: | :x: | 55 |
-| [Guns N Roses (Data East 1994)](external/vpx-gnr) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
+| [Guns N Roses (Data East 1994)](external/vpx-gnr) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Guns N' Roses Limited Edition (Data East 1994)](external/vpx-gnrle) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Gunship (Original 2023)](external/vpx-gunship) | :x: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
 | [Hardbody (Bally 1987)](external/vpx-hardbody) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Harley-Davidson (Sega 1999)](external/vpx-harleyd) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 58 |
 | [Haunted House (Gottlieb 1982)](external/vpx-hauntedhouse) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
+| [Hellboy Pinball (Original 2024)](external/vpx-hellboy) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Hellraiser (Original 2022)](external/vpx-hellraiser) | :x: | :x: | :x: | :white_check_mark: | 60 |
 | [High Speed (Williams 1986)](external/vpx-highspeed) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Hollywood Heat (Gottlieb 1986)](external/vpx-hollywoodheat) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
+| [Hook (Data East 1992)](external/vpx-hook) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Humpty Dumpty (Gottlieb 1947)](external/vpx-humptydumpty) | :white_check_mark: | :x: | :x: | :x: | 60 |
+| [Ice Cold Beer (Taito 1983)](external/vpx-icb) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Incredible Hulk, The (Gottlieb 1979)](external/vpx-incrediblehulk) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Independence Day (SEGA 1996)](external/vpx-id4) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Indiana Jones - The Last Movie (Original 2023)](external/vpx-indylastmovie) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Indiana Jones - The Pinball Adventure (Williams 1993)](external/vpx-indianajonestpa) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Iron Maiden Legacy of the Beast (Stern 2018)](external/vpx-ironmaidenlotb) | :x: | :x: | :x: | :white_check_mark: | 50 |
+| [It Pinball Madness (Original 2022)](external/vpx-itpinballmadnesspup) | :x: | :x: | :x: | :white_check_mark: | 60 |
 | [Jacks Open (Gottlieb 1977)](external/vpx-jacksopen) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Jacks to Open (Gottlieb 1984)](external/vpx-jackstoopen) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 58 |
 | [James Cameron's Avatar (Stern 2010)](external/vpx-avatar) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 58 |
@@ -205,9 +313,10 @@ Links to these products on Amazon are through affiliate links.
 | [John Wick (Original 2023)](external/vpx-johnwick) | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Johnny Mnemonic (Williams 1995)](external/vpx-johnnymnemonic) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Judge Dredd (Bally 1993)](external/vpx-judgedredd) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 56 |
+| [Jungle Lord (Williams 1981)](external/vpx-junglelord) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Jurassic Park (Data East 1993)](external/vpx-jurassicpark) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Jurassic Park Pro LE (Original 2022)](external/vpx-jurassicparkle) | :x: | :x: | :x: | :white_check_mark: | 60 |
-| [King Kong (Data East 1990)](external/vpx-kingkong) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 52 |
+| [King Kong (Data East 1990)](external/vpx-kingkong) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [King Of The Hill (Original 2025)](external/vpx-koth) | :x: | :x: | :x: | :white_check_mark: | 60 |
 | [KISS (Bally 1979)](external/vpx-kissbally) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Knight Rider (Original 2021)](external/vpx-knightrider) | :white_check_mark: | :x: | :x: | :x: | 60 |
@@ -223,6 +332,7 @@ Links to these products on Amazon are through affiliate links.
 | [Mad Max - Fury Road (Original 2021)](external/vpx-madmax) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Mary Shelley's Frankenstein (Sega 1995)](external/vpx-maryshelleyfrank) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Mata Hari (Bally 1978)](external/vpx-matahari) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Maverick (Data East 1994)](external/vpx-maverick) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 58 |
 | [Medieval Madness (Williams 1997)](external/vpx-mm) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 56 |
 | [Megadeth (Original 2023)](external/vpx-megadeth) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Metallica (Premium Monsters) (Stern 2013)](external/vpx-metallicapremium) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
@@ -236,13 +346,13 @@ Links to these products on Amazon are through affiliate links.
 | [NASCAR, JP's (Original 2015)](external/vpx-jpsnascar) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [NBA Fastbreak (Bally 1997)](external/vpx-nbafastbreak) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Neverending Story, The (Original 2021)](external/vpx-tnes) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
-| [No Fear - Dangerous Sports (Williams 1995)](external/vpx-nofear) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
+| [No Fear - Dangerous Sports (Williams 1995)](external/vpx-nofear) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [O Gaucho (LTD do Brasil 1975)](external/vpx-ogaucho) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Pennant Fever (Williams 1984)](external/vpx-pennantfever) | :white_check_mark: | :x: | :white_check_mark: | :x: | 57 |
 | [Pharaoh - Dead Rise](external/vpx-pharoahdr) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Pin-Bot (Williams 1986)](external/vpx-pinbot) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Pink Floyd (Original 2022)](external/vpx-pinkfloyd) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
-| [Pirates of the Caribbean (Stern 2006)](external/vpx-potc) | :white_check_mark: | :white_check_mark: | :x: | :x: | 58 |
+| [Pirates of the Caribbean (Stern 2006)](external/vpx-potc) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 58 |
 | [Pistol Poker (Alvin G. 1993)](external/vpx-pistolpoker) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Playboy (Bally 1978)](external/vpx-playboy1978) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Playboy (Bally 1978) Definitive Edition (Bally 1978)](external/vpx-playboy1978de) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
@@ -262,7 +372,7 @@ Links to these products on Amazon are through affiliate links.
 | [Seawitch, JP's (Stern 1980)](external/vpx-jpseawitch) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Seawitch, JP's (Stern 1980)](external/vpx-seawitch) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Secret Service (Data East 1988)](external/vpx-secretservice) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
-| [Sexy Girl Nude Mod (Arkon 1980)](external/vpx-sexygirlnude) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Sexy Girl Nude Mod (Arkon 1980) (Arkon 1980)](external/vpx-sexygirlnude) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Shadow, The (Bally 1994)](external/vpx-theshadow) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Shark (Taito do Brasil 1982)](external/vpx-shark) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Sharkey's Shootout (Stern 2000)](external/vpx-sharkeys) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
@@ -283,6 +393,8 @@ Links to these products on Amazon are through affiliate links.
 | [Starship Troopers (Sega 1997)](external/vpx-starship) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Starship Troopers VPW - SEGA (1997)](external/vpx-starshipvpw) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
 | [Street Fighter II, JP's (Gottlieb 1993)](external/vpx-sfii) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Super Mario Bros. (Gottlieb 1992)](external/vpx-supermario) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Super Mario Bros. Mushroom World (Gottlieb 1992)](external/vpx-smbmushroom) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Tales from the Crypt (Data East 1993)](external/vpx-tftc) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 58 |
 | [Tales of the Arabian Nights, JP's (Williams 1996)](external/vpx-totan) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Taxi (Williams 1988)](external/vpx-taxi) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
@@ -292,7 +404,7 @@ Links to these products on Amazon are through affiliate links.
 | [The Champion Pub (Williams 1998)](external/vpx-champpub) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [The Simpsons Pinball Party (Stern 2003)](external/vpx-simpsonspprty) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Torpedo Alley (Data East 1988)](external/vpx-torpedoalley) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
-| [Total Nuclear Annihilation (Spooky Pinball 2017)](external/vpx-tna) | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
+| [Total Nuclear Annihilation (Spooky Pinball 2017)](external/vpx-tna) | :white_check_mark: | :x: | :x: | :white_check_mark: | 60 |
 | [Trailer Park Boys - Pin-Ballers (Original 2024)](external/vpx-trailerparkboys) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Transformers (Pro) [Marcade Mod] (Original 2025)](external/vpx-transformersmod) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 58 |
 | [Trident (Stern 1979)](external/vpx-trident) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
@@ -306,11 +418,12 @@ Links to these products on Amazon are through affiliate links.
 | [Walkure (Original 2025)](external/vpx-walkure) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Walkyria (Joctronic 1986)](external/vpx-walkyria) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Whirlwind (Williams 1990)](external/vpx-wwind) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
-| [WHO Dunnit (Bally 1995)](external/vpx-whodunnit) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 58 |
+| [WHO Dunnit (Bally 1995)](external/vpx-whodunnit) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Who's Tommy Pinball Wizard, The (Data East 1994)](external/vpx-tommy) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Whoa Nellie! Big Juicy Melons (Stern 2015)](external/vpx-whoanellie) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Willow (Original 2025)](external/vpx-willow) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Wipe Out (Gottlieb 1993)](external/vpx-wipeout) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 58 |
+| [World Cup Soccer (Bally 1994)](external/vpx-worldcupsoccer) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Wrath of Olympus, JP's (Original 2022)](external/vpx-wrath) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Wuthering Waves (Original 2026)](external/vpx-wutheringwaves) | :x: | :x: | :x: | :white_check_mark: | 57 |
 | [WWF Royal Rumble (Data East 1994)](external/vpx-royalrumble) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
@@ -322,22 +435,19 @@ Links to these products on Amazon are through affiliate links.
 
 <br>
 
-## Manual Install Tables
-
+## Manual Install Tables (500)
 
 | Table | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |:------|:---------:|:---:|:------------:|:---:|:---:|
 | [301 Bullseye (Grand Products 1986)](external/vpx-301bullseye) | :white_check_mark: | :x: | :white_check_mark: | :x: | 57 |
 | [A Real American Hero - Operation P.I.N.B.A.L.L. (Original 2017)](external/vpx-gijoe) | :white_check_mark: | :x: | :white_check_mark: | :x: | 52 |
-| [Abra Ca Dabra (Gottlieb 1975)](external/vpx-abracadabra) | :white_check_mark: | :x: | :x: | :x: | 49 |
 | [Ace of Speed (Original 2019)](external/vpx-aceofspeed) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 30 |
 | [Ace Ventura Pet Detective (TBA 2019)](external/vpx-aceventura) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
-| [Addams Family, The (Bally 1992)](external/vpx-taf) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Aerosmith (Pro) (Stern/Tribute 2017)](external/vpx-aerosmith) | :white_check_mark: | :white_check_mark: | :x: | :x: | 44 |
 | [Agents 777 (Game Plan 1984)](external/vpx-agents777) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
-| [Airborne Avenger (Atari 1977)](external/vpx-airavenger) | :white_check_mark: | :x: | :white_check_mark: | :x: | 55 |
+| [Airborne Avenger (Atari 1977)](external/vpx-airavenger) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Airwolf (TBA 2020)](external/vpx-airwolf) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
-| [Aladdin's Castle (Bally 1976)](external/vpx-aladdincastle) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
+| [Aladdin's Castle (Bally 1976)](external/vpx-aladdincastle) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Algar (Williams 1980)](external/vpx-algar) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Ali (Stern 1980)](external/vpx-ali) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Alien Poker (Williams 1980)](external/vpx-alienpoker) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
@@ -351,7 +461,7 @@ Links to these products on Amazon are through affiliate links.
 | [Atarians, The (Atari 1976)](external/vpx-atarians) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Atlantis (Bally 1989)](external/vpx-atlantis) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
 | [Atlantis (Gottlieb 1975)](external/vpx-atlantisgottlieb) | :white_check_mark: | :white_check_mark: | :x: | :x: | 44 |
-| [Attack & Revenge from Mars (Original 2015)](external/vpx-attackandrevengefrommars) | :x: | :x: | :x: | :x: | N/A |
+| [Attack & Revenge from Mars (Original 2015)](external/vpx-attackandrevengefrommars) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
 | [Attack from Mars (Bally 1995)](external/vpx-attackfrommars) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 30 |
 | [Attack of the Killer Tomatoes (MusicMOD) (Iceman 2023)](external/vpx-attackofthekillertomatoes) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Attila The Hun (Game Plan 1984)](external/vpx-atilla) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
@@ -361,7 +471,7 @@ Links to these products on Amazon are through affiliate links.
 | [Barb Wire (Gottlieb 1996)](external/vpx-barbwire) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 41 |
 | [Barracora (Williams 1981)](external/vpx-barracora) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 32 |
 | [Baseball (Gottlieb 1970)](external/vpx-baseball1970) | :white_check_mark: | :x: | :x: | :x: | 45 |
-| [Batman '66 Premium (Stern 2016)](external/vpx-batman66premium) | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 50 |
+| [Batman '66 Premium (Stern 2016)](external/vpx-batman66premium) | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 55 |
 | [Batman BW Edition (Data East 1991)](external/vpx-batmanbw) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 47 |
 | [Battlestar Galactica (Original 2018)](external/vpx-battlestargalactica) | :white_check_mark: | :x: | :white_check_mark: | :x: | 47 |
 | [Beach Bums (Original 2018)](external/vpx-beachbums) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 42 |
@@ -377,7 +487,7 @@ Links to these products on Amazon are through affiliate links.
 | [Big Indian (Gottlieb 1974)](external/vpx-bigindian) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Big Lebowski (2025)](external/vpx-biglebowski) | :white_check_mark: | :white_check_mark: | :x: | :x: | 50 |
 | [Big Star (Williams 1972)](external/vpx-bigstar) | :white_check_mark: | :x: | :x: | :x: | 60 |
-| [Biker Mice From Mars](external/vpx-bikermice) | :x: | :x: | :x: | :x: | 47 |
+| [Biker Mice From Mars](external/vpx-bikermice) | :x: | :x: | :x: | :white_check_mark: | 47 |
 | [Bird Fly (Original 2022)](external/vpx-birdfly) | :white_check_mark: | :x: | :white_check_mark: | :x: | 52 |
 | [Black Belt (Bally 1986)](external/vpx-blackbeltbally) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [Black Fever (Playmatic 1980)](external/vpx-blackfever) | :white_check_mark: | :x: | :white_check_mark: | :x: | 50 |
@@ -385,7 +495,7 @@ Links to these products on Amazon are through affiliate links.
 | [Blackout (Williams 1980)](external/vpx-blackout) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Blood Machines (Original 2022)](external/vpx-bloodmachines) | :white_check_mark: | :white_check_mark: | :x: | :x: | 27 |
 | [BMX (Radical Rick) (Bally 1983)](external/vpx-bmx) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
-| [Bobby Orr Power Play (Bally 1977)](external/vpx-bobbyorr) | :white_check_mark: | :x: | :white_check_mark: | :x: | 40 |
+| [Bobby Orr Power Play (Bally 1977)](external/vpx-bobbyorr) | :white_check_mark: | :x: | :x: | :x: | 40 |
 | [Bonanza (Original 2022)](external/vpx-bonanza) | :white_check_mark: | :x: | :white_check_mark: | :x: | 58 |
 | [Bond 60th - Limited Edition (Original 2023)](external/vpx-jb00760th) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Bone Busters Inc. (Gottlieb 1989)](external/vpx-bonebusters) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 35 |
@@ -411,14 +521,14 @@ Links to these products on Amazon are through affiliate links.
 | [Charlie's Angels (Gottlieb 1978)](external/vpx-charliesangels) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Charlie's Angels (Gottlieb 1978) iDig Complete rEMix](external/vpx-charliesangelsremix) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 57 |
 | [Checkpoint (Data East 1991)](external/vpx-checkpoint) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 58 |
-| [Cheech & Chong: Road-Trip'pin (Bally 2021)](external/vpx-cheechandchong) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
+| [Cheech & Chong: Road-Trip'pin (Bally 2021)](external/vpx-cheechandchong) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
 | [Cheetah (Stern 1980)](external/vpx-cheetah) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 32 |
-| [Child's Play (Original 2018)](external/vpx-childsplay) | :white_check_mark: | :x: | :x: | :white_check_mark: | 52 |
+| [Child's Play (Original 2018)](external/vpx-childsplay) | :white_check_mark: | :x: | :x: | :white_check_mark: | 50 |
 | [Circus (Gottlieb 1980)](external/vpx-circus) | :white_check_mark: | :x: | :white_check_mark: | :x: | 38 |
 | [Cirqus Voltaire (Bally 1997)](external/vpx-cirqus) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 35 |
 | [City Slicker (Bally 1987)](external/vpx-cityslicker) | :white_check_mark: | :x: | :white_check_mark: | :x: | 32 |
 | [Class of 1984 (Original 2024)](external/vpx-classof1984) | :white_check_mark: | :x: | :white_check_mark: | :x: | 52 |
-| [Clown PlayMatic 1971](external/vpx-clownplaymatic) | :white_check_mark: | :x: | :x: | :x: | N/A |
+| [Clown PlayMatic 1971](external/vpx-clownplaymatic) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Comet (Williams 1985)](external/vpx-comet) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 34 |
 | [Conan (Rowamet 1983)](external/vpx-conan) | :white_check_mark: | :x: | :white_check_mark: | :x: | 55 |
 | [Corvette (Midway 1994)](external/vpx-corvette) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
@@ -429,12 +539,10 @@ Links to these products on Amazon are through affiliate links.
 | [Creepshow (Original 2022)](external/vpx-creepshow) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 42 |
 | [Criterium 77 (Taito do Brasil 1977)](external/vpx-criterium77) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Cue Ball Wizard (Gottlieb 1992)](external/vpx-cueball) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 33 |
-| [Cuphead Original  (D.Goblett & Co 2019)](external/vpx-cupheadoriginal) | :white_check_mark: | :white_check_mark: | :x: | :x: | 47 (without music) |
+| [Cuphead Original (D.Goblett & Co 2019)](external/vpx-cupheadoriginal) | :white_check_mark: | :white_check_mark: | :x: | :x: | 47 |
 | [Cuphead Pro (Original 2020)](external/vpx-cuphead) | :white_check_mark: | :x: | :x: | :x: | 34 |
-| [Cyber Race (Original 2023)](external/vpx-cyberrace) | :white_check_mark: | :white_check_mark: | :x: | :x: | 40 |
 | [Cybernaut (Bally 1985)](external/vpx-cybernaut) | :white_check_mark: | :x: | :white_check_mark: | :x: | 45 |
 | [Daredevil and The Defenders (Original 2024)](external/vpx-daredevil) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
-| [Dark Chaos, (Original 2025)](external/vpx-darkchaos) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Dark Crystal, The (Original 2020)](external/vpx-darkcrystal) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [DarkPrincess (original 2020)](external/vpx-darkprincess) | :white_check_mark: | :white_check_mark: | :x: | :x: | 57 |
 | [Death Note (Original 2020)](external/vpx-deathnote) | :white_check_mark: | :x: | :x: | :x: | 60 |
@@ -444,7 +552,8 @@ Links to these products on Amazon are through affiliate links.
 | [Demolition Man (Williams 1994) - Limited Cryo Edition](external/vpx-demolitionmancryo) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
 | [Depeche Mode Pinball (Original 2021)](external/vpx-depechemode) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Desert City (Fipermatic 1977)](external/vpx-desertcity) | :white_check_mark: | :x: | :x: | :x: | 52 |
-| [Devil's Dare (Gottlieb 1982)](external/vpx-devilsdare) | :white_check_mark: | :x: | :white_check_mark: | :x: | 58 |
+| [Devil's Dare (Gottlieb 1982)](external/vpx-devilsdare) | :white_check_mark: | :x: | :white_check_mark: | :x: | 57 |
+| [Diablo Pinball (Original 2017)](external/vpx-diablo) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Dick Tracy (Original 2024)](external/vpx-dicktracy) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Dimension \/ Galaxie (Gottlieb 1971)](external/vpx-dimension) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Disco Dancing(LTD do Brasil 1979)](external/vpx-discodancing) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
@@ -456,7 +565,6 @@ Links to these products on Amazon are through affiliate links.
 | [Dragon Ball Z (Original 2018)](external/vpx-dbz) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Ducktales Quest For Money](external/vpx-ducktales) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Duke Nukem 3D (Original 2020)](external/vpx-dukenukem3d) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
-| [Dungeons & Dragons (Bally 1987)](external/vpx-dungeonsndragons) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
 | [Duotron (Gottlieb 1974)](external/vpx-duotron) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Eclipse (Gottlieb 1982)](external/vpx-eclipse) | :white_check_mark: | :x: | :white_check_mark: | :x: | 45 |
 | [Eight Ball (Bally 1977)](external/vpx-jpeightball) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
@@ -465,7 +573,6 @@ Links to these products on Amazon are through affiliate links.
 | [El Bueno, el Feo y el Malo (Original 2015)](external/vpx-bueno) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [El Dorado (Gottlieb 1975)](external/vpx-eldorado) | :white_check_mark: | :x: | :x: | :x: | 43 |
 | [Elektra (Bally 1981)](external/vpx-elektrabigus) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
-| [Elvira and the Party Monsters (Bally 1989)](external/vpx-partymonsters) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 33 |
 | [Elvira's House of Horrors Remix (Original 2021)](external/vpx-elvirashouseofhorrors) | :white_check_mark: | :x: | :white_check_mark: | :x: | 38 |
 | [Elvis (Stern 2004)](external/vpx-elvis) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Embryon (Bally 1981)](external/vpx-embryon) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 29 |
@@ -475,15 +582,15 @@ Links to these products on Amazon are through affiliate links.
 | [Evil Dead 2 - Version A (Original 2022)](external/vpx-evildead2a) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Evil Dead 2 - Version B (Original 2022)](external/vpx-evildead2b) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Evil Fight (Playmatic 1980)](external/vpx-evilfight) | :white_check_mark: | :x: | :white_check_mark: | :x: | 53 |
-| [Fallout Vault Edition (Original 2024)](external/vpx-fallout) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
+| [Fallout - Season One (Original 2024)](external/vpx-fallout) | :x: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
 | [Fan-Tas-Tic (Williams 1972)](external/vpx-fantastic) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Far Cry 3 - Blood Dragon (Original 2018)](external/vpx-farcry3) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Farfalla (Zaccaria 1983)](external/vpx-farfalla) | :x: | :white_check_mark: | :white_check_mark: | :x: | 45 |
 | [Fast Draw (Gottlieb 1975)](external/vpx-fastdraw) | :white_check_mark: | :x: | :x: | :x: | 51 |
 | [Fire Action (Taito do Brasil 1980)](external/vpx-jpfireaction) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Fire Action de Luxe (Taito do Brasil 1983)](external/vpx-jpfireactiondeluxe) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
+| [Fireworks Mania (Orignial 2026)](external/vpx-fireworksmania) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Five Nights at Freddy's Original (2021)](external/vpx-fivenightatfreddys) | :white_check_mark: | :white_check_mark: | :x: | :x: | 48 |
-| [Flash (Williams 1979)](external/vpx-flash) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Flash Gordon (Bally 1981) 2.0.2](external/vpx-flashgordon) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 35 |
 | [Flash Gordon (Bally, 1981) Sound MOD v2.1](external/vpx-flashgordonsm) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 35 |
 | [Flashman (Sportmatic 1984)](external/vpx-jpflashman) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
@@ -512,26 +619,22 @@ Links to these products on Amazon are through affiliate links.
 | [Gold Wing (Original 2017)](external/vpx-goldwing) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [GORILLAZ (Original 2024)](external/vpx-gorillaz) | :white_check_mark: | :white_check_mark: | :x: | :x: | 30 |
 | [Grand Lizard (Williams 1986)](external/vpx-grandlizard) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
-| [Granny and the Gators (Bally 1984)](external/vpx-granny) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Grease (Original 2020)](external/vpx-grease) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Grease B&W Pro (2021)](external/vpx-greaseblackandwhite) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Great Houdini (Original 2022)](external/vpx-greathoudini) | :white_check_mark: | :white_check_mark: | :x: | :x: | 50 |
 | [Gremlins (Original 2022)](external/vpx-gremlins) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
-| [Guns n' Roses (Remix) (Original 2021)](external/vpx-gunsle) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 48 |
 | [Hall & Oates (Original 2025)](external/vpx-hallandoates) | :white_check_mark: | :x: | :white_check_mark: | :x: | 45 |
-| [Halloween 1978-1981 (Original 2022)](external/vpx-halloween) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
+| [Halloween 1978-1981 (Original 2022)](external/vpx-halloween) | :white_check_mark: | :white_check_mark: | :x: | :x: | 40 |
 | [Halloween MM Edition (Original 2023) Version 3.1](external/vpx-halloweenmm) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Hannibal Lecter (Original 2022)](external/vpx-hanniballec) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Harlem Globetrotters on Tour (Bally 1979) (JP's)](external/vpx-harlemglobetrotters) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Harley Quinn (Original 2017)](external/vpx-harleyquinn) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Harley-Davidson (Bally 1991)](external/vpx-hdavidson) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
-| [Harry Potter and the Goblet of Fire (Original 2020)](external/vpx-hpgof) | :white_check_mark: | :white_check_mark: | :x: | :x: | 35 |
+| [Harry Potter and the Goblet of Fire (Original 2020)](external/vpx-hpgof) | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 35 |
 | [Heavy Metal [Classic] (Rowamet 1983)](external/vpx-heavymetalclassic) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
-| [Hellboy Pinball](external/vpx-hellboy) | :white_check_mark: | :white_check_mark: | :x: | :x: | 40 |
 | [High Roller Casino (Stern 2001)](external/vpx-highrollercasino) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
 | [Highlander (TBA 2019)](external/vpx-highlander) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [HIPHOP](external/vpx-hiphop) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 59 |
-| [Hook (Data East 1992)](external/vpx-hook) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 35 |
 | [Horrorburg JP_VPX8](external/vpx-horrorburg) | :white_check_mark: | :white_check_mark: | :x: | :x: | 57 |
 | [Hot Ball (Taito do Brasil 1979)](external/vpx-jphotball) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Hurricane - Balutito Mod 2.0](external/vpx-hurricane) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
@@ -569,8 +672,7 @@ Links to these products on Amazon are through affiliate links.
 | [JP's Terminator 3 (Stern 2003)](external/vpx-terminator3) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
 | [JP's The Walking Dead (Stern 2014)](external/vpx-thewalkingdead) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Jumanji (Original 2023)](external/vpx-jumanji) | :white_check_mark: | :white_check_mark: | :x: | :x: | 48 |
-| [Jungle Lord (Williams 1981)](external/vpx-junglelord) | :white_check_mark: | :x: | :white_check_mark: | :x: | 30 |
-| [Junk Yard (Williams 1996)](external/vpx-junkyard) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
+| [Junk Yard Williams 1996](external/vpx-junkyard) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
 | [Junkyard Cats (Bailey 2012)](external/vpx-junkyardcats) | :white_check_mark: | :x: | :x: | :x: | 54 |
 | [Kill Bill (Original 2022)](external/vpx-killbill) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Killer Instinct](external/vpx-killerinstinct) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 44 |
@@ -588,7 +690,7 @@ Links to these products on Amazon are through affiliate links.
 | [Legend - A Pinball Adventure (Original 2023)](external/vpx-legend) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 54 |
 | [Lightning (Stern 1981)](external/vpx-lightning) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Lights Camera Action! (Gottlieb 1989)](external/vpx-lca) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
-| [Lion King (Original 2020)](external/vpx-lionking) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| [Lion King (Original 2020)](external/vpx-lionking) | :x: | :x: | :x: | :x: | N/A |
 | [Lost World (Bally 1978)](external/vpx-lostworld) | :white_check_mark: | :x: | :white_check_mark: | :x: | 56 |
 | [Lucky Seven (Williams 1978)](external/vpx-luckyseven) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Mac Jungle (MAC 1987)](external/vpx-macjungle) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
@@ -599,7 +701,6 @@ Links to these products on Amazon are through affiliate links.
 | [Mars Trek (Sonic 1977)](external/vpx-marstrek) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Mask (Sound Mod) (Original 2023)](external/vpx-mask) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
 | [Masters of the Universe (Original 2018)](external/vpx-mastersoftheuniverse) | :white_check_mark: | :white_check_mark: | :x: | :x: | 54 |
-| [Maverick (Data East 1994)](external/vpx-maverick) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 35 |
 | [Medusa (Bally 1981)](external/vpx-jpmedusa) | :white_check_mark: | :x: | :white_check_mark: | :x: | 58 |
 | [Medusa (Bally 1981)](external/vpx-medusa) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 32 |
 | [Memory Lane (Stern 1978)](external/vpx-memlane) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
@@ -607,9 +708,9 @@ Links to these products on Amazon are through affiliate links.
 | [Metallica Pro, JPs (Stern 2013)](external/vpx-jpmetallica) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Meteor (Stern 1979)](external/vpx-meteor) | :white_check_mark: | :x: | :white_check_mark: | :x: | 42 |
 | [Metropolis (Original 2022)](external/vpx-metropolis) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 46 |
-| [MF DOOM (GOILL773 2024)](external/vpx-mfdoom) | :white_check_mark: |:white_check_mark: | :x: | :white_check_mark: | 35 |
-| [MF DOOM (GOILL773 2024) FlexDMD version](external/vpx-mfdoomflexdmd) | :white_check_mark: |:white_check_mark: | :x: | :x: | 58 |
-| [Miami Vice (Original 2020)](external/vpx-miamivice) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 33 |
+| [MF DOOM (GOILL773 2024)](external/vpx-mfdoom) | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 35 |
+| [MF Doom (Original 2024) FlexDMD version](external/vpx-mfdoomflexdmd) | :white_check_mark: | :white_check_mark: | :x: | :x: | 58 |
+| [Miami Vice (TBA 2020)](external/vpx-miamivice) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 37 |
 | [Michael Jordan (Data East 1992)](external/vpx-michaeljordan) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
 | [Mickey Mouse in Steamboat Willie](external/vpx-mickeysbw) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Middle Earth (Atari 1978)](external/vpx-middleearth) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
@@ -666,17 +767,17 @@ Links to these products on Amazon are through affiliate links.
 | [Polar Explorer (Taito do Brasil 1983)](external/vpx-jppolarexplorer) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Poltergeist (Original 2022)](external/vpx-poltergeist) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Pool Sharks (Bally/Midway 1990)](external/vpx-poolsharks) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 55 |
-| [Popeye Saves the Earth (Bally 1994)](external/vpx-popeye) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 35 |
+| [Popeye Saves the Earth (Bally 1994)](external/vpx-popeye) | :white_check_mark: | :white_check_mark: | :x: | :x: | 35 |
 | [Predator 2 (Original 2019)](external/vpx-predator2) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Primus (Stern 2018)](external/vpx-primus) | :white_check_mark: | :x: | :x: | :x: | 47 |
 | [Pulp Fiction (CGC 2023)](external/vpx-pulpfiction) | :white_check_mark: | :x: | :x: | :x: | 60 |
-| [Punk Park (Original 2025)](external/vpx-punkpark) | :white_check_mark: | :white_check_mark: | :x: | :x: | 43 |
+| [Punk Park (Original 2025)](external/vpx-punkpark) | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 43 |
 | [Q-Bert's Quest (Gottlieb 1983)](external/vpx-qbertquest) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 42 |
-| [Queen: Show must go on (Original 2022)](external/vpx-queen) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
+| [Queen: Show must go on (Original 2022)](external/vpx-queen) | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 60 |
 | [Radical (Bally 1990)](external/vpx-rad) | :white_check_mark: | :x: | :white_check_mark: | :x: | 42 |
 | [Rally (Taito do Brasil 1980)](external/vpx-jprally) | :white_check_mark: | :x: | :white_check_mark: | :x: | 58 |
 | [Rambo First Blood Part II (TBA 2020)](external/vpx-rambo) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 54 |
-| [Rambo: From first to last blood (Original 2025)](external/vpx-ramboflb) | :white_check_mark: | :white_check_mark: | :x: | :x: | 50 |
+| [Rambo: From first to last blood (Original 2025)](external/vpx-ramboflb) | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 50 |
 | [Ramones (Original 2021/1972)](external/vpx-ramones) | :white_check_mark: | :x: | :x: | :x: | 50 |
 | [Rawhide (Stern 1977)](external/vpx-jprawhide) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Raygun Runner (Original 2024)](external/vpx-raygunrunner) | :white_check_mark: | :x: | :x: | :x: | 60 |
@@ -720,7 +821,7 @@ Links to these products on Amazon are through affiliate links.
 | [solar City (Gottlieb 1976)](external/vpx-solarcity) | :white_check_mark: | :x: | :x: | :x: | 52 |
 | [Sorcerer (Williams 1985)](external/vpx-jpsorcerer) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Sorcerer (Williams 1985)](external/vpx-sorcerer) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 43 |
-| [Sound Stage  Chicago Coin 1976](external/vpx-soundstage) | :white_check_mark: | :x: | :x: | :x: | N/A |
+| [Sound Stage Chicago Coin 1976](external/vpx-soundstage) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Space Mission (Williams 1976)](external/vpx-spacemission) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Space Oddity (Original 2022)](external/vpx-spaceoddity) | :white_check_mark: | :x: | :white_check_mark: | :x: | 37 |
 | [Space Patrol (Taito do Brasil 1978)](external/vpx-jpspacepatrol) | :white_check_mark: | :x: | :x: | :x: | 60 |
@@ -751,8 +852,6 @@ Links to these products on Amazon are through affiliate links.
 | [Student Prince (Williams 1968)](external/vpx-studentprince) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Sultan (Taito do Brasil 1979)](external/vpx-sultan) | :white_check_mark: | :x: | :white_check_mark: | :x: | 60 |
 | [Summer Time (Williams 1972)](external/vpx-summertime) | :white_check_mark: | :x: | :x: | :x: | 60 |
-| [Super Mario Bros. (Gottlieb 1992)](external/vpx-supermario) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
-| [Super Mario Bros. Mushroom World (Premier 1992)](external/vpx-smbmushroom) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Super Mario Galaxy (Original 2021)](external/vpx-mariogalaxy) | :white_check_mark: | :white_check_mark: | :x: | :x: | 58 |
 | [Super Spin (Gottlieb 1977)](external/vpx-superspin) | :white_check_mark: | :x: | :x: | :x: | 48 |
 | [Superman (Atari 1979)](external/vpx-superman) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
@@ -797,7 +896,7 @@ Links to these products on Amazon are through affiliate links.
 | [Time Machine (Zaccaria 1983)](external/vpx-timemachinezac) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [TimeLord 3.0.10 (Luigi Saves the Universe) OriginalHybrid (Original 2022)](external/vpx-timelord) | :white_check_mark: | :white_check_mark: | :x: | :x: | 30 |
 | [Tom & Jerry (Original 2018)](external/vpx-tomjerry) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 30 |
-| [Tomb Raider (Original 2025)](external/vpx-tombraider) | :white_check_mark: | :white_check_mark: | :x: | :x: | 50 |
+| [Tomb Raider (Original 2025)](external/vpx-tombraider) | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 50 |
 | [Tornado Rally (Original 2024)](external/vpx-tornadorally) | :white_check_mark: | :x: | :x: | :x: | 40 |
 | [Transformers G1 Generation One (TBA 2018) 1.7](external/vpx-transformersg1) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Transformers Pro (Stern 2011)](external/vpx-transformers) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
@@ -829,7 +928,6 @@ Links to these products on Amazon are through affiliate links.
 | [Wizard! (Bally 1975)](external/vpx-wizard) | :white_check_mark: | :white_check_mark: | :x: | :x: | 60 |
 | [Wolf Man (Peyper 1987)](external/vpx-wolfman) | :white_check_mark: | :x: | :white_check_mark: | :x: | 42 |
 | [World Challenge Soccer (Gottlieb 1994)](external/vpx-wcsoccer) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 50 |
-| [World Cup Soccer (Bally 1994)](external/vpx-worldcupsoccer) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 32 |
 | [World Joker Tour, JP's (Original 2024)](external/vpx-jpwjt) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [World Poker Tour (Stern 2006)](external/vpx-wpt) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
 | [WOW Monopoly, JPs (Original 2015)](external/vpx-wowmonopoly) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |

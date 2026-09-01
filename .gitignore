@@ -1,5 +1,6 @@
 /external/*/*.*
 !/external/*/launcher.cfg
+!/external/*/buttons.ini
 !/external/*/launcher.png
 !/external/*/nvram.nv
 !/external/*/README.md
@@ -7,12 +8,13 @@
 !/external/*/table.yml
 !/external/*/table.vbs
 !/external/*/table.dif
-!/external/*/use_these_dmd_files.zip
 !/external/*/use_these_pup_files.zip
 !/external/*/VPReg.ini
 !/external/*/dmd.png
 !/external/*/pinmame.ini
 !/external/*/backglass.png
+!/external/*/alias.txt
+!/external/*/playfield.png
 !/external/.yamllint
 /external/*/VPinballX.ini
 /external/*/gamecontrollerdb.txt

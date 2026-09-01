@@ -1,12 +1,11 @@
-' **********************************************************
+' ********************************************************
 '                     BURNER
 '            for VISUAL PINBALL X 10.8
 '        Uses FlexDMD for cabinet / FS mode
 '            table by jpsalas - 2026
 '            graphics by hassanchop
 ' all the user options are in the F12 user settings menu
-' custom high score edits reflecting VPXS initials by Filth
-' **********************************************************
+' ********************************************************
 
 Option Explicit
 Randomize
@@ -1547,21 +1546,21 @@ End Sub
 Sub Loadhs
     Dim x
     x = LoadValue(MyTable, "HighScore1")
-    If(x <> "") Then HighScore(0) = CDbl(x) Else HighScore(0) = 1500000 End If    'changed original default hs initials to VPXS team related
+    If(x <> "") Then HighScore(0) = CDbl(x) Else HighScore(0) = 1500000 End If
     x = LoadValue(MyTable, "HighScore1Name")
-    If(x <> "") Then HighScoreName(0) = x Else HighScoreName(0) = "JSM" End If    'originally "AAA"
+    If(x <> "") Then HighScoreName(0) = x Else HighScoreName(0) = "AAA" End If
     x = LoadValue(MyTable, "HighScore2")
     If(x <> "") then HighScore(1) = CDbl(x) Else HighScore(1) = 1400000 End If
     x = LoadValue(MyTable, "HighScore2Name")
-    If(x <> "") then HighScoreName(1) = x Else HighScoreName(1) = "NIX" End If    'originally "BBB"
+    If(x <> "") then HighScoreName(1) = x Else HighScoreName(1) = "BBB" End If
     x = LoadValue(MyTable, "HighScore3")
     If(x <> "") then HighScore(2) = CDbl(x) Else HighScore(2) = 1300000 End If
     x = LoadValue(MyTable, "HighScore3Name")
-    If(x <> "") then HighScoreName(2) = x Else HighScoreName(2) = "CTH" End If    'originally "CCC"
+    If(x <> "") then HighScoreName(2) = x Else HighScoreName(2) = "CCC" End If
     x = LoadValue(MyTable, "HighScore4")
     If(x <> "") then HighScore(3) = CDbl(x) Else HighScore(3) = 1200000 End If
     x = LoadValue(MyTable, "HighScore4Name")
-    If(x <> "") then HighScoreName(3) = x Else HighScoreName(3) = "WTH" End If    'originally "DDD"
+    If(x <> "") then HighScoreName(3) = x Else HighScoreName(3) = "DDD" End If
     x = LoadValue(MyTable, "Credits")
     If(x <> "") then Credits = CInt(x) Else Credits = 0
     x = LoadValue(MyTable, "TotalGamesPlayed")
@@ -1582,10 +1581,10 @@ Sub Savehs
 End Sub
 
 Sub Reseths
-    HighScoreName(0) = "JSM"    'originally "AAA"
-    HighScoreName(1) = "NIX"    'originally "BBB"
-    HighScoreName(2) = "CTH"    'originally "CCC"
-    HighScoreName(3) = "WTH"    'originally "DDD"
+    HighScoreName(0) = "AAA"
+    HighScoreName(1) = "BBB"
+    HighScoreName(2) = "CCC"
+    HighScoreName(3) = "DDD"
     HighScore(0) = 1500000
     HighScore(1) = 1400000
     HighScore(2) = 1300000
@@ -3077,13 +3076,13 @@ End Sub
 Sub ScoopTrigger_Hit 'hole tunnel trigger
     BonusSwitches = BonusSwitches + 1
     BallsInHole = BallsInHole + 1
+    F7.State = 0
+    If ModesCompleted = 7 AND ModeActive <> 8 Then StartMode 8:HoleOut:Exit Sub
     If bMainModeReady AND(ModeActive = 0) Then 'just kick out the ball if a side mode is active
         StartSelectMainMode
     Else
         HoleOut
     End If
-    F7.State = 0
-    If ModesCompleted = 7 AND ModeActive <> 8 Then StartMode 8:HoleOut:Exit Sub
     'Extra Ball
     If bExtraBallLit AND ModeActive <> 8 Then
         bExtraBallLit = False

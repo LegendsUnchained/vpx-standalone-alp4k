@@ -43,6 +43,13 @@ testers:
 # Set to false to hide this table from the wizard. [Boolean] (default: shown)
 # enabled: true
 
+# Password candidates for encrypted downloads, tried in order before Table
+# Manager asks the user. Each item is a Base64-encoded UTF-8 password; vpsdb.py
+# decodes these into the manifest's archivePassword list. Base64 is obfuscation,
+# not encryption.
+# vpxMagic:
+#   - "anBncg=="                              # "jpgr"
+
 
 # --- NSFW / adult content (optional) ----------------------------------------
 # Author-set adult-content flags. All [Boolean], default false. When a wizard
@@ -168,6 +175,53 @@ testers:
 # altSoundNSFW: false                             # [Boolean] altsound is adult (filtered out when NSFW is off; table still installs)
 
 
+# --- Table archive (optional) ------------------------------------------------
+# Set vpxArchiveFormat when the table must be installed from the archive the
+# author published instead of a bare .vpx — i.e. whenever it needs whole FOLDERS
+# out of that download, since an upload slot can only carry files. The wizard's
+# vpx slot then accepts only that archive, and the cabinet unpacks the .vpx
+# (picked by checksum) plus every folder asked for.
+#
+# vpxChecksum must then list BOTH the archive's md5 and the .vpx's, in any order:
+# one admits the upload, the other picks the table out of the archive.
+# vpxArchiveFormat: "zip"                         # [String] zip | rar | 7z
+# vpxExtractExtra:                                # [List] extra folders to install into the table root
+#   - "Music"                                     #        e.g. Music/MFDOOM/*.mp3 -> <table>/Music/MFDOOM/*.mp3
+# vpxChecksum:                                    # [List] the archive's md5 AND the .vpx's (any order)
+#   - "00000000000000000000000000000000"
+#   - "11111111111111111111111111111111"
+
+
+# --- Special DMD: UltraDMD / FlexDMD (optional) ------------------------------
+# The DMD content folder (e.g. "MyTable.UltraDMD") a table's script loads at run
+# time. It is installed into the ROOT of the table folder, beside the .vpx.
+# VPS has no category for these, so nothing is resolved — every field is set
+# here. specialDMDType is REQUIRED: it is the label the wizard shows.
+# There is no "required" flag; once declared, the wizard requires it.
+#
+# TWO SHAPES. Pick one:
+#
+# 1) STANDALONE — the pack is its own archive, usually another file on the
+#    table's download page. specialDMDChecksum is REQUIRED. Leave the url unset
+#    and the wizard sends the user to the table's own mirrors.
+# specialDMDType: "UltraDMD"                      # [String] UltraDMD | FlexDMD — REQUIRED
+# specialDMDChecksum: "00000000000000000000000000000000"   # [String|List] REQUIRED for a standalone pack
+# specialDMDUrlOverride: "https://..."            # [String] only when the pack is NOT on the table's page
+# specialDMDVersion: "1.0"                        # [String]
+# specialDMDNotes: "Markdown notes."              # [String]
+# specialDMDArchiveFormat: "zip"                  # [String] zip | rar | 7z  (default: zip)
+# specialDMDArchiveRoot: "MyTable.UltraDMD"       # [String] the folder INSIDE the archive to install
+# specialDMDNSFW: false                           # [Boolean] pack is adult (filtered out when NSFW is off; table still installs)
+#
+# 2) BUNDLED — the folder is inside the table download itself, so this is an
+#    archive install: it REQUIRES vpxArchiveFormat and the two-hash vpxChecksum
+#    from the "Table archive" section above. specialDMDChecksum is not allowed
+#    (a folder has no single hash).
+# specialDMDType: "FlexDMD"                       # [String] UltraDMD | FlexDMD — REQUIRED
+# specialDMDBundled: true                         # [Boolean] the folder ships inside the table download
+# specialDMDArchiveRoot: "MyTable.FlexDMD"        # [String] REQUIRED — the folder to unpack from the table archive
+
+
 # --- Tutorial (optional) ----------------------------------------------------
 # tutorialVPSId: "xxxxxxxx"                       # [String] resolves title / YouTube ID
 
@@ -176,3 +230,16 @@ testers:
 # Applies known fixes at install time. Allowed values: bass
 # applyFixes:
 #   - bass
+
+
+# --- Post-install renames (optional) ----------------------------------------
+# Ordered exact-path moves performed after every table file/folder has been
+# installed or extracted. Both paths are relative to the installed table root;
+# destination parent folders are created automatically. To move a folder and
+# its complete subtree, name the folder itself. Paths must not begin or end with
+# `/`; globs, absolute paths, `..`, and backslashes are not supported.
+# postInstallRename:
+#   - source: "file1.ext"
+#     destination: "renamed/file.ext"
+#   - source: "folder1"
+#     destination: "assets/renamedFolder"

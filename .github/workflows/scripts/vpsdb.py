@@ -1,3 +1,5 @@
+import base64
+import binascii
 import collections
 import json
 import os
@@ -62,6 +64,138 @@ def normalize_checksums(value):
         value = [value]
     normalized = [str(item).lower() for item in value if item]
     return normalized or None
+
+
+def as_str_list(value):
+    """Normalize a field that may be a single string or a list of strings into a
+    list of strings. Absent/empty becomes None so the manifest simply omits it.
+    Used by vpxExtractExtra, which is authored as a list of archive paths.
+    """
+    if value is None:
+        return None
+    if isinstance(value, str):
+        value = [value]
+    normalized = [str(item) for item in value if item]
+    return normalized or None
+
+
+def normalize_post_install_renames(value):
+    """Validate and normalize ordered post-install file/folder moves.
+
+    Each rule is authored as ``{source, destination}``, with both paths relative
+    to the installed table root. Paths are emitted with forward slashes and glob
+    syntax is rejected because a rule always addresses one exact filesystem
+    entry (a directory rule naturally includes its complete subtree).
+    """
+    if value is None:
+        return None
+    if not isinstance(value, list):
+        raise ValueError("postInstallRename must be a list of rename objects")
+
+    normalized = []
+    expected_fields = {"source", "destination"}
+    for index, entry in enumerate(value):
+        label = f"postInstallRename[{index}]"
+        if not isinstance(entry, dict):
+            raise ValueError(f"{label} must be an object")
+
+        fields = set(entry)
+        missing = expected_fields - fields
+        unknown = fields - expected_fields
+        if missing:
+            raise ValueError(f"{label} is missing {', '.join(sorted(missing))}")
+        if unknown:
+            raise ValueError(
+                f"{label} has unsupported field(s): {', '.join(sorted(unknown))}"
+            )
+
+        rule = {}
+        for field in ("source", "destination"):
+            path_value = entry[field]
+            field_label = f"{label}.{field}"
+            if not isinstance(path_value, str) or not path_value.strip():
+                raise ValueError(f"{field_label} must be a non-empty string")
+            if "\x00" in path_value:
+                raise ValueError(f"{field_label} contains a NUL byte")
+            if "\\" in path_value:
+                raise ValueError(f"{field_label} must use forward slashes")
+            if any(character in path_value for character in "*?["):
+                raise ValueError(
+                    f"{field_label} contains a glob; globs are not supported"
+                )
+            if path_value.startswith("/"):
+                raise ValueError(f"{field_label} must be relative to the table root")
+            if path_value.endswith("/"):
+                raise ValueError(f"{field_label} must not end with a slash")
+
+            clean_path = Path(os.path.normpath(path_value)).as_posix()
+            if clean_path == ".." or clean_path.startswith("../"):
+                raise ValueError(f"{field_label} must stay inside the table root")
+            if clean_path in ("", "."):
+                raise ValueError(f"{field_label} must name a file or folder")
+            rule[field] = clean_path
+
+        if rule["source"] == rule["destination"]:
+            raise ValueError(f"{label} source and destination are the same path")
+        normalized.append(rule)
+
+    return normalized or None
+
+
+def decode_archive_passwords(value):
+    """Decode table.yml ``vpxMagic`` values for the wizard manifest.
+
+    ``vpxMagic`` is authored as one or more Base64-encoded UTF-8 passwords.
+    The manifest carries the decoded candidates as ``archivePassword`` so Table
+    Manager can try them in order before asking the user. A bare string is
+    tolerated for compatibility, though the documented form is a YAML list.
+    """
+    if value is None:
+        return None
+    encoded_values = [value] if isinstance(value, str) else value
+    if not isinstance(encoded_values, list):
+        raise ValueError("vpxMagic must be a string or list of Base64 strings")
+
+    passwords = []
+    for index, encoded in enumerate(encoded_values):
+        if not isinstance(encoded, str) or not encoded:
+            raise ValueError(
+                f"vpxMagic item {index + 1} must be a non-empty Base64 string"
+            )
+        try:
+            password = base64.b64decode(encoded, validate=True).decode("utf-8")
+        except (binascii.Error, UnicodeDecodeError) as exc:
+            raise ValueError(
+                f"vpxMagic item {index + 1} is not valid Base64-encoded UTF-8"
+            ) from exc
+        if not password:
+            raise ValueError(f"vpxMagic item {index + 1} decodes to an empty password")
+        if password not in passwords:
+            passwords.append(password)
+
+    return passwords or None
+
+
+def pick_manifest_image(table):
+    """Return the game preview image used by the VPS website.
+
+    Prefer the game-level ``imgUrl``. When VPS has no image at that level, use
+    the first backglass preview with an ``imgUrl``. This is intentionally
+    separate from ``tableImage``, which is the selected VPX file's playfield
+    preview.
+    """
+    image = table.get("imgUrl")
+    if image:
+        return image
+
+    return next(
+        (
+            backglass.get("imgUrl")
+            for backglass in (table.get("b2sFiles") or [])
+            if isinstance(backglass, dict) and backglass.get("imgUrl")
+        ),
+        "",
+    )
 
 
 def normalize_dict_list(value):
@@ -327,8 +461,10 @@ def get_table_meta(files, warn_on_error=True):
         romChecksum = normalize_checksums(data.get("romChecksum"))
         vpxChecksum = normalize_checksums(data.get("vpxChecksum"))
         pupChecksum = normalize_checksums(data.get("pupChecksum"))
+        specialDMDChecksum = normalize_checksums(data.get("specialDMDChecksum"))
 
         table_meta = {
+            "archivePassword": decode_archive_passwords(data.get("vpxMagic")),
             "altSoundAuthors": data.get("altSoundAuthorsOverride"),
             "altSoundBundled": data.get("altSoundBundled"),
             "altSoundChecksum": altSoundChecksum,
@@ -381,12 +517,43 @@ def get_table_meta(files, warn_on_error=True):
             "pupVersion": data.get("pupVersion"),
             "pupArchiveFormat": data.get("pupArchiveFormat"),
             "pupNSFW": data.get("pupNSFW"),
+            "postInstallRename": normalize_post_install_renames(
+                data.get("postInstallRename")
+            ),
             "romBundled": data.get("romBundled"),
             "romChecksum": romChecksum,
             "romFileUrl": as_url_list(data.get("romUrlOverride")),
             "romNotes": data.get("romNotes"),
             "romVersion": data.get("romVersionOverride"),
             "romNSFW": data.get("romNSFW"),
+            # Special DMD (UltraDMD / FlexDMD): the DMD content folder a
+            # table's script loads at run time, installed into the ROOT of the
+            # table folder. VPS has no category for these, so there is no id to
+            # resolve — every field is authored here and passed through.
+            #
+            # specialDMDFileUrl is an OVERRIDE only: the pack is normally one of
+            # the files on the table's own download page, so with no override the
+            # wizard sends the user to the table's mirrors. When
+            # specialDMDBundled is set the folder is inside the table download
+            # itself and there is nothing to link at all — the wizard uploads
+            # that archive (vpxArchiveFormat) and the device unpacks the folder
+            # named by specialDMDArchiveRoot out of it.
+            "specialDMDArchiveFormat": data.get("specialDMDArchiveFormat"),
+            "specialDMDArchiveRoot": data.get("specialDMDArchiveRoot"),
+            "specialDMDBundled": data.get("specialDMDBundled"),
+            "specialDMDChecksum": specialDMDChecksum,
+            "specialDMDFileUrl": as_url_list(data.get("specialDMDUrlOverride")),
+            "specialDMDNotes": data.get("specialDMDNotes"),
+            "specialDMDNSFW": data.get("specialDMDNSFW"),
+            "specialDMDType": data.get("specialDMDType"),
+            "specialDMDVersion": data.get("specialDMDVersion"),
+            # vpxArchiveFormat means the table installs from the archive the
+            # author published rather than a bare .vpx: the wizard's upload slot
+            # takes only that format, and the cabinet unpacks the .vpx (picked by
+            # checksum) plus every folder listed in vpxExtractExtra - run-time
+            # media like "Music" that the table loads from its own folder.
+            "vpxArchiveFormat": data.get("vpxArchiveFormat"),
+            "vpxExtractExtra": as_str_list(data.get("vpxExtractExtra")),
             "tableChecksum": vpxChecksum,
             "tableNotes": data.get("tableNotes"),
             "tagline": data.get("tagline"),
@@ -419,7 +586,7 @@ def get_table_meta(files, warn_on_error=True):
             # filtering the per-url `broken` flags on the files we resolve.
 
             table_meta["designers"] = table.get("designers", [])
-            table_meta["image"] = table.get("imgUrl", "")
+            table_meta["image"] = pick_manifest_image(table)
 
             if not table_meta["name"]:
                 table_meta["name"] = table.get("name", "")
