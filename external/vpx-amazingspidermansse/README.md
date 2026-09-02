@@ -1,4 +1,4 @@
-# Amazing Spider-Man, The (Gottlieb 1980)
+# Amazing Spider-Man Sinister Six Edition, The (Gottlieb 1980)
 
 ![Table Preview](../../images/7q1Na5E1Rw-preview.webp)
 
@@ -33,7 +33,7 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`Amazing Spider-Man, The (Gottlieb 1980)`**
+4.  Find and select this table from the dropdown menu: **`Amazing Spider-Man Sinister Six Edition, The (Gottlieb 1980)`**
 5.  Follow the on-screen instructions to download and upload the required files
 6. *"There goes the Spider-Man"*
 
