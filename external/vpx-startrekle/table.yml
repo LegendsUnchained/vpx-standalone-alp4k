@@ -1,0 +1,17 @@
+---
+diffChecksum: "00F8D62034008F322C697AD67A6D076C"
+diffVPSId: "HsQi0my24N"
+fps: 60
+pupArchiveFormat: "zip"
+pupArchiveRoot: "Startrek_LE_PuP/st_161hc"
+pupChecksum: "064862E21EA5A8D4FB2F600942D0C047"
+pupVersion: "st_161h"
+pupVPSId: "qtxSwkQJ"
+romChecksum: "12C72684C1DA512B950985D9B09CE519"
+romVPSId: "ySybA9v6"
+tableVPSId: "XYh-gw4S"
+testers:
+  - "Wraith"
+  - "Bla1ze"
+vpxChecksum: "E378CA67729E6312D2F540C416CE0FCA"
+vpxVPSId: "C0Jt1amq"
