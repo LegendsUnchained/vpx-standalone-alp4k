@@ -1,0 +1,21 @@
+---
+backglassChecksum: "8C7ED6DB3C38E8D7A534A588D9659E25"
+backglassNotes: "Download version 1.0"
+backglassVPSId: "ilcSqv68JY"
+coloredROMChecksum: "D301B63DE4753D0292A6395D6649A708"
+coloredROMNotes: "Download version 1.01"
+coloredROMVPSId: "WmF0x5DiQL"
+diffChecksum: "150FF959A7E18D846CA647E23966321D"
+diffNotes: "Download 'AC-DC Pro Vault-1.0 Lighting Bug Fix.dif'"
+diffVPSId: "xk_hRDrZhp"
+fps: 60
+romChecksum: "E571F0E41C93990620B9D3254CEBA0F4"
+romNotes: "Download 'AC/DC Pro 1.70.0 Game Code'"
+romUrlOverride: "https://wp.sternpinball.com/?post_type=game_code&s=AC%2FDC+Pro+1.70.0+Game+Code"
+romVersionOverride: "acd_170"
+tableNotes: "Download 'AC-DC Pro Vault-1.0.rar'"
+tableVPSId: "pJJOvLweWw"
+testers:
+  - "OminousOsie"
+vpxChecksum: "E10512FC70CB0C9CAED02C491DC7FC4E"
+vpxVPSId: "zFOcOPpA2Y"
