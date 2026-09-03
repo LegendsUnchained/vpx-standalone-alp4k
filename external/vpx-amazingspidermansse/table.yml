@@ -1,0 +1,17 @@
+---
+backglassBundled: true
+backglassChecksum: "153FBB441E5CB774CA65BF909106C7E8"
+backglassNotes: "Included in VPX .zip file."
+fps: 60
+romChecksum: "FCCCF366660CCE975D600192AC508A3C"
+romNotes: "Download spidermn.zip"
+romUrlOverride: "https://pinballnirvana.com/forums/resources/spidermn.2352/"
+romVersionOverride: "spidermn"
+tableNameOverride: "Amazing Spider-Man Sinister Six Edition, The (Gottlieb 1980)"
+tableVPSId: "9Uv1Jljw"
+tagline: "There goes the Spider-Man"
+testers:
+  - "TechZombie"
+  - "Dasme"
+vpxChecksum: "6CA101C908E7E8039D3C895F73B33EE8"
+vpxVPSId: "7q1Na5E1Rw"
