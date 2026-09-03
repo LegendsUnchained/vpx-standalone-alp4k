@@ -1,0 +1,14 @@
+---
+additionalRoms:
+  - vpsId: "Q2i8zbfknl"
+    checksum: "136DFD96F61D4EF00ABD7941B63DCD89"
+backglassChecksum: "D67A559F3AE50C2EDB7B20E817FD89D1"
+backglassVPSId: "-pPsy-McV-"
+fps: 60
+romChecksum: "D70C44B7E0725DBEFDB1F6E99603D957"
+romVPSId: "Tz5iB2aCvJ"
+tableVPSId: "a_C3Wh0aHE"
+testers:
+  - "Wraith"
+vpxChecksum: "A1EB07470BDCC41D3E7230750FC392A4"
+vpxVPSId: "2BtP-2bk3p"
