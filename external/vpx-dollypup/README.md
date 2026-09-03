@@ -1,6 +1,6 @@
-# Aerosmith (Pro) (Stern 2017)
+# Dolly Parton (Pup Pack) (Bally 1979)
 
-![Table Preview](../../images/UYsEyTmIhb-preview.webp)
+![Table Preview](../../images/eqkRAG7dls-preview.webp)
 
 <br>
 
@@ -8,7 +8,7 @@
 
 | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |-----------|-----|-----|-----|-----|
-| ❌ | ❌ | ❌ | ✅ | 60 |
+| ✅ | ✅ | ✅ | ✅ | 60 |
 
 <br>
 
@@ -32,9 +32,9 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`Aerosmith (Pro) (Stern 2017)`**
+4.  Find and select this table from the dropdown menu: **`Dolly Parton (Pup Pack) (Bally 1979)`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *"... Cause I miss you babe, and I don't wanna miss a thing."*
+6. *""I'm not offended by all the dumb blonde jokes because I know I'm not dumb... and I also know that I'm not blonde." - Dolly Parton"*
 
 <br>
 

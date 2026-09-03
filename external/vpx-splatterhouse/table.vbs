@@ -40,6 +40,7 @@ Timer12.Enabled = True
 	turnonultradmd = 0 ' change to 1 to turn on ultradmd
 	toppervideo = 0 'set to 1 to turn on the topper
 	ballrolleron = 1 ' set to 0 to turn off the ball roller if you use the "c" key in your cabinet
+        bFreePlay = 1 ' set to 1 for free play, 0 to require credits
 
 	Const typefont = "Raleway Medium"
 	Const numberfont = "Bebas Neue"
@@ -171,15 +172,21 @@ Dim ii
     Credits = 0
     Match = 0
 
-   StartAttractMode
+    StartAttractMode
 
- 
- ScoreReel1.AddValue Score
+	 
+	ScoreReel1.AddValue Score
 
-Timer14.enabled=1
+	Timer14.enabled=1
 
-
-
+    ScoreR1.Visible = False
+	Ball1.Visible = False
+	Ball2.Visible = False
+	Ball3.Visible = False
+	Ball4.Visible = False
+	Ball5.Visible = False
+	GameoverR.Visible = False
+    
 
 '    NewBallDelay = 0
  '   Special = False
@@ -195,6 +202,7 @@ Timer14.enabled=1
     loadhs
     CreditReel.Setvalue Credits
     ScoreReel1.SetValue Score
+    ScoreReel1.ResetToZero
     'StartShake
     GameTimer.Enabled = 1
     ' reset VP objects
@@ -257,7 +265,7 @@ End Sub
 Sub FlexTimer_Timer()
 	FlexDMD.LockRenderThread
 	With FlexDMD.Stage
-		.GetLabel("Score").Text = Right(FormatNumber(Score + 10000000, 0, -1, 0, -1),9) 
+		.GetLabel("Score").Text = Right(FormatNumber(score, 0, -1, 0, -1), 9)
 		.GetLabel("Ball").Text = "Ball " & CStr(Ball)
 		.GetLabel("Credit").Text = "Credits " & CStr(Credits)
 	End With
@@ -327,14 +335,13 @@ Sub Table1_KeyDown(ByVal keycode)
         Savehs
     End If
 
-    If keycode = StartGameKey And Credits > 0 AND Game_Over = TRUE Then
-        AddCredits -1
-        'PlaySound "fx_Startup"
-        Initialize
-        Clear_Match
-        Game_Over = False
-        NextBall
-    End If
+If keycode = StartGameKey And (bFreePlay = 1 Or Credits > 0) AND Game_Over = TRUE Then
+    If bFreePlay = 0 Then AddCredits -1
+    Initialize
+    Clear_Match
+    Game_Over = False
+    NextBall
+End If
 
     If keycode = LeftTiltKey Then Nudge 90, 6:PlaySound "fx_nudge"
     If keycode = RightTiltKey Then Nudge 270, 6:PlaySound "fx_nudge"
