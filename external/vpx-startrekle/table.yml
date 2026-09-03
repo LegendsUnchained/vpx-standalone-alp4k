@@ -1,14 +1,19 @@
 ---
+backglassChecksum: "CF9D976591C87E7CEC437F6679D16C84"
+backglassVPSId: "ZwWOf4NFZU"
+coloredROMChecksum: "BCA5443EC393743084024307690C46A8"
+coloredROMNotes: "Download 'pin2dmd.pal'"
+# yamllint disable-line rule:line-length
+coloredROMUrlOverride: "https://montetoncab.fr/leslipdejoane/Pincab/Medias/VPX/rom_color_pour_VPX_4_et_16_couleurs/DMD_Colorisee_patche/DMD_Colorise_16_color/St161%20hc/st_161hc/"
+coloredROMVersionOverride: "st_161hc"
 diffChecksum: "00F8D62034008F322C697AD67A6D076C"
 diffVPSId: "HsQi0my24N"
 fps: 60
-pupArchiveFormat: "zip"
-pupArchiveRoot: "Startrek_LE_PuP/st_161hc"
-pupChecksum: "064862E21EA5A8D4FB2F600942D0C047"
-pupVersion: "st_161h"
-pupVPSId: "qtxSwkQJ"
-romChecksum: "12C72684C1DA512B950985D9B09CE519"
-romVPSId: "ySybA9v6"
+romChecksum: "FE0212963850BE8E6CF10F9EEB2EDA08"
+romNotes: "Download 'st_161hc.zip'"
+# yamllint disable-line rule:line-length
+romUrlOverride: "https://montetoncab.fr/leslipdejoane/Pincab/Medias/VPX/rom_color_pour_VPX_4_et_16_couleurs/DMD_Colorisee_patche/DMD_Colorise_16_color/St161%20hc/"
+romVersionOverride: "st_161hc"
 tableVPSId: "XYh-gw4S"
 testers:
   - "Wraith"

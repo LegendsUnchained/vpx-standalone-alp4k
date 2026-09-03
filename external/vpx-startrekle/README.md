@@ -8,12 +8,13 @@
 
 | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |-----------|-----|-----|-----|-----|
-| ❌ | ✅ | ✅ | ✅ | 60 |
+| ✅ | ✅ | ✅ | ❌ | 60 |
 
 <br>
 
 **VPXS 4KP Testers:**
   - Wraith
+  - Bla1ze
 
 <br>
 
