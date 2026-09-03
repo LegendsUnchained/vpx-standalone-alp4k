@@ -5,7 +5,7 @@ fps: 60
 romChecksum: "F9C82529A12B3CE03CC81FED10E0F9AC"
 romNotes: "carhop.zip"
 romUrlOverride: "https://pinballnirvana.com/forums/resources/carhop.1647/"
-romVersionOverride: "9-9-22"
+romVersionOverride: "carhop"
 tableVPSId: "OFlFlRLB"
 testers:
   - "PBW23"
