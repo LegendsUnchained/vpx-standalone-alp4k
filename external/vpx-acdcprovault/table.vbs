@@ -62,6 +62,7 @@
 'RustyCardores for the Surround Sound MOD;
 'rysr, Peter J and javier for the help with the pics.
 'the VPDevTeam for the freaking amazing VPX
+'MisterCoffee: Lighting bug fix
 
 Option explicit
 Randomize
@@ -99,7 +100,7 @@ If CustomDMD OR (NOT DesktopMode AND NOT CustomDMD) Then UseVPMDMD = False		'hid
 If DesktopMode AND NOT CustomDMD Then UseVPMDMD = True							'shows the internal VPMDMD when in desktop mode and color ROM is not in use
 Scoretext.visible = NOT CustomDMD												'hides the textbox when using the color ROM
 
-LoadVPM "02800000", "Sam.VBS", 3.54
+LoadVPM "03060000", "Sam.VBS", 3.54
 
 '********************
 'Standard definitions
@@ -119,6 +120,7 @@ Const SCoin = "fx_coin"
 '************************************************************************
 '						 INIT TABLE
 '************************************************************************
+
 
 Dim bsTrough, bsTEject, PlungerIM
 
@@ -575,12 +577,12 @@ Sub UpdateGi(nr,enabled)
 		If enabled Then
 			DOF 103, DOFOn
 			ACDC.ColorGradeImage="ColorGrade_on"
-			For Each ii in BandMembersPoster: ii.IntensityScale=1:Next
-			For each ii in GI_Red: ii.state=1:Next
-			For each ii in GI_White: ii.state=1:Next
-			For each ii in GI_Blue: ii.state=1:Next
-			For Each ii in BLRLights: ii.IntensityScale=1:Next
-			For Each bulb in BLBLights: bulb.IntensityScale=1:Next
+			For Each ii in BandMembersPoster: ii.IntensityScale=0.6:Next
+			For each ii in GI_Red: ii.state=0.6:Next
+			For each ii in GI_White: ii.state=0.4:Next
+			For each ii in GI_Blue: ii.state=0.6:Next
+			For Each ii in BLRLights: ii.IntensityScale=0.4:Next
+			For Each bulb in BLBLights: bulb.IntensityScale=0.4:Next
 			bulb1.BlendDisableLighting = 8
 			bulb2.BlendDisableLighting = 8
 			bulb3.BlendDisableLighting = 8
@@ -881,11 +883,11 @@ End Sub
 Sub RGBLED (object,red,green,blue)
 	If TypeName(object) = "Light" Then
 		object.color = RGB(0,0,0)
-		object.colorfull = RGB(2.5*red,2.5*green,2.5*blue)
+		object.colorfull = RGB(0.25*red,0.25*green,0.25*blue)
 		object.state=1
 	ElseIf TypeName(object) = "Flasher" Then
-		object.color = RGB(2.5*red,2.5*green,2.5*blue)
-		object.IntensityScale = 1
+		object.color = RGB(0.25*red,0.25*green,0.25*blue)
+		object.IntensityScale = 0.25
 	End If
 End Sub
 
