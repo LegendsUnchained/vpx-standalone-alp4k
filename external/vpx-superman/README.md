@@ -1,47 +1,61 @@
-﻿# Superman (Atari 1979)
-![Table Preview](../../images/vpx-superman-preview.jpg)
+# Superman (Atari 1979)
 
-Author(s): [bigus1](https://www.vpforums.org/index.php?showuser=107629)
-  
-Version:  Superman (Atari 1979)_Bigus(MOD) 1.2
+![Table Preview](../../images/ERdeGR6A-N-preview.webp)
 
-Download:  [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=18560)
+<br>
 
-DirectB2S
+## *️⃣  Table Statistics
 
-Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ✅ | ✅ | ❌ | 60 |
 
-Version: Superman (Atari 1979) b2s
+<br>
 
-Download: [VP Universe](https://vpuniverse.com/files/file/7422-superman-atari-1979-b2s/)
+**VPXS 4KP Testers:**
+  - CoffeeAtJoes
+  - Dasme
+
+<br>
+
+---
+
+<br>
+
+## ❇️ Available in the Wizard! 🪄✨
+
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Superman (Atari 1979)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"It's a bird! It's a plane! It's..."*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
 
 
-ROM: Superman
-
-Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)
-
-Version: superman.zip
-
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=181)
-
-
-Tested by:
-[CoffeeAtJoes]
-
-## Status 
-
-Minimum VPX Standalone build: 10.8.0-1983-b84441e
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
-
-## Instructions
-
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more information found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
-- OPTIONAL MUSIC INSTRUCTIONS: Download Goldchicco's 1.2a table package [here] (https://vpuniverse.com/files/file/7372-superman-atari-1979/)
-- Place ONLY the folder 'Superman' into provided folder /vpx-superman/Music
-- Right Magnasave - Stop Track, Left Magnasave - Resume/Next Track
-- "It's bird!" "It's a plane!" "IT'S SUPERMAN... on your Legends 4K!"
-
+<br>
+<br>
+<br>
+<br>
+<br>
