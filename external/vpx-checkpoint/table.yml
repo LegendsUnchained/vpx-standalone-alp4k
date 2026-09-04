@@ -1,0 +1,18 @@
+---
+backglassChecksum: "BCF64F3704F27BF412BC48F4CF620855"
+backglassVPSId: "jcCxJdcwdA"
+diffAuthorsOverride:
+  - "LoadedWeapon"
+diffChecksum: "E1C5D0F2597A42227F697C2710BF1DC5"
+diffNotes: "Download version 1.0.0"
+diffUrlOverride: "https://vpuniverse.com/files/file/22682-checkpoint-cabinet-mod/"
+diffVersionOverride: "1.0.0"
+fps: 60
+romChecksum: "26586B4A6E1F6D1B5F7215BA8FC920FA"
+romVPSId: "j7OIOuQt"
+tableVPSId: "wM2zN7_C"
+testers:
+  - "PBW23"
+  - "Reboot"
+vpxChecksum: "79D2268E3E92521150E30232E03C60D9"
+vpxVPSId: "cgGHIB6lm4"
