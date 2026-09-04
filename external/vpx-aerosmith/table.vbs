@@ -1,15 +1,21 @@
 ' Allknowing2012 - Please dont redistribute at this time...
 ' 2023
-' v1.01 
+' v1.02 now with VR
 ' My Channel: https://www.youtube.com/channel/UCi9jCs_DmgtHWqLVPf5_7rA
 '
 ' rel 1.01 - changed the COMMENTED OUT code for the nudge buttons to use the VPM keycodes (for those looking for nudge Keys)
 '       - remove docallouts - notused
 '		- Namestr undefined bug
-'		- flexdmd option now has backglass. Todo no music after 1st ball
+'		- flexdmd option now has backglass. 
 '		- Bug Scorbit sending updates when not paired
 '		- ball eject from kicker bug
 '		- ScorBit is now OFF by default Line 135
+'  1.02 - VR Updates from MikeDaSpike
+'		- TODO after 2 player high score, score is not shown	
+'		- TODO Add callouts	
+'		- apron image update from drik333
+'		- Todo no music after 1st ball	
+'		- TODO Nailbuster fixes..to PUP.zip 
 '
 ' Code Framework based heavily on the Guardians of the Galaxy 2.x table
 ' Credits there include 
@@ -36,7 +42,7 @@
 '     _█▓▓▓▓▓▓▓▌                             ¡▓▓▓▓▓▓▓▓╛     _█▓▓▓▓▓▓▌
 '     █▓▓▓▓▓▓▓▓                    _,,▄▄▄▄▄▄▄▓▓▓▓▓▓▓▓       ▐▓▓▓▓▓▓▓
 '    ▐▓▓▓▓▓▓▓▓▓               _µ▄██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓       ]▓▓▓▓▓▓▓M
-'   _▓▓▓▓▓▓▓▓▓▓,          _╓▄█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█µ      ▓▓▓▓▓▓▓▓                        V1.01 2023
+'   _▓▓▓▓▓▓▓▓▓▓,          _╓▄█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█µ      ▓▓▓▓▓▓▓▓                        V1.02 2023
 '   ▄▓▓▓▓▓▓▓▓▓▓▓▄    _,▄██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▀▀▀▓▓▓▓▓▓▓▓▓▓█▄_  ]▓▓▓▓▓▓▓`
 '   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▀▀_     ▐▓▓▓▓▓▓▀▓▓▓▓▓█µ_▓▓▓▓▓▓▓▓
 '   ]▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▀`        ,▓▓▓▓▓▓▌ _Ñ▓▓▓▓▓█▓▓▓▓▓▓▓M
@@ -136,18 +142,19 @@ Dim ScorbitActive:ScorbitActive	= 0		' Is Scorbit Active
 
 Const bUsePlungerForSternKey 	= False	' Defaults to Right Magna Button but you can use Plunger button also	
 Const kBallSearchTimeout 		= 10000	'  Start ball search after 15 seconds of no activity
-Const DMDMode					= 1 	' 0=None, 1 = Flex/Ultra, 2=PUP (make sure you set PuPDMDDriverType below)
+Const DMDMode					= 2 	' 0=None, 1 = Flex/Ultra, 2=PUP (make sure you set PuPDMDDriverType below)
 TextBox.Visible					= False ' Set to True if you have nothing, pup, flex, (debug for Me)
 Const bFlipperSkipEnabled 		= True	' Skip scenes
 Const FontScale					= 1		' Scales the PupFonts up/down for different sized DMDs 		[Desktop 0.75]
 Const FontScaleDmd				= 0.5	' Scales the SlimDMDFonts up/down for different sized DMDs  [Desktop 0.5]
 	  	
-Const     ScorbitShowClaimQR	= 1 	' If Scorbit is active this will show a QR Code in the bottom left on ball 1 that allows player to claim the active player from the app
-Const     ScorbitClaimSmall		= 0 	' Make Claim QR Code smaller for high res backglass 
-Const     ScorbitUploadLog		= 0 	' Store local log and upload after the game is over 
-Const     ScorbitAlternateUUID  = 0 	' Force Alternate UUID from Windows Machine and saves it in VPX Users directory (C:\Visual Pinball\User\ScorbitUUID.dat)
+Const ScorbitShowClaimQR		= 1 	' If Scorbit is active this will show a QR Code in the bottom left on ball 1 that allows player to claim the active player from the app
+Const ScorbitClaimSmall			= 0 	' Make Claim QR Code smaller for high res backglass 
+Const ScorbitUploadLog			= 0 	' Store local log and upload after the game is over 
+Const ScorbitAlternateUUID  	= 0 	' Force Alternate UUID from Windows Machine and saves it in VPX Users directory (C:\Visual Pinball\User\ScorbitUUID.dat)
 Const osbactive					= 0 	' Orbital Scoreboard: Set to 0 for off, 1 for only player 1 to be sent, 2 for all scores to be sent.	
 										' See link to create obs.vbs: https://docs.orbitalpin.com/vpx-user-settings
+Const VRCabinet					= 0     ' Change cabinet style : 0= Pro, 1= Premium, 2=Limited Edition
 
 Dim AutoQA:AutoQa=False                	'Main QA Testing FLAG setting to false will disable all this stuff.
 
@@ -205,13 +212,13 @@ Const 	FlexDMD_Align_TopLeft = 0, _
 '   UltraDMD USER Config
 '**************************
 Const UseFullColor = "True" 			'	ULTRA: Enable full Color on UltraDMD "True" / "False"
-Const UltraDMDVideos = False				'	ULTRA: Works on my DMDv3 but seems it causes issues on others
+Const UltraDMDVideos = True				'	ULTRA: Works on my DMDv3 but seems it causes issues on others
 '**************************
 '   PinUp Player USER Config
 '**************************
 dim PuPDMDDriverType: PuPDMDDriverType=0   	' 0=LCD DMD, 1=RealDMD (For FULLDMD use the batch scripts in the pup pack)
 dim useRealDMDScale : useRealDMDScale=0    	' 0 or 1 for RealDMD scaling.  Choose which one you prefer.
-dim useDMDVideos    : useDMDVideos=False	   	' true or false to use DMD splash videos.
+dim useDMDVideos    : useDMDVideos=True	   	' true or false to use DMD splash videos.
 Dim pGameName       : pGameName="aerosmith"	' pupvideos foldername, probably set to cGameName in realworld
 '***********TABLE VOLUME LEVELS ********* 
 ' [Value is from 0 to 1 where 1 is full volume. 
@@ -275,6 +282,9 @@ Const TableName = "aerosmith"
 Const myVersion = "1.0.0"
 Const MaxPlayers = 4		
 Dim MusicDir	
+
+'VR_
+Dim VR_Room : If RenderingMode = 2 Then VR_Room=True Else VR_Room=False
 
 '*****************************************
 '      Structure to save/restore all player data before moving to a new ones
@@ -4546,6 +4556,123 @@ Sub Table1_Init()
 		bTableReady = True
 	End If
 
+If VR_Room Then
+		'First Hide a lot of stuff that was on the original table
+		DotMatrix.visible = False
+		pscrew027.visible = False 
+		Light001.visible = False 
+		Light001.ShowBulbMesh = False
+		LeftWallDecal.SideVisible = False 
+		RightWallDecal.SideVisible = False 
+		Ramp17.visible = False
+		FlasherFlash5_5.visible = False
+		FlasherFlash5.visible = False
+		FlasherBase5.visible = False
+		SmartButton.visible = False
+		DesktopApronButton.visible = False
+		RightRail.visible = False
+		LeftRail.visible = False
+		Wall2Hide.visible = False
+		'Right card is floating. Set to left card
+		pcardright.Z = pCardLeft.Z
+		'Set the Decal, metals and flippers by the type of cabinet layout
+		Dim objVRmetal
+			select Case VRCabinet
+				Case 0 'Pro
+					For Each objVRmetal in VRMetalColors
+						objVRmetal.DisableLighting = False
+						objVRmetal.Color=RGB(0,5,66)
+					Next
+					Pincab_FirePlate_Image.Color=RGB(64,107,255)
+					PinCab_Right_Rail_Blade.visible = False
+					PinCab_Right_Rail_Screw_1.visible = False
+					PinCab_Right_Rail_Screw_2.visible = False
+					PinCab_Right_Rail_Screw_3.visible = False
+					PinCab_Left_Rail_Blade.visible = False
+					PinCab_Left_Rail_Screw_1.visible = False
+					PinCab_Left_Rail_Screw_2.visible = False
+					PinCab_Left_Rail_Screw_3.visible = False
+					PinCab_Flipper_Button_Left.material = "Plastic Black"
+					PinCab_Flipper_Button_Right.material = "Plastic Black"
+					PinCab_Button_Rings.material = "Plastic Black"
+					PinCab_Button_Rings.Size_X = 3 
+					PinCab_Flipper_Button_Left.x = PinCab_Flipper_Button_Left.x +4
+					PinCab_Flipper_Button_Right.x = PinCab_Flipper_Button_Right.x -4
+					PinCab_Button_Rings.x = PinCab_Button_Rings.x -22
+					Pincab_Backglass.image = "Translite"
+					PinCab_Backbox.image = "VR_Pincab_BackBox_Pro"
+					PinCab_Cabinet.image = "VR_Pincab_Cabinet_Pro"
+					VRFlyerPrim.image = "VRFlyer_Pro"
+				Case 1 'Premium
+					For Each objVRmetal in VRMetalColors
+						objVRmetal.DisableLighting = False
+						objVRmetal.Color=RGB(1,1,1)
+					Next
+					Pincab_FirePlate_Image.Color=RGB(1,1,1)
+					PinCab_Right_Rail_Blade.visible = False
+					PinCab_Right_Rail_Screw_1.visible = False
+					PinCab_Right_Rail_Screw_2.visible = False
+					PinCab_Right_Rail_Screw_3.visible = False
+					PinCab_Left_Rail_Blade.visible = False
+					PinCab_Left_Rail_Screw_1.visible = False
+					PinCab_Left_Rail_Screw_2.visible = False
+					PinCab_Left_Rail_Screw_3.visible = False
+					PinCab_Button_Rings.material = "Plastic White"
+					PinCab_Button_Rings.Size_X = 3 
+					PinCab_Flipper_Button_Left.x = PinCab_Flipper_Button_Left.x +4
+					PinCab_Flipper_Button_Right.x = PinCab_Flipper_Button_Right.x -4
+					PinCab_Button_Rings.x = PinCab_Button_Rings.x -22
+					PinCab_Flipper_Button_Left.material = "Plastic White"
+					PinCab_Flipper_Button_Right.material = "Plastic White"
+					Pincab_Backglass.image = "VR_Pincab_backImage_LE"
+					PinCab_Backbox.image = "VR_Pincab_BackBox_LE"
+					PinCab_Cabinet.image = "VR_Pincab_Cabinet_LE"
+					Pincab_Backglass.image = "VR_Pincab_backImage_LE"
+					PinCab_Backbox.image = "VR_Pincab_BackBox_LE"
+					PinCab_Cabinet.image = "VR_Pincab_Cabinet_LE"
+					Pincab_Backglass.image = "VR_Pincab_backImage_Premium"
+					PinCab_Backbox.image = "VR_Pincab_BackBox_Premium"
+					PinCab_Cabinet.image = "VR_Pincab_Cabinet_Premium"
+					VRFlyerPrim.image = "VRFlyer_Premium"
+				Case 2 'LE
+					For Each objVRmetal in VRMetalColors
+						objVRmetal.DisableLighting = False
+						objVRmetal.Color=RGB(80,45,91)
+					Next
+					Pincab_FirePlate_Image.Color=RGB(255,92,64)
+					PinCab_Right_Rail_Blade.visible = True
+					PinCab_Right_Rail_Screw_1.visible = True
+					PinCab_Right_Rail_Screw_2.visible = True
+					PinCab_Right_Rail_Screw_3.visible = True
+					PinCab_Left_Rail_Blade.visible = True
+					PinCab_Left_Rail_Screw_1.visible = True
+					PinCab_Left_Rail_Screw_2.visible = True
+					PinCab_Left_Rail_Screw_3.visible = True
+					PinCab_Flipper_Button_Left.material = "Plastic Black"
+					PinCab_Flipper_Button_Right.material = "Plastic Black"
+					PinCab_Button_Rings.material = "Plastic Black"
+					Pincab_Backglass.image = "VR_Pincab_backImage_LE"
+					PinCab_Backbox.image = "VR_Pincab_BackBox_LE"
+					PinCab_Cabinet.image = "VR_Pincab_Cabinet_LE"
+					VRFlyerPrim.image = "VRFlyer_LE"
+			end Select
+			'Set DMD. 
+			Select Case DMDMode
+				Case 0 'all off (not playable in VR
+					PinCab_DMD.visible = False
+				Case 1  'Flex
+					PinCab_DMD.visible = True
+				Case 2  'PUp
+					PinCab_DMD.visible = True
+			End Select
+	Else
+		Dim objVR
+		For Each objVR in VRStuff
+			objVR.visible = False
+		Next
+	End If
+
+
     EndOfGame()
 End Sub
 
@@ -5134,6 +5261,9 @@ Sub EndOfBall()
 	End If
 
 	SceneClearMessage()	
+	if NOT bUsePUPDMD then
+		EndMusic
+	End If
 
     ' only process any of this If the table is not tilted.  (the tilt recovery
     ' mechanism will handle any extra balls or end of game)
@@ -5811,6 +5941,13 @@ D "kickout 3"
 			End If
 		End If 
     End If ' If (GameInPlay)
+	'VR Keys animation
+	If keycode = LeftFlipperKey Then PinCab_Flipper_Button_Left.X = PinCab_Flipper_Button_Left.X +8
+	If keycode = RightFlipperkey Then PinCab_Flipper_Button_Right.X = PinCab_Flipper_Button_Right.X -8
+	If Keycode = StartGameKey Then  PinCab_Start_Button.y = PinCab_Start_Button.y -2: PinCab_Start_Button_Inner_Ring.Y = PinCab_Start_Button_Inner_Ring.Y -2
+	If keycode = RightMagnaSave or keycode = LockBarKey or (keycode = PlungerKey and bUsePlungerForSternKey) Then PinCab_SmartButton_1.Z =PinCab_SmartButton_1.Z -6	:PinCab_SmartButton_2.Z =PinCab_SmartButton_2.Z -6 :PinCab_SmartButton_inner.Z = PinCab_SmartButton_inner.Z -6
+	If keycode = PlungerKey Then TimerVRPlunger.enabled = True : TimerVRPlunger2.enabled = False
+	If Credits > 0 then Pincab_TimserStartButton.enabled = True
 End Sub
 
 
@@ -5866,6 +6003,14 @@ Sub Table1_KeyUp(ByVal keycode)
 		If keycode = LeftFlipperKey Then lfpress = 0
 		If keycode = RightFlipperKey Then rfpress = 0
     End If
+
+	'VR Keys animation
+	If keycode = LeftFlipperKey Then PinCab_Flipper_Button_Left.X = PinCab_Flipper_Button_Left.X -8
+	If keycode = RightFlipperkey Then PinCab_Flipper_Button_Right.X = PinCab_Flipper_Button_Right.X +8
+	If Keycode = StartGameKey Then  PinCab_Start_Button.y = PinCab_Start_Button.y +2: PinCab_Start_Button_Inner_Ring.Y = PinCab_Start_Button_Inner_Ring.Y +2
+	If keycode = RightMagnaSave or keycode = LockBarKey or (keycode = PlungerKey and bUsePlungerForSternKey) Then PinCab_SmartButton_1.Z =PinCab_SmartButton_1.Z +6	:PinCab_SmartButton_2.Z =PinCab_SmartButton_2.Z +6 : PinCab_SmartButton_inner.Z = PinCab_SmartButton_inner.Z +6
+	If keycode = PlungerKey Then TimerVRPlunger.enabled = False : TimerVRPlunger2.enabled = True
+
 End Sub
 
 
@@ -8878,55 +9023,95 @@ Sub SmartButtonFlash(color, enabled)  'the lockbar light
 	If enabled Then 
 		tmrSmartButtonLightFlash.Enabled = False
 		If color = "green" then 						' If color is blank just use what the color was before 
-			Flasherflash5_5.Color = RGB(0,255,0)
-			Flasherflash5.ImageA = "domegreenflash"
-			Flasherbase5.Image = "dome2basegreen"
-			Flasherlit5.Image = "dome2litgreen"
+			if VR_Room Then
+				Pincab_FireButtonLight.Colorfull = RGB(0,255,0) 
+			Else
+				Flasherflash5_5.Color = RGB(0,255,0)
+				Flasherflash5.ImageA = "domegreenflash"
+				Flasherbase5.Image = "dome2basegreen"
+				Flasherlit5.Image = "dome2litgreen"
+			End If
 		elseIf color = "white" then
-			Flasherflash5_5.Color = RGB(255,255,255)
-			Flasherflash5.ImageA = "domewhiteflash"
-			Flasherbase5.Image = "dome2basewhite"
-			Flasherlit5.Image = "dome2litwhite"
+			if VR_Room Then
+				Pincab_FireButtonLight.Colorfull = RGB(255,255,255)
+			Else
+				Flasherflash5_5.Color = RGB(255,255,255)
+				Flasherflash5.ImageA = "domewhiteflash"
+				Flasherbase5.Image = "dome2basewhite"
+				Flasherlit5.Image = "dome2litwhite"
+			End IF
 		elseIf color = "cyan" then
-			Flasherflash5_5.Color = RGB(0,255,255)
-			Flasherflash5.ImageA = "domeredflash"
-			Flasherbase5.Image = "dome2basered"
-			Flasherlit5.Image = "dome2litred"
+			if VR_Room Then
+				Pincab_FireButtonLight.Colorfull = RGB(0,255,255)
+			Else
+				Flasherflash5_5.Color = RGB(0,255,255)
+				Flasherflash5.ImageA = "domeredflash"
+				Flasherbase5.Image = "dome2basered"
+				Flasherlit5.Image = "dome2litred"
+			End If
 		elseIf color = "orange" then
-			Flasherflash5_5.Color = RGB(255,165,0)
-			Flasherflash5.ImageA = "domeredflash"
-			Flasherbase5.Image = "dome2basered"
-			Flasherlit5.Image = "dome2litred"
+			if VR_Room Then
+				Pincab_FireButtonLight.Colorfull = RGB(255,165,0) 
+			Else
+				Flasherflash5_5.Color = RGB(255,165,0)
+				Flasherflash5.ImageA = "domeredflash"
+				Flasherbase5.Image = "dome2basered"
+				Flasherlit5.Image = "dome2litred"
+			End If
 		elseIf color = "orangedark" then
-			Flasherflash5_5.Color = RGB(204,85,0)
-			Flasherflash5.ImageA = "domeredflash"
-			Flasherbase5.Image = "dome2basered"
-			Flasherlit5.Image = "dome2litred"
+			if VR_Room Then
+				Pincab_FireButtonLight.Colorfull = RGB(204,85,0)
+			Else
+				Flasherflash5_5.Color = RGB(204,85,0)
+				Flasherflash5.ImageA = "domeredflash"
+				Flasherbase5.Image = "dome2basered"
+				Flasherlit5.Image = "dome2litred"
+			End If
 		elseIf color = "red" then 
-			Flasherflash5_5.Color = RGB(255,0,0)
-			Flasherflash5.ImageA = "domeredflash"
-			Flasherbase5.Image = "dome2basered"
-			Flasherlit5.Image = "dome2litred"
+			if VR_Room Then
+				Pincab_FireButtonLight.Colorfull = RGB(255,0,0) 
+			Else
+				Flasherflash5_5.Color = RGB(255,0,0)
+				Flasherflash5.ImageA = "domeredflash"
+				Flasherbase5.Image = "dome2basered"
+				Flasherlit5.Image = "dome2litred"
+			End If
 		elseIf color = "blue" then 
-			Flasherflash5_5.Color = RGB(0,0,255)
-			Flasherflash5.ImageA = "domeblueflash"
-			Flasherbase5.Image = "dome2baseblue"
-			Flasherlit5.Image = "dome2litblue"
+			if VR_Room Then
+				Pincab_FireButtonLight.Colorfull = RGB(0,0,255)
+			Else
+				Flasherflash5_5.Color = RGB(0,0,255)
+				Flasherflash5.ImageA = "domeblueflash"
+				Flasherbase5.Image = "dome2baseblue"
+				Flasherlit5.Image = "dome2litblue"
+			End If
 		elseIf color = "purple" then 
-			Flasherflash5_5.Color = RGB(128,0,128)
-			Flasherflash5.ImageA = "domepurpleflash"
-			Flasherbase5.Image = "dome2basepurple"
-			Flasherlit5.Image = "dome2litpurple"
+			if VR_Room Then
+				Pincab_FireButtonLight.Colorfull = RGB(128,0,128) 
+			Else
+				Flasherflash5_5.Color = RGB(128,0,128)
+				Flasherflash5.ImageA = "domepurpleflash"
+				Flasherbase5.Image = "dome2basepurple"
+				Flasherlit5.Image = "dome2litpurple"
+			End If
 		elseIf color = "yellow" then 
-			Flasherflash5_5.Color = RGB(255,255,0)
-			Flasherflash5.ImageA = "domeyellowflash"
-			Flasherbase5.Image = "dome2baseyellow"
-			Flasherlit5.Image = "dome2lityellow"
+			if VR_Room Then
+				Pincab_FireButtonLight.Colorfull = RGB(255,255,0)
+			Else
+				Flasherflash5_5.Color = RGB(255,255,0)
+				Flasherflash5.ImageA = "domeyellowflash"
+				Flasherbase5.Image = "dome2baseyellow"
+				Flasherlit5.Image = "dome2lityellow"
+			End If
 		elseIf color = "white" then 
-			Flasherflash5_5.Color = RGB(255,255,255)
-			Flasherflash5.ImageA = "domewhiteflash"
-			Flasherbase5.Image = "dome2basewhite"
-			Flasherlit5.Image = "dome2litwhite"
+			if VR_Room Then
+				Pincab_FireButtonLight.Colorfull = RGB(255,255,255) 
+			Else
+				Flasherflash5_5.Color = RGB(255,255,255)
+				Flasherflash5.ImageA = "domewhiteflash"
+				Flasherbase5.Image = "dome2basewhite"
+				Flasherlit5.Image = "dome2litwhite"
+			End If
 		End If
 		tmrSmartButtonLightFlash.Enabled = True
 		DOF 141, DOFOn
@@ -8935,6 +9120,7 @@ Sub SmartButtonFlash(color, enabled)  'the lockbar light
 		FlashLevel(5) = 0 : Flasherflash5_Timer
 	End If
 End Sub
+
 
 Sub tmrSmartButtonLightFlash_Timer
 	FlashLevel(5) = 1 : Flasherflash5_Timer
@@ -8945,11 +9131,15 @@ End Sub
 Sub Flasherflash5_Timer
 	dim flashx3, matdim
 	If Flasherflash5.TimerEnabled = False Then 
+		If VR_Room Then
+			Pincab_FireButtonLight.State = 1
+		Else
+			Flasherflash5.visible = 1
+			Flasherflash5_5.visible = 1
+			Flasherlit5.visible = 1
+		End if
 		Flasherflash5.TimerEnabled = True
 		Flasherflash5_5.TimerEnabled = True
-		Flasherflash5.visible = 1
-		Flasherflash5_5.visible = 1
-		Flasherlit5.visible = 1
 	End If
 	flashx3 = FlashLevel(5) * FlashLevel(5) * FlashLevel(5)
 	Flasherflash5.opacity = 200 * flashx3
@@ -8960,15 +9150,29 @@ Sub Flasherflash5_Timer
 	Flasherlit5.material = "domelit" & matdim
 	FlashLevel(5) = FlashLevel(5) * 0.9 - 0.01
 	If FlashLevel(5) < 0.15 Then
-		Flasherlit5.visible = 0
+		If VR_Room Then 
+			Pincab_FireButtonLight.State = 0
+		Else
+			Flasherlit5.visible = 0
+
+		End If 
 	Else
-		Flasherlit5.visible = 1
+		If VR_Room Then 
+			Pincab_FireButtonLight.State = 1
+		Else
+			Flasherlit5.visible = 1
+
+		End If 
 	end If
 	If FlashLevel(5) < 0 Then
+		If VR_Room Then
+			Pincab_FireButtonLight.State = 0
+		Else		
+			Flasherflash5.visible = 0
+			Flasherflash5_5.visible = 0
+		End If
 		Flasherflash5.TimerEnabled = False
 		Flasherflash5_5.TimerEnabled = False
-		Flasherflash5.visible = 0
-		Flasherflash5_5.visible = 0
 	End If
 End Sub
 
@@ -14643,3 +14847,63 @@ End Class
 '  END SCORBIT 
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+'Extra VR Stuff
+'***************************************************************************
+'Beer Bubble Code - Rawd
+'***************************************************************************
+Sub BeerTimer_Timer()
+
+	Randomize(21)
+	BeerBubble1.z = BeerBubble1.z + Rnd(1)*0.5
+	if BeerBubble1.z > -771 then BeerBubble1.z = -955
+	BeerBubble2.z = BeerBubble2.z + Rnd(1)*1
+	if BeerBubble2.z > -768 then BeerBubble2.z = -955
+	BeerBubble3.z = BeerBubble3.z + Rnd(1)*1
+	if BeerBubble3.z > -768 then BeerBubble3.z = -955
+	BeerBubble4.z = BeerBubble4.z + Rnd(1)*0.75
+	if BeerBubble4.z > -774 then BeerBubble4.z = -955
+	BeerBubble5.z = BeerBubble5.z + Rnd(1)*1
+	if BeerBubble5.z > -771 then BeerBubble5.z = -955
+	BeerBubble6.z = BeerBubble6.z + Rnd(1)*1
+	if BeerBubble6.z > -774 then BeerBubble6.z = -955
+	BeerBubble7.z = BeerBubble7.z + Rnd(1)*0.8
+	if BeerBubble7.z > -768 then BeerBubble7.z = -955
+	BeerBubble8.z = BeerBubble8.z + Rnd(1)*1
+	if BeerBubble8.z > -771 then BeerBubble8.z = -955
+End Sub
+
+
+'***************************************************************************
+'VR Clock code below - THANKS RASCAL
+'***************************************************************************
+
+
+' VR Clock code below....
+Sub ClockTimer_Timer()
+	dim CurrentMinute: Currentminute = Minute(Now())
+	VRClockMinutes.RotAndTra2 = (Minute(Now())+(Second(Now())/100))*6
+	VRClockhours.RotAndTra2 = Hour(Now())*30+(Minute(Now())/2)
+    VRClockseconds.RotAndTra2 = (Second(Now()))*6
+	CurrentMinute=Minute(Now())
+End Sub
+
+'***************************************************************************
+' VR Plunger Animataion Code
+'***************************************************************************
+
+Sub TimerVRPlunger_Timer
+	if Pincab_PLungerrod.Y < (Plunger.y - 1810) then Pincab_PLungerrod.Y = Pincab_PLungerrod.y +12
+	if Pincab_PLungerKnob.Y < (Plunger.y - 1810) then Pincab_PLungerKnob.Y = Pincab_PLungerKnob.y +12
+End Sub
+
+Sub TimerVRPlunger2_Timer
+	Pincab_PLungerrod.Y = Plunger.y -1900 + (5* Plunger.Position) 
+	Pincab_PLungerKnob.Y = Plunger.y -1900 + (5* Plunger.Position) 
+end sub
+
+
+sub Pincab_TimserStartButton_timer
+	if Credits =0 Then PinCab_Start_Button_Inner_Ring.DisableLighting=False : Pincab_TimserStartButton.enabled=False : exit sub
+	' if Pincab_StartButton.DisableLighting=1 then  Pincab_StartButton.DisableLighting=0 else  Pincab_StartButton.DisableLighting=1
+	if PinCab_Start_Button_Inner_Ring.DisableLighting=True then  PinCab_Start_Button_Inner_Ring.DisableLighting=False else  PinCab_Start_Button_Inner_Ring.DisableLighting=True
+end Sub

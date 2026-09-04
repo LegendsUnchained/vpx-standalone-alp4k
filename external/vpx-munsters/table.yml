@@ -1,0 +1,22 @@
+---
+backglassChecksum: "25D5A8A86BDA50CD46B1C293F9987E47"
+backglassNotes: "Download v1.0.0"
+backglassVPSId: "PbQ45r5a"
+fps: 60
+mainNotes: "LED MOD w/ b2s BG & PuP on DMD"
+pupArchiveFormat: "zip"
+pupArchiveRoot: "mmunsters"
+pupChecksum: "5E16A5F14E2618A5BE49D5FE9E7F2D42"
+pupFileUrl: "https://vpuniverse.com/files/file/10068-munsters-original-2020-105vpx/"
+pupNotes: "Download PUPVideos_mmunsters_1.05.zip"
+pupRequired: true
+pupVersion: "1.05"
+tableNotes: "Download Munsters (Original 2020) Ejse83 LED Mod 1.05"
+tableVPSId: "RXSK4eem"
+tagline: "Cross their welcome mat and you're apt to die laughing!"
+testers:
+  - "Filth"
+  - "MissleToad"
+  - "Wraith"
+vpxChecksum: "7CBFE255E92F24354D8EA49E1FB0D6A2"
+vpxVPSId: "Z-unsHBi1c"

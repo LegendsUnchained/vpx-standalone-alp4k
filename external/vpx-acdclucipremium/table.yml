@@ -1,0 +1,25 @@
+---
+backglassChecksum: "A784001458562CC3EA40FDB7700C8179"
+backglassNotes: "Download - ACDC (LUCI Premium) (Stern 2013) full dmd hi-res.zip"
+backglassVPSId: "rmedTC-AEp"
+coloredROMChecksum: "D301B63DE4753D0292A6395D6649A708"
+coloredROMNotes: "Download - acd_170h.cROMc"
+coloredROMVPSId: "C5EgKOjshg"
+fps: 60
+mainNotes: "Customizable visual playfield options are available in the 'TABLE OPTIONS' section of the .vbs ⚡🔔🚂🎸🔥👙"
+romChecksum: "FE2F89D88054D5A924D3A35B11A4407D"
+romNotes: Download - 'ACD170LE.BIN' from the provided 'AC/DC LE 1.70.0 Game Code' link
+romUrlOverride: "https://f002.backblazeb2.com/file/gamecode/ACD170LE.BIN"
+romVersionOverride: "acd_170h"
+tableNotes: "Download - AC-DC LUCI Premium VR (Stern 2013) v1.1.3.vpx"
+tableVPSId: "kGBkVb-v"
+tagline: "It's a long way to the top if you wanna rock n' roll!"
+testers:
+  - "MissleToad"
+  - "Wraith"
+  - "OminousOsie"
+  - "Onegoodball"
+tutorialVPSId: "OGrpDU8IK2"
+vpxChecksum: "F79C70A41A27C31BFBF92579366FBE31"
+vpxNSFW: true
+vpxVPSId: "butCgIcLzI"

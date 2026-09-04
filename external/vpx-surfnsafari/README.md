@@ -1,35 +1,61 @@
-﻿# Surf 'N Safari (Gottlieb 1991)
+# Surf 'n Safari (Gottlieb 1991)
 
-![Table Preview](../../images/vpx-surfnsafari.png)
+![Table Preview](../../images/kUsl6GKL9x-preview.webp)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author | 
-|-----------|--------|----------|--------------|
-| **VPX** | [VPUniverse](https://vpuniverse.com/files/file/22539-surf-n-safari/) | 1.0.0 | [LoadedWeapon](https://vpuniverse.com/profile/493-loadedweapon/) |
-| **B2S** | [VPUniverse](https://vpuniverse.com/files/file/14482-surf-n-safari-gottlieb-1991-b2s/) | 1.0.0 | [Hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
-| **DMD** | Included In Download | Included In Download | Included In Download |
-| **ROM** | [Pinball Nirvana](https://pinballnirvana.com/forums/resources/surfnsaf.2429/)| surfnsaf.zip | Rock-ola|
+## *️⃣  Table Statistics
 
-**Tested by:** Bla1ze
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ✅ | ✅ | ❌ | 60 |
 
----
+<br>
 
-## Status
+**VPXS 4KP Testers:**
+  - Bla1ze
+  - pinballwizard2023
 
-**Minimum VPX Standalone build:** 10.8.0-1989-a764013
-
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | 47 |
+<br>
 
 ---
 
-## Instructions
+<br>
 
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more information found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
-- Later Gator! 🐊
+## ❇️ Available in the Wizard! 🪄✨
 
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Surf 'n Safari (Gottlieb 1991)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"Later Gator!"*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
