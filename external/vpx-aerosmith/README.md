@@ -1,39 +1,60 @@
-﻿# Aerosmith (Pro) (Stern/Tribute 2017) 
+# Aerosmith (Pro) (Stern 2017)
 
-![Table Preview](../../images/vpx-aerosmith-preview.jpg)
+![Table Preview](../../images/UYsEyTmIhb-preview.webp)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author |
-|:---------:|:----:|:-------:|:------:|
-| VPX | [VP Universe](https://vpuniverse.com/files/file/13403-aerosmith-pro-sterntribute-2017-v102zip-with-vr/) | 1.0 | [allknowing2012](https://vpuniverse.com/profile/5615-allknowing2012/) |
-| B2S | [VP Universe](https://vpuniverse.com/files/file/13413-aerosmith-stern-2017flex-b2s-with-full-dmd/) | 3.1 | [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
-| DMD | N/A | N/A | N/A |
-| ROM | N/A | N/A | N/A |
+## *️⃣  Table Statistics
 
-**Tested by:** [OminousOsie]
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ❌ | ❌ | ❌ | ✅ | 60 |
 
----
+<br>
 
-## Status
-**Minimum VPX Standalone build:** 10.8.0-1989-a764013
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 44 |
+**VPXS 4KP Testers:**
+  - Ominous Osie 🌸
+
+<br>
 
 ---
 
-## Instructions
+<br>
 
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more information found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
-- Download the PupPack, copy the contents of the music folder into external/vpx-aerosmith/Music/Aerosmith/
-- Do NOT rename VPReg.ini file
+## ❇️ Available in the Wizard! 🪄✨
 
-## Notes
-- Music Files
-- Author: [allknowing2012](https://vpuniverse.com/profile/5615-allknowing2012/)
-- Version: 1.0 
-- PupPack: [MEGA download link for PupPack](https://mega.nz/file/ErxEHAQY#9G1aWoR0aDAAFfz_bK3XrCB0clRzn5n7sBwzd7FX6-8)
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Aerosmith (Pro) (Stern 2017)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"... Cause I miss you babe, and I don't wanna miss a thing."*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
