@@ -1,7 +1,10 @@
 ---
-backglassChecksum: "8C7ED6DB3C38E8D7A534A588D9659E25"
-backglassNotes: "Download version 1.0"
-backglassVPSId: "ilcSqv68JY"
+backglassAuthorsOverride:
+  - "hauntfreaks"
+backglassChecksum: "433E38ECEADBB71E1B3E32259FB3A718"
+backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/s84WMRNZAW_1721302723703.webp"
+backglassNotes: "Download 'ACDC (hells bells) (Stern 2013) full dmd.zip'"
+backglassUrlOverride: "https://vpuniverse.com/files/file/10932-acdc-hells-bells-stern-2013-b2s-full-dmd/"
 coloredROMChecksum: "D301B63DE4753D0292A6395D6649A708"
 coloredROMNotes: "Download version 1.01"
 coloredROMVPSId: "WmF0x5DiQL"
