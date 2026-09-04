@@ -2,21 +2,11 @@
 backglassChecksum: "BC3B78F7FC8C300A368D85D72DD4BCF5"
 backglassNotes: "Download 'Twilight Zone (Bally 1993) BW full dmd.zip'"
 backglassVPSId: "31vt0T-Yx6"
-coloredROMChecksum: "8AD4428ECE01D8916B2F3BA988479BC4"
-coloredROMNotes: "Download 'TZ 1.01.pac'"
-coloredROMVPSId: "mAR1qrYwff"
-diffAuthorsOverride:
-  - "cheese3075"
-diffChecksum: "2DE348A74646E41F3EF93348AD3D8732"
-diffNotes: "Download version 1.01_BW"
-diffUrlOverride: "https://vpuniverse.com/files/file/25444-twilight-zone-bally-1993-vpw-bw-mod/"
-diffVersionOverride: "1.01_BW"
 fps: 60
 romChecksum: "96B16E0D78E0FE105D9B68E9BDBBC4FA"
 romVPSId: "DEWpkrvK"
-tableNotes: "Download version 1.0.0"
 tableVPSId: "WMwkA7_p"
 testers:
   - "OminousOsie"
-vpxChecksum: "844B38BA4180F2136171632CD53E6EA1"
-vpxVPSId: "bgnmeH-lBI"
+vpxChecksum: "768B54EA7786A66E4854503B131C8DDC"
+vpxVPSId: "6PKuEaZ-"
