@@ -537,6 +537,7 @@ Links to these products on Amazon are through affiliate links.
 | [Cosmic Princess (Stern 1979)](external/vpx-cosmicprincess) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
 | [Counterforce (Gottlieb 1980)](external/vpx-counterforce) | :white_check_mark: | :x: | :white_check_mark: | :x: | 33 |
 | [Creature From The Black Lagoon (1992) - BW Edition](external/vpx-creaturebw) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 40 |
+| [Creature From The Black Lagoon (1992) - VPin Workshop Edition](external/vpx-creaturevpw) | :x: | :white_check_mark: | :white_check_mark: | :x: | 57 |
 | [Creepshow (Original 2022)](external/vpx-creepshow) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 42 |
 | [Criterium 77 (Taito do Brasil 1977)](external/vpx-criterium77) | :white_check_mark: | :x: | :x: | :x: | 60 |
 | [Cue Ball Wizard (Gottlieb 1992)](external/vpx-cueball) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 33 |

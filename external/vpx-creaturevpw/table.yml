@@ -1,0 +1,12 @@
+---
+enabled: false
+fps: 57
+romChecksum: "E1F87E7C99A9889E063049832601B733"
+romVPSId: "d4nESeqt"
+tableNameOverride: "Creature From the Black Lagoon (Bally 1992) Vpin Workshop Edition"
+tableVPSId: "OiRcNWYu"
+tagline: "'Move your car!'"
+testers:
+  - "Curt"
+vpxChecksum: "9887271DED5409EAE9E21D6D277677FA"
+vpxVPSId: "4MKFjZuJ_P"
