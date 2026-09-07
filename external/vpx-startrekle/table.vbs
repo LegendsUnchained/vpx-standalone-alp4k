@@ -35,8 +35,8 @@ On Error Goto 0
 dim SoundLevelMult, PunchItKey, StagedFlippers, UpperFlipperKey, RGBSaturation
 
 '----- Table Options ----
-Const cGameName = "st_161h"	' Default game rom
-'Const cGameName = "st_161hc" ' Color ROM
+'Const cGameName = "st_161h"	' Default game rom
+Const cGameName = "st_161hc" ' Color ROM
 
 ' Minimal desktop background included in "Image Manager" under "desktop_background_minimal"
 
@@ -47,9 +47,11 @@ PunchItKey = RightMagnaSave			' Set the keybind for the lockdown bar button. EG 
 StagedFlippers = False			' Staged Flippers Support
 UpperFlipperKey = 205 			' Define a key for the upper flipper. '205 = Right Arrow Key
 
-Const Shaker = True				' DOF only - Shaker motor. Can be disabled in rom code, and here.
+Const Shaker = False				' DOF only - Shaker motor. Can be disabled in rom code, and here.
 
 const SingleScreenFS = False	' Rotates DMD for single screen FS setups
+
+'Const bladeArt	= 0	'1=On (Art), 0=Sideblades Off.
 
 Dim MoveButton
 MoveButton = 1 					' Punch It button mod, moves button to Apron. 1 = on (default)
@@ -90,17 +92,6 @@ Else
 	For Each VR_Obj in VRCabinet : VR_Obj.Visible = 0 : Next
 	For Each VR_Obj in VRRoom : VR_Obj.Visible = 0 : Next
 End If
-
-UseVPMDMD=DesktopMode
-Sub ImplicitDMD_Init
-   Me.x = 30
-   Me.y = 30
-   Me.width = 128 * 2
-   Me.height = 32 * 2
-   Me.visible = true
-   Me.intensityScale=1.2
-   Me.fontColor = RGB(102,255,255)
-End Sub
 
 '---------------
 'Debug stuff
@@ -1237,6 +1228,48 @@ Sub TBVa_Timer()
 End Sub
 
 
+'' Choose Side Blades 
+'	if bladeArt = 1 then
+'		PinCab_Blades.Image = "Sidewalls ST"
+'		PinCab_Blades.visible = 1
+'	elseif bladeArt = 0 then
+'		PinCab_Blades.visible = 0
+'	End if 
+'**********************************
+' 	F12 Menu For Cabinet
+'**********************************
+Dim RailChoice: RailChoice = True
+'//////////////F12 Menu//////////////
+' Called when options are tweaked by the player. 
+' - 0: game has started, good time to load options and adjust accordingly
+' - 1: an option has changed
+' - 2: options have been reseted
+' - 3: player closed the tweak UI, good time to update staticly prerendered parts
+' Table1.Option arguments are: 
+' - option name, minimum value, maximum value, step between valid values, default value, unit (0=None, 1=Percent), an optional arry of literal strings
+Dim dspTriggered : dspTriggered = False
+Sub Table1_OptionEvent(ByVal eventId)
+	If eventId = 1 And Not dspTriggered Then dspTriggered = True : DisableStaticPreRendering = True : End If
+
+    	RailChoice = Table1.Option("Side Walls", 0, 1, 1, 1, 0, Array("ArtWork", "No Art"))
+	SetRails RailChoice
+If eventId = 3 And dspTriggered Then dspTriggered = False : DisableStaticPreRendering = False : End If
+	End Sub
+
+	
+Sub SetRails(Opt)
+	Select Case Opt
+		Case 0:
+			'Ramp15.Visible = 0
+			'Ramp16.Visible = 0
+			PinCab_Blades.visible = 1
+		Case 1:
+			'Ramp15.Visible = 1
+			'Ramp16.Visible = 1
+			PinCab_Blades.visible = 0
+	End Select
+End Sub
+
 dim Vstep
 Sub VengT_Timer()
 	dim vX, vY, vZ, vRotX
@@ -1529,15 +1562,15 @@ Sub SW25_UnHit():Controller.Switch(25) = 0 :End Sub
 Sub LeftSlingShot_SlingShot()
 	vpmTimer.PulseSw 26
     RandomSoundSlingshotLeft Col_RUBBER_MISC15
-	LeftSling.playanim 0, (3*CGT/500) * 2
-	LeftSlingArm.playanim 0, (3*CGT/500) * 2
+	LeftSling.playanim 0, (3*CGT/50) * 2
+	LeftSlingArm.playanim 0, (3*CGT/50) * 2
 End Sub
 
 Sub RightSlingShot_SlingShot()
 	vpmTimer.PulseSw 27
 	RandomSoundSlingshotRight Col_RUBBER_MISC16
-	RightSling.playanim 0, (3*CGT/500) * 2
-	RightSlingArm.playanim 0, (3*CGT/500) * 2
+	RightSling.playanim 0, (3*CGT/50) * 2
+	RightSlingArm.playanim 0, (3*CGT/50) * 2
 End Sub
 
 Sub SW28_Hit():Controller.Switch(28) = 1 :End Sub
@@ -1546,9 +1579,9 @@ Sub SW28_UnHit():Controller.Switch(28) = 0 :End Sub
 Sub SW29_Hit():Controller.Switch(29) = 1 :End Sub
 Sub SW29_UnHit():Controller.Switch(29) = 0 :End Sub
 
-Sub Bumper1_Hit:vpmTimer.PulseSw 30:RandomSoundBumperTop Bumper1:BumperRing1.playanim 0, (3*CGT/50) * 0.5:End Sub
-Sub Bumper2_Hit:vpmTimer.PulseSw 31:RandomSoundBumperMiddle Bumper2:BumperRing2.playanim 0, (3*CGT/50) * 0.5:End Sub
-Sub Bumper3_Hit:vpmTimer.PulseSw 32:RandomSoundBumperBottom Bumper3:BumperRing3.playanim 0, (3*CGT/50) * 0.5:End Sub
+Sub Bumper1_Hit:vpmTimer.PulseSw 30:RandomSoundBumperTop Bumper1:BumperRing1.playanim 0, (3*CGT/30) * 0.5:End Sub
+Sub Bumper2_Hit:vpmTimer.PulseSw 31:RandomSoundBumperMiddle Bumper2:BumperRing2.playanim 0, (3*CGT/30) * 0.5:End Sub
+Sub Bumper3_Hit:vpmTimer.PulseSw 32:RandomSoundBumperBottom Bumper3:BumperRing3.playanim 0, (3*CGT/30) * 0.5:End Sub
 
 Sub SW33_Hit():Controller.Switch(33) = 1 : me.timerenabled = 0: End Sub	'Veng Otp 1
 Sub SW33_UnHit():me.timerenabled = 1 : End Sub
@@ -2145,14 +2178,7 @@ Sub UpdateLamps()
 '	ModFlashObjm 419, F19P, "DomeRed", 13
 	nModFlash 469, f19w, 0, 37, 1
 	nModFlashm 469, f19a, 0, 0
-	nModFlashm 469, F19LMTop, 0, 0
-	nModFlashm 469, F19LM3, 0, 0
-	nModFlashm 469, F19LM4, 0, 0
-	nModFlashm 469, F19LM5, 0, 0
-	nModFlashm 469, F19LM6, 0, 0
-	nModFlashm 469, F19LM7, 0, 0
-	nModFlashm 469, F19LM8, 0, 0
-	nModFlashm 469, F19LM9, 0, 0
+    nModFlashm 469, f19a1, 0, 0
 	nModFlashM 469, f19t, 0, 0	'Transmit light
 
 '	nModFlash 420, F20a, 0, 0, 1
@@ -2160,14 +2186,8 @@ Sub UpdateLamps()
 '	ModFlashObjm 420, F20P, "DomeYellow_", 13
 	nModFlash 470, f20w, 0, 37, 1
 	nModFlashm 470, f20a, 0, 0
-	nModFlashm 470, F20LMTop, 0, 0
-	nModFlashm 470, F20LM3, 0, 0
-	nModFlashm 470, F20LM4, 0, 0
-	nModFlashm 470, F20LM5, 0, 0
-	nModFlashm 470, F20LM6, 0, 0
-	nModFlashm 470, F20LM7, 0, 0
-	nModFlashm 470, F20LM8, 0, 0
-	nModFlashm 470, F20LM9, 0, 0
+    nModFlashm 470, f20a1, 0, 0
+	
 '	nModFlashM 470, f20t, 0, 0	'Transmit light	'not used
 
 	nModFlash 421, F21, 0, 0, 1
@@ -2904,82 +2924,16 @@ Sub InitFlashers 'flasher locations (flasher X and Y positions are buggy in the 
 	End If
 	setlamp 492, 1
 
-	LeftSling.Showframe 100
-	LeftSlingArm.Showframe 100
-	RightSling.Showframe 100
-	RightSlingArm.Showframe 100
-	BumperRing1.Showframe 100
-	BumperRing2.Showframe 100
-	BumperRing3.Showframe 100
+	LeftSling.Showframe 1000
+	LeftSlingArm.Showframe 1000
+	RightSling.Showframe 1000
+	RightSlingArm.Showframe 1000
+	BumperRing1.Showframe 1000
+	BumperRing2.Showframe 1000
+	BumperRing3.Showframe 1000
 
 
-	'F19 and F20
-	F19LMtop.x = 0
-	F19LMtop.y = 0
-
-	F19LM3.x = 29.79881
-	F19LM3.y = 0
-
-	F19LM4.x = 25.80653
-	F19LM4.y = 14.89941
-
-	F19LM5.x = 14.89941
-	F19LM5.y = 25.80653
-
-	F19LM6.x = 0
-	F19LM6.y = 29.79881
-
-	F19LM7.x = -14.89941
-	F19LM7.y = 25.80653
-
-	F19LM8.x = -25.80653
-	F19LM8.y = 14.89941
-
-	F19LM9.x = -29.79881
-	F19LM9.y = 0
-
-	dim LMa : Lma = Array(F19LMtop, F19LM3, F19LM4, F19LM5, F19LM6, F19LM7, F19LM8, F19LM9, F19P1)
-	for each x in Lma
-		On Error Resume Next
-		x.x = x.x + 47.6688957
-		x.y = x.y + 248.8867188
-		x.height = x.height + 155.8977509
-		x.z = x.z + 155.8977509
-	Next
-
-	'f20 flasher cap lightmap test
-	F20LMtop.x = 0
-	F20LMtop.y = 0
-
-	F20LM3.x = 29.79881
-	F20LM3.y = 0
-
-	F20LM4.x = 25.80653
-	F20LM4.y = 14.89941
-
-	F20LM5.x = 14.89941
-	F20LM5.y = 25.80653
-
-	F20LM6.x = 0
-	F20LM6.y = 29.79881
-
-	F20LM7.x = -14.89941
-	F20LM7.y = 25.80653
-
-	F20LM8.x = -25.80653
-	F20LM8.y = 14.89941
-
-	F20LM9.x = -29.79881
-	F20LM9.y = 0
-
-	dim LMb : Lmb = Array(F20LMtop, F20LM3, F20LM4, F20LM5, F20LM6, F20LM7, F20LM8, F20LM9, F20LMp)
-	for each x in Lmb
-		On Error Resume Next
-		x.x = x.x + 713.588913
-		x.y = x.y + 158.141861
-		x.height = x.height + 209.1091156
-		x.z = x.z + 209.1091156
-	Next
+	
 
 	'Kickback reflections
 	
@@ -3038,12 +2992,12 @@ Sub InitFlashers 'flasher locations (flasher X and Y positions are buggy in the 
 
 
 '''
-	f19a.x = 47.6688957
-	f19a.y = 248.8867188
+	'f19a.x = 47.6688957
+	'f19a.y = 248.8867188
 '	f19a.z = 156
 
-	f20a.x = 713.588913
-	f20a.y = 158.141861
+	'f20a.x = 713.588913
+	'f20a.y = 158.141861
 
 	f19bw.x = 482.3715128
 	f19bw.y = 106
@@ -3573,21 +3527,10 @@ Sub Initballstacks() : dim x: for x = 0 to 9 : Set Lballstack(x,0) = Nothing : S
 
 'Left Flipper ====================================
 
-' TypeName fails on Nothing
-' https://bugs.winehq.org/show_bug.cgi?id=55969
-' so we specifically return "Nothing" for Nothing
-Function FixedTypeName(obj)
-	If obj Is Nothing Then
-		FixedTypeName = "Nothing"
-	Else
-		FixedTypeName = TypeName(obj)
-	End If
-End Function
-
 Sub TriggerLF_Hit()	'add a ball to the stack
 '	tb.text = activeball.mass
 	dim x : for x = 0 to 9
-		if FixedTypeName(Lballstack(x, 0)) = "Nothing" then 
+		if Typename(Lballstack(x, 0)) = "Nothing" then 
 			Set Lballstack(x, 0) = activeball
 			Lballstack(x, 1) = activeball.id
 			exit For
@@ -3616,7 +3559,7 @@ Sub ProcessballsL()	'note X position of balls in flipper area
 	TriggerLF.TimerEnabled = 1
 	LFon = True
 	dim x : for x = 0 to 9 'Count X positions of balls in array
-		if FixedTypeName(Lballstack(x, 0)) = "IBall" then
+		if TypeName(Lballstack(x, 0)) = "IBall" then
 			Lballstack(x, 2) = Lballstack(x, 0).X
 			Lballstack(x, 3) = Lballstack(x, 0).Y
 			Lballstack(x, 4) = Lballstack(x, 0).VelX
@@ -3636,7 +3579,7 @@ end Sub
 
 Sub TriggerRF_Hit()	'add a ball to the stack
 	dim x : for x = 0 to 9
-		if FixedTypeName(Rballstack(x, 0)) = "Nothing" then 
+		if Typename(Rballstack(x, 0)) = "Nothing" then 
 			Set Rballstack(x, 0) = activeball
 			Rballstack(x, 1) = activeball.id
 			exit For
@@ -3664,8 +3607,8 @@ End Sub
 Sub tbBS_Timer()	'debug textbox
 '	on error resume next
 	dim y(9), x : for x = 0 to 9
-		y(x) = FixedTypeName(Rballstack(x, 0))
-		if FixedTypeName(Rballstack(x, 0)) = "IBall" then y(x) = y(x) & " " & Rballstack(x, 0).ID
+		y(x) = Typename(Rballstack(x, 0))
+		if TypeName(Rballstack(x, 0)) = "IBall" then y(x) = y(x) & " " & Rballstack(x, 0).ID
 		y(x) = y(x) & " " & Rballstack(x, 2)
 	Next
 	me.text = "Ball 1: " & y(0) & " " & Rballstack(0,1) & vbnewline & _
@@ -3685,7 +3628,7 @@ Sub ProcessballsR()	'note X position of balls in flipper area
 	TriggerRF.TimerEnabled = 1
 	RFon = True
 	dim x : for x = 0 to 9 'Count X positions of balls in array
-		if FixedTypeName(Rballstack(x, 0)) = "IBall" then
+		if TypeName(Rballstack(x, 0)) = "IBall" then
 			Rballstack(x, 2) = Rballstack(x, 0).X
 			Rballstack(x, 3) = Rballstack(x, 0).Y
 			Rballstack(x, 4) = Rballstack(x, 0).VelX
@@ -3765,7 +3708,7 @@ End Function
 
 dim PolarityEnabled : PolarityEnabled = True	'debug
 Sub PolarityCorrect(object, xpos, ypos, xvel, PartialFLipCoef, LR)	'Corrects angle/velocity using ball data captured at flip
-	if FixedTypeName(object) = "Nothing" then Exit Sub 'Bug - This happens when the ball wavers in and out of trigger maybe
+	if TypeName(object) = "Nothing" then Exit Sub 'Bug - This happens when the ball wavers in and out of trigger maybe
 	if object.vely > 0 then TBpl.text = "exit sub" : exit sub
 	dim TestVar : 	TestVar = "Cutoff"	'debug string
 	dim lrcoef : if lr = 1 then lrcoef = -1 else lrcoef = 1 end if	'Direction Coef- could be used to compress the script. readability tho
