@@ -1,5 +1,5 @@
 ---
-fps: 60
+fps: 55
 pupArchiveFormat: "zip"
 pupArchiveRoot: "DarkestDungeon"
 pupBundled: true
@@ -9,7 +9,7 @@ pupRequired: true
 pupVersion: "DarkestDungeon"
 tableVPSId: "9B6KqxBypv"
 testers:
-  - "miku"
+  - "Miku"
   - "Wraith"
   - "Missile Toad"
   - "Silentkat"
