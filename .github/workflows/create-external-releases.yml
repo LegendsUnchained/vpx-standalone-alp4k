@@ -27,6 +27,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v5
         with:
+          ref: ${{ github.event.release.tag_name || inputs.release_tag || github.ref }}
           # Full commit graph is required so generate-release.py can call
           # git.iter_commits(paths=..., max_count=1) per external folder.
           # A blobless partial clone keeps all commits + tree objects but
@@ -63,6 +64,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r .github/workflows/scripts/requirements.txt
 
+      - name: Test discovery history
+        run: python -m unittest discover -s .github/workflows/scripts -p test_catalog_history.py
+
       - name: Full table.yml validation (release gate)
         run: |
           echo "Running full table.yml validation across external/ with VPSDB checks..."
@@ -88,8 +92,8 @@ jobs:
           fi
 
       - name: Table Manager Achievements Config
-        run: gh release upload ${{ github.ref_name }} tm-config/achievements.json
-        
+        run: gh release upload "$GITHUB_REF_NAME" tm-config/achievements.json --clobber
+
       - name: Open PR for README updates
         if: github.event_name == 'release'
         run: |

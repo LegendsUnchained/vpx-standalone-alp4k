@@ -79,7 +79,7 @@ Const doCallouts				= False ' Play random callouts during the game
 Const FontScale					= 1		' Scales the PupFonts up/down for different sized DMDs
 Const FontScaleDmd				= 1		' Scales the SlimDMDFonts up/down for different sized DMDs
 Const osbactive					= 0 	' Orbital Scoreboard: Set to 0 for off, 1 for only player 1 to be sent, 2 for all scores to be sent.	
-Const bladeArt					= 0		' 0=Off (Black wood), 1=On (Art), 2=Sideblades Off.
+Const bladeArt					= 1		' 0=Off (Black wood), 1=On (Art), 2=Sideblades Off.
 Const showRails					= 1		' 0=Off, 1=ON - Show rails on top of sideblades
 Const AttractSilent				= 0		' 0 = audio and DOF played during attract sequence, 1 = no audio and no DOF during attract sequence(after first play)
 Const AlternatePhysics			= 0		' 0=Default Physics, 1=Mod Physics - See which flipper physics option you like best
@@ -93,8 +93,8 @@ Const VRBats					= 0		'0=No Bats, 1=BATS!
 '   PinUp Player USER Config
 '**************************
 Dim bSingleScreen:bSingleScreen=False	   ' when Playfield is in landscape and single screen this will allow PUP to work properly
-dim PuPDMDDriverType: PuPDMDDriverType=0   ' 0=LCD DMD, 2=FullDMD
-dim useHighResDMD:useHighResDMD=False	   ' if you have a high res FullDMD this will make some animtions look better
+dim PuPDMDDriverType: PuPDMDDriverType=2   ' 0=LCD DMD, 2=FullDMD
+dim useHighResDMD:useHighResDMD=True	   ' if you have a high res FullDMD this will make some animtions look better
 dim useRealDMDScale : useRealDMDScale=0    ' 0 or 1 for RealDMD scaling.  Choose which one you prefer.
 dim useDMDVideos    : useDMDVideos=True	   ' true or false to use DMD splash videos.
 dim b5x4Mode		: b5x4Mode=False	   ' Using 5x4 Screen
@@ -13299,17 +13299,17 @@ End Sub
 '
 'ffmpeg -loop 1 -i bonus1.png -c:v libx264 -t 15 -pix_fmt yuv420p -vf scale=320:240 out.mp4
 
-'ffmpeg -loop 1 -r 30 -s 1920x1080 -i bonus1.png -vcodec libx264 -crf 25 -b:v 4M -pix_fmt yuv420p -vf scale=1920:1080 -t 4 -profile:v baseline bonus1.png
-'ffmpeg -loop 1 -r 30 -s 1920x1080 -i bonus2.png -vcodec libx264 -crf 25 -b:v 4M -pix_fmt yuv420p -vf scale=1920:1080 -t 4 -profile:v baseline bonus2.png
-'ffmpeg -loop 1 -r 30 -s 1920x1080 -i bonus3.png -vcodec libx264 -crf 25 -b:v 4M -pix_fmt yuv420p -vf scale=1920:1080 -t 4 -profile:v baseline bonus3.png
-'ffmpeg -loop 1 -r 30 -s 1920x1080 -i bonus4.png -vcodec libx264 -crf 25 -b:v 4M -pix_fmt yuv420p -vf scale=1920:1080 -t 4 -profile:v baseline bonus4.png
-'ffmpeg -loop 1 -r 30 -s 1920x1080 -i bonus5.png -vcodec libx264 -crf 25 -b:v 4M -pix_fmt yuv420p -vf scale=1920:1080 -t 4 -profile:v baseline bonus5.png
-'ffmpeg -loop 1 -r 30 -s 1920x1080 -i bonus6.png -vcodec libx264 -crf 25 -b:v 4M -pix_fmt yuv420p -vf scale=1920:1080 -t 4 -profile:v baseline bonus6.png
+'ffmpeg -loop 1 -r 30 -s 1920x1080 -i bonus1.png -vcodec libx264 -crf 25 -b:v 4M -pix_fmt yuv420p -vf scale=1920:1080 -t 4 -profile:v baseline bonus1.mp4
+'ffmpeg -loop 1 -r 30 -s 1920x1080 -i bonus2.png -vcodec libx264 -crf 25 -b:v 4M -pix_fmt yuv420p -vf scale=1920:1080 -t 4 -profile:v baseline bonus2.mp4
+'ffmpeg -loop 1 -r 30 -s 1920x1080 -i bonus3.png -vcodec libx264 -crf 25 -b:v 4M -pix_fmt yuv420p -vf scale=1920:1080 -t 4 -profile:v baseline bonus3.mp4
+'ffmpeg -loop 1 -r 30 -s 1920x1080 -i bonus4.png -vcodec libx264 -crf 25 -b:v 4M -pix_fmt yuv420p -vf scale=1920:1080 -t 4 -profile:v baseline bonus4.mp4
+'ffmpeg -loop 1 -r 30 -s 1920x1080 -i bonus5.png -vcodec libx264 -crf 25 -b:v 4M -pix_fmt yuv420p -vf scale=1920:1080 -t 4 -profile:v baseline bonus5.mp4
+'ffmpeg -loop 1 -r 30 -s 1920x1080 -i bonus6.png -vcodec libx264 -crf 25 -b:v 4M -pix_fmt yuv420p -vf scale=1920:1080 -t 4 -profile:v baseline bonus6.mp4
 
-'ffmpeg -loop 1 -r 30 -s 1920x1080 -i bonus7.png -vcodec libx264 -crf 25 -b:v 4M -pix_fmt yuv420p -vf scale=1920:1080 -t 4 -profile:v baseline bonus7.png
-'ffmpeg -loop 1 -r 30 -s 1920x1080 -i bonus8.png -vcodec libx264 -crf 25 -b:v 4M -pix_fmt yuv420p -vf scale=1920:1080 -t 4 -profile:v baseline bonus8.png
-'ffmpeg -loop 1 -r 30 -s 1920x1080 -i bonus9.png -vcodec libx264 -crf 25 -b:v 4M -pix_fmt yuv420p -vf scale=1920:1080 -t 4 -profile:v baseline bonus9.png
-'ffmpeg -loop 1 -r 30 -s 1920x1080 -i bonus10.png -vcodec libx264 -crf 25 -b:v 4M -pix_fmt yuv420p -vf scale=1920:1080 -t 4 -profile:v baseline bonus10.png
+'ffmpeg -loop 1 -r 30 -s 1920x1080 -i bonus7.png -vcodec libx264 -crf 25 -b:v 4M -pix_fmt yuv420p -vf scale=1920:1080 -t 4 -profile:v baseline bonus7.mp4
+'ffmpeg -loop 1 -r 30 -s 1920x1080 -i bonus8.png -vcodec libx264 -crf 25 -b:v 4M -pix_fmt yuv420p -vf scale=1920:1080 -t 4 -profile:v baseline bonus8.mp4
+'ffmpeg -loop 1 -r 30 -s 1920x1080 -i bonus9.png -vcodec libx264 -crf 25 -b:v 4M -pix_fmt yuv420p -vf scale=1920:1080 -t 4 -profile:v baseline bonus9.mp4
+'ffmpeg -loop 1 -r 30 -s 1920x1080 -i bonus10.png -vcodec libx264 -crf 25 -b:v 4M -pix_fmt yuv420p -vf scale=1920:1080 -t 4 -profile:v baseline bonus10.mp4
 
 
 Dim ScoreBonusAdd
@@ -13351,7 +13351,7 @@ Sub tmrBonus_Timer()
 					AnimateLabel screen, "Bonus1", 25, 3, 17*FontScale, 12*FontScale, 500, "Bonus", 500
 					TweenStr = "{'mt':2, 'size': "& 17*FontScale &",'ypos': 25}"				' mt1=Animate, at2=Motion, 
 
-					playmedia "bonus1.png", "PupBonus", screen, "", -1, "", 1, 1
+					playmedia "bonus1.mp4", "PupBonus", screen, "", -1, "", 1, 1
 
 					puPlayer.LabelSet screen,"Bonus1", "Bonus", 1, TweenStr
 					puPlayer.LabelSet screen,"Bonus2", "", 1, ""
@@ -13428,7 +13428,7 @@ Sub tmrBonus_Timer()
 						PlaySoundVol "sfx-bonus9", VolSfx
 						DOF_UnderCab "Bonus_Blue"	'Bonus End
 						'playclear screen
-						playmedia "bonus9.png", "PupBonus", screen, "", -1, "", 1, 1
+						playmedia "bonus9.mp4", "PupBonus", screen, "", -1, "", 1, 1
 
 						puPlayer.LabelSet screen,"Bonus1", "Total Bonus", 1, ""
 						puPlayer.LabelSet screen,"Bonus2", "Bonus Multiplier "&BonusMultiplier&" x", 1, ""
@@ -13450,7 +13450,7 @@ Sub tmrBonus_Timer()
 				if bBonusSkip=False then
 					PlaySoundVol "sfx-bonus11", VolSfx
 					'playclear screen
-					playmedia "bonus10.png", "PupBonus", screen, "", -1, "", 1, 1
+					playmedia "bonus10.mp4", "PupBonus", screen, "", -1, "", 1, 1
 
 					AnimateLabel screen, "Bonus3", 38, 38, 2*FontScale, 10*FontScale, 300, "Egghead", 0
 					AnimateLabel screen, "Bonus5", 65, 65, 2*FontScale, 10*FontScale, 300, FormatScore(BonusModeTotal(7)), 400
@@ -13471,7 +13471,7 @@ Sub tmrBonus_Timer()
 				DOF 500, DOFPulse	'Bonus End
 				bonusBGIdx=9
 				'playclear screen
-				playmedia "bonus9.png", "PupBonus", screen, "", -1, "", 1, 1
+				playmedia "bonus9.mp4", "PupBonus", screen, "", -1, "", 1, 1
 
 				AnimateLabel screen, "Bonus1", 3, 25, 12*FontScale, 17*FontScale, 500, "Total Bonus", 0
 				AnimateLabel screen, "Bonus5", 65, 45, 12*FontScale, 17*FontScale, 500, FormatScore(ScoreBonusAdd), 0

@@ -7,7 +7,8 @@ WITHOUT touching GitHub: no release, no asset upload, no git history required.
 The three release-only fields the manifest gains at publish time (`repoConfig`,
 the asset download URL; `repoConfigChecksum`, its MD5; and `configVersion`, the
 table folder's commit hash) are intentionally absent here — everything else is
-byte-for-byte what ships.
+byte-for-byte what ships. Discovery dates can be included with --history pointing
+to a downloaded table-history.json release asset; no local history is assumed.
 
 Use it to preview / review the JSON a table.yml renders to before opening or
 merging a PR.
@@ -32,6 +33,7 @@ import sys
 from pathlib import Path
 
 import vpsdb
+import catalog_history
 
 EXTERNAL_DIR = Path("external")
 
@@ -64,7 +66,7 @@ def resolve_files(tokens):
     return files
 
 
-def render(files, strict):
+def render(files, strict, history=None):
     """Render the manifest dict for the given table.yml files.
 
     strict=False (default) mirrors a lenient preview: a table that fails to
@@ -86,6 +88,8 @@ def render(files, strict):
             data["name"] = vpsdb.process_title(
                 name, data.get("manufacturer", ""), data.get("year", "")
             )
+    if history is not None:
+        catalog_history.stamp(tables, history)
     return tables
 
 
@@ -109,6 +113,11 @@ def main(argv=None):
         action="store_true",
         help="exit non-zero if any table fails to resolve (matches the release/validator).",
     )
+    parser.add_argument(
+        "--history",
+        type=Path,
+        help="downloaded table-history.json release asset to include known discovery dates.",
+    )
     args = parser.parse_args(argv)
 
     files = resolve_files(args.tables)
@@ -116,7 +125,8 @@ def main(argv=None):
         print("No table.yml files to render.", file=sys.stderr)
         return 1
 
-    tables = render(files, args.strict)
+    history = json.loads(args.history.read_text()) if args.history else None
+    tables = render(files, args.strict, history)
 
     payload = json.dumps(tables, indent=2)
     if args.output:

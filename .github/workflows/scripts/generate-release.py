@@ -11,6 +11,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import requests
 import vpsdb
+import catalog_history
 import git
 from github import Github, Auth
 from github.GithubException import GithubException
@@ -284,23 +285,6 @@ def main():
     if unchanged_tables:
         print(f"[INFO] Skipping unchanged tables: {', '.join(sorted(unchanged_tables))}")
 
-    if not changed_tables:
-        print("[INFO] No changed tables detected; nothing to build.")
-        # Keep release consistent: upload the previous manifest if it exists
-        if isinstance(prev_manifest, dict) and prev_manifest:
-            manifest_file = "manifest.json"
-            with open(manifest_file, "w") as f:
-                json.dump(prev_manifest, f, indent=2)
-            # Build asset index once and upload manifest using it
-            asset_index = build_asset_index(rel)
-            index_lock = threading.Lock()
-            _ = upload_release_asset(github_token, repo_name, rel, asset_index, index_lock, manifest_file, clobber=True)
-            try:
-                os.remove(manifest_file)
-            except OSError:
-                pass
-        sys.exit(0)
-
     # Build asset index once to avoid pagination per file
     asset_index = build_asset_index(rel)
     index_lock = threading.Lock()
@@ -317,11 +301,28 @@ def main():
         futures = {executor.submit(process_table, arg): arg[0] for arg in pool_args}
         for future in as_completed(futures):
             table, updated_data = future.result()
+            if not all(updated_data.get(field) for field in ("repoConfig", "repoConfigChecksum", "configVersion")):
+                raise RuntimeError(f"Incomplete config bundle for {table}; refusing to publish discovery history")
             updated_tables[table] = updated_data
 
     # Merge manifest: keep previous entries for unchanged tables, update changed ones
-    merged_manifest = dict(prev_manifest) if isinstance(prev_manifest, dict) else {}
+    # Keep only currently enabled/resolved tables; removed entries stay in the
+    # history ledger, not in the installable catalog.
+    merged_manifest = {key: dict(prev_manifest[key]) for key in unchanged_tables}
     merged_manifest.update(updated_tables)
+
+    # Stamp every entry, including unchanged ones and no-op reruns. First
+    # availability is immutable; content changes get the release's update date.
+    history = catalog_history.release_history(repo, rel, merged_manifest)
+    catalog_history.stamp(merged_manifest, history)
+    # Generated history lives in release assets, never in the checkout.
+    with tempfile.TemporaryDirectory(prefix="catalog-history-") as output_dir:
+        history_file = os.path.join(output_dir, "table-history.json")
+        with open(history_file, "w") as f:
+            json.dump(history, f, indent=2, sort_keys=True)
+        history_url = upload_release_asset(github_token, repo_name, rel, asset_index, index_lock, history_file, clobber=True)
+        if not history_url:
+            raise RuntimeError("Could not publish table history; refusing to publish an incomplete catalog")
 
     # Write & upload manifest
     manifest_file = "manifest.json"
@@ -329,6 +330,8 @@ def main():
         json.dump(merged_manifest, f, indent=2)
 
     manifest_url = upload_release_asset(github_token, repo_name, rel, asset_index, index_lock, manifest_file, clobber=True)
+    if not manifest_url:
+        raise RuntimeError("Could not publish manifest.json")
     print(f"Uploaded manifest.json to release: {manifest_url}")
 
     # Optional cleanup
