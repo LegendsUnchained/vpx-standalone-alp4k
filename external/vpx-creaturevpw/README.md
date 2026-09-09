@@ -8,9 +8,8 @@
 | File Type | Link | Version | Author(s) | 
 |-----------|--------|----------|--------------|
 | **VPX** | [vpuniverse](https://vpuniverse.com/files/file/25612-creature-from-the-black-lagoon-williams-1992/) | 1.2 | VPW, Niwak, Sixtoe |
-| **B2S** | download and use the included backglass.png |
+| **B2S** | [vpuniverse](https://vpuniverse.com/files/file/12155-creature-from-the-black-lagoon-bally-1992-b2s-with-full-dmd/) | 4.0 | HauntFreaks |
 | **ROM** | [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=1169) | cftbl_l4 | Destruk |
-
 
 **Tested by:** Curt
 
@@ -20,7 +19,7 @@
 
 | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |-----------|-----|-----|-----|-----|
-| ❌ | ✅ | ✅ | ❌ | 57 |
+| ✅ | ✅ | ✅ | ❌ | 57 |
 
 ---
 
