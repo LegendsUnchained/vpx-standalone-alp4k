@@ -1,0 +1,6 @@
+# Deps for the publish-catalog-data.yml workflow (generate-thumbnails.py +
+# generate-vpinmdb-mirror.py). Kept separate from requirements.txt (the main
+# release pipeline's deps) so this workflow doesn't pull in pygithub/GitPython/
+# etc. it never uses.
+Pillow==11.0.0
+requests==2.32.5
