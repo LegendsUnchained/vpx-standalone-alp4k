@@ -55,12 +55,23 @@ jobs:
           echo "tag=$tag" >> "$GITHUB_OUTPUT"
           echo "Publishing catalog data for release $tag"
 
-      # Only external/*/launcher.png at this tag is needed (for box art); no
-      # history required, unlike the release-generation workflow.
-      - name: Checkout release tag
+      # This workflow's own scripts — always from wherever it's defined (the
+      # ref that triggered this run, typically main), NOT from the release
+      # tag below. That tag can be much older than this workflow (this is
+      # re-dispatchable for any past release), so checking IT out first would
+      # overwrite the working directory and lose scripts that didn't exist
+      # yet at that tag.
+      - name: Checkout workflow scripts
+        uses: actions/checkout@v5
+
+      # external/*/launcher.png as of the release being published, into a
+      # separate path so it doesn't clobber the checkout above. No history
+      # required here, unlike the release-generation workflow.
+      - name: Checkout release tag (for box art source images)
         uses: actions/checkout@v5
         with:
           ref: ${{ steps.rel.outputs.tag }}
+          path: release-checkout
           fetch-depth: 1
           filter: blob:none
           submodules: false
@@ -88,7 +99,10 @@ jobs:
       # small-thumbnail variant: 145 KB is already small enough for a
       # ~300-table page, and the browser caches it across every use.
       - name: Generate box art
-        run: python .github/workflows/scripts/generate-boxart.py --out /tmp/catalog-publish/boxart
+        run: |
+          python .github/workflows/scripts/generate-boxart.py \
+            --external-dir release-checkout/external \
+            --out /tmp/catalog-publish/boxart
 
       # Trims vpinmediadb's ~1156-table index down to the ~300 wizard tables and
       # re-encodes each 1k bg/table/fss PNG (~1080p, ~3 MB) as a 960x540 WebP

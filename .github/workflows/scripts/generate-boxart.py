@@ -11,6 +11,7 @@ variant needed on top: 145 KB is already small enough for a page listing
 
 Usage:
     python generate-boxart.py --out /tmp/boxart
+    python generate-boxart.py --external-dir release-checkout/external --out /tmp/boxart
 """
 import argparse
 import sys
@@ -18,21 +19,22 @@ from pathlib import Path
 
 from PIL import Image
 
-EXTERNAL_DIR = Path("external")
 QUALITY = 90
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--external-dir", default="external", help="directory containing <table-key>/launcher.png folders (default: %(default)s)")
     parser.add_argument("--out", required=True, help="output directory for <table-key>.webp files")
     args = parser.parse_args()
 
+    external_dir = Path(args.external_dir)
     out_dir = Path(args.out)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    sources = sorted(EXTERNAL_DIR.glob("*/launcher.png"))
+    sources = sorted(external_dir.glob("*/launcher.png"))
     if not sources:
-        print(f"No launcher.png files found under {EXTERNAL_DIR}/", file=sys.stderr)
+        print(f"No launcher.png files found under {external_dir}/", file=sys.stderr)
         sys.exit(1)
 
     written = 0
