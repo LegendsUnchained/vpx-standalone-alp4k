@@ -2,32 +2,59 @@
 
 ![Table Preview](../../images/vpx-alienpoker.png)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author |
-|:---------:|:----:|:-------:|:------:|
-| VPX | [VPforums](https://www.vpforums.org/index.php?s=920da0de1e29988e389b98e25e90cfbe&app=downloads&showfile=13175) | 4.0.0 | [jpsalas](https://www.vpforums.org/index.php?showuser=277) |
-| B2S | [VP Universe](https://vpuniverse.com/files/file/13228-alien-poker-williams-1980-b2s/) | 1.0.0 | [HauntFreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
-| DMD | N/A | N/A | N/A |
-| ROM | [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=790) | alpok_l6.zip | N/A |
+## *️⃣  Table Statistics
 
-**Tested by:** [kaoticBPR]
-
----
-
-## Status 
-**Minimum VPX Standalone build:** 10.8.0-1989-a764013
 | Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
 |-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 55 |
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
+
+<br>
+
+**VPXS 4KP Testers:**
+  - PBW23
+  - kaoticBPR
+
+<br>
 
 ---
 
-## Instructions
+<br>
 
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more information found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
-- "Check that alien's sleeve for a pocketed ace!"
+## ❇️ Available in the Wizard! 🪄✨
 
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Alien Poker`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *"You fold, I deal."*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+<br>
+<br>
+<br>
+<br>
+<br>
