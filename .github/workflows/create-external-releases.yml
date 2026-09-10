@@ -35,7 +35,12 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       GITHUB_TOKEN: ${{ github.token }}
       GITHUB_REPOSITORY: ${{ github.repository }}
-      GITHUB_REF_NAME: ${{ inputs.release_tag }}
+      # NOT GITHUB_REF_NAME. That name is reserved: the runner injects its own
+      # value into every step, overriding anything set here, and for a
+      # workflow_dispatch on main that value is "main" — which the scripts then
+      # looked up as a release. It only ever appeared to work because a release
+      # event's built-in GITHUB_REF_NAME happens to be the tag.
+      RELEASE_TAG: ${{ inputs.release_tag }}
 
     steps:
       - name: Checkout code
@@ -117,7 +122,26 @@ jobs:
           fi
 
       - name: Table Manager Achievements Config
-        run: gh release upload "$GITHUB_REF_NAME" tm-config/achievements.json --clobber
+        run: |
+          # Uploaded through the API rather than `gh release upload <tag>`:
+          # that resolves the tag endpoint, which cannot see a draft, and the
+          # release is still a draft at this point in the pipeline.
+          repo="${{ github.repository }}"
+          id=$(TAG="$RELEASE_TAG" gh api "repos/$repo/releases" --paginate \
+                 --jq '[.[] | select(.tag_name==env.TAG)] | sort_by(.draft) | reverse | .[0].id')
+          if [ -z "$id" ]; then
+            echo "::error::No release found for tag '$RELEASE_TAG'."
+            exit 1
+          fi
+          # --clobber equivalent: the API refuses a duplicate asset name.
+          old=$(gh api "repos/$repo/releases/$id/assets" --paginate \
+                  --jq '.[] | select(.name=="achievements.json") | .id')
+          for a in $old; do gh api -X DELETE "repos/$repo/releases/assets/$a"; done
+          gh api --method POST \
+            -H "Content-Type: application/json" \
+            "https://uploads.github.com/repos/$repo/releases/$id/assets?name=achievements.json" \
+            --input tm-config/achievements.json > /dev/null
+          echo "Uploaded achievements.json to release $id ($RELEASE_TAG)"
 
       # Disabled 2026-09-10: paired with the regeneration step above. With that
       # step off there is never a README.md change to raise a PR for.
@@ -130,7 +154,7 @@ jobs:
             exit 0
           fi
           DEFAULT_BRANCH="${{ github.event.repository.default_branch }}"
-          SAFE_TAG=$(echo "${GITHUB_REF_NAME}" | tr '[:upper:]' '[:lower:]' | sed -E 's#[^a-z0-9._-]+#-#g; s#^-+##; s#-+$##')
+          SAFE_TAG=$(echo "${RELEASE_TAG}" | tr '[:upper:]' '[:lower:]' | sed -E 's#[^a-z0-9._-]+#-#g; s#^-+##; s#-+$##')
           if [ -z "$SAFE_TAG" ]; then
             SAFE_TAG="release-${GITHUB_RUN_ID}"
           fi
@@ -171,7 +195,7 @@ jobs:
                 --base "$DEFAULT_BRANCH" \
                 --head "$PR_BRANCH" \
                 --title "chore: regenerate README table listings" \
-                --body "Automated regeneration of the Wizard Tables and Manual Install Tables sections in README.md, triggered by release \`${GITHUB_REF_NAME}\`."; then
+                --body "Automated regeneration of the Wizard Tables and Manual Install Tables sections in README.md, triggered by release \`${RELEASE_TAG}\`."; then
               exit 0
             fi
             echo "::warning::gh pr create attempt ${attempt} failed; retrying..."

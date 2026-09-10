@@ -31,17 +31,24 @@ def find_release(repo, tag):
     """Find a release by tag name, including drafts.
 
     `repo.get_release(tag)` resolves through /releases/tags/{tag}, which cannot
-    see a draft because a draft has no git tag yet. Releases are now built as a
-    draft and published only once every asset is in place, so the lookup has to
-    fall back to scanning the release list.
+    see a draft because a draft has no git tag yet, and would silently return
+    the previous published release when a candidate reuses its tag. Scanning the
+    list is the only way to reach a draft, and lets the draft take precedence.
     """
-    try:
-        return repo.get_release(tag)
-    except Exception:
-        for release in repo.get_releases():
-            if release.tag_name == tag:
-                return release
-    return None
+    draft = None
+    published = None
+    for release in repo.get_releases():
+        if release.tag_name != tag:
+            continue
+        if release.draft:
+            draft = draft or release
+        else:
+            published = published or release
+    # A draft wins when both exist. The pipeline builds a candidate as a draft
+    # that reuses the final tag, so while it runs there can be a draft and the
+    # previous published release sharing one tag — and uploading the new assets
+    # onto the published one would corrupt the release currently being served.
+    return draft or published
 
 
 def find_table_yml(base_dir="tables"):
@@ -318,7 +325,9 @@ def process_table(args):
 def main():
     github_token = os.environ.get("GITHUB_TOKEN")
     repo_name = os.environ.get("GITHUB_REPOSITORY")
-    release_tag = os.environ.get("GITHUB_REF_NAME")
+    # RELEASE_TAG, not GITHUB_REF_NAME: the latter is reserved and the runner
+    # overrides it with the ref the workflow ran on.
+    release_tag = os.environ.get("RELEASE_TAG")
 
     if not github_token or not repo_name or not release_tag:
         print("Error: Required environment variables not set.")

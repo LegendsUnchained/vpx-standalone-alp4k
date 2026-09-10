@@ -19,17 +19,23 @@ CATALOG_URL = "https://vpxtablemanager.com/catalog/#table={key}"
 def find_release(repo, tag):
     """Find a release by tag name.
 
-    A prerelease is a normal published release, so the tag endpoint resolves it
-    directly; the list scan is only a fallback for a release whose tag has not
-    propagated yet.
+    Scanned rather than resolved through /releases/tags/{tag}: that endpoint
+    cannot see a draft, and returns the previous published release when a
+    candidate reuses its tag.
     """
-    try:
-        return repo.get_release(tag)
-    except Exception:
-        for release in repo.get_releases():
-            if release.tag_name == tag:
-                return release
-    return None
+    draft = None
+    published = None
+    for release in repo.get_releases():
+        if release.tag_name != tag:
+            continue
+        if release.draft:
+            draft = draft or release
+        else:
+            published = published or release
+    # Draft first: a candidate reuses the final tag, so while the pipeline runs
+    # a draft and the previous published release share one. Writing the notes to
+    # the published one would rewrite the release users are being served.
+    return draft or published
 
 
 def get_wizard_data(repo, tag):
@@ -99,7 +105,9 @@ def get_release_notes(added, modified, wizard_data):
 def main():
     github_token = os.environ.get("GITHUB_TOKEN")
     repo_name = os.environ.get("GITHUB_REPOSITORY")
-    release_tag = os.environ.get("GITHUB_REF_NAME")
+    # RELEASE_TAG, not GITHUB_REF_NAME: the latter is reserved and the runner
+    # overrides it with the ref the workflow ran on.
+    release_tag = os.environ.get("RELEASE_TAG")
 
     parser = argparse.ArgumentParser(
         description="Write a release's notes from its own published manifest."

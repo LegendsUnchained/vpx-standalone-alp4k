@@ -89,8 +89,11 @@ jobs:
           # Resolve by listing, not /releases/tags/{tag}: create-testing-release
           # mirrors a release while it is still a DRAFT, and a draft is
           # invisible to the tag endpoint and has no git tag of its own.
+          # sort_by(.draft)|reverse puts a draft first: while the pipeline runs, a
+          # candidate draft and the previous published release share the tag, and
+          # the mirror must describe the candidate.
           read -r id commitish isdraft < <(TAG="$tag" gh api "repos/${{ github.repository }}/releases" --paginate \
-            --jq '.[] | select(.tag_name==env.TAG) | "\(.id) \(.target_commitish) \(.draft)"' | head -1)
+            --jq '[.[] | select(.tag_name==env.TAG)] | sort_by(.draft) | reverse | .[0] | "\(.id) \(.target_commitish) \(.draft)"')
           if [ -z "$id" ]; then
             echo "::error::No release found with tag '$tag'."
             exit 1
