@@ -27,7 +27,7 @@ def md5sum(file_path, chunk_size=1024 * 1024):
     return digest.hexdigest()
 
 
-def find_release(repo, tag):
+def find_release(repo, tag, prefer_draft=True):
     """Find a release by tag name, including drafts.
 
     `repo.get_release(tag)` resolves through /releases/tags/{tag}, which cannot
@@ -48,7 +48,7 @@ def find_release(repo, tag):
     # that reuses the final tag, so while it runs there can be a draft and the
     # previous published release sharing one tag — and uploading the new assets
     # onto the published one would corrupt the release currently being served.
-    return draft or published
+    return (draft or published) if prefer_draft else (published or draft)
 
 
 def find_table_yml(base_dir="tables"):
@@ -170,7 +170,10 @@ def fetch_existing_manifest(github_token, repo_name, release_tag):
         auth = Auth.Token(github_token)
         g = Github(auth=auth)
         repo = g.get_repo(repo_name)
-        rel = find_release(repo, release_tag)
+        # The PUBLISHED release with this tag, not the draft being built: the
+        # draft starts empty, and treating that as "no previous manifest" makes
+        # every run rebuild all ~315 tables instead of only what changed.
+        rel = find_release(repo, release_tag, prefer_draft=False)
         if rel is None:
             return {}
         for asset in rel.get_assets():

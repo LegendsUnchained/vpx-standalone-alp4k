@@ -41,11 +41,10 @@ def find_release(repo, tag):
 def get_wizard_data(repo, tag, token):
     """Read the manifest.json asset attached to a release.
 
-    Authenticated on purpose: notes are written while the release is still a
-    draft, and a draft's assets are not publicly downloadable. Fetching
-    browser_download_url without a token returns 404 even though the asset is
-    there, which reads as "no manifest.json asset on release" — the asset
-    exists, the request just isn't allowed to see it.
+    Notes are written while the release is still a draft, so this reads the
+    asset through the authenticated API endpoint. A draft has no public
+    download URL at all — browser_download_url points at a synthetic
+    .../download/untagged-<hash>/ path that 404s regardless of credentials.
     """
     try:
         release = find_release(repo, tag)
@@ -54,8 +53,12 @@ def get_wizard_data(repo, tag, token):
             return None
         for asset in release.get_assets():
             if asset.name == "manifest.json":
+                # asset.url (the API endpoint), not browser_download_url. A
+                # draft's browser URL is a synthetic .../download/untagged-<hash>/
+                # path that 404s even with a token; the API endpoint serves the
+                # bytes when asked for octet-stream.
                 response = requests.get(
-                    asset.browser_download_url,
+                    asset.url,
                     headers={
                         "Authorization": f"token {token}",
                         "Accept": "application/octet-stream",
