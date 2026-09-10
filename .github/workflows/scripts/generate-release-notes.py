@@ -11,6 +11,11 @@ import sys
 from github import Github
 
 
+# Each entry links to the table's page in the Table Manager Wizard catalog.
+# Same URL the per-table READMEs point at, keyed on the table folder name.
+CATALOG_URL = "https://vpxtablemanager.com/catalog/#table={key}"
+
+
 def find_release(repo, tag):
     """Find a release by tag name.
 
@@ -75,18 +80,19 @@ def get_release_notes(added, modified, wizard_data):
         print("No tables were added or updated in this release.")
         return None
 
-    def name_of(key):
-        return (wizard_data or {}).get(key, {}).get("name", key)
+    def entry(key):
+        name = (wizard_data or {}).get(key, {}).get("name", key)
+        # The folder key stays visible: contributors refer to tables by folder,
+        # and it is what the catalog link is keyed on.
+        return f"- [{name}]({CATALOG_URL.format(key=key)}) (`{key}`)"
 
     release_notes = []
     if added:
         release_notes.append("## Newly added tables")
-        for key in added:
-            release_notes.append(f"- {name_of(key)} ({key})")
+        release_notes.extend(entry(key) for key in added)
     if modified:
         release_notes.append("## Updated tables:")
-        for key in modified:
-            release_notes.append(f"- {name_of(key)} ({key})")
+        release_notes.extend(entry(key) for key in modified)
     return "\n".join(release_notes)
 
 
