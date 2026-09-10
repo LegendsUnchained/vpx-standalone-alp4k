@@ -1,21 +1,20 @@
-# Ice Cold Beer (Taito 1983)
+# Time Machine (Data East 1988)
 
-![Table Preview](../../images/tX4EQjdU6v-preview.webp)
+![Table Preview](../../images/vpx-timemachine-preview.png)
 
 <br>
 
 ## *️⃣  Table Statistics
 
-| Backglass | DMD | ROM Required | Has Puppack | FPS |
-|-----------|-----|-----|-----|-----|
-| ✅ | ✅ | ❌ | ❌ | 60 |
+| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
+|-----------|----------|-----------|-----|--------------|-----|
+| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
 
 <br>
 
 **VPXS 4KP Testers:**
-  - Bla1ze
-  - MissleToad
-  - pinballwizard2023
+  - PBW23
+  - Wraith
 
 <br>
 
@@ -34,9 +33,9 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`Ice Cold Beer (Taito 1983)`**
+4.  Find and select this table from the dropdown menu: **`Time Machine`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *"Cheers!"*
+6. *"Gag me with a spoon!"*
 
 <br>
 
@@ -53,7 +52,6 @@ __*We hope you enjoy!!*__
 - Bla1ze           - evilwraith       - Silentkat        
 - mrandromeda      - SScorpio         - pointdablame
 </pre>
-
 
 <br>
 <br>

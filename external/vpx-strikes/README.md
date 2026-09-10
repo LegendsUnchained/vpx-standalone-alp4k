@@ -4,14 +4,14 @@
 
 Authors: [HiRez00](https://vpuniverse.com/profile/19941-hirez00/)  
 Version: 2.0  
-Striles And Spares (Bally 1978) 2.0.vpx  
+Strikes And Spares (Bally 1978) 2.0.vpx  
 Download: [VP Universe](https://vpuniverse.com/files/file/14061-strikes-and-spares-bally-1978-20-extras/)
 
 DirectB2S
 
 Authors [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)  
 Version: 2.0  
-Stikes and Spares (Bally 1978).directb2s  
+Strikes and Spares (Bally 1978).directb2s  
 Download: [VP Universe](https://vpuniverse.com/files/file/6357-strikes-and-spares-bally-1977-b2s/)
 
 ROM
