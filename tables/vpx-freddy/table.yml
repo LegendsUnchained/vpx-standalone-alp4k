@@ -1,0 +1,20 @@
+---
+backglassVPSId: "Gl-EVBjkA5"
+backglassChecksum: "0BB47FC236BC581AC01C84877A7ACD72"
+backglassNotes: "Download version 1.0.0"
+coloredROMChecksum: "17A99C6CA5E3EC828521C1BBD6DAD7D3"
+coloredROMNotes: "Download and extract 'GLaltcolor.7z'. Use file in 'freddy'"
+coloredROMUrlOverride: "https://vpuniverse.com/files/file/5120-glaltcolor7z/"
+fps: 58
+romUrlOverride: "https://pinballnirvana.com/forums/resources/freddy.1835/"
+romVersionOverride: "freddy"
+romChecksum: "30D614734072E3FD25475EA9320B2865"
+romNotes: "Download freddy.zip"
+tableVPSId: "SrcagQN8"
+tagline: "1....2... Freddy's coming for you!"
+tableNotes: "Download ''Freddy A Nightmare On Elm Street (Gottlieb 1994)_Bigus(MOD)2.0.vpx.zip"
+testers:
+  - "Bla1ze"
+  - "mcap"
+vpxVPSId: "4diBoDyZ"
+vpxChecksum: "5CEEBBE07F02DD5FEB0C8115ECD694BA"

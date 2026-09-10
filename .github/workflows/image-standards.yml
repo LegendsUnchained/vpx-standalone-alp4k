@@ -1,0 +1,59 @@
+name: Image standards
+
+# Blocks art that does not match what the launcher renders: wrong resolution,
+# an animated PNG, or a JPEG/WEBP wearing a .png extension. All three have
+# landed in the repo before.
+#
+# Deliberately scoped to the images the PR itself touches. The repo still
+# carries pre-existing off-spec art, and an unrelated PR must not fail for it.
+
+on:
+  pull_request:
+    paths:
+      - '**.png'
+      # A table.yml is how a table enters the Wizard catalog. 52 table folders
+      # currently carry off-spec art and are only tolerated because nothing
+      # enumerates them; enabling one must not smuggle that art in without a
+      # check, so its images are validated whenever its table.yml changes.
+      - '**table.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  resolutions:
+    name: Check image resolutions and formats
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          # Both PR endpoints must be present for the diff below.
+          fetch-depth: 0
+
+      - name: Collect the images this PR touches
+        id: changed
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          # --diff-filter=d skips deletions: a removed image needs no checking.
+          git diff --name-only --diff-filter=d "$BASE_SHA" "$HEAD_SHA" -- '*.png' > changed-images.txt
+          # Plus the art of any table whose table.yml changed, even if the art
+          # itself is untouched — that is the path by which a table gets
+          # enabled, and its existing images may never have been checked.
+          git diff --name-only --diff-filter=d "$BASE_SHA" "$HEAD_SHA" -- '*table.yml' \
+          | while read -r yml; do
+              folder=$(dirname "$yml")
+              for art in launcher.png backglass.png dmd.png; do
+                [ -f "$folder/$art" ] && echo "$folder/$art"
+              done
+            done >> changed-images.txt
+          sort -u -o changed-images.txt changed-images.txt
+          echo "count=$(wc -l < changed-images.txt)" >> "$GITHUB_OUTPUT"
+          echo "Images changed by this PR:"
+          sed 's/^/  /' changed-images.txt
+
+      - name: Validate
+        if: steps.changed.outputs.count != '0'
+        run: xargs -a changed-images.txt -r -d '\n' python3 .github/workflows/scripts/validate-images.py

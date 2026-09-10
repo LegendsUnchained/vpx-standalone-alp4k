@@ -1,0 +1,21 @@
+---
+altSoundArchiveFormat: "zip"
+altSoundArchiveRoot: "alienstr"
+altSoundChecksum: "38D01AF07F2D8CA55EE00D5C086DE484"
+altSoundVPSId: "ZqrmxM2TtE"
+backglassChecksum: "F4E4C7E7392D52C539C45BC98A0AD5E3"
+backglassNotes: "download v2.0"
+backglassVPSId: "YF7EW_7NzA"
+fps: 60
+romChecksum: "6241C22899DB43F91B1669AAB2A2A5C3"
+romNotes: "alienstr"
+romUrlOverride: "https://pinballnirvana.com/forums/resources/alienstr.1519/"
+romVersionOverride: "alienstr"
+tableNotes: "download version 3.0.2"
+tableVPSId: "0RdFWzVI"
+testers:
+  - "PBW23"
+  - "kaoticBPR"
+  - "Wraith"
+vpxChecksum: "B8C9B1A059DED9ABA6E82BC9058BB4F8"
+vpxVPSId: "EE7Sw0ydR5"

@@ -1,0 +1,16 @@
+---
+backglassVPSId: "tDAM7jAu"
+backglassChecksum: "1104d5ed2c1620f4e114bca77938e577"
+backglassNotes: "Version: 2.0"
+fps: 60
+romVPSId: "y-qgYEy-"
+romChecksum: "514554cb47ccfa9902993d7f13a2c17c"
+tableVPSId: "x9i_W1Ql"
+tagline: "Beware the Sorcery of Seawitch!"
+testers:
+  - "mcap"
+  - "Sscorpio"
+  - "CoffeeAtJoes"
+vpxVPSId: "1MTsorv_ku"
+vpxChecksum: "D79CD83D8C46883D1F07EE45ED4E5ED7"
+tableNotes: "Version: 'v600.zip'"

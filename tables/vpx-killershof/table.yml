@@ -1,0 +1,19 @@
+---
+fps: 60
+mainNotes: "VPX File and PuP Pack are found on same downloads page."
+nsfw: true
+pupArchiveFormat: "zip"
+pupArchiveRoot: "PupPack_1.1/killershof"
+pupBundled: true
+pupChecksum: "5CE431E8232968AD3ACAE3FF9F818B3D"
+pupNotes: "Download v1.1_2023_PupPack_BG_Media.zip"
+pupRequired: true
+pupVersion: "1.1"
+tableNotes: "Download V1.2.vpx | PuP file on same download page."
+tableVPSId: "CnrU71I6br"
+tagline: "How's this for a wet dream?!"
+testers:
+  - "PBW23"
+  - "Filth"
+vpxChecksum: "1862CC5DD4A33145F7380DF762CFDDAC"
+vpxVPSId: "SMzlb0NiWN"

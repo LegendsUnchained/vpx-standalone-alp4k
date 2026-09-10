@@ -1,0 +1,22 @@
+---
+backglassChecksum: "A7F949868E8F2BDA64C9C230CBA5577D"
+backglassNotes: "Download - South Park (Sega 1999) full dmd.zip"
+backglassVPSId: "yO6cSlEirs"
+coloredROMChecksum: "D42E9370BC25AC6679D9E0A1D000BCDF"
+coloredROMNotes: "Download 'pin2dmd.pac'"
+coloredROMUrlOverride: "https://drive.google.com/drive/folders/1ywDW35vNjBZz3HAOggNB3azP0lw70QJk"
+coloredROMVersionOverride: "sprk_103"
+fps: 60
+romChecksum: "9F604CD406898A8271E27C6BB707CB8D"
+romNotes: "Download - sprk_103.zip"
+romVPSId: "9WjKJMcq"
+tableNotes: "Version 1.1.2"
+tableVPSId: "FkkA7R0w"
+tagline: "So come on down to South Park, and meet some friends of mine."
+testers:
+  - "mcap"
+  - "Sscorpio"
+  - "OminousOsie"
+  - "Wraith"
+vpxChecksum: "73E92754D32F4136F749F545974446CC"
+vpxVPSId: "u7LAlVHhmV"

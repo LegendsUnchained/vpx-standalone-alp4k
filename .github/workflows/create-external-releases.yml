@@ -1,0 +1,181 @@
+name: Create External Folder Releases and Manifest
+
+permissions:
+  contents: write
+  pull-requests: write
+
+# Prerelease-first: assets are built onto a PRERELEASE so the team can vet a
+# candidate while stable users keep being served the published release.
+# GitHub excludes prereleases from /releases/latest, so stable clients never
+# see one — no gating of our own required. Promotion to stable is a separate,
+# deliberate step (promote-release.yml).
+#
+# `prereleased` fires when a prerelease is published. `released` (promotion of
+# a prerelease to a full release) is deliberately NOT handled here: promoting a
+# vetted candidate must not rebuild its assets.
+on:
+  release:
+    types: [prereleased]
+  # Manual runs for a specific prerelease tag.
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 'Tag of the prerelease to build'
+        required: false
+
+jobs:
+  create_zips_and_manifest:
+    # Only ever act on prereleases.
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.release.prerelease }}
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GITHUB_TOKEN: ${{ github.token }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
+      GITHUB_REF_NAME: ${{ github.event.release.tag_name || inputs.release_tag }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+        with:
+          # A prerelease is a real published release, so its tag exists and is
+          # the right thing to build from.
+          ref: ${{ github.event.release.tag_name || inputs.release_tag || github.ref }}
+          # Full commit graph is required for catalog_history.table_renames,
+          # which diffs the previous release tag against this one to carry a
+          # renamed table's arrival date across. (configVersion no longer needs
+          # it: it is the folder's tree id, read straight off this commit.)
+          # A blobless partial clone keeps all commits + tree objects but
+          # skips historical blob content, cutting the initial transfer
+          # dramatically as tables/ grows. Blobs for the current tip are
+          # fetched on demand when the release script reads folder files.
+          fetch-depth: 0
+          filter: blob:none
+          submodules: false
+          lfs: false
+
+      - name: Checkout diagnostics
+        run: |
+          echo "event=${{ github.event_name }}"
+          echo "repository=${{ github.repository }}"
+          echo "ref=${{ github.ref }}"
+          echo "sha=${{ github.sha }}"
+          echo "git_commit=$(git rev-parse HEAD)"
+          echo "git_remote=$(git remote get-url origin)"
+          echo "promisor=$(git config --local --get remote.origin.promisor || true)"
+          echo "partialclonefilter=$(git config --local --get remote.origin.partialclonefilter || true)"
+          git count-objects -vH
+          du -sh .git
+
+      - name: Set up Python 3.11 (with pip cache)
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: '**/requirements.txt'
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r .github/workflows/scripts/requirements.txt
+
+      - name: Test discovery history
+        run: python -m unittest discover -s .github/workflows/scripts -p test_catalog_history.py
+
+      - name: Full table.yml validation (release gate)
+        run: |
+          echo "Running full table.yml validation across tables/ with VPSDB checks..."
+          python .github/workflows/scripts/validate-table-yaml.py
+
+      - name: Generate changed zips only
+        run: python .github/workflows/scripts/generate-release.py
+
+      - name: Update Release notes (optional)
+        run: python .github/workflows/scripts/generate-release-notes.py
+
+      # Disabled 2026-09-10: this generator sources each row's title and stats by
+      # parsing the per-table README's `# Title` heading and Status table. Those
+      # READMEs were replaced with a pointer to the Table Manager Wizard catalog,
+      # so it now finds 315 tables with no heading and 316 with no parseable
+      # status, and would rewrite README.md with degraded rows on every release.
+      # To re-enable, drop `if: false` once the generator reads table.yml instead.
+      - name: Regenerate README table listings
+        id: readme_gen
+        if: false
+        run: |
+          # On a release run, rewrite README.md in place and stage the change.
+          # On a manual workflow_dispatch run, only print what would change
+          # (dry-run) so operators can review before committing.
+          if [ "${{ github.event_name }}" = "release" ]; then
+            python .github/workflows/scripts/generate-readme-tables.py
+          else
+            echo "workflow_dispatch: dry-run only (no README write, no commit)."
+            python .github/workflows/scripts/generate-readme-tables.py --check
+          fi
+
+      - name: Table Manager Achievements Config
+        run: gh release upload "$GITHUB_REF_NAME" tm-config/achievements.json --clobber
+
+      # Disabled 2026-09-10: paired with the regeneration step above. With that
+      # step off there is never a README.md change to raise a PR for.
+      # Original condition: github.event_name == 'release'
+      - name: Open PR for README updates
+        if: false
+        run: |
+          if [ -z "$(git status --porcelain README.md)" ]; then
+            echo "No README changes to commit."
+            exit 0
+          fi
+          DEFAULT_BRANCH="${{ github.event.repository.default_branch }}"
+          SAFE_TAG=$(echo "${GITHUB_REF_NAME}" | tr '[:upper:]' '[:lower:]' | sed -E 's#[^a-z0-9._-]+#-#g; s#^-+##; s#-+$##')
+          if [ -z "$SAFE_TAG" ]; then
+            SAFE_TAG="release-${GITHUB_RUN_ID}"
+          fi
+          PR_BRANCH="chore/regenerate-readme-tables-${SAFE_TAG}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin "$DEFAULT_BRANCH"
+          # Base the PR branch on the current tip of the default branch so the
+          # diff is limited to the regenerated README, even though this workflow
+          # runs at the release tag ref.
+          git checkout -B "$PR_BRANCH" "origin/$DEFAULT_BRANCH"
+          python .github/workflows/scripts/generate-readme-tables.py
+          if [ -z "$(git status --porcelain README.md)" ]; then
+            echo "No README changes after rebasing onto $DEFAULT_BRANCH."
+            exit 0
+          fi
+          git add README.md
+          git commit -m "chore: regenerate README table listings [skip ci]"
+          # Repository rules may disallow force-push, so use a release-scoped
+          # branch and a normal push.
+          if ! git push origin "HEAD:$PR_BRANCH"; then
+            ALT_BRANCH="${PR_BRANCH}-${GITHUB_RUN_ID}"
+            echo "::warning::Push to ${PR_BRANCH} failed; retrying with ${ALT_BRANCH}."
+            git push origin "HEAD:$ALT_BRANCH"
+            PR_BRANCH="$ALT_BRANCH"
+          fi
+          # Reuse an existing open PR for this branch if there is one; otherwise
+          # open a new one against the protected default branch. Retry a few
+          # times to ride out transient GitHub GraphQL failures.
+          EXISTING_PR=$(gh pr list --head "$PR_BRANCH" --base "$DEFAULT_BRANCH" --state open --json number --jq '.[0].number' || true)
+          if [ -n "$EXISTING_PR" ]; then
+            echo "Existing PR #$EXISTING_PR updated with new README regeneration commit."
+            exit 0
+          fi
+          MANUAL_URL="https://github.com/${GITHUB_REPOSITORY}/pull/new/${PR_BRANCH}"
+          for attempt in 1 2 3 4 5; do
+            if gh pr create \
+                --base "$DEFAULT_BRANCH" \
+                --head "$PR_BRANCH" \
+                --title "chore: regenerate README table listings" \
+                --body "Automated regeneration of the Wizard Tables and Manual Install Tables sections in README.md, triggered by release \`${GITHUB_REF_NAME}\`."; then
+              exit 0
+            fi
+            echo "::warning::gh pr create attempt ${attempt} failed; retrying..."
+            sleep $((attempt * 5))
+          done
+          echo "::warning::Could not open PR after retries. Branch '${PR_BRANCH}' is pushed; open a PR manually at ${MANUAL_URL}"
+          # Don't fail the whole workflow just because the PR API was flaky;
+          # the branch is already on the remote and the next release run will
+          # try again (and reuse it if a PR has been opened in the meantime).
+          exit 0

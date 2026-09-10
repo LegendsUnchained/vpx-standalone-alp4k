@@ -1,0 +1,103 @@
+name: Promote prerelease to stable
+
+# The deliberate half of the prerelease-first pipeline.
+#
+# Assets are built onto a prerelease by "Create External Folder Releases and
+# Manifest", and mirrored to the manifest-testing branch for vetting. A
+# prerelease is public but excluded from /releases/latest, so stable clients
+# keep being served the previous release until this workflow runs.
+#
+# Order matters and is enforced by job dependencies: the stable `manifest`
+# mirror is updated FIRST, then the release is published. Publishing first
+# would point users at a release whose catalog data had not landed yet.
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 'Tag of the prerelease to promote'
+        required: true
+        type: string
+      make_latest:
+        description: 'Mark this release as "Latest" once published'
+        required: false
+        default: true
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    name: Check the prerelease is promotable
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    outputs:
+      id: ${{ steps.rel.outputs.id }}
+      tag: ${{ steps.rel.outputs.tag }}
+    steps:
+      - name: Resolve the prerelease
+        id: rel
+        run: |
+          tag="${{ inputs.release_tag }}"
+          read -r id prerelease draft assets < <(gh api "repos/${{ github.repository }}/releases" --paginate \
+            --jq --arg t "$tag" '.[] | select(.tag_name==$t) | "\(.id) \(.prerelease) \(.draft) \(.assets|length)"' | head -1)
+          if [ -z "$id" ]; then
+            echo "::error::No release found with tag '$tag'."
+            exit 1
+          fi
+          if [ "$draft" = "true" ]; then
+            echo "::error::Release '$tag' is a draft. Publish it as a prerelease first."
+            exit 1
+          fi
+          if [ "$prerelease" != "true" ]; then
+            echo "::error::Release '$tag' is already stable. Nothing to promote."
+            exit 1
+          fi
+          if [ "$assets" = "0" ]; then
+            echo "::error::Prerelease '$tag' has no assets — has the release build run yet?"
+            exit 1
+          fi
+          echo "Promoting prerelease '$tag' (id $id, $assets assets)"
+          { echo "id=$id"; echo "tag=$tag"; } >> "$GITHUB_OUTPUT"
+
+  # Step 1: refresh the STABLE catalog mirror from this candidate's assets —
+  # this is what carries updated launcher.png box art across to stable.
+  mirror:
+    name: Update the stable manifest branch
+    needs: validate
+    uses: ./.github/workflows/publish-catalog-data.yml
+    permissions:
+      contents: write
+    secrets: inherit
+    with:
+      release_tag: ${{ needs.validate.outputs.tag }}
+      target_branch: manifest
+
+  # Step 2: only now does the release become visible to users.
+  publish:
+    name: Publish the release
+    needs: [validate, mirror]
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Flip prerelease to stable
+        run: |
+          # Clearing `prerelease` is what makes this release visible to
+          # /releases/latest, and therefore to stable clients.
+          gh api -X PATCH "repos/${{ github.repository }}/releases/${{ needs.validate.outputs.id }}" \
+            -F prerelease=false \
+            -F make_latest=${{ inputs.make_latest }} \
+            --jq '"promoted: \(.tag_name)  prerelease=\(.prerelease)  url=\(.html_url)"'
+
+      - name: Confirm stable clients now resolve it
+        run: |
+          tag="${{ needs.validate.outputs.tag }}"
+          latest=$(gh api "repos/${{ github.repository }}/releases/latest" --jq .tag_name 2>/dev/null || true)
+          if [ "$latest" = "$tag" ]; then
+            echo "/releases/latest now resolves to $tag"
+          else
+            echo "::warning::/releases/latest is '$latest', not '$tag' — expected unless make_latest was false."
+          fi

@@ -1,0 +1,25 @@
+---
+backglassAuthorsOverride:
+  - "Scott Danesi"
+backglassBundled: true
+backglassChecksum: "6F6AB4E1C94BC7F5ACA71297BFC8A897"
+backglassImageOverride:  >-
+  https://virtualpinballspreadsheet.github.io/vps-db/img/be6e17ab661ccb4a45eb986cb0a2ea8e_cover_1638726339993.webp
+backglassNotes: "Backglass in vpx zip"
+diffChecksum: "40C483F70ECEB4D0DBE41E131DE4E9FC"
+diffVPSId: "1VdWE8a8WP"
+fps: 60
+mainNotes: "Buy the soundtrack! https://danesidesigns.com/collections/digital-music-downloads"
+pupArchiveFormat: "zip"
+pupArchiveRoot: "tna"
+pupBundled: true
+pupChecksum: "8A2B64AAA2A1D7A2B875DA066F9337CD"
+pupNotes: "Download TNA (Spooky 2017) VPW PUP v2.0.3.zip from vpx link"
+pupRequired: true
+pupVersion: "tna"
+tableVPSId: "Tr4QuA4p"
+tagline: "Welcome to the future..."
+testers:
+  - "Wraith"
+vpxChecksum: "4A6FBAF4816A578B4628A237BD3CF516"
+vpxVPSId: "d56VntTvLS"

@@ -1,0 +1,58 @@
+# Static half of the generated site config. build.py copies this verbatim and
+# appends the nav it derives from the wiki page names.
+site_name: VPXS 4KP Wiki
+site_url: https://wiki.legendsunchained.com/
+site_description: Documentation for the VPX Standalone 4KP project.
+repo_url: https://github.com/LegendsUnchained/vpx-standalone-alp4k
+edit_uri: ""
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: slate
+      primary: black
+      accent: green
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: green
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+plugins:
+  - search
+
+markdown_extensions:
+  # The wiki leans on raw HTML (<picture>, <p align>, <br>, <details>), so
+  # keep HTML passthrough and attribute support on.
+  - attr_list
+  - md_in_html
+  - tables
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/discord
+      link: https://discord.com/invite/moxs
+      name: Mox's Game Room on Discord

@@ -1,0 +1,154 @@
+name: Wizard Table Issue Report
+description: Report a problem with a table installed through the Table Manager Wizard.
+title: "[Table issue]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form only for problems with a table installed through **Table Manager → Add Table → Wizard**, such as launch failures, gameplay, controls, graphics, backglass/DMD, sound, PUP media, or performance.
+
+        **Tables installed manually or imported from outside the Wizard are unsupported.** Please do not file issues for them.
+
+        If the Wizard fails to download, install, update, configure, or manage a supported table, please use the **Table Manager Bug Report** form instead.
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please verify these before submitting the report.
+      options:
+        - label: I installed this table through **Table Manager → Add Table → Wizard**, not through Manual installation or an import.
+          required: true
+        - label: The Wizard installation completed; this is a problem with the table or its packaged configuration, not the Table Manager interface or installation process.
+          required: true
+        - label: I searched the [existing issues](https://github.com/LegendsUnchained/vpx-standalone-alp4k/issues?q=is%3Aissue) for this table and problem.
+          required: true
+        - label: I am using the latest version of this table offered on my selected update track, or the problem prevents the table from launching.
+          required: true
+
+  - type: input
+    id: table-name
+    attributes:
+      label: Table name
+      placeholder: "Example: The Leprechaun King"
+    validations:
+      required: true
+
+  - type: input
+    id: table-folder
+    attributes:
+      label: Table folder
+      description: Enter the table package/folder name when available.
+      placeholder: "Example: vpx-leprechaunking"
+    validations:
+      required: true
+
+  - type: input
+    id: table-version
+    attributes:
+      label: Table version
+      description: Enter the version shown for the installed table or in its README.
+      placeholder: "Example: 1.0.0"
+    validations:
+      required: true
+
+  - type: input
+    id: system-version
+    attributes:
+      label: VPX Standalone version
+      description: Include the installed build or release number if available.
+      placeholder: "Example: 10.8.0-390c69a-1787468367"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: problem-area
+    attributes:
+      label: Problem area
+      options:
+        - Table will not launch or crashes
+        - Controls or input
+        - Playfield or graphics
+        - Backglass or DMD
+        - Sound or music
+        - PUP Pack or other media
+        - Performance
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: table-modified
+    attributes:
+      label: Has the installed table been modified?
+      description: Include script edits, replaced media, configuration changes, or other manual changes.
+      options:
+        - "No"
+        - "Yes"
+        - Unsure
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Clearly describe the table problem and when it occurs.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: What actually happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Reproduction steps
+      description: Explain the exact steps leading to the problem, including the launch attempt when relevant.
+      placeholder: |
+        1. Launch the table ...
+        2. Start a game ...
+        3. Trigger ...
+        4. See the problem ...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How often does this happen?
+      options:
+        - Every time
+        - Often
+        - Sometimes
+        - Happened once
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Paste relevant vpinball.log, vpx-launcher.log files. This field is automatically formatted as a log.
+      render: shell
+
+  - type: upload
+    id: additional-files
+    attributes:
+      label: Screenshots, videos, and additional files
+      description: Optionally add screenshots, videos, logs, or configuration files that demonstrate the table problem.
+    validations:
+      required: false
+      accept: ".png,.jpg,.jpeg,.gif,.webp,.mp4,.mov,.webm,.log,.txt,.ini,.zip"

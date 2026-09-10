@@ -1,0 +1,16 @@
+---
+enabled: false
+fps: 55
+pupArchiveFormat: "rar"
+pupArchiveRoot: "fallout"
+pupChecksum: "03f29d4515017dfcfbe5a51504863a3f"
+pupRequired: true
+pupVPSId: "XqsrKS4lpF"
+romChecksum: "e427cf6dd232a791191ac94e583688bc"
+romNotes: "Use rom included with VPX"
+romVPSId: "8KEkqK9jYd"
+tableVPSId: "7lRqLeldtK"
+testers:
+  - "Wraith"
+vpxChecksum: "a2874742de5186b402fb05cbf98be255"
+vpxVPSId: "mUYcb63dvR"

@@ -1,0 +1,72 @@
+# Publishes the repo wiki to https://wiki.legendsunchained.com/
+#
+# The wiki stays the place people edit. The `gollum` event fires whenever a
+# wiki page is created or updated, which rebuilds and redeploys the site.
+name: Publish Wiki
+
+on:
+  gollum:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/wiki-publish.yml
+      - .github/wiki-site/**
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race; queue instead of cancelling so a wiki edit made
+# during a run still gets published.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo (build scripts only)
+        uses: actions/checkout@v5
+        with:
+          sparse-checkout: .github/wiki-site
+          sparse-checkout-cone-mode: false
+
+      - name: Clone the wiki
+        # Public repo, so this needs no credentials. The wiki is a separate
+        # git repo from the code and is not part of the checkout above.
+        run: git clone --depth 1 "https://github.com/${{ github.repository }}.wiki.git" wiki
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: .github/wiki-site/requirements.txt
+
+      - name: Install MkDocs
+        run: pip install -r .github/wiki-site/requirements.txt
+
+      - name: Convert wiki pages to an MkDocs tree
+        run: python .github/wiki-site/build.py wiki build
+
+      - name: Build the site
+        working-directory: build
+        # build.py already audits links; a stray MkDocs warning should not block
+        # a wiki edit from publishing.
+        run: mkdocs build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

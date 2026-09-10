@@ -1,0 +1,19 @@
+---
+backglassChecksum: "C62584F213846BF92C3561E16BDCACE0"
+backglassNotes: "Download 'Rescue 911 (Gottilieb 1994).zip'"
+backglassVPSId: "QaeDuYum4q"
+coloredROMChecksum: "17A99C6CA5E3EC828521C1BBD6DAD7D3"
+coloredROMNotes: "Download and extract 'GLaltcolor.7z'. Use file in 'rescu911'"
+coloredROMUrlOverride: "https://vpuniverse.com/files/file/5120-glaltcolor7z/"
+fps: 60
+romChecksum: "C4897D8D8F2AF353A980AAE47CD7DAFD"
+romNotes: "Download 'rescu911.zip'"
+romUrlOverride: "https://vpuniverse.com/files/file/1301-rescu911zip/"
+romVersionOverride: "rescu911"
+tableNotes: "Download '1036023482_Rescue911(Gottlieb1994)v1.0.zip'"
+tableVPSId: "W8KNgel5"
+tagline: "'Weeeewoooo Weeeeeewoooo'"
+testers:
+  - "Wraith"
+vpxChecksum: "CCD902E3D81061EC8075F21D6883D581"
+vpxVPSId: "BzkddwC8"

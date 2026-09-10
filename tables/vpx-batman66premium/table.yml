@@ -1,0 +1,19 @@
+---
+fps: 60
+pupArchiveFormat: "zip"
+pupArchiveRoot: "b66_orig"
+pupChecksum: "28E687EC02B201018DDF6933FCDEA027"
+pupFileUrl: "https://mega.nz/file/XMIgnRwC#LmRlA5GjAzxrWdjxl4O87PxqjUldOF4kA-fLoU0odFQ"
+pupNotes: >-
+  Download 'b66_orig-1.1.0-PupPack
+  .zip'
+pupRequired: true
+pupVersion: "b66_orig"
+tableVPSId: "JyxgU6op0S"
+testers:
+  - "Wraith"
+  - "Curt"
+  - "Missile Toad"
+  - "PBW23"
+vpxChecksum: "8F9E1451BCBEAEE7CB1BDC0473A288D9"
+vpxVPSId: "UYz53f4Vy5"

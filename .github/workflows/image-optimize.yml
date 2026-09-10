@@ -1,0 +1,103 @@
+name: Optimise PR images
+
+# Runs optipng (lossless) over the PNGs a PR touches and commits the result
+# back onto the PR branch.
+#
+# Requirements:
+#   * The PR must have "Allow edits by maintainers" enabled. GITHUB_TOKEN is
+#     read-only for pull requests from forks, so the push is made with a
+#     maintainer PAT instead.
+#   * Repository secret IMAGE_BOT_TOKEN: a PAT with `public_repo` (or `repo`)
+#     belonging to an account with push access. Without it this workflow warns
+#     and exits without failing the PR.
+#
+# SECURITY: pull_request_target is required so repository secrets are available
+# for the push. It therefore MUST NOT execute anything from the PR checkout.
+# The only things run against that checkout are apt-installed optipng and git —
+# no scripts, no build steps, no actions that read PR-controlled config.
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+    paths:
+      - '**.png'
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  optipng:
+    name: optipng
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the maintainer token is configured
+        id: token
+        env:
+          IMAGE_BOT_TOKEN: ${{ secrets.IMAGE_BOT_TOKEN }}
+        run: |
+          if [ -z "$IMAGE_BOT_TOKEN" ]; then
+            echo "::warning::IMAGE_BOT_TOKEN is not set — skipping image optimisation. Add the secret to enable it."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout the PR branch
+        if: steps.token.outputs.ok == 'true'
+        uses: actions/checkout@v5
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
+          token: ${{ secrets.IMAGE_BOT_TOKEN }}
+          persist-credentials: true
+
+      - name: List the PNGs this PR touches
+        if: steps.token.outputs.ok == 'true'
+        id: changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          # Asked of the API rather than computed from a local diff: the fork
+          # checkout has no guaranteed copy of the base branch to diff against.
+          gh api --paginate "repos/${{ github.repository }}/pulls/$PR/files" \
+            --jq '.[] | select(.status != "removed") | .filename' \
+            | grep -i '\.png$' > changed-images.txt || true
+          echo "count=$(wc -l < changed-images.txt)" >> "$GITHUB_OUTPUT"
+          sed 's/^/  /' changed-images.txt
+
+      - name: Install optipng
+        if: steps.token.outputs.ok == 'true' && steps.changed.outputs.count != '0'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq optipng
+
+      - name: Optimise
+        if: steps.token.outputs.ok == 'true' && steps.changed.outputs.count != '0'
+        run: |
+          before=$(xargs -a changed-images.txt -r -d '\n' stat -c%s 2>/dev/null | awk '{s+=$1} END{print s+0}')
+          # -o5 is the practical ceiling; -o7 costs far more time for ~1% more.
+          # optipng rewrites in place and is lossless.
+          xargs -a changed-images.txt -r -d '\n' optipng -o5 -strip all -quiet || true
+          after=$(xargs -a changed-images.txt -r -d '\n' stat -c%s 2>/dev/null | awk '{s+=$1} END{print s+0}')
+          echo "optipng: ${before} -> ${after} bytes"
+          echo "SAVED=$(( before - after ))" >> "$GITHUB_ENV"
+
+      - name: Commit and push if anything shrank
+        if: steps.token.outputs.ok == 'true' && steps.changed.outputs.count != '0'
+        run: |
+          if [ -z "$(git status --porcelain -- '*.png')" ]; then
+            echo "Already optimal — nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- '*.png'
+          git commit -m "chore: losslessly optimise PNGs with optipng (saved ${SAVED} bytes)"
+          # A second run finds nothing to do and commits nothing, so this
+          # cannot loop even though the push retriggers the workflow.
+          if ! git push; then
+            echo "::error::Could not push to the PR branch. The PR must have 'Allow edits by maintainers' enabled."
+            exit 1
+          fi

@@ -1,0 +1,20 @@
+---
+backglassAuthorsOverride:
+  - "bord"
+backglassBundled: true
+backglassChecksum: "5D5DDAAAFBBD2DC529AFA880702060DA"
+backglassNotes: "Bundled with VPX"
+fps: 60
+romChecksum: "A0ACE6E5EEDC8D2EDCCB36E3FF26B1D3"
+romNotes: "Download - pb_l5.zip"
+romVPSId: "aSGrFJgL"
+tableNotes: "Download - 211309852_Pinbot(Williams1986)2.1.1VR.zip"
+tableVPSId: "u3bADyBV"
+tagline: "I am in your control."
+testers:
+  - "Boris"
+  - "Mox"
+  - "Silentkat"
+  - "CoffeeAtJoes"
+vpxChecksum: "36674A6DC01E67E90CB125EE6432D69F"
+vpxVPSId: "232sR2Et"

@@ -1,0 +1,18 @@
+---
+backglassChecksum: "5B045F40C10DB567CCA7312C2DEC5BF2"
+backglassNotes: "Download Version 3.0.0"
+backglassVPSId: "9PF-mqeSsB"
+coloredROMChecksum: "7608BC5FEB5AA8A597263EC41320EC2E"
+coloredROMNotes: "Download apollo13.cROMc"
+coloredROMVPSId: "FtzgAFNGY7"
+fps: 60
+romChecksum: "92A52BFD42E78DB2A855E801900489A2"
+romVPSId: "vPGh66oT"
+tableVPSId: "dhgyex0l"
+tagline: "Houston, we have a problem!"
+testers:
+  - "mcap"
+  - "OminousOsie"
+  - "Wraith"
+vpxChecksum: "630FE0BE3CFD77E0BFDA539219E66E40"
+vpxVPSId: "Dln8y0RtYj"

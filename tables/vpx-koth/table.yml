@@ -1,0 +1,16 @@
+---
+fps: 60
+pupArchiveRoot: "kingofthehill"
+pupBundled: true
+pupChecksum: "7C12832D003267AFB6EFCB5178CA5B15"
+pupNotes: "Download kinbgofthehill-PuP-v1.00.zip same location as vpx"
+pupRequired: true
+pupVersion: "kingofthehill"
+tableNotes: "Download KOTH-Original-v1.03.vpx"
+tableVPSId: "G2R9RT47DC"
+tagline: "'I don't know you!' -Bobby Hill"
+testers:
+  - "evilwraith"
+  - "silentkat"
+vpxChecksum: "E2EB0251053E29CE1A54E11D29080427"
+vpxVPSId: "iQC3YbzBzM"

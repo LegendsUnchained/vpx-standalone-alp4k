@@ -1,0 +1,20 @@
+---
+backglassChecksum: "3A3ACB997C7FACD276715F1D72E4D302"
+backglassNotes: "Download - Super Mario Bros (Gottlieb 1992).zip"
+backglassVPSId: "58uBddVSma"
+coloredROMChecksum: "28EF4DD98753686BDE1E57A2F923FDBA"
+coloredROMNotes: "Download - smb3.cROMc"
+coloredROMVPSId: "b8LTuHqo7N"
+fps: 60
+romChecksum: "5BBBF451CDF5353B7B5D69BA17DA8825"
+romNotes: "Download -  smb3.zip"
+romUrlOverride: "https://pinballnirvana.com/forums/resources/smb3.2317/"
+romVersionOverride: "smb3"
+tagline: "It's-a me, Mario!"
+testers:
+  - "MissleToad"
+  - "Wraith"
+tableVPSId: "fM3IOgUK"
+vpxChecksum: "0D8DCC33353BA7ED8FC611489FA7E2C6"
+vpxVPSId: "lzcdTBAV"
+tableNotes: "Bigus (MOD) 3.0"

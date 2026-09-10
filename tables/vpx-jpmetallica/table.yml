@@ -1,0 +1,17 @@
+---
+backglassVPSId: "91twii_cTY"
+backglassChecksum: "c9abc82f08d6fba3dc55677721dbdd47"
+backglassNotes: "Download file 'Metallica Pro (Stern 2013).zip'"
+romChecksum: "554963E161A002F86FDCB7077DE60615"
+romNotes: "Download 'Metallica Pro 1.80 Game Code'"
+# yamllint disable-line rule:line-length
+romUrlOverride: "https://wp.sternpinball.com/?post_type=game_code&s=Metallica+Pro&jNwyWHxp-=*ZhrQf50l1UOy&EMGdkqHQiXl=7_TavCdAlc8BQ0&jNwyWHxp-=*ZhrQf50l1UOy&EMGdkqHQiXl=7_TavCdAlc8BQ0"
+romVersionOverride: "mtl_180"
+fps: 60
+tableVPSId: "kb8PmIUpX6"
+tagline: "Ride the lightning!"
+testers:
+  - "mcap"
+vpxVPSId: "P-R9a8GPd1"
+vpxChecksum: "EAC6F11782700CCE383ECC7E90BC099B"
+enabled: false

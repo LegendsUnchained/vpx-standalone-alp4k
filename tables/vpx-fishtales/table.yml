@@ -1,0 +1,20 @@
+---
+fps: 57
+backglassVPSId: "PwZqw3IxKI"
+backglassChecksum: "7B270B3C56172B0B00CC1D9A545E2E40"
+backglassNotes: "Download version 1.0"
+coloredROMVPSId: "ijwZ4BRv"
+coloredROMChecksum: "6574D9D0A954AF349F491F189628C4BA"
+coloredROMNotes: "Download 'FT_2.0.pac'"
+romVPSId: "k3DEd-AK"
+romChecksum: "3FD56DE6F91F04E236D55F7FBDDCAA98"
+romNotes: "Download - ft_l5.zip"
+tableVPSId: "tV1GotAP"
+tagline: "Gone fishin', leave a message."
+testers:
+  - "evilwraith"
+  - "Mox"
+  - "OminousOsie"
+vpxVPSId: "9FuFBUxfy8"
+vpxChecksum: "8DED537F11A898A7A223637F164ACF12"
+tableNotes: "Download version 1.1.1"

@@ -1,0 +1,18 @@
+---
+fps: 60
+mainNotes: "VPX and PuP Pack downloads on same page"
+pupArchiveFormat: "zip"
+pupArchiveRoot: "BTILC"
+pupBundled: true
+pupChecksum: "E44856AE67F858D2749B33F282C991DE"
+pupNotes: "Download BTILC-PuP-v1.01.zip"
+pupRequired: true
+pupVersion: "1.01"
+tableNotes: "Download BTILC_2026_Original_1.0.1.vpx (PuP on same page)"
+tableVPSId: "njaR7FTf1J"
+tagline: "Some people pick the darnedest places to start a fight!"
+testers:
+  - "Filth"
+  - "PBW23"
+vpxChecksum: "4A861CACFCA3F05A07064AC5C2864353"
+vpxVPSId: "qI3NAhCmY4"

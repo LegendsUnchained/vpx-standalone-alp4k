@@ -1,0 +1,17 @@
+---
+backglassChecksum: "F17188C477B752663538DD80C03F6FB1"
+backglassNotes: "Download 'Primus (Stern 2018).zip'"
+backglassVPSId: "ag7yjNRw9z"
+fps: 60
+tableNotes: "Download 'Primus (Stern 2018) 1.3 MW Mod.zip'"
+tableVPSId: "MudNn9NB"
+tagline: "test"
+testers:
+  - "OminousOsie"
+vpxVPSId: "WfKXpRx0QT"
+vpxArchiveFormat: "zip"                        
+vpxChecksum:                                    
+   - "22EBFCB34FD5ECED6AAA4B7FD785C62B"
+   - "E1EEFF810F8C1937526120C81E7E860D"
+vpxExtractExtra:
+  - "Music"

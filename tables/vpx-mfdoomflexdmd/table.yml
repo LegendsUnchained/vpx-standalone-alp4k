@@ -1,0 +1,16 @@
+---
+enabled: False
+applyFixes:
+  - "bass"
+backglassChecksum: "df1ccf1f1cb4d22b913401a63870701d"
+backglassNotes: "MF DOOM (GOILL773 2024)(say no to drugs) 2scn.directb2s"
+backglassVPSId: "0nvD4ByKxU"
+fps: 58
+mainNotes: "Don't forget Music and FlexDMD!"
+tableNotes: "VPX file is in 'MFDOOM-PKG-1.1/Table/'"
+tableVPSId: "6A2KHPqZc9"
+tagline: "Say NO to drugs!"
+testers:
+  - "Curt"
+vpxChecksum: "e4831dbb14857269ab8a0670f6f9fce0"
+vpxVPSId: "Ug53LOj8gf"

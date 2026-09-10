@@ -1,0 +1,23 @@
+---
+backglassChecksum: "6B155EE1206269D1D1F3C3300C3CA084"
+backglassNotes: "Download Maverick (Data East 1994) b2s with full dmd"
+backglassVPSId: "uUey4vEpCR"
+diffAuthorsOverride:
+  - "capnclaw"
+diffChecksum: "EB2264B23E3D2CEDB161E2C11F57CA6A"
+diffNotes: "Maverick (Data East 1994) Side Blade Mod"
+diffUrlOverride: "https://vpuniverse.com/files/file/24330-maverick-data-east-1994-side-blade-mod/"
+diffVersionOverride: "1.0.0"
+fps: 58
+romChecksum: "3E0F367618E0871A96CFFDB791FE8350"
+romNotes: "Download mav_402.zip"
+romVPSId: "zyamIOmP"
+tableNotes: "Download Maverick VPW (for VPX 10.7) (Data East 1994)"
+tableVPSId: "iIiz13Wn"
+tagline: "Ante Up!"
+testers:
+  - "Bla1ze"
+  - "MissleToad"
+tutorialVPSId: "vt_sf3-XjM"
+vpxChecksum: "F464738E52E5E987A07621A797C87D02"
+vpxVPSId: "FQIed3Gh"

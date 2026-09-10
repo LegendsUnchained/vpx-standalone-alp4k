@@ -1,0 +1,23 @@
+---
+backglassVPSId: "jPdDfup10S"
+backglassChecksum: "D2092F6654357AA0216C622CEBABBBE9"
+backglassNotes: "Download 'Dolly Parton (Bally 1979) 7digit.zip"
+fps: 60
+romVPSId: "0aFG05ZT"
+romChecksum: "57ed716d60df66d4f868619c332b0cb7"
+tableVPSId: "bRgTaBG7"
+tagline: >-
+  "I'm not offended by all the dumb blonde jokes
+  because I know I'm not dumb...
+  and I also know that I'm not blonde." - Dolly Parton
+testers:
+  - "OminousOsie"
+vpxVPSId: "eqkRAG7dls"
+vpxChecksum: "B70C9E60C6CD1F1B639E30362467B1A3"
+tableNotes: "Download 'Dolly V1.7z'"
+pupBundled: true
+pupChecksum: "9E75467CBD0599C6531E422505CD0B67"
+pupArchiveFormat: "7z"
+pupVersion: "dollyptb"
+pupArchiveRoot: "Dolly V1/dollyptb/"
+tableNameOverride: "Dolly Parton (Pup Pack)"

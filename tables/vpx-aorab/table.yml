@@ -1,0 +1,20 @@
+---
+backglassVPSId: "TtZIXKi3pX"
+backglassChecksum: "589fdc0cd35db5ce091f9529be187011"
+coloredROMChecksum: 
+  - "C8ED9AE08B6D152F684CAB0DB4B0ADC5"
+  - "36BD1C9C81302700221F806C70CD0FA9"
+coloredROMPin2DMD: true
+coloredROMNotes: ""
+coloredROMVPSId: "hbA1yHDY"
+fps: 60
+romVPSId: "6SOILe1q"
+romChecksum: "b6f8c5bcb3a8837f6afaadad13df0703"
+tableVPSId: "DXehLyun"
+tagline: "Hey, Rocky! Watch me pull a rabbit out of my hat!"
+testers:
+  - "Bla1ze"
+  - "OminousOsie"
+  - "Wraith"
+vpxVPSId: "ncBxxDuBlr"
+vpxChecksum: "3DBE27B8595333F8B789B2ECA44CF4D8"

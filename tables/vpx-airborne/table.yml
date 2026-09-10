@@ -1,0 +1,23 @@
+---
+backglassChecksum: "2E8BB651877AD830668C80AB12B8875A"
+backglassNotes: "Download Airborne (Capcom 1996) full dmd.zip (v1.0.0)"
+backglassVPSId: "WH8SNVKCk0"
+diffAuthorsOverride:
+  - "capnclaw"
+diffChecksum: "6EB97BE65B135BE289F0170553328662"
+diffNotes: "Download Airborne (Capcom 1996).dif"
+diffUrlOverride: "https://vpuniverse.com/files/file/23619-airborne-cabinet-side-blade-mod/"
+diffVersionOverride: "1.1.0"
+fps: 60
+romChecksum: "C1BD3BD35DCC0267D13B99CC4F4283E5"
+romNotes: "Download abv106.zip"
+romVPSId: "yVrAFplB"
+tableNotes: "Download Airborne (Capcom 1996) v1.0.vpx"
+tableVPSId: "gNyJvD-k"
+tagline: "Pilot, you're cleared for takeoff!"
+testers:
+  - "Bla1ze"
+  - "Wraith"
+tutorialVPSId: "8-VHcO7Hf3"
+vpxChecksum: "8043B5FE8B3A37B8DBE371A25FDCB8A1"
+vpxVPSId: "um2mEgU3gx"

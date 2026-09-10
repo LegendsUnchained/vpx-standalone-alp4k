@@ -1,0 +1,661 @@
+import re
+import sys
+import yaml
+
+import vpsdb
+
+from pathlib import Path
+
+def check_bundled(meta):
+    """Checks if bundled fields have associated notes.
+
+    Args:
+      meta: The table metadata.
+
+    Returns:
+      None
+    """
+    print("Checking bundled fields...")
+    for table, table_meta in meta.items():
+        if (
+            "backglassBundled" in table_meta
+            and table_meta["backglassBundled"] is not None
+        ):
+            if table_meta["backglassBundled"]:
+                if (
+                    "backglassNotes" not in table_meta
+                    or table_meta["backglassNotes"] is None
+                ):
+                    print(
+                        f"ERROR: backglassBundled is True but backglassNotes is not found in table: {table}"
+                    )
+                    sys.exit(1)
+
+                if (
+                    "backglassChecksum" not in table_meta
+                    or table_meta["backglassChecksum"] is None
+                ):
+                    print(
+                        f"ERROR: backglassBundled is True but backglassChecksum is not found in table: {table}"
+                    )
+                    sys.exit(1)
+
+                if not isinstance(table_meta["backglassNotes"], str):
+                    print(f"ERROR: backglassNotes is not a string in table: {table}")
+                    sys.exit(1)
+
+            if table_meta["coloredROMBundled"]:
+                if (
+                    "coloredROMNotes" not in table_meta
+                    or table_meta["coloredROMNotes"] is None
+                ):
+                    print(
+                        f"ERROR: coloredROMBundled is True but coloredROMNotes is not found in table: {table}"
+                    )
+                    sys.exit(1)
+
+                if (
+                    "coloredROMChecksum" not in table_meta
+                    or table_meta["coloredROMChecksum"] is None
+                ):
+                    print(
+                        f"ERROR: coloredROMBundled is True but coloredROMChecksum is not found in table: {table}"
+                    )
+                    sys.exit(1)
+
+                if not isinstance(table_meta["coloredROMNotes"], str):
+                    print(f"ERROR: coloredROMNotes is not a string in table: {table}")
+                    sys.exit(1)
+
+            if table_meta["romBundled"]:
+                if "romNotes" not in table_meta or table_meta["romNotes"] is None:
+                    print(
+                        f"ERROR: romBundled is True but romNotes is not found in table: {table}"
+                    )
+                    sys.exit(1)
+
+                if "romChecksum" not in table_meta or table_meta["romChecksum"] is None:
+                    print(
+                        f"ERROR: romBundled is True but romChecksum is not found in table: {table}"
+                    )
+                    sys.exit(1)
+
+                if not isinstance(table_meta["romNotes"], str):
+                    print(f"ERROR: romNotes is not a string in table: {table}")
+                    sys.exit(1)
+
+        if table_meta.get("altSoundBundled"):
+            if (
+                "altSoundNotes" not in table_meta
+                or table_meta["altSoundNotes"] is None
+            ):
+                print(
+                    f"ERROR: altSoundBundled is True but altSoundNotes is not found in table: {table}"
+                )
+                sys.exit(1)
+
+            if (
+                "altSoundChecksum" not in table_meta
+                or table_meta["altSoundChecksum"] is None
+            ):
+                print(
+                    f"ERROR: altSoundBundled is True but altSoundChecksum is not found in table: {table}"
+                )
+                sys.exit(1)
+
+            if not isinstance(table_meta["altSoundNotes"], str):
+                print(f"ERROR: altSoundNotes is not a string in table: {table}")
+                sys.exit(1)
+
+def check_checksums(meta):
+    """Checks that required checksums are present.
+
+    Requiredness depends on rendered fields (e.g. backglassFileUrl), so it is
+    checked here on the vpsdb-rendered metadata. The string-vs-list format and
+    MD5 validity of the raw table.yml values are checked by
+    check_checksum_format instead, since vpsdb has already normalized every
+    present checksum to a list by this point.
+
+    Args:
+      meta: The table metadata.
+
+    Returns:
+      None
+    """
+    print("Checking checksums...")
+    for table, table_meta in meta.items():
+        if "tableChecksum" not in table_meta or table_meta["tableChecksum"] is None:
+            print(f"ERROR: vpxChecksum field not found in table: {table}")
+            sys.exit(1)
+
+        if (
+            "backglassFileUrl" in table_meta
+            and table_meta["backglassFileUrl"] is not None
+        ) and (
+            "backglassChecksum" not in table_meta
+            or table_meta["backglassChecksum"] is None
+        ):
+            print(f"ERROR: backglassChecksum field not found in table: {table}")
+            sys.exit(1)
+
+        if (
+            "coloredROMFileUrl" in table_meta
+            and table_meta["coloredROMFileUrl"] is not None
+        ) and (
+            "coloredROMChecksum" not in table_meta
+            or table_meta["coloredROMChecksum"] is None
+        ):
+            print(f"ERROR: coloredROMChecksum field not found in table: {table}")
+            sys.exit(1)
+
+        if (
+            "altSoundFileUrl" in table_meta
+            and table_meta["altSoundFileUrl"] is not None
+        ) and (
+            "altSoundChecksum" not in table_meta
+            or table_meta["altSoundChecksum"] is None
+        ):
+            print(f"ERROR: altSoundChecksum field not found in table: {table}")
+            sys.exit(1)
+
+        if ("pupFileUrl" in table_meta and table_meta["pupFileUrl"] is not None) and (
+            "pupChecksum" not in table_meta or table_meta["pupChecksum"] is None
+        ):
+            print(f"ERROR: pupChecksum field not found in table: {table}")
+            sys.exit(1)
+
+        if ("romFileUrl" in table_meta and table_meta["romFileUrl"] is not None) and (
+            "romChecksum" not in table_meta or table_meta["romChecksum"] is None
+        ):
+            print(f"ERROR: romChecksum field not found in table: {table}")
+            sys.exit(1)
+
+        additional_roms = table_meta.get("additionalRoms")
+        if additional_roms:
+            for i, rom in enumerate(additional_roms):
+                if not rom.get("checksum"):
+                    print(
+                        f"ERROR: additionalRoms[{i}] missing checksum in table: {table}"
+                    )
+                    sys.exit(1)
+
+
+# Raw table.yml checksum keys. vpsdb renames vpxChecksum -> tableChecksum, so
+# these are the names as authored in table.yml (checked before rendering).
+CHECKSUM_YAML_KEYS = [
+    "altSoundChecksum",
+    "backglassChecksum",
+    "coloredROMChecksum",
+    "diffChecksum",
+    "pupChecksum",
+    "romChecksum",
+    "specialDMDChecksum",
+    "vpxChecksum",
+]
+
+
+def validate_checksum_value(label, value):
+    """Validate one checksum value (one or more acceptable MD5 hashes):
+      - a single hash MUST be a plain string, and
+      - two or more hashes MUST be a list (a single-element list is rejected).
+    Every hash must be a valid MD5. Exits on any violation.
+
+    Args:
+      label: Human-readable field name used in error messages.
+      value: The raw checksum value (string or list of strings).
+
+    Returns:
+      None
+    """
+    if isinstance(value, str):
+        hashes = [value]
+    elif isinstance(value, list):
+        if len(value) < 2:
+            print(f"ERROR: {label} has a single entry; use a string instead of a list")
+            sys.exit(1)
+        hashes = value
+    else:
+        print(f"ERROR: {label} must be a string or a list of strings")
+        sys.exit(1)
+
+    for checksum in hashes:
+        if not isinstance(checksum, str) or not is_md5_hash(checksum.lower()):
+            print(f"ERROR: checksum {checksum} for {label} is not a valid MD5 hash")
+            sys.exit(1)
+
+
+def check_checksum_format(meta):
+    """Validates the format of raw table.yml checksum fields.
+
+    vpsdb normalizes both string and list forms to a list for the manifest, so
+    this format rule only governs how table.yml is authored (see
+    validate_checksum_value for the rule).
+
+    Args:
+      meta: The raw table.yml content (a single table's parsed dict).
+
+    Returns:
+      None
+    """
+    if not isinstance(meta, dict):
+        return
+
+    for key in CHECKSUM_YAML_KEYS:
+        value = meta.get(key)
+        if value is None:
+            continue
+        validate_checksum_value(key, value)
+
+
+def check_additional_roms(meta):
+    """Validates the raw table.yml additionalRoms field (a list of ROM objects).
+
+    Each entry mirrors the primary ROM: checksum required (string or list of
+    MD5s); vpsId xor urlOverride (mutually exclusive); urlOverride requires
+    versionOverride; bundled (bool) requires notes;
+    vpsId/urlOverride/versionOverride/notes must be strings.
+
+    Args:
+      meta: The raw table.yml content (a single table's parsed dict).
+
+    Returns:
+      None
+    """
+    if not isinstance(meta, dict):
+        return
+
+    value = meta.get("additionalRoms")
+    if value is None:
+        return
+    if isinstance(value, dict):
+        value = [value]
+    if not isinstance(value, list):
+        print("ERROR: additionalRoms must be a list of ROM objects")
+        sys.exit(1)
+
+    for i, entry in enumerate(value):
+        label = f"additionalRoms[{i}]"
+        if not isinstance(entry, dict):
+            print(f"ERROR: {label} must be a mapping")
+            sys.exit(1)
+
+        if entry.get("checksum") is None:
+            print(f"ERROR: {label} is missing the required checksum field")
+            sys.exit(1)
+        validate_checksum_value(f"{label}.checksum", entry.get("checksum"))
+
+        for field in ("vpsId", "urlOverride", "versionOverride", "notes"):
+            if entry.get(field) is not None and not isinstance(entry.get(field), str):
+                print(f"ERROR: {label}.{field} must be a string")
+                sys.exit(1)
+
+        if "bundled" in entry and not isinstance(entry.get("bundled"), bool):
+            print(f"ERROR: {label}.bundled must be a boolean")
+            sys.exit(1)
+
+        # A bundled ROM ships in the table download, so authors must document it
+        # (mirrors the primary ROM's romBundled -> romNotes rule).
+        if entry.get("bundled") and entry.get("notes") is None:
+            print(f"ERROR: {label} is bundled but has no notes")
+            sys.exit(1)
+
+        vps_id = entry.get("vpsId")
+        url_override = entry.get("urlOverride")
+        if vps_id is not None and url_override is not None:
+            print(f"ERROR: {label} has both vpsId and urlOverride (mutually exclusive)")
+            sys.exit(1)
+        if url_override is not None and entry.get("versionOverride") is None:
+            print(f"ERROR: {label} has urlOverride but no versionOverride")
+            sys.exit(1)
+
+
+def check_post_install_rename(meta):
+    """Validate raw table.yml postInstallRename rules.
+
+    vpsdb uses the same normalizer while rendering the manifest. Running it on
+    the raw YAML first gives authors a concise validation error before any VPSDB
+    lookup or release generation starts.
+    """
+    if not isinstance(meta, dict) or meta.get("postInstallRename") is None:
+        return
+    try:
+        vpsdb.normalize_post_install_renames(meta.get("postInstallRename"))
+    except ValueError as error:
+        print(f"ERROR: {error}")
+        sys.exit(1)
+
+
+# Special-DMD packs the wizard knows how to label. specialDMDType is only a
+# display string, but it is validated against this list so a typo doesn't reach a
+# cabinet as a mislabelled row. Add to it when a new DMD format is supported.
+SPECIAL_DMD_TYPES = ["UltraDMD", "FlexDMD"]
+
+ARCHIVE_FORMATS = ["zip", "rar", "7z"]
+
+
+def check_vpx_archive(meta):
+    """Checks the table-archive fields (vpxArchiveFormat / vpxExtractExtra).
+
+    Setting vpxArchiveFormat means the table installs from the archive the author
+    published rather than from a bare .vpx: the wizard's upload slot then accepts
+    only that archive, and the cabinet unpacks the .vpx and any folders the table
+    needs out of it. A table needs this whenever something it loads at run time
+    is a FOLDER - an UltraDMD/FlexDMD pack, a music folder - because an upload
+    slot can only carry files.
+
+    Two consequences are checked here:
+      * vpxChecksum must list at least two hashes. It stays an unordered set of
+        accepted hashes, as everywhere else; it just has to contain both the
+        archive's MD5 (which is what admits the upload) and the .vpx's (which is
+        what picks the table out of the archive, since a download often carries
+        several cuts).
+      * vpxExtractExtra is only meaningful with it, and each entry must be a
+        relative path inside the archive.
+
+    Args:
+      meta: The table metadata.
+
+    Returns:
+      None
+    """
+    print("Checking table archive...")
+    for table, table_meta in meta.items():
+        archive_format = table_meta.get("vpxArchiveFormat")
+        extras = table_meta.get("vpxExtractExtra")
+
+        if archive_format is not None and archive_format not in ARCHIVE_FORMATS:
+            print(
+                f"ERROR: vpxArchiveFormat '{archive_format}' is not one of "
+                f"{', '.join(ARCHIVE_FORMATS)} in table: {table}"
+            )
+            sys.exit(1)
+
+        if archive_format is None:
+            if extras:
+                print(
+                    f"ERROR: vpxExtractExtra needs vpxArchiveFormat - there is no archive "
+                    f"to extract from without it in table: {table}"
+                )
+                sys.exit(1)
+            continue
+
+        if len(table_meta.get("tableChecksum") or []) < 2:
+            print(
+                f"ERROR: vpxArchiveFormat is set but vpxChecksum lists one hash - it must "
+                f"list the table archive's MD5 as well as the .vpx's in table: {table}"
+            )
+            sys.exit(1)
+
+        for path in extras or []:
+            if not isinstance(path, str) or not path.strip():
+                print(f"ERROR: vpxExtractExtra has an empty entry in table: {table}")
+                sys.exit(1)
+            if path.startswith("/") or ".." in Path(path).parts:
+                print(
+                    f"ERROR: vpxExtractExtra entry '{path}' must be a relative path inside "
+                    f"the archive in table: {table}"
+                )
+                sys.exit(1)
+
+
+def check_special_dmd(meta):
+    """Checks the special-DMD (UltraDMD / FlexDMD) fields.
+
+    The pack reaches a cabinet in one of two shapes, with different rules:
+
+      * standalone - the pack is its own archive, so specialDMDChecksum is
+        required. specialDMDUrlOverride is optional: with no override the wizard
+        sends the user to the table's own download page, where the pack usually
+        sits beside the table.
+      * bundled - the folder is inside the table download, so there is no
+        separate file to hash. It therefore requires vpxArchiveFormat, which
+        turns the install into an archive install (see check_vpx_archive), and
+        specialDMDArchiveRoot names the folder the cabinet unpacks out of it. A
+        specialDMDChecksum here would cover nothing, so it is rejected rather
+        than quietly ignored.
+
+    specialDMDType is required either way - it is the label the wizard row and
+    the upload slot carry. specialDMDNSFW works in both shapes: a standalone pack
+    is filtered out by not uploading it, and a bundled one by telling the cabinet
+    not to unpack that folder from the table archive.
+
+    Args:
+      meta: The table metadata.
+
+    Returns:
+      None
+    """
+    print("Checking special DMD...")
+    dmd_fields = (
+        "specialDMDArchiveFormat",
+        "specialDMDArchiveRoot",
+        "specialDMDChecksum",
+        "specialDMDFileUrl",
+        "specialDMDNotes",
+        "specialDMDType",
+        "specialDMDVersion",
+    )
+
+    for table, table_meta in meta.items():
+        bundled = bool(table_meta.get("specialDMDBundled"))
+        if not bundled and not any(table_meta.get(f) is not None for f in dmd_fields):
+            continue
+
+        dmd_type = table_meta.get("specialDMDType")
+        if dmd_type is None:
+            print(f"ERROR: specialDMDType field not found in table: {table}")
+            sys.exit(1)
+        if dmd_type not in SPECIAL_DMD_TYPES:
+            print(
+                f"ERROR: specialDMDType '{dmd_type}' is not one of "
+                f"{', '.join(SPECIAL_DMD_TYPES)} in table: {table}"
+            )
+            sys.exit(1)
+
+        fmt_value = table_meta.get("specialDMDArchiveFormat")
+        if fmt_value is not None and fmt_value not in ARCHIVE_FORMATS:
+            print(
+                f"ERROR: specialDMDArchiveFormat '{fmt_value}' is not one of "
+                f"{', '.join(ARCHIVE_FORMATS)} in table: {table}"
+            )
+            sys.exit(1)
+
+        if bundled:
+            if table_meta.get("specialDMDArchiveRoot") is None:
+                print(
+                    f"ERROR: specialDMDBundled is True but specialDMDArchiveRoot "
+                    f"(the folder to unpack from the table archive) is not found in table: {table}"
+                )
+                sys.exit(1)
+
+            if table_meta.get("vpxArchiveFormat") is None:
+                print(
+                    f"ERROR: specialDMDBundled is True but vpxArchiveFormat is not found in table: {table}"
+                )
+                sys.exit(1)
+
+            if table_meta.get("specialDMDChecksum") is not None:
+                print(
+                    f"ERROR: specialDMDBundled is True, so the folder has no file to hash - "
+                    f"put the table archive's MD5 in vpxChecksum instead of specialDMDChecksum "
+                    f"in table: {table}"
+                )
+                sys.exit(1)
+
+        elif table_meta.get("specialDMDChecksum") is None:
+            print(f"ERROR: specialDMDChecksum field not found in table: {table}")
+            sys.exit(1)
+
+
+def check_fixes(meta):
+    """Checks if the applyFixes field is valid.
+
+    Args:
+      meta: The table metadata.
+
+    Returns:
+      None
+    """
+    print("Checking applyFixes...")
+    allowed_fixes = [
+        "bass",
+    ]
+
+    for table, table_meta in meta.items():
+        if "applyFixes" in table_meta and table_meta["applyFixes"] is not None:
+            if not isinstance(table_meta["applyFixes"], list):
+                print(f"ERROR: applyFixes is not a list in table: {table}")
+                sys.exit(1)
+
+            for fix in table_meta["applyFixes"]:
+                if fix not in allowed_fixes:
+                    print(
+                        f"ERROR: applyFixes contains an invalid fix '{fix}' in table: {table}"
+                    )
+                    print(f"Allowed fixes: {','.join(allowed_fixes)}")
+                    sys.exit(1)
+
+def check_fps(meta):
+    """Checks if the fps field is an integer."
+
+    Args:
+      meta: The table metadata.
+
+    Returns:
+      None
+    """
+    print("Checking fps...")
+    for table, table_meta in meta.items():
+        if "fps" not in table_meta or table_meta["fps"] is None:
+            print(f"ERROR: fps field not found in table: {table}")
+            sys.exit(1)
+
+        if not isinstance(table_meta["fps"], int):
+            print(f"ERROR: fps is not an integer in table: {table}")
+            sys.exit(1)
+
+def check_overrides(meta):
+    """Checks if the overrides have versions defined.
+
+    Args:
+      meta: The table metadata.
+
+    Returns:
+      None
+    """
+    print("Checking overrides...")
+
+    if "romUrlOverride" in meta and meta["romUrlOverride"] is not None:
+        if not isinstance(meta["romUrlOverride"], str):
+            print(f"ERROR: romUrlOverride is not a string")
+            sys.exit(1)
+
+        if "romVPSId" in meta and meta["romVPSId"] is not None:
+            print(f"ERROR: romVPSId is not allowed with romUrlOverride")
+            sys.exit(1)
+
+        if "romVersionOverride" not in meta or meta["romVersionOverride"] is None:
+            print(
+                f"ERROR: romUrlOverride defined and romVersionOverride field not found"
+            )
+            sys.exit(1)
+
+    if "altSoundUrlOverride" in meta and meta["altSoundUrlOverride"] is not None:
+        if not isinstance(meta["altSoundUrlOverride"], str):
+            print(f"ERROR: altSoundUrlOverride is not a string")
+            sys.exit(1)
+
+        if "altSoundVPSId" in meta and meta["altSoundVPSId"] is not None:
+            print(f"ERROR: altSoundVPSId is not allowed with altSoundUrlOverride")
+            sys.exit(1)
+
+        if (
+            "altSoundVersionOverride" not in meta
+            or meta["altSoundVersionOverride"] is None
+        ):
+            print(
+                f"ERROR: altSoundUrlOverride defined and altSoundVersionOverride field not found"
+            )
+            sys.exit(1)
+
+def check_testers(meta):
+    """Checks if the testers field is a list."
+
+    Args:
+      meta: The table metadata.
+
+    Returns:
+      None
+    """
+    print("Checking testers...")
+    for table, table_meta in meta.items():
+        if "testers" not in table_meta or table_meta["testers"] is None:
+            print(f"ERROR: testers field not found in table: {table}")
+            sys.exit(1)
+
+        if not isinstance(table_meta["testers"], list):
+            print(f"ERROR: testers is not a list in table: {table}")
+            sys.exit(1)
+
+def is_md5_hash(hash_string):
+    """Checks if a string is a valid MD5 hash.
+
+    Args:
+      hash_string: The string to check.
+
+    Returns:
+      True if the string is a valid MD5 hash, False otherwise.
+    """
+    return bool(re.match(r"^[a-f0-9]{32}$", hash_string))
+
+
+if __name__ == "__main__":
+    # Accept optional file paths on the command line. If none are provided,
+    # auto-discover all table.yml files under the tables/ directory.
+    files = sys.argv[1:]
+
+    if files:
+        # Keep only files that actually exist (skip deleted/missing paths)
+        files = [f for f in files if Path(f).is_file()]
+        if not files:
+            print("No valid table.yml files passed on the command line. Nothing to validate.")
+            sys.exit(0)
+    else:
+        base = Path("tables")
+        files = [str(p) for p in base.rglob("table.yml")]
+        if not files:
+            print("No table.yml files found under tables/ — skipping validation.")
+            sys.exit(0)
+
+    # For each discovered file, perform YAML-level checks (check_overrides)
+    for f in files:
+        try:
+            with open(f, "r") as table_data:
+                table_yaml = yaml.safe_load(table_data)
+        except Exception as e:
+            print(f"ERROR: Failed to load {f}: {e}")
+            sys.exit(1)
+
+        path = Path(f)
+        folder_name = path.parent.name
+        print(f"Processing {folder_name} ({f})")
+
+        # Perform checks on the YAML file content
+        check_overrides(table_yaml)
+        check_checksum_format(table_yaml)
+        check_additional_roms(table_yaml)
+        check_post_install_rename(table_yaml)
+
+    # Render metadata for all files in a single call, then run the meta-level checks
+    meta = vpsdb.get_table_meta(files, warn_on_error=False)
+
+    check_bundled(meta)
+    check_checksums(meta)
+    check_vpx_archive(meta)
+    check_special_dmd(meta)
+    check_fixes(meta)
+    check_fps(meta)
+    check_testers(meta)
+
+    print(f"Validation passed for {len(files)} table.yml file(s).")
+    sys.exit(0)
