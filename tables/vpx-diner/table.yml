@@ -1,16 +1,15 @@
 ---
-backglassVPSId: "w7_rYKRX"
-backglassChecksum: "17a8e4b8980db6302ae83901c9f77c17"
-backglassNotes: "Download 'Diner_B2S_2_scr.zip'"
-fps: 60
-romVPSId: "4vpPLYhK"
-romChecksum: "077941b50f11cd7ea28552333f815f0d"
+backglassChecksum: "6359C34B59247192C7DE77754BAD7028"
+backglassVPSId: "ruJkYWDKxz"
+coloredROMChecksum: "0BF920D886F0D13AD64DA41721E8527E"
 coloredROMVPSId: "2mjYVpHHp6"
-coloredROMChecksum: "0bf920d886f0d13ad64da41721e8527e"
+fps: 60
+romChecksum: "077941B50F11CD7EA28552333F815F0D"
+romVPSId: "4vpPLYhK"
 tableVPSId: "2qcWVEi9"
 tagline: "It's fresh! It's fast! It's hot!"
 testers:
   - "mcap"
   - "OminousOsie"
+vpxChecksum: "9E35CEC2781EB05B5DA3B43E54A8B80A"
 vpxVPSId: "9-YJeZ-RkH"
-vpxChecksum: "9e35cec2781eb05b5da3b43e54a8b80a"
