@@ -1,19 +1,22 @@
 # Darkest Dungeon (Original 2023)
 
+![Table Preview](../../images/8neiKBTNGj-preview.webp)
+
 <br>
 
 ## *️⃣  Table Statistics
 
 | Backglass | DMD | ROM Required | Has Puppack | FPS |
 |-----------|-----|-----|-----|-----|
-| ✅ | ✅ | ❌ | ✅ | 60 |
+| ❌ | ❌ | ❌ | ✅ | 60 |
 
 <br>
 
 **VPXS 4KP Testers:**
+  - miku
   - Wraith
-  - Miku
   - Missile Toad
+  - Slientkat
 
 <br>
 
@@ -34,7 +37,7 @@ This table is available through the Table Manager Wizard, which makes installati
 3.  Select the **Wizard** tab
 4.  Find and select this table from the dropdown menu: **`Darkest Dungeon (Original 2023)`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *"Perhaps the wait will innoculate you from the horrors down below..."*
+6. *""*
 
 <br>
 

@@ -1,18 +1,19 @@
 ---
-enabled: False
-backglassChecksum: "8f9e1451bcbeaee7cb1bdc0473a288d9"
-backglassNotes: "Download version 1.0"
-backglassVPSId: "v8m9wTMfLE"
-fps: 50
-pupChecksum: "28e687ec02b201018ddf6933fcdea027"
+fps: 60
+pupArchiveFormat: "zip"
+pupArchiveRoot: "b66_orig"
+pupChecksum: "28E687EC02B201018DDF6933FCDEA027"
 pupFileUrl: "https://mega.nz/file/XMIgnRwC#LmRlA5GjAzxrWdjxl4O87PxqjUldOF4kA-fLoU0odFQ"
-pupNotes: "Housed on .vpx download page"
+pupNotes: >-
+  Download 'b66_orig-1.1.0-PupPack
+  .zip'
 pupRequired: true
-tableNameOverride: "Batman '66 Premium (Stern 2016)"
-tableNotes: "Download version 1.1.0"
+pupVersion: "b66_orig"
 tableVPSId: "JyxgU6op0S"
-tagline: "'It's Coming back!'"
 testers:
+  - "Wraith"
   - "Curt"
-vpxChecksum: "8f9e1451bcbeaee7cb1bdc0473a288d9"
+  - "Missile Toad"
+  - "PBW23"
+vpxChecksum: "8F9E1451BCBEAEE7CB1BDC0473A288D9"
 vpxVPSId: "UYz53f4Vy5"

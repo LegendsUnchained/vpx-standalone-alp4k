@@ -3,15 +3,15 @@ fps: 57
 pupArchiveFormat: "rar"
 pupArchiveRoot: "WuWa"
 pupBundled: true
-pupChecksum: "EF5C75805342CF648614C8F317C675A3"
+pupChecksum: "E19189B506C28EDD12AF6408990F2077"
 pupNotes: "Download 'WuWa.rar'"
 pupRequired: true
 pupVersion: "WuWa"
-tableNotes: "Download 'Wuthering Waves (2026) v1.02.vpx'"
+tableNotes: "Download 'Wuthering Waves (2026) v1.02.vpx' File Size 333.07 MB. 1.03 is mislabeled as 1.02."
 tableVPSId: "Pfyv1wi_Go"
 tagline: "Master the concerto. Summon your echos. [sic]"
 testers:
   - "Curt"
   - "Wraith"
-vpxChecksum: "6A4032E30902DA41988211C90AEFB6FE"
+vpxChecksum: "6C2BF6E8753475D3F7760F7771CF343A"
 vpxVPSId: "ELfdwzW0JN"

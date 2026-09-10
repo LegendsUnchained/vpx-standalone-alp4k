@@ -1,0 +1,26 @@
+---
+backglassAuthorsOverride:
+  - "hauntfreaks"
+backglassChecksum: "433E38ECEADBB71E1B3E32259FB3A718"
+backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/s84WMRNZAW_1721302723703.webp"
+backglassNotes: "Download 'ACDC (hells bells) (Stern 2013) full dmd.zip'"
+backglassUrlOverride: "https://vpuniverse.com/files/file/10932-acdc-hells-bells-stern-2013-b2s-full-dmd/"
+coloredROMChecksum: "D301B63DE4753D0292A6395D6649A708"
+coloredROMNotes: "Download version 1.01"
+coloredROMVPSId: "WmF0x5DiQL"
+diffChecksum: "150FF959A7E18D846CA647E23966321D"
+diffNotes: "Download 'AC-DC Pro Vault-1.0 Lighting Bug Fix.dif'"
+diffVPSId: "xk_hRDrZhp"
+tagline: >-
+   I'll give you black sensations up and down your spine... If you're into evil, you're a friend of mine
+fps: 60
+romChecksum: "E571F0E41C93990620B9D3254CEBA0F4"
+romNotes: "Download 'AC/DC Pro 1.70.0 Game Code'"
+romUrlOverride: "https://wp.sternpinball.com/?post_type=game_code&s=AC%2FDC+Pro+1.70.0+Game+Code"
+romVersionOverride: "acd_170"
+tableNotes: "Download 'AC-DC Pro Vault-1.0.rar'"
+tableVPSId: "pJJOvLweWw"
+testers:
+  - "OminousOsie"
+vpxChecksum: "E10512FC70CB0C9CAED02C491DC7FC4E"
+vpxVPSId: "zFOcOPpA2Y"
