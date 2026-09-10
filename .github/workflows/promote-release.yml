@@ -33,6 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
+      TAG: ${{ inputs.release_tag }}
     outputs:
       id: ${{ steps.rel.outputs.id }}
       tag: ${{ steps.rel.outputs.tag }}
@@ -40,9 +41,11 @@ jobs:
       - name: Resolve the prerelease
         id: rel
         run: |
-          tag="${{ inputs.release_tag }}"
+          tag="$TAG"
+          # env.TAG, not --arg: `gh api --jq` takes a single filter and does
+          # not accept jq's own flags.
           read -r id prerelease draft assets < <(gh api "repos/${{ github.repository }}/releases" --paginate \
-            --jq --arg t "$tag" '.[] | select(.tag_name==$t) | "\(.id) \(.prerelease) \(.draft) \(.assets|length)"' | head -1)
+            --jq '.[] | select(.tag_name==env.TAG) | "\(.id) \(.prerelease) \(.draft) \(.assets|length)"' | head -1)
           if [ -z "$id" ]; then
             echo "::error::No release found with tag '$tag'."
             exit 1
@@ -91,6 +94,27 @@ jobs:
             -F prerelease=false \
             -F make_latest=${{ inputs.make_latest }} \
             --jq '"promoted: \(.tag_name)  prerelease=\(.prerelease)  url=\(.html_url)"'
+
+      # The promoted release is no longer a prerelease, so anything still
+      # flagged as one is a candidate that was superseded rather than shipped.
+      # Left alone it lingers in the release list forever; internal devices are
+      # protected from following it by the newer-than-stable check in
+      # resolveWizardRelease, but the invariant is "exactly one open
+      # prerelease", so sweep them here. Runs after the promotion succeeded, so
+      # a failed promote never deletes a candidate.
+      - name: Delete superseded prereleases
+        run: |
+          leftovers=$(gh api --paginate "repos/${{ github.repository }}/releases" \
+            --jq '.[] | select(.prerelease and (.draft | not)) | .tag_name')
+          if [ -z "$leftovers" ]; then
+            echo "No superseded prereleases to remove."
+            exit 0
+          fi
+          echo "$leftovers" | while read -r tag; do
+            [ -z "$tag" ] && continue
+            echo "Deleting superseded prerelease $tag (and its tag)"
+            gh release delete "$tag" --repo "${{ github.repository }}" --yes --cleanup-tag
+          done
 
       - name: Confirm stable clients now resolve it
         run: |

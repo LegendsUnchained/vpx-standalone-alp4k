@@ -35,6 +35,26 @@ jobs:
       GITHUB_REF_NAME: ${{ github.event.release.tag_name || inputs.release_tag }}
 
     steps:
+      # Exactly one candidate may be open at a time. Two would also break the
+      # catalog history chain: release_history seeds from the newest *stable*
+      # release, so a second candidate built before the first is promoted
+      # silently diffs against the same baseline as the first.
+      - name: Enforce a single open prerelease
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.release.tag_name || inputs.release_tag }}
+        run: |
+          # env.TAG, not --arg: `gh api --jq` takes a single filter and does
+          # not accept jq's own flags.
+          others=$(gh api --paginate "repos/${{ github.repository }}/releases" \
+            --jq '.[] | select(.prerelease and (.draft | not) and .tag_name != env.TAG) | .tag_name')
+          if [ -n "$others" ]; then
+            echo "::error::Another prerelease is already open: $(echo "$others" | tr '\n' ' ')."
+            echo "::error::Promote it (promote-release.yml) or delete it before cutting a new candidate."
+            exit 1
+          fi
+          echo "No other prerelease open."
+
       - name: Checkout code
         uses: actions/checkout@v5
         with:
