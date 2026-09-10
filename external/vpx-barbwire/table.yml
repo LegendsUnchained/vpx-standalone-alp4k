@@ -1,0 +1,19 @@
+---
+fps: 60
+pupArchiveFormat: "zip"
+pupArchiveRoot: "Barbwire"
+pupChecksum: "2AE7DF39C8236E38CD1903C797BDBE5D"
+pupNSFW: true
+pupRequired: true
+pupVersion: "barbwire"
+pupVPSId: "ngh31BtlPC"
+romChecksum: "43E5D44CA1CF29112710B6E3EE028023"
+romNotes: "Download barbwire.zip"
+romUrlOverride: "https://pinballnirvana.com/forums/resources/barbwire.1547/"
+romVersionOverride: "barbwire"
+tableVPSId: "RnSsHgKM"
+testers:
+  - "Wraith"
+  - "'Coffee' Joe"
+vpxChecksum: "F466D1939D0CD2D675FCCEB672285D63"
+vpxVPSId: "8puRqHeyal"

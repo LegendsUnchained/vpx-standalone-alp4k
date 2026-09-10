@@ -93,7 +93,7 @@ jobs:
 
       - name: Table Manager Achievements Config
         run: gh release upload "$GITHUB_REF_NAME" tm-config/achievements.json --clobber
-        
+
       - name: Open PR for README updates
         if: github.event_name == 'release'
         run: |
