@@ -6,12 +6,9 @@ import os
 import requests
 import sys
 
-import yaml
 
-import vpsdb
 
 from github import Github
-from pathlib import Path
 
 
 def find_release(repo, tag):
@@ -30,27 +27,6 @@ def find_release(repo, tag):
     return None
 
 
-def get_commit_hash_from_release(repo, tag):
-    """Resolve the commit a release points at.
-
-    Prereleases carry a real git tag, so the tag list is authoritative;
-    target_commitish is only a fallback.
-    """
-    try:
-        release = find_release(repo, tag)
-        if release is None:
-            print(f"Error: no release found with tag {tag}", file=sys.stderr)
-            return None
-        for t in repo.get_tags():
-            if t.name == tag:
-                return t.commit.sha
-        target = release.target_commitish or repo.default_branch
-        return repo.get_commit(target).sha
-    except Exception as e:
-        print(f"Error getting commit hash for tag {tag}: {e}", file=sys.stderr)
-        return None
-
-
 def get_wizard_data(repo, tag):
     """Get wizard data from release tag using the GitHub Releases API."""
     try:
@@ -67,118 +43,51 @@ def get_wizard_data(repo, tag):
         return None
 
 
-def find_changed_files(repo, tag1_hash, tag2_hash):
-    """Find changed table.yml files using the GitHub API."""
-    try:
-        enabled_tables = get_enabled_tables()
+def classify_from_manifest(manifest, tag):
+    """Split a stamped manifest into tables new in this release and tables updated by it.
 
-        if enabled_tables:
-            comparison = repo.compare(tag1_hash, tag2_hash)
-            changed_files = []
-            for file in comparison.files:
-                path = Path(file.filename)
-                folder_name = path.parent.name
+    The catalog history already answers this exactly: generate-release.py stamps
+    every entry with firstAvailableRelease and updatedRelease from the ledger,
+    which is derived from release assets and each table's content fingerprint.
 
-                if (
-                    folder_name not in enabled_tables
-                    or path.name.lower() == "readme.md"
-                ):
-                    continue
-
-                status = "modified"
-                if path.name == "table.yml" and file.status == "added":
-                    status = "added"
-
-                changed_folder = f"{status}\t{folder_name}"
-                if changed_folder not in changed_files:
-                    changed_files.append(changed_folder)
-            changed_files.sort()
-            return "\n".join(changed_files)
-    except Exception as e:
-        print(f"Error finding changed files: {e}", file=sys.stderr)
-        return None
-
-
-def get_enabled_tables():
-    """Find all files named table.yml in the 'tables' folder relative to the cwd."""
-    tables_dir = os.path.join(os.getcwd(), "tables")
-    table_yml_files = []
-
-    if not os.path.exists(tables_dir) or not os.path.isdir(tables_dir):
-        return table_yml_files  # Return empty list if 'tables' folder doesn't exist
-
-    for root, _, files in os.walk(tables_dir):
-        for file in files:
-            if file == "table.yml":
-                table_yml_files.append(os.path.join(root, file))
-
-    enabled_tables = []
-    for table_yml in table_yml_files:
-        with open(table_yml, "r") as f:
-            y = yaml.safe_load(f)
-            # Shared predicate so this matches get_table_meta exactly — only an
-            # explicit `enabled: false` disables (enabled: null/absent = enabled).
-            if vpsdb.is_disabled(y):
-                print(f"Skipping {table_yml} because it is disabled.")
-                continue
-
-            path = Path(table_yml)
-            folder_name = path.parent.name
-            enabled_tables.append(folder_name)
-    return enabled_tables
-
-
-def get_release_notes(changed_files, wizard_data):
-    """List added and changed table.yml files."""
-    if not changed_files:
-        print("No table.yml files have changed or been added since the last release.")
-    else:
-        added_files = []
-        modified_files = []
-        for line in changed_files.splitlines():
-            parts = line.split("\t")
-            if len(parts) >= 2:
-                status, file = parts[0], parts[1]
-                if status == "added":
-                    added_files.append(file)
-                elif status == "modified":
-                    modified_files.append(file)
-
-        release_notes = []
-        if added_files:
-            release_notes.append("## Newly added tables")
-            for file in added_files:
-                if file in modified_files:
-                    modified_files.remove(file)
-                table_name = wizard_data.get(file, {}).get("name", file)
-                release_notes.append(f"- {table_name} ({file})")
-        if modified_files:
-            release_notes.append("## Updated tables:")
-            for file in modified_files:
-                table_name = wizard_data.get(file, {}).get("name", file)
-                release_notes.append(f"- {table_name} ({file})")
-
-        return "\n".join(release_notes)
-
-
-def get_latest_stable_tag(repo, current_tag):
-    """Tag of the most recent stable release — not a draft, not a prerelease.
-
-    Notes always describe what a candidate adds on top of what users are
-    actually running, so the baseline is the newest stable release rather than
-    whichever release happens to sit next to this one in the list. With several
-    prereleases open at once, the adjacent-release rule produced notes that
-    diffed one unreleased candidate against another.
+    This used to diff the two release tags in git, which broke the moment the
+    repository was flattened: every tag was retargeted onto the flatten commit,
+    so a tag-to-tag comparison showed no table changes at all and the notes came
+    out empty. Reading the manifest is immune to that, and is also more accurate
+    — it ignores presentation-only churn like recompressed art, exactly as the
+    Recently Updated feed does.
     """
-    try:
-        for release in repo.get_releases():
-            if release.draft or release.prerelease or release.tag_name == current_tag:
-                continue
-            return release.tag_name
-    except Exception as e:
-        print(f"Error getting releases: {e}", file=sys.stderr)
+    added, modified = [], []
+    for key, entry in sorted(manifest.items()):
+        if not isinstance(entry, dict) or entry.get("enabled") is False:
+            continue
+        if entry.get("firstAvailableRelease") == tag:
+            added.append(key)
+        elif entry.get("updatedRelease") == tag:
+            modified.append(key)
+    return added, modified
+
+
+def get_release_notes(added, modified, wizard_data):
+    """Render the added/updated table lists. Format unchanged from the
+    git-diff implementation this replaced, so published notes stay consistent."""
+    if not added and not modified:
+        print("No tables were added or updated in this release.")
         return None
-    return None
+
+    def name_of(key):
+        return (wizard_data or {}).get(key, {}).get("name", key)
+
+    release_notes = []
+    if added:
+        release_notes.append("## Newly added tables")
+        for key in added:
+            release_notes.append(f"- {name_of(key)} ({key})")
+    if modified:
+        release_notes.append("## Updated tables:")
+        for key in modified:
+            release_notes.append(f"- {name_of(key)} ({key})")
+    return "\n".join(release_notes)
 
 
 def main():
@@ -187,90 +96,68 @@ def main():
     release_tag = os.environ.get("GITHUB_REF_NAME")
 
     parser = argparse.ArgumentParser(
-        description="List changed table.yml files between tags."
+        description="Write a release's notes from its own published manifest."
     )
-    parser.add_argument("--start-tag", help="Start tag for diff.")
     parser.add_argument(
-        "--end-tag", default=release_tag, help="End tag for diff. (Required)"
+        "--tag", default=release_tag, help="Release tag to write notes for."
     )
     parser.add_argument(
         "--repository", default=repo_name, help="Repository to check (owner/repo)."
     )
     parser.add_argument("--github-token", default=github_token, help="Github token")
+    parser.add_argument(
+        "--dry-run", action="store_true",
+        help="Print the notes instead of writing them to the release.",
+    )
 
     args = parser.parse_args()
+    tag = args.tag
 
-    end_tag = args.end_tag
-    start_tag = args.start_tag
-    repository = args.repository
-    github_token = args.github_token
-
-    if not github_token:
+    if not args.github_token:
         print("Error: --github-token is required.", file=sys.stderr)
         sys.exit(1)
-
-    if not end_tag:
-        print("Error: --end-tag is required.", file=sys.stderr)
+    if not tag:
+        print("Error: --tag is required.", file=sys.stderr)
         sys.exit(1)
 
     try:
-        g = Github(github_token)
-        repo = g.get_repo(repository or os.environ.get("GITHUB_REPOSITORY"))
+        g = Github(args.github_token)
+        repo = g.get_repo(args.repository or os.environ.get("GITHUB_REPOSITORY"))
     except Exception as e:
         print(f"Error connecting to GitHub: {e}", file=sys.stderr)
         sys.exit(1)
 
-    if not start_tag:
-        start_tag = get_latest_stable_tag(repo, end_tag)
+    # The manifest this release just published is the source of truth: its
+    # entries are stamped with firstAvailableRelease/updatedRelease from the
+    # catalog history, so no git comparison is involved and a flattened
+    # repository makes no difference.
+    manifest = get_wizard_data(repo, tag)
+    if not manifest:
+        print(f"Error: no manifest.json asset on release '{tag}'.", file=sys.stderr)
+        sys.exit(1)
 
-    if start_tag:
-        tag1_hash = get_commit_hash_from_release(repo, start_tag)
-        tag2_hash = get_commit_hash_from_release(repo, end_tag)
+    added, modified = classify_from_manifest(manifest, tag)
+    print(f"{len(added)} table(s) new in {tag}, {len(modified)} updated.")
+    new_release_notes = get_release_notes(added, modified, manifest)
+    if new_release_notes is None:
+        sys.exit(0)
 
-        if tag1_hash and tag2_hash:
-            changed_files = find_changed_files(repo, tag1_hash, tag2_hash)
-            wizard_data = get_wizard_data(repo, end_tag)
-            new_release_notes = get_release_notes(changed_files, wizard_data)
-            print("Adding release notes to the release...")
-            print(new_release_notes)
-            if new_release_notes is None:
-                sys.exit(0)
-            try:
-                release = find_release(repo, end_tag)
-                # draft/prerelease must be echoed back: PyGithub defaults both
-                # to False, so omitting them would promote the prerelease to a
-                # full release just by writing its notes.
-                release.update_release(name=release.title, message=new_release_notes,
-                                       draft=release.draft, prerelease=release.prerelease)
-                print(f"Release notes for tag '{end_tag}' updated successfully.")
-            except Exception as e:
-                print(f"Error editing release notes: {e}", file=sys.stderr)
-                sys.exit(1)
-        else:
-            print("Error: Failed to get commit hashes for tags.", file=sys.stderr)
-            sys.exit(1)
-    else:
-        enabled_tables = get_enabled_tables()
-        if not enabled_tables:
-            print("No tables found in the 'tables' folder.")
-            sys.exit(1)
-        print("No previous release tag found. Listing all tables:")
-        changed_files = []
-        for table in enabled_tables:
-            changed_files.append(f"added\t{table}")
-        wizard_data = get_wizard_data(repo, end_tag)
-        changed_files.sort()
-        new_release_notes = get_release_notes("\n".join(changed_files), wizard_data)
-        print("Adding release notes to the release...")
-        print(new_release_notes)
-        try:
-            release = find_release(repo, end_tag)
-            release.update_release(name=release.title, message=new_release_notes,
-                                   draft=release.draft, prerelease=release.prerelease)
-            print(f"Release notes for tag '{end_tag}' updated successfully.")
-        except Exception as e:
-            print(f"Error editing release notes: {e}", file=sys.stderr)
-            sys.exit(1)
+    print("Adding release notes to the release...")
+    print(new_release_notes)
+    if args.dry_run:
+        return
+
+    try:
+        release = find_release(repo, tag)
+        # draft/prerelease must be echoed back: PyGithub defaults both to
+        # False, so omitting them would promote the prerelease to a full
+        # release just by writing its notes.
+        release.update_release(name=release.title, message=new_release_notes,
+                               draft=release.draft, prerelease=release.prerelease)
+        print(f"Release notes for tag '{tag}' updated successfully.")
+    except Exception as e:
+        print(f"Error editing release notes: {e}", file=sys.stderr)
+        sys.exit(1)
 
 
 if __name__ == "__main__":
