@@ -36,6 +36,7 @@ jobs:
     outputs:
       tag: ${{ steps.draft.outputs.tag }}
       id: ${{ steps.draft.outputs.id }}
+      sha: ${{ github.sha }}
     steps:
       - name: Resolve the tag and create a draft release
         id: draft
@@ -61,6 +62,7 @@ jobs:
           if TAG="$tag" gh api "repos/${{ github.repository }}/releases" --paginate \
                --jq '.[] | select(.tag_name==env.TAG and (.draft|not)) | .tag_name' | grep -q .; then
             echo "::notice::A published release already uses $tag; it will be retired just before this candidate is published."
+            echo "::notice::Until then GitHub shows this draft against the OLD tag's commit, because the tag still exists. Do not publish the draft by hand — the workflow deletes the old tag first so the new tag is created at ${{ github.sha }}."
           fi
           if TAG="$tag" gh api "repos/${{ github.repository }}/releases" --paginate \
                --jq '.[] | select(.tag_name==env.TAG and .draft) | .id' | grep -q .; then
@@ -70,7 +72,7 @@ jobs:
 
           id=$(gh api -X POST "repos/${{ github.repository }}/releases" \
                  -f tag_name="$tag" \
-                 -f target_commitish="${{ github.ref_name }}" \
+                 -f target_commitish="${{ github.sha }}" \
                  -f name="Update ${tag#v}" \
                  -F draft=true -F prerelease=true \
                  -f body="Building..." --jq .id)
@@ -88,6 +90,7 @@ jobs:
     secrets: inherit
     with:
       release_tag: ${{ needs.prepare.outputs.tag }}
+      ref: ${{ needs.prepare.outputs.sha }}
 
   # CORS mirror for the candidate. Force-pushed before the release is visible,
   # so an internal device never sees a manifest whose release is not published.
@@ -127,6 +130,16 @@ jobs:
           gh api -X PATCH "repos/${{ github.repository }}/releases/${{ needs.prepare.outputs.id }}" \
             -F draft=false -F prerelease=true \
             --jq '"published: \(.tag_name)  prerelease=\(.prerelease)  \(.html_url)"'
+
+      - name: Confirm the tag points at the commit we built
+        run: |
+          want="${{ needs.prepare.outputs.sha }}"
+          got=$(gh api "repos/${{ github.repository }}/git/ref/tags/$TAG" --jq .object.sha 2>/dev/null || true)
+          if [ "$got" != "$want" ]; then
+            echo "::error::Tag $TAG points at ${got:-nothing}, expected $want (the commit the assets were built from)."
+            exit 1
+          fi
+          echo "Tag $TAG -> $got"
 
       - name: Confirm stable is untouched
         run: |

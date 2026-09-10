@@ -21,6 +21,10 @@ on:
         description: 'Tag of the release to build (may be an unpublished draft)'
         required: true
         type: string
+      ref:
+        description: 'Commit to build from. Defaults to the calling ref.'
+        required: false
+        type: string
   # Manual re-run against an existing release.
   workflow_dispatch:
     inputs:
@@ -46,9 +50,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v5
         with:
-          # The build runs against a draft, which has no tag of its own, so
-          # check out the branch the candidate was cut from.
-          ref: ${{ github.ref }}
+          # An explicit commit when the caller supplies one: a draft has no tag
+          # to check out, and pinning the sha means a push to the branch part
+          # way through cannot change what this build produces.
+          ref: ${{ inputs.ref || github.ref }}
           # Full commit graph is required for catalog_history.table_renames,
           # which diffs the previous release tag against this one to carry a
           # renamed table's arrival date across. (configVersion no longer needs

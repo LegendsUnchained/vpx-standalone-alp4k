@@ -38,17 +38,32 @@ def find_release(repo, tag):
     return draft or published
 
 
-def get_wizard_data(repo, tag):
-    """Get wizard data from release tag using the GitHub Releases API."""
+def get_wizard_data(repo, tag, token):
+    """Read the manifest.json asset attached to a release.
+
+    Authenticated on purpose: notes are written while the release is still a
+    draft, and a draft's assets are not publicly downloadable. Fetching
+    browser_download_url without a token returns 404 even though the asset is
+    there, which reads as "no manifest.json asset on release" — the asset
+    exists, the request just isn't allowed to see it.
+    """
     try:
         release = find_release(repo, tag)
-        assets = release.get_assets()
-        for asset in assets:
+        if release is None:
+            print(f"Error: no release found with tag {tag}", file=sys.stderr)
+            return None
+        for asset in release.get_assets():
             if asset.name == "manifest.json":
-                # download the asset with requests
-                response = requests.get(asset.browser_download_url)
-                if response.status_code == 200:
-                    return response.json()
+                response = requests.get(
+                    asset.browser_download_url,
+                    headers={
+                        "Authorization": f"token {token}",
+                        "Accept": "application/octet-stream",
+                    },
+                    timeout=30,
+                )
+                response.raise_for_status()
+                return json.loads(response.text)
     except Exception as e:
         print(f"Error getting wizard data for tag {tag}: {e}", file=sys.stderr)
         return None
@@ -145,7 +160,7 @@ def main():
     # entries are stamped with firstAvailableRelease/updatedRelease from the
     # catalog history, so no git comparison is involved and a flattened
     # repository makes no difference.
-    manifest = get_wizard_data(repo, tag)
+    manifest = get_wizard_data(repo, tag, args.github_token)
     if not manifest:
         print(f"Error: no manifest.json asset on release '{tag}'.", file=sys.stderr)
         sys.exit(1)
