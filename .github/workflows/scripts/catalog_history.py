@@ -37,8 +37,19 @@ def fingerprint(entry):
 def utc(value):
     return datetime.fromisoformat(value.replace('Z', '+00:00')).astimezone(timezone.utc)
 
+def tag_exists(tag, cwd='.'):
+    return subprocess.run(['git', 'rev-parse', '--verify', f'refs/tags/{tag}'],
+                          cwd=cwd, capture_output=True).returncode == 0
+
 def table_renames(previous, current, cwd='.'):
     if not previous or previous == current:
+        return {}
+    # A release built as a draft has no tag yet, so there is nothing to diff
+    # against. Skip rather than fail the build: the alternative is a hard
+    # CalledProcessError, and a rename is re-detectable on the next release.
+    missing = [t for t in (previous, current) if not tag_exists(t, cwd)]
+    if missing:
+        print(f"Skipping rename detection: no tag for {', '.join(missing)}")
         return {}
     # The release runner is blobless: restrict rename detection to YAML so
     # it never fetches old launcher artwork or other large binary blobs.
@@ -172,8 +183,9 @@ def release_history(repo, release, tables):
     """
     history = None
     pending = []
+    cutoff = release.published_at or release.created_at
     candidates = sorted((r for r in repo.get_releases() if not r.draft and not r.prerelease
-                         and r.published_at <= release.published_at),
+                         and r.published_at <= cutoff),
                         key=lambda r: r.published_at, reverse=True)
     for previous in candidates:
         assets = catalog_assets(previous)
@@ -195,7 +207,10 @@ def release_history(repo, release, tables):
     # Adopt the current fingerprint definition before comparing against it.
     history = rebaseline(history, tables)
     aliases = table_renames(history and history.get('latestRelease'), release.tag_name)
-    date = release.published_at.astimezone(timezone.utc).isoformat().replace('+00:00', 'Z')
+    # A draft has no published_at; it is created now and published moments
+    # later, so its creation time is the honest stamp for this release.
+    stamped_at = release.published_at or release.created_at
+    date = stamped_at.astimezone(timezone.utc).isoformat().replace('+00:00', 'Z')
     return advance(history, tables, release.tag_name, date, aliases)
 
 if __name__ == '__main__':

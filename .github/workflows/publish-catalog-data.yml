@@ -77,7 +77,7 @@ jobs:
         run: |
           tag="${{ inputs.release_tag }}"
           if [ -z "$tag" ]; then
-            # Newest prerelease: the pipeline builds assets onto prereleases,
+            # Newest prerelease: the pipeline builds assets onto a candidate,
             # so that is what the testing mirror should reflect.
             tag=$(gh api "repos/${{ github.repository }}/releases" --paginate \
                     --jq '[.[] | select(.prerelease and (.draft | not))] | first | .tag_name // empty')
@@ -86,10 +86,19 @@ jobs:
             echo "::error::No prerelease found and no release_tag supplied."
             exit 1
           fi
+          # Resolve by listing, not /releases/tags/{tag}: create-testing-release
+          # mirrors a release while it is still a DRAFT, and a draft is
+          # invisible to the tag endpoint and has no git tag of its own.
+          read -r id commitish isdraft < <(TAG="$tag" gh api "repos/${{ github.repository }}/releases" --paginate \
+            --jq '.[] | select(.tag_name==env.TAG) | "\(.id) \(.target_commitish) \(.draft)"' | head -1)
+          if [ -z "$id" ]; then
+            echo "::error::No release found with tag '$tag'."
+            exit 1
+          fi
           branch="${{ inputs.target_branch }}"
           [ -z "$branch" ] && branch="manifest-testing"
-          { echo "tag=$tag"; echo "branch=$branch"; } >> "$GITHUB_OUTPUT"
-          echo "Publishing catalog data for $tag onto '$branch'"
+          { echo "tag=$tag"; echo "id=$id"; echo "commitish=$commitish"; echo "branch=$branch"; } >> "$GITHUB_OUTPUT"
+          echo "Publishing catalog data for $tag (id $id, draft=$isdraft) onto '$branch'"
 
       # This workflow's own scripts — always from wherever it's defined (the
       # ref that triggered this run, typically main), NOT from the release
@@ -103,10 +112,11 @@ jobs:
       # tables/*/launcher.png as of the release being published, into a
       # separate path so it doesn't clobber the checkout above. No history
       # required here, unlike the release-generation workflow.
-      - name: Checkout release tag (for box art source images)
+      - name: Checkout release commit (for box art source images)
         uses: actions/checkout@v5
         with:
-          ref: ${{ steps.rel.outputs.tag }}
+          # target_commitish, not the tag: a draft has no tag to check out.
+          ref: ${{ steps.rel.outputs.commitish }}
           path: release-checkout
           fetch-depth: 1
           filter: blob:none
@@ -126,9 +136,17 @@ jobs:
       - name: Download release assets
         run: |
           rm -rf /tmp/catalog-publish
-          gh release download "${{ steps.rel.outputs.tag }}" \
-            -p manifest.json -p table-history.json -p achievements.json \
-            --clobber -D /tmp/catalog-publish
+          mkdir -p /tmp/catalog-publish
+          # By asset id: `gh release download <tag>` resolves through the tag
+          # endpoint, which cannot see a draft release's assets.
+          gh api "repos/${{ github.repository }}/releases/${{ steps.rel.outputs.id }}/assets" --paginate \
+            --jq '.[] | select(.name == "manifest.json" or .name == "table-history.json" or .name == "achievements.json") | "\(.id) \(.name)"' \
+          | while read -r asset_id asset_name; do
+              echo "  fetching $asset_name"
+              gh api -H "Accept: application/octet-stream" \
+                "repos/${{ github.repository }}/releases/assets/$asset_id" > "/tmp/catalog-publish/$asset_name"
+            done
+          ls -l /tmp/catalog-publish
 
       # Full-size WebP re-encode of tables/<key>/launcher.png (~640x960,
       # ~1.2 MB PNG -> ~145 KB WebP q90 measured, no resize). No separate

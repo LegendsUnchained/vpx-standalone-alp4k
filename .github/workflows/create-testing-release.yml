@@ -1,0 +1,157 @@
+name: Create Testing Release
+
+# One button for contributors: builds a release candidate end to end and only
+# makes it visible once every piece is in place.
+#
+#   draft -> assets -> catalog mirror -> notes -> publish -> retire the old one
+#
+# Everything is built while the release is a DRAFT, which is invisible to the
+# API and to devices. Nothing an internal cabinet can see changes until the
+# publish step, so there is no window where a candidate is half-built.
+#
+# The previous candidate is deleted immediately before publishing rather than
+# before building. That is what keeps Table Manager's internal tracks working:
+# the old candidate stays serviceable through the whole build, and the gap
+# between retiring it and publishing the new one is a few seconds instead of a
+# whole rebuild. Candidates reuse the final tag, so asset URLs and catalog
+# history references are correct from the start and promotion stays a flag flip.
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 'Tag for the candidate (blank = bump the patch of the latest stable)'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    name: Create the draft
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    outputs:
+      tag: ${{ steps.draft.outputs.tag }}
+      id: ${{ steps.draft.outputs.id }}
+    steps:
+      - name: Resolve the tag and create a draft release
+        id: draft
+        env:
+          REQUESTED: ${{ inputs.release_tag }}
+        run: |
+          set -euo pipefail
+          tag="$REQUESTED"
+          if [ -z "$tag" ]; then
+            latest=$(gh api "repos/${{ github.repository }}/releases/latest" --jq .tag_name)
+            # Tags carry a leading v and occasionally a letter suffix (v2.0.6a),
+            # so read the three leading numbers and bump the last.
+            nums=$(printf '%s' "$latest" | sed -E 's/^v//; s/^([0-9]+)\.([0-9]+)\.([0-9]+).*$/\1 \2 \3/')
+            read -r maj min pat <<<"$nums"
+            if [ -z "${pat:-}" ]; then
+              echo "::error::Could not parse a version from latest stable '$latest'; pass release_tag explicitly."
+              exit 1
+            fi
+            tag="v${maj}.${min}.$((pat + 1))"
+            echo "Latest stable is $latest; candidate will be $tag"
+          fi
+
+          if TAG="$tag" gh api "repos/${{ github.repository }}/releases" --paginate \
+               --jq '.[] | select(.tag_name==env.TAG and (.draft|not)) | .tag_name' | grep -q .; then
+            echo "::notice::A published release already uses $tag; it will be retired just before this candidate is published."
+          fi
+          if TAG="$tag" gh api "repos/${{ github.repository }}/releases" --paginate \
+               --jq '.[] | select(.tag_name==env.TAG and .draft) | .id' | grep -q .; then
+            echo "::error::A draft for $tag already exists. Delete it before starting a new run."
+            exit 1
+          fi
+
+          id=$(gh api -X POST "repos/${{ github.repository }}/releases" \
+                 -f tag_name="$tag" \
+                 -f target_commitish="${{ github.ref_name }}" \
+                 -f name="Update ${tag#v}" \
+                 -F draft=true -F prerelease=true \
+                 -f body="Building..." --jq .id)
+          echo "Created draft $tag (id $id) from ${{ github.ref_name }}"
+          { echo "tag=$tag"; echo "id=$id"; } >> "$GITHUB_OUTPUT"
+
+  # Zips, manifest, table-history and release notes, all onto the draft.
+  build:
+    name: Build release assets
+    needs: prepare
+    uses: ./.github/workflows/create-external-releases.yml
+    permissions:
+      contents: write
+      pull-requests: write
+    secrets: inherit
+    with:
+      release_tag: ${{ needs.prepare.outputs.tag }}
+
+  # CORS mirror for the candidate. Force-pushed before the release is visible,
+  # so an internal device never sees a manifest whose release is not published.
+  mirror:
+    name: Publish the testing catalog mirror
+    needs: [prepare, build]
+    uses: ./.github/workflows/publish-catalog-data.yml
+    permissions:
+      contents: write
+    secrets: inherit
+    with:
+      release_tag: ${{ needs.prepare.outputs.tag }}
+      target_branch: manifest-testing
+
+  publish:
+    name: Retire the old candidate and publish
+    needs: [prepare, mirror]
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      TAG: ${{ needs.prepare.outputs.tag }}
+    steps:
+      # Deleting first frees the tag when the new candidate reuses it, and
+      # keeps the "exactly one open prerelease" invariant true at all times.
+      - name: Retire previous candidates
+        run: |
+          gh api --paginate "repos/${{ github.repository }}/releases" \
+            --jq '.[] | select(.prerelease and (.draft | not)) | .tag_name' \
+          | while read -r old; do
+              [ -z "$old" ] && continue
+              echo "Retiring previous candidate $old"
+              gh release delete "$old" --repo "${{ github.repository }}" --yes --cleanup-tag
+            done
+
+      - name: Publish the candidate
+        run: |
+          gh api -X PATCH "repos/${{ github.repository }}/releases/${{ needs.prepare.outputs.id }}" \
+            -F draft=false -F prerelease=true \
+            --jq '"published: \(.tag_name)  prerelease=\(.prerelease)  \(.html_url)"'
+
+      - name: Confirm stable is untouched
+        run: |
+          latest=$(gh api "repos/${{ github.repository }}/releases/latest" --jq .tag_name)
+          echo "releases/latest is still $latest"
+          if [ "$latest" = "$TAG" ]; then
+            echo "::error::$TAG became the latest release; it should be a prerelease."
+            exit 1
+          fi
+
+  # A failed run must not strand an invisible draft holding the tag.
+  cleanup:
+    name: Remove the draft if the run failed
+    needs: [prepare, build, mirror, publish]
+    if: failure() && needs.prepare.result == 'success'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Delete the unpublished draft
+        run: |
+          state=$(gh api "repos/${{ github.repository }}/releases/${{ needs.prepare.outputs.id }}" --jq .draft 2>/dev/null || echo "gone")
+          if [ "$state" = "true" ]; then
+            echo "Run failed; deleting the draft ${{ needs.prepare.outputs.tag }}"
+            gh api -X DELETE "repos/${{ github.repository }}/releases/${{ needs.prepare.outputs.id }}"
+          else
+            echo "Draft already published or removed (state=$state); leaving it alone."
+          fi

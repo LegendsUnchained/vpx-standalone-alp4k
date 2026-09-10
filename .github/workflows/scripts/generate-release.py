@@ -27,6 +27,23 @@ def md5sum(file_path, chunk_size=1024 * 1024):
     return digest.hexdigest()
 
 
+def find_release(repo, tag):
+    """Find a release by tag name, including drafts.
+
+    `repo.get_release(tag)` resolves through /releases/tags/{tag}, which cannot
+    see a draft because a draft has no git tag yet. Releases are now built as a
+    draft and published only once every asset is in place, so the lookup has to
+    fall back to scanning the release list.
+    """
+    try:
+        return repo.get_release(tag)
+    except Exception:
+        for release in repo.get_releases():
+            if release.tag_name == tag:
+                return release
+    return None
+
+
 def find_table_yml(base_dir="tables"):
     result = []
     if not os.path.exists(base_dir):
@@ -146,7 +163,9 @@ def fetch_existing_manifest(github_token, repo_name, release_tag):
         auth = Auth.Token(github_token)
         g = Github(auth=auth)
         repo = g.get_repo(repo_name)
-        rel = repo.get_release(release_tag)
+        rel = find_release(repo, release_tag)
+        if rel is None:
+            return {}
         for asset in rel.get_assets():
             if asset.name == "manifest.json":
                 url = asset.browser_download_url
@@ -309,7 +328,10 @@ def main():
     try:
         g = Github(auth=Auth.Token(github_token))
         repo = g.get_repo(repo_name)
-        rel = repo.get_release(release_tag)
+        rel = find_release(repo, release_tag)
+        if rel is None:
+            print(f"[ERROR] Release '{release_tag}' not found in '{repo_name}'.")
+            sys.exit(1)
 
         # Capability probe: listing assets should succeed with a write-capable token
         _ = list(rel.get_assets())

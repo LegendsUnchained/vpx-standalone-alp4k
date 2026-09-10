@@ -10,57 +10,40 @@ permissions:
 # see one — no gating of our own required. Promotion to stable is a separate,
 # deliberate step (promote-release.yml).
 #
-# `prereleased` fires when a prerelease is published. `released` (promotion of
-# a prerelease to a full release) is deliberately NOT handled here: promoting a
-# vetted candidate must not rebuild its assets.
+# Not triggered by release events. "Create Testing Release" owns the flow: it
+# creates a draft, calls this workflow to fill it, mirrors the catalog, and only
+# then publishes. Reacting to `prereleased` here would fire a second, duplicate
+# build the moment that workflow published its own draft.
 on:
-  release:
-    types: [prereleased]
-  # Manual runs for a specific prerelease tag.
+  workflow_call:
+    inputs:
+      release_tag:
+        description: 'Tag of the release to build (may be an unpublished draft)'
+        required: true
+        type: string
+  # Manual re-run against an existing release.
   workflow_dispatch:
     inputs:
       release_tag:
-        description: 'Tag of the prerelease to build'
-        required: false
+        description: 'Tag of the release to build'
+        required: true
 
 jobs:
   create_zips_and_manifest:
-    # Only ever act on prereleases.
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event.release.prerelease }}
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
       GITHUB_TOKEN: ${{ github.token }}
       GITHUB_REPOSITORY: ${{ github.repository }}
-      GITHUB_REF_NAME: ${{ github.event.release.tag_name || inputs.release_tag }}
+      GITHUB_REF_NAME: ${{ inputs.release_tag }}
 
     steps:
-      # Exactly one candidate may be open at a time. Two would also break the
-      # catalog history chain: release_history seeds from the newest *stable*
-      # release, so a second candidate built before the first is promoted
-      # silently diffs against the same baseline as the first.
-      - name: Enforce a single open prerelease
-        env:
-          GH_TOKEN: ${{ github.token }}
-          TAG: ${{ github.event.release.tag_name || inputs.release_tag }}
-        run: |
-          # env.TAG, not --arg: `gh api --jq` takes a single filter and does
-          # not accept jq's own flags.
-          others=$(gh api --paginate "repos/${{ github.repository }}/releases" \
-            --jq '.[] | select(.prerelease and (.draft | not) and .tag_name != env.TAG) | .tag_name')
-          if [ -n "$others" ]; then
-            echo "::error::Another prerelease is already open: $(echo "$others" | tr '\n' ' ')."
-            echo "::error::Promote it (promote-release.yml) or delete it before cutting a new candidate."
-            exit 1
-          fi
-          echo "No other prerelease open."
-
       - name: Checkout code
         uses: actions/checkout@v5
         with:
-          # A prerelease is a real published release, so its tag exists and is
-          # the right thing to build from.
-          ref: ${{ github.event.release.tag_name || inputs.release_tag || github.ref }}
+          # The build runs against a draft, which has no tag of its own, so
+          # check out the branch the candidate was cut from.
+          ref: ${{ github.ref }}
           # Full commit graph is required for catalog_history.table_renames,
           # which diffs the previous release tag against this one to carry a
           # renamed table's arrival date across. (configVersion no longer needs
