@@ -2,10 +2,10 @@ name: Promote prerelease to stable
 
 # The deliberate half of the prerelease-first pipeline.
 #
-# Assets are built onto a prerelease by "Create External Folder Releases and
-# Manifest", and mirrored to the manifest-testing branch for vetting. A
-# prerelease is public but excluded from /releases/latest, so stable clients
-# keep being served the previous release until this workflow runs.
+# Assets are built onto a prerelease by "Build release assets", and mirrored to
+# the manifest-testing branch for vetting. A prerelease is public but excluded
+# from /releases/latest, so stable clients keep being served the previous
+# release until this workflow runs.
 #
 # Order matters and is enforced by job dependencies: the stable `manifest`
 # mirror is updated FIRST, then the release is published. Publishing first

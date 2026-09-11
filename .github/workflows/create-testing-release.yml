@@ -83,7 +83,7 @@ jobs:
   build:
     name: Build release assets
     needs: prepare
-    uses: ./.github/workflows/create-external-releases.yml
+    uses: ./.github/workflows/build-release-assets.yml
     permissions:
       contents: write
       pull-requests: write

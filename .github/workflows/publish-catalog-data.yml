@@ -19,7 +19,7 @@ name: Publish Catalog Data (CORS mirror)
 # safe to make incremental too, but there's no reason to carry history a
 # CORS-fetch-only branch never needs to diff against.
 #
-# Runs automatically after "Create External Folder Releases and Manifest"
+# Runs automatically after "Build release assets"
 # finishes publishing a release's assets (chained via workflow_run so it can't
 # race the upload). Can also be triggered manually — Actions tab -> this
 # workflow -> Run workflow — to re-publish the mirror for the latest release,
@@ -39,7 +39,7 @@ permissions:
 # target_branch=manifest as the first half of promoting a candidate to stable.
 on:
   workflow_run:
-    workflows: ["Create External Folder Releases and Manifest"]
+    workflows: ["Build release assets"]
     types: [completed]
   workflow_dispatch:
     inputs:

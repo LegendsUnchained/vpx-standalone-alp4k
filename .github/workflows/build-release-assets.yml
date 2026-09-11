@@ -1,4 +1,4 @@
-name: Create External Folder Releases and Manifest
+name: Build release assets
 
 permissions:
   contents: write
