@@ -65,18 +65,75 @@ jobs:
           echo "Promoting prerelease '$tag' (id $id, $assets assets)"
           { echo "id=$id"; echo "tag=$tag"; } >> "$GITHUB_OUTPUT"
 
-  # Step 1: refresh the STABLE catalog mirror from this candidate's assets —
-  # this is what carries updated launcher.png box art across to stable.
+  # Step 1: move the STABLE catalog mirror onto the exact commit the testing
+  # mirror already holds.
+  #
+  # A ref copy, not a rebuild. Rebuilding re-downloaded the release assets,
+  # re-encoded the box art and re-fetched the vpinmdb media, which meant stable
+  # could be handed different bytes than testing was vetted with — art changing
+  # underneath a promotion is precisely what promotion is supposed to rule out.
+  # Every re-encode that is not byte-identical also writes new blobs for
+  # content that did not change.
+  #
+  # Copying the ref is reproducible by construction: same tree, same blobs, all
+  # of which already exist, so it adds nothing to the pack and takes seconds.
+  #
+  # `manifest` keeps the objects alive on its own. Git holds an object for as
+  # long as any ref reaches it, so once this points at that commit, later
+  # candidates force-pushing manifest-testing — or deleting it outright — cannot
+  # take it away.
   mirror:
-    name: Update the stable manifest branch
+    name: Point the stable manifest branch at the tested one
     needs: validate
-    uses: ./.github/workflows/publish-catalog-data.yml
-    permissions:
-      contents: write
-    secrets: inherit
-    with:
-      release_tag: ${{ needs.validate.outputs.tag }}
-      target_branch: manifest
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      TAG: ${{ needs.validate.outputs.tag }}
+    steps:
+      - name: Checkout the mirror branches
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: The tested mirror must be the one built for this release
+        run: |
+          set -euo pipefail
+          git fetch -q origin manifest-testing
+          git show origin/manifest-testing:manifest.json > /tmp/testing-manifest.json
+
+          # Trust the contents, not the commit message: manifest.json names the
+          # release its assets live in, so it is the mirror's own account of what
+          # it was built from. A stale mirror is otherwise indistinguishable from
+          # a current one, and promoting it would point stable at a candidate
+          # that never shipped.
+          total=$(jq 'length' /tmp/testing-manifest.json)
+          match=$(jq --arg t "$TAG" '[ .[]
+            | select((.repoConfig // "")
+            | contains("/releases/download/" + $t + "/")) ] | length' /tmp/testing-manifest.json)
+          echo "manifest-testing: $match of $total entries reference $TAG"
+          if [ "$total" -eq 0 ] || [ "$match" -eq 0 ]; then
+            echo "::error::manifest-testing does not reference $TAG. It was built for a"
+            echo "::error::different release; re-run Publish Catalog Data for $TAG first."
+            exit 1
+          fi
+
+      - name: Copy the ref onto manifest
+        run: |
+          set -euo pipefail
+          before=$(git rev-parse origin/manifest 2>/dev/null || echo none)
+          target=$(git rev-parse origin/manifest-testing)
+          echo "manifest $before -> $target"
+          git push --force "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" \
+            "$target:refs/heads/manifest"
+
+      - name: Stable and testing now hold identical trees
+        run: |
+          set -euo pipefail
+          git fetch -q origin manifest manifest-testing
+          a=$(git rev-parse origin/manifest^{tree})
+          b=$(git rev-parse origin/manifest-testing^{tree})
+          echo "manifest tree=$a  manifest-testing tree=$b"
+          [ "$a" = "$b" ] || { echo "::error::trees differ after the promote"; exit 1; }
 
   # Step 2: only now does the release become visible to users.
   publish:
