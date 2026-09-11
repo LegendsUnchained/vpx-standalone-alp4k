@@ -104,7 +104,8 @@ jobs:
         run: python .github/workflows/scripts/generate-release.py
 
       - name: Update Release notes (optional)
-        run: python .github/workflows/scripts/generate-release-notes.py
+        # manifest.json is still in the workspace from the previous step.
+        run: python .github/workflows/scripts/generate-release-notes.py --manifest manifest.json
 
       # Disabled 2026-09-10: this generator sources each row's title and stats by
       # parsing the per-table README's `# Title` heading and Status table. Those

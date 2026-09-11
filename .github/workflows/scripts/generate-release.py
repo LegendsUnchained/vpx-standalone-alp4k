@@ -442,12 +442,10 @@ def main():
     if not manifest_url:
         raise RuntimeError("Could not publish manifest.json")
     print(f"Uploaded manifest.json to release: {manifest_url}")
-
-    # Optional cleanup
-    try:
-        os.remove(manifest_file)
-    except OSError:
-        pass
+    # Left in the workspace on purpose. Later steps in this job read it from
+    # disk rather than downloading it back from the release, which is both a
+    # pointless round trip and the thing that kept breaking: a draft release
+    # has no publicly fetchable asset URL.
 
 
 if __name__ == "__main__":

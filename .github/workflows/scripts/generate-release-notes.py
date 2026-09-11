@@ -138,6 +138,12 @@ def main():
     )
     parser.add_argument("--github-token", default=github_token, help="Github token")
     parser.add_argument(
+        "--manifest",
+        help="Read the manifest from this file instead of the release asset. "
+             "generate-release.py leaves it in the workspace, so in the release "
+             "job this avoids downloading back what was just written.",
+    )
+    parser.add_argument(
         "--dry-run", action="store_true",
         help="Print the notes instead of writing them to the release.",
     )
@@ -163,7 +169,13 @@ def main():
     # entries are stamped with firstAvailableRelease/updatedRelease from the
     # catalog history, so no git comparison is involved and a flattened
     # repository makes no difference.
-    manifest = get_wizard_data(repo, tag, args.github_token)
+    if args.manifest and os.path.isfile(args.manifest):
+        with open(args.manifest) as fh:
+            manifest = json.load(fh)
+        print(f"Read {len(manifest)} manifest entries from {args.manifest}")
+    else:
+        # Standalone run against a past release: fetch it.
+        manifest = get_wizard_data(repo, tag, args.github_token)
     if not manifest:
         print(f"Error: no manifest.json asset on release '{tag}'.", file=sys.stderr)
         sys.exit(1)
