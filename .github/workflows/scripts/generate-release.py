@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
+import collections
 import os
+from urllib.parse import quote
 import sys
 import time
 import json
@@ -161,36 +163,87 @@ def get_config_tree_hash(repo_path, folder_path):
         return None
 
 
-def fetch_existing_manifest(github_token, repo_name, release_tag):
-    """
-    Fetch manifest.json (if present) from the target release and return it as a dict.
-    Keys are expected to be table folder names; values include 'configVersion'.
-    """
-    try:
-        auth = Auth.Token(github_token)
-        g = Github(auth=auth)
-        repo = g.get_repo(repo_name)
-        # The PUBLISHED release with this tag, not the draft being built: the
-        # draft starts empty, and treating that as "no previous manifest" makes
-        # every run rebuild all ~315 tables instead of only what changed.
-        rel = find_release(repo, release_tag, prefer_draft=False)
-        if rel is None:
-            return {}
-        for asset in rel.get_assets():
-            if asset.name == "manifest.json":
-                url = asset.browser_download_url
-                headers = {
-                    "Authorization": f"token {github_token}",
-                    "Accept": "application/octet-stream",
-                }
-                r = requests.get(url, headers=headers, timeout=30)
-                r.raise_for_status()
-                print("[INFO] Loaded previous manifest.json from release")
-                return json.loads(r.text)
-    except Exception as e:
-        print(f"[INFO] No previous manifest found or failed to load it: {e}")
-    return {}
+# The tag assets will be published under. Set once in main, because the URL a
+# client is given has to be the one that works AFTER the release is published,
+# and while the build runs the release is still a draft.
+_PUBLISH_TAG = ""
 
+
+def published_asset_url(repo_name, file_name):
+    """The download URL an asset will have once the release is published.
+
+    Deliberately constructed rather than read from asset.browser_download_url.
+    A draft has no tag, so GitHub reports its assets under a placeholder
+    ("untagged-<hash>"), and that URL dies the moment the release is published.
+    Assets are uploaded to a draft here, so every URL recorded from the API was
+    a placeholder -- the manifest shipped 404s for exactly the tables the build
+    had just rebuilt.
+    """
+    return (
+        f"https://github.com/{repo_name}/releases/download/"
+        f"{quote(_PUBLISH_TAG)}/{quote(file_name)}"
+    )
+
+
+def find_inheritance_source(repo, release_tag):
+    """The release an incremental build may leave assets in.
+
+    Incremental builds only work if the release being referenced outlives the
+    one referencing it, so this is the newest PUBLISHED STABLE release that is
+    not the tag being built. Two exclusions, both load-bearing:
+
+    * Prereleases. A candidate is retired -- deleted, with its assets -- as soon
+      as the next one is cut, so anything pointing at it starts 404ing then.
+    * The tag being built. A candidate can be rebuilt under a tag that already
+      exists, and inheriting from that is inheriting from the release about to
+      be replaced. That is the shape the manifest was in: 296 tables pointing at
+      v2.0.11 while v2.0.11 held 19 zips, every one of them a 404.
+
+    Anchoring on stable also means a table changed during a prerelease chain is
+    re-uploaded to each candidate rather than chained across them, so no
+    candidate depends on an earlier candidate surviving.
+    """
+    newest = None
+    for rel in repo.get_releases():
+        if rel.draft or rel.prerelease:
+            continue
+        if rel.tag_name == release_tag:
+            continue
+        stamped = rel.published_at or rel.created_at
+        if newest is None or (stamped and stamped > (newest.published_at or newest.created_at)):
+            newest = rel
+    return newest
+
+
+def fetch_inheritable_manifest(github_token, repo_name, source):
+    """Manifest and asset names of the release incremental builds inherit from.
+
+    Returns (manifest, asset_names, tag). Empty when there is no usable source,
+    which makes the build a full rebuild -- the correct fallback, and what every
+    pre-flatten release did.
+    """
+    if source is None:
+        return {}, set(), ""
+    try:
+        names = {a.name for a in source.get_assets()}
+        if "manifest.json" not in names:
+            return {}, set(), ""
+        url = (
+            f"https://github.com/{repo_name}/releases/download/"
+            f"{quote(source.tag_name)}/manifest.json"
+        )
+        headers = {
+            "Authorization": f"token {github_token}",
+            "Accept": "application/octet-stream",
+        }
+        r = requests.get(url, headers=headers, timeout=30)
+        r.raise_for_status()
+        print(f"[INFO] Inheriting unchanged assets from {source.tag_name} "
+              f"({len(names)} assets)")
+        return json.loads(r.text), names, source.tag_name
+    except Exception as e:
+        print(f"[INFO] No inheritable manifest ({e}); every table will be rebuilt")
+        return {}, set(), ""
 
 def build_asset_index(release):
     """
@@ -200,13 +253,14 @@ def build_asset_index(release):
     url_by_name = {}
     for asset in release.get_assets():
         by_name[asset.name] = asset
-        url_by_name[asset.name] = asset.browser_download_url
+        url_by_name[asset.name] = published_asset_url(repo_name, asset.name)
     return {"by_name": by_name, "url_by_name": url_by_name}
 
 
 def upload_release_asset(github_token, repo_name, release, asset_index, index_lock, file_path, clobber=True, max_attempts=3):
     """
-    Uploads a file as a release asset using PyGithub. Returns the browser_download_url or None.
+    Uploads a file as a release asset using PyGithub. Returns its published
+    download URL (see published_asset_url) or None.
     Uses a shared asset_index (name -> asset) to avoid repeated listing/pagination.
     """
     file_name = os.path.basename(file_path)
@@ -250,8 +304,8 @@ def upload_release_asset(github_token, repo_name, release, asset_index, index_lo
                 # update cache without re-listing
                 with index_lock:
                     asset_index["by_name"][file_name] = asset
-                    asset_index["url_by_name"][file_name] = asset.browser_download_url
-                return asset.browser_download_url
+                    asset_index["url_by_name"][file_name] = published_asset_url(repo_name, file_name)
+                return published_asset_url(repo_name, file_name)
             except GithubException as ge:
                 if ge.status == 403:
                     msg = ge.data if isinstance(ge.data, dict) else str(ge.data)
@@ -336,6 +390,11 @@ def main():
         print("Error: Required environment variables not set.")
         sys.exit(1)
 
+    # Every asset URL written into the manifest is built from this, so it has to
+    # be set before the first upload.
+    global _PUBLISH_TAG
+    _PUBLISH_TAG = release_tag
+
     # Sanity probe: ensure we can reach the release
     try:
         g = Github(auth=Auth.Token(github_token))
@@ -365,43 +424,70 @@ def main():
     # resolution), so no post-filter is needed here.
     tables = vpsdb.get_table_meta(files)
 
-    # Load previous manifest (if any) to enable unchanged-skip
-    prev_manifest = fetch_existing_manifest(github_token, repo_name, release_tag)
+    # What this build may inherit instead of rebuilding: the newest stable
+    # release that is not this tag. Assets stay where they are and the manifest
+    # points back at them.
+    source = find_inheritance_source(repo, release_tag)
+    prev_manifest, source_assets, source_tag = fetch_inheritable_manifest(
+        github_token, repo_name, source
+    )
 
     # Decide which tables changed by comparing the folder's content hash with
     # the manifest's configVersion. Content-derived, so a history rewrite that
     # leaves a table's files alone does not mark it as changed.
-    changed_tables = {}
     unchanged_tables = []
+    reasons = collections.Counter()
     for table, data in list(tables.items()):
         table_path = os.path.join("tables", table)
         latest = get_config_tree_hash(".", table_path)
         short = (latest or "")[:7]
-        prev_short = ""
-        if isinstance(prev_manifest, dict):
-            prev_short = (prev_manifest.get(table, {}) or {}).get("configVersion", "")
-        prev_checksum = ""
-        if isinstance(prev_manifest, dict):
-            prev_checksum = (prev_manifest.get(table, {}) or {}).get("repoConfigChecksum", "")
+        prev = (prev_manifest.get(table, {}) or {}) if isinstance(prev_manifest, dict) else {}
+        prev_short = prev.get("configVersion", "")
+        prev_checksum = prev.get("repoConfigChecksum", "")
+
+        if not short or short != prev_short:
+            reasons["content changed or new"] += 1
+            continue
         # A checksum-less entry is deliberately rebuilt even when its config is
         # unchanged. This backfills manifests published before config bundle
         # verification was introduced.
-        if short and short == prev_short and prev_checksum:
-            unchanged_tables.append(table)
-        else:
-            changed_tables[table] = data
+        if not prev_checksum:
+            reasons["no checksum to inherit"] += 1
+            continue
+        # The inherited URL has to name an asset that exists in the source
+        # release, and name the SOURCE -- not this tag, and not some older
+        # release that may since have been retired. Without this check the
+        # manifest happily carries a URL to something deleted, and the failure
+        # only shows up as a 404 on a device mid-install.
+        prev_url = prev.get("repoConfig") or ""
+        expected = f"/releases/download/{quote(source_tag)}/" if source_tag else None
+        asset_name = f"{table}.zip"
+        if not expected or expected not in prev_url:
+            reasons["inherited URL is not the source release"] += 1
+            continue
+        if asset_name not in source_assets:
+            reasons["asset missing from the source release"] += 1
+            continue
+        unchanged_tables.append(table)
+
+    if reasons:
+        print("[INFO] Rebuilding: "
+              + ", ".join(f"{n} {why}" for why, n in reasons.most_common()))
 
     if unchanged_tables:
-        print(f"[INFO] Skipping unchanged tables: {', '.join(sorted(unchanged_tables))}")
+        print(f"[INFO] Inheriting {len(unchanged_tables)} unchanged table(s) from "
+              f"{source_tag}; their assets are not re-uploaded.")
 
     # Build asset index once to avoid pagination per file
     asset_index = build_asset_index(rel)
     index_lock = threading.Lock()
 
-    # Prepare arguments for parallel processing (only changed)
+    # Only what changed is rebuilt; everything else keeps the URL of the asset
+    # already published in the inheritance source (see find_inheritance_source).
     pool_args = [
-        (table, changed_tables[table], github_token, repo_name, rel, asset_index, index_lock)
-        for table in changed_tables
+        (table, tables[table], github_token, repo_name, rel, asset_index, index_lock)
+        for table in tables
+        if table not in unchanged_tables
     ]
 
     # Process tables in parallel (adjust max_workers as needed)
@@ -414,9 +500,10 @@ def main():
                 raise RuntimeError(f"Incomplete config bundle for {table}; refusing to publish discovery history")
             updated_tables[table] = updated_data
 
-    # Merge manifest: keep previous entries for unchanged tables, update changed ones
-    # Keep only currently enabled/resolved tables; removed entries stay in the
-    # history ledger, not in the installable catalog.
+    # Unchanged tables keep the entry they had in the source release, URL and
+    # all, which is the whole point: the asset stays where it is and this
+    # manifest points back at it. Every check above has already established that
+    # the URL names an asset the source still holds.
     merged_manifest = {key: dict(prev_manifest[key]) for key in unchanged_tables}
     merged_manifest.update(updated_tables)
 
