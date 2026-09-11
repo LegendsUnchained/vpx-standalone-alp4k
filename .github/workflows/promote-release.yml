@@ -1,6 +1,11 @@
-name: Promote prerelease to stable
+name: Promote Testing Release
 
-# The deliberate half of the prerelease-first pipeline.
+# The deliberate half of the prerelease-first pipeline: promotes the open
+# testing candidate to stable.
+#
+# It takes no tag. Only one candidate is ever open -- cutting a new one retires
+# the last -- so the tag was a value with exactly one correct answer, and asking
+# for it only created ways to be wrong.
 #
 # Assets are built onto a prerelease by "Build release assets", and mirrored to
 # the manifest-testing branch for vetting. A prerelease is public but excluded
@@ -14,10 +19,6 @@ name: Promote prerelease to stable
 on:
   workflow_dispatch:
     inputs:
-      release_tag:
-        description: 'Tag of the prerelease to promote'
-        required: true
-        type: string
       make_latest:
         description: 'Mark this release as "Latest" once published'
         required: false
@@ -33,7 +34,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
-      TAG: ${{ inputs.release_tag }}
     outputs:
       id: ${{ steps.rel.outputs.id }}
       tag: ${{ steps.rel.outputs.tag }}
@@ -41,25 +41,24 @@ jobs:
       - name: Resolve the prerelease
         id: rel
         run: |
-          tag="$TAG"
-          # env.TAG, not --arg: `gh api --jq` takes a single filter and does
-          # not accept jq's own flags.
-          read -r id prerelease draft assets < <(gh api "repos/${{ github.repository }}/releases" --paginate \
-            --jq '.[] | select(.tag_name==env.TAG) | "\(.id) \(.prerelease) \(.draft) \(.assets|length)"' | head -1)
-          if [ -z "$id" ]; then
-            echo "::error::No release found with tag '$tag'."
-            exit 1
-          fi
-          if [ "$draft" = "true" ]; then
-            echo "::error::Release '$tag' is a draft. Publish it as a prerelease first."
-            exit 1
-          fi
-          if [ "$prerelease" != "true" ]; then
-            echo "::error::Release '$tag' is already stable. Nothing to promote."
+          # The open candidate, resolved rather than typed. There is only ever
+          # one -- cutting a new one retires the last -- so naming it added a
+          # way to get it wrong (promoting a stale tag, or a typo failing the
+          # run) without adding a decision anyone actually makes.
+          #
+          # Newest by creation date, not list order: the releases endpoint is
+          # ordered by creation, but relying on that quietly rather than sorting
+          # is the kind of assumption that holds until it does not.
+          read -r id tag draft assets < <(gh api "repos/${{ github.repository }}/releases" --paginate \
+            --jq '[.[] | select(.prerelease and (.draft|not))]
+                  | sort_by(.created_at) | reverse | .[0]
+                  | "\(.id) \(.tag_name) \(.draft) \(.assets|length)"')
+          if [ -z "$id" ] || [ "$id" = "null" ]; then
+            echo "::error::No open prerelease to promote. Run 'Create Testing Release' first."
             exit 1
           fi
           if [ "$assets" = "0" ]; then
-            echo "::error::Prerelease '$tag' has no assets — has the release build run yet?"
+            echo "::error::Prerelease '$tag' has no assets - has the release build run yet?"
             exit 1
           fi
           echo "Promoting prerelease '$tag' (id $id, $assets assets)"

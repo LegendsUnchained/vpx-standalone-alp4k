@@ -1,0 +1,184 @@
+name: Create Fork Release
+
+# Cuts a release from a fork of this repository, so a fork can be used as a
+# Table Manager config repo.
+#
+# Table Manager only consults prereleases for the upstream repository, and only
+# on internal tracks (http/wizard.go, resolveWizardRelease). Every other config
+# repo is read through /releases/latest, which excludes prereleases and drafts
+# by definition. A fork that published a prerelease would therefore look to
+# every device exactly like a fork with no releases at all.
+#
+# So this publishes an ordinary release and nothing else: no prerelease, no
+# promotion, no candidate to retire. The draft below is a staging step, not a
+# state a device can observe -- assets are uploaded to it and it is published in
+# the same run, or deleted if the run fails.
+#
+# Upstream uses "Create Testing Release" instead, which is the prerelease-first
+# flow this deliberately is not.
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 'Tag for the release (blank = bump the patch of the latest release, or v1.0.0 if there are none)'
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fork-release-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  # Fails before anything is created, so a mistaken run on upstream costs
+  # nothing and leaves nothing behind.
+  guard:
+    name: Forks only
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      UPSTREAM: LegendsUnchained/vpx-standalone-alp4k
+    steps:
+      - name: Refuse to run on the upstream repository
+        run: |
+          set -euo pipefail
+          if [ "${{ github.repository }}" = "$UPSTREAM" ]; then
+            echo "::error::This workflow is for forks. ${{ github.repository }} is the upstream"
+            echo "::error::repository, whose releases are cut by 'Create Testing Release' and"
+            echo "::error::promoted by 'Promote Testing Release'. Publishing a plain release"
+            echo "::error::here would bypass the testing track entirely."
+            exit 1
+          fi
+
+          # Checked as well as the name above: a repository renamed, transferred
+          # or re-created from a template is not a fork, and nothing here has
+          # been thought through for one.
+          is_fork=$(gh api "repos/${{ github.repository }}" --jq .fork)
+          if [ "$is_fork" != "true" ]; then
+            echo "::error::${{ github.repository }} is not a fork. This workflow only supports"
+            echo "::error::forks of $UPSTREAM."
+            exit 1
+          fi
+          echo "${{ github.repository }} is a fork of $UPSTREAM — proceeding."
+
+  prepare:
+    name: Create the draft
+    needs: guard
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REQUESTED: ${{ inputs.release_tag }}
+    outputs:
+      tag: ${{ steps.draft.outputs.tag }}
+      id: ${{ steps.draft.outputs.id }}
+      sha: ${{ github.sha }}
+    steps:
+      - name: Resolve the tag and create a draft release
+        id: draft
+        run: |
+          set -euo pipefail
+          tag="$REQUESTED"
+          if [ -z "$tag" ]; then
+            # A fresh fork has no releases of its own: forking copies code, not
+            # releases. So "no latest release" is the normal first run, not an
+            # error.
+            latest=$(gh api "repos/${{ github.repository }}/releases/latest" --jq .tag_name 2>/dev/null || true)
+            if [ -z "$latest" ] || [ "$latest" = "null" ]; then
+              tag="v1.0.0"
+              echo "No releases yet; first release will be $tag"
+            elif [[ "$latest" =~ ^v?([0-9]+)\.([0-9]+)\.([0-9]+) ]]; then
+              tag="v${BASH_REMATCH[1]}.${BASH_REMATCH[2]}.$((BASH_REMATCH[3] + 1))"
+              echo "Latest release is $latest; this one will be $tag"
+            else
+              echo "::error::Could not parse a version from '$latest'; pass release_tag explicitly."
+              exit 1
+            fi
+          fi
+
+          if TAG="$tag" gh api "repos/${{ github.repository }}/releases" --paginate \
+               --jq '.[] | select(.tag_name==env.TAG) | .id' | grep -q .; then
+            echo "::error::A release already uses $tag. Pick another tag, or delete that release first."
+            exit 1
+          fi
+
+          # Created as a draft and pinned to this commit: a draft has no tag, so
+          # the tag is created at ${{ github.sha }} when it is published, rather
+          # than wherever the branch has moved to by then.
+          id=$(gh api -X POST "repos/${{ github.repository }}/releases" \
+                 -f tag_name="$tag" \
+                 -f target_commitish="${{ github.sha }}" \
+                 -f name="Update ${tag#v}" \
+                 -F draft=true -F prerelease=false --jq .id)
+          echo "Created draft $tag (id $id) at ${{ github.sha }}"
+          { echo "tag=$tag"; echo "id=$id"; } >> "$GITHUB_OUTPUT"
+
+  build:
+    name: Build release assets
+    needs: prepare
+    uses: ./.github/workflows/build-release-assets.yml
+    permissions:
+      contents: write
+      pull-requests: write
+    secrets: inherit
+    with:
+      release_tag: ${{ needs.prepare.outputs.tag }}
+      ref: ${{ needs.prepare.outputs.sha }}
+
+  publish:
+    name: Publish the release
+    needs: [prepare, build]
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      TAG: ${{ needs.prepare.outputs.tag }}
+    steps:
+      - name: Publish, and make it the latest release
+        run: |
+          set -euo pipefail
+          # make_latest matters: Table Manager reads a fork through
+          # /releases/latest, so a release that is published but not latest is
+          # invisible to every device pointed at this fork.
+          gh api -X PATCH "repos/${{ github.repository }}/releases/${{ needs.prepare.outputs.id }}" \
+            -F draft=false -F prerelease=false -f make_latest=true >/dev/null
+          echo "Published $TAG"
+
+      - name: The tag was created at the commit that was built
+        run: |
+          set -euo pipefail
+          built="${{ needs.prepare.outputs.sha }}"
+          landed=$(gh api "repos/${{ github.repository }}/git/ref/tags/$TAG" --jq .object.sha)
+          echo "tag $TAG -> $landed (built $built)"
+          [ "$landed" = "$built" ] || {
+            echo "::error::$TAG points at $landed but the assets were built from $built."
+            exit 1
+          }
+
+      - name: Devices resolve this release
+        run: |
+          set -euo pipefail
+          latest=$(gh api "repos/${{ github.repository }}/releases/latest" --jq .tag_name)
+          echo "releases/latest -> $latest"
+          [ "$latest" = "$TAG" ] || {
+            echo "::error::/releases/latest is $latest, not $TAG. Table Manager reads a fork"
+            echo "::error::through that endpoint, so this release would not be served."
+            exit 1
+          }
+
+  cleanup:
+    name: Remove the draft if the run failed
+    needs: [prepare, build, publish]
+    if: always() && needs.prepare.result == 'success' && (needs.build.result != 'success' || needs.publish.result != 'success')
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Delete the unpublished draft
+        run: |
+          set -euo pipefail
+          # Only ever a draft: it was never published, so nothing was serving it
+          # and no tag was created. Leaving it would block the next run, which
+          # refuses a tag that already exists.
+          gh api -X DELETE "repos/${{ github.repository }}/releases/${{ needs.prepare.outputs.id }}" || true
+          echo "Deleted draft ${{ needs.prepare.outputs.tag }}"
