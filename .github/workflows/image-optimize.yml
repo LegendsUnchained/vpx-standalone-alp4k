@@ -1,4 +1,4 @@
-name: Optimise PR images
+name: Optimize PR images
 
 # Runs optipng (lossless) over the PNGs a PR touches and commits the result
 # back onto the PR branch.
@@ -37,7 +37,7 @@ jobs:
           IMAGE_BOT_TOKEN: ${{ secrets.IMAGE_BOT_TOKEN }}
         run: |
           if [ -z "$IMAGE_BOT_TOKEN" ]; then
-            echo "::warning::IMAGE_BOT_TOKEN is not set — skipping image optimisation. Add the secret to enable it."
+            echo "::warning::IMAGE_BOT_TOKEN is not set — skipping image optimization. Add the secret to enable it."
             echo "ok=false" >> "$GITHUB_OUTPUT"
           else
             echo "ok=true" >> "$GITHUB_OUTPUT"
@@ -73,7 +73,7 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y -qq optipng
 
-      - name: Optimise
+      - name: Optimize
         if: steps.token.outputs.ok == 'true' && steps.changed.outputs.count != '0'
         run: |
           before=$(xargs -a changed-images.txt -r -d '\n' stat -c%s 2>/dev/null | awk '{s+=$1} END{print s+0}')
@@ -94,7 +94,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -- '*.png'
-          git commit -m "chore: losslessly optimise PNGs with optipng (saved ${SAVED} bytes)"
+          git commit -m "chore: losslessly optimize PNGs with optipng (saved ${SAVED} bytes)"
           # A second run finds nothing to do and commits nothing, so this
           # cannot loop even though the push retriggers the workflow.
           if ! git push; then

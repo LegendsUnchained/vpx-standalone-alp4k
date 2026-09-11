@@ -18,7 +18,7 @@ permissions:
   pages: write
   id-token: write
 
-# Never let two deploys race; queue instead of cancelling so a wiki edit made
+# Never let two deploys race; queue instead of canceling so a wiki edit made
 # during a run still gets published.
 concurrency:
   group: pages

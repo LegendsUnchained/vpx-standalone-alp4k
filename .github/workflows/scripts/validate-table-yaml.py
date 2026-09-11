@@ -327,7 +327,7 @@ def check_post_install_rename(meta):
 
 # Special-DMD packs the wizard knows how to label. specialDMDType is only a
 # display string, but it is validated against this list so a typo doesn't reach a
-# cabinet as a mislabelled row. Add to it when a new DMD format is supported.
+# cabinet as a mislabeled row. Add to it when a new DMD format is supported.
 SPECIAL_DMD_TYPES = ["UltraDMD", "FlexDMD"]
 
 ARCHIVE_FORMATS = ["zip", "rar", "7z"]

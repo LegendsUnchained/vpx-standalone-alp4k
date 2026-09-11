@@ -147,7 +147,7 @@ def get_config_tree_hash(repo_path, folder_path):
     try:
         repo = git.Repo(repo_path)
         # `rev-parse HEAD:<path>` resolves the path to its tree id in the
-        # checked-out commit. Preferred over Tree.__getitem__ so the behaviour
+        # checked-out commit. Preferred over Tree.__getitem__ so the behavior
         # is exactly git's own path resolution.
         return repo.git.rev_parse(f"HEAD:{folder_path}")
     except git.GitCommandError:

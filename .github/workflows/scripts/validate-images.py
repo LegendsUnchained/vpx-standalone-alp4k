@@ -47,7 +47,7 @@ def read_png(path):
     if data[:8] != PNG_SIG:
         kind = "JPEG" if data[:3] == b"\xff\xd8\xff" else \
                "WEBP" if data[:4] == b"RIFF" and data[8:12] == b"WEBP" else \
-               "GIF" if data[:4] == b"GIF8" else "not an image we recognise"
+               "GIF" if data[:4] == b"GIF8" else "not an image we recognize"
         raise ValueError(kind)
     if data[12:16] != b"IHDR":
         raise ValueError("PNG header is malformed (no IHDR)")
