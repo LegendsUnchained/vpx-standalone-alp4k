@@ -8,11 +8,20 @@ romVPSId: "shk3YZ7d2f"
 romChecksum: "8bcefbd013dcccff3a377d1d22db51a7"
 romVersionOverride: "superman"
 tableVPSId: "i5rBZVqzUF"
-tagline: "Fortnite teaches that every loss is a step closer to victory."
+tagline: "Hey, it's that guy from Fortnite!"
 testers:
   - "TechZombie"
   - "OminousOsie"
   - "CoffeeAtJoes"
+  - "Dasme"
 vpxVPSId: "Q8DOi1_yat"
-vpxChecksum: "8cb873f815f86cc2d94c476e10c2e314"
+vpxChecksum:                                    
+   - "8CB873F815F86CC2D94C476E10C2E314"
+   - "1CD6E41B2E6718DD950D9616263326A9"
 tableNotes: "Download 1.01 VR.rar"
+vpxArchiveFormat: "rar"
+vpxExtractExtra:
+  - "Fortnite(2024) 1.01/Table Music"
+postInstallRename:
+  - source: "Table Music"
+    destination: "music"
