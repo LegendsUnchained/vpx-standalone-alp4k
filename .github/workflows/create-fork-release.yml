@@ -84,7 +84,17 @@ jobs:
             # A fresh fork has no releases of its own: forking copies code, not
             # releases. So "no latest release" is the normal first run, not an
             # error.
-            latest=$(gh api "repos/${{ github.repository }}/releases/latest" --jq .tag_name 2>/dev/null || true)
+            # gh writes the JSON error body to stdout even with --jq. Only a
+            # 404 means there is no latest release; do not parse that error
+            # body as a version or hide authentication/network failures.
+            if latest=$(gh api "repos/${{ github.repository }}/releases/latest" --jq .tag_name); then
+              :
+            elif jq -e '.status == "404"' <<< "$latest" >/dev/null 2>&1; then
+              latest=""
+            else
+              echo "::error::Could not look up the latest release."
+              exit 1
+            fi
             if [ -z "$latest" ] || [ "$latest" = "null" ]; then
               tag="v1.0.0"
               echo "No releases yet; first release will be $tag"
