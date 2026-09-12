@@ -104,7 +104,7 @@ Randomize
 '  FlexDmd or PupDmd
 '**************************
 	
-Const HasPuP = false  		'False=FlexDMD (default) , True=PUPDMD
+Const HasPuP = True  		'False=FlexDMD (default) , True=PUPDMD
 Const forceFlexOn = false	'This is used for pup option 6 that enables Flex and Pup at the same time
 
 '**************************
@@ -154,14 +154,14 @@ Const MusicVol = 0.25				'Separate setting that only affects music volume. Range
 Const StartupTune = true			'Play some opening tune after loading the game, I prefer you to disable this after you are sure you hear the music correctly
 Const CalloutVol = 1				'Separate setting that only affects verbal callout volume. Range from 0 to 1
 
-Const DynamicBallShadowsOn = 0		'0 = no dynamic ball shadow, 1 = enable dynamic ball shadow
-Const AmbientBallShadowOn = 0		'0 = Static shadow under ball ("flasher" image, like JP's)
+Const DynamicBallShadowsOn = 1		'0 = no dynamic ball shadow, 1 = enable dynamic ball shadow
+Const AmbientBallShadowOn = 1		'0 = Static shadow under ball ("flasher" image, like JP's)
  									'1 = Moving ball shadow ("primitive" object, like ninuzzu's) - This is the only one that shows up on the pf when in ramps and fades when close to lights!
  									'2 = flasher image shadow, but it moves like ninuzzu's
 
-Const FlasherBloomsEnabled = true	'true/false: Enabled and disables FlasherBlooms. Disable for performance
+Const FlasherBloomsEnabled = false	'true/false: Enabled and disables FlasherBlooms. Disable for performance
 Const PupilLatency = True			'true/false: Enabled and disables Pupil Latency lighting feature.  
-Const bInsertBlooms = True			'true/false: Enabled and disables insert blooms lighting feature.  
+Const bInsertBlooms = false			'true/false: Enabled and disables insert blooms lighting feature.  
 Dim Insert_Bloom_x_GIon : Insert_Bloom_x_GIon = 0.05	'Higher value, higher bloom
 
 Const ballbrightnessMax = 170		'ball max brightness 0-255
@@ -205,12 +205,12 @@ Const GunMotorSoundLevel = 0.7
 
 dim ScorbitActive
 'This should point to the path where all the original sound track music is placed
-'dim MusicDir : MusicDir = "C:\Visual Pinball\Music\Blood Machines OST\"
-dim MusicDir
+'dim MusicDirectory : MusicDirectory = "C:\Visual Pinball\Music\Blood Machines OST\"
+dim MusicDirectory
 'if VersionMinor => 8 Then
-	MusicDir = musicdirectory & "Blood Machines OST\"
+'	MusicDirectory = musicdirectory("Blood Machines OST")	'this not working right now
 'Else
-'	MusicDir = GetMusicFolder & "\Blood Machines OST\"
+	MusicDirectory = GetMusicFolder & "/Blood Machines OST/"
 'end if
 
 'The songs placed in the directory must bedefined here. The filenames must be correct and in this order
@@ -233,7 +233,7 @@ Songs(13) = "Carpenter Brut - BLOOD MACHINES OST - 13 Gone Now (Feat. Pencey Slo
 Function GetMusicFolder()
     Dim GMF
     Set GMF = CreateObject("Scripting.FileSystemObject")
-    GetMusicFolder= GMF.GetParentFolderName(userdirectory) & "\Music"
+    GetMusicFolder= GMF.GetParentFolderName(userdirectory) & "/Music"
     set GMF = nothing 
 End Function
 
@@ -1816,7 +1816,7 @@ Sub CreateDMD1
 	scene.GetImage("ScOverlay1").visible=True 
 
 
-	scene.AddActor FlexDMD.NewImage("highlight1" , "Misc/3lines1highlight.png" ) ' highlight1 Underlay for mission screens  12px high move it around -1 10 21 height
+	scene.AddActor FlexDMD.NewImage("highlight1" , "misc/3lines1highlight.png" ) ' highlight1 Underlay for mission screens  12px high move it around -1 10 21 height
 	scene.GetImage("highlight1").visible=False 
 
 
@@ -11633,21 +11633,21 @@ Set fso = CreateObject("Scripting.FileSystemObject")
 initPlayer
 
 sub initPlayer
-	if Not fso.FolderExists(MusicDir) Then
-		'InfoBox.text = "Music path: " & MusicDir & " not found. Checking default path."
-		MusicDir = "C:\vPinball\VisualPinball\Music\Blood Machines OST\"
-		if Not fso.FolderExists(MusicDir) Then
-			MusicDir = "D:\Visual Pinball\Music\Blood Machines OST\"
-			if Not fso.FolderExists(MusicDir) Then
-				'InfoBox.text = "Music path: " & MusicDir & " not found. Go get a Music pack."
+	'if Not fso.FolderExists(MusicDirectory) Then
+		'InfoBox.text = "Music path: " & MusicDirectory & " not found. Checking default path."
+		'MusicDirectory = "C:\vPinball\VisualPinball\Music\Blood Machines OST\"
+		'if Not fso.FolderExists(MusicDirectory) Then
+			'MusicDirectory = "D:\Visual Pinball\Music\Blood Machines OST\"
+			if Not fso.FolderExists(MusicDirectory) Then
+				'InfoBox.text = "Music path: " & MusicDirectory & " not found. Go get a Music pack."
 				'msgbox "No music detected, will play ambient audio"
 				AmbientAudio = 1
-			else
+			'else
 				'InfoBox.text = ""
-			end If
-		else
+			'end If
+		'else
 			'InfoBox.text = ""
-		end If
+		'end If
 	end if
 end sub
 
@@ -11674,7 +11674,7 @@ end sub
 sub PlaySong(aNro)
 	StopSong
 	CurrentSong = aNro
-	oPlayer1.URL = MusicDir & Songs(CurrentSong)
+	oPlayer1.URL = MusicDirectory & Songs(CurrentSong)
 	oPlayer1.settings.volume = MusicVol*100
 	oPlayer1.controls.play
 end sub
@@ -11692,7 +11692,7 @@ end sub
 '
 'sub SongStartDelay_timer
 ''	debug.print "delayed"
-'	oPlayer1.URL = MusicDir & "\" & Songs(CurrentSong)
+'	oPlayer1.URL = MusicDirectory & "\" & Songs(CurrentSong)
 '	oPlayer1.controls.play
 '	SongStartDelay.enabled = false
 'end sub
@@ -11722,12 +11722,12 @@ end sub
 sub PlaySongStartingAt(chan,aNro,seconds)
 	CurrentSong = aNro
 	If chan = 1 Then
-		oPlayer1.URL = MusicDir & Songs(CurrentSong)
+		oPlayer1.URL = MusicDirectory & Songs(CurrentSong)
 		oPlayer1.controls.currentPosition = seconds
 		oPlayer1.settings.volume = MusicVol*100
 		oPlayer1.controls.play
 	Elseif chan = 2 Then
-		oPlayer2.URL = MusicDir & Songs(CurrentSong)
+		oPlayer2.URL = MusicDirectory & Songs(CurrentSong)
 		oPlayer2.controls.currentPosition = seconds
 		oPlayer2.settings.volume = MusicVol*100
 		oPlayer2.controls.play
@@ -14323,39 +14323,6 @@ End Class
 '  DROP TARGETS INITIALIZATION
 '******************************************************
 
-Class DropTarget
-  Private m_primary, m_secondary, m_prim, m_sw, m_animate, m_isDropped
-
-  Public Property Get Primary(): Set Primary = m_primary: End Property
-  Public Property Let Primary(input): Set m_primary = input: End Property
-
-  Public Property Get Secondary(): Set Secondary = m_secondary: End Property
-  Public Property Let Secondary(input): Set m_secondary = input: End Property
-
-  Public Property Get Prim(): Set Prim = m_prim: End Property
-  Public Property Let Prim(input): Set m_prim = input: End Property
-
-  Public Property Get Sw(): Sw = m_sw: End Property
-  Public Property Let Sw(input): m_sw = input: End Property
-
-  Public Property Get Animate(): Animate = m_animate: End Property
-  Public Property Let Animate(input): m_animate = input: End Property
-
-  Public Property Get IsDropped(): IsDropped = m_isDropped: End Property
-  Public Property Let IsDropped(input): m_isDropped = input: End Property
-
-  Public default Function init(primary, secondary, prim, sw, animate, isDropped)
-    Set m_primary = primary
-    Set m_secondary = secondary
-    Set m_prim = prim
-    m_sw = sw
-    m_animate = animate
-    m_isDropped = isDropped
-
-    Set Init = Me
-  End Function
-End Class
-
 'Define a variable for each drop target
 Dim DT1, DT2, DT3, DT4, DT5, DT6,DT7, DT8, DT9
 
@@ -14374,18 +14341,16 @@ Dim DT1, DT2, DT3, DT4, DT5, DT6,DT7, DT8, DT9
 '	animate:			Arrary slot for handling the animation instrucitons, set to 0
 '
 '	Values for annimate: 1 - bend target (hit to primary), 2 - drop target (hit to secondary), 3 - brick target (high velocity hit to secondary), -1 - raise target 
-'
-'       isDropped:  Boolean which determines whether a drop target is dropped. Set to false if they are initially raised, true if initially dropped.
 
-Set DT1 = (new DropTarget)(TargetScavenge1, TargetScavenge1a, TargetScavenge1p, 1, 0, false)
-Set DT2 = (new DropTarget)(TargetScavenge2, TargetScavenge2a, TargetScavenge2p, 2, 0, false)
-Set DT3 = (new DropTarget)(TargetScavenge3, TargetScavenge3a, TargetScavenge3p, 3, 0, false)
-Set DT4 = (new DropTarget)(TargetVascan1, TargetVascan1a, TargetVascan1p, 4, 0, false)
-Set DT5 = (new DropTarget)(TargetVascan2, TargetVascan2a, TargetVascan2p, 5, 0, false)
-Set DT6 = (new DropTarget)(TargetVascan3, TargetVascan3a, TargetVascan3p, 6, 0, false)
-Set DT7 = (new DropTarget)(TargetVascan4, TargetVascan4a, TargetVascan4p, 7, 0, false)
-Set DT8 = (new DropTarget)(TargetVascan5, TargetVascan5a, TargetVascan5p, 8, 0, false)
-Set DT9 = (new DropTarget)(TargetVascan6, TargetVascan6a, TargetVascan6p, 9, 0, false)
+DT1 = Array(TargetScavenge1, TargetScavenge1a, TargetScavenge1p, 1, 0)
+DT2 = Array(TargetScavenge2, TargetScavenge2a, TargetScavenge2p, 2, 0)
+DT3 = Array(TargetScavenge3, TargetScavenge3a, TargetScavenge3p, 3, 0)
+DT4 = Array(TargetVascan1, TargetVascan1a, TargetVascan1p, 4, 0)
+DT5 = Array(TargetVascan2, TargetVascan2a, TargetVascan2p, 5, 0)
+DT6 = Array(TargetVascan3, TargetVascan3a, TargetVascan3p, 6, 0)
+DT7 = Array(TargetVascan4, TargetVascan4a, TargetVascan4p, 7, 0)
+DT8 = Array(TargetVascan5, TargetVascan5a, TargetVascan5p, 8, 0)
+DT9 = Array(TargetVascan6, TargetVascan6a, TargetVascan6p, 9, 0)
 
 Dim DTArray
 DTArray = Array(DT1, DT2, DT3, DT4, DT5, DT6, DT7, DT8, DT9)
@@ -14409,6 +14374,19 @@ Const DTHitSound = "" 'Drop Target Hit sound
 
 Const DTMass = 0.2 'Mass of the Drop Target (between 0 and 1), higher values provide more resistance
 
+
+Dim DTArray0, DTArray1, DTArray2, DTArray3, DTArray4
+Redim DTArray0(UBound(DTArray)), DTArray1(UBound(DTArray)), DTArray2(UBound(DTArray)), DTArray3(UBound(DTArray)), DTArray4(UBound(DTArray))
+
+Dim DTIdx
+For DTIdx = 0 to UBound(DTArray)
+   Set DTArray0(DTIdx) = DTArray(DTIdx)(0)
+   Set DTArray1(DTIdx) = DTArray(DTIdx)(1)
+   Set DTArray2(DTIdx) = DTArray(DTIdx)(2)
+   DTArray3(DTIdx) = DTArray(DTIdx)(3)
+   DTArray4(DTIdx) = DTArray(DTIdx)(4)
+Next
+
 '******************************************************
 '  DROP TARGETS FUNCTIONS
 '******************************************************
@@ -14418,9 +14396,9 @@ Sub DTHit(switch)
 	i = DTArrayID(switch)
 
 '	PlayTargetSound
-	DTArray(i).animate =  DTCheckBrick(Activeball,DTArray(i).prim)
-	If DTArray(i).animate = 1 or DTArray(i).animate = 3 or DTArray(i).animate = 4 Then
-		DTBallPhysics Activeball, DTArray(i).prim.rotz, DTMass
+	DTArray4(i) =  DTCheckBrick(Activeball,DTArray2(i))
+	If DTArray4(i) = 1 or DTArray4(i) = 3 or DTArray4(i) = 4 Then
+		DTBallPhysics Activeball, DTArray2(i).rotz, DTMass
 	End If
 	DoDTAnim
 	Select Case Switch
@@ -14442,7 +14420,7 @@ Sub DTRaise(switch)
 	DTWasDropped(Switch) = DTIsDropped(switch)
 	DTIsDropped(switch) = False
 
-	DTArray(i).animate = -1
+	DTArray4(i) = -1
 	DoDTAnim
 	Select Case Switch
 		case 1: LightMystery1C.visible = true
@@ -14455,14 +14433,14 @@ Sub DTDrop(switch)
 	Dim i
 	i = DTArrayID(switch)
 
-	DTArray(i).animate = 1
+	DTArray4(i) = 1
 	DoDTAnim
 End Sub
 
 Function DTArrayID(switch)
 	Dim i
 	For i = 0 to uBound(DTArray) 
-		If DTArray(i).sw = switch Then DTArrayID = i:Exit Function 
+		If DTArray3(i) = switch Then DTArrayID = i:Exit Function 
 	Next
 End Function
 
@@ -14517,7 +14495,7 @@ End Function
 Sub DoDTAnim()
 	Dim i
 	For i=0 to Ubound(DTArray)
-		DTArray(i).animate = DTAnimate(DTArray(i).primary,DTArray(i).secondary,DTArray(i).prim,DTArray(i).sw,DTArray(i).animate)
+		DTArray4(i) = DTAnimate(DTArray0(i),DTArray1(i),DTArray2(i),DTArray3(i),DTArray4(i))
 	Next
 End Sub
 
@@ -19640,7 +19618,7 @@ If VRRoom > 0 Then
 		for each VRThings in VR_360:VRThings.visible = 0:Next
 		for each VRThings in VR_Cab:VRThings.visible = 0:Next
 		for each VRThings in VR_Min:VRThings.visible = 0:Next
-		'DMD.visible=1
+		DMD.visible=1
 		PinCab_Backbox.visible = 1
 		PinCab_Backglass.visible = 1
 	End If
