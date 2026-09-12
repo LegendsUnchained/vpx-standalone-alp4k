@@ -181,3 +181,19 @@ jobs:
           else
             echo "::warning::/releases/latest is '$latest', not '$tag' — expected unless make_latest was false."
           fi
+
+  notify:
+    name: Post new and updated tables to Discord
+    needs: [validate, publish]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Send the promoted release notes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_ID: ${{ needs.validate.outputs.id }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_RELEASE_WEBHOOK_URL }}
+        run: |
+          gh api "repos/${{ github.repository }}/releases/$RELEASE_ID" > "$RUNNER_TEMP/promoted-release.json"
+          python3 .github/workflows/scripts/notify-discord-release.py "$RUNNER_TEMP/promoted-release.json"
