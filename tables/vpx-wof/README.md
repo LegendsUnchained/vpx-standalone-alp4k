@@ -12,7 +12,7 @@
 | DMD | N/A | N/A | N/A |
 | ROM | [VP Universe](https://vpuniverse.com/files/file/3291-wheel-of-fortune-v50/) | N/A | N/A |
 
-**Tested by:** [Imscomobob]
+**Tested by:** [Imscomobob], [Travis]
 
 ---
 

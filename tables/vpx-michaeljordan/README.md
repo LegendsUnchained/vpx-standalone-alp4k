@@ -23,6 +23,8 @@ MD5: 2be34108527558d1cd2b44ab85cd8c72
 SHA: 3897507b3422b73186b61137758b354366591a85
 
 
+**Tested by:** [Bla1ze]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1983-b84441e

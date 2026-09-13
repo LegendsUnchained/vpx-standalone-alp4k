@@ -16,6 +16,8 @@ ROM
 
 Download: [Pinball Nirvana](https://pinballnirvana.com/forums/resources/bonebstr.1611/)
 
+**Tested by:** [mcap]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

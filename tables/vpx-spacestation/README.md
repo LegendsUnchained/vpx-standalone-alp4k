@@ -17,6 +17,8 @@ ROM
 Download: [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=906)  
 ROM Name and version: spstn_l5.zip
 
+**Tested by:** [Kaoticbpr]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

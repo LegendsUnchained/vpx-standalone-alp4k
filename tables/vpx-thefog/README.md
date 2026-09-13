@@ -18,6 +18,8 @@ Download: [VPUniverse](https://vpuniverse.com/files/file/8357-fog-the-gottlieb-1
 Tested and Fixed by:
 [TechZombie]
 
+**Tested by:** [TechZombie]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1983-b84441e

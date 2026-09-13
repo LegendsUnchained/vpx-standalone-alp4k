@@ -21,6 +21,8 @@ ROM
 Download: [VP Universe](https://vpuniverse.com/files/file/1661-cheetahzip/)  
 ROM Name and version: cheetah.zip
 
+**Tested by:** [Kaoticbpr]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

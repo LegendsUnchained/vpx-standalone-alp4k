@@ -10,8 +10,9 @@ tagline: >-
   It's coming at 30,000 mph...
   and there's no place on Earth to hide!
 testers:
-  - "evilwraith"
-  - "CoffeeAtJoes"
+  - "Wraith"
+  - "Coffee Joe"
+  - "shaver"
 vpxVPSId: "sIQfoxku"
 vpxChecksum: "EAC0CF61986304474B5B6022F1051D81"
 tableNotes: "Download 'v600_VPX8.zip'"

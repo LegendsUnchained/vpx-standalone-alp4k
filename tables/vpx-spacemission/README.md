@@ -14,6 +14,8 @@ Download: [VPUniverse](https://vpuniverse.com/files/file/18528-space-mission-wil
 
 No Rom Required
 
+**Tested by:** [Kaoticbpr]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

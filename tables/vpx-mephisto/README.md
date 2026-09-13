@@ -14,6 +14,8 @@ Download: [vpuniverse](https://vpuniverse.com/files/file/15720-jp%C2%B4s-mephist
 
 No Rom Required
 
+**Tested by:** [Kaoticbpr]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

@@ -9,6 +9,8 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 DirectB2S  
 Click same link above to ALSO download the backglass!
 
+**Tested by:** [Wraith]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

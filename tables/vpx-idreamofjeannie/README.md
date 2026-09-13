@@ -22,6 +22,8 @@ Click "SHOW ALL" / Click "genie.zip"
 SHA: 86c91838e6f9564ee4b1421e7d24f8f3f908f5bf
 MD5: 02c3bb866e8c97642f61ea4e5c03ceb7
 
+**Tested by:** [TechZombie]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

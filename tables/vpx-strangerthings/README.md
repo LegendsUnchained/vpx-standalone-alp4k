@@ -12,7 +12,7 @@
 | **DMD** | N/A | N/A | N/A |
 | **ROM** | N/A | N/A | N/A |
 
-**Tested by:** [mrandromeda]
+**Tested by:** [mrandromeda], [Kaoticbpr]
 
 ---
 

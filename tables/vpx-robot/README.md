@@ -17,6 +17,8 @@ ROM
 ROM Name: robot.zip  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=622)
 
+**Tested by:** [Boris]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

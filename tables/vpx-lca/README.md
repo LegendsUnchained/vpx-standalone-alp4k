@@ -17,6 +17,8 @@ ROM
 
 Download: [Pinball Nirvana](https://pinballnirvana.com/forums/resources/lca2.2025/)
 
+**Tested by:** [mcap]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013
