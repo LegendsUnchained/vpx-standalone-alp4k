@@ -538,7 +538,7 @@ body::-webkit-scrollbar-track { background: var(--tm-bg); }
   .md-search-result .md-typeset h1 {
     font-family: "Manrope", sans-serif;
     font-weight: 600;
-    font-size: 0.66rem;
+    font-size: 0.6rem;  /* 12px -- search result page name */
     letter-spacing: 0;
     line-height: 1.4;
     text-shadow: none;
@@ -548,7 +548,7 @@ body::-webkit-scrollbar-track { background: var(--tm-bg); }
   .md-search-result .md-typeset h2 {
     font-family: "Manrope", sans-serif;
     font-weight: 600;
-    font-size: 0.78rem;
+    font-size: 0.75rem;  /* 15px -- search result heading */
     line-height: 1.45;
     letter-spacing: 0;
     text-transform: none;
@@ -580,13 +580,17 @@ body::-webkit-scrollbar-track { background: var(--tm-bg); }
 /* --------------------------------------------------------------------------
  * Typography
  * ----------------------------------------------------------------------- */
-.md-typeset { font-size: 0.82rem; line-height: 1.7; color: var(--tm-ink); }
+.md-typeset {
+  font-size: 0.75rem;  /* 15px -- body copy */
+  line-height: 1.7;
+  color: var(--tm-ink);
+}
 .md-typeset p { text-wrap: pretty; }
 
 .md-typeset h1 {
   font-family: "Orbitron", sans-serif;
   font-weight: 900;
-  font-size: 2rem;
+  font-size: 1.6rem;  /* 32px -- h1, the page title */
   letter-spacing: 0.04em;
   color: var(--tm-ink);
   text-shadow: 0 0 24px rgb(var(--tm-accent-rgb) / 0.35);
@@ -596,7 +600,7 @@ body::-webkit-scrollbar-track { background: var(--tm-bg); }
 .md-typeset h2 {
   font-family: "Orbitron", sans-serif;
   font-weight: 700;
-  font-size: 0.75rem;
+  font-size: 0.6rem;  /* 12px -- h2, the section rule */
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--tm-accent);
@@ -606,7 +610,7 @@ body::-webkit-scrollbar-track { background: var(--tm-bg); }
 .md-typeset h3 {
   font-family: "Orbitron", sans-serif;
   font-weight: 700;
-  font-size: 0.7rem;
+  font-size: 0.55rem;  /* 11px -- h3 */
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--tm-ink);
@@ -616,7 +620,7 @@ body::-webkit-scrollbar-track { background: var(--tm-bg); }
 .md-typeset a:hover { color: #9aefff; }
 
 .md-typeset code {
-  font-size: 0.74rem;
+  font-size: 0.675rem;  /* 13.5px -- inline code */
   background: rgba(8, 11, 20, 0.68);
   border: 1px solid var(--tm-line);
   border-radius: 4px;
@@ -644,7 +648,7 @@ body::-webkit-scrollbar-track { background: var(--tm-bg); }
 .md-typeset code .filename {
   font-family: "Orbitron", sans-serif;
   font-weight: 700;
-  font-size: 0.6rem;
+  font-size: 0.5rem;  /* 10px -- code well language label */
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--tm-muted);
@@ -661,13 +665,13 @@ body::-webkit-scrollbar-track { background: var(--tm-bg); }
   border: 1px solid var(--tm-line);
   border-radius: 12px;
   background: transparent;
-  font-size: 0.78rem;
+  font-size: 0.7rem;  /* 14px -- table body */
   overflow: hidden;
 }
 .md-typeset table:not([class]) th {
   font-family: "Orbitron", sans-serif;
   font-weight: 700;
-  font-size: 0.6rem;
+  font-size: 0.5rem;  /* 10px -- table column head */
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--tm-muted);
@@ -692,13 +696,13 @@ body::-webkit-scrollbar-track { background: var(--tm-bg); }
   border-radius: 10px;
   background: rgb(var(--tm-accent-rgb) / 0.06);
   box-shadow: none;
-  font-size: 0.78rem;
+  font-size: 0.7rem;  /* 14px -- admonition body */
 }
 .md-typeset .admonition-title,
 .md-typeset summary {
   font-family: "Orbitron", sans-serif;
   font-weight: 700;
-  font-size: 0.7rem;
+  font-size: 0.6rem;  /* 12px -- admonition title */
   letter-spacing: 0.16em;
   text-transform: uppercase;
   background: transparent;
@@ -777,7 +781,7 @@ body::-webkit-scrollbar-track { background: var(--tm-bg); }
   gap: 10px;
   font-family: "Orbitron", sans-serif;
   font-weight: 700;
-  font-size: 0.7rem;
+  font-size: 0.6rem;  /* 12px -- difficulty eyebrow */
   letter-spacing: 0.16em;
   text-transform: uppercase;
   margin: 0 0 0.6rem;
