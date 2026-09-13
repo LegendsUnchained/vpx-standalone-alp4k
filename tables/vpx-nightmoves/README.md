@@ -1,5 +1,5 @@
 ﻿# Night Moves (International Concepts 1989)
-Tested by: teh_pwn_slap, [thtanner]
+Tested by: teh_pwn_slap
 
 ![Table Preview](../../images/vpx-nightmoves-preview.png)
 
