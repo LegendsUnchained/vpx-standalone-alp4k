@@ -1,16 +1,17 @@
 ---
-backglassVPSId: "aKAU92HIYe"
-backglassChecksum: "4bbd4e71ec5ce89563f38f78be5d6ca0"
+backglassChecksum: "4BBD4E71EC5CE89563F38F78BE5D6CA0"
 backglassNotes: "Download version 1.0.0"
+backglassVPSId: "aKAU92HIYe"
 fps: 60
+mainNotes: "This is the beta version of what became Stern's Sharkey's Shootout. It is not complete."
+romChecksum: "9246873BCB2218F0E6EE5D2B9A6EA74C"
 romVPSId: "LmiEEC7cOd"
-romChecksum: "9246873bcb2218f0e6ee5d2b9a6ea74c"
+tableNotes: "Download 'Golden Cue v1.2 (Sega 1998).zip'"
 tableVPSId: "I_hPHP6Kta"
 tagline: "Learn from the best, Kelly Packard"
 testers:
   - "kaoticBPR"
   - "OminousOsie"
   - "Wraith"
-vpxVPSId: "-k2koNyQCq"
 vpxChecksum: "BA628C44000941F1AA2A0036B8CA6505"
-tableNotes: "Download 'Golden Cue v1.2 (Sega 1998).zip'"
+vpxVPSId: "-k2koNyQCq"
