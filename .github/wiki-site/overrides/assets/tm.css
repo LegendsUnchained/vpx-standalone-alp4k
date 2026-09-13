@@ -1,0 +1,803 @@
+/* ==========================================================================
+ * Table Manager 3.x Preview skin for MkDocs Material.
+ *
+ * Loaded via theme.custom_dir + extra_css. Dark only: mkdocs.base.yml keeps a
+ * single `slate` scheme and no palette toggle, so there is no light branch to
+ * maintain here.
+ *
+ * Values are lifted from the Table Manager design kit — do not invent new
+ * colors; add a variable below and reuse it.
+ * ======================================================================= */
+
+:root,
+[data-md-color-scheme="slate"] {
+  --tm-bg: #080b14;
+  --tm-panel: #0d1220;
+  --tm-panel-hi: #0f1424;
+  --tm-rail: #0b0f1c;
+  --tm-ink: #e6ebf5;
+  --tm-muted: #8d97ad;
+  --tm-accent: #4de3ff;
+  --tm-accent-rgb: 77 227 255;
+  --tm-line: rgba(255, 255, 255, 0.08);
+  --tm-beginner: #5cf2a5;
+  --tm-intermediate: #ffb347;
+  --tm-advanced: #ff5c7a;
+
+  /* Material's own variables, remapped. Anything the theme paints — links,
+     admonitions, tables, search — picks these up without extra selectors. */
+  --md-default-bg-color: var(--tm-bg);
+  --md-default-fg-color: var(--tm-ink);
+  --md-default-fg-color--light: var(--tm-muted);
+  --md-default-fg-color--lighter: rgba(141, 151, 173, 0.6);
+  --md-default-fg-color--lightest: rgba(141, 151, 173, 0.25);
+  --md-primary-bg-color: var(--tm-ink);
+  --md-primary-fg-color: var(--tm-rail);
+  --md-accent-fg-color: var(--tm-accent);
+  --md-typeset-a-color: var(--tm-accent);
+  --md-code-bg-color: rgba(8, 11, 20, 0.68);
+  --md-code-fg-color: var(--tm-beginner);
+  --md-text-font: "Manrope";
+  --md-code-font: "Roboto Mono";
+}
+
+html {
+  color-scheme: dark;
+  background: var(--tm-bg);
+}
+
+/* The app's ambient cyan wash behind the whole page. */
+.md-main {
+  background:
+    radial-gradient(1100px 520px at 75% -10%, rgb(var(--tm-accent-rgb) / 0.10), transparent 60%),
+    var(--tm-bg);
+}
+
+/* --------------------------------------------------------------------------
+ * Scrollbars — one treatment everywhere, from reference/preview-3x.css.
+ * The root bar needs an explicit track: a transparent one falls through to
+ * the viewport's platform default and renders white.
+ * ----------------------------------------------------------------------- */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--tm-accent-rgb) / 0.3);
+  border: 2px solid transparent;
+  background-clip: content-box;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--tm-accent-rgb) / 0.55);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-corner { background: transparent; }
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar { width: 10px; background: var(--tm-bg); }
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track { background: var(--tm-bg); }
+
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--tm-accent-rgb) / 0.3) transparent;
+  }
+}
+
+/* --------------------------------------------------------------------------
+ * Header + rail
+ * ----------------------------------------------------------------------- */
+.md-header {
+  background: var(--tm-rail);
+  border-bottom: 1px solid rgb(var(--tm-accent-rgb) / 0.12);
+  box-shadow: none;
+}
+
+.md-header__title,
+.md-nav__title {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.md-sidebar--primary .md-nav__title {
+  /* The drawer header below the breakpoint -- desktop hides this in favor of
+     the rail head. Sticky, so rows scroll under it: opaque, in the rail's own
+     color. */
+  background: var(--tm-rail);
+  box-shadow: none;
+  color: var(--tm-muted);
+}
+
+.md-search__form {
+  background: rgba(8, 11, 20, 0.68);
+  border: 1px solid var(--tm-line);
+  border-radius: 8px;
+  height: 38px;
+}
+.md-search__form:hover,
+.md-search__input:focus ~ .md-search__form {
+  background: rgba(8, 11, 20, 0.68);
+  border-color: rgb(var(--tm-accent-rgb) / 0.5);
+}
+.md-search__output {
+  border-radius: 12px;
+  border: 1px solid rgb(var(--tm-accent-rgb) / 0.22);
+  background: rgba(15, 20, 36, 0.97);
+}
+.md-search-result__meta {
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tm-muted);
+}
+
+/* Below the breakpoint this element is the off-canvas drawer, and its own box
+   is the full-height surface. */
+.md-sidebar--primary {
+  background: var(--tm-rail);
+  border-right: 1px solid rgb(var(--tm-accent-rgb) / 0.12);
+}
+
+/* 248px rail. Material's sidebar is em-based, so this is set in px to match
+   the app exactly. */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary { width: 248px; }
+
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    /* Keep the wrap, and so its scrollbar, inside the rail: a negative right
+       margin hangs both past the edge. Drop the inner gutter instead, which
+       leaves the bar sitting a few px off the rows as the design has it. The
+       rail is against the window edge, so the rows need the design's 14px
+       inset on that side rather than the 6px the scrollbar wants. */
+    margin: 0;
+    padding: 0 6px 0 14px;
+  }
+  .md-sidebar--primary .md-sidebar__inner { padding-right: 0; }
+
+  /* The design's rail is the first child of a full-viewport flex row, so it
+     sits against the window edge. Material centers the whole row inside a
+     61rem grid, which floats the rail 110px in at 1440 and further as the
+     window widens. Unbind the row and cap the article instead -- rail, centered
+     column, TOC, which is the design's layout. */
+  .md-main__inner {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  /* With the rail against the window edge the header's own wordmark lands
+     directly above the rail's, the same mark twice. The rail is where the
+     brand lives in the design, and both link home, so drop this one and let
+     the header be the page title and the repo. */
+  .md-header__button.md-logo { display: none; }
+
+  /* The header is the same 61rem grid, so it has to come with the row or its
+     contents float in from an edge nothing else lines up with. */
+  .md-header__inner {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 6px;
+    padding-right: 14px;
+  }
+  /* Material sets these margins at `[dir=ltr] .md-sidebar--x:not([hidden]) ~
+     .md-content > .md-content__inner`, so matching that weight takes the
+     leading [dir]. */
+  [dir] .md-sidebar--primary:not([hidden]) ~ .md-content > .md-content__inner,
+  [dir] .md-sidebar--secondary:not([hidden]) ~ .md-content > .md-content__inner {
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.md-nav__list { display: flex; flex-direction: column; gap: 4px; }
+
+/* Section labels (START HERE / GOING FURTHER / DEEP END) come from the nav
+   sections build.py emits. */
+.md-nav--primary .md-nav__item--section > .md-nav__link,
+.md-nav--primary .md-nav__item--nested > label.md-nav__link {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  font-size: 0.5rem;  /* 10px at Material's 20px root */
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tm-muted);
+  height: auto;
+  min-height: 0;
+  padding: 14px 12px 6px;
+  margin: 0;
+}
+
+.md-nav--primary .md-nav__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: none;
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 0 12px;
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 0.7rem;  /* 14px */
+  color: var(--tm-ink);
+  transition: color 140ms ease, background 140ms ease, border-color 140ms ease;
+}
+.md-nav--primary .md-nav__link:hover {
+  color: var(--tm-accent);
+  background: rgb(var(--tm-accent-rgb) / 0.06);
+}
+/* `md-nav__item--active` is also set on the section a page sits in, and a
+   glowing section label reads as a second selected row. */
+.md-nav--primary .md-nav__link--active,
+.md-nav--primary .md-nav__item--active:not(.md-nav__item--section) > .md-nav__link {
+  color: var(--tm-accent);
+  border-color: rgb(var(--tm-accent-rgb) / 0.5);
+  background: rgb(var(--tm-accent-rgb) / 0.12);
+  box-shadow:
+    0 0 18px rgb(var(--tm-accent-rgb) / 0.18),
+    inset 0 0 0 1px rgb(var(--tm-accent-rgb) / 0.18);
+}
+
+/* Track dot per page, colored by which section the row sits in. build.py
+   emits the sections in TRACK_ORDER, so the first is beginner (the default
+   below), the second intermediate, the third advanced. Matching on "a section
+   preceded by another section" rather than an nth-of-type index keeps this
+   correct however many untracked pages -- Home, and anything else with no
+   difficulty emoji -- sit above the groups. */
+.md-nav--primary .md-nav__item > .md-nav__link::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--tm-track, var(--tm-beginner));
+}
+.md-nav--primary .md-nav__item--section > .md-nav__link::before,
+.md-nav--primary label.md-nav__link::before { content: none; }
+
+.md-nav--primary > .md-nav__list > .md-nav__item--section
+  ~ .md-nav__item--section .md-nav__item { --tm-track: var(--tm-intermediate); }
+.md-nav--primary > .md-nav__list > .md-nav__item--section
+  ~ .md-nav__item--section
+  ~ .md-nav__item--section .md-nav__item { --tm-track: var(--tm-advanced); }
+
+/* --------------------------------------------------------------------------
+ * Rail head: wordmark + search trigger (overrides/main.html)
+ * ----------------------------------------------------------------------- */
+/* Material squares the header logo off at 1.2rem both ways; the wordmark is
+   nearly 3:1, so let it keep its aspect ratio. */
+.md-header__button.md-logo img {
+  width: auto;
+  height: 1.4rem;
+}
+
+/* The drawer has Material's own heading and the top bar keeps its search
+   button, so below the breakpoint the rail head only duplicates both -- and
+   the drawer is a plain scrolling list with nowhere to pin a footer. */
+.tm-rail__head,
+.tm-rail__foot { display: none; }
+
+@media screen and (min-width: 76.25em) {
+  /* The design stacks the wordmark and the search field above the page list,
+     with only the list scrolling. Material's rail heading is the drawer header
+     below this breakpoint, so here it is redundant. */
+  .md-sidebar--primary .md-nav__title { display: none; }
+
+  /* The rail is a fixed-height flex column: head and foot are static and only
+     the page list between them scrolls. They are siblings of the scrolling
+     wrap rather than sticky inside it (see overrides/main.html) -- keeping the
+     wrap as the scroll container is also what preserves the reveal of the
+     current page when it sits far down the list. */
+  .md-sidebar--primary {
+    display: flex;
+    flex-direction: column;
+    /* Material leaves this column with no height of its own -- 24px of padding
+       around nothing -- so the foot has no bottom to sit at, and the rail's
+       own background paints a 48px stub. 2.4rem is the theme's sticky `top`,
+       i.e. the header; the matching negative margin cancels .md-main__inner's
+       top margin, so the column sits at the same offset whether it is stuck or
+       not. Without that it starts 30px lower at the top of a page and the foot
+       falls below the fold. */
+    height: calc(100vh - 2.4rem);
+    margin-top: -1.5rem;
+  }
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    /* Material's JS writes an inline height here sized to the whole viewport,
+       which would push the foot off the bottom. The column sizes it now. */
+    height: auto !important;
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  .tm-rail__head {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 0 14px 18px;
+  }
+
+  .tm-rail__foot {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 18px 14px 0;
+    padding: 12px;
+    border: 1px solid rgb(var(--tm-accent-rgb) / 0.22);
+    border-radius: 10px;
+  }
+  .tm-rail__foot-title {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 700;
+    font-size: 0.5rem;  /* 10px */
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--tm-accent);
+  }
+  .tm-rail__foot-body {
+    margin: 0;
+    font-size: 0.65rem;  /* 13px */
+    line-height: 1.5;
+    color: var(--tm-muted);
+  }
+
+  .tm-rail__logo { display: block; line-height: 0; }
+  .tm-rail__logo img {
+    width: 180px;
+    height: auto;
+    filter: drop-shadow(0 0 14px rgb(var(--tm-accent-rgb) / 0.25));
+  }
+
+  .tm-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 38px;
+    padding: 0 12px;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 8px;
+    background: rgba(8, 11, 20, 0.68);
+    color: var(--tm-muted);
+    cursor: pointer;
+    transition: color 140ms ease, border-color 140ms ease;
+  }
+  .tm-search:hover {
+    color: var(--tm-accent);
+    border-color: rgb(var(--tm-accent-rgb) / 0.5);
+  }
+  .tm-search__icon { display: flex; flex: none; }
+  .tm-search__icon svg { width: 17px; height: 17px; fill: currentcolor; }
+  .tm-search__label { font-size: 0.7rem; }  /* 14px */
+  .tm-search__key {
+    margin-left: auto;
+    padding: 2px 5px;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 4px;
+    font-family: "Roboto Mono", monospace;
+    font-size: 0.55rem;
+    line-height: 1;
+  }
+}
+
+/* --------------------------------------------------------------------------
+ * Search dialog
+ *
+ * Material's desktop search is a dropdown hanging off the header field. The
+ * design is a centered modal opened from the rail, so the checked state of
+ * Material's own `#__search` toggle -- which the rail label flips, no script
+ * involved -- is restyled into one. Below the breakpoint Material's overlay is
+ * left exactly as it ships.
+ * ----------------------------------------------------------------------- */
+@media screen and (min-width: 76.25em) {
+  /* The rail trigger replaces it. */
+  .md-header__button[for="__search"] { display: none; }
+
+  /* Static, so the fixed children below resolve against the viewport rather
+     than the header field's slot. */
+  .md-search { position: static; }
+
+  /* Closed: clipped rather than `display: none`, which would make the input
+     unfocusable -- and Material's `/`, `f` and `s` shortcuts work by focusing
+     it, which is also what flips the toggle this dialog opens on. Focus
+     therefore opens the dialog rather than landing on something invisible. */
+  .md-search__inner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  [data-md-toggle="search"]:checked ~ .md-header .md-search__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    opacity: 1;
+    transform: none;
+    background: rgba(4, 6, 12, 0.72);
+    backdrop-filter: blur(3px);
+  }
+
+  [data-md-toggle="search"]:checked ~ .md-header .md-search__inner {
+    opacity: 1;
+    pointer-events: auto;
+    position: fixed;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 41;
+    width: 620px;
+    max-width: 90vw;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    float: none;
+    background: rgba(15, 20, 36, 0.97);
+    border: 1px solid rgb(var(--tm-accent-rgb) / 0.22);
+    border-radius: 12px;
+    box-shadow:
+      0 28px 80px rgba(0, 0, 0, 0.6),
+      0 0 30px rgb(var(--tm-accent-rgb) / 0.08);
+    overflow: hidden;
+  }
+
+  /* The form is the dialog's 56px header row. Material positions the icon
+     absolutely and pads the input clear of it, so that layout is kept. */
+  [data-md-toggle="search"]:checked ~ .md-header .md-search__form {
+    height: 56px;
+    border-radius: 0;
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    background: transparent;
+  }
+  [data-md-toggle="search"]:checked ~ .md-header .md-search__input {
+    height: 56px;
+    padding: 0 3.6rem 0 2.5rem;
+    font-size: 0.8rem;
+    color: var(--tm-ink);
+  }
+  [data-md-toggle="search"]:checked ~ .md-header .md-search__input::placeholder {
+    color: var(--tm-muted);
+  }
+  /* `search.suggest` paints the completion in a layer behind the input, so its
+     padding and type size have to be the input's exactly -- any difference and
+     the two strings sit side by side instead of on top of each other. Material
+     keeps them matched at 2.2rem; the icon inset above moves the input. */
+  [data-md-toggle="search"]:checked ~ .md-header .md-search__suggest {
+    padding: 0 3.6rem 0 2.5rem;
+    font-size: 0.8rem;
+  }
+  [data-md-toggle="search"]:checked ~ .md-header .md-search__icon[for="__search"] {
+    width: 1rem;
+    height: 1rem;
+    margin: 0.5rem 0.4rem;
+    color: var(--tm-accent);
+  }
+  [data-md-toggle="search"]:checked ~ .md-header .md-search__options { top: 0.75rem; }
+
+  [data-md-toggle="search"]:checked ~ .md-header .md-search__output {
+    position: static;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+  }
+  [data-md-toggle="search"]:checked ~ .md-header .md-search__scrollwrap {
+    max-height: min(58vh, 560px);
+    margin: 0;
+    padding: 10px;
+    background: transparent;
+  }
+
+  /* Flatten Material's sticky count band onto the panel. */
+  .md-search-result__meta {
+    padding: 6px 14px 10px;
+    background: transparent;
+    box-shadow: none;
+    line-height: 1.4;
+    height: auto;
+  }
+
+  .md-search-result__list { margin: 0; }
+  .md-search-result__item { box-shadow: none; }
+  .md-search-result__link {
+    border-radius: 8px;
+    transition: background 140ms ease;
+  }
+  .md-search-result__link:hover,
+  .md-search-result__link:focus {
+    background: rgb(var(--tm-accent-rgb) / 0.06);
+  }
+  /* Material indents the row by 2.2rem to clear the leading glyph, at a
+     specificity ([dir=ltr] .md-search-result__article) that a bare class
+     cannot reach -- hence the doubled class here. The design has no glyph, so
+     the indent is dead space. */
+  .md-search-result .md-search-result__article {
+    padding: 10px 14px;
+    margin: 0;
+  }
+  /* The page-name row and the first heading under it are one row in the
+     design, so close the gap between them. */
+  .md-search-result__item > .md-search-result__link:first-child
+    .md-search-result__article { padding-bottom: 2px; }
+
+  /* The design's row is a small muted page name over the matched heading.
+     Material splits those across two links -- the document, then each heading
+     under it -- so the page name becomes the group label and carries the
+     difficulty emoji, which is the track color the design's eyebrow shows. */
+  .md-search-result .md-typeset h1 {
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 0.66rem;
+    letter-spacing: 0;
+    line-height: 1.4;
+    text-shadow: none;
+    color: var(--tm-muted);
+    margin: 0;
+  }
+  .md-search-result .md-typeset h2 {
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 0.78rem;
+    line-height: 1.45;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--tm-ink);
+    margin: 0;
+  }
+  /* The design's rows are page name + heading only. Material's teaser runs to
+     several lines per hit, which buries the list. Dropping it takes two rules:
+     part of it is elements -- whatever markup surrounded the hit, so code
+     blocks and lists as well as <p> -- and part arrives as bare text nodes
+     interleaved with <mark>, which no selector can reach. Collapsing the
+     article's type and handing it back to the headings covers both. */
+  .md-search-result .md-typeset {
+    font-size: 0;
+    line-height: 0;
+  }
+  .md-search-result .md-typeset > :not(h1):not(h2) { display: none; }
+  .md-search-result__more > summary > div {
+    font-size: 0.68rem;
+    color: var(--tm-accent);
+  }
+  .md-search-result mark {
+    color: var(--tm-accent);
+    background: transparent;
+  }
+  .md-search-result__terms { color: var(--tm-muted); }
+}
+
+/* --------------------------------------------------------------------------
+ * Typography
+ * ----------------------------------------------------------------------- */
+.md-typeset { font-size: 0.82rem; line-height: 1.7; color: var(--tm-ink); }
+.md-typeset p { text-wrap: pretty; }
+
+.md-typeset h1 {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  letter-spacing: 0.04em;
+  color: var(--tm-ink);
+  text-shadow: 0 0 24px rgb(var(--tm-accent-rgb) / 0.35);
+}
+
+/* H2 is a rule, not a heading block — same as the app's section labels. */
+.md-typeset h2 {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--tm-accent);
+  margin-top: 2.2em;
+}
+
+.md-typeset h3 {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tm-ink);
+}
+
+.md-typeset a { text-decoration: none; }
+.md-typeset a:hover { color: #9aefff; }
+
+.md-typeset code {
+  font-size: 0.74rem;
+  background: rgba(8, 11, 20, 0.68);
+  border: 1px solid var(--tm-line);
+  border-radius: 4px;
+  padding: 1px 5px;
+  color: var(--tm-ink);
+}
+
+/* --------------------------------------------------------------------------
+ * Code wells
+ * ----------------------------------------------------------------------- */
+.md-typeset pre > code {
+  border: none;
+  padding: 14px;
+  color: var(--tm-beginner);
+  line-height: 1.7;
+}
+.md-typeset .highlight,
+.md-typeset .highlighttable {
+  border: 1px solid var(--tm-line);
+  border-radius: 8px;
+  background: rgba(8, 11, 20, 0.68);
+  overflow: hidden;
+}
+.md-typeset .highlight .filename,
+.md-typeset code .filename {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tm-muted);
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.md-clipboard { color: var(--tm-muted); }
+.md-clipboard:hover { color: var(--tm-accent); }
+
+/* --------------------------------------------------------------------------
+ * Tables
+ * ----------------------------------------------------------------------- */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--tm-line);
+  border-radius: 12px;
+  background: transparent;
+  font-size: 0.78rem;
+  overflow: hidden;
+}
+.md-typeset table:not([class]) th {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tm-muted);
+  background: linear-gradient(180deg, var(--tm-panel-hi), var(--tm-panel));
+  border: none;
+  padding: 10px 16px;
+}
+.md-typeset table:not([class]) td {
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 11px 16px;
+  color: var(--tm-ink);
+}
+
+/* --------------------------------------------------------------------------
+ * Admonitions — these are what `> [!WARNING]` becomes after the build.py
+ * rewrite, so they carry the wiki's rules and DRM callouts.
+ * ----------------------------------------------------------------------- */
+.md-typeset .admonition,
+.md-typeset details {
+  border: 1px solid var(--tm-line);
+  border-left: 3px solid var(--tm-accent);
+  border-radius: 10px;
+  background: rgb(var(--tm-accent-rgb) / 0.06);
+  box-shadow: none;
+  font-size: 0.78rem;
+}
+.md-typeset .admonition-title,
+.md-typeset summary {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: transparent;
+  border: none;
+}
+/* Material colors each type's whole border, tints the title bar and paints
+   the icon, all at `.md-typeset .admonition.<type>` specificity. The skin
+   wants a hairline box with a single colored edge and an untinted title, so
+   reset all three at that same specificity -- `[class]` matches the type
+   class without naming it. These come before the per-type rules below, which
+   then re-color only the left edge. */
+.md-typeset .admonition[class],
+.md-typeset details[class] {
+  border-color: var(--tm-line);
+  border-left-color: var(--tm-accent);  /* the per-type rules recolour this */
+}
+.md-typeset .admonition[class] > .admonition-title,
+.md-typeset details[class] > summary { background-color: transparent; }
+.md-typeset .admonition[class] > .admonition-title::before,
+.md-typeset details[class] > summary::before { background-color: currentcolor; }
+
+.md-typeset .admonition.warning,
+.md-typeset .admonition.danger,
+.md-typeset .admonition.caution {
+  border-left-color: var(--tm-advanced);
+  background: rgba(255, 92, 122, 0.06);
+}
+.md-typeset .admonition.warning > .admonition-title,
+.md-typeset .admonition.danger > .admonition-title,
+.md-typeset .admonition.caution > .admonition-title { color: var(--tm-advanced); }
+
+.md-typeset .admonition.important,
+.md-typeset .admonition.attention {
+  border-left-color: var(--tm-intermediate);
+  background: rgba(255, 179, 71, 0.06);
+}
+.md-typeset .admonition.important > .admonition-title,
+.md-typeset .admonition.attention > .admonition-title { color: var(--tm-intermediate); }
+
+.md-typeset .admonition.note > .admonition-title,
+.md-typeset .admonition.info > .admonition-title,
+.md-typeset .admonition.tip > .admonition-title { color: var(--tm-accent); }
+
+/* --------------------------------------------------------------------------
+ * On this page (Material's TOC; toc.follow does the scroll tracking)
+ * ----------------------------------------------------------------------- */
+.md-nav--secondary .md-nav__title {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  font-size: 0.5rem;  /* 10px */
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tm-muted);
+  background: transparent;
+  box-shadow: none;
+}
+.md-nav--secondary .md-nav__list { border-left: 1px solid rgba(255, 255, 255, 0.06); gap: 0; }
+.md-nav--secondary .md-nav__link {
+  font-size: 0.675rem;  /* 13.5px */
+  color: var(--tm-muted);
+  padding: 7px 0 7px 12px;
+  transition: color 140ms ease;
+}
+.md-nav--secondary .md-nav__link--active {
+  color: var(--tm-accent);
+  border-left: 1px solid var(--tm-accent);
+  margin-left: -1px;
+}
+
+/* --------------------------------------------------------------------------
+ * Difficulty eyebrow (overrides/main.html) + scanlines
+ * ----------------------------------------------------------------------- */
+.tm-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin: 0 0 0.6rem;
+}
+.tm-eyebrow__dot { width: 6px; height: 6px; border-radius: 50%; background: currentcolor; }
+.tm-track--beginner { color: var(--tm-beginner); }
+.tm-track--intermediate { color: var(--tm-intermediate); }
+.tm-track--advanced { color: var(--tm-advanced); }
+
+.tm-scanlines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  background: repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0 1px, transparent 1px 3px);
+}
+
+.md-footer,
+.md-footer-meta { background: var(--tm-rail); }
+
+@media print {
+  .tm-scanlines { display: none; }
+}
