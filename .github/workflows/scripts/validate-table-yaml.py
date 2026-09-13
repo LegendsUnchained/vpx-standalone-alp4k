@@ -630,7 +630,7 @@ if __name__ == "__main__":
     # For each discovered file, perform YAML-level checks (check_overrides)
     for f in files:
         try:
-            with open(f, "r") as table_data:
+            with open(f, "r", encoding="utf-8") as table_data:
                 table_yaml = yaml.safe_load(table_data)
         except Exception as e:
             print(f"ERROR: Failed to load {f}: {e}")

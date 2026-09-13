@@ -429,7 +429,7 @@ def get_table_meta(files, warn_on_error=True):
         folder_name = path.parent.name
 
         print(f"Processing {folder_name}")
-        with open(table_yaml, "r") as table_data:
+        with open(table_yaml, "r", encoding="utf-8") as table_data:
             data = yaml.safe_load(table_data)
 
         # Disabled tables are excluded up front, before any VPSDB resolution, so
