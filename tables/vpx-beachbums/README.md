@@ -14,6 +14,8 @@ Download: [VP Universe](https://vpuniverse.com/files/file/5183-beach-bums-10-201
 
 ROM/Music - Included with VPX download
 
+**Tested by:** [mcap]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

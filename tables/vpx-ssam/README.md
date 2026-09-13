@@ -12,6 +12,8 @@ Authors: [Fusionwerks](https://www.vpforums.org/index.php?showuser=120505)
 Version: 1.0  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=13913)
 
+**Tested by:** [mcap]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

@@ -19,6 +19,9 @@ I highly recommend this file as it improves the overall experience of the table.
 Author(s): [iDigStuff](https://vpuniverse.com/profile/29753-idigstuff/)  
 Version: Altsound 2.0.0
 Download: [VP Universe](https://vpuniverse.com/files/file/5936-altsound-20-creature-from-the-black-lagoon-bally-1992/)
+
+**Tested by:** [TechZombie]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1983-b84441e

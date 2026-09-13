@@ -12,6 +12,8 @@ Authors: [hauntfreaks](https://vpuniverse.com/profile/5216-hauntfreaks/)
 Version: 1.0  
 Download: [VP Universe](https://vpuniverse.com/files/file/17292-jumanji-balutito-2023-alt-b2s/)
 
+**Tested by:** [mcap]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

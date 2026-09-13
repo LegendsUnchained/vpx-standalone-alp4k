@@ -19,6 +19,8 @@ Download #1: [VPUniverse](https://vpuniverse.com/files/file/1661-cheetahzip/)
 Download #2: [VPUniverse](https://vpuniverse.com/files/file/450-cheetah2zip/)  
 ROM Names and versions: cheetah.zip and cheetah2.zip
 
+**Tested by:** [Kaoticbpr]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

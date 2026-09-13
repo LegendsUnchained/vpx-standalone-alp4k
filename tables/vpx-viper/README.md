@@ -12,7 +12,7 @@
 | **B2S & DMD** | [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=11052) | 1.0 | [kramer73](https://www.vpforums.org/index.php?showuser=309) |
 | **ROM** | [vpforums](http://www.vpforums.org/index.php?app=downloads&showfile=753) | viper.zip |  |
 
-**Tested by: shavendave** 
+**Tested by: shavendave**, [Kaoticbpr]
 
 ---
 

@@ -18,6 +18,8 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 ROM Name: cycln_l5  
 MD5: ed9587500313901fc287419aa24d0b7e
 
+**Tested by:** [mcap]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

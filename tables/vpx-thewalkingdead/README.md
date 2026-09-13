@@ -20,6 +20,8 @@ Download: [Stern](https://sternpinball.com/support/game-code/)
 - Rename the BIN file to twd_160.bin
 - Zip the BIN file to twd_160.zip
 
+**Tested by:** [mcap]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

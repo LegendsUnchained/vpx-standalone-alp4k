@@ -21,6 +21,8 @@ Download: [VP Universe](https://www.vpforums.org/index.php?app=downloads&showfil
 ROM:
 No ROM Needed
 
+**Tested by:** [TechZombie]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1983-b84441e  

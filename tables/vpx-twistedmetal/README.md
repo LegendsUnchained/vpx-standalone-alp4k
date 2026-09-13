@@ -13,6 +13,8 @@ Version: 1.0.0
 Download: [VP Universe](https://vpuniverse.com/files/file/20656-twisted-metal-clairvius-2024-animated-b2s-with-full-dmd/)
 
 
+**Tested by:** [Mox]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

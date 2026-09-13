@@ -17,6 +17,8 @@ ROM
 
 Download: [VP Universe](https://vpuniverse.com/files/file/869-term3zip/)
 
+**Tested by:** [mcap]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

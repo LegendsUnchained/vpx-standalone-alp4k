@@ -12,7 +12,7 @@
 | DMD | Included in VPX link | N/A | N/A |
 | ROM | [VPForums](https://www.vpforums.org/index.php?app=downloads&showfile=474) | N/A | [destruk](https://www.vpforums.org/index.php?showuser=5}) |
 
-**Tested by:** [Curt]
+**Tested by:** [Curt], [OminousOsie]
 
 ---
 

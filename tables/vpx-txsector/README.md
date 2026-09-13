@@ -12,7 +12,7 @@
 | **ROM** | [Pinball Nirvana](https://pinballnirvana.com/forums/resources/txsector.2542/) |
 
 
-**Tested by:** nobody 
+**Tested by:** nobody, [bofgi]
 
 ---
 

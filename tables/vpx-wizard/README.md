@@ -12,7 +12,7 @@
 | DMD | N/A | N/A | N/A |
 | ROM | N/A | N/A | N/A |
 
-**Tested by:** [Imscomobob]
+**Tested by:** [Imscomobob], [Travis]
 
 ---
 

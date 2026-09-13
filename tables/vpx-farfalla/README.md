@@ -16,6 +16,8 @@ ROM
 
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=612)
 
+**Tested by:** [Boris]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-2042-1431983
