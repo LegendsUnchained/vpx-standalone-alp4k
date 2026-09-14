@@ -11,27 +11,33 @@ site_dir: site
 
 theme:
   name: material
+  custom_dir: overrides
+  # Copied into docs/assets by build.py, alongside tm.css.
+  logo: assets/header.svg
   language: en
+  # The Table Manager skin ships Orbitron / Manrope / Roboto Mono from
+  # overrides/main.html. Leaving this on would also pull Material's Roboto.
+  font: false
   features:
     - navigation.top
     - navigation.tracking
+    - navigation.sections
+    # navigation.indexes is deliberately off: build.py writes every page as
+    # <slug>/index.md, so Material would absorb the first page of each track
+    # into its section heading and drop its row from the rail.
+    - toc.follow
     - search.suggest
     - search.highlight
+    - search.share
     - content.code.copy
+  # Dark only: the skin has no light branch, so there is no palette toggle.
   palette:
     - scheme: slate
       primary: black
-      accent: green
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: black
-      accent: green
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
+      accent: cyan
+
+extra_css:
+  - assets/tm.css
 
 plugins:
   - search
@@ -41,6 +47,7 @@ markdown_extensions:
   # keep HTML passthrough and attribute support on.
   - attr_list
   - md_in_html
+  - meta
   - tables
   - admonition
   - toc:
