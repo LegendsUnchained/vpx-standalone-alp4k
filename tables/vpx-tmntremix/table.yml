@@ -1,0 +1,35 @@
+---
+additionalRoms:
+  - checksum: "2BB16B5E2A2D7090B3372AB2C3E1B218"
+    versionOverride: "tmnt_104"
+    urlOverride: "https://www.vpforums.org/index.php?app=downloads&showfile=827"
+backglassAuthorsOverride:
+  - "BurtMacklin"
+  - "RyGuy"
+backglassChecksum: "1DF770204ACDA1441505DCE836DD3821"
+# yamllint disable-line rule:line-length
+backglassImageOverride: "https://vpuniverse.com/screenshots/monthly_2022_06/361910734_backglassimage.PNG.ad460ff65232f877d9a2f92dbb04d5e9.PNG"
+backglassNotes: "tmnt2-1.0.vpx.directb2s"
+backglassUrlOverride: "https://vpuniverse.com/files/file/10407-tmnt-reskin-of-data-east-table-backglass/"
+coloredROMChecksum: "411F2BF063857B6BAF5684441AC2A224"
+coloredROMNotes: "TMNT 2.0R VPIN.zip"
+coloredROMUrlOverride: "https://vpuniverse.com/files/file/6739-teenage-mutant-ninja-turtles-de-pin2dmd/"
+coloredROMVersionOverride: "tmnt_200"
+fps: 60
+pupArchiveFormat: "zip"
+pupArchiveRoot: "tmnt_104"
+pupChecksum: "CDB1E6C031F127C5EE9DB280C80AF992"
+pupFileUrl: "https://mega.nz/file/Ddk2WB6Q#abkLiyRP4l0qEEuudpPTso09W4N-pjAbG9kpGdevt2A"
+pupNotes: "Download tmnt_104.zip"
+pupRequired: true
+pupVersion: "tmnt_200"
+romChecksum: "215E33EE289386C75A51B999EFE858BD"
+romNotes: "Download tmnt_200.zip"
+romUrlOverride: "https://vpuniverse.com/files/file/27696-teenage-mutant-ninja-turtles-200-unofficial-mod"
+romVersionOverride: "tmnt_200"
+tableNotes: "Download 'Teenage Mutant Ninja Turtles (Stern-Data East mash-up) v2.86d.vpx'"
+tableVPSId: "uA2t19UU2O"
+testers:
+  - "Wraith"
+vpxChecksum: "91EFC4C0AA10D347B31A9063065FC8CE"
+vpxVPSId: "eiKQUmT6oX"
