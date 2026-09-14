@@ -14,6 +14,8 @@ ROM
 
 No ROM needed.
 
+**Tested by:** [Sscorpio]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

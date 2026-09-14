@@ -18,6 +18,8 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 Download: [Internet Archive](https://archive.org/download/mame-0.236-roms-split/MAME%200.236%20ROMs%20%28split%29/beatclck2.zip) ROM Name: beatclck2.zip
 
 
+**Tested by:** [Wraith]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

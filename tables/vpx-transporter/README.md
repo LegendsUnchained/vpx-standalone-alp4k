@@ -19,6 +19,8 @@ Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=
 SHA: 90194afb0ed641e04abfc5b7d935b9695fc9f0fd  
 MD5: 7547afa874f381fb07dbb3e632156c1f
 
+**Tested by:** [Bla1ze]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1983-b84441e

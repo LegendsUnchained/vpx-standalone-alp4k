@@ -46,7 +46,14 @@ jobs:
           | while read -r yml; do
               folder=$(dirname "$yml")
               for art in launcher.png backglass.png dmd.png; do
-                [ -f "$folder/$art" ] && echo "$folder/$art"
+                # `if`, not `[ -f … ] && echo`. The && form leaves the loop's
+                # exit status at 1 whenever the LAST file checked is missing,
+                # and under `bash -e` that aborts the step before it reaches
+                # the validator. Most tables have no dmd.png, so in practice
+                # every PR touching a table.yml failed here.
+                if [ -f "$folder/$art" ]; then
+                  echo "$folder/$art"
+                fi
               done
             done >> changed-images.txt
           sort -u -o changed-images.txt changed-images.txt

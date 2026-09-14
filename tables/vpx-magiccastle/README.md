@@ -17,6 +17,8 @@ ROM
 ROM Name: mcastle.zip  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=618)
 
+**Tested by:** [Boris]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

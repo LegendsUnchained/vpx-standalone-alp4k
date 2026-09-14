@@ -17,6 +17,8 @@ ROM
 Download: [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=1266)  
 ROM Name and version: i500_11r.zip
 
+**Tested by:** [Kaoticbpr]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

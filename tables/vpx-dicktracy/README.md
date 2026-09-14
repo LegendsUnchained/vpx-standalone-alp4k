@@ -22,7 +22,7 @@ Download: [VPUniverse](https://vpuniverse.com/files/file/1374-vortexzip/)
 SHA1: 5C5D3EA7DBF0AFE3C608E08AB02D62BD357AC7F5  
 MD5:  86443FA0F0CAF72918A14C54C04679CF
 
-Tested by: evilwraith
+Tested by: Wraith
 
 ## Status 
 

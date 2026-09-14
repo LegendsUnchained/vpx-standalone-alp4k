@@ -18,6 +18,8 @@ ROM
 Download: [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=704)  
 ROM Name and version: stk_sprs.zip  
 
+**Tested by:** [psybocilin]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1983-b84441e

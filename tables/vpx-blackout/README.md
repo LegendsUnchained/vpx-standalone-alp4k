@@ -12,7 +12,7 @@
 | **ROM** | [vpforums](https://www.vpforums.org/index.php?app=downloads&showfile=781) | blkou_l1.zip | [destruk](https://www.vpforums.org/index.php?showuser=5) |
 
 
-**Tested by:** [reboot]
+**Tested by:** [reboot], [Kaoticbpr]
 
 ---
 

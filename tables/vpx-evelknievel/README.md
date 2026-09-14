@@ -29,6 +29,8 @@ SHA-1: 9D218CE28FA45F1555052ECC18C48DA5C82FB1CD
 Tested and Fixed by:  
 [TechZombie] 
 
+**Tested by:** [TechZombie]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1983-b84441e

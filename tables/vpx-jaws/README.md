@@ -18,6 +18,8 @@ No Rom Needed
 Tested:  
 [TechZombie]
 
+**Tested by:** [TechZombie]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1983-b84441e

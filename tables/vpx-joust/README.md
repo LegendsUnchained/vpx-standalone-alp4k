@@ -15,6 +15,8 @@ ROM
 Download: [Pinball Nirvana](https://pinballnirvana.com/forums/resources/jst_l2.1999/)  
 ROM Name and version: jst_l2.zip
 
+**Tested by:** [Kaoticbpr]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

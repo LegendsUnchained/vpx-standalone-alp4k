@@ -11,7 +11,7 @@
 | **B2S** | [VPU](https://vpuniverse.com/files/file/21828-teenage-mutant-ninja-turtles-data-east-1991-alt-b2s-full-dmd/) | SternLE | [HauntFreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
 | **ROM** | [VPF](https://vpforums.org/index.php?app=downloads&showfile=827) | tmnt_104 | [destruk](https://vpfoums.org/index.php?s=3dc593d82108ca5a23f00ca86d4f86e0&showuser=5) |
 
-**Tested by:** fAthAwg
+**Tested by:** fAthAwg, [Wraith]
 
 ---
 

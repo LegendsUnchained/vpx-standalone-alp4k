@@ -18,7 +18,7 @@ Authors: [destruk](https://www.vpforums.org/index.php?showuser=5)
 ROM Name: pharo_l2  
 Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=798)
 
-Tested by: HearForGear
+Tested by: HereForGear
 
 ## Status 
 

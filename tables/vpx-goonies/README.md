@@ -7,6 +7,8 @@ Download: [VP Universe](https://vpuniverse.com/files/file/7819-the-goonies-never
 
 DirectB2S : Included in table download
 
+**Tested by:** [cth77277]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1989-a764013

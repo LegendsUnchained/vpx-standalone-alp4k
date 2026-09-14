@@ -16,6 +16,8 @@ ROM
 
 Download: [VP Universe](https://vpuniverse.com/files/file/4161-sir-lancelot/)
 
+**Tested by:** [Boris]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1983-b84441e

@@ -16,6 +16,8 @@ Download: [VP Universe](https://vpuniverse.com/files/file/12855-timelord-3010-lu
 
 No Rom Needed
 
+**Tested by:** [Skully1963]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1983-b84441e

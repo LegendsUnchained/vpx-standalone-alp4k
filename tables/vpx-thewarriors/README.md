@@ -23,6 +23,8 @@ Download: [Archive.org](https://archive.org/details/music_20240912)
 Tested and Fixed by:  
 [TechZombie]
 
+**Tested by:** [TechZombie]
+
 ## Status 
 
 Minimum VPX Standalone build: 10.8.0-1983-b84441e

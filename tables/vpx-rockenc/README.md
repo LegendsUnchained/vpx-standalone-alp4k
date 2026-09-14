@@ -10,7 +10,7 @@
 | **DMD** | Not Needed | Not Needed | Not Needed |
 | **ROM** | [PinballNirvana](https://pinballnirvana.com/forums/resources/rock_enc.2247/) | 9-8-2022 | [rockola](https://pinballnirvana.com/forums/members/rock-ola.1/) |
 
-**Tested by:** [vicpac73]
+**Tested by:** [vicpac73], [OminousOsie]
 
 ---
 
