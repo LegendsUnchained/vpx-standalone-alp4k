@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+<!--
+  Table Manager 3.x Preview skin for the VPXS 4KP wiki.
+
+  Adds: the kit's fonts, the rail head (wordmark + search trigger), the
+  difficulty eyebrow (driven by the `track` front matter build.py writes), and
+  the scanline overlay. Everything else is CSS in assets/tm.css — Material's
+  own DOM supplies the rail, TOC, search modal and code-copy buttons.
+-->
+
+{% block fonts %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Manrope:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0">
+{% endblock %}
+
+{#
+  Copied from base.html so the rail can lead with the wordmark and the search
+  field, as the design has it. Both sit above `partials/nav.html` rather than
+  inside it, because the nav partial puts its own heading and the page list in
+  one block with nowhere between them to inject.
+
+  The trigger is a plain <label> for Material's `#__search` toggle — the same
+  control its own header button uses — so opening the dialog needs no script.
+#}
+{% block site_nav %}
+  {% if nav %}
+    {% if page.meta and page.meta.hide %}
+      {% set hidden = "hidden" if "navigation" in page.meta.hide %}
+    {% endif %}
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" {{ hidden }}>
+      <div class="tm-rail__head">
+        <a class="tm-rail__logo" href="{{ config.site_url | d(nav.homepage.url, true) | url }}" title="{{ config.site_name | e }}">
+          <img src="{{ 'assets/header.svg' | url }}" alt="{{ config.site_name }}">
+        </a>
+        {% if "material/search" in config.plugins %}
+          <label class="tm-search" for="__search">
+            <span class="tm-search__icon">{% include ".icons/material/magnify.svg" %}</span>
+            <span class="tm-search__label">Search the wiki</span>
+            <span class="tm-search__key">/</span>
+          </label>
+        {% endif %}
+      </div>
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+          {% include "partials/nav.html" %}
+        </div>
+      </div>
+      <div class="tm-rail__foot">
+        <div class="tm-rail__foot-title">Edit this page</div>
+        <p class="tm-rail__foot-body">Pages are edited in the GitHub wiki. Saving republishes this site.</p>
+      </div>
+    </div>
+  {% endif %}
+  {% if "toc.integrate" not in features %}
+    {% if page.meta and page.meta.hide %}
+      {% set hidden = "hidden" if "toc" in page.meta.hide %}
+    {% endif %}
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" {{ hidden }}>
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+          {% include "partials/toc.html" %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  {% if page and page.meta and page.meta.track %}
+    <div class="tm-eyebrow tm-track--{{ page.meta.track }}">
+      <span class="tm-eyebrow__dot"></span>
+      <span>{{ page.meta.track | upper }}{% if page.meta.order %} &middot; PAGE {{ page.meta.order | upper }}{% endif %}</span>
+    </div>
+  {% endif %}
+  {{ super() }}
+{% endblock %}
+
+{% block footer %}
+  {{ super() }}
+  <div class="tm-scanlines" aria-hidden="true"></div>
+{% endblock %}
