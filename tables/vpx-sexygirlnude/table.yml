@@ -11,5 +11,13 @@ tableVPSId: "UVJGVYQc"
 tagline: "'Boobs'"
 testers:
   - "Wraith"
-vpxChecksum: "DAAB47BB80C288621A926B327505522B"
+vpxArchiveFormat: "zip"
+vpxChecksum: 
+  - "DAAB47BB80C288621A926B327505522B"
+  - "17BD49DAA2EA480983B38C9C01FFA9E7"
 vpxVPSId: "pNjJ2n4R33"
+vpxExtractExtra:
+  - "Sexy Girl (Arkon 1980)MOD/Sexy Girl"
+postInstallRename:
+  - source: "Sexy Girl"
+    destination: "music/Sexy Girl"
