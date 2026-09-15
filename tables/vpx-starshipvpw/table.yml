@@ -1,4 +1,7 @@
 ---
+coloredROMChecksum: "3353C567E4C99191C352D75ED8C9464F"
+coloredROMNotes: "Download 'Starship_Troopers_JPAJMO.pac'"
+coloredROMVPSId: "S1xQNGdYbk"
 pupChecksum: "967B3C0373549ABF407C1766D6830782"
 pupFileUrl: >-
   https://vpuniverse.com/files/file/16710-starship-troopers-english-pup-pack/
@@ -16,5 +19,6 @@ testers:
   - "Bla1ze"
   - "Ominous Osie"
   - "Khrymsyn"
+  - "Wraith"
 vpxChecksum: "1A67B0C4B103F3B1303D7815A1B2AD27"
 vpxVPSId: "DbFuVTNKWt"
