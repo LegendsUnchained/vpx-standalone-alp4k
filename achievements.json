@@ -1,0 +1,689 @@
+{
+  "categories": [
+    {
+      "id": "milestones",
+      "label": "Milestones",
+      "subtitle": "Lifetime play time"
+    },
+    {
+      "id": "streak",
+      "label": "Day Streak",
+      "subtitle": "Longest streak ever hit"
+    },
+    {
+      "id": "collection",
+      "label": "Collection",
+      "subtitle": "Tables in your library"
+    },
+    {
+      "id": "variety",
+      "label": "Variety",
+      "subtitle": "Manufacturers, eras & designers explored"
+    },
+    {
+      "id": "playstyle",
+      "label": "Play Style",
+      "subtitle": "How and when you play"
+    },
+    {
+      "id": "osies-list",
+      "label": "Osie's Blessing",
+      "subtitle": ".⋆❀° ꫂ❁ ｡˚⋆ ♡ ⋆❀° ⋆˚✿˖° .⋆❀° ˚˖𓍢ִ໋❀"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "milestones-welcome",
+      "category": "milestones",
+      "icon": "celebration",
+      "rarity": "common",
+      "displayOrder": 10,
+      "label": "Welcome to the Arcade",
+      "description": "Play your very first session",
+      "remainingText": "play your first session",
+      "conditions": {
+        "sessionCount": 1
+      }
+    },
+    {
+      "id": "milestones-10h",
+      "category": "milestones",
+      "icon": "schedule",
+      "rarity": "common",
+      "displayOrder": 20,
+      "label": "Regular",
+      "description": "{hours}+ hours played, lifetime",
+      "remainingText": "{hours}h to go",
+      "conditions": {
+        "minutesPlayed": 600
+      }
+    },
+    {
+      "id": "milestones-25h",
+      "category": "milestones",
+      "icon": "schedule",
+      "rarity": "uncommon",
+      "displayOrder": 30,
+      "label": "Dedicated",
+      "description": "{hours}+ hours played, lifetime",
+      "remainingText": "{hours}h to go",
+      "conditions": {
+        "minutesPlayed": 1500
+      }
+    },
+    {
+      "id": "milestones-50h",
+      "category": "milestones",
+      "icon": "schedule",
+      "rarity": "rare",
+      "displayOrder": 40,
+      "label": "Veteran",
+      "description": "{hours}+ hours played, lifetime",
+      "remainingText": "{hours}h to go",
+      "conditions": {
+        "minutesPlayed": 3000
+      }
+    },
+    {
+      "id": "milestones-100h",
+      "category": "milestones",
+      "icon": "access_time",
+      "rarity": "epic",
+      "displayOrder": 50,
+      "label": "Master",
+      "description": "{hours}+ hours played, lifetime",
+      "remainingText": "{hours}h to go",
+      "conditions": {
+        "minutesPlayed": 6000
+      }
+    },
+    {
+      "id": "milestones-250h",
+      "category": "milestones",
+      "icon": "military_tech",
+      "rarity": "legendary",
+      "displayOrder": 60,
+      "label": "Ascendant",
+      "description": "{hours}+ hours played, lifetime",
+      "remainingText": "{hours}h to go",
+      "conditions": {
+        "minutesPlayed": 15000
+      }
+    },
+    {
+      "id": "milestones-eternal",
+      "category": "milestones",
+      "icon": "star",
+      "rarity": "impossible",
+      "displayOrder": 70,
+      "label": "Eternal",
+      "description": "{hours}+ hours played, lifetime",
+      "remainingText": "{hours}h to go",
+      "conditions": {
+        "minutesPlayed": 30000
+      }
+    },
+    {
+      "id": "streak-3",
+      "category": "streak",
+      "icon": "local_fire_department",
+      "rarity": "common",
+      "displayOrder": 80,
+      "label": "On a Roll",
+      "description": "{days}-day streak, at your best",
+      "remainingText": "{days}d to go",
+      "conditions": {
+        "longestStreakDays": 3,
+        "sessionCount": 1
+      }
+    },
+    {
+      "id": "streak-7",
+      "category": "streak",
+      "icon": "local_fire_department",
+      "rarity": "common",
+      "displayOrder": 90,
+      "label": "One Week Strong",
+      "description": "{days}-day streak, at your best",
+      "remainingText": "{days}d to go",
+      "conditions": {
+        "longestStreakDays": 7,
+        "sessionCount": 1
+      }
+    },
+    {
+      "id": "streak-14",
+      "category": "streak",
+      "icon": "local_fire_department",
+      "rarity": "uncommon",
+      "displayOrder": 100,
+      "label": "Fortnight Flame",
+      "description": "{days}-day streak, at your best",
+      "remainingText": "{days}d to go",
+      "conditions": {
+        "longestStreakDays": 14,
+        "sessionCount": 1
+      }
+    },
+    {
+      "id": "streak-30",
+      "category": "streak",
+      "icon": "local_fire_department",
+      "rarity": "rare",
+      "displayOrder": 110,
+      "label": "Monthly Ritual",
+      "description": "{days}-day streak, at your best",
+      "remainingText": "{days}d to go",
+      "conditions": {
+        "longestStreakDays": 30,
+        "sessionCount": 1
+      }
+    },
+    {
+      "id": "streak-60",
+      "category": "streak",
+      "icon": "local_fire_department",
+      "rarity": "epic",
+      "displayOrder": 120,
+      "label": "Sixty-Day Solitude",
+      "description": "{days}-day streak, at your best",
+      "remainingText": "{days}d to go",
+      "conditions": {
+        "longestStreakDays": 60,
+        "sessionCount": 1
+      }
+    },
+    {
+      "id": "streak-100",
+      "category": "streak",
+      "icon": "military_tech",
+      "rarity": "legendary",
+      "displayOrder": 130,
+      "label": "Century Streak",
+      "description": "{days}-day streak, at your best",
+      "remainingText": "{days}d to go",
+      "conditions": {
+        "longestStreakDays": 100,
+        "sessionCount": 1
+      }
+    },
+    {
+      "id": "streak-perfect-year",
+      "category": "streak",
+      "icon": "star",
+      "rarity": "impossible",
+      "displayOrder": 140,
+      "label": "Perfect Year",
+      "description": "{days}-day streak, at your best",
+      "remainingText": "{days}d to go",
+      "conditions": {
+        "longestStreakDays": 365,
+        "sessionCount": 1
+      }
+    },
+    {
+      "id": "collection-10",
+      "category": "collection",
+      "icon": "grid_view",
+      "rarity": "common",
+      "displayOrder": 150,
+      "label": "Starter Shelf",
+      "description": "{count}+ unique tables played",
+      "remainingText": "{count} more tables",
+      "conditions": {
+        "uniqueTablesPlayed": 10
+      }
+    },
+    {
+      "id": "collection-25",
+      "category": "collection",
+      "icon": "grid_view",
+      "rarity": "common",
+      "displayOrder": 160,
+      "label": "Small Library",
+      "description": "{count}+ unique tables played",
+      "remainingText": "{count} more tables",
+      "conditions": {
+        "uniqueTablesPlayed": 25
+      }
+    },
+    {
+      "id": "collection-50",
+      "category": "collection",
+      "icon": "grid_view",
+      "rarity": "uncommon",
+      "displayOrder": 170,
+      "label": "Building a Library",
+      "description": "{count}+ unique tables played",
+      "remainingText": "{count} more tables",
+      "conditions": {
+        "uniqueTablesPlayed": 50
+      }
+    },
+    {
+      "id": "collection-100",
+      "category": "collection",
+      "icon": "grid_view",
+      "rarity": "rare",
+      "displayOrder": 180,
+      "label": "Serious Collection",
+      "description": "{count}+ unique tables played",
+      "remainingText": "{count} more tables",
+      "conditions": {
+        "uniqueTablesPlayed": 100
+      }
+    },
+    {
+      "id": "collection-150",
+      "category": "collection",
+      "icon": "grid_view",
+      "rarity": "epic",
+      "displayOrder": 190,
+      "label": "Arcade Overflow",
+      "description": "{count}+ unique tables played",
+      "remainingText": "{count} more tables",
+      "conditions": {
+        "uniqueTablesPlayed": 150
+      }
+    },
+    {
+      "id": "collection-250",
+      "category": "collection",
+      "icon": "military_tech",
+      "rarity": "legendary",
+      "displayOrder": 200,
+      "label": "Full Cabinet",
+      "description": "{count}+ unique tables played",
+      "remainingText": "{count} more tables",
+      "conditions": {
+        "uniqueTablesPlayed": 250
+      }
+    },
+    {
+      "id": "collection-pinball-wizard",
+      "category": "collection",
+      "icon": "star",
+      "rarity": "impossible",
+      "displayOrder": 210,
+      "label": "Pinball Wizard",
+      "description": "Play at least 25 mins on {count} unique tables",
+      "remainingText": "{count} more tables",
+      "conditions": {
+        "minutesPlayedPerTable": 25,
+        "uniqueTablesPlayed": 250
+      }
+    },
+    {
+      "id": "variety-decades-3",
+      "category": "variety",
+      "icon": "history",
+      "rarity": "common",
+      "displayOrder": 220,
+      "label": "Time Traveler",
+      "description": "Tables spanning {count}+ decades",
+      "remainingText": "{count} more decades",
+      "conditions": {
+        "distinctDecades": 3
+      }
+    },
+    {
+      "id": "variety-manufacturers-3",
+      "category": "variety",
+      "icon": "explore",
+      "rarity": "common",
+      "displayOrder": 230,
+      "label": "Brand Curious",
+      "description": "{count}+ different manufacturers played",
+      "remainingText": "{count} more manufacturers",
+      "conditions": {
+        "distinctManufacturers": 3
+      }
+    },
+    {
+      "id": "variety-designers-5",
+      "category": "variety",
+      "icon": "person",
+      "rarity": "uncommon",
+      "displayOrder": 240,
+      "label": "Auteur Appreciation",
+      "description": "{count}+ different designers played",
+      "remainingText": "{count} more designers",
+      "conditions": {
+        "distinctDesigners": 5
+      }
+    },
+    {
+      "id": "variety-manufacturers-7",
+      "category": "variety",
+      "icon": "explore",
+      "rarity": "rare",
+      "displayOrder": 250,
+      "label": "Manufacturer Hopper",
+      "description": "{count}+ different manufacturers played",
+      "remainingText": "{count} more manufacturers",
+      "conditions": {
+        "distinctManufacturers": 7
+      }
+    },
+    {
+      "id": "variety-osies-approval",
+      "category": "variety",
+      "icon": "local_florist",
+      "rarity": "epic",
+      "displayOrder": 260,
+      "label": "Osie's Approval",
+      "description": "Play Baywatch, Godzilla, and The Lost World: Jurassic Park",
+      "remainingText": "{count} more to go",
+      "conditions": {
+        "specificTablesPlayed": [
+          "Baywatch (Sega 1995)",
+          "Godzilla (Sega 1998)",
+          [
+            "Lost World Jurassic Park, The (Sega 1997)",
+            "Lost World Jurassic Park, JP's The (Original 2020)"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "variety-manufacturers-15",
+      "category": "variety",
+      "icon": "military_tech",
+      "rarity": "legendary",
+      "displayOrder": 270,
+      "label": "Every Maker",
+      "description": "{count}+ different manufacturers played",
+      "remainingText": "{count} more manufacturers",
+      "conditions": {
+        "distinctManufacturers": 15
+      }
+    },
+    {
+      "id": "variety-master-of-time",
+      "category": "variety",
+      "icon": "star",
+      "rarity": "impossible",
+      "displayOrder": 280,
+      "label": "Master of Time",
+      "description": "Play a table from every year between 1970-2020",
+      "remainingText": "{count} more years",
+      "conditions": {
+        "specificYears": [
+          1970,
+          1971,
+          1972,
+          1973,
+          1974,
+          1975,
+          1976,
+          1977,
+          1978,
+          1979,
+          1980,
+          1981,
+          1982,
+          1983,
+          1984,
+          1985,
+          1986,
+          1987,
+          1988,
+          1989,
+          1990,
+          1991,
+          1992,
+          1993,
+          1994,
+          1995,
+          1996,
+          1997,
+          1998,
+          1999,
+          2000,
+          2001,
+          2002,
+          2003,
+          2004,
+          2005,
+          2006,
+          2007,
+          2008,
+          2009,
+          2010,
+          2011,
+          2012,
+          2013,
+          2014,
+          2015,
+          2016,
+          2017,
+          2018,
+          2019,
+          2020
+        ]
+      }
+    },
+    {
+      "id": "playstyle-rage-quit",
+      "category": "playstyle",
+      "icon": "mood_bad",
+      "rarity": "common",
+      "displayOrder": 290,
+      "label": "Rage Quit",
+      "description": "Quit a session inside 3 minutes",
+      "remainingText": "hasn't happened yet",
+      "conditions": {
+        "sessionMaxLengthMinutes": 3,
+        "sessionCount": 1
+      }
+    },
+    {
+      "id": "playstyle-weekend-warrior",
+      "category": "playstyle",
+      "icon": "weekend",
+      "rarity": "common",
+      "displayOrder": 300,
+      "label": "Weekend Warrior",
+      "description": "{count}+ weekends played",
+      "remainingText": "{count} more weekends",
+      "conditions": {
+        "distinctWeekendsCount": 8
+      }
+    },
+    {
+      "id": "playstyle-night-owl",
+      "category": "playstyle",
+      "icon": "bedtime",
+      "rarity": "uncommon",
+      "displayOrder": 310,
+      "label": "Night Owl",
+      "description": "{count}+ sessions started late at night",
+      "remainingText": "{count} more late sessions",
+      "conditions": {
+        "timeOfDayFrom": 22,
+        "timeOfDayTo": 5,
+        "sessionCount": 20
+      }
+    },
+    {
+      "id": "playstyle-early-bird",
+      "category": "playstyle",
+      "icon": "wb_twilight",
+      "rarity": "rare",
+      "displayOrder": 320,
+      "label": "Early Bird",
+      "description": "{count}+ sessions started early morning",
+      "remainingText": "{count} more early sessions",
+      "conditions": {
+        "timeOfDayFrom": 5,
+        "timeOfDayTo": 9,
+        "sessionCount": 20
+      }
+    },
+    {
+      "id": "playstyle-marathon",
+      "category": "playstyle",
+      "icon": "timer",
+      "rarity": "epic",
+      "displayOrder": 330,
+      "label": "Marathon Runner",
+      "description": "{count}+ sessions, 60+ minutes long",
+      "remainingText": "{count} more long sessions",
+      "conditions": {
+        "sessionMinLengthMinutes": 60,
+        "sessionCount": 3
+      }
+    },
+    {
+      "id": "playstyle-wizard-wednesday",
+      "category": "playstyle",
+      "icon": "auto_awesome",
+      "rarity": "legendary",
+      "displayOrder": 340,
+      "label": "Wizard Wednesday",
+      "description": "Play a table for the first time on a Wednesday",
+      "remainingText": "hasn't happened yet",
+      "conditions": {
+        "tablePlayedForFirstTime": true,
+        "dayOfWeekFrom": 3,
+        "dayOfWeekTo": 3,
+        "sessionCount": 1
+      }
+    },
+    {
+      "id": "playstyle-wednesday-warrior",
+      "category": "playstyle",
+      "icon": "star",
+      "rarity": "impossible",
+      "displayOrder": 350,
+      "label": "Wednesday Warrior",
+      "description": "{count}+ sessions of 60+ minutes, all on Wednesdays",
+      "remainingText": "{count} more Wednesday sessions",
+      "conditions": {
+        "sessionMinLengthMinutes": 60,
+        "dayOfWeekFrom": 3,
+        "dayOfWeekTo": 3,
+        "sessionCount": 10
+      }
+    },
+    {
+      "id": "villa-diodati",
+      "category": "osies-list",
+      "icon": "nightlight",
+      "rarity": "common",
+      "displayOrder": 360,
+      "label": " Villa Diodati",
+      "description": "Play both Frankenstein and Dracula",
+      "remainingText": "{count} left to play",
+      "conditions": {
+        "specificTablesPlayed": [
+          "Mary Shelley's Frankenstein (Sega 1995)",
+          [
+            "Bram Stoker's Dracula (Williams 1993)",
+            "Bram Stoker's Dracula - BLOOD EDITION (Williams 1993)",
+            "Bram Stoker's Dracula - BLOOD EDITION (Original 2025)"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "osie-multiply",
+      "category": "osies-list",
+      "icon": "casino",
+      "rarity": "common",
+      "displayOrder": 370,
+      "label": "They Tend to Multiply!",
+      "description": "Play 2 versions of  The Lost World, Jurassic Park",
+      "remainingText": "{count} left to play",
+      "conditions": {
+        "specificTablesPlayed": [
+          "Lost World Jurassic Park, The (Sega 1997)",
+          [
+            "Lost World Jurassic Park, JP's The (Original 2020)",
+            "Lost World Jurassic Park, JP's The (Sega 1997)"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "9-day-meltdown",
+      "category": "osies-list",
+      "icon": "bolt",
+      "rarity": "uncommon",
+      "displayOrder": 380,
+      "label": "9-Day Meltdown",
+      "description": "Play Total Nuclear Annihilation everyday, for a 9 days streak",
+      "remainingText": "{count} days left on best streak",
+      "conditions": {
+        "specificTablesPlayed": [
+          "Total Nuclear Annihilation (Spooky Pinball 2017)"
+        ],
+        "longestStreakDays": 9
+      }
+    },
+    {
+      "id": "segaaa",
+      "category": "osies-list",
+      "icon": "emoji_events",
+      "rarity": "rare",
+      "displayOrder": 390,
+      "label": "SEEGAAAAA",
+      "description": "Play 10 unique Sega tables",
+      "remainingText": "{count} left to go",
+      "conditions": {
+        "specificManufacturers": [
+          "Sega"
+        ],
+        "uniqueTablesPlayed": 10
+      }
+    },
+    {
+      "id": "baywatch-playtime",
+      "category": "osies-list",
+      "icon": "flag",
+      "rarity": "epic",
+      "displayOrder": 400,
+      "label": "Panic at Malibu Pier",
+      "description": "Play Baywatch for 95 minutes in one session",
+      "remainingText": "{count}m left on best attempt",
+      "conditions": {
+        "sessionMinLengthMinutes": 95,
+        "specificTablesPlayed": [
+          "Baywatch (Sega 1995)"
+        ]
+      }
+    },
+    {
+      "id": "vpx-community",
+      "category": "osies-list",
+      "icon": "favorite",
+      "rarity": "legendary",
+      "displayOrder": 410,
+      "label": "We ❤︎ The VPX Community!",
+      "description": "Play 20 Original tables",
+      "remainingText": "{count} left to play",
+      "conditions": {
+        "specificManufacturers": [
+          "Original"
+        ],
+        "uniqueTablesPlayed": 20
+      }
+    },
+    {
+      "id": "stern-believer",
+      "category": "osies-list",
+      "icon": "star",
+      "rarity": "impossible",
+      "displayOrder": 420,
+      "label": "Stern Believer",
+      "description": "Play 50 hours on Stern tables",
+      "remainingText": "{hours}h left",
+      "conditions": {
+        "minutesPlayed": 3000,
+        "specificManufacturers": [
+          "Stern"
+        ]
+      }
+    }
+  ]
+}

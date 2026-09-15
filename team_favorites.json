@@ -1,0 +1,92 @@
+[
+  {
+    "member": "n-i-x",
+    "avatar": "https://cdn.discordapp.com/avatars/627396010569891853/1b8f95660d1998cc62de13a1a0bc3c03.png",
+    "role": "Lead Developer",
+    "tables": [
+      "vpx-deadpool",
+      "vpx-spacecadetge",
+      "vpx-pennantfever"
+    ]
+  },
+  {
+    "member": "Wraith",
+    "avatar": "https://cdn.discordapp.com/avatars/271328343893213186/8e29d9476dddc7ee97021b3a52bc4676.png",
+    "role": "Developer",
+    "tables": [
+      "vpx-taf",
+      "vpx-jpattackfrommars",
+      "vpx-fireball"
+    ]
+  },
+  {
+    "member": "Ominous Osie",
+    "avatar": "https://cdn.discordapp.com/avatars/174128511785762816/ece39af6ef3b423cbefc9fc0bbd45392.png",
+    "role": "Developer / Community Manager",
+    "tables": [
+      "vpx-baywatch",
+      "vpx-tna",
+      "vpx-godzilla"
+    ]
+  },
+  {
+    "member": "Mox",
+    "avatar": "https://cdn.discordapp.com/avatars/240222455409541121/47e2e6c4cd012237b5b23568b2358f71.png",
+    "role": "Wizard Wrangler / Community Manager",
+    "tables": [
+      "vpx-demoman",
+      "vpx-id4",
+      "vpx-indianajonestpa"
+    ]
+  },
+  {
+    "member": "'Coffee' Joe",
+    "avatar": "https://cdn.discordapp.com/avatars/735556812862128158/40ccbffae4b299b34e99967ea97a1bf3.png",
+    "role": "Art Department Head",
+    "tables": [
+      "vpx-mousin",
+      "vpx-hardbody",
+      "vpx-cftbl"
+    ]
+  },
+  {
+    "member": "pointdablame",
+    "avatar": "https://cdn.discordapp.com/avatars/231606866810109954/b12d55c480f913d8adaa8bba6c65f226.png",
+    "role": "Art Department",
+    "tables": [
+      "vpx-sopranos",
+      "vpx-spacecadetge",
+      "vpx-tna"
+    ]
+  },
+  {
+    "member": "GamerDad89",
+    "avatar": "https://cdn.discordapp.com/avatars/1325826626134478880/070162d5acd9cb59f515a7af2167f6b0.png",
+    "role": "Tournament Coordinator",
+    "tables": [
+      "vpx-bop",
+      "vpx-xfiles",
+      "vpx-spacecadetge"
+    ]
+  },
+  {
+    "member": "Bla1ze",
+    "avatar": "https://cdn.discordapp.com/avatars/488775261534289920/5f73c634780b6ff8172319ae8eb91890.png",
+    "role": "Wizard",
+    "tables": [
+      "vpx-bigbangbar",
+      "vpx-tommy",
+      "vpx-sopranos"
+    ]
+  },
+  {
+    "member": "Silentkat",
+    "avatar": "https://cdn.discordapp.com/avatars/542903512959549470/520a604ebbfd0b78ee3c3848f35676f6.png",
+    "role": "Wizard / PUP Sorcerer",
+    "tables": [
+      "vpx-dcrystalpup",
+      "vpx-2001",
+      "vpx-deadpool"
+    ]
+  }
+]
