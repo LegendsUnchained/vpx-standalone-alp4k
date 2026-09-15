@@ -1,0 +1,23 @@
+---
+fps: 60
+pupArchiveFormat: "zip"
+pupArchiveRoot: "MFDOOM"
+pupBundled: true
+pupChecksum: "90EF4527C3F97774E0F956E90A19B243"
+pupNotes: "Bundled in VPX zip: In PuPVideos folder 'MFDOOM-PuP-v1.1.zip'"
+pupRequired: true
+pupVersion: "MFDOOM"
+tableVPSId: "6A2KHPqZc9"
+tagline: "'DOOM TOOTS AS DOOM PLEASES'"
+testers:
+  - "Wraith"
+  - "Bla1ze"
+  - "dr_wraith"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "E4831DBB14857269AB8A0670F6F9FCE0"
+  - "51649B94B76D6CDAA7417FAB9656373D"
+vpxVPSId: "Ug53LOj8gf"
+vpxExtractExtra:
+  - "DMD/MFDOOMDMD"
+  - "Music"
