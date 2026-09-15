@@ -75,31 +75,22 @@
 ' RC5 MerlinRTP	   - Added Scorbit	
 ' RC6 apophis	   - Fixed autoplunger. Made VR flipper buttons red. Set ScorbitActive = 0. Default Day Night set to 30%. Set most VR room prims disable lighting to zero. Updated desktop and cab pov. Updated Table Info Description with current credits
 
+' 1.1 Oqqsan	   - Improved FlexDMD gameover and attract loops to display GameOver and Top Scores
+'	  MerlinRTP	   - Added Table1_MusicDone routine to keep music playing
+'	  			   - Added wall objects to clearsmoke collection to shorten smoke GIF image display time
+'                  - Added fx_next, fx_previous, fx_enter sound files for high score entry
+'                  - Skill lane rotation reverted
+'                  - Modified hidescorbit routine calls to only call if scorbitactive = 1
+'                  - Added controller.stop to Table1_exit routine, was preventing pup from closing out on table exit for some
 
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 	Option Explicit
 	Randomize
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ' This will dynamically create an array SONGS that has the mp3 files it finds in music\MFDOOM directory
-'Dim re,fso,folder,files,Songs
-'Songs = mp3PathArray
-dim Songs(15)
-Songs(1) = "MFDOOM01.mp3"
-Songs(2) = "MFDOOM02.mp3"
-Songs(3) = "MFDOOM03.mp3"
-Songs(4) = "MFDOOM04.mp3"
-Songs(5) = "MFDOOM05.mp3"
-Songs(6) = "MFDOOM06.mp3"
-Songs(7) = "MFDOOM07.mp3"
-Songs(8) = "MFDOOM08.mp3"
-Songs(9) = "MFDOOM09.mp3"
-Songs(10) = "MFDOOM10.mp3"
-Songs(11) = "MFDOOM11.mp3"
-Songs(12) = "MFDOOM12.mp3"
-Songs(13) = "MFDOOM13.mp3"
-Songs(13) = "MFDOOM14.mp3"
-Songs(14) = "Attract1.mp3"
-Songs(15) = "Attract2.mp3"
+Dim re,fso,folder,files,Songs
+Songs = mp3PathArray
+
 
 
 '  USER OPTIONS
@@ -2029,7 +2020,7 @@ End Sub
 	Const zoombgfont = "Whole trains"     'Outline
 	Const cGameName = "MFDOOM"                      
 	Const TableName = "MFDOOM"                      
-	Const myVersion = "1.0.22"
+	Const myVersion = "1.1"
 	Const MaxPlayers = 4   
 	Const BallSaverTime = 15 
 	Const MaxMultiplier = 6 
@@ -2326,6 +2317,7 @@ End Sub
 	Sub Table1_Init()
 		LoadEM
 		Set PuPlayer = CreateObject("PinUpPlayer.PinDisplay") 
+
 		if UsePuPEvents Then 
 			PuPStart(cPuPPack)
 		End If
@@ -2606,7 +2598,7 @@ if keycode = "7" Then RTP
 						
 						ldown = 1
 						checkdown
-						If bSkillshotReady = False AND bSkillshotRotateLights Then 
+						If bSkillshotRotateLights Then 
 							'RotateLaneLightsLeft
 							RotateSkillLightsLeft
 						End If
@@ -2632,7 +2624,7 @@ if keycode = "7" Then RTP
 
 						rdown = 1
 						checkdown
-						If bSkillshotReady = False AND bSkillshotRotateLights Then  
+						If bSkillshotRotateLights Then  
 							'RotateLaneLightsRight
 							RotateSkillLightsRight
 						End If
@@ -3109,18 +3101,32 @@ End Sub
 		BallHandlingQueue.Add "FirstBall","FirstBall",30,1500,0,0,0,False
 
 	End Sub
+
 	Sub EndOfGame()
-		'StopAllMusic
+		StopAttractMode
 		DelayAttractText
+		DMDBigText "GAME OVER",3500,1
+		endofgametimer.enabled = 1
+	End Sub
+
+	Sub endofgametimer_Timer
+		endofgametimer.enabled = 0
+		EndOfGame2
+	End Sub
+
+	Sub EndOfGame2
+		'StopAllMusic
+'		DelayAttractText
 		StopScorbit
 		StartAttractMode
-		introposition = 0     '0
+		introposition = 5     '0  5= new attreact sequance
 		bGameInPLay = False
 		bJustStarted = False
 		Dim i
 		GiOff
-
 	End Sub
+
+
 	Dim hsDelayTextActive:hsDelayTextActive = False
 	Sub DelayAttractText
 		Dbg "In Delay Attract"
@@ -3194,8 +3200,9 @@ End Sub
 
 Sub resetbackglass
 	Loadhs
-	PuPlayer.LabelShowPage pBackglass,1,0,""
 	if PuPStatus = False Then Exit Sub
+	PuPlayer.LabelShowPage pBackglass,1,0,""
+	'if PuPStatus = False Then Exit Sub
 	PuPlayer.LabelNew pBackglass,"Smoke",1,		10,RGB(255, 255, 255)			,0,1,0 ,0,0    ,1,1
 	dim i
 	for i = 0 to 5
@@ -3321,25 +3328,25 @@ End Function
 Sub Loadhs
     Dim x
     x = LoadValue(cGameName, "HighScore1")
-    If(x <> "")Then HighScore(0) = CDbl(x)Else HighScore(0) = 2000000 End If
+    If IsNumeric(x) Then HighScore(0) = CDbl(x)Else HighScore(0) = 2000000 End If
     x = LoadValue(cGameName, "HighScore1Name")
     If(x <> "")Then HighScoreName(0) = x Else HighScoreName(0) = "ILL" End If
     x = LoadValue(cGameName, "HighScore2")
-    If(x <> "")then HighScore(1) = CDbl(x)Else HighScore(1) = 1500000 End If
+    If IsNumeric(x) Then HighScore(1) = CDbl(x)Else HighScore(1) = 1500000 End If
     x = LoadValue(cGameName, "HighScore2Name")
     If(x <> "")then HighScoreName(1) = x Else HighScoreName(1) = "RTP" End If
     x = LoadValue(cGameName, "HighScore3")
-    If(x <> "")then HighScore(2) = CDbl(x)Else HighScore(2) = 1000000 End If
+    If IsNumeric(x) Then HighScore(2) = CDbl(x)Else HighScore(2) = 1000000 End If
     x = LoadValue(cGameName, "HighScore3Name")
     If(x <> "")then HighScoreName(2) = x Else HighScoreName(2) = "IAK" End If
     x = LoadValue(cGameName, "HighScore4")
-    If(x <> "")then HighScore(3) = CDbl(x)Else HighScore(3) = 800000 End If
+    If IsNumeric(x) Then HighScore(3) = CDbl(x)Else HighScore(3) = 800000 End If
     x = LoadValue(cGameName, "HighScore4Name")
     If(x <> "")then HighScoreName(3) = x Else HighScoreName(3) = "RKP" End If
     x = LoadValue(cGameName, "Credits")
-    If(x <> "")then Credits = CInt(x)Else Credits = 0
+    If IsNumeric(x) Then Credits = CInt(x)Else Credits = 0 End If
     x = LoadValue(cGameName, "TotalGamesPlayed")
-    If(x <> "")then TotalGamesPlayed = CInt(x)Else TotalGamesPlayed = 0 End If
+    If IsNumeric(x) Then TotalGamesPlayed = CInt(x)Else TotalGamesPlayed = 0 End If
 
 
 End Sub
@@ -3543,6 +3550,7 @@ End Sub
 '  ATTRACT MODE
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 	Sub StartAttractMode()
+		Dbg "StartAttract"
 		Dim i
 		DOF 947, DOFOn   'DOF MX - Attract Mode ON
 		DOF 311, DOFOn   'MX-Undercab1
@@ -3601,9 +3609,9 @@ Sub SwitchMusic(sTrack)
 if Ubound(Songs) < 1 Then Exit Sub ' make sure there are music files to play
 Dbg "sTrack: " &sTrack
 
-	if bIdleMusicOn Then StopIdleSound ' make sure idle music is not playing
+	if bIdleMusicOn Then StopIdleSound:bIdleMusicOn = False ' make sure idle music is not playing
 
-	if sTrack<> "" Then
+	if sTrack <> "" Then
 		If sTrack <> sMusicTrack Then
 			if sMusicTrack <> "" Then EndMusic
 			sMusicTrack = Songs(sTrack)
@@ -3616,7 +3624,9 @@ Dbg "sTrack: " &sTrack
 End Sub
 
 Sub StopAllMusic
+	Dbg "Stopping all music: " &sMusicTrack
 	EndMusic
+	sMusicTrack = ""
 End Sub
 
 Dim newSong
@@ -3638,9 +3648,14 @@ Sub CheckNoMusicTimer_Timer()
 End Sub
 
 Sub RandomRestartMusicSelection
-	IF (bGameInPLay = True) AND (Tilted = False) AND (BallsOnPlayfield > 0) AND (LWarpMultiballCounter.state = 0) THEN
+	IF (bGameInPLay = True) AND (Tilted = False) AND (BallsOnPlayfield > 0) And LWarpMultiballCounter.state = 0 THEN
 		UpdateMusicNow		
 	END IF
+End Sub
+
+Sub Table1_MusicDone
+	Dbg "Music Done: " &sMusicTrack
+	RandomRestartMusicSelection
 End Sub
 
 
@@ -4182,22 +4197,6 @@ end sub
 
 	End Sub
 
-'	Sub StopIdleSound
-'		Select Case IdleCalloutIndex			
-'			Case 1:StopSound "fx308-idle"
-'			Case 2:StopSound "fx309-idle"
-'			Case 3:StopSound "fx310-idle"
-'			Case 4:StopSound "fx311-idle"
-'			Case 5:StopSound "fx312-idle"
-'			Case 6:StopSound "fx333-idle"
-'			Case 7:StopSound "fx334-idle"
-'			Case 8:StopSound "fx335-idle"
-'			Case 9:StopSound "fx336-idle"
-'			Case 10:StopSound "fx337-idle"
-'			Case 11:StopSound "fx338-idle"
-'			Case 12:StopSound "fx339-idle"
-'		End Select
-'	End Sub
 
 	Sub StopIdleSound
 		Dbg "Stopping Idle Tracks"	
@@ -4236,7 +4235,8 @@ end sub
 				   SoundPlungerShoot = 0
 		End Select
 		'turnitbackup
-		RandomRestartMusicSelection
+		'Dbg "Plunger Shoot, starting music"
+		'RandomRestartMusicSelection
 	End Sub
 		
 		Dim SoundKickout
@@ -9670,7 +9670,7 @@ End Sub
 			For each z in herbs
 			z.State = 0
 		Next
-		StopAllMusic
+		'StopAllMusic
 		'hsbModeActive = False ' Reset high score mode active
 		If PlayersPlayingGame > 1 Then
 			If CurrentPlayer = 1 Then
@@ -9725,7 +9725,7 @@ End Sub
 				DOF 942, DOFOn   'DOF MX	
 				DOF 971, DOFOn   'DOF MX - BACK	
 				'chilloutthemusic
-				StopAllMusic
+				'StopAllMusic
 				LSlime.state = 2
 			Elseif currentplayer = 4 Then
 				Player4Callout
@@ -9770,7 +9770,7 @@ End Sub
 		ResetNewBallVariables
 		bBallSaverReady = True
 		bSkillShotReady = True
-		bSkillshotRotateLights = False
+		bSkillshotRotateLights = True
 		bDoubleScoringActive = False       '
 		bWarpSpeedMultiballActive = False  '
 		bComboActive = False               '
@@ -10143,7 +10143,7 @@ End Sub
 		If bSkillShotReady Then
 			ResetSkillShotTimer.Enabled = 1
 			ScorbitClaimQR(False)
-			hideScorbit 'backup call to make sure all scorbit QR codes are gone
+			if ScorbitActive Then hideScorbit 'backup call to make sure all scorbit QR codes are gone
 		End If
 
 		bOnTheFirstBallScorbit = False
@@ -10246,25 +10246,67 @@ End Function
 		introposition = introposition + 1
 		Select Case introposition
 			Case 1
-	Dbg "In the DMD Loop"
+				DMDBigText "TOP SCORES",1500,0
+
+			Case 2
+				Dbg "In the DMD Loop"
 				PupEvent 736
 				'PupEvent 836
 				
 				' switchmusic attract bg1.mp3
-				DMDTopSplash HighScoreName(0),1000,0
+				DMDTopSplash HighScoreName(0),1000,1
 				DMDBigText formatscore(HighScore(0)),1000,0
-			Case 2
+			Case 3
 				DMDTopSplash HighScoreName(1),1000,0
 				DMDBigText formatscore(HighScore(1)),1000,0
-			Case 3
+			Case 4
    				DMDTopSplash HighScoreName(2),1000,0
 				DMDBigText formatscore(HighScore(2)),1000,0                   
-			Case 4
+			Case 5
 			'	PupEvent 737
 			'	PupEvent 837
    				DMDTopSplash HighScoreName(3),1000,0
 				DMDBigText formatscore(HighScore(3)),1000,0  
-			Case 5
+			Case 6
+  				DMDTopSplash "",500,0
+				if score(1) > 0 then
+					DMDBigText "GAME OVER",1500,1
+				Else
+					DMDBigText "MF DOOM",1500,1
+				End If
+			Case 7
+				if score(1) > 0 then
+					DMDTopSplash "PLAYER 1",2000,0
+					DMDBigText formatscore(Score(1)),2000,1
+				else
+					DMDintroloop   ' skip to next one
+				end if
+			Case 8
+				if score(2) > 0 then
+					DMDTopSplash "PLAYER 2",1000,0
+					DMDBigText formatscore(Score(2)),1000,0
+				else
+					DMDintroloop   ' skip to next one
+				end if
+			Case 9
+				if score(3) > 0 then
+					DMDTopSplash "PLAYER 3",1000,0
+					DMDBigText formatscore(Score(3)),1000,0
+				else
+					DMDintroloop   ' skip to next one
+				end if
+			Case 10
+				if score(4) > 0 then
+					DMDTopSplash "PLAYER 4",1000,0
+					DMDBigText formatscore(Score(4)),1000,0
+				else
+					DMDintroloop   ' skip to next one
+				end if
+
+			Case 11
+  				DMDTopSplash "",500,0
+				DMDBigText "",500,0  
+
 				FlasherAllBlinkOnce
 				introposition = 0 
 		End Select
@@ -10276,7 +10318,7 @@ End Function
 	Sub intromover_timer
 		introtime = introtime + 1
 		If introposition = 1 Then
-			If introtime = 34 Then  
+			If introtime = 18 Then  
 				DMDintroloop
 			End If
 		End If
@@ -10296,12 +10338,46 @@ End Function
 			End If
 		End If
 		If introposition = 5 Then
+			If introtime = 18 Then 
+				DMDintroloop
+			End If
+		End If
+		If introposition = 6 Then
+			If introtime = 9 Then 
+				DMDintroloop
+			End If
+		End If
+		If introposition = 7 Then
+			If introtime = 18 Then 
+				DMDintroloop
+			End If
+		End If
+		If introposition = 8 Then
+			If introtime = 9 Then 
+				DMDintroloop
+			End If
+		End If
+		If introposition = 9 Then
+			If introtime = 9 Then 
+				DMDintroloop
+			End If
+		End If
+
+		If introposition = 10 Then
+			If introtime = 9 Then 
+				DMDintroloop
+			End If
+		End If
+
+
+		If introposition = 11 Then
 			If introtime = 29 Then
 				DMDintroloop
 				introposition = 0
 			End If
 		End If
 	End Sub
+
 
 	Sub AttractModeGrandChampion
 			RandomSoundHighScores  
@@ -13623,6 +13699,7 @@ End Function
 
 ' Be sure to call RollingUpdate in a timer with a 10ms interval see the GameTimer_Timer() sub
 
+Dim rolling()
 ReDim rolling(tnob)
 InitRolling
 
@@ -14718,7 +14795,10 @@ End Sub
 
 Sub Table1_exit()
 	SaveLUT
-'	Controller.Stop
+	If B2SOn Then
+		Controller.Pause = False
+		Controller.Stop
+	End If
     If Not FlexDMD is Nothing Then
 		FlexDMD.Show = False
 		FlexDMD.Run = False
@@ -18084,9 +18164,17 @@ End Function
 
 Function mp3PathArray()
   Dim matchedFiles()
-  Dim rootPath:rootPath = MusicDirectory &"\MFDOOM"
-  Dim objFile,bMatch,curFile
-  
+  Dim objFile,bMatch,curFile,rootPath
+
+  On Error Resume Next ' degrade to empty playlist if music folder is missing/mis-cased
+  rootPath = MusicDirectory &"\MFDOOM"
+  If Err.Number <> 0 Or Len(rootPath) = 0 Then
+    Err.Clear
+    On Error Goto 0
+    mp3PathArray = matchedFiles ' empty array
+    Exit Function
+  End If
+
   Set re = New RegExp
   re.Global     = True
   re.IgnoreCase = False
@@ -18094,7 +18182,14 @@ Function mp3PathArray()
 
   Set fso = CreateObject("Scripting.FileSystemObject")
   set folder = fso.GetFolder(rootPath)
+  If Err.Number <> 0 Or folder Is Nothing Then
+    Err.Clear
+    On Error Goto 0
+    mp3PathArray = matchedFiles ' empty array
+    Exit Function
+  End If
   Set files = folder.Files
+  On Error Goto 0
 
   For Each objFile in files
     bMatch = re.Test(objFile.Name)
@@ -18180,7 +18275,7 @@ End Function
 Sub Scorbit_Paired()								' Scorbit callback when new machine is paired 
 dbg "Scorbit PAIRED"
 	PlaySound "scorbit_login"
-	hideScorbit
+	if ScorbitActive Then hideScorbit
 
 End Sub 
 
@@ -18206,7 +18301,7 @@ dbg "In ScorbitClaimQR: " &bShow					'  Show QRCode on first ball for users to c
 		'pbackglasslabelshow "ScorbitQR2"
 	Else 
 		dbg "Hiding QR claim"
-		hideScorbit
+		if ScorbitActive Then hideScorbit
 		'PuPlayer.LabelSet pBackglass, "ScorbitQR2", "PuPOverlays\\clear.png",0,""
 		'pupevent 800
 	End if 

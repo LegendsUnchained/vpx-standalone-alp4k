@@ -1,0 +1,19 @@
+---
+diffChecksum: "38F3A684F72BBA28E569B1F42D1A3046"
+diffVPSId: "sylh_KSyXO"
+fps: 60
+pupArchiveFormat: "zip"
+pupArchiveRoot: "pizzatime"
+pupBundled: true
+pupChecksum: "FCC2DC2664315817208BFCA7E6A76ECE"
+pupNotes: "Pup is in pt65.rar with the table"
+pupRequired: true
+pupVersion: "pizzatime"
+tableNotes: "Scroll down to Pizza Time, Click on either the MEGA or Torrent link."
+tableVPSId: "lVAa60DK"
+testers:
+  - "Wraith"
+  - "Ominous Osie"
+vpxChecksum: "8F72419005AB4E4778025813A6ACE60E"
+vpxVPSId: "Vzt5icUh"
+vpxMagic: "Y3J1c3R3aW5z"

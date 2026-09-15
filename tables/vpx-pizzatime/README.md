@@ -1,6 +1,6 @@
-# MF Doom (Original 2024)
+# Pizza Time (Original 2020)
 
-![Table Preview](../../images/Ug53LOj8gf-preview.webp)
+![Table Preview](../../images/Vzt5icUh-preview.webp)
 
 <br>
 
@@ -14,8 +14,7 @@
 
 **VPXS 4KP Testers:**
   - Wraith
-  - Bla1ze
-  - dr_wraith
+  - Ominous Osie
 
 <br>
 
@@ -34,7 +33,7 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`MF Doom (Original 2024)`**
+4.  Find and select this table from the dropdown menu: **`Pizza Time (Original 2020)`**
 5.  Follow the on-screen instructions to download and upload the required files
 6. *""*
 
