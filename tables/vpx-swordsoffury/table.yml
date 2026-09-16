@@ -2,8 +2,8 @@
 altSoundArchiveFormat: "rar"
 altSoundChecksum: "D6F6651C163F39B4B939387D49408B0E"
 altSoundVPSId: "sdWxghw133"
-backglassChecksum: "27E6130A069440011CB7E99C4A5AEEC2"
-backglassVPSId: "0Vq3rTMzf3"
+backglassChecksum: "2F6E31B039FC541480694745AFBE99C1"
+backglassVPSId: "-aFNC2u7Mh"
 fps: 60
 romChecksum: "E427CF6DD232A791191AC94E583688BC"
 romVPSId: "hvdHQU4KIB"
@@ -11,6 +11,5 @@ tableNotes: "Download '281452208_SwordsofFury(Williams1988)1.0.1.zip'"
 tableVPSId: "UQ6dnKLa"
 testers:
   - "Wraith"
-  - "Kaoticbpr"
 vpxChecksum: "B2A1764823FA3FEE7184AD42DA99F916"
 vpxVPSId: "T0IHdM4dhw"
