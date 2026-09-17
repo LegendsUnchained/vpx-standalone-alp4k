@@ -1,0 +1,75 @@
+[
+  {
+    "vendor": "Kingston",
+    "model": "DataTraveler Max",
+    "purchase_links": [
+      {
+        "title": "Kingston DataTraveler Max 256GB",
+        "link": "https://amzn.to/42Ygu1k"
+      },
+      {
+        "title": "Kingston DataTraveler Max 512GB",
+        "link": "https://amzn.to/3ECtzFi"
+      }
+    ]
+  },
+  {
+    "vendor": "Samsung",
+    "model": "Flash Drive FIT",
+    "purchase_links": [
+      {
+        "title": "Samsung FIT 256GB Flash Drive",
+        "link": "https://amzn.to/3ymA382"
+      },
+      {
+        "title": "Samsung FIT 512GB Flash Drive",
+        "link": "https://amzn.to/46uLC9M"
+      }
+    ]
+  },
+  {
+    "vendor": "Samsung",
+    "model": "PSSD T7",
+    "purchase_links": [
+      {
+        "title": "Samsung T7 Portable SSD 1TB",
+        "link": "https://link.amazon/B0d79pJsV"
+      },
+      {
+        "title": "Samsung T7 Portable SSD 2TB",
+        "link": "https://link.amazon/B0gbctq0L"
+      }
+    ],
+    "id": {
+      "vid": "04e8",
+      "pid": "4001"
+    }
+  },
+  {
+    "vendor": "SP",
+    "model": "DS72",
+    "purchase_links": []
+  },
+  {
+    "vendor": "General",
+    "model": "USB Flash Disk",
+    "purchase_links": [
+      {
+        "title": "Amazon Basics 128GB USB Flash Drive",
+        "link": "https://amzn.to/4w0KmX0"
+      },
+      {
+        "title": "Amazon Basics 256GB USB Flash Drive",
+        "link": "https://amzn.to/4pPivYq"
+      },
+      {
+        "title": "Amazon Basics 512GB USB Flash Drive",
+        "link": "https://amzn.to/4bqSrgn"
+      }
+    ],
+    "id": {
+      "vid": "21c4",
+      "pid": "3000"
+    }
+  }
+]

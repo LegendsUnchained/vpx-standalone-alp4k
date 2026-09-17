@@ -138,6 +138,11 @@ Links to these products on Amazon are through affiliate links.
 - [Samsung FIT 256GB Flash Drive](https://amzn.to/3ymA382)
 - [Samsung FIT 512GB Flash Drive](https://amzn.to/46uLC9M)
 
+#### Portable SSDs
+
+- [Samsung T7 Portable SSD 1TB](https://link.amazon/B0d79pJsV)
+- [Samsung T7 Portable SSD 2TB](https://link.amazon/B0gbctq0L)
+
 #### Keyboards
 - [Rii RK707 Keyboard/Game Controller](https://amzn.to/4fqC1oC)
 - [Rii Mini](https://amzn.to/40iwZE7)
