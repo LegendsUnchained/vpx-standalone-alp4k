@@ -1,0 +1,21 @@
+---
+backglassChecksum: "5B46F4461952FAFF2B18C0447208CA10"
+backglassNotes: "download v2.0"
+backglassVPSId: "Ps52rbUR"
+diffAuthorsOverride:
+  - "baberim"
+diffChecksum: "F507A1EAD8E2CC47453877EB98A3EF24"
+diffNotes: "download v1.0.0"
+diffUrlOverride: "https://vpuniverse.com/files/file/24345-transporter-the-rescue-bally-1989-sideblade-mod/"
+diffVersionOverride: "v1.0.0"
+fps: 60
+romChecksum: "7547AFA874F381FB07DBB3E632156C1F"
+romVPSId: "3p0IO7DD"
+tableNotes: "download v1.05"
+tableVPSId: "84mCc7bc"
+testers:
+  - "PBW23"
+  - "Bla1ze"
+  - "pointdablame"
+vpxChecksum: "920F2B15FF6CD040B4E6B684BEA05619"
+vpxVPSId: "K5y6-Rv_"
