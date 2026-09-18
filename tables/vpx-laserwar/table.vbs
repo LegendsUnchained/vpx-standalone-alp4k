@@ -890,7 +890,10 @@ End Sub
 ' ****************************************************
 ' rotating spinner
 ' ****************************************************
+Dim LastSpin27, LastSpin51 : LastSpin27 = -999 : LastSpin51 = -999
 Sub SpinnerTimer()
+	If sw27.CurrentAngle = LastSpin27 And sw51.CurrentAngle = LastSpin51 Then Exit Sub
+	LastSpin27 = sw27.CurrentAngle : LastSpin51 = sw51.CurrentAngle
 	pSpinner27.RotX 		= 360 - sw27.CurrentAngle
     pSpinnerRod27.TransZ 	= -Sin(sw27.CurrentAngle * 2 * 3.14 / 360) * 5
     pSpinnerRod27.TransX 	= Sin((sw27.CurrentAngle - 90) * 2 * 3.14 / 360) * -5
@@ -1414,18 +1417,22 @@ Sub SolGI(IsOff)
 		If isGIOn Then
 			' GI goes on
 			gilvl = 1
+			If VR_Room = 1 Then
 			PinCab_Backglass.image="backglassimagelit"
 			PinCab_Backglass.blenddisablelighting = .8
 			PinCab_DMD.blenddisablelighting = .8
+			End If
 			Sound_GI_Relay 1, Relay_GI
 			GIDir = 1 : GITimer_Timer
 			DOF 101, DOFOn
 		Else
 			' GI goes off
 			gilvl = 0
+			If VR_Room = 1 Then
 			PinCab_Backglass.image="backglassimage"
 			PinCab_Backglass.blenddisablelighting = .3
 			PinCab_DMD.blenddisablelighting = .1
+			End If
 			Sound_GI_Relay 0, Relay_GI
 			GIDir = -1 : GITimer_Timer
 			DOF 101, DOFOff
@@ -1435,6 +1442,7 @@ End Sub
 
 Sub GITimer_Timer()
 	If Not GITimer.Enabled Then GITimer.Enabled = True
+	If PerfFastGI = 1 Then GIStep = 2 + GIDir	'jump straight to fully on/off (one update instead of 4)
 	GIStep = GIStep + GIDir
 	' set opacity of the shadow overlays and overhead GI illumination
 	SetShadowOpacityAndGIOverhead
@@ -4239,8 +4247,11 @@ End Sub
 '******************************************************
 const BallBrightMax = 255			'Brightness setting when GI is on (max of 255). Only applies for Normal ball.
 const BallBrightMin = 100			'Brightness setting when GI is off (don't set above the max). Only applies for Normal ball.
+Dim LastBBGI : LastBBGI = -1
 Sub UpdateBallBrightness
 	Dim b, brightness
+	If bbgi = LastBBGI Then Exit Sub
+	LastBBGI = bbgi
 	For b = 0 to UBound(gBOT)
 		if bbgi = 0 Then
 			gBOT(b).color = BallBrightMin + (BallBrightMin * 256) + (BallBrightMin * 256 * 256)
@@ -4406,7 +4417,7 @@ End Sub
 Sub RotateFlasher(nr, angle) : angle = ((angle + 360 - objbase(nr).ObjRotZ) mod 180)/30 : objbase(nr).showframe(angle) : objlit(nr).showframe(angle) : End Sub
 
 Sub FlashFlasher(nr)
-	If not objflasher(nr).TimerEnabled Then objflasher(nr).TimerEnabled = True : objflasher(nr).visible = 1 : objbloom(nr).visible = 1 : objlit(nr).visible = 1 : End If
+	If not objflasher(nr).TimerEnabled Then objflasher(nr).TimerEnabled = True : objflasher(nr).visible = 1 : objbloom(nr).visible = (PerfHideFlasherBloom = 0) : objlit(nr).visible = 1 : End If
 	objflasher(nr).opacity = 1000 *  FlasherFlareIntensity * ObjLevel(nr)^2.5
 	objbloom(nr).opacity = 100 *  FlasherBloomIntensity * ObjLevel(nr)^2.5
 	objlight(nr).IntensityScale = 0.5 * FlasherLightIntensity * ObjLevel(nr)^3
@@ -4970,3 +4981,53 @@ End Function
 
 
 
+
+'******************************************************
+'  ALP 4KP PERFORMANCE OPTIONS (VPX Standalone on AtGames Legends Pinball 4KP)
+'  Added on top of the Legends Unchained config. Every option hides
+'  or throttles something; set an option to 0 to restore the original.
+'******************************************************
+
+Const PerfHideUnusedGIColor = 1	'1 = hide red/yellow/blue overhead GI flashers when GIColorMod = 0 (they are drawn at 0 intensity anyway; no visual change)
+Const PerfHideInsertHalos   = 1	'1 = hide the second, larger halo light on each insert (l3a..l64a, radius 80); 0 = original
+Const PerfTowerLightStep    = 2	'Laser tower lights (22 large lights per color): 1 = all (original), 2 = every 2nd, 3 = every 3rd
+Const PerfHideGIOverhead    = 0	'1 = hide the full-table overhead GI glow flasher
+Const PerfHideGIShadowMaps  = 0	'1 = hide the full-table GI on/off shadow overlays (fGIOn/fGIOff)
+Const PerfHideFlasherBloom  = 1	'1 = no full-table glow when the flasher domes fire (domes still flash). 0 = original
+Const PerfFastGI            = 1	'1 = GI switches on/off instantly (1 material update instead of a 4-step fade). 0 = original fade
+Const PerfFlipperTimerMs    = 1	'nFozzy flipper tricks timer. 1 = original. 5 or 10 = much less script work, slightly changes live catch / EOS feel
+
+Sub PerfHide(objName)
+	On Error Resume Next
+	Dim o : Set o = Eval(objName)
+	If Err.Number = 0 Then o.Visible = False
+	Err.Clear
+End Sub
+
+Sub ApplyPerfOptions()
+	Dim i, obj, coll
+	If PerfHideUnusedGIColor = 1 And GIColorMod = 0 Then
+		PerfHide "GIOverheadRed" : PerfHide "GIOverheadYellow" : PerfHide "GIOverheadBlue"
+	End If
+	If PerfHideInsertHalos = 1 Then
+		For i = 1 To 64
+			If i < 8 Or i > 11 Then PerfHide "l" & i & "a"
+		Next
+	End If
+	If PerfTowerLightStep > 1 Then
+		On Error Resume Next
+		For Each coll In Array(GIRedTowerLights, GIYellowTowerLights, GIBlueTowerLights, GIWhiteTowerLights)
+			i = 0
+			For Each obj In coll
+				If (i Mod PerfTowerLightStep) <> 0 Then obj.Visible = False
+				i = i + 1
+			Next
+		Next
+		On Error Goto 0
+	End If
+	If PerfHideGIOverhead = 1 Then PerfHide "GIOverhead"
+	If PerfHideGIShadowMaps = 1 Then PerfHide "fGIOn" : PerfHide "fGIOff"
+	If PerfFlipperTimerMs > 1 Then RightFlipper.TimerInterval = PerfFlipperTimerMs
+End Sub
+
+ApplyPerfOptions
