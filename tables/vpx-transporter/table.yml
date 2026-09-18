@@ -1,7 +1,7 @@
 ---
 backglassChecksum: "5B46F4461952FAFF2B18C0447208CA10"
 backglassNotes: "download v2.0"
-backglassVPSId: "Ps52rbUR"
+backglassVPSId: "pbSg14kDXR"
 diffAuthorsOverride:
   - "baberim"
 diffChecksum: "F507A1EAD8E2CC47453877EB98A3EF24"
@@ -17,5 +17,6 @@ testers:
   - "PBW23"
   - "Bla1ze"
   - "pointdablame"
+  - "Missile Toad"
 vpxChecksum: "920F2B15FF6CD040B4E6B684BEA05619"
 vpxVPSId: "K5y6-Rv_"
