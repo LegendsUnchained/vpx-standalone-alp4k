@@ -1,5 +1,5 @@
 {
-  "minWriteMBps": 20,
+  "minWriteMBps": 15,
   "drives": [
     {
       "vendor": "Kingston",
