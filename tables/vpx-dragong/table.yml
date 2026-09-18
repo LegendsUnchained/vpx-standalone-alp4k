@@ -1,16 +1,18 @@
 ---
 backglassChecksum: "2BDAFA1F3289A0D353208B3E6E92A545"
+backglassNotes: "Download Dragon (Gottlieb 1978).directb2s"
 backglassVPSId: "fMx08pkxjV"
 fps: 60
-romNotes: "Download dragon.zip"
 romChecksum: "D631076325A51E518A14F4510772BEBB"
+romNotes: "Download dragon.zip"
 romUrlOverride: "https://vpuniverse.com/files/file/1698-dragon/"
 romVersionOverride: "dragon"
-tagline: "*Startling* Beauty AND The Beast Graphics!"
+tableNotes: "Download Dragon(Gottleib1978)-NFozzy-FleepVR-Hybrid-V1.0.4"
 tableVPSId: "XPpvhsC3"
+tagline: "*Startling* Beauty AND The Beast Graphics!"
 testers:
   - "Wraith"
   - "Curt"
   - "Coffee Joe"
-vpxChecksum: "EF20EA154457E2FB6D5C54FA33100326"
-vpxVPSId: "CCGbRcqwTx"
+vpxChecksum: "8DFADCE5DC6B024215D0F2FBEC2A0F4E"
+vpxVPSId: "xBKn_3pP0d"
