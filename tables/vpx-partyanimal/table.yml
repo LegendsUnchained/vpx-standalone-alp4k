@@ -1,0 +1,17 @@
+---
+backglassChecksum: "C004788D8FAD1B6E46FA9E3A3311ECC1"
+backglassNotes: "v1.0.0"
+backglassVPSId: "u-LB5Mqsze"
+fps: 60
+romChecksum: "E188D85BA065D265F4CF8060B640F882"
+romNotes: "prtyanim.zip"
+romVPSId: "AsvKV38S"
+tableNotes: "v1.0.0"
+tableVPSId: "CTN4RRLC"
+testers:
+  - "PBW23"
+  - "Wraith"
+  - "Missile Toad"
+  - "mcap"
+vpxChecksum: "843B23A802997D2193F9F7BF72D72592"
+vpxVPSId: "mO_nz3db"
