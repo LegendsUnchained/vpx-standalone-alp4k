@@ -1,0 +1,17 @@
+---
+backglassChecksum: "4DD601FFC3E126E87F5A5A9F64EF2136"
+backglassNotes: "1.0.0"
+backglassVPSId: "y4AbNuizor"
+fps: 60
+specialDMDArchiveRoot: "Sonic.UltraDMD"
+specialDMDBundled: true
+specialDMDType: "UltraDMD"
+tableNotes: "v1.33"
+tableVPSId: "ojcmHOaZ"
+testers:
+  - "PBW23"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "F4FBF7C1B5826CBE07A28FD96DAE03EE"
+  - "2D5B6D594262C646E40B8E956E3C75A1"
+vpxVPSId: "TYVVL51gSe"
