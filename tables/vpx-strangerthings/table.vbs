@@ -46,8 +46,21 @@
 Option Explicit
 Randomize
 
+'****************************************************************
+'	VR
+'****************************************************************
+'///////////////////////---- VR Room ----////////////////////////
+Dim VRRoomChoice : VRRoomChoice = 0					'0 - VR Room Off, 1 - Minimal Room, 2 - Hallway, 3 - Mall, 4 - ByersHouse
+Dim VRTest : VRTest = True
 
-
+'///////////////////////-----General Sound Options-----///////////////////////
+'// VolumeDial:
+'// VolumeDial is the actual global volume multiplier for the mechanical sounds.
+'// Values smaller than 1 will decrease mechanical sounds volume.
+'// Recommended values should be no greater than 1.
+Dim VolumeDial : VolumeDial = 0.8           	' Overall Mechanical sound effect volume. Recommended values should be no greater than 1.
+Dim BallRollVolume : BallRollVolume = 0.5   	' Level of ball rolling volume. Value between 0 and 1
+Dim RampRollVolume : RampRollVolume = 0.5 		' Level of ramp rolling volume. Value between 0 and 1
 
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ' X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  
@@ -64,12 +77,12 @@ Randomize
 
 	Dim osbactive:osbactive = 0 'set to 0 for off, 1 for only player 1 to be sent, 2 for all scores to be sent.
 	Dim osbid:osbid ="" ' your orbital scoreboard login name
-	Dim osbkey:osbkey="" ' your orbital scoreboard api key
+	Dim osbkey:osbkey="enter your key" ' your orbital scoreboard api key
 	Dim osbdefinit:osbdefinit = "" ' your default initials to use 
 	Rockmusic = 1 'change this to 1 to switch out the background music with 80s rock/pop songs from the show
-	soundtrackvol = 50 'Set the background audio volume to whatever you'd like out of 100
+	soundtrackvol = 80 'Set the background audio volume to whatever you'd like out of 100
 	videovol = 100 'set the volme you'd like for the videos
-	calloutvol = 100 ' set this to whatever you're like your callouts to be
+	calloutvol = 80 ' set this to whatever you're like your callouts to be
 	calloutlowermusicvol = 1 'set to 1 if you want music volume lowered during audio callouts
 	turnoffrules = 0 ' change to 1 to take off the backglass helper rules text during a game
 	turnonultradmd = 1 ' change to 1 to turn on ultradmd, 2 to turn on ultradmd expiramental (only works if pc region set to USA)
@@ -92,7 +105,8 @@ Randomize
 ' X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  
 ' 
 	'Constructions
-	Const BallSize = 50
+	Const BallSize = 50		'Ball size must be 50
+    Const BallMass = 1		'Ball mass must be 1
 	Const cGameName = "STLE"
 	Const TableName = "STLE"
 	Const myVersion = "1.47"
@@ -138,6 +152,7 @@ Randomize
 	Dim bInstantInfo
 	Dim bromconfig
 	Dim bAttractMode
+	Dim BIPL
 
 	Const typefont = "ITC Avant Garde Gothic LT Bold"
 	Const numberfont = "ITC Avant Garde Gothic LT Bold"
@@ -162,6 +177,10 @@ Randomize
 	Dim bJustStarted
 
 	Dim plungerIM 
+
+Dim BallHandlingQueue : Set BallHandlingQueue = New vpwQueueManager
+Dim xmasQueue : Set xmasQueue = New vpwQueueManager
+Dim GeneralPupQueue: Set GeneralPupQueue = New vpwQueueManager
 
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ' X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  
@@ -218,7 +237,7 @@ Randomize
 
 		worldscores = objXmlHttpMain.responseText
 		vpmtimer.addtimer 3000, "showsuccess '"
-		'debug.print "got the scores"
+		debug.print "got the scores"
 		'debug.print worldscores
 		splitscores
 	End Sub	
@@ -273,7 +292,7 @@ Randomize
 					dailyvar(MyNum) = 0
 				end if
 			end if
-			'debug.print "dailyvar(" &MyNum & ")=" & x
+			debug.print "dailyvar(" &MyNum & ")=" & x
 		Next
 
 ' weekly scores
@@ -300,7 +319,7 @@ Randomize
 					weeklyvar(MyNum) = 0
 				end if
 			end if
-			'debug.print "weeklyvar(" &MyNum & ")=" & x
+			debug.print "weeklyvar(" &MyNum & ")=" & x
 		Next
 
 ' alltime scores
@@ -327,7 +346,7 @@ Randomize
 					alltimevar(MyNum) = "0"
 				end if
 			end if
-			'debug.print "alltimevar(" &MyNum & ")=" & x
+			debug.print "alltimevar(" &MyNum & ")=" & x
 		Next
 
 	end Sub
@@ -452,16 +471,102 @@ Randomize
 		On Error Goto 0
 	End Sub
 
-	'********************
-	' MATHS
-	'********************
 
-	Function RndNum(min,max)
-	 RndNum = Int(Rnd()*(max-min+1))+min     ' Sets a random number between min AND max
-	End Function
+Dim SidewallChoice: SidewallChoice = 0
+Dim RailChoice: RailChoice = 0
+Dim GuitarChoice: GuitarChoice = True
+'//////////////F12 Menu//////////////
+' Called when options are tweaked by the player. 
+' - 0: game has started, good time to load options and adjust accordingly
+' - 1: an option has changed
+' - 2: options have been reseted
+' - 3: player closed the tweak UI, good time to update staticly prerendered parts
+' Table1.Option arguments are: 
+' - option name, minimum value, maximum value, step between valid values, default value, unit (0=None, 1=Percent), an optional arry of literal strings
+Dim dspTriggered : dspTriggered = False
+Sub Table1_OptionEvent(ByVal eventId)
+	If eventId = 1 And Not dspTriggered Then dspTriggered = True : DisableStaticPreRendering = True : End If
+
+    ' VRRoom
+	VRRoomChoice = Table1.Option("VR Room", 0, 4, 1, 4, 0, Array("Off", "Minimal Room", "Hallway", "Mall", "VR_ByersHouse"))
+	LoadVRRoom
+
+    ' Sound volumes
+    VolumeDial = Table1.Option("Mech Volume", 0, 1, 0.01, 0.8, 1)
+    BallRollVolume = Table1.Option("Ball Roll Volume", 0, 1, 0.01, 0.5, 1)
+	RampRollVolume = Table1.Option("Ramp Roll Volume", 0, 1, 0.01, 0.9, 1)
+
+	
+    RailChoice = Table1.Option("Desktop Options", 0, 2, 1, 0, 0, Array("OffCab", "Desktop1", "Desktop2"))
+	SetRails RailChoice
+
+	SidewallChoice = Table1.Option("Cabinet Options", 0, 2, 1, 0, 0, Array("Desktop", "PinCab1", "PinCab2"))
+	SetSidewall SidewallChoice
+
+    If eventId = 3 And dspTriggered Then dspTriggered = False : DisableStaticPreRendering = False : End If
+	
+    GuitarChoice = Table1.Option("Guitar Visible", 0, 1, 1, 1, 0, Array("False", "True"))
+	SetGuitar GuitarChoice
+End Sub
+
+Sub SetRails(Opt)
+	Select Case Opt
+		Case 0:
+			Ramp41.Visible = 0
+			Ramp42.Visible = 0
+			RightCab.visible= 0
+            LeftCab.visible= 0
+		Case 1:
+			Ramp41.Visible = 1
+			Ramp42.Visible = 1
+			RightCab.visible= 1
+            LeftCab.visible= 1
+            RightCab.image = "sidecabR"
+            LeftCab.image = "sidecabL"
+        Case 2:
+			Ramp41.Visible = 1
+			Ramp42.Visible = 1
+			RightCab.visible= 1
+            LeftCab.visible= 1
+            RightCab.image = "sidecabR2"
+            LeftCab.image = "sidecabL2"
+	End Select
+End Sub
 
 
+Sub SetSidewall(Opt)
+	Select Case Opt
+		Case 0:
+			Wall001.sidevisible = 0
+			Wall002.sidevisible = 0
+			Wall013.sidevisible = 0
+			Wall014.sidevisible = 0
+		Case 1:
+			Wall001.sidevisible = 1
+			Wall002.sidevisible = 1
+            Wall013.sidevisible = 0
+			Wall014.sidevisible = 0
+			Wall001.Image = "blader"
+			Wall002.Image = "bladel"
+		Case 2:
+            Wall001.sidevisible = 0
+			Wall002.sidevisible = 0
+			Wall013.sidevisible = 1
+			Wall014.sidevisible = 1
+			Wall013.Image = "blader_2"
+			Wall014.Image = "bladel_2"
+	End Select
+End Sub
 
+Sub SetGuitar(Opt)
+	Select Case Opt
+		Case 0:
+			Guitar.Visible = 0
+			
+		Case 1:
+			Guitar.Visible = 1
+	End Select
+End Sub
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ' X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  
 '/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/
@@ -656,16 +761,33 @@ Sub LoadController(TableType)
 	B2SOnALT = False
 	tempC = 0
 	on error resume next
-	tempC = 0 ' objShell.RegRead(directory & "ForceDisableB2S")
-	DOFeffects(1)=2 ' objShell.RegRead(directory & "DOFContactors")
-	DOFeffects(2)=2 ' objShell.RegRead(directory & "DOFKnocker")
-	DOFeffects(3)=2 ' objShell.RegRead(directory & "DOFChimes")
-	DOFeffects(4)=2 ' objShell.RegRead(directory & "DOFBell")
-	DOFeffects(5)=2 ' objShell.RegRead(directory & "DOFGear")
-	DOFeffects(6)=2 ' objShell.RegRead(directory & "DOFShaker")
-	DOFeffects(7)=2 ' objShell.RegRead(directory & "DOFFlippers")
-	DOFeffects(8)=2 ' objShell.RegRead(directory & "DOFTargets")
-	DOFeffects(9)=2 ' objShell.RegRead(directory & "DOFDropTargets")
+	Set objShell = CreateObject("WScript.Shell")
+	objShell.RegRead(directory & "ForceDisableB2S")
+	If Err.number <> 0 Then
+		PopupMessage = "This latest version of Controller.vbs stores its settings in the registry. To adjust the values, you must use VP 10.2 (or newer) and setup your configuration in the DOF section of the -Keys, Nudge and DOF- dialog of Visual Pinball."
+		objShell.RegWrite directory & "ForceDisableB2S",0, "REG_DWORD"
+		objShell.RegWrite directory & "DOFContactors",2, "REG_DWORD"
+		objShell.RegWrite directory & "DOFKnocker",2, "REG_DWORD"
+		objShell.RegWrite directory & "DOFChimes",2, "REG_DWORD"
+		objShell.RegWrite directory & "DOFBell",2, "REG_DWORD"
+		objShell.RegWrite directory & "DOFGear",2, "REG_DWORD"
+		objShell.RegWrite directory & "DOFShaker",2, "REG_DWORD"
+		objShell.RegWrite directory & "DOFFlippers",2, "REG_DWORD"
+		objShell.RegWrite directory & "DOFTargets",2, "REG_DWORD"
+		objShell.RegWrite directory & "DOFDropTargets",2, "REG_DWORD"
+		MsgBox PopupMessage
+	End If
+	tempC = objShell.RegRead(directory & "ForceDisableB2S")
+	DOFeffects(1)=objShell.RegRead(directory & "DOFContactors")
+	DOFeffects(2)=objShell.RegRead(directory & "DOFKnocker")
+	DOFeffects(3)=objShell.RegRead(directory & "DOFChimes")
+	DOFeffects(4)=objShell.RegRead(directory & "DOFBell")
+	DOFeffects(5)=objShell.RegRead(directory & "DOFGear")
+	DOFeffects(6)=objShell.RegRead(directory & "DOFShaker")
+	DOFeffects(7)=objShell.RegRead(directory & "DOFFlippers")
+	DOFeffects(8)=objShell.RegRead(directory & "DOFTargets")
+	DOFeffects(9)=objShell.RegRead(directory & "DOFDropTargets")
+	Set objShell = nothing
 
 	If TableType = "PROC" or TableType = "VPMALT" Then
 		If TableType = "PROC" Then
@@ -788,6 +910,17 @@ Sub DOFALT(DOFevent, State)
 	End If
 End Sub
 
+Sub WallsDown
+	Debugwallleft.isdropped = True
+	Debugwallright001.isdropped = True
+	Debugwallcenter.isdropped = True
+End Sub
+
+Sub WallsUp
+	Debugwallleft.isdropped = False
+	Debugwallright001.isdropped = False
+	Debugwallcenter.isdropped = False
+End Sub
 
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ' X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  
@@ -805,110 +938,104 @@ End Sub
 
 	Sub Table1_KeyDown(ByVal Keycode)
 
-	If ballrolleron = 1 then
-		if keycode = 46 then ' C Key
-			 If contball = 1 Then
-				  contball = 0
-			 Else
-				  contball = 1
-			 End If
-		End If
-	End If
-	if keycode = 48 then 'B Key
-		 If bcboost = 1 Then
-			  bcboost = bcboostmulti
-		 Else
-			  bcboost = 1
-		 End If
-	End If
-	if keycode = 203 then bcleft = 1 ' Left Arrow
-	if keycode = 200 then bcup = 1 ' Up Arrow
-	if keycode = 208 then bcdown = 1 ' Down Arrow
-	if keycode = 205 then bcright = 1 ' Right Arrow
 
+	'if keycode = "3" Then WallsDown
+	'if keycode = "8" Then wallsUp
 
-		If keycode = PlungerKey Then
-			PlaySoundAt "fx_plungerpull", Plunger
-			Plunger.Pullback
-		End If
+	If keycode = LeftFlipperKey Then
+		If VRRoom > 0 Then PinCab_Flipper_Button_Left.X = PinCab_Flipper_Button_Left.X + 10
+	End If
+
+	If keycode = RightFlipperKey Then
+		If VRRoom > 0 Then PinCab_Flipper_Button_Right.X = PinCab_Flipper_Button_Right.X - 10
+	End If
+
+		If KeyCode = PlungerKey Then Plunger.Pullback:SoundPlungerPull()
 
 		If hsbModeActive = True Then
 			EnterHighScoreKey(keycode)
 		elseif bGameInPlay Then
 
 			If inhighscore = False Then
-			If keycode = LeftTiltKey Then Nudge 90, 6:PlaySound SoundFX("fx_nudge",0), 0, 1, -0.1, 0.25:CheckTilt
-			If keycode = RightTiltKey Then Nudge 270, 6:PlaySound SoundFX("fx_nudge",0), 0, 1, 0.1, 0.25:CheckTilt
-			If keycode = CenterTiltKey Then Nudge 0, 7:PlaySound SoundFX("fx_nudge",0), 0, 1, 1, 0.25:CheckTilt
+				If keycode = LeftTiltKey Then Nudge 90, 5:SoundNudgeLeft():CheckTilt
+				If keycode = RightTiltKey Then Nudge 270, 5:SoundNudgeRight():CheckTilt
+				If keycode = CenterTiltKey Then Nudge 0, 3:SoundNudgeCenter():CheckTilt
 			End If
-			If NOT Tilted Then
-			If keycode = LeftFlipperKey Then SolLFlipper 1:SolULFlipper 1:ldown = 1:checkdown
-			If keycode = RightFlipperKey Then SolRFlipper 1:SolURFlipper 1:rdown = 1:checkdown
 
-			If keycode = StartGameKey Then
-				If((PlayersPlayingGame <MaxPlayers) AND(bOnTheFirstBall = True) ) Then
-						PlayersPlayingGame = PlayersPlayingGame + 1
-						PuPlayer.playlistplayex pCallouts,"audiocallouts","player1.wav",80,1
-		chilloutthemusic
-						If PlayersPlayingGame = 2 Then
-							PuPlayer.LabelSet pBackglass,"Play2","PLAYER 2",1,"{'mt':2,'color':16777215, 'size': 1.5, 'xpos': 93.3, 'xalign': 0}"
-							pUpdateScores
-						PuPlayer.playlistplayex pCallouts,"audiocallouts","player2.wav",80,1
-		chilloutthemusic
-						End If
-						If PlayersPlayingGame = 3 Then
-							PuPlayer.LabelSet pBackglass,"Play3","PLAYER 3",1,"{'mt':2,'color':16777215, 'size': 1.5, 'xpos': 93.3, 'xalign': 0}"
-							pUpdateScores
-						PuPlayer.playlistplayex pCallouts,"audiocallouts","player3.wav",80,1
-		chilloutthemusic
-						End If
-						If PlayersPlayingGame = 4 Then
-							PuPlayer.LabelSet pBackglass,"Play4","PLAYER 4",1,"{'mt':2,'color':16777215, 'size': 1.5, 'xpos': 93.3, 'xalign': 0}"
-							pUpdateScores	
-						PuPlayer.playlistplayex pCallouts,"audiocallouts","player4.wav",80,1
-		chilloutthemusic
-						End If
-						TotalGamesPlayed = TotalGamesPlayed + 1
-						savegp
-						DMDFlush
-						DMD "black.png", " ", PlayersPlayingGame & " PLAYERS",  500
-						PlaySound "so_fanfare1"
-				End If
-			End If
-			End If
-			Else
-			If NOT Tilted Then
-	 ' If (GameInPlay)
-					'If keycode = RightFlipperKey Then 'DMDFlush
-				If keycode = LeftFlipperKey Then SolLFlipper 0:SolULFlipper 0:helptime.enabled = true:DMDintroloop:introtime = 0
-				If keycode = RightFlipperKey Then SolRFlipper 0:SolURFlipper 0:helptime.enabled = true:DMDintroloop:introtime = 0
+				If NOT Tilted Then
+					If keycode = LeftFlipperKey Then SolLFlipper 1:SolULFlipper 1:ldown = 1:checkdown
+					If keycode = RightFlipperKey Then SolRFlipper 1:SolURFlipper 1:rdown = 1:checkdown
+
 					If keycode = StartGameKey Then
-							If(BallsOnPlayfield = 0) Then
-								ResetForNewGame()
+							If((PlayersPlayingGame <MaxPlayers) AND(bOnTheFirstBall = True) ) Then
+									PlayersPlayingGame = PlayersPlayingGame + 1
+									PuPlayer.playlistplayex pCallouts,"audiocallouts","player1.wav",80,1
+									chilloutthemusic
+									If PlayersPlayingGame = 2 Then
+										PuPlayer.LabelSet pBackglass,"Play2","PLAYER 2",1,"{'mt':2,'color':16777215, 'size': 1.5, 'xpos': 93.3, 'xalign': 0}"
+										pUpdateScores
+										PuPlayer.playlistplayex pCallouts,"audiocallouts","player2.wav",80,1
+										chilloutthemusic
+									End If
+									If PlayersPlayingGame = 3 Then
+										PuPlayer.LabelSet pBackglass,"Play3","PLAYER 3",1,"{'mt':2,'color':16777215, 'size': 1.5, 'xpos': 93.3, 'xalign': 0}"
+										pUpdateScores
+										PuPlayer.playlistplayex pCallouts,"audiocallouts","player3.wav",80,1
+										chilloutthemusic
+									End If
+									If PlayersPlayingGame = 4 Then
+										PuPlayer.LabelSet pBackglass,"Play4","PLAYER 4",1,"{'mt':2,'color':16777215, 'size': 1.5, 'xpos': 93.3, 'xalign': 0}"
+										pUpdateScores	
+										PuPlayer.playlistplayex pCallouts,"audiocallouts","player4.wav",80,1
+										chilloutthemusic
+									End If
+									TotalGamesPlayed = TotalGamesPlayed + 1
+									savegp
+									'DMDFlush
+									'DMD "black.png", " ", PlayersPlayingGame & " PLAYERS",  500
+									soundStartButton()
 							End If
 					End If
-			End If
+				End If
+			Else
+				If NOT Tilted Then
+		 ' If (GameInPlay)
+						'If keycode = RightFlipperKey Then 'DMDFlush
+					If keycode = LeftFlipperKey Then SolLFlipper 0:SolULFlipper 0:helptime.enabled = true:DMDintroloop:introtime = 0
+					If keycode = RightFlipperKey Then SolRFlipper 0:SolURFlipper 0:helptime.enabled = true:DMDintroloop:introtime = 0
+						If keycode = StartGameKey Then
+								If(BallsOnPlayfield = 0) Then
+									ResetForNewGame()
+								End If
+						End If
+				End If
 			End If ' If (GameInPlay)
 
 	End Sub
 
 	sub fireitbitch
-Plunger.Fire
-			bAutoPlunger = False
-			Plunger.AutoPlunger = false
+		Plunger.Fire
+		bAutoPlunger = False
+		Plunger.AutoPlunger = false
 	end sub
 
 	Sub Table1_KeyUp(ByVal keycode)
-	
 
-	if keycode = 203 then bcleft = 0 ' Left Arrow
-	if keycode = 200 then bcup = 0 ' Up Arrow
-	if keycode = 208 then bcdown = 0 ' Down Arrow
-	if keycode = 205 then bcright = 0 ' Right Arrow
+	If keycode = LeftFlipperKey Then
+		If VRRoom > 0 Then PinCab_Flipper_Button_Left.X = PinCab_Flipper_Button_Left.X - 10
+	End If
 
-		If keycode = PlungerKey Then
-			PlaySoundAt "fx_plunger", Plunger
+	If keycode = RightFlipperKey Then
+		If VRRoom > 0 Then PinCab_Flipper_Button_Right.X = PinCab_Flipper_Button_Right.X + 10
+	End If
+
+		If KeyCode = PlungerKey Then
 			Plunger.Fire
+			If BIPL = 1 Then
+				SoundPlungerReleaseBall()			'Plunger release sound when there is a ball in shooter lane
+			Else
+				SoundPlungerReleaseNoBall()			'Plunger release sound when there is no ball in shooter lane
+			End If
 		End If
 
 		' Table specific
@@ -943,6 +1070,9 @@ Plunger.Fire
 
 	End Sub
 
+	Sub TimerPlunger_Timer
+		VR_Primary_plunger.Y = 2 + (5* Plunger.Position) -20
+	End Sub
 
 	'*************
 	' Pause Table
@@ -964,21 +1094,36 @@ Plunger.Fire
 	'     Flippers
 	'********************
 
+	Const ReflipAngle = 20
+
+
 
 	Sub SolLFlipper(Enabled)
 		If finalflips = False Then
-		If lowerflippersoff = True Then
-		If Enabled Then
-			PlaySoundAt SoundFXDOF("fx_flipperup", 101, DOFOn, DOFFlippers), lane3
-			LeftFlipper.RotateToEnd
-			If bSkillshotReady = False Then
-				RotateLaneLightsLeft
+			If lowerflippersoff = True Then
+				If Enabled Then
+					FlipperActivate LeftFlipper, LFPress
+					LF.Fire  'leftflipper.rotatetoend
+					DOF 101, DOFOn
+					If bSkillshotReady = False Then
+						RotateLaneLightsLeft
+					End If
+					If leftflipper.currentangle < leftflipper.endangle + ReflipAngle Then
+						RandomSoundReflipUpLeft LeftFlipper
+					Else
+						SoundFlipperUpAttackLeft LeftFlipper
+						RandomSoundFlipperUpLeft LeftFlipper
+					End If
+				Else
+					FlipperDeActivate LeftFlipper, LFPress
+					LeftFlipper.RotateToStart
+					DOF 101, DOFOff
+					If LeftFlipper.currentangle < LeftFlipper.startAngle - 5 Then
+						RandomSoundFlipperDownLeft LeftFlipper
+					End If
+					FlipperLeftHitParm = FlipperUpSoundLevel
+				End If
 			End If
-		Else
-			PlaySoundAt SoundFXDOF("fx_flipperdown", 101, DOFOff, DOFFlippers), lane3
-			LeftFlipper.RotateToStart
-		End If
-		End If
 		End If
 	End Sub
 
@@ -986,65 +1131,92 @@ Plunger.Fire
 
 	Sub SolULFlipper(Enabled)
 		If finalflips = False Then
-		If lowerflippersoff = False Then
-		If Enabled Then
-			PlaySoundAt SoundFXDOF("fx_flipperup", 101, DOFOn, DOFFlippers), Flipper2
-			Flipper2.RotateToEnd
-		Else
-			PlaySoundAt SoundFXDOF("fx_flipperdown", 101, DOFOff, DOFFlippers), Flipper2
-			Flipper2.RotateToStart
-		End If
-		End If
+			If lowerflippersoff = False Then
+				If Enabled Then
+				 FlipperActivate Flipper2, LFPress1
+				 	DOF 101, DOFOn
+					PlaySoundAt SoundFXDOF("Flipper_R01", 101, DOFOn, DOFFlippers), Flipper2
+					Flipper2.RotateToEnd
+				Else
+					FlipperDeActivate Flipper2, LFPress1
+					DOF 101, DOFOff
+					PlaySoundAt SoundFXDOF("Flipper_RD", 101, DOFOff, DOFFlippers), Flipper2
+					Flipper2.RotateToStart
+				End If
+			End If
 		End If
 	End Sub
 
 	Sub SolRFlipper(Enabled)
 		If finalflips = False Then
-		If lowerflippersoff = True Then
-		If Enabled Then
-			PlaySoundAt SoundFXDOF("fx_flipperup", 102, DOFOn, DOFFlippers), lane5
-			RightFlipper.RotateToEnd
-			If bSkillshotReady = False Then
-				RotateLaneLightsRight
+			If lowerflippersoff = True Then
+
+				If Enabled Then
+					FlipperActivate RightFlipper, RFPress
+					DOF 102, DOFOn
+					RF.Fire 'rightflipper.rotatetoend
+					If bSkillshotReady = False Then
+						RotateLaneLightsRight
+					End If					
+					If rightflipper.currentangle > rightflipper.endangle - ReflipAngle Then
+						RandomSoundReflipUpRight RightFlipper
+					Else
+						SoundFlipperUpAttackRight RightFlipper
+						RandomSoundFlipperUpRight RightFlipper
+					End If
+				Else
+					FlipperDeActivate RightFlipper, RFPress
+					DOF 102, DOFOff
+					RightFlipper.RotateToStart
+					If RightFlipper.currentangle > RightFlipper.startAngle + 5 Then
+						RandomSoundFlipperDownRight RightFlipper
+					End If
+					FlipperRightHitParm = FlipperUpSoundLevel
+				End If
+
 			End If
-		Else
-			PlaySoundAt SoundFXDOF("fx_flipperdown", 102, DOFOff, DOFFlippers), lane5
-			RightFlipper.RotateToStart
-		End If
-		End If
 		End If
 	End Sub
 
 	Sub SolURFlipper(Enabled)
 		If finalflips = False Then
-		If lowerflippersoff = False Then
-		If Enabled Then
-			PlaySoundAt SoundFXDOF("fx_flipperup", 102, DOFOn, DOFFlippers), Flipper1
-			Flipper1.RotateToEnd
-		Else
-			PlaySoundAt SoundFXDOF("fx_flipperdown", 102, DOFOff, DOFFlippers), Flipper1
-			Flipper1.RotateToStart
-		End If
-		End If
+			If lowerflippersoff = False Then
+				If Enabled Then
+					FlipperActivate Flipper1, RFPress1
+					DOF 102, DOFOff
+					PlaySoundAt SoundFXDOF("Flipper_L01", 102, DOFOn, DOFFlippers), Flipper1
+					Flipper1.RotateToEnd
+				Else
+					FlipperDeActivate Flipper1, RFPress1
+					DOF 102, DOFOff
+					PlaySoundAt SoundFXDOF("Flipper_LD", 102, DOFOff, DOFFlippers), Flipper1
+					Flipper1.RotateToStart
+				End If
+			End If
 		End If
 	End Sub
 
 	' flippers hit Sound
 
+
 	Sub LeftFlipper_Collide(parm)
-		PlaySoundAtVol "fx_rubber_flipper", ActiveBall, parm 
+        CheckLiveCatch Activeball, LeftFlipper, LFCount, parm
+	    LF.ReProcessBalls ActiveBall
+		LeftFlipperCollide parm
 	End Sub
 
 	Sub RightFlipper_Collide(parm)
-		PlaySoundAtVol "fx_rubber_flipper", ActiveBall, parm 
+        CheckLiveCatch Activeball, RightFlipper, RFCount, parm
+	    RF.ReProcessBalls ActiveBall
+		RightFlipperCollide parm
 	End Sub
 
 	Sub Flipper2_Collide(parm)
-		PlaySoundAtVol "fx_rubber_flipper", ActiveBall, parm
+		LeftFlipperCollide parm
 	End Sub
 
 	Sub Flipper1_Collide(parm)
-		PlaySoundAtVol "fx_rubber_flipper", ActiveBall, parm
+		RightFlipperCollide parm
 	End Sub
 
 	Sub RotateLaneLightsLeft
@@ -1197,9 +1369,9 @@ Plunger.Fire
 
 			LeftSlingshot.Disabled = 1
 			RightSlingshot.Disabled = 1
-		playpupmusicresume 'PuPlayer.playresume 4
-		'PuPlayer.playlistplayex pAudio,"audiomodes","clear.mp3",100,1
-		playpupmusicclear ' PuPlayer.playlistplayex pMusic,"audioclear","clear.mp3",100, 1
+		PuPlayer.playresume 4
+		PuPlayer.playlistplayex pAudio,"audiomodes","clear.mp3",100,1
+		PuPlayer.playlistplayex pMusic,"audioclear","clear.mp3",100, 1
 
 		Else
 			'turn back on GI and the lights
@@ -1304,216 +1476,83 @@ Plunger.Fire
 		End If
 	End Sub
 
-	Function Vol(ball) ' Calculates the Volume of the sound based on the ball speed
-		Vol = Csng(BallVel(ball) ^2 / 200)
-	End Function
-
-	Function Pan(ball) ' Calculates the pan for a ball based on the X position on the table. "table1" is the name of the table
-		Dim tmp
-		tmp = ball.x * 2 / table1.width-1
-		If tmp> 0 Then
-			Pan = Csng(tmp ^10)
-		Else
-			Pan = Csng(-((- tmp) ^10) )
-		End If
-	End Function
-
-	Function Pitch(ball) ' Calculates the pitch of the sound based on the ball speed
-		Pitch = BallVel(ball) * 20
-	End Function
-
-	Function BallVel(ball) 'Calculates the ball speed
-		BallVel = INT(SQR((ball.VelX ^2) + (ball.VelY ^2) ) )
-	End Function
 
 	'********************
 	' SSF supporting functions
 	'********************
 
-	function AudioFade(ball)
-		Dim tmp
-		tmp = ball.y * 2 / Table1.height-1
-		If tmp > 0 Then
-			AudioFade = Csng(tmp ^10)
-		Else
-			AudioFade = Csng(-((- tmp) ^10) )
-		End If
-	End Function
 
-	'Set position as table object (Use object or light but NOT wall) and Vol to 1
-	Sub PlaySoundAt(sound, tableobj)
-		PlaySound sound, 1, 1, Pan(tableobj), 0,0,0, 1, AudioFade(tableobj)
-	End Sub
 
-	'Set all as per ball position & speed.
-	Sub PlaySoundAtBall(sound)
-		PlaySound sound, 0, Vol(ActiveBall), Pan(ActiveBall), 0, Pitch(ActiveBall), 0, 1, AudioFade(ActiveBall)
-	End Sub
-
-	'Set position as table object and Vol manually.
-	Sub PlaySoundAtVol(sound, tableobj, Vol)
-		PlaySound sound, 1, Vol, Pan(tableobj), 0, 0, 0, 1, AudioFade(tableobj)
-	End Sub
-
-	Sub PlayLoopSoundAtVol(sound, tableobj, Vol)
-		PlaySound sound, -1, Vol, Pan(tableobj), 0, 0, 1, 0, AudioFade(tableobj)
-	End Sub
-
-	'Set all as per ball position & speed, but Vol Multiplier may be used eg; PlaySoundAtBallVol "sound",3
-	Sub PlaySoundAtBallVol(sound, VolMult)
-		PlaySound sound, 0, Vol(ActiveBall) * VolMult, Pan(ActiveBall), 0, Pitch(ActiveBall), 0, 1, AudioFade(ActiveBall)
-	End Sub
-
-	'Set position as bumperX and Vol manually.
-	Sub PlaySoundAtBumperVol(sound, tableobj, Vol)
-		PlaySound sound, 1, Vol, Pan(tableobj), 0,0,1, 1, AudioFade(tableobj)
-	End Sub
-
-	Dim NextOrbitHit:NextOrbitHit = 0
-	Sub PlasticRampBumps_Hit(idx)
-		if BallVel(ActiveBall) > .3 and Timer > NextOrbitHit then
-			RandomBump 10, -20000
-			' Schedule the next possible sound time.  This prevents it from rapid-firing noises too much. 
-			' Lowering these numbers allow more closely-spaced clunks.
-			NextOrbitHit = Timer + .1 + (Rnd * .2)
-		end if 
-	End Sub
-
-	Sub PlasticBumps_Hit(idx)
-		PlaySoundAtBall "fx_plastichit"
-	End Sub
-
-	Sub MetalWallBumps_Hit(idx)
-		'debug.print "MetalWall"
-
-		if BallVel(ActiveBall) > .3 and Timer > NextOrbitHit then
-			RandomBump 3, 20000 'Increased pitch to simulate metal wall
-			' Schedule the next possible sound time.  This prevents it from rapid-firing noises too much. 
-			' Lowering these numbers allow more closely-spaced clunks.
-			NextOrbitHit = Timer + .2 + (Rnd * .2)
-		end if 
-	End Sub
-
-	Sub WireRampBumps_Hit(idx)
-		if BallVel(ActiveBall) > .3 and Timer > NextOrbitHit then
-			dim BumpSnd:BumpSnd= "wirerampbump" & CStr(Int(Rnd*5)+1)
-			PlaySound BumpSnd, 0, Vol(ActiveBall) * .5, Pan(ActiveBall), 0, 30000, 0, 1, AudioFade(ActiveBall)
-			NextOrbitHit = Timer + .2 + (Rnd * .2)
-		end if 
-	End Sub
-
-	Sub RandomBump(voladj, freq)
-		dim BumpSnd:BumpSnd= "rampbump" & CStr(Int(Rnd*7)+1)
-		PlaySound BumpSnd, 0, Vol(ActiveBall)*voladj, Pan(ActiveBall), 0, freq, 0, 1, AudioFade(ActiveBall)
-	End Sub
-
-	' Requires rampbump1 to 7 in Sound Manager
-	Sub RandomBump(voladj, freq)
-		dim BumpSnd:BumpSnd= "rampbump" & CStr(Int(Rnd*7)+1)
-		PlaySound BumpSnd, 0, Vol(ActiveBall)*voladj, Pan(ActiveBall), 0, freq, 0, 1, AudioFade(ActiveBall)
-	End Sub
-
-	
-
-	' Stop Bump Sounds
-	Sub BumpSTOPMetal ()
-	dim i:for i=1 to 7:StopSound "RampBump" & i:next
-	NextOrbitHit = Timer + 1
-	End Sub
-
-	Sub BumpSTOPWire ()
-	dim i:for i=1 to 4:StopSound "WireRampBump" & i:next
-	NextOrbitHit = Timer + 1
-	End Sub
 
 
 	'->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
 	'-> Real Time updates using the GameTimer
 	'->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
 
-	Sub GameTimer_Timer
-		RollingUpdate
-	End Sub
 
 '*****************************************
 '      JP's VP10 Rolling Sounds
 '*****************************************
 
-Const tnob = 20 ' total number of balls
-Const lob = 0   'number of locked balls
-ReDim rolling(tnob)
-InitRolling
+'Const tnob = 20 ' total number of balls
+'Const lob = 0   'number of locked balls
+'ReDim rolling(tnob)
+'InitRolling
 
-Sub InitRolling
-    Dim i
-    For i = 0 to tnob
-        rolling(i) = False
-    Next
-End Sub
+'Sub InitRolling
+'    Dim i
+'    For i = 0 to tnob
+'        rolling(i) = False
+'    Next
+'End Sub
 
-Sub RollingUpdate()
-    Dim BOT, b, ballpitch
-    BOT = GetBalls
+'Sub RollingUpdate()
+'    Dim BOT, b, ballpitch
+'    BOT = GetBalls
 
-    ' stop the sound of deleted balls
-    For b = UBound(BOT) + 1 to tnob
-        rolling(b) = False
-        StopSound("fx_ballrolling" & b)
-    Next
+'    ' stop the sound of deleted balls
+'    For b = UBound(BOT) + 1 to tnob
+'        rolling(b) = False
+'        StopSound("fx_ballrolling" & b)
+'    Next
 
-    ' exit the sub if no balls on the table
-    If UBound(BOT) = -1 Then Exit Sub 'there no extra balls on this table
+'    ' exit the sub if no balls on the table
+'    If UBound(BOT) = -1 Then Exit Sub 'there no extra balls on this table
 
-    ' play the rolling sound for each ball
-    For b = lob to UBound(BOT)
-        If BallVel(BOT(b) )> 1 Then
-            If BOT(b).z <30 Then
-                ballpitch = Pitch(BOT(b) )
-            Else
-                ballpitch = Pitch(BOT(b) ) * 100
-            End If
-            rolling(b) = True
-            PlaySound("fx_ballrolling" & b), -1, Vol(BOT(b) ) * .5, Pan(BOT(b) ), 0, ballpitch, 1, 0, AudioFade(BOT(b))
-        Else
-            If rolling(b) = True Then
-                StopSound("fx_ballrolling" & b)
-                rolling(b) = False
-            End If
-        End If
-    Next
-End Sub
+'    ' play the rolling sound for each ball
+'    For b = lob to UBound(BOT)
+'        If BallVel(BOT(b) )> 1 Then
+'            If BOT(b).z <30 Then
+'                ballpitch = Pitch(BOT(b) )
+'            Else
+'                ballpitch = Pitch(BOT(b) ) * 100
+'            End If
+'            rolling(b) = True
+'            PlaySound("fx_ballrolling" & b), -1, Vol(BOT(b) ) * .5, Pan(BOT(b) ), 0, ballpitch, 1, 0, AudioFade(BOT(b))
+'        Else
+'            If rolling(b) = True Then
+'                StopSound("fx_ballrolling" & b)
+'                rolling(b) = False
+'            End If
+'        End If
+'    Next
+'End Sub
+
+
+'********************
 
 	'->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
 	'->  Sound FX Groupings
 	'->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
 	' Make sure to make collections for each of these to fire the sound fxs
 
-	Sub OnBallBallCollision(ball1, ball2, velocity)
-		PlaySound("fx_collide"), 0, Csng(velocity) ^2 / 500, Pan(ball1), 0, Pitch(ball1), 0, 0, AudioFade(ball1)
-	End Sub
+'	Sub OnBallBallCollision(ball1, ball2, velocity)
+'        FlipperCradleCollision ball1, ball2, velocity
+'		PlaySound("fx_collide"), 0, Csng(velocity) ^2 / 500, Pan(ball1), 0, Pitch(ball1), 0, 0, AudioFade(ball1)
+'	End Sub
 
 	Sub Pins_Hit (idx)
 		PlaySound "pinhit_low", 0, Vol(ActiveBall), Pan(ActiveBall), 0, Pitch(ActiveBall), 0, 0, AudioFade(ActiveBall)
-	End Sub
-
-	Sub Targets_Hit (idx)
-		PlaySound "target", 0, Vol(ActiveBall), Pan(ActiveBall), 0, Pitch(ActiveBall), 0, 0, AudioFade(ActiveBall)
-	End Sub
-
-	Sub Gates_Hit (idx)
-		PlaySound "gate4", 0, Vol(ActiveBall), Pan(ActiveBall), 0, Pitch(ActiveBall), 1, 0, AudioFade(ActiveBall)
-	End Sub
-
-
-	Sub Rubbers_Hit(idx)
-		'debug.print "Rubbers"
-		dim finalspeed
-		finalspeed=SQR(activeball.velx * activeball.velx + activeball.vely * activeball.vely)
-		If finalspeed > 20 then 
-			PlaySound "fx_rubber2", 0, Vol(ActiveBall)*3, Pan(ActiveBall), 0, Pitch(ActiveBall), 1, 0, AudioFade(ActiveBall)
-		else
-			RandomSoundRubber()
-		End If
 	End Sub
 
 	Sub Posts_Hit(idx)
@@ -1526,23 +1565,6 @@ End Sub
 			RandomSoundRubber()
 		End If
 	End Sub
-
-	Sub LeftFlipper_Collide(parm)
-		RandomSoundFlipper()
-	End Sub
-
-	Sub RightFlipper_Collide(parm)
-		RandomSoundFlipper()
-	End Sub
-
-	Sub Flipper1_Collide(parm)
-		RandomSoundFlipper()
-	End Sub
-
-	Sub Flipper2_Collide(parm)
-		RandomSoundFlipper()
-	End Sub
-
 
 	'->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
 	'-> Sound Randomizers
@@ -1586,28 +1608,43 @@ End Sub
 		PlaySound Quote
 	End Sub
 
-	' Ramp Soundss
-	
-	Sub rrend_Hit(): StopSound "fx_metalrolling": BumpSTOPWire(): vpmTimer.AddTimer 100, "PlaySoundAt ""fx_balldrop"",rrend'":End Sub
-	Sub lrend_Hit(): StopSound "fx_metalrolling": BumpSTOPWire(): vpmTimer.AddTimer 100, "PlaySoundAt ""fx_balldrop"",lrend'":End Sub
+	Sub rrend_Hit()
+		WireRampOff
+	End Sub
 
+	Sub rrend_UnHit()
+		RandomSoundRampStop rrend
+	End Sub
+
+	Sub lrend_Hit()
+		WireRampOff	
+	End Sub
+
+	Sub lrend_UnHit()
+		WireRampOff	
+		RandomSoundRampStop lrend
+	End Sub
 
 	'->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
 	'->  Ramp Sounds, Use as needed
 	'->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->
 	'shooter ramp
-	Sub ShooterStart_Hit():StopSound "fx_launchball":If ActiveBall.VelY < 0 Then PlaySoundAt "fx_launchball", ShooterStart:End If:End Sub	'ball is going up
-	Sub ShooterEnd_Hit:If ActiveBall.Z > 50  Then Me.TimerInterval=100:Me.TimerEnabled=1:End If:End Sub						'ball is flying
+	'Sub ShooterStart_Hit():StopSound "fx_launchball":If ActiveBall.VelY < 0 Then PlaySoundAt "fx_launchball", ShooterStart:End If:End Sub	'ball is going up
+	Sub ShooterEnd_Hit:BIPL=0:If ActiveBall.Z > 50  Then Me.TimerInterval=100:Me.TimerEnabled=1:End If:End Sub						'ball is flying	
 	Sub ShooterEnd_Timer(): Me.TimerEnabled=0 : PlaySoundAt "fx_balldrop", ShooterEnd : End Sub
 	'center ramp
-	Sub CREnter_Hit():If ActiveBall.VelY < 0 Then PlaySoundAt "fx_lrenter", CREnter:End If
+	Sub CREnter_Hit()
+		'If ActiveBall.VelY < 0 Then PlaySoundAt "fx_lrenter", CREnter:End If
 		spinsign
+		WireRampOn True
 	End Sub			'ball is going up
-	Sub CREnter_UnHit():If ActiveBall.VelY > 0 Then StopSound "fx_metalrolling":StopSound "fx_lrenter":End If:End Sub		'ball is going down
-	Sub CREnter1_Hit():If ActiveBall.VelY < 0 Then PlaySoundAt "fx_lrenter", CRenter1:End If:End Sub			'ball is going up
-	Sub CREnter1_UnHit():If ActiveBall.VelY > 0 Then StopSound "fx_metalrolling":StopSound "fx_lrenter":End If:End Sub		'ball is going down
-	Sub CREnter2_Hit():If ActiveBall.VelY < 0 Then PlaySoundAt "fx_lrenter", CRenter2:End If:End Sub			'ball is going up
-	Sub CREnter2_UnHit():If ActiveBall.VelY > 0 Then StopSound "fx_metalrolling":StopSound "fx_lrenter":End If:End Sub		'ball is going down
+
+
+	'Sub CREnter_UnHit():If ActiveBall.VelY > 0 Then StopSound "fx_metalrolling":StopSound "fx_lrenter":End If:End Sub		'ball is going down
+	'Sub CREnter1_Hit():If ActiveBall.VelY < 0 Then PlaySoundAt "fx_lrenter", CRenter1:End If:End Sub			'ball is going up
+	'Sub CREnter1_UnHit():If ActiveBall.VelY > 0 Then StopSound "fx_metalrolling":StopSound "fx_lrenter":End If:End Sub		'ball is going down
+	'Sub CREnter2_Hit():If ActiveBall.VelY < 0 Then PlaySoundAt "fx_lrenter", CRenter2:End If:End Sub			'ball is going up
+	'Sub CREnter2_UnHit():If ActiveBall.VelY > 0 Then StopSound "fx_metalrolling":StopSound "fx_lrenter":End If:End Sub		'ball is going down
 
 
 
@@ -1630,6 +1667,7 @@ End Sub
 	Sub ResetForNewGame()
 		Dim i
 
+		WallsDown
 
 		bGameInPLay = True
 
@@ -1640,6 +1678,8 @@ End Sub
 		clearosblabels
 		
 		GiOn
+
+		BIPL = 0
 
 		TotalGamesPlayed = TotalGamesPlayed + 1
 		savegp
@@ -1674,16 +1714,16 @@ End Sub
 
 
 	Sub EndOfGame()
-		playpupmusicclear ' PuPlayer.playlistplayex pMusic,"audioclear","clear.mp3",100, 1
+		PuPlayer.playlistplayex pMusic,"audioclear","clear.mp3",100, 1
 		'pNote "GAME OVER","PLAY AGAIN"
 		PuPlayer.playlistplayex pBackglass,"videogameover","",100,1
-		introposition = 0
 		StartAttractMode
 		'debug.print "End Of Game"
+		introposition = 0
 		bGameInPLay = False
 		' just ended your game then play the end of game tune
 		If NOT bJustStarted Then
-			PlaySong "m_end"
+			'PlaySong "m_end"
 		End If
 		bJustStarted = False
 		' ensure that the flippers are down
@@ -1702,20 +1742,20 @@ End Sub
 		' most of the Mode/timers terminate at the end of the ball
 		'PlayQuote.Enabled = 0
 		' show game over on the 'DMD
-		DMD "black.png", "Game Over", "",  2000
+		'DMD "black.png", "Game Over", "",  2000
 		Dim i 
 		If Score(1) Then
-			DMD "black.png", "PLAYER 1", Score(1), 3000
+			'DMD "black.png", "PLAYER 1", Score(1), 3000
 			' Submit Player 1 Score to Orbital Scoreboard
 		End If
 		If Score(2) Then
-			DMD "black.png", "PLAYER 2", Score(2), 3000
+			'DMD "black.png", "PLAYER 2", Score(2), 3000
 		End If
 		If Score(3) Then
-			DMD "black.png", "PLAYER 3", Score(3), 3000
+			'DMD "black.png", "PLAYER 3", Score(3), 3000
 		End If
 		If Score(4) Then
-			DMD "black.png", "PLAYER 4", Score(4), 3000
+			'DMD "black.png", "PLAYER 4", Score(4), 3000
 		End If
 
 		' set any lights for the attract mode
@@ -1751,14 +1791,13 @@ End Sub
 
 	Sub DMD(background, toptext, bottomtext, duration)
 		If turnonultradmd = 0 then exit sub
-		background = ""
 		UltraDMD.DisplayScene00 background, toptext, 15, bottomtext, 15, 14, duration, 14
 		UltraDMDTimer.Enabled = 1 'to show the score after the animation/message
 	End Sub
 
 	Sub DMDScore
 		If turnonultradmd = 0 then exit sub
-		'UltraDMD.SetScoreboardBackgroundImage "scoreboard-background.jpg", 15, 7
+		UltraDMD.SetScoreboardBackgroundImage "scoreboard-background.jpg", 15, 7
 
 		If turnonultradmd = 1 Then
 		UltraDMD.DisplayScoreboard PlayersPlayingGame, CurrentPlayer, Score(1), Score(2), Score(3), Score(4), "Player " & CurrentPlayer, "Ball " & Balls
@@ -1829,7 +1868,16 @@ End Sub
 			Exit Sub
 		End If
 
-		DMD "", "STRANGER", "THINGS", 5000
+		Dim fso:Set fso = CreateObject("Scripting.FileSystemObject")
+		Dim curDir:curDir = fso.GetAbsolutePathName(".")
+
+		Dim DirName
+		DirName = curDir& "\" &TableName& ".UltraDMD"
+
+		If Not fso.FolderExists(DirName) Then _
+				Msgbox "UltraDMD userfiles directory '" & DirName & "' does not exist." & CHR(13) & "No graphic images will be displayed on the DMD"
+		UltraDMD.SetProjectFolder DirName
+
 		' wait for the animation to end
 		While UltraDMD.IsRendering = True
 		WEnd
@@ -1872,7 +1920,6 @@ End Sub
 	if HasPuP Then
 	on error resume next
 	Set PuPlayer = CreateObject("PinUpPlayer.PinDisplay") 
-	PuPlayer.B2SInit "", cGameName   'use new method to startup pup with dmd via puppack
 	on error goto 0
 	if not IsObject(PuPlayer) then HasPuP = False
 	end If
@@ -1880,99 +1927,26 @@ End Sub
 	if HasPuP Then
 
 	PuPlayer.Init pBackglass,"STLE"
-	'PuPlayer.Init pMusic,"STLE"
-	'PuPlayer.Init pAudio,"STLE"
+	PuPlayer.Init pMusic,"STLE"
+	PuPlayer.Init pAudio,"STLE"
 	PuPlayer.Init pCallouts,"STLE"
 	If toppervideo = 1 Then
 	PuPlayer.Init pTopper,"STLE"
 	End If
 
 	PuPlayer.SetScreenex pBackglass,0,0,0,0,0       'Set PuPlayer DMD TO Always ON    <screen number> , xpos, ypos, width, height, POPUP
-	'PuPlayer.SetScreenex pAudio,0,0,0,0,2
-	'PuPlayer.hide pAudio
-	'PuPlayer.SetScreenex pMusic,0,0,0,0,2
-	'PuPlayer.hide pMusic
+	PuPlayer.SetScreenex pAudio,0,0,0,0,2
+	PuPlayer.hide pAudio
+	PuPlayer.SetScreenex pMusic,0,0,0,0,2
+	PuPlayer.hide pMusic
 	PuPlayer.SetScreenex pCallouts,0,0,0,0,2
 	PuPlayer.hide pCallouts
-
-	Dim lastName
-	Dim lastPlaylist
-	Dim lastAudiolevel
-	Dim lastPriority
-	Dim pauzeName
-	Dim pauzePlaylist
-	Dim pauzePriority
-	Dim pauzeAudioLevel : pauzeAudioLevel = -1
-	Dim playPupStatus : playPupStatus = 0
-
-	sub playpupmusic(playlist,name,audiolevel,priority)
-		If (name = "") Then
-			select case playlist
-				case "audiobg"
-					name = RndNum(1,15) & ".mp3"
-				case "audiobgrock"
-					name = RndNum(1,11) & ".mp3"
-			end select
-		End if
-		lastName = name
-		lastPlaylist = playlist
-		lastAudiolevel = audiolevel
-		lastPriority = priority
-		pauzeAudioLevel = -1
-		PlayMusic "./pupvideos/" & cGameName & "/" & playlist & "/" & name, audiolevel / 100
-		playPupStatus = 1
-	end sub
-
-	sub playpupmusicpause()
-		if (playPupStatus = 1) Then
-			pauzeName = lastName
-			pauzePlaylist = lastPlaylist
-			pauzeAudiolevel = lastAudiolevel
-			pauzePriority = lastPriority
-			pauzeAudioLevel = lastAudiolevel
-			playpupmusicvolume 0
-			playPupStatus = 2
-		End If
-	end sub
-
-	sub playpupmusicresume()
-		if (playPupStatus = 2) Then
-			playPupStatus = 1
-			lastName = pauzeName
-			lastPlaylist = pauzePlaylist
-			lastAudiolevel = pauzeAudiolevel
-			lastPriority = pauzePriority
-			lastAudioLevel = pauzeAudioLevel
-			playpupmusic lastPlaylist, lastName, lastAudiolevel, lastPriority
-		End If
-	end sub
-
-	sub playpupmusicvolume(audiolevel)
-		If (playPupStatus = 2) Then
-			pauzeAudioLevel = audioLevel
-		End If
-		If (playPupStatus = 1) Then
-			lastAudiolevel = audiolevel
-			MusicVolume = audiolevel / 100
-		End If
-	end sub
-
-	sub Table1_MusicDone
-		If (playPupStatus = 1) Then
-			playpupmusic lastPlaylist, lastName, lastAudiolevel, lastPriority
-		End If
-	end sub
-
-	sub playpupmusicclear()
-		playPupStatus = 0
-		EndMusic
-	end Sub
 
 	Sub chilloutthemusic
 		If calloutlowermusicvol = 1 Then
 			PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 2, ""FN"":11, ""VL"":40 }"
-			playpupmusicvolume 25 ' PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 4, ""FN"":11, ""VL"":40 }"
-			'PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 7, ""FN"":11, ""VL"":40 }"
+			PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 4, ""FN"":11, ""VL"":40 }"
+			PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 7, ""FN"":11, ""VL"":40 }"
 			PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 8, ""FN"":11, ""VL"":"&(calloutvol)&" }"
 			vpmtimer.addtimer 2200, "turnitbackup'"
 		End If
@@ -1981,19 +1955,19 @@ End Sub
 	Sub turnitbackup
 		If calloutlowermusicvol = 1 Then
 			PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 2, ""FN"":11, ""VL"":"&(videovol)&" }"
-			playpupmusicvolume soundtrackvol 'PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 4, ""FN"":11, ""VL"":"&(soundtrackvol)&" }"
-			'PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 7, ""FN"":11, ""VL"":"&(soundtrackvol)&" }"
+			PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 4, ""FN"":11, ""VL"":"&(soundtrackvol)&" }"
+			PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 7, ""FN"":11, ""VL"":"&(soundtrackvol)&" }"
 		End If
 	End Sub
 
 
-	' PuPlayer.playlistadd pMusic,"audioattract", 1 , 0
-	' PuPlayer.playlistadd pMusic,"audiobg", 1 , 0
-	' PuPlayer.playlistadd pMusic,"audioclear", 1 , 0
-	' PuPlayer.playlistadd pMusic,"audiobgrock", 1 , 0
-	' PuPlayer.playlistadd pAudio,"audioevents", 1 , 0
-	' PuPlayer.playlistadd pAudio,"audiomodes", 1 , 0
-	' PuPlayer.playlistadd pAudio,"audiomultiballs", 1 , 0
+	PuPlayer.playlistadd pMusic,"audioattract", 1 , 0
+	PuPlayer.playlistadd pMusic,"audiobg", 1 , 0
+	PuPlayer.playlistadd pMusic,"audioclear", 1 , 0
+	PuPlayer.playlistadd pMusic,"audiobgrock", 1 , 0
+	PuPlayer.playlistadd pAudio,"audioevents", 1 , 0
+	PuPlayer.playlistadd pAudio,"audiomodes", 1 , 0
+	PuPlayer.playlistadd pAudio,"audiomultiballs", 1 , 0
 	PuPlayer.playlistadd pCallouts,"audiocallouts", 1 , 0
 	PuPlayer.playlistadd pCallouts,"audiojackpot", 1 , 0
 	PuPlayer.playlistadd pCallouts,"audiosuperjackpot", 1 , 0
@@ -2036,15 +2010,20 @@ End Sub
 			'pNote "A.V CLUB","NOW OPEN"
 			'PuPlayer.playlistplayex pBackglass,"videoavopen","",100,1
 
-	'Set Background video on DMD
+'	Set Background video on DMD
 		PuPlayer.playlistplayex pBackglass,"scene","base.mov",0,1  'should be an attract background (no text is displayed)
 		PuPlayer.SetBackground pBackglass,1	
+
+		'PuPlayer.playevent pBackglass,"scene","base.mov",0,20,6,0,""
 
 	End if
 
 	If toppervideo = 1 Then
 		PuPlayer.playlistplayex pTopper,"topper","topper.mp4",0,1  'should be an attract background (no text is displayed)
 		PuPlayer.SetBackground pTopper,1	
+
+		'PuPlayer.playevent pTopper,"topper","topper.mp4",0,20,6,0,""
+
 	End If
 
 
@@ -2057,142 +2036,142 @@ End Sub
 
 	'Page 1 (default score display)
 	PuPlayer.LabelNew pBackglass,"Play1","AvantGarde-Book",				2,16777215  ,0,2,1,98,67,1,0
-	PuPlayer.LabelNew pBackglass,"Play1score",typefont,	3,16777215  ,0,2,1,98,70,1,0
+	PuPlayer.LabelNew pBackglass,"Play1score","AvantGarde LT Medium",	3,16777215  ,0,2,1,98,70,1,0
 	PuPlayer.LabelNew pBackglass,"Play2","AvantGarde-Book",				2,16777215  ,0,2,1,98,73,1,0
-	PuPlayer.LabelNew pBackglass,"Play2score",typefont,	3,16777215  ,0,2,1,98,76,1,0
+	PuPlayer.LabelNew pBackglass,"Play2score","AvantGarde LT Medium",	3,16777215  ,0,2,1,98,76,1,0
 	PuPlayer.LabelNew pBackglass,"Play3","AvantGarde-Book",				2,16777215  ,0,2,1,98,79,1,0
-	PuPlayer.LabelNew pBackglass,"Play3score",typefont,	3,16777215  ,0,2,1,98,82,1,0
+	PuPlayer.LabelNew pBackglass,"Play3score","AvantGarde LT Medium",	3,16777215  ,0,2,1,98,82,1,0
 	PuPlayer.LabelNew pBackglass,"Play4","AvantGarde-Book",				2,16777215  ,0,2,1,98,85,1,0
-	PuPlayer.LabelNew pBackglass,"Play4score",typefont,	3,16777215  ,0,2,1,98,88,1,0
+	PuPlayer.LabelNew pBackglass,"Play4score","AvantGarde LT Medium",	3,16777215  ,0,2,1,98,88,1,0
 	PuPlayer.LabelNew pBackglass,"Ball","AvantGarde-Book",				2,16777215 	,0,2,1,98,63,1,1
 	PuPlayer.LabelNew pBackglass,"hstitle","AvantGarde-Book",			1,16777215 	,0,2,1,98,92,1,1
 	PuPlayer.LabelNew pBackglass,"hs","AvantGarde-Book",				2,16777215 	,0,2,1,98,94,1,1
 	PuPlayer.LabelNew pBackglass,"gptitle","AvantGarde-Book",			1,16777215 	,0,2,1,98,96,1,1
 	PuPlayer.LabelNew pBackglass,"gp","AvantGarde-Book",				2,16777215 	,0,2,1,98,98,1,1
-	PuPlayer.LabelNew pBackglass,"Willh",typefont,		2,16777215  ,0,1,1,8,70,1,1
-	PuPlayer.LabelNew pBackglass,"Willj",typefont,		2,16777215  ,0,2,1,13,70,1,1
-	PuPlayer.LabelNew pBackglass,"badh",typefont,			2,16777215  ,0,2,1,8,76,1,1
-	PuPlayer.LabelNew pBackglass,"badj",typefont,			2,16777215  ,0,2,1,13,76,1,1
-	PuPlayer.LabelNew pBackglass,"barbh",typefont,		2,16777215  ,0,2,1,8,80,1,1
-	PuPlayer.LabelNew pBackglass,"barbj",typefont,		2,16777215  ,0,2,1,13,80,1,1
-	PuPlayer.LabelNew pBackglass,"partyh",typefont,		2,16777215  ,0,2,1,8,85,1,1
-	PuPlayer.LabelNew pBackglass,"partyj",typefont,		2,16777215  ,0,2,1,13,85,1,1
-	PuPlayer.LabelNew pBackglass,"mav",typefont,			2,16777215  ,0,2,1,8,85,1,1
-	PuPlayer.LabelNew pBackglass,"mwaf",typefont,			2,16777215  ,0,1,1,13,85,1,1
-	PuPlayer.LabelNew pBackglass,"notetitle",typefont,	4.5,16777215  ,0,1,1,50,87,1,1
-	PuPlayer.LabelNew pBackglass,"notecopy","AvantGarde-Book",			2.7,16777215 	,0,1,1,50,93,1,1
+	PuPlayer.LabelNew pBackglass,"Willh","AvantGarde LT Medium",		2,16777215  ,0,1,1,8,70,1,1
+	PuPlayer.LabelNew pBackglass,"Willj","AvantGarde LT Medium",		2,16777215  ,0,2,1,13,70,1,1
+	PuPlayer.LabelNew pBackglass,"badh","AvantGarde LT Medium",			2,16777215  ,0,2,1,8,76,1,1
+	PuPlayer.LabelNew pBackglass,"badj","AvantGarde LT Medium",			2,16777215  ,0,2,1,13,76,1,1
+	PuPlayer.LabelNew pBackglass,"barbh","AvantGarde LT Medium",		2,16777215  ,0,2,1,8,80,1,1
+	PuPlayer.LabelNew pBackglass,"barbj","AvantGarde LT Medium",		2,16777215  ,0,2,1,13,80,1,1
+	PuPlayer.LabelNew pBackglass,"partyh","AvantGarde LT Medium",		2,16777215  ,0,2,1,8,85,1,1
+	PuPlayer.LabelNew pBackglass,"partyj","AvantGarde LT Medium",		2,16777215  ,0,2,1,13,85,1,1
+	PuPlayer.LabelNew pBackglass,"mav","AvantGarde LT Medium",			2,16777215  ,0,2,1,8,85,1,1
+	PuPlayer.LabelNew pBackglass,"mwaf","AvantGarde LT Medium",			2,16777215  ,0,1,1,13,85,1,1
+	PuPlayer.LabelNew pBackglass,"notetitle","AvantGarde LT Medium",	4,16777215  ,0,1,1,50,87,1,1
+	PuPlayer.LabelNew pBackglass,"notecopy","AvantGarde-Book",			2,16777215 	,0,1,1,50,92,1,1
 	PuPlayer.LabelNew pBackglass,"titlebg","Fundamental 3D  Brigade",	9,0  ,0,1,1,50,50,1,1
 	PuPlayer.LabelNew pBackglass,"title","Fundamental  Brigade",		9,16777215 	,0,1,1,50,50,1,1
 	PuPlayer.LabelNew pBackglass,"titlebg2","Fundamental 3D  Brigade",	6,0  ,0,1,1,50,50,1,1
 	PuPlayer.LabelNew pBackglass,"title2","Fundamental  Brigade",		6,16777215 	,0,1,1,50,50,1,1
 	PuPlayer.LabelNew pBackglass,"modetitle","AvantGarde-Book",			2,16777215  ,0,1,1,80,74,1,1
-	PuPlayer.LabelNew pBackglass,"modetimer",typefont,	6,16777215  ,0,1,1,80,78,1,1
-	PuPlayer.LabelNew pBackglass,"high1name",typefont,	5,16777215  ,0,1,1,22,30,1,1
-	PuPlayer.LabelNew pBackglass,"high1score",typefont,	5,16777215  ,0,1,1,36,30,1,1
-	PuPlayer.LabelNew pBackglass,"high2name",typefont,	5,16777215  ,0,1,1,22,38,1,1
-	PuPlayer.LabelNew pBackglass,"high2score",typefont,	5,16777215  ,0,1,1,36,38,1,1
-	PuPlayer.LabelNew pBackglass,"high3name",typefont,	5,16777215  ,0,1,1,22,46,1,1
-	PuPlayer.LabelNew pBackglass,"high3score",typefont,	5,16777215  ,0,1,1,36,46,1,1
-	PuPlayer.LabelNew pBackglass,"high4name",typefont,	5,16777215  ,0,1,1,22,54,1,1
-	PuPlayer.LabelNew pBackglass,"high4score",typefont,	5,16777215  ,0,1,1,36,54,1,1
-	PuPlayer.LabelNew pBackglass,"waf1name",typefont,		5,16777215  ,0,1,1,56,30,1,1
-	PuPlayer.LabelNew pBackglass,"waf1score",typefont,	5,16777215  ,0,1,1,63,30,1,1
-	PuPlayer.LabelNew pBackglass,"waf2name",typefont,		5,16777215  ,0,1,1,56,38,1,1
-	PuPlayer.LabelNew pBackglass,"waf2score",typefont,	5,16777215  ,0,1,1,63,38,1,1
-	PuPlayer.LabelNew pBackglass,"waf3name",typefont,		5,16777215  ,0,1,1,56,46,1,1
-	PuPlayer.LabelNew pBackglass,"waf3score",typefont,	5,16777215  ,0,1,1,63,46,1,1
-	PuPlayer.LabelNew pBackglass,"waf4name",typefont,		5,16777215  ,0,1,1,56,54,1,1
-	PuPlayer.LabelNew pBackglass,"waf4score",typefont,	5,16777215  ,0,1,1,63,54,1,1
-	PuPlayer.LabelNew pBackglass,"HighScore",typefont,	6,16777215	,0,0,1,20,30,1,1
-	PuPlayer.LabelNew pBackglass,"HighScoreL1",typefont,	8,16777215	,0,0,1,20,40,1,1
-	PuPlayer.LabelNew pBackglass,"HighScoreL2",typefont,	8,16777215	,0,0,1,24,40,1,1
-	PuPlayer.LabelNew pBackglass,"HighScoreL3",typefont,	8,16777215	,0,0,1,28,40,1,1
-	PuPlayer.LabelNew pBackglass,"HighScoreL4",typefont,	4,16777215	,0,0,1,20,50,1,1
+	PuPlayer.LabelNew pBackglass,"modetimer","AvantGarde LT Medium",	6,16777215  ,0,1,1,80,78,1,1
+	PuPlayer.LabelNew pBackglass,"high1name","AvantGarde LT Medium",	5,16777215  ,0,1,1,22,30,1,1
+	PuPlayer.LabelNew pBackglass,"high1score","AvantGarde LT Medium",	5,16777215  ,0,1,1,36,30,1,1
+	PuPlayer.LabelNew pBackglass,"high2name","AvantGarde LT Medium",	5,16777215  ,0,1,1,22,38,1,1
+	PuPlayer.LabelNew pBackglass,"high2score","AvantGarde LT Medium",	5,16777215  ,0,1,1,36,38,1,1
+	PuPlayer.LabelNew pBackglass,"high3name","AvantGarde LT Medium",	5,16777215  ,0,1,1,22,46,1,1
+	PuPlayer.LabelNew pBackglass,"high3score","AvantGarde LT Medium",	5,16777215  ,0,1,1,36,46,1,1
+	PuPlayer.LabelNew pBackglass,"high4name","AvantGarde LT Medium",	5,16777215  ,0,1,1,22,54,1,1
+	PuPlayer.LabelNew pBackglass,"high4score","AvantGarde LT Medium",	5,16777215  ,0,1,1,36,54,1,1
+	PuPlayer.LabelNew pBackglass,"waf1name","AvantGarde LT Medium",		5,16777215  ,0,1,1,56,30,1,1
+	PuPlayer.LabelNew pBackglass,"waf1score","AvantGarde LT Medium",	5,16777215  ,0,1,1,63,30,1,1
+	PuPlayer.LabelNew pBackglass,"waf2name","AvantGarde LT Medium",		5,16777215  ,0,1,1,56,38,1,1
+	PuPlayer.LabelNew pBackglass,"waf2score","AvantGarde LT Medium",	5,16777215  ,0,1,1,63,38,1,1
+	PuPlayer.LabelNew pBackglass,"waf3name","AvantGarde LT Medium",		5,16777215  ,0,1,1,56,46,1,1
+	PuPlayer.LabelNew pBackglass,"waf3score","AvantGarde LT Medium",	5,16777215  ,0,1,1,63,46,1,1
+	PuPlayer.LabelNew pBackglass,"waf4name","AvantGarde LT Medium",		5,16777215  ,0,1,1,56,54,1,1
+	PuPlayer.LabelNew pBackglass,"waf4score","AvantGarde LT Medium",	5,16777215  ,0,1,1,63,54,1,1
+	PuPlayer.LabelNew pBackglass,"HighScore","AvantGarde LT Medium",	6,16777215	,0,0,1,20,30,1,1
+	PuPlayer.LabelNew pBackglass,"HighScoreL1","AvantGarde LT Medium",	8,16777215	,0,0,1,20,40,1,1
+	PuPlayer.LabelNew pBackglass,"HighScoreL2","AvantGarde LT Medium",	8,16777215	,0,0,1,24,40,1,1
+	PuPlayer.LabelNew pBackglass,"HighScoreL3","AvantGarde LT Medium",	8,16777215	,0,0,1,28,40,1,1
+	PuPlayer.LabelNew pBackglass,"HighScoreL4","AvantGarde LT Medium",	4,16777215	,0,0,1,20,50,1,1
 
 'obslabels
 	'day
-	PuPlayer.LabelNew pBackglass,"dh1n",typefont,				5,16777215  ,0,1,1,21,30,1,1
-	PuPlayer.LabelNew pBackglass,"dh1s",typefont,				5,16777215  ,0,1,1,32,30,1,1
-	PuPlayer.LabelNew pBackglass,"dh2n",typefont,				5,16777215  ,0,1,1,21,34,1,1
-	PuPlayer.LabelNew pBackglass,"dh2s",typefont,				5,16777215  ,0,1,1,32,34,1,1
-	PuPlayer.LabelNew pBackglass,"dh3n",typefont,				5,16777215  ,0,1,1,21,38,1,1
-	PuPlayer.LabelNew pBackglass,"dh3s",typefont,				5,16777215  ,0,1,1,32,38,1,1
-	PuPlayer.LabelNew pBackglass,"dh4n",typefont,				5,16777215  ,0,1,1,21,42,1,1
-	PuPlayer.LabelNew pBackglass,"dh4s",typefont,				5,16777215  ,0,1,1,32,42,1,1
-	PuPlayer.LabelNew pBackglass,"dh5n",typefont,				5,16777215  ,0,1,1,21,46,1,1
-	PuPlayer.LabelNew pBackglass,"dh5s",typefont,				5,16777215  ,0,1,1,32,46,1,1
-	PuPlayer.LabelNew pBackglass,"dh6n",typefont,				5,16777215  ,0,1,1,21,50,1,1
-	PuPlayer.LabelNew pBackglass,"dh6s",typefont,				5,16777215  ,0,1,1,32,50,1,1
-	PuPlayer.LabelNew pBackglass,"dh7n",typefont,				5,16777215  ,0,1,1,21,54,1,1
-	PuPlayer.LabelNew pBackglass,"dh7s",typefont,				5,16777215  ,0,1,1,32,54,1,1
-	PuPlayer.LabelNew pBackglass,"dh8n",typefont,				5,16777215  ,0,1,1,21,58,1,1
-	PuPlayer.LabelNew pBackglass,"dh8s",typefont,				5,16777215  ,0,1,1,32,58,1,1
-	PuPlayer.LabelNew pBackglass,"dh9n",typefont,				5,16777215  ,0,1,1,21,62,1,1
-	PuPlayer.LabelNew pBackglass,"dh9s",typefont,				5,16777215  ,0,1,1,32,62,1,1
-	PuPlayer.LabelNew pBackglass,"dh10n",typefont,			5,16777215  ,0,1,1,21,66,1,1
-	PuPlayer.LabelNew pBackglass,"dh10s",typefont,			5,16777215  ,0,1,1,32,66,1,1
+	PuPlayer.LabelNew pBackglass,"dh1n","AvantGarde LT Medium",				5,16777215  ,0,1,1,21,30,1,1
+	PuPlayer.LabelNew pBackglass,"dh1s","AvantGarde LT Medium",				5,16777215  ,0,1,1,32,30,1,1
+	PuPlayer.LabelNew pBackglass,"dh2n","AvantGarde LT Medium",				5,16777215  ,0,1,1,21,34,1,1
+	PuPlayer.LabelNew pBackglass,"dh2s","AvantGarde LT Medium",				5,16777215  ,0,1,1,32,34,1,1
+	PuPlayer.LabelNew pBackglass,"dh3n","AvantGarde LT Medium",				5,16777215  ,0,1,1,21,38,1,1
+	PuPlayer.LabelNew pBackglass,"dh3s","AvantGarde LT Medium",				5,16777215  ,0,1,1,32,38,1,1
+	PuPlayer.LabelNew pBackglass,"dh4n","AvantGarde LT Medium",				5,16777215  ,0,1,1,21,42,1,1
+	PuPlayer.LabelNew pBackglass,"dh4s","AvantGarde LT Medium",				5,16777215  ,0,1,1,32,42,1,1
+	PuPlayer.LabelNew pBackglass,"dh5n","AvantGarde LT Medium",				5,16777215  ,0,1,1,21,46,1,1
+	PuPlayer.LabelNew pBackglass,"dh5s","AvantGarde LT Medium",				5,16777215  ,0,1,1,32,46,1,1
+	PuPlayer.LabelNew pBackglass,"dh6n","AvantGarde LT Medium",				5,16777215  ,0,1,1,21,50,1,1
+	PuPlayer.LabelNew pBackglass,"dh6s","AvantGarde LT Medium",				5,16777215  ,0,1,1,32,50,1,1
+	PuPlayer.LabelNew pBackglass,"dh7n","AvantGarde LT Medium",				5,16777215  ,0,1,1,21,54,1,1
+	PuPlayer.LabelNew pBackglass,"dh7s","AvantGarde LT Medium",				5,16777215  ,0,1,1,32,54,1,1
+	PuPlayer.LabelNew pBackglass,"dh8n","AvantGarde LT Medium",				5,16777215  ,0,1,1,21,58,1,1
+	PuPlayer.LabelNew pBackglass,"dh8s","AvantGarde LT Medium",				5,16777215  ,0,1,1,32,58,1,1
+	PuPlayer.LabelNew pBackglass,"dh9n","AvantGarde LT Medium",				5,16777215  ,0,1,1,21,62,1,1
+	PuPlayer.LabelNew pBackglass,"dh9s","AvantGarde LT Medium",				5,16777215  ,0,1,1,32,62,1,1
+	PuPlayer.LabelNew pBackglass,"dh10n","AvantGarde LT Medium",			5,16777215  ,0,1,1,21,66,1,1
+	PuPlayer.LabelNew pBackglass,"dh10s","AvantGarde LT Medium",			5,16777215  ,0,1,1,32,66,1,1
 	'week
-	PuPlayer.LabelNew pBackglass,"wh1n",typefont,				5,16777215  ,0,1,1,54,30,1,1
-	PuPlayer.LabelNew pBackglass,"wh1s",typefont,				5,16777215  ,0,1,1,65,30,1,1
-	PuPlayer.LabelNew pBackglass,"wh2n",typefont,				5,16777215  ,0,1,1,54,34,1,1
-	PuPlayer.LabelNew pBackglass,"wh2s",typefont,				5,16777215  ,0,1,1,65,34,1,1
-	PuPlayer.LabelNew pBackglass,"wh3n",typefont,				5,16777215  ,0,1,1,54,38,1,1
-	PuPlayer.LabelNew pBackglass,"wh3s",typefont,				5,16777215  ,0,1,1,65,38,1,1
-	PuPlayer.LabelNew pBackglass,"wh4n",typefont,				5,16777215  ,0,1,1,54,42,1,1
-	PuPlayer.LabelNew pBackglass,"wh4s",typefont,				5,16777215  ,0,1,1,65,42,1,1
-	PuPlayer.LabelNew pBackglass,"wh5n",typefont,				5,16777215  ,0,1,1,54,46,1,1
-	PuPlayer.LabelNew pBackglass,"wh5s",typefont,				5,16777215  ,0,1,1,65,46,1,1
-	PuPlayer.LabelNew pBackglass,"wh6n",typefont,				5,16777215  ,0,1,1,54,50,1,1
-	PuPlayer.LabelNew pBackglass,"wh6s",typefont,				5,16777215  ,0,1,1,65,50,1,1
-	PuPlayer.LabelNew pBackglass,"wh7n",typefont,				5,16777215  ,0,1,1,54,54,1,1
-	PuPlayer.LabelNew pBackglass,"wh7s",typefont,				5,16777215  ,0,1,1,65,54,1,1
-	PuPlayer.LabelNew pBackglass,"wh8n",typefont,				5,16777215  ,0,1,1,54,58,1,1
-	PuPlayer.LabelNew pBackglass,"wh8s",typefont,				5,16777215  ,0,1,1,65,58,1,1
-	PuPlayer.LabelNew pBackglass,"wh9n",typefont,				5,16777215  ,0,1,1,54,62,1,1
-	PuPlayer.LabelNew pBackglass,"wh9s",typefont,				5,16777215  ,0,1,1,65,62,1,1
-	PuPlayer.LabelNew pBackglass,"wh10n",typefont,			5,16777215  ,0,1,1,54,66,1,1
-	PuPlayer.LabelNew pBackglass,"wh10s",typefont,			5,16777215  ,0,1,1,65,66,1,1
+	PuPlayer.LabelNew pBackglass,"wh1n","AvantGarde LT Medium",				5,16777215  ,0,1,1,54,30,1,1
+	PuPlayer.LabelNew pBackglass,"wh1s","AvantGarde LT Medium",				5,16777215  ,0,1,1,65,30,1,1
+	PuPlayer.LabelNew pBackglass,"wh2n","AvantGarde LT Medium",				5,16777215  ,0,1,1,54,34,1,1
+	PuPlayer.LabelNew pBackglass,"wh2s","AvantGarde LT Medium",				5,16777215  ,0,1,1,65,34,1,1
+	PuPlayer.LabelNew pBackglass,"wh3n","AvantGarde LT Medium",				5,16777215  ,0,1,1,54,38,1,1
+	PuPlayer.LabelNew pBackglass,"wh3s","AvantGarde LT Medium",				5,16777215  ,0,1,1,65,38,1,1
+	PuPlayer.LabelNew pBackglass,"wh4n","AvantGarde LT Medium",				5,16777215  ,0,1,1,54,42,1,1
+	PuPlayer.LabelNew pBackglass,"wh4s","AvantGarde LT Medium",				5,16777215  ,0,1,1,65,42,1,1
+	PuPlayer.LabelNew pBackglass,"wh5n","AvantGarde LT Medium",				5,16777215  ,0,1,1,54,46,1,1
+	PuPlayer.LabelNew pBackglass,"wh5s","AvantGarde LT Medium",				5,16777215  ,0,1,1,65,46,1,1
+	PuPlayer.LabelNew pBackglass,"wh6n","AvantGarde LT Medium",				5,16777215  ,0,1,1,54,50,1,1
+	PuPlayer.LabelNew pBackglass,"wh6s","AvantGarde LT Medium",				5,16777215  ,0,1,1,65,50,1,1
+	PuPlayer.LabelNew pBackglass,"wh7n","AvantGarde LT Medium",				5,16777215  ,0,1,1,54,54,1,1
+	PuPlayer.LabelNew pBackglass,"wh7s","AvantGarde LT Medium",				5,16777215  ,0,1,1,65,54,1,1
+	PuPlayer.LabelNew pBackglass,"wh8n","AvantGarde LT Medium",				5,16777215  ,0,1,1,54,58,1,1
+	PuPlayer.LabelNew pBackglass,"wh8s","AvantGarde LT Medium",				5,16777215  ,0,1,1,65,58,1,1
+	PuPlayer.LabelNew pBackglass,"wh9n","AvantGarde LT Medium",				5,16777215  ,0,1,1,54,62,1,1
+	PuPlayer.LabelNew pBackglass,"wh9s","AvantGarde LT Medium",				5,16777215  ,0,1,1,65,62,1,1
+	PuPlayer.LabelNew pBackglass,"wh10n","AvantGarde LT Medium",			5,16777215  ,0,1,1,54,66,1,1
+	PuPlayer.LabelNew pBackglass,"wh10s","AvantGarde LT Medium",			5,16777215  ,0,1,1,65,66,1,1
 	' all-time
-	PuPlayer.LabelNew pBackglass,"ah1n",typefont,				5,16777215  ,0,1,1,21,30,1,1
-	PuPlayer.LabelNew pBackglass,"ah1s",typefont,				5,16777215  ,0,1,1,32,30,1,1
-	PuPlayer.LabelNew pBackglass,"ah2n",typefont,				5,16777215  ,0,1,1,21,34,1,1
-	PuPlayer.LabelNew pBackglass,"ah2s",typefont,				5,16777215  ,0,1,1,32,34,1,1
-	PuPlayer.LabelNew pBackglass,"ah3n",typefont,				5,16777215  ,0,1,1,21,38,1,1
-	PuPlayer.LabelNew pBackglass,"ah3s",typefont,				5,16777215  ,0,1,1,32,38,1,1
-	PuPlayer.LabelNew pBackglass,"ah4n",typefont,				5,16777215  ,0,1,1,21,42,1,1
-	PuPlayer.LabelNew pBackglass,"ah4s",typefont,				5,16777215  ,0,1,1,32,42,1,1
-	PuPlayer.LabelNew pBackglass,"ah5n",typefont,				5,16777215  ,0,1,1,21,46,1,1
-	PuPlayer.LabelNew pBackglass,"ah5s",typefont,				5,16777215  ,0,1,1,32,46,1,1
-	PuPlayer.LabelNew pBackglass,"ah6n",typefont,				5,16777215  ,0,1,1,21,50,1,1
-	PuPlayer.LabelNew pBackglass,"ah6s",typefont,				5,16777215  ,0,1,1,32,50,1,1
-	PuPlayer.LabelNew pBackglass,"ah7n",typefont,				5,16777215  ,0,1,1,21,54,1,1
-	PuPlayer.LabelNew pBackglass,"ah7s",typefont,				5,16777215  ,0,1,1,32,54,1,1
-	PuPlayer.LabelNew pBackglass,"ah8n",typefont,				5,16777215  ,0,1,1,21,58,1,1
-	PuPlayer.LabelNew pBackglass,"ah8s",typefont,				5,16777215  ,0,1,1,32,58,1,1
-	PuPlayer.LabelNew pBackglass,"ah9n",typefont,				5,16777215  ,0,1,1,21,62,1,1
-	PuPlayer.LabelNew pBackglass,"ah9s",typefont,				5,16777215  ,0,1,1,32,62,1,1
-	PuPlayer.LabelNew pBackglass,"ah10n",typefont,			5,16777215  ,0,1,1,21,66,1,1
-	PuPlayer.LabelNew pBackglass,"ah10s",typefont,			5,16777215  ,0,1,1,32,66,1,1
-	PuPlayer.LabelNew pBackglass,"ah11n",typefont,			5,16777215  ,0,1,1,54,30,1,1
-	PuPlayer.LabelNew pBackglass,"ah11s",typefont,			5,16777215  ,0,1,1,65,30,1,1
-	PuPlayer.LabelNew pBackglass,"ah12n",typefont,			5,16777215  ,0,1,1,54,34,1,1
-	PuPlayer.LabelNew pBackglass,"ah12s",typefont,			5,16777215  ,0,1,1,65,34,1,1
-	PuPlayer.LabelNew pBackglass,"ah13n",typefont,			5,16777215  ,0,1,1,54,38,1,1
-	PuPlayer.LabelNew pBackglass,"ah13s",typefont,			5,16777215  ,0,1,1,65,38,1,1
-	PuPlayer.LabelNew pBackglass,"ah14n",typefont,			5,16777215  ,0,1,1,54,42,1,1
-	PuPlayer.LabelNew pBackglass,"ah14s",typefont,			5,16777215  ,0,1,1,65,42,1,1
-	PuPlayer.LabelNew pBackglass,"ah15n",typefont,			5,16777215  ,0,1,1,54,46,1,1
-	PuPlayer.LabelNew pBackglass,"ah15s",typefont,			5,16777215  ,0,1,1,65,46,1,1
-	PuPlayer.LabelNew pBackglass,"ah16n",typefont,			5,16777215  ,0,1,1,54,50,1,1
-	PuPlayer.LabelNew pBackglass,"ah16s",typefont,			5,16777215  ,0,1,1,65,50,1,1
-	PuPlayer.LabelNew pBackglass,"ah17n",typefont,			5,16777215  ,0,1,1,54,54,1,1
-	PuPlayer.LabelNew pBackglass,"ah17s",typefont,			5,16777215  ,0,1,1,65,54,1,1
-	PuPlayer.LabelNew pBackglass,"ah18n",typefont,			5,16777215  ,0,1,1,54,58,1,1
-	PuPlayer.LabelNew pBackglass,"ah18s",typefont,			5,16777215  ,0,1,1,65,58,1,1
-	PuPlayer.LabelNew pBackglass,"ah19n",typefont,			5,16777215  ,0,1,1,54,62,1,1
-	PuPlayer.LabelNew pBackglass,"ah19s",typefont,			5,16777215  ,0,1,1,65,62,1,1
-	PuPlayer.LabelNew pBackglass,"ah20n",typefont,			5,16777215  ,0,1,1,54,66,1,1
-	PuPlayer.LabelNew pBackglass,"ah20s",typefont,			5,16777215  ,0,1,1,65,66,1,1
+	PuPlayer.LabelNew pBackglass,"ah1n","AvantGarde LT Medium",				5,16777215  ,0,1,1,21,30,1,1
+	PuPlayer.LabelNew pBackglass,"ah1s","AvantGarde LT Medium",				5,16777215  ,0,1,1,32,30,1,1
+	PuPlayer.LabelNew pBackglass,"ah2n","AvantGarde LT Medium",				5,16777215  ,0,1,1,21,34,1,1
+	PuPlayer.LabelNew pBackglass,"ah2s","AvantGarde LT Medium",				5,16777215  ,0,1,1,32,34,1,1
+	PuPlayer.LabelNew pBackglass,"ah3n","AvantGarde LT Medium",				5,16777215  ,0,1,1,21,38,1,1
+	PuPlayer.LabelNew pBackglass,"ah3s","AvantGarde LT Medium",				5,16777215  ,0,1,1,32,38,1,1
+	PuPlayer.LabelNew pBackglass,"ah4n","AvantGarde LT Medium",				5,16777215  ,0,1,1,21,42,1,1
+	PuPlayer.LabelNew pBackglass,"ah4s","AvantGarde LT Medium",				5,16777215  ,0,1,1,32,42,1,1
+	PuPlayer.LabelNew pBackglass,"ah5n","AvantGarde LT Medium",				5,16777215  ,0,1,1,21,46,1,1
+	PuPlayer.LabelNew pBackglass,"ah5s","AvantGarde LT Medium",				5,16777215  ,0,1,1,32,46,1,1
+	PuPlayer.LabelNew pBackglass,"ah6n","AvantGarde LT Medium",				5,16777215  ,0,1,1,21,50,1,1
+	PuPlayer.LabelNew pBackglass,"ah6s","AvantGarde LT Medium",				5,16777215  ,0,1,1,32,50,1,1
+	PuPlayer.LabelNew pBackglass,"ah7n","AvantGarde LT Medium",				5,16777215  ,0,1,1,21,54,1,1
+	PuPlayer.LabelNew pBackglass,"ah7s","AvantGarde LT Medium",				5,16777215  ,0,1,1,32,54,1,1
+	PuPlayer.LabelNew pBackglass,"ah8n","AvantGarde LT Medium",				5,16777215  ,0,1,1,21,58,1,1
+	PuPlayer.LabelNew pBackglass,"ah8s","AvantGarde LT Medium",				5,16777215  ,0,1,1,32,58,1,1
+	PuPlayer.LabelNew pBackglass,"ah9n","AvantGarde LT Medium",				5,16777215  ,0,1,1,21,62,1,1
+	PuPlayer.LabelNew pBackglass,"ah9s","AvantGarde LT Medium",				5,16777215  ,0,1,1,32,62,1,1
+	PuPlayer.LabelNew pBackglass,"ah10n","AvantGarde LT Medium",			5,16777215  ,0,1,1,21,66,1,1
+	PuPlayer.LabelNew pBackglass,"ah10s","AvantGarde LT Medium",			5,16777215  ,0,1,1,32,66,1,1
+	PuPlayer.LabelNew pBackglass,"ah11n","AvantGarde LT Medium",			5,16777215  ,0,1,1,54,30,1,1
+	PuPlayer.LabelNew pBackglass,"ah11s","AvantGarde LT Medium",			5,16777215  ,0,1,1,65,30,1,1
+	PuPlayer.LabelNew pBackglass,"ah12n","AvantGarde LT Medium",			5,16777215  ,0,1,1,54,34,1,1
+	PuPlayer.LabelNew pBackglass,"ah12s","AvantGarde LT Medium",			5,16777215  ,0,1,1,65,34,1,1
+	PuPlayer.LabelNew pBackglass,"ah13n","AvantGarde LT Medium",			5,16777215  ,0,1,1,54,38,1,1
+	PuPlayer.LabelNew pBackglass,"ah13s","AvantGarde LT Medium",			5,16777215  ,0,1,1,65,38,1,1
+	PuPlayer.LabelNew pBackglass,"ah14n","AvantGarde LT Medium",			5,16777215  ,0,1,1,54,42,1,1
+	PuPlayer.LabelNew pBackglass,"ah14s","AvantGarde LT Medium",			5,16777215  ,0,1,1,65,42,1,1
+	PuPlayer.LabelNew pBackglass,"ah15n","AvantGarde LT Medium",			5,16777215  ,0,1,1,54,46,1,1
+	PuPlayer.LabelNew pBackglass,"ah15s","AvantGarde LT Medium",			5,16777215  ,0,1,1,65,46,1,1
+	PuPlayer.LabelNew pBackglass,"ah16n","AvantGarde LT Medium",			5,16777215  ,0,1,1,54,50,1,1
+	PuPlayer.LabelNew pBackglass,"ah16s","AvantGarde LT Medium",			5,16777215  ,0,1,1,65,50,1,1
+	PuPlayer.LabelNew pBackglass,"ah17n","AvantGarde LT Medium",			5,16777215  ,0,1,1,54,54,1,1
+	PuPlayer.LabelNew pBackglass,"ah17s","AvantGarde LT Medium",			5,16777215  ,0,1,1,65,54,1,1
+	PuPlayer.LabelNew pBackglass,"ah18n","AvantGarde LT Medium",			5,16777215  ,0,1,1,54,58,1,1
+	PuPlayer.LabelNew pBackglass,"ah18s","AvantGarde LT Medium",			5,16777215  ,0,1,1,65,58,1,1
+	PuPlayer.LabelNew pBackglass,"ah19n","AvantGarde LT Medium",			5,16777215  ,0,1,1,54,62,1,1
+	PuPlayer.LabelNew pBackglass,"ah19s","AvantGarde LT Medium",			5,16777215  ,0,1,1,65,62,1,1
+	PuPlayer.LabelNew pBackglass,"ah20n","AvantGarde LT Medium",			5,16777215  ,0,1,1,54,66,1,1
+	PuPlayer.LabelNew pBackglass,"ah20s","AvantGarde LT Medium",			5,16777215  ,0,1,1,65,66,1,1
 
 	Sub ruleshelperon
 		rulestime.enabled = 1
@@ -2237,11 +2216,11 @@ End Sub
 
 
 	'Page 2 (default Text Splash 1 Big Line)
-	PuPlayer.LabelNew pBackglass,"Splash"  ,"AvantGarde-Book",40,77749231,0,1,1,0,0,2,0
+	PuPlayer.LabelNew pBackglass,"Splash"  ,"avantgarde",40,77749231,0,1,1,0,0,2,0
 
 	'Page 3 (default Text Splash 2 Lines)
-	PuPlayer.LabelNew pBackglass,"Splash2a","AvantGarde-Book",40,77749231,0,1,1,0,25,3,0
-	PuPlayer.LabelNew pBackglass,"Splash2b","AvantGarde-Book",40,77749231,0,1,1,0,75,3,0
+	PuPlayer.LabelNew pBackglass,"Splash2a","avantgarde",40,77749231,0,1,1,0,25,3,0
+	PuPlayer.LabelNew pBackglass,"Splash2b","avantgarde",40,77749231,0,1,1,0,75,3,0
 
 	Sub resetbackglass
 	Loadhs
@@ -2749,7 +2728,7 @@ End Sub
 			SubmitOSBScore
 			end If
 			EndOfBallComplete()
-			checkwaffles()
+			'checkwaffles()
 		End If
 	End Sub
 
@@ -3454,8 +3433,8 @@ End Sub
 		PuPlayer.LabelSet pBackglass,"HighScoreL3","",1,""
 		PuPlayer.LabelSet pBackglass,"HighScoreL4","",1,""
 		PuPlayer.LabelSet pBackglass,"modetimer","",1,""
-			playpupmusicclear ' PuPlayer.playlistplayex pMusic,"audioclear","clear.mp3",100, 1
-			PuPlayer.playlistplayex pBackglass,"videoattract","intro-smaller.mov",60,1
+			PuPlayer.playlistplayex pMusic,"audioclear","clear.mp3",100, 1
+			PuPlayer.playlistplayex pBackglass,"videoattract","intro-smaller.mov",100,1
 			PuPlayer.LabelSet pBackglass,"notetitle","Need Rules Help?",1,""
 			PuPlayer.LabelSet pBackglass,"notecopy","Hold both flippers for 2 seconds while in attract mode for rules overlay \r Hold them again (or start a game) to remove it",1,""
 			PuPlayer.LabelSet pBackglass,"high1name","",1,""
@@ -3476,7 +3455,7 @@ End Sub
 			PuPlayer.LabelSet pBackglass,"waf4score","",1,""
 		Case 2
 		loadhs
-			playpupmusic "audiobgrock","",soundtrackvol,1 'PuPlayer.playlistplayex pMusic,"audiobgrock","",soundtrackvol,1
+			PuPlayer.playlistplayex pMusic,"audiobgrock","",soundtrackvol,1
 		PuPlayer.LabelSet pBackglass,"HighScore","",1,""
 		PuPlayer.LabelSet pBackglass,"HighScoreL1","",1,""
 		PuPlayer.LabelSet pBackglass,"HighScoreL2","",1,""
@@ -3642,8 +3621,8 @@ End Sub
 
 		Case 7
 			PuPlayer.playlistplayex pBackglass,"videoattract","nohatesm.mov",100,1
-			PuPlayer.LabelSet pBackglass,"notetitle","Be Excellent to Each Other",1,""
-			PuPlayer.LabelSet pBackglass,"notecopy","There is no place for homophobia, fascism, sexism, racism or hate",1,""
+			PuPlayer.LabelSet pBackglass,"notetitle","Hope You Enjoy The Game!",1,""
+			PuPlayer.LabelSet pBackglass,"notecopy","Table Update By LoadedWeapon",1,""
 			introposition = 0
 	End Select
 	End Sub
@@ -3756,7 +3735,6 @@ End Sub
 
 	Sub intromover_timer
 		introtime = introtime + 1
-
 		If introposition = 1 Then
 			If introtime = 47 Then
 				DMDintroloop
@@ -3794,10 +3772,10 @@ End Sub
 		End If
 		If introposition = 0 Then
 			If introtime = 9 Then
-		 		introposition = 0
-		 		DMDintroloop
-		 	End If
-		 End If
+				introposition = 0
+				DMDintroloop
+			End If
+		End If
 	End Sub
 
 
@@ -3809,7 +3787,7 @@ End Sub
 		'ShowTableInfo
 		DMDintroloop
 		StartRainbow aLights
-		DMDattract.Enabled = 1
+		'DMDattract.Enabled = 1
 		intromover.enabled = true
 		ruleshelperoff
 	End Sub
@@ -3822,7 +3800,7 @@ End Sub
 		LightSeqFlasher.StopPlay
 		StopRainbow
 		ResetAllLightsColor
-		DMDattract.Enabled = 0
+		'DMDattract.Enabled = 0
 		intromover.enabled = false
 		
 	'StopSong
@@ -4292,10 +4270,11 @@ End Sub
 
 
 	Sub StartLightSeq()
+
 		On Error Resume Next
 		'lights sequences
-		LightSeqaxmas.UpdateInterval = 150
-		LightSeqaxmas.Play SeqRandom, 10, , 50000
+'		LightSeqaxmas.UpdateInterval = 150
+'		LightSeqaxmas.Play SeqRandom, 10, , 50000
 		LightSeqFlasher.UpdateInterval = 150
 		LightSeqFlasher.Play SeqRandom, 10, , 50000
 		LightSeqAttract.UpdateInterval = 25
@@ -4711,6 +4690,8 @@ Redim fspeed(axmas.Count),intensity(axmas.Count),fadeDir(axmas.Count)
 
 '**************** Starts the fading
 Sub StartXMAS
+exit Sub
+
 Dim i:For i = 0 to axmas.Count-1
 axmas(i).timerInterval=-1
 axmas(i).timerenabled=1
@@ -5298,56 +5279,7 @@ End Sub
 
 	 
 
-'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-' X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  
-'/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/
-'\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\
-' X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  
-'/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/
-'  MANUAL BALLCONTROL
-'\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\
-' X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  
-'/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/
-'\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\
-' X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  
-	' 
 
-	Sub StartControl_Hit()
-		 Set ControlBall = ActiveBall
-		 contballinplay = true
-	End Sub
-
-	Sub StopControl_Hit()
-		 contballinplay = false
-	End Sub
-
-	Dim bcup, bcdown, bcleft, bcright, contball, contballinplay, ControlBall, bcboost
-	Dim bcvel, bcyveloffset, bcboostmulti
-
-	bcboost = 1 'Do Not Change - default setting
-	bcvel = 4 'Controls the speed of the ball movement
-	bcyveloffset = -0.01 'Offsets the force of gravity to keep the ball from drifting vertically on the table, should be negative
-	bcboostmulti = 3 'Boost multiplier to ball veloctiy (toggled with the B key)
-
-	Sub BallControl_Timer()
-		 If Contball and ContBallInPlay then
-			  If bcright = 1 Then
-				   ControlBall.velx = bcvel*bcboost
-			  ElseIf bcleft = 1 Then
-				   ControlBall.velx = - bcvel*bcboost
-			  Else
-				   ControlBall.velx=0
-			  End If
-
-			 If bcup = 1 Then
-				  ControlBall.vely = -bcvel*bcboost
-			 ElseIf bcdown = 1 Then
-				  ControlBall.vely = bcvel*bcboost
-			 Else
-				  ControlBall.vely= bcyveloffset
-			 End If
-		 End If
-	End Sub
 
 
 
@@ -5380,7 +5312,7 @@ End Sub
 
 	Sub AwardExtraBall()
 		If NOT bExtraBallWonThisBall Then
-			DMD "black.png", "EXTRA", "BALL",  2000
+			'DMD "black.png", "EXTRA", "BALL",  2000
 			LightShootAgain.State = 1
 			LightShootAgain1.State = 1
 			flashflash.Enabled = True
@@ -5473,7 +5405,7 @@ End Sub
 
 
 	Sub ResetForNewPlayerBall()
-		playpupmusicresume 'PuPlayer.playresume 4
+		PuPlayer.playresume 4
 		If PlayersPlayingGame > 1 Then
 			If CurrentPlayer = 1 Then
 				PuPlayer.playlistplayex pBackglass,"videoplayers","player1sm1.mov",40,1
@@ -5496,6 +5428,8 @@ End Sub
 			pNote "BALL " & Balls,"LAUNCH BALL"
 		PlaySound "flute"
 		End If
+
+		BIPL = 1
 		AddScore 0
 		BonusPoints(CurrentPlayer) = 0
 		bBonusHeld = False
@@ -5564,7 +5498,9 @@ End Sub
 	End Sub
 
 	Sub EndOfBall()
-		playpupmusicclear ' PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
+		PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
+
+
 		bMultiBallMode = False
 		bOnTheFirstBall = False
 		If NOT Tilted Then
@@ -5632,7 +5568,7 @@ End Sub
 
 	Sub Balldrained
 		DOF 312, DOFPulse  'DOF MX - Drained
-		playpupmusicclear 'PuPlayer.playlistplayex pMusic,"audioclear","clear.mp3",100, 1
+		PuPlayer.playlistplayex pMusic,"audioclear","clear.mp3",100, 1
 		PuPlayer.playlistplayex pBackglass,"videodrain","",100,1
 	End Sub
 
@@ -5682,7 +5618,7 @@ End Sub
 			End If
 				If(BallsOnPlayfield = 0) Then
 					bMultiBallMode = False
-					PlaySong "m_wait"
+					'PlaySong "m_wait"
 					ChangeGi "white"
 		If poolactive = 1 Then
 			poolend
@@ -6160,11 +6096,11 @@ End Sub
 
 	Sub ResetNewBallVariables()          'reset variables for a new ball or player
 		If rockmusic = 1 Then
-		playpupmusic "audiobgrock","",soundtrackvol,1  'PuPlayer.playlistplayex pMusic,"audiobgrock","",soundtrackvol,1
-		'PuPlayer.SetLoop 4,1		
+		PuPlayer.playlistplayex pMusic,"audiobgrock","",soundtrackvol,1
+		PuPlayer.SetLoop 4,1		
 		Else
-		playpupmusic "audiobg","",soundtrackvol,1  'PuPlayer.playlistplayex pMusic,"audiobg","",soundtrackvol,1
-		'PuPlayer.SetLoop 4,1
+		PuPlayer.playlistplayex pMusic,"audiobg","",soundtrackvol,1
+		PuPlayer.SetLoop 4,1
 		End if
 	End Sub
 
@@ -6584,11 +6520,14 @@ End Sub
 	Dim LStep, RStep
 
 	Sub LeftSlingShot_Slingshot
+        LS.VelocityCorrect(Activeball)
 		If Tilted Then Exit Sub
 		movemodes
 		LightEffect 7
-		PlaySoundAt SoundFXDOF("fx_slingshot", 103, DOFPulse, DOFContactors), lane3
-		PlaySound "whomp"
+		DOF 103, DOFPulse
+		'PlaySoundAt SoundFXDOF("Sling_L1", 103, DOFPulse, DOFContactors), lane3
+		RandomSoundSlingshotLeft Sling2
+		'PlaySound "whomp"
 		DOF 104, DOFPulse	'DOF OuterLeft Flasher Red
 		DOF 300, DOFPulse   'DOF MX - Left Slingshot
 		LeftSling4.Visible = 1
@@ -6613,11 +6552,14 @@ End Sub
 	End Sub
 
 	Sub RightSlingShot_Slingshot
+        RS.VelocityCorrect(Activeball)
 		If Tilted Then Exit Sub
 		LightEffect 6
 		movemodes
-		PlaySoundAt SoundFXDOF("fx_slingshot", 105, DOFPulse, DOFContactors), lane5
-		PlaySound "whomp"
+		DOF 105, DOFPulse
+		'PlaySoundAt SoundFXDOF("Sling_R1", 105, DOFPulse, DOFContactors), lane5
+		'PlaySound "whomp"
+		RandomSoundSlingshotRight Sling1
 		DOF 106, DOFPulse	'DOF OuterRight Flasher Red
 		DOF 301, DOFPulse   'DOF MX - Right Slingshot
 		RightSling4.Visible = 1
@@ -6683,7 +6625,7 @@ End Sub
 	Sub Spinner1_Spin
 		DOF 131, DOFPulse
 		DOF 350, DOFPulse   'DOF MX - Left Spinner
-		PlaySoundAt "fx_spinner", Spinner1
+		SoundSpinner Spinner1
 		If Not Tilted Then
 			' any light effect?
 			' any ''''DMD display?
@@ -6702,7 +6644,7 @@ End Sub
 	Sub Spinner2_Spin
 		DOF 130, DOFPulse
 		DOF 351, DOFPulse   'DOF MX - Right Spinner
-		PlaySoundAt "fx_spinner", Spinner2
+		SoundSpinner Spinner2
 		If Not Tilted Then
 			' any light effect?
 			' any ''''DMD display?
@@ -6736,9 +6678,12 @@ End Sub
 	Dim quotenum:quotenum = 0
 	Sub randomquote
 		quotenum = RndNum(1,5)
+'		debug.print "Q:" & quotenum
 		Select Case quotenum
 			Case 1
-			PuPlayer.playlistplayex pBackglass,"videoquotes","",100,1
+				PuPlayer.playlistplayex pBackglass,"videoquotes","",100,1
+			Case 2
+				RandomLightQuote
 		End Select
 	End Sub
 
@@ -6872,7 +6817,7 @@ End Sub
 		DOF 142, DOFPulse
 		LightEffect 12
 		FlashLevel1 = 1 : Flasherflash1_Timer
-		PlaySoundAt "fx_metalrolling", ActiveBall
+		'PlaySoundAt "fx_metalrolling", ActiveBall
 
 		If Tilted Then Exit Sub
 
@@ -6960,7 +6905,7 @@ End Sub
 		DOF 142, DOFPulse
 		LightEffect 12
 		FlashLevel2 = 1 : Flasherflash2_Timer
-		PlaySoundAt "fx_metalrolling", ActiveBall
+		'PlaySoundAt "fx_metalrolling", ActiveBall
 
 		If Tilted Then Exit Sub
 
@@ -7050,7 +6995,7 @@ End Sub
 		LightEffect 13
 		FlashLevel4 = 1 : Flasherflash4_Timer
 		FlashLevel6 = 1 : Flasherflash6_Timer
-		PlaySoundAt "fx_metalrolling", ActiveBall
+		'PlaySoundAt "fx_metalrolling", ActiveBall
 		PlaySound "portalopen"
 
 		If bMultiBallMode = False Then
@@ -7318,7 +7263,7 @@ End Sub
 	End Sub
 
 	Sub levitateprestart
-		playpupmusicpause 'PuPlayer.playpause 4
+		PuPlayer.playpause 4
 		Dim waittime
 		avclubready.state = 0
 		avclubready1.state = 0
@@ -7334,7 +7279,7 @@ End Sub
 	End Sub
 
 	Sub poolprestart
-		playpupmusicpause 'PuPlayer.playpause 4
+		PuPlayer.playpause 4
 		Dim waittime
 		waittime = 8000
 		avclubready.state = 0
@@ -7366,7 +7311,7 @@ End Sub
 	End Sub
 
 	Sub compassprestart
-		playpupmusicpause 'PuPlayer.playpause 4
+		PuPlayer.playpause 4
 		Dim waittime
 		avclubready.state = 0
 		avclubready1.state = 0
@@ -7403,7 +7348,9 @@ End Sub
 	Sub exitav3
 		FlashLevel6 = 1 : Flasherflash6_Timer
 		kicker1.Kick 200, 20
-		PlaySoundAt SoundFXDOF("fx_kicker", 200, DOFPulse, DOFContactors), kicker1   
+		SoundSaucerKick 1, Kicker1
+		DOF 200, DOFPulse
+		'PlaySoundAt SoundFXDOF("fx_kicker", 200, DOFPulse, DOFContactors), kicker1   
 		DOF 361, DOFPulse  'DOF MX - Center Blue Flasher
 		DOF 115, DOFPulse
 		PlaySound "zing"
@@ -7568,7 +7515,7 @@ End Sub
 	Sub levitatestart
 		If levitateskip = 0 then exit Sub
 		PuPlayer.LabelSet pBackglass,"notetitle","A.V. CLUB - Levitation Mode | 0/10",1,""
-		avsdone(CurrentPlayer) = avsdone(CurrentPlayer) + 1
+		'avsdone(CurrentPlayer) = avsdone(CurrentPlayer) + 1
 		exitav
 		BallLockEscape.enabled = False
 		inmode = 1
@@ -7577,9 +7524,9 @@ End Sub
 		PuPlayer.SetLoop 2,1
 		GiOff
 		GiPurple
-		playpupmusicpause 'PuPlayer.playpause 4
-		playpupmusic "audiomodes","levitate.mp3",soundtrackvol,1 ' PuPlayer.playlistplayex pAudio,"audiomodes","levitate.mp3",100,1
-		'PuPlayer.SetLoop 7,1
+		PuPlayer.playpause 4
+		PuPlayer.playlistplayex pAudio,"audiomodes","levitate.mp3",100,1
+		PuPlayer.SetLoop 7,1
 		levitatetime.enabled = True
 		batterygreen.state = 0
 		batterygreen1.state = 0
@@ -7753,9 +7700,9 @@ End Sub
 		GiOff
 		GiOn
 		End If
-		playpupmusicresume 'PuPlayer.playresume 4
-		'PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
-		'PuPlayer.SetLoop 7,0
+		PuPlayer.playresume 4
+		PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
+		PuPlayer.SetLoop 7,0
 		levitatetime.enabled = False
 		levitatemove.enabled = False
 		levitatepos = 0
@@ -7769,6 +7716,7 @@ End Sub
 		levitate1.state = 1
 		resetmodecheck
 
+		avsdone(CurrentPlayer) = avsdone(CurrentPlayer) + 1
 		If avsdone(CurrentPlayer) = 2 and extraball.state = 0 Then
 			extraballmode
 		End If
@@ -7796,9 +7744,9 @@ End Sub
 		PuPlayer.SetLoop 2,1
 		GiOff
 		GiPurple
-		playpupmusicpause 'PuPlayer.playpause 4
-		playpupmusic "audiomodes","pool.mp3",soundtrackvol,1 'PuPlayer.playlistplayex pAudio,"audiomodes","pool.mp3",100,1
-		'PuPlayer.SetLoop 7,1
+		PuPlayer.playpause 4
+		PuPlayer.playlistplayex pAudio,"audiomodes","pool.mp3",100,1
+		PuPlayer.SetLoop 7,1
 		pooltime.enabled = True
 		llo4.state = 2
 		llo6.state = 2
@@ -7819,7 +7767,7 @@ End Sub
 		batt1on(CurrentPlayer) = 0
 		batt2on(CurrentPlayer) = 0
 		batt3on(CurrentPlayer) = 0
-		avsdone(CurrentPlayer) = avsdone(CurrentPlayer) + 1
+		'avsdone(CurrentPlayer) = avsdone(CurrentPlayer) + 1
 		poolskip = 0
 	End Sub
 
@@ -7930,9 +7878,9 @@ End Sub
 		GiOff
 		GiOn
 		End If
-		playpupmusicresume 'PuPlayer.playresume 4
-		'PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
-		'PuPlayer.SetLoop 7,0
+		PuPlayer.playresume 4
+		PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
+		PuPlayer.SetLoop 7,0
 		pooltime.enabled = False
 		SetLightColor pool, amber, -1
 		SetLightColor pool1, amber, -1
@@ -7943,6 +7891,8 @@ End Sub
 		poolawarded = 0
 		poolactive = 0
 		resetmodecheck
+	
+		avsdone(CurrentPlayer) = avsdone(CurrentPlayer) + 1
 		If avsdone(CurrentPlayer) = 2 and extraball.state = 0 Then
 			extraballmode
 		End If
@@ -7969,9 +7919,9 @@ End Sub
 		PuPlayer.SetLoop 2,1
 		GiOff
 		GiPurple
-		playpupmusicpause 'PuPlayer.playpause 4
-		playpupmusic "audiomodes","radio.mp3",soundtrackvol,1 'PuPlayer.playlistplayex pAudio,"audiomodes","radio.mp3",100,1
-		'PuPlayer.SetLoop 7,1
+		PuPlayer.playpause 4
+		PuPlayer.playlistplayex pAudio,"audiomodes","radio.mp3",100,1
+		PuPlayer.SetLoop 7,1
 		radiomove.enabled = True
 		radiotime.enabled = True
 		radioactive = 1
@@ -7987,7 +7937,7 @@ End Sub
 		batt1on(CurrentPlayer) = 0
 		batt2on(CurrentPlayer) = 0
 		batt3on(CurrentPlayer) = 0
-		avsdone(CurrentPlayer) = avsdone(CurrentPlayer) + 1
+		'avsdone(CurrentPlayer) = avsdone(CurrentPlayer) + 1
 		radioskip = 0
 	End Sub
 
@@ -8097,9 +8047,9 @@ End Sub
 		GiOff
 		GiOn
 		End If
-		playpupmusicresume 'PuPlayer.playresume 4
-		'PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
-		'PuPlayer.SetLoop 7,0
+		PuPlayer.playresume 4
+		PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
+		PuPlayer.SetLoop 7,0
 		radiodone(CurrentPlayer) = 1
 		SetLightColor radio, amber, -1
 		radio.state = 1
@@ -8112,6 +8062,8 @@ End Sub
 		radioactive = 0
 		radiomove.enabled = False
 		radiotime.enabled = False
+
+		avsdone(CurrentPlayer) = avsdone(CurrentPlayer) + 1
 		If avsdone(CurrentPlayer) = 2 and extraball.state = 0 Then
 			extraballmode
 		End If
@@ -8139,9 +8091,9 @@ End Sub
 		PuPlayer.playlistplayex pBackglass,"videocompass","compassmid.mov",100,2
 		GiOff
 		GiPurple
-		playpupmusicpause 'PuPlayer.playpause 4
-		playpupmusic "audiomodes","compass.mp3",soundtrackvol,1 'PuPlayer.playlistplayex pAudio,"audiomodes","compass.mp3",100,1
-		'PuPlayer.SetLoop 7,1
+		PuPlayer.playpause 4
+		PuPlayer.playlistplayex pAudio,"audiomodes","compass.mp3",100,1
+		PuPlayer.SetLoop 7,1
 		compassactive = 1
 		llo4.state = 2
 		llo6.state = 2
@@ -8162,7 +8114,7 @@ End Sub
 		batt1on(CurrentPlayer) = 0
 		batt2on(CurrentPlayer) = 0
 		batt3on(CurrentPlayer) = 0
-		avsdone(CurrentPlayer) = avsdone(CurrentPlayer) + 1
+		'avsdone(CurrentPlayer) = avsdone(CurrentPlayer) + 1
 		compassskip = 0
 	End Sub
 
@@ -8257,9 +8209,9 @@ End Sub
 		GiOff
 		GiOn
 		End If
-		playpupmusicresume 'PuPlayer.playresume 4
-		'PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
-		'PuPlayer.SetLoop 7,0
+		PuPlayer.playresume 4
+		PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
+		PuPlayer.SetLoop 7,0
 		compasstime.enabled = False
 		compassdone(CurrentPlayer) = 1
 		SetLightColor compass, amber, -1
@@ -8276,6 +8228,7 @@ End Sub
 		llo5.state = 0
 		llo10.state = 0
 		resetmodecheck
+		avsdone(CurrentPlayer) = avsdone(CurrentPlayer) + 1
 		If avsdone(CurrentPlayer) = 2 and extraball.state = 0 Then
 			extraballmode
 		End If
@@ -8303,10 +8256,12 @@ End Sub
 		LightEffect 5
 		If NOT Tilted Then
 			BumperRewards
-			PlaySoundAt SoundFXDOF("fx_bumper", 107, DOFPulse, DOFContactors), ActiveBall  
+			DOF 107, DOFPulse
+			'PlaySoundAt SoundFXDOF("fx_bumper", 107, DOFPulse, DOFContactors), ActiveBall  
 			DOF 110, DOFPulse   'Left Flasher Gold
 			DOF 302, DOFPulse   'DOF MX - Bumper 1
 			PlaySound "wave"
+			RandomSoundBumperTop Bumper1
 			AddScore 1000
 		End If
 	End Sub
@@ -8316,10 +8271,12 @@ End Sub
 		LightEffect 5
 		If NOT Tilted Then
 			BumperRewards
-			PlaySoundAt SoundFXDOF("fx_bumper", 109, DOFPulse, DOFContactors), ActiveBall	
+			DOF 109, DOFPulse
+			'PlaySoundAt SoundFXDOF("fx_bumper", 109, DOFPulse, DOFContactors), ActiveBall	
 			DOF 111, DOFPulse   'Center Flasher Gold
 			DOF 303, DOFPulse   'DOF MX - Bumper 2
 			PlaySound "wave"
+			RandomSoundBumperMiddle Bumper2
 			AddScore 1000
 		End If
 	End Sub
@@ -8329,10 +8286,12 @@ End Sub
 		LightEffect 5
 		If NOT Tilted Then
 			BumperRewards
-			PlaySoundAt SoundFXDOF("fx_bumper", 108, DOFPulse, DOFContactors), ActiveBall	
+			DOF 108, DOFPulse
+			'PlaySoundAt SoundFXDOF("fx_bumper", 108, DOFPulse, DOFContactors), ActiveBall	
 			DOF 112, DOFPulse   'Right Flasher Gold
 			DOF 304, DOFPulse   'DOF MX - Bumper 3
 			PlaySound "wave"
+			RandomSoundBumperBottom Bumper3
 			AddScore 1000
 		End If
 	End Sub
@@ -8486,7 +8445,7 @@ End Sub
 					Else
 					waittime = 16000
 					End If
-					playpupmusicpause 'PuPlayer.playpause 4
+					PuPlayer.playpause 4
 					PuPlayer.playlistplayex pBackglass,"videobarb","barbmdstart.mov",100,1
 					vpmtimer.addtimer waittime, "StartBarb'"
 					PuPlayer.LabelSet pBackglass,"barbh","" & BallsInLock(CurrentPlayer) ,1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
@@ -8518,7 +8477,7 @@ End Sub
 					vpmtimer.addtimer waittime, "BallLockRunExit '"
 				Case 2
 					badmenskip = 1
-					playpupmusicpause 'PuPlayer.playpause 4
+					PuPlayer.playpause 4
 					ResetRunLights
 					run1lock(CurrentPlayer) = 3
 					ruleshelperoff
@@ -8606,7 +8565,7 @@ End Sub
 					vpmtimer.addtimer waittime, "BallLockRunExit '"
 				Case 2
 					badmenskip = 1
-					playpupmusicpause 'PuPlayer.playpause 4
+					PuPlayer.playpause 4
 					ResetRunLights
 					run1lock(CurrentPlayer) = 3
 					ruleshelperoff
@@ -8712,7 +8671,7 @@ End Sub
 					Else
 					waittime = 16000
 					End If
-					playpupmusicpause 'PuPlayer.playpause 4
+					PuPlayer.playpause 4
 					PuPlayer.playlistplayex pBackglass,"videobarb","barbmdstart.mov",100,1
 					vpmtimer.addtimer waittime, "StartBarb'"
 					PuPlayer.LabelSet pBackglass,"barbh","" & BallsInLock(CurrentPlayer) ,1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
@@ -8803,7 +8762,7 @@ End Sub
 
 	Sub partyprestart
 		partyskip = 1
-		playpupmusicpause 'PuPlayer.playpause 4
+		PuPlayer.playpause 4
 		gioff
 		Dim waittime
 		If inmode = 1 Then
@@ -8843,7 +8802,9 @@ End Sub
 		DOF 360, DOFPulse  'DOF MX - Right Red Flasher
 		FlashLevel3 = 1 : Flasherflash3_Timer
 		castlekicker.Kick 230, 22
-		PlaySoundAt SoundFXDOF("fx_kicker", 137, DOFPulse, DOFContactors), castlekicker   
+		SoundSaucerKick 1, castleKicker
+		DOF 137, DOFPulse
+		'PlaySoundAt SoundFXDOF("fx_kicker", 137, DOFPulse, DOFContactors), castlekicker   
 		PlaySound "flute"
 	End Sub
 
@@ -8942,9 +8903,9 @@ End Sub
 		PuPlayer.SetLoop 2,1
 		GiOff
 		GiOrange
-		playpupmusicpause 'PuPlayer.playpause 4
-		playpupmusic "audiomultiballs","party.mp3",soundtrackvol,1 'PuPlayer.playlistplayex pAudio,"audiomultiballs","party.mp3",100,1
-		'PuPlayer.SetLoop 7,1
+		PuPlayer.playpause 4
+		PuPlayer.playlistplayex pAudio,"audiomultiballs","party.mp3",100,1
+		PuPlayer.SetLoop 7,1
 		partylock.state = 0
 		partylock1.state = 0
 		partyready(CurrentPlayer) = 0
@@ -8954,8 +8915,29 @@ End Sub
 		AddMultiball 1
 		EnableBallSaver 15
 		flashflash.Enabled = True
-		LightSeqaxmas.UpdateInterval = 150
-		LightSeqaxmas.Play SeqRandom, 10, , 100000
+'		StartDemoLightSeq
+'		GeneralPupQueue.Add "StopDemoLightSeq","StopDemoLightSeq",80,100000,0,0,0,False
+
+	dim k, newLoopDelay
+		xmasQueue.RemoveAll(True)
+		bInLightQuote = True
+		PrepSpellWord 40
+		SetLoopDelay "adventuring party" 
+
+		SpellWord "adventuring party"
+
+		for k = 1 to 7
+			
+			NewLoopDelay = LoopDelay*k
+		debug.print "loop delay :" &k &":" &newloopdelay	
+	
+			xmasQueue.Add "SpellWord-"&k,"SpellWord ""adventuring party"" ",80,NewLoopDelay,0,0,0,False
+		Next
+
+		xmasQueue.Add "SpellEnd","giOn:bInLightQuote = False",75,LoopDelay*8+(delayInc*myFSpeed*2),0,0,0,False
+
+'		LightSeqaxmas.UpdateInterval = 150
+'		LightSeqaxmas.Play SeqRandom, 10, , 100000
 		LightSeqFlasher.UpdateInterval = 150
 		LightSeqFlasher.Play SeqRandom, 10, , 100000
 		boltsoff
@@ -9074,9 +9056,9 @@ End Sub
 		PuPlayer.SetLoop 2,0
 		GiOff
 		GiOn
-		playpupmusicresume 'PuPlayer.playresume 4
-		'PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
-		'PuPlayer.SetLoop 7,0
+		PuPlayer.playresume 4
+		PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
+		PuPlayer.SetLoop 7,0
 		ResetPartyLights
 		bMultiBallMode = False
 		PartyMultiball = False
@@ -9085,7 +9067,11 @@ End Sub
 		FlashEffect 0
 		Flashxmas 0
 		LightSeqFlasher.StopPlay
-		LightSeqaxmas.StopPlay
+		' Reset party jacks count
+		partyjacks(CurrentPlayer) = 0
+		
+		xmasqueue.RemoveAll(True)
+'		LightSeqaxmas.StopPlay
 		endamultiball
 
 	End Sub
@@ -9128,9 +9114,9 @@ End Sub
 
 
 	Sub lane1_Hit
-		PlaySoundAt "fx_sensor", ActiveBall
+		'PlaySoundAt "fx_sensor", ActiveBall
 		If bMultiBallMode = False Then
-			PlaySound "lane"
+			'PlaySound "lane"
 			DOF 144, DOFPulse
 			DOF 313, DOFPulse   'DOF MX - Left Outer Lane
 		End If
@@ -9147,14 +9133,15 @@ End Sub
 	End Sub
 
 	Sub lane2_Hit
-		PlaySoundAt "fx_sensor", ActiveBall
+		'PlaySoundAt "fx_sensor", ActiveBall
 		If bMultiBallMode = False Then
-			PlaySound "lane"
+			'PlaySound "lane"
 			DOF 145, DOFPulse
 			DOF 315, DOFPulse   'DOF MX - Left Inner Lane
 		End If
 		If Tilted Then Exit Sub
 		LaneBonus = LaneBonus + 1
+		activeball.vely = 1 ' slow down the ball
 		ll2.State = 1
 		ll7.State = 1
 		AddScore 10010
@@ -9166,13 +9153,14 @@ End Sub
 	End Sub
 
 	Sub lane3_Hit
-		PlaySoundAt "fx_sensor", ActiveBall
+		'PlaySoundAt "fx_sensor", ActiveBall
 		If bMultiBallMode = False Then
-			PlaySound "lane"
+			'PlaySound "lane"
 			DOF 146, DOFPulse
 			DOF 315, DOFPulse   'DOF MX - Left Inner Lane
 		End If
 		If Tilted Then Exit Sub
+		activeball.vely = 1 ' slow down the ball
 		LaneBonus = LaneBonus + 1
 		ll3.State = 1
 		ll6.State = 1
@@ -9185,13 +9173,14 @@ End Sub
 	End Sub
 
 	Sub lane4_Hit
-		PlaySoundAt "fx_sensor", ActiveBall
+		'PlaySoundAt "fx_sensor", ActiveBall
 		If bMultiBallMode = False Then
-			PlaySound "lane"
+			'PlaySound "lane"
 			DOF 147, DOFPulse
 			DOF 316, DOFPulse   'DOF MX - Right Inner Lane
 		End If
 		If Tilted Then Exit Sub
+		activeball.vely = 1 ' slow down the ball
 		LaneBonus = LaneBonus + 1
 		ll4.State = 1
 		ll9.State = 1
@@ -9204,9 +9193,9 @@ End Sub
 	End Sub
 
 	Sub lane5_Hit
-		PlaySoundAt "fx_sensor", ActiveBall
+		'PlaySoundAt "fx_sensor", ActiveBall
 		If bMultiBallMode = False Then
-			PlaySound "lane"
+			'PlaySound "lane"
 			DOF 148, DOFPulse
 			DOF 314, DOFPulse   'DOF MX - Right Outer Lane
 		End If
@@ -9233,7 +9222,7 @@ End Sub
 			End If
 			kickinback
 
-			DMD "black.png", "Ball Save","Activated",  500
+			''''DMD "black.png", "Ball Save","Activated",  500
 		End If
 	End Sub
 
@@ -9251,8 +9240,10 @@ End Sub
 		if bBallSaverActive = false Then
 			EnableBallSaver 5
 		end if
-		kickback.Kick 0, 79
-		PlaySoundAt SoundFXDOF("fx_kicker", 103, DOFPulse, DOFContactors), kickback  
+		kickback.Kick 0, 22+RndNum(1,10)
+		SoundSaucerKick 1, Kickback
+		DOF 103, DOFPulse
+		'PlaySoundAt SoundFXDOF("fx_kicker", 103, DOFPulse, DOFContactors), kickback  
 		DOF 309, DOFPulse   'DOF MX - Kickback
 		PuPlayer.playlistplayex pBackglass,"videokickback","",100,1
 		kickbackon(CurrentPlayer) = 0
@@ -9298,7 +9289,8 @@ End Sub
 		wallll.State = 1
 		wallll1.State = 1
 		checkbank
-		PlaySoundAt SoundFXDOF("fx_target", 201, DOFPulse, DOFTargets), ActiveBall   
+		DOF 201, DOFPulse
+		'PlaySoundAt SoundFXDOF("fx_target", 201, DOFPulse, DOFTargets), ActiveBall   
 		DOF 340, DOFPulse  'DOF MX - Barricade Targets
 		If WillMultiball = True Then
 		Else
@@ -9314,7 +9306,8 @@ End Sub
 		wallml.State = 1
 		wallml1.State = 1
 		checkbank
-		PlaySoundAt SoundFXDOF("fx_target", 201, DOFPulse, DOFTargets), ActiveBall   
+		DOF 201, DOFPulse
+		'PlaySoundAt SoundFXDOF("fx_target", 201, DOFPulse, DOFTargets), ActiveBall   
 		DOF 340, DOFPulse  'DOF MX - Barricade Targets
 		If WillMultiball = True Then
 		Else
@@ -9330,7 +9323,8 @@ End Sub
 		wallrl.State = 1
 		wallrl1.State = 1
 		checkbank
-		PlaySoundAt SoundFXDOF("fx_target", 201, DOFPulse, DOFTargets), ActiveBall   
+		DOF 201, DOFPulse
+		'PlaySoundAt SoundFXDOF("fx_target", 201, DOFPulse, DOFTargets), ActiveBall   
 		DOF 340, DOFPulse  'DOF MX - Barricade Targets
 		If WillMultiball = True Then
 		Else
@@ -9371,11 +9365,23 @@ End Sub
 					Dim waittime
 					waittime = 16000
 					gioff
-					vpmtimer.addtimer waittime, "Dropwall'"
+					'vpmtimer.addtimer waittime, "Dropwall'"
+					BallHandlingQueue.Add "Dropwall","Dropwall",95,waittime,0,0,0,True
 					MagnetW.MagnetON = True
 					spinner.MotorOn = True
-					playpupmusicpause 'PuPlayer.playpause 4
+					PuPlayer.playpause 4
+
+					myFSpeed = 80
+
 					PuPlayer.playlistplayex pBackglass,"videowill","barricade down.mov",100,1
+					GeneralPupQueue.Add "StopXmas","StopXmas",95,2000,0,0,0,True
+					GeneralPupQueue.Add "Spell-R","Spell ""r"" ",95,3200,0,0,0,True
+					GeneralPupQueue.Add "Spell-U","Spell ""u"" ",95,5500,0,0,0,True
+					GeneralPupQueue.Add "Spell-N","Spell ""n"" ",95,8700,0,0,0,True
+					GeneralPupQueue.Add "StartDemoLightSeq","StartDemoLightSeq",95,12600,0,0,0,True
+					GeneralPupQueue.Add "StopDemoLightSeq","StopDemoLightSeq",95,15600,0,0,0,True
+
+
 					DOF_Shaker_R.enabled = true  'DOF - Shaker pulse for "R"
 					DOF_Shaker_U.enabled = true  'DOF - Shaker pulse for "U"
 					DOF_Shaker_N.enabled = true  'DOF - Shaker pulse for "N"
@@ -9439,25 +9445,13 @@ End Sub
 	'*****************
 	' Maths
 	'*****************
-	Const Pi = 3.1415927
 
-	Function dSin(degrees)
-		dsin = sin(degrees * Pi/180)
-	End Function
-
-	Function dCos(degrees)
-		dcos = cos(degrees * Pi/180)
-	End Function
-
-	Function RndNum(min, max)
-		RndNum = Int(Rnd() * (max-min + 1) ) + min ' Sets a random number between min and max
-	End Function
 
 
 	dim twalk,rndD,Ddir:ddir=1
 	Sub demWalk_Timer
 
-		twalk=twalk+0.8*Ddir
+		twalk=twalk+0.3*Ddir
 
 		if dgs= 1 then 
 			rndD=RndNum(1,3):if rndD=1 then Ddir=ddir*-1
@@ -9467,7 +9461,8 @@ End Sub
 		Dleft.rotz=dsin(twalk)*20
 		Dright.rotz=dsin(twalk)*20
 		Dhead.rotz=dsin(twalk)*-10+(rndD*3)
-
+        Dhead001.rotz=dsin(twalk)*-15+(rndD*3)
+        Dhead002.rotz=dsin(twalk)*15+(rndD*3)
 		Dleft.rotx=dsin(twalk)*20
 		Dright.rotx=dsin(twalk+180)*20
 
@@ -9496,6 +9491,7 @@ End Sub
 			thedemogorgonmodel1.y = dbody.y
 			If  dbody.y = -85 Then
 				demogorgontime.Enabled = False
+				closewall
 				demoout = False
 			End If
 		End If
@@ -9570,15 +9566,49 @@ End Sub
 		End If
 	End Sub
 
+Sub StartDemoLightSeq
+
+'Debug.print "Start DEMO Light"
+	dim i
+	for i = 0 to axmas.count-1
+		axmas(i).opacity = 2000
+	Next 
+
+	LightSeqaxmas.UpdateInterval = 150
+	LightSeqaxmas.Play SeqRandom, 10, , 6000
+	xmasQueue.Add "ResetDemoLightSeq","ResetDemoLightSeq",95,6050,0,0,0,True
+End Sub
+
+Sub ResetDemoLightSeq
+dim i
+	for i = 0 to axmas.count-1
+		axmas(i).opacity = 0
+	Next
+
+	LightSeqaxmas.StopPlay
+	xmasQueue.Add "StartDemoLightSeq","StartDemoLightSeq",95,100,0,0,0,True
+
+End Sub
+
+Sub StopDemoLightSeq
+	xmasQueue.RemoveAll(True)
+	dim i
+	for i = 0 to axmas.count-1
+		axmas(i).opacity = 0
+	Next
+
+	LightSeqaxmas.StopPlay
+ 
+End Sub
 
 	Sub Dropwall
 		if dropwallskip = 0 then exit Sub
-		StopXMAS
+		GeneralPupQueue.Add "StopXMAS","StopXMAS",80,100,0,0,0,False
 		Spot1.opacity = 1000
 		DOF 116, DOFPulse  'DOF - Gear Motor
 		PlaySound "Bridge_Move"
-		LightSeqaxmas.UpdateInterval = 150
-		LightSeqaxmas.Play SeqRandom, 10, , 3000
+'		LightSeqaxmas.UpdateInterval = 150
+'		LightSeqaxmas.Play SeqRandom, 10, , 3000
 		LightSeqFlasher.UpdateInterval = 150
 		LightSeqFlasher.Play SeqRandom, 10, , 3000
 		MagnetW.MagnetON = True
@@ -9597,7 +9627,7 @@ End Sub
 	Sub wallrelease
 		dropwallskip = 0
 		If bMultiBallMode = False and inmode = 0 then
-		playpupmusicresume 'PuPlayer.playresume 4
+		PuPlayer.playresume 4
 		gion
 		End If
 		PlaySound "Bridge_Stop"
@@ -9612,13 +9642,15 @@ End Sub
 	End Sub
 
 	Sub spinoff
+		StopDemoLightSeq
 		LightSeqFlasher.StopPlay
 		LightSeqaxmas.StopPlay
 		spinner.MotorOn = False
 	End Sub
 
 	Sub Raisewall
-		StartXMAS
+		StopDemoLightSeq
+		'StartXMAS
 		Spot1.opacity = 0
 		DOF 116, DOFPulse  'DOF - Gear Motor
 		PlaySound "Bridge_Move"
@@ -9630,12 +9662,15 @@ End Sub
 			udtargettime.Enabled = True
 		End If
 		If openwall = True Then
-			backwallleft.Enabled = True
-			backwallright.Enabled = True
 			demogorgontime.Enabled = True
-			barricadetime.Enabled = True
 		End If
 	End Sub
+
+Sub closewall
+	backwallleft.Enabled = True
+	backwallright.Enabled = True
+	barricadetime.Enabled = True
+End Sub
 
 
 	Sub backwallleft_Timer()
@@ -9680,7 +9715,8 @@ End Sub
 		DGs=1: playsound "dgshoutsoft"
 		DOF 203, DOFPulse  'DOF - Fan
 		DOF 341, DOFPulse  'DOF MX - Upside Down Targets
-		PlaySoundAt SoundFXDOF("fx_target", 202, DOFPulse, DOFTargets), ActiveBall	
+		DOF 202, DOFPulse
+		'PlaySoundAt SoundFXDOF("fx_target", 202, DOFPulse, DOFTargets), ActiveBall	
 		Dim waittime
 		waittime = 700
 		vpmtimer.addtimer waittime, "beaconoff'"
@@ -9694,7 +9730,8 @@ End Sub
 	Sub udtarget1_hit
 		beaconon
 		DOF 341, DOFPulse  'DOF MX - Upside Down Targets
-		PlaySoundAt SoundFXDOF("fx_target", 202, DOFPulse, DOFTargets), ActiveBall	
+		DOF 202, DOFPulse
+		'PlaySoundAt SoundFXDOF("fx_target", 202, DOFPulse, DOFTargets), ActiveBall	
 		Dim waittime
 		waittime = 700
 		vpmtimer.addtimer waittime, "beaconoff'"
@@ -9708,7 +9745,8 @@ End Sub
 	Sub udtarget2_hit
 		beaconon
 		DOF 341, DOFPulse  'DOF MX - Upside Down Targets
-		PlaySoundAt SoundFXDOF("fx_target", 202, DOFPulse, DOFTargets), ActiveBall	
+		DOF 202, DOFPulse
+		'PlaySoundAt SoundFXDOF("fx_target", 202, DOFPulse, DOFTargets), ActiveBall	
 		Dim waittime
 		waittime = 700
 		vpmtimer.addtimer waittime, "beaconoff'"
@@ -9777,7 +9815,8 @@ End Sub
 
 	Sub escape1_Hit
 		DOF 352, DOFPulse   'DOF MX - Escape E
-		PlaySoundAt SoundFXDOF("fx_target", 135, DOFPulse, DOFTargets), ActiveBall	
+		DOF 135, DOFPulse
+		'PlaySoundAt SoundFXDOF("fx_target", 135, DOFPulse, DOFTargets), ActiveBall	
 		If Tilted Then Exit Sub
 		If le2.State = 0 Then
 		le2.State = 1
@@ -9802,7 +9841,8 @@ End Sub
 
 	Sub escape2_Hit
 		DOF 353, DOFPulse   'DOF MX - Escape S
-		PlaySoundAt SoundFXDOF("fx_target", 135, DOFPulse, DOFTargets), ActiveBall	
+		DOF 135, DOFPulse
+		'PlaySoundAt SoundFXDOF("fx_target", 135, DOFPulse, DOFTargets), ActiveBall	
 		If Tilted Then Exit Sub
 		If le4.State = 0 Then
 		le4.State = 1
@@ -9948,10 +9988,7 @@ End Sub
 	End If
 	End Sub
 
-	Sub BallEscapeDrain_Hit
-		MagnetU.MagnetON = False ' Magnet On
-	End Sub
-
+	
 	Sub ResetESCAPELights
 		le1on(CurrentPlayer) = 0
 		le2on(CurrentPlayer) = 0
@@ -10006,7 +10043,7 @@ End Sub
 
 		ruleshelperoff
 		GiOff
-		playpupmusicpause 'PuPlayer.playpause 4
+		PuPlayer.playpause 4
 		PuPlayer.LabelSet pBackglass,"notetitle","The Upside Down",1,""
 		PuPlayer.LabelSet pBackglass,"notecopy","Collect all Escape target to open the exit \r Escape to start Will Multiball",1,""		
 		If udfirst(CurrentPlayer) = 0 Then
@@ -10035,9 +10072,9 @@ End Sub
 		If willskip = 0 then exit Sub
 		PuPlayer.playlistplayex pBackglass,"videowill","upsidedown1.mov",100,3
 		PuPlayer.SetLoop 2,1
-		playpupmusicpause 'PuPlayer.playpause 4
-		playpupmusic "audiomultiballs","upsidedown.mp3",soundtrackvol,1 'PuPlayer.playlistplayex pAudio,"audiomultiballs","upsidedown.mp3",100,1
-		'PuPlayer.SetLoop 7,1
+		PuPlayer.playpause 4
+		PuPlayer.playlistplayex pAudio,"audiomultiballs","upsidedown.mp3",100,1
+		PuPlayer.SetLoop 7,1
 		SolULFlipper 1
 		SolULFlipper 0
 		SolULFlipper 1
@@ -10065,7 +10102,7 @@ End Sub
 		vpmtimer.addtimer waittime, "UpsideDown'"
 		PlaySound "bell"
 		DOF 410, DOFOn   'DOF MX - Upside Down - ON
-		DMD "black.png", "Entering", "Upside Down",  1000   
+		''''DMD "black.png", "Entering", "Upside Down",  1000   
 		GiOff
 		GiLowerOn
 		End If
@@ -10074,24 +10111,29 @@ End Sub
 
 	Sub UpsideDown
 		BallEscapeRelease.CreateBall
-		BallEscapeRelease.Kick 90, 7
-		PlaySoundAt "fx_kicker", BallEscapeRelease
+		BallEscapeRelease.Kick 50, 7
+		SoundSaucerKick 1, BallEscapeRelease
+		'PlaySoundAt "fx_kicker", BallEscapeRelease
+		
 		DOF 410, DOFOn   'DOF MX - Upside Down - ON
 	End Sub
 
 	Sub BallEscapeDrain_Hit
+        MagnetU.MagnetON = False ' Magnet On
 		Flipper2.RotateToStart
 		Flipper1.RotateToStart
 		PuPlayer.playlistplayex pBackglass,"videobarb","clear.mov",100,3
 		PuPlayer.SetLoop 2,0
-		playpupmusicresume 'PuPlayer.playresume 4
-		'PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
-		'PuPlayer.SetLoop 7,0
+		PuPlayer.playresume 4
+		PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
+		PuPlayer.SetLoop 7,0
 		BallEscapeDrain.DestroyBall
 		BallLockEscape.CreateBall
 		BallLockEscape.Kick 190, 17
-		PlaySoundAt "fx_kicker", BallEscapeDrain
-		PlaySoundAt SoundFXDOF("fx_Ballrel", 138, DOFPulse, DOFContactors), BallLockEscape
+		'PlaySoundAt "fx_kicker", BallEscapeDrain
+		SoundSaucerKick 1, BallLockEscape
+		DOF 138, DOFPulse
+		'PlaySoundAt SoundFXDOF("fx_Ballrel", 138, DOFPulse, DOFContactors), BallLockEscape
 		DOF 115, DOFPulse
 		GiOn
 		GiLowerOff
@@ -10105,17 +10147,19 @@ End Sub
 	Sub BallEscape_Hit
 		Flipper2.RotateToStart
 		Flipper1.RotateToStart
-		playpupmusicresume 'PuPlayer.playresume 4
-		'PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
-		'PuPlayer.SetLoop 7,0
+		PuPlayer.playresume 4
+		PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
+		PuPlayer.SetLoop 7,0
 		RandomSoundHole
 		ResetESCAPELights
 		PlaySound "demogorgon"
 		BallEscape.DestroyBall
 		BallLockEscape.CreateBall
 		BallLockEscape.Kick 190, 17
-		PlaySoundAt "fx_kicker",BallLockEscape
-		PlaySoundAt SoundFXDOF("fx_Ballrel", 138, DOFPulse, DOFContactors), BallLockEscape
+		'PlaySoundAt "fx_kicker",BallLockEscape
+		SoundSaucerKick 1, BallLockEscape
+		DOF 138, DOFPulse
+		'PlaySoundAt SoundFXDOF("fx_Ballrel", 138, DOFPulse, DOFContactors), BallLockEscape
 		DOF 115, DOFPulse
 		DOF 410, DOFOff   'DOF MX - Upside Down - OFF
 		Gate8.Open = False
@@ -10139,9 +10183,9 @@ End Sub
 		ruleshelperoff
 		PuPlayer.LabelSet pBackglass,"notetitle","Save Will Multiball",1,""
 		PuPlayer.LabelSet pBackglass,"notecopy","Follow the sequence of shots between ramps and barricade \r Complete all 12 Shots to save Will!",1,""		
-		playpupmusicpause 'PuPlayer.playpause 4
-		playpupmusic "audiomultiballs","will.mp3",soundtrackvol,1 'PuPlayer.playlistplayex pAudio,"audiomultiballs","will.mp3",100,1
-		'PuPlayer.SetLoop 7,1
+		PuPlayer.playpause 4
+		PuPlayer.playlistplayex pAudio,"audiomultiballs","will.mp3",100,1
+		PuPlayer.SetLoop 7,1
 		Raisewall
 		barricadedown(CurrentPlayer) = 0
 		udhits(CurrentPlayer) = 0
@@ -10180,8 +10224,13 @@ End Sub
 		GiOff
 		GiGreen
 		flashflash.Enabled = True
-		LightSeqaxmas.UpdateInterval = 150
-		LightSeqaxmas.Play SeqRandom, 10, , 50000
+
+
+		StartDemoLightSeq
+		GeneralPupQueue.Add "StopDemoLightSeq","StopDemoLightSeq",80,50000,0,0,0,False
+
+'		LightSeqaxmas.UpdateInterval = 150
+'		LightSeqaxmas.Play SeqRandom, 10, , 50000
 		LightSeqFlasher.UpdateInterval = 150
 		LightSeqFlasher.Play SeqRandom, 10, , 50000
 		startamultiball
@@ -10432,9 +10481,9 @@ End Sub
 		PuPlayer.playlistplayex pBackglass,"videobarb","clear.mov",100,3
 		PuPlayer.SetLoop 2,0
 		beaconoff
-		playpupmusicresume 'PuPlayer.playresume 4
-		'PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
-		'PuPlayer.SetLoop 7,0
+		PuPlayer.playresume 4
+		PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
+		PuPlayer.SetLoop 7,0
 		WillMultiball = False
 		WillSuperReady = False
 		bMultiBallMode = False
@@ -10555,7 +10604,7 @@ End Sub
 			barbgate.Open = True
 				If lro1.state = 0 then
 					PuPlayer.playlistplayex pCallouts,"audiocallouts","barblockislit.wav",100,1
-		chilloutthemusic
+					chilloutthemusic
 					PuPlayer.playlistplayex pBackglass,"videobarblit","",100,1
 					pNote "WHERE'S BARB","LOCK IS LIT"
 				End If 
@@ -10594,7 +10643,7 @@ End Sub
 		Dim waittime
 		waittime = 100
 		If LookForBarb = True Then
-		BarbSuper
+		'BarbSuper
 		Else
 		BallsInLock(CurrentPlayer) = BallsInLock(CurrentPlayer) + 1
 			Select Case BallsInLock(CurrentPlayer)
@@ -10620,7 +10669,7 @@ End Sub
 					Else
 					waittime = 16000
 					End If
-					playpupmusicpause 'PuPlayer.playpause 4
+					PuPlayer.playpause 4
 					PuPlayer.playlistplayex pBackglass,"videobarb","barbmdstart.mov",100,1
 					vpmtimer.addtimer waittime, "StartBarb'"
 					PuPlayer.LabelSet pBackglass,"barbh","" & BallsInLock(CurrentPlayer) ,1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
@@ -10630,7 +10679,9 @@ End Sub
 
 	Sub BallLockBarbExit()
 		BallLockBarb.Kick 80, 9
-			PlaySoundAt SoundFXDOF("fx_kicker", 119, DOFPulse, DOFContactors), BallLockBarb  
+			SoundSaucerKick 1, BallLockBarb
+			DOF 119, DOFPulse
+			'PlaySoundAt SoundFXDOF("fx_kicker", 119, DOFPulse, DOFContactors), BallLockBarb  
 			DOF 115, DOFPulse
 		barbgate.Open = False
 	End Sub
@@ -10640,15 +10691,16 @@ End Sub
 '****************
 
 	Sub StartBarb() 'Multiball
+	Dim i
 		If barbskip = 0 then exit Sub
 		BallLockBarbExit
 		DOF 338, DOFPulse   'DOF MX - BARB Flash
 		pNote "WHERE'S BARB","MULTIBALL"
 		PuPlayer.playlistplayex pBackglass,"videobarb","barbmbmid.mov",100,3
 		PuPlayer.SetLoop 2,1
-		playpupmusicpause 'PuPlayer.playpause 4
-		playpupmusic "audiomultiballs","barb.mp3",soundtrackvol,1 'PuPlayer.playlistplayex pAudio,"audiomultiballs","barb.mp3",100,1
-		'PuPlayer.SetLoop 7,1
+		PuPlayer.playpause 4
+		PuPlayer.playlistplayex pAudio,"audiomultiballs","barb.mp3",100,1
+		PuPlayer.SetLoop 7,1
 		flashflash.Enabled = True
 		PuPlayer.LabelSet pBackglass,"barbh","0",1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
 		BallsInLock(CurrentPlayer) = 0
@@ -10659,8 +10711,31 @@ End Sub
 		GiOff
 		GiYellow
 		AssignBarbSuper
-		LightSeqaxmas.UpdateInterval = 150
-		LightSeqaxmas.Play SeqRandom, 10, , 50000
+
+
+	dim k, newLoopDelay
+		xmasQueue.RemoveAll(True)
+		bInLightQuote = True
+		PrepSpellWord 40
+		SetLoopDelay "find barb" 
+
+		SpellWord "find barb"
+
+		for k = 1 to 7
+			
+			NewLoopDelay = LoopDelay*k
+		debug.print "loop delay :" &k &":" &newloopdelay	
+	
+			xmasQueue.Add "SpellWord-"&k,"SpellWord ""find barb"" ",80,NewLoopDelay,0,0,0,False
+		Next
+
+		xmasQueue.Add "SpellEnd","giOn:bInLightQuote = False",75,LoopDelay*8+(delayInc*myFSpeed*2),0,0,0,False
+
+
+'		StartDemoLightSeq
+'		GeneralPupQueue.Add "StopDemoLightSeq","StopDemoLightSeq",80,50000,0,0,0,False
+'		LightSeqaxmas.UpdateInterval = 150
+'		LightSeqaxmas.Play SeqRandom, 10, , 50000
 		LightSeqFlasher.UpdateInterval = 150
 		LightSeqFlasher.Play SeqRandom, 10, , 50000
 		SetLightColor llo1, yellow, -1
@@ -10688,7 +10763,7 @@ End Sub
 	End Sub
  
 	Sub AssignBarbSuper
-		BSuper(CurrentPlayer) = RndNum(1,5)
+		BSuper(CurrentPlayer) = RndInt(1,5)
 		'1 - leftorbitdone 2 - leftrampdone 3 - centerrampdone 4 - rightrampdone 5 - rightorbitdone
 	End Sub
 
@@ -10767,9 +10842,12 @@ End Sub
 		ruleshelperon
 		PuPlayer.playlistplayex pBackglass,"videobarb","clear.mov",100,3
 		PuPlayer.SetLoop 2,0
-		playpupmusicresume 'PuPlayer.playresume 4
-		'PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
-		'PuPlayer.SetLoop 7,0
+		PuPlayer.playresume 4
+		PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
+		PuPlayer.SetLoop 7,0
+
+		xmasqueue.RemoveAll(True)
+
 		LookForBarb = False
 		barbMultiball = False
 		BarbJackpots = False
@@ -10942,7 +11020,7 @@ End Sub
 				End If 
 				PlaySoundAt "fx_diverter", Diverter
 				''''DMD "lock-3.wmv", "", "", 4000
-				DMD "black.png", "Run Lock","is Lit",  500
+				''''DMD "black.png", "Run Lock","is Lit",  500
 				llo1.State = 2
 				llo9.State = 2
 				llo2.State = 2
@@ -11028,7 +11106,7 @@ End Sub
 					vpmtimer.addtimer waittime, "BallLockRunExit '"
 				Case 2
 					badmenskip = 1
-					playpupmusicpause 'PuPlayer.playpause 4
+					PuPlayer.playpause 4
 					ResetRunLights
 					run1lock(CurrentPlayer) = 3
 					ruleshelperoff
@@ -11073,7 +11151,9 @@ End Sub
 	Sub BallLockRunExit
 		FlashLevel1 = 1 : Flasherflash1_Timer
 		BallLockRun.Kick 90, 7
-		PlaySoundAt SoundFXDOF("fx_kicker", 117, DOFPulse, DOFContactors), BallLockRun  
+		SoundSaucerKick 1, BallLockRun
+		DOF 117, DOFPulse
+		'PlaySoundAt SoundFXDOF("fx_kicker", 117, DOFPulse, DOFContactors), BallLockRun  
 		DOF 115, DOFPulse
 		llo1.State = 0
 		llo9.State = 0
@@ -11104,9 +11184,9 @@ End Sub
 		pNote "BAD MEN","MULTIBALL"
 		PuPlayer.playlistplayex pBackglass,"videobadmenmb","badmenmid.mov",100,3
 		PuPlayer.SetLoop 2,1
-		playpupmusicpause 'PuPlayer.playpause 4
-		playpupmusic "audiomultiballs","badmen.mp3",soundtrackvol,1 'PuPlayer.playlistplayex pAudio,"audiomultiballs","badmen.mp3",100,1
-		'PuPlayer.SetLoop 7,1
+		PuPlayer.playpause 4
+		PuPlayer.playlistplayex pAudio,"audiomultiballs","badmen.mp3",100,1
+		PuPlayer.SetLoop 7,1
 		flashflash.Enabled = True
 		BallsInRunLock(CurrentPlayer) = 0
 		bMultiBallMode = True
@@ -11116,8 +11196,30 @@ End Sub
 		GiOff
 		GiBlue
 		run1lock(CurrentPlayer) = 0
-		LightSeqaxmas.UpdateInterval = 150
-		LightSeqaxmas.Play SeqRandom, 10, , 50000
+'		LightSeqaxmas.UpdateInterval = 150
+'		LightSeqaxmas.Play SeqRandom, 10, , 50000
+
+	dim k, newLoopDelay
+		xmasQueue.RemoveAll(True)
+		bInLightQuote = True
+		PrepSpellWord 40
+		SetLoopDelay "bad men" 
+
+		SpellWord "bad men"
+
+		for k = 1 to 7
+			
+			NewLoopDelay = LoopDelay*k
+		debug.print "loop delay :" &k &":" &newloopdelay	
+	
+			xmasQueue.Add "SpellWord-"&k,"SpellWord ""bad men"" ",80,NewLoopDelay,0,0,0,False
+		Next
+
+		xmasQueue.Add "SpellEnd","giOn:bInLightQuote = False",75,LoopDelay*8+(delayInc*myFSpeed*2),0,0,0,False
+
+
+'		StartDemoLightSeq
+'		GeneralPupQueue.Add "StopDemoLightSeq","StopDemoLightSeq",80,50000,0,0,0,False
 		LightSeqFlasher.UpdateInterval = 150
 		LightSeqFlasher.Play SeqRandom, 10, , 50000
 		' turn up the lights and yell baby
@@ -11238,9 +11340,9 @@ End Sub
 		ruleshelperon
 		PuPlayer.playlistplayex pBackglass,"videobarb","clear.mov",100,3
 		PuPlayer.SetLoop 2,0
-		playpupmusicresume 'PuPlayer.playresume 4
-		'PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
-		'PuPlayer.SetLoop 7,0
+		PuPlayer.playresume 4
+		PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
+		PuPlayer.SetLoop 7,0
 		ResetRunLights
 		RunAway = False
 		RunMultiball = False
@@ -11337,7 +11439,9 @@ End Sub
 		DOF 115, DOFPulse
 		KickerEL.enabled = False
 		spinner.MotorOn = True
-		PlaySoundAt SoundFXDOF("fx_kicker", 118, DOFPulse, DOFContactors), KickerEL  
+		SoundSaucerKick 1, KickerEL
+		DOF 118, DOFPulse
+		'PlaySoundAt SoundFXDOF("fx_kicker", 118, DOFPulse, DOFContactors), KickerEL  
 	End Sub
 
 
@@ -11350,10 +11454,12 @@ End Sub
 		bBallSaverActive = False
 		ruleshelperoff
 		PuPlayer.playlistplayex pBackglass,"videowizard","wizardfinal.mov",100,3
-		'PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
-		playpupmusicclear ' PuPlayer.playlistplayex pMusic,"audioclear","clear.mp3",100, 1
-		LightSeqaxmas.UpdateInterval = 150
-		LightSeqaxmas.Play SeqRandom, 10, , 116000
+		PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
+		PuPlayer.playlistplayex pMusic,"audioclear","clear.mp3",100, 1
+'		LightSeqaxmas.UpdateInterval = 150
+'		LightSeqaxmas.Play SeqRandom, 10, , 116000
+		StartDemoLightSeq
+		GeneralPupQueue.Add "StopDemoLightSeq","StopDemoLightSeq",80,116000,0,0,0,False
 		LightSeqFlasher.UpdateInterval = 150
 		LightSeqFlasher.Play SeqRandom, 10, , 116000
 		lm4.State = 1
@@ -11399,7 +11505,9 @@ End Sub
 		KickerEL.Kick -40, 50
 		DOF 115, DOFPulse
 		KickerEL.enabled = False
-		PlaySoundAt SoundFXDOF("fx_kicker", 118, DOFPulse, DOFContactors), KickerEL  
+		SoundSaucerKick 1, KickerEL
+		DOF 118, DOFPulse
+		'PlaySoundAt SoundFXDOF("fx_kicker", 118, DOFPulse, DOFContactors), KickerEL  
 	End Sub
 
 	Dim wizardpos
@@ -11432,9 +11540,9 @@ End Sub
 		End If
 		wizardtimer.enabled = true
 		DemoMultiball = True
-		playpupmusicpause 'PuPlayer.playpause 4
-		playpupmusic "audiomultiballs","wizard.mp3",soundtrackvol,1 'PuPlayer.playlistplayex pAudio,"audiomultiballs","wizard.mp3",100,1
-		'PuPlayer.SetLoop 7,1
+		PuPlayer.playpause 4
+		PuPlayer.playlistplayex pAudio,"audiomultiballs","wizard.mp3",100,1
+		PuPlayer.SetLoop 7,1
 		bMultiBallMode = True
 		DOF 419, DOFPulse    'DOF MX - Monster Flash
 		DemoMultiball = True
@@ -11443,8 +11551,29 @@ End Sub
 		FlasherEL.opacity = 0
 		DemoHits = 0
 		FlashEffect 2
-		LightSeqaxmas.UpdateInterval = 150
-		LightSeqaxmas.Play SeqRandom, 10, , 65000
+'		StartDemoLightSeq
+'		GeneralPupQueue.Add "StopDemoLightSeq","StopDemoLightSeq",80,65000,0,0,0,False
+
+	dim k, newLoopDelay
+		xmasQueue.RemoveAll(True)
+		bInLightQuote = True
+		PrepSpellWord 40
+		SetLoopDelay "demogorgon" 
+
+		SpellWord "demogorgon"
+
+		for k = 1 to 7
+			
+			NewLoopDelay = LoopDelay*k
+		debug.print "loop delay :" &k &":" &newloopdelay	
+	
+			xmasQueue.Add "SpellWord-"&k,"SpellWord ""demogorgon"" ",80,NewLoopDelay,0,0,0,False
+		Next
+
+		xmasQueue.Add "SpellEnd","giOn:bInLightQuote = False",75,LoopDelay*8+(delayInc*myFSpeed*2),0,0,0,False
+
+'		LightSeqaxmas.UpdateInterval = 150
+'		LightSeqaxmas.Play SeqRandom, 10, , 65000
 		LightSeqFlasher.UpdateInterval = 150
 		LightSeqFlasher.Play SeqRandom, 10, , 65000
 		' turn up the lights and yell baby
@@ -11617,9 +11746,9 @@ End Sub
 		bBallSaverActive = False
 		PuPlayer.playlistplayex pBackglass,"videobarb","clear.mov",100,3
 		PuPlayer.SetLoop 2,0
-		playpupmusicresume 'PuPlayer.playresume 4
-		'PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
-		'PuPlayer.SetLoop 7,0
+		PuPlayer.playresume 4
+		PuPlayer.playlistplayex pAudio,"audiomultiballs","clear.mp3",100,1
+		PuPlayer.SetLoop 7,0
 		spinner.MotorOn = False
 		Dim lamp
 		MonsterFinalBlow = False
@@ -11643,7 +11772,10 @@ End Sub
 		GiOn
 		wizardpos = 0
 		FlashEffect 0
-		LightSeqFlasher.StopPlay
+
+		xmasqueue.RemoveAll(True)
+
+'		LightSeqFlasher.StopPlay
 		LightSeqaxmas.StopPlay
 		If demodefeated = True Then
 		lm4.State = 1
@@ -11653,11 +11785,11 @@ End Sub
 		endamultiball
 		Raisewall
 		If rockmusic = 1 Then
-		playpupmusic "audiobgrock","",soundtrackvol,1 ' PuPlayer.playlistplayex pMusic,"audiobgrock","",soundtrackvol,1
-		'PuPlayer.SetLoop 4,1		
+		PuPlayer.playlistplayex pMusic,"audiobgrock","",soundtrackvol,1
+		PuPlayer.SetLoop 4,1		
 		Else
-		playpupmusic "audiobg","",soundtrackvol,1 'PuPlayer.playlistplayex pMusic,"audiobg","",soundtrackvol,1
-		'PuPlayer.SetLoop 4,1
+		PuPlayer.playlistplayex pMusic,"audiobg","",soundtrackvol,1
+		PuPlayer.SetLoop 4,1
 		End if
 		bMultiBallMode = False
 		MagnetR.MagnetON = false ' Magnet On
@@ -11702,6 +11834,2927 @@ End Sub
 			DOF 254, DOFPulse   'DOF Shaker   "Will is Hiding"
 			DOF_Shaker_WillHiding.enabled = false
 	End Sub
+	
+'****************************************************************
+'		VR Mode
+'****************************************************************
+'Detect if VPX is rendering in VR and then make sure the VR Room Choice is used
+Dim VRRoom
+DIM VRThings
+
+Sub LoadVRRoom
+	for each VRThings in VR_Cab:VRThings.visible = 0:Next
+	for each VRThings in VR_Min:VRThings.visible = 0:Next
+	for each VRThings in VR_Hallway:VRThings.visible = 0:Next
+	for each VRThings in VR_Mall:VRThings.visible = 0:Next
+	for each VRThings in VR_ByersHouse:VRThings.visible = 0:Next
+	TimerPlunger.Enabled = False
+
+	If RenderingMode = 2 or VRTest Then
+		VRRoom = VRRoomChoice
+	Else
+		VRRoom = 0
+	End If
+
+    If VRRoom > 0 Then
+		TimerPlunger.Enabled = True
+    End If
+	If VRRoom = 1 Then
+		for each VRThings in VR_Cab:VRThings.visible = 1:Next
+		for each VRThings in VR_Min:VRThings.visible = 1:Next
+		for each VRThings in VR_Hallway:VRThings.visible = 0:Next
+		for each VRThings in VR_Mall:VRThings.visible = 0:Next
+		for each VRThings in VR_ByersHouse:VRThings.visible = 0:Next
+	End If
+	If VRRoom = 2 Then
+		for each VRThings in VR_Cab:VRThings.visible = 1:Next
+		for each VRThings in VR_Min:VRThings.visible = 0:Next
+		for each VRThings in VR_Hallway:VRThings.visible = 1:Next
+		for each VRThings in VR_Mall:VRThings.visible = 0:Next
+		for each VRThings in VR_ByersHouse:VRThings.visible = 0:Next
+	End If
+	If VRRoom = 3 Then
+		for each VRThings in VR_Cab:VRThings.visible = 1:Next
+		for each VRThings in VR_Min:VRThings.visible = 0:Next
+		for each VRThings in VR_Hallway:VRThings.visible = 0:Next
+		for each VRThings in VR_Mall:VRThings.visible = 1:Next
+		for each VRThings in VR_ByersHouse:VRThings.visible = 0:Next
+	End If
+	If VRRoom = 4 Then
+		for each VRThings in VR_Cab:VRThings.visible = 1:Next
+		for each VRThings in VR_Min:VRThings.visible = 0:Next
+		for each VRThings in VR_Hallway:VRThings.visible = 0:Next
+		for each VRThings in VR_Mall:VRThings.visible = 0:Next
+		for each VRThings in VR_ByersHouse:VRThings.visible = 1:Next
+	End If
+End Sub		
+		
+		
+		
+'**********************************
+' 	ZMAT: General Math Functions
+'**********************************
+' These get used throughout the script. 
+
+Dim PI
+PI = 4 * Atn(1)
+
+Function dSin(degrees)
+	dsin = Sin(degrees * Pi / 180)
+End Function
+
+Function dCos(degrees)
+	dcos = Cos(degrees * Pi / 180)
+End Function
+
+Function Atn2(dy, dx)
+	If dx > 0 Then
+		Atn2 = Atn(dy / dx)
+	ElseIf dx < 0 Then
+		If dy = 0 Then
+			Atn2 = pi
+		Else
+			Atn2 = Sgn(dy) * (pi - Atn(Abs(dy / dx)))
+		End If
+	ElseIf dx = 0 Then
+		If dy = 0 Then
+			Atn2 = 0
+		Else
+			Atn2 = Sgn(dy) * pi / 2
+		End If
+	End If
+End Function
+
+Function ArcCos(x)
+	If x = 1 Then
+		ArcCos = 0/180*PI
+	ElseIf x = -1 Then
+		ArcCos = 180/180*PI
+	Else
+		ArcCos = Atn(-x/Sqr(-x * x + 1)) + 2 * Atn(1)
+	End If
+End Function
+
+Function max(a,b)
+	If a > b Then
+		max = a
+	Else
+		max = b
+	End If
+End Function
+
+Function min(a,b)
+	If a > b Then
+		min = b
+	Else
+		min = a
+	End If
+End Function
+
+' Used for drop targets
+Function InRect(px,py,ax,ay,bx,by,cx,cy,dx,dy) 'Determines if a Points (px,py) is inside a 4 point polygon A-D in Clockwise/CCW order
+	Dim AB, BC, CD, DA
+	AB = (bx * py) - (by * px) - (ax * py) + (ay * px) + (ax * by) - (ay * bx)
+	BC = (cx * py) - (cy * px) - (bx * py) + (by * px) + (bx * cy) - (by * cx)
+	CD = (dx * py) - (dy * px) - (cx * py) + (cy * px) + (cx * dy) - (cy * dx)
+	DA = (ax * py) - (ay * px) - (dx * py) + (dy * px) + (dx * ay) - (dy * ax)
+	
+	If (AB <= 0 And BC <= 0 And CD <= 0 And DA <= 0) Or (AB >= 0 And BC >= 0 And CD >= 0 And DA >= 0) Then
+		InRect = True
+	Else
+		InRect = False
+	End If
+End Function
+
+Function InRotRect(ballx,bally,px,py,angle,ax,ay,bx,by,cx,cy,dx,dy)
+	Dim rax,ray,rbx,rby,rcx,rcy,rdx,rdy
+	Dim rotxy
+	rotxy = RotPoint(ax,ay,angle)
+	rax = rotxy(0) + px
+	ray = rotxy(1) + py
+	rotxy = RotPoint(bx,by,angle)
+	rbx = rotxy(0) + px
+	rby = rotxy(1) + py
+	rotxy = RotPoint(cx,cy,angle)
+	rcx = rotxy(0) + px
+	rcy = rotxy(1) + py
+	rotxy = RotPoint(dx,dy,angle)
+	rdx = rotxy(0) + px
+	rdy = rotxy(1) + py
+	
+	InRotRect = InRect(ballx,bally,rax,ray,rbx,rby,rcx,rcy,rdx,rdy)
+End Function
+
+Function RotPoint(x,y,angle)
+	Dim rx, ry
+	rx = x * dCos(angle) - y * dSin(angle)
+	ry = x * dSin(angle) + y * dCos(angle)
+	RotPoint = Array(rx,ry)
+End Function
+
+'******************************************************
+'	ZNFF:  FLIPPER CORRECTIONS by nFozzy
+'******************************************************
+'
+' There are several steps for taking advantage of nFozzy's flipper solution.  At a high level we'll need the following:
+'	1. flippers with specific physics settings
+'	2. custom triggers for each flipper (TriggerLF, TriggerRF)
+'	3. and, special scripting
+'
+' TriggerLF and RF should now be 27 vp units from the flippers. In addition, 3 degrees should be added to the end angle
+' when creating these triggers.
+'
+' RF.ReProcessBalls Activeball and LF.ReProcessBalls Activeball must be added the flipper_collide subs.
+'
+' A common mistake is incorrect flipper length.  A 3-inch flipper with rubbers will be about 3.125 inches long.
+' This translates to about 147 vp units.  Therefore, the flipper start radius + the flipper length + the flipper end
+' radius should  equal approximately 147 vp units. Another common mistake is is that sometimes the right flipper
+' angle was set with a large postive value (like 238 or something). It should be using negative value (like -122).
+'
+' The following settings are a solid starting point for various eras of pinballs.
+' |                    | EM's           | late 70's to mid 80's | mid 80's to early 90's | mid 90's and later |
+' | ------------------ | -------------- | --------------------- | ---------------------- | ------------------ |
+' | Mass               | 1              | 1                     | 1                      | 1                  |
+' | Strength           | 500-1000 (750) | 1400-1600 (1500)      | 2000-2600              | 3200-3300 (3250)   |
+' | Elasticity         | 0.88           | 0.88                  | 0.88                   | 0.88               |
+' | Elasticity Falloff | 0.15           | 0.15                  | 0.15                   | 0.15               |
+' | Fricition          | 0.8-0.9        | 0.9                   | 0.9                    | 0.9                |
+' | Return Strength    | 0.11           | 0.09                  | 0.07                   | 0.055              |
+' | Coil Ramp Up       | 2.5            | 2.5                   | 2.5                    | 2.5                |
+' | Scatter Angle      | 0              | 0                     | 0                      | 0                  |
+' | EOS Torque         | 0.4            | 0.4                   | 0.375                  | 0.375              |
+' | EOS Torque Angle   | 4              | 4                     | 6                      | 6                  |
+'
+
+'******************************************************
+' Flippers Polarity (Select appropriate sub based on era)
+'******************************************************
+
+Dim LF : Set LF = New FlipperPolarity
+Dim RF : Set RF = New FlipperPolarity
+
+InitPolarity
+
+
+'*******************************************
+' Early 90's and after
+
+Sub InitPolarity()
+	Dim x, a
+	a = Array(LF, RF)
+	For Each x In a
+		x.AddPt "Ycoef", 0, RightFlipper.Y-65, 1 'disabled
+		x.AddPt "Ycoef", 1, RightFlipper.Y-11, 1
+		x.enabled = True
+		x.TimeDelay = 60
+		x.DebugOn=False ' prints some info in debugger
+
+		x.AddPt "Polarity", 0, 0, 0
+		x.AddPt "Polarity", 1, 0.05, - 5.5
+		x.AddPt "Polarity", 2, 0.16, - 5.5
+		x.AddPt "Polarity", 3, 0.20, - 0.75
+		x.AddPt "Polarity", 4, 0.25, - 1.25
+		x.AddPt "Polarity", 5, 0.3, - 1.75
+		x.AddPt "Polarity", 6, 0.4, - 3.5
+		x.AddPt "Polarity", 7, 0.5, - 5.25
+		x.AddPt "Polarity", 8, 0.7, - 4.0
+		x.AddPt "Polarity", 9, 0.75, - 3.5
+		x.AddPt "Polarity", 10, 0.8, - 3.0
+		x.AddPt "Polarity", 11, 0.85, - 2.5
+		x.AddPt "Polarity", 12, 0.9, - 2.0
+		x.AddPt "Polarity", 13, 0.95, - 1.5
+		x.AddPt "Polarity", 14, 1, - 1.0
+		x.AddPt "Polarity", 15, 1.05, -0.5
+		x.AddPt "Polarity", 16, 1.1, 0
+		x.AddPt "Polarity", 17, 1.3, 0
+
+		x.AddPt "Velocity", 0, 0, 0.85
+		x.AddPt "Velocity", 1, 0.23, 0.85
+		x.AddPt "Velocity", 2, 0.27, 1
+		x.AddPt "Velocity", 3, 0.3, 1
+		x.AddPt "Velocity", 4, 0.35, 1
+		x.AddPt "Velocity", 5, 0.6, 1 '0.982
+		x.AddPt "Velocity", 6, 0.62, 1.0
+		x.AddPt "Velocity", 7, 0.702, 0.968
+		x.AddPt "Velocity", 8, 0.95,  0.968
+		x.AddPt "Velocity", 9, 1.03,  0.945
+		x.AddPt "Velocity", 10, 1.5,  0.945
+
+	Next
+	
+	' SetObjects arguments: 1: name of object 2: flipper object: 3: Trigger object around flipper
+	LF.SetObjects "LF", LeftFlipper, TriggerLF
+	RF.SetObjects "RF", RightFlipper, TriggerRF
+End Sub
+
+'******************************************************
+'  FLIPPER CORRECTION FUNCTIONS
+'******************************************************
+
+' modified 2023 by nFozzy
+' Removed need for 'endpoint' objects
+' Added 'createvents' type thing for TriggerLF / TriggerRF triggers.
+' Removed AddPt function which complicated setup imo
+' made DebugOn do something (prints some stuff in debugger)
+'   Otherwise it should function exactly the same as before\
+' modified 2024 by rothbauerw
+' Added Reprocessballs for flipper collisions (LF.Reprocessballs Activeball and RF.Reprocessballs Activeball must be added to the flipper collide subs
+' Improved handling to remove correction for backhand shots when the flipper is raised
+
+Class FlipperPolarity
+	Public DebugOn, Enabled
+	Private FlipAt		'Timer variable (IE 'flip at 723,530ms...)
+	Public TimeDelay		'delay before trigger turns off and polarity is disabled
+	Private Flipper, FlipperStart, FlipperEnd, FlipperEndY, LR, PartialFlipCoef, FlipStartAngle
+	Private Balls(20), balldata(20)
+	Private Name
+	
+	Dim PolarityIn, PolarityOut
+	Dim VelocityIn, VelocityOut
+	Dim YcoefIn, YcoefOut
+	Public Sub Class_Initialize
+		ReDim PolarityIn(0)
+		ReDim PolarityOut(0)
+		ReDim VelocityIn(0)
+		ReDim VelocityOut(0)
+		ReDim YcoefIn(0)
+		ReDim YcoefOut(0)
+		Enabled = True
+		TimeDelay = 50
+		LR = 1
+		Dim x
+		For x = 0 To UBound(balls)
+			balls(x) = Empty
+			Set Balldata(x) = new SpoofBall
+		Next
+	End Sub
+	
+	Public Sub SetObjects(aName, aFlipper, aTrigger)
+		
+		If TypeName(aName) <> "String" Then MsgBox "FlipperPolarity: .SetObjects error: first argument must be a String (And name of Object). Found:" & TypeName(aName) End If
+		If TypeName(aFlipper) <> "Flipper" Then MsgBox "FlipperPolarity: .SetObjects error: Second argument must be a flipper. Found:" & TypeName(aFlipper) End If
+		If TypeName(aTrigger) <> "Trigger" Then MsgBox "FlipperPolarity: .SetObjects error: third argument must be a trigger. Found:" & TypeName(aTrigger) End If
+		If aFlipper.EndAngle > aFlipper.StartAngle Then LR = -1 Else LR = 1 End If
+		Name = aName
+		Set Flipper = aFlipper
+		FlipperStart = aFlipper.x
+		FlipperEnd = Flipper.Length * Sin((Flipper.StartAngle / 57.295779513082320876798154814105)) + Flipper.X ' big floats for degree to rad conversion
+		FlipperEndY = Flipper.Length * Cos(Flipper.StartAngle / 57.295779513082320876798154814105)*-1 + Flipper.Y
+		
+		Dim str
+		str = "Sub " & aTrigger.name & "_Hit() : " & aName & ".AddBall ActiveBall : End Sub'"
+		ExecuteGlobal(str)
+		str = "Sub " & aTrigger.name & "_UnHit() : " & aName & ".PolarityCorrect ActiveBall : End Sub'"
+		ExecuteGlobal(str)
+		
+	End Sub
+	
+	' Legacy: just no op
+	Public Property Let EndPoint(aInput)
+		
+	End Property
+	
+	Public Sub AddPt(aChooseArray, aIDX, aX, aY) 'Index #, X position, (in) y Position (out)
+		Select Case aChooseArray
+			Case "Polarity"
+				ShuffleArrays PolarityIn, PolarityOut, 1
+				PolarityIn(aIDX) = aX
+				PolarityOut(aIDX) = aY
+				ShuffleArrays PolarityIn, PolarityOut, 0
+			Case "Velocity"
+				ShuffleArrays VelocityIn, VelocityOut, 1
+				VelocityIn(aIDX) = aX
+				VelocityOut(aIDX) = aY
+				ShuffleArrays VelocityIn, VelocityOut, 0
+			Case "Ycoef"
+				ShuffleArrays YcoefIn, YcoefOut, 1
+				YcoefIn(aIDX) = aX
+				YcoefOut(aIDX) = aY
+				ShuffleArrays YcoefIn, YcoefOut, 0
+		End Select
+	End Sub
+	
+	Public Sub AddBall(aBall)
+		Dim x
+		For x = 0 To UBound(balls)
+			If IsEmpty(balls(x)) Then
+				Set balls(x) = aBall
+				Exit Sub
+			End If
+		Next
+	End Sub
+	
+	Private Sub RemoveBall(aBall)
+		Dim x
+		For x = 0 To UBound(balls)
+			If TypeName(balls(x) ) = "IBall" Then
+				If aBall.ID = Balls(x).ID Then
+					balls(x) = Empty
+					Balldata(x).Reset
+				End If
+			End If
+		Next
+	End Sub
+	
+	Public Sub Fire()
+		Flipper.RotateToEnd
+		processballs
+	End Sub
+	
+	Public Property Get Pos 'returns % position a ball. For debug stuff.
+		Dim x
+		For x = 0 To UBound(balls)
+			If Not IsEmpty(balls(x)) Then
+				pos = pSlope(Balls(x).x, FlipperStart, 0, FlipperEnd, 1)
+			End If
+		Next
+	End Property
+	
+	Public Sub ProcessBalls() 'save data of balls in flipper range
+		FlipAt = GameTime
+		Dim x
+		For x = 0 To UBound(balls)
+			If Not IsEmpty(balls(x)) Then
+				balldata(x).Data = balls(x)
+			End If
+		Next
+		FlipStartAngle = Flipper.currentangle
+		PartialFlipCoef = ((Flipper.StartAngle - Flipper.CurrentAngle) / (Flipper.StartAngle - Flipper.EndAngle))
+		PartialFlipCoef = abs(PartialFlipCoef-1)
+	End Sub
+
+	Public Sub ReProcessBalls(aBall) 'save data of balls in flipper range
+		If FlipperOn() Then
+			Dim x
+			For x = 0 To UBound(balls)
+				If Not IsEmpty(balls(x)) Then
+					if balls(x).ID = aBall.ID Then
+						If isempty(balldata(x).ID) Then
+							balldata(x).Data = balls(x)
+						End If
+					End If
+				End If
+			Next
+		End If
+	End Sub
+
+	'Timer shutoff for polaritycorrect
+	Private Function FlipperOn()
+		If GameTime < FlipAt+TimeDelay Then
+			FlipperOn = True
+		End If
+	End Function
+	
+	Public Sub PolarityCorrect(aBall)
+		If FlipperOn() Then
+			Dim tmp, BallPos, x, IDX, Ycoef, BalltoFlip, BalltoBase, NoCorrection, checkHit
+			Ycoef = 1
+			
+			'y safety Exit
+			If aBall.VelY > -8 Then 'ball going down
+				RemoveBall aBall
+				Exit Sub
+			End If
+			
+			'Find balldata. BallPos = % on Flipper
+			For x = 0 To UBound(Balls)
+				If aBall.id = BallData(x).id And Not IsEmpty(BallData(x).id) Then
+					idx = x
+					BallPos = PSlope(BallData(x).x, FlipperStart, 0, FlipperEnd, 1)
+					BalltoFlip = DistanceFromFlipperAngle(BallData(x).x, BallData(x).y, Flipper, FlipStartAngle)
+					If ballpos > 0.65 Then  Ycoef = LinearEnvelope(BallData(x).Y, YcoefIn, YcoefOut)								'find safety coefficient 'ycoef' data
+				End If
+			Next
+			
+			If BallPos = 0 Then 'no ball data meaning the ball is entering and exiting pretty close to the same position, use current values.
+				BallPos = PSlope(aBall.x, FlipperStart, 0, FlipperEnd, 1)
+				If ballpos > 0.65 Then  Ycoef = LinearEnvelope(aBall.Y, YcoefIn, YcoefOut)												'find safety coefficient 'ycoef' data
+				NoCorrection = 1
+			Else
+				checkHit = 50 + (20 * BallPos) 
+
+				If BalltoFlip > checkHit or (PartialFlipCoef < 0.5 and BallPos > 0.22) Then
+					NoCorrection = 1
+				Else
+					NoCorrection = 0
+				End If
+			End If
+			
+			'Velocity correction
+			If Not IsEmpty(VelocityIn(0) ) Then
+				Dim VelCoef
+				VelCoef = LinearEnvelope(BallPos, VelocityIn, VelocityOut)
+				
+				'If partialflipcoef < 1 Then VelCoef = PSlope(partialflipcoef, 0, 1, 1, VelCoef)
+				
+				If Enabled Then aBall.Velx = aBall.Velx*VelCoef
+				If Enabled Then aBall.Vely = aBall.Vely*VelCoef
+			End If
+			
+			'Polarity Correction (optional now)
+			If Not IsEmpty(PolarityIn(0) ) Then
+				Dim AddX
+				AddX = LinearEnvelope(BallPos, PolarityIn, PolarityOut) * LR
+				
+				If Enabled and NoCorrection = 0 Then aBall.VelX = aBall.VelX + 1 * (AddX*ycoef*PartialFlipcoef*VelCoef)
+			End If
+			If DebugOn Then debug.print "PolarityCorrect" & " " & Name & " @ " & GameTime & " " & Round(BallPos*100) & "%" & " AddX:" & Round(AddX,2) & " Vel%:" & Round(VelCoef*100)
+		End If
+		RemoveBall aBall
+	End Sub
+End Class
+
+'******************************************************
+'  FLIPPER POLARITY AND RUBBER DAMPENER SUPPORTING FUNCTIONS
+'******************************************************
+
+' Used for flipper correction and rubber dampeners
+Sub ShuffleArray(ByRef aArray, byVal offset) 'shuffle 1d array
+	Dim x, aCount
+	aCount = 0
+	ReDim a(UBound(aArray) )
+	For x = 0 To UBound(aArray)		'Shuffle objects in a temp array
+		If Not IsEmpty(aArray(x) ) Then
+			If IsObject(aArray(x)) Then
+				Set a(aCount) = aArray(x)
+			Else
+				a(aCount) = aArray(x)
+			End If
+			aCount = aCount + 1
+		End If
+	Next
+	If offset < 0 Then offset = 0
+	ReDim aArray(aCount-1+offset)		'Resize original array
+	For x = 0 To aCount-1				'set objects back into original array
+		If IsObject(a(x)) Then
+			Set aArray(x) = a(x)
+		Else
+			aArray(x) = a(x)
+		End If
+	Next
+End Sub
+
+' Used for flipper correction and rubber dampeners
+Sub ShuffleArrays(aArray1, aArray2, offset)
+	ShuffleArray aArray1, offset
+	ShuffleArray aArray2, offset
+End Sub
+
+' Used for flipper correction, rubber dampeners, and drop targets
+Function BallSpeed(ball) 'Calculates the ball speed
+	BallSpeed = Sqr(ball.VelX^2 + ball.VelY^2 + ball.VelZ^2)
+End Function
+
+' Used for flipper correction and rubber dampeners
+Function PSlope(Input, X1, Y1, X2, Y2)		'Set up line via two points, no clamping. Input X, output Y
+	Dim x, y, b, m
+	x = input
+	m = (Y2 - Y1) / (X2 - X1)
+	b = Y2 - m*X2
+	Y = M*x+b
+	PSlope = Y
+End Function
+
+' Used for flipper correction
+Class spoofball
+	Public X, Y, Z, VelX, VelY, VelZ, ID, Mass, Radius
+	Public Property Let Data(aBall)
+		With aBall
+			x = .x
+			y = .y
+			z = .z
+			velx = .velx
+			vely = .vely
+			velz = .velz
+			id = .ID
+			mass = .mass
+			radius = .radius
+		End With
+	End Property
+	Public Sub Reset()
+		x = Empty
+		y = Empty
+		z = Empty
+		velx = Empty
+		vely = Empty
+		velz = Empty
+		id = Empty
+		mass = Empty
+		radius = Empty
+	End Sub
+End Class
+
+' Used for flipper correction and rubber dampeners
+Function LinearEnvelope(xInput, xKeyFrame, yLvl)
+	Dim y 'Y output
+	Dim L 'Line
+	'find active line
+	Dim ii
+	For ii = 1 To UBound(xKeyFrame)
+		If xInput <= xKeyFrame(ii) Then
+			L = ii
+			Exit For
+		End If
+	Next
+	If xInput > xKeyFrame(UBound(xKeyFrame) ) Then L = UBound(xKeyFrame)		'catch line overrun
+	Y = pSlope(xInput, xKeyFrame(L-1), yLvl(L-1), xKeyFrame(L), yLvl(L) )
+	
+	If xInput <= xKeyFrame(LBound(xKeyFrame) ) Then Y = yLvl(LBound(xKeyFrame) )		 'Clamp lower
+	If xInput >= xKeyFrame(UBound(xKeyFrame) ) Then Y = yLvl(UBound(xKeyFrame) )		'Clamp upper
+	
+	LinearEnvelope = Y
+End Function
+
+'******************************************************
+'  FLIPPER TRICKS
+'******************************************************
+' To add the flipper tricks you must
+'	 - Include a call to FlipperCradleCollision from within OnBallBallCollision subroutine
+'	 - Include a call the CheckLiveCatch from the LeftFlipper_Collide and RightFlipper_Collide subroutines
+'	 - Include FlipperActivate and FlipperDeactivate in the Flipper solenoid subs
+
+RightFlipper.timerinterval = 1
+Rightflipper.timerenabled = True
+
+Sub RightFlipper_timer()
+	FlipperTricks LeftFlipper, LFPress, LFCount, LFEndAngle, LFState
+	FlipperTricks RightFlipper, RFPress, RFCount, RFEndAngle, RFState
+    FlipperTricks Flipper2, LFPress1, LFCount1, LFEndAngle1, LFState1
+	FlipperTricks Flipper1, RFPress1, RFCount1, RFEndAngle1, RFState1
+	FlipperNudge RightFlipper, RFEndAngle, RFEOSNudge, LeftFlipper, LFEndAngle
+	FlipperNudge LeftFlipper, LFEndAngle, LFEOSNudge,  RightFlipper, RFEndAngle
+End Sub
+
+Dim LFEOSNudge, RFEOSNudge
+
+Sub FlipperNudge(Flipper1, Endangle1, EOSNudge1, Flipper2, EndAngle2)
+	Dim b
+	   Dim gBOT
+	   gBOT = GetBalls
+	
+	If Flipper1.currentangle = Endangle1 And EOSNudge1 <> 1 Then
+		EOSNudge1 = 1
+		'   debug.print Flipper1.currentangle &" = "& Endangle1 &"--"& Flipper2.currentangle &" = "& EndAngle2
+		If Flipper2.currentangle = EndAngle2 Then
+			For b = 0 To UBound(gBOT)
+				If FlipperTrigger(gBOT(b).x, gBOT(b).y, Flipper1) Then
+					'Debug.Print "ball in flip1. exit"
+					Exit Sub
+				End If
+			Next
+			For b = 0 To UBound(gBOT)
+				If FlipperTrigger(gBOT(b).x, gBOT(b).y, Flipper2) Then
+					gBOT(b).velx = gBOT(b).velx / 1.3
+					gBOT(b).vely = gBOT(b).vely - 0.5
+				End If
+			Next
+		End If
+	Else
+		If Abs(Flipper1.currentangle) > Abs(EndAngle1) + 30 Then EOSNudge1 = 0
+	End If
+End Sub
+
+
+Dim FCCDamping: FCCDamping = 0.4
+
+Sub FlipperCradleCollision(ball1, ball2, velocity)
+	if velocity < 0.7 then exit sub		'filter out gentle collisions
+    Dim DoDamping, coef
+    DoDamping = false
+    'Check left flipper
+    If LeftFlipper.currentangle = LFEndAngle Then
+		If FlipperTrigger(ball1.x, ball1.y, LeftFlipper) OR FlipperTrigger(ball2.x, ball2.y, LeftFlipper) Then DoDamping = true
+    End If
+    'Check right flipper
+    If RightFlipper.currentangle = RFEndAngle Then
+		If FlipperTrigger(ball1.x, ball1.y, RightFlipper) OR FlipperTrigger(ball2.x, ball2.y, RightFlipper) Then DoDamping = true
+    End If
+    If DoDamping Then
+		coef = FCCDamping
+        ball1.velx = ball1.velx * coef: ball1.vely = ball1.vely * coef: ball1.velz = ball1.velz * coef
+        ball2.velx = ball2.velx * coef: ball2.vely = ball2.vely * coef: ball2.velz = ball2.velz * coef
+    End If
+End Sub
+	
 
 
 
+
+'*************************************************
+'  Check ball distance from Flipper for Rem
+'*************************************************
+
+Function Distance(ax,ay,bx,by)
+	Distance = Sqr((ax - bx) ^ 2 + (ay - by) ^ 2)
+End Function
+
+Function DistancePL(px,py,ax,ay,bx,by) 'Distance between a point and a line where point Is px,py
+	DistancePL = Abs((by - ay) * px - (bx - ax) * py + bx * ay - by * ax) / Distance(ax,ay,bx,by)
+End Function
+
+Function Radians(Degrees)
+	Radians = Degrees * PI / 180
+End Function
+
+Function AnglePP(ax,ay,bx,by)
+	AnglePP = Atn2((by - ay),(bx - ax)) * 180 / PI
+End Function
+
+Function DistanceFromFlipper(ballx, bally, Flipper)
+	DistanceFromFlipper = DistancePL(ballx, bally, Flipper.x, Flipper.y, Cos(Radians(Flipper.currentangle + 90)) + Flipper.x, Sin(Radians(Flipper.currentangle + 90)) + Flipper.y)
+End Function
+
+Function DistanceFromFlipperAngle(ballx, bally, Flipper, Angle)
+	DistanceFromFlipperAngle = DistancePL(ballx, bally, Flipper.x, Flipper.y, Cos(Radians(Angle + 90)) + Flipper.x, Sin(Radians(angle + 90)) + Flipper.y)
+End Function
+
+Function FlipperTrigger(ballx, bally, Flipper)
+	Dim DiffAngle
+	DiffAngle = Abs(Flipper.currentangle - AnglePP(Flipper.x, Flipper.y, ballx, bally) - 90)
+	If DiffAngle > 180 Then DiffAngle = DiffAngle - 360
+	
+	If DistanceFromFlipper(ballx,bally,Flipper) < 48 And DiffAngle <= 90 And Distance(ballx,bally,Flipper.x,Flipper.y) < Flipper.Length Then
+		FlipperTrigger = True
+	Else
+		FlipperTrigger = False
+	End If
+End Function
+
+'*************************************************
+'  End - Check ball distance from Flipper for Rem
+'*************************************************
+
+Dim LFPress, RFPress, LFCount, RFCount
+Dim LFState, RFState
+Dim EOST, EOSA,Frampup, FElasticity,FReturn
+Dim RFEndAngle, LFEndAngle
+Dim LFPress1, LFCount1, LFEndAngle1, LFState1
+Dim RFPress1, RFCount1, RFEndAngle1, RFState1
+
+Const FlipperCoilRampupMode = 0 '0 = fast, 1 = medium, 2 = slow (tap passes should work)
+LFState = 1
+LFState1 = 1
+RFState = 1
+RFState1 = 1
+EOST = leftflipper.eostorque
+EOSA = leftflipper.eostorqueangle
+Frampup = LeftFlipper.rampup
+FElasticity = LeftFlipper.elasticity
+FReturn = LeftFlipper.return
+'Const EOSTnew = 1.5 'EM's to late 80's - new recommendation by rothbauerw (previously 1)
+Const EOSTnew = 1.2 '90's and later - new recommendation by rothbauerw (previously 0.8)
+Const EOSAnew = 1
+Const EOSRampup = 0
+Dim SOSRampup
+Select Case FlipperCoilRampupMode
+	Case 0
+		SOSRampup = 2.5
+	Case 1
+		SOSRampup = 6
+	Case 2
+		SOSRampup = 8.5
+End Select
+
+Const LiveCatch = 16
+Const LiveElasticity = 0.45
+Const SOSEM = 0.815
+'   Const EOSReturn = 0.055  'EM's
+'   Const EOSReturn = 0.045  'late 70's to mid 80's
+'Const EOSReturn = 0.035  'mid 80's to early 90's
+Const EOSReturn = 0.025  'mid 90's and later
+
+LFEndAngle = Leftflipper.endangle
+RFEndAngle = RightFlipper.endangle
+LFEndAngle = Leftflipper.endangle
+LFEndAngle1 = Flipper2.endangle
+RFEndAngle = RightFlipper.endangle
+RFEndAngle1 = Flipper1.endangle
+
+Sub FlipperActivate(Flipper, FlipperPress)
+	FlipperPress = 1
+	Flipper.Elasticity = FElasticity
+	
+	Flipper.eostorque = EOST
+	Flipper.eostorqueangle = EOSA
+End Sub
+
+Sub FlipperDeactivate(Flipper, FlipperPress)
+	FlipperPress = 0
+	Flipper.eostorqueangle = EOSA
+	Flipper.eostorque = EOST * EOSReturn / FReturn
+	
+	If Abs(Flipper.currentangle) <= Abs(Flipper.endangle) + 0.1 Then
+		Dim b, gBOT
+				gBOT = GetBalls
+		
+		For b = 0 To UBound(gBOT)
+			If Distance(gBOT(b).x, gBOT(b).y, Flipper.x, Flipper.y) < 55 Then 'check for cradle
+				If gBOT(b).vely >= - 0.4 Then gBOT(b).vely =  - 0.4
+			End If
+		Next
+	End If
+End Sub
+
+Sub FlipperTricks (Flipper, FlipperPress, FCount, FEndAngle, FState)
+	Dim Dir
+	Dir = Flipper.startangle / Abs(Flipper.startangle) '-1 for Right Flipper
+	
+	If Abs(Flipper.currentangle) > Abs(Flipper.startangle) - 0.05 Then
+		If FState <> 1 Then
+			Flipper.rampup = SOSRampup
+			Flipper.endangle = FEndAngle - 3 * Dir
+			Flipper.Elasticity = FElasticity * SOSEM
+			FCount = 0
+			FState = 1
+		End If
+	ElseIf Abs(Flipper.currentangle) <= Abs(Flipper.endangle) And FlipperPress = 1 Then
+		If FCount = 0 Then FCount = GameTime
+		
+		If FState <> 2 Then
+			Flipper.eostorqueangle = EOSAnew
+			Flipper.eostorque = EOSTnew
+			Flipper.rampup = EOSRampup
+			Flipper.endangle = FEndAngle
+			FState = 2
+		End If
+	ElseIf Abs(Flipper.currentangle) > Abs(Flipper.endangle) + 0.01 And FlipperPress = 1 Then
+		If FState <> 3 Then
+			Flipper.eostorque = EOST
+			Flipper.eostorqueangle = EOSA
+			Flipper.rampup = Frampup
+			Flipper.Elasticity = FElasticity
+			FState = 3
+		End If
+	End If
+End Sub
+
+Const LiveDistanceMin = 5  'minimum distance In vp units from flipper base live catch dampening will occur
+Const LiveDistanceMax = 114 'maximum distance in vp units from flipper base live catch dampening will occur (tip protection)
+Const BaseDampen = 0.55
+
+Sub CheckLiveCatch(ball, Flipper, FCount, parm) 'Experimental new live catch
+    Dim Dir, LiveDist
+    Dir = Flipper.startangle / Abs(Flipper.startangle)    '-1 for Right Flipper
+    Dim LiveCatchBounce   'If live catch is not perfect, it won't freeze ball totally
+    Dim CatchTime
+    CatchTime = GameTime - FCount
+    LiveDist = Abs(Flipper.x - ball.x)
+
+    If CatchTime <= LiveCatch And parm > 3 And LiveDist > LiveDistanceMin And LiveDist < LiveDistanceMax Then
+        If CatchTime <= LiveCatch * 0.5 Then   'Perfect catch only when catch time happens in the beginning of the window
+            LiveCatchBounce = 0
+        Else
+            LiveCatchBounce = Abs((LiveCatch / 2) - CatchTime)  'Partial catch when catch happens a bit late
+        End If
+        
+        If LiveCatchBounce = 0 And ball.velx * Dir > 0 And LiveDist > 30 Then ball.velx = 0
+
+        If ball.velx * Dir > 0 And LiveDist < 30 Then
+            ball.velx = BaseDampen * ball.velx
+            ball.vely = BaseDampen * ball.vely
+            ball.angmomx = BaseDampen * ball.angmomx
+            ball.angmomy = BaseDampen * ball.angmomy
+            ball.angmomz = BaseDampen * ball.angmomz
+        Elseif LiveDist > 30 Then
+            ball.vely = LiveCatchBounce * (32 / LiveCatch) ' Multiplier for inaccuracy bounce
+            ball.angmomx = 0
+            ball.angmomy = 0
+            ball.angmomz = 0
+        End If
+    Else
+        If Abs(Flipper.currentangle) <= Abs(Flipper.endangle) + 1 Then FlippersD.Dampenf ActiveBall, parm
+    End If
+End Sub
+
+'******************************************************
+'****  END FLIPPER CORRECTIONS
+'******************************************************
+
+
+
+
+
+'******************************************************
+' 	ZDMP:  RUBBER  DAMPENERS
+'******************************************************
+' These are data mined bounce curves,
+' dialed in with the in-game elasticity as much as possible to prevent angle / spin issues.
+' Requires tracking ballspeed to calculate COR
+
+Sub dPosts_Hit(idx)
+	RubbersD.dampen ActiveBall
+	TargetBouncer ActiveBall, 1
+End Sub
+
+Sub dSleeves_Hit(idx)
+	SleevesD.Dampen ActiveBall
+	TargetBouncer ActiveBall, 0.7
+End Sub
+
+Dim RubbersD				'frubber
+Set RubbersD = New Dampener
+RubbersD.name = "Rubbers"
+RubbersD.debugOn = False	'shows info in textbox "TBPout"
+RubbersD.Print = False	  'debug, reports In debugger (In vel, out cor); cor bounce curve (linear)
+
+'for best results, try to match in-game velocity as closely as possible to the desired curve
+'   RubbersD.addpoint 0, 0, 0.935   'point# (keep sequential), ballspeed, CoR (elasticity)
+RubbersD.addpoint 0, 0, 1.1		 'point# (keep sequential), ballspeed, CoR (elasticity)
+RubbersD.addpoint 1, 3.77, 0.97
+RubbersD.addpoint 2, 5.76, 0.967	'dont take this as gospel. if you can data mine rubber elasticitiy, please help!
+RubbersD.addpoint 3, 15.84, 0.874
+RubbersD.addpoint 4, 56, 0.64	   'there's clamping so interpolate up to 56 at least
+
+Dim SleevesD	'this is just rubber but cut down to 85%...
+Set SleevesD = New Dampener
+SleevesD.name = "Sleeves"
+SleevesD.debugOn = False	'shows info in textbox "TBPout"
+SleevesD.Print = False	  'debug, reports In debugger (In vel, out cor)
+SleevesD.CopyCoef RubbersD, 0.85
+
+'######################### Add new FlippersD Profile
+'######################### Adjust these values to increase or lessen the elasticity
+
+Dim FlippersD
+Set FlippersD = New Dampener
+FlippersD.name = "Flippers"
+FlippersD.debugOn = False
+FlippersD.Print = False
+FlippersD.addpoint 0, 0, 1.1
+FlippersD.addpoint 1, 3.77, 0.99
+FlippersD.addpoint 2, 6, 0.99
+
+Class Dampener
+	Public Print, debugOn   'tbpOut.text
+	Public name, Threshold  'Minimum threshold. Useful for Flippers, which don't have a hit threshold.
+	Public ModIn, ModOut
+	Private Sub Class_Initialize
+		ReDim ModIn(0)
+		ReDim Modout(0)
+	End Sub
+	
+	Public Sub AddPoint(aIdx, aX, aY)
+		ShuffleArrays ModIn, ModOut, 1
+		ModIn(aIDX) = aX
+		ModOut(aIDX) = aY
+		ShuffleArrays ModIn, ModOut, 0
+		If GameTime > 100 Then Report
+	End Sub
+	
+	Public Sub Dampen(aBall)
+		If threshold Then
+			If BallSpeed(aBall) < threshold Then Exit Sub
+		End If
+		Dim RealCOR, DesiredCOR, str, coef
+		DesiredCor = LinearEnvelope(cor.ballvel(aBall.id), ModIn, ModOut )
+		RealCOR = BallSpeed(aBall) / (cor.ballvel(aBall.id) + 0.0001)
+		coef = desiredcor / realcor
+		If debugOn Then str = name & " In vel:" & Round(cor.ballvel(aBall.id),2 ) & vbNewLine & "desired cor: " & Round(desiredcor,4) & vbNewLine & _
+		"actual cor: " & Round(realCOR,4) & vbNewLine & "ballspeed coef: " & Round(coef, 3) & vbNewLine
+		If Print Then Debug.print Round(cor.ballvel(aBall.id),2) & ", " & Round(desiredcor,3)
+		
+		aBall.velx = aBall.velx * coef
+		aBall.vely = aBall.vely * coef
+		aBall.velz = aBall.velz * coef
+		If debugOn Then TBPout.text = str
+	End Sub
+	
+	Public Sub Dampenf(aBall, parm) 'Rubberizer is handle here
+		Dim RealCOR, DesiredCOR, str, coef
+		DesiredCor = LinearEnvelope(cor.ballvel(aBall.id), ModIn, ModOut )
+		RealCOR = BallSpeed(aBall) / (cor.ballvel(aBall.id) + 0.0001)
+		coef = desiredcor / realcor
+		If Abs(aball.velx) < 2 And aball.vely < 0 And aball.vely >  - 3.75 Then
+			aBall.velx = aBall.velx * coef
+			aBall.vely = aBall.vely * coef
+			aBall.velz = aBall.velz * coef
+		End If
+	End Sub
+	
+	Public Sub CopyCoef(aObj, aCoef) 'alternative addpoints, copy with coef
+		Dim x
+		For x = 0 To UBound(aObj.ModIn)
+			addpoint x, aObj.ModIn(x), aObj.ModOut(x) * aCoef
+		Next
+	End Sub
+	
+	Public Sub Report() 'debug, reports all coords in tbPL.text
+		If Not debugOn Then Exit Sub
+		Dim a1, a2
+		a1 = ModIn
+		a2 = ModOut
+		Dim str, x
+		For x = 0 To UBound(a1)
+			str = str & x & ": " & Round(a1(x),4) & ", " & Round(a2(x),4) & vbNewLine
+		Next
+		TBPout.text = str
+	End Sub
+End Class
+
+'******************************************************
+'  TRACK ALL BALL VELOCITIES
+'  FOR RUBBER DAMPENER AND DROP TARGETS
+'******************************************************
+
+Dim cor
+Set cor = New CoRTracker
+
+Class CoRTracker
+	Public ballvel, ballvelx, ballvely
+	
+	Private Sub Class_Initialize
+		ReDim ballvel(0)
+		ReDim ballvelx(0)
+		ReDim ballvely(0)
+	End Sub
+	
+	Public Sub Update()	'tracks in-ball-velocity
+		Dim str, b, AllBalls, highestID
+		allBalls = GetBalls
+		
+		For Each b In allballs
+			If b.id >= HighestID Then highestID = b.id
+		Next
+		
+		If UBound(ballvel) < highestID Then ReDim ballvel(highestID)	'set bounds
+		If UBound(ballvelx) < highestID Then ReDim ballvelx(highestID)	'set bounds
+		If UBound(ballvely) < highestID Then ReDim ballvely(highestID)	'set bounds
+		
+		For Each b In allballs
+			ballvel(b.id) = BallSpeed(b)
+			ballvelx(b.id) = b.velx
+			ballvely(b.id) = b.vely
+		Next
+	End Sub
+End Class
+
+' Note, cor.update must be called in a 10 ms timer. The example table uses the GameTimer for this purpose, but sometimes a dedicated timer call RDampen is used.
+
+Sub RDampen_Timer
+	Cor.Update
+End Sub
+
+'******************************************************
+'****  END PHYSICS DAMPENERS
+'******************************************************
+
+
+
+'******************************************************
+' 	ZBOU: VPW TargetBouncer for targets and posts by Iaakki, Wrd1972, Apophis
+'******************************************************
+
+Const TargetBouncerEnabled = 1	  '0 = normal standup targets, 1 = bouncy targets
+Const TargetBouncerFactor = 0.9	 'Level of bounces. Recommmended value of 0.7-1
+
+Sub TargetBouncer(aBall,defvalue)
+	Dim zMultiplier, vel, vratio
+	If TargetBouncerEnabled = 1 And aball.z < 30 Then
+		'   debug.print "velx: " & aball.velx & " vely: " & aball.vely & " velz: " & aball.velz
+		vel = BallSpeed(aBall)
+		If aBall.velx = 0 Then vratio = 1 Else vratio = aBall.vely / aBall.velx
+		Select Case Int(Rnd * 6) + 1
+			Case 1
+				zMultiplier = 0.2 * defvalue
+			Case 2
+				zMultiplier = 0.25 * defvalue
+			Case 3
+				zMultiplier = 0.3 * defvalue
+			Case 4
+				zMultiplier = 0.4 * defvalue
+			Case 5
+				zMultiplier = 0.45 * defvalue
+			Case 6
+				zMultiplier = 0.5 * defvalue
+		End Select
+		aBall.velz = Abs(vel * zMultiplier * TargetBouncerFactor)
+		aBall.velx = Sgn(aBall.velx) * Sqr(Abs((vel ^ 2 - aBall.velz ^ 2) / (1 + vratio ^ 2)))
+		aBall.vely = aBall.velx * vratio
+		'   debug.print "---> velx: " & aball.velx & " vely: " & aball.vely & " velz: " & aball.velz
+		'   debug.print "conservation check: " & BallSpeed(aBall)/vel
+	End If
+End Sub
+
+'Add targets or posts to the TargetBounce collection if you want to activate the targetbouncer code from them
+Sub TargetBounce_Hit(idx)
+	TargetBouncer ActiveBall, 1
+End Sub
+
+
+
+'******************************************************
+'	ZSSC: SLINGSHOT CORRECTION FUNCTIONS by apophis
+'******************************************************
+' To add these slingshot corrections:
+'	 - On the table, add the endpoint primitives that define the two ends of the Slingshot
+'	 - Initialize the SlingshotCorrection objects in InitSlingCorrection
+'	 - Call the .VelocityCorrect methods from the respective _Slingshot event sub
+
+Dim LS
+Set LS = New SlingshotCorrection
+Dim RS
+Set RS = New SlingshotCorrection
+
+InitSlingCorrection
+
+Sub InitSlingCorrection
+	LS.Object = LeftSlingshot
+	LS.EndPoint1 = EndPoint1LS
+	LS.EndPoint2 = EndPoint2LS
+	
+	RS.Object = RightSlingshot
+	RS.EndPoint1 = EndPoint1RS
+	RS.EndPoint2 = EndPoint2RS
+	
+	'Slingshot angle corrections (pt, BallPos in %, Angle in deg)
+	' These values are best guesses. Retune them if needed based on specific table research.
+	AddSlingsPt 0, 0.00, - 4
+	AddSlingsPt 1, 0.45, - 7
+	AddSlingsPt 2, 0.48,	0
+	AddSlingsPt 3, 0.52,	0
+	AddSlingsPt 4, 0.55,	7
+	AddSlingsPt 5, 1.00,	4
+End Sub
+
+Sub AddSlingsPt(idx, aX, aY)		'debugger wrapper for adjusting flipper script In-game
+	Dim a
+	a = Array(LS, RS)
+	Dim x
+	For Each x In a
+		x.addpoint idx, aX, aY
+	Next
+End Sub
+
+'' The following sub are needed, however they may exist somewhere else in the script. Uncomment below if needed
+'Dim PI: PI = 4*Atn(1)
+'Function dSin(degrees)
+'	dsin = sin(degrees * Pi/180)
+'End Function
+'Function dCos(degrees)
+'	dcos = cos(degrees * Pi/180)
+'End Function
+'
+'Function RotPoint(x,y,angle)
+'	dim rx, ry
+'	rx = x*dCos(angle) - y*dSin(angle)
+'	ry = x*dSin(angle) + y*dCos(angle)
+'	RotPoint = Array(rx,ry)
+'End Function
+
+Class SlingshotCorrection
+	Public DebugOn, Enabled
+	Private Slingshot, SlingX1, SlingX2, SlingY1, SlingY2
+	
+	Public ModIn, ModOut
+	
+	Private Sub Class_Initialize
+		ReDim ModIn(0)
+		ReDim Modout(0)
+		Enabled = True
+	End Sub
+	
+	Public Property Let Object(aInput)
+		Set Slingshot = aInput
+	End Property
+	
+	Public Property Let EndPoint1(aInput)
+		SlingX1 = aInput.x
+		SlingY1 = aInput.y
+	End Property
+	
+	Public Property Let EndPoint2(aInput)
+		SlingX2 = aInput.x
+		SlingY2 = aInput.y
+	End Property
+	
+	Public Sub AddPoint(aIdx, aX, aY)
+		ShuffleArrays ModIn, ModOut, 1
+		ModIn(aIDX) = aX
+		ModOut(aIDX) = aY
+		ShuffleArrays ModIn, ModOut, 0
+		If GameTime > 100 Then Report
+	End Sub
+	
+	Public Sub Report() 'debug, reports all coords in tbPL.text
+		If Not debugOn Then Exit Sub
+		Dim a1, a2
+		a1 = ModIn
+		a2 = ModOut
+		Dim str, x
+		For x = 0 To UBound(a1)
+			str = str & x & ": " & Round(a1(x),4) & ", " & Round(a2(x),4) & vbNewLine
+		Next
+		TBPout.text = str
+	End Sub
+	
+	
+	Public Sub VelocityCorrect(aBall)
+		Dim BallPos, XL, XR, YL, YR
+		
+		'Assign right and left end points
+		If SlingX1 < SlingX2 Then
+			XL = SlingX1
+			YL = SlingY1
+			XR = SlingX2
+			YR = SlingY2
+		Else
+			XL = SlingX2
+			YL = SlingY2
+			XR = SlingX1
+			YR = SlingY1
+		End If
+		
+		'Find BallPos = % on Slingshot
+		If Not IsEmpty(aBall.id) Then
+			If Abs(XR - XL) > Abs(YR - YL) Then
+				BallPos = PSlope(aBall.x, XL, 0, XR, 1)
+			Else
+				BallPos = PSlope(aBall.y, YL, 0, YR, 1)
+			End If
+			If BallPos < 0 Then BallPos = 0
+			If BallPos > 1 Then BallPos = 1
+		End If
+		
+		'Velocity angle correction
+		If Not IsEmpty(ModIn(0) ) Then
+			Dim Angle, RotVxVy
+			Angle = LinearEnvelope(BallPos, ModIn, ModOut)
+			'   debug.print " BallPos=" & BallPos &" Angle=" & Angle
+			'   debug.print " BEFORE: aBall.Velx=" & aBall.Velx &" aBall.Vely" & aBall.Vely
+			RotVxVy = RotPoint(aBall.Velx,aBall.Vely,Angle)
+			If Enabled Then aBall.Velx = RotVxVy(0)
+			If Enabled Then aBall.Vely = RotVxVy(1)
+			'   debug.print " AFTER: aBall.Velx=" & aBall.Velx &" aBall.Vely" & aBall.Vely
+			'   debug.print " "
+		End If
+	End Sub
+End Class
+
+Sub Spell(tmpLetter)
+Dim i
+	Select Case tmpLetter
+		Case "a"
+			i = 0
+		Case "b"
+			i = 1
+		Case "c"
+			i = 2
+		Case "d"
+			i = 3
+		Case "e"
+			i = 4
+		Case "f"
+			i = 5
+		Case "g"
+			i = 6
+		Case "h"
+			i = 7
+		Case "i"
+			i = 8
+		Case "j"
+			i = 9
+		Case "k"
+			i = 10
+		Case "l"
+			i = 11
+		Case "m"
+			i = 12
+		Case "n"
+			i = 13
+		Case "o"
+			i = 14
+		Case "p"
+			i = 15
+		Case "q"
+			i = 16
+		Case "r"
+			i = 17
+		Case "s"
+			i = 18
+		Case "t"
+			i = 19
+		Case "u"
+			i = 20
+		Case "v"
+			i = 21
+		Case "w"
+			i = 22
+		Case "x"
+			i = 23
+		Case "y"
+			i = 24
+		Case "z"
+			i = 25
+		Case Else
+			Exit Sub
+	End Select
+
+
+
+axmas(i).timerInterval= 10
+axmas(i).opacity = 100
+fadedir(i) = 1
+fspeed(i) = myFSpeed
+Intensity(i) = 1
+axmas(i).timerenabled=1
+'vpmtimer.addtimer 2000 , "axmas(i).timerenabled=0:axmas(i).opacity = 0 '"
+
+ExecuteGlobal ("Sub " & axmas(i).Name & "_timer:" & _
+"If Intensity("& i &") <=0 Then me.timerenabled=0:End If:" & _
+"If Intensity("& i &") >= 3000 Then fadeDir("& i &")=-1 :End If:" & _
+"Intensity("& i &") = Intensity("& i &") + fSpeed("& i &") * fadeDir("& i &"):" & _
+"axmas("& i &").opacity = intensity("& i &"):" & _
+"End Sub")
+
+End Sub
+
+Dim bInLightQuote : bInLightQuote = False
+Sub RandomLightQuote
+
+	if bInLightQuote then Exit Sub
+	xmasQueue.RemoveAll(True)
+	PrepSpellWord 60
+
+	bInLightQuote = True
+
+	Select Case (Int(Rnd*5)+1)
+		Case 1
+			Spellword "friends dont lie"
+		Case 2
+			Spellword "a neverending story"
+		Case 3
+			Spellword "mornings are for coffee and contemplation" 
+		Case 4
+			Spellword "i dump your ass"
+		Case 5
+			Spellword "she will not be able to resist these pearls"
+	End Select
+
+End Sub
+
+
+Sub SetLoopDelay(xString)
+	LoopDelay =  (Len(xString)*delayInc*myFSpeed) + (delayInc*myFSpeed*2)
+	debug.print "loop delay " &loopdelay
+End Sub
+
+Sub TestMerlin
+	debug.print "in test"
+
+
+	dim k, newLoopDelay
+
+		PrepSpellWord 40
+		SetLoopDelay "adventuring party" 
+
+		SpellWord "adventuring party"
+
+		for k = 1 to 7
+			
+			NewLoopDelay = LoopDelay*k
+		debug.print "loop delay :" &k &":" &newloopdelay	
+	
+			xmasQueue.Add "SpellWord-"&k,"SpellWord ""adventuring party"" ",80,NewLoopDelay,0,0,0,False
+		Next
+
+		xmasQueue.Add "SpellEnd","giOn:bInLightQuote = False",75,LoopDelay*8+(delayInc*myFSpeed*2),0,0,0,False
+
+
+Exit Sub
+	dim k2, newLoopDelay2
+
+		PrepSpellWord 40
+		SetLoopDelay "find barb" 
+
+		SpellWord "find barb"
+
+		for k = 1 to 7
+			
+			NewLoopDelay = LoopDelay*k
+		debug.print "loop delay :" &k &":" &newloopdelay	
+	
+			xmasQueue.Add "SpellWord-"&k,"SpellWord ""find barb"" ",80,NewLoopDelay,0,0,0,False
+		Next
+
+		xmasQueue.Add "SpellEnd","giOn:bInLightQuote = False",75,LoopDelay*8+(delayInc*myFSpeed*2),0,0,0,False
+End Sub
+
+
+Dim LoopDelay
+dim delay,myFSpeed
+delay = 0
+LoopDelay = 0
+
+Sub PrepSpellWord (tmpSpeed)
+	myFSpeed = tmpSpeed
+	gioff
+	'StopXMAS
+	GeneralPupQueue.Add "StopXMAS","StopXMAS",80,10,0,0,0,False
+End Sub
+
+Dim DelayInc : DelayInc = 25
+
+Sub SpellWord(xString)
+dim i,tmpX, delayInc
+	
+'debug.print "WORD:" & xString
+
+	delay = 0
+	delayInc = 25
+	For i = 1 To Len(xString)
+		tmpX = chr(34) &Mid(xString,i,1) & chr(34)
+		delay = delay + delayInc*myFSpeed
+		xmasQueue.Add "Spell-"&i,"Spell " &tmpX,95,delay,0,0,0,True
+	Next
+'	delay = delay + delayInc*myFSpeed
+	'GeneralPupQueue.Add "Spell-"&i+1,"giOn:bInLightQuote = False",95,delay,0,0,0,True
+End Sub
+
+
+'  "If Intensity("& i &") <=0 Then axmas(i).timerenabled=0:axmas(i).opacity = 0:End If:" & _ 
+
+
+'***************************************************************
+' ZQUE: VPIN WORKSHOP ADVANCED QUEUING SYSTEM - 1.2.0
+'***************************************************************
+' WHAT IS IT?
+' The VPin Workshop Advanced Queuing System allows table authors
+' to put sub routine calls in a queue without creating a bunch
+' of timers. There are many use cases for this: queuing sequences
+' for light shows and DMD scenes, delaying solenoids until the
+' DMD is finished playing all its sequences (such as holding a
+' ball in a scoop), managing what actions take priority over
+' others (e.g. an extra ball sequence is probably more important
+' than a small jackpot), and many more.
+'
+' This system uses Scripting.Dictionary, a single timer, and the
+' GameTime global to keep track of everything in the queue.
+' This allows for better stability and a virtually unlimited
+' number of items in the queue. It also allows for greater
+' versatility, like pre-delays, queue delays, priorities, and
+' even modifying items in the queue.
+'
+' The VPin Workshop Queuing System can replace vpmTimer as a
+' proper queue system (each item depends on the previous)
+' whereas vpmTimer is a collection of virtual timers that run
+' in parallel. It also adds on other advanced functionality.
+' However, this queue system does not have ROM support out of
+' the box like vpmTimer does.
+'
+' I recommend reading all the comments before you implement the
+' queuing system into your table.
+'
+' WHAT YOU NEED to use the queuing system:
+' 1) Put this VBS file in your scripts folder, or copy / paste
+'    the code into your table script (and skip step 2).
+' 2) Include this file via Scripting.FileSystemObject, and
+'    ExecuteGlobal it.
+' 3) Make one or more queues by constructing the vpwQueueManager:
+'    Dim queue : Set queue = New vpwQueueManager
+' 4) Create (or use) a timer that is always enabled and
+'    preferably has an interval of 1 millisecond. Use a
+'    higher number for less time precision but less resource
+'    use. You only need one timer even if you
+'    have multiple queues.
+' 5) For each queue you created, call its Tick routine in
+'    the timer's *_timer() routine:
+'    queue.Tick
+' 6) You're done! Refer to the routines in vpwQueueManager to
+'    learn how to use the queuing system.
+'
+' TUTORIAL: https://youtu.be/kpPYgOiUlxQ
+'***************************************************************
+
+'===========================================
+' vpwQueueManager
+' This class manages a queue of
+' vpwQueueItems and executes them.
+'===========================================
+Class vpwQueueManager
+	Public qItems ' A dictionary of vpwQueueItems in the queue (do NOT use native Scripting.Dictionary.Add/Remove; use the vpwQueueManager's Add/Remove methods instead!)
+	Public preQItems ' A dictionary of vpwQueueItems pending to be added to qItems
+	Public debugOn 'Null = no debug. String = activate debug by using this unique label for the queue. REQUIRES baldgeek's error logs.
+	
+	'----------------------------------------------------------
+	' vpwQueueManager.qCurrentItem
+	' This contains a string of the key currently active / at
+	' the top of the queue. An empty string means no items are
+	' active right now.
+	' This is an important property; it should be monitored
+	' in another timer or routine whenever you Add a queue item
+	' with a -1 (indefinite) preDelay or postDelay. Then, for
+	' preDelay, ExecuteCurrentItem should be called to run the
+	' queue item. And for postDelay, DoNextItem should be
+	' called to move to the next item in the queue.
+	'
+	' For example, let's say you add a queue item with the
+	' key "kickTheBall" and an indefinite preDelay. You want
+	' to wait until another timer fires before this queue item
+	' executes and kicks the ball out of a scoop. In the other
+	' timer, you will monitor qCurrentItem. Once it equals
+	' "kickTheBall", call ExecuteCurrentItem, which will run
+	' the queue item and presumably kick out the ball.
+	'
+	' WARNING!: If you do not properly execute one of these
+	' callback routines on an indefinite delayed item, then
+	' the queue will effectively freeze / stop until you do.
+	'---------------------------------------------------------
+	Public qCurrentItem
+	
+	Public preDelayTime ' The GameTime the preDelay for the qCurrentItem was started
+	Public postDelayTime ' The GameTime the postDelay for the qCurrentItem was started
+	
+	Private onQueueEmpty ' A string or object to be called every time the queue empties (use the QueueEmpty property to get/set this)
+	Private queueWasEmpty ' Boolean to determine if the queue was already empty when firing DoNextItem
+	Private preDelayTransfer ' Number of milliseconds of preDelay to transfer over to the next queue item when doNextItem is called
+	
+	Private Sub Class_Initialize
+		Set qItems = CreateObject("Scripting.Dictionary")
+		Set preQItems = CreateObject("Scripting.Dictionary")
+		qCurrentItem = ""
+		onQueueEmpty = ""
+		queueWasEmpty = True
+		debugOn = Null
+		preDelayTransfer = 0
+	End Sub
+	
+	'----------------------------------------------------------
+	' vpwQueueManager.Tick
+	' This is where all the magic happens! Call this method in
+	' your timer's _timer routine to check the queue and
+	' execute the necessary methods. We do not iterate over
+	' every item in the queue here, which allows for superior
+	' performance even if you have hundreds of items in the
+	' queue.
+	'----------------------------------------------------------
+	Public Sub Tick()
+		Dim item
+		If qItems.Count > 0 Then ' Don't waste precious resources if we have nothing in the queue
+			
+			' If no items are active, or the currently active item no longer exists, move to the next item in the queue.
+			' (This is also a failsafe to ensure the queue continues to work even if an item gets manually deleted from the dictionary).
+			If qCurrentItem = "" Or Not qItems.Exists(qCurrentItem) Then
+				DoNextItem
+			Else ' We are good; do stuff as normal
+				Set item = qItems.item(qCurrentItem)
+				
+				If item.Executed Then
+					' If the current item was executed and the post delay passed, go to the next item in the queue
+					If item.postDelay >= 0 And GameTime >= (postDelayTime + item.postDelay) Then
+						DebugLog qCurrentItem & " - postDelay of " & item.postDelay & " passed."
+						DoNextItem
+					End If
+				Else
+					' If the current item expires before it can be executed, go to the next item in the queue
+					If item.timeToLive > 0 And GameTime >= (item.queuedOn + item.timeToLive) Then
+						DebugLog qCurrentItem & " - expired (Time To live). Moving To the Next queue item."
+						DoNextItem
+					End If
+					
+					' If the current item was not executed yet and the pre delay passed, then execute it
+					If item.preDelay >= 0 And GameTime >= (preDelayTime + item.preDelay) Then
+						DebugLog qCurrentItem & " - preDelay of " & item.preDelay & " passed. Executing callback."
+						item.Execute
+						preDelayTime = 0
+						postDelayTime = GameTime
+					End If
+				End If
+			End If
+		End If
+		
+		' Loop through each item in the pre-queue to find any that is ready to be added
+		If preQItems.Count > 0 Then
+			Dim k, key
+			k = preQItems.Keys
+			For Each key In k
+				Set item = preQItems.Item(key)
+				
+				' If a queue item was pre-queued and is ready to be considered as actually in the queue, add it
+				If GameTime >= (item.queuedOn + item.preQueueDelay) Then
+					DebugLog key & " (preQueue) - preQueueDelay of " & item.preQueueDelay & " passed. Item added To the main queue."
+					preQItems.Remove key
+					Me.Add key, item.Callback, item.priority, 0, item.preDelay, item.postDelay, item.timeToLive, item.executeNow
+				End If
+			Next
+		End If
+	End Sub
+	
+	'----------------------------------------------------------
+	' vpwQueueManager.DoNextItem
+	' Goes to the next item in the queue and deletes the
+	' currently active one.
+	'----------------------------------------------------------
+	Public Sub DoNextItem()
+		If Not qCurrentItem = "" Then
+			If qItems.Exists(qCurrentItem) Then qItems.Remove qCurrentItem ' Remove the current item from the queue if it still exists
+			qCurrentItem = ""
+		End If
+		
+		If qItems.Count > 0 Then
+			Dim k, key
+			Dim nextItem
+			Dim nextItemPriority
+			Dim item
+			nextItemPriority = 0
+			nextItem = ""
+			
+			' Find which item needs to run next based on priority first, queue order second (ignore items with an active preQueueDelay)
+			k = qItems.Keys
+			For Each key In k
+				Set item = qItems.Item(key)
+				
+				If item.preQueueDelay <= 0 And item.priority > nextItemPriority Then
+					nextItem = key
+					nextItemPriority = item.priority
+				End If
+			Next
+			
+			If qItems.Exists(nextItem) Then
+				Set item = qItems.Item(nextItem)
+				DebugLog "DoNextItem - checking " & nextItem & " (priority " & item.priority & ")"
+				
+				' Make sure the item is not expired and not already executed. If it is, remove it and re-call doNextItem
+				If (item.timeToLive > 0 And GameTime >= (item.queuedOn + item.timeToLive + preDelayTransfer)) Or item.executed = True Then
+					DebugLog "DoNextItem - " & nextItem & " expired (Time To live) Or already executed. Removing And going To the Next item."
+					qItems.Remove nextItem
+					DoNextItem
+					Exit Sub
+				End If
+				
+				'Transfer preDelay time when applicable
+				If preDelayTransfer > 0 And item.preDelay > -1 Then
+					DebugLog "DoNextItem " & nextItem & " - Transferred remaining postDelay of " & preDelayTransfer & " milliseconds from previously overridden queue item To its preDelay And timeToLive"
+					qItems.Item(nextItem).preDelay = item.preDelay + preDelayTransfer
+					If item.timeToLive > 0 Then qItems.Item(nextItem).timeToLive = item.timeToLive + preDelayTransfer
+					preDelayTransfer = 0
+				End If
+				
+				' Set item as current / active, and execute if it has no pre-delay (otherwise Tick will take care of pre-delay)
+				qCurrentItem = nextItem
+				If item.preDelay = 0 Then
+					DebugLog "DoNextItem - " & nextItem & " Now active. It has no preDelay, so executing callback immediately."
+					item.Execute
+					preDelayTime = 0
+					postDelayTime = GameTime
+				Else
+					DebugLog "DoNextItem - " & nextItem & " Now active. Waiting For a preDelay of " & item.preDelay & " before executing."
+					preDelayTime = GameTime
+					postDelayTime = 0
+				End If
+			End If
+		ElseIf queueWasEmpty = False Then
+			DebugLog "DoNextItem - Queue Is Now Empty; executing queueEmpty callback."
+			CallQueueEmpty() ' Call QueueEmpty if this was the last item in the queue
+		End If
+	End Sub
+	
+	'----------------------------------------------------------
+	' vpwQueueManager.ExecuteCurrentItem
+	' Helper routine that can be used when the current item is
+	' on an indefinite preDelay. Call this when you are ready
+	' for that item to execute.
+	'----------------------------------------------------------
+	Public Sub ExecuteCurrentItem()
+		If Not qCurrentItem = "" And qItems.Exists(qCurrentItem) Then
+			DebugLog "ExecuteCurrentItem - Executing the callback For " & qCurrentItem & "."
+			Dim item
+			Set item = qItems.Item(qCurrentItem)
+			item.Execute
+			preDelayTime = 0
+			postDelayTime = GameTime
+		End If
+	End Sub
+	
+	'----------------------------------------------------------
+	' vpwQueueManager.Add
+	' REQUIRES Class vpwQueueItem
+	'
+	' Add an item to the queue.
+	'
+	' PARAMETERS:
+	'
+	' key (string) - Unique name for this queue item
+	' WARNING: Specifying a key that already exists will
+	' overwrite the item in the queue. This is by design. Also
+	' note the following behaviors:
+	' * Tickers / clocks for tracking delay times will NOT be
+	' restarted for this item (but the total duration will be
+	' updated. For example, if the old preDelay was 3 seconds
+	' and 2 seconds elapsed, but Add was called to update
+	' preDelay to 5 seconds, then the queue item will now
+	' execute in 3 more seconds (new preDelay - time elapsed)).
+	' However, timeToLive WILL be restarted.
+	' * Items will maintain their same place in the queue.
+	' * If key = qCurrentItem (overwriting the currently active
+	' item in the queue) and qCurrentItem already executed
+	' the callback (but is waiting for a postDelay), then the
+	' current queue item's remaining postDelay will be added to
+	' the preDelay of the next item, and this item will be
+	' added to the bottom of the queue for re-execution.
+	' If you do not want it to re-execute, then add an If
+	' guard on your call to the Add method checking
+	' "If Not vpwQueueManager.qCurrentItem = key".
+	'
+	' qCallback (object|string) - An object to be called,
+	' or string to be executed globally, when this queue item
+	' runs. I highly recommend making sub routines for groups
+	' of things that should be executed by the queue so that
+	' your qCallback string does not get long, and you can
+	' easily organize your callbacks. Also, use double
+	' double-quotes when the call itself has quotes in it
+	' (VBScript escaping).
+	' Example: "playsound ""Plunger"""
+	'
+	' priority (number) - Items in the queue will be executed
+	' in order from highest priority to lowest. Items with the
+	' same priority will be executed in order according to
+	' when they were added to the queue. Use any number
+	' greater than 0. My recommendation is to make a plan for
+	' your table on how you will prioritize various types of
+	' queue items and what priority number each type should
+	' have. Also, you should reserve priority 1 (lowest) to
+	' items which should wait until everything else in the
+	' queue is done (such as ejecting a ball from a scoop).
+	'
+	' preQueueDelay (number) - The number of
+	' milliseconds before the queue actually considers this
+	' item as "in the queue" (pretend you started a timer to
+	' add this item into the queue after this delay; this
+	' logically works in a similar way; the only difference is
+	' timeToLive is still considered even when an item is
+	' pre-queued.) Set to 0 to add to the queue immediately.
+	' NOTE: this should be less than timeToLive.
+	'
+	' preDelay (number) - The number of milliseconds before
+	' the qCallback executes once this item is active (top)
+	' in the queue. Set this to 0 to immediately execute the
+	' qCallback when this item becomes active.
+	' Set this to -1 to have an indefinite delay until
+	' vpwQueueManager.ExecuteCurrentItem is called (see the
+	' comment for qCurrentItem for more information).
+	' NOTE: this should be less than timeToLive. And, if
+	' timeToLive runs out before preDelay runs out, the item
+	' will be removed and will not execute.
+	'
+	' postDelay (number) - After the qCallback executes, the
+	' number of milliseconds before moving on to the next item
+	' in the queue. Set this to -1 to have an indefinite delay
+	' until vpwQueueManager.DoNextItem is called (see the
+	' comment for qCurrentItem for more information).
+	'
+	' timeToLive (number) - After this item is added to the
+	' queue, the number of milliseconds before this queue item
+	' expires / is removed if the qCallback is not executed by
+	' then. Set to 0 to never expire. NOTE: If not 0, this
+	' should be greater than preDelay + preQueueDelay or the
+	' item will expire before the qCallback is executed.
+	' Example use case: Maybe a player scored a jackpot, but
+	' it would be awkward / irrelevant to play that jackpot
+	' sequence if it hasn't played after a few seconds (e.g.
+	' other items in the queue took priority).
+	'
+	' executeNow (boolean) - Specify true if this item
+	' should interrupt the queue and run immediately. This
+	' will only happen, however, if the currently active item
+	' has a priority less than or equal to the item you are
+	' adding. Note this does not bypass preQueueDelay nor
+	' preDelay if set.
+	' Example: If a player scores an extra ball, you might
+	' want that to interrupt everything else going on as it
+	' is an important milestone.
+	'----------------------------------------------------------
+	Public Sub Add(key, qCallback, priority, preQueueDelay, preDelay, postDelay, timeToLive, executeNow)
+		DebugLog "Adding queue item " & key
+		
+		'Construct the item class
+		Dim newClass
+		Set newClass = New vpwQueueItem
+		With newClass
+			.Callback = qCallback
+			.priority = priority
+			.preQueueDelay = preQueueDelay
+			.preDelay = preDelay
+			.postDelay = postDelay
+			.timeToLive = timeToLive
+			.executeNow = executeNow
+		End With
+		
+		'If we are attempting to overwrite the current queue item which already executed, take the remaining postDelay and add it to the preDelay of the next item. And set us up to immediately go to the next item while re-adding this item to the queue.
+		If preQueueDelay <= 0 And qItems.Exists(key) And qCurrentItem = key Then
+			If qItems.Item(key).executed = True Then
+				DebugLog key & " (Add) - Attempting To overwrite the current queue item which already executed. Immediately re-queuing this item To the bottom of the queue, transferring the remaining postDelay To the Next item, And going To the Next item."
+				If qItems.Item(key).postDelay >= 0 Then
+					preDelayTransfer = ((postDelayTime + qItems.Item(key).postDelay) - GameTime)
+				End If
+				
+				'Remove current queue item so we can go to the next item, this can be re-queued to the bottom, and the remaining postDelay transferred to the preDelay of the next item
+				qItems.Remove qCurrentItem
+				qCurrentItem = ""
+			End If
+		End If
+		
+		' Determine execution stuff if this item does not have a pre-queue delay
+		If preQueueDelay <= 0 Then
+			If executeNow = True Then
+				' Make sure this item does not immediately execute if the current item has a higher priority
+				If Not qCurrentItem = "" And qItems.Exists(qCurrentItem) Then
+					Dim item
+					Set item = qItems.Item(qCurrentItem)
+					If item.priority <= priority Then
+						DebugLog key & " (Add) - Execute Now was Set To True And this item's priority (" & priority & ") Is >= the active item's priority (" & item.priority & " from " & qCurrentItem & "). Making it the current active queue item."
+						qCurrentItem = key
+						If preDelay = 0 And preDelayTransfer = 0 Then
+							DebugLog key & " (Add) - No pre-delay. Executing the callback immediately."
+							newClass.Execute
+							preDelayTime = 0
+							postDelayTime = GameTime
+						Else
+							DebugLog key & " (Add) - Waiting For a pre-delay of " & (preDelay + preDelayTransfer) & " before executing the callback."
+							preDelayTime = GameTime
+							postDelayTime = 0
+						End If
+					Else
+						DebugLog key & " (Add) - Execute Now was Set To True, but this item's priority (" & priority & ") Is Not >= the active item's priority (" & item.priority & " from " & qCurrentItem & "). This item will Not be executed Now And will be added To the queue normally."
+					End If
+				Else
+					DebugLog key & " (Add) - Execute Now was Set To True And no item was active In the queue. Making it the current active queue item."
+					qCurrentItem = key
+					If preDelay = 0 Then
+						DebugLog key & " (Add) - No pre-delay. Executing the callback immediately."
+						preDelayTransfer = 0 'No preDelay transfer if we are immediately re-executing the same queue item
+						newClass.Execute
+						preDelayTime = 0
+						postDelayTime = GameTime
+					Else
+						DebugLog key & " (Add) - Waiting For a pre-delay of " & preDelay & " before executing the callback."
+						preDelayTime = GameTime
+						postDelayTime = 0
+					End If
+				End If
+			End If
+			If qItems.Exists(key) Then 'Overwrite existing item in the queue if it exists
+				DebugLog key & " (Add) - Already exists In the queue. Updating the item With the new parameters passed In Add."
+				Set qItems.Item(key) = newClass
+			Else
+				DebugLog key & " (Add) - Added To the queue."
+				qItems.Add key, newClass
+			End If
+			queueWasEmpty = False
+		Else
+			If preQItems.Exists(key) Then 'Overwrite existing item in the preQueue if it exists
+				DebugLog key & " (Add) - Already exists In the preQueue. Updating the item With the new parameters passed In Add."
+				Set preQItems.Item(key) = newClass
+			Else
+				DebugLog key & " (Add) - Added To the preQueue."
+				preQItems.Add key, newClass
+			End If
+		End If
+	End Sub
+	
+	'----------------------------------------------------------
+	' vpwQueueManager.Remove
+	'
+	' Removes an item from the queue. It is better to use this
+	' than to remove the item from qItems directly as this sub
+	' will also call DoNextItem to advance the queue if
+	' the item removed was the active item.
+	' NOTE: This only removes items from qItems; to remove
+	' an item from preQItems, use the standard
+	' Scripting.Dictionary Remove method.
+	'
+	' PARAMETERS:
+	'
+	' key (string) - Unique name of the queue item to remove.
+	'----------------------------------------------------------
+	Public Sub Remove(key)
+		If qItems.Exists(key) Then
+			DebugLog key & " (Remove)"
+			qItems.Remove key
+			If qCurrentItem = key Or qCurrentItem = "" Then DoNextItem ' Ensure the queue does not get stuck
+		End If
+	End Sub
+	
+	'----------------------------------------------------------
+	' vpwQueueManager.RemoveAll
+	'
+	' Removes all items from the queue / clears the queue.
+	' It is better to call this sub than to remove all items
+	' from qItems directly because this sub cleans up the queue
+	' to ensure it continues to work properly.
+	'
+	' PARAMETERS:
+	'
+	' preQueue (boolean) - Also clear the pre-queue.
+	'----------------------------------------------------------
+	Public Sub RemoveAll(preQueue)
+		DebugLog "Queue was emptied via RemoveAll."
+		
+		' Loop through each item in the queue and remove it
+		Dim k, key
+		k = qItems.Keys
+		For Each key In k
+			qItems.Remove key
+		Next
+		qCurrentItem = ""
+		
+		If queueWasEmpty = False Then CallQueueEmpty() ' Queue is now empty, so call our callback if applicable
+		
+		If preQueue Then
+			k = preQItems.Keys
+			For Each key In k
+				preQItems.Remove key
+			Next
+		End If
+	End Sub
+	
+	'----------------------------------------------------------
+	' Get vpwQueueManager.QueueEmpty
+	' Get the current callback for when the queue is empty.
+	'----------------------------------------------------------
+	Public Property Get QueueEmpty()
+		If IsObject(onQueueEmpty) Then
+			Set QueueEmpty = onQueueEmpty
+		Else
+			QueueEmpty = onQueueEmpty
+		End If
+	End Property
+	
+	'----------------------------------------------------------
+	' Let vpwQueueManager.QueueEmpty
+	' Set the callback to call every time the queue empties.
+	' This could be useful for setting a sub routine to be
+	' called each time the queue empties for doing things such
+	' as ejecting balls from scoops. Unlike using the Add
+	' method, this callback is immune from getting removed by
+	' higher priority items in the queue and will be called
+	' every time the queue is emptied, not just once.
+	'
+	' PARAMETERS:
+	'
+	' callback (object|string) - The callback to call every
+	' time the queue empties.
+	'----------------------------------------------------------
+	Public Property Let QueueEmpty(callback)
+		If IsObject(callback) Then
+			Set onQueueEmpty = callback
+		ElseIf VarType(callback) = vbString Then
+			onQueueEmpty = callback
+		End If
+	End Property
+	
+	'----------------------------------------------------------
+	' Get vpwQueueManager.CallQueueEmpty
+	' Private method that actually calls the QueueEmpty
+	' callback.
+	'----------------------------------------------------------
+	Private Sub CallQueueEmpty()
+		If queueWasEmpty = True Then Exit Sub
+		queueWasEmpty = True
+		
+		If IsObject(onQueueEmpty) Then
+			Call onQueueEmpty(0)
+		ElseIf VarType(onQueueEmpty) = vbString Then
+			If onQueueEmpty > "" Then ExecuteGlobal onQueueEmpty
+		End If
+	End Sub
+	
+	'----------------------------------------------------------
+	' DebugLog
+	' Log something if debugOn is not null.
+	' REQUIRES / uses the WriteToLog sub from Baldgeek's
+	' error log library.
+	'----------------------------------------------------------
+	Private Sub DebugLog(message)
+		If Not IsNull(debugOn) Then
+			WriteToLog "VPW Queue " & debugOn, message
+		End If
+	End Sub
+End Class
+
+'===========================================
+' vpwQueueItem
+' Represents a single item for the queue
+' system. Do NOT use this class directly.
+' Instead, use the vpwQueueManager.Add
+' routine.
+
+' You can, however, access an individual
+' item in the queue via
+' vpwQueueManager.qItems and then modify
+' its properties while it is still in the
+' queue.
+'===========================================
+Class vpwQueueItem  ' Do not construct this class directly; use vpwQueueManager.Add instead, and vpwQueueManager.qItems.Item(key) to modify an item's properties.
+	Public priority ' The item's set priority
+	Public timeToLive ' The item's set timeToLive milliseconds requested
+	Public preQueueDelay ' The item's pre-queue milliseconds requested
+	Public preDelay ' The item's pre delay milliseconds requested
+	Public postDelay ' The item's post delay milliseconds requested
+	Public executeNow ' Whether the item was set to Execute immediately
+	Private qCallback ' The item's callback object or string (use the Callback property on the class to get/set it)
+	
+	Public executed ' Whether or not this item's qCallback was executed yet
+	Public queuedOn ' The game time this item was added to the queue
+	Public executedOn ' The game time this item was executed
+	
+	Private Sub Class_Initialize
+		' Defaults
+		priority = 0
+		timeToLive = 0
+		preQueueDelay = 0
+		preDelay = 0
+		postDelay = 0
+		qCallback = ""
+		executeNow = False
+		
+		queuedOn = GameTime
+		executedOn = 0
+	End Sub
+	
+	'----------------------------------------------------------
+	' vpwQueueItem.Execute
+	' Executes the qCallback on this item if it was not yet
+	' already executed.
+	Public Sub Execute()
+		If executed Then Exit Sub ' Do not allow an item's qCallback to ever Execute more than one time
+		
+		'Mark as execute before actually executing callback; that way, if callback recursively adds the item back into the queue, then we can properly handle it.
+		executed = True
+		executedOn = GameTime
+		
+		' Execute qCallback
+		If IsObject(qCallback) Then
+			Call qCallback(0)
+		ElseIf VarType(qCallback) = vbString Then
+			If qCallback > "" Then ExecuteGlobal qCallback
+		End If
+	End Sub
+	
+	Public Property Get Callback()
+		If IsObject(qCallback) Then
+			Set Callback = qCallback
+		Else
+			Callback = qCallback
+		End If
+	End Property
+	
+	Public Property Let Callback(cb)
+		If IsObject(cb) Then
+			Set qCallback = cb
+		ElseIf VarType(cb) = vbString Then
+			qCallback = cb
+		End If
+	End Property
+End Class
+
+
+
+Sub WipeAllQueues
+	GeneralPupQueue.RemoveAll(True)
+	xmasQueue.RemoveAll(True)
+	BallHandlingQueue.RemoveAll(True)
+End Sub
+
+Sub QueueTimer_Timer()
+	BallHandlingQueue.Tick
+	GeneralPupQueue.Tick
+	xmasQueue.Tick
+End Sub
+'***************************************************************
+' END VPIN WORKSHOP ADVANCED QUEUING SYSTEM
+'***************************************************************
+
+
+'////////////////////////////  MECHANICAL SOUNDS  ///////////////////////////
+'//  This part in the script is an entire block that is dedicated to the physics sound system.
+'//  Various scripts and sounds that may be pretty generic and could suit other WPC systems, but the most are tailored specifically for this table.
+
+'///////////////////////////////  SOUNDS PARAMETERS  //////////////////////////////
+Dim GlobalSoundLevel, CoinSoundLevel, PlungerReleaseSoundLevel, PlungerPullSoundLevel, NudgeLeftSoundLevel
+Dim NudgeRightSoundLevel, NudgeCenterSoundLevel, StartButtonSoundLevel, RollingSoundFactor
+
+CoinSoundLevel = 1														'volume level; range [0, 1]
+NudgeLeftSoundLevel = 1													'volume level; range [0, 1]
+NudgeRightSoundLevel = 1												'volume level; range [0, 1]
+NudgeCenterSoundLevel = 1												'volume level; range [0, 1]
+StartButtonSoundLevel = 0.1												'volume level; range [0, 1]
+PlungerReleaseSoundLevel = 0.8 '1 wjr											'volume level; range [0, 1]
+PlungerPullSoundLevel = 1												'volume level; range [0, 1]
+RollingSoundFactor = 1.1/5		
+
+'///////////////////////-----Solenoids, Kickers and Flash Relays-----///////////////////////
+Dim FlipperUpAttackMinimumSoundLevel, FlipperUpAttackMaximumSoundLevel, FlipperUpAttackLeftSoundLevel, FlipperUpAttackRightSoundLevel
+Dim FlipperUpSoundLevel, FlipperDownSoundLevel, FlipperLeftHitParm, FlipperRightHitParm
+Dim SlingshotSoundLevel, BumperSoundFactor, KnockerSoundLevel
+
+FlipperUpAttackMinimumSoundLevel = 0.010           						'volume level; range [0, 1]
+FlipperUpAttackMaximumSoundLevel = 0.635								'volume level; range [0, 1]
+FlipperUpSoundLevel = 1.0                        						'volume level; range [0, 1]
+FlipperDownSoundLevel = 0.45                      						'volume level; range [0, 1]
+FlipperLeftHitParm = FlipperUpSoundLevel								'sound helper; not configurable
+FlipperRightHitParm = FlipperUpSoundLevel								'sound helper; not configurable
+SlingshotSoundLevel = 0.95												'volume level; range [0, 1]
+BumperSoundFactor = 4.25												'volume multiplier; must not be zero
+KnockerSoundLevel = 1 													'volume level; range [0, 1]
+
+'///////////////////////-----Ball Drops, Bumps and Collisions-----///////////////////////
+Dim RubberStrongSoundFactor, RubberWeakSoundFactor, RubberFlipperSoundFactor,BallWithBallCollisionSoundFactor
+Dim BallBouncePlayfieldSoftFactor, BallBouncePlayfieldHardFactor, PlasticRampDropToPlayfieldSoundLevel, WireRampDropToPlayfieldSoundLevel, DelayedBallDropOnPlayfieldSoundLevel
+Dim WallImpactSoundFactor, MetalImpactSoundFactor, SubwaySoundLevel, SubwayEntrySoundLevel, ScoopEntrySoundLevel
+Dim SaucerLockSoundLevel, SaucerKickSoundLevel
+
+BallWithBallCollisionSoundFactor = 3.2									'volume multiplier; must not be zero
+RubberStrongSoundFactor = 0.055/5											'volume multiplier; must not be zero
+RubberWeakSoundFactor = 0.075/5											'volume multiplier; must not be zero
+RubberFlipperSoundFactor = 0.075/5										'volume multiplier; must not be zero
+BallBouncePlayfieldSoftFactor = 0.025									'volume multiplier; must not be zero
+BallBouncePlayfieldHardFactor = 0.025									'volume multiplier; must not be zero
+DelayedBallDropOnPlayfieldSoundLevel = 0.8									'volume level; range [0, 1]
+WallImpactSoundFactor = 0.075											'volume multiplier; must not be zero
+MetalImpactSoundFactor = 0.075/3
+SaucerLockSoundLevel = 0.8
+SaucerKickSoundLevel = 0.8
+
+'///////////////////////-----Gates, Spinners, Rollovers and Targets-----///////////////////////
+
+Dim GateSoundLevel, TargetSoundFactor, SpinnerSoundLevel, RolloverSoundLevel, DTSoundLevel
+
+GateSoundLevel = 0.5/5													'volume level; range [0, 1]
+TargetSoundFactor = 0.0025 * 10											'volume multiplier; must not be zero
+DTSoundLevel = 0.25														'volume multiplier; must not be zero
+RolloverSoundLevel = 0.25                              					'volume level; range [0, 1]
+SpinnerSoundLevel = 0.5
+
+'///////////////////////-----Ball Release, Guides and Drain-----///////////////////////
+Dim DrainSoundLevel, BallReleaseSoundLevel, BottomArchBallGuideSoundFactor, FlipperBallGuideSoundFactor 
+
+DrainSoundLevel = 0.8														'volume level; range [0, 1]
+BallReleaseSoundLevel = 1												'volume level; range [0, 1]
+BottomArchBallGuideSoundFactor = 0.2									'volume multiplier; must not be zero
+FlipperBallGuideSoundFactor = 0.015										'volume multiplier; must not be zero
+
+'///////////////////////-----Loops and Lanes-----///////////////////////
+Dim ArchSoundFactor
+ArchSoundFactor = 0.025/5													'volume multiplier; must not be zero
+
+
+'/////////////////////////////  SOUND PLAYBACK FUNCTIONS  ////////////////////////////
+'/////////////////////////////  POSITIONAL SOUND PLAYBACK METHODS  ////////////////////////////
+' Positional sound playback methods will play a sound, depending on the X,Y position of the table element or depending on ActiveBall object position
+' These are similar subroutines that are less complicated to use (e.g. simply use standard parameters for the PlaySound call)
+' For surround setup - positional sound playback functions will fade between front and rear surround channels and pan between left and right channels
+' For stereo setup - positional sound playback functions will only pan between left and right channels
+' For mono setup - positional sound playback functions will not pan between left and right channels and will not fade between front and rear channels
+
+' PlaySound full syntax - PlaySound(string, int loopcount, float volume, float pan, float randompitch, int pitch, bool useexisting, bool restart, float front_rear_fade)
+' Note - These functions will not work (currently) for walls/slingshots as these do not feature a simple, single X,Y position
+Sub PlaySoundAtLevelStatic(playsoundparams, aVol, tableobj)
+    PlaySound playsoundparams, 0, aVol * VolumeDial, AudioPan(tableobj), 0, 0, 0, 0, AudioFade(tableobj)
+End Sub
+
+Sub PlaySoundAtLevelExistingStatic(playsoundparams, aVol, tableobj)
+    PlaySound playsoundparams, 0, aVol * VolumeDial, AudioPan(tableobj), 0, 0, 1, 0, AudioFade(tableobj)
+End Sub
+
+Sub PlaySoundAtLevelStaticLoop(playsoundparams, aVol, tableobj)
+    PlaySound playsoundparams, -1, aVol * VolumeDial, AudioPan(tableobj), 0, 0, 0, 0, AudioFade(tableobj)
+End Sub
+
+Sub PlaySoundAtLevelStaticRandomPitch(playsoundparams, aVol, randomPitch, tableobj)
+    PlaySound playsoundparams, 0, aVol * VolumeDial, AudioPan(tableobj), randomPitch, 0, 0, 0, AudioFade(tableobj)
+End Sub
+
+Sub PlaySoundAtLevelActiveBall(playsoundparams, aVol)
+	PlaySound playsoundparams, 0, aVol * VolumeDial, AudioPan(ActiveBall), 0, 0, 0, 0, AudioFade(ActiveBall)
+End Sub
+
+Sub PlaySoundAtLevelExistingActiveBall(playsoundparams, aVol)
+	PlaySound playsoundparams, 0, aVol * VolumeDial, AudioPan(ActiveBall), 0, 0, 1, 0, AudioFade(ActiveBall)
+End Sub
+
+Sub PlaySoundAtLeveTimerActiveBall(playsoundparams, aVol, ballvariable)
+	PlaySound playsoundparams, 0, aVol * VolumeDial, AudioPan(ballvariable), 0, 0, 0, 0, AudioFade(ballvariable)
+End Sub
+
+Sub PlaySoundAtLevelTimerExistingActiveBall(playsoundparams, aVol, ballvariable)
+	PlaySound playsoundparams, 0, aVol * VolumeDial, AudioPan(ballvariable), 0, 0, 1, 0, AudioFade(ballvariable)
+End Sub
+
+Sub PlaySoundAtLevelRoll(playsoundparams, aVol, pitch)
+    PlaySound playsoundparams, -1, aVol * VolumeDial, AudioPan(tableobj), randomPitch, 0, 0, 0, AudioFade(tableobj)
+End Sub
+
+
+Sub PlaySoundAt(soundname, tableobj)
+    PlaySound soundname, 1, 1 * VolumeDial, AudioPan(tableobj), 0,0,0, 1, AudioFade(tableobj)
+End Sub
+
+Sub PlaySoundAtVol(soundname, tableobj, aVol)
+    PlaySound soundname, 1, aVol * VolumeDial, AudioPan(tableobj), 0,0,0, 1, AudioFade(tableobj)
+End Sub
+
+Sub PlaySoundAtBall(soundname)
+    PlaySoundAt soundname, ActiveBall
+End Sub
+
+Sub PlaySoundAtBallVol (Soundname, aVol)
+	Playsound soundname, 1,aVol * VolumeDial, AudioPan(ActiveBall), 0,0,0, 1, AudioFade(ActiveBall)
+End Sub
+
+Sub PlaySoundAtBallVolM (Soundname, aVol)
+	Playsound soundname, 1,aVol * VolumeDial, AudioPan(ActiveBall), 0,0,0, 0, AudioFade(ActiveBall)
+End Sub
+
+Sub PlaySoundAtVolLoops(sound, tableobj, Vol, Loops)
+	PlaySound sound, Loops, Vol * VolumeDial, AudioPan(tableobj), 0,0,0, 1, AudioFade(tableobj)
+End Sub
+
+
+' *********************************************************************
+'                     Fleep  Supporting Ball & Sound Functions
+' *********************************************************************
+
+Dim tablewidth, tableheight : tablewidth = table1.width : tableheight = table1.height
+
+Function AudioFade(tableobj) ' Fades between front and back of the table (for surround systems or 2x2 speakers, etc), depending on the Y position on the table. "table1" is the name of the table
+	Dim tmp
+    tmp = tableobj.y * 2 / tableheight-1
+    If tmp > 0 Then
+		AudioFade = Csng(tmp ^10)
+    Else
+        AudioFade = Csng(-((- tmp) ^10) )
+    End If
+End Function
+
+Function AudioPan(tableobj) ' Calculates the pan for a tableobj based on the X position on the table. "table1" is the name of the table
+    Dim tmp
+    tmp = tableobj.x * 2 / tablewidth-1
+    If tmp > 0 Then
+        AudioPan = Csng(tmp ^10)
+    Else
+        AudioPan = Csng(-((- tmp) ^10) )
+    End If
+End Function
+
+Function Vol(ball) ' Calculates the volume of the sound based on the ball speed
+	Vol = Csng(BallVel(ball) ^2)
+End Function
+
+Function Volz(ball) ' Calculates the volume of the sound based on the ball speed
+	Volz = Csng((ball.velz) ^2)
+End Function
+
+Function Pitch(ball) ' Calculates the pitch of the sound based on the ball speed
+    Pitch = BallVel(ball) * 20
+End Function
+
+Function BallVel(ball) 'Calculates the ball speed
+    BallVel = INT(SQR((ball.VelX ^2) + (ball.VelY ^2) ) )
+End Function
+
+Function VolPlayfieldRoll(ball) ' Calculates the roll volume of the sound based on the ball speed
+	VolPlayfieldRoll = RollingSoundFactor * 0.0005 * Csng(BallVel(ball) ^3)
+End Function
+
+Function PitchPlayfieldRoll(ball) ' Calculates the roll pitch of the sound based on the ball speed
+    PitchPlayfieldRoll = BallVel(ball) ^2 * 15
+End Function
+
+Function RndInt(min, max)
+    RndInt = Int(Rnd() * (max-min + 1) + min)' Sets a random number integer between min and max
+End Function
+
+Function RndNum(min, max)
+    RndNum = Rnd() * (max-min) + min' Sets a random number between min and max
+End Function
+
+'/////////////////////////////  GENERAL SOUND SUBROUTINES  ////////////////////////////
+Sub SoundStartButton()
+	PlaySound ("Start_Button"), 0, StartButtonSoundLevel, 0, 0.25
+End Sub
+
+Sub SoundNudgeLeft()
+	PlaySound ("Nudge_" & Int(Rnd*2)+1), 0, NudgeLeftSoundLevel * VolumeDial, -0.1, 0.25
+End Sub
+
+Sub SoundNudgeRight()
+	PlaySound ("Nudge_" & Int(Rnd*2)+1), 0, NudgeRightSoundLevel * VolumeDial, 0.1, 0.25
+End Sub
+
+Sub SoundNudgeCenter()
+	PlaySound ("Nudge_" & Int(Rnd*2)+1), 0, NudgeCenterSoundLevel * VolumeDial, 0, 0.25
+End Sub
+
+
+Sub SoundPlungerPull()
+	PlaySoundAtLevelStatic ("Plunger_Pull_1"), PlungerPullSoundLevel, Plunger
+End Sub
+
+Sub SoundPlungerReleaseBall()
+	PlaySoundAtLevelStatic ("Plunger_Release_Ball"), PlungerReleaseSoundLevel, Plunger	
+End Sub
+
+Sub SoundPlungerReleaseNoBall()
+	PlaySoundAtLevelStatic ("Plunger_Release_No_Ball"), PlungerReleaseSoundLevel, Plunger
+End Sub
+
+'/////////////////////////////  SPINNER SOUNDS  ////////////////////////////
+
+Sub SoundSpinner(spinnerswitch)
+	PlaySoundAtLevelStatic ("Spinner"), SpinnerSoundLevel, spinnerswitch
+End Sub
+
+'/////////////////////////////  KNOCKER SOLENOID  ////////////////////////////
+Sub KnockerSolenoid()
+	PlaySoundAtLevelStatic SoundFX("Knocker_1",DOFKnocker), KnockerSoundLevel, KnockerPosition
+End Sub
+
+'/////////////////////////////  DRAIN SOUNDS  ////////////////////////////
+Sub RandomSoundDrain(drainswitch)
+	PlaySoundAtLevelStatic ("Drain_" & Int(Rnd*11)+1), DrainSoundLevel, drainswitch
+End Sub
+
+'/////////////////////////////  TROUGH BALL RELEASE SOLENOID SOUNDS  ////////////////////////////
+
+Sub RandomSoundBallRelease(drainswitch)
+	PlaySoundAtLevelStatic SoundFX("BallRelease" & Int(Rnd*7)+1,DOFContactors), BallReleaseSoundLevel, drainswitch
+End Sub
+
+'/////////////////////////////  SLINGSHOT SOLENOID SOUNDS  ////////////////////////////
+Sub RandomSoundSlingshotLeft(sling)
+	PlaySoundAtLevelStatic SoundFX("Sling_L" & Int(Rnd*10)+1,DOFContactors), SlingshotSoundLevel, Sling
+End Sub
+
+Sub RandomSoundSlingshotRight(sling)
+	PlaySoundAtLevelStatic SoundFX("Sling_R" & Int(Rnd*8)+1,DOFContactors), SlingshotSoundLevel, Sling
+End Sub
+
+'/////////////////////////////  BUMPER SOLENOID SOUNDS  ////////////////////////////
+Sub RandomSoundBumperTop(Bump)
+	PlaySoundAtLevelStatic SoundFX("Bumpers_Top_" & Int(Rnd*5)+1,DOFContactors), Vol(ActiveBall) * BumperSoundFactor, Bump
+End Sub
+
+Sub RandomSoundBumperMiddle(Bump)
+	PlaySoundAtLevelStatic SoundFX("Bumpers_Middle_" & Int(Rnd*5)+1,DOFContactors), Vol(ActiveBall) * BumperSoundFactor, Bump
+End Sub
+
+Sub RandomSoundBumperBottom(Bump)
+	PlaySoundAtLevelStatic SoundFX("Bumpers_Bottom_" & Int(Rnd*5)+1,DOFContactors), Vol(ActiveBall) * BumperSoundFactor, Bump
+End Sub
+
+'/////////////////////////////  FLIPPER BATS SOUND SUBROUTINES  ////////////////////////////
+'/////////////////////////////  FLIPPER BATS SOLENOID ATTACK SOUND  ////////////////////////////
+Sub SoundFlipperUpAttackLeft(flipper)
+	FlipperUpAttackLeftSoundLevel = RndNum(FlipperUpAttackMinimumSoundLevel, FlipperUpAttackMaximumSoundLevel)
+	PlaySoundAtLevelStatic ("Flipper_Attack-L01"), FlipperUpAttackLeftSoundLevel, flipper
+End Sub
+
+Sub SoundFlipperUpAttackRight(flipper)
+	FlipperUpAttackRightSoundLevel = RndNum(FlipperUpAttackMinimumSoundLevel, FlipperUpAttackMaximumSoundLevel)
+		PlaySoundAtLevelStatic ("Flipper_Attack-R01"), FlipperUpAttackLeftSoundLevel, flipper
+End Sub
+
+'/////////////////////////////  FLIPPER BATS SOLENOID CORE SOUND  ////////////////////////////
+Sub RandomSoundFlipperUpLeft(flipper)
+	PlaySoundAtLevelStatic SoundFX("Flipper_L0" & Int(Rnd*9)+1,DOFFlippers), FlipperLeftHitParm, Flipper
+End Sub
+
+Sub RandomSoundFlipperUpRight(flipper)
+	PlaySoundAtLevelStatic SoundFX("Flipper_R0" & Int(Rnd*9)+1,DOFFlippers), FlipperRightHitParm, Flipper
+End Sub
+
+Sub RandomSoundReflipUpLeft(flipper)
+	PlaySoundAtLevelStatic SoundFX("Flipper_ReFlip_L0" & Int(Rnd*3)+1,DOFFlippers), (RndNum(0.8, 1))*FlipperUpSoundLevel, Flipper
+End Sub
+
+Sub RandomSoundReflipUpRight(flipper)
+	PlaySoundAtLevelStatic SoundFX("Flipper_ReFlip_R0" & Int(Rnd*3)+1,DOFFlippers), (RndNum(0.8, 1))*FlipperUpSoundLevel, Flipper
+End Sub
+
+Sub RandomSoundFlipperDownLeft(flipper)
+	PlaySoundAtLevelStatic SoundFX("Flipper_Left_Down_" & Int(Rnd*7)+1,DOFFlippers), FlipperDownSoundLevel, Flipper
+End Sub
+
+Sub RandomSoundFlipperDownRight(flipper)
+	PlaySoundAtLevelStatic SoundFX("Flipper_Right_Down_" & Int(Rnd*8)+1,DOFFlippers), FlipperDownSoundLevel, Flipper
+End Sub
+
+'/////////////////////////////  FLIPPER BATS BALL COLLIDE SOUND  ////////////////////////////
+
+Sub LeftFlipperCollide(parm)
+	FlipperLeftHitParm = parm/10
+	If FlipperLeftHitParm > 1 Then
+		FlipperLeftHitParm = 1
+	End If
+	FlipperLeftHitParm = FlipperUpSoundLevel * FlipperLeftHitParm
+	RandomSoundRubberFlipper(parm)
+End Sub
+
+Sub RightFlipperCollide(parm)
+	FlipperRightHitParm = parm/10
+	If FlipperRightHitParm > 1 Then
+		FlipperRightHitParm = 1
+	End If
+	FlipperRightHitParm = FlipperUpSoundLevel * FlipperRightHitParm
+ 	RandomSoundRubberFlipper(parm)
+End Sub
+
+Sub RandomSoundRubberFlipper(parm)
+	PlaySoundAtLevelActiveBall ("Flipper_Rubber_" & Int(Rnd*7)+1), parm  * RubberFlipperSoundFactor
+End Sub
+
+'/////////////////////////////  ROLLOVER SOUNDS  ////////////////////////////
+Sub RandomSoundRollover()
+	PlaySoundAtLevelActiveBall ("Rollover_" & Int(Rnd*4)+1), RolloverSoundLevel
+End Sub
+
+Sub Rollovers_Hit(idx)
+	RandomSoundRollover
+End Sub
+
+'/////////////////////////////  VARIOUS PLAYFIELD SOUND SUBROUTINES  ////////////////////////////
+'/////////////////////////////  RUBBERS AND POSTS  ////////////////////////////
+'/////////////////////////////  RUBBERS - EVENTS  ////////////////////////////
+Sub Rubbers_Hit(idx)
+ 	dim finalspeed
+  	finalspeed=SQR(activeball.velx * activeball.velx + activeball.vely * activeball.vely)
+ 	If finalspeed > 5 then		
+ 		RandomSoundRubberStrong 1
+	End if
+	If finalspeed <= 5 then
+ 		RandomSoundRubberWeak()
+ 	End If	
+End Sub
+
+'/////////////////////////////  RUBBERS AND POSTS - STRONG IMPACTS  ////////////////////////////
+Sub RandomSoundRubberStrong(voladj)
+	Select Case Int(Rnd*10)+1
+		Case 1 : PlaySoundAtLevelActiveBall ("Rubber_Strong_1"), Vol(ActiveBall) * RubberStrongSoundFactor*voladj
+		Case 2 : PlaySoundAtLevelActiveBall ("Rubber_Strong_2"), Vol(ActiveBall) * RubberStrongSoundFactor*voladj
+		Case 3 : PlaySoundAtLevelActiveBall ("Rubber_Strong_3"), Vol(ActiveBall) * RubberStrongSoundFactor*voladj
+		Case 4 : PlaySoundAtLevelActiveBall ("Rubber_Strong_4"), Vol(ActiveBall) * RubberStrongSoundFactor*voladj
+		Case 5 : PlaySoundAtLevelActiveBall ("Rubber_Strong_5"), Vol(ActiveBall) * RubberStrongSoundFactor*voladj
+		Case 6 : PlaySoundAtLevelActiveBall ("Rubber_Strong_6"), Vol(ActiveBall) * RubberStrongSoundFactor*voladj
+		Case 7 : PlaySoundAtLevelActiveBall ("Rubber_Strong_7"), Vol(ActiveBall) * RubberStrongSoundFactor*voladj
+		Case 8 : PlaySoundAtLevelActiveBall ("Rubber_Strong_8"), Vol(ActiveBall) * RubberStrongSoundFactor*voladj
+		Case 9 : PlaySoundAtLevelActiveBall ("Rubber_Strong_9"), Vol(ActiveBall) * RubberStrongSoundFactor*voladj
+		Case 10 : PlaySoundAtLevelActiveBall ("Rubber_1_Hard"), Vol(ActiveBall) * RubberStrongSoundFactor * 0.6*voladj
+	End Select
+End Sub
+
+'/////////////////////////////  RUBBERS AND POSTS - WEAK IMPACTS  ////////////////////////////
+Sub RandomSoundRubberWeak()
+	PlaySoundAtLevelActiveBall ("Rubber_" & Int(Rnd*9)+1), Vol(ActiveBall) * RubberWeakSoundFactor
+End Sub
+
+'/////////////////////////////  WALL IMPACTS  ////////////////////////////
+Sub Walls_Hit(idx)
+ 	dim finalspeed
+  	finalspeed=SQR(activeball.velx * activeball.velx + activeball.vely * activeball.vely)
+ 	If finalspeed > 5 then
+ 		RandomSoundRubberStrong 1 
+	End if
+	If finalspeed <= 5 then
+ 		RandomSoundRubberWeak()
+ 	End If	
+End Sub
+
+Sub RandomSoundWall()
+ 	dim finalspeed
+  	finalspeed=SQR(activeball.velx * activeball.velx + activeball.vely * activeball.vely)
+ 	If finalspeed > 16 then 
+		Select Case Int(Rnd*5)+1
+			Case 1 : PlaySoundAtLevelExistingActiveBall ("Wall_Hit_1"), Vol(ActiveBall) * WallImpactSoundFactor
+			Case 2 : PlaySoundAtLevelExistingActiveBall ("Wall_Hit_2"), Vol(ActiveBall) * WallImpactSoundFactor
+			Case 3 : PlaySoundAtLevelExistingActiveBall ("Wall_Hit_5"), Vol(ActiveBall) * WallImpactSoundFactor
+			Case 4 : PlaySoundAtLevelExistingActiveBall ("Wall_Hit_7"), Vol(ActiveBall) * WallImpactSoundFactor
+			Case 5 : PlaySoundAtLevelExistingActiveBall ("Wall_Hit_9"), Vol(ActiveBall) * WallImpactSoundFactor
+		End Select
+	End if
+	If finalspeed >= 6 AND finalspeed <= 16 then
+		Select Case Int(Rnd*4)+1
+			Case 1 : PlaySoundAtLevelExistingActiveBall ("Wall_Hit_3"), Vol(ActiveBall) * WallImpactSoundFactor
+			Case 2 : PlaySoundAtLevelExistingActiveBall ("Wall_Hit_4"), Vol(ActiveBall) * WallImpactSoundFactor
+			Case 3 : PlaySoundAtLevelExistingActiveBall ("Wall_Hit_6"), Vol(ActiveBall) * WallImpactSoundFactor
+			Case 4 : PlaySoundAtLevelExistingActiveBall ("Wall_Hit_8"), Vol(ActiveBall) * WallImpactSoundFactor
+		End Select
+ 	End If
+	If finalspeed < 6 Then
+		Select Case Int(Rnd*3)+1
+			Case 1 : PlaySoundAtLevelExistingActiveBall ("Wall_Hit_4"), Vol(ActiveBall) * WallImpactSoundFactor
+			Case 2 : PlaySoundAtLevelExistingActiveBall ("Wall_Hit_6"), Vol(ActiveBall) * WallImpactSoundFactor
+			Case 3 : PlaySoundAtLevelExistingActiveBall ("Wall_Hit_8"), Vol(ActiveBall) * WallImpactSoundFactor
+		End Select
+	End if
+End Sub
+
+'/////////////////////////////  METAL TOUCH SOUNDS  ////////////////////////////
+Sub RandomSoundMetal()
+	PlaySoundAtLevelActiveBall ("Metal_Touch_" & Int(Rnd*13)+1), Vol(ActiveBall) * MetalImpactSoundFactor
+End Sub
+
+'/////////////////////////////  METAL - EVENTS  ////////////////////////////
+
+Sub Metals_Hit (idx)
+	RandomSoundMetal
+End Sub
+
+Sub ShooterDiverter_collide(idx)
+	RandomSoundMetal
+End Sub
+
+'/////////////////////////////  BOTTOM ARCH BALL GUIDE  ////////////////////////////
+'/////////////////////////////  BOTTOM ARCH BALL GUIDE - SOFT BOUNCES  ////////////////////////////
+Sub RandomSoundBottomArchBallGuide()
+ 	dim finalspeed
+  	finalspeed=SQR(activeball.velx * activeball.velx + activeball.vely * activeball.vely)
+ 	If finalspeed > 16 then 
+		PlaySoundAtLevelActiveBall ("Apron_Bounce_"& Int(Rnd*2)+1), Vol(ActiveBall) * BottomArchBallGuideSoundFactor
+	End if
+	If finalspeed >= 6 AND finalspeed <= 16 then
+ 		Select Case Int(Rnd*2)+1
+			Case 1 : PlaySoundAtLevelActiveBall ("Apron_Bounce_1"), Vol(ActiveBall) * BottomArchBallGuideSoundFactor
+			Case 2 : PlaySoundAtLevelActiveBall ("Apron_Bounce_Soft_1"), Vol(ActiveBall) * BottomArchBallGuideSoundFactor
+		End Select
+ 	End If
+	If finalspeed < 6 Then
+ 		Select Case Int(Rnd*2)+1
+			Case 1 : PlaySoundAtLevelActiveBall ("Apron_Bounce_Soft_1"), Vol(ActiveBall) * BottomArchBallGuideSoundFactor
+			Case 2 : PlaySoundAtLevelActiveBall ("Apron_Medium_3"), Vol(ActiveBall) * BottomArchBallGuideSoundFactor
+		End Select
+	End if
+End Sub
+
+'/////////////////////////////  BOTTOM ARCH BALL GUIDE - HARD HITS  ////////////////////////////
+Sub RandomSoundBottomArchBallGuideHardHit()
+	PlaySoundAtLevelActiveBall ("Apron_Hard_Hit_" & Int(Rnd*3)+1), BottomArchBallGuideSoundFactor * 0.25
+End Sub
+
+Sub Apron_Hit (idx)
+	If Abs(cor.ballvelx(activeball.id) < 4) and cor.ballvely(activeball.id) > 7 then
+		RandomSoundBottomArchBallGuideHardHit()
+	Else
+		RandomSoundBottomArchBallGuide
+	End If
+End Sub
+
+'/////////////////////////////  FLIPPER BALL GUIDE  ////////////////////////////
+Sub RandomSoundFlipperBallGuide()
+ 	dim finalspeed
+  	finalspeed=SQR(activeball.velx * activeball.velx + activeball.vely * activeball.vely)
+ 	If finalspeed > 16 then 
+ 		Select Case Int(Rnd*2)+1
+			Case 1 : PlaySoundAtLevelActiveBall ("Apron_Hard_1"),  Vol(ActiveBall) * FlipperBallGuideSoundFactor
+			Case 2 : PlaySoundAtLevelActiveBall ("Apron_Hard_2"),  Vol(ActiveBall) * 0.8 * FlipperBallGuideSoundFactor
+		End Select
+	End if
+	If finalspeed >= 6 AND finalspeed <= 16 then
+		PlaySoundAtLevelActiveBall ("Apron_Medium_" & Int(Rnd*3)+1),  Vol(ActiveBall) * FlipperBallGuideSoundFactor
+ 	End If
+	If finalspeed < 6 Then
+		PlaySoundAtLevelActiveBall ("Apron_Soft_" & Int(Rnd*7)+1),  Vol(ActiveBall) * FlipperBallGuideSoundFactor
+	End If
+End Sub
+
+'/////////////////////////////  TARGET HIT SOUNDS  ////////////////////////////
+Sub RandomSoundTargetHitStrong()
+	PlaySoundAtLevelActiveBall SoundFX("Target_Hit_" & Int(Rnd*4)+5,DOFTargets), Vol(ActiveBall) * 0.45 * TargetSoundFactor
+End Sub
+
+Sub RandomSoundTargetHitWeak()		
+	PlaySoundAtLevelActiveBall SoundFX("Target_Hit_" & Int(Rnd*4)+1,DOFTargets), Vol(ActiveBall) * TargetSoundFactor
+End Sub
+
+Sub PlayTargetSound()
+ 	dim finalspeed
+  	finalspeed=SQR(activeball.velx * activeball.velx + activeball.vely * activeball.vely)
+ 	If finalspeed > 10 then
+ 		RandomSoundTargetHitStrong()
+		RandomSoundBallBouncePlayfieldSoft Activeball
+	Else 
+ 		RandomSoundTargetHitWeak()
+ 	End If	
+End Sub
+
+Sub Targets_Hit (idx)
+	PlayTargetSound	
+End Sub
+
+'/////////////////////////////  BALL BOUNCE SOUNDS  ////////////////////////////
+Sub RandomSoundBallBouncePlayfieldSoft(aBall)
+	Select Case Int(Rnd*9)+1
+		Case 1 : PlaySoundAtLevelStatic ("Ball_Bounce_Playfield_Soft_1"), volz(aBall) * BallBouncePlayfieldSoftFactor, aBall
+		Case 2 : PlaySoundAtLevelStatic ("Ball_Bounce_Playfield_Soft_2"), volz(aBall) * BallBouncePlayfieldSoftFactor * 0.5, aBall
+		Case 3 : PlaySoundAtLevelStatic ("Ball_Bounce_Playfield_Soft_3"), volz(aBall) * BallBouncePlayfieldSoftFactor * 0.8, aBall
+		Case 4 : PlaySoundAtLevelStatic ("Ball_Bounce_Playfield_Soft_4"), volz(aBall) * BallBouncePlayfieldSoftFactor * 0.5, aBall
+		Case 5 : PlaySoundAtLevelStatic ("Ball_Bounce_Playfield_Soft_5"), volz(aBall) * BallBouncePlayfieldSoftFactor, aBall
+		Case 6 : PlaySoundAtLevelStatic ("Ball_Bounce_Playfield_Hard_1"), volz(aBall) * BallBouncePlayfieldSoftFactor * 0.2, aBall
+		Case 7 : PlaySoundAtLevelStatic ("Ball_Bounce_Playfield_Hard_2"), volz(aBall) * BallBouncePlayfieldSoftFactor * 0.2, aBall
+		Case 8 : PlaySoundAtLevelStatic ("Ball_Bounce_Playfield_Hard_5"), volz(aBall) * BallBouncePlayfieldSoftFactor * 0.2, aBall
+		Case 9 : PlaySoundAtLevelStatic ("Ball_Bounce_Playfield_Hard_7"), volz(aBall) * BallBouncePlayfieldSoftFactor * 0.3, aBall
+	End Select
+End Sub
+
+Sub RandomSoundBallBouncePlayfieldHard(aBall)
+	PlaySoundAtLevelStatic ("Ball_Bounce_Playfield_Hard_" & Int(Rnd*7)+1), volz(aBall) * BallBouncePlayfieldHardFactor, aBall
+End Sub
+
+'/////////////////////////////  DELAYED DROP - TO PLAYFIELD - SOUND  ////////////////////////////
+Sub RandomSoundDelayedBallDropOnPlayfield(aBall)
+	Select Case Int(Rnd*5)+1
+		Case 1 : PlaySoundAtLevelStatic ("Ball_Drop_Playfield_1_Delayed"), DelayedBallDropOnPlayfieldSoundLevel, aBall
+		Case 2 : PlaySoundAtLevelStatic ("Ball_Drop_Playfield_2_Delayed"), DelayedBallDropOnPlayfieldSoundLevel, aBall
+		Case 3 : PlaySoundAtLevelStatic ("Ball_Drop_Playfield_3_Delayed"), DelayedBallDropOnPlayfieldSoundLevel, aBall
+		Case 4 : PlaySoundAtLevelStatic ("Ball_Drop_Playfield_4_Delayed"), DelayedBallDropOnPlayfieldSoundLevel, aBall
+		Case 5 : PlaySoundAtLevelStatic ("Ball_Drop_Playfield_5_Delayed"), DelayedBallDropOnPlayfieldSoundLevel, aBall
+	End Select
+End Sub
+
+'/////////////////////////////  BALL GATES AND BRACKET GATES SOUNDS  ////////////////////////////
+
+Sub SoundPlayfieldGate()			
+	PlaySoundAtLevelStatic ("Gate_FastTrigger_" & Int(Rnd*2)+1), GateSoundLevel, Activeball
+End Sub
+
+Sub SoundHeavyGate()
+	PlaySoundAtLevelStatic ("Gate_2"), GateSoundLevel, Activeball
+End Sub
+
+Sub Gates_hit(idx)
+	SoundHeavyGate
+End Sub
+
+Sub GatesWire_hit(idx)	
+	SoundPlayfieldGate	
+End Sub	
+
+'/////////////////////////////  LEFT LANE ENTRANCE - SOUNDS  ////////////////////////////
+
+Sub RandomSoundLeftArch()
+	PlaySoundAtLevelActiveBall ("Arch_L" & Int(Rnd*4)+1), Vol(ActiveBall) * ArchSoundFactor
+End Sub
+
+Sub RandomSoundRightArch()
+	PlaySoundAtLevelActiveBall ("Arch_R" & Int(Rnd*4)+1), Vol(ActiveBall) * ArchSoundFactor
+End Sub
+
+
+Sub Arch1_hit()
+	If Activeball.velx > 1 Then SoundPlayfieldGate
+	StopSound "Arch_L1"
+	StopSound "Arch_L2"
+	StopSound "Arch_L3"
+	StopSound "Arch_L4"
+End Sub
+
+Sub Arch1_unhit()
+	If activeball.velx < -8 Then
+		RandomSoundRightArch
+	End If
+End Sub
+
+Sub Arch2_hit()
+	If Activeball.velx < 1 Then SoundPlayfieldGate
+	StopSound "Arch_R1"
+	StopSound "Arch_R2"
+	StopSound "Arch_R3"
+	StopSound "Arch_R4"
+End Sub
+
+Sub Arch2_unhit()
+	If activeball.velx > 10 Then
+		RandomSoundLeftArch
+	End If
+End Sub
+
+'/////////////////////////////  SAUCERS (KICKER HOLES)  ////////////////////////////
+
+Sub SoundSaucerLock()
+	PlaySoundAtLevelStatic ("Saucer_Enter_" & Int(Rnd*2)+1), SaucerLockSoundLevel, Activeball
+End Sub
+
+Sub SoundSaucerKick(scenario, saucer)
+	Select Case scenario
+		Case 0: PlaySoundAtLevelStatic SoundFX("Saucer_Empty", DOFContactors), SaucerKickSoundLevel, saucer
+		Case 1: PlaySoundAtLevelStatic SoundFX("Saucer_Kick", DOFContactors), SaucerKickSoundLevel, saucer
+	End Select
+End Sub
+
+'/////////////////////////////  BALL COLLISION SOUND  ////////////////////////////
+Sub OnBallBallCollision(ball1, ball2, velocity)
+	Dim snd
+	Select Case Int(Rnd*7)+1
+		Case 1 : snd = "Ball_Collide_1"
+		Case 2 : snd = "Ball_Collide_2"
+		Case 3 : snd = "Ball_Collide_3"
+		Case 4 : snd = "Ball_Collide_4"
+		Case 5 : snd = "Ball_Collide_5"
+		Case 6 : snd = "Ball_Collide_6"
+		Case 7 : snd = "Ball_Collide_7"
+	End Select
+
+	PlaySound (snd), 0, Csng(velocity) ^2 / 200 * BallWithBallCollisionSoundFactor * VolumeDial, AudioPan(ball1), 0, Pitch(ball1), 0, 0, AudioFade(ball1)
+End Sub
+
+
+'/////////////////////////////////////////////////////////////////
+'					End Mechanical Sounds
+'/////////////////////////////////////////////////////////////////
+
+
+'******************************************************
+'		BALL ROLLING AND DROP SOUNDS
+'******************************************************
+
+Const tnob = 10 ' total number of balls
+ReDim rolling(tnob)
+InitRolling
+
+Dim DropCount
+ReDim DropCount(tnob)
+
+Sub InitRolling
+	Dim i
+	For i = 0 to tnob
+		rolling(i) = False
+	Next
+End Sub
+
+Sub RollingUpdate()
+	Dim BOT, b
+	BOT = GetBalls
+
+	' stop the sound of deleted balls
+	For b = UBound(BOT) + 1 to tnob
+		rolling(b) = False
+		StopSound("BallRoll_" & b)
+	Next
+
+	' exit the sub if no balls on the table
+	If UBound(BOT) = -1 Then Exit Sub
+
+	' play the rolling sound for each ball
+
+	For b = 0 to UBound(BOT)
+		If BallVel(BOT(b)) > 1 AND BOT(b).z < 30 Then
+			rolling(b) = True
+			PlaySound ("BallRoll_" & b), -1, VolPlayfieldRoll(BOT(b)) * BallRollVolume * VolumeDial, AudioPan(BOT(b)), 0, PitchPlayfieldRoll(BOT(b)), 1, 0, AudioFade(BOT(b))
+
+		Else
+			If rolling(b) = True Then
+				StopSound("BallRoll_" & b)
+				rolling(b) = False
+			End If
+		End If
+
+		'***Ball Drop Sounds***
+		If BOT(b).VelZ < -1 and BOT(b).z < 55 and BOT(b).z > 27 Then 'height adjust for ball drop sounds
+			If DropCount(b) >= 5 Then
+				DropCount(b) = 0
+				If BOT(b).velz > -7 Then
+					RandomSoundBallBouncePlayfieldSoft BOT(b)
+				Else
+					RandomSoundBallBouncePlayfieldHard BOT(b)
+				End If				
+			End If
+		End If
+		If DropCount(b) < 5 Then
+			DropCount(b) = DropCount(b) + 1
+		End If
+	Next
+End Sub
+
+'******************************************************
+' 	ZRRL: RAMP ROLLING SFX
+'******************************************************
+
+'Ball tracking ramp SFX 1.0
+'   Reqirements:
+'		  * Import A Sound File for each ball on the table for plastic ramps.  Call It RampLoop<Ball_Number> ex: RampLoop1, RampLoop2, ...
+'		  * Import a Sound File for each ball on the table for wire ramps. Call it WireLoop<Ball_Number> ex: WireLoop1, WireLoop2, ...
+'		  * Create a Timer called RampRoll, that is enabled, with a interval of 100
+'		  * Set RampBAlls and RampType variable to Total Number of Balls
+'	Usage:
+'		  * Setup hit events and call WireRampOn True or WireRampOn False (True = Plastic ramp, False = Wire Ramp)
+'		  * To stop tracking ball
+'				 * call WireRampOff
+'				 * Otherwise, the ball will auto remove if it's below 30 vp units
+'
+
+Dim RampMinLoops
+RampMinLoops = 4
+
+' RampBalls
+' Setup:  Set the array length of x in RampBalls(x,2) Total Number of Balls on table + 1:  if tnob = 5, then RampBalls(6,2)
+Dim RampBalls(6,2)
+'x,0 = ball x,1 = ID, 2 = Protection against ending early (minimum amount of updates)
+
+'0,0 is boolean on/off, 0,1 unused for now
+RampBalls(0,0) = False
+
+' RampType
+' Setup: Set this array to the number Total number of balls that can be tracked at one time + 1.  5 ball multiball then set value to 6
+' Description: Array type indexed on BallId and a values used to deterimine what type of ramp the ball is on: False = Wire Ramp, True = Plastic Ramp
+Dim RampType(6)
+
+Sub WireRampOn(input)
+	Waddball ActiveBall, input
+	RampRollUpdate
+End Sub
+
+Sub WireRampOff()
+	WRemoveBall ActiveBall.ID
+End Sub
+
+' WaddBall (Active Ball, Boolean)
+Sub Waddball(input, RampInput) 'This subroutine is called from WireRampOn to Add Balls to the RampBalls Array
+	' This will loop through the RampBalls array checking each element of the array x, position 1
+	' To see if the the ball was already added to the array.
+	' If the ball is found then exit the subroutine
+	Dim x
+	For x = 1 To UBound(RampBalls)	'Check, don't add balls twice
+		If RampBalls(x, 1) = input.id Then
+			If Not IsEmpty(RampBalls(x,1) ) Then Exit Sub	'Frustating issue with BallId 0. Empty variable = 0
+		End If
+	Next
+	
+	' This will itterate through the RampBalls Array.
+	' The first time it comes to a element in the array where the Ball Id (Slot 1) is empty.  It will add the current ball to the array
+	' The RampBalls assigns the ActiveBall to element x,0 and ball id of ActiveBall to 0,1
+	' The RampType(BallId) is set to RampInput
+	' RampBalls in 0,0 is set to True, this will enable the timer and the timer is also turned on
+	For x = 1 To UBound(RampBalls)
+		If IsEmpty(RampBalls(x, 1)) Then
+			Set RampBalls(x, 0) = input
+			RampBalls(x, 1) = input.ID
+			RampType(x) = RampInput
+			RampBalls(x, 2) = 0
+			'exit For
+			RampBalls(0,0) = True
+			RampRoll.Enabled = 1	 'Turn on timer
+			'RampRoll.Interval = RampRoll.Interval 'reset timer
+			Exit Sub
+		End If
+		If x = UBound(RampBalls) Then	 'debug
+			Debug.print "WireRampOn error, ball queue Is full: " & vbNewLine & _
+			RampBalls(0, 0) & vbNewLine & _
+			TypeName(RampBalls(1, 0)) & " ID:" & RampBalls(1, 1) & "type:" & RampType(1) & vbNewLine & _
+			TypeName(RampBalls(2, 0)) & " ID:" & RampBalls(2, 1) & "type:" & RampType(2) & vbNewLine & _
+			TypeName(RampBalls(3, 0)) & " ID:" & RampBalls(3, 1) & "type:" & RampType(3) & vbNewLine & _
+			TypeName(RampBalls(4, 0)) & " ID:" & RampBalls(4, 1) & "type:" & RampType(4) & vbNewLine & _
+			TypeName(RampBalls(5, 0)) & " ID:" & RampBalls(5, 1) & "type:" & RampType(5) & vbNewLine & _
+			" "
+		End If
+	Next
+End Sub
+
+' WRemoveBall (BallId)
+Sub WRemoveBall(ID) 'This subroutine is called from the RampRollUpdate subroutine and is used to remove and stop the ball rolling sounds
+	'   Debug.Print "In WRemoveBall() + Remove ball from loop array"
+	Dim ballcount
+	ballcount = 0
+	Dim x
+	For x = 1 To UBound(RampBalls)
+		If ID = RampBalls(x, 1) Then 'remove ball
+			Set RampBalls(x, 0) = Nothing
+			RampBalls(x, 1) = Empty
+			RampType(x) = Empty
+			StopSound("RampLoop" & x)
+			StopSound("wireloop" & x)
+		End If
+		'if RampBalls(x,1) = Not IsEmpty(Rampballs(x,1) then ballcount = ballcount + 1
+		If Not IsEmpty(Rampballs(x,1)) Then ballcount = ballcount + 1
+	Next
+	If BallCount = 0 Then RampBalls(0,0) = False	'if no balls in queue, disable timer update
+End Sub
+
+Sub RampRoll_Timer()
+	RampRollUpdate
+End Sub
+
+Sub RampRollUpdate()	'Timer update
+	Dim x
+	For x = 1 To UBound(RampBalls)
+		If Not IsEmpty(RampBalls(x,1) ) Then
+			If BallVel(RampBalls(x,0) ) > 1 Then ' if ball is moving, play rolling sound
+				If RampType(x) Then
+					PlaySound("RampLoop" & x), - 1, VolPlayfieldRoll(RampBalls(x,0)) * RampRollVolume * VolumeDial, AudioPan(RampBalls(x,0)), 0, BallPitchV(RampBalls(x,0)), 1, 0, AudioFade(RampBalls(x,0))
+					StopSound("wireloop" & x)
+				Else
+					StopSound("RampLoop" & x)
+					PlaySound("wireloop" & x), - 1, VolPlayfieldRoll(RampBalls(x,0)) * RampRollVolume * VolumeDial, AudioPan(RampBalls(x,0)), 0, BallPitch(RampBalls(x,0)), 1, 0, AudioFade(RampBalls(x,0))
+				End If
+				RampBalls(x, 2) = RampBalls(x, 2) + 1
+			Else
+				StopSound("RampLoop" & x)
+				StopSound("wireloop" & x)
+			End If
+			If RampBalls(x,0).Z < 30 And RampBalls(x, 2) > RampMinLoops Then	'if ball is on the PF, remove  it
+				StopSound("RampLoop" & x)
+				StopSound("wireloop" & x)
+				Wremoveball RampBalls(x,1)
+			End If
+		Else
+			StopSound("RampLoop" & x)
+			StopSound("wireloop" & x)
+		End If
+	Next
+	If Not RampBalls(0,0) Then RampRoll.enabled = 0
+End Sub
+
+' This can be used to debug the Ramp Roll time.  You need to enable the tbWR timer on the TextBox
+Sub tbWR_Timer()	'debug textbox
+	Me.text = "on? " & RampBalls(0, 0) & " timer: " & RampRoll.Enabled & vbNewLine & _
+	"1 " & TypeName(RampBalls(1, 0)) & " ID:" & RampBalls(1, 1) & " type:" & RampType(1) & " Loops:" & RampBalls(1, 2) & vbNewLine & _
+	"2 " & TypeName(RampBalls(2, 0)) & " ID:" & RampBalls(2, 1) & " type:" & RampType(2) & " Loops:" & RampBalls(2, 2) & vbNewLine & _
+	"3 " & TypeName(RampBalls(3, 0)) & " ID:" & RampBalls(3, 1) & " type:" & RampType(3) & " Loops:" & RampBalls(3, 2) & vbNewLine & _
+	"4 " & TypeName(RampBalls(4, 0)) & " ID:" & RampBalls(4, 1) & " type:" & RampType(4) & " Loops:" & RampBalls(4, 2) & vbNewLine & _
+	"5 " & TypeName(RampBalls(5, 0)) & " ID:" & RampBalls(5, 1) & " type:" & RampType(5) & " Loops:" & RampBalls(5, 2) & vbNewLine & _
+	"6 " & TypeName(RampBalls(6, 0)) & " ID:" & RampBalls(6, 1) & " type:" & RampType(6) & " Loops:" & RampBalls(6, 2) & vbNewLine & _
+	" "
+End Sub
+
+Function BallPitch(ball) ' Calculates the pitch of the sound based on the ball speed
+	BallPitch = pSlope(BallVel(ball), 1, - 1000, 60, 10000)
+End Function
+
+Function BallPitchV(ball) ' Calculates the pitch of the sound based on the ball speed Variation
+	BallPitchV = pSlope(BallVel(ball), 1, - 4000, 60, 7000)
+End Function
+
+Sub RandomSoundRampStop(obj)
+	Select Case Int(rnd*3)
+		Case 0: PlaySoundAtVol "wireramp_stop1", obj, 0.2*VolumeDial:PlaySoundAtLevelActiveBall ("Rubber_Strong_1"), Vol(ActiveBall) * RubberStrongSoundFactor * 0.6
+		Case 1: PlaySoundAtVol "wireramp_stop2", obj, 0.2*VolumeDial:PlaySoundAtLevelActiveBall ("Rubber_Strong_2"), Vol(ActiveBall) * RubberStrongSoundFactor * 0.6
+		Case 2: PlaySoundAtVol "wireramp_stop3", obj, 0.2*VolumeDial:PlaySoundAtLevelActiveBall ("Rubber_1_Hard"), Vol(ActiveBall) * RubberStrongSoundFactor * 0.6
+	End Select
+End Sub
+
+'******************************************************
+'**** END RAMP ROLLING SFX
+'******************************************************
+
+
+Sub CREnter1_Hit()
+	WireRampOn True
+End Sub
+
+Sub CREnter2_Hit()
+	WireRampOn True
+End Sub
+
+Sub CRExit1_Hit()
+	WireRampOff
+End Sub
+
+Sub CRExit1_unHit()
+	WireRampOn False
+End Sub
+
+Sub leftrampdone2_Hit()
+	WireRampOff
+End Sub
+
+Sub leftrampdone2_UnHit()
+	WireRampOn False
+End Sub

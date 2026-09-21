@@ -1,0 +1,26 @@
+---
+fps: 60
+pupArchiveFormat: "rar"
+pupArchiveRoot: "STLE147/STLE"
+pupChecksum: "99EBE4FB96FB53EB04F1999E695CB192"
+pupFileUrl: "https://mega.nz/file/6UEnSQyC#Wm57VL2YfCzi2Sr3bVEUBIc4KGwThQX3fVInnuhj8jM"
+pupNotes: "STLEpup.rar"
+pupRequired: true
+pupVersion: "STLE"
+specialDMDArchiveRoot: "STLE.UltraDMD"
+specialDMDBundled: true
+specialDMDType: "UltraDMD"
+tableNotes: "Download Stranger Things (Original 2020) LW v3.06.vpx.zip"
+tableVPSId: "RExBoops"
+tagline: "'friendsdontlie'"
+testers:
+  - "Wraith"
+  - "Bla1ze"
+  - "Dasme"
+  - "Onegoodball"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "E99B9D3FB51D0354A0A21ED3C1FCF35F"
+  - "A23AF11AA22FBB2A862F21B12E68A682"
+vpxMagic: "ZnJpZW5kc2RvbnRsaWU="
+vpxVPSId: "OK0fjaA-NI"
