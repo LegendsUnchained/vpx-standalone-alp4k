@@ -14,7 +14,7 @@
 
 **VPXS 4KP Testers:**
   - PBW23
-
+  - Missile Toad
 <br>
 
 ---
