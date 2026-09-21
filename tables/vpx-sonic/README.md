@@ -1,14 +1,14 @@
-﻿# Sonic The Hedgehog (Original 2005)
+# Sonic The Hedgehog (Original 2005)
 
-![Table Preview](../../images/vpx-sonic.png)
+![Table Preview](../../images/TYVVL51gSe-preview.webp)
 
 <br>
 
 ## *️⃣  Table Statistics
 
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 60 |
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ❌ | ❌ | ❌ | 60 |
 
 <br>
 
@@ -32,9 +32,9 @@ This table is available through the Table Manager Wizard, which makes installati
 1.  Open the **Table Manager**
 2.  Click the **Add Table** button
 3.  Select the **Wizard** tab
-4.  Find and select this table from the dropdown menu: **`Sonic`**
+4.  Find and select this table from the dropdown menu: **`Sonic The Hedgehog (Original 2005)`**
 5.  Follow the on-screen instructions to download and upload the required files
-6. *" "*
+6. *""*
 
 <br>
 
@@ -51,6 +51,7 @@ __*We hope you enjoy!!*__
 - Bla1ze           - evilwraith       - Silentkat        
 - mrandromeda      - SScorpio         - pointdablame
 </pre>
+
 
 <br>
 <br>
