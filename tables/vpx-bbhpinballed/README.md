@@ -38,7 +38,7 @@ Minimum VPX Standalone build: 10.8.0-1989-a764013
 - Your table is now ready. Exit the Table Manager on your device, and play.
 ## THIS TABLE IS LOUD; LOWER YOUR MACHINE SOUND TO 5 AND ADJUST ACCORDINGLY
 
-- If you need help, more information can be found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
+- If you need help, more information can be found on the wiki: [TM - Add Table - Manual](https://wiki.legendsunchained.com/05-manual-table-install/)
 
 
 
