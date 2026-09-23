@@ -25,6 +25,14 @@ on:
         description: 'Commit to build from. Defaults to the calling ref.'
         required: false
         type: string
+      release_id:
+        description: >-
+          Numeric id of the release to build. Optional; when the caller already
+          has it (it just created the draft), passing it skips looking the
+          release up by tag.
+        required: false
+        type: string
+        default: ''
   # Manual re-run against an existing release.
   workflow_dispatch:
     inputs:
@@ -45,6 +53,7 @@ jobs:
       # looked up as a release. It only ever appeared to work because a release
       # event's built-in GITHUB_REF_NAME happens to be the tag.
       RELEASE_TAG: ${{ inputs.release_tag }}
+      RELEASE_ID: ${{ inputs.release_id }}
 
     steps:
       - name: Checkout code
@@ -129,24 +138,61 @@ jobs:
 
       - name: Table Manager Achievements Config
         run: |
+          set -uo pipefail
           # Uploaded through the API rather than `gh release upload <tag>`:
           # that resolves the tag endpoint, which cannot see a draft, and the
           # release is still a draft at this point in the pipeline.
           repo="${{ github.repository }}"
-          id=$(TAG="$RELEASE_TAG" gh api "repos/$repo/releases" --paginate \
-                 --jq '[.[] | select(.tag_name==env.TAG)] | sort_by(.draft) | reverse | .[0].id')
+
+          # GitHub's API returns intermittent 502/504s. Retry with backoff.
+          retry() {
+            local n=1 max=5 delay=5
+            until "$@"; do
+              if [ "$n" -ge "$max" ]; then
+                echo "::error::Failed after $max attempts: $*" >&2
+                return 1
+              fi
+              echo "::warning::Attempt $n failed; retrying in ${delay}s: $*" >&2
+              sleep "$delay"; n=$((n + 1)); delay=$((delay * 2))
+            done
+          }
+
+          id="$RELEASE_ID"
+          if [ -z "$id" ]; then
+            # Page through releases a few at a time and stop at the first
+            # match. The old `--paginate` fetched every release with its full
+            # asset list in one go; with hundreds of zips per release that
+            # response grew until GitHub timed out building it (HTTP 504).
+            # Newest releases (including this draft) come first.
+            for page in $(seq 1 50); do
+              ids=$(retry gh api "repos/$repo/releases?per_page=10&page=$page" \
+                      --jq '[.[] | {id, tag_name, draft}]') || exit 1
+              [ "$ids" = "[]" ] && break
+              id=$(TAG="$RELEASE_TAG" jq -r \
+                     '[.[] | select(.tag_name==env.TAG)] | sort_by(.draft) | reverse | .[0].id // empty' \
+                     <<< "$ids")
+              [ -n "$id" ] && break
+            done
+          fi
           if [ -z "$id" ]; then
             echo "::error::No release found for tag '$RELEASE_TAG'."
             exit 1
           fi
-          # --clobber equivalent: the API refuses a duplicate asset name.
-          old=$(gh api "repos/$repo/releases/$id/assets" --paginate \
-                  --jq '.[] | select(.name=="achievements.json") | .id')
-          for a in $old; do gh api -X DELETE "repos/$repo/releases/assets/$a"; done
-          gh api --method POST \
-            -H "Content-Type: application/json" \
-            "https://uploads.github.com/repos/$repo/releases/$id/assets?name=achievements.json" \
-            --input tm-config/achievements.json > /dev/null
+
+          # --clobber equivalent: the API refuses a duplicate asset name. Done
+          # inside the retried block too, so a retry after an upload that
+          # actually landed (despite a 504) doesn't hit "already_exists".
+          upload() {
+            local old a
+            old=$(gh api "repos/$repo/releases/$id/assets?per_page=100" --paginate \
+                    --jq '.[] | select(.name=="achievements.json") | .id') || return 1
+            for a in $old; do gh api -X DELETE "repos/$repo/releases/assets/$a" || return 1; done
+            gh api --method POST \
+              -H "Content-Type: application/json" \
+              "https://uploads.github.com/repos/$repo/releases/$id/assets?name=achievements.json" \
+              --input tm-config/achievements.json > /dev/null
+          }
+          retry upload || exit 1
           echo "Uploaded achievements.json to release $id ($RELEASE_TAG)"
 
       # Disabled 2026-09-10: paired with the regeneration step above. With that
