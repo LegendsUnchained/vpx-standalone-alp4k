@@ -90,6 +90,7 @@ jobs:
     secrets: inherit
     with:
       release_tag: ${{ needs.prepare.outputs.tag }}
+      release_id: ${{ needs.prepare.outputs.id }}
       ref: ${{ needs.prepare.outputs.sha }}
 
   # CORS mirror for the candidate. Force-pushed before the release is visible,
