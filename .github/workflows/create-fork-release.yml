@@ -107,24 +107,11 @@ jobs:
             fi
           fi
 
-          # Scanned in small pages, each retried: a single --paginate listing
-          # pulls every release with its full asset list, and with hundreds of
-          # zips per release GitHub times out building that response (HTTP 504).
-          for page in $(seq 1 100); do
-            ok=""
-            for attempt in 1 2 3 4 5; do
-              if tags=$(gh api "repos/${{ github.repository }}/releases?per_page=10&page=$page" \
-                          --jq '[.[].tag_name]'); then ok=1; break; fi
-              echo "::warning::Listing releases page $page failed (attempt $attempt); retrying." >&2
-              sleep $((attempt * 5))
-            done
-            [ -n "$ok" ] || { echo "::error::Could not list releases."; exit 1; }
-            [ "$tags" = "[]" ] && break
-            if TAG="$tag" jq -e 'index(env.TAG) != null' <<< "$tags" >/dev/null; then
-              echo "::error::A release already uses $tag. Pick another tag, or delete that release first."
-              exit 1
-            fi
-          done
+          if TAG="$tag" gh api "repos/${{ github.repository }}/releases" --paginate \
+               --jq '.[] | select(.tag_name==env.TAG) | .id' | grep -q .; then
+            echo "::error::A release already uses $tag. Pick another tag, or delete that release first."
+            exit 1
+          fi
 
           # Created as a draft and pinned to this commit: a draft has no tag, so
           # the tag is created at ${{ github.sha }} when it is published, rather
@@ -148,7 +135,6 @@ jobs:
     with:
       release_tag: ${{ needs.prepare.outputs.tag }}
       ref: ${{ needs.prepare.outputs.sha }}
-      release_id: ${{ needs.prepare.outputs.id }}
 
   publish:
     name: Publish the release
