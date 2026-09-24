@@ -5534,6 +5534,8 @@ debug.print "Super Skillshot Enabled"
 	End Sub
 
 	Sub PlayGeneralMusic()
+	    playclear pMusic
+        bMediaPaused(pMusic) = False
 		If houseband=1 Then
 			playmedia "", "Musicipfree", pMusic, "", -1, "", 1, 1
 		Else
@@ -11930,6 +11932,9 @@ debug.print "Clear is cancelling " & currentqueue
 Debug.print "PlayMedia"
 		Dim NextQueue:NextQueue=""
 		bMediaSet(channel) = True
+		If channel = pMusic Then
+            bMediaPaused(channel) = False
+        End If
 		if audiolevel = 1 Then
 			if channel = pBackglass Then
 				audiolevel = VolBGMusic
