@@ -1,0 +1,17 @@
+---
+fps: 60
+pupArchiveFormat: "zip"
+pupArchiveRoot: "Puppack/halloween"
+pupBundled: true
+pupChecksum: "8612329734761AE7B4EDBCD813A5C298"
+pupNotes: "Puppack included in table download - Pack halloween.zip"
+pupRequired: true
+pupVersion: "halloween"
+tableNotes: "Download - Pack halloween.zip"
+tableVPSId: "lv3m3-sqpv"
+tagline: "It's Halloween, everyone's entitled to one good scare"
+testers:
+  - "Missle Toad"
+  - "PBW23"
+vpxChecksum: "C0FEDC012676D3D005BFCA22F171E0D2"
+vpxVPSId: "CK9P8JB4AY"
