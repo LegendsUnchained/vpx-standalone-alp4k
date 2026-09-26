@@ -3176,6 +3176,7 @@ End Sub
 Dim Song, Songnr
 Song = ""
 Songnr = INT(RND * kMaxSongs)
+Dim SongStartedIdx : SongStartedIdx = -1		' index SelectMusic2 last started; -1 = nothing playing
 
 Sub PlaySong(name)
     If bMusicOn Then
@@ -3306,6 +3307,7 @@ End Sub
 
 Sub SelectMusic2(SongIndex, bModeMusic)
 	dim ModeStr:ModeStr=""
+	SongStartedIdx = SongIndex
 If KeepLogs Then WriteToLog "     ", "SelectMusic:" & SongIndex
 	if bModeMusic then ModeStr="_Mode"
 
@@ -3368,7 +3370,7 @@ End Sub
 
 Sub ExitSongSelection()
 	saveSong(CurrentPlayer)=Songnr
-	SelectMusic(Songnr)
+	If SongStartedIdx <> Songnr Then SelectMusic(Songnr)	' nothing chosen: start the default without restarting a chosen track
 	StopSongSelect
 End Sub
 Sub StopSongSelect()
@@ -4120,6 +4122,7 @@ Sub ResetForNewGame()
 	UpdatePlayers
     bOnTheFirstBall = True
     For i = 0 To MaxPlayers-1
+		saveSong(i) = INT(RND * kMaxSongs)		' random default track per player (15 = "no music" is never picked)
 		ScoreSave(i)=0
 		LastScore(i)=0
         Score(i) = 0
@@ -4140,6 +4143,7 @@ Sub ResetForNewGame()
 
     ' initialise Game variables
 	playclear pMusic
+	SongStartedIdx = -1
 	PlaySoundVol "vo_Welcome2MyWorld", VolDef
     Game_Init()
 
@@ -4794,6 +4798,7 @@ Sub EndOfGame()
 	LFPress=0
 	RFPress=0
 	playclear pMusic
+	SongStartedIdx = -1
 
 	Scorbit.StopSession Score(0), Score(1), Score(2), Score(3), PlayersPlayingGame
 
@@ -5029,7 +5034,7 @@ Sub swPlungerRest_UnHit()' This means the trigger is up because ball has been fi
     swPlungerRest.TimerEnabled = 0 'stop the launch ball timer if active
     If bSkillShotReady Then
 		
-		StopSongSelect
+		ExitSongSelection
 		ResetSkillShotTimer.UserValue=0
         ResetSkillShotTimer.Enabled = 1
 		ScorbitClaimQR(False)
@@ -17587,6 +17592,7 @@ PriorityReset=4000
 			case 0:
 '				PlayMusic "MusicEndOfGame.mp3"		' Dont loop
 				playclear pMusic
+				SongStartedIdx = -1
 				playmedia "MusicEndOfGame.mp3", MusicDir, pMusic, "", 250486, "", 1, 1
 				PuPlayer.playlistplayex pDMDFull,"Callouts","EndOfGame.mp4", cVolBGVideo*100, 1
 			case 1 :
@@ -22902,6 +22908,7 @@ End Sub
 'WriteToLog "     ", "playMusic: " & curSong & " " & fileName
 		if curSong <> fileName then 
 			playclear pMusic
+			SongStartedIdx = -1
 			curSong=fileName
 			playmedia fileName, MusicDir, pMusic, "", -1, "", 1, 1
 		End if 

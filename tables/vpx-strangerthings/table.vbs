@@ -972,19 +972,19 @@ End Sub
 									PuPlayer.playlistplayex pCallouts,"audiocallouts","player1.wav",80,1
 									chilloutthemusic
 									If PlayersPlayingGame = 2 Then
-										PuPlayer.LabelSet pBackglass,"Play2","PLAYER 2",1,"{'mt':2,'color':16777215, 'size': 1.5, 'xpos': 93.3, 'xalign': 0}"
+										PuPlayer.LabelSet pBackglass,"Play2","PLAYER 2",1,"{'mt':2,'color':16777215, 'size': 2.5, 'xpos': 93.3, 'xalign': 0}"
 										pUpdateScores
 										PuPlayer.playlistplayex pCallouts,"audiocallouts","player2.wav",80,1
 										chilloutthemusic
 									End If
 									If PlayersPlayingGame = 3 Then
-										PuPlayer.LabelSet pBackglass,"Play3","PLAYER 3",1,"{'mt':2,'color':16777215, 'size': 1.5, 'xpos': 93.3, 'xalign': 0}"
+										PuPlayer.LabelSet pBackglass,"Play3","PLAYER 3",1,"{'mt':2,'color':16777215, 'size': 2.5, 'xpos': 93.3, 'xalign': 0}"
 										pUpdateScores
 										PuPlayer.playlistplayex pCallouts,"audiocallouts","player3.wav",80,1
 										chilloutthemusic
 									End If
 									If PlayersPlayingGame = 4 Then
-										PuPlayer.LabelSet pBackglass,"Play4","PLAYER 4",1,"{'mt':2,'color':16777215, 'size': 1.5, 'xpos': 93.3, 'xalign': 0}"
+										PuPlayer.LabelSet pBackglass,"Play4","PLAYER 4",1,"{'mt':2,'color':16777215, 'size': 2.5, 'xpos': 93.3, 'xalign': 0}"
 										pUpdateScores	
 										PuPlayer.playlistplayex pCallouts,"audiocallouts","player4.wav",80,1
 										chilloutthemusic
@@ -2035,31 +2035,31 @@ End Sub
 	' syntax - PuPlayer.LabelNew <screen# or pDMD>,<Labelname>,<fontName>,<size%>,<colour>,<rotation>,<xAlign>,<yAlign>,<xpos>,<ypos>,<PageNum>,<visible>
 
 	'Page 1 (default score display)
-	PuPlayer.LabelNew pBackglass,"Play1","AvantGarde-Book",				2,16777215  ,0,2,1,98,67,1,0
-	PuPlayer.LabelNew pBackglass,"Play1score","AvantGarde LT Medium",	3,16777215  ,0,2,1,98,70,1,0
-	PuPlayer.LabelNew pBackglass,"Play2","AvantGarde-Book",				2,16777215  ,0,2,1,98,73,1,0
-	PuPlayer.LabelNew pBackglass,"Play2score","AvantGarde LT Medium",	3,16777215  ,0,2,1,98,76,1,0
-	PuPlayer.LabelNew pBackglass,"Play3","AvantGarde-Book",				2,16777215  ,0,2,1,98,79,1,0
-	PuPlayer.LabelNew pBackglass,"Play3score","AvantGarde LT Medium",	3,16777215  ,0,2,1,98,82,1,0
-	PuPlayer.LabelNew pBackglass,"Play4","AvantGarde-Book",				2,16777215  ,0,2,1,98,85,1,0
-	PuPlayer.LabelNew pBackglass,"Play4score","AvantGarde LT Medium",	3,16777215  ,0,2,1,98,88,1,0
-	PuPlayer.LabelNew pBackglass,"Ball","AvantGarde-Book",				2,16777215 	,0,2,1,98,63,1,1
-	PuPlayer.LabelNew pBackglass,"hstitle","AvantGarde-Book",			1,16777215 	,0,2,1,98,92,1,1
-	PuPlayer.LabelNew pBackglass,"hs","AvantGarde-Book",				2,16777215 	,0,2,1,98,94,1,1
-	PuPlayer.LabelNew pBackglass,"gptitle","AvantGarde-Book",			1,16777215 	,0,2,1,98,96,1,1
-	PuPlayer.LabelNew pBackglass,"gp","AvantGarde-Book",				2,16777215 	,0,2,1,98,98,1,1
-	PuPlayer.LabelNew pBackglass,"Willh","AvantGarde LT Medium",		2,16777215  ,0,1,1,8,70,1,1
-	PuPlayer.LabelNew pBackglass,"Willj","AvantGarde LT Medium",		2,16777215  ,0,2,1,13,70,1,1
-	PuPlayer.LabelNew pBackglass,"badh","AvantGarde LT Medium",			2,16777215  ,0,2,1,8,76,1,1
-	PuPlayer.LabelNew pBackglass,"badj","AvantGarde LT Medium",			2,16777215  ,0,2,1,13,76,1,1
-	PuPlayer.LabelNew pBackglass,"barbh","AvantGarde LT Medium",		2,16777215  ,0,2,1,8,80,1,1
-	PuPlayer.LabelNew pBackglass,"barbj","AvantGarde LT Medium",		2,16777215  ,0,2,1,13,80,1,1
-	PuPlayer.LabelNew pBackglass,"partyh","AvantGarde LT Medium",		2,16777215  ,0,2,1,8,85,1,1
-	PuPlayer.LabelNew pBackglass,"partyj","AvantGarde LT Medium",		2,16777215  ,0,2,1,13,85,1,1
-	PuPlayer.LabelNew pBackglass,"mav","AvantGarde LT Medium",			2,16777215  ,0,2,1,8,85,1,1
-	PuPlayer.LabelNew pBackglass,"mwaf","AvantGarde LT Medium",			2,16777215  ,0,1,1,13,85,1,1
+	PuPlayer.LabelNew pBackglass,"Play1","AvantGarde-Book",				2.5,16777215  ,0,2,1,98,67,1,0
+	PuPlayer.LabelNew pBackglass,"Play1score","AvantGarde LT Medium",	3.5,16777215  ,0,2,1,98,70,1,0
+	PuPlayer.LabelNew pBackglass,"Play2","AvantGarde-Book",				2.5,16777215  ,0,2,1,98,73,1,0
+	PuPlayer.LabelNew pBackglass,"Play2score","AvantGarde LT Medium",	3.5,16777215  ,0,2,1,98,76,1,0
+	PuPlayer.LabelNew pBackglass,"Play3","AvantGarde-Book",				2.5,16777215  ,0,2,1,98,79,1,0
+	PuPlayer.LabelNew pBackglass,"Play3score","AvantGarde LT Medium",	3.5,16777215  ,0,2,1,98,82,1,0
+	PuPlayer.LabelNew pBackglass,"Play4","AvantGarde-Book",				2.5,16777215  ,0,2,1,98,85,1,0
+	PuPlayer.LabelNew pBackglass,"Play4score","AvantGarde LT Medium",	3.5,16777215  ,0,2,1,98,88,1,0
+	PuPlayer.LabelNew pBackglass,"Ball","AvantGarde-Book",				3,16777215 	,0,2,1,98,63,1,1
+	PuPlayer.LabelNew pBackglass,"hstitle","AvantGarde-Book",			1.5,16777215 	,0,2,1,98,92,1,1
+	PuPlayer.LabelNew pBackglass,"hs","AvantGarde-Book",				2.5,16777215 	,0,2,1,98,94,1,1
+	PuPlayer.LabelNew pBackglass,"gptitle","AvantGarde-Book",			1.5,16777215 	,0,2,1,98,96,1,1
+	PuPlayer.LabelNew pBackglass,"gp","AvantGarde-Book",				2.5,16777215 	,0,2,1,98,98,1,1
+	PuPlayer.LabelNew pBackglass,"Willh","AvantGarde LT Medium",		3,16777215  ,0,1,1,8,70,1,1
+	PuPlayer.LabelNew pBackglass,"Willj","AvantGarde LT Medium",		3,16777215  ,0,2,1,13,70,1,1
+	PuPlayer.LabelNew pBackglass,"badh","AvantGarde LT Medium",			3,16777215  ,0,2,1,8,76,1,1
+	PuPlayer.LabelNew pBackglass,"badj","AvantGarde LT Medium",			3,16777215  ,0,2,1,13,76,1,1
+	PuPlayer.LabelNew pBackglass,"barbh","AvantGarde LT Medium",		3,16777215  ,0,2,1,8,80,1,1
+	PuPlayer.LabelNew pBackglass,"barbj","AvantGarde LT Medium",		3,16777215  ,0,2,1,13,80,1,1
+	PuPlayer.LabelNew pBackglass,"partyh","AvantGarde LT Medium",		3,16777215  ,0,2,1,8,85,1,1
+	PuPlayer.LabelNew pBackglass,"partyj","AvantGarde LT Medium",		3,16777215  ,0,2,1,13,85,1,1
+	PuPlayer.LabelNew pBackglass,"mav","AvantGarde LT Medium",			3,16777215  ,0,2,1,8,85,1,1
+	PuPlayer.LabelNew pBackglass,"mwaf","AvantGarde LT Medium",			3,16777215  ,0,1,1,13,85,1,1
 	PuPlayer.LabelNew pBackglass,"notetitle","AvantGarde LT Medium",	4,16777215  ,0,1,1,50,87,1,1
-	PuPlayer.LabelNew pBackglass,"notecopy","AvantGarde-Book",			2,16777215 	,0,1,1,50,92,1,1
+	PuPlayer.LabelNew pBackglass,"notecopy","AvantGarde-Book",			3,16777215 	,0,1,1,50,92,1,1
 	PuPlayer.LabelNew pBackglass,"titlebg","Fundamental 3D  Brigade",	9,0  ,0,1,1,50,50,1,1
 	PuPlayer.LabelNew pBackglass,"title","Fundamental  Brigade",		9,16777215 	,0,1,1,50,50,1,1
 	PuPlayer.LabelNew pBackglass,"titlebg2","Fundamental 3D  Brigade",	6,0  ,0,1,1,50,50,1,1
@@ -2231,17 +2231,17 @@ End Sub
 	PuPlayer.LabelSet pBackglass,"hs","" & FormatNumber(HighScore(0),0),1,""
 	PuPlayer.LabelSet pBackglass,"gptitle","GAMES PLAYED",1,""
 	PuPlayer.LabelSet pBackglass,"gp","" & FormatNumber(TotalGamesPlayed,0),1,""
-	PuPlayer.LabelSet pBackglass,"Willh","0",1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 8.1, 'xalign': 1}"
-	PuPlayer.LabelSet pBackglass,"Willj","0",1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0}"
-	PuPlayer.LabelSet pBackglass,"badh","0",1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
-	PuPlayer.LabelSet pBackglass,"badj","0",1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
-	PuPlayer.LabelSet pBackglass,"barbh","0",1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
-	PuPlayer.LabelSet pBackglass,"barbj","0",1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
-	PuPlayer.LabelSet pBackglass,"partyh","0",1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
-	PuPlayer.LabelSet pBackglass,"partyj","0",1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
-	PuPlayer.LabelSet pBackglass,"mav","0",1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 94.6, 'yalign': 0}"
-	PuPlayer.LabelSet pBackglass,"mwaf","000",1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 13.3, 'xalign': 1, 'ypos': 94.6, 'yalign': 0}"
-	PuPlayer.LabelSet pBackglass,"Ball","PRESS START TO PLAY",1,""
+	PuPlayer.LabelSet pBackglass,"Willh","0",1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 8.1, 'xalign': 1}"
+	PuPlayer.LabelSet pBackglass,"Willj","0",1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0}"
+	PuPlayer.LabelSet pBackglass,"badh","0",1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
+	PuPlayer.LabelSet pBackglass,"badj","0",1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
+	PuPlayer.LabelSet pBackglass,"barbh","0",1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
+	PuPlayer.LabelSet pBackglass,"barbj","0",1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
+	PuPlayer.LabelSet pBackglass,"partyh","0",1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
+	PuPlayer.LabelSet pBackglass,"partyj","0",1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
+	PuPlayer.LabelSet pBackglass,"mav","0",1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 94.6, 'yalign': 0}"
+	PuPlayer.LabelSet pBackglass,"mwaf","000",1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 13.3, 'xalign': 1, 'ypos': 94.6, 'yalign': 0}"
+	PuPlayer.LabelSet pBackglass,"Ball","PRESS START TO PLAY",1,"{'mt':2,'size':2.5,'xpos':98.5}"
 	End Sub
 
 	Dim titlepos
@@ -2340,15 +2340,15 @@ End Sub
 
 
 	Sub currentplayerbackglass
-		PuPlayer.LabelSet pBackglass,"Willh","" & udhits(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 8.1, 'xalign': 1}"
-		PuPlayer.LabelSet pBackglass,"Willj","" & WillHits(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0}"
-		PuPlayer.LabelSet pBackglass,"badh","" & BallsInRunLock(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
-		PuPlayer.LabelSet pBackglass,"badj","" & RunHits(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
-		PuPlayer.LabelSet pBackglass,"barbh","" & BallsInLock(CurrentPlayer) ,1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
-		PuPlayer.LabelSet pBackglass,"barbj","" & barbjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
-		PuPlayer.LabelSet pBackglass,"partyh","" & partycollected(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
-		PuPlayer.LabelSet pBackglass,"partyj","" & partyjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
-		PuPlayer.LabelSet pBackglass,"mav","" & avsdone(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 94.6, 'yalign': 0}"
+		PuPlayer.LabelSet pBackglass,"Willh","" & udhits(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 8.1, 'xalign': 1}"
+		PuPlayer.LabelSet pBackglass,"Willj","" & WillHits(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0}"
+		PuPlayer.LabelSet pBackglass,"badh","" & BallsInRunLock(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
+		PuPlayer.LabelSet pBackglass,"badj","" & RunHits(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
+		PuPlayer.LabelSet pBackglass,"barbh","" & BallsInLock(CurrentPlayer) ,1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
+		PuPlayer.LabelSet pBackglass,"barbj","" & barbjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
+		PuPlayer.LabelSet pBackglass,"partyh","" & partycollected(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
+		PuPlayer.LabelSet pBackglass,"partyj","" & partyjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
+		PuPlayer.LabelSet pBackglass,"mav","" & avsdone(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 94.6, 'yalign': 0}"
 		PuPlayer.LabelSet pBackglass,"mwaf", bumps(CurrentPlayer),1,""
 		PuPlayer.LabelSet pBackglass,"modetitle","Timer",1,"{'mt':2,'color':16777215, 'size': 0, 'xpos': 80.7, 'xalign': 1, 'ypos': 72.6, 'yalign': 0}"
 		PuPlayer.LabelSet pBackglass,"modetimer","",1,"{'mt':2,'color':16777215, 'size': 4, 'xpos': 80.7, 'xalign': 1, 'ypos': 75, 'yalign': 0}"
@@ -2357,81 +2357,81 @@ End Sub
 
 	Sub pUpdateScores
 		If CurrentPlayer = 1 Then
-			PuPlayer.LabelSet pBackglass,"Play1score","" & FormatNumber(Score(CurrentPlayer),0),1,"{'mt':2,'color':16777215, 'size': 2.4 }"
+			PuPlayer.LabelSet pBackglass,"Play1score","" & FormatNumber(Score(CurrentPlayer),0),1,"{'mt':2,'color':16777215, 'size': 3.5 }"
 			PuPlayer.LabelSet pBackglass,"Play1","PLAYER 1",1,"{'mt':2,'color':16777215 }"
 			'make other scores red (inactive)
 			If PlayersPlayingGame = 2 Then
-				PuPlayer.LabelSet pBackglass,"Play2score","" & FormatNumber(Score(2),0),1,"{'mt':2,'color':3875550, 'size': 2.4 }"
+				PuPlayer.LabelSet pBackglass,"Play2score","" & FormatNumber(Score(2),0),1,"{'mt':2,'color':3875550, 'size': 3.5 }"
 				PuPlayer.LabelSet pBackglass,"Play2","PLAYER 2",1,"{'mt':2,'color':3875550}"
 			End If
 			If PlayersPlayingGame = 3 Then
-				PuPlayer.LabelSet pBackglass,"Play2score","" & FormatNumber(Score(2),0),1,"{'mt':2,'color':3875550, 'size': 2.4 }"
+				PuPlayer.LabelSet pBackglass,"Play2score","" & FormatNumber(Score(2),0),1,"{'mt':2,'color':3875550, 'size': 3.5 }"
 				PuPlayer.LabelSet pBackglass,"Play2","PLAYER 2",1,"{'mt':2,'color':3875550}"
-				PuPlayer.LabelSet pBackglass,"Play3score","" & FormatNumber(Score(3),0),1,"{'mt':2,'color':3875550, 'size': 2.4 }"
+				PuPlayer.LabelSet pBackglass,"Play3score","" & FormatNumber(Score(3),0),1,"{'mt':2,'color':3875550, 'size': 3.5 }"
 				PuPlayer.LabelSet pBackglass,"Play3","PLAYER 3",1,"{'mt':2,'color':3875550}"
 			End If
 			If PlayersPlayingGame = 4 Then
-				PuPlayer.LabelSet pBackglass,"Play2score","" & FormatNumber(Score(2),0),1,"{'mt':2,'color':3875550, 'size': 2.4 }"
+				PuPlayer.LabelSet pBackglass,"Play2score","" & FormatNumber(Score(2),0),1,"{'mt':2,'color':3875550, 'size': 3.5 }"
 				PuPlayer.LabelSet pBackglass,"Play2","PLAYER 2",1,"{'mt':2,'color':3875550}"
-				PuPlayer.LabelSet pBackglass,"Play3score","" & FormatNumber(Score(3),0),1,"{'mt':2,'color':3875550, 'size': 2.4 }"
+				PuPlayer.LabelSet pBackglass,"Play3score","" & FormatNumber(Score(3),0),1,"{'mt':2,'color':3875550, 'size': 3.5 }"
 				PuPlayer.LabelSet pBackglass,"Play3","PLAYER 3",1,"{'mt':2,'color':3875550}"
-				PuPlayer.LabelSet pBackglass,"Play4score","" & FormatNumber(Score(4),0),1,"{'mt':2,'color':3875550, 'size': 2.4 }"
+				PuPlayer.LabelSet pBackglass,"Play4score","" & FormatNumber(Score(4),0),1,"{'mt':2,'color':3875550, 'size': 3.5 }"
 				PuPlayer.LabelSet pBackglass,"Play4","PLAYER 4",1,"{'mt':2,'color':3875550}"
 			End If
 		End If
 		If CurrentPlayer = 2 Then
-			PuPlayer.LabelSet pBackglass,"Play2score","" & FormatNumber(Score(CurrentPlayer),0),1,"{'mt':2,'color':16777215, 'size': 2.4 }"
+			PuPlayer.LabelSet pBackglass,"Play2score","" & FormatNumber(Score(CurrentPlayer),0),1,"{'mt':2,'color':16777215, 'size': 3.5 }"
 			PuPlayer.LabelSet pBackglass,"Play2","PLAYER 2",1,"{'mt':2,'color':16777215 }"
 			If PlayersPlayingGame = 2 Then
-				PuPlayer.LabelSet pBackglass,"Play1score","" & FormatNumber(Score(1),0),1,"{'mt':2,'color':3875550, 'size': 2.4 }"
+				PuPlayer.LabelSet pBackglass,"Play1score","" & FormatNumber(Score(1),0),1,"{'mt':2,'color':3875550, 'size': 3.5 }"
 				PuPlayer.LabelSet pBackglass,"Play1","PLAYER 1",1,"{'mt':2,'color':3875550}"
 			End If
 			If PlayersPlayingGame = 3 Then
-				PuPlayer.LabelSet pBackglass,"Play1score","" & FormatNumber(Score(1),0),1,"{'mt':2,'color':3875550, 'size': 2.4 }"
+				PuPlayer.LabelSet pBackglass,"Play1score","" & FormatNumber(Score(1),0),1,"{'mt':2,'color':3875550, 'size': 3.5 }"
 				PuPlayer.LabelSet pBackglass,"Play1","PLAYER 1",1,"{'mt':2,'color':3875550}"
-				PuPlayer.LabelSet pBackglass,"Play3score","" & FormatNumber(Score(3),0),1,"{'mt':2,'color':3875550, 'size': 2.4 }"
+				PuPlayer.LabelSet pBackglass,"Play3score","" & FormatNumber(Score(3),0),1,"{'mt':2,'color':3875550, 'size': 3.5 }"
 				PuPlayer.LabelSet pBackglass,"Play3","PLAYER 3",1,"{'mt':2,'color':3875550}"
 			End If
 			If PlayersPlayingGame = 4 Then
-				PuPlayer.LabelSet pBackglass,"Play1score","" & FormatNumber(Score(1),0),1,"{'mt':2,'color':3875550, 'size': 2.4 }"
+				PuPlayer.LabelSet pBackglass,"Play1score","" & FormatNumber(Score(1),0),1,"{'mt':2,'color':3875550, 'size': 3.5 }"
 				PuPlayer.LabelSet pBackglass,"Play1","PLAYER 1",1,"{'mt':2,'color':3875550}"
-				PuPlayer.LabelSet pBackglass,"Play3score","" & FormatNumber(Score(3),0),1,"{'mt':2,'color':3875550, 'size': 2.4 }"
+				PuPlayer.LabelSet pBackglass,"Play3score","" & FormatNumber(Score(3),0),1,"{'mt':2,'color':3875550, 'size': 3.5 }"
 				PuPlayer.LabelSet pBackglass,"Play3","PLAYER 3",1,"{'mt':2,'color':3875550}"
-				PuPlayer.LabelSet pBackglass,"Play4score","" & FormatNumber(Score(4),0),1,"{'mt':2,'color':3875550, 'size': 2.4 }"
+				PuPlayer.LabelSet pBackglass,"Play4score","" & FormatNumber(Score(4),0),1,"{'mt':2,'color':3875550, 'size': 3.5 }"
 				PuPlayer.LabelSet pBackglass,"Play4","PLAYER 4",1,"{'mt':2,'color':3875550}"
 			End If
 		End If
 		If CurrentPlayer = 3 Then
-			PuPlayer.LabelSet pBackglass,"Play3score","" & FormatNumber(Score(CurrentPlayer),0),1,"{'mt':2,'color':16777215, 'size': 2.4 }"
+			PuPlayer.LabelSet pBackglass,"Play3score","" & FormatNumber(Score(CurrentPlayer),0),1,"{'mt':2,'color':16777215, 'size': 3.5 }"
 			PuPlayer.LabelSet pBackglass,"Play3","PLAYER 3",1,"{'mt':2,'color':16777215 }"
 			If PlayersPlayingGame = 3 Then
-				PuPlayer.LabelSet pBackglass,"Play1score","" & FormatNumber(Score(1),0),1,"{'mt':2,'color':3875550, 'size': 2.4 }"
+				PuPlayer.LabelSet pBackglass,"Play1score","" & FormatNumber(Score(1),0),1,"{'mt':2,'color':3875550, 'size': 3.5 }"
 				PuPlayer.LabelSet pBackglass,"Play1","PLAYER 1",1,"{'mt':2,'color':3875550}"
-				PuPlayer.LabelSet pBackglass,"Play2score","" & FormatNumber(Score(2),0),1,"{'mt':2,'color':3875550, 'size': 2.4 }"
+				PuPlayer.LabelSet pBackglass,"Play2score","" & FormatNumber(Score(2),0),1,"{'mt':2,'color':3875550, 'size': 3.5 }"
 				PuPlayer.LabelSet pBackglass,"Play2","PLAYER 2",1,"{'mt':2,'color':3875550}"
 			End If
 			If PlayersPlayingGame = 4 Then
-				PuPlayer.LabelSet pBackglass,"Play1score","" & FormatNumber(Score(1),0),1,"{'mt':2,'color':3875550, 'size': 2.4 }"
+				PuPlayer.LabelSet pBackglass,"Play1score","" & FormatNumber(Score(1),0),1,"{'mt':2,'color':3875550, 'size': 3.5 }"
 				PuPlayer.LabelSet pBackglass,"Play1","PLAYER 1",1,"{'mt':2,'color':3875550}"
-				PuPlayer.LabelSet pBackglass,"Play2score","" & FormatNumber(Score(2),0),1,"{'mt':2,'color':3875550, 'size': 2.4 }"
+				PuPlayer.LabelSet pBackglass,"Play2score","" & FormatNumber(Score(2),0),1,"{'mt':2,'color':3875550, 'size': 3.5 }"
 				PuPlayer.LabelSet pBackglass,"Play2","PLAYER 2",1,"{'mt':2,'color':3875550}"
-				PuPlayer.LabelSet pBackglass,"Play4score","" & FormatNumber(Score(4),0),1,"{'mt':2,'color':3875550, 'size': 2.4 }"
+				PuPlayer.LabelSet pBackglass,"Play4score","" & FormatNumber(Score(4),0),1,"{'mt':2,'color':3875550, 'size': 3.5 }"
 				PuPlayer.LabelSet pBackglass,"Play4","PLAYER 4",1,"{'mt':2,'color':3875550}"
 			End If
 		End If
 		If CurrentPlayer = 4 Then
-			PuPlayer.LabelSet pBackglass,"Play4score","" & FormatNumber(Score(CurrentPlayer),0),1,"{'mt':2,'color':16777215, 'size': 2.4 }"
+			PuPlayer.LabelSet pBackglass,"Play4score","" & FormatNumber(Score(CurrentPlayer),0),1,"{'mt':2,'color':16777215, 'size': 3.5 }"
 			PuPlayer.LabelSet pBackglass,"Play4","PLAYER 4",1,"{'mt':2,'color':16777215 }"
 			If PlayersPlayingGame = 4 Then
-				PuPlayer.LabelSet pBackglass,"Play1score","" & FormatNumber(Score(1),0),1,"{'mt':2,'color':3875550, 'size': 2.4 }"
+				PuPlayer.LabelSet pBackglass,"Play1score","" & FormatNumber(Score(1),0),1,"{'mt':2,'color':3875550, 'size': 3.5 }"
 				PuPlayer.LabelSet pBackglass,"Play1","PLAYER 1",1,"{'mt':2,'color':3875550}"
-				PuPlayer.LabelSet pBackglass,"Play2score","" & FormatNumber(Score(2),0),1,"{'mt':2,'color':3875550, 'size': 2.4 }"
+				PuPlayer.LabelSet pBackglass,"Play2score","" & FormatNumber(Score(2),0),1,"{'mt':2,'color':3875550, 'size': 3.5 }"
 				PuPlayer.LabelSet pBackglass,"Play2","PLAYER 2",1,"{'mt':2,'color':3875550}"
-				PuPlayer.LabelSet pBackglass,"Play3score","" & FormatNumber(Score(3),0),1,"{'mt':2,'color':3875550, 'size': 2.4 }"
+				PuPlayer.LabelSet pBackglass,"Play3score","" & FormatNumber(Score(3),0),1,"{'mt':2,'color':3875550, 'size': 3.5 }"
 				PuPlayer.LabelSet pBackglass,"Play3","PLAYER 3",1,"{'mt':2,'color':3875550}"
 			End If
 		End If
-	PuPlayer.LabelSet pBackglass,"Ball","Ball "  &  bpgcurrent - BallsRemaining(CurrentPlayer) + 1 & "/" & bpgcurrent,1,""
+	PuPlayer.LabelSet pBackglass,"Ball","Ball "  &  bpgcurrent - BallsRemaining(CurrentPlayer) + 1 & "/" & bpgcurrent,1,"{'mt':2,'size':3,'xpos':98}"
 	end Sub
 
 
@@ -6047,7 +6047,7 @@ End Sub
 		pUpdateScores
 		PuPlayer.playlistplayex pBackglass,"scene","base.mov",0,1
 		PuPlayer.SetBackground pBackglass,1
-		PuPlayer.LabelSet pBackglass,"Play1","PLAYER 1",1,"{'mt':2,'color':16777215, 'size': 1.5, 'xpos': 93.3, 'xalign': 0}"
+		PuPlayer.LabelSet pBackglass,"Play1","PLAYER 1",1,"{'mt':2,'color':16777215, 'size': 2.5, 'xpos': 93.3, 'xalign': 0}"
 			PuPlayer.LabelSet pBackglass,"notetitle","",1,""
 			PuPlayer.LabelSet pBackglass,"notecopy","",1,""
 		ruleshelperon
@@ -6705,7 +6705,7 @@ End Sub
 				jonathan.state = 1
 				jonathanon(CurrentPlayer) = 1
 				partycollected(CurrentPlayer) = partycollected(CurrentPlayer) + 1
-				PuPlayer.LabelSet pBackglass,"partyh","" & partycollected(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
+				PuPlayer.LabelSet pBackglass,"partyh","" & partycollected(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
 				checkparty
 			End If
 		End If
@@ -6748,7 +6748,7 @@ End Sub
 				dustin.state = 1
 				dustinon(CurrentPlayer) = 1
 				partycollected(CurrentPlayer) = partycollected(CurrentPlayer) + 1
-				PuPlayer.LabelSet pBackglass,"partyh","" & partycollected(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
+				PuPlayer.LabelSet pBackglass,"partyh","" & partycollected(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
 				checkparty
 			End If
 		End If
@@ -6830,7 +6830,7 @@ End Sub
 				nancy.state = 1
 				nancyon(CurrentPlayer) = 1
 				partycollected(CurrentPlayer) = partycollected(CurrentPlayer) + 1
-				PuPlayer.LabelSet pBackglass,"partyh","" & partycollected(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
+				PuPlayer.LabelSet pBackglass,"partyh","" & partycollected(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
 				checkparty
 			End If
 		End If
@@ -6920,7 +6920,7 @@ End Sub
 				joyce.state = 1
 				joyceon(CurrentPlayer) = 1
 				partycollected(CurrentPlayer) = partycollected(CurrentPlayer) + 1
-				PuPlayer.LabelSet pBackglass,"partyh","" & partycollected(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
+				PuPlayer.LabelSet pBackglass,"partyh","" & partycollected(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
 				checkparty
 			End If
 		End If
@@ -7024,7 +7024,7 @@ End Sub
 				hopper.state = 1
 				hopperon(CurrentPlayer) = 1
 				partycollected(CurrentPlayer) = partycollected(CurrentPlayer) + 1
-				PuPlayer.LabelSet pBackglass,"partyh","" & partycollected(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
+				PuPlayer.LabelSet pBackglass,"partyh","" & partycollected(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
 				checkparty
 			End If
 		End If
@@ -7188,7 +7188,7 @@ End Sub
 				elevencrew.state = 1
 				elevencrewon(CurrentPlayer) = 1
 				partycollected(CurrentPlayer) = partycollected(CurrentPlayer) + 1
-				PuPlayer.LabelSet pBackglass,"partyh","" & partycollected(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
+				PuPlayer.LabelSet pBackglass,"partyh","" & partycollected(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
 				checkparty
 			End If
 		End If
@@ -7720,7 +7720,7 @@ End Sub
 		If avsdone(CurrentPlayer) = 2 and extraball.state = 0 Then
 			extraballmode
 		End If
-		PuPlayer.LabelSet pBackglass,"mav","" & avsdone(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 94.6, 'yalign': 0}"
+		PuPlayer.LabelSet pBackglass,"mav","" & avsdone(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 94.6, 'yalign': 0}"
 	End Sub
 
 
@@ -7896,7 +7896,7 @@ End Sub
 		If avsdone(CurrentPlayer) = 2 and extraball.state = 0 Then
 			extraballmode
 		End If
-		PuPlayer.LabelSet pBackglass,"mav","" & avsdone(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 94.6, 'yalign': 0}"
+		PuPlayer.LabelSet pBackglass,"mav","" & avsdone(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 94.6, 'yalign': 0}"
 	End Sub
 
 	'****************
@@ -8067,7 +8067,7 @@ End Sub
 		If avsdone(CurrentPlayer) = 2 and extraball.state = 0 Then
 			extraballmode
 		End If
-		PuPlayer.LabelSet pBackglass,"mav","" & avsdone(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 94.6, 'yalign': 0}"
+		PuPlayer.LabelSet pBackglass,"mav","" & avsdone(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 94.6, 'yalign': 0}"
 	End Sub
 
 	'****************
@@ -8232,7 +8232,7 @@ End Sub
 		If avsdone(CurrentPlayer) = 2 and extraball.state = 0 Then
 			extraballmode
 		End If
-		PuPlayer.LabelSet pBackglass,"mav","" & avsdone(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 94.6, 'yalign': 0}"
+		PuPlayer.LabelSet pBackglass,"mav","" & avsdone(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 94.6, 'yalign': 0}"
 	End Sub
 
 
@@ -8432,7 +8432,7 @@ End Sub
 					PuPlayer.playlistplayex pBackglass,"videobarblock","",100,1
 					pNote "WHERE'S BARB","BALL 1 LOCKED"
 					vpmtimer.addtimer waittime, "BallLockBarbExit '"
-					PuPlayer.LabelSet pBackglass,"barbh","" & BallsInLock(CurrentPlayer) ,1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
+					PuPlayer.LabelSet pBackglass,"barbh","" & BallsInLock(CurrentPlayer) ,1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
 				Case 2
 					barbskip = 1
 					ResetBARBLights
@@ -8448,7 +8448,7 @@ End Sub
 					PuPlayer.playpause 4
 					PuPlayer.playlistplayex pBackglass,"videobarb","barbmdstart.mov",100,1
 					vpmtimer.addtimer waittime, "StartBarb'"
-					PuPlayer.LabelSet pBackglass,"barbh","" & BallsInLock(CurrentPlayer) ,1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
+					PuPlayer.LabelSet pBackglass,"barbh","" & BallsInLock(CurrentPlayer) ,1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
 			End Select
 				End If
 			Case 5 'badmen lock
@@ -8461,7 +8461,7 @@ End Sub
 					pNote "BAD MEN","BALL 1 LOCKED"
 					PuPlayer.playlistplayex pBackglass,"videobadmenlock","",100,1
 					DOF 405, DOFPulse   'DOF MX - Ball Locked
-					PuPlayer.LabelSet pBackglass,"badh","" & BallsInRunLock(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
+					PuPlayer.LabelSet pBackglass,"badh","" & BallsInRunLock(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
 					waittime = 1000
 					vpmtimer.addtimer waittime, "BallLockRunExit'"
 				Case 3
@@ -8473,7 +8473,7 @@ End Sub
 					PuPlayer.playlistplayex pBackglass,"videobadmenlock","",100,1
 					waittime = 1000
 					DOF 405, DOFPulse   'DOF MX - Ball Locked
-					PuPlayer.LabelSet pBackglass,"badh","" & BallsInRunLock(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
+					PuPlayer.LabelSet pBackglass,"badh","" & BallsInRunLock(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
 					vpmtimer.addtimer waittime, "BallLockRunExit '"
 				Case 2
 					badmenskip = 1
@@ -8490,7 +8490,7 @@ End Sub
 					Else
 						waittime = 11000
 					End If
-					PuPlayer.LabelSet pBackglass,"badh","" & BallsInRunLock(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
+					PuPlayer.LabelSet pBackglass,"badh","" & BallsInRunLock(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
 					vpmtimer.addtimer waittime, "StartRun'"
 			End Select
 				
@@ -8549,7 +8549,7 @@ End Sub
 					pNote "BAD MEN","BALL 1 LOCKED"
 					PuPlayer.playlistplayex pBackglass,"videobadmenlock","",100,1
 					DOF 405, DOFPulse   'DOF MX - Ball Locked
-					PuPlayer.LabelSet pBackglass,"badh","" & BallsInRunLock(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
+					PuPlayer.LabelSet pBackglass,"badh","" & BallsInRunLock(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
 					waittime = 1000
 					vpmtimer.addtimer waittime, "BallLockRunExit'"
 				Case 3
@@ -8561,7 +8561,7 @@ End Sub
 					PuPlayer.playlistplayex pBackglass,"videobadmenlock","",100,1
 					waittime = 1000
 					DOF 405, DOFPulse   'DOF MX - Ball Locked
-					PuPlayer.LabelSet pBackglass,"badh","" & BallsInRunLock(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
+					PuPlayer.LabelSet pBackglass,"badh","" & BallsInRunLock(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
 					vpmtimer.addtimer waittime, "BallLockRunExit '"
 				Case 2
 					badmenskip = 1
@@ -8578,7 +8578,7 @@ End Sub
 					Else
 						waittime = 11000
 					End If
-					PuPlayer.LabelSet pBackglass,"badh","" & BallsInRunLock(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
+					PuPlayer.LabelSet pBackglass,"badh","" & BallsInRunLock(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
 					vpmtimer.addtimer waittime, "StartRun'"
 			End Select
 			Case 11 ' drop wall
@@ -8658,7 +8658,7 @@ End Sub
 					PuPlayer.playlistplayex pBackglass,"videobarblock","",100,1
 					pNote "WHERE'S BARB","BALL 1 LOCKED"
 					vpmtimer.addtimer waittime, "BallLockBarbExit '"
-					PuPlayer.LabelSet pBackglass,"barbh","" & BallsInLock(CurrentPlayer) ,1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
+					PuPlayer.LabelSet pBackglass,"barbh","" & BallsInLock(CurrentPlayer) ,1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
 				Case 2
 					barbskip = 1
 					ResetBARBLights
@@ -8674,7 +8674,7 @@ End Sub
 					PuPlayer.playpause 4
 					PuPlayer.playlistplayex pBackglass,"videobarb","barbmdstart.mov",100,1
 					vpmtimer.addtimer waittime, "StartBarb'"
-					PuPlayer.LabelSet pBackglass,"barbh","" & BallsInLock(CurrentPlayer) ,1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
+					PuPlayer.LabelSet pBackglass,"barbh","" & BallsInLock(CurrentPlayer) ,1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
 			End Select
 				End If
 			Case 17
@@ -8713,7 +8713,7 @@ End Sub
 				will.state = 1
 				willon(CurrentPlayer) = 1
 				partycollected(CurrentPlayer) = partycollected(CurrentPlayer) + 1
-				PuPlayer.LabelSet pBackglass,"partyh","" & partycollected(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
+				PuPlayer.LabelSet pBackglass,"partyh","" & partycollected(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
 				checkparty
 			End If
 		End If
@@ -8909,7 +8909,7 @@ End Sub
 		partylock.state = 0
 		partylock1.state = 0
 		partyready(CurrentPlayer) = 0
-		PuPlayer.LabelSet pBackglass,"barbh","0",1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
+		PuPlayer.LabelSet pBackglass,"barbh","0",1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
 		bMultiBallMode = True
 		partyMultiball = True
 		AddMultiball 1
@@ -8965,14 +8965,14 @@ End Sub
 				pNote "JACKPOT","1,000,000"
 				PuPlayer.playlistplayex pCallouts,"audiojackpot","",100,1
 		chilloutthemusic
-				PuPlayer.LabelSet pBackglass,"partyj","" & partyjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
+				PuPlayer.LabelSet pBackglass,"partyj","" & partyjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
 			Case 2
 				AddScore 1000000
 				DOF 404, DOFPulse   'DOF MX - Jackpot
 				pNote "JACKPOT","1,000,000"
 				PuPlayer.playlistplayex pCallouts,"audiojackpot","",100,1
 		chilloutthemusic
-				PuPlayer.LabelSet pBackglass,"partyj","" & partyjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
+				PuPlayer.LabelSet pBackglass,"partyj","" & partyjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
 			Case 3
 				AddScore 1000000
 				DOF 404, DOFPulse   'DOF MX - Jackpot
@@ -8980,7 +8980,7 @@ End Sub
 				AddMultiball 1
 				PuPlayer.playlistplayex pCallouts,"audiojackpot","",100,1
 		chilloutthemusic
-				PuPlayer.LabelSet pBackglass,"partyj","" & partyjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
+				PuPlayer.LabelSet pBackglass,"partyj","" & partyjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
 
 			Case 4
 				AddScore 1000000
@@ -8988,7 +8988,7 @@ End Sub
 				pNote "JACKPOT","1,000,000"
 				PuPlayer.playlistplayex pCallouts,"audiojackpot","",100,1
 		chilloutthemusic
-				PuPlayer.LabelSet pBackglass,"partyj","" & partyjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
+				PuPlayer.LabelSet pBackglass,"partyj","" & partyjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
 
 			Case 5
 				AddScore 1000000
@@ -8996,7 +8996,7 @@ End Sub
 				pNote "JACKPOT","1,000,000"
 				PuPlayer.playlistplayex pCallouts,"audiojackpot","",100,1
 		chilloutthemusic
-				PuPlayer.LabelSet pBackglass,"partyj","" & partyjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
+				PuPlayer.LabelSet pBackglass,"partyj","" & partyjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
 
 			Case 6
 				AddScore 1000000
@@ -9004,7 +9004,7 @@ End Sub
 				pNote "JACKPOT","1,000,000"
 				PuPlayer.playlistplayex pCallouts,"audiojackpot","",100,1
 		chilloutthemusic
-				PuPlayer.LabelSet pBackglass,"partyj","" & partyjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
+				PuPlayer.LabelSet pBackglass,"partyj","" & partyjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
 
 				AddMultiball 1
 			Case 7
@@ -9013,19 +9013,19 @@ End Sub
 				pNote "JACKPOT","1,000,000"
 				PuPlayer.playlistplayex pCallouts,"audiojackpot","",100,1
 		chilloutthemusic
-				PuPlayer.LabelSet pBackglass,"partyj","" & partyjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
+				PuPlayer.LabelSet pBackglass,"partyj","" & partyjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
 
 			Case 8
 				AddScore 1000000
 				DOF 429, DOFPulse  ' DOF MX - Party Get SJ
 				pNote "JACKPOT","1,000,000"
-				PuPlayer.LabelSet pBackglass,"partyj","" & partyjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
+				PuPlayer.LabelSet pBackglass,"partyj","" & partyjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
 				PuPlayer.playlistplayex pCallouts,"audiocallouts","getthesuperjackpot.wav",100,1
 		chilloutthemusic
 			Case 9
 				partysuper
 				DOF 423, DOFPulse  ' DOF MX - Party Mode Complete
-				PuPlayer.LabelSet pBackglass,"partyj","" & partyjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
+				PuPlayer.LabelSet pBackglass,"partyj","" & partyjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
 
 		End Select
 	End Sub
@@ -9347,7 +9347,7 @@ End Sub
 				mikey.state = 1
 				mikeyon(CurrentPlayer) = 1
 				partycollected(CurrentPlayer) = partycollected(CurrentPlayer) + 1
-				PuPlayer.LabelSet pBackglass,"partyh","" & partycollected(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
+				PuPlayer.LabelSet pBackglass,"partyh","" & partycollected(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
 				checkparty
 			End If
 		End If
@@ -9768,7 +9768,7 @@ End Sub
 		End If
 
 		udhits(CurrentPlayer) = udhits(CurrentPlayer) + 1
-		PuPlayer.LabelSet pBackglass,"Willh","" & udhits(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 8.1, 'xalign': 1}"
+		PuPlayer.LabelSet pBackglass,"Willh","" & udhits(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 8.1, 'xalign': 1}"
 		If udfirst(CurrentPlayer) = 0 Then
 			If udhits(CurrentPlayer) > 15 Then
 				openupsidedown
@@ -10242,7 +10242,7 @@ End Sub
 
 	Sub AwardWill
 		WillHits(CurrentPlayer) = WillHits(CurrentPlayer) + 1
-		PuPlayer.LabelSet pBackglass,"Willj","" & WillHits(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0}"
+		PuPlayer.LabelSet pBackglass,"Willj","" & WillHits(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0}"
 		Select Case WillHits(CurrentPlayer)
 			Case 1
 				AddScore 1000000
@@ -10656,7 +10656,7 @@ End Sub
 					PuPlayer.playlistplayex pBackglass,"videobarblock","",100,1
 					pNote "WHERE'S BARB","BALL 1 LOCKED"
 					vpmtimer.addtimer waittime, "BallLockBarbExit '"
-					PuPlayer.LabelSet pBackglass,"barbh","" & BallsInLock(CurrentPlayer) ,1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
+					PuPlayer.LabelSet pBackglass,"barbh","" & BallsInLock(CurrentPlayer) ,1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
 				Case 2
 					barbskip = 1
 					ResetBARBLights
@@ -10672,7 +10672,7 @@ End Sub
 					PuPlayer.playpause 4
 					PuPlayer.playlistplayex pBackglass,"videobarb","barbmdstart.mov",100,1
 					vpmtimer.addtimer waittime, "StartBarb'"
-					PuPlayer.LabelSet pBackglass,"barbh","" & BallsInLock(CurrentPlayer) ,1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
+					PuPlayer.LabelSet pBackglass,"barbh","" & BallsInLock(CurrentPlayer) ,1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
 			End Select
 		End If
 	End Sub
@@ -10702,7 +10702,7 @@ End Sub
 		PuPlayer.playlistplayex pAudio,"audiomultiballs","barb.mp3",100,1
 		PuPlayer.SetLoop 7,1
 		flashflash.Enabled = True
-		PuPlayer.LabelSet pBackglass,"barbh","0",1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
+		PuPlayer.LabelSet pBackglass,"barbh","0",1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
 		BallsInLock(CurrentPlayer) = 0
 		bMultiBallMode = True
 		barbMultiball = True
@@ -10769,7 +10769,7 @@ End Sub
 
 	Sub AwardBarb
 		barbjacks(CurrentPlayer) = barbjacks(currentplayer) + 1
-		PuPlayer.LabelSet pBackglass,"barbj","" & barbjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
+		PuPlayer.LabelSet pBackglass,"barbj","" & barbjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
 		AddScore 1000000
 		pNote "JACKPOT","1,000,000"
 		PuPlayer.playlistplayex pCallouts,"audiojackpot","",100,1
@@ -10798,7 +10798,7 @@ End Sub
 		lro2.state = 2
 		lro6.state = 2
 		barbjacks(CurrentPlayer) = barbjacks(currentplayer) + 1
-		PuPlayer.LabelSet pBackglass,"barbj","" & barbjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
+		PuPlayer.LabelSet pBackglass,"barbj","" & barbjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
 		
 	End Sub
 	
@@ -10834,7 +10834,7 @@ End Sub
 		rightrampred.state = 2
 		rightrampred1.state = 2
 		barbjacks(CurrentPlayer) = barbjacks(currentplayer) + 1
-		PuPlayer.LabelSet pBackglass,"barbj","" & barbjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
+		PuPlayer.LabelSet pBackglass,"barbj","" & barbjacks(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0, 'ypos': 81.5, 'yalign': 0}"
 		
 	End Sub
 
@@ -10995,7 +10995,7 @@ End Sub
 				lucas.state = 1
 				lucason(CurrentPlayer) = 1
 				partycollected(CurrentPlayer) = partycollected(CurrentPlayer) + 1
-				PuPlayer.LabelSet pBackglass,"partyh","" & partycollected(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
+				PuPlayer.LabelSet pBackglass,"partyh","" & partycollected(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 88, 'yalign': 0}"
 				checkparty
 			End If
 		End If
@@ -11090,7 +11090,7 @@ End Sub
 					pNote "BAD MEN","BALL 1 LOCKED"
 					PuPlayer.playlistplayex pBackglass,"videobadmenlock","",100,1
 					DOF 405, DOFPulse   'DOF MX - Ball Locked
-					PuPlayer.LabelSet pBackglass,"badh","" & BallsInRunLock(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
+					PuPlayer.LabelSet pBackglass,"badh","" & BallsInRunLock(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
 					waittime = 1000
 					vpmtimer.addtimer waittime, "BallLockRunExit'"
 				Case 3
@@ -11102,7 +11102,7 @@ End Sub
 					PuPlayer.playlistplayex pBackglass,"videobadmenlock","",100,1
 					waittime = 1000
 					DOF 405, DOFPulse   'DOF MX - Ball Locked
-					PuPlayer.LabelSet pBackglass,"badh","" & BallsInRunLock(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
+					PuPlayer.LabelSet pBackglass,"badh","" & BallsInRunLock(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
 					vpmtimer.addtimer waittime, "BallLockRunExit '"
 				Case 2
 					badmenskip = 1
@@ -11119,7 +11119,7 @@ End Sub
 					Else
 						waittime = 11000
 					End If
-					PuPlayer.LabelSet pBackglass,"badh","" & BallsInRunLock(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 7.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
+					PuPlayer.LabelSet pBackglass,"badh","" & BallsInRunLock(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 7.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
 					vpmtimer.addtimer waittime, "StartRun'"
 			End Select
 		End If
@@ -11251,7 +11251,7 @@ End Sub
 			Case 1
 				AddScore 2000000
 				pNote "JACKPOT","2,000,000"
-				PuPlayer.LabelSet pBackglass,"badj","" & RunHits(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
+				PuPlayer.LabelSet pBackglass,"badj","" & RunHits(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
 				PlaySound "steve"
 				DOF 404, DOFPulse   'DOF MX - Jackpot
 				PuPlayer.playlistplayex pCallouts,"audiojackpot","",100,1
@@ -11259,7 +11259,7 @@ End Sub
 			Case 2
 				AddScore 2000000
 				pNote "JACKPOT","2,000,000"
-				PuPlayer.LabelSet pBackglass,"badj","" & RunHits(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
+				PuPlayer.LabelSet pBackglass,"badj","" & RunHits(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
 				PlaySound "steve"
 				DOF 404, DOFPulse   'DOF MX - Jackpot
 				PuPlayer.playlistplayex pCallouts,"audiojackpot","",100,1
@@ -11267,7 +11267,7 @@ End Sub
 			Case 3
 				AddScore 2000000
 				pNote "JACKPOT","2,000,000"
-				PuPlayer.LabelSet pBackglass,"badj","" & RunHits(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
+				PuPlayer.LabelSet pBackglass,"badj","" & RunHits(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
 				PlaySound "steve"
 				DOF 404, DOFPulse   'DOF MX - Jackpot
 				PuPlayer.playlistplayex pCallouts,"audiojackpot","",100,1
@@ -11275,7 +11275,7 @@ End Sub
 			Case 4
 				AddScore 2000000
 				pNote "JACKPOT","2,000,000"
-				PuPlayer.LabelSet pBackglass,"badj","" & RunHits(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
+				PuPlayer.LabelSet pBackglass,"badj","" & RunHits(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
 				PlaySound "steve"
 				DOF 404, DOFPulse   'DOF MX - Jackpot
 				PuPlayer.playlistplayex pCallouts,"audiojackpot","",100,1
@@ -11283,7 +11283,7 @@ End Sub
 			Case 5
 				AddScore 2000000
 				pNote "JACKPOT","2,000,000"
-				PuPlayer.LabelSet pBackglass,"badj","" & RunHits(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
+				PuPlayer.LabelSet pBackglass,"badj","" & RunHits(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
 				PlaySound "steve"
 				DOF 430, DOFPulse  ' DOF MX - Bad Men Get SJ
 				PuPlayer.playlistplayex pCallouts,"audiojackpot","",100,1
@@ -11324,7 +11324,7 @@ End Sub
 		PlaySound "steve"
 		DOF 424, DOFPulse  ' DOF MX - Bad Men Mode Complete
 		RunHits(CurrentPlayer) = 0
-		PuPlayer.LabelSet pBackglass,"badj","" & RunHits(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 2, 'xpos': 12.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
+		PuPlayer.LabelSet pBackglass,"badj","" & RunHits(CurrentPlayer),1,"{'mt':2,'color':16777215, 'size': 3, 'xpos': 12.7, 'xalign': 0, 'ypos': 74.6, 'yalign': 0}"
 		lm2.State = 1
 		lm8.State = 1
 		lc1.State = 0
