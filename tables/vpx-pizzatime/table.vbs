@@ -5785,8 +5785,8 @@ debug.print "Super Skillshot Enabled"
 
 			PlayModeMusic "Sonny & The Sunsets - Green Blood.mp3"
 
-			PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 2, ""FN"":16, ""EX"": ""MiniGame\\PUPShooter1.exe"", ""WT"": ""PUPShooter"", ""RS"":1 , ""TO"":15 , ""WZ"":0 , ""SH"": 1 , ""FT"":""Visual Pinball Player"" }" 
-			AlwaysOnTop "PUPShooter1", ".", True
+			'PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 2, ""FN"":16, ""EX"": ""MiniGame\\PUPShooter1.exe"", ""WT"": ""PUPShooter"", ""RS"":1 , ""TO"":15 , ""WZ"":0 , ""SH"": 1 , ""FT"":""Visual Pinball Player"" }" 
+			'AlwaysOnTop "PUPShooter1", ".", True
 			'PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 2, ""FN"":3, ""OT"": 0 }"      'this will hide overlay if applicable
 			PuPGameTimeout=-3    'check for timeout  every 500 ms
 			PuPGameRunning=true	
@@ -5867,19 +5867,20 @@ debug.print "Super Skillshot Enabled"
 
 		Sub PuPGameTimer_Timer()    
 
-			PuPGameTimeout=PuPGameTimeout+1
-			if PuPGameTimeout = 3 then 
+			PuPGameTimeout=PuPGameTimeout+20
+			'if PuPGameTimeout = 3 then 
 				'WshShell.AppActivate "PUPShooter"
-				WshShell.AppActivate "Visual Pinball Player"
-			End if
+			' 	WshShell.AppActivate "Visual Pinball Player"
+			'End if
 			PuPGameInfo= PuPlayer.GameUpdate("PUPShooter", 0 , 0 , "")   '0=game over, 1=game running
 			'CHECK GAME OVER
 			if PuPGameInfo=0 AND PuPGameTimeOut>12 Then  'gameover if more than 5 seconds passed
 			   PuPGameTimer.enabled=false 
 debug.print "GAME STOPPED " & PuPGameInfo & " " & PuPGameTimeOut
  			   PupGameRunning=False
-			   PuPGameScore= PuPlayer.GameUpdate("PUPShooter", 3 , 0 , "\PUPShooter1\gameover.txt")   'grab score from minigame   3=gms 6=godot           
+			   'PuPGameScore= PuPlayer.GameUpdate("PUPShooter", 3 , 0 , "\PUPShooter1\gameover.txt")   'grab score from minigame   3=gms 6=godot           
 			   'msgbox PuPGameScore  'DO something with the score if its over 0!!!
+			   PUPGameScore = 0
 			   PuPMiniGameEnd(PuPGameScore)  
 			End If 
 		End Sub
