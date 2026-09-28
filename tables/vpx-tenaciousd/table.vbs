@@ -277,7 +277,7 @@ Sub Table1_Init
 		.ShowFrame=0
 		.ShowTitle=0
         .hidden = 1
-        .Games("fpwr2_l2").Settings.Value("sound") = 1 'set to 0 if you want to mute the rom sounds of Firepower II
+        .Games("fpwr2_l2").Settings.Value("sound") = 0 'set to 0 if you want to mute the rom sounds of Firepower II
 		If UseFlexDMD Then ExternalEnabled = .Games("fpwr2_l2").Settings.Value("showpindmd")
 		If UseFlexDMD Then .Games("fpwr2_l2").Settings.Value("showpindmd") = 0
          On Error Resume Next
