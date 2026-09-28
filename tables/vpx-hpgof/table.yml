@@ -1,0 +1,15 @@
+---
+fps: 60
+pupArchiveFormat: "zip"
+pupArchiveRoot: "hpgof"
+pupChecksum: "A669723F39BE28F2BBBFF86EFA6DE97F"
+pupNotes: "unpack hpgof52.rar, use hpgof46.zip"
+pupRequired: true
+pupVersion: "1.0"
+pupVPSId: "CXhlqFmM1F"
+tableVPSId: "fshAx0OA"
+testers:
+  - "Wraith"
+vpxChecksum: "E8595CFA1CD7B67E33815BE4EE512209"
+vpxMagic: "aWFtdXB0b25vZ29vZA=="
+vpxVPSId: "7X51T4Zn61"

@@ -47,7 +47,7 @@ Randomize
 ' X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X 
 
 	'orbital scoreboard
-	Dim osbactive:osbactive = 0 'set to 0 for off, 1 for only player 1 to be sent, 2 for all scores to be sent.
+	Dim osbactive:osbactive = 2 'set to 0 for off, 1 for only player 1 to be sent, 2 for all scores to be sent.
 	Dim osbid:osbid ="" ' your orbital scoreboard login name
 	Dim osbkey:osbkey="" ' your orbital scoreboard api key
 	Dim osbdefinit:osbdefinit = "" ' your default initials to use 
@@ -64,13 +64,14 @@ Randomize
 	Dim eyeFollowS : eyeFollowS=8  'ms timer interval of eye follow speed try 5-20 range
 	dim nofunmode:nofunmode = 0 ' switch to 1 if you hate fun or just have a low end pc. it'll turn off the animations
 	dim notinus : notinus = 0 ' set this if you're not from the USA and it'll make sure your backglass numbers have commas
+	dim minigamequickstart : minigamequickstart = True ' True: hold both flippers for 2 seconds during a game to start the PuP mini-game. False to turn off
 
 
 '**************************
 '   PinUp Player USER Config
 '**************************
     dim usePuPDMD       : usePuPDMD=true       ' set to false to not use PuPDMD for a DMD (different that BG scoring)
-	dim PuPDMDDriverType: PuPDMDDriverType=0   ' 0=LCD DMD, 1=RealDMD 2=FULLDMD (large/High LCD)
+	dim PuPDMDDriverType: PuPDMDDriverType=2   ' 0=LCD DMD, 1=RealDMD 2=FULLDMD (large/High LCD)
 	dim useRealDMDScale : useRealDMDScale=0    ' 0 or 1 for RealDMD scaling.  Choose which one you prefer.
 	dim useDMDVideos    : useDMDVideos=true   ' true or false to use DMD splash videos.
 	Dim pGameName       : pGameName="hpgof"    'pupvideos foldername, probably set to cGameName in realworld
@@ -79,7 +80,7 @@ Randomize
 	dim dmdver : dmdver = PuPDMDDriverType
 	if dmdver = 2 Then
 	Else
-		dmdver = 1
+		dmdver = 1 
 	end if
 
 	dim dragonmod: dragonmod=1
@@ -146,7 +147,8 @@ Randomize
 ' 	
 
 	'Constructions
-	Const BallSize = 50
+	Const BallSize = 50				 'Ball diameter in VPX units; must be 50
+    Const BallMass = 1				  'Ball mass must be 1
 	Const MaxPlayers = 4
 	Const BallSaverTime = 15
 	Const MaxMultiplier = 6 
@@ -213,9 +215,6 @@ Randomize
 	Dim EnableBallControl
 	EnableBallControl = false 'Change to true to enable manual ball control (or press C in-game) via the arrow keys and B (boost movement) keys
 
-	Sub table1_Exit
-		Controller.stop
-	End Sub
 
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ' X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  
@@ -302,16 +301,33 @@ Sub LoadController(TableType)
 	B2SOnALT = False
 	tempC = 0
 	on error resume next
-	tempC = 0 'objShell.RegRead(directory & "ForceDisableB2S")
-	DOFeffects(1)=2 'objShell.RegRead(directory & "DOFContactors")
-	DOFeffects(2)=2 'objShell.RegRead(directory & "DOFKnocker")
-	DOFeffects(3)=2 'objShell.RegRead(directory & "DOFChimes")
-	DOFeffects(4)=2 'objShell.RegRead(directory & "DOFBell")
-	DOFeffects(5)=2 'objShell.RegRead(directory & "DOFGear")
-	DOFeffects(6)=2 'objShell.RegRead(directory & "DOFShaker")
-	DOFeffects(7)=2 'objShell.RegRead(directory & "DOFFlippers")
-	DOFeffects(8)=2 'objShell.RegRead(directory & "DOFTargets")
-	DOFeffects(9)=2 'objShell.RegRead(directory & "DOFDropTargets")
+	Set objShell = CreateObject("WScript.Shell")
+	objShell.RegRead(directory & "ForceDisableB2S")
+	If Err.number <> 0 Then
+		PopupMessage = "This latest version of Controller.vbs stores its settings in the registry. To adjust the values, you must use VP 10.2 (or newer) and setup your configuration in the DOF section of the -Keys, Nudge and DOF- dialog of Visual Pinball."
+		objShell.RegWrite directory & "ForceDisableB2S",0, "REG_DWORD"
+		objShell.RegWrite directory & "DOFContactors",2, "REG_DWORD"
+		objShell.RegWrite directory & "DOFKnocker",2, "REG_DWORD"
+		objShell.RegWrite directory & "DOFChimes",2, "REG_DWORD"
+		objShell.RegWrite directory & "DOFBell",2, "REG_DWORD"
+		objShell.RegWrite directory & "DOFGear",2, "REG_DWORD"
+		objShell.RegWrite directory & "DOFShaker",2, "REG_DWORD"
+		objShell.RegWrite directory & "DOFFlippers",2, "REG_DWORD"
+		objShell.RegWrite directory & "DOFTargets",2, "REG_DWORD"
+		objShell.RegWrite directory & "DOFDropTargets",2, "REG_DWORD"
+		MsgBox PopupMessage
+	End If
+	tempC = objShell.RegRead(directory & "ForceDisableB2S")
+	DOFeffects(1)=objShell.RegRead(directory & "DOFContactors")
+	DOFeffects(2)=objShell.RegRead(directory & "DOFKnocker")
+	DOFeffects(3)=objShell.RegRead(directory & "DOFChimes")
+	DOFeffects(4)=objShell.RegRead(directory & "DOFBell")
+	DOFeffects(5)=objShell.RegRead(directory & "DOFGear")
+	DOFeffects(6)=objShell.RegRead(directory & "DOFShaker")
+	DOFeffects(7)=objShell.RegRead(directory & "DOFFlippers")
+	DOFeffects(8)=objShell.RegRead(directory & "DOFTargets")
+	DOFeffects(9)=objShell.RegRead(directory & "DOFDropTargets")
+	Set objShell = nothing
 
 	If TableType = "PROC" or TableType = "VPMALT" Then
 		If TableType = "PROC" Then
@@ -462,12 +478,12 @@ End Sub
 		bJustStarted = True
 		GiOff
 		'PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 2, ""FN"":4, ""FS"":1 }"
+		StartAttractMode
 	    if usePUPDMD Then 
 			PUPInit
-		Else 
+			Else 
 			pupDMDupdate.enabled=0  'init pupdmd driver
         End if
-		StartAttractMode
 	End Sub
 
 
@@ -527,14 +543,18 @@ End Sub
 					if PuPGameRunning Then
 						PuPGameInfo= PuPlayer.GameUpdate("PupMiniGame", 1 , 83 , "")  'w
 					Else
-						LeftFlipper.RotateToEnd:LeftFlipper1.RotateToEnd
+						FlipperActivate LeftFlipper, LFPress
+                        FlipperActivate LeftFlipper1, LFPress1
+                        LF.Fire
+                        LeftFlipper1.RotateToEnd
 						if confus = 1 Then
-							RightFlipper.RotateToEnd
+					    FlipperActivate RightFlipper, RFPress
+                        RF.Fire
 						end if
 						ldown = 1
 						checkdown
 						movelanesleft
-						PlaySound SoundFX("flipup2",DOFFlippers), 0, .67, AudioPan(LeftFlipper), 0.05,0,0,1,AudioFade(LeftFlipper)
+						PlaySound SoundFX("flipup",DOFFlippers), 0, .67, AudioPan(LeftFlipper), 0.05,0,0,1,AudioFade(LeftFlipper)
 						DOF 101, DOFOn
 					end if
 				End If
@@ -545,9 +565,13 @@ End Sub
 					if PuPGameRunning Then
 						PuPGameInfo= PuPlayer.GameUpdate("PupMiniGame", 1 , 87 , "")  'w
 					Else
-						RightFlipper.RotateToEnd
+						FlipperActivate RightFlipper, RFPress
+                        RF.Fire
 						if confus = 1 Then
-							LeftFlipper.RotateToEnd:LeftFlipper1.RotateToEnd
+					    FlipperActivate LeftFlipper, LFPress
+                        FlipperActivate LeftFlipper1, LFPress1
+                        LF.Fire
+                        LeftFlipper1.RotateToEnd
 						end if
 						rdown = 1
 						checkdown
@@ -574,28 +598,28 @@ End Sub
 							PlayersPlayingGame = PlayersPlayingGame + 1
 							If PlayersPlayingGame = 1 Then
 							playmedia "player1.wav","audiocallouts",pCallouts,"",1000,"",1,5  '(name,playlist,channel,cinematic,length,nextitem,audiolevel,priority)
-							'pupDMDDisplay "-","Player^One",dmdnote,3,0,10
+							pupDMDDisplay "-","Player^One",dmdnote,3,0,10
 					End If
 
 					If PlayersPlayingGame = 2 Then
 						PuPlayer.LabelSet pBackglass,"Play2","PLAYER 2",1,"{'mt':2}"
 						pUpdateScores
 						playmedia "player2.wav","audiocallouts",pCallouts,"",1000,"",1,5  '(name,playlist,channel,cinematic,length,nextitem,audiolevel,priority)
-						'pupDMDDisplay "-","Player^Two",dmdnote,3,0,10
+						pupDMDDisplay "-","Player^Two",dmdnote,3,0,10
 					End If
 
 					If PlayersPlayingGame = 3 Then
 						PuPlayer.LabelSet pBackglass,"Play3","PLAYER 3",1,"{'mt':2}"
 						pUpdateScores
 						playmedia "player3.wav","audiocallouts",pCallouts,"",1000,"",1,5  '(name,playlist,channel,cinematic,length,nextitem,audiolevel,priority)
-						'pupDMDDisplay "-","Player^Three",dmdnote,3,0,10
+						pupDMDDisplay "-","Player^Three",dmdnote,3,0,10
 					End If
 
 					If PlayersPlayingGame = 4 Then
 						PuPlayer.LabelSet pBackglass,"Play4","PLAYER 4",1,"{'mt':2}"
 						pUpdateScores	
 						playmedia "player4.wav","audiocallouts",pCallouts,"",1000,"",1,5  '(name,playlist,channel,cinematic,length,nextitem,audiolevel,priority)
-						'pupDMDDisplay "-","Player^Four",dmdnote,3,0,10
+						pupDMDDisplay "-","Player^Four",dmdnote,3,0,10
 					End If
 
 					TotalGamesPlayed = TotalGamesPlayed + 1
@@ -662,8 +686,11 @@ End Sub
 					PuPGameInfo= PuPlayer.GameUpdate("PupMiniGame", 2 , 83 , "")  'w
 				else
 					ldown = 0
-					LeftFlipper.RotateToStart:LeftFlipper1.RotateToStart
+				        FlipperDeActivate LeftFlipper, LFPress
+                        FlipperDeActivate LeftFlipper1, LFPress1
+                        LeftFlipper.RotateToStart:LeftFlipper1.RotateToStart
 					if confus = 1 Then
+                        FlipperDeActivate RightFlipper, RFPress
 						RightFlipper.RotateToStart
 					end if
 					DOF 101, DOFOff
@@ -675,8 +702,11 @@ End Sub
 					PuPGameInfo= PuPlayer.GameUpdate("PupMiniGame", 2 , 87 , "")  'w
 				Else
 					rdown = 0
+                    FlipperDeActivate RightFlipper, RFPress
 					RightFlipper.RotateToStart
 					if confus = 1 Then
+                    FlipperDeActivate LeftFlipper, LFPress
+                    FlipperDeActivate LeftFlipper1, LFPress1
 					LeftFlipper.RotateToStart:LeftFlipper1.RotateToStart
 					end if
 					DOF 102, DOFOff
@@ -690,7 +720,54 @@ End Sub
 
 	End Sub
 
+Dim SidewallChoice: SidewallChoice = 0
+Dim RailChoice: RailChoice = True
+'//////////////F12 Menu//////////////
+' Called when options are tweaked by the player. 
+' - 0: game has started, good time to load options and adjust accordingly
+' - 1: an option has changed
+' - 2: options have been reseted
+' - 3: player closed the tweak UI, good time to update staticly prerendered parts
+' Table1.Option arguments are: 
+' - option name, minimum value, maximum value, step between valid values, default value, unit (0=None, 1=Percent), an optional arry of literal strings
+Dim dspTriggered : dspTriggered = False
+Sub Table1_OptionEvent(ByVal eventId)
+	If eventId = 1 And Not dspTriggered Then dspTriggered = True : DisableStaticPreRendering = True : End If
 
+    	RailChoice = Table1.Option("Rails Visible", 0, 1, 1, 1, 0, Array("False", "True (Default)"))
+	SetRails RailChoice
+
+	SidewallChoice = Table1.Option("Sidewall Art", 0, 2, 1, 0, 0, Array("Art1", "Art2", "Art3"))
+	SetSidewall SidewallChoice
+        If eventId = 3 And dspTriggered Then dspTriggered = False : DisableStaticPreRendering = False : End If
+	End Sub
+
+Sub SetRails(Opt)
+	Select Case Opt
+		Case 0:
+			Ramp15.Visible = 0
+			Ramp16.Visible = 0
+			'Primitive13.visible= 0
+		Case 1:
+			Ramp15.Visible = 1
+			Ramp16.Visible = 1
+			'Primitive13.visible=1
+	End Select
+End Sub
+
+Sub SetSidewall(Opt)
+	Select Case Opt
+		Case 0:
+			SideWallC.visible = 1
+			SideWallC.Image = "Sidewalls HP"
+		Case 1:
+			SideWallC.visible = 1
+			SideWallC.Image = "Sidewalls HP2"
+		Case 2:
+			SideWallC.visible = 1
+			SideWallC.Image = "Sidewalls HP3"
+	End Select
+End Sub
 
 
 
@@ -832,7 +909,8 @@ End Sub
 			LeftSlingshot.Disabled = 1
 			RightSlingshot.Disabled = 1
 			'PuPlayer.playresume 4
-			'playbgaudio
+		playbgaudio
+			playclear pAudio
 			playclear pMusic
 		Else
 			GiOn
@@ -1034,6 +1112,7 @@ end sub
 	'**********************
 
 	Sub OnBallBallCollision(ball1, ball2, velocity)
+        FlipperCradleCollision ball1, ball2, velocity
 		PlaySound("fx_collide"), 0, Csng(velocity) ^2 / 2000, AudioPan(ball1), 0, Pitch(ball1), 0, 0, AudioFade(ball1)
 	End Sub
 
@@ -1049,6 +1128,10 @@ end sub
 
 	Sub Pins_Hit (idx)
 		PlaySound "pinhit_low", 0, Vol(ActiveBall), AudioPan(ActiveBall), 0, Pitch(ActiveBall), 0, 0, AudioFade(ActiveBall)
+	End Sub
+    
+    Sub Wood_Hit (idx)
+		PlaySound "WoodHit", 0, Vol(ActiveBall), AudioPan(ActiveBall), 0, Pitch(ActiveBall), 0, 0, AudioFade(ActiveBall)
 	End Sub
 
 	Sub triggers_Hit (idx)
@@ -1112,10 +1195,14 @@ end sub
 	End Sub
 
 	Sub LeftFlipper_Collide(parm)
+        CheckLiveCatch ActiveBall, LeftFlipper, LFCount, parm
+	    LF.ReProcessBalls ActiveBall
 		RandomSoundFlipper()
 	End Sub
 
 	Sub RightFlipper_Collide(parm)
+        CheckLiveCatch ActiveBall, RightFlipper, RFCount, parm
+	    RF.ReProcessBalls ActiveBall
 		RandomSoundFlipper()
 	End Sub
 
@@ -1163,12 +1250,7 @@ end sub
 		end if 
 	End Sub
 
-	Sub RandomBump(voladj, freq)
-		'debug.print "randombump"
-		dim BumpSnd:BumpSnd= "rampbump" & CStr(Int(Rnd*7)+1)
-		PlaySound BumpSnd, 0, Vol(ActiveBall)*voladj, Pan(ActiveBall), 0, freq, 0, 1, AudioFade(ActiveBall)
-	End Sub
-
+	
 	' Requires rampbump1 to 7 in Sound Manager
 	Sub RandomBump(voladj, freq)
 		dim BumpSnd:BumpSnd= "rampbump" & CStr(Int(Rnd*7)+1)
@@ -1241,7 +1323,7 @@ end sub
 		closemaze
 		playclear pMusic
 		pNote "GAME OVER","PLAY AGAIN"
-		'pupDMDDisplay "-","Game Over^Play Again",dmdnote,3,0,10
+		pupDMDDisplay "-","Game Over^Play Again",dmdnote,3,0,10
 			PuPlayer.LabelSet pBackglass,"HighScore","",1,""
 			PuPlayer.LabelSet pBackglass,"HighScoreL1","",1,""
 			PuPlayer.LabelSet pBackglass,"HighScoreL2","",1,""
@@ -1259,7 +1341,7 @@ end sub
 		'PuPlayer.playlistplayex pBackglass,"videogo","",vsvol,1
 		gameovervids
 		pDMDGameOver
-		'pupDMDDisplay "attract","","intro" & dmdver &".mp4",71,0,1
+		pupDMDDisplay "attract","","intro" & dmdver &".mp4",71,0,1
 		'StartAttractMode
 		introposition = 0
 		bGameInPLay = False
@@ -1284,7 +1366,7 @@ end sub
 		select case govdnum
 			case 1
 				playmedia "dark and difficult times lie ahead.mp4","videogo",pBackglass,"",0,"",1,9
-				vpmtimer.addtimer 26000, "StartAttractMode() '"
+				vpmtimer.addtimer 14000, "StartAttractMode() '"
 			case 2
 				playmedia "everythings gonna change now isnt it.mp4","videogo",pBackglass,"",0,"",1,9
 				vpmtimer.addtimer 14000, "StartAttractMode() '"
@@ -1319,10 +1401,11 @@ end sub
 	Const pBackglass=2
 	Const pPlayfield=3
 	Const pMusic=4
-	Const pAudio=6
-	Const pAudio2=7
+	Const pAudio=7
 	Const pCallouts=8
 	Const pOvervid=14
+	Const pGame=15
+
 
 	if HasPuP Then
 	on error resume next
@@ -1723,7 +1806,7 @@ end sub
 	'PUPDMD Layout for each Table1
 	'Setup Pages.  Note if you use fonts they must be in FONTS folder of the pupVideos\tablename\FONTS  "case sensitive exact naming fonts!"
 	'*****************************************************************
-	dim dmdnote:dmdnote="1-shortnote.mp4"
+	dim dmdnote:dmdnote="2-shortnote.mp4"
 
 	Sub pSetPageLayouts
 
@@ -1792,7 +1875,7 @@ end sub
 			PuPlayer.LabelNew pDMD,"Splash7c",dmdfixed,40,33023,0,1,0,0,50,7,0
 
 			
-			'pDMDStartBackLoop "DMDSplash","intro1.mp4"
+			pDMDStartBackLoop "DMDSplash","intro1.mp4"
 			dmdnote="1-shortnote.mp4"
 
 	END IF  ' use PuPDMDDriver
@@ -1821,7 +1904,7 @@ end sub
 			PuPlayer.LabelNew pDMD,"Splash3b",dmdalt,30,2697513,0,1,0,0,30,3,0
 			PuPlayer.LabelNew pDMD,"Splash3c",dmdalt,25,2697513,0,1,0,0,57,3,0
 
-		Debug.Print "Splash4a"
+
 		'Page 4 (default Text 2 Line)
 			PuPlayer.LabelNew pDMD,"Splash4a",dmddef,20,2697513,0,1,0,0,20,4,0
 			PuPlayer.LabelNew pDMD,"Splash4b",dmddef,15,2697513,0,1,2,0,65,4,0
@@ -1841,7 +1924,7 @@ end sub
 			PuPlayer.LabelNew pDMD,"Splash7b",dmdfixed,40,2697513,0,1,0,0,20,7,0
 			PuPlayer.LabelNew pDMD,"Splash7c",dmdfixed,40,2697513,0,1,0,0,50,7,0
 
-			'pDMDStartBackLoop "DMDSplash","intro1.mp4"
+			pDMDStartBackLoop "DMDSplash","intro1.mp4"
 			dmdnote="1-shortnote.mp4"
 
 	END IF  ' use PuPDMDDriver
@@ -1913,7 +1996,7 @@ end sub
 
 	Sub pDMDGameOver
 	pAttractStart
-	'pDMDStartBackLoop "DMDSplash","intro" & dmdver &".mp4"
+	pDMDStartBackLoop "DMDSplash","intro" & dmdver &".mp4"
 	end Sub
 
 	Sub pAttractStart
@@ -1929,8 +2012,8 @@ end sub
 	end Sub
 
 	Sub pDMDStartGame
-		'pDMDStartBackLoop "DMDSplash",dmdver & "-background.mp4"
-		'pupDMDDisplay "attract","",dmdver & "-background.mp4",71,0,1
+		pDMDStartBackLoop "DMDSplash",dmdver & "-background.mp4"
+		pupDMDDisplay "attract","",dmdver & "-background.mp4",71,0,1
 	 'pupDMDDisplay "attract","",dmdver & "-background.mp4",3,0,20
 	 'PuPlayer.SetLoop 3,1  '3????
 	 pInAttract=false  ' will startup attract after startup video
@@ -1945,8 +2028,7 @@ end sub
 
 	  Select Case pCurAttractPos
 
-	  Case 1 
-		'pupDMDDisplay "attract","","intro" & dmdver &".mp4",71,0,1
+	  Case 1 pupDMDDisplay "attract","","intro" & dmdver &".mp4",71,0,1
 	'  Case 2 pupDMDDisplay "attract","Attract^2","",3,0,10
 	'  Case 3 pupDMDDisplay "attract","Attract^3","",2,0,10
 	'  Case 4 pupDMDDisplay "attract","Attract^4","",3,1,10
@@ -2194,17 +2276,16 @@ end sub
 		hsCurrentDigit = 1
 		'PuPlayer.playlistplayex pCallouts,"audiocallouts","yougotahighscore.mp3",vovol,1
 		playmedia "yougotahighscore.mp3","audiocallouts",pCallouts,"",2000,"",1,1  '(name,playlist,channel,cinematic,length,nextitem,audiolevel,priority)
-		'pupDMDDisplay "-","You Got a^High Score",dmdnote,3,0,10
+		pupDMDDisplay "-","You Got a^High Score",dmdnote,3,0,10
 		'chilloutthemusic
 		'PuPlayer.playpause 4
 		playclear pMusic
 		'playmedia "hs.mp3","audiomultiballs",pAudio,"cineon",10000,"",1,0,1  // (name,playlist,channel,cinematic,length,nextitem,audiolevel,priority))
-		playmedia "hs.mp3","audiomultiballs",pAudio,"",0,"",1,1
+		playmedia "hs.mp3","audiomultiballs",pAudio,0,0,"",1,1
 
 		'playmedia "hs.mp3","audiomultiballs",pAudio,"cineon",10000,"",1,0,1  // (name,playlist,channel,cinematic,length,nextitem,audiolevel,priority)
-		'playmedia "highscore.mp4","videoscenes",pBackglass,0,0,"",1,2
-		PuPEvent 800
-		'PuPlayer.SetLoop 2,1
+		playmedia "highscore.mp4","videoscenes",pBackglass,0,0,"",1,2
+		PuPlayer.SetLoop 2,1
 		Playsound "knocker"
 		HighScoreDisplayName()
 		HighScorelabels	
@@ -2488,6 +2569,8 @@ end sub
 		PuPlayer.SetLoop 2,0
 		'PuPlayer.playresume 4
 		playbgaudio
+		playclear pAudio
+		PuPlayer.SetLoop 7,0
 		hsEnteredName = hsEnteredDigits(1) & hsEnteredDigits(2) & hsEnteredDigits(3)
 		HighScoreName(3) = hsEnteredName
 		checkorder
@@ -2526,7 +2609,7 @@ end sub
 
 	Sub StartAttractMode()
 		pNote "Game Set","Start Anytime"
-		'pupDMDDisplay "-","Game Set^Start Anytime",dmdnote,3,0,10
+		pupDMDDisplay "-","Game Set^Start Anytime",dmdnote,3,0,10
 		cineon =0
 		if bBallSaverActive = True then exit sub
 		'PuPlayer.playpause 4
@@ -3352,20 +3435,20 @@ end sub
 		If not Flasherflash1.TimerEnabled Then 
 			Flasherflash1.TimerEnabled = True
 			Flasherflash1.visible = 1
-			Flasherlit1.visible = 1
+			Flasherlit1.visible = 0
 		End If
 		flashx3 = FlashLevel1 * FlashLevel1 * FlashLevel1
 		Flasherflash1.opacity = 1500 * flashx3
-		Flasherlit1.BlendDisableLighting = 10 * flashx3
-		Flasherbase1.BlendDisableLighting =  flashx3
+		'Flasherlit1.BlendDisableLighting = 10 * flashx3
+		'Flasherbase1.BlendDisableLighting =  flashx3
 		Flasherlight1.IntensityScale = flashx3
 		matdim = Round(10 * FlashLevel1)
-		Flasherlit1.material = "domelit" & matdim
+		'Flasherlit1.material = "domelit" & matdim
 		FlashLevel1 = FlashLevel1 * 0.9 - 0.01
 		If FlashLevel1 < 0.15 Then
 			Flasherlit1.visible = 0
 		Else
-			Flasherlit1.visible = 1
+			'Flasherlit1.visible = 1
 			DOF 340, DOFPulse 'Green Flasher
 		end If
 		If FlashLevel1 < 0 Then
@@ -3381,20 +3464,20 @@ end sub
 		If not Flasherflash2.TimerEnabled Then 
 			Flasherflash2.TimerEnabled = True
 			Flasherflash2.visible = 1
-			Flasherlit2.visible = 1
+			Flasherlit2.visible = 0
 		End If
 		flashx3 = FlashLevel2 * FlashLevel2 * FlashLevel2
 		Flasherflash2.opacity = 1500 * flashx3
-		Flasherlit2.BlendDisableLighting = 10 * flashx3
-		Flasherbase2.BlendDisableLighting =  flashx3
+		'Flasherlit2.BlendDisableLighting = 1 * flashx3
+		'Flasherbase2.BlendDisableLighting =  flashx3
 		Flasherlight2.IntensityScale = flashx3
 		matdim = Round(10 * FlashLevel2)
-		Flasherlit2.material = "domelit" & matdim
+		'Flasherlit2.material = "domelit" & matdim
 		FlashLevel2 = FlashLevel2 * 0.9 - 0.01
 		If FlashLevel2 < 0.15 Then
 			Flasherlit2.visible = 0
 		Else
-			Flasherlit2.visible = 1
+			'Flasherlit2.visible = 1
 		end If
 		If FlashLevel2 < 0 Then
 			Flasherflash2.TimerEnabled = False
@@ -3409,20 +3492,20 @@ end sub
 		If not Flasherflash3.TimerEnabled Then 
 			Flasherflash3.TimerEnabled = True
 			Flasherflash3.visible = 1
-			Flasherlit3.visible = 1
+			Flasherlit3.visible = 0
 		End If
 		flashx3 = FlashLevel3 * FlashLevel3 * FlashLevel3
 		Flasherflash3.opacity = 1500 * flashx3
-		Flasherlit3.BlendDisableLighting = 10 * flashx3
-		Flasherbase3.BlendDisableLighting =  flashx3
+		'Flasherlit3.BlendDisableLighting = 10 * flashx3
+		'Flasherbase3.BlendDisableLighting =  flashx3
 		Flasherlight3.IntensityScale = flashx3
 		matdim = Round(10 * FlashLevel3)
-		Flasherlit3.material = "domelit" & matdim
+		'Flasherlit3.material = "domelit" & matdim
 		FlashLevel3 = FlashLevel3 * 0.9 - 0.01
 		If FlashLevel3 < 0.15 Then
 			Flasherlit3.visible = 0
 		Else
-			Flasherlit3.visible = 1
+			'Flasherlit3.visible = 1
 			DOF 342, DOFPulse 'Red Flasher
 		end If
 		If FlashLevel3 < 0 Then
@@ -3438,20 +3521,20 @@ end sub
 		If not Flasherflash4.TimerEnabled Then 
 			Flasherflash4.TimerEnabled = True
 			Flasherflash4.visible = 1
-			Flasherlit4.visible = 1
+			Flasherlit4.visible = 0
 		End If
 		flashx3 = FlashLevel4 * FlashLevel4 * FlashLevel4
 		Flasherflash4.opacity = 1500 * flashx3
-		Flasherlit4.BlendDisableLighting = 10 * flashx3
-		Flasherbase4.BlendDisableLighting =  flashx3
+		'Flasherlit4.BlendDisableLighting = 10 * flashx3
+		'Flasherbase4.BlendDisableLighting =  flashx3
 		Flasherlight4.IntensityScale = flashx3
 		matdim = Round(10 * FlashLevel4)
-		Flasherlit4.material = "domelit" & matdim
+		'Flasherlit4.material = "domelit" & matdim
 		FlashLevel4 = FlashLevel4 * 0.9 - 0.01
 		If FlashLevel4 < 0.15 Then
 			Flasherlit4.visible = 0
 		Else
-			Flasherlit4.visible = 1
+			'Flasherlit4.visible = 1
 			DOF 343, DOFPulse 'White Flasher
 		end If
 		If FlashLevel4 < 0 Then
@@ -3467,20 +3550,20 @@ end sub
 		If not Flasherflash5.TimerEnabled Then 
 			Flasherflash5.TimerEnabled = True
 			Flasherflash5.visible = 1
-			Flasherlit5.visible = 1
+			Flasherlit5.visible = 0
 		End If
 		flashx3 = FlashLevel5 * FlashLevel5 * FlashLevel5
 		Flasherflash5.opacity = 1500 * flashx3
-		Flasherlit5.BlendDisableLighting = 10 * flashx3
-		Flasherbase5.BlendDisableLighting =  flashx3
+		'Flasherlit5.BlendDisableLighting = 10 * flashx3
+		'Flasherbase5.BlendDisableLighting =  flashx3
 		Flasherlight5.IntensityScale = flashx3
 		matdim = Round(10 * FlashLevel5)
-		Flasherlit5.material = "domelit" & matdim
+		'Flasherlit5.material = "domelit" & matdim
 		FlashLevel5 = FlashLevel5 * 0.9 - 0.01
 		If FlashLevel5 < 0.15 Then
 			Flasherlit5.visible = 0
 		Else
-			Flasherlit5.visible = 1
+			'Flasherlit5.visible = 1
 			DOF 344, DOFPulse 'Blue Flasher
 		end If
 		If FlashLevel5 < 0 Then
@@ -3497,20 +3580,20 @@ end sub
 		If not Flasherflash6.TimerEnabled Then 
 			Flasherflash6.TimerEnabled = True
 			Flasherflash6.visible = 1
-			Flasherlit6.visible = 1
+			Flasherlit6.visible = 0
 		End If
 		flashx3 = FlashLevel6 * FlashLevel6 * FlashLevel6
 		Flasherflash6.opacity = 1500 * flashx3
-		Flasherlit6.BlendDisableLighting = 10 * flashx3
-		Flasherbase6.BlendDisableLighting =  flashx3
+		'Flasherlit6.BlendDisableLighting = 10 * flashx3
+		'Flasherbase6.BlendDisableLighting =  flashx3
 		Flasherlight6.IntensityScale = flashx3
 		matdim = Round(10 * FlashLevel6)
-		Flasherlit6.material = "domelit" & matdim
+		'Flasherlit6.material = "domelit" & matdim
 		FlashLevel6 = FlashLevel6 * 0.9 - 0.01
 		If FlashLevel6 < 0.15 Then
 			Flasherlit6.visible = 0
 		Else
-			Flasherlit6.visible = 1
+			'Flasherlit6.visible = 1
 			DOF 345, DOFPulse 'Pink Flasher
 		end If
 		If FlashLevel6 < 0 Then
@@ -3862,6 +3945,8 @@ end sub
 
 	sub playbgaudio
 		debug.print "playbgaudio "
+		PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 4, ""FN"":11, ""VL"":"&sndtrkvol&" }"
+		'PuPlayer.setvolume pMusic sndtrkvol
 		dim trkpik
 		if sndtrk = 1 Then
 			trkpik=RndNum(1,4)
@@ -3905,6 +3990,7 @@ end sub
 				case 29:playmedia "Travis - Why Does It Always Rain on Me.mp3",songs,pMusic,"",0,"",1,10
 			end Select
 		end if
+		PuPlayer.SetLoop 4,1
 	end Sub
 
 
@@ -4030,7 +4116,7 @@ end sub
 			Plunger.Pullback
 			vpmtimer.addtimer 300, "fireit '"
 		Else
-			'pupDMDDisplay "-","Launch^ball",dmdnote,3,0,10
+			pupDMDDisplay "-","Launch^ball",dmdnote,3,0,10
 		End If
 		DOF 317, DOFOn 	'MX, Launch Ball - Ball Ready to Shoot
 	End Sub
@@ -4168,7 +4254,7 @@ end sub
 				bAutoPlunger = True
 				If bMultiBallMode = False Then
 					playmedia "ballsaved.mp4","videoscenes",pBackglass,"",6000,"",1,1 '(name,playlist,channel,cinematic,length,nextitem,audiolevel,priority)
-					'pupDMDDisplay "-","Ball^Saved",dmdnote,3,0,10
+					pupDMDDisplay "-","Ball^Saved",dmdnote,3,0,10
 				End If
 			Else
 				If BallsOnPlayfield = 1 Then
@@ -4211,6 +4297,7 @@ end sub
 	sub drainvids
 		dim dvid:dvid = RndNum(1,6)
 		playclear pMusic
+		playclear pAudio
 		select Case dvid
 		case 1
 		playmedia "brilliant that makes me feel loads better.mp4","videodrains",pBackglass,"cineon",3000,"",1,1 '(name,playlist,channel,cinematic,length,nextitem,audiolevel,priority)
@@ -4277,7 +4364,7 @@ end sub
 			'PuPlayer.playpause 4
 			playmedia "intro.mp4","videoattract",pBackglass,"",53000,"",1,10
 			playclear pMusic
-			'playmedia "base.mp4","backglass",pBackglass,"",0,"",1,1
+			playmedia "base.mp4","backglass",pBackglass,"",0,"",1,1
 			PuPlayer.LabelSet pBackglass,"notetitle","Need Rules Help?",1,""
 			PuPlayer.LabelSet pBackglass,"notecopy","Hold both flippers for 2 seconds while in attract mode for rules overlay.",1,""
 
@@ -4319,12 +4406,63 @@ end sub
 			PuPlayer.LabelSet pBackglass,"high4score",FormatNumber(HighScore(3),0),1,"{'mt':2,'color':2697513, 'size': 4, 'xpos': 71.1, 'xalign': 1, 'ypos': 63, 'yalign': 1}"
 
 		Case 5
+			if osbkey="" then
+				clearhslabels
+				clearosblabels
+				DMDintroloop
+			Else
+			clearhslabels
+			PuPlayer.LabelSet pBackglass,"notetitle","Got A killer good High Score?",1,""
+			PuPlayer.LabelSet pBackglass,"notecopy","Post it to #stlevpx on instagram to brag.",1,""
+			playmedia "osb.mp4","videoattract",pBackglass,"",44000,"",1,14
+			PuPlayer.LabelSet pBackglass,"wh1n","1. " & scorevar(1),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 9.8, 'xalign': 1, 'ypos': 31, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"wh1s",FormatNumber(scorevar(2),0),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 26.1, 'xalign': 2, 'ypos': 31, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"wh2n","2. " & scorevar(3),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 9.8, 'xalign': 1, 'ypos': 35, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"wh2s",FormatNumber(scorevar(4),0),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 26.1, 'xalign': 2, 'ypos': 35, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"wh3n","3. " & scorevar(5),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 9.8, 'xalign': 1, 'ypos': 39, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"wh3s",FormatNumber(scorevar(6),0),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 26.1, 'xalign': 2, 'ypos': 39, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"wh4n","4. " & scorevar(7),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 9.8, 'xalign': 1, 'ypos': 43, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"wh4s",FormatNumber(scorevar(8),0),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 26.1, 'xalign': 2, 'ypos': 43, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"wh5n","5. " & scorevar(9),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 9.8, 'xalign': 1, 'ypos': 47, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"wh5s",FormatNumber(scorevar(10),0),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 26.1, 'xalign': 2, 'ypos': 47, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"wh6n","6. " & scorevar(11),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 9.8, 'xalign': 1, 'ypos': 51, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"wh6s",FormatNumber(scorevar(12),0),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 26.1, 'xalign': 2, 'ypos': 51, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"wh7n","7. " & scorevar(13),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 9.8, 'xalign': 1, 'ypos': 55, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"wh7s",FormatNumber(scorevar(14),0),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 26.1, 'xalign': 2, 'ypos': 55, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"wh8n","8. " & scorevar(15),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 9.8, 'xalign': 1, 'ypos': 59, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"wh8s",FormatNumber(scorevar(16),0),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 26.1, 'xalign': 2, 'ypos': 59, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"wh9n","9. " & scorevar(17),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 9.8, 'xalign': 1, 'ypos': 63, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"wh9s",FormatNumber(scorevar(18),0),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 26.1, 'xalign': 2, 'ypos': 63, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"wh10n","10. " & scorevar(19),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 9.8, 'xalign': 1, 'ypos': 67, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"wh10s",FormatNumber(scorevar(20),0),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 26.1, 'xalign': 2, 'ypos': 67, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ah1n","1. " & scorevar(21),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 76.8, 'xalign': 1, 'ypos': 31, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ah1s",FormatNumber(scorevar(22),0),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 94.1, 'xalign': 2, 'ypos': 31, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ah2n","2. " & scorevar(23),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 76.8, 'xalign': 1, 'ypos': 35, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ah2s",FormatNumber(scorevar(24),0),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 94.1, 'xalign': 2, 'ypos': 35, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ah3n","3. " & scorevar(25),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 76.8, 'xalign': 1, 'ypos': 39, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ah3s",FormatNumber(scorevar(26),0),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 94.1, 'xalign': 2, 'ypos': 39, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ah4n","4. " & scorevar(27),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 76.8, 'xalign': 1, 'ypos': 43, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ah4s",FormatNumber(scorevar(28),0),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 94.1, 'xalign': 2, 'ypos': 43, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ah5n","5. " & scorevar(29),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 76.8, 'xalign': 1, 'ypos': 47, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ah5s",FormatNumber(scorevar(30),0),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 94.1, 'xalign': 2, 'ypos': 47, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ah6n","6. " & scorevar(31),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 76.8, 'xalign': 1, 'ypos': 51, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ah6s",FormatNumber(scorevar(32),0),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 94.1, 'xalign': 2, 'ypos': 51, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ah7n","7. " & scorevar(33),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 76.8, 'xalign': 1, 'ypos': 55, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ah7s",FormatNumber(scorevar(34),0),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 94.1, 'xalign': 2, 'ypos': 55, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ah8n","8. " & scorevar(35),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 76.8, 'xalign': 1, 'ypos': 59, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ah8s",FormatNumber(scorevar(36),0),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 94.1, 'xalign': 2, 'ypos': 59, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ah9n","9. " & scorevar(37),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 76.8, 'xalign': 1, 'ypos': 63, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ah9s",FormatNumber(scorevar(38),0),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 94.1, 'xalign': 2, 'ypos': 63, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ah10n","10. " & scorevar(39),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 76.8, 'xalign': 1, 'ypos': 67, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ah10s",FormatNumber(scorevar(40),0),1,"{'mt':2,'color':15066597, 'size': 3, 'xpos': 94.1, 'xalign': 2, 'ypos': 67, 'yalign': 1}"
+			end If
+		Case 6
 			clearhslabels
 			clearosblabels
 			playmedia "psa.mp4","videoattract",pBackglass,"",11000,"",1,15
 			PuPlayer.LabelSet pBackglass,"notetitle","Be Excellent to Each Other",1,""
 			PuPlayer.LabelSet pBackglass,"notecopy","There is no place for homophobia, fascism, sexism, racism or hate.",1,""
-		Case 6
+		Case 7
 			playclear pBackglass
 			introposition = 0
 	End Select
@@ -6344,7 +6482,7 @@ end sub
 		if bMultiBallMode = 0 and inamode = 0 Then
 			maybemadeye
 		end If
-		FlashForMs l21, 1000, 50, 0:FlashForMs l20f1, 1000, 50, 0
+		FlashForMs l21, 100, 50, 0:FlashForMs l20f1, 100, 50, 0
 		spinningeye.enabled = 1
 		eyespin = 1
 		DOF 105, DOFPulse
@@ -6367,7 +6505,7 @@ end sub
 
 	Sub LeftSlingShot_Slingshot
 		movemodes
-		FlashForMs l20, 1000, 50, 0:FlashForMs l20f, 1000, 50, 0
+		FlashForMs l20, 100, 50, 0:FlashForMs l20f, 100, 50, 0
 		DOF 103, DOFPulse
 		PlaySound SoundFX("left_slingshot",DOFContactors), 0,1, -0.05,0.05 '0,1, AudioPan(LeftSlingShot), 0.05,0,0,1,AudioFade(LeftSlingShot)
 		LSling.Visible = 0
@@ -6604,12 +6742,6 @@ end Sub
 		PlaySoundAt "mbpc-spinner", Spinner1
 	End Sub
 
-
-
-
-	Sub Spinner3_Spin
-		PlaySoundAt "mbpc-spinner", Spinner3
-	End Sub
 
 	Sub innerorbitsnd_hit
 				if bMultiBallMode = false then
@@ -6929,6 +7061,7 @@ end Sub
 			PuPlayer.SetLoop 2,0
 			'PuPlayer.playresume 4
 			playclear pAudio
+			PuPlayer.SetLoop 7,0
 			TurnOffmultiLights
 			GiOff
 			GiOn
@@ -7015,6 +7148,7 @@ end Sub
 		playclear pMusic
 		'PuPlayer.playlistplayex pAudio,"audiomodes","quiddich.mp3",100,1
 		playmedia "quiddich.mp3","audiomodes",pAudio,"",0,"",1,1  '(name,playlist,channel,cinematic,length,nextitem,audiolevel,priority)
+		PuPlayer.SetLoop 7,1
 	end sub
 	
 	sub lightquid
@@ -7110,8 +7244,8 @@ end Sub
 	sub gobaudio
 		'PuPlayer.playpause 4
 		playclear pmusic
-		'PuPlayer.playlistplayex pAudio,"audiomodes","rita.mp3",100,1
-		playmedia "rita.mp3","audiomodes",pAudio,"",0,"",1,1
+		PuPlayer.playlistplayex pAudio,"audiomodes","rita.mp3",100,1
+		PuPlayer.SetLoop 7,1
 	end sub
 	
 	sub lightgob
@@ -7193,6 +7327,7 @@ end Sub
 		playclear pMusic
 		'PuPlayer.playlistplayex pAudio,"audiomodes","Frank Dies.mp3",100,1
 		playmedia "Frank Dies.mp3","audiomodes",pAudio,"",0,"",1,1  '(name,playlist,channel,cinematic,length,nextitem,audiolevel,priority)
+		PuPlayer.SetLoop 7,1
 	end sub
 	
 	sub lightcurses
@@ -7290,6 +7425,7 @@ end Sub
 		playclear pMusic
 		'PuPlayer.playlistplayex pAudio,"audiomodes","night.mp3",80,1
 		playmedia "night.mp3","audiomodes",pAudio,"",0,"",1,1  '(name,playlist,channel,cinematic,length,nextitem,audiolevel,priority)
+		PuPlayer.SetLoop 7,1
 	end sub
 
 	sub deathcheck
@@ -7434,7 +7570,7 @@ end Sub
 
 	Sub Bumper1_Hit
 		bump
-		FlashForMs bumpl4b, 1000, 50, 1:FlashForMs bumpl4a, 1000, 50, 1
+		FlashForMs bumpl4b, 100, 50, 1:FlashForMs bumpl4a, 100, 50, 1
 		LightEffect 5
 		If NOT Tilted Then
 			PlaySoundAt SoundFXDOF("bumpleft", 107, DOFPulse, DOFContactors), bumper1
@@ -7445,7 +7581,7 @@ end Sub
 
 	Sub Bumper2_Hit
 		bump
-		FlashForMs bumpl1b, 1000, 50, 1:FlashForMs bumpl1a, 1000, 50, 1
+		FlashForMs bumpl1b, 100, 50, 1:FlashForMs bumpl1a, 100, 50, 1
 		LightEffect 5
 		If NOT Tilted Then
 			PlaySoundAt SoundFXDOF("bumpright", 108, DOFPulse, DOFContactors), bumper2
@@ -7456,7 +7592,7 @@ end Sub
 
 	Sub Bumper3_Hit
 		bump
-		FlashForMs bumpl3b, 1000, 50, 1:FlashForMs bumpl3a, 1000, 50, 1
+		FlashForMs bumpl3b, 100, 50, 1:FlashForMs bumpl3a, 100, 50, 1
 		LightEffect 5
 		If NOT Tilted Then
 			PlaySoundAt SoundFXDOF("bumpright", 109, DOFPulse, DOFContactors), bumper3
@@ -7467,7 +7603,7 @@ end Sub
 
 	Sub Bumper4_Hit
 		bump
-		FlashForMs bumpl2b, 1000, 50, 1:FlashForMs bumpl2a, 1000, 50, 1
+		FlashForMs bumpl2b, 100, 50, 1:FlashForMs bumpl2a, 100, 50, 1
 		LightEffect 5
 		If NOT Tilted Then
 			PlaySoundAt SoundFXDOF("bumpleft", 110, DOFPulse, DOFContactors), bumper4
@@ -7496,7 +7632,7 @@ end Sub
 			PuPlayer.LabelSet pBackglass,"deatheaternum",0,1,"{'mt':2,'color':2697513, 'size': 4, 'xpos': 17.1, 'xalign': 1, 'ypos': 88.8, 'yalign': 1}"
 			checkmerlinsecond
 		end if
-		FlashForMs l22, 1000, 50, 0:FlashForMs l20f2, 1000, 50, 0
+		FlashForMs l22, 100, 50, 0:FlashForMs l20f2, 100, 50, 0
 		vpmtimer.addtimer 1000, "outofbumps '"
 		checkspell
 		'setspellname
@@ -7839,7 +7975,7 @@ end Sub
 		if inamode = 1 then exit Sub
 		dscream = 1
 		'PuPlayer.playlistplayex pAudio,"audiodragons","",80,1
-		playmedia "","audiodragons",pAudio2,"",0,"",1,1  '(name,playlist,channel,cinematic,length,nextitem,audiolevel,priority)
+		playmedia "","audiodragons",pAudio,"",0,"",1,1  '(name,playlist,channel,cinematic,length,nextitem,audiolevel,priority)
 		'PuPlayer.playlistplayex pBackglass,"videodragonhit","",vsvol,1
 		playmedia "","videodragonhit",pBackglass,"",0,"",1,1  '(name,playlist,channel,cinematic,length,nextitem,audiolevel,priority)
 		vpmtimer.addtimer 1000, "screamdone '"
@@ -8042,6 +8178,7 @@ end Sub
 		playclear pMusic
 		'PuPlayer.playlistplayex pAudio,"audiomultiballs","dragon.mp3",100,3
 		playmedia "dragon.mp3","audiomultiballs",pAudio,"",0,"",1,1  '(name,playlist,channel,cinematic,length,nextitem,audiolevel,priority)
+		PuPlayer.SetLoop 7,1
 		bMultiBallMode = True
 		doublekick
 		'AddMultiball 2
@@ -8228,6 +8365,8 @@ end Sub
 		PuPlayer.SetLoop 2,0
 		'PuPlayer.playresume 4
 		playbgaudio
+		playclear pAudio
+		PuPlayer.SetLoop 7,0
 		cleardragonlights
 		checkvoldemort
 		gispinstop
@@ -8573,6 +8712,7 @@ end Sub
 		playclear pMusic
 		'PuPlayer.playlistplayex pAudio,"audiomultiballs","lake.mp3",100,3
 		playmedia "lake.mp3","audiomultiballs",pAudio,"",0,"",1,5  '(name,playlist,channel,cinematic,length,nextitem,audiolevel,priority)
+		PuPlayer.SetLoop 7,1
 
 		If merlock1full = 1 Then
 			merlock1full = 0
@@ -8760,6 +8900,8 @@ end Sub
 		PuPlayer.SetLoop 2,0
 		'PuPlayer.playresume 4
 		playbgaudio
+		playclear pAudio
+		PuPlayer.SetLoop 7,0
 		checkvoldemort
 		mersjready = 0
 		mermultivalue = 1000000
@@ -9008,7 +9150,7 @@ end Sub
 	sub lockflash
 		PlaySound "wandlock"
 		Flasherflash7.opacity = 3000
-		FlashForMs Flasherlight7, 500, 50, 0
+		FlashForMs Flasherlight7, 300, 50, 0
 		vpmtimer.addtimer 200, "lockflashoff '"
 	end Sub
 
@@ -9088,6 +9230,7 @@ end Sub
 		playclear pMusic
 		'PuPlayer.playlistplayex pAudio,"audiomultiballs","wand.mp3",100,3
 		playmedia "wand.mp3","audiomultiballs",pAudio,"",0,"",1,3  '(name,playlist,channel,cinematic,length,nextitem,audiolevel,priority)
+		PuPlayer.SetLoop 7,1
 		EnableBallSaver 10:bBallSaverActive = True
 		giflasher
 		spotsoff
@@ -9184,10 +9327,10 @@ end Sub
 		vpmtimer.addtimer 700, "nolongerrun '"
 	End Sub
 
-	Sub nolongerrun
-		runninglights = 0
-		LightSeqAttract.StopPlay
-	end Sub
+'	Sub nolongerrun
+'		runninglights = 0
+'		LightSeqAttract.StopPlay
+'	end Sub
 
 	Sub endwandmulti
 		stopmer.collidable = 0
@@ -9196,6 +9339,8 @@ end Sub
 		PuPlayer.SetLoop 2,0
 		'PuPlayer.playresume 4
 		playbgaudio
+		playclear pAudio
+		PuPlayer.SetLoop 7,0
 		checkvoldemort
 		gispinstop
 		giflashtime.enabled = 0
@@ -9453,6 +9598,7 @@ end Sub
 		playclear pMusic
 		'PuPlayer.playlistplayex pAudio,"audiomultiballs","maze.mp3",100,3
 		playmedia "maze.mp3","audiomultiballs",pAudio,"",0,"",1,3  '(name,playlist,channel,cinematic,length,nextitem,audiolevel,priority)
+		PuPlayer.SetLoop 7,1
 		bMultiBallMode = True
 		openmaze
 		bBallSaverActive = False
@@ -9582,6 +9728,8 @@ end Sub
 		PuPlayer.SetLoop 2,0
 		'PuPlayer.playresume 4
 		playbgaudio
+		playclear pAudio
+		PuPlayer.SetLoop 7,0
 		checkvoldemort
 		mazetimer.enabled = 0
 		gislidestop
@@ -9670,8 +9818,8 @@ end Sub
 
 		Sub PuPGameStartMiniGame
 			if PuPGameRunning Then Exit Sub
-			'PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 2, ""FN"":16, ""EX"": ""MiniGame\\PuPMiniGame.exe"", ""WT"": ""PupMiniGame"", ""RS"":1 , ""TO"":15 , ""WZ"":0 , ""SH"": 1 , ""FT"":""Visual Pinball Player"" }"    
-			'PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 2, ""FN"":3, ""OT"": 0 }"      'this will hide overlay if applicable
+			PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 2, ""FN"":16, ""EX"": ""MiniGame\\PuPMiniGame.exe"", ""WT"": ""PupMiniGame"", ""RS"":1 , ""TO"":15 , ""WZ"":0 , ""SH"": 1 , ""FT"":""Visual Pinball Player"" }"    
+			PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 2, ""FN"":3, ""OT"": 0 }"      'this will hide overlay if applicable
 			PuPGameTimeout=-3    'check for timeout  every 500 ms
 			PuPGameRunning=true	
 			PuPGameTimer.enabled=true
@@ -9686,7 +9834,7 @@ end Sub
 			PuPlayer.LabelSet pBackglass,"mgscore",FormatNumber(PuPGameScore,0),1,""
 			playmedia "defensescore.mp4","videoscenes",pBackglass,"cineon",4000,"",1,5  '(name,playlist,channel,cinematic,length,nextitem,audiolevel,priority)
 			'msgbox "mini score "&PuPGameScore
-			'PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 2, ""FN"":3, ""OT"": 1 }"      'this will showsuccess overlay if applicable
+			PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 2, ""FN"":3, ""OT"": 1 }"      'this will showsuccess overlay if applicable
 			vpmtimer.addtimer 4000, "clearmgscore '"
 			vpmtimer.addtimer 4000, "checkk1lock '"
 		End Sub
@@ -9696,13 +9844,13 @@ end Sub
 		end Sub
 
 		Sub PuPGameTimer_Timer()    
-			PuPGameTimeout=PuPGameTimeout+12
-			PuPGameInfo= 0 ' PuPlayer.GameUpdate("PupMiniGame", 0 , 0 , "")   '0=game over, 1=game running
+			PuPGameTimeout=PuPGameTimeout+1
+			PuPGameInfo= PuPlayer.GameUpdate("PupMiniGame", 0 , 0 , "")   '0=game over, 1=game running
 			'CHECK GAME OVER
 			if PuPGameInfo=0 AND PuPGameTimeOut>12 Then  'gameover if more than 5 seconds passed
 			   PuPGameTimer.enabled=false 
 			   PupGameRunning=False
-			   PuPGameScore=1000000 ' PuPlayer.GameUpdate("PupMiniGame", 6 , 0 , "\MiniGame\gameover.txt")   'grab score from minigame   3=gms 6=godot           
+			   PuPGameScore= PuPlayer.GameUpdate("PupMiniGame", 6 , 0 , "\MiniGame\gameover.txt")   'grab score from minigame   3=gms 6=godot           
 			   'msgbox PuPGameScore  DO something with the score if its over 0!!!
 			   PuPMiniGameEnd(PuPGameScore)       
 			End If 
@@ -9861,30 +10009,18 @@ end Sub
 	dim cineon:cineon = 0
 	dim skipped:skipped = 0
 		
-	Dim lastName
-	Dim lastPlaylist
-	Dim lastCinematic
-	Dim lastLength
-	Dim lastNextItem
-	Dim lastAudiolevel
-	Dim lastPriority
-	Dim playPupStatus : playPupStatus = 0
 			
 	sub playclear(chan)
 		debug.print "play clear'd " & chan
 		if chan = pAudio Then
 			'PuPlayer.playlistplayex pAudio,"audioclear","clear.mp3",100,20
-			'PuPlayer.playstop pAudio
-			playPupStatus = 0
-			EndMusic
+			PuPlayer.playstop pAudio
 		End If
 
 		if chan = pMusic Then
-			playPupStatus = 0
-			EndMusic
 			'PuPlayer.playlistplayex pMusic,"audioclear","clear.mp3",100,20
 			'PuPlayer.playstop pMusic
-			'PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 4, ""FN"":11, ""VL"":0 }"
+			PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 4, ""FN"":11, ""VL"":0 }"
 		End If
 
 		if chan = pBackglass Then
@@ -9892,30 +10028,6 @@ end Sub
 			PuPlayer.playstop pBackglass
 		end if 
 	end Sub
-
-	sub playpupmusic(name,playlist,cinematic,length,nextitem,audiolevel,priority)
-		lastName = name
-		lastPlaylist = playlist
-		lastCinematic = cinematic
-		lastLength = length
-		lastNextItem = nextitem
-		lastAudiolevel = audiolevel
-		lastPriority = priority
-		PlayMusic  "./pupvideos/" & pGameName & "/" & playlist & "/" & name, audiolevel / 100
-		playPupStatus = 1
-	end sub
-
-	sub playpupvolume(audiolevel)
-		If (playPupStatus  > 0) Then
-			MusicVolume = audiolevel / 100
-		End If
-	end sub
-
-	sub Table1_MusicDone
-		If (playPupStatus = 1) Then
-			playpupmusic lastName, lastPlaylist, lastCinematic, lastLength, lastNextItem, lastAudiolevel, lastPriority
-		End If
-	end sub
 
 	dim lastvocall:lastvocall=""
 	dim noskipper:noskipper=0
@@ -9932,18 +10044,10 @@ end Sub
 				audiolevel = sndtrkvol
 			Elseif channel = pAudio Then
 				audiolevel = sndtrkvol
-			Elseif channel = pAudio2 Then
-				audiolevel = sndtrkvol
 			Elseif channel = pOvervid Then
 				audiolevel = vsvol
 			end If
 		end If
-
-		if (channel = pMusic) Or (channel = pAudio) Then
-			playpupmusic name,playlist,cinematic,length,nextitem,audiolevel,priority
-			Exit Sub
-		End If
-
 
 		if channel = pCallouts Then
 			if name = "jackpot.mp3" or name ="" or name = "jackpot.wav" Then
@@ -9966,8 +10070,7 @@ end Sub
 		If cinematic = "cineon" Then
 			skipped=0
 			'PuPlayer.playpause 4 ' stop then resume the music
-			'PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 4, ""FN"":11, ""VL"":20 }"
-			playpupvolume 20
+			PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 4, ""FN"":11, ""VL"":20 }"
 			vpmtimer.addtimer length, "turnitbackupcine '"
 			GiOff
 			cineon = 1
@@ -9977,9 +10080,8 @@ end Sub
 
 		If channel = pCallouts Then
 			PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 2, ""FN"":11, ""VL"":60 }"
-			'PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 4, ""FN"":11, ""VL"":60 }"
-			playpupvolume 60
-			'PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 7, ""FN"":11, ""VL"":60 }"
+			PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 4, ""FN"":11, ""VL"":60 }"
+			PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 7, ""FN"":11, ""VL"":60 }"
 			vpmtimer.addtimer length, "turnitbackup'"
 		end If
 
@@ -9996,9 +10098,8 @@ end Sub
 
 	Sub turnitbackup
 		PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 2, ""FN"":11, ""VL"":"&vsvol&" }"
-		'PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 4, ""FN"":11, ""VL"":"&sndtrkvol&" }"
-		playpupvolume sndtrkvol
-		'PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 7, ""FN"":11, ""VL"":"&vovol&" }"
+		PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 4, ""FN"":11, ""VL"":"&sndtrkvol&" }"
+		PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 7, ""FN"":11, ""VL"":"&vovol&" }"
 		debug.print "turnitbackup "
 		'puplayer.setvolume pMusic sndtrkvol
 	End Sub
@@ -10009,8 +10110,7 @@ end Sub
 	End Sub
 
 	Sub turnitbackupcine
-		'PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 4, ""FN"":11, ""VL"":"&sndtrkvol&" }"
-		playpupvolume sndtrkvol
+		PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 4, ""FN"":11, ""VL"":"&sndtrkvol&" }"
 		debug.print "turnitbackupcine "
 	End Sub
 
@@ -10021,16 +10121,14 @@ end Sub
 		if skipped = 0 Then
 			noskipper=0
 			'PuPlayer.playresume 4
-			'PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 4, ""FN"":11, ""VL"":"&sndtrkvol&" }"
-			playpupvolume sndtrkvol
+					PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 4, ""FN"":11, ""VL"":"&sndtrkvol&" }"
 			gion
 			cineon = 0
 			looktimer = 0
 			execute currentqueue
 		Elseif skipped = 1 Then
 			'PuPlayer.playresume 4
-			'PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 4, ""FN"":11, ""VL"":"&sndtrkvol&" }"
-			playpupvolume sndtrkvol
+					PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 4, ""FN"":11, ""VL"":"&sndtrkvol&" }"
 			gion
 			cineon = 0
 			looktimer = 0
@@ -10078,6 +10176,20 @@ end Sub
 	Sub checkdown
 		If ldown + rdown = 2 Then
 			skipscene
+			' Mini-game quick start (minigamequickstart in Player Options): hold both flippers for 2 s during a game.
+			If minigamequickstart And bGameInPlay And Not PuPGameRunning And Not TestMiniGameArmed Then
+				TestMiniGameArmed = True
+				vpmtimer.addtimer 2000, "TestMiniGameHold '"
+			End If
+		End If
+	End Sub
+
+	Dim TestMiniGameArmed : TestMiniGameArmed = False
+	Sub TestMiniGameHold
+		TestMiniGameArmed = False
+		If minigamequickstart And ldown + rdown = 2 And bGameInPlay And Not PuPGameRunning Then
+			inminigame = 1
+			PuPGameStartMiniGame
 		End If
 	End Sub
 
@@ -11066,9 +11178,9 @@ end Sub
 
 
 
-Sub Table1_Exit()
-	
-End Sub
+Sub table1_Exit
+		Controller.stop
+	End Sub
 
 
 '****** DOF Extra Stuff ******
@@ -11429,7 +11541,7 @@ End Sub
 	'************************ where all the MAGIC goes,  pretty much call this everywhere  ****************************************
 	'*************************                see docs for examples                ************************************************
 	'****************************************   DONT TOUCH THIS CODE   ************************************************************
-	
+	dim notenow:notenow = dmdnote
 	Sub pupDMDDisplay(pEventID, pText, VideoName,TimeSec, pAni,pPriority)
 	' pEventID = reference if application,  
 	' pText = "text to show" separate lines by ^ in same string
@@ -11439,8 +11551,12 @@ End Sub
 	' animation if any 0=none 1=Flasher
 	' also,  now can specify color of each line (when no animation).  "sometext|12345"  will set label to "sometext" and set color to 12345
 
-	pAni = 0
+	if dmdnote = notenow Then
+		VideoName = dmdver &"-shortnote2.mp4"
+	end if
 	
+	notenow = VideoName	
+
 	DIM curPos
 	if pDMDCurPriority>=pPriority then Exit Sub  'if something is being displayed that we don't want interrupted.  same level will interrupt.
 	pDMDCurPriority=pPriority
@@ -11503,6 +11619,9 @@ End Sub
 		pDMDVideoPlaying=true
 	end if 'if showing a splash video with no text
 
+
+
+
 	if StrComp(pEventID,"shownum",1)=0 Then              'check eventIDs
 		pDMDShowCounter pLine1,pLine2,pLine3,timeSec
 	Elseif StrComp(pEventID,"target",1)=0 Then              'check eventIDs
@@ -11552,3 +11671,1137 @@ End Sub
 	'********************* END OF PUPDMD FRAMEWORK v1.0 *************************
 	'******************** DO NOT MODIFY STUFF ABOVE THIS LINE!!!! ***************
 	'****************************************************************************
+
+'**********************************
+' 	ZMAT: General Math Functions
+'**********************************
+' These get used throughout the script. 
+
+Dim PI
+PI = 4 * Atn(1)
+
+Function dSin(degrees)
+	dsin = Sin(degrees * Pi / 180)
+End Function
+
+Function dCos(degrees)
+	dcos = Cos(degrees * Pi / 180)
+End Function
+
+Function Atn2(dy, dx)
+	If dx > 0 Then
+		Atn2 = Atn(dy / dx)
+	ElseIf dx < 0 Then
+		If dy = 0 Then
+			Atn2 = pi
+		Else
+			Atn2 = Sgn(dy) * (pi - Atn(Abs(dy / dx)))
+		End If
+	ElseIf dx = 0 Then
+		If dy = 0 Then
+			Atn2 = 0
+		Else
+			Atn2 = Sgn(dy) * pi / 2
+		End If
+	End If
+End Function
+
+Function ArcCos(x)
+	If x = 1 Then
+		ArcCos = 0/180*PI
+	ElseIf x = -1 Then
+		ArcCos = 180/180*PI
+	Else
+		ArcCos = Atn(-x/Sqr(-x * x + 1)) + 2 * Atn(1)
+	End If
+End Function
+
+Function max(a,b)
+	If a > b Then
+		max = a
+	Else
+		max = b
+	End If
+End Function
+
+Function min(a,b)
+	If a > b Then
+		min = b
+	Else
+		min = a
+	End If
+End Function
+
+' Used for drop targets
+Function InRect(px,py,ax,ay,bx,by,cx,cy,dx,dy) 'Determines if a Points (px,py) is inside a 4 point polygon A-D in Clockwise/CCW order
+	Dim AB, BC, CD, DA
+	AB = (bx * py) - (by * px) - (ax * py) + (ay * px) + (ax * by) - (ay * bx)
+	BC = (cx * py) - (cy * px) - (bx * py) + (by * px) + (bx * cy) - (by * cx)
+	CD = (dx * py) - (dy * px) - (cx * py) + (cy * px) + (cx * dy) - (cy * dx)
+	DA = (ax * py) - (ay * px) - (dx * py) + (dy * px) + (dx * ay) - (dy * ax)
+	
+	If (AB <= 0 And BC <= 0 And CD <= 0 And DA <= 0) Or (AB >= 0 And BC >= 0 And CD >= 0 And DA >= 0) Then
+		InRect = True
+	Else
+		InRect = False
+	End If
+End Function
+
+Function InRotRect(ballx,bally,px,py,angle,ax,ay,bx,by,cx,cy,dx,dy)
+	Dim rax,ray,rbx,rby,rcx,rcy,rdx,rdy
+	Dim rotxy
+	rotxy = RotPoint(ax,ay,angle)
+	rax = rotxy(0) + px
+	ray = rotxy(1) + py
+	rotxy = RotPoint(bx,by,angle)
+	rbx = rotxy(0) + px
+	rby = rotxy(1) + py
+	rotxy = RotPoint(cx,cy,angle)
+	rcx = rotxy(0) + px
+	rcy = rotxy(1) + py
+	rotxy = RotPoint(dx,dy,angle)
+	rdx = rotxy(0) + px
+	rdy = rotxy(1) + py
+	
+	InRotRect = InRect(ballx,bally,rax,ray,rbx,rby,rcx,rcy,rdx,rdy)
+End Function
+
+Function RotPoint(x,y,angle)
+	Dim rx, ry
+	rx = x * dCos(angle) - y * dSin(angle)
+	ry = x * dSin(angle) + y * dCos(angle)
+	RotPoint = Array(rx,ry)
+End Function
+
+'******************************************************
+'	ZNFF:  FLIPPER CORRECTIONS by nFozzy
+'******************************************************
+'
+' There are several steps for taking advantage of nFozzy's flipper solution.  At a high level we'll need the following:
+'	1. flippers with specific physics settings
+'	2. custom triggers for each flipper (TriggerLF, TriggerRF)
+'	3. and, special scripting
+'
+' TriggerLF and RF should now be 27 vp units from the flippers. In addition, 3 degrees should be added to the end angle
+' when creating these triggers.
+'
+' RF.ReProcessBalls Activeball and LF.ReProcessBalls Activeball must be added the flipper_collide subs.
+'
+' A common mistake is incorrect flipper length.  A 3-inch flipper with rubbers will be about 3.125 inches long.
+' This translates to about 147 vp units.  Therefore, the flipper start radius + the flipper length + the flipper end
+' radius should  equal approximately 147 vp units. Another common mistake is is that sometimes the right flipper
+' angle was set with a large postive value (like 238 or something). It should be using negative value (like -122).
+'
+' The following settings are a solid starting point for various eras of pinballs.
+' |                    | EM's           | late 70's to mid 80's | mid 80's to early 90's | mid 90's and later |
+' | ------------------ | -------------- | --------------------- | ---------------------- | ------------------ |
+' | Mass               | 1              | 1                     | 1                      | 1                  |
+' | Strength           | 500-1000 (750) | 1400-1600 (1500)      | 2000-2600              | 3200-3300 (3250)   |
+' | Elasticity         | 0.88           | 0.88                  | 0.88                   | 0.88               |
+' | Elasticity Falloff | 0.15           | 0.15                  | 0.15                   | 0.15               |
+' | Fricition          | 0.8-0.9        | 0.9                   | 0.9                    | 0.9                |
+' | Return Strength    | 0.11           | 0.09                  | 0.07                   | 0.055              |
+' | Coil Ramp Up       | 2.5            | 2.5                   | 2.5                    | 2.5                |
+' | Scatter Angle      | 0              | 0                     | 0                      | 0                  |
+' | EOS Torque         | 0.4            | 0.4                   | 0.375                  | 0.375              |
+' | EOS Torque Angle   | 4              | 4                     | 6                      | 6                  |
+'
+
+'******************************************************
+' Flippers Polarity (Select appropriate sub based on era)
+'******************************************************
+
+Dim LF : Set LF = New FlipperPolarity
+Dim RF : Set RF = New FlipperPolarity
+
+InitPolarity
+
+'*******************************************
+' Early 90's and after
+
+Sub InitPolarity()
+	Dim x, a
+	a = Array(LF, RF)
+	For Each x In a
+		x.AddPt "Ycoef", 0, RightFlipper.Y-65, 1 'disabled
+		x.AddPt "Ycoef", 1, RightFlipper.Y-11, 1
+		x.enabled = True
+		x.TimeDelay = 60
+		x.DebugOn=False ' prints some info in debugger
+
+		x.AddPt "Polarity", 0, 0, 0
+		x.AddPt "Polarity", 1, 0.05, - 5.5
+		x.AddPt "Polarity", 2, 0.16, - 5.5
+		x.AddPt "Polarity", 3, 0.20, - 0.75
+		x.AddPt "Polarity", 4, 0.25, - 1.25
+		x.AddPt "Polarity", 5, 0.3, - 1.75
+		x.AddPt "Polarity", 6, 0.4, - 3.5
+		x.AddPt "Polarity", 7, 0.5, - 5.25
+		x.AddPt "Polarity", 8, 0.7, - 4.0
+		x.AddPt "Polarity", 9, 0.75, - 3.5
+		x.AddPt "Polarity", 10, 0.8, - 3.0
+		x.AddPt "Polarity", 11, 0.85, - 2.5
+		x.AddPt "Polarity", 12, 0.9, - 2.0
+		x.AddPt "Polarity", 13, 0.95, - 1.5
+		x.AddPt "Polarity", 14, 1, - 1.0
+		x.AddPt "Polarity", 15, 1.05, -0.5
+		x.AddPt "Polarity", 16, 1.1, 0
+		x.AddPt "Polarity", 17, 1.3, 0
+
+		x.AddPt "Velocity", 0, 0, 0.85
+		x.AddPt "Velocity", 1, 0.23, 0.85
+		x.AddPt "Velocity", 2, 0.27, 1
+		x.AddPt "Velocity", 3, 0.3, 1
+		x.AddPt "Velocity", 4, 0.35, 1
+		x.AddPt "Velocity", 5, 0.6, 1 '0.982
+		x.AddPt "Velocity", 6, 0.62, 1.0
+		x.AddPt "Velocity", 7, 0.702, 0.968
+		x.AddPt "Velocity", 8, 0.95,  0.968
+		x.AddPt "Velocity", 9, 1.03,  0.945
+		x.AddPt "Velocity", 10, 1.5,  0.945
+
+	Next
+	
+	' SetObjects arguments: 1: name of object 2: flipper object: 3: Trigger object around flipper
+	LF.SetObjects "LF", LeftFlipper, TriggerLF
+	RF.SetObjects "RF", RightFlipper, TriggerRF
+End Sub
+
+'******************************************************
+'  FLIPPER CORRECTION FUNCTIONS
+'******************************************************
+
+' modified 2023 by nFozzy
+' Removed need for 'endpoint' objects
+' Added 'createvents' type thing for TriggerLF / TriggerRF triggers.
+' Removed AddPt function which complicated setup imo
+' made DebugOn do something (prints some stuff in debugger)
+'   Otherwise it should function exactly the same as before\
+' modified 2024 by rothbauerw
+' Added Reprocessballs for flipper collisions (LF.Reprocessballs Activeball and RF.Reprocessballs Activeball must be added to the flipper collide subs
+' Improved handling to remove correction for backhand shots when the flipper is raised
+
+Class FlipperPolarity
+	Public DebugOn, Enabled
+	Private FlipAt		'Timer variable (IE 'flip at 723,530ms...)
+	Public TimeDelay		'delay before trigger turns off and polarity is disabled
+	Private Flipper, FlipperStart, FlipperEnd, FlipperEndY, LR, PartialFlipCoef, FlipStartAngle
+	Private Balls(20), balldata(20)
+	Private Name
+	
+	Dim PolarityIn, PolarityOut
+	Dim VelocityIn, VelocityOut
+	Dim YcoefIn, YcoefOut
+	Public Sub Class_Initialize
+		ReDim PolarityIn(0)
+		ReDim PolarityOut(0)
+		ReDim VelocityIn(0)
+		ReDim VelocityOut(0)
+		ReDim YcoefIn(0)
+		ReDim YcoefOut(0)
+		Enabled = True
+		TimeDelay = 50
+		LR = 1
+		Dim x
+		For x = 0 To UBound(balls)
+			balls(x) = Empty
+			Set Balldata(x) = new SpoofBall
+		Next
+	End Sub
+	
+	Public Sub SetObjects(aName, aFlipper, aTrigger)
+		
+		If TypeName(aName) <> "String" Then MsgBox "FlipperPolarity: .SetObjects error: first argument must be a String (And name of Object). Found:" & TypeName(aName) End If
+		If TypeName(aFlipper) <> "Flipper" Then MsgBox "FlipperPolarity: .SetObjects error: Second argument must be a flipper. Found:" & TypeName(aFlipper) End If
+		If TypeName(aTrigger) <> "Trigger" Then MsgBox "FlipperPolarity: .SetObjects error: third argument must be a trigger. Found:" & TypeName(aTrigger) End If
+		If aFlipper.EndAngle > aFlipper.StartAngle Then LR = -1 Else LR = 1 End If
+		Name = aName
+		Set Flipper = aFlipper
+		FlipperStart = aFlipper.x
+		FlipperEnd = Flipper.Length * Sin((Flipper.StartAngle / 57.295779513082320876798154814105)) + Flipper.X ' big floats for degree to rad conversion
+		FlipperEndY = Flipper.Length * Cos(Flipper.StartAngle / 57.295779513082320876798154814105)*-1 + Flipper.Y
+		
+		Dim str
+		str = "Sub " & aTrigger.name & "_Hit() : " & aName & ".AddBall ActiveBall : End Sub'"
+		ExecuteGlobal(str)
+		str = "Sub " & aTrigger.name & "_UnHit() : " & aName & ".PolarityCorrect ActiveBall : End Sub'"
+		ExecuteGlobal(str)
+		
+	End Sub
+	
+	' Legacy: just no op
+	Public Property Let EndPoint(aInput)
+		
+	End Property
+	
+	Public Sub AddPt(aChooseArray, aIDX, aX, aY) 'Index #, X position, (in) y Position (out)
+		Select Case aChooseArray
+			Case "Polarity"
+				ShuffleArrays PolarityIn, PolarityOut, 1
+				PolarityIn(aIDX) = aX
+				PolarityOut(aIDX) = aY
+				ShuffleArrays PolarityIn, PolarityOut, 0
+			Case "Velocity"
+				ShuffleArrays VelocityIn, VelocityOut, 1
+				VelocityIn(aIDX) = aX
+				VelocityOut(aIDX) = aY
+				ShuffleArrays VelocityIn, VelocityOut, 0
+			Case "Ycoef"
+				ShuffleArrays YcoefIn, YcoefOut, 1
+				YcoefIn(aIDX) = aX
+				YcoefOut(aIDX) = aY
+				ShuffleArrays YcoefIn, YcoefOut, 0
+		End Select
+	End Sub
+	
+	Public Sub AddBall(aBall)
+		Dim x
+		For x = 0 To UBound(balls)
+			If IsEmpty(balls(x)) Then
+				Set balls(x) = aBall
+				Exit Sub
+			End If
+		Next
+	End Sub
+	
+	Private Sub RemoveBall(aBall)
+		Dim x
+		For x = 0 To UBound(balls)
+			If TypeName(balls(x) ) = "IBall" Then
+				If aBall.ID = Balls(x).ID Then
+					balls(x) = Empty
+					Balldata(x).Reset
+				End If
+			End If
+		Next
+	End Sub
+	
+	Public Sub Fire()
+		Flipper.RotateToEnd
+		processballs
+	End Sub
+	
+	Public Property Get Pos 'returns % position a ball. For debug stuff.
+		Dim x
+		For x = 0 To UBound(balls)
+			If Not IsEmpty(balls(x)) Then
+				pos = pSlope(Balls(x).x, FlipperStart, 0, FlipperEnd, 1)
+			End If
+		Next
+	End Property
+	
+	Public Sub ProcessBalls() 'save data of balls in flipper range
+		FlipAt = GameTime
+		Dim x
+		For x = 0 To UBound(balls)
+			If Not IsEmpty(balls(x)) Then
+				balldata(x).Data = balls(x)
+			End If
+		Next
+		FlipStartAngle = Flipper.currentangle
+		PartialFlipCoef = ((Flipper.StartAngle - Flipper.CurrentAngle) / (Flipper.StartAngle - Flipper.EndAngle))
+		PartialFlipCoef = abs(PartialFlipCoef-1)
+	End Sub
+
+	Public Sub ReProcessBalls(aBall) 'save data of balls in flipper range
+		If FlipperOn() Then
+			Dim x
+			For x = 0 To UBound(balls)
+				If Not IsEmpty(balls(x)) Then
+					if balls(x).ID = aBall.ID Then
+						If isempty(balldata(x).ID) Then
+							balldata(x).Data = balls(x)
+						End If
+					End If
+				End If
+			Next
+		End If
+	End Sub
+
+	'Timer shutoff for polaritycorrect
+	Private Function FlipperOn()
+		If GameTime < FlipAt+TimeDelay Then
+			FlipperOn = True
+		End If
+	End Function
+	
+	Public Sub PolarityCorrect(aBall)
+		If FlipperOn() Then
+			Dim tmp, BallPos, x, IDX, Ycoef, BalltoFlip, BalltoBase, NoCorrection, checkHit
+			Ycoef = 1
+			
+			'y safety Exit
+			If aBall.VelY > -8 Then 'ball going down
+				RemoveBall aBall
+				Exit Sub
+			End If
+			
+			'Find balldata. BallPos = % on Flipper
+			For x = 0 To UBound(Balls)
+				If aBall.id = BallData(x).id And Not IsEmpty(BallData(x).id) Then
+					idx = x
+					BallPos = PSlope(BallData(x).x, FlipperStart, 0, FlipperEnd, 1)
+					BalltoFlip = DistanceFromFlipperAngle(BallData(x).x, BallData(x).y, Flipper, FlipStartAngle)
+					If ballpos > 0.65 Then  Ycoef = LinearEnvelope(BallData(x).Y, YcoefIn, YcoefOut)								'find safety coefficient 'ycoef' data
+				End If
+			Next
+			
+			If BallPos = 0 Then 'no ball data meaning the ball is entering and exiting pretty close to the same position, use current values.
+				BallPos = PSlope(aBall.x, FlipperStart, 0, FlipperEnd, 1)
+				If ballpos > 0.65 Then  Ycoef = LinearEnvelope(aBall.Y, YcoefIn, YcoefOut)												'find safety coefficient 'ycoef' data
+				NoCorrection = 1
+			Else
+				checkHit = 50 + (20 * BallPos) 
+
+				If BalltoFlip > checkHit or (PartialFlipCoef < 0.5 and BallPos > 0.22) Then
+					NoCorrection = 1
+				Else
+					NoCorrection = 0
+				End If
+			End If
+			
+			'Velocity correction
+			If Not IsEmpty(VelocityIn(0) ) Then
+				Dim VelCoef
+				VelCoef = LinearEnvelope(BallPos, VelocityIn, VelocityOut)
+				
+				'If partialflipcoef < 1 Then VelCoef = PSlope(partialflipcoef, 0, 1, 1, VelCoef)
+				
+				If Enabled Then aBall.Velx = aBall.Velx*VelCoef
+				If Enabled Then aBall.Vely = aBall.Vely*VelCoef
+			End If
+			
+			'Polarity Correction (optional now)
+			If Not IsEmpty(PolarityIn(0) ) Then
+				Dim AddX
+				AddX = LinearEnvelope(BallPos, PolarityIn, PolarityOut) * LR
+				
+				If Enabled and NoCorrection = 0 Then aBall.VelX = aBall.VelX + 1 * (AddX*ycoef*PartialFlipcoef*VelCoef)
+			End If
+			If DebugOn Then debug.print "PolarityCorrect" & " " & Name & " @ " & GameTime & " " & Round(BallPos*100) & "%" & " AddX:" & Round(AddX,2) & " Vel%:" & Round(VelCoef*100)
+		End If
+		RemoveBall aBall
+	End Sub
+End Class
+
+'******************************************************
+'  FLIPPER POLARITY AND RUBBER DAMPENER SUPPORTING FUNCTIONS
+'******************************************************
+
+' Used for flipper correction and rubber dampeners
+Sub ShuffleArray(ByRef aArray, byVal offset) 'shuffle 1d array
+	Dim x, aCount
+	aCount = 0
+	ReDim a(UBound(aArray) )
+	For x = 0 To UBound(aArray)		'Shuffle objects in a temp array
+		If Not IsEmpty(aArray(x) ) Then
+			If IsObject(aArray(x)) Then
+				Set a(aCount) = aArray(x)
+			Else
+				a(aCount) = aArray(x)
+			End If
+			aCount = aCount + 1
+		End If
+	Next
+	If offset < 0 Then offset = 0
+	ReDim aArray(aCount-1+offset)		'Resize original array
+	For x = 0 To aCount-1				'set objects back into original array
+		If IsObject(a(x)) Then
+			Set aArray(x) = a(x)
+		Else
+			aArray(x) = a(x)
+		End If
+	Next
+End Sub
+
+' Used for flipper correction and rubber dampeners
+Sub ShuffleArrays(aArray1, aArray2, offset)
+	ShuffleArray aArray1, offset
+	ShuffleArray aArray2, offset
+End Sub
+
+' Used for flipper correction, rubber dampeners, and drop targets
+Function BallSpeed(ball) 'Calculates the ball speed
+	BallSpeed = Sqr(ball.VelX^2 + ball.VelY^2 + ball.VelZ^2)
+End Function
+
+' Used for flipper correction and rubber dampeners
+Function PSlope(Input, X1, Y1, X2, Y2)		'Set up line via two points, no clamping. Input X, output Y
+	Dim x, y, b, m
+	x = input
+	m = (Y2 - Y1) / (X2 - X1)
+	b = Y2 - m*X2
+	Y = M*x+b
+	PSlope = Y
+End Function
+
+' Used for flipper correction
+Class spoofball
+	Public X, Y, Z, VelX, VelY, VelZ, ID, Mass, Radius
+	Public Property Let Data(aBall)
+		With aBall
+			x = .x
+			y = .y
+			z = .z
+			velx = .velx
+			vely = .vely
+			velz = .velz
+			id = .ID
+			mass = .mass
+			radius = .radius
+		End With
+	End Property
+	Public Sub Reset()
+		x = Empty
+		y = Empty
+		z = Empty
+		velx = Empty
+		vely = Empty
+		velz = Empty
+		id = Empty
+		mass = Empty
+		radius = Empty
+	End Sub
+End Class
+
+' Used for flipper correction and rubber dampeners
+Function LinearEnvelope(xInput, xKeyFrame, yLvl)
+	Dim y 'Y output
+	Dim L 'Line
+	'find active line
+	Dim ii
+	For ii = 1 To UBound(xKeyFrame)
+		If xInput <= xKeyFrame(ii) Then
+			L = ii
+			Exit For
+		End If
+	Next
+	If xInput > xKeyFrame(UBound(xKeyFrame) ) Then L = UBound(xKeyFrame)		'catch line overrun
+	Y = pSlope(xInput, xKeyFrame(L-1), yLvl(L-1), xKeyFrame(L), yLvl(L) )
+	
+	If xInput <= xKeyFrame(LBound(xKeyFrame) ) Then Y = yLvl(LBound(xKeyFrame) )		 'Clamp lower
+	If xInput >= xKeyFrame(UBound(xKeyFrame) ) Then Y = yLvl(UBound(xKeyFrame) )		'Clamp upper
+	
+	LinearEnvelope = Y
+End Function
+
+'******************************************************
+'  FLIPPER TRICKS
+'******************************************************
+' To add the flipper tricks you must
+'	 - Include a call to FlipperCradleCollision from within OnBallBallCollision subroutine
+'	 - Include a call the CheckLiveCatch from the LeftFlipper_Collide and RightFlipper_Collide subroutines
+'	 - Include FlipperActivate and FlipperDeactivate in the Flipper solenoid subs
+
+RightFlipper.timerinterval = 1
+Rightflipper.timerenabled = True
+
+Sub RightFlipper_timer()
+	FlipperTricks LeftFlipper, LFPress, LFCount, LFEndAngle, LFState
+	FlipperTricks RightFlipper, RFPress, RFCount, RFEndAngle, RFState
+    FlipperTricks LeftFlipper1, LFPress1, LFCount1, LFEndAngle1, LFState1
+	FlipperNudge RightFlipper, RFEndAngle, RFEOSNudge, LeftFlipper, LFEndAngle
+	FlipperNudge LeftFlipper, LFEndAngle, LFEOSNudge,  RightFlipper, RFEndAngle
+End Sub
+
+Dim LFEOSNudge, RFEOSNudge
+
+Sub FlipperNudge(Flipper1, Endangle1, EOSNudge1, Flipper2, EndAngle2)
+	Dim b
+	   Dim gBOT
+	   gBOT = GetBalls
+	
+	If Flipper1.currentangle = Endangle1 And EOSNudge1 <> 1 Then
+		EOSNudge1 = 1
+		'   debug.print Flipper1.currentangle &" = "& Endangle1 &"--"& Flipper2.currentangle &" = "& EndAngle2
+		If Flipper2.currentangle = EndAngle2 Then
+			For b = 0 To UBound(gBOT)
+				If FlipperTrigger(gBOT(b).x, gBOT(b).y, Flipper1) Then
+					'Debug.Print "ball in flip1. exit"
+					Exit Sub
+				End If
+			Next
+			For b = 0 To UBound(gBOT)
+				If FlipperTrigger(gBOT(b).x, gBOT(b).y, Flipper2) Then
+					gBOT(b).velx = gBOT(b).velx / 1.3
+					gBOT(b).vely = gBOT(b).vely - 0.5
+				End If
+			Next
+		End If
+	Else
+		If Abs(Flipper1.currentangle) > Abs(EndAngle1) + 30 Then EOSNudge1 = 0
+	End If
+End Sub
+
+
+Dim FCCDamping: FCCDamping = 0.4
+
+Sub FlipperCradleCollision(ball1, ball2, velocity)
+	if velocity < 0.7 then exit sub		'filter out gentle collisions
+    Dim DoDamping, coef
+    DoDamping = false
+    'Check left flipper
+    If LeftFlipper.currentangle = LFEndAngle Then
+		If FlipperTrigger(ball1.x, ball1.y, LeftFlipper) OR FlipperTrigger(ball2.x, ball2.y, LeftFlipper) Then DoDamping = true
+    End If
+    'Check right flipper
+    If RightFlipper.currentangle = RFEndAngle Then
+		If FlipperTrigger(ball1.x, ball1.y, RightFlipper) OR FlipperTrigger(ball2.x, ball2.y, RightFlipper) Then DoDamping = true
+    End If
+    If DoDamping Then
+		coef = FCCDamping
+        ball1.velx = ball1.velx * coef: ball1.vely = ball1.vely * coef: ball1.velz = ball1.velz * coef
+        ball2.velx = ball2.velx * coef: ball2.vely = ball2.vely * coef: ball2.velz = ball2.velz * coef
+    End If
+End Sub
+	
+
+
+
+
+'*************************************************
+'  Check ball distance from Flipper for Rem
+'*************************************************
+
+Function Distance(ax,ay,bx,by)
+	Distance = Sqr((ax - bx) ^ 2 + (ay - by) ^ 2)
+End Function
+
+Function DistancePL(px,py,ax,ay,bx,by) 'Distance between a point and a line where point Is px,py
+	DistancePL = Abs((by - ay) * px - (bx - ax) * py + bx * ay - by * ax) / Distance(ax,ay,bx,by)
+End Function
+
+Function Radians(Degrees)
+	Radians = Degrees * PI / 180
+End Function
+
+Function AnglePP(ax,ay,bx,by)
+	AnglePP = Atn2((by - ay),(bx - ax)) * 180 / PI
+End Function
+
+Function DistanceFromFlipper(ballx, bally, Flipper)
+	DistanceFromFlipper = DistancePL(ballx, bally, Flipper.x, Flipper.y, Cos(Radians(Flipper.currentangle + 90)) + Flipper.x, Sin(Radians(Flipper.currentangle + 90)) + Flipper.y)
+End Function
+
+Function DistanceFromFlipperAngle(ballx, bally, Flipper, Angle)
+	DistanceFromFlipperAngle = DistancePL(ballx, bally, Flipper.x, Flipper.y, Cos(Radians(Angle + 90)) + Flipper.x, Sin(Radians(angle + 90)) + Flipper.y)
+End Function
+
+Function FlipperTrigger(ballx, bally, Flipper)
+	Dim DiffAngle
+	DiffAngle = Abs(Flipper.currentangle - AnglePP(Flipper.x, Flipper.y, ballx, bally) - 90)
+	If DiffAngle > 180 Then DiffAngle = DiffAngle - 360
+	
+	If DistanceFromFlipper(ballx,bally,Flipper) < 48 And DiffAngle <= 90 And Distance(ballx,bally,Flipper.x,Flipper.y) < Flipper.Length Then
+		FlipperTrigger = True
+	Else
+		FlipperTrigger = False
+	End If
+End Function
+
+'*************************************************
+'  End - Check ball distance from Flipper for Rem
+'*************************************************
+
+Dim LFPress, RFPress, LFCount, RFCount
+Dim LFState, RFState
+Dim EOST, EOSA,Frampup, FElasticity,FReturn
+Dim RFEndAngle, LFEndAngle
+Dim LFPress1, LFCount1, LFEndAngle1, LFState1
+
+Const FlipperCoilRampupMode = 0 '0 = fast, 1 = medium, 2 = slow (tap passes should work)
+
+LFState = 1
+RFState = 1
+LFState1 = 1
+EOST = leftflipper.eostorque
+EOSA = leftflipper.eostorqueangle
+Frampup = LeftFlipper.rampup
+FElasticity = LeftFlipper.elasticity
+FReturn = LeftFlipper.return
+'Const EOSTnew = 1.5 'EM's to late 80's - new recommendation by rothbauerw (previously 1)
+Const EOSTnew = 1.2 '90's and later - new recommendation by rothbauerw (previously 0.8)
+Const EOSAnew = 1
+Const EOSRampup = 0
+Dim SOSRampup
+Select Case FlipperCoilRampupMode
+	Case 0
+		SOSRampup = 2.5
+	Case 1
+		SOSRampup = 6
+	Case 2
+		SOSRampup = 8.5
+End Select
+
+Const LiveCatch = 16
+Const LiveElasticity = 0.45
+Const SOSEM = 0.815
+'   Const EOSReturn = 0.055  'EM's
+'   Const EOSReturn = 0.045  'late 70's to mid 80's
+'Const EOSReturn = 0.035  'mid 80's to early 90's
+   Const EOSReturn = 0.025  'mid 90's and later
+
+LFEndAngle = Leftflipper.endangle
+RFEndAngle = RightFlipper.endangle
+LFEndAngle1 = LeftFlipper1.endangle
+
+Sub FlipperActivate(Flipper, FlipperPress)
+	FlipperPress = 1
+	Flipper.Elasticity = FElasticity
+	
+	Flipper.eostorque = EOST
+	Flipper.eostorqueangle = EOSA
+End Sub
+
+Sub FlipperDeactivate(Flipper, FlipperPress)
+	FlipperPress = 0
+	Flipper.eostorqueangle = EOSA
+	Flipper.eostorque = EOST * EOSReturn / FReturn
+	
+	If Abs(Flipper.currentangle) <= Abs(Flipper.endangle) + 0.1 Then
+		Dim b, gBOT
+				gBOT = GetBalls
+		
+		For b = 0 To UBound(gBOT)
+			If Distance(gBOT(b).x, gBOT(b).y, Flipper.x, Flipper.y) < 55 Then 'check for cradle
+				If gBOT(b).vely >= - 0.4 Then gBOT(b).vely =  - 0.4
+			End If
+		Next
+	End If
+End Sub
+
+Sub FlipperTricks (Flipper, FlipperPress, FCount, FEndAngle, FState)
+	Dim Dir
+	Dir = Flipper.startangle / Abs(Flipper.startangle) '-1 for Right Flipper
+	
+	If Abs(Flipper.currentangle) > Abs(Flipper.startangle) - 0.05 Then
+		If FState <> 1 Then
+			Flipper.rampup = SOSRampup
+			Flipper.endangle = FEndAngle - 3 * Dir
+			Flipper.Elasticity = FElasticity * SOSEM
+			FCount = 0
+			FState = 1
+		End If
+	ElseIf Abs(Flipper.currentangle) <= Abs(Flipper.endangle) And FlipperPress = 1 Then
+		If FCount = 0 Then FCount = GameTime
+		
+		If FState <> 2 Then
+			Flipper.eostorqueangle = EOSAnew
+			Flipper.eostorque = EOSTnew
+			Flipper.rampup = EOSRampup
+			Flipper.endangle = FEndAngle
+			FState = 2
+		End If
+	ElseIf Abs(Flipper.currentangle) > Abs(Flipper.endangle) + 0.01 And FlipperPress = 1 Then
+		If FState <> 3 Then
+			Flipper.eostorque = EOST
+			Flipper.eostorqueangle = EOSA
+			Flipper.rampup = Frampup
+			Flipper.Elasticity = FElasticity
+			FState = 3
+		End If
+	End If
+End Sub
+
+Const LiveDistanceMin = 5  'minimum distance In vp units from flipper base live catch dampening will occur
+Const LiveDistanceMax = 114 'maximum distance in vp units from flipper base live catch dampening will occur (tip protection)
+Const BaseDampen = 0.55
+
+Sub CheckLiveCatch(ball, Flipper, FCount, parm) 'Experimental new live catch
+    Dim Dir, LiveDist
+    Dir = Flipper.startangle / Abs(Flipper.startangle)    '-1 for Right Flipper
+    Dim LiveCatchBounce   'If live catch is not perfect, it won't freeze ball totally
+    Dim CatchTime
+    CatchTime = GameTime - FCount
+    LiveDist = Abs(Flipper.x - ball.x)
+
+    If CatchTime <= LiveCatch And parm > 3 And LiveDist > LiveDistanceMin And LiveDist < LiveDistanceMax Then
+        If CatchTime <= LiveCatch * 0.5 Then   'Perfect catch only when catch time happens in the beginning of the window
+            LiveCatchBounce = 0
+        Else
+            LiveCatchBounce = Abs((LiveCatch / 2) - CatchTime)  'Partial catch when catch happens a bit late
+        End If
+        
+        If LiveCatchBounce = 0 And ball.velx * Dir > 0 And LiveDist > 30 Then ball.velx = 0
+
+        If ball.velx * Dir > 0 And LiveDist < 30 Then
+            ball.velx = BaseDampen * ball.velx
+            ball.vely = BaseDampen * ball.vely
+            ball.angmomx = BaseDampen * ball.angmomx
+            ball.angmomy = BaseDampen * ball.angmomy
+            ball.angmomz = BaseDampen * ball.angmomz
+        Elseif LiveDist > 30 Then
+            ball.vely = LiveCatchBounce * (32 / LiveCatch) ' Multiplier for inaccuracy bounce
+            ball.angmomx = 0
+            ball.angmomy = 0
+            ball.angmomz = 0
+        End If
+    Else
+        If Abs(Flipper.currentangle) <= Abs(Flipper.endangle) + 1 Then FlippersD.Dampenf ActiveBall, parm
+    End If
+End Sub
+
+'******************************************************
+'****  END FLIPPER CORRECTIONS
+'******************************************************
+
+
+
+
+
+'******************************************************
+' 	ZDMP:  RUBBER  DAMPENERS
+'******************************************************
+' These are data mined bounce curves,
+' dialed in with the in-game elasticity as much as possible to prevent angle / spin issues.
+' Requires tracking ballspeed to calculate COR
+
+Sub dPosts_Hit(idx)
+	RubbersD.dampen ActiveBall
+	TargetBouncer ActiveBall, 1
+End Sub
+
+Sub dSleeves_Hit(idx)
+	SleevesD.Dampen ActiveBall
+	TargetBouncer ActiveBall, 0.7
+End Sub
+
+Dim RubbersD				'frubber
+Set RubbersD = New Dampener
+RubbersD.name = "Rubbers"
+RubbersD.debugOn = False	'shows info in textbox "TBPout"
+RubbersD.Print = False	  'debug, reports In debugger (In vel, out cor); cor bounce curve (linear)
+
+'for best results, try to match in-game velocity as closely as possible to the desired curve
+'   RubbersD.addpoint 0, 0, 0.935   'point# (keep sequential), ballspeed, CoR (elasticity)
+RubbersD.addpoint 0, 0, 1.1		 'point# (keep sequential), ballspeed, CoR (elasticity)
+RubbersD.addpoint 1, 3.77, 0.97
+RubbersD.addpoint 2, 5.76, 0.967	'dont take this as gospel. if you can data mine rubber elasticitiy, please help!
+RubbersD.addpoint 3, 15.84, 0.874
+RubbersD.addpoint 4, 56, 0.64	   'there's clamping so interpolate up to 56 at least
+
+Dim SleevesD	'this is just rubber but cut down to 85%...
+Set SleevesD = New Dampener
+SleevesD.name = "Sleeves"
+SleevesD.debugOn = False	'shows info in textbox "TBPout"
+SleevesD.Print = False	  'debug, reports In debugger (In vel, out cor)
+SleevesD.CopyCoef RubbersD, 0.85
+
+'######################### Add new FlippersD Profile
+'######################### Adjust these values to increase or lessen the elasticity
+
+Dim FlippersD
+Set FlippersD = New Dampener
+FlippersD.name = "Flippers"
+FlippersD.debugOn = False
+FlippersD.Print = False
+FlippersD.addpoint 0, 0, 1.1
+FlippersD.addpoint 1, 3.77, 0.99
+FlippersD.addpoint 2, 6, 0.99
+
+Class Dampener
+	Public Print, debugOn   'tbpOut.text
+	Public name, Threshold  'Minimum threshold. Useful for Flippers, which don't have a hit threshold.
+	Public ModIn, ModOut
+	Private Sub Class_Initialize
+		ReDim ModIn(0)
+		ReDim Modout(0)
+	End Sub
+	
+	Public Sub AddPoint(aIdx, aX, aY)
+		ShuffleArrays ModIn, ModOut, 1
+		ModIn(aIDX) = aX
+		ModOut(aIDX) = aY
+		ShuffleArrays ModIn, ModOut, 0
+		If GameTime > 100 Then Report
+	End Sub
+	
+	Public Sub Dampen(aBall)
+		If threshold Then
+			If BallSpeed(aBall) < threshold Then Exit Sub
+		End If
+		Dim RealCOR, DesiredCOR, str, coef
+		DesiredCor = LinearEnvelope(cor.ballvel(aBall.id), ModIn, ModOut )
+		RealCOR = BallSpeed(aBall) / (cor.ballvel(aBall.id) + 0.0001)
+		coef = desiredcor / realcor
+		If debugOn Then str = name & " In vel:" & Round(cor.ballvel(aBall.id),2 ) & vbNewLine & "desired cor: " & Round(desiredcor,4) & vbNewLine & _
+		"actual cor: " & Round(realCOR,4) & vbNewLine & "ballspeed coef: " & Round(coef, 3) & vbNewLine
+		If Print Then Debug.print Round(cor.ballvel(aBall.id),2) & ", " & Round(desiredcor,3)
+		
+		aBall.velx = aBall.velx * coef
+		aBall.vely = aBall.vely * coef
+		aBall.velz = aBall.velz * coef
+		If debugOn Then TBPout.text = str
+	End Sub
+	
+	Public Sub Dampenf(aBall, parm) 'Rubberizer is handle here
+		Dim RealCOR, DesiredCOR, str, coef
+		DesiredCor = LinearEnvelope(cor.ballvel(aBall.id), ModIn, ModOut )
+		RealCOR = BallSpeed(aBall) / (cor.ballvel(aBall.id) + 0.0001)
+		coef = desiredcor / realcor
+		If Abs(aball.velx) < 2 And aball.vely < 0 And aball.vely >  - 3.75 Then
+			aBall.velx = aBall.velx * coef
+			aBall.vely = aBall.vely * coef
+			aBall.velz = aBall.velz * coef
+		End If
+	End Sub
+	
+	Public Sub CopyCoef(aObj, aCoef) 'alternative addpoints, copy with coef
+		Dim x
+		For x = 0 To UBound(aObj.ModIn)
+			addpoint x, aObj.ModIn(x), aObj.ModOut(x) * aCoef
+		Next
+	End Sub
+	
+	Public Sub Report() 'debug, reports all coords in tbPL.text
+		If Not debugOn Then Exit Sub
+		Dim a1, a2
+		a1 = ModIn
+		a2 = ModOut
+		Dim str, x
+		For x = 0 To UBound(a1)
+			str = str & x & ": " & Round(a1(x),4) & ", " & Round(a2(x),4) & vbNewLine
+		Next
+		TBPout.text = str
+	End Sub
+End Class
+
+'******************************************************
+'  TRACK ALL BALL VELOCITIES
+'  FOR RUBBER DAMPENER AND DROP TARGETS
+'******************************************************
+
+Dim cor
+Set cor = New CoRTracker
+
+Class CoRTracker
+	Public ballvel, ballvelx, ballvely
+	
+	Private Sub Class_Initialize
+		ReDim ballvel(0)
+		ReDim ballvelx(0)
+		ReDim ballvely(0)
+	End Sub
+	
+	Public Sub Update()	'tracks in-ball-velocity
+		Dim str, b, AllBalls, highestID
+		allBalls = GetBalls
+		
+		For Each b In allballs
+			If b.id >= HighestID Then highestID = b.id
+		Next
+		
+		If UBound(ballvel) < highestID Then ReDim ballvel(highestID)	'set bounds
+		If UBound(ballvelx) < highestID Then ReDim ballvelx(highestID)	'set bounds
+		If UBound(ballvely) < highestID Then ReDim ballvely(highestID)	'set bounds
+		
+		For Each b In allballs
+			ballvel(b.id) = BallSpeed(b)
+			ballvelx(b.id) = b.velx
+			ballvely(b.id) = b.vely
+		Next
+	End Sub
+End Class
+
+' Note, cor.update must be called in a 10 ms timer. The example table uses the GameTimer for this purpose, but sometimes a dedicated timer call RDampen is used.
+
+Sub RDampen_Timer
+	Cor.Update
+End Sub
+
+'******************************************************
+'****  END PHYSICS DAMPENERS
+'******************************************************
+
+
+
+'******************************************************
+' 	ZBOU: VPW TargetBouncer for targets and posts by Iaakki, Wrd1972, Apophis
+'******************************************************
+
+Const TargetBouncerEnabled = 1	  '0 = normal standup targets, 1 = bouncy targets
+Const TargetBouncerFactor = 0.9	 'Level of bounces. Recommmended value of 0.7-1
+
+Sub TargetBouncer(aBall,defvalue)
+	Dim zMultiplier, vel, vratio
+	If TargetBouncerEnabled = 1 And aball.z < 30 Then
+		'   debug.print "velx: " & aball.velx & " vely: " & aball.vely & " velz: " & aball.velz
+		vel = BallSpeed(aBall)
+		If aBall.velx = 0 Then vratio = 1 Else vratio = aBall.vely / aBall.velx
+		Select Case Int(Rnd * 6) + 1
+			Case 1
+				zMultiplier = 0.2 * defvalue
+			Case 2
+				zMultiplier = 0.25 * defvalue
+			Case 3
+				zMultiplier = 0.3 * defvalue
+			Case 4
+				zMultiplier = 0.4 * defvalue
+			Case 5
+				zMultiplier = 0.45 * defvalue
+			Case 6
+				zMultiplier = 0.5 * defvalue
+		End Select
+		aBall.velz = Abs(vel * zMultiplier * TargetBouncerFactor)
+		aBall.velx = Sgn(aBall.velx) * Sqr(Abs((vel ^ 2 - aBall.velz ^ 2) / (1 + vratio ^ 2)))
+		aBall.vely = aBall.velx * vratio
+		'   debug.print "---> velx: " & aball.velx & " vely: " & aball.vely & " velz: " & aball.velz
+		'   debug.print "conservation check: " & BallSpeed(aBall)/vel
+	End If
+End Sub
+
+'Add targets or posts to the TargetBounce collection if you want to activate the targetbouncer code from them
+Sub TargetBounce_Hit(idx)
+	TargetBouncer ActiveBall, 1
+End Sub
+
+
+
+'******************************************************
+'	ZSSC: SLINGSHOT CORRECTION FUNCTIONS by apophis
+'******************************************************
+' To add these slingshot corrections:
+'	 - On the table, add the endpoint primitives that define the two ends of the Slingshot
+'	 - Initialize the SlingshotCorrection objects in InitSlingCorrection
+'	 - Call the .VelocityCorrect methods from the respective _Slingshot event sub
+
+Dim LS
+Set LS = New SlingshotCorrection
+Dim RS
+Set RS = New SlingshotCorrection
+
+InitSlingCorrection
+
+Sub InitSlingCorrection
+	LS.Object = LeftSlingshot
+	LS.EndPoint1 = EndPoint1LS
+	LS.EndPoint2 = EndPoint2LS
+	
+	RS.Object = RightSlingshot
+	RS.EndPoint1 = EndPoint1RS
+	RS.EndPoint2 = EndPoint2RS
+	
+	'Slingshot angle corrections (pt, BallPos in %, Angle in deg)
+	' These values are best guesses. Retune them if needed based on specific table research.
+	AddSlingsPt 0, 0.00, - 4
+	AddSlingsPt 1, 0.45, - 7
+	AddSlingsPt 2, 0.48,	0
+	AddSlingsPt 3, 0.52,	0
+	AddSlingsPt 4, 0.55,	7
+	AddSlingsPt 5, 1.00,	4
+End Sub
+
+Sub AddSlingsPt(idx, aX, aY)		'debugger wrapper for adjusting flipper script In-game
+	Dim a
+	a = Array(LS, RS)
+	Dim x
+	For Each x In a
+		x.addpoint idx, aX, aY
+	Next
+End Sub
+
+'' The following sub are needed, however they may exist somewhere else in the script. Uncomment below if needed
+'Dim PI: PI = 4*Atn(1)
+'Function dSin(degrees)
+'	dsin = sin(degrees * Pi/180)
+'End Function
+'Function dCos(degrees)
+'	dcos = cos(degrees * Pi/180)
+'End Function
+'
+'Function RotPoint(x,y,angle)
+'	dim rx, ry
+'	rx = x*dCos(angle) - y*dSin(angle)
+'	ry = x*dSin(angle) + y*dCos(angle)
+'	RotPoint = Array(rx,ry)
+'End Function
+
+Class SlingshotCorrection
+	Public DebugOn, Enabled
+	Private Slingshot, SlingX1, SlingX2, SlingY1, SlingY2
+	
+	Public ModIn, ModOut
+	
+	Private Sub Class_Initialize
+		ReDim ModIn(0)
+		ReDim Modout(0)
+		Enabled = True
+	End Sub
+	
+	Public Property Let Object(aInput)
+		Set Slingshot = aInput
+	End Property
+	
+	Public Property Let EndPoint1(aInput)
+		SlingX1 = aInput.x
+		SlingY1 = aInput.y
+	End Property
+	
+	Public Property Let EndPoint2(aInput)
+		SlingX2 = aInput.x
+		SlingY2 = aInput.y
+	End Property
+	
+	Public Sub AddPoint(aIdx, aX, aY)
+		ShuffleArrays ModIn, ModOut, 1
+		ModIn(aIDX) = aX
+		ModOut(aIDX) = aY
+		ShuffleArrays ModIn, ModOut, 0
+		If GameTime > 100 Then Report
+	End Sub
+	
+	Public Sub Report() 'debug, reports all coords in tbPL.text
+		If Not debugOn Then Exit Sub
+		Dim a1, a2
+		a1 = ModIn
+		a2 = ModOut
+		Dim str, x
+		For x = 0 To UBound(a1)
+			str = str & x & ": " & Round(a1(x),4) & ", " & Round(a2(x),4) & vbNewLine
+		Next
+		TBPout.text = str
+	End Sub
+	
+	
+	Public Sub VelocityCorrect(aBall)
+		Dim BallPos, XL, XR, YL, YR
+		
+		'Assign right and left end points
+		If SlingX1 < SlingX2 Then
+			XL = SlingX1
+			YL = SlingY1
+			XR = SlingX2
+			YR = SlingY2
+		Else
+			XL = SlingX2
+			YL = SlingY2
+			XR = SlingX1
+			YR = SlingY1
+		End If
+		
+		'Find BallPos = % on Slingshot
+		If Not IsEmpty(aBall.id) Then
+			If Abs(XR - XL) > Abs(YR - YL) Then
+				BallPos = PSlope(aBall.x, XL, 0, XR, 1)
+			Else
+				BallPos = PSlope(aBall.y, YL, 0, YR, 1)
+			End If
+			If BallPos < 0 Then BallPos = 0
+			If BallPos > 1 Then BallPos = 1
+		End If
+		
+		'Velocity angle correction
+		If Not IsEmpty(ModIn(0) ) Then
+			Dim Angle, RotVxVy
+			Angle = LinearEnvelope(BallPos, ModIn, ModOut)
+			'   debug.print " BallPos=" & BallPos &" Angle=" & Angle
+			'   debug.print " BEFORE: aBall.Velx=" & aBall.Velx &" aBall.Vely" & aBall.Vely
+			RotVxVy = RotPoint(aBall.Velx,aBall.Vely,Angle)
+			If Enabled Then aBall.Velx = RotVxVy(0)
+			If Enabled Then aBall.Vely = RotVxVy(1)
+			'   debug.print " AFTER: aBall.Velx=" & aBall.Velx &" aBall.Vely" & aBall.Vely
+			'   debug.print " "
+		End If
+	End Sub
+End Class
+
