@@ -1,0 +1,19 @@
+---
+additionalRoms:
+  - vpsId: "gy0tyW7U"
+    checksum: "2BB16B5E2A2D7090B3372AB2C3E1B218"
+backglassChecksum: "BB84E7CFC34A596FDF8E6205A0530A0C"
+backglassVPSId: "lwA632lu03"
+coloredROMChecksum: "411F2BF063857B6BAF5684441AC2A224"
+coloredROMVPSId: "pQeB3Ula"
+fps: 60
+romChecksum: "215E33EE289386C75A51B999EFE858BD"
+romVersionOverride: "tmnt_200"
+romVPSId: "XOxQ35O0xR"
+tableNotes: "Download 'Teenage Mutant Ninja Turtles (Data East 1991) v1.2.3f.vpx'"
+tableVPSId: "Bl366m1T"
+tagline: "'NINJA NINJA'"
+testers:
+  - "Wraith"
+vpxChecksum: "814D2C0F69194830230A1E9428E21D2B"
+vpxVPSId: "jNYUZvtB"

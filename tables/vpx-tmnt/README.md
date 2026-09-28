@@ -1,42 +1,60 @@
-﻿# Teenage Mutant Ninja Turtles Data East (1991)
+# Teenage Mutant Ninja Turtles (Data East 1991)
 
-![Table Preview](../../images/vpx-tmnt.png)
+![Table Preview](../../images/jNYUZvtB-preview.webp)
 
-Authors: [Gedankekojote97](https://vpuniverse.com/profile/42203-gedankekojote97/)
+<br>
 
-Tested by: Bla1ze
+## *️⃣  Table Statistics
 
-Version: 1.0
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ✅ | ✅ | ❌ | 60 |
 
-Download: [VP Universe](https://vpuniverse.com/files/file/9830-teenage-mutant-ninja-turtles-mod-nfozzy-fleep-sounds-lut/)
+<br>
 
-DirectB2S
+**VPXS 4KP Testers:**
+  - Wraith
 
-Authors: [Mr. Flytrap](https://vpuniverse.com/profile/43240-mrflytrap/)
+<br>
 
-Version: 2.0
+---
 
-Download: [VP Universe](https://vpuniverse.com/files/file/11308-tmnt-data-east-1991-animated-alternate-backglass/)
+<br>
 
-ROM
+## ❇️ Available in the Wizard! 🪄✨
 
-Download: [VP Forums](https://www.vpforums.org/index.php?app=downloads&showfile=827)
+<br>
 
-MD5: 2bb16b5e2a2d7090b3372ab2c3e1b218
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
 
-SHA: 5ddec5644a84275b4d9ef78a46efdc509fe8b0c6
+### How to install:
 
-## Status 
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Teenage Mutant Ninja Turtles (Data East 1991)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *""NINJA NINJA""*
 
-Minimum VPX Standalone build: 10.8.0-1989-a764013
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 40 |
+<br>
 
-## Instructions
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
 
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more information found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
-- Cowwwwwwabunga dude! 🐢
+<br>
 
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

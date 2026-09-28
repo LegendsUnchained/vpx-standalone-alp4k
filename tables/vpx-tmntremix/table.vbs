@@ -93,7 +93,7 @@ PuPStart(cPuPPack) 'Check for PuP - If found, then start Pinup Player / PuP-Pack
 ' ball size
 Const BallRadius = 25
 Const BallMass = 1.1
-Const cGameName = "tmnt_104"
+Const cGameName = "tmnt_200"
 Dim DesktopMode:DesktopMode = Table1.ShowDT
 Dim  UseVPMDMD
 'If VRRoom <> 0 Then UseVPMDMD = True Else UseVPMDMD = DesktopMode

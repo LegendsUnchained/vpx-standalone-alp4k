@@ -4,7 +4,8 @@ Randomize
 '*****************************************************************************************************
 ' Teenage Mutant Ninja Turtles
 ' IPDB No. 2509 / Data East May, 1991 / 4 Players
-' VPX version 1.1 - Cyberpez, VR Convertion Retro27
+' VPX version 1.2.3f - Table by Cyberpez, VR, F12 Menu, Cabinet, Backglass, Toppers by Retro27, Mega Lair by Dough Nut
+' Mega Sewer by Crypt101, nFozzy, Fleep Sounds, LUT by Gedankekojote97 , 
 '*****************************************************************************************************
 
 On Error Resume Next
@@ -13,68 +14,8 @@ If Err Then MsgBox "You need the Controller.vbs file in order to run this table 
 On Error Goto 0
 
 
-Dim EnableBallControl, ballmod, FlipperMod, BlacklightOoze, BlacklightLaneGuides, PostsColor, BlacklightPegs, PlasticProtectors, LBCOnorOff, SideFlasherColor, GIColorMod, RubberMod, TurtleWeapons, CustomICs, GameType, TurtlesColorMod
+Dim EnableBallControl, ballmod, FlipperMod, BlacklightOoze, BlacklightLaneGuides, PostsColor, BlacklightPegs, PlasticProtectors, LBCOnorOff, SideFlasherColor, GIColorMod, RubberMod, TurtleWeapons, CustomICs, TurtlesColorMod
 EnableBallControl = false 'Change to true to enable manual ball control (or press C in-game) via the arrow keys and B (boost movement) keys
-
-'***************************************************************************'
-'***************************************************************************'
-'							  VR ROOM OPTIONS
-'***************************************************************************'
-'***************************************************************************'
-
-'VR Room
-'0= No VR Room
-'1= Show VR Room
-Const VR_Room = 0
-
-'Scratched Glass
-'0= None
-'1= Normal
-'2= More
-'3= Less
-Const Sglass = 3
-
-'Flyer Poster
-'0= No Poster
-'1= Show Flyer Poster
-Const Poster = 1
-
-'Logo
-'0= No logo
-'1= Show Logo
-Const VRlogo = 1
-
-'Topper
-'0= No Topper
-'1= Show Topper 
-const topper = 1
-
-'Side Blades
-'0= Standard Green
-'1= Standard Black 
-'2= Custom Green by Retro Refurds. https://www.retrorefurbs.com/
-'3= Custom by Pinball Centre. https://www.pinball.center/en/
-Const Sblades = 0
-
-'DMD Reflection
-'0= No DMD Reflection
-'1= Show DMD Reflection
-Const DMDreflection = 1
-
-'Backglass Reflection
-'0= No Backglass Reflection
-'1= Show Backglass Reflection
-Const BGreflection = 1
-
-'VR Room Interactive Lighting
-'0= No Interactive Lighting
-'1= Show Interactive Lighting
-Const Roomfade = 0
-
-'Enable B2S Backglass
-' 0 = B2S Off
-' 1 = B2S On
-Const B2Son1 = 0
 
 '***************************************************************************'
 '***************************************************************************'
@@ -82,116 +23,15 @@ Const B2Son1 = 0
 '***************************************************************************'
 '***************************************************************************'
 
-Const BallBright = 0				'0 - Normal, 1 - Bright
+Const BallBright = 1				'0 - Normal, 1 - Bright
 Const VolumeDial = 0.8
 Const BallRollVolume = 0.5 			'Level of ball rolling volume. Value between 0 and 1
 Const RampRollVolume = 0.5 			'Level of ramp rolling volume. Value between 0 and 1
 
+' VR ROOM
+Dim VRTest : VRTest = False
 
-'GI ColorMod
-'0= Random
-'1= Normal
-'2= CoolWhite
-'3= MultiColor
-'4= AllGreen
-GIColorMod = 4
-
-'T U R T L E S color mod
-'0= Normal
-'1= Green
-TurtlesColorMod = 1
-
-'Flipper Colors
-'0= Random
-'1= White/Red
-'2= White/Black
-'3= White/Yellow
-'4= White/Green
-'5= White/BlackLightGreen
-'6= Yellow/Red
-'7= Yellow/Black
-'8= Yellow/Green
-'9= Yellow/BlackLightGreen
-FlipperMod = 8
-
-'Colored Rubbers
-'0= Random
-'1= White
-'2= Black
-'3= Colored
-RubberMod = 2
-
-'Instructions Card
-'0= Random
-'1= Normal
-'2= Custom1
-'3= Custom2
-'4= Normal Green
-CustomICs = 1
-
-'0= FreePlay
-'1= Coin
-GameType = 1
-
-'Plastic Protectors
-'0= Random
-'1= Clear
-'2= OozeGreen
-PlasticProtectors = 1
-
-'LightBoxCover
-'0= Off
-'1= On
-LBCOnorOff = 0
-
-'SideFlasherColor
-'0= Random
-'1= Yellow
-'2= Green
-SideFlasherColor = 1
-
-'Turtle Weapons
-'0= Hidden
-'1= Visible
-TurtleWeapons = 0
-
-'Post Colors
-'0= Random
-'1= Black
-'2= Yellow
-'3= Green
-'4= Ooze Green
-PostsColor = 3
-
-'''''''''''''''''''''
-' Blacklight things '
-'''''''''''''''''''''
-
-'Blacklight Ooooze
-'0= Off
-'1= On
-BlacklightOoze = 1
-
-'Blacklight LaneGuides
-'0= Off
-'1= On
-BlacklightLaneGuides = 0
-
-'Blacklight Pegs
-'0= Off
-'1= On
-BlacklightPegs = 0
-
-'***************************************************************************'
-'***************************************************************************'
-'						End of OPTIONS
-'***************************************************************************'
-'***************************************************************************'
-
-
-
-
-' ball size
+' Ball Size
 Const BallRadius = 25
 Const BallMass = 1
 
@@ -208,9 +48,8 @@ Dim tableheight: tableheight = tmnt.height
 
 
 ' VPinMAME ROM name
-
-Const cGameName 			= "tmnt_104"	
-
+Const cGameName 			= "tmnt_200"	'v2.00 Rom Requies PinMame 3.7.0.206 and above.
+'Const cGameName 			= "tmnt_104"	'v1.04 Rom
 
 
 ' ===============================================================================================
@@ -231,7 +70,6 @@ Dim UseVPMDMD
     UseVPMDMD = true
 
 LoadVPM "01560000", "DE.VBS", 3.26
-
 
 ' ===============================================================================================
 ' solenoids
@@ -262,8 +100,7 @@ SolCallBack(16)	= "SewerOpen"
 'SolCallback(20)             = "vpmSolSound ""left_slingshot_new"","
 'SolCallback(21)             = "vpmSolSound ""right_slingshot_new"","
 
-SolCallBack(22) ="SolPizzaSpin"
-
+SolCallBack(22) = "SolPizzaSpin"
 
 SolCallBack(25)  = "SetLamp 125,"
 SolCallBack(26)  = "SetLamp 126,"
@@ -273,7 +110,6 @@ SolCallBack(29)  = "SetLamp 129,"
 SolCallBack(30)  = "SetLamp 130,"
 SolCallBack(31)  = "SetLamp 131,"
 SolCallBack(32)  = "SetLamp 132,"
-
 
 Dim Ball(6)
 Dim InitTime
@@ -297,7 +133,7 @@ Sub InitVPM()
     With Controller
         .GameName = cGameName
 '        If Err Then MsgBox "Can't start Game " & cGameName & vbNewLine & Err.Description:Exit Sub
-        .SplashInfoLine = "TMNT" & vbNewLine & "VPX - cyberpez"
+        .SplashInfoLine = "Teenage Mutant Ninja Turtles" & vbNewLine & "Data East 1991"
 '        .Games(cGameName).Settings.Value("rol") = 0 'rotate DMD to the left
 '        .HandleKeyboard = 0
 '        .ShowTitle = 0
@@ -314,6 +150,8 @@ Sub InitVPM()
      Controller.Run
 End Sub
 
+'Initialize VR beacon
+SolRotateBeacons False
 
 
 Sub tmnt_Init
@@ -334,7 +172,7 @@ LoadLUT
  
 
     ' Impulse Plunger
-    Const IMPowerSetting = 75 'Plunger Power
+    Const IMPowerSetting = 60 'Plunger Power
     Const IMTime = 0.6        ' Time in seconds for Full Plunge
     Set AutoPlunger = New cvpmImpulseP
     With AutoPlunger
@@ -366,6 +204,7 @@ LoadLUT
 		l46.visible = False
 		l47.visible = False
 		l48.visible = False
+		l6d.visible = False
 	Else
 		l43.visible = True
 		l44.visible = True
@@ -373,9 +212,8 @@ LoadLUT
 		l46.visible = True
 		l47.visible = True
 		l48.visible = True
+		l6d.visible = True
 	End If
-
-	SetOptions
 
 	vpmInit me
 
@@ -448,10 +286,10 @@ Sub ShowLUT
 		Case 8: LUTBox.text = "3rdaxis Referenced THX Standard"
 		Case 9: LUTBox.text = "CalleV Punchy Brightness and Contrast"
 		Case 10: LUTBox.text = "HauntFreaks Desaturated"
-  		Case 11: LUTBox.text = "Tomate washed out"
-        Case 12: LUTBox.text = "VPW original 1on1"
-        Case 13: LUTBox.text = "bassgeige"
-        Case 14: LUTBox.text = "blacklight"
+  		Case 11: LUTBox.text = "Tomate Washed Out"
+        Case 12: LUTBox.text = "VPW Original 1on1"
+        Case 13: LUTBox.text = "Bassgeige"
+        Case 14: LUTBox.text = "Blacklight"
         Case 15: LUTBox.text = "B&W Comic Book"
 		Case 16: LUTBox.text = "Skitso New ColorLut"
 	End Select
@@ -503,6 +341,7 @@ Sub LoadLUT
 	    Set FileObj = Nothing
 End Sub
 
+
 '//////////////////////////////////////////////////////////////////////
 '// Keys
 '//////////////////////////////////////////////////////////////////////
@@ -528,6 +367,10 @@ If keycode = LeftMagnaSave Then bLutActive = True
         End If
         End If
 If keycode = PlungerKey Then Plunger.PullBack:SoundPlungerPull()
+
+If Keycode = StartGameKey Then
+Pincab_startbutton.Y = Pincab_startbutton.Y - 5
+End If
 
 	If keycode = PlungerKey Then
 		plunger.PullBack
@@ -561,24 +404,23 @@ If keycode = PlungerKey Then Plunger.PullBack:SoundPlungerPull()
 	End If
 
 If keycode = LeftFlipperKey Then 
-Primary_flipperbuttonleft.X = Primary_flipperbuttonleft.X + 10
+Pincab_flipperbuttonleft.X = Pincab_flipperbuttonleft.X + 8
 end if
 If keycode = RightFlipperKey Then 
-Primary_flipperbuttonright.X = Primary_flipperbuttonright.X - 10
+Pincab_flipperbuttonright.X = Pincab_flipperbuttonright.X - 8
 end if
 
 If keycode = RightFlipperKey Then FlipperActivate RightFlipper, RFPress End If
 
 If keycode = LeftFlipperKey Then FlipperActivate LeftFlipper, LFPress End If
 
-If Keycode = StartGameKey Then		
-Primary_startbutton1.y = Primary_startbutton1.y - 5
-Primary_startbutton2.y = Primary_startbutton2.y - 5
-End If
-
 End Sub
 
 Sub tmnt_KeyUp(ByVal keycode)
+
+If Keycode = StartGameKey Then
+Pincab_startbutton.Y = Pincab_startbutton.Y + 5
+End If
 
 'LUT controls
 If keycode = LeftMagnaSave Then bLutActive = False
@@ -588,28 +430,19 @@ If keycode = LeftMagnaSave Then bLutActive = False
 		SoundPlungerReleaseBall()
 		TimerPlunger.Enabled = False
 		TimerPlunger2.Enabled = True
-
 	End If
 
 If keycode = LeftFlipperKey Then 
-Primary_flipperbuttonleft.X = Primary_flipperbuttonleft.X - 10
+Pincab_flipperbuttonleft.X = Pincab_flipperbuttonleft.X - 8
 end if
 If keycode = RightFlipperKey Then 
-Primary_flipperbuttonright.X = Primary_flipperbuttonright.X + 10
+Pincab_flipperbuttonright.X = Pincab_flipperbuttonright.X + 8
 end if
 
 If keycode = RightFlipperKey Then FlipperDeActivate RightFlipper, RFPress End If
 
 If keycode = LeftFlipperKey Then FlipperDeActivate LeftFlipper, LFPress End If 
 
-'*****************************************************************************************************
-'Move and Cancel ambient sound when Start button is pressed
-'*****************************************************************************************************
-If Keycode = StartGameKey Then		
-Primary_startbutton1.y = Primary_startbutton1.y + 5
-Primary_StartButton2.y = Primary_StartButton2.y + 5
-'StopSound "ambientSound"
-End If
 End Sub
 
 
@@ -1322,6 +1155,33 @@ Sub CheckLiveCatch(ball, Flipper, FCount, parm) 'Experimental new live catch
 End Sub
 
 '*****************************************************************************************************
+' VR Beacon ANIMATION
+'*****************************************************************************************************
+Dim BeaconPos:BeaconPos = 0
+
+Sub BeaconTimer_Timer
+	BeaconPos = BeaconPos + 3
+	if BeaconPos = 360 then BeaconPos = 0
+	Pincab_Parabola.RotY = BeaconPos+90
+    PinCab_Beacon.BlendDisableLighting=.3 * abs(sin((BeaconPos+90+90) * 6.28 / 360))
+	BeaconFB.RotY = BeaconPos + 90
+    if BeaconPos+90 > 270 then BeaconFb.IntensityScale = -1 else BeaconFb.IntensityScale = 2
+End Sub
+
+Sub SolRotateBeacons(Enabled)
+    If Enabled then
+		BeaconTimer.Enabled = true       
+        PinCab_Beacon.image = "dome3_green_lit"
+		'PlaySound SoundFX("fx_relay",DOFContactors)
+    Else
+		BeaconTimer.Enabled = false
+        PinCab_Beacon.image = "dome3_green"
+		if BeaconPos+90 > 270 then BeaconFb.IntensityScale = -.01 else BeaconFb.IntensityScale = .01
+    End If
+End Sub
+
+
+'*****************************************************************************************************
 ' VR PLUNGER ANIMATION
 '
 ' Code needed to animate the plunger. If you pull the plunger it will move in VR.
@@ -1329,22 +1189,22 @@ End Sub
 ' range in which it can move. The fists numeric value is the actual y position of the plunger primitive
 ' and the second is the actual y position + 135 to determine the range in which it can move.
 '
-' You need to to select the Primary_plunger primitive you copied from the
-' template you need to select the Primary_plunger primitive and copy the value of the Y position 
+' You need to to select the Pincab_plunger primitive you copied from the
+' template you need to select the Pincab_plunger primitive and copy the value of the Y position 
 ' (e.g. 1269.286) into the code. The value that determines the range of the plunger is always the y 
 ' position + 135 (e.g. 1404).
 '
 '*****************************************************************************************************
 
 Sub TimerPlunger_Timer
-  If Primary_plunger.Y < -130 Then
-  	Primary_plunger.Y = Primary_plunger.Y + 5
+  If Pincab_plunger.Y < 2489.324 Then
+  	Pincab_plunger.Y = Pincab_plunger.Y + 5
   End If
 End Sub
 
 Sub TimerPlunger2_Timer
  'debug.print plunger.position
-  Primary_plunger.Y = -230 + (5* Plunger.Position) -20
+  PinCab_plunger.Y = 2335.324 + (5* Plunger.Position) -20
 End Sub
 
 
@@ -1373,162 +1233,463 @@ End Sub
 Dim BIP,xxBLPeg, xxPostsColor, FlipperColorType, PlasticProtectorsType, SideFlasherColorType, PostsColorType, CustomICsType
 BIP = 0
 
+'***********************************
+'			Options
+'***********************************
 
-Sub SetOptions()
+Sub TMNT_OptionEvent(ByVal eventId)
 
-'Flipper Colors
+	' Side Blades
+	Dim Sblades : Sblades = 1
+	Sblades = TMNT.Option("Side Blades", 1, 4, 1, 1, 0, Array("Standard Green", "Standard Black", "Custom Green by Retro Refurds", "Custom Blades by Pinball Centre"))
+	Select Case Sblades
+		Case 1:
+			PinCab_Blades.image= "PinCab_Blades1"
+		Case 2:
+			PinCab_Blades.image= "PinCab_Blades"
+		Case 3:
+			PinCab_Blades.image= "PinCab_Blades2"
+		Case 4:
+			PinCab_Blades.image= "PinCab_Blades3"
+:
+	End Select
 
-'0=Random
-'1=White/Red
-'2=White/Black
-'3=White/Yellow
-'4=White/Green
-'5=White/BlackLightGreen
-'6=Yellow/Red
-'7=Yellow/Black
-'8=Yellow/Green
-'9=Yellow/BlackLightGreen
+	' Scratched Glass
+	Dim Sglass : Sglass = 1
+	Sglass = TMNT.Option("Scratched Glass", 1, 4, 1, 1, 0, Array("None", "Less", "Normal", "More"))
+	Select Case Sglass
+		Case 1:
+			PinCab_Glass_Scratches.imageA= "VRBG_blank"
+		Case 2:
+			PinCab_Glass_Scratches.imageA= "VR Table Cab_glass_scratches2"
+		Case 3:
+			PinCab_Glass_Scratches.imageA= "VR Table Cab_glass_scratches"
+		Case 4:
+			PinCab_Glass_Scratches.imageA= "VR Table Cab_glass_scratches1"
+	End Select
 
-If FlipperMod = 0 Then
-		FlipperColorType = Int(Rnd*9)+1
-	Else
-		FlipperColorType = FlipperMod
-End If
-
-If FlipperColorType = 1 Then
-	flipperrBat.Material = "Plastic White"
-	flipperrRubber.Material = "Red Rubber"
-	pRightFlipperLogo.Material = "Plastic White"
-	flipperlBat.Material = "Plastic White"
-	flipperlRubber.Material = "Red Rubber"
-	pLeftFlipperLogo.Material = "Plastic White"
-End If
-
-If FlipperColorType = 2 Then
-	flipperrBat.Material = "Plastic White"
-	flipperrRubber.Material = "Black Rubber"
-	pRightFlipperLogo.Material = "Plastic White"
-	flipperlBat.Material = "Plastic White"
-	flipperlRubber.Material = "Black Rubber"
-	pLeftFlipperLogo.Material = "Plastic White"
-End If
-
-If FlipperColorType = 3 Then
-	flipperrBat.Material = "Plastic White"
-	flipperrRubber.Material = "Yellow Rubber"
-	pRightFlipperLogo.Material = "Plastic White"
-	flipperlBat.Material = "Plastic White"
-	flipperlRubber.Material = "Yellow Rubber"
-	pLeftFlipperLogo.Material = "Plastic White"
-End If
-
-If FlipperColorType = 4 Then
-	flipperrBat.Material = "Plastic White"
-	flipperrRubber.Material = "Green Rubber"
-	pRightFlipperLogo.Material = "Plastic White"
-	flipperlBat.Material = "Plastic White"
-	flipperlRubber.Material = "Green Rubber"
-	pLeftFlipperLogo.Material = "Plastic White"
-End If
-
-If FlipperColorType = 5 Then
-	flipperrBat.Material = "Plastic White"
-	flipperrRubber.Material = "Green Rubber"
-	flipperrRubber.DisableLighting = 1
-	pRightFlipperLogo.Material = "Plastic White"
-	flipperlBat.Material = "Plastic White"
-	flipperlRubber.Material = "Green Rubber"
-	flipperlRubber.DisableLighting = 1
-	pLeftFlipperLogo.Material = "Plastic White"
-End If
-
-If FlipperColorType = 6 Then
-	flipperrBat.Material = "Plastic Yellow"
-	flipperrRubber.Material = "Red Rubber"
-	pRightFlipperLogo.Material = "Plastic Yellow"
-	flipperlBat.Material = "Plastic Yellow"
-	flipperlRubber.Material = "Red Rubber"
-	pLeftFlipperLogo.Material = "Plastic Yellow"
-End If
-
-If FlipperColorType = 7 Then
-	flipperrBat.Material = "Plastic Yellow"
-	flipperrRubber.Material = "Black Rubber"
-	pRightFlipperLogo.Material = "Plastic Yellow"
-	flipperlBat.Material = "Plastic Yellow"
-	flipperlRubber.Material = "Black Rubber"
-	pLeftFlipperLogo.Material = "Plastic Yellow"
-End If
-
-If FlipperColorType = 8 Then
-	flipperrBat.Material = "Plastic Yellow"
-	flipperrRubber.Material = "Green Rubber"
-	pRightFlipperLogo.Material = "Plastic Yellow"
-	flipperlBat.Material = "Plastic Yellow"
-	flipperlRubber.Material = "Green Rubber"
-	pLeftFlipperLogo.Material = "Plastic Yellow"
-End If
-
-If FlipperColorType = 9 Then
-	flipperrBat.Material = "Plastic Yellow"
-	flipperrRubber.Material = "Green Rubber"
-	flipperrRubber.DisableLighting = 1
-	pRightFlipperLogo.Material = "Plastic Yellow"
-	flipperlBat.Material = "Plastic Yellow"
-	flipperlRubber.Material = "Green Rubber"
-	flipperlRubber.DisableLighting = 1
-	pLeftFlipperLogo.Material = "Plastic Yellow"
-End If
+	' Bumpers
+	Dim Cbumpers : Cbumpers = 1
+	Cbumpers = TMNT.Option("Bumpers", 1, 2, 1, 1, 0, Array("Standard", "Prototype"))
+	Select Case Cbumpers
+		Case 1:
+			pBumpCap1.image= "Red_bumper_texture"
+			pBumpCap2.image= "greencap_texture"
+			pBumpCap3.image= "greencap_texture"
+		Case 2:
+			pBumpCap1.image= "Red_Bumper_Bottom_Proto"
+			pBumpCap2.image= "Red_bumper_Top_Proto"
+			pBumpCap3.image= "Red_bumper_Top_Proto"
+	End Select
 
 
+	' Turtle Weapons
+	Dim TurtleWeapons : TurtleWeapons = 1
+	TurtleWeapons = TMNT.Option("Turtle Weapons", 1, 2, 1, 1, 0, Array("Weapons Off", "Weapons On"))
+	Select Case TurtleWeapons
+		Case 1:
+		pNunChuk1a.Visible = 0
+		pNunChuk1b.Visible = 0
+		pNunChuk1c.Visible = 0
+		pNunChuk2a.Visible = 0
+		pNunChuk2b.Visible = 0
+		pNunChuk2c.Visible = 0
+		pMike_Belt2.Visible = 0
+		pMike_Belt1.Visible = 1
+		pBoStaff.Visible = 0
+		pSai1a.Visible = 0
+		pSai1b.Visible = 0
+		pSai2a.Visible = 0
+		pSai2b.Visible = 0
+		pSword1a.Visible = 0
+		pSword1b.Visible = 0
+		pSword2a.Visible = 0
+		Case 2:
+		pNunChuk1a.Visible = 1
+		pNunChuk1b.Visible = 1
+		pNunChuk1c.Visible = 1
+		pNunChuk2a.Visible = 1
+		pNunChuk2b.Visible = 1
+		pNunChuk2c.Visible = 1
+		pMike_Belt2.Visible = 1
+		pMike_Belt1.Visible = 0
+		pBoStaff.Visible = 1
+		pSai1a.Visible = 1
+		pSai1b.Visible = 1
+		pSai2a.Visible = 1
+		pSai2b.Visible = 1
+		pSword1a.Visible = 1
+		pSword1b.Visible = 1
+		pSword2a.Visible = 1
+		pSword2b.Visible = 1
+	End Select
 
+'Instruction Cards
+	Dim CustomICs : CustomICs = 1
+	CustomICs = TMNT.Option("Instruction Cards", 1, 8, 1, 1, 0, Array("Standard White", "Standard White Freeplay", "Standard Green", "Standard Green Freeplay", "Custom Blue", "Custom Blue Freeplay", "Custom Geen", "Custom Green Freeplay"))
+	Select Case CustomICs
+	Case 1:
+		pICL.Image = "tmnt_left_standard"
+		pICR.Image = "tmnt_right_coin"
+	Case 2:
+		pICL.Image = "tmnt_left_standard"
+		pICR.Image = "tmnt_right_freeplay"
+	Case 3:
+		pICL.Image = "tmnt_left_standard_green"
+		pICR.Image = "tmnt_right_coin_green"
+	Case 4:
+		pICL.Image = "tmnt_left_standard_green"
+		pICR.Image = "tmnt_right_freeplay_green"
+	Case 5:
+		pICL.Image = "tmnt_left_blue_custom"
+		pICR.Image = "tmnt_right_coin_blue"
+	Case 6:
+		pICL.Image = "tmnt_left_blue_custom"
+		pICR.Image = "tmnt_right_freeplay_blue"
+	Case 7:
+		pICL.Image = "tmnt_left_green_custom"
+		pICR.Image = "tmnt_right_coin_green_custom"
+	Case 8:
+		pICL.Image = "tmnt_left_green_custom"
+		pICR.Image = "tmnt_right_freeplay_green_custom"
+	End Select
 
+'Cabinet Mode
+	Dim Metalselect : Metalselect  = 1
+	Metalselect = TMNT.Option("Cabinet Mode", 1, 2, 1, 1, 0, Array("On", "Off"))
+	Select Case Metalselect
+		Case 1:
+			PinCab_Rails.Visible = 1
+		Case 2:
+			PinCab_Rails.Visible = 0
+		End Select
 
-'''''''''''''''''''''''''''
-''''''GI
-'''''''''''''''''''''''''''
-Dim Red, RedFull, RedI, Pink, PinkFull, PinkI, White, WhiteFull, WhiteI, Blue, BlueFull, BlueI, Yellow, YellowFull, YellowI, Green, GreenFull, GreenI, GreenI2, Orange, OrangeFull, OrangeI, Purple, PurpleFull, PurpleI, AmberFull, Amber, AmberI
-Dim GIColorModType
+'Metal Color
+	Dim Metalcolor : Metalcolor  = 1
+	Metalcolor = TMNT.Option("Cabinet Metals Color ", 1, 2, 1, 1, 0, Array("Black", "Green"))
+	Select Case Metalcolor 
+		Case 1:
+			PinCab_Rails.material = "Metal_Black_Powdercoat"
+			PinCab_Coin_Door.material = "Metal_Black_Powdercoat"
+			PinCab_Housing.material = "Metal_Black_Powdercoat"
+			PinCab_Cabinet.image="PinCab_Cabinet"
+			Pincab_LeftFrontLeg.material = "Metal_Black_Powdercoat"
+			Pincab_FrontRightLeg.material = "Metal_Black_Powdercoat"
+			PinCab_BackleftLeg.material = "Metal_Black_Powdercoat"
+			Pincab_BackRightLeg.material = "Metal_Black_Powdercoat"
+			PinCab_Front_Left_Bolt.material = "Metal"
+			PinCab_Front_Right_Bolt.material = "Metal"
+			Pincab_Backbox_Bracket_Right.material = "Metal_Black_Powdercoat"
+			Pincab_Backbox_Bracket_Left.material = "Metal_Black_Powdercoat"
+			Pincab_front_metal_Right.material = "Metal_Black_Powdercoat"
+			Pincab_front_metal_Left.material = "Metal_Black_Powdercoat"
+		Case 2:
+			PinCab_Rails.material = "Metal_Green"
+			PinCab_Coin_Door.material = "Metal_Green"
+			PinCab_Housing.material = "Metal_Green"
+			PinCab_Cabinet.image="PinCab_Cabinet_Green"
+			Pincab_LeftFrontLeg.material = "Metal_Green"
+			Pincab_FrontRightLeg.material = "Metal_Green"
+			PinCab_BackleftLeg.material = "Metal_Green"
+			Pincab_BackRightLeg.material = "Metal_Green"
+			PinCab_Front_Left_Bolt.material = "Metal_Green"
+			PinCab_Front_Right_Bolt.material = "Metal_Green"
+			Pincab_Backbox_Bracket_Right.material = "Metal_Green"
+			Pincab_Backbox_Bracket_Left.material = "Metal_Green"
+			Pincab_front_metal_Right.material = "Metal_Green"
+			Pincab_front_metal_Left.material = "Metal_Green"
+		End Select
 
-RedFull = rgb(255,0,0) 
-Red = rgb(255,0,0)
-RedI = 20
-PinkFull = rgb(255,0,128)
-Pink = rgb(255,0,255)
-PinkI = 20
-WhiteFull = rgb(255,255,128) 
-White = rgb(255,255,255)
-WhiteI = 10
-BlueFull = rgb(0,128,255)
-Blue = rgb(0,255,255)
-BlueI = 20
-YellowFull = rgb(255,255,128)
-Yellow = rgb(255,255,0)
-YellowI = 10
-GreenFull = rgb(128,255,128)
-Green = rgb(0,255,0)
-GreenI = 20
-GreenI2 = 2
-PurpleFull = rgb(128,0,255)
-Purple = rgb(64,0,128)
-PurpleI = 20
-OrangeFull = rgb(255,128,64)
-Orange = rgb(128,128,0)
-OrangeI = 20
-AmberFull = rgb(255,197,143)
-Amber = rgb(255,197,143)
-AmberI = 20
+'Blacklight Ooooze
+	Dim BlacklightOoze : BlacklightOoze = 1
+	BlacklightOoze = TMNT.Option("Blacklight Ooooze", 1, 2, 1, 1, 0, Array("Off", "On"))
+	Select Case BlacklightOoze
+		Case 1:
+			bl_green.visible = False
+			fApronOozeL.visible = False
+			fApronOozeR.visible = False
+		Case 2:
+			bl_green.visible = True
+			fApronOozeL.visible = True
+			fApronOozeR.visible = True
+	End Select
 
+'Blacklight LaneGuides
+	Dim BlacklightLaneGuides : BlacklightLaneGuides = 1
+	BlacklightLaneGuides = TMNT.Option("Blacklight LaneGuides", 1, 2, 1, 1, 0, Array("Off", "On"))
+	Select Case BlacklightLaneGuides
+		Case 1:
+			Primitive4.DisableLighting = 0
+			Primitive13.DisableLighting = 0
+		Case 2:
+			Primitive4.DisableLighting = 1
+			Primitive13.DisableLighting = 1
+	End Select
 
+'Blacklight Pegs
+	Dim BlacklightPegs : BlacklightPegs = 1
+	BlacklightPegs = TMNT.Option("Blacklight Pegs", 1, 2, 1, 1, 0, Array("Off", "On"))
+	Select Case BlacklightPegs
+		Case 1:
+	for each xxBLPeg in Pegs
+		xxBLPeg.DisableLighting = 0
+		next
+		Case 2:
+	for each xxBLPeg in Pegs
+		xxBLPeg.DisableLighting = 1
+		next
+	End Select
 
-If GIColorMod = 0 Then
-		GIColorModType = Int(Rnd*4)+1
-	Else
-		GIColorModType = GIColorMod
-End If
+'Light Box Cover
+	Dim LBCOnorOff : LBCOnorOff = 1
+	LBCOnorOff = TMNT.Option("Light Box Cover", 1, 2, 1, 1, 0, Array("Off", "On"))
+	Select Case LBCOnorOff
+		Case 1:
+			pLightBoxCover.visible = false
+		Case 2:
+			pLightBoxCover.visible = true
+	End Select
 
+'SideFlasherColor
+	Dim SideFlasherColor : SideFlasherColor = 1
+	SideFlasherColor = TMNT.Option("Side Flasher Color", 1, 2, 1, 1, 0, Array("Yellow", "Green"))
+	Select Case SideFlasherColor
+		Case 1:
+		pDome14a.Image = "TopFlasherYellow_off"
+		f14aa.Color = RGB(255,128,0)
+		f14aa.ColorFull = RGB(255,255,255)
+		f14ab.Color = RGB(255,128,0)
+		f14ab.ColorFull = RGB(255,255,255)
+		pDome14b.Image = "TopFlasherYellow_off"
+		f14ba.Color = RGB(255,128,0)
+		f14ba.ColorFull = RGB(255,255,255)
+		f14bb.Color = RGB(255,128,0)
+		f14bb.ColorFull = RGB(255,255,255)
+		Case 2:
+		pDome14a.Image = "TopFlasherGreen_off"
+		f14aa.Color = RGB(0,128,0)
+		f14aa.ColorFull = RGB(0,255,0)
+		f14ab.Color = RGB(0,128,0)
+		f14ab.ColorFull = RGB(0,255,0)
+		pDome14b.Image = "TopFlasherGreen_off"
+		f14ba.Color = RGB(0,128,0)
+		f14ba.ColorFull = RGB(0,255,0)
+		f14bb.Color = RGB(0,128,0)
+		f14bb.ColorFull = RGB(0,255,0)
+	End Select
 
-If GIColorModType = 1 Then
+'Plastic Protectors
+	Dim PlasticProtectors : PlasticProtectors = 1
+	PlasticProtectors = TMNT.Option("Plastic Protectors", 1, 2, 1, 1, 0, Array("Clear", "OozeGreen"))
+	Select Case PlasticProtectors
+		Case 1:
+	pClearPlastic1.Material = "ClearPlastic"
+	pClearPlastic1.DisableLighting = 0
+	pClearPlastic2.Material = "ClearPlastic"
+	pClearPlastic2.DisableLighting = 0
+	pClearPlastic3.Material = "ClearPlastic"
+	pClearPlastic3.DisableLighting = 0
+	pClearPlastic4.Material = "ClearPlastic"
+	pClearPlastic4.DisableLighting = 0
+	pClearPlastic5.Material = "ClearPlastic"
+	pClearPlastic5.DisableLighting = 0
+	pClearPlastic6.Material = "ClearPlastic"
+	pClearPlastic6.DisableLighting = 0
+	pClearPlastic7.Material = "ClearPlastic"
+	pClearPlastic7.DisableLighting = 0
+		Case 2:
+	pClearPlastic1.Material = "ClearPlasticNeonGreen"
+	pClearPlastic1.DisableLighting = 1
+	pClearPlastic2.Material = "ClearPlasticNeonGreen"
+	pClearPlastic2.DisableLighting = 1
+	pClearPlastic3.Material = "ClearPlasticNeonGreen"
+	pClearPlastic3.DisableLighting = 1
+	pClearPlastic4.Material = "ClearPlasticNeonGreen"
+	pClearPlastic4.DisableLighting = 1
+	pClearPlastic5.Material = "ClearPlasticNeonGreen"
+	pClearPlastic5.DisableLighting = 1
+	pClearPlastic6.Material = "ClearPlasticNeonGreen"
+	pClearPlastic6.DisableLighting = 1
+	pClearPlastic7.Material = "ClearPlasticNeonGreen"
+	pClearPlastic7.DisableLighting = 1
+	End Select
+
+'T U R T L E S color mod
+	Dim TurtlesColorMod : TurtlesColorMod = 1
+	TurtlesColorMod = TMNT.Option("T U R T L E S Color", 1, 2, 1, 1, 0, Array("Standard", "Green"))
+	Select Case TurtlesColorMod
+		Case 1:
+	l9.Color=Amber
+	l9.ColorFull=AmberFull
+	l10.Color=Amber
+	l10.ColorFull=AmberFull
+	l11.Color=Amber
+	l11.ColorFull=AmberFull
+	l12.Color=Amber
+	l12.ColorFull=AmberFull
+	l13.Color=Amber
+	l13.ColorFull=AmberFull
+	l14.Color=Amber
+	l14.ColorFull=AmberFull
+	l15.Color=Amber
+	l15.ColorFull=AmberFull
+		Case 2:
+	l9.Color=Green
+	l9.ColorFull=GreenFull
+	l10.Color=Green
+	l10.ColorFull=GreenFull
+	l11.Color=Green
+	l11.ColorFull=GreenFull
+	l12.Color=Green
+	l12.ColorFull=GreenFull
+	l13.Color=Green
+	l13.ColorFull=GreenFull
+	l14.Color=Green
+	l14.ColorFull=GreenFull
+	l15.Color=Green
+	l15.ColorFull=GreenFull
+	End Select
+	
+'Post Colors
+	Dim PostsColor : PostsColor = 1
+	PostsColor = TMNT.Option("Post Colors", 1, 4, 1, 1, 0, Array("Black", "Yellow", "Green", "Ooze Green"))
+	Select Case PostsColor
+		Case 1:
+	for each xxPostsColor in RubberPosts
+		xxPostsColor.DisableLighting = 0
+		xxPostsColor.Image = "rubber-post_black"
+		next
+		Case 2:
+	for each xxPostsColor in RubberPosts
+		xxPostsColor.DisableLighting = 0
+		xxPostsColor.Image = "rubber-post_yellow"
+		next
+		Case 3:
+	for each xxPostsColor in RubberPosts
+		xxPostsColor.DisableLighting = 0
+		xxPostsColor.Image = "rubber-post_green"
+		next
+		Case 4:
+	for each xxPostsColor in RubberPosts
+		xxPostsColor.DisableLighting = 1
+		xxPostsColor.Image = "rubber-post_oozegreen"
+		next
+	End Select
+
+'Colored Rubbers
+	Dim RubberMod : RubberMod = 1
+	RubberMod = TMNT.Option("Rubbers Colors", 1, 3, 1, 1, 0, Array("White", "Black", "Colored"))
+	Select Case RubberMod
+		Case 1:
+	LeftSlingshota.Material = "Rubber White"
+	LeftSlingshotb.Material = "Rubber White"
+	LeftSlingshotc.Material = "Rubber White"
+	LeftSlingshotd.Material = "Rubber White"
+
+	RightSlingshota.Material = "Rubber White"
+	RightSlingshotb.Material = "Rubber White"
+	RightSlingshotc.Material = "Rubber White"
+	RightSlingshotd.Material = "Rubber White"
+
+	Rubber1.Material = "Rubber White"
+	Rubber3.Material = "Rubber White"
+	Rubber4.Material = "Rubber White"
+	Rubber5.Material = "Rubber White"
+	Rubber6.Material = "Rubber White"
+	Rubber7.Material = "Rubber White"
+	Rubber8.Material = "Rubber White"
+	Rubber9.Material = "Rubber White"
+	Rubber21.Material = "Rubber White"
+	Rubber10.Material = "Rubber White"
+	Rubber22.Material = "Rubber White"
+	Rubber11.Material = "Rubber White"
+
+	Rubber32.Material = "Rubber White"
+
+	Pin3.Material = "Rubber White"
+	Pin4.Material = "Rubber White"
+	PegRubber3.Material = "Rubber White"
+	PegRubber4.Material = "Rubber White"
+	Pin7.Material = "Rubber White"
+	Pin8.Material = "Rubber White"
+	PegRubber1.Material = "Rubber White"
+	PegRubber2.Material = "Rubber White"
+		Case 2:
+	LeftSlingshota.Material = "Black Rubber"
+	LeftSlingshotb.Material = "Black Rubber"
+	LeftSlingshotc.Material = "Black Rubber"
+	LeftSlingshotd.Material = "Black Rubber"
+
+	RightSlingshota.Material = "Black Rubber"
+	RightSlingshotb.Material = "Black Rubber"
+	RightSlingshotc.Material = "Black Rubber"
+	RightSlingshotd.Material = "Black Rubber"
+
+	Rubber1.Material = "Black Rubber"
+	Rubber3.Material = "Black Rubber"
+	Rubber4.Material = "Black Rubber"
+	Rubber5.Material = "Black Rubber"
+	Rubber6.Material = "Black Rubber"
+	Rubber7.Material = "Black Rubber"
+	Rubber8.Material = "Black Rubber"
+	Rubber9.Material = "Black Rubber"
+	Rubber21.Material = "Black Rubber"
+	Rubber10.Material = "Black Rubber"
+	Rubber22.Material = "Black Rubber"
+	Rubber11.Material = "Black Rubber"
+
+	Rubber32.Material = "Black Rubber"
+
+	Pin3.Material = "Black Rubber"
+	Pin4.Material = "Black Rubber"
+	PegRubber3.Material = "Black Rubber"
+	PegRubber4.Material = "Black Rubber"
+	Pin7.Material = "Black Rubber"
+	Pin8.Material = "Black Rubber"
+	PegRubber1.Material = "Black Rubber"
+	PegRubber2.Material = "Black Rubber"
+		Case 3:
+	LeftSlingshota.Material = "Rubber Dark Green"
+	LeftSlingshotb.Material = "Rubber Dark Green"
+	LeftSlingshotc.Material = "Rubber Dark Green"
+	LeftSlingshotd.Material = "Rubber Dark Green"
+
+	RightSlingshota.Material = "Rubber Dark Green"
+	RightSlingshotb.Material = "Rubber Dark Green"
+	RightSlingshotc.Material = "Rubber Dark Green"
+	RightSlingshotd.Material = "Rubber Dark Green"
+
+	Rubber1.Material = "Rubber Purple"
+	Rubber3.Material = "Rubber Blue"
+	Rubber4.Material = "Rubber Red"
+	Rubber5.Material = "Rubber Purple"
+	Rubber6.Material = "Rubber Blue"
+	Rubber7.Material = "Rubber Purple"
+	Rubber8.Material = "Rubber Purple"
+	Rubber9.Material = "Rubber Purple"
+	Rubber21.Material = "Rubber Purple"
+	Rubber10.Material = "Rubber Orange"
+	Rubber22.Material = "Rubber Orange"
+	Rubber11.Material = "Rubber Purple"
+
+	Rubber32.Material = "Rubber Purple"
+
+	Pin3.Material = "Rubber Dark Green"
+	Pin4.Material = "Rubber Dark Green"
+	PegRubber3.Material = "Rubber Dark Green"
+	PegRubber4.Material = "Rubber Dark Green"
+
+	Pin7.Material = "Black Rubber"
+	Pin8.Material = "Black Rubber"
+	PegRubber1.Material = "Black Rubber"
+	PegRubber2.Material = "Black Rubber"
+
+	End Select
+
+	Dim GIColorMod : GIColorMod = 1
+	GIColorMod = TMNT.Option("GI ColorMod", 1, 4, 1, 1, 0, Array("Normal", "CoolWhite", "MultiColor", "AllGreen"))
+	Select Case GIColorMod
+		Case 1:
 	gi1a.Color=Amber
 	gi1a.ColorFull=AmberFull
 	gi1b.Color=Amber
@@ -1697,10 +1858,7 @@ If GIColorModType = 1 Then
 	gi21c.ColorFull=WhiteFull
 	gi21a.Intensity = AmberI
 
-End If
-
-
-If GIColorModType = 2 Then
+	Case 2:
 	gi1a.Color=White
 	gi1a.ColorFull=WhiteFull
 	gi1b.Color=Yellow
@@ -1869,9 +2027,7 @@ If GIColorModType = 2 Then
 	gi21c.ColorFull=WhiteFull
 	gi21a.Intensity = WhiteI
 
-End If
-
-If GIColorModType = 3 Then
+	Case 3:
 	gi1a.Color=Green
 	gi1a.ColorFull=GreenFull
 	gi1b.Color=Green
@@ -2049,10 +2205,7 @@ If GIColorModType = 3 Then
 	gi24.Color=Green
 	gi24.ColorFull=GreenFull
 
-End If
-
-
-If GIColorModType = 4 Then
+	Case 4:
 	gi1a.Color=Green
 	gi1a.ColorFull=GreenFull
 	gi1b.Color=Green
@@ -2221,526 +2374,275 @@ If GIColorModType = 4 Then
 	gi21c.ColorFull=GreenFull
 	gi21a.Intensity = GreenI
 
-End If
-
-If TurtlesColorMod = 1 Then
-	l9.Color=Green
-	l9.ColorFull=GreenFull
-	l10.Color=Green
-	l10.ColorFull=GreenFull
-	l11.Color=Green
-	l11.ColorFull=GreenFull
-	l12.Color=Green
-	l12.ColorFull=GreenFull
-	l13.Color=Green
-	l13.ColorFull=GreenFull
-	l14.Color=Green
-	l14.ColorFull=GreenFull
-	l15.Color=Green
-	l15.ColorFull=GreenFull
-Else
-	l9.Color=Amber
-	l9.ColorFull=AmberFull
-	l10.Color=Amber
-	l10.ColorFull=AmberFull
-	l11.Color=Amber
-	l11.ColorFull=AmberFull
-	l12.Color=Amber
-	l12.ColorFull=AmberFull
-	l13.Color=Amber
-	l13.ColorFull=AmberFull
-	l14.Color=Amber
-	l14.ColorFull=AmberFull
-	l15.Color=Amber
-	l15.ColorFull=AmberFull
-End If
-
-Dim RubberModType
-
-'''''Rubbers
-
-If RubberMod = 0 Then
-		RubberModType = Int(Rnd*3)+1
-	Else
-		RubberModType = RubberMod
-End If
-
-
-If RubberModType = 1 Then
-
-	LeftSlingshota.Material = "Rubber White"
-	LeftSlingshotb.Material = "Rubber White"
-	LeftSlingshotc.Material = "Rubber White"
-	LeftSlingshotd.Material = "Rubber White"
-
-	RightSlingshota.Material = "Rubber White"
-	RightSlingshotb.Material = "Rubber White"
-	RightSlingshotc.Material = "Rubber White"
-	RightSlingshotd.Material = "Rubber White"
-
-	Rubber1.Material = "Rubber White"
-	Rubber3.Material = "Rubber White"
-	Rubber4.Material = "Rubber White"
-	Rubber5.Material = "Rubber White"
-	Rubber6.Material = "Rubber White"
-	Rubber7.Material = "Rubber White"
-	Rubber8.Material = "Rubber White"
-	Rubber9.Material = "Rubber White"
-	Rubber21.Material = "Rubber White"
-	Rubber10.Material = "Rubber White"
-	Rubber22.Material = "Rubber White"
-	Rubber11.Material = "Rubber White"
-
-	Rubber32.Material = "Rubber White"
-
-	Pin3.Material = "Rubber White"
-	Pin4.Material = "Rubber White"
-	PegRubber3.Material = "Rubber White"
-	PegRubber4.Material = "Rubber White"
-	Pin7.Material = "Rubber White"
-	Pin8.Material = "Rubber White"
-	PegRubber1.Material = "Rubber White"
-	PegRubber2.Material = "Rubber White"
-
-End If
-
-If RubberModType = 2 Then
-
-	LeftSlingshota.Material = "Black Rubber"
-	LeftSlingshotb.Material = "Black Rubber"
-	LeftSlingshotc.Material = "Black Rubber"
-	LeftSlingshotd.Material = "Black Rubber"
-
-	RightSlingshota.Material = "Black Rubber"
-	RightSlingshotb.Material = "Black Rubber"
-	RightSlingshotc.Material = "Black Rubber"
-	RightSlingshotd.Material = "Black Rubber"
-
-	Rubber1.Material = "Black Rubber"
-	Rubber3.Material = "Black Rubber"
-	Rubber4.Material = "Black Rubber"
-	Rubber5.Material = "Black Rubber"
-	Rubber6.Material = "Black Rubber"
-	Rubber7.Material = "Black Rubber"
-	Rubber8.Material = "Black Rubber"
-	Rubber9.Material = "Black Rubber"
-	Rubber21.Material = "Black Rubber"
-	Rubber10.Material = "Black Rubber"
-	Rubber22.Material = "Black Rubber"
-	Rubber11.Material = "Black Rubber"
-
-	Rubber32.Material = "Black Rubber"
-
-	Pin3.Material = "Black Rubber"
-	Pin4.Material = "Black Rubber"
-	PegRubber3.Material = "Black Rubber"
-	PegRubber4.Material = "Black Rubber"
-	Pin7.Material = "Black Rubber"
-	Pin8.Material = "Black Rubber"
-	PegRubber1.Material = "Black Rubber"
-	PegRubber2.Material = "Black Rubber"
-
-End If
-
-If RubberModType = 3 Then
-
-	LeftSlingshota.Material = "Rubber Dark Green"
-	LeftSlingshotb.Material = "Rubber Dark Green"
-	LeftSlingshotc.Material = "Rubber Dark Green"
-	LeftSlingshotd.Material = "Rubber Dark Green"
-
-	RightSlingshota.Material = "Rubber Dark Green"
-	RightSlingshotb.Material = "Rubber Dark Green"
-	RightSlingshotc.Material = "Rubber Dark Green"
-	RightSlingshotd.Material = "Rubber Dark Green"
-
-	Rubber1.Material = "Rubber Purple"
-	Rubber3.Material = "Rubber Blue"
-	Rubber4.Material = "Rubber Red"
-	Rubber5.Material = "Rubber Purple"
-	Rubber6.Material = "Rubber Blue"
-	Rubber7.Material = "Rubber Purple"
-	Rubber8.Material = "Rubber Purple"
-	Rubber9.Material = "Rubber Purple"
-	Rubber21.Material = "Rubber Purple"
-	Rubber10.Material = "Rubber Orange"
-	Rubber22.Material = "Rubber Orange"
-	Rubber11.Material = "Rubber Purple"
-
-	Rubber32.Material = "Rubber Purple"
-
-	Pin3.Material = "Rubber Dark Green"
-	Pin4.Material = "Rubber Dark Green"
-	PegRubber3.Material = "Rubber Dark Green"
-	PegRubber4.Material = "Rubber Dark Green"
-
-	Pin7.Material = "Black Rubber"
-	Pin8.Material = "Black Rubber"
-	PegRubber1.Material = "Black Rubber"
-	PegRubber2.Material = "Black Rubber"
-
-
-End If
-
-
-'Plastic Protectors
-'0=Random
-'1=Clear
-'2=OozeGreen
-
-If PlasticProtectors = 0 Then
-		PlasticProtectorsType = Int(Rnd*2)+1
-	Else
-		PlasticProtectorsType = PlasticProtectors
-End If
-
-If PlasticProtectorsType = 1 Then
-	pClearPlastic1.Material = "ClearPlastic"
-	pClearPlastic1.DisableLighting = 0
-	pClearPlastic2.Material = "ClearPlastic"
-	pClearPlastic2.DisableLighting = 0
-	pClearPlastic3.Material = "ClearPlastic"
-	pClearPlastic3.DisableLighting = 0
-	pClearPlastic4.Material = "ClearPlastic"
-	pClearPlastic4.DisableLighting = 0
-	pClearPlastic5.Material = "ClearPlastic"
-	pClearPlastic5.DisableLighting = 0
-	pClearPlastic6.Material = "ClearPlastic"
-	pClearPlastic6.DisableLighting = 0
-	pClearPlastic7.Material = "ClearPlastic"
-	pClearPlastic7.DisableLighting = 0
-End If
-
-If PlasticProtectorsType = 2 Then
-	pClearPlastic1.Material = "ClearPlasticNeonGreen"
-	pClearPlastic1.DisableLighting = 1
-	pClearPlastic2.Material = "ClearPlasticNeonGreen"
-	pClearPlastic2.DisableLighting = 1
-	pClearPlastic3.Material = "ClearPlasticNeonGreen"
-	pClearPlastic3.DisableLighting = 1
-	pClearPlastic4.Material = "ClearPlasticNeonGreen"
-	pClearPlastic4.DisableLighting = 1
-	pClearPlastic5.Material = "ClearPlasticNeonGreen"
-	pClearPlastic5.DisableLighting = 1
-	pClearPlastic6.Material = "ClearPlasticNeonGreen"
-	pClearPlastic6.DisableLighting = 1
-	pClearPlastic7.Material = "ClearPlasticNeonGreen"
-	pClearPlastic7.DisableLighting = 1
-End If
-
-
-If LBCOnorOff = 1 Then
-	pLightBoxCover.visible = True
-Else
-	pLightBoxCover.visible = False
-End If
-
-'SideFlasherColor
-'0=Random
-'1=Yellow
-'2=Green
-
-If SideFlasherColor = 0 Then
-		SideFlasherColorType = Int(Rnd*2)+1
-	Else
-		SideFlasherColorType = SideFlasherColor
-End If
-
-
-If SideFlasherColorType = 1 Then
-	pDome14a.Image = "TopFlasherYellow_off"
-	f14aa.Color = RGB(255,128,0)
-	f14aa.ColorFull = RGB(255,255,255)
-	f14ab.Color = RGB(255,128,0)
-	f14ab.ColorFull = RGB(255,255,255)
-	pDome14b.Image = "TopFlasherYellow_off"
-	f14ba.Color = RGB(255,128,0)
-	f14ba.ColorFull = RGB(255,255,255)
-	f14bb.Color = RGB(255,128,0)
-	f14bb.ColorFull = RGB(255,255,255)
-End If
-
-If SideFlasherColorType = 2 Then
-	pDome14a.Image = "TopFlasherGreen_off"
-	f14aa.Color = RGB(0,128,0)
-	f14aa.ColorFull = RGB(0,255,0)
-	f14ab.Color = RGB(0,128,0)
-	f14ab.ColorFull = RGB(0,255,0)
-	pDome14b.Image = "TopFlasherGreen_off"
-	f14ba.Color = RGB(0,128,0)
-	f14ba.ColorFull = RGB(0,255,0)
-	f14bb.Color = RGB(0,128,0)
-	f14bb.ColorFull = RGB(0,255,0)
-End If
-
-If Sglass = 0 Then
-		Primary_Glass_scratches.imageA= "VR Table Cab_glass_no_scratches"
-	End If
-If Sglass = 1 Then
-		Primary_Glass_scratches.imageA= "VR Table Cab_glass_scratches"
-	End If
-If Sglass = 2 Then
-		Primary_Glass_scratches.imageA= "VR Table Cab_glass_scratches1"
-	End If
-If Sglass = 3 Then
-		Primary_Glass_scratches.imageA= "VR Table Cab_glass_scratches2"
-	End If
-
-If Sblades = 0 Then
-		PinCab_Blades.image= "PinCab_Blades1"
-	End If
-If Sblades = 1 Then
-		PinCab_Blades.image= "PinCab_Blades"
-		PinCab_Blades.material= "colormaxnoreflectionhalf"
-	End If
-If Sblades = 2 Then
-		PinCab_Blades.image= "PinCab_Blades2"
-	End If
-If Sblades = 3 Then
-		PinCab_Blades.image= "PinCab_Blades3"
-		PinCab_Blades.material= "colormaxnoreflectionhalf"
-	End If
-
-If poster = 0 Then 
-		VR_Poster.image= "VR Table Cab_glass_no_scratches"
-	End If
-If Poster = 1 Then
-		VR_Poster.image= "flyer"
-	End If
-
-If B2Son1 = 0 Then
-		PinCab_Backglass.image= "backglass"
-	End If
-If B2Son1 = 1 Then 
-		PinCab_Backglass.image= "backglassimage"
-	End If
-
-If VRlogo = 0 Then 
-		VR_logo.imageA= "VR Table Cab_glass_no_scratches"
-	End If
-If VRlogo = 1 Then
-		VR_logo.imageA= "VR_logo"
-	End If
-
-If topper = 0 Then 
-		VR_topper.imageA= "VR Table Cab_glass_no_scratches"
-	End If
-If topper = 1 Then
-		VR_topper.imageA= "VR_topper"
-	End If
-
-If VR_Room = 0 Then
-		Primitive52.visible = 1
-	Else
-		Primitive52.visible = 0
-	End If
-
-If DMDreflection = 0 Then  
-		Primary_DMD_reflection.dmd = 0
-		Primary_DMD_reflection.imageA = "VR Table Cab_glass_no_scratches"
-	End If
-If DMDreflection = 1 Then  
-		Primary_DMD_reflection.dmd = 1
-	End If
-
-
-If BGreflection = 0 Then 
-		Primary_backglass_reflection.imageA= "VR Table Cab_glass_no_scratches"
-	End If
-If BGreflection = 1 Then
-		Primary_backglass_reflection.imageA= "Backglass_Reflection"
-	End If
-
-
-
-Dim VRThings
-
-if VR_Room = 0 Then
-	for each VRThings  in VRStuff:VRThings.visible = 0:Next
-Else if VR_Room = 0  Then
-	for each VRThings in VRStuff:VRThings.visible = 0:Next
-Else
-	for each VRThings in VRStuff:VRThings.visible = 1:Next
-	end if
-
-End If
-
-
-
-If TurtleWeapons = 1 Then
-	pNunChuk1a.Visible = 1
-	pNunChuk1b.Visible = 1
-	pNunChuk1c.Visible = 1
-	pNunChuk2a.Visible = 1
-	pNunChuk2b.Visible = 1
-	pNunChuk2c.Visible = 1
-	pMike_Belt2.Visible = 1
-	pMike_Belt1.Visible = 0
-	pBoStaff.Visible = 1
-	pSai1a.Visible = 1
-	pSai1b.Visible = 1
-	pSai2a.Visible = 1
-	pSai2b.Visible = 1
-	pSword1a.Visible = 1
-	pSword1b.Visible = 1
-	pSword2a.Visible = 1
-	pSword2b.Visible = 1
-Else
-	pNunChuk1a.Visible = 0
-	pNunChuk1b.Visible = 0
-	pNunChuk1c.Visible = 0
-	pNunChuk2a.Visible = 0
-	pNunChuk2b.Visible = 0
-	pNunChuk2c.Visible = 0
-	pMike_Belt2.Visible = 0
-	pMike_Belt1.Visible = 1
-	pBoStaff.Visible = 0
-	pSai1a.Visible = 0
-	pSai1b.Visible = 0
-	pSai2a.Visible = 0
-	pSai2b.Visible = 0
-	pSword1a.Visible = 0
-	pSword1b.Visible = 0
-	pSword2a.Visible = 0
-	pSword2b.Visible = 0
-End If
-
-'Blacklight Ooooze
-'0=Off
-'1=On
-
-If BlacklightOoze = 1 Then
-
-	bl_green.visible = True
-	fApronOozeL.visible = True
-	fApronOozeR.visible = True
-
-Else
-
-	bl_green.visible = False
-	fApronOozeL.visible = False
-	fApronOozeR.visible = False
-
-End If
-
-
-'Blacklight LaneGuides
-'0=Off
-'1=On
-
-If BlacklightLaneGuides = 1 Then
-
-	Primitive4.DisableLighting = 1
-	Primitive13.DisableLighting = 1
-
-Else
-
-	Primitive4.DisableLighting = 0
-	Primitive13.DisableLighting = 0
-
-End If
-
-
-'Post Colors
-'0=Random
-'1=Black
-'2=Yellow
-'3=Green
-'4=Ooze Green
-
-If PostsColor = 0 Then
-		PostsColorType = Int(Rnd*4)+1
-	Else
-		PostsColorType = PostsColor
-End If
-
-If PostsColorType = 1 Then
-	for each xxPostsColor in RubberPosts
-		xxPostsColor.DisableLighting = 0
-		xxPostsColor.Image = "rubber-post_black"
-		next
-End If
-
-If PostsColorType = 2 Then
-	for each xxPostsColor in RubberPosts
-		xxPostsColor.DisableLighting = 0
-		xxPostsColor.Image = "rubber-post_yellow"
-		next
-End If
-
-If PostsColorType = 3 Then
-	for each xxPostsColor in RubberPosts
-		xxPostsColor.DisableLighting = 0
-		xxPostsColor.Image = "rubber-post_green"
-		next
-End If
-
-If PostsColorType = 4 Then
-	for each xxPostsColor in RubberPosts
-		xxPostsColor.DisableLighting = 1
-		xxPostsColor.Image = "rubber-post_oozegreen"
-		next
-End If
-
-
-'Blacklight Pegs
-'0=Off
-'1=On
-
-If BlacklightPegs = 1 Then
-	for each xxBLPeg in Pegs
-		xxBLPeg.DisableLighting = 1
-		next
-Else
-	for each xxBLPeg in Pegs
-		xxBLPeg.DisableLighting = 0
-		next
-End If
-
-'Instruction Cards
-
-	If CustomICs = 0 Then
-		CustomICsType = Int(Rnd*4)+1
-	Else
-		CustomICsType = CustomICs
-	End If
-
-	If CustomICsType = 1 Then
-		pICL.Image = "IC1_left"
-		If GameType = 1 Then
-			pICR.Image = "dataeast-coin"
-		Else
-			pICR.Image = "dataeast-freeplay"
-		End If
-	End If
-
-	If CustomICsType = 2 Then
-		pICL.Image = "tmnt_cICL1"
-		If GameType = 1 Then
-			pICR.Image = "tmnt_cICR1-C"
-		Else
-			pICR.Image = "tmnt_cICR1-F"
-		End If
-	End If
-
-	If CustomICsType = 4 Then
-		pICL.Image = "tmnt_cICL2"
-		If GameType = 1 Then
-			pICR.Image = "tmnt_cICR2-C"
-		Else
-			pICR.Image = "tmnt_cICR2-F"
-		End If
-	End If
-	If CustomICsType = 3 Then
-		pICL.Image = "tmnt_cICL3"
-		If GameType = 1 Then
-			pICR.Image = "tmnt_cICR3-C"
-		Else
-			pICR.Image = "tmnt_cICR3-F"
-		End If
-	End If
+End Select
+
+'Flipper Colors
+
+	Dim FlipperColor : FlipperColor = 1
+	FlipperColor = TMNT.Option("Flipper Colors", 1, 7, 1, 1, 0, Array("White/Red", "White/Black", "White/Yellow", "White/LightGreen", "Yellow/Red", "Yellow/Black", "Yellow/LightGreen"))
+	Select Case FlipperColor
+		Case 1:
+	flipperrBat.Material = "Plastic White"
+	flipperrRubber.Material = "Red Rubber"
+	pRightFlipperLogo.Material = "Plastic White"
+	flipperlBat.Material = "Plastic White"
+	flipperlRubber.Material = "Red Rubber"
+	pLeftFlipperLogo.Material = "Plastic White"
+		Case 2:
+	flipperrBat.Material = "Plastic White"
+	flipperrRubber.Material = "Black Rubber"
+	pRightFlipperLogo.Material = "Plastic White"
+	flipperlBat.Material = "Plastic White"
+	flipperlRubber.Material = "Black Rubber"
+	pLeftFlipperLogo.Material = "Plastic White"
+		Case 3:
+	flipperrBat.Material = "Plastic White"
+	flipperrRubber.Material = "Yellow Rubber"
+	pRightFlipperLogo.Material = "Plastic White"
+	flipperlBat.Material = "Plastic White"
+	flipperlRubber.Material = "Yellow Rubber"
+	pLeftFlipperLogo.Material = "Plastic White"
+		Case 4:
+	flipperrBat.Material = "Plastic White"
+	flipperrRubber.Material = "Green Rubber"
+	flipperrRubber.DisableLighting = 1
+	pRightFlipperLogo.Material = "Plastic White"
+	flipperlBat.Material = "Plastic White"
+	flipperlRubber.Material = "Green Rubber"
+	flipperlRubber.DisableLighting = 1
+	pLeftFlipperLogo.Material = "Plastic White"
+		Case 5:
+	flipperrBat.Material = "Plastic Yellow"
+	flipperrRubber.Material = "Red Rubber"
+	pRightFlipperLogo.Material = "Plastic Yellow"
+	flipperlBat.Material = "Plastic Yellow"
+	flipperlRubber.Material = "Red Rubber"
+	pLeftFlipperLogo.Material = "Plastic Yellow"
+		Case 6:
+	flipperrBat.Material = "Plastic Yellow"
+	flipperrRubber.Material = "Black Rubber"
+	pRightFlipperLogo.Material = "Plastic Yellow"
+	flipperlBat.Material = "Plastic Yellow"
+	flipperlRubber.Material = "Black Rubber"
+	pLeftFlipperLogo.Material = "Plastic Yellow"
+		Case 7:
+	flipperrBat.Material = "Plastic Yellow"
+	flipperrRubber.Material = "Green Rubber"
+	flipperrRubber.DisableLighting = 1
+	pRightFlipperLogo.Material = "Plastic Yellow"
+	flipperlBat.Material = "Plastic Yellow"
+	flipperlRubber.Material = "Green Rubber"
+	flipperlRubber.DisableLighting = 1
+	pLeftFlipperLogo.Material = "Plastic Yellow"
+End Select
+
+	' VR Room
+	Dim VRRoomChoice : VRRoomChoice = 1
+		VRRoomChoice = TMNT.Option("VR Room", 1, 4, 1, 1, 0, Array("Minimal", "Mega Sewer", "Mega Lair", "Cabinet Only"))
+	Select Case VRRoomChoice
+		Case 1:
+		if RenderingMode = 2 or VRTest Then
+			for each VRThings in VRCab:VRThings.visible = 1:Next
+			for each VRThings in VRMin:VRThings.visible = 1:Next
+			for each VRThings in VRMega:VRThings.visible = 0:Next
+			for each VRThings in VRMega1:VRThings.visible = 0:Next
+			VRRoom360.visible = 0
+		end if
+		Case 2:
+		if RenderingMode = 2 or VRTest Then
+			for each VRThings in VRCab:VRThings.visible = 1:Next
+			for each VRThings in VRMin:VRThings.visible = 0:Next
+			for each VRThings in VRMega:VRThings.visible = 1:Next
+			for each VRThings in VRMega1:VRThings.visible = 0:Next
+			VRRoom360.visible = 0
+		end if
+		Case 3:
+		if RenderingMode = 2 or VRTest Then
+			for each VRThings in VRCab:VRThings.visible = 1:Next
+			for each VRThings in VRMin:VRThings.visible = 0:Next
+			for each VRThings in VRMega:VRThings.visible = 0:Next
+			for each VRThings in VRMega1:VRThings.visible = 1:Next
+			VRRoom360.visible = 0
+		end if
+		Case 4:
+		if RenderingMode = 2 or VRTest Then
+			for each VRThings in VRCab:VRThings.visible = 1:Next
+			for each VRThings in VRMin:VRThings.visible = 0:Next
+			for each VRThings in VRMega:VRThings.visible = 0:Next
+			for each VRThings in VRMega1:VRThings.visible = 0:Next
+			VRRoom360.visible = 1
+		end if
+	End Select
+
+
+	' VR Room Poster
+	Dim VRPoster : VRPoster = 1
+	VRPoster = TMNT.Option("VR Poster", 1, 2, 1, 1, 0, Array("Off", "On"))
+	Select Case VRPoster
+		Case 1:
+			VR_Poster.image= "VRBG_blank"
+		Case 2:
+			VR_Poster.image= "flyer"
+	End Select
+
+	' VR Topper
+	Dim VRthings	
+	Dim vrtopper : vrtopper = 1
+	vrtopper = TMNT.Option("VR Topper", 1, 3, 1, 1, 0, Array("Standard Topper", "Prototype Topper", "Topper Off"))
+	Select Case vrtopper
+		Case 1:
+		if RenderingMode = 2 or VRTest  Then
+		PinCab_Topper.visible = 1
+		for each VRThings in VRTopperProto:VRThings.visible = 0:Next
+			end if
+		Case 2:			
+		if RenderingMode = 2 or VRTest  Then
+		PinCab_Topper.visible = 0
+		for each VRThings in VRTopperProto:VRThings.visible = 1:Next
+			end if
+		Case 3:			
+		if RenderingMode = 2 or VRTest  Then
+		PinCab_Topper.visible = 0
+		for each VRThings in VRTopperProto:VRThings.visible = 0:Next
+			end if
+	End Select
+
+	' VR Plunger
+	Dim VRplunger : VRplunger = 1
+	VRPlunger = TMNT.Option("VR Plunger Color", 1, 3, 1, 1, 0, Array("Black Plunger", "Red Plunger", "Green Plunger"))
+	Select Case VRplunger
+		Case 1:
+			if RenderingMode = 2 or VRTest  Then
+		Pincab_plunger.image = "VRplungermap"
+			end if
+		Case 2:			
+		if RenderingMode = 2 or VRTest  Then
+		Pincab_plunger.image = "VRredplungermap"
+			end if
+		Case 3:			
+		if RenderingMode = 2 or VRTest  Then
+		Pincab_plunger.image = "VRGreenPlungermap"
+			end if
+	End Select
+
+	' VR PUP Backglass
+	Dim Pupback : Pupback = 1
+	Pupback = TMNT.Option("VR PUP Backglass", 1, 2, 1, 1, 0, Array("Pup Off", "Pup On"))
+	Select Case Pupback
+		Case 1:
+			if RenderingMode = 2 or VRTest  Then
+		for each VRThings in VRPUPBackglass:VRThings.visible = 0:Next
+		for each VRThings in VRBackglass:VRThings.visible = 1:Next
+		VRFlasher1.X = 244.2326 
+		VRFlasher1.Y = 110.103
+		VRFlasher1.Height = 519
+		VRFlasher2.X = 354.0185
+		VRFlasher2.Y = 110.519
+		VRFlasher2.Height = 519
+		VRFlasher3.X = 452.5858
+		VRFlasher3.Y = 110.519
+		VRFlasher3.Height = 519
+		VRFlasher4.X = 544.4266
+		VRFlasher4.Y = 110.519
+		VRFlasher4.Height = 519
+		VRFlasher5.X = 641.9935
+		VRFlasher5.Y = 110.519
+		VRFlasher5.Height = 519
+		VRFlasher6.X = 742.619
+		VRFlasher6.Y = 110.519
+		VRFlasher6.Height = 519
+		VRFlasher7.X = 488
+		VRFlasher7.Y = 108
+		VRFlasher7.Height = 586
+			end if
+		Case 2:			
+		if RenderingMode = 2 or VRTest  Then
+		for each VRThings in VRPUPBackglass:VRThings.visible = 1:Next
+		for each VRThings in VRBackglass:VRThings.visible = 0:Next
+		VRFlasher1.X = 240.7249 
+		VRFlasher1.Y = 120.8876
+		VRFlasher1.Height = 482
+		VRFlasher2.X = 350.5108 
+		VRFlasher2.Y = 120.8876
+		VRFlasher2.Height = 482
+		VRFlasher3.X = 449.0781
+		VRFlasher3.Y = 120.8876
+		VRFlasher3.Height = 482
+		VRFlasher4.X = 540.9188
+		VRFlasher4.Y = 120.8876
+		VRFlasher4.Height = 482
+		VRFlasher5.X = 638.4857
+		VRFlasher5.Y = 120.8876
+		VRFlasher5.Height = 482
+		VRFlasher6.X = 739.1111
+		VRFlasher6.Y = 120.8876
+		VRFlasher6.Height = 482
+		VRFlasher7.X = 488
+		VRFlasher7.Y = 120
+		VRFlasher7.Height = 558
+			end if
+	End Select
+
+	'VR DMD Reflection
+	Dim DMDref : DMDref = 1
+	DMDref = TMNT.Option("VR DMD Reflection", 1, 2, 1, 1, 0, Array("Off", "On"))
+	Select Case DMDref
+		Case 1:
+			PinCab_DMD_reflection.Visible = 0
+			PinCab_DMD_reflection2.Visible = 0
+		Case 2:
+			If Pupback = 1 then
+			PinCab_DMD_reflection.Visible = 1
+			PinCab_DMD_reflection2.Visible = 0
+			end If
+			if Pupback = 2 then
+			PinCab_DMD_reflection.Visible = 0
+			PinCab_DMD_reflection2.Visible = 1
+			end If
+	End Select
 
 End Sub
+
+
+'***********************************
+'	END	Options
+'***********************************
+
+
+'''''''''''''''''''''''''''
+''''''GI
+'''''''''''''''''''''''''''
+Dim Red, RedFull, RedI, Pink, PinkFull, PinkI, White, WhiteFull, WhiteI, Blue, BlueFull, BlueI, Yellow, YellowFull, YellowI, Green, GreenFull, GreenI, GreenI2, Orange, OrangeFull, OrangeI, Purple, PurpleFull, PurpleI, AmberFull, Amber, AmberI
+Dim GIColorModType
+
+RedFull = rgb(255,0,0) 
+Red = rgb(255,0,0)
+RedI = 20
+PinkFull = rgb(255,0,128)
+Pink = rgb(255,0,255)
+PinkI = 20
+WhiteFull = rgb(255,255,128) 
+White = rgb(255,255,255)
+WhiteI = 10
+BlueFull = rgb(0,128,255)
+Blue = rgb(0,255,255)
+BlueI = 20
+YellowFull = rgb(255,255,128)
+Yellow = rgb(255,255,0)
+YellowI = 10
+GreenFull = rgb(128,255,128)
+Green = rgb(0,255,0)
+GreenI = 20
+GreenI2 = 2
+PurpleFull = rgb(128,0,255)
+Purple = rgb(64,0,128)
+PurpleI = 20
+OrangeFull = rgb(255,128,64)
+Orange = rgb(128,128,0)
+OrangeI = 20
+AmberFull = rgb(255,197,143)
+Amber = rgb(255,197,143)
+AmberI = 20
 
 
 ''''
@@ -3320,6 +3222,10 @@ PlaysoundAtVol "Wheel_Spinn" ,PizzaTrigger, 0.03
 		stopDiscs			= False
 		DiscsTimer.Interval = 20
 		DiscsTimer.Enabled 	= True
+		SolRotateBeacons Enabled
+		Bulb165.DisableLighting = 1000
+		BeaconFB.imagea = "fcw"
+		BeaconFB.imageb = "fcw"
 	Else
 		stopDiscs			= True
 		discsAreRunning		= True
@@ -3341,6 +3247,10 @@ Sub DiscsTimer_Timer()
 		stepAngle = stepAngle - 0.1
 		If stepAngle <= 0 Then
 			DiscsTimer.Enabled 	= False
+			SolRotateBeacons False
+			Bulb165.DisableLighting = 0.2
+			BeaconFB.imagea = "VRBG_blank"
+			BeaconFB.imageb = "VRBG_blank"
 		End If
 	End If
 End Sub
@@ -3541,12 +3451,18 @@ SetLamp 200, 0
 SetLamp 111, 0
 	If 	GION = 1 then playsound "flasher_relay_off", 0
 	GION = 0
+	VRFlasher7.imagea ="Pincab_DMD_Decal"
+	l6d.image ="Pincab_DMD_Decal"
+	Backglass_L17.visible = false
     Else
 
 SetLamp 200, 1
 SetLamp 111, 1
 	If 	GION = 0 then playsound "flasher_relay_on", 0
 	GION = 1
+	VRFlasher7.imagea ="Pincab_DMD_Decal_Bright"
+	l6d.image ="Pincab_DMD_Decal_Bright"
+	Backglass_L17.visible = true
     End If
 End Sub
 
@@ -3584,6 +3500,7 @@ Dim YellowDome: YellowDome = Array("domeyellowbase", "domeyellowlit")
 Dim RedDome: RedDome = Array("domeRedbase", "domeRedlit")
 Dim YellowRoundDome: YellowRoundDome = Array("TopFlasherYellow_on", "TopFlasherYellow_66", "TopFlasherYellow_33", "TopFlasherYellow_off")
 Dim GreenRoundDome: GreenRoundDome = Array("TopFlasherGreen_on", "TopFlasherGreen_66", "TopFlasherGreen_33", "TopFlasherGreen_off")
+Dim RedRoundDome: RedRoundDome = Array("TopFlasherRed_on", "TopFlasherRed_66", "TopFlasherRed_33", "TopFlasherRed_off")
 Dim YellowDome4: YellowDome4 = Array("domeyellow_on", "domeyellow_66", "domeyellow_33", "domeyellow_off")
 
 
@@ -3736,12 +3653,6 @@ FadeGI 200
 UpdateGIobjectsSingle 200, theGicollection
 GiCompensationSingle 200, aLampsAll, GIscale(0)
 
-If Roomfade = 0 Then
-		'FadeLUTsingle 200, "LUTCont_", 28
-	End If
-If Roomfade = 1 Then 
-	End If
-
 	NFadeL 1, L1
 	NFadeL 2, L2
 	NFadeL 3, L3
@@ -3808,29 +3719,41 @@ If Roomfade = 1 Then
 	NFadeL 41, L41
 	NFadeL 42, L42
 
-If VR_Room = 0 Then
+	If Renderingmode = 2 or VRtest Then
+	FadeObj 43, VRFlasher1, "l43-1", "l43-1", "l43-3","l43-3"
+    FadeObj 44, VRFlasher2, "l44-1", "l44-1", "l44-3","l44-3"
+    FadeObj 45, VRFlasher3, "l45-1", "l45-1", "l45-3","l45-3"
+    FadeObj 46, VRFlasher4, "l46-1", "l46-1", "l46-3","l46-3"
+    FadeObj 47, VRFlasher5, "l47-1", "l47-1", "l47-3","l47-3"
+    FadeObj 48, VRFlasher6, "l48-1", "l48-1", "l48-3","l48-3"
+	FadeObj 49, VRFlasher7, "Pincab_DMD_Decal_bright", "Pincab_DMD_Decal", "Pincab_DMD_Decal","Pincab_DMD_Decal"
+	End if
+
+	If Renderingmode = 0 then
 	FadeR 43, l43
     FadeR 44, l44
     FadeR 45, l45
     FadeR 46, l46
     FadeR 47, l47
     FadeR 48, l48
-	Else
-	FadeObj 43, VRFlasher1, "l43-1", "l43-2", "l43-3","l43-4"
-    FadeObj 44, VRFlasher2, "l44-1", "l44-2", "l44-3","l44-4"
-    FadeObj 45, VRFlasher3, "l45-1", "l45-2", "l45-3","l45-4"
-    FadeObj 46, VRFlasher4, "l46-1", "l46-2", "l46-3","l46-4"
-    FadeObj 47, VRFlasher5, "l47-1", "l47-2", "l47-3","l47-4"
-    FadeObj 48, VRFlasher6, "l48-1", "l48-2", "l48-3","l48-4"
 	End If
-
-
-
 
 	NFadeL 49, L49
 	NFadeL 50, L50
 
 	NFadeL 52, L52
+	
+	'NFadeL 53, L53	'Prototype Topper Light Left
+	'NFadeL 54, L54  'Prototype Topper Light Right
+
+	FadePri4m 53, PinCab_Topper_Dome_Left, RedRoundDome
+	FadeMaterialP 53, PinCab_Topper_Dome_Left, TextureArray1
+	FadeDisableLighting 53, PinCab_Topper_Dome_Left
+
+	FadePri4m 54, PinCab_Topper_Dome_Right, RedRoundDome
+	FadeMaterialP 54, PinCab_Topper_Dome_Right, TextureArray1
+	FadeDisableLighting 54, PinCab_Topper_Dome_Right
+
 
 	NFadeL 55, L55
 	NFadeL 56, L56
@@ -3839,6 +3762,7 @@ If VR_Room = 0 Then
 	NFadeL 59, L59
 	NFadeL 60, L60
 	NFadeL 61, L61
+	'NFadeL 61, L62  'Start Button (Mod)
 
 	NFadeLm 130, FlashLight6a
 	NFadeLm 130, FlashLight6b
@@ -3854,8 +3778,6 @@ If VR_Room = 0 Then
 	flash 130, flasher4
 
 
-
-
 	NFadeLm 109, f9a
 	NFadeL 109, f9b
 
@@ -3864,8 +3786,6 @@ If VR_Room = 0 Then
 
 	NFadeLm 113, f13a
 	NFadeL 113, f13b
-
-
 
 	NFadeLm 114, f14c1
 	NFadeLm 114, f14c1
@@ -3938,6 +3858,71 @@ If VR_Room = 0 Then
 	NFadeLm 132, f132b
 	NFadeLm 132, f132c
 	NFadeL 132, f132d
+
+'*****************************************
+'   Backglass Light
+'*****************************************
+
+	If L6.state="1" Then
+	VRFlasher7.imagea ="Pincab_DMD_Decal_bright"
+	Else
+	VRFlasher7.imagea ="Pincab_DMD_Decal"
+	end if
+
+	If L1.state="1" Then
+	Backglass_L1B.visible="true"
+	Else
+	Backglass_L1B.visible="false"
+	end if
+	
+	If L2.state="1" Then
+	Backglass_L2B.visible="true"
+	Else
+	Backglass_L2B.visible="false"
+	end if
+
+	If L3.state="1" Then
+	Backglass_L3B.visible="true"
+	Else
+	Backglass_L3B.visible="false"
+	end if
+
+	If L4.state="1" Then
+	Backglass_L4B.visible="true"
+	Else
+	Backglass_L4B.visible="false"
+	end if
+
+	If L5.state="1" Then
+	Backglass_L5B.visible="true"
+	Else
+	Backglass_L5B.visible="false"
+	end if
+
+	If L7.state="1" Then
+	Backglass_L7B.visible="true"
+	Else
+	Backglass_L7B.visible="false"
+	end if
+
+	If L9.state="1" Then
+	Backglass_L9B.visible="true"
+	Else
+	Backglass_L9B.visible="false"
+	end if
+
+	If L12.state="1" Then
+	Backglass_L12B.visible="true"
+	Else
+	Backglass_L12B.visible="false"
+	end if
+
+	If L13.state="1" Then
+	Backglass_L13B.visible="true"
+	Else
+	Backglass_L13B.visible="false"
+	end if
+
 
    End Sub
    
@@ -4433,8 +4418,6 @@ REM Put this at the top of the script, before LoadVPM
     REM Const UseVPMModSol = 1
 REM Put this in the table1_Init() section
     REM vpmInit me
-
-
 
 
 
@@ -5660,3 +5643,4 @@ End Sub
 Sub FrameTimer_Timer()
 	FlipperVisualUpdate				'update flipper shadows and primitives
 End Sub
+

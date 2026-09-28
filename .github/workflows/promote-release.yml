@@ -193,7 +193,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           RELEASE_ID: ${{ needs.validate.outputs.id }}
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_RELEASE_WEBHOOK_URL }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_STABLE_RELEASE_WEBHOOK_URL }}
         run: |
           gh api "repos/${{ github.repository }}/releases/$RELEASE_ID" > "$RUNNER_TEMP/promoted-release.json"
           python3 .github/workflows/scripts/notify-discord-release.py "$RUNNER_TEMP/promoted-release.json"

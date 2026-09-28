@@ -20,5 +20,5 @@ repos:
       - id: validate-images
         name: Validate image standards
         entry: python .github/workflows/scripts/validate-images.py
-        language: system
+        language: python
         files: '\.png$'

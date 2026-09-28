@@ -1,0 +1,19 @@
+---
+backglassChecksum: "AC207583D56D78ECF2E0215DCB3AF8D4"
+backglassNotes: "download v2.5"
+backglassVPSId: "INktoNTKKh"
+diffChecksum: "58BE2B0FE57A773AEDF1CD1A1C680677"
+diffNotes: "download v1.0.0"
+diffVPSId: "PsGOhq4ey4"
+fps: 60
+romChecksum: "8DD3E8A9E4016BEAB805D3B5CE7A4B82"
+romNotes: "gs_lu4"
+romVPSId: "x-ke8m-TQo"
+tableNotes: "download v1.29"
+tableVPSId: "l8PhYmEL"
+testers:
+  - "PBW23"
+  - "Wraith"
+  - "mcap"
+vpxChecksum: "D45A0AD604C59653A1BA346183CD81D8"
+vpxVPSId: "c8MEOMMDFg"

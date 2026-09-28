@@ -25,6 +25,10 @@ on:
         description: 'Commit to build from. Defaults to the calling ref.'
         required: false
         type: string
+      release_id:
+        description: 'ID returned when the caller created the draft release'
+        required: false
+        type: string
   # Manual re-run against an existing release.
   workflow_dispatch:
     inputs:
@@ -128,14 +132,22 @@ jobs:
           fi
 
       - name: Table Manager Achievements Config
+        env:
+          RELEASE_ID: ${{ inputs.release_id }}
         run: |
           # Uploaded through the API rather than `gh release upload <tag>`:
           # that resolves the tag endpoint, which cannot see a draft, and the
           # release is still a draft at this point in the pipeline.
           repo="${{ github.repository }}"
-          id=$(TAG="$RELEASE_TAG" gh api "repos/$repo/releases" --paginate \
-                 --jq '[.[] | select(.tag_name==env.TAG)] | sort_by(.draft) | reverse | .[0].id')
+          # Creation workflows already have the draft ID. Reuse it to avoid
+          # listing every release again, which can time out on large forks.
+          id="$RELEASE_ID"
           if [ -z "$id" ]; then
+            # Manual builds supply only a tag; retain draft lookup support.
+            id=$(TAG="$RELEASE_TAG" gh api "repos/$repo/releases" --paginate --slurp \
+                   --jq '[.[][] | select(.tag_name==env.TAG)] | sort_by(.draft) | reverse | .[0].id')
+          fi
+          if ! [[ "$id" =~ ^[0-9]+$ ]]; then
             echo "::error::No release found for tag '$RELEASE_TAG'."
             exit 1
           fi

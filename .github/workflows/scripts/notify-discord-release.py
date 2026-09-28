@@ -36,7 +36,7 @@ def message(title, notes, release):
         for kept in range(total - 1, -1, -1):
             footer = (
                 f"{total - kept} Additional. View the entire list at "
-                "[https://vpxtablemanager.com/catalog](https://vpxtablemanager.com/catalog)"
+                "[Table Manager Catalog](https://vpxtablemanager.com/catalog)"
             )
             content = heading + "\n".join(tables[:kept])
             content += ("\n\n" if kept else "") + footer
@@ -70,7 +70,7 @@ def send(url, data, content_type):
 def main():
     url = os.environ.get("DISCORD_WEBHOOK_URL", "")
     if not url:
-        raise RuntimeError("Set the DISCORD_RELEASE_WEBHOOK_URL repository secret")
+        raise RuntimeError("Set DISCORD_WEBHOOK_URL from the workflow webhook secret")
     parts = urllib.parse.urlsplit(url)
     query = dict(urllib.parse.parse_qsl(parts.query))
     query["wait"] = "true"

@@ -1,53 +1,60 @@
-﻿# Stranger Things – Stranger Edition (Original 2018)
+# Stranger Things - Stranger Edition (Original 2018)
 
-![Table Preview](../../images/vpx-strangerthings-preview.jpg)
-
----
-
-## Files
-| File Type | Link | Version | Author | 
-|-----------|--------|----------|--------------|
-| **VPX** | [orbitalpin](https://orbitalpin.com/downloads/) | 0.52 | [ScottyWic](https://orbitalpin.com/) |
-| **B2S** | N/A | N/A | N/A |
-| **DMD** | N/A | N/A | N/A |
-| **ROM** | N/A | N/A | N/A |
-
-**Tested by:** [mrandromeda], [Kaoticbpr]
-
----
-
-## Status 
-**Minimum VPX Standalone build:** 10.8.0-5b941e6
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | 45 |
-
----
+![Table Preview](../../images/OK0fjaA-NI-preview.webp)
 
 <br>
-<table>
-  <tr>
-    <td style="background-color: #FFDDDD; padding: 0; border-left: 4px solid #FF0000;">
-      <div style="padding: 8px 12px; background-color: #FFCCCB; font-weight: bold;font-size: 20px;">
-        <strong>⚠️ WARNING ⚠️</strong>
-      </div>
-      <div style="padding: 12px 12px 12px 12px;">
-        Manually added puppacks are not supported by the VPXS 4KP team<br>We will not be able to help you diagnose issues until this puppack is in the Wizard
-      </div>
-    </td>
-  </tr>
-</table>
+
+## *️⃣  Table Statistics
+
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ❌ | ❌ | ❌ | ✅ | 60 |
+
+<br>
+
+**VPXS 4KP Testers:**
+  - Wraith
+
 <br>
 
 ---
 
-## Instructions
+<br>
 
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more information found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
-- Go to the website listed above and scroll down for Stranger Things – Stranger Edition. **Remember (copy) the password in the sixth column** and click on the VPX and Mega link in the previous column and download both archives.
-- Create the folder `pupvideos`.
-- Extract the archive `STLEpup.rar` and place the `STLE147\STLE` subfolder in `pupvideos` so you have `pupvideos\STLE`.
-- "You're all so nerdy, it makes me physically ill." — Erica Sinclair.
+## ❇️ Available in the Wizard! 🪄✨
 
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Stranger Things - Stranger Edition (Original 2018)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *""friendsdontlie""*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>

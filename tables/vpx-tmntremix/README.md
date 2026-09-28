@@ -1,32 +1,60 @@
-﻿# T.M.N.T. - Remix (Original 2024)
+# Teenage Mutant Ninja Turtles (Stern / Data East remix) (Original 2024)
 
-![Table Preview](../../images/vpx-tmntle-preview.png)
+![Table Preview](../../images/eiKQUmT6oX-preview.webp)
 
----
+<br>
 
-## Files
-| File Type | Link | Version | Author | 
-|-----------|--------|----------|--------------|
-| **VPX** | [VPU](https://vpuniverse.com/files/file/22296-teenage-mutant-ninja-turtles-stern-data-east-remix-v20-table/?tab=reviews) | v2.86 | [cheese3075](https://vpuniverse.com/profile/73114-cheese3075/) |
-| **B2S** | [VPU](https://vpuniverse.com/files/file/21828-teenage-mutant-ninja-turtles-data-east-1991-alt-b2s-full-dmd/) | SternLE | [HauntFreaks](https://vpuniverse.com/profile/5216-hauntfreaks/) |
-| **ROM** | [VPF](https://vpforums.org/index.php?app=downloads&showfile=827) | tmnt_104 | [destruk](https://vpfoums.org/index.php?s=3dc593d82108ca5a23f00ca86d4f86e0&showuser=5) |
+## *️⃣  Table Statistics
 
-**Tested by:** fAthAwg, [Wraith]
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ❌ | ✅ | ✅ | ✅ | 60 |
 
----
+<br>
 
-## Status
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 50 |
+**VPXS 4KP Testers:**
+  - Wraith
+
+<br>
 
 ---
 
-## Instructions
+<br>
 
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
-- If you need help, more information found on the wiki: [TM - Add Table - Manual](https://github.com/LegendsUnchained/vpx-standalone-alp4k/wiki/%5B04%5D-%F0%9F%A7%A1-TM-%E2%80%90-Other-Features#add-table---manual)
-- If the table requires any additional files/steps, click `GO TO TABLE` after adding, and the TM will open to the relevant table folder.
-- If you want a green dmd, run the table one time, back out and open table manager, on your device navigate to the vpx-tmntle/pinmame/ini folder and open the tmnt_104.ini file. Change red to 127, green to 255 and blue to 0. Save and exit.
-- "Wise man say: Forgveness is divine, but never pay full price for late pizza."
+## ❇️ Available in the Wizard! 🪄✨
 
+<br>
+
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Teenage Mutant Ninja Turtles (Stern / Data East remix) (Original 2024)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *""*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
