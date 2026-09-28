@@ -16,5 +16,10 @@ tagline: "Sometimes dead is better"
 testers:
   - "TechZombie"
   - "pointdablame"
-vpxChecksum: "A8BB69CF66D383E867EAAB359A1641C3"
+vpxChecksum:
+   - "A8BB69CF66D383E867EAAB359A1641C3"
+   - "23BF5530FB2AF037898DD1E6F112F3EE"
 vpxVPSId: "nnDQCFrX"
+vpxArchiveFormat: "rar"  
+vpxExtractExtra:
+  - "Music"
