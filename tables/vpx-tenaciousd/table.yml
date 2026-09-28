@@ -21,6 +21,6 @@ vpxExtractExtra:
   - "tenD"
 postInstallRename:
   - source: "tenD"
-    destination: "music"
+    destination: "music/tenD"
 vpxNSFW: true
 vpxVPSId: "61JuCZGQSp"
