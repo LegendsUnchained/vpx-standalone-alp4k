@@ -1,0 +1,18 @@
+---
+fps: 60
+pupArchiveFormat: "rar"
+pupArchiveRoot: "PUPVideos/seawitfp"
+pupChecksum: "5F1B171D806D5E6FDEBFF3FAEF778576"
+pupFileUrl: "https://orbitalpin.com/downloads/"
+pupNotes: "Download 'final7.rar'"
+pupRequired: true
+pupVersion: "seawitfp"
+romChecksum: "514554CB47CCFA9902993D7F13A2C17C"
+romVPSId: "6l_aPoqut-"
+tableNotes: "Download 'The Beatles_007 nfozzy.7z'"
+tableVPSId: "8p6whnul"
+testers:
+  - "Wraith"
+vpxChecksum: "05181569FA5618E2EE00844D1862D935"
+vpxMagic: "anBncg=="
+vpxVPSId: "dr8FU0-12Q"
