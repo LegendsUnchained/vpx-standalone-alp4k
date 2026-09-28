@@ -6,7 +6,7 @@ fps: 60
 romChecksum: "28982008CFF77FF5D4571F66B9554C5D"
 romNotes: "Download version 1.0"
 romUrlOverride: "https://pinballnirvana.com/forums/resources/excalibr.1794/"
-romVersionOverride: "1.0"
+romVersionOverride: "excalibr"
 tableVPSId: "ZON_Da7C"
 testers:
   - "Miku"
