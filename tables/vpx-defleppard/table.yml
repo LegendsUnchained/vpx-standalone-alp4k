@@ -1,0 +1,19 @@
+---
+backglassBundled: true
+backglassChecksum: "BA06C24219109F7B88B6371E9815E6A4"
+backglassNotes: "included with table download"
+fps: 60
+romChecksum: "D5749F25CF4117124D17A148361E3141"
+romNotes: "Download 'sorcr_l1.zip'"
+romVPSId: "nM72U1qCse"
+tableVPSId: "98YT1JSQvf"
+tagline: "Do you wanna get rocked ?"
+testers:
+  - "PBW23"
+vpxChecksum:
+  - "A041F604CC794DEB2E884AD838925204"
+  - "A89F22A9C6067F2540E4357B5D900727"
+vpxVPSId: "4GkzXouk9h"
+vpxArchiveFormat: "rar"
+vpxExtractExtra:
+  - "VisualPinball/Music/"
