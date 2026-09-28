@@ -1,0 +1,19 @@
+---
+altSoundArchiveFormat: "rar"
+altSoundChecksum: "1F28065B6758C7A924F227D44C62158D"
+altSoundVPSId: "w3IXMvpNzd"
+backglassChecksum: "6576310D897011B1BF5B45256EB68345"
+backglassVPSId: "7KzcGUwEX2"
+coloredROMChecksum: "3CDEF45BD588F52524B6FF5488F0490D"
+coloredROMVPSId: "_R_pi1tqAi"
+fps: 60
+romChecksum: "A88B7D86F882206C1FABF2A87DAF2E4E"
+romUrlOverride: "https://pinballnirvana.com/forums/resources/sfight2.2281/"
+romVersionOverride: "sfight2"
+romNotes: "Download - sfight2.zip"
+tableVPSId: "LYD7vXqU"
+testers:
+  - "Amx70s"
+  - "Miku"
+vpxChecksum: "3017BDE3A6DD1B967B77A0E6AF380E4A"
+vpxVPSId: "bp1bwDPjvO"
