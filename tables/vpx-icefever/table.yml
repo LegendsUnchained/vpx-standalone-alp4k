@@ -1,0 +1,16 @@
+---
+backglassBundled: true
+backglassChecksum: "7CC43D93F71A7A407DABEF5285E16B46"
+backglassNotes: "Included in .vpx download"
+fps: 60
+romChecksum: "1362DE77667CB4ABC042AC17A6972428"
+romNotes: "Download icefever.zip"
+romUrlOverride: "https://pinballnirvana.com/forums/resources/icefever.3350/"
+romVersionOverride: "icefever"
+tableVPSId: "DGfiHlXP"
+tagline: "He shoots, he scores!"
+testers:
+  - "Dasme"
+  - "vicpac73"
+vpxChecksum: "E75166684E8F61C288BE998173EF0D21"
+vpxVPSId: "Q0uzEOAvl-"
