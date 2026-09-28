@@ -1,0 +1,20 @@
+---
+altSoundArchiveFormat: "zip"
+altSoundArchiveRoot: "beav_butt"
+altSoundAuthorsOverride:
+  - "MikeDASpike"
+altSoundChecksum: "0A0CFC71BB72C8257B151DCDA2D626DB"
+altSoundNotes: "Download 'Beavis and Butt-head_Pinballed.zip' - same URL as vpx"
+altSoundUrlOverride: "https://vpuniverse.com/files/file/27824-beavis-and-butt-head-pinballed-original-2024-with-vr/"
+altSoundVersionOverride: "1.0"
+backglassChecksum: "ACC6F3A52AC81BE6569E55A01920EF44"
+backglassVPSId: "vVj3OmCOBQ"
+fps: 60
+romChecksum: "9922E296D36855E7BEF63C69B09258B6"
+romVPSId: "8WHPK_6oRU"
+tableNotes: "Download 'Beavis and Butt-head_Pinballed_1.1.4.zip'"
+tableVPSId: "MQtJWcsvt6"
+testers:
+  - "Wraith"
+vpxChecksum: "F26A9D834394F6E50E80FDC25BF4D006"
+vpxVPSId: "K7-NItOIGS"
