@@ -64,7 +64,7 @@ Randomize
 	Dim eyeFollowS : eyeFollowS=8  'ms timer interval of eye follow speed try 5-20 range
 	dim nofunmode:nofunmode = 0 ' switch to 1 if you hate fun or just have a low end pc. it'll turn off the animations
 	dim notinus : notinus = 0 ' set this if you're not from the USA and it'll make sure your backglass numbers have commas
-	dim minigamequickstart : minigamequickstart = True ' True: hold both flippers for 2 seconds during a game to start the PuP mini-game. False to turn off
+	dim minigamequickstart : minigamequickstart = False ' True: hold both flippers for 2 seconds during a game to start the PuP mini-game. False to turn off
 
 
 '**************************
