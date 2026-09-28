@@ -1,0 +1,15 @@
+---
+backglassChecksum: "45377E7C34BA2C25046D551EB53CD85C"
+backglassVPSId: "LSMkVtbzrg"
+fps: 60
+romChecksum: "55813BE33F72A5D38477B780DE8F4A7F"
+romVPSId: "unEjgUl4"
+tableManufacturerOverride: "Bally"
+tableNameOverride: "Mr. & Mrs. Pac-Man (Bally 1982)"
+tableVPSId: "QRX8qru1"
+tableYearOverride: 1982
+testers:
+  - "Miku"
+tutorialVPSId: "AxGqL_3CJS"
+vpxChecksum: "A3A3CB2ACEF3B1CEC617A84DE36BC18B"
+vpxVPSId: "Qu8VSe_P3i"
