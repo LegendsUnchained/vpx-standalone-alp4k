@@ -1,6 +1,6 @@
 ---
 backglassChecksum: "47DDF9413A98B732922E4277C1F504FB"
-backglassNotes: "Download - Dukes Of Hazzard (2022).directb2s"
+backglassNotes: "Download - Dukes Of Hazzard (2022).directb2s from the directb2s link. Do not use the directb2s next to the .vpx table link, it has the same name"
 backglassVPSId: "zaqvkCiAAV"
 fps: 60
 pupArchiveFormat: "zip"
@@ -20,5 +20,7 @@ testers:
   - "Missile Toad"
   - "Wraith"
   - "pointdablame"
+  - "Filth"
+  - "rocjr73"
 vpxChecksum: "7B77CF1D06C90D4CF995435984A9DCB9"
 vpxVPSId: "g1WwIyskTw"
