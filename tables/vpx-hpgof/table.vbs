@@ -1397,7 +1397,7 @@ end sub
 	Dim PuPlayer
 
 	Const pTopper=0
-	Const pDMD=1
+	Const pDMD=5
 	Const pBackglass=2
 	Const pPlayfield=3
 	Const pMusic=4
