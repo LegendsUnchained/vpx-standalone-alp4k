@@ -6,5 +6,11 @@ tableVPSId: "_dOxi60nms"
 tagline: "You wanted the best, you got the best!"
 testers:
   - "Miku"
-vpxChecksum: "72C6DC10F5380445B4912A83DF19D632"
+vpxChecksum: 
+  - "72C6DC10F5380445B4912A83DF19D632"
+  - "f6e9a52065cc2659537c7ac91bb7469a"
 vpxVPSId: "0aP6hmkZjV"
+vpxArchiveFormat: "7z"
+vpxExtractExtra:
+  - "KISS.UltraDMD"
+  - "Music"
