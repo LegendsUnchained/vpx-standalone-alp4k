@@ -3,13 +3,14 @@ enabled: true
 backglassChecksum: "CA96F60CBB731665C13322A048F00C47"
 backglassVPSId: "yt7j5dez"
 fps: 60
-tableNotes: "Download 'America's Most Haunted (Spooky Pinball 2014) LW 1.0.1.zip'."
+tableNameOverride: "Download 'America's Most Haunted (PAPA Tournament) LW 1.0.1'."
+tableNotes: "Download 'America's Most Haunted (PAPA Tournament) LW 1.0.1'."
 tableVPSId: "lVlGWK9A"
 testers:
   - "Miku"
 vpxChecksum:
-  - "F03712F816C066CD3427C4FEEA4C1BFE"
-  - "7E6C9C5EAD7956AE6E020359D38A8D22"
+  - "2711E2BCC2691D2CCD23C7A94CC10488"
+  - "afae8f463e447d7ba37d03b4c0ab9c3d"
 vpxVPSId: "KYsTwjS2-o"
 vpxArchiveFormat: "zip"
 vpxExtractExtra:
