@@ -1,12 +1,14 @@
 ---
-enabled: false
-backglassBundled: true
-backglassChecksum: "51fa221cee325aa8a625c865e8be064a"
-backglassNotes: "B2s is bundled with table"
+backglassChecksum: "C1C8A9B7DAA6908F228C920145227D3D"
+backglassVPSId: "9YoCuDRVHx"
 fps: 60
 tableVPSId: "OUkF84KSUG"
 tagline: "'Help! Help! Man overboard!'"
 testers:
+  - "Dasme"
+  - "Missile Toad"
+  - "Filth"
+  - "pointdablame"
   - "Mar3nBu"
-vpxChecksum: "ebab6b9213c0e4dd7857ae3db40d54e0"
+vpxChecksum: "EBAB6B9213C0E4DD7857AE3DB40D54E0"
 vpxVPSId: "pkDACTJnym"
