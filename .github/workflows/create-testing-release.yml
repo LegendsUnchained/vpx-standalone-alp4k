@@ -151,6 +151,25 @@ jobs:
             exit 1
           fi
 
+  # The candidate's new and updated tables, as one embed. Separate from
+  # publish, and not among cleanup's needs, so a failed Discord post can never
+  # delete a candidate that is already published.
+  notify:
+    name: Post the candidate's tables to Discord
+    needs: [prepare, publish]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Send the testing release embed
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_ID: ${{ needs.prepare.outputs.id }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_TESTING_RELEASE_WEBHOOK_URL }}
+        run: |
+          gh api "repos/${{ github.repository }}/releases/$RELEASE_ID" > "$RUNNER_TEMP/testing-release.json"
+          python3 .github/workflows/scripts/notify-discord-release.py --kind testing "$RUNNER_TEMP/testing-release.json"
+
   # A failed run must not strand an invisible draft holding the tag.
   cleanup:
     name: Remove the draft if the run failed
