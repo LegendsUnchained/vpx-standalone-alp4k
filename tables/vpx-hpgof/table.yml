@@ -8,9 +8,12 @@ pupRequired: true
 pupVersion: "1.0"
 pupVPSId: "CXhlqFmM1F"
 tableVPSId: "fshAx0OA"
+tagline: "'Trans rights are human rights, you hateful cow.' - Wraith & 'Coffee' Joe"
 testers:
   - "Wraith"
   - "mrandromeda"
+  - "TransRights"
+  - "'Coffee' Joe"
 vpxChecksum: "E8595CFA1CD7B67E33815BE4EE512209"
 vpxMagic: "aWFtdXB0b25vZ29vZA=="
 vpxVPSId: "7X51T4Zn61"
