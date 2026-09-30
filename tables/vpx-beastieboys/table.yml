@@ -1,0 +1,25 @@
+---
+altSoundArchiveFormat: "zip"
+altSoundArchiveRoot: "MEDIA PACK/BEASTIEB"
+altSoundAuthorsOverride:
+  - "ZandysArcade"
+altSoundChecksum: "3FFE6630BA731820920B2BBF3FD635F3"
+altSoundNotes: "MEDIA PACK.zip"
+altSoundUrlOverride: "https://vpuniverse.com/files/file/25400-beastie-boys/"
+altSoundVersionOverride: "MEDIA PACK"
+postInstallRename:
+  - source: "pinmame/altsound/barra_l1"
+    destination: "music/BEASTIEB"
+backglassChecksum: "7E1E5EF9EC3C4611423CBEB8BB490CE8"
+backglassVPSId: "VqCua6OG05"
+fps: 60
+romChecksum: "15AD242DFA6FE1CFC707B496851D87F1"
+romVPSId: "7mQisFl-If"
+tableVPSId: "HUSCRwFAXS"
+tagline: "So, so what'cha, what'cha, what'cha want?"
+testers:
+  - "Dasme"
+  - "Missile Toad"
+  - "Coffee Joe"
+vpxChecksum: "19B4C3F4A670F4C2ED74381582338FA5"
+vpxVPSId: "7e3nbMe8Bn"
