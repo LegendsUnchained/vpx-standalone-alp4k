@@ -1,5 +1,6 @@
 ---
 fps: 60
+nsfw: true
 pupArchiveFormat: "zip"
 pupArchiveRoot: "scarface"
 pupBundled: true
@@ -8,6 +9,7 @@ pupNotes: "Download is in the same location as vpx"
 pupRequired: true
 pupVersion: "1.0.4"
 tableVPSId: "EqRLN5tN"
+tagline: "'All I have is my balls and my word... and I don't break 'em for nobody.'"
 testers:
   - "Wraith"
 vpxChecksum: "DA8DCC0F32B4C5419EDD5B0ECEC8EDE6"
