@@ -1,3 +1,4 @@
+
 '
 Option Explicit
 Randomize
@@ -46,7 +47,20 @@ NoUpperLeftFlipper
 '********************
 'Standard definitions
 '********************
- 
+ ' Define an array of playfield image names
+Dim playfieldImages(4)
+playfieldImages(0) = "PF VampirellaB"
+playfieldImages(1) = "PF VampirellaA"
+playfieldImages(2) = "PF VampirellaC"
+playfieldImages(3) = "PF VampirellaD"
+playfieldImages(4) = "PF VampirellaE"
+
+' Generate a random number between 0 and 4
+Dim randomIndex
+randomIndex = Int(Rnd * 5)
+
+' Set the playfield image using the randomly selected image
+Table1.Image = playfieldImages(randomIndex)
 Const UseSolenoids = 2
 Const UseLamps = 1
 Const UseSync = 0
@@ -60,19 +74,6 @@ Const SFlipperOff = "FlipperDown"
 Const SCoin = "Coin"
 Const MusicOn = true ' False if you don't want music
 
- ' Define an array of playfield image names
-Dim playfieldImages(3)
-playfieldImages(0) = "PF VampirellaB"
-playfieldImages(1) = "PF VampirellaA"
-playfieldImages(2) = "PF VampirellaC"
-playfieldImages(3) = "PF VampirellaD"
-
-' Generate a random number between 0 and 3
-Dim randomIndex
-randomIndex = Int(Rnd * 4)
-
-' Set the playfield image using the randomly selected image
-Table1.Image = playfieldImages(randomIndex)
  
 Set GiCallback2 = GetRef("UpdateGI2")
  
@@ -83,9 +84,7 @@ Dim mMagnet, dtLDrop, bsCastleLock, x, bumper1, bumper2, bumper3, plungerIM
 On Error Resume Next
 Dim i
 For i=0 To 127
-    If IsObject(eval("L" & i)) Then
     Execute "Set Lights(" & i & ")  = L" & i
-    End If
 Next
  
 Lights(58)=Array(L58,L58A)
@@ -1436,3 +1435,35 @@ Sub OnBallBallCollision(ball1, ball2, velocity)
     PlaySound("fx_collide"), 0, Csng(velocity) ^2 / 200, Pan(ball1), 0, Pitch(ball1), 0, 0
   End if
 End Sub
+
+'**********
+' Settings
+'**********
+
+Dim bgOption
+
+Sub Table1_OptionEvent(ByVal eventId)
+
+    bgOption = Table1.Option("BG Image", 0, 4, 1, 0, 0, Array("A", "B", "C", "D", "Random"))
+
+    Select Case bgOption
+        Case "0":
+            Table1.Image = "PF VampirellaA"
+        Case "1":
+            Table1.Image = "PF VampirellaB"
+        Case "2":
+            Table1.Image = "PF VampirellaC"
+        Case "3":
+            Table1.Image = "PF VampirellaD"
+        Case "4":
+             Select Case Int(4*Rnd+1)
+                Case 1 : Table1.Image = "PF VampirellaA"
+                Case 2 : Table1.Image = "PF VampirellaB"
+                Case 3 : Table1.Image = "PF VampirellaC"
+                Case 4 : Table1.Image = "PF VampirellaD"
+            End Select 
+    End Select
+
+End Sub
+
+
