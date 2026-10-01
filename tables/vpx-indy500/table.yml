@@ -1,0 +1,16 @@
+---
+backglassChecksum: "96A7AF0F317F5E3DA0958DAE7E645696"
+backglassVPSId: "v3xlZIf1pC"
+coloredROMChecksum: "2FEBCE79591299D1BF09219AD9669782"
+coloredROMNotes: "Download the 'pin2dmd.pac' in the 'I500' folder."
+coloredROMUrlOverride: "https://drive.google.com/drive/folders/1O41M98vBEnyOJ_uw9B28JBnC6sADPDdv"
+coloredROMVersionOverride: "1.0"
+coloredROMVPSId: "M7yEYJQpKE"
+fps: 60
+romChecksum: "6FEF9C5847EB6FD0EAE8088B2CE9F87F"
+romVPSId: "MR643erl"
+tableVPSId: "NjRUdQm9"
+testers:
+  - "Miku"
+vpxChecksum: "3A3804AAC12AE1CCBBD87E546531F2D0"
+vpxVPSId: "JWpSQr6u83"
