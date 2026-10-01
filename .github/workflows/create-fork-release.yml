@@ -134,6 +134,7 @@ jobs:
     secrets: inherit
     with:
       release_tag: ${{ needs.prepare.outputs.tag }}
+      release_id: ${{ needs.prepare.outputs.id }}
       ref: ${{ needs.prepare.outputs.sha }}
 
   publish:

@@ -1,44 +1,60 @@
-# Beavis and Butt-head: Pinballed (Original 2024)
+# Beavis and Butt-Head Pinballed (Original 2024)
 
-![Table Preview](../../images/vpx-bbhpinballed.jpg)
+![Table Preview](../../images/K7-NItOIGS-preview.webp)
 
-Authors: [watacaractr](https://vpuniverse.com/profile/5551-watacaractr/)
-Version: 1.1
-Download: [VP Universe](https://vpuniverse.com/files/file/18299-beavis-and-butt-head-pinballed-original-2024/)
+<br>
 
-DirectB2S
+## *️⃣  Table Statistics
 
-Authors: [watacaractr](https://vpuniverse.com/profile/5551-watacaractr/)
-Version: 1.0
-Download: [VP Universe](https://vpuniverse.com/files/file/18258-beavis-and-butt-head-pinballed-bally-1993-directb2s-3-screen/)
+| Backglass | DMD | ROM Required | Has Puppack | FPS |
+|-----------|-----|-----|-----|-----|
+| ✅ | ✅ | ✅ | ❌ | 60 |
 
-**Tested by:** [mcap]
+<br>
 
-## Status 
+**VPXS 4KP Testers:**
+  - Wraith
 
-Minimum VPX Standalone build: 10.8.0-1989-a764013
-| Playfield | Controls | Backglass | DMD | ROM Required | FPS | 
-|-----------|----------|-----------|-----|--------------|-----|
-| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | 60 |
+<br>
 
-## Instructions
+---
 
-- Install this table through the Table Manager, using the `Add Table` > `Manual` page
+<br>
 
-## Special Instructions
+## ❇️ Available in the Wizard! 🪄✨
 
-- You will need to unzip the vpx archive, because there are files that will have to be handled individually. So, before you do anything in the Table Manager: on your computer or mobile device, unzip the `table.vpx.zip` folder, navigate to the `beav_butt` subfolder in the unzipped vpx folder, and move the file `altsound.ini` to a separate, safe place.
-- Now you can begin your install using the files in the unzipped folder, but DO NOT include the file `beav_butt.vbs` when you perform your initial install.
-- DO include the `.vpx`, `.directb2s`, `beav_butt.nv`, and the ROM, `beav_butt.zip` (without unzipping it) in the install.
-- After installing, click `GO TO TABLE`, and the TM will open to the table folder.
-- Now, copy `beav_butt.vbs` to the table folder, WITHOUT renaming it to match the table name.
-- Copy the `altsound.ini` file from your safe place to the table folder.
-- Open the `pinmame` folder, and create a folder inside `pinmame` named `altsound`.
-- Open the `altsound` folder, and upload the `beav_butt` subfolder from the .vpx files to `altsound`.
-- Your table is now ready. Exit the Table Manager on your device, and play.
-## THIS TABLE IS LOUD; LOWER YOUR MACHINE SOUND TO 5 AND ADJUST ACCORDINGLY
+<br>
 
-- If you need help, more information can be found on the wiki: [TM - Add Table - Manual](https://wiki.legendsunchained.com/05-manual-table-install/)
+This table is available through the Table Manager Wizard, which makes installation quick and easy!
+
+### How to install:
+
+1.  Open the **Table Manager**
+2.  Click the **Add Table** button
+3.  Select the **Wizard** tab
+4.  Find and select this table from the dropdown menu: **`Beavis and Butt-Head Pinballed (Original 2024)`**
+5.  Follow the on-screen instructions to download and upload the required files
+6. *""*
+
+<br>
+
+Using the Wizard ensures you get the latest table version, have all required files (ROM, backglass, etc.), and have all the VPXS 4KP team's table tweaks and improvements!
+
+<br>
+
+__*We hope you enjoy!!*__
+
+*The VPXS 4KP Wizard team:*
+<pre>
+- n-i-x            - Mox              - Lloydbraun
+- Boris Undead     - 'Coffee' Joe     - Ominous Osie 🌸
+- Bla1ze           - evilwraith       - Silentkat        
+- mrandromeda      - SScorpio         - pointdablame
+</pre>
 
 
-
+<br>
+<br>
+<br>
+<br>
+<br>
