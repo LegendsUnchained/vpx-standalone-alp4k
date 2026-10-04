@@ -1,0 +1,13 @@
+---
+fps: 60
+pupArchiveFormat: "zip"
+pupArchiveRoot: "trickrtreat"
+pupChecksum: "D5FBE6365353B3184870C697268332A6"
+pupRequired: true
+pupVersion: "1.0"
+pupVPSId: "pYFqCpBzjZ"
+tableVPSId: "sjhO7zhf6O"
+testers:
+  - "Wraith"
+vpxChecksum: "FAB49222877087BE2557BDD52D74AC20"
+vpxVPSId: "A2tWThQM10"
