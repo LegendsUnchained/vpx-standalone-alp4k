@@ -14,7 +14,6 @@ testers:
 vpxChecksum:
  - "46BA5B856AB552C4D2D26C442648C9E5"
  - "5e43b6a02cfe69a3e325663fe21dd65d"
-
 vpxVPSId: "KwF0L8v-Az"
 vpxArchiveFormat: "rar"
 vpxExtractExtra:
