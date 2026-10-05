@@ -1,0 +1,16 @@
+---
+fps: 60
+pupArchiveFormat: "zip"
+pupArchiveRoot: "michael"
+pupChecksum: "26668887CC354868A2C1A0F5C199613F"
+pupFileUrl: "https://vpuniverse.com/files/file/30793-michael/"
+pupNotes: "included in table download"
+pupRequired: true
+pupVersion: "3.5"
+tableNotes: "Download pack michael.zip"
+tableVPSId: "hEll8TKHQN"
+tagline: "The King of Pop!"
+testers:
+  - "Rocjr73"
+vpxChecksum: "3C2494CE936A8F3FA8F0FF4D16B3577C"
+vpxVPSId: "hXSU5zcM7d"
