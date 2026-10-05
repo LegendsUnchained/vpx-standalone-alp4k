@@ -70,6 +70,12 @@
 Option Explicit : Randomize
 SetLocale 1033
 
+' =====================================================================
+' PERFORMANCE OPTIMIZATION TOGGLES (ALP 4K / ARM HARDWARE)
+' =====================================================================
+Const EnablePWMFlashers          = False  ' Disables pulse-width modulation flasher loops
+Const TargetFrameInterval        = 16     ' Caps visual update timers to ~60 FPS (16ms)
+
 '******************************************************
 '  ZVAR: Constants and Global Variables
 '******************************************************
@@ -366,6 +372,16 @@ Sub Table1_Init
 	FlFadeBumper 1,1
 	FlFadeBumper 2,1
 	FlFadeBumper 3,1
+
+	' Performance Optimizations
+	If Not EnablePWMFlashers Then
+		On Error Resume Next
+		PWM_Flasher.Enabled = False
+		PWM_Timer.Enabled = False
+		On Error GoTo 0
+	End If
+
+	OptimizeTableTimers
 End Sub
 
 Sub Table1_Paused() : Controller.Pause = 1 : End Sub
@@ -4500,6 +4516,18 @@ End Sub
 ''------ Use this for PWM following domes ---------'
 
 Sub ModFlashFlasher(nr, aValue)
+	' Fast performance mode: Simple ON/OFF toggling (bypasses heavy UpdateMaterial calls)
+	If Not EnablePWMFlashers Then
+		Dim state
+		If aValue > 0.1 Then state = 1 Else state = 0
+		objflasher(nr).visible = state
+		objbloom(nr).visible = state
+		objlit(nr).visible = state
+		objlight(nr).IntensityScale = state * FlasherLightIntensity
+		Exit Sub
+	End If
+
+	' Full PWM mode
 	objflasher(nr).visible = 1 : objbloom(nr).visible = 1 : objlit(nr).visible = 1
 	objflasher(nr).opacity = 1000 *  FlasherFlareIntensity * aValue
 	objbloom(nr).opacity = 100 *  FlasherBloomIntensity * aValue
@@ -5367,4 +5395,19 @@ Sub SetupLogoPoster
 			VR_Poster.Visible = False
 		End If
 	End If
+End Sub
+
+' =====================================================================
+' TIMER OPTIMIZATION HELPER
+' =====================================================================
+Sub OptimizeTableTimers()
+	' Ensure non-physics visual update timers run no faster than 16ms (~60 Hz)
+	Dim t
+	On Error Resume Next
+	For Each t in Array(PinMAMETimer)
+		If t.Interval < TargetFrameInterval Then
+			t.Interval = TargetFrameInterval
+		End If
+	Next
+	On Error GoTo 0
 End Sub
