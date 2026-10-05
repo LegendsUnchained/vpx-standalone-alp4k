@@ -276,8 +276,8 @@ Sub Table1_Init
 		.ShowDMDOnly=1
 		.ShowFrame=0
 		.ShowTitle=0
-        .hidden = 0
-        .Games("fpwr2_l2").Settings.Value("sound") = 1 'set to 0 if you want to mute the rom sounds of Firepower II
+        .hidden = 1
+        .Games("fpwr2_l2").Settings.Value("sound") = 0 'set to 0 if you want to mute the rom sounds of Firepower II
 		If UseFlexDMD Then ExternalEnabled = .Games("fpwr2_l2").Settings.Value("showpindmd")
 		If UseFlexDMD Then .Games("fpwr2_l2").Settings.Value("showpindmd") = 0
          On Error Resume Next
@@ -452,7 +452,11 @@ end sub
 ' Final State values are:   0=Off, 1=On, 2=Return to previous State
 '********************************************************************************************
 
-Sub FlashForMs(MyLight, TotalPeriod, BlinkPeriod, FinalState) 'thanks gtxjoe for the first version
+
+
+Dim FlashForMsDefined : Set FlashForMsDefined = CreateObject("Scripting.Dictionary") 'tracks which _Timer subs have already been injected
+
+Sub FlashForMs(MyLight, TotalPeriod, BlinkPeriod, FinalState) 'leak-fixed version to prevent memory leaks when in game UI is open
 
     If TypeName(MyLight) = "Light" Then
 
@@ -476,9 +480,17 @@ Sub FlashForMs(MyLight, TotalPeriod, BlinkPeriod, FinalState) 'thanks gtxjoe for
         MyLight.TimerInterval = BlinkPeriod
         MyLight.TimerEnabled = 0
         MyLight.TimerEnabled = 1
-        ExecuteGlobal "Sub " & MyLight.Name & "_Timer:" & "Dim tmp, steps, fstate:tmp=me.UserValue:fstate = tmp MOD 10:steps= tmp\10 -1:Me.Visible = steps MOD 2:me.UserValue = steps *10 + fstate:If Steps = 0 then Me.Visible = fstate:Me.TimerEnabled=0:End if:End Sub"
+
+        ' FIX: only inject this object's _Timer sub the first time we ever see it.
+        ' Re-injecting via ExecuteGlobal on every call is what caused the memory leak,
+        ' since VBScript never releases the previously compiled sub of the same name.
+        If Not FlashForMsDefined.Exists(MyLight.Name) Then
+            ExecuteGlobal "Sub " & MyLight.Name & "_Timer:" & "Dim tmp, steps, fstate:tmp=me.UserValue:fstate = tmp MOD 10:steps= tmp\10 -1:Me.Visible = steps MOD 2:me.UserValue = steps *10 + fstate:If Steps = 0 then Me.Visible = fstate:Me.TimerEnabled=0:End if:End Sub"
+            FlashForMsDefined.Add MyLight.Name, True
+        End If
     End If
 End Sub
+
 
 '**********************************************************************************************************
 ' Fleep BIPL
