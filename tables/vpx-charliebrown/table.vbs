@@ -59,7 +59,7 @@ Const cGameName = "CBBaseball" ' B2S name & DOF config
 Const MaxPlayers = 1           ' 1 to 4 can play
 Const MaxMultiplier = 3        ' limit bonus multiplier
 Const MaxBonus = 20            ' highest bonus count
-Const FreePlay = False         ' Free play or coins
+Const FreePlay = True         ' Free play or coins
 
 ' Global variables
 Dim PlayersPlayingGame
