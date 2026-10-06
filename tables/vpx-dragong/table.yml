@@ -1,11 +1,11 @@
 ---
-enabled: false
 backglassChecksum: "2BDAFA1F3289A0D353208B3E6E92A545"
 backglassNotes: "Download Dragon (Gottlieb 1978).directb2s"
 backglassVPSId: "fMx08pkxjV"
 fps: 60
 romChecksum: "D631076325A51E518A14F4510772BEBB"
 romNotes: "Download dragon.zip"
+romUrlOverride: "https://vpuniverse.com/files/file/1698-dragon/"
 romVersionOverride: "dragon"
 tableNotes: "Download Dragon(Gottleib1978)-NFozzy-FleepVR-Hybrid-V1.0.4"
 tableVPSId: "XPpvhsC3"
