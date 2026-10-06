@@ -5,6 +5,7 @@ fps: 46
 mainNotes: "Static backglass will load from repo"
 romNotes: "ROM in spreadsheet will not work"
 romChecksum: "af179668180ff471d567c87d60324e38"
+romUrlOverride: "https://www.vpforums.org/index.php?app=downloads&showfile=285"
 romVersionOverride: "spcrider"
 tableNotes: "Download v1.1.0"
 tableVPSId: "mEWEUmMsJL"
