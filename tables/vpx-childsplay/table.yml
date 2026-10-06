@@ -2,6 +2,7 @@
 backglassAuthorsOverride:
   - ""
 fps: 52
+pupBundled: true
 pupChecksum: "ef3889dd3385a7b5c08dcf7d9b8fd5f3"
 pupRequired: true
 pupVersion: "Fast_Draw_1975"
