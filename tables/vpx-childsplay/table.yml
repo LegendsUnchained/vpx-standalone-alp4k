@@ -6,7 +6,7 @@ pupBundled: true
 pupChecksum: "ef3889dd3385a7b5c08dcf7d9b8fd5f3"
 pupRequired: true
 pupVersion: "Fast_Draw_1975"
-pupArchiveRoot: "Child's Play/Puppack/"
+pupArchiveRoot: "Child's Play/Puppack/Fast_Draw_1975"
 pupNotes: "Upload the whole 'Child's Play.zip' file for the PUP pack"
 tableVPSId: "uveE3RK0ya"
 tableNotes: "VPX file can be found in the zip inside the 'Table' folder."
