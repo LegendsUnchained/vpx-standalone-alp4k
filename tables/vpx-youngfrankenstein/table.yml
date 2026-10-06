@@ -1,9 +1,9 @@
 ---
+enabled: false
 backglassVPSId: "1nK152JE"
 backglassChecksum: "CDC93F83AE7CBE4BB61662700F29BE81"
 backglassNotes: "Young Frankenstein (hauntfreaks 2021) 3srn.directb2s"
 fps: 60
-romUrlOverride: "https://vpuniverse.com/files/file/1089-eclipsezip/?do=download"
 romVersionOverride: "eclipse"
 romChecksum: "99827f772968ef334ede295fcf0f93a9"
 romNotes: "Download - eclipse.zip"
