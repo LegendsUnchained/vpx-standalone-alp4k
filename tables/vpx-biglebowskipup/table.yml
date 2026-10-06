@@ -2,9 +2,9 @@
 fps: 60
 pupArchiveFormat: "rar"
 pupArchiveRoot: "BigLebowsky"
+pupBundled: true
 pupChecksum: "566E387FAF1279EA9A836001F96E1E2D"
-pupFileUrl: "https://vpuniverse.com/files/file/23628-big-lebowski-pup-pack/"
-pupNotes: "Dowanload - BigLebowsky.rar"
+pupNotes: "Dowanload - BigLebowsky.rar, next to the .vpx table link"
 pupRequired: true
 pupVersion: "BigLebowsky"
 tableNotes: "Download - Big Lebowski Marty02 Pup LW Cabinet Mod 3.5.vpx"
