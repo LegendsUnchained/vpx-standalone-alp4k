@@ -1,0 +1,25 @@
+---
+backglassAuthorsOverride:
+  - "marcobus2005"
+backglassChecksum: "0757D5DE99D52C42BF48B23B5D275F13"
+# yamllint disable-line rule:line-length
+backglassImageOverride: "https://vpuniverse.com/screenshots/monthly_2023_12/pet-bg.jpg.8a902c49e9b99ac406055a85d516db2f.jpg"
+backglassNotes: "Download version 1.0.0"
+backglassUrlOverride: "https://vpuniverse.com/files/file/17799-stephen-kings-pet-sematary-tba2019-b2s-with-full-dmd/"
+fps: 60
+romChecksum: "BFAF704DD3713B3A506CE3849CD360A9"
+romNotes: "Download 'dracula.zip'"
+romVPSId: "Ny4qPYGb"
+tableNotes: "Download Pet Sematary (TBA 2019).rar"
+tableVPSId: "uP4_P2lE"
+tagline: "Sometimes dead is better"
+testers:
+  - "TechZombie"
+  - "pointdablame"
+vpxChecksum:
+   - "A8BB69CF66D383E867EAAB359A1641C3"
+   - "23BF5530FB2AF037898DD1E6F112F3EE"
+vpxVPSId: "nnDQCFrX"
+vpxArchiveFormat: "rar"  
+vpxExtractExtra:
+  - "Music"

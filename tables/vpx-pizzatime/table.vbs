@@ -52,6 +52,7 @@ Const osbactive			= 0 	' Orbital Scoreboard: Set to 0 for off, 1 for only player
 								'     See link to create obs.vbs: https://docs.orbitalpin.com/vpx-user-settings
 Const FontScale			= .5	' Scales the PupFonts up/down for different sized DMDs  [0.5 Desktop]
 Const PreloadMe 		= 1     ' Go through flasher sequence at table start, to prevent in-game slowdowns 
+Const minigamequickstart = False ' True: hold both flippers for 2 seconds during a game to start the PuP mini-game. False to turn off
 Const TableName = "pizzatime"
 Const cGameName = "pizzatime"
 Const myVersion = "0.64"
@@ -993,6 +994,11 @@ debug.print "attract left flipper"
 		End If
 			RFPress = 1	
 		end if 
+		' Mini-game quick start (minigamequickstart): both flippers held for 2 s during a game
+		If minigamequickstart And LFPress = 1 And RFPress = 1 And bGameInPlay And Not PuPGameRunning And Not TestMiniGameArmed Then
+			TestMiniGameArmed = True
+			vpmtimer.addtimer 2000, "TestMiniGameHold '"
+		End If
 
 
 		If hsbModeActive Then
@@ -5751,6 +5757,16 @@ debug.print "Super Skillshot Enabled"
 		DIM PuPGameInfo
 		DIM PuPGameScore
 		Dim inminigame
+		Dim TestMiniGameArmed : TestMiniGameArmed = False
+		Sub TestMiniGameHold
+			TestMiniGameArmed = False
+			' Straight to the game, not startminigame: releasing both flippers runs QueueSkip, which would
+			' cut the intro video whose end starts the game.
+			If LFPress = 1 And RFPress = 1 And bGameInPlay And Not PuPGameRunning Then
+				inminigame = 1
+				PuPGameStartMiniGame
+			End If
+		End Sub
 
 		Dim tmrModeCountdownSave
 		Dim tmrBeerFrenzySave 
