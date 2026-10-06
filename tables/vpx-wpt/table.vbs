@@ -201,26 +201,30 @@ Dim DivValue : DivValue = 2                 ' Change Value to 4 if LED array doe
 'The frame timer should be used to update anything visual, like some animations, shadows, etc.
 'However, a lot of animations will be handled in their respective _animate subroutines.
 
-Dim FrameTime, InitFrameTime
-InitFrameTime = 0
+Dim FrameSkip : FrameSkip = 0
 
-FrameTimer.Interval = -1
 Sub FrameTimer_Timer() 
-	FrameTime = gametime - InitFrameTime 'Calculate FrameTime as some animuations could use this
-	InitFrameTime = gametime	'Count frametime
-	'Add animation stuff here
+	FrameTime = gametime - InitFrameTime
+	InitFrameTime = gametime
+	
 	UpdatePlunger
-	UpdateBallBrightness
-	If AmbientBallShadowOn = 1 Then
-		BSUpdate
+	
+	' Run heavy visual calculations every 2nd frame
+	FrameSkip = (FrameSkip + 1) Mod 2
+	If FrameSkip = 0 Then
+		UpdateBallBrightness
+		If AmbientBallShadowOn = 1 Then
+			BSUpdate
+		End If
 	End If
+	
 	RollingUpdate
 	DoSTAnim
 	DoDTAnim
 End Sub
 
 'The CorTimer interval should be 10. It's sole purpose is to update the Cor calculations
-CorTimer.Interval = 10
+CorTimer.Interval = 16
 Sub CorTimer_Timer(): Cor.Update: End Sub
 
 Sub UpdatePlunger()
@@ -894,6 +898,7 @@ End Sub
 
 Sub SolJailLatch(Enabled)
     If Enabled Then 'close jail
+		DT_Timer.Enabled = True
         JailDiv.IsDropped = false
         JailDiv1.IsDropped = false
         JailDiv2.IsDropped = false
@@ -904,6 +909,7 @@ End Sub
 
 Sub SolJailUp(Enabled)
     If Enabled Then
+		DT_Timer.Enabled = True
         JailDiv.IsDropped = true
         JailDiv1.IsDropped = true
         JailDiv2.IsDropped = true
@@ -914,6 +920,7 @@ End Sub
 
 Sub RRDownPost(Enabled)
     If Enabled Then
+		DT_Timer.Enabled = True
         RightPost.IsDropped = False
 		RightPost.Collidable = True
     Else
@@ -925,6 +932,7 @@ End Sub
 
 Sub LRPost(Enabled)
     If Enabled Then
+		DT_Timer.Enabled = True
         LeftPost.IsDropped = False
 		LeftPost.Collidable = True
     Else
@@ -1023,16 +1031,23 @@ Sub PrimT_Timer
 End Sub
 
 Sub DT_Timer()
-    If Jaildown = true and Jail1.z > 160 then Jail1.z = Jail1.z - 3
-    If Jaildown = true and Jail2.z > 160 then Jail2.z = Jail2.z - 3
-    If RPDown = true and RPPrim.z > 160 then RPPrim.z = RPPrim.z - 3
-    If LPUp = true and LeftPostPrim.z < 0 then LeftPostPrim.z = LeftPostPrim.z + 3
-    If Jaildown = False and Jail1.z < 210 then Jail1.z = Jail1.z + 3
-    If Jaildown = False and Jail2.z < 210 then Jail2.z = Jail2.z + 3
-    If RPDown = False and RPPrim.z < 210 then RPPrim.z = RPPrim.z + 3
-    If LPUp = False and LeftPostPrim.z > -50 then LeftPostPrim.z = LeftPostPrim.z - 3
+    Dim StillMoving : StillMoving = False
+
+    If Jaildown = true and Jail1.z > 160 then Jail1.z = Jail1.z - 3 : StillMoving = True
+    If Jaildown = true and Jail2.z > 160 then Jail2.z = Jail2.z - 3 : StillMoving = True
+    If RPDown = true and RPPrim.z > 160 then RPPrim.z = RPPrim.z - 3 : StillMoving = True
+    If LPUp = true and LeftPostPrim.z < 0 then LeftPostPrim.z = LeftPostPrim.z + 3 : StillMoving = True
+    
+    If Jaildown = False and Jail1.z < 210 then Jail1.z = Jail1.z + 3 : StillMoving = True
+    If Jaildown = False and Jail2.z < 210 then Jail2.z = Jail2.z + 3 : StillMoving = True
+    If RPDown = False and RPPrim.z < 210 then RPPrim.z = RPPrim.z + 3 : StillMoving = True
+    If LPUp = False and LeftPostPrim.z > -50 then LeftPostPrim.z = LeftPostPrim.z - 3 : StillMoving = True
+    
     If Jail1.z <= 210 then Jaildown = false
     If Jail2.z <= 210 then Jaildown = false
+
+    ' Stop timer execution when animations finish
+    If Not StillMoving Then Me.Enabled = False
 End Sub
 
 Dim BallInJail : BallInJail=  False
@@ -2105,7 +2120,7 @@ End Function
 '	 - Include a call the CheckLiveCatch from the LeftFlipper_Collide and RightFlipper_Collide subroutines
 '	 - Include FlipperActivate and FlipperDeactivate in the Flipper solenoid subs
 
-RightFlipper.timerinterval = 1
+RightFlipper.timerinterval = 10
 Rightflipper.timerenabled = True
 
 Sub RightFlipper_timer()
@@ -4837,14 +4852,14 @@ Dim VolumeDial : VolumeDial = 0.8           	      ' Overall Mechanical sound ef
 Dim BallRollVolume : BallRollVolume = 0.5   	      ' Level of ball rolling volume. Value between 0 and 1
 Dim RampRollVolume : RampRollVolume = 0.5 		      ' Level of ramp rolling volume. Value between 0 and 1
 Dim StagedFlippers : StagedFlippers = 0               ' Staged Flippers. 0 = Disabled, 1 = Enabled
-Dim AmbientBallShadowOn : AmbientBallShadowon = 1     ' Ambient Ball Shadows. 0 = Disabled, 1 = Enabled 
+Dim AmbientBallShadowOn : AmbientBallShadowon = 0     ' Ambient Ball Shadows. 0 = Disabled, 1 = Enabled 
 Dim RenderProbeOpt : RenderProbeOpt = 1 		      ' 0 = No Refraction Probes (best performance), 1 = Full Refraction Probes (best visual)
 Dim PlayfieldReflections : PlayfieldReflections = 100 ' Defines the reflection strength of the (dynamic) table elements on the playfield (0-100) / 5 = 20 Max 
 Dim ReflOpt : ReflOpt = 1						      ' 0 = Reflections off, 1 = Reflections on
 Dim LightReflOpt : LightReflOpt = 1				      ' 0 = Light Reflections off, 1 = Light Reflections on
 Dim InsertReflOpt : InsertReflOpt = 1			      ' 0 = Insert Reflections off, 1 = Insert Reflections on
-Dim BackglassReflOpt : BackglassReflOpt = 1	          ' 0 = Backglass Reflections off, 1 = Backglass Reflections on
-Dim SidewallFlashOpt : SidewallFlashOpt = 1			  ' 0 = Sidewall Flashers off, 1 = Sidewall Flashers on
+Dim BackglassReflOpt : BackglassReflOpt = 0	          ' 0 = Backglass Reflections off, 1 = Backglass Reflections on
+Dim SidewallFlashOpt : SidewallFlashOpt = 0			  ' 0 = Sidewall Flashers off, 1 = Sidewall Flashers on
 
 Dim SideBladeMod, LegendsCabMod, OutlaneDifficulty, InstMod, FlipperMod, GlassMod, DMDDecalMod, DMDDetail, GrillDecalmod, TopperMod, BackglassMod, CabinetMod, LogoPosterMod, Railsmod
 
