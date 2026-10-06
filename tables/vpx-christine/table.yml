@@ -1,4 +1,5 @@
 ---
+enabled: false
 backglassBundled: true
 backglassChecksum: "095A0E6333E62C470D2115F81872D875"
 # yamllint disable-line rule:line-length

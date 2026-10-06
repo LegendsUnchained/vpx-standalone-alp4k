@@ -1,4 +1,5 @@
 ---
+enabled: false
 backglassVPSId: "b60z5C7gXE"
 backglassChecksum: "0FDCE59809F11BC593A3FFC3034F4ED4"
 fps: 60
