@@ -6,7 +6,7 @@ RELEASE_JSON is the release object from the GitHub API. The webhook comes from
 DISCORD_WEBHOOK_URL; --dry-run prints the payload instead of sending it.
 
 stable is the promotion to a published release (promote-release.yml); testing
-is a new prerelease candidate (create-testing-release.yml). They differ only in
+is tables arriving in the rolling pre-release (sync-prerelease.yml). They differ only in
 color and footer. A greeting leads the description: "Happy Wizard Wednesday!"
 when the release went out on a Wednesday, US Eastern time, and a wistful
 version naming the actual day otherwise.
@@ -98,7 +98,14 @@ def description(found, kept, hello):
 def embed(release, kind):
     style = KINDS[kind]
     tag = release["tag_name"].strip()
-    title = f"Wizard Table Release - {tag if tag.startswith('v') else 'v' + tag}"[:TITLE_MAX]
+    # Stable releases are titled with their version. The rolling pre-release
+    # has none (its tag is just `pre-release`), and the footer already says it
+    # is a testing release, so its title stands alone.
+    if re.match(r"^v?\d", tag):
+        title = f"Wizard Table Release - {tag if tag.startswith('v') else 'v' + tag}"
+    else:
+        title = "Wizard Table Release"
+    title = title[:TITLE_MAX]
     footer = style["footer"]
     found = sections(release.get("body") or "")
     hello = greeting(release)
