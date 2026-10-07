@@ -88,7 +88,7 @@ PuPStart(cPuPPack) 'Check for PuP -
 
 Const BallSize = 50    ' 50 is the normal size used in the core.vbs, VP kicker routines uses this value divided by 2
 Const BallMass = 1    ' 1 is the normal mass
-Const SongVolume = 0.5 ' 1 is full volume. Value is from 0 to 1
+Const SongVolume = 1 ' 1 is full volume. Value is from 0 to 1
 Dim mMagnaSave1,mMagnaSave2, mMagnaSave3
 dim spinner
 
@@ -103,7 +103,7 @@ Const myVersion = ""
 Const MaxPlayers = 4     ' from 1 to 4
 Const BallSaverTime = 15 ' in seconds
 Const MaxMultiplier = 5  ' limit to 5x in this game, both bonus multiplier and playfield multiplier
-Const BallsPerGame =  5  ' usually 3 or 5
+Const BallsPerGame =  3  ' usually 3 or 5
 Const MaxMultiballs = 5  ' max number of balls during multiballs
 
 '************
@@ -1632,7 +1632,10 @@ End Sub
 '********************
 Sub PlaySong(name)
     If bMusicOn Then
-        If Song <> name Then
+        If name = "" Then
+            PlayRandomSong
+        End If
+        If Song <> name And name <> "" Then
             StopSound Song
             Song = name
             PlaySound Song, -1, SongVolume
