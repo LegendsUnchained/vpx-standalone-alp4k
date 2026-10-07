@@ -1,0 +1,21 @@
+---
+enabled: true
+backglassChecksum: "CA96F60CBB731665C13322A048F00C47"
+backglassVPSId: "yt7j5dez"
+fps: 60
+tableNameOverride: "America's Most Haunted (PAPA Tournament Edition)"
+tableNotes: "Download 'America's Most Haunted (PAPA Tournament) LW 1.0.1'."
+tableVPSId: "lVlGWK9A"
+testers:
+  - "Miku"
+vpxChecksum:
+  - "2711E2BCC2691D2CCD23C7A94CC10488"
+  - "afae8f463e447d7ba37d03b4c0ab9c3d"
+vpxVPSId: "KYsTwjS2-o"
+vpxArchiveFormat: "zip"
+vpxExtractExtra:
+  - "America's Most Haunted.UltraDMD"
+  - "AMH"
+postInstallRename:
+  - source: "AMH"
+    destination: "music/AMH"
