@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import collections
-from datetime import datetime, timezone
 import os
 from urllib.parse import quote
 import sys
@@ -15,6 +14,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import requests
 import vpsdb
 import catalog_history
+import config_bundle
+import release_meta as release_meta_lib
 import git
 from github import Github, Auth
 from github.GithubException import GithubException
@@ -68,19 +69,8 @@ def find_table_yml(base_dir="tables"):
     return result
 
 
-# Files that only affect how a table is presented, never how it plays or
-# installs. Excluded from the history fingerprint so a lossless image
-# recompression or a README rewrite does not announce ~300 tables as "updated"
-# in the Wizard's Recently Updated feed. They still change configVersion, so
-# devices do re-download the bundle — the two signals are deliberately separate.
-PRESENTATION_FILES = frozenset({
-    "README.md",
-    "launcher.png",
-    "backglass.png",
-    "dmd.png",
-    "dmdframe.png",
-    "playfield.png",
-})
+# Shared with prerelease.py, so the two builds fingerprint tables identically.
+PRESENTATION_FILES = config_bundle.PRESENTATION_FILES
 
 
 def get_config_fingerprint(repo_path, folder_path):
@@ -531,44 +521,9 @@ def main():
         raise RuntimeError("Could not publish manifest.json")
     print(f"Uploaded manifest.json to release: {manifest_url}")
 
-    # A small, stable summary of the release, so a client that only wants a few
-    # facts does not have to pull the whole manifest for them.
-    #
-    # The table count in particular cannot be derived from the release any more.
-    # It used to be read by counting vpx-*.zip assets, which worked only while
-    # every release carried every zip; an incremental release carries the
-    # changed ones, so that count became "tables changed in this release" and
-    # the repo picker started reporting a 315-table catalog as 19.
-    #
-    # manifest.json is ~1.2 MiB, and the picker reads one per offered repo, so
-    # the difference is a listing that is instant rather than one that downloads
-    # several megabytes to render two numbers per row.
+    # A small, stable summary of the release (see release_meta for why).
     meta_file = "release-meta.json"
-    release_meta = {
-        # Bump when a field changes meaning. Readers should tolerate unknown
-        # fields and a missing file: releases published before this exists, and
-        # forks that have not rebuilt, simply do not have one.
-        "schemaVersion": 1,
-        "repo": repo_name,
-        "version": release_tag,
-        # When the release was BUILT. Not when it was published: at this point
-        # it is still a draft and has no publish date. Clients wanting that have
-        # it already, from the release API response that led them here.
-        "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "tableCount": len(merged_manifest),
-        "newCount": sum(
-            1 for v in merged_manifest.values()
-            if v.get("firstAvailableRelease") == release_tag
-        ),
-        "updatedCount": sum(
-            1 for v in merged_manifest.values()
-            if v.get("updatedRelease") == release_tag
-        ),
-        # Lets a client decide whether the manifest it already has is still
-        # current without downloading it again.
-        "manifestBytes": os.path.getsize(manifest_file),
-        "manifestChecksum": md5sum(manifest_file),
-    }
+    release_meta = release_meta_lib.build(repo_name, release_tag, merged_manifest, manifest_file)
     with open(meta_file, "w") as f:
         json.dump(release_meta, f, indent=2, sort_keys=True)
     meta_url = upload_release_asset(
