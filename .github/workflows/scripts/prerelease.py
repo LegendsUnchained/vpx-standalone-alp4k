@@ -40,7 +40,9 @@ import mirror_tree
 
 TAG = "pre-release"
 TABLES = "tables"
-CATALOG_URL = "https://vpxtablemanager.com/catalog/#table={key}"
+# Staged tables are not in the catalog yet: link each to its card on the
+# testers page, where it is reviewed and signed off.
+TESTERS_URL = "https://vpxtablemanager.com/testers/#table={key}"
 EXTRAS = {  # catalog files that are not tables: mirror path -> repo path
     "achievements.json": "tm-config/achievements.json",
     "team_favorites.json": "team_favorites.json",
@@ -127,7 +129,7 @@ def notes(manifest, delta, keys=None):
 
     def line(key):
         name = (manifest.get(key) or {}).get("name") or key
-        return f"- [{name}]({CATALOG_URL.format(key=key)}) (`{key}`)"
+        return f"- [{name}]({TESTERS_URL.format(key=key)}) (`{key}`)"
 
     blocks = []
     for heading, change in (("## Newly added tables", "added"), ("## Updated tables:", "updated")):
