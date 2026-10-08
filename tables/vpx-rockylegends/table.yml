@@ -4,18 +4,19 @@ mainNotes: >-
   Hold off on pressing Start and enjoy a flashback video montage!
   
   Once you press Start, wait 10 seconds before hitting the plunger to hear table instructions from Rocky himself! 🥊
+pupBundled: true
 pupArchiveFormat: "zip"
-pupArchiveRoot: "ROCKYLEGENDS2026"
+pupArchiveRoot: "PUP ROCKYLEGENDS2026 V2.0/ROCKYLEGENDS2026"
 pupChecksum: "FA467DBECFE0CC88143F62E8DAD36513"
-pupFileUrl: "https://vpuniverse.com/files/file/31541-rocky-legends/"
-pupNotes: "Download PUP ROCKYLEGENDS2026 V2.0"
 pupRequired: true
+pupNotes: "Use the same table link to Download PUP ROCKYLEGENDS2026 V2.0"
 pupVersion: "2.0"
+pupVPSId: "Oa_KQKCjPQ"
 tableNotes: "Download VPX Rocky Legends V2.0"
 tableVPSId: "nyTVgUxs2M"
 tagline: "It ain't about how hard ya hit. It's about how hard you can get hit and keep moving forward."
 testers:
-  - "Missile Toad"
   - "Rocjr73"
+  - "Missile Toad"
 vpxChecksum: "D81C7C6BB1324185FE8575D4830A10C5"
 vpxVPSId: "LzlhsG_VED"
