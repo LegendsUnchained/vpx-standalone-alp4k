@@ -17,4 +17,4 @@ vpxExtractExtra:
   - "Music heman"
 postInstallRename:
   - source: "music"
-    destination: "vpx-motu"
+    destination: "vpx-motu/music"
