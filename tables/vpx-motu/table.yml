@@ -16,5 +16,5 @@ vpxArchiveFormat: "zip"
 vpxExtractExtra:
   - "Music heman"
 postInstallRename:
-  - source: "music"
-    destination: "vpx-motu/music"
+  - source: "Music heman"
+    destination: "music"
