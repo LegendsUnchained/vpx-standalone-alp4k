@@ -9,6 +9,7 @@ coloredROMChecksum:
   - "AC7928503459C0DDCBD01372021ECC72"
   - "8A554E7D6004DA4BFD303DEE64F77670"
 coloredROMPin2DMD: true
+coloredROMNotes: "Download both the 'whitewater.pal' and 'whitewater.vni'"
 coloredROMVPSId: "7FLTONEl"
 fps: 60
 romChecksum: "8C9A09212DD10AD69EBFB24A129D7287"
