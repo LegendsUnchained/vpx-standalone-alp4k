@@ -8,5 +8,13 @@ tableVPSId: "Ua8rVDhy"
 tagline: "'I have the power!'"
 testers:
   - "Curt"
-vpxChecksum: "216AF6772C6A2C82FC342C3C3A3B87A3"
+vpxChecksum: 
+- "216AF6772C6A2C82FC342C3C3A3B87A3"
+- "14EB676EABA23630B1D891FAB741B890"
 vpxVPSId: "g9ZMfhVFhz"
+vpxArchiveFormat: "zip"
+vpxExtractExtra:
+  - "Music heman"
+postInstallRename:
+  - source: "music"
+    destination: "vpx-motu"
