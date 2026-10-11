@@ -10,6 +10,7 @@ tableNotes: "Download 'SpongeBob's Bikini Bottom Pinball VPW 2.1.vpx' (v2.1)"
 tableVPSId: "OgtWKSmg"
 testers:
   - "PBW23"
+  - "Missile Toad"
 vpxArchiveFormat: "zip"
 vpxChecksum:
   - "BD000C0969511C7BC7F343DEB8CEFFEB"
