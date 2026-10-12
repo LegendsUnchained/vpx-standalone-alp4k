@@ -1,0 +1,27 @@
+---
+backglassChecksum: "47DDF9413A98B732922E4277C1F504FB"
+backglassNotes: "Download - Dukes Of Hazzard (2022).directb2s from the directb2s link, not the b2s next to the .vpx"
+backglassVPSId: "zaqvkCiAAV"
+fps: 60
+pupArchiveFormat: "zip"
+pupArchiveRoot: "Dukes with VR Option Pup Pack/dukes"
+pupChecksum: "9AA9A6716319A53C0FCC1E0789EB33C8"
+pupFileUrl: "https://vpuniverse.com/files/file/11716-dukes-of-hazzard-pinball-2022-table-and-puppack/"
+pupNotes: "Download - Dukes with VR Option Pup Pack.zip"
+pupRequired: true
+pupVersion: "dukes"
+romChecksum: "555E29582994EBCB5EE8CF42F212EC60"
+romNotes: "Download -  hs_l4.zip"
+romVPSId: "ACanTzGjXs"
+tableNotes: "Download - Dukes Of Hazzard (2022) 1.5.vpx"
+tableVPSId: "yMmmJZFQSI"
+tagline: "Yee-haw!"
+testers:
+  - "Missile Toad"
+  - "Wraith"
+  - "pointdablame"
+  - "Filth"
+  - "Dasme"
+  - "rocjr73"
+vpxChecksum: "7B77CF1D06C90D4CF995435984A9DCB9"
+vpxVPSId: "g1WwIyskTw"

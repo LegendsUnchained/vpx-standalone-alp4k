@@ -6,11 +6,10 @@ fps: 60
 romChecksum: "BD8EAAFA17D1F895A1C7A9CA13356C29"
 romNotes: "Download fball_ii.zip"
 romVPSId: "tw8I8eBm"
-tableNotes: "Download Fireball II (Bally 1981)_1.3.rar"
 tableVPSId: "kbcU3ghD"
 tagline: "'From the makers of Fireball, Fireball Classic, and New Fireball'"
 testers:
   - "Wraith"
   - "Coffee Joe"
-vpxChecksum: "4DC345BF2404E8BCBD34FDFD22E5A71A"
-vpxVPSId: "PYN3jDqp"
+vpxChecksum: "1DDD03C0E9721026E3ABCEBD416C5366"
+vpxVPSId: "v76SfSWCHX"

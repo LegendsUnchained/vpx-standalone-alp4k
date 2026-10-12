@@ -1,0 +1,26 @@
+---
+diffAuthorsOverride:
+  - "TeamTuga"
+diffChecksum: "82B0AF8BB0846290DF9FB33E6498E0D4"
+diffNotes: "Use NBC-tuga.rar from the downloaded pup pack. The .dif file is in the same .rar as the puppack"
+diffUrlOverride: "https://vpuniverse.com/files/file/22770-nightmare-before-christmas-puppack-table-dif-file/"
+diffVersionOverride: "1.0.0"
+fps: 60
+mainNotes: "Twas a long time ago, longer now than it seems..."
+pupArchiveFormat: "rar"
+pupArchiveRoot: "NBC_tuga/nightmarebc"
+pupChecksum: "EC906326A42F9FE3913A374C77E12373"
+pupNotes: "Download - NBC_tuga.rar"
+pupRequired: true
+pupVersion: "nightmarebc"
+pupVPSId: "Ho3yQcKRvy"
+tableNotes: "Download - Nightmare Before Christmas(2024) v1.02.vpx"
+tableVPSId: "7jN8q3noP6"
+testers:
+  - "Missile Toad"
+  - "Wraith"
+  - "Dasme"
+  - "pointdablame"
+  - "Bla1ze"
+vpxChecksum: "24EFA8858AA00A86DD613BCD134619A6"
+vpxVPSId: "LI9FmU9PDM"

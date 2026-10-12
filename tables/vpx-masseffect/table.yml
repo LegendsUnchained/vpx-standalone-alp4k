@@ -1,0 +1,19 @@
+---
+backglassChecksum: "D10C68F1A0EDA52F8E5F31F9D15F8115"
+backglassNotes: "Download 'Mass Effect (Original 2026) B2S and Full DMD.directb2s'"
+backglassVPSId: "iVkNG0cTCn"
+coloredROMBundled: true
+coloredROMChecksum: "D5783760E73AA69F63C45B4FC6450793"
+coloredROMNotes: "included with table download"
+fps: 60
+romChecksum: "7550943E9E7D9ADFE6BED395B4179ACD"
+romNotes: "Download 'afm_113b.zip'"
+romUrlOverride: "https://www.vpforums.org/index.php?app=downloads&showfile=1340"
+romVersionOverride: "afm_113b"
+tableNotes: "Download 'Mass Effect 1.0.7.zip'"
+tableVPSId: "RdBgVaYCBg"
+testers:
+  - "PBW23"
+  - "Wraith"
+vpxChecksum: "D0679FEBC78BAB4992DAC54596909F79"
+vpxVPSId: "XRl2sh3KTP"
