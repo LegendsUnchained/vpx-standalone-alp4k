@@ -9,7 +9,7 @@ On Error Goto 0
 
 'Const BallsSize = 50
 
-Const cGameName="fpwr2_l2",UseSolenoids=2,UseLamps=0,UseGI=0,SSolenoidOn="SolOn",SSolenoidOff="SolOff", SCoin="coin"
+Const cGameName="TenaciousD",UseSolenoids=2,UseLamps=0,UseGI=0,SSolenoidOn="SolOn",SSolenoidOff="SolOff", SCoin="coin"
 
 LoadVPM "01560000", "S7.VBS", 3.26
 
@@ -20,6 +20,8 @@ LoadVPM "01560000", "S7.VBS", 3.26
 '// Recommended values should be no greater than 1.
 Const VolumeDial = 0.8
 
+Const UseFlexDMD = 1    ' 1 is on
+Const NumberOfBalls = 3  'change only if you change the game settings to 5 in the adjustment menu
 'Flipper Rampup mode: 0 = fast, 1 = medium, 2 = slow (tap passes should work)
 dim FlipperCoilRampupMode : FlipperCoilRampupMode = 1
 
@@ -260,20 +262,24 @@ End Sub
 Dim bsTrough, BsSaucer
 
 Sub Table1_Init
+	' initalise the FlexDMD display
+    If UseFlexDMD Then FlexDMD_Init
     Playsound "vo_Welcome"
 	vpmInit Me
 	On Error Resume Next
 		With Controller
 		.GameName = cGameName
          If Err Then MsgBox "Can't start Game " & cGameName & vbNewLine & Err.Description:Exit Sub
-        .SplashInfoLine = "Firepower II (Williams 1983)" & vbNewLine & "Created for VPX by Walamab"
+        .SplashInfoLine = "Tenacious D: a mod of Firepower II (Williams 1983)" & vbNewLine & "Created for VPX by Walamab"
 		.HandleMechanics=0
 		.HandleKeyboard=0
 		.ShowDMDOnly=1
 		.ShowFrame=0
 		.ShowTitle=0
         .hidden = 1
-        .Games("fpwr2_l2").Settings.Value("sound") = 0
+        .Games("fpwr2_l2").Settings.Value("sound") = 0 'set to 0 if you want to mute the rom sounds of Firepower II
+		If UseFlexDMD Then ExternalEnabled = .Games("fpwr2_l2").Settings.Value("showpindmd")
+		If UseFlexDMD Then .Games("fpwr2_l2").Settings.Value("showpindmd") = 0
          On Error Resume Next
          .Run GetPlayerHWnd
          If Err Then MsgBox Err.Description
@@ -305,6 +311,7 @@ Sub Table1_Init
 
 	if VRMode = True Then
 		setup_backglass()
+	If UseFlexDMD then VR_BG_ON.image = "Backglass OnFlex"
 	End If
 End Sub
 
@@ -445,7 +452,11 @@ end sub
 ' Final State values are:   0=Off, 1=On, 2=Return to previous State
 '********************************************************************************************
 
-Sub FlashForMs(MyLight, TotalPeriod, BlinkPeriod, FinalState) 'thanks gtxjoe for the first version
+
+
+Dim FlashForMsDefined : Set FlashForMsDefined = CreateObject("Scripting.Dictionary") 'tracks which _Timer subs have already been injected
+
+Sub FlashForMs(MyLight, TotalPeriod, BlinkPeriod, FinalState) 'leak-fixed version to prevent memory leaks when in game UI is open
 
     If TypeName(MyLight) = "Light" Then
 
@@ -469,9 +480,17 @@ Sub FlashForMs(MyLight, TotalPeriod, BlinkPeriod, FinalState) 'thanks gtxjoe for
         MyLight.TimerInterval = BlinkPeriod
         MyLight.TimerEnabled = 0
         MyLight.TimerEnabled = 1
-        ExecuteGlobal "Sub " & MyLight.Name & "_Timer:" & "Dim tmp, steps, fstate:tmp=me.UserValue:fstate = tmp MOD 10:steps= tmp\10 -1:Me.Visible = steps MOD 2:me.UserValue = steps *10 + fstate:If Steps = 0 then Me.Visible = fstate:Me.TimerEnabled=0:End if:End Sub"
+
+        ' FIX: only inject this object's _Timer sub the first time we ever see it.
+        ' Re-injecting via ExecuteGlobal on every call is what caused the memory leak,
+        ' since VBScript never releases the previously compiled sub of the same name.
+        If Not FlashForMsDefined.Exists(MyLight.Name) Then
+            ExecuteGlobal "Sub " & MyLight.Name & "_Timer:" & "Dim tmp, steps, fstate:tmp=me.UserValue:fstate = tmp MOD 10:steps= tmp\10 -1:Me.Visible = steps MOD 2:me.UserValue = steps *10 + fstate:If Steps = 0 then Me.Visible = fstate:Me.TimerEnabled=0:End if:End Sub"
+            FlashForMsDefined.Add MyLight.Name, True
+        End If
     End If
 End Sub
+
 
 '**********************************************************************************************************
 ' Fleep BIPL
@@ -1009,7 +1028,7 @@ If musicNum = 23 Then PlayMusic "TEND/Classical Teacher.mp3" End If
 If musicNum = 24 Then PlayMusic "TEND/Senorita.mp3" End If
 If musicNum = 25 Then PlayMusic "TEND/Deth Starr.mp3" End If
 If musicNum = 26 Then PlayMusic "TEND/Roadie.mp3" End If
-If musicNum = 27 Then PlayMusic "TEND/The Ballad of Hollywood Jack and the Rage Kage.mp3" End If
+If musicNum = 27 Then PlayMusic "TEND/The Ballad of Holywood Jack and the Rage Kage.mp3" End If
 If musicNum = 28 Then PlayMusic "TEND/Throwdown.mp3" End If
 If musicNum = 29 Then PlayMusic "TEND/Rock Is Dead.mp3" End If
 If musicNum = 30 Then PlayMusic "TEND/They Fucked Our Asses.mp3" End If
@@ -1328,6 +1347,20 @@ If Not IsEmpty(ChgLED) Then
 			end if
 		next
 		end if
+		If UseFlexDMD = 1 Then
+		For ii = 0 To UBound(chgLED)
+			num = chgLED(ii, 0) : chg = chgLED(ii, 1) : stat = chgLED(ii, 2)
+			If UseFlexDMD then UpdateFlexChar num, stat
+'			if (num < 32) then
+'				For Each obj In Digits(num)
+'					If chg And 1 Then obj.State = stat And 1 
+'					chg = chg\2 : stat = stat\2
+'				Next
+'			else
+'			end if
+		next
+		end if
+		If UseFlexDMD then FlexDMDUpdate
 end if
 End Sub
 
@@ -1931,9 +1964,7 @@ Function Atn2(dy, dx)
 End Function
  
 ' Used for drop targets and flipper tricks
-Function Distance(ax,ay,bx,by)
-	Distance = SQR((ax - bx)^2 + (ay - by)^2)
-End Function
+
  
 '******************************************************
 '			FLIPPER TRICKS
@@ -2909,6 +2940,14 @@ Sub Table1_exit()
     Controller.Stop
   Controller.Games("fpwr2_l2").Settings.Value("sound") = 1
   End If
+  If UseFlexDMD then
+		If Not FlexDMD is Nothing Then 
+			FlexDMD.Show = False
+			FlexDMD.Run = False
+			FlexDMD = NULL
+		Controller.Games(cGameName).Settings.Value("showpindmd")=ExternalEnabled
+		End if
+	End if
 End Sub
 
 
@@ -3163,8 +3202,8 @@ End Sub
 '**************************
 
 Dim PORT1Pos, PORTFLOW
-PORTFLOW = Array("P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", _
-    "P10", "P11", "P12", "P13", "P14", "P15", "P16", "P17", "P18", "P19", "P20", "P21", "P22", "P23", "P24")
+PORTFLOW = Array("Po1", "Po2", "Po3", "Po4", "Po5", "Po6", "Po7", "Po8", "Po9", _
+    "Po10", "Po11", "Po12", "Po13", "Po14", "Po15", "Po16", "Po17", "Po18", "Po19", "Po20", "Po21", "Po22", "Po23", "Po24")
 
 Sub StartPORT
     PORT1Pos = 0
@@ -3177,7 +3216,7 @@ Sub PORTTimer_Timer
     PORT1.ImageA = PORTFLOW(PORT1Pos)
     
     PORT1Pos = (PORT1Pos + 1) MOD 24    
-    
+    Firemove
 End Sub
 
 
@@ -3547,13 +3586,16 @@ Sub VRDisplayTimer
 		If Not IsEmpty(ChgLED) Then
 			For ii=0 To UBound(chgLED)
 				num=chgLED(ii, 0) : chg=chgLED(ii, 1) : stat=chgLED(ii, 2)
+			If UseFlexDMD then UpdateFlexChar num, stat
 				For Each obj In VRDigits(num)
  '                  If chg And 1 Then obj.visible=stat And 1    'if you use the object color for off; turn the display object visible to not visible on the playfield, and uncomment this line out.
 					If chg And 1 Then FadeDisplay obj, stat And 1	
 					chg=chg\2 : stat=stat\2
 				Next
 			Next
+		If UseFlexDMD then FlexDMDUpdate
 		End If
+		
 
 End Sub
 
@@ -3601,4 +3643,373 @@ Sub UpdateVRLamps()
 	If Controller.Lamp(5) = 0 Then: VR_BG_Fl_SA.visible=0: 		else: VR_BG_Fl_SA.visible=1 		'Shoot again
 	If Controller.Lamp(4) = 0 Then: VR_BG_Fl_HS.visible=0: 		else: VR_BG_Fl_HS.visible=1 		'Highest Score
 	If Controller.Lamp(40) = 0 Then: VR_BG_Fl_BIP.visible=0: 		else: VR_BG_Fl_BIP.visible=1 	'Ball In Play
+End Sub
+
+
+'********************************************************************************
+' Flex DMD routines made possible by scutters' tutorials and scripts.
+'********************************************************************************
+DIm FlexDMDFont
+Dim FlexDMDFontActiveScore
+Dim FlexDMDScene
+Dim ExternalEnabled
+
+Dim LastScoreUpdated
+Dim FlexDMD		' the flex dmd display
+DIm FlexDMDDict		' a dictionary / lookup to convert segment display hex/int codes to characters
+Dim L1Chars, L2Chars, L3Chars, L4Chars
+Dim Line1Change, Line2Change, Line3Change, Line4Change, Flexpath
+Dim placemil, place100k, place10k, placek, place100, place10, place1
+Dim fso,curdir
+Dim Scorearray
+Dim digitoffset, digitadjust, LCChars, LBChars, BallsInPlay
+
+Sub FlexDMD_Init() 'default/startup values
+	
+	Scorearray=Array("11","11","11","11","11","11","11")
+	'arrays to hold characters to display converted from segment codes
+	L1Chars = Array("11","11","11","11","11","11","11")
+	L2Chars = Array("11","11","11","11","11","11","11")
+	L3Chars = Array("11","11","11","11","11","11","11")
+	L4Chars = Array("11","11","11","11","11","11","11")
+	LCChars = Array("CR "," "," ")
+	LBChars = Array("0","0","0")
+	LastScoreUpdated = 0
+	FlexDictionary_Init
+	Set fso = CreateObject("Scripting.FileSystemObject")
+	curDir = fso.GetAbsolutePathName(".")
+	FlexPath = "VPX." 'curdir & "\Flex\TD\"
+
+	Set FlexDMD = CreateObject("FlexDMD.FlexDMD")
+	If Not FlexDMD is Nothing Then
+	UseColoredDMD = true
+		FlexDMD.GameName = cGameName
+		FlexDMD.RenderMode = 2
+		FlexDMD.Width = 128
+		FlexDMD.Height = 32
+		FlexDMD.Clear = True
+		FlexDMD.Run = True
+		FlexDMD.TableFile = Table1.Filename & ".vpx"
+		Set FlexDMDScene = FlexDMD.NewGroup("Scene")
+
+
+		With FlexDMDScene
+
+	
+			.AddActor FlexDMD.NewImage("Back", Flexpath & "background&region= 0,0,128,32")
+			digitoffset = 0
+	digitadjust= 0
+
+			.AddActor FlexDMD.NewImage("Million",FlexPath & "0")
+			.GetImage("Million").SetAlignedPosition  (20-digitoffset),13,0    
+			.GetImage("Million").Visible = True
+
+			.AddActor FlexDMD.Newimage("100K",FlexPath & "0")
+			.Getimage("100K").SetAlignedPosition  (33-digitoffset),13,0
+			.Getimage("100K").Visible = True
+			
+			.AddActor FlexDMD.Newimage("10K",FlexPath & "0")
+			.Getimage("10K").SetAlignedPosition  (46-digitoffset),13,0
+			.Getimage("10K").Visible = True
+
+			.AddActor FlexDMD.Newimage("1000",FlexPath & "0")
+			.Getimage("1000").SetAlignedPosition  (59-digitoffset),13,0
+			.Getimage("1000").Visible = True
+
+			.AddActor FlexDMD.Newimage("100",FlexPath & "0")
+			.Getimage("100").SetAlignedPosition  (72-digitoffset),13,0
+			.Getimage("100").Visible = True
+
+			.AddActor FlexDMD.Newimage("10",FlexPath & "0")
+			.Getimage("10").SetAlignedPosition  (85-digitoffset),13,0
+			.Getimage("10").Visible = True
+			
+			.AddActor FlexDMD.Newimage("1",FlexPath & "0")
+			.Getimage("1").SetAlignedPosition  (98-digitoffset),13,0
+			.Getimage("1").Visible = True
+			
+			.AddActor FlexDMD.Newimage("Blank1",FlexPath & "11")
+			.Getimage("Blank1").SetAlignedPosition  (104-digitoffset),13,0
+			.Getimage("Blank1").Visible = False
+			
+			.AddActor FlexDMD.Newimage("Blank2",FlexPath & "11")
+			.Getimage("Blank2").SetAlignedPosition  (98-digitoffset),13,0
+			.Getimage("Blank2").Visible = False
+			
+			.AddActor FlexDMD.Newimage("Blank3",FlexPath & "11")
+			.Getimage("Blank3").SetAlignedPosition  (91-digitoffset),13,0
+			.Getimage("Blank3").Visible = False
+
+
+
+'			.AddActor FlexDMD.Newimage("Kcomma",FlexPath & "comma.png")
+'			.Getimage("Kcomma").SetAlignedPosition  (72-digitoffset),28,0
+'			.Getimage("Kcomma").Visible = True
+
+'			.AddActor FlexDMD.Newimage("Mcomma",FlexPath & "comma.png")
+'			.Getimage("Mcomma").SetAlignedPosition  (18-digitoffset),28,0
+'			.Getimage("Mcomma").Visible = True
+
+			.AddActor FlexDMD.NewImage("scoreplate",FlexPath & "scoreplate")
+			.GetImage("scoreplate").SetAlignedPosition  0,0,0
+			.GetImage("scoreplate").Visible = True
+
+			.AddActor FlexDMD.NewImage("Ball1",FlexPath & "pick")
+			.GetImage("Ball1").SetAlignedPosition  112,26,0
+			.GetImage("Ball1").Visible = True
+
+			.AddActor FlexDMD.NewImage("Ball2",FlexPath & "pick")
+			.GetImage("Ball2").SetAlignedPosition  112,20,0
+			.GetImage("Ball2").Visible = True
+
+			.AddActor FlexDMD.NewImage("Ball3",FlexPath & "pick")
+			.GetImage("Ball3").SetAlignedPosition  112,14,0
+			.GetImage("Ball3").Visible = True
+
+			.AddActor FlexDMD.NewImage("Player",FlexPath & "p2")
+			.GetImage("Player").SetAlignedPosition  1,14,0
+			.GetImage("Player").Visible = False
+
+			.AddActor FlexDMD.NewImage("Title",FlexPath & "title")
+			.GetImage("Title").SetAlignedPosition  0,0,0
+			.GetImage("Title").Visible = True
+
+
+
+		End With
+
+		FlexDMD.LockRenderThread
+		
+		FlexDMD.Stage.AddActor FlexDMDScene
+		
+		FlexDMD.Show = True
+		FlexDMD.UnlockRenderThread
+		
+		Line1Change = False
+		Line2Change = False 
+		Line3Change = False
+		Line4Change = False
+		LineBallChange = False
+
+	End If
+
+End Sub
+
+
+
+Sub FlexDictionary_Init
+
+	'add conversion of segment charcters codes to lookup table
+	Set FlexDMDDict = CreateObject("Scripting.Dictionary")
+
+	FlexDMDDict.Add 0, curdir & "11"
+	FlexDMDDict.Add 63, curdir & "0"
+	FlexDMDDict.Add 6, curdir & "1"
+	FlexDMDDict.Add 91, curdir & "2"
+	FlexDMDDict.Add 79, curdir & "3"
+	FlexDMDDict.Add 102, curdir & "4"
+	FlexDMDDict.Add 109, curdir & "5"
+	FlexDMDDict.Add 125, curdir & "6"
+	FlexDMDDict.Add 7, curdir & "7"
+	FlexDMDDict.Add 127, curdir & "8"
+	FlexDMDDict.Add 111, curdir & "9"
+	
+	FlexDMDDict.Add 191, curdir & "0"
+	FlexDMDDict.Add 134, curdir & "1"
+	FlexDMDDict.Add 219, curdir & "2"
+	FlexDMDDict.Add 207, curdir & "3"
+	FlexDMDDict.Add 230, curdir & "4"
+	FlexDMDDict.Add 237, curdir & "5"
+	FlexDMDDict.Add 253, curdir & "6"
+	FlexDMDDict.Add 135, curdir & "7"
+	FlexDMDDict.Add 255, curdir & "8"
+	FlexDMDDict.Add 239, curdir & "9"
+	 
+End Sub
+
+'**************
+' Update FlexDMD
+'**************
+
+Sub FlexDMDUpdate()
+
+	if UseFlexDMD then
+	If Not FlexDMD is Nothing Then FlexDMD.LockRenderThread
+	If FlexDMD.Run = False Then FlexDMD.Run = True
+
+		Dim i 
+			for i = 0 to 6 
+			If Line1Change Then 
+'			If L1Chars(i)<>"b" Then 
+Scorearray(i)= L1Chars(i)
+			End If
+
+			If Line2Change Then
+'			If L2Chars(i)<>"b" Then 
+Scorearray(i)= L2Chars(i)
+			End If
+
+			If Line3Change Then
+'			If L3Chars(i)<>"b" Then 
+Scorearray(i)= L3Chars(i)
+			End If
+
+			If Line4Change Then
+'			If L4Chars(i)<>"b" Then 
+Scorearray(i)= L4Chars(i)
+			End If
+			Next
+
+if Lineballchange Then BallsInPlay = NumberOfBalls - LBChars(2) + 1
+
+	With FlexDMD.Stage
+ If Lineballchange Then
+	.GetImage("Ball1").Visible = False
+	.GetImage("Ball2").Visible = False
+	.GetImage("Ball3").Visible = False
+	If BallsInPlay >0 Then.GetImage("Ball1").Visible = True 
+	If BallsInPlay >1 Then.GetImage("Ball2").Visible = True 
+	If BallsInPlay >2 Then.GetImage("Ball3").Visible = True 
+
+End If
+
+'		If Scorearray(0)<>"11" Then 
+'		.Getimage("Mcomma").Visible = True
+'		Else
+'		.Getimage("Mcomma").Visible = False
+'		End If
+
+		.GetImage("Title").Visible = False
+		.GetImage("Million").Bitmap = FlexDMD.NewImage("Million",FlexPath & Scorearray(0)).Bitmap
+		.GetImage("100K").Bitmap = FlexDMD.NewImage("100K",FlexPath & Scorearray(1) ).Bitmap
+		.GetImage("10K").Bitmap = FlexDMD.NewImage("10K",FlexPath & Scorearray(2) ).Bitmap
+		.GetImage("1000").Bitmap = FlexDMD.NewImage("1000",FlexPath & Scorearray(3) ).Bitmap
+		.GetImage("100").Bitmap = FlexDMD.NewImage("100",FlexPath & Scorearray(4) ).Bitmap
+		.GetImage("10").Bitmap = FlexDMD.NewImage("10",FlexPath & Scorearray(5) ).Bitmap
+		.GetImage("1").Bitmap = FlexDMD.NewImage("1",FlexPath & Scorearray(6) ).Bitmap
+ 
+'			If Scorearray(3) <> "11" Then 
+'			.Getimage("Kcomma").Visible = True
+'			Else 
+'			.Getimage("Kcomma").Visible = False
+'			End If
+ 'put score in the center    20 33 46 59 72 85 98
+			.GetImage("Blank1").Visible = False
+			.GetImage("Blank2").Visible = False
+			.GetImage("Blank3").Visible = False
+		If Scorearray(0) <> "11" Then digitoffset=0
+		If Scorearray(0) = "11" and Scorearray(1) <> "11" Then 
+			digitoffset=6
+			.GetImage("Blank1").Visible = True
+			End If
+		If Scorearray(1) = "11" and Scorearray(2) <> "11" Then 
+		digitoffset=13
+			.GetImage("Blank2").Visible = True
+			End If
+		If Scorearray(2) = "11" Then 
+		digitoffset=19
+			.GetImage("Blank1").Visible = True
+			.GetImage("Blank2").Visible = True
+			.GetImage("Blank3").Visible = True
+			End If
+'		If Scorearray(3) = "11" and Scorearray(4) <> "11" Then digitoffset=30
+'		If Scorearray(4) = "11" and Scorearray(5) <> "11" Then digitoffset=37
+
+	.GetImage("Million").SetAlignedPosition (20- digitoffset - digitadjust),13,0
+	.GetImage("100K").SetAlignedPosition (33- digitoffset - digitadjust),13,0
+	.GetImage("10K").SetAlignedPosition (46- digitoffset - digitadjust),13,0
+	.GetImage("1000").SetAlignedPosition (59- digitoffset - digitadjust),13,0
+	.GetImage("100").SetAlignedPosition (72- digitoffset - digitadjust),13,0
+	.GetImage("10").SetAlignedPosition (85- digitoffset - digitadjust),13,0
+	.GetImage("1").SetAlignedPosition (98- digitoffset - digitadjust),13,0
+'	.Getimage("Kcomma").SetAlignedPosition  (72- digitoffset - digitadjust),28,0
+'	.GetImage("Mcomma").SetAlignedPosition (18- digitoffset - digitadjust),28,0
+	.GetImage("Player").Visible = True
+		If Line1Change then .GetImage("Player").Bitmap = FlexDMD.NewImage("Player",FlexPath & "p3").Bitmap
+		If Line2Change then .GetImage("Player").Bitmap = FlexDMD.NewImage("Player",FlexPath & "p4").Bitmap
+		If Line3Change then .GetImage("Player").Bitmap = FlexDMD.NewImage("Player",FlexPath & "p1").Bitmap
+		If Line4Change then .GetImage("Player").Bitmap = FlexDMD.NewImage("Player",FlexPath & "p2").Bitmap
+
+
+	End With
+
+	If Not FlexDMD is Nothing Then FlexDMD.UnlockRenderThread
+	
+	Line1Change = False
+	Line2Change = False 
+	Line3Change = False
+	Line4Change = False
+	Lineballchange = False
+		End If
+End Sub
+
+Dim Lineballchange
+Sub UpdateFlexChar(id, value)
+	'map segment code to character in LnChars arrays
+	Dim chr
+	if id < 30 and FlexDMDDict.Exists (value) then
+	
+		chr = FlexDMDDict.Item (value)
+		
+
+
+		if id < 7 then
+			L1Chars(id) = chr
+			Line1Change = True
+		elseif id < 14 then
+			L2Chars(id - 7) = chr
+			Line2Change = True
+		elseif id < 21 then
+			L3Chars(id - 14) = chr
+			Line3Change = True
+		elseif id < 28 then
+			L4Chars(id - 21) = chr
+			Line4Change = True
+		elseif id < 30 then
+			LBChars(id - 27) = chr
+			LineBallChange = True
+		end if
+
+	end if 
+		
+End Sub
+
+Sub FlexDMDTimer_Timer
+	Dim DMDp
+	If UseDMD Then
+		DMDp = FlexDMD.DmdPixels
+		If Not IsEmpty(DMDp) Then
+			DMDWidth = FlexDMD.Width
+			DMDHeight = FlexDMD.Height
+			DMDPixels = DMDp
+		End If
+	ElseIf UseColoredDMD Then
+		DMDp = FlexDMD.DmdColoredPixels
+		If Not IsEmpty(DMDp) Then
+			DMDWidth = FlexDMD.Width
+			DMDHeight = FlexDMD.Height
+			DMDColoredPixels = DMDp
+		End If
+	End If
+End Sub
+
+Dim fireframe 
+fireframe=0
+
+Sub Firemove
+	if UseFlexDMD then
+	If Not FlexDMD is Nothing Then FlexDMD.LockRenderThread
+	If FlexDMD.Run = False Then FlexDMD.Run = True
+
+
+	With FlexDMD.Stage
+
+		.GetImage("Back").Bitmap = FlexDMD.NewImage("Back",FlexPath & "background&region= 0,"& (fireframe*32) &",128,32").Bitmap
+		fireframe = fireframe+1
+		If fireframe > 30 Then fireframe=0 
+
+	If Not FlexDMD is Nothing Then FlexDMD.UnlockRenderThread
+	end With
+	End If
+
 End Sub

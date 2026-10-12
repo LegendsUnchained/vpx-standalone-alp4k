@@ -1,0 +1,26 @@
+---
+backglassBundled: true
+backglassChecksum: "8A3B8CF608ED3FB0A36A16FD6E39B4B0"
+backglassNotes: "Bundled with .vpx file."
+fps: 60
+romChecksum: "64596DF579B8E19BF66F3DE1C0F9E302"
+romVPSId: "RjhqkzqmYK"
+tableVPSId: "_FRiDmAU5n"
+tagline: >-
+  To find your fame and fortune, through the valley you must walk. You will face your inner demons, now go my son and
+  ROCK.
+testers:
+  - "Dasme"
+  - "PBW23"
+  - "TechZombie"
+vpxChecksum: 
+  - "B88DC7617972B82C8864B08819ED765C"
+  - "f4ca2276167338f65266dca342877ba4"
+vpxArchiveFormat: "zip"
+vpxExtractExtra:
+  - "tenD"
+postInstallRename:
+  - source: "tenD"
+    destination: "music/tenD"
+vpxNSFW: true
+vpxVPSId: "61JuCZGQSp"

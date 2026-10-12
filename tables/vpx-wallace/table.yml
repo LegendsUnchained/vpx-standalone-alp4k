@@ -1,0 +1,20 @@
+---
+backglassChecksum: "5471BA32F5A4293EC8161F2BDFC5777C"
+backglassNotes: "Download 'Wallace and Gromit 1.0.directb2s.zip'"
+backglassVPSId: "MdvzdTPYog"
+fps: 60
+tableNotes: "Download 'Wallace And Gromit_Bigus(MOD)2.0.vpx.zip'"
+tableVPSId: "3fhWcn16Wz"
+testers:
+  - "PBW23"
+  - "Filth"
+vpxChecksum:
+- "AD44925CAE4AD3841CDABFA4B1E78BE7"
+- "2ddeca863bc6231883a762648caa02c2"
+vpxVPSId: "tp_EOTT6gw"
+vpxArchiveFormat: "zip"
+vpxExtractExtra:
+  - "WandG_music"
+postInstallRename:
+  - source: "WandG_music"
+    destination: "music"
