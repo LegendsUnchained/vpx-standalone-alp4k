@@ -1038,8 +1038,8 @@ if Light21.state=1 then
 SameShot=1
 changeball 1
 UltraDMD.CancelRendering()
-UltraDMD.DisplayScene00Ex "sameplayer.wmv", "Same Player", 30, -1, "Shoots", 30, -1, 14, 20000, 14
-vpmTimer.addTimer 20000, "bsTrough.addball Drain:scoreclick=1 '":vpmtimer.addtimer 1, "DisplayTimerLED.enabled = 1 '"
+UltraDMD.DisplayScene00Ex "Xtraball.wmv", "Same Player", 30, -1, "Shoots", 30, -1, 14, 10000, 14
+vpmTimer.addTimer 10000, "bsTrough.addball Drain:scoreclick=1 '":vpmtimer.addtimer 1, "DisplayTimerLED.enabled = 1 '"
 Exit Sub
 End If
 
