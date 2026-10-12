@@ -63,7 +63,7 @@ Randomize
 Const BallSize = 50       ' 50 is the normal size used in the core.vbs, VP kicker routines uses this value divided by 2
 Const BallMass = 1      ' standard ball mass in JP's VPX Physics 3.0
 Const SongVolume = 0.5 ' 1 is full volume. Value is from 0 to 1. 0.0065 is a fix for VPX beta 10.7
-Const bFreePlay = False 'freeplay or coins
+Const bFreePlay = True 'freeplay or coins
 Const FlexDMDHighQuality = True 'FlexDMD in high quality (True = LCD at 256x64) or normal quality (False = Real DMD at 128x32)
 
 ' Load the core.vbs for supporting Subs and functions
@@ -85,7 +85,7 @@ Const myVersion = "4.0.1"
 Const MaxPlayers = 1          ' from 1 to 4
 Const MaxMultiplier = 3       ' limit playfield multiplier
 Const MaxBonusMultiplier = 50 'limit Bonus multiplier
-Const BallsPerGame = 5        ' usually 3 or 5
+Const BallsPerGame = 3        ' usually 3 or 5
 Const MaxMultiballs = 6       ' max number of balls during multiballs
 Dim BallSaverTime             ' 20 in seconds
 Dim mMagnaSave2
