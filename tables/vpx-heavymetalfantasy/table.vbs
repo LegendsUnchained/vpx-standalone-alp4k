@@ -1070,8 +1070,8 @@ End If
 If ballcount < 3 then
 changeball 0
 UltraDMD.CancelRendering()
-UltraDMD.DisplayScene00 "topreset.wmv", "", 15, "", -1, 14, 3000, 14
-vpmTimer.addTimer 3000, "bsTrough.addball Drain:scoreclick=1 '":vpmtimer.addtimer 1, "DisplayTimerLED.enabled = 1 '"
+UltraDMD.DisplayScene00 "topreset.wmv", "", 15, "", -1, 14, 4000, 14
+vpmTimer.addTimer 4000, "bsTrough.addball Drain:scoreclick=1 '":vpmtimer.addtimer 1, "DisplayTimerLED.enabled = 1 '"
 End If
 
 
