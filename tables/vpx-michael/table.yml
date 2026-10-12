@@ -1,0 +1,18 @@
+---
+fps: 60
+pupArchiveFormat: "zip"
+pupVersion: "michael"
+pupArchiveRoot: "Pack michael/michael"
+pupChecksum: "2C3CB6F60251D08D69D265779730C76D"
+pupBundled: true
+pupNotes: "included in 'pack michael.zip'"
+pupRequired: true
+pupVersion: "3.5"
+tableNotes: "Download 'pack michael.zip'"
+tableVPSId: "hEll8TKHQN"
+tagline: "The King of Pop!"
+testers:
+  - "Rocjr73"
+  - "OminousOsie"
+vpxChecksum: "717672A39BD11B176A3CAF4F0F0AA730"
+vpxVPSId: "hXSU5zcM7d"
