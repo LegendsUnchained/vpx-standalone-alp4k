@@ -5,9 +5,10 @@ fps: 60
 pupArchiveFormat: "zip"
 pupArchiveRoot: "Thundercats"
 pupChecksum: "DD76B1AF0475E1F154B9C6BB6A384E8F"
-pupNotes: "Download ThundercatsPup-v1.0.9.zip"
+pupNotes: "Download ThundercatsPup-v1.0.9.zip from .vpx link"
 pupRequired: true
 pupVersion: "ThundercatsPup-v1.0.9.zip"
+specialDMDNotes: "Download Thundercats.UltraDMD-v1.0.0.zip from .vpx link"
 specialDMDArchiveFormat: "zip"
 specialDMDArchiveRoot: "Thundercats.UltraDMD"
 specialDMDChecksum: "C9F11E676225623B2E03D70E3BECE902"
