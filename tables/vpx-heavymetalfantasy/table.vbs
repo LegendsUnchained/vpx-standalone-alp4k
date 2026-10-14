@@ -1038,7 +1038,7 @@ if Light21.state=1 then
 SameShot=1
 changeball 1
 UltraDMD.CancelRendering()
-UltraDMD.DisplayScene00Ex "Xtraball.wmv", "Same Player", 30, -1, "Shoots", 30, -1, 14, 10000, 14
+UltraDMD.DisplayScene00Ex "Xtraball.wmv", "Extra Ball", 30, -1, "REWARD", 30, -1, 14, 10000, 14
 vpmTimer.addTimer 10000, "bsTrough.addball Drain:scoreclick=1 '":vpmtimer.addtimer 1, "DisplayTimerLED.enabled = 1 '"
 Exit Sub
 End If
@@ -1119,8 +1119,8 @@ Sub Kicker1_Hit
 		PlaySoundAt "kicker_enter_center", Kicker1:DOF 117,1
 		kickerL.duration 1, 30, 0
 		UltraDMD.CancelRendering()
-		UltraDMD.DisplayScene00Ex "Xtraball.wmv", "Player " & Cstr(player+1) & " EXTRA BALL!", 30, -1, "CLAIMED", 30, -1, 14, 9000, 14
-		vpmTimer.addTimer 6000, "bsSaucer.addball 0 '":vpmTimer.addTimer 6500, "kickerE.duration 1, 30, 0 '"
+		UltraDMD.DisplayScene00Ex "shootagain.wmv", "Player " & Cstr(player+1) & " EXTRA BALL!", 30, -1, "CLAIMED", 30, -1, 14, 2000, 14
+		vpmTimer.addTimer 2000, "bsSaucer.addball 0 '":vpmTimer.addTimer 6500, "kickerE.duration 1, 30, 0 '"
 		Exit Sub
 
 	ElseIF Light1.state = 0 and Light2.state = 0 then  ' Needed when you claim all the ball lock bonuses and reset it
