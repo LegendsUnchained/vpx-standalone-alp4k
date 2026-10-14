@@ -1047,10 +1047,10 @@ End If
 If ballcount= 4 then 
 changeball 3 
 UltraDMD.CancelRendering()
-UltraDMD.DisplayScene00 "challenge.wmv", "", 15, "", -1, 14, 31939, 14
+UltraDMD.DisplayScene00 "challenge.wmv", "", 15, "", -1, 14, 26000, 14
 UltraDMD.DisplayScene00EX "background.wmv", "Player " & Cstr(player)+1 & " Ball " & Cstr(ballcount), 30, -1, "DIE!", 30, -1, 14, 1, 14
 DOF 112, 1 ' Shaker
-vpmTimer.addTimer 31939, "bsTrough.addball Drain:scoreclick=1 '":vpmtimer.addtimer 1, "DisplayTimerLED.enabled = 1 '"
+vpmTimer.addTimer 26000, "bsTrough.addball Drain:scoreclick=1 '":vpmtimer.addtimer 1, "DisplayTimerLED.enabled = 1 '"
 DOF 123, 0 ' turn off blue undercab
 DOF 122, 1 ' change undercab to green
 End If
