@@ -1,13 +1,20 @@
 ---
-backglassChecksum: "d8cce6f08f7cf9af4a57f2c3f169e5b8"
-backglassVPSId: "nfCkwbgD-T"
-enabled: false
-fps: 55
-romChecksum: "3607731fdbdbc1e589fb8d6ba498508f"
-romVPSId: "8SvZI6Ex"
-tableNotes: "Download v6.0.0"
-backglassNotes: "Download v2.0"
-tableVPSId: "j9F71ZEC"
+coloredROMChecksum: "C5D333BC0AC600BAA3BAE2A8E0EB9175"
+coloredROMNotes: "Download 'pin2dmd.pac'"
+coloredROMVPSId: "j9tU4EOIGh"
+fps: 60
+pupArchiveFormat: "zip"
+pupArchiveRoot: "term3/term3"
+pupChecksum: "503C19EE2CE06CD981E915BA7F833267"
+pupNotes: "Download v1.0.0"
+pupRequired: true
+pupVersion: "1.0.0"
+pupVPSId: "nZgdnKOZKl"
+romChecksum: "3607731FDBDBC1E589FB8D6BA498508F"
+romNotes: "Download V4.0.0"
+romVPSId: "BYfQr_Jn"
+tableNotes: "Download v1.0.0"
+tableVPSId: "AtQZt7BR"
 tagline: "Isn't this Beneath the Planet of the Apes?'"
 testers:
   - "mcap"
@@ -16,5 +23,7 @@ testers:
   - "Wraith"
   - "lilalien"
   - "n-i-x"
-vpxChecksum: "cf6c7e63877e3abfc7f283f5009e8aad"
-vpxVPSId: "ZqAnVIW8"
+  - "mrandromeda"
+tutorialVPSId: "fPv2_TtOmr"
+vpxChecksum: "7799554EE272BEC6F45EC5B80644178A"
+vpxVPSId: "RTNoPPvU8W"
