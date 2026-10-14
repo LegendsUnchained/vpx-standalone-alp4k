@@ -3,6 +3,7 @@ diffChecksum: "EAAD84A7DB7557B6749648B602C54DB7"
 diffVPSId: "HXZXIE-34D"
 fps: 60
 pupArchiveFormat: "zip"
+pupBundled: true
 pupArchiveRoot: "Thundercats"
 pupChecksum: "DD76B1AF0475E1F154B9C6BB6A384E8F"
 pupNotes: "Download ThundercatsPup-v1.0.9.zip from .vpx link"
