@@ -1,10 +1,6 @@
 ---
-diffAuthorsOverride:
-  - "capnclaw"
 diffChecksum: "EAAD84A7DB7557B6749648B602C54DB7"
-diffNotes: "Download 'Thundercats (Original 2023) Side Blade Mod.zip'"
-diffUrlOverride: "https://vpuniverse.com/files/file/24061-thundercats-original-2023-side-blade-mod/"
-diffVersionOverride: "1.0.0"
+diffVPSId: "HXZXIE-34D"
 fps: 60
 pupArchiveFormat: "zip"
 pupArchiveRoot: "Thundercats"
