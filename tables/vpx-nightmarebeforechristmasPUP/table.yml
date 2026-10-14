@@ -1,8 +1,4 @@
 ---
-diffAuthorsOverride:
-  - "TeamTuga"
-diffArchiveFormat: "rar"
-diffArchiveRoot: "NBC_tuga/nightmarebc"
 diffBundled: true
 diffChecksum: "82B0AF8BB0846290DF9FB33E6498E0D4"
 diffNotes: "Use NBC-tuga.rar from the downloaded pup pack. The .dif file is in the same .rar as the puppack"
