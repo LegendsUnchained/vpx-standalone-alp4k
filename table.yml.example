@@ -152,8 +152,9 @@ testers:
 # diffVersionOverride: "name"                     # [String] required with the UrlOverride
 # diffAuthorsOverride:                            # [List] override resolved authors
 #   - "author"
-# diffChecksum: "00000000000000000000000000000000"   # [String|List]
-# diffNotes: "Markdown notes."                    # [String]
+# diffChecksum: "00000000000000000000000000000000"   # [String|List] REQUIRED when bundled
+# diffNotes: "Markdown notes."                    # [String] REQUIRED when bundled
+# diffBundled: false                              # [Boolean] the .dif ships inside the table download
 # diffNSFW: false                                 # [Boolean] the VPU patch adds adult content (filtered out when NSFW is off; table installs unpatched)
 
 
