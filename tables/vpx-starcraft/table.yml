@@ -1,0 +1,19 @@
+---
+fps: 54
+pupArchiveFormat: "zip"
+pupArchiveRoot: "startrp2sc"
+pupChecksum: "1F4EF337E84D122C6A9688FBB0A5C89F"
+pupFileUrl: "https://mega.nz/file/dspySRYC#MBiSlbKqiuF4D-mFdsHaV8eU6AMKWeTBEpJ8sjpbPhE"
+pupNotes: "Download - startrp2sc.zip"
+pupRequired: true
+pupVersion: "2.0"
+romChecksum: "AC756E2AB3643C1743B53EF6E51DFAFE"
+romNotes: "Download - Starship Troopers (2.00)"
+romVPSId: "9SRWYmpQpu"
+tableNotes: "Download - StarCraft (Sega 1997) v1.2.1"
+tableVPSId: "x_MAfnPT2z"
+tagline: "'You called down the thunder, now reap the whirlwind.'"
+testers:
+  - "Rocjr73"
+vpxChecksum: "472D2C77D3ACEDF7ADF78E438AE20392"
+vpxVPSId: "7NVj9DRY0N"
