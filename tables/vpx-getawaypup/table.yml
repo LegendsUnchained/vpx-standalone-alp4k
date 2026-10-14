@@ -4,8 +4,6 @@ altSoundArchiveRoot: "altsound/gw_l5"
 altSoundBundled: true
 altSoundChecksum: "C45F1C3988A4EC53CCE77214D56F862E"
 altSoundNotes: "Included in PuP archive."
-backglassChecksum: "751152334CD802FAE632DEA23194A3E7"
-backglassVPSId: "u7fa9sa2XM"
 coloredROMChecksum: "E438FA8B9CE49D1A19F24DDFD9863969"
 coloredROMVPSId: "j0V6-6mzcG"
 fps: 60
