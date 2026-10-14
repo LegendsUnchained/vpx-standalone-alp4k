@@ -1,0 +1,17 @@
+---
+backglassBundled: true
+backglassChecksum: "76F3D593268C5A597BA0060E49E0FE82"
+backglassNotes: "included with table download"
+fps: 60
+specialDMDArchiveRoot: "CrystalPalaceHotelDMD"
+specialDMDBundled: true
+specialDMDType: "FlexDMD"
+tableNotes: "Download 'Crystal Palace Hotel (Original 2026) v1.2.zip'"
+tableVPSId: "1u9uZCgfto"
+testers:
+  - "PBW23"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "C7AD2A57BABCD1E73609A8C54388038D"
+  - "BE18D77A47D1E9735B10E91088B93D14"
+vpxVPSId: "1qgaPOXssl"
