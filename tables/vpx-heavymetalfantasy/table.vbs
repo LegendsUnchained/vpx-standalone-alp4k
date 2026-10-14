@@ -3329,7 +3329,7 @@ End Sub
 Sub BankReset3
 If dhit=0 then
 UltraDMD.CancelRendering()
-UltraDMD.DisplayScene00 "topreset.wmv", "", 15, "", -1, 14, 3000, 14
+UltraDMD.DisplayScene00 "bankreset4.wmv", "", 15, "", -1, 14, 3000, 14
 end if
 End Sub
 
