@@ -385,7 +385,34 @@ Ramp050.Image = "track"
     GiOff
     StartAttractMode
 	'EndOfGame()
+    vpmTimer.AddTimer 4000, "StartSmokePreload '"   'preload smoke textures: avoids first-use GPU upload hitch
 End Sub
+
+' ---- Smoke texture preload --------------------------------------------------
+'   Each smokescreen mode uses its own image set (sb1-4 / sm1-4 / su1-5, plus
+'   Nsmoke). The first time a mode runs, the GPU has to upload those textures,
+'   which hitches the frame. This warms all of them at startup (barely-visible,
+'   during attract) so the first run of each mode is smooth.
+Dim SmokePreImgs : SmokePreImgs = Array("sb1","sb2","sb3","sb4","sm1","sm2","sm3","sm4","su1","su2","su3","su4","su5","Nsmoke")
+Dim pfPreOrigOpacity, pfPreOrigVisible
+
+Sub StartSmokePreload
+    pfPreOrigVisible = pfflashert.visible
+    pfPreOrigOpacity = pfflashert.Opacity
+    pfflashert.Opacity = 1          'barely visible, but still drawn so each texture uploads
+    pfflashert.visible = True
+    Dim i
+    For i = 0 To UBound(SmokePreImgs)
+        vpmTimer.AddTimer 60 * (i + 1), "pfflashert.ImageA = """ & SmokePreImgs(i) & """ '"
+    Next
+    vpmTimer.AddTimer 60 * (UBound(SmokePreImgs) + 3), "EndSmokePreload '"
+End Sub
+
+Sub EndSmokePreload
+    pfflashert.visible = pfPreOrigVisible
+    pfflashert.Opacity = pfPreOrigOpacity
+End Sub
+'------------------------------------------------------------------------------
 
 '****************************************
 ' Real Time updatess using the GameTimer
