@@ -883,8 +883,10 @@ Sub EndOfGame()
     bGameInPLay = False
     bJustStarted = False
     TurnON aGameOver
+    BallsReel.SetValue 0
     If B2SOn then
         Controller.B2SSetGameOver 1
+        Controller.B2SSetScorePlayer 3, 0   'BALLS TO PLAY -> 00 at game over
     end if
     ' turn off flippers
     SolLFlipper 0
@@ -956,14 +958,14 @@ Sub Clear_Match()
     Match = 0
     Display_Match
     If B2SOn then
-        Controller.B2SSetScorePlayer3 0
+        Controller.B2SSetMatch 0
     end if
 End Sub
 
 Sub Display_Match()
     BallsReel.SetValue Match
     If B2SOn then
-        Controller.B2SSetScorePlayer3 Match
+        Controller.B2SSetMatch Match
     end if
 End Sub
 
@@ -1012,7 +1014,7 @@ End Sub
 ' ****************************************
 
 Sub AddScore(Points)
-    If bGameInPLay = False Then Exit Sub 
+    If bGameInPLay = False Then Exit Sub
     If Tilted Then Exit Sub
     Score(CurrentPlayer) = Score(CurrentPlayer) + Points
     PlaySound "tone" &Points
@@ -1047,7 +1049,7 @@ End Sub
 Sub ResetScores
     ScoreReel1.SetValue 0
     If B2SOn then
-        Controller.B2SSetScorePlayer1 0
+        Controller.B2SSetScorePlayer 1, 0
     end if
 End Sub
 
@@ -1067,10 +1069,10 @@ Sub UpdateCredits
 End Sub
 
 Sub UpdateBallInPlay 'update backdrop lights
-    'Ball in play
+    'Balls to play (balls remaining) - shown on the player-3 reel
     BallsReel.SetValue BallsRemaining(CurrentPlayer)
     If B2SOn then
-        Controller.B2SSetScorePlayer3 BallsRemaining(CurrentPlayer)
+        Controller.B2SSetScorePlayer 3, BallsRemaining(CurrentPlayer)
     end if
 End Sub
 
@@ -1438,7 +1440,7 @@ Sub Game_Init 'called at the start of a new game
     ModesWon = 0
     inningsReel.SetValue ModesWon
     If B2SOn then
-        Controller.B2SSetScorePlayer2 ModesWon
+        Controller.B2SSetScorePlayer 2, ModesWon
     end if
     'Start or init timers
     'Init lights?
@@ -1863,7 +1865,7 @@ Sub CheckMode
             AwardAddaBall
             inningsReel.SetValue ModesWon
             If B2SOn then
-                Controller.B2SSetScorePlayer2 ModesWon
+                Controller.B2SSetScorePlayer 2, ModesWon
             end if
             'lightshow
             LightEffect 2
@@ -1886,7 +1888,7 @@ Sub WinGame
     end if
     inningsReel.SetValue ModesWon
     If B2SOn then
-        Controller.B2SSetScorePlayer2 ModesWon
+        Controller.B2SSetScorePlayer 2, ModesWon
     end if
     AwardSpecial
     DisableTable 1
