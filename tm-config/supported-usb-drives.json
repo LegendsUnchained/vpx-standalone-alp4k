@@ -2,18 +2,27 @@
   "minWriteMBps": 15,
   "drives": [
     {
-      "vendor": "Kingston",
-      "model": "DataTraveler Max",
+      "vendor": "General",
+      "model": "USB Flash Disk",
+      "displayName": "Amazon Basics USB Flash Drive",
       "purchase_links": [
         {
-          "title": "Kingston DataTraveler Max 256GB",
-          "link": "https://amzn.to/42Ygu1k"
+          "title": "Amazon Basics 128GB USB Flash Drive",
+          "link": "https://amzn.to/4w0KmX0"
         },
         {
-          "title": "Kingston DataTraveler Max 512GB",
-          "link": "https://amzn.to/3ECtzFi"
+          "title": "Amazon Basics 256GB USB Flash Drive",
+          "link": "https://amzn.to/4pPivYq"
+        },
+        {
+          "title": "Amazon Basics 512GB USB Flash Drive",
+          "link": "https://amzn.to/4bqSrgn"
         }
-      ]
+      ],
+      "id": {
+        "vid": "21c4",
+        "pid": "3000"
+      }
     },
     {
       "vendor": "Samsung",
@@ -53,26 +62,18 @@
       "purchase_links": []
     },
     {
-      "vendor": "General",
-      "model": "USB Flash Disk",
+      "vendor": "Kingston",
+      "model": "DataTraveler Max",
       "purchase_links": [
         {
-          "title": "Amazon Basics 128GB USB Flash Drive",
-          "link": "https://amzn.to/4w0KmX0"
+          "title": "Kingston DataTraveler Max 256GB",
+          "link": "https://amzn.to/42Ygu1k"
         },
         {
-          "title": "Amazon Basics 256GB USB Flash Drive",
-          "link": "https://amzn.to/4pPivYq"
-        },
-        {
-          "title": "Amazon Basics 512GB USB Flash Drive",
-          "link": "https://amzn.to/4bqSrgn"
+          "title": "Kingston DataTraveler Max 512GB",
+          "link": "https://amzn.to/3ECtzFi"
         }
-      ],
-      "id": {
-        "vid": "21c4",
-        "pid": "3000"
-      }
+      ]
     }
   ]
 }

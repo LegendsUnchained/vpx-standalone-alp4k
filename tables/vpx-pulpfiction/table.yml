@@ -1,0 +1,16 @@
+---
+fps: 60
+pupArchiveFormat: "rar"
+pupArchiveRoot: "Pulp Fiction Pup/pulp fiction"
+pupChecksum: "AA60F177547EB74A4CF4C1914CB0053C"
+pupNSFW: true
+pupRequired: true
+pupVersion: "1.0"
+pupVPSId: "bj4TSNOCEA"
+tableVPSId: "A5ui4Fdlml"
+tagline: "English, mother fucker, do you speak it?"
+testers:
+  - "Reboot"
+vpxChecksum: "C061A6FAC97A6BC72B905AB7C2EF205E"
+vpxNSFW: true
+vpxVPSId: "HImsGBv3v1"
