@@ -1,0 +1,25 @@
+---
+diffChecksum: "EAAD84A7DB7557B6749648B602C54DB7"
+diffVPSId: "HXZXIE-34D"
+fps: 60
+pupArchiveFormat: "zip"
+pupBundled: true
+pupArchiveRoot: "Thundercats"
+pupChecksum: "DD76B1AF0475E1F154B9C6BB6A384E8F"
+pupNotes: "Download ThundercatsPup-v1.0.9.zip from .vpx link"
+pupRequired: true
+pupVersion: "ThundercatsPup-v1.0.9.zip"
+specialDMDNotes: "Download Thundercats.UltraDMD-v1.0.0.zip from .vpx link"
+specialDMDArchiveFormat: "zip"
+specialDMDArchiveRoot: "Thundercats.UltraDMD"
+specialDMDChecksum: "C9F11E676225623B2E03D70E3BECE902"
+specialDMDType: "UltraDMD"
+specialDMDVersion: "Thundercats.UltraDMD-v1.0.0.zip"
+tableNotes: "Download Thundercats Pinball v1.0.9.vpx"
+tableVPSId: "ZiuRa5QxKD"
+tagline: "ThunderCats are on the move, ThunderCats are loose!"
+testers:
+  - "Dasme"
+  - "PBW23"
+vpxChecksum: "087D2F9AE1B081C28D6285158A53D548"
+vpxVPSId: "xhpcI1231-"
