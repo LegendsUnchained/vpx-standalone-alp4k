@@ -78,6 +78,9 @@ DisableGI = False
 '*** Dynamic Ball Shadows: 1 = On, 0 = Off ************************************************
 DynamicBallShadowsOn = 0
 
+'*** Plunger strength ************************************************
+Plunger.FireSpeed = 125
+
 ' **** enables manual ball control with C key (enable/disable control) ********************
 ' **** and B key (speed boost) and arrow keys *********************************************
 debugballs = False
