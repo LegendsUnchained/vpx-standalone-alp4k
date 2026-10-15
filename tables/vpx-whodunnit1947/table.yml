@@ -1,0 +1,24 @@
+---
+altSoundArchiveFormat: "zip"
+altSoundArchiveRoot: "wd_12"
+altSoundChecksum: "D61E1AA48E286946CE35CFBF0DB1B700"
+altSoundNotes: "Download - 'Altsound 2.0 - Who Dunnit 1947.zip', version 2.0.0"
+altSoundVPSId: "VIEyYwT-"
+backglassBundled: true
+backglassChecksum: "B989DD6AE5068BFA954EECB34AA0C03A"
+backglassNotes: "Backglass included in the table.zip"
+fps: 60
+romChecksum: "4F553E84D3A8E649B14467B12C5AB727"
+romNotes: "Download - 'wd_12.zip', version 1.2"
+romVPSId: "pzZrWXJf"
+tableNameOverride: "Who Dunnit 1947 Noir B&W Mod"
+tableNotes: "Download - 'Who_Dunnit_1947_(Bally_2021)_1.1.zip', version 1.1"
+tableVPSId: "n7aheBtw"
+tagline: "I was in deep, and the water was getting rough."
+testers:
+  - "Missile Toad"
+  - "PBW23"
+  - "Wraith"
+  - "Filth"
+vpxChecksum: "DFF52678141EDAB457459CB33B69154B"
+vpxVPSId: "EB649DTu"
