@@ -1,7 +1,7 @@
 ---
-backglassChecksum: "C9B34CA212A4E339D1ADD13C0D7B85CD"
-backglassNotes: "Download - 'DAREDEVIL.directb2s', version 1.0.0"
-backglassVPSId: "cC72hKYLQK"
+backglassBundled: true
+backglassChecksum: "412212AB55F308E6C1489F56FE3C5EA9"
+backglassNotes: "Download - 'MEDIA PACK2.0.zip', next to the table .vpx link"
 fps: 60
 mainNotes: "There is an alternate directB2s available in the MEDIA PACK2.0.zip"
 tableNotes: "Download - 'DAREDEVIL2.0.2.vpx', version 2.0.2"
