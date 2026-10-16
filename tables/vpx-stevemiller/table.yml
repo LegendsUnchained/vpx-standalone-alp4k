@@ -15,7 +15,7 @@ fps: 60
 mainNotes: "AltSound (used for music), backglass, and ROM all come from 'MediaPack.zip', next to the table .vpx download"
 romBundled: true
 romChecksum: "E3995B40E0DCD3A52974D651CA2ADD18"
-romNotes: "slbmania.zip, inside 'MediaPack.zip, next to the table .vpx download'"
+romNotes: "slbmania.zip, inside 'MediaPack.zip', next to the table .vpx download"
 romVersionOverride: "slbmania"
 tableNotes: "Download - 'Steve Miller Band 1.0.2 VR.vpx', version 1.0.2"
 tableVPSId: "VVMU7y7cmK"
