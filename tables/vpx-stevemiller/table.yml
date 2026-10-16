@@ -1,21 +1,24 @@
 ---
-backglassBundled: true
+altSoundArchiveFormat: "zip"
+altSoundArchiveRoot: "MediaPack/med/Music"
+altSoundChecksum: "EB47CCBA781E10AB554373D6A6CAE349"
+altSoundNotes: "Download - MediaPack.zip"
+altSoundVersionOverride: "MediaPack"
+postInstallRename:
+  - source: "pinmame/altsound/slbmania"
+    destination: "music/STMILLERB"
 backglassChecksum: "B684249559C319A83BA9424A0BB0A70B"
-backglassNotes: "Download - 'MediaPack.zip', next to the table .vpx link"
+backglassNotes: "Download - MediaPack.zip"
+backglassVPSId: "ukHid7d8f9"
 fps: 60
-romBundled: true
-romChecksum: "EB47CCBA781E10AB554373D6A6CAE349"
-romNotes: "Download - 'MediaPack.zip', next to the table .vpx link"
-tableNotes: "Download - 'Steve Miller Band 1.0.2 VR.vpx', version 1.02"
+mainNotes: "AltSound (used for music), backglass, and rom fields all use the same file 'MediaPack.zip'"
+romChecksum: "E3995B40E0DCD3A52974D651CA2ADD18"
+romNotes: "Download - MediaPack.zip"
+romVersionOverride: "slbmania"
+tableNotes: "Steve Miller Band 1.0.2 VR.vpx"
 tableVPSId: "VVMU7y7cmK"
 tagline: "Fly like an eagle"
 testers:
   - "Missile Toad"
-vpxChecksum: 
-  -"2FA1A7AD22F42495B401B0580D0105B0"
-  -"EB47CCBA781E10AB554373D6A6CAE349"
+vpxChecksum: "2FA1A7AD22F42495B401B0580D0105B0"
 vpxVPSId: "Xt6Jvkkr3r"
-vpxArchiveFormat: "zip"
-vpxExtractExtra:
-  - "MediaPack/med/Music"
-
