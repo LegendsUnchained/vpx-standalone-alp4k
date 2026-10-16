@@ -1,0 +1,21 @@
+---
+backglassBundled: true
+backglassChecksum: 
+  -"B684249559C319A83BA9424A0BB0A70B"
+  -"EB47CCBA781E10AB554373D6A6CAE349"
+backglassNotes: "Download - 'MediaPack.zip', next to the table .vpx link"
+fps: 60
+romBundled: true
+romChecksum: "EB47CCBA781E10AB554373D6A6CAE349"
+romNotes: "Download - 'MediaPack.zip', next to the table .vpx link"
+tableNotes: "Download - 'Steve Miller Band 1.0.2 VR.vpx', version 1.02"
+tableVPSId: "VVMU7y7cmK"
+tagline: "Fly like an eagle"
+testers:
+  - "Missile Toad"
+vpxChecksum: "2FA1A7AD22F42495B401B0580D0105B0"
+vpxVPSId: "Xt6Jvkkr3r"
+vpxArchiveFormat: "zip"
+vpxExtractExtra:
+  - "MediaPack\med"
+
