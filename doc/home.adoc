@@ -24,7 +24,7 @@ page: +
 Make sure to take the time to fully ready through the wiki and other support threads too.
 * *_DO NOT SHARE FILES!_* +
 *DO NOT* share any `VPXS Launcher` files,
-`Table Manager` files, `.vpx` files, `.directb2s` files, `.c7z` serum
+`Table Manager` files, `.vpx` files, `.directb2s` files, `.cRZ` serum
 files, `puppack` files, or `ROM` files with anyone. Doing so will
 trigger the DRM and ban your account along with anyone you share files
 with. Download files from official sources. The README links and the

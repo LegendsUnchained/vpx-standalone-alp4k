@@ -490,6 +490,7 @@ def get_table_meta(files, warn_on_error=True):
             "coloredROMVersion": data.get("coloredROMVersionOverride"),
             "coloredROMNSFW": data.get("coloredROMNSFW"),
             "diffAuthors": data.get("diffAuthorsOverride"),
+            "diffBundled": data.get("diffBundled"),
             "diffFileUrl": as_url_list(data.get("diffUrlOverride")),
             "diffNotes": data.get("diffNotes"),
             "diffVersion": data.get("diffVersionOverride"),

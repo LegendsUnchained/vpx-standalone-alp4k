@@ -6,13 +6,43 @@ on every push or every bot dry run.
 """
 import json
 import os
+import socket
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
 
 API = os.environ.get("GITHUB_API_URL", "https://api.github.com")
 UPLOADS = "https://uploads.github.com"
+
+# Reads and uploads are retried after a GitHub 5xx or a dropped connection;
+# these are the waits before each retry. A promotion makes dozens of asset
+# downloads and uploads, and one transient 500 or 502 used to fail the run.
+RETRY_WAITS = (5, 15, 45)
+
+
+def _transient(e):
+    """A failure worth retrying: a 5xx, or no answer at all."""
+    if isinstance(e, urllib.error.HTTPError):
+        return e.code >= 500
+    return isinstance(e, (urllib.error.URLError, socket.timeout, ConnectionError))
+
+
+def _retrying(what, fn, before_retry=None):
+    """fn(), retried after a transient failure. before_retry runs before each
+    retry, to undo what a failed attempt may have left behind."""
+    for attempt, wait in enumerate((*RETRY_WAITS, None)):
+        try:
+            return fn()
+        except Exception as e:
+            if wait is None or not _transient(e):
+                raise
+            print(f"{what} failed ({e}); retry {attempt + 1} of {len(RETRY_WAITS)} in {wait}s",
+                  file=sys.stderr)
+        time.sleep(wait)
+        if before_retry:
+            before_retry()
 
 
 class _NoRedirect(urllib.request.HTTPRedirectHandler):
@@ -56,8 +86,12 @@ class Api:
 
     def call(self, method, path, body=None):
         url = path if path.startswith("http") else f"{API}/repos/{self.repo}/{path}"
-        with self._request(method, url, body) as resp:
-            raw = resp.read()
+
+        def once():
+            with self._request(method, url, body) as resp:
+                return resp.read()
+        # Only reads are retried: a write that failed may still have happened.
+        raw = _retrying(f"{method} {url}", once) if method == "GET" else once()
         return json.loads(raw) if raw else None
 
     def get(self, path):
@@ -99,14 +133,17 @@ class Api:
         request that carries two kinds of credentials.
         """
         url = f"{API}/repos/{self.repo}/releases/assets/{asset_id}"
-        resp = self._request("GET", url, accept="application/octet-stream")
-        if resp.status in (301, 302, 303, 307, 308):
-            location = resp.headers["Location"]
-            resp.close()
-            with urllib.request.urlopen(location, timeout=300) as follow:
-                return follow.read()
-        with resp:
-            return resp.read()
+
+        def once():
+            resp = self._request("GET", url, accept="application/octet-stream")
+            if resp.status in (301, 302, 303, 307, 308):
+                location = resp.headers["Location"]
+                resp.close()
+                with urllib.request.urlopen(location, timeout=300) as follow:
+                    return follow.read()
+            with resp:
+                return resp.read()
+        return _retrying(f"Downloading asset {asset_id}", once)
 
     def named_bytes(self, assets, name):
         """Bytes of the asset called name in an asset list, or None."""
@@ -114,10 +151,26 @@ class Api:
         return self.asset_bytes(asset["id"]) if asset else None
 
     def upload(self, release_id, name, data, content_type="application/octet-stream"):
+        """Upload an asset, retrying a GitHub 5xx or a dropped connection.
+
+        A failed upload can still leave an asset of that name behind (often
+        in the "starter" state), and a second upload of the name then fails
+        with 422 already_exists. So each retry first deletes any asset the
+        release already has under the name.
+        """
         url = (f"{UPLOADS}/repos/{self.repo}/releases/{release_id}/assets"
                f"?name={urllib.parse.quote(name)}")
-        with self._request("POST", url, data, content_type=content_type) as resp:
-            return json.loads(resp.read())
+
+        def once():
+            with self._request("POST", url, data, content_type=content_type) as resp:
+                return json.loads(resp.read())
+
+        def clear_half_upload():
+            for a in self.assets(release_id):
+                if a["name"] == name:
+                    print(f"  deleting the half-uploaded {name} (state {a.get('state')})", file=sys.stderr)
+                    self.delete_asset(a["id"])
+        return _retrying(f"Uploading {name}", once, clear_half_upload)
 
     def delete_asset(self, asset_id):
         self.call("DELETE", f"releases/assets/{asset_id}")
