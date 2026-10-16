@@ -17,5 +17,5 @@ vpxChecksum: "2FA1A7AD22F42495B401B0580D0105B0"
 vpxVPSId: "Xt6Jvkkr3r"
 vpxArchiveFormat: "zip"
 vpxExtractExtra:
-  - "MediaPack\med"
+  - "MediaPack\med\Music"
 
