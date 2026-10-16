@@ -1,21 +1,23 @@
 ---
 altSoundArchiveFormat: "zip"
 altSoundArchiveRoot: "MediaPack/med/Music"
+altSoundBundled: true
 altSoundChecksum: "EB47CCBA781E10AB554373D6A6CAE349"
-altSoundNotes: "Download - MediaPack.zip"
-altSoundVersionOverride: "MediaPack"
+altSoundNotes: "Download 'MediaPack.zip' (it holds the table music), next to the table .vpx download"
 postInstallRename:
   - source: "pinmame/altsound/slbmania"
     destination: "music/STMILLERB"
+backglassBundled: true
 backglassChecksum: "B684249559C319A83BA9424A0BB0A70B"
-backglassNotes: "Download - MediaPack.zip"
+backglassNotes: "Inside 'MediaPack.zip', next to the table .vpx download"
 backglassVPSId: "ukHid7d8f9"
 fps: 60
-mainNotes: "AltSound (used for music), backglass, and rom fields all use the same file 'MediaPack.zip'"
+mainNotes: "AltSound (used for music), backglass, and ROM all come from 'MediaPack.zip', next to the table .vpx download"
+romBundled: true
 romChecksum: "E3995B40E0DCD3A52974D651CA2ADD18"
-romNotes: "Download - MediaPack.zip"
+romNotes: "slbmania.zip, inside 'MediaPack.zip, next to the table .vpx download'"
 romVersionOverride: "slbmania"
-tableNotes: "Steve Miller Band 1.0.2 VR.vpx"
+tableNotes: "Download - 'Steve Miller Band 1.0.2 VR.vpx', version 1.0.2"
 tableVPSId: "VVMU7y7cmK"
 tagline: "Fly like an eagle"
 testers:
