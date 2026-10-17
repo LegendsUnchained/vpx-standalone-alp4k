@@ -1,0 +1,27 @@
+---
+backglassChecksum: "9CE679BD6B941308E4C844B658DE941D"
+backglassNotes: "Use Laroullas Heavy Metal (Rowamet 1983) ).directb2s"
+backglassVPSId: "5e7dLIDWR5"
+fps: 60
+nsfw: true
+romChecksum: "B09BA239C3C5C944901239E99A0FB73D"
+romNotes: "Use heavymetl.zip"
+romVPSId: "uqaJQsCE"
+mainNotes: >-
+  Get the original soundtrack from the DropBox link on the table download page. After the table is installed, upload the
+  mp3 files to your thumb drive, in external/vpx-heavymetalfantasy/music/HeavyMetal/
+specialDMDArchiveFormat: "zip"
+specialDMDArchiveRoot: "Tables/HvyMtl.DMD"
+specialDMDChecksum: "68CEF529AC41BA09C0A9B904AE0F8132"
+specialDMDNotes: "From the main table page, also download HEAVY METAL DMD.zip"
+specialDMDType: "FlexDMD"
+specialDMDVersion: "From the main table page, also download HEAVY METAL DMD.zip"
+tableNameOverride: "Heavy Metal Fantasy Table (Mod)"
+tableNotes: "Use Heavy Metal (Rowamet 1983)  4.0.vpx"
+tableVPSId: "yEvOelRa"
+tagline: "'From one war to another, my influence is always present.'"
+testers:
+  - "Curt"
+  - "Missile Toad"
+vpxChecksum: "FE65D834265EA34E271F01043041F4D2"
+vpxVPSId: "or_OYzZF"
