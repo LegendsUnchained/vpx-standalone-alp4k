@@ -1,0 +1,17 @@
+---
+additionalRoms:
+  - vpsId: "JG4tLoLZls"
+    checksum: "E0299B92741EE7825F3786B5BAF4C546"
+backglassChecksum: "E53113ACCEA75079CEBFB15BFC764179"
+backglassVPSId: "NAg_5Lh6pI"
+coloredROMChecksum: "E2B22F93FE7B72046723CC5C9001D617"
+coloredROMVPSId: "jhjBylCh"
+fps: 60
+romChecksum: "CD592C5FCA7C3465CD97DD410DFDAFAC"
+romVPSId: "QlQe08yy2W"
+tableVPSId: "sx604oSu"
+testers:
+  - "Reboot"
+tutorialVPSId: "ylD81ZyK1z"
+vpxChecksum: "CFF28B49484D9D21418682C8FA1F9393"
+vpxVPSId: "8eaL59APvQ"
