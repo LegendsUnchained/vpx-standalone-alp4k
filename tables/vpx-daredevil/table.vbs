@@ -577,7 +577,9 @@ Sub Table1_KeyDown(ByVal Keycode)
 		End Select
         Credits = Credits + 1
         DOF 125, DOFOn
-        If(Tilted = False)Then
+        ' Fix: don't overwrite the high score name entry screen (the coin message and the
+        ' name entry were redrawing over each other, making the DMD go haywire)
+        If(Tilted = False) And Not hsbModeActive Then
             DMDFlush
             DMD "_", CL(1, "CREDITS: " & Credits), "", eNone, eNone, eNone, 500, True, "fx_coin"
             If NOT bGameInPlay Then ShowTableInfo
@@ -1892,6 +1894,9 @@ Sub HighScoreCommitName()
 
     HighScoreName(3) = hsEnteredName
     SortHighscore
+    ' Fix: clear the name entry screen. Nothing redrew the DMD until the next score
+    ' change, so in multiplayer the next player's ball was ready behind "YOUR NAME:"
+    DMDScoreNow
     EndOfBallComplete()
 End Sub
 
