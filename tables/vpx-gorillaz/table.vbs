@@ -10,7 +10,7 @@ Randomize
 
 Const BallSize = 50    ' 50 is the normal size used in the core.vbs, VP kicker routines uses this value divided by 2
 Const BallMass = 1     ' 1 is the normal mass
-Const SongVolume = 0.4 ' 1 is full volume. Value is from 0 to 1
+Const SongVolume = 0.65 ' 1 is full volume. Value is from 0 to 1
 
 'FlexDMD in high or normal quality
 'change it to True if you have an LCD screen, 256x64
@@ -35,8 +35,20 @@ Const VolumeDial = 0.80			  ' Overall Mechanical sound effect volume. Recommende
 Const BallRollVolume = 0.7		  ' Level of ball rolling volume. Value between 0 and 1
 Const RampRollVolume = 0.7		  ' Level of ramp rolling volume. Value between 0 and 1
 
+'----- 4KP / ALP4K performance options (multiball GPU load) -----
+' Multiball dropped to ~30 fps because the graphics chip ran out of drawing time
+' (log: "GPU Flip" ~24 ms per frame), not because of script or texture loading.
+Const OptMBJackpotShow = 1	' Jackpot light show while a multiball is running:
+'								  0 = original (inserts + flashers on every jackpot)
+'								  1 = inserts only (skips the big flasher glows)
+'								  2 = flashers only
+'								  3 = no extra light show (jackpot lights still blink)
+Const OptHideAnimCopies = 1	' 1 = hide the unused copies of the animated band figures (they were
+'								  parked below the playfield but still drawn every frame); 0 = original
+
 '----- Ball Shadow Options -----
-Const DynamicBallShadowsOn = 1		' 0 = no dynamic ball shadow ("triangles" near slings and such), 1 = enable dynamic ball shadow
+Const DynamicBallShadowsOn = 0		' 0 = no dynamic ball shadow ("triangles" near slings and such), 1 = enable dynamic ball shadow
+'									' 4KP: was 1. Each ball adds extra shadow layers, so multiball multiplied the drawing load.
 Const AmbientBallShadowOn = 1		' 0 = Static shadow under ball ("flasher" image, like JP's)
 '									' 1 = Moving ball shadow ("primitive" object, like ninuzzu's) - This is the only one that shows up on the pf when in ramps and fades when close to lights!
 '									' 2 = flasher image shadow, but it moves like ninuzzu's
@@ -1530,8 +1542,7 @@ Sub AwardJackpot() 'award a normal jackpot, double or triple jackpot
         Case 0:PlaySound "vo_Jackpot3"
     End Select
     AddScore Jackpot(CurrentPlayer)
-    LightEffect 2
-    FlashEffect 2
+    JackpotLightShow
     'sjekk for superjackpot
     EnableSuperJackpot
 End Sub
@@ -1541,10 +1552,17 @@ Sub AwardSuperJackpot() 'this is actually 4 times a jackpot
     DMD CL(FormatScore(SuperJackpot)), CL("SUPER JACKPOT"), "d_border", eBlinkFast, eBlinkFast, eNone, 1000, True, "vo_superjackpot"
     DOF 158, DOFPulse			'JWK
     AddScore SuperJackpot
-    LightEffect 2
-    FlashEffect 2
+    JackpotLightShow
     'enabled jackpots again
     StartJackpots
+End Sub
+
+' 4KP: full light show outside multiball; lighter show during multiball (see OptMBJackpotShow)
+Sub JackpotLightShow()
+    Dim lvl : lvl = 0
+    If bMultiBallMode Then lvl = OptMBJackpotShow
+    If lvl = 0 Or lvl = 1 Then LightEffect 2
+    If lvl = 0 Or lvl = 2 Then FlashEffect 2
 End Sub
 
 Sub AwardSkillshot()
@@ -7766,62 +7784,51 @@ End Sub
 '*******Band**********
 
 Sub boxingtimer_Timer
-countr = countr + 1 : If Countr > 4 then Countr = 1 : end If
-select case countr
-case 1 : box001.z=55:box002.z=-200:box003.z=-200:box004.z=-200
-case 2 : box001.z=-200:box002.z=55:box003.z=-200:box004.z=-200
-case 3 : box001.z=-200:box002.z=-200:box003.z=55:box004.z=-200
-case 4 : box001.z=-200:box002.z=-200:box003.z=-200:box004.z=55
-end Select
-End Sub 
+countr = countr + 1 : If countr > 4 then countr = 1 : end If
+AnimPick Array(box001, box002, box003, box004), countr, 55, -200
+End Sub
 
 
 Sub bexingtimer_Timer
-countrr = countrr + 1 : If Countrr > 4 then Countrr = 1 : end If
-select case countrr
-case 1 : bex001.z=55:bex002.z=-250:bex003.z=-250:bex004.z=-250
-case 2 : bex001.z=-250:bex002.z=55:bex003.z=-250:bex004.z=-250
-case 3 : bex001.z=-250:bex002.z=-250:bex003.z=55:bex004.z=-250
-case 4 : bex001.z=-250:bex002.z=-250:bex003.z=-250:bex004.z=55
-end Select
+countrr = countrr + 1 : If countrr > 4 then countrr = 1 : end If
+AnimPick Array(bex001, bex002, bex003, bex004), countrr, 55, -250
 End Sub
 
 Sub baxingtimer_Timer
-countrrr = countrrr + 1 : If Countrrr > 2 then Countrrr = 1 : end If
-select case countrr
-case 1 : bax001.z=120:bax002.z=-200
-case 2 : bax001.z=-200:bax002.z=120
-
-end Select
-End Sub 
+countrrr = countrrr + 1 : If countrrr > 2 then countrrr = 1 : end If
+AnimPick Array(bax001, bax002), countrrr, 120, -200
+End Sub
 
 Sub buxingtimer_Timer
-countrrrr = countrrrr + 1 : If Countrrrr > 3 then Countrrrr = 1 : end If
-select case countrr
-case 1 : bux001.z=120:bux002.z=-200:bux003.z=-200
-case 2 : bux001.z=-200:bux002.z=120:bux003.z=-200
-case 3 : bux001.z=-200:bux002.z=-200:bux003.z=120
-
-end Select
-End Sub 
+countrrrr = countrrrr + 1 : If countrrrr > 3 then countrrrr = 1 : end If
+AnimPick Array(bux001, bux002, bux003), countrrrr, 120, -200
+End Sub
 
 Sub bixingtimer_Timer
-countrrrrr = countrrrrr + 1 : If Countrrrrr > 2 then Countrrrrr = 1 : end If
-select case countrr
-case 1 : bix001.z=55:bix002.z=-200
-case 2 : bix001.z=-200:bix002.z=55
-
-end Select
-End Sub 
+countrrrrr = countrrrrr + 1 : If countrrrrr > 2 then countrrrrr = 1 : end If
+AnimPick Array(bix001, bix002), countrrrrr, 55, -200
+End Sub
 
 Sub acxingtimer_Timer
-countr3 = countr3 + 1 : If Countr3 > 2 then Countr3 = 1 : end If
-select case countr3
-case 1 : ace001.z=150:ace002.z=-200
-case 2 : ace001.z=-200:ace002.z=150
+countr3 = countr3 + 1 : If countr3 > 2 then countr3 = 1 : end If
+AnimPick Array(ace001, ace002), countr3, 150, -200
+End Sub
 
-end Select
-End Sub 
+' 4KP: show one copy of an animated figure and park the rest. With OptHideAnimCopies the
+' parked copies are also hidden, so they are no longer drawn below the playfield every frame.
+' (The original baxing/buxing/bixing timers read bexing's counter; each now uses its own.)
+Sub AnimPick(objs, n, zOn, zOff)
+    Dim i
+    For i = 0 To UBound(objs)
+        If i = n - 1 Then
+            objs(i).z = zOn
+            If OptHideAnimCopies Then objs(i).Visible = True
+        Else
+            objs(i).z = zOff
+            If OptHideAnimCopies Then objs(i).Visible = False
+        End If
+    Next
+End Sub
 
 Sub StartBand
  boxingtimer.enabled = 1
