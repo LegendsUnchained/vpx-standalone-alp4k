@@ -21,6 +21,17 @@ Const UseGI = 0
 Const UseSync = 0 'set it to 1 if the table runs too fast
 Const HandleMech = 0
 
+'******************************************************************************
+' Cabinet options (added for vpx-standalone-alp4k)
+'******************************************************************************
+Const FreePlay        = 1    ' 1 = Start button adds a credit and starts (no coin needed), 0 = coins required
+Const FreePlayStartMs = 300  ' delay between the auto coin and the start press (raise if a press is ignored)
+
+Const ReelGuard       = 1    ' 1 = keep the final scores on the backglass reels after game over
+                             ' 0 = original behaviour (Taito end-of-game display scrambles the reels)
+Const ReelGuardLockMs = 2500 ' ms after the play relay drops before the reels are locked
+                             ' (window for any end-of-ball bonus to finish counting)
+
 Dim VarHidden
 If Table1.ShowDT = true then
     VarHidden = 1
@@ -138,12 +149,31 @@ Sub table1_KeyDown(ByVal Keycode)
     If keycode = RightTiltKey Then Nudge 270, 6:PlaySound SoundFX("fx_nudge", 0), 0, 1, 0.1, 0.25
     If keycode = CenterTiltKey Then Nudge 0, 7:PlaySound SoundFX("fx_nudge", 0), 0, 1, 0, 0.25
     If keycode = PlungerKey Then PlaySound "fx_PlungerPull", 0, 1, 0.1, 0.25:Plunger.Pullback
+    If FreePlay = 1 And keycode = StartGameKey Then FreePlayStart:Exit Sub
     If vpmKeyDown(keycode) Then Exit Sub
 End Sub
 
 Sub table1_KeyUp(ByVal Keycode)
+    If FreePlay = 1 And keycode = StartGameKey Then Exit Sub
     If vpmKeyUp(keycode) Then Exit Sub
     If keycode = PlungerKey Then PlaySound "fx_plunger", 0, 1, 0.1, 0.25:Plunger.Fire
+End Sub
+
+' Free play: Taito has no free-play setting, so feed one coin then press Start.
+' Pressing Start again during ball 1 adds players exactly like a real coin+start.
+' If the credit reel already shows credits, just press Start (no coin), so presses
+' the ROM ignores (e.g. after ball 1) don't pile up credits.
+Sub FreePlayStart
+    Dim cr:cr = 0
+    If B2SOn And ReelGuard = 1 Then cr = SegToNum(rgSeg(25)) ' digit 25 = credit display
+    If cr > 0 Then
+        Controller.Switch(swStartButton) = 1
+        vpmTimer.AddTimer 200, "Controller.Switch(swStartButton) = 0'"
+    Else
+        vpmTimer.PulseSw swCoin1
+        vpmTimer.AddTimer FreePlayStartMs, "Controller.Switch(swStartButton) = 1'"
+        vpmTimer.AddTimer FreePlayStartMs + 200, "Controller.Switch(swStartButton) = 0'"
+    End If
 End Sub
 
 '*********
@@ -296,7 +326,12 @@ SolCallback(9) = "dtbankCenter.SolHit 3,"
 SolCallback(10) = "dtbankCenter.SolHit 4,"
 SolCallback(12)	= "dtbankCenter.SolDropUp"
 SolCallback(17) = "SolGi" '17=relay
-SolCallback(18) = "vpmNudge.SolGameOn"
+SolCallback(18) = "SolGameOn" '18 = play relay
+
+Sub SolGameOn(Enabled)
+    vpmNudge.SolGameOn Enabled
+    ReelGuardGameOn Enabled
+End Sub
 
 Sub SolGi(enabled)
     If enabled Then
@@ -750,9 +785,10 @@ Patterns2(10) = 239 '9
 'Set Digits(25) = e1
 
 Sub UpdateLeds
+    If B2SOn And ReelGuard = 1 Then ReelGuardUpdate:Exit Sub
     On Error Resume Next
     Dim ChgLED, ii, jj, chg, stat
-    ChgLED = Controller.ChangedLEDs(&HFF, &HFFFF)
+    ChgLED = Controller.ChangedLEDs(0, &H3FFFFFF) ' digits 0-25 (was &HFF, &HFFFF = digits 0-15 only)
     If Not IsEmpty(ChgLED) Then
         For ii = 0 To UBound(ChgLED)
             chg = chgLED(ii, 1):stat = chgLED(ii, 2)
@@ -761,6 +797,144 @@ Sub UpdateLeds
             Next
         Next
     End IF
+End Sub
+
+'******************************************************************************
+' Reel guard
+' At game over the Taito firmware borrows the 4 score displays for a message /
+' attract animation. On 7-segment LEDs that reads as text; on this backglass's
+' score REELS every non-digit pattern becomes "0", so the scores get scrambled
+' and stay wrong. While a game is running the ROM drives the reels as normal.
+' After the play relay (sol 18) drops we only accept sane score changes (one
+' player at a time, never going down), then lock the reels on the final scores
+' and stop reading the displays until the next game starts.
+' Note: while locked the credit/ball reels also stay put (no change with FreePlay).
+'******************************************************************************
+Dim rgSeg(25), rgGood(23), rgText(23), rgState, rgOffTime
+' rgState: 0 = game running, 1 = watching after game over, 2 = locked
+rgState = 1:rgOffTime = 0
+For x = 0 To 25:rgSeg(x) = 0:Next
+For x = 0 To 23:rgGood(x) = 0:rgText(x) = -1:Next
+
+Function SegToNum(v) ' -1 = blank, -2 = not a digit
+    Select Case (v And 127)
+        Case 0:SegToNum = -1
+        Case 63:SegToNum = 0
+        Case 6:SegToNum = 1
+        Case 91:SegToNum = 2
+        Case 79:SegToNum = 3
+        Case 102:SegToNum = 4
+        Case 109:SegToNum = 5
+        Case 125, 124:SegToNum = 6
+        Case 7:SegToNum = 7
+        Case 127:SegToNum = 8
+        Case 111, 103:SegToNum = 9
+        Case Else:SegToNum = -2
+    End Select
+End Function
+
+Function PlayerScore(p) ' -1 if the display is not a plain score
+    Dim d, n, s, started
+    s = 0:started = False
+    For d = p * 6 To p * 6 + 5
+        n = SegToNum(rgSeg(d))
+        If n = -2 Then PlayerScore = -1:Exit Function
+        If n = -1 Then
+            If started Then PlayerScore = -1:Exit Function ' blank inside a number
+            n = 0
+        Else
+            started = True
+        End If
+        s = s * 10 + n
+    Next
+    PlayerScore = s
+End Function
+
+Function GoodScore(p)
+    Dim d, s:s = 0
+    For d = p * 6 To p * 6 + 5:s = s * 10 + rgGood(d):Next
+    GoodScore = s
+End Function
+
+Sub AcceptPlayer(p)
+    Dim d, n
+    For d = p * 6 To p * 6 + 5
+        n = SegToNum(rgSeg(d)):If n < 0 Then n = 0
+        rgGood(d) = n
+    Next
+End Sub
+
+Sub SetReelDigit(d, v) ' d = ROM digit 0-23, v = 0-9
+    On Error Resume Next
+    If rgText(d) = v Or rgText(d) = -1 Then Controller.B2SSetScoreDigit d + 1, (v + 1) Mod 10 ' force a repaint
+    Controller.B2SSetScoreDigit d + 1, v
+    rgText(d) = v
+    On Error Goto 0
+End Sub
+
+Sub ReelGuardUpdate
+    Dim ChgLED, ii, n, d, p, changed(3), nChanged, s, bad
+    If rgState = 2 Then Exit Sub ' locked: leave the displays unread so the reels keep the final scores
+    If rgState = 1 And GameTime - rgOffTime > ReelGuardLockMs Then rgState = 2:Exit Sub
+
+    ChgLED = Controller.ChangedLEDs(0, &H3FFFFFF) ' digits 0-25: P1-P4 (0-23), ball (24), credits (25)
+    If IsEmpty(ChgLED) Then Exit Sub
+    n = -1:On Error Resume Next:n = UBound(ChgLED):On Error Goto 0
+    If n < 0 Then Exit Sub
+    For ii = 0 To n
+        d = ChgLED(ii, 0)
+        If d >= 0 And d <= 25 Then
+            rgSeg(d) = ChgLED(ii, 2)
+            If d <= 23 Then changed(d \ 6) = True
+        End If
+    Next
+
+    nChanged = 0:bad = False
+    For p = 0 To 3
+        If changed(p) Then
+            nChanged = nChanged + 1
+            s = PlayerScore(p)
+            If s < 0 Then
+                bad = True
+            ElseIf rgState = 1 And s < GoodScore(p) Then
+                bad = True
+            End If
+        End If
+    Next
+    If rgState = 1 And nChanged > 1 Then bad = True
+
+    If rgState = 0 Then
+        For p = 0 To 3
+            If changed(p) And PlayerScore(p) >= 0 Then AcceptPlayer p
+        Next
+    ElseIf bad Then
+        ' end-of-game display started: put the last good scores back and lock
+        For d = 0 To 23:SetReelDigit d, rgGood(d):Next
+        rgState = 2
+    Else
+        For p = 0 To 3
+            If changed(p) Then AcceptPlayer p
+        Next
+    End If
+End Sub
+
+Sub ReelGuardGameOn(Enabled)
+    Dim d, n
+    If Not (B2SOn And ReelGuard = 1) Then Exit Sub
+    If Enabled Then
+        If rgState <> 0 Then
+            ' new game / next ball: catch up on everything that changed while locked
+            rgState = 0
+            ReelGuardUpdate
+            For d = 0 To 23
+                n = SegToNum(rgSeg(d)):If n < 0 Then n = 0
+                rgGood(d) = n
+                SetReelDigit d, n
+            Next
+        End If
+    ElseIf rgState = 0 Then
+        rgState = 1:rgOffTime = GameTime
+    End If
 End Sub
 
 '******************************
