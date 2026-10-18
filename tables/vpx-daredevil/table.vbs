@@ -114,7 +114,6 @@ Sub FrameTimer_Timer() 'The frame timer interval should be -1, so executes at th
 	RollingUpdate   		'update rolling sounds
 	DoDTAnim				'handle drop target animations
 	DoSTAnim				'handle stand up target animations
-	If FXW_Active Then FXWarm_Tick	'FX texture pre-warm, one step per rendered frame
 End Sub
 
 'The CorTimer interval should be 10. It's sole purpose is to update the Cor calculations
@@ -358,8 +357,6 @@ Sub Table1_Init()
     FXHalveFrames
     ' Compile FlashForMs timer handlers now instead of mid-game
     FFM_PreDefine
-    ' Upload hidden effect textures during attract mode (see FX texture pre-warm)
-    FXWarm_Start
 End Sub
 
 Dim LeftOutlaneDifficulty,RightOutlaneDifficulty,nBallsPerGame
@@ -1051,7 +1048,6 @@ End Sub
 '
 Sub ResetForNewGame()
     Dim i
-    FXWarm_End
 
     bGameInPLay = True
 
@@ -2528,6 +2524,16 @@ Sub FFM_Define(MyLight)
     If InStr(FFM_Names, "|" & MyLight.Name & "|") > 0 Then Exit Sub
     FFM_Names = FFM_Names & MyLight.Name & "|"
     ExecuteGlobal "Sub " & MyLight.Name & "_Timer:" & "Dim tmp, steps, fstate:tmp=me.UserValue:fstate = tmp MOD 10:steps= tmp\10 -1:Me.Visible = steps MOD 2:me.UserValue = steps *10 + fstate:If Steps = 0 then Me.Visible = fstate:Me.TimerEnabled=0:End if:End Sub"
+End Sub
+
+' Compile the FlashForMs blink handlers at init rather than on first use mid-game
+Sub FFM_PreDefine
+    Dim o
+    For Each o In Array(Flasher9, Flasher9a, Flasher10, Flasher10a, Flasher11, Flasher11a, _
+                        Flasher12, Flasher12a, gbeam2, ray, flash4, flash3, _
+                        FlasherExitHole, ap1, ap2, MYSTLIGHT)
+        FFM_Define o
+    Next
 End Sub
 
 '******************************************
@@ -5065,8 +5071,7 @@ End Sub
 '*******Mysterio Smoke and Animation************
 
 Dim Fire1Pos, Fire2Pos, Fire3Pos, Fire4Pos, Fire5Pos, Fire6Pos, Fire7Pos,Fire8Pos, Flames
-Flames = Array("fire01", "fire02", "fire03", "fire04", "fire05", "fire06", "fire07", "fire08", "fire09", _
-    "fire10", "fire11", "fire12", "fire13", "fire14", "fire15", "fire16")
+Flames = Array("fire01", "fire03", "fire05", "fire07", "fire09", "fire11", "fire13", "fire15")   ' 4KP: every other frame (8 of 16) - fewer textures to load and keep in memory
 
 Sub StartFire
     Fire1Pos = 0
@@ -5102,8 +5107,7 @@ End Sub
 
 ' TORCH lamps
 Dim TOR1Pos, TOR2Pos, Torches
-Torches = Array("TOR01", "TOR02", "TOR03", "TOR04", "TOR05", "TOR06", "TOR07", "TOR08", "TOR09", _
-    "TOR10", "TOR11", "TOR12", "TOR13", "TOR14", "TOR15", "TOR16")
+Torches = Array("TOR01", "TOR03", "TOR05", "TOR07", "TOR09", "TOR11", "TOR13", "TOR15")   ' 4KP: every other frame (8 of 16) - fewer textures to load and keep in memory
 
 Sub StartTOR
     TOR1Pos = 0
@@ -5124,8 +5128,7 @@ End Sub
 
 ' RAIN ****
 Dim RAIN1Pos,RAIN2Pos,RAIN3Pos, RAINING
-RAINING = Array("RAIN001", "RAIN002", "RAIN003", "RAIN004", "RAIN005", "RAIN006", "RAIN007", "RAIN008", "RAIN009", _
-    "RAIN010", "RAIN011", "RAIN012", "RAIN013", "RAIN014", "RAIN015")
+RAINING = Array("RAIN001", "RAIN003", "RAIN005", "RAIN007", "RAIN009", "RAIN011", "RAIN013", "RAIN015")   ' 4KP: every other frame (8 of 15) - fewer textures to load and keep in memory
 
 Sub StartRAIN
     RAIN1Pos = 0
@@ -5244,8 +5247,8 @@ End sub
 '******Gun********
 
 Dim Gun1Pos, GunFrames
-GunFrames = Array("MF-000", "MF-001", "MF-002", "MF-003", "MF-004", "MF-005", "MF-006", "MF-007", "MF-008", "MF-009", "MF-010", "MF-011", "MF-012", "MF-013", "MF-014", "MF-015", "MF-016", "MF-017", "MF-018", "MF-019", "MF-020", _
-"MF-021", "MF-022", "MF-023", "MF-024", "MF-025", "MF-026", "MF-027", "MF-028", "MF-029")
+GunFrames = Array("MF-000", "MF-002", "MF-004", "MF-006", "MF-008", "MF-010", "MF-012", "MF-014", "MF-016", "MF-018", "MF-020", "MF-022", _
+    "MF-024", "MF-026", "MF-028")   ' 4KP: every other frame (15 of 30) - fewer textures to load and keep in memory
  
 Sub StartGun
 GunFlash.visible = True
@@ -5275,8 +5278,8 @@ End Sub
 '*****Laser*******
 
 Dim	Laser1Pos, LaserFrames 
-LaserFrames = Array("ML-000", "ML-001", "ML-002", "ML-003", "ML-004", "ML-005", "ML-006", "ML-007", "ML-008", "ML-009", "ML-010", "ML-011", "ML-012", "ML-013", "ML-014", "ML-015", "ML-016", "ML-017", "ML-018", "ML-019", "ML-020", _
-"ML-021", "ML-022", "ML-023", "ML-024", "ML-025", "ML-026", "ML-027", "ML-028", "ML-029")
+LaserFrames = Array("ML-000", "ML-002", "ML-004", "ML-006", "ML-008", "ML-010", "ML-012", "ML-014", "ML-016", "ML-018", "ML-020", "ML-022", _
+    "ML-024", "ML-026", "ML-028")   ' 4KP: every other frame (15 of 30) - fewer textures to load and keep in memory
 
 Sub StartLaser
 LaserFlash.visible = True
@@ -5316,7 +5319,7 @@ End Sub
 '*********Sonar*********
 
 Dim	Sonar1Pos, SonarFrames 
-SonarFrames = Array("MS-000", "MS-001", "MS-002", "MS-003", "MS-004", "MS-005", "MS-006", "MS-007", "MS-008", "MS-009", "MS-010", "MS-011", "MS-012", "MS-013", "MS-014", "MS-015", "MS-016", "MS-017", "MS-018", "MS-019", "MS-020")
+SonarFrames = Array("MS-000", "MS-002", "MS-004", "MS-006", "MS-008", "MS-010", "MS-012", "MS-014", "MS-016", "MS-018", "MS-020")   ' 4KP: every other frame (11 of 21) - fewer textures to load and keep in memory
 
 Sub StartSonar
 SonarFlash.visible = True
@@ -5346,8 +5349,8 @@ End Sub
 '*********Smoke***********
 
 Dim	Smoke1Pos, SmokeFrames 
-SmokeFrames = Array("MG-000", "MG-001", "MG-002", "MG-003", "MG-004", "MG-005", "MG-006", "MG-007", "MG-008", "MG-009", "MG-010", "MG-011", "MG-012", "MG-013", "MG-014", "MG-015", "MG-016", "MG-017", "MG-018", "MG-019", "MG-020", _
-"MG-021", "MG-022", "MG-023", "MG-024", "MG-025", "MG-026", "MG-027", "MG-028", "MG-029", "MG-030", "MG-031", "MG-032", "MG-033", "MG-034", "MG-035", "MG-036", "MG-037", "MG-038", "MG-039", "MG-040", "MG-041", "MG-042", "MG-043")
+SmokeFrames = Array("MG-000", "MG-002", "MG-004", "MG-006", "MG-008", "MG-010", "MG-012", "MG-014", "MG-016", "MG-018", "MG-020", "MG-022", _
+    "MG-024", "MG-026", "MG-028", "MG-030", "MG-032", "MG-034", "MG-036", "MG-038", "MG-040", "MG-042")   ' 4KP: every other frame (22 of 44) - fewer textures to load and keep in memory
 
 Sub StartSmoke
 SmokeFlash.visible = True
@@ -5377,8 +5380,8 @@ End Sub
 '********LASER CHARGE********
 
 Dim	Charge1Pos, ChargeFrames 
-ChargeFrames = Array("CH-000", "CH-001", "CH-002", "CH-003", "CH-004", "CH-005", "CH-006", "CH-007", "CH-008", "CH-009", "CH-010", "CH-011", "CH-012", "CH-013", "CH-014", "CH-015", "CH-016", "CH-017", "CH-018", "CH-019", "CH-020", _
-"CH-021", "CH-022", "CH-023", "CH-024", "CH-025", "CH-026", "CH-027", "CH-028")
+ChargeFrames = Array("CH-000", "CH-002", "CH-004", "CH-006", "CH-008", "CH-010", "CH-012", "CH-014", "CH-016", "CH-018", "CH-020", "CH-022", _
+    "CH-024", "CH-026", "CH-028")   ' 4KP: every other frame (15 of 29) - fewer textures to load and keep in memory
 
 Sub StartCharge
 ChargeFlash.visible = True
@@ -5408,8 +5411,8 @@ End Sub
 '******MYSTERIO HANDS******
 
 Dim	Iron1Pos, IronFrames 
-IronFrames = Array("FL-01", "FL-02", "FL-03", "FL-04", "FL-05", "FL-06", "FL-07", "FL-08", "FL-09", "FL-010", "FL-011", "FL-012", "FL-013", "FL-014", "FL-015", "FL-016", "FL-017", "FL-018", "FL-019", "FL-020", _
-"FL-021", "FL-022", "FL-023", "FL-024", "FL-025", "FL-026", "FL-027", "FL-028", "FL-029", "FL-030", "FL-031", "FL-032", "FL-033", "FL-034", "FL-035", "FL-036", "FL-037", "FL-038", "FL-039", "FL-040", "FL-041", "FL-042", "FL-043", "FL-044", "FL-045", "FL-046", "FL-047", "FL-048")
+IronFrames = Array("FL-01", "FL-03", "FL-05", "FL-07", "FL-09", "FL-011", "FL-013", "FL-015", "FL-017", "FL-019", "FL-021", "FL-023", _
+    "FL-025", "FL-027", "FL-029", "FL-031", "FL-033", "FL-035", "FL-037", "FL-039", "FL-041", "FL-043", "FL-045", "FL-047")   ' 4KP: every other frame (24 of 48) - fewer textures to load and keep in memory
 
 Sub StartIron
 IronFlash.visible = True
@@ -6038,8 +6041,7 @@ End Sub
 '**************************
 
 Dim LAVA1Pos,LAVAFLOW
-LAVAFLOW = Array("f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8", "f9", _
-    "f10", "f11", "f12", "f13", "f14", "f15", "f16")
+LAVAFLOW = Array("f1", "f3", "f5", "f7", "f9", "f11", "f13", "f15")   ' 4KP: every other frame (8 of 16) - fewer textures to load and keep in memory
 
 Sub StartLAVA
     LAVA1Pos = 0
@@ -8998,134 +9000,11 @@ End Sub
 
 
 '*******************************************
-' FX texture pre-warm (standalone / RK3588)
-'*******************************************
-' Hidden effect flashers (rain, gun/laser/sonar/smoke/charge/iron flip-books, Mephisto
-' green beam) and the alternate playfield worlds only get their textures decoded and
-' uploaded the first time they render. On the ALP4K that costs 300-400ms of
-' "Prepare Frame" per pop, which is the FPS dip when a mode or callout fires.
-' This pass renders every hidden effect once (flashers at 1% opacity, primitives
-' sunk below the playfield) and steps through every flip-book frame, one step per
-' rendered frame, during attract mode. Those textures are then resident, and VPX
-' records them in Cache/<table>/used_textures.xml so later launches preload them
-' on the loading screen.
-' Set FXPrewarm = 0 to turn it off.
-
-Const FXPrewarm = 1
-
-Dim FXW_Active : FXW_Active = False
-Dim FXW_Step, FXW_MaxStep, FXW_Flip, FXW_Saved, FXW_Count
-
-Sub FXWarm_Start
-    If FXPrewarm = 0 Then Exit Sub
-    Dim i, o, f
-    FXW_Flip = Array( _
-        Array(RAIN, RAINING), Array(LAVA1, LAVAFLOW), _
-        Array(GunFlash, GunFrames), Array(LaserFlash, LaserFrames), _
-        Array(SonarFlash, SonarFrames), Array(SmokeFlash, SmokeFrames), _
-        Array(ChargeFlash, ChargeFrames), Array(IronFlash, IronFrames))
-
-    ReDim FXW_Saved(31)
-    FXW_Count = 0
-    FXW_MaxStep = 0
-    For i = 0 To UBound(FXW_Flip)
-        Set o = FXW_Flip(i)(0)
-        f = FXW_Flip(i)(1)
-        FXW_Hold o
-        If UBound(f) > FXW_MaxStep Then FXW_MaxStep = UBound(f)
-    Next
-    ' One-shot effects that pop in with modes and callouts
-    For Each o In Array(RAIN2, RAIN3, PF2World, PF3World, Stan001, Stan002, Stan003, Stan004, _
-                        gbeam2, ray, flash4, flash3, KINGPIN2, KINGPIN3)
-        FXW_Hold o
-    Next
-
-    FXW_Step = 0
-    FXW_Active = True
-End Sub
-
-' Make an object render without being seen, remembering how to put it back
-Sub FXW_Hold(o)
-    Dim t : t = TypeName(o)
-    If t = "Flasher" Then
-        FXW_Saved(FXW_Count) = Array(o, t, o.Visible, o.Opacity, o.ImageA)
-        o.Opacity = 1
-        o.Visible = True
-    ElseIf t = "Primitive" Then
-        FXW_Saved(FXW_Count) = Array(o, t, o.Visible, o.Z, "")
-        o.Z = o.Z - 300
-        o.Visible = True
-    Else
-        Exit Sub
-    End If
-    FXW_Count = FXW_Count + 1
-    If FXW_Count > UBound(FXW_Saved) Then ReDim Preserve FXW_Saved(FXW_Count + 15)
-End Sub
-
-' Called from FrameTimer_Timer (interval -1), so each image gets a rendered frame
-Sub FXWarm_Tick
-    Dim i, o, f
-    If FXW_Step <= FXW_MaxStep Then
-        For i = 0 To UBound(FXW_Flip)
-            f = FXW_Flip(i)(1)
-            If FXW_Step <= UBound(f) Then
-                Set o = FXW_Flip(i)(0)
-                If TypeName(o) = "Flasher" Then o.ImageA = f(FXW_Step)
-            End If
-        Next
-    ElseIf FXW_Step >= FXW_MaxStep + 3 Then
-        FXWarm_End
-        Exit Sub
-    End If
-    FXW_Step = FXW_Step + 1
-End Sub
-
-Sub FXWarm_End
-    If Not FXW_Active Then Exit Sub
-    FXW_Active = False
-    Dim i, e, o
-    For i = 0 To FXW_Count - 1
-        e = FXW_Saved(i)
-        Set o = e(0)
-        If e(1) = "Flasher" Then
-            o.ImageA = e(4)
-            o.Opacity = e(3)
-        Else
-            o.Z = e(3)
-        End If
-        o.Visible = e(2)
-    Next
-End Sub
-
-' Compile the FlashForMs blink handlers at init rather than on first use mid-game
-Sub FFM_PreDefine
-    Dim o
-    For Each o In Array(Flasher9, Flasher9a, Flasher10, Flasher10a, Flasher11, Flasher11a, _
-                        Flasher12, Flasher12a, gbeam2, ray, flash4, flash3, _
-                        FlasherExitHole, ap1, ap2, MYSTLIGHT)
-        FFM_Define o
-    Next
-End Sub
-
-'*******************************************
 ' Half-frame animations (memory saver for the ALP4K)
 '*******************************************
-' Each flip-book frame is its own texture, and keeping all of them resident pushed the
-' cabinet to ~99% RAM. This keeps every other frame and doubles each animation timer's
-' interval, so effects last as long as before with half the textures.
-' Set FXHalfFrames = 0 for the full frame sets (delete Cache/<table>/used_textures.xml after switching).
-
-Const FXHalfFrames = 1
-
-Function FXHalf(a)
-    Dim r(), i, n
-    n = UBound(a) \ 2
-    ReDim r(n)
-    For i = 0 To n
-        r(i) = a(i * 2)
-    Next
-    FXHalf = r
-End Function
+' The frame lists above keep every other frame. Trimming them in the script itself (not at
+' run time) also keeps the engine's script-named texture warm-up under its memory budget.
+' Each animation timer's interval is doubled here so effects last as long as before.
 
 ' Double a timer's interval (only for normal ms timers, not -1 frame timers)
 Sub FXSlow(t)
@@ -9133,18 +9012,7 @@ Sub FXSlow(t)
 End Sub
 
 Sub FXHalveFrames
-    If FXHalfFrames = 0 Then Exit Sub
-    Flames = FXHalf(Flames)           : FXSlow FireTimer
-    Torches = FXHalf(Torches)         : FXSlow TorTimer
-    RAINING = FXHalf(RAINING)         : FXSlow RainTimer
-    LAVAFLOW = FXHalf(LAVAFLOW)       : FXSlow LAVATimer
-    GunFrames = FXHalf(GunFrames)     : FXSlow GunTimer
-    LaserFrames = FXHalf(LaserFrames) : FXSlow LaserTimer
-    SonarFrames = FXHalf(SonarFrames) : FXSlow SonarTimer
-    SmokeFrames = FXHalf(SmokeFrames) : FXSlow SmokeTimer
-    ChargeFrames = FXHalf(ChargeFrames) : FXSlow ChargeTimer
-    IronFrames = FXHalf(IronFrames)   : FXSlow IronTimer
-    ' Positions may already be past the new end if a timer ran before init
-    Fire1Pos = 0: Fire2Pos = 1: Fire3Pos = 2: Fire4Pos = 3: Fire5Pos = 4: Fire6Pos = 5: Fire7Pos = 6: Fire8Pos = 7
-    Tor1Pos = 0: Tor2Pos = 1: RAIN1Pos = 0: RAIN2Pos = 1: RAIN3Pos = 1: LAVA1Pos = 0
+    FXSlow FireTimer: FXSlow TorTimer: FXSlow RainTimer: FXSlow LAVATimer
+    FXSlow GunTimer: FXSlow LaserTimer: FXSlow SonarTimer: FXSlow SmokeTimer
+    FXSlow ChargeTimer: FXSlow IronTimer
 End Sub
