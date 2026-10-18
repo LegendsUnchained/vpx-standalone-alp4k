@@ -1,15 +1,16 @@
 ---
 additionalRoms:
-  - vpsId: "JG4tLoLZls"
-    checksum: "E0299B92741EE7825F3786B5BAF4C546"
+  - vpsId: "QlQe08yy2W"
+    checksum: "CD592C5FCA7C3465CD97DD410DFDAFAC"
 backglassChecksum: "E53113ACCEA75079CEBFB15BFC764179"
 backglassVPSId: "NAg_5Lh6pI"
 coloredROMChecksum: "E2B22F93FE7B72046723CC5C9001D617"
 coloredROMVPSId: "jhjBylCh"
 fps: 60
-romChecksum: "CD592C5FCA7C3465CD97DD410DFDAFAC"
-romVPSId: "QlQe08yy2W"
+romChecksum: "E0299B92741EE7825F3786B5BAF4C546"
+romVPSId: "JG4tLoLZls"
 tableVPSId: "sx604oSu"
+tagline: "CANDY 2000: 'You have been terminated. Have a nice day!'"
 testers:
   - "Reboot"
 tutorialVPSId: "ylD81ZyK1z"
