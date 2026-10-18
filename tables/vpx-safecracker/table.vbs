@@ -306,6 +306,15 @@ Sub Table1_Init
 
 	L_DT_1.intensity = 0
 
+	' PERF: VR-only timers have no job outside VR - switch them off
+	If VR_Room = 0 Then
+		ClockTimer.Enabled = False
+		TimerVRPlunger.Enabled = False
+		TimerVRPlunger1.Enabled = False
+		BeaconTimer.Enabled = False
+		BeaconSoundTimer.Enabled = False
+	End If
+
 End Sub
 
 Sub Table_Paused:Controller.Pause = 1:End Sub
@@ -508,27 +517,37 @@ Const PLTop = 610 				'Y position of punger lane top
 Const PLBottom = 1685 			'Y position of punger lane bottom
 Dim PLGain: PLGain = (1-PLOffset)/(PLTop-PLBottom)
 
+Dim BallColorCache(4)
+Dim BallColorInit : BallColorInit = False
+
 Sub UpdateBallBrightness
-	Dim s, b_base, b_r, b_g, b_b, d_w
+	Dim s, b_base, b_r, d_w, bx, by, bz
+	' PERF: read each ball property once, run the plunger-lane polygon test only when the
+	' ball is inside the lane's X band, and only write ball.color when the value changed.
+	If Not BallColorInit Then
+		For s = 0 To 4 : BallColorCache(s) = -1 : Next
+		BallColorInit = True
+	End If
 	b_base = 120 * BallBrightness + 135*gilvl	' orig was 120 and 70
 
 	For s = 0 To UBound(gBOT)
+		bx = gBOT(s).x : by = gBOT(s).y : bz = gBOT(s).z
 		' Handle z direction
-		d_w = b_base*(1 - (gBOT(s).z-25)/500)
+		d_w = b_base*(1 - (bz-25)/500)
 		If d_w < 30 Then d_w = 30
 		' Handle plunger lane
-		If InRect(gBOT(s).x,gBOT(s).y,PLLeft,PLBottom,PLLeft,PLTop,PLRight,PLTop,PLRight,PLBottom) Then  
-			d_w = d_w*(PLOffset+PLGain*(gBOT(s).y-PLBottom))
+		If bx >= PLLeft And bx <= PLRight Then
+			If InRect(bx,by,PLLeft,PLBottom,PLLeft,PLTop,PLRight,PLTop,PLRight,PLBottom) Then  
+				d_w = d_w*(PLOffset+PLGain*(by-PLBottom))
+			End If
 		End If
 		' Assign color
 		b_r = Int(d_w)
-		b_g = Int(d_w)
-		b_b = Int(d_w)
 		If b_r > 255 Then b_r = 255
-		If b_g > 255 Then b_g = 255
-		If b_b > 255 Then b_b = 255
-		gBOT(s).color = b_r + (b_g * 256) + (b_b * 256 * 256)
-		'debug.print "--- ball.color level="&b_r
+		If b_r <> BallColorCache(s) Then
+			BallColorCache(s) = b_r
+			gBOT(s).color = b_r + (b_r * 256) + (b_r * 65536)
+		End If
 	Next
 End Sub
 
@@ -555,8 +574,8 @@ Sub Table1_KeyDown(ByVal keycode)	'***What to do when a button is pressed***
 
 	If KeyCode = PlungerKey Then
 		Plunger.Pullback:SoundPlungerPull()
-		TimerVRPlunger.Enabled = True
-		TimerVRPlunger1.Enabled = False
+		If VR_Room = 1 Then TimerVRPlunger.Enabled = True
+		If VR_Room = 1 Then TimerVRPlunger1.Enabled = False
 		VR_Primary_plunger.Y = 810
 	End If
 
@@ -603,8 +622,8 @@ Sub Table1_KeyUp(ByVal keycode)		'***What to do when a button is released***
 		Else
 			SoundPlungerReleaseNoBall()			'Plunger release sound when there is no ball in shooter lane
 		End If
-		TimerVRPlunger.Enabled = False
-        TimerVRPlunger1.Enabled = True
+		If VR_Room = 1 Then TimerVRPlunger.Enabled = False
+		If VR_Room = 1 Then TimerVRPlunger1.Enabled = True
 		VR_Primary_plunger.Y = 810
 	End If
 
@@ -1495,13 +1514,18 @@ Sub InitRolling
 	Next
 End Sub
 
+Dim RollSndName(5), RollSndInit
 Sub RollingUpdate()
 	Dim b
+	If Not RollSndInit Then
+		For b = 0 To 5 : RollSndName(b) = "BallRoll_" & b : Next
+		RollSndInit = True
+	End If
 
 	' stop the sound of deleted balls
 	For b = UBound(gBOT) + 1 to tnob - 1
 		rolling(b) = False
-		StopSound("BallRoll_" & b)
+		StopSound(RollSndName(b))
 	Next
 
 	' exit the sub if no balls on the table
@@ -1512,11 +1536,11 @@ Sub RollingUpdate()
 	For b = 0 to UBound(gBOT)
 		If BallVel(gBOT(b)) > 1 AND gBOT(b).z < 30 Then
 			rolling(b) = True
-			PlaySound ("BallRoll_" & b), -1, VolPlayfieldRoll(gBOT(b)) * BallRollVolume * VolumeDial, AudioPan(gBOT(b)), 0, PitchPlayfieldRoll(gBOT(b)), 1, 0, AudioFade(gBOT(b))
+			PlaySound (RollSndName(b)), -1, VolPlayfieldRoll(gBOT(b)) * BallRollVolume * VolumeDial, AudioPan(gBOT(b)), 0, PitchPlayfieldRoll(gBOT(b)), 1, 0, AudioFade(gBOT(b))
 
 		Else
 			If rolling(b) = True Then
-				StopSound("BallRoll_" & b)
+				StopSound(RollSndName(b))
 				rolling(b) = False
 			End If
 		End If
@@ -4444,6 +4468,24 @@ Sub l78_animate: p78.BlendDisableLighting = 200 * (l78.GetInPlayIntensity / l78.
 '*****   Bumper and Backglass Lamps
 '******************************************************
 
+' PERF helper: only touch the VPX object when the ROM lamp state actually changed.
+Dim LampVisCache(600), LampVisInit
+Sub SetLampVis(n, obj, cacheOfs)
+	Dim v, k
+	If Not LampVisInit Then
+		For k = 0 To 600 : LampVisCache(k) = -1 : Next
+		For k = 0 To 87 : LampLastBank(k) = -1 : Next
+		LampVisInit = True
+	End If
+	If controller.Lamp(n) = True Then v = 1 Else v = 0
+	k = n + cacheOfs
+	If LampVisCache(k) <> v Then
+		LampVisCache(k) = v
+		If v = 1 Then obj.visible = 1 Else obj.visible = 0
+	End If
+End Sub
+
+Dim LampOnceHidden, LampLast88, LampLastBank(87)
 Set LampCallback=GetRef("UpdateLamps")
 
 Sub UpdateLamps()
@@ -4479,94 +4521,99 @@ Sub UpdateLamps()
 	End If
 
 ' Bank, Cellar, and Roof lamps, 
-	If controller.Lamp(84) = True Then bankLeftFlasher.visible=1:Else bankLeftFlasher.visible=0
-	If controller.Lamp(84) = True Then bankLeftLamp.BlendDisableLighting = 0.1:Else bankLeftLamp.BlendDisableLighting = 0
-	If controller.Lamp(85) = True Then bankRightFlasher.visible=1:Else bankRightFlasher.visible=0
-	If controller.Lamp(85) = True Then bankRightLamp.BlendDisableLighting = 0.1:Else bankRightLamp.BlendDisableLighting = 0
-	If controller.Lamp(86) = True Then cellarFlasher.visible=1:Else cellarFlasher.visible=0
-	If controller.Lamp(86) = True Then cellarLamp.BlendDisableLighting = 0.1:Else cellarLamp.BlendDisableLighting = 0
-	If controller.Lamp(87) = True Then roofFlasher.visible=1:Else roofFlasher.visible=0
-	If controller.Lamp(87) = True Then roofLamp.BlendDisableLighting = 0.1:Else roofLamp.BlendDisableLighting = 0
+	SetLampVis 84, bankLeftFlasher, 400
+	If LampVisCache(84+400) <> LampLastBank(84) Then LampLastBank(84) = LampVisCache(84+400) : bankLeftLamp.BlendDisableLighting = 0.1 * LampVisCache(84+400)
+	SetLampVis 85, bankRightFlasher, 400
+	If LampVisCache(85+400) <> LampLastBank(85) Then LampLastBank(85) = LampVisCache(85+400) : bankRightLamp.BlendDisableLighting = 0.1 * LampVisCache(85+400)
+	SetLampVis 86, cellarFlasher, 400
+	If LampVisCache(86+400) <> LampLastBank(86) Then LampLastBank(86) = LampVisCache(86+400) : cellarLamp.BlendDisableLighting = 0.1 * LampVisCache(86+400)
+	SetLampVis 87, roofFlasher, 400
+	If LampVisCache(87+400) <> LampLastBank(87) Then LampLastBank(87) = LampVisCache(87+400) : roofLamp.BlendDisableLighting = 0.1 * LampVisCache(87+400)
 
 
 ' Backglass Lamps
 
 dim xb2s
 if desktopmode = true AND useownb2s = 1 Then
-	for each xb2s in BGArr
-		xb2s.visible = 0
-	Next
+	' PERF: hide the built-in backglass lamps once instead of on every lamp update
+	If Not LampOnceHidden Then
+		for each xb2s in BGArr
+			xb2s.visible = 0
+		Next
+	End If
 
 elseif cab_mode = 1 Then
-	for each xb2s in BGArr
-		xb2s.visible = 0
-	Next
+	If Not LampOnceHidden Then
+		for each xb2s in BGArr
+			xb2s.visible = 0
+		Next
+	End If
 
 Else
 
 if cab_mode = 0 Then
 
-	If controller.Lamp(1) = True Then l1.visible=1:Else l1.visible=0
-	If controller.Lamp(2) = True Then l2.visible=1:Else l2.visible=0
-	If controller.Lamp(3) = True Then l3.visible=1:Else l3.visible=0
-	If controller.Lamp(4) = True Then l4.visible=1:Else l4.visible=0
-	If controller.Lamp(5) = True Then l5.visible=1:Else l5.visible=0
-	If controller.Lamp(6) = True Then l6.visible=1:Else l6.visible=0
-	If controller.Lamp(7) = True Then l7.visible=1:Else l7.visible=0
-	If controller.Lamp(8) = True Then l8.visible=1:Else l8.visible=0
-	If controller.Lamp(9) = True Then l9.visible=1:Else l9.visible=0
-	If controller.Lamp(10) = True Then l10.visible=1:Else l10.visible=0
-	If controller.Lamp(19) = True Then l19.visible=1:Else l19.visible=0
-	If controller.Lamp(20) = True Then l20.visible=1:Else l20.visible=0
-	If controller.Lamp(29) = True Then l29.visible=1:Else l29.visible=0
-	If controller.Lamp(91) = True Then l91.visible=1:Else l91.visible=0
-	If controller.Lamp(92) = True Then l92.visible=1:Else l92.visible=0
-	If controller.Lamp(93) = True Then l93.visible=1:Else l93.visible=0
-	If controller.Lamp(94) = True Then l94.visible=1:Else l94.visible=0
-	If controller.Lamp(95) = True Then l95.visible=1:Else l95.visible=0
-	If controller.Lamp(96) = True Then l96.visible=1:Else l96.visible=0
-	If controller.Lamp(97) = True Then l97.visible=1:Else l97.visible=0
-	If controller.Lamp(98) = True Then l98.visible=1:Else l98.visible=0
-	If controller.Lamp(101) = True Then l101.visible=1:Else l101.visible=0
-	If controller.Lamp(102) = True Then l102.visible=1:Else l102.visible=0
-	If controller.Lamp(103) = True Then l103.visible=1:Else l103.visible=0
-	If controller.Lamp(104) = True Then l104.visible=1:Else l104.visible=0
-	If controller.Lamp(105) = True Then l105.visible=1:Else l105.visible=0
-	If controller.Lamp(106) = True Then l106.visible=1:Else l106.visible=0
-	If controller.Lamp(107) = True Then l107.visible=1:Else l107.visible=0
-	If controller.Lamp(108) = True Then l108.visible=1:Else l108.visible=0
-	If controller.Lamp(111) = True Then l111.visible=1:Else l111.visible=0
-	If controller.Lamp(112) = True Then l112.visible=1:Else l112.visible=0
-	If controller.Lamp(113) = True Then l113.visible=1:Else l113.visible=0
-	If controller.Lamp(114) = True Then l114.visible=1:Else l114.visible=0
-	If controller.Lamp(115) = True Then l115.visible=1:Else l115.visible=0
-	If controller.Lamp(116) = True Then l116.visible=1:Else l116.visible=0
-	If controller.Lamp(117) = True Then l117.visible=1:Else l117.visible=0
-	If controller.Lamp(118) = True Then l118.visible=1:Else l118.visible=0
-	If controller.Lamp(121) = True Then l121.visible=1:Else l121.visible=0
-	If controller.Lamp(122) = True Then l122.visible=1:Else l122.visible=0
-	If controller.Lamp(123) = True Then l123.visible=1:Else l123.visible=0
-	If controller.Lamp(124) = True Then l124.visible=1:Else l124.visible=0
-	If controller.Lamp(125) = True Then l125.visible=1:Else l125.visible=0
-	If controller.Lamp(126) = True Then l126.visible=1:Else l126.visible=0
-	If controller.Lamp(127) = True Then l127.visible=1:Else l127.visible=0
-	If controller.Lamp(128) = True Then l128.visible=1:Else l128.visible=0
-	If controller.Lamp(131) = True Then l131.visible=1:Else l131.visible=0
-	If controller.Lamp(132) = True Then l132.visible=1:Else l132.visible=0
-	If controller.Lamp(133) = True Then l133.visible=1:Else l133.visible=0
-	If controller.Lamp(134) = True Then l134.visible=1:Else l134.visible=0
-	If controller.Lamp(135) = True Then l135.visible=1:Else l135.visible=0
-	If controller.Lamp(136) = True Then l136.visible=1:Else l136.visible=0
-	If controller.Lamp(137) = True Then l137.visible=1:Else l137.visible=0
-	If controller.Lamp(138) = True Then l138.visible=1:Else l138.visible=0
-	If controller.Lamp(141) = True Then l141.visible=1:Else l141.visible=0
-	If controller.Lamp(142) = True Then l142.visible=1:Else l142.visible=0
-	If controller.Lamp(143) = True Then l143.visible=1:Else l143.visible=0
-	If controller.Lamp(144) = True Then l144.visible=1:Else l144.visible=0
-	If controller.Lamp(145) = True Then l145.visible=1:Else l145.visible=0
-	If controller.Lamp(146) = True Then l146.visible=1:Else l146.visible=0
-	If controller.Lamp(147) = True Then l147.visible=1:Else l147.visible=0
-	If controller.Lamp(148) = True Then l148.visible=1:Else l148.visible=0
+	SetLampVis 1, l1, 0
+	SetLampVis 2, l2, 0
+	SetLampVis 3, l3, 0
+	SetLampVis 4, l4, 0
+	SetLampVis 5, l5, 0
+	SetLampVis 6, l6, 0
+	SetLampVis 7, l7, 0
+	SetLampVis 8, l8, 0
+	SetLampVis 9, l9, 0
+	SetLampVis 10, l10, 0
+	SetLampVis 19, l19, 0
+	SetLampVis 20, l20, 0
+	SetLampVis 29, l29, 0
+	SetLampVis 91, l91, 0
+	SetLampVis 92, l92, 0
+	SetLampVis 93, l93, 0
+	SetLampVis 94, l94, 0
+	SetLampVis 95, l95, 0
+	SetLampVis 96, l96, 0
+	SetLampVis 97, l97, 0
+	SetLampVis 98, l98, 0
+	SetLampVis 101, l101, 0
+	SetLampVis 102, l102, 0
+	SetLampVis 103, l103, 0
+	SetLampVis 104, l104, 0
+	SetLampVis 105, l105, 0
+	SetLampVis 106, l106, 0
+	SetLampVis 107, l107, 0
+	SetLampVis 108, l108, 0
+	SetLampVis 111, l111, 0
+	SetLampVis 112, l112, 0
+	SetLampVis 113, l113, 0
+	SetLampVis 114, l114, 0
+	SetLampVis 115, l115, 0
+	SetLampVis 116, l116, 0
+	SetLampVis 117, l117, 0
+	SetLampVis 118, l118, 0
+	SetLampVis 121, l121, 0
+	SetLampVis 122, l122, 0
+	SetLampVis 123, l123, 0
+	SetLampVis 124, l124, 0
+	SetLampVis 125, l125, 0
+	SetLampVis 126, l126, 0
+	SetLampVis 127, l127, 0
+	SetLampVis 128, l128, 0
+	SetLampVis 131, l131, 0
+	SetLampVis 132, l132, 0
+	SetLampVis 133, l133, 0
+	SetLampVis 134, l134, 0
+	SetLampVis 135, l135, 0
+	SetLampVis 136, l136, 0
+	SetLampVis 137, l137, 0
+	SetLampVis 138, l138, 0
+	SetLampVis 141, l141, 0
+	SetLampVis 142, l142, 0
+	SetLampVis 143, l143, 0
+	SetLampVis 144, l144, 0
+	SetLampVis 145, l145, 0
+	SetLampVis 146, l146, 0
+	SetLampVis 147, l147, 0
+	SetLampVis 148, l148, 0
 
 End if
 
@@ -4575,131 +4622,135 @@ End if
 
 	If ShowGlass = 1 AND VR_Room = 1 Then
 
-		If controller.Lamp(2) = True Then l2m.visible=1:Else l2m.visible=0
-		If controller.Lamp(3) = True Then l3m.visible=1:Else l3m.visible=0
-		If controller.Lamp(4) = True Then l4m.visible=1:Else l4m.visible=0
-		If controller.Lamp(5) = True Then l5m.visible=1:Else l5m.visible=0
-		If controller.Lamp(6) = True Then l6m.visible=1:Else l6m.visible=0
-		If controller.Lamp(7) = True Then l7m.visible=1:Else l7m.visible=0
-		If controller.Lamp(8) = True Then l8m.visible=1:Else l8m.visible=0
-		If controller.Lamp(19) = True Then l19m.visible=1:Else l19m.visible=0
-		If controller.Lamp(20) = True Then l20m.visible=1:Else l20m.visible=0
-		If controller.Lamp(29) = True Then l29m.visible=1:Else l29m.visible=0
-		If controller.Lamp(91) = True Then l91m.visible=1:Else l91m.visible=0
-		If controller.Lamp(92) = True Then l92m.visible=1:Else l92m.visible=0
-		If controller.Lamp(93) = True Then l93m.visible=1:Else l93m.visible=0
-		If controller.Lamp(94) = True Then l94m.visible=1:Else l94m.visible=0
-		If controller.Lamp(95) = True Then l95m.visible=1:Else l95m.visible=0
-		If controller.Lamp(96) = True Then l96m.visible=1:Else l96m.visible=0
-		If controller.Lamp(97) = True Then l97m.visible=1:Else l97m.visible=0
-		If controller.Lamp(98) = True Then l98m.visible=1:Else l98m.visible=0
-		If controller.Lamp(101) = True Then l101m.visible=1:Else l101m.visible=0
-		If controller.Lamp(102) = True Then l102m.visible=1:Else l102m.visible=0
-		If controller.Lamp(103) = True Then l103m.visible=1:Else l103m.visible=0
-		If controller.Lamp(104) = True Then l104m.visible=1:Else l104m.visible=0
-		If controller.Lamp(105) = True Then l105m.visible=1:Else l105m.visible=0
-		If controller.Lamp(106) = True Then l106m.visible=1:Else l106m.visible=0
-		If controller.Lamp(107) = True Then l107m.visible=1:Else l107m.visible=0
-		If controller.Lamp(108) = True Then l108m.visible=1:Else l108m.visible=0
-		If controller.Lamp(111) = True Then l111m.visible=1:Else l111m.visible=0
-		If controller.Lamp(112) = True Then l112m.visible=1:Else l112m.visible=0
-		If controller.Lamp(113) = True Then l113m.visible=1:Else l113m.visible=0
-		If controller.Lamp(114) = True Then l114m.visible=1:Else l114m.visible=0
-		If controller.Lamp(115) = True Then l115m.visible=1:Else l115m.visible=0
-		If controller.Lamp(116) = True Then l116m.visible=1:Else l116m.visible=0
-		If controller.Lamp(117) = True Then l117m.visible=1:Else l117m.visible=0
-		If controller.Lamp(118) = True Then l118m.visible=1:Else l118m.visible=0
-		If controller.Lamp(121) = True Then l121m.visible=1:Else l121m.visible=0
-		If controller.Lamp(122) = True Then l122m.visible=1:Else l122m.visible=0
-		If controller.Lamp(123) = True Then l123m.visible=1:Else l123m.visible=0
-		If controller.Lamp(124) = True Then l124m.visible=1:Else l124m.visible=0
-		If controller.Lamp(125) = True Then l125m.visible=1:Else l125m.visible=0
-		If controller.Lamp(126) = True Then l126m.visible=1:Else l126m.visible=0
-		If controller.Lamp(127) = True Then l127m.visible=1:Else l127m.visible=0
-		If controller.Lamp(128) = True Then l128m.visible=1:Else l128m.visible=0
-		If controller.Lamp(131) = True Then l131m.visible=1:Else l131m.visible=0
-		If controller.Lamp(132) = True Then l132m.visible=1:Else l132m.visible=0
-		If controller.Lamp(133) = True Then l133m.visible=1:Else l133m.visible=0
-		If controller.Lamp(134) = True Then l134m.visible=1:Else l134m.visible=0
-		If controller.Lamp(135) = True Then l135m.visible=1:Else l135m.visible=0
-		If controller.Lamp(136) = True Then l136m.visible=1:Else l136m.visible=0
-		If controller.Lamp(137) = True Then l137m.visible=1:Else l137m.visible=0
-		If controller.Lamp(138) = True Then l138m.visible=1:Else l138m.visible=0
-		If controller.Lamp(141) = True Then l141m.visible=1:Else l141m.visible=0
-		If controller.Lamp(142) = True Then l142m.visible=1:Else l142m.visible=0
-		If controller.Lamp(143) = True Then l143m.visible=1:Else l143m.visible=0
-		If controller.Lamp(144) = True Then l144m.visible=1:Else l144m.visible=0
-		If controller.Lamp(145) = True Then l145m.visible=1:Else l145m.visible=0
-		If controller.Lamp(146) = True Then l146m.visible=1:Else l146m.visible=0
-		If controller.Lamp(147) = True Then l147m.visible=1:Else l147m.visible=0
-		If controller.Lamp(148) = True Then l148m.visible=1:Else l148m.visible=0
+		SetLampVis 2, l2m, 200
+		SetLampVis 3, l3m, 200
+		SetLampVis 4, l4m, 200
+		SetLampVis 5, l5m, 200
+		SetLampVis 6, l6m, 200
+		SetLampVis 7, l7m, 200
+		SetLampVis 8, l8m, 200
+		SetLampVis 19, l19m, 200
+		SetLampVis 20, l20m, 200
+		SetLampVis 29, l29m, 200
+		SetLampVis 91, l91m, 200
+		SetLampVis 92, l92m, 200
+		SetLampVis 93, l93m, 200
+		SetLampVis 94, l94m, 200
+		SetLampVis 95, l95m, 200
+		SetLampVis 96, l96m, 200
+		SetLampVis 97, l97m, 200
+		SetLampVis 98, l98m, 200
+		SetLampVis 101, l101m, 200
+		SetLampVis 102, l102m, 200
+		SetLampVis 103, l103m, 200
+		SetLampVis 104, l104m, 200
+		SetLampVis 105, l105m, 200
+		SetLampVis 106, l106m, 200
+		SetLampVis 107, l107m, 200
+		SetLampVis 108, l108m, 200
+		SetLampVis 111, l111m, 200
+		SetLampVis 112, l112m, 200
+		SetLampVis 113, l113m, 200
+		SetLampVis 114, l114m, 200
+		SetLampVis 115, l115m, 200
+		SetLampVis 116, l116m, 200
+		SetLampVis 117, l117m, 200
+		SetLampVis 118, l118m, 200
+		SetLampVis 121, l121m, 200
+		SetLampVis 122, l122m, 200
+		SetLampVis 123, l123m, 200
+		SetLampVis 124, l124m, 200
+		SetLampVis 125, l125m, 200
+		SetLampVis 126, l126m, 200
+		SetLampVis 127, l127m, 200
+		SetLampVis 128, l128m, 200
+		SetLampVis 131, l131m, 200
+		SetLampVis 132, l132m, 200
+		SetLampVis 133, l133m, 200
+		SetLampVis 134, l134m, 200
+		SetLampVis 135, l135m, 200
+		SetLampVis 136, l136m, 200
+		SetLampVis 137, l137m, 200
+		SetLampVis 138, l138m, 200
+		SetLampVis 141, l141m, 200
+		SetLampVis 142, l142m, 200
+		SetLampVis 143, l143m, 200
+		SetLampVis 144, l144m, 200
+		SetLampVis 145, l145m, 200
+		SetLampVis 146, l146m, 200
+		SetLampVis 147, l147m, 200
+		SetLampVis 148, l148m, 200
 
 	Else
 
-		l2m.visible = 0
-		l3m.visible = 0
-		l4m.visible = 0
-		l5m.visible = 0
-		l6m.visible = 0
-		l7m.visible = 0
-		l8m.visible = 0
-		l19m.visible = 0
-		l20m.visible = 0
-		l29m.visible = 0
-		l91m.visible = 0	
-		l91m.visible = 0
-		l92m.visible = 0
-		l93m.visible = 0
-		l94m.visible = 0
-		l95m.visible = 0
-		l96m.visible = 0
-		l97m.visible = 0
-		l98m.visible = 0
-		l101m.visible = 0
-		l102m.visible = 0
-		l103m.visible = 0
-		l104m.visible = 0
-		l105m.visible = 0
-		l106m.visible = 0
-		l107m.visible = 0
-		l108m.visible = 0
-		l111m.visible = 0
-		l112m.visible = 0
-		l113m.visible = 0
-		l114m.visible = 0
-		l115m.visible = 0
-		l116m.visible = 0
-		l117m.visible = 0
-		l118m.visible = 0
-		l121m.visible = 0
-		l122m.visible = 0
-		l123m.visible = 0
-		l124m.visible = 0
-		l125m.visible = 0
-		l126m.visible = 0
-		l127m.visible = 0
-		l128m.visible = 0
-		l131m.visible = 0
-		l132m.visible = 0
-		l133m.visible = 0
-		l134m.visible = 0
-		l135m.visible = 0
-		l136m.visible = 0
-		l137m.visible = 0
-		l138m.visible = 0
-		l141m.visible = 0
-		l142m.visible = 0
-		l143m.visible = 0
-		l144m.visible = 0
-		l145m.visible = 0
-		l146m.visible = 0
-		l147m.visible = 0
-		l148m.visible = 0
+		' PERF: hide the VR glass reflections once, not on every lamp update
+		If Not LampOnceHidden Then
+			l2m.visible = 0
+			l3m.visible = 0
+			l4m.visible = 0
+			l5m.visible = 0
+			l6m.visible = 0
+			l7m.visible = 0
+			l8m.visible = 0
+			l19m.visible = 0
+			l20m.visible = 0
+			l29m.visible = 0
+			l91m.visible = 0	
+			l91m.visible = 0
+			l92m.visible = 0
+			l93m.visible = 0
+			l94m.visible = 0
+			l95m.visible = 0
+			l96m.visible = 0
+			l97m.visible = 0
+			l98m.visible = 0
+			l101m.visible = 0
+			l102m.visible = 0
+			l103m.visible = 0
+			l104m.visible = 0
+			l105m.visible = 0
+			l106m.visible = 0
+			l107m.visible = 0
+			l108m.visible = 0
+			l111m.visible = 0
+			l112m.visible = 0
+			l113m.visible = 0
+			l114m.visible = 0
+			l115m.visible = 0
+			l116m.visible = 0
+			l117m.visible = 0
+			l118m.visible = 0
+			l121m.visible = 0
+			l122m.visible = 0
+			l123m.visible = 0
+			l124m.visible = 0
+			l125m.visible = 0
+			l126m.visible = 0
+			l127m.visible = 0
+			l128m.visible = 0
+			l131m.visible = 0
+			l132m.visible = 0
+			l133m.visible = 0
+			l134m.visible = 0
+			l135m.visible = 0
+			l136m.visible = 0
+			l137m.visible = 0
+			l138m.visible = 0
+			l141m.visible = 0
+			l142m.visible = 0
+			l143m.visible = 0
+			l144m.visible = 0
+			l145m.visible = 0
+			l146m.visible = 0
+			l147m.visible = 0
+			l148m.visible = 0
+		End If
 
 	End If
 
 End If
 
+	LampOnceHidden = True
 End Sub
 
 
@@ -4712,7 +4763,14 @@ dim gilvl
 Set GICallback2 = GetRef("GIUpdates2")		'use this for stepped/modulated GI
 
 'GIupdates2 is called always when some event happens to GI channel.
+Dim GILastApplied : GILastApplied = -1
+Dim GILastOnState : GILastOnState = -1
 Sub GIUpdates2(aNr, aLvl)	
+	' PERF: GI callbacks fire on every PWM step, often with an unchanged value. Skip those.
+	If aNr = 0 Then
+		If aLvl = GILastApplied Then Exit Sub
+		GILastApplied = aLvl
+	End If
 '	debug.print "GIUpdates2 nr: " & aNr & " value: " & aLvl
 
 	Select Case aNr 'Strings are selected here
@@ -4755,18 +4813,24 @@ Sub GIUpdates2(aNr, aLvl)
 			girubbercolor3 = 10*alvl + 14
 			MaterialColor "Rubber red",RGB(girubbercolor2,girubbercolor3,girubbercolor3)
 
-			if aLvl = 0 Then
-				scbgframe.imageA="SCBGFrame_Off"
-				scbgframe2.imageA="SCBGFrame2_Off"
-				scbgframe.imageB="SCBGFrame_Off"
-				scbgframe2.imageB="SCBGFrame2_Off"
-				DOF 101, DOFOff
-			else
-				scbgframe.imageA="SCBGFrame_On"
-				scbgframe2.imageA="SCBGFrame2_On"
-				scbgframe.imageB="SCBGFrame_On"
-				scbgframe2.imageB="SCBGFrame2_On"
-				DOF 101, DOFOn
+			' PERF: image swaps and DOF only on an actual off<->on transition, not every PWM step
+			Dim giOnNow
+			If aLvl = 0 Then giOnNow = 0 Else giOnNow = 1
+			If giOnNow <> GILastOnState Then
+				GILastOnState = giOnNow
+				if aLvl = 0 Then
+					scbgframe.imageA="SCBGFrame_Off"
+					scbgframe2.imageA="SCBGFrame2_Off"
+					scbgframe.imageB="SCBGFrame_Off"
+					scbgframe2.imageB="SCBGFrame2_Off"
+					DOF 101, DOFOff
+				else
+					scbgframe.imageA="SCBGFrame_On"
+					scbgframe2.imageA="SCBGFrame2_On"
+					scbgframe.imageB="SCBGFrame_On"
+					scbgframe2.imageB="SCBGFrame2_On"
+					DOF 101, DOFOn
+				End If
 			End If
 
 			gilvl = aLvl		'Storing the latest GI fading state into global variable, so one can use it elsewhere too.
@@ -4965,22 +5029,54 @@ End Sub
 
 ''------ Use this for PWM following domes ---------'
 
+' PERF: skip work when the PWM level has not changed, hide the flare/bloom/lit
+' objects while the dome is off (they were left visible at opacity 0, costing a
+' transparent draw each), and avoid rebuilding the material name string per call.
+Dim FlLastLevel(20), FlMatName(20), FlInitDone
+Dim FlasherMinStep : FlasherMinStep = 0.01	'ignore PWM changes smaller than this (1% = invisible). 0 = update on every change.
+
 Sub ModFlashFlasher(nr, aValue)
+	If Not FlInitDone Then
+		Dim fi
+		For fi = 0 To 20 : FlLastLevel(fi) = -1 : FlMatName(fi) = "Flashermaterial" & fi : Next
+		FlInitDone = True
+	End If
+
+	' unchanged, or a tiny step that cannot be seen (always let 0 and 1 through so it settles exactly)
+	If aValue = FlLastLevel(nr) Then Exit Sub
+	If aValue > 0 And aValue < 1 And FlLastLevel(nr) >= 0 Then
+		If Abs(aValue - FlLastLevel(nr)) < FlasherMinStep Then Exit Sub
+	End If
+	FlLastLevel(nr) = aValue
+
+	If aValue <= 0 Then
+		' fully off: park everything at its "off" look and stop rendering the glow objects
+		objflasher(nr).visible = 0 : objbloom(nr).visible = 0 : objlit(nr).visible = 0
+		objlight(nr).IntensityScale = 0
+		objbase(nr).BlendDisableLighting = FlasherOffBrightness
+		objlit(nr).BlendDisableLighting = 0
+		Exit Sub
+	End If
+
 	objflasher(nr).visible = 1 : objbloom(nr).visible = 1 : objlit(nr).visible = 1
 	objflasher(nr).opacity = 1000 *  FlasherFlareIntensity * aValue
 	objbloom(nr).opacity = 100 *  FlasherBloomIntensity * aValue
 	objlight(nr).IntensityScale = 0.5 * FlasherLightIntensity * aValue
 	objbase(nr).BlendDisableLighting =  FlasherOffBrightness + 10 * aValue
 	objlit(nr).BlendDisableLighting = 10 * aValue
-	UpdateMaterial "Flashermaterial" & nr,0,0,0,0,0,0,aValue,RGB(255,255,255),0,0,False,True,0,0,0,0 
+	UpdateMaterial FlMatName(nr),0,0,0,0,0,0,aValue,RGB(255,255,255),0,0,False,True,0,0,0,0 
 End Sub
 
 Sub SolFlash17(level)				'Flasher Solonoid Name
 	ModFlashFlasher 5,level			'Flasher Number assigned in flupper script
 End Sub
 
+Dim SF18Last : SF18Last = -1
+Dim SF21Last : SF21Last = -1
 Sub SolFlash18(level)				'Flasher Solonoid Name (Note both back right flasher dome and big PF flaher are tied to solenoid 18)
 	ModFlashFlasher 6,level			'Flasher Number assigned in flupper script
+	If level = SF18Last Then Exit Sub
+	SF18Last = level
 	F18.state = level				'Flasher light object name
 	F18a.state = level				'Flasher light glow object name
 	pF18.blenddisablelighting = 200 * level	'flasher primitive insert name
@@ -4996,6 +5092,8 @@ End Sub
 
 Sub SolFlash21(level)				'Flasher Solonoid Name
 	ModFlashFlasher 3,level			'Flasher Number assigned in flupper script
+	If level = SF21Last Then Exit Sub
+	SF21Last = level
 	Fdisc.state = level				'Flasher light object name
 	pdisc1.blenddisablelighting = 0.5 * level	'flasher primitive insert name
 	OverheadLamp.blenddisablelighting = 0.15 * level	'flasher primitive insert name
@@ -5271,16 +5369,26 @@ Sub BSInit()
 End Sub
 
 
+Dim BSVis(4), BSLastX(4), BSLastY(4)
 Sub BSUpdate
-	Dim s: For s = lob To UBound(gBOT)
+	' PERF: only write the shadow primitive when it is not yet shown / the ball actually moved
+	Dim s, bz, bx, by, sx: For s = lob To UBound(gBOT)
 		' *** Normal "ambient light" ball shadow
 		
 		'Primitive shadow on playfield, flasher shadow in ramps
 		'** If on main and upper pf
-		If gBOT(s).Z > 20 And gBOT(s).Z < 30 Then
-			objBallShadow(s).visible = 1
-			objBallShadow(s).X = gBOT(s).X + (gBOT(s).X - (tablewidth / 2)) / (Ballsize / AmbientMovement) + offsetX
-			objBallShadow(s).Y = gBOT(s).Y + offsetY
+		bz = gBOT(s).Z
+		If bz > 20 And bz < 30 Then
+			bx = gBOT(s).X : by = gBOT(s).Y
+			If BSVis(s) <> 1 Then objBallShadow(s).visible = 1 : BSVis(s) = 1
+			If bx <> BSLastX(s) Then
+				BSLastX(s) = bx
+				objBallShadow(s).X = bx + (bx - (tablewidth / 2)) / (Ballsize / AmbientMovement) + offsetX
+			End If
+			If by <> BSLastY(s) Then
+				BSLastY(s) = by
+				objBallShadow(s).Y = by + offsetY
+			End If
 			'objBallShadow(s).Z = gBOT(s).Z + s/1000 + 1.04 - 25	
 
 		'** No shadow if ball is off the main playfield (this may need to be adjusted per table)
