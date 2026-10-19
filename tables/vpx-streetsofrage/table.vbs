@@ -2125,7 +2125,8 @@ Sub DMDScore
       Dim i
         ' ShowTableInfo
         'UltraDMD.SetScoreboardBackgroundImage "metalslug.png", 15, 15
-        DMD "metalslug.jpg", "", "", 5000
+        'DMD "metalslug.jpg", "", "", 5000  'stock: static logo (score lived on the directb2s LED strip)
+        DMDShowScoreboard
        ' UltraDMD.DisplayScene00 "MetalSluglogo.png", "", 14, 2, "", -1, -1', UltraDMD_Animation_None, 100, UltraDMD_Animation_None  
       '  UltraDMD.DisplayScoreboard PlayersPlayingGame, CurrentPlayer, Score(1), Score(2), Score(3), Score(4), "Player " & CurrentPlayer, "Ball " & Balls 
       Else
@@ -7325,7 +7326,12 @@ Dim Char(32),i,TempText                     'increase dimension if You need larg
 '-----  B2S section, not used in the demo  -----
 '-----------------------------------------------
 
-Sub DisplayB2SText(TextPar)							'Procedure to display Text on a 30 digit B2S LED reel. Assuming that it is display 1 with internal digit numbers 1-30
+Sub DisplayB2SText(TextPar)
+	B2SLEDText TextPar
+	DMDMirrorText TextPar
+End Sub
+
+Sub B2SLEDText(TextPar)							'Procedure to display Text on a 30 digit B2S LED reel. Assuming that it is display 1 with internal digit numbers 1-30
 	TempText = TextPar		
 	for i = 1 to 32
 		if i <= len(TextPar) then
@@ -7408,10 +7414,43 @@ End Function
 
 Sub DisplayScore
   If Score(1) < 1000000 Then
-	 DisplayB2SText (cstr(Score(1))) & "" & "                   BALL " & Ball
+	 B2SLEDText (cstr(Score(1))) & "" & "                   BALL " & Ball
 	Else
-	 DisplayB2SText (cstr(Score(1))) & (Score(1)) & String(32 - Len(Score(1)), " ") 
+	 B2SLEDText (cstr(Score(1))) & (Score(1)) & String(32 - Len(Score(1)), " ") 
   End If
+  DMDShowScoreboard
+End Sub
+
+' Live score on the UltraDMD (no directb2s LED strip on the cabinet)
+Sub DMDShowScoreboard
+    If Not IsObject(UltraDMD) Then Exit Sub
+    If UltraDMD.IsRendering Then Exit Sub
+    UltraDMD.DisplayScoreboard 1, 1, Score(1), 0, 0, 0, "BALL " & Ball, ""
+End Sub
+
+' Mirror backglass LED messages (BALL SAVED, KILLED IN ACTION, missions...) onto the DMD.
+' Skips while a video/scene is playing so messages never pile up behind it.
+Sub DMDMirrorText(TextPar)
+    Dim s, l1, l2, p
+    If Not IsObject(UltraDMD) Then Exit Sub
+    If Not bGameInPlay Then Exit Sub
+    If UltraDMD.IsRendering Then Exit Sub
+    s = Trim(TextPar)
+    Do While InStr(s, "  ") > 0
+        s = Replace(s, "  ", " ")
+    Loop
+    If s = "" Then Exit Sub
+    l1 = s : l2 = ""
+    If Len(s) > 18 Then
+        p = InStrRev(s, " ", Len(s) \ 2 + 1)
+        If p = 0 Then p = InStr(s, " ")
+        If p > 0 Then l1 = Left(s, p - 1) : l2 = Mid(s, p + 1)
+    End If
+    If l2 = "" Then
+        DMD "", "", l1, 1500
+    Else
+        DMD "", l1, l2, 1500
+    End If
 End Sub
 
 
