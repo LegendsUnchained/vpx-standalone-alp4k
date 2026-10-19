@@ -180,6 +180,7 @@ Const MaxPlayers = 4     ' from 1 to 4
 Const BallSaverTime = 15 ' in seconds
 Const MaxMultiplier = 5  ' limit to 5x in this game, both bonus multiplier and playfield multiplier
 Const BallsPerGame = 3   ' usually 3 or 5
+Const CalloutVolume = 0.35  ' voice callouts (0 to 1). Music plays at 0.1; stock callouts were 1.0
 Const MaxMultiballs = 5  ' max number of balls during multiballs
 
 ' Define Global Variables
@@ -531,7 +532,7 @@ Sub Table1_KeyDown(ByVal Keycode)
             PlaySound "fx_coin"
             DisplayB2SText " CREDITS " &credits
             D1.Text = " CREDITS " &credits
-            PlaySound "go"
+            PlayCallout "go"
             If NOT bGameInPlay Then ShowTableInfo:
         End If
     End If
@@ -777,6 +778,11 @@ End Sub
 
 Dim Song
 Song = ""
+
+' Voice callouts at a reduced level - set CalloutVolume at the top of the script
+Sub PlayCallout(name)
+    PlaySound name, 0, CalloutVolume
+End Sub
 
 Sub PlaySong(name)
     If bMusicOn Then
@@ -1210,7 +1216,7 @@ End Sub
 ' Handle any bonus points awarded
 
 Sub EndOfBall()
-	Playsound "Marcodie"
+	PlayCallout "Marcodie"
 	Playsound "explode3"
 	FlashOff()
 	' Assume the player isn't playing a ball.
@@ -1791,7 +1797,7 @@ End Sub
 
 Sub HighScoreEntryInit()
     hsbModeActive = True
-    PlaySound "vo_enteryourinitials"
+    PlayCallout "vo_enteryourinitials"
     hsLetterFlash = 0
 
     hsEnteredDigits(0) = "A"
@@ -2490,7 +2496,7 @@ Sub FuturePinball_Tilted()
    EndMission()
 	' Stop theme.
    StopMusic 1
-   Playsound "mordenlaugh", FALSE
+   PlayCallout "mordenlaugh"
    If bPlayingFinalMission Then ingamereset()
 	' Ensure all the flippers are down (as the keys won't work from now on).
 	' VPX flippers (SolenoidOff is Future Pinball-only; TopRightFlipper is RightFlipper1 here)
@@ -2676,7 +2682,7 @@ Sub LeftInLaneTrigger_Hit()
 	' Add 1000 points.
 	AddScore(1000)
 	' Play specific sound.
-   PlaySound "go"
+   PlayCallout "go"
 	' Lit the left inlane light.
    LeftInLaneLight.State = 1
    bLeftInLaneIsLit = TRUE
@@ -2701,7 +2707,7 @@ Sub RightInLaneTrigger_Hit()
 	' Add 1000 points.
 	AddScore(1000)
 	' Play specific sound.
-   PlaySound "go"
+   PlayCallout "go"
 	' Lit the right inlane light.
    RightInLaneLight.State = 1
    bRightInLaneIsLit = TRUE
@@ -2881,7 +2887,7 @@ End Sub
 Sub Rubber6_Hit()
 	If Tilted Then Exit Sub	' Ignore this _Hit() event if the table is tilted.
 	AddScore(10)
-	Playsound "go"
+	PlayCallout "go"
 End Sub
 
 
@@ -3412,7 +3418,7 @@ Sub C1_Hit()
 			If bPlayingMission4 Then ScoreMission4()
 		Else
 			LightMission()
-			Playsound "Thankyou"
+			PlayCallout "Thankyou"
 		End If
 	End If
 End Sub
@@ -3435,7 +3441,7 @@ Sub C2_Hit()
 			If bPlayingMission4 Then ScoreMission4()
 		Else
 			LightMission()
-			Playsound "Thankyou"
+			PlayCallout "Thankyou"
 		End If
 	End If
 End Sub
@@ -3460,7 +3466,7 @@ Sub C3_Hit()
 			If bPlayingMission4 Then ScoreMission4()
 		Else
 			LightMission()
-			Playsound "Thankyou"
+			PlayCallout "Thankyou"
 		End If
 	End If
 End Sub
@@ -3495,7 +3501,7 @@ Sub C4_Hit()
 		S1.isdropped = 1
 		S1Light.State = 1
 	End If
-	Playsound "Ok"
+	PlayCallout "Ok"
 	AdvancePOW()
 	AddScore(8000)
 	If Not(bPlayingMission) And Not(bMissionSuspended) Then LightMission()
@@ -3563,9 +3569,9 @@ Sub Drain_Hit()
 				If (BallsOnPlayfield = 2) And (BallsLocked = 2) Then EndOfBall()
 				If (BallsOnPlayfield = 3) And (BallsLocked = 3) Then EndOfBall()
 				If (BallsOnPlayfield = 1) And (BallsLocked = 0) Then EndMultiBall()
-				If (BallsOnPlayfield = 3) And (BallsLocked = 0) Then Playsound "Fiodie"
-				If (BallsOnPlayfield = 2) And (BallsLocked = 0) Then Playsound "Eridie"
-				If (BallsOnPlayfield = 1) And (BallsLocked = 0) Then Playsound "Tarmadie"
+				If (BallsOnPlayfield = 3) And (BallsLocked = 0) Then PlayCallout "Fiodie"
+				If (BallsOnPlayfield = 2) And (BallsLocked = 0) Then PlayCallout "Eridie"
+				If (BallsOnPlayfield = 1) And (BallsLocked = 0) Then PlayCallout "Tarmadie"
 			End If
 		Else
 			If Not(FiveBallOverTimer.Enabled) Then
@@ -4045,7 +4051,7 @@ Sub EndOfBallTimer_Timer()
         DisplayB2SText "  *   S H O O T  A G A I N   *  "
 '		D1.QueueText "  *   S H O O T  A G A I N   *  ", seBlinkMask, 1000
 '		D2.QueueText "  *   S H O O T  A G A I N   *  ", seBlinkMask, 1000
-		Playsound "cheers"
+		PlayCallout "cheers"
 		CurrentWeapon = 0
 		Weapon1.State = 2
 		Weapon2.State = 0
@@ -4221,7 +4227,7 @@ Sub POWBonusTimer_Timer()
 				D1.Text = "          NO SOR BONUS          "', seScrollIn, 1000, 0, TRUE
                 DisplayB2SText "          NO SOR BONUS          "
 			Case 14:
-				Playsound "cmonboy"
+				PlayCallout "cmonboy"
 			Case 22:
 				'D1.FlushQueue()
 				'D2.FlushQueue()
@@ -4239,7 +4245,7 @@ Sub POWBonusTimer_Timer()
 				lenPOWScore = Len(1000 * nvR2 * POWBonus)
                 DisplayB2SText (POWBonus) & " SOR     " & String(lenPOWBase, " ") & "     " & String(lenPOWScore, " ") & String(Int((18 - lenPOWBonus - lenPOWBase - lenPOWScore) / 2), " ")
 				D1.Text = FormatScore(POWBonus) & " SOR     " & String(lenPOWBase, " ") & "     " & String(lenPOWScore, " ") & String(Int((18 - lenPOWBonus - lenPOWBase - lenPOWScore) / 2), " ")
-				Playsound "Thankyou"
+				PlayCallout "Thankyou"
 			Case 15:
 				lenPOWBonus = Len(POWBonus)
 				lenPOWBase = Len(1000 * nvR2)
@@ -4268,9 +4274,9 @@ Sub POWBonusTimer_Timer()
                 DisplayB2SText (POWBonus) & " SOR  X  " & FormatScore(nvR2 * 1000) & "  =  " & FormatScore(1000 * nvR2 * POWBonus) & String(Int((18 - lenPOWBonus - lenPOWBase - lenPOWScore) / 2), " ")
 				D1.Text = FormatScore(POWBonus) & " SOR  X  " & FormatScore(nvR2 * 1000) & "  =  " & FormatScore(1000 * nvR2 * POWBonus) & String(Int((18 - lenPOWBonus - lenPOWBase - lenPOWScore) / 2), " ")
 				If POWBonusBall < 10 Then
-					Playsound "Ok"
+					PlayCallout "Ok"
 				Else
-					Playsound "youregreat"
+					PlayCallout "youregreat"
 				End If
 			Case 42:
 				POWBonusTimer.Enabled = FALSE
@@ -4387,61 +4393,61 @@ Sub AnimateWeaponTimer_Timer()
 					W6.Isdropped = 1
                     W6Light.state = 0
                     W1Light.state = 2
-					Playsound "allenlaugh"
+					PlayCallout "allenlaugh"
 				Case 2:
 					W6.Isdropped = 0
 					W1.Isdropped = 1
                     W1Light.state = 0
                     W6Light.state = 2
-					Playsound "allenlaugh"
+					PlayCallout "allenlaugh"
 				Case 3:
 					W2.Isdropped = 0
 					W6.Isdropped = 1
                     W6Light.state = 0
                     W2Light.state = 2
-					Playsound "cmonboy"
+					PlayCallout "cmonboy"
 				Case 4:
 					W5.Isdropped = 0
 					W2.Isdropped = 1
                     W2Light.state = 0
                     W5Light.state = 2
-					Playsound "gohometomommy"
+					PlayCallout "gohometomommy"
 				Case 5:
 					W3.Isdropped = 0
 					W5.Isdropped = 1
                     W3Light.state = 0
                     W5Light.state = 2
-					Playsound "allenlaugh"
+					PlayCallout "allenlaugh"
 				Case 6:
 					W4.Isdropped = 0
 					W3.Isdropped = 1
                     W4Light.state = 0
                     W3Light.state = 2
-					Playsound "cmonboy"
+					PlayCallout "cmonboy"
 				Case 7:
 					W3.Isdropped = 0
 					W4.Isdropped = 1
                     W4Light.state = 0
                     W3Light.state = 2
-					Playsound "youremincemeat"
+					PlayCallout "youremincemeat"
 				Case 8:
 					W5.Isdropped = 0
 					W3.Isdropped = 1
                     W3Light.state = 0
                     W5Light.state = 2
-					Playsound "cmonboy"
+					PlayCallout "cmonboy"
 				Case 9:
 					W2.Isdropped = 0
 					W5.Isdropped = 1
                     W5Light.state = 0
                     W2Light.state = 2
-					Playsound "allenlaugh"
+					PlayCallout "allenlaugh"
 				Case 10:
 					W6.Isdropped = 0
 					W2.Isdropped = 1
                     W2Light.state = 0
                     W6Light.state = 2
-					Playsound "gohometomommy"
+					PlayCallout "gohometomommy"
 					AnimateWeaponTimer.Uservalue = 0
 			End Select
 	End Select
@@ -4638,7 +4644,7 @@ Sub FinalMissionShowTimer_Timer()
 		Case 3:
             DisplayB2SText "      SOR BONUS IS DOUBLED      "
 			D1.Text = "      SOR BONUS IS DOUBLED      "
-			Playsound "thankyou"
+			PlayCallout "thankyou"
 		Case 4:
             DisplayB2SText "    KICKERS SCORE 25,000 EACH    "
 			D1.Text = "    KICKERS SCORE 25,000 EACH    "
@@ -4646,15 +4652,15 @@ Sub FinalMissionShowTimer_Timer()
 		Case 5:
             DisplayB2SText "       CAPTIVE BALL IS LIT      "
 			D1.Text = "       CAPTIVE BALL IS LIT      "
-			Playsound "ok"
+			PlayCallout "ok"
 		Case 6:
             DisplayB2SText "       KICK BUMPERS ARE LIT      "
 			D1.Text = "       KICK BUMPERS ARE LIT      "
-			Playsound "mordenlaugh"
+			PlayCallout "mordenlaugh"
 		Case 7:
             DisplayB2SText "         JACKPOT IS LIT         "
 			D1.Text = "         JACKPOT IS LIT         "
-			Playsound "yell6"
+			PlayCallout "yell6"
 			' Create locked balls in kickers.
 			bBallLockedInKicker1 = TRUE
 			bBallInKicker1 = TRUE
@@ -4739,7 +4745,7 @@ Sub FinalMissionShowTimer_Timer()
 			D1.Text = "      SEE YOU NEXT MISSION      "
 		'	D1.QueueText "      SEE YOU NEXT MISSION      ", seBlinkMask, 2300
 		'	D2.QueueText "      SEE YOU NEXT MISSION      ", seBlinkMask, 2300
-			Playsound "metalslug1"
+			PlayCallout "metalslug1"
 		Case 19:
             DisplayB2SText "      SEE YOU NEXT MISSION      "
 			D1.Text = "      SEE YOU NEXT MISSION      "
@@ -5044,7 +5050,7 @@ Sub JackpotDisplayTimer_Timer()
             DisplayB2SText "  *      J A C K P O T       *  "
 			bInterruptedDisplay = TRUE
 			Playsound "explode5"
-			Playsound "Cheers"
+			PlayCallout "Cheers"
 			FlashEffectMissionTimer.enabled = 1'GI_Flash()
 			If Not(bPlayingFinalMission) Then Playsound "MSJackpot"
 		Case 12:
@@ -5492,7 +5498,7 @@ End Function
 ' *** DOCAM OPTIMIZED ***
 '
 Sub ScoreMission1()
-	Playsound "ok"
+	PlayCallout "ok"
 	InterruptDisplay(600)
 	AddScore(20000)
 	'D1.FlushQueue()
@@ -5550,7 +5556,7 @@ Sub ScoreMission4()
 '	D1.QueueText "           SOR SAVED            ", seBlinkMask, 300
 '	D2.QueueText "           SOR SAVED            ", seBlinkMask, 300
 	AddScore(15000)
-	Playsound "thankyou"
+	PlayCallout "thankyou"
 	Playsound "chopper"
 	If RemainingPOW = 0 Then CompleteMission()
 End Sub
@@ -5613,13 +5619,13 @@ End Sub
 Sub PlaySlugSound()
 	SlugSound = SlugSound + 1
 	Select Case SlugSound
-		Case 1: Playsound "yell1"
-		Case 2: Playsound "yell2"
-		Case 3: Playsound "yell3"
-		Case 4: Playsound "yell4"
-		Case 5: Playsound "yell5"
+		Case 1: PlayCallout "yell1"
+		Case 2: PlayCallout "yell2"
+		Case 3: PlayCallout "yell3"
+		Case 4: PlayCallout "yell4"
+		Case 5: PlayCallout "yell5"
 		Case 6: 
-			Playsound "yell6"
+			PlayCallout "yell6"
 			SlugSound = 0
 	End Select
 End Sub
@@ -5634,10 +5640,10 @@ Sub PlayOutLaneSound()
 	OutLaneSound = OutLaneSound + 1
 	FlashAnimate1()
 	Select Case OutLaneSound
-		Case 1: Playsound "mordenlaugh"
-		Case 2: Playsound "yell7"
+		Case 1: PlayCallout "mordenlaugh"
+		Case 2: PlayCallout "yell7"
 		Case 3:
-			Playsound "allenlaugh"
+			PlayCallout "allenlaugh"
 			OutLaneSound = 0
 	End Select
 End Sub
@@ -6093,9 +6099,9 @@ Sub CompleteMission()
 	FlashEffectMissionTimer.enabled = 1'GI_Flash()
    Playsound "MSMissioncomplete"
    If Mission < 5 Then
-		Playsound "MissionComplete"
+		PlayCallout "MissionComplete"
    ElseIf Mission = 5 Then
-		Playsound "seeyouinhell"
+		PlayCallout "seeyouinhell"
    End If
    bInterruptedDisplay = FALSE
    NextMessage = 3
@@ -6185,7 +6191,7 @@ Sub LockBall()
 	If BallsLocked = 1 Then
 		DisplayBallLocked()
 		AutoBall()
-		Playsound "Marco"
+		PlayCallout "Marco"
         DMDFLush
         DMD "Marco.jpg", "", "", 2000
 		Marco.State = 1
@@ -6195,7 +6201,7 @@ Sub LockBall()
 	ElseIf BallsLocked = 2 Then
 		DisplayBallLocked()
 		AutoBall()
-		Playsound "Tarma"
+		PlayCallout "Tarma"
         DMDFLush
         DMD "Tarma.jpg", "", "", 2000
 		Marco.State = 1
@@ -6205,7 +6211,7 @@ Sub LockBall()
 	ElseIf BallsLocked = 3 Then
 		DisplayBallLocked()
 		AutoBall()
-		Playsound "Eri"
+		PlayCallout "Eri"
         DMDFLush
         DMD "Eri.jpg", "", "", 2000
 		Marco.State = 1
@@ -6215,7 +6221,7 @@ Sub LockBall()
 	ElseIf BallsLocked = 4 Then
 		DisplayBallLocked()
 		StartMultiballTimer.Enabled = TRUE
-		Playsound "Fio"
+		PlayCallout "Fio"
         DMDFLush
         DMD "Fio.jpg", "", "", 2000
 		Marco.State = 1
@@ -6351,7 +6357,7 @@ Sub CheckWeapon()
 			Case 1:
 				Weapon1.State = 1
 				Weapon2.State = 2
-				PlaySound "Heavymachinegun"
+				PlayCallout "Heavymachinegun"
 				InterruptDisplay(1000)
 				'D1.FlushQueue()
 				'D2.FlushQueue()
@@ -6363,7 +6369,7 @@ Sub CheckWeapon()
 			Case 2:
 				Weapon2.State = 1
 				Weapon3.State = 2
-				PlaySound "Flameshot"
+				PlayCallout "Flameshot"
 				InterruptDisplay(1000)
 			'	D1.FlushQueue()
 			'	D2.FlushQueue()
@@ -6375,7 +6381,7 @@ Sub CheckWeapon()
 			Case 3:
 				Weapon3.State = 1
 				Weapon4.State = 2
-				PlaySound "Rocketlauncher"
+				PlayCallout "Rocketlauncher"
 				InterruptDisplay(1000)
 			'	D1.FlushQueue()
 			'	D2.FlushQueue()
@@ -6387,7 +6393,7 @@ Sub CheckWeapon()
 			Case 4:
 				Weapon4.State = 1
 				Weapon5.State = 2
-				PlaySound "Shotgun"
+				PlayCallout "Shotgun"
 				InterruptDisplay(1000)
 			'	D1.FlushQueue()
 			'	D2.FlushQueue()
@@ -6411,7 +6417,7 @@ Sub CheckWeapon()
 			Case 6:
 				Weapon6.State = 1
 				ExtraBall.State = 2
-				PlaySound "Lasergun"
+				PlayCallout "Lasergun"
 				InterruptDisplay(1000)
 			'	D1.FlushQueue()
 			'	D2.FlushQueue()
@@ -6424,7 +6430,7 @@ Sub CheckWeapon()
 				ExtraBall.State = 1
 				PlaySound SoundFXDOF("knocker",131,DOFPulse,DOFKnocker)
 				DOF 114, DOFPulse
-				PlaySound "cheers"
+				PlayCallout "cheers"
 				bExtraBallAward = TRUE
 				InterruptDisplay(1000)
 			'	D1.FlushQueue()
@@ -6434,7 +6440,7 @@ Sub CheckWeapon()
 			'	D1.QueueText "     * E X T R A  B A L L *     ", seBlinkMask, 600
 			Case 8:
 				CurrentWeapon = 7
-				PlaySound "ok"
+				PlayCallout "ok"
 				InterruptDisplay(1000)
 				AddScore(40000)
 			'	D1.FlushQueue()
@@ -6562,7 +6568,7 @@ Sub CheckPOWLanes()
 		POWLaneLight1.State = 0
 		POWLaneLight2.State = 0
 		POWLaneLight3.State = 0
-		Playsound "ThankYou"
+		PlayCallout "ThankYou"
 		If bPlayingMission And (Mission = 4) Then ScoreMission4()
 	End If
 End Sub
