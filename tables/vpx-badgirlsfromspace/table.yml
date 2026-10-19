@@ -1,0 +1,21 @@
+---
+backglassBundled: true
+backglassChecksum: "E872046CF242EEF62BBB311DC07C8900"
+backglassNotes: "Backglass included in the table.zip"
+fps: 60
+romChecksum: "D60A136E9538FC6FB5310746663E7205"
+romNotes: "Download - flight2k.zip"
+romVPSId: "dUB_2qVCa7"
+tableNotes: "Download - Bad Girls from Space (PEandS1Ws Mod 2026).zip, Version 1.0"
+tableVPSId: "BtBYgrJljk"
+tagline: "Incoming Signal: The Bad Girls have landed"
+testers:
+  - "Missile Toad"
+  - "pointdablame"
+vpxChecksum:
+  - "A5D291ADD1BE2B33D1A3D39A4D6D0467"
+  - "3BDA7A482654F795486EED9ABED4152D"
+vpxVPSId: "3wY0nQ_K8f"
+vpxArchiveFormat: "zip"
+vpxExtractExtra:
+  - "Bad Girls from Space (PEandS1Ws Mod 2026)/Music"
