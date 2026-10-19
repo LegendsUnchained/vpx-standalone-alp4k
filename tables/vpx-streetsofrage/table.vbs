@@ -183,6 +183,8 @@ Const BallsPerGame = 3   ' usually 3 or 5
 Const SongVolume = 0.1     ' background music (stock 0.1)
 Const CalloutVolume = 0.35  ' voice callouts (stock 1.0)
 Const EffectsVolume = 0.35  ' game effects: guns, explosions, rockets, steel, chopper (stock 1.0)
+Const DMDScoreTime = 8000      ' in-game DMD: show the score this long (ms)...
+Const DMDLogoTime = 3000       ' ...then the STREETS OF RAGE logo this long (ms)
 Const StingerVolume = 0.15  ' Metal Slug music stingers: jackpot, game over, mission complete (stock 1.0)
 Const MaxMultiballs = 5  ' max number of balls during multiballs
 
@@ -2144,6 +2146,7 @@ Sub DMDScore
         'UltraDMD.SetScoreboardBackgroundImage "metalslug.png", 15, 15
         'DMD "metalslug.jpg", "", "", 5000  'stock: static logo (score lived on the directb2s LED strip)
         DMDShowScoreboard
+        DMDScheduleLogo
        ' UltraDMD.DisplayScene00 "MetalSluglogo.png", "", 14, 2, "", -1, -1', UltraDMD_Animation_None, 100, UltraDMD_Animation_None  
       '  UltraDMD.DisplayScoreboard PlayersPlayingGame, CurrentPlayer, Score(1), Score(2), Score(3), Score(4), "Player " & CurrentPlayer, "Ball " & Balls 
       Else
@@ -7440,6 +7443,21 @@ Sub DisplayScore
 End Sub
 
 ' Live score on the UltraDMD (no directb2s LED strip on the cabinet)
+' Alternate the in-game DMD between the score and the logo (stock showed only the logo).
+' Each schedule bumps DMDCycleGen so older pending timers are ignored.
+Dim DMDCycleGen : DMDCycleGen = 0
+Sub DMDScheduleLogo
+    DMDCycleGen = DMDCycleGen + 1
+    vpmtimer.addtimer DMDScoreTime, "DMDLogoCycle " & DMDCycleGen & " '"
+End Sub
+
+Sub DMDLogoCycle(gen)
+    If gen <> DMDCycleGen Then Exit Sub          ' superseded by a newer score display
+    If Not bGameInPlay Or bAttractMode Then Exit Sub
+    If UltraDMD.IsRendering Then Exit Sub        ' a message is showing; the score returns after it
+    DMD "metalslug.jpg", "", "", DMDLogoTime     ' DMD() re-arms UltraDMDScoreTimer, which brings the score back
+End Sub
+
 Sub DMDShowScoreboard
     If Not IsObject(UltraDMD) Then Exit Sub
     If UltraDMD.IsRendering Then Exit Sub
