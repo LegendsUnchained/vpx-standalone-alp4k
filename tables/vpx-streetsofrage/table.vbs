@@ -180,7 +180,10 @@ Const MaxPlayers = 4     ' from 1 to 4
 Const BallSaverTime = 15 ' in seconds
 Const MaxMultiplier = 5  ' limit to 5x in this game, both bonus multiplier and playfield multiplier
 Const BallsPerGame = 3   ' usually 3 or 5
-Const CalloutVolume = 0.35  ' voice callouts (0 to 1). Music plays at 0.1; stock callouts were 1.0
+Const MusicVolume = 0.1     ' background music (stock 0.1)
+Const CalloutVolume = 0.35  ' voice callouts (stock 1.0)
+Const EffectsVolume = 0.35  ' game effects: guns, explosions, rockets, steel, chopper (stock 1.0)
+Const StingerVolume = 0.15  ' Metal Slug music stingers: jackpot, game over, mission complete (stock 1.0)
 Const MaxMultiballs = 5  ' max number of balls during multiballs
 
 ' Define Global Variables
@@ -393,7 +396,7 @@ Sub Table1_Init()
 	FixTargetTimer.Enabled = TRUE
 
     'StopSound Song:Song = ""
-    PlaySound "mu_MSmissioncomplete"
+    PlayStinger "mu_MSmissioncomplete"
 
     ' Misc. VP table objects Initialisation, droptargets, animations...
     VPObjects_Init
@@ -779,9 +782,17 @@ End Sub
 Dim Song
 Song = ""
 
-' Voice callouts at a reduced level - set CalloutVolume at the top of the script
+' Volume-controlled players - set the levels at the top of the script
 Sub PlayCallout(name)
     PlaySound name, 0, CalloutVolume
+End Sub
+
+Sub PlayEffect(name)
+    PlaySound name, 0, EffectsVolume
+End Sub
+
+Sub PlayStinger(name)
+    PlaySound name, 0, StingerVolume
 End Sub
 
 Sub PlaySong(name)
@@ -790,9 +801,9 @@ Sub PlaySong(name)
             StopSound Song
             Song = name
             If Song = "mu_end" Then
-                PlaySound Song, 0, 0.1  'this last number is the volume, from 0 to 1
+                PlaySound Song, 0, MusicVolume  'this last number is the volume, from 0 to 1
             Else
-                PlaySound Song, -1, 0.1 'this last number is the volume, from 0 to 1
+                PlaySound Song, -1, MusicVolume 'this last number is the volume, from 0 to 1
             End If
         End If
     End If
@@ -1217,7 +1228,7 @@ End Sub
 
 Sub EndOfBall()
 	PlayCallout "Marcodie"
-	Playsound "explode3"
+	PlayEffect "explode3"
 	FlashOff()
 	' Assume the player isn't playing a ball.
 	bPlayingBall = FALSE
@@ -1414,7 +1425,7 @@ Sub EndOfGame()
   ' LookAtBackbox()
    D1.Text = "           GAME OVER            "
    DisplayB2SText "           GAME OVER            " 
-	Playsound "msmissioncomplete"
+	PlayStinger "msmissioncomplete"
 	' Ensure that the flippers are down.
 	'LeftFlipper.SolenoidOff()
 	'RightFlipper.SolenoidOff()
@@ -1636,7 +1647,7 @@ End Sub
 Sub AwardJackpot() 'award a normal jackpot, double or triple jackpot
     Jackpot = 1000000 + Round(Score(CurrentPlayer) / 10, 0)
    ' DMDBlink "", "JACKPOT", Jackpot, 100, 10
-    PlaySound "criticalhit"
+    PlayEffect "criticalhit"
     AddScore Jackpot
     GiEffect 1
     LightEffect 2
@@ -1646,7 +1657,7 @@ End Sub
 Sub AwardDoubleJackpot() 'in this table the jackpot is always 1 million + 10% of your score
     Jackpot = (1000000 + Round(Score(CurrentPlayer) / 10, 0) ) * 2
    ' DMDBlink "", "DOUBLE JACKPOT", Jackpot, 100, 10
-    PlaySound "criticalhit"
+    PlayEffect "criticalhit"
     AddScore Jackpot
     GiEffect 1
     LightEffect 2
@@ -1657,7 +1668,7 @@ Sub AwardSuperJackpot() 'this is actually a tripple jackpot
     DOF 133, DOFPulse
     SuperJackpot = (1000000 + Round(Score(CurrentPlayer) / 10, 0) ) * 3
    ' DMDBlink "", "SUPER JACKPOT", SuperJackpot, 100, 10
-    PlaySound "criticalhit"
+    PlayEffect "criticalhit"
     AddScore SuperJackpot
     GiEffect 1
     LightEffect 2
@@ -2491,7 +2502,7 @@ Sub FuturePinball_Tilted()
 		Tilted = FALSE
 		Exit Sub
 	End If
-	PlaySound "Tilt"
+	PlayEffect "Tilt"
 	' Terminate current mission.
    EndMission()
 	' Stop theme.
@@ -2659,7 +2670,7 @@ Sub LoopTrigger_Hit()
 	startB2S(6)
 	If Tilted Then Exit Sub	' Ignore this _Hit() event if the table is tilted.
 	ResetWEAPONTargets()
-	PlaySound "explode3"
+	PlayEffect "explode3"
 	AddScore(2500)
 End Sub
 
@@ -2824,7 +2835,7 @@ Sub LeftSlingshotRubber_Slingshot()
     LeftSlingshotRubber.TimerEnabled = True
 
 	' Play specific sound.
-	Playsound "Rocket1"
+	PlayEffect "Rocket1"
 	' Add 110 points.
 	AddScore(110)
 	' Flash the lights around the lime slingshot.
@@ -2860,7 +2871,7 @@ Sub RightSlingshotRubber_Slingshot()
     RightSlingShotRubber.TimerEnabled = True
 
 	' Play specific sound.
-	Playsound "Rocket1"
+	PlayEffect "Rocket1"
 	' Add 110 points.
 	AddScore(110)
 	' Flash the lights around the right slingshot.
@@ -2914,7 +2925,7 @@ Sub Slug1_Hit()
 	Slug1Light.State = 1
 	CheckSLUGTimer.Enabled = TRUE
 	PlaySlugSound()
-	Playsound "gun8"
+	PlayEffect "gun8"
 	If bPlayingMission1 Then ScoreMission1()
 End Sub
 
@@ -2936,7 +2947,7 @@ Sub Slug2_Hit()
 	Slug2Light.State = 1
 	CheckSLUGTimer.Enabled = TRUE
 	PlaySlugSound()
-	Playsound "gun9"
+	PlayEffect "gun9"
 	If bPlayingMission1 Then ScoreMission1()
 End Sub
 
@@ -2958,7 +2969,7 @@ Sub Slug3_Hit()
 	Slug3Light.State = 1
 	CheckSLUGTimer.Enabled = TRUE
 	PlaySlugSound()
-	Playsound "gun8"
+	PlayEffect "gun8"
 	If bPlayingMission1 Then ScoreMission1()
 End Sub
 
@@ -2980,7 +2991,7 @@ Sub Slug4_Hit()
 	Slug4Light.State = 1
 	CheckSLUGTimer.Enabled = TRUE
 	PlaySlugSound()
-	Playsound "gun9"
+	PlayEffect "gun9"
 	If bPlayingMission1 Then ScoreMission1()
 End Sub
 
@@ -3002,7 +3013,7 @@ Sub Slug5_Hit()
 	Slug5Light.State = 1
 	CheckSLUGTimer.Enabled = TRUE
 	PlaySlugSound()
-	Playsound "gun8"
+	PlayEffect "gun8"
 	If bPlayingMission1 Then ScoreMission1()
 End Sub
 
@@ -3024,7 +3035,7 @@ Sub Slug6_Hit()
 	Slug6Light.State = 1
 	CheckSLUGTimer.Enabled = TRUE
 	PlaySlugSound()
-	Playsound "gun9"
+	PlayEffect "gun9"
 	If bPlayingMission1 Then ScoreMission1()
 End Sub
 
@@ -3046,7 +3057,7 @@ Sub Slug7_Hit()
 	Slug7Light.State = 1
 	CheckSLUGTimer.Enabled = TRUE
 	PlaySlugSound()
-	Playsound "gun8"
+	PlayEffect "gun8"
 	If bPlayingMission1 Then ScoreMission1()
 End Sub
 
@@ -3068,7 +3079,7 @@ Sub Slug8_Hit()
 	Slug8Light.State = 1
 	CheckSLUGTimer.Enabled = TRUE
 	PlaySlugSound()
-	Playsound "gun9"
+	PlayEffect "gun9"
 	If bPlayingMission1 Then ScoreMission1()
 End Sub
 
@@ -3090,7 +3101,7 @@ Sub Slug9_Hit()
 	Slug9Light.State = 1
 	CheckSLUGTimer.Enabled = TRUE
 	PlaySlugSound()
-	Playsound "gun8"
+	PlayEffect "gun8"
 	If bPlayingMission1 Then ScoreMission1()
 End Sub
 
@@ -3124,14 +3135,14 @@ Sub W1_Hit()
 				FlashForMs W1Light, 500, 100, 0
 				ScoreMission5()
 			ElseIf bPlayingMission3 Or bPlayingMission4 Or bPlayingFinalMission Then
-				Playsound "steel"
+				PlayEffect "steel"
 				W1Light.State = 1
 				bW1TargetIsDown = TRUE
 				CheckWeapon()
 				AddScore(500)
 			End If
 		Else
-			Playsound "steel"
+			PlayEffect "steel"
 			AddScore(500)
 			W1Light.State = 1
 			bW1TargetIsDown = TRUE
@@ -3164,14 +3175,14 @@ Sub W2_Hit()
 				FlashForMs W2Light, 500, 100, 0
 				ScoreMission5()
 			ElseIf bPlayingMission3 Or bPlayingMission4 Or bPlayingFinalMission Then
-				Playsound "steel"
+				PlayEffect "steel"
 				W2Light.State = 1
 				bW2TargetIsDown = TRUE
 				CheckWeapon()
 				AddScore(500)
 			End If
 		Else
-			Playsound "steel"
+			PlayEffect "steel"
 			AddScore(500)
 			W2Light.State = 1
 			bW2TargetIsDown = TRUE
@@ -3204,14 +3215,14 @@ Sub W3_Hit()
 				FlashForMs W3Light, 500, 100, BulbOff
 				ScoreMission5()
 			ElseIf bPlayingMission3 Or bPlayingMission4 Or bPlayingFinalMission Then
-				Playsound "steel"
+				PlayEffect "steel"
 				W3Light.State = 1
 				bW3TargetIsDown = TRUE
 				CheckWeapon()
 				AddScore(500)
 			End If
 		Else
-			Playsound "steel"
+			PlayEffect "steel"
 			AddScore(500)
 			W3Light.State = 1
 			bW3TargetIsDown = TRUE
@@ -3244,14 +3255,14 @@ Sub W4_Hit()
 				FlashForMs W4Light, 500, 100, 0
 				ScoreMission5()
 			ElseIf bPlayingMission3 Or bPlayingMission4 Or bPlayingFinalMission Then
-				Playsound "steel"
+				PlayEffect "steel"
 				W4Light.State = 1
 				bW4TargetIsDown = TRUE
 				CheckWeapon()
 				AddScore(500)
 			End If
 		Else
-			Playsound "steel"
+			PlayEffect "steel"
 			AddScore(500)
 			W4Light.State = 1
 			bW4TargetIsDown = TRUE
@@ -3284,14 +3295,14 @@ Sub W5_Hit()
 				FlashForMs W5Light, 500, 100, 0
 				ScoreMission5()
 			ElseIf bPlayingMission3 Or bPlayingMission4 Or bPlayingFinalMission Then
-				Playsound "steel"
+				PlayEffect "steel"
 				W5Light.State = 1
 				bW5TargetIsDown = TRUE
 				CheckWeapon()
 				AddScore(500)
 			End If
 		Else
-			Playsound "steel"
+			PlayEffect "steel"
 			AddScore(500)
 			W5Light.State = 1
 			bW5TargetIsDown = TRUE
@@ -3324,14 +3335,14 @@ Sub W6_Hit()
 				FlashForMs W6Light, 500, 100, 0
 				ScoreMission5()
 			ElseIf bPlayingMission3 Or bPlayingMission4 Or bPlayingFinalMission Then
-				Playsound "steel"
+				PlayEffect "steel"
 				W6Light.State = 1
 				bW6TargetIsDown = TRUE
 				CheckWeapon()
 				AddScore(500)
 			End If
 		Else
-			Playsound "steel"
+			PlayEffect "steel"
 			AddScore(500)
 			W6Light.State = 1
 			bW6TargetIsDown = TRUE
@@ -3357,7 +3368,7 @@ Sub S1_Hit()
 	DOF 118, DOFPulse
 	If Tilted Then Exit Sub	' Ignore this _Hit() event if the table is tilted.
 	AddScore(1000)
-	Playsound "explode4"
+	PlayEffect "explode4"
 	S1Light.State = 1
 	If bPlayingMission1 Then ScoreMission1()
 End Sub
@@ -3373,7 +3384,7 @@ Sub S2_Hit()
 	DOF 118, DOFPulse
 	If Tilted Then Exit Sub	' Ignore this _Hit() event if the table is tilted.
 	AddScore(2000)
-	Playsound "explode4"
+	PlayEffect "explode4"
 	S2Light.State = 1
 	If bPlayingMission1 Then ScoreMission1()
 End Sub
@@ -3389,7 +3400,7 @@ Sub S3_Hit()
 	DOF 118, DOFPulse
 	If Tilted Then Exit Sub	' Ignore this _Hit() event if the table is tilted.
 	AddScore(3000)
-	Playsound "explode4"
+	PlayEffect "explode4"
 	S3Light.State = 1
 	If bPlayingMission1 Then ScoreMission1()
 End Sub
@@ -3540,7 +3551,7 @@ Sub Drain_Hit()
 	Drain.DestroyBall()
 	BallsOnPlayfield = BallsOnPlayfield - 1
 	' Pretend to knock the ball into the ball storage mechanism.
-	PlaySound "Drain"
+	PlayEffect "Drain"
    If fpTilted Then FixWeapon()
 	' If there is a game in progress and not tilted.
 	If bGameInPlay And Not(fpTilted) Then
@@ -4111,7 +4122,7 @@ Sub EndOfBallTimer_Timer()
 				End If
 				bEnteringAHighScore = FALSE
 				' Play the game over music.
-				Playsound "MSgameover"
+				PlayStinger "MSgameover"
 				' Delay the game over during 7 seconds.
 				GameOverTimer.Enabled = TRUE
 			End If
@@ -4153,7 +4164,7 @@ Sub KickbackTimer_timer()
 	DOF 124, DOFPulse
 	If KickbackTimer.Uservalue = 1 Then	
 		' Play rocket explosion sound.
-		Playsound "rocket2"
+		PlayEffect "rocket2"
 		' Add 2000 points.
 		AddScore(2000)
 		' Unlit kickback orange light.
@@ -4252,21 +4263,21 @@ Sub POWBonusTimer_Timer()
 				lenPOWScore = Len(1000 * nvR2 * POWBonus)
                 DisplayB2SText (POWBonus) & " SOR  X  " & String(lenPOWBase, " ") & "     " & String(lenPOWScore, " ") & String(Int((18 - lenPOWBonus - lenPOWBase - lenPOWScore) / 2), " ")
 				D1.Text = FormatScore(POWBonus) & " SOR  X  " & String(lenPOWBase, " ") & "     " & String(lenPOWScore, " ") & String(Int((18 - lenPOWBonus - lenPOWBase - lenPOWScore) / 2), " ")
-				Playsound "Steel"
+				PlayEffect "Steel"
 			Case 20:
 				lenPOWBonus = Len(POWBonus)
 				lenPOWBase = Len(1000 * nvR2)
 				lenPOWScore = Len(1000 * nvR2 * POWBonus)
                 DisplayB2SText (POWBonus) & " SOR  X  " & FormatScore(nvR2 * 1000) & "     " & String(lenPOWScore, " ") & String(Int((18 - lenPOWBonus - lenPOWBase - lenPOWScore) / 2), " ")
 				D1.Text = FormatScore(POWBonus) & " SOR  X  " & FormatScore(nvR2 * 1000) & "     " & String(lenPOWScore, " ") & String(Int((18 - lenPOWBonus - lenPOWBase - lenPOWScore) / 2), " ")
-				Playsound "Steel"
+				PlayEffect "Steel"
 			Case 25:
 				lenPOWBonus = Len(POWBonus)
 				lenPOWBase = Len(1000 * nvR2)
 				lenPOWScore = Len(1000 * nvR2 * POWBonus)
                 DisplayB2SText (POWBonus) & " SOR  X  " & FormatScore(nvR2 * 1000) & "  =  " & String(lenPOWScore, " ") & String(Int((18 - lenPOWBonus - lenPOWBase - lenPOWScore) / 2), " ")
 				D1.Text = FormatScore(POWBonus) & " SOR  X  " & FormatScore(nvR2 * 1000) & "  =  " & String(lenPOWScore, " ") & String(Int((18 - lenPOWBonus - lenPOWBase - lenPOWScore) / 2), " ")
-				Playsound "Steel"
+				PlayEffect "Steel"
 			Case 30:
 				lenPOWBonus = Len(POWBonus)
 				lenPOWBase = Len(1000 * nvR2)
@@ -4484,7 +4495,7 @@ Sub AutoBallTimer_Timer()
 	AutoBallTimer.Enabled = FALSE
 	PlungerSolenoidPulse.Interval = 2000
     PlungerSolenoidPulse.enabled = 1
-	Playsound "gun6"
+	PlayEffect "gun6"
 	FlashAnimate3()
 End Sub
 
@@ -4502,7 +4513,7 @@ Sub Kicker1Timer_Timer()
 	Kicker1SolenoidPulse()
 	bBallInKicker1 = FALSE
 	L1.State = 0
-	Playsound "Rocket2"
+	PlayEffect "Rocket2"
 End Sub
 
 
@@ -4514,7 +4525,7 @@ Sub Kicker2Timer_Timer()
 	Kicker2SolenoidPulse()
 	bBallInKicker2 = FALSE
 	L2.State = 0
-	Playsound "Rocket2"
+	PlayEffect "Rocket2"
 End Sub
 
 
@@ -4526,7 +4537,7 @@ Sub Kicker3Timer_Timer()
 	Kicker3SolenoidPulse()
 	bBallInKicker3 = FALSE
 	L3.State = 0
-	Playsound "Rocket2"
+	PlayEffect "Rocket2"
 End Sub
 
 
@@ -4538,7 +4549,7 @@ Sub Kicker4Timer_Timer()
 	Kicker4SolenoidPulse()
 	bBallInKicker4 = FALSE
 	L4.State = 0
-	Playsound "Rocket2"
+	PlayEffect "Rocket2"
 End Sub
 
 
@@ -4592,7 +4603,7 @@ Sub CheckSLUGTimer_Timer()
 			'D1.QueueText "          LOCK IS LIT           "', seBlinkMask, 400
 			'D2.QueueText "          LOCK IS LIT           "', seBlinkMask, 400
 			FlashAnimate3()
-			Playsound "explode5"
+			PlayEffect "explode5"
 			bLockIsLit = TRUE
 			'L1.state = 2
 			'L2.state = 2
@@ -4606,7 +4617,7 @@ Sub CheckSLUGTimer_Timer()
 			Tarma.State = 0
 			Eri.State = 0
 			Fio.State = 0
-			If Not(bPlayingMission) Then Playsound "MSlocklit"
+			If Not(bPlayingMission) Then PlayStinger "MSlocklit"
 		End If
 		If bBallLockedInKicker1 And bBallLockedInKicker2 And bBallLockedInKicker3 And bMissionIsLit And (Mission < 5) Then StartMission(): FlashEffectMissionTimer.enabled = 0
 	End If
@@ -4624,7 +4635,7 @@ Sub FinalMissionShowTimer_Timer()
 		Case 1:
             DisplayB2SText "   STARTING 5-BALL MULTIBALL    "
 			D1.Text = "   STARTING 5-BALL MULTIBALL    "
-			Playsound "explode3"
+			PlayEffect "explode3"
 			ExplodeAnimate()
 			' Cancels regular ball saver.
 			bBallSaverIsActive = FALSE
@@ -4635,7 +4646,7 @@ Sub FinalMissionShowTimer_Timer()
 		Case 2:
             DisplayB2SText " DROP TARGETS SCORE 20,000 EACH  "
 			D1.Text = " DROP TARGETS SCORE 20,000 EACH  "
-			Playsound "steel"
+			PlayEffect "steel"
 			' Destroy any ball in kickers.
 			Kicker1SolenoidPulse
 			Kicker2SolenoidPulse()
@@ -4648,7 +4659,7 @@ Sub FinalMissionShowTimer_Timer()
 		Case 4:
             DisplayB2SText "    KICKERS SCORE 25,000 EACH    "
 			D1.Text = "    KICKERS SCORE 25,000 EACH    "
-			Playsound "rocket2"
+			PlayEffect "rocket2"
 		Case 5:
             DisplayB2SText "       CAPTIVE BALL IS LIT      "
 			D1.Text = "       CAPTIVE BALL IS LIT      "
@@ -4693,7 +4704,7 @@ Sub FinalMissionShowTimer_Timer()
 			D1.Text = "        EVERYTHING IS LIT       "
 		'	D1.QueueText "        EVERYTHING IS LIT       ", seBlinkMask, 1000
 		'	D2.QueueText "        EVERYTHING IS LIT       ", seBlinkMask, 1000
-			Playsound "explode3"
+			PlayEffect "explode3"
 			ExplodeAnimate()
 		Case 10:
 			FinalMissionShowTimer.Enabled = FALSE
@@ -4720,26 +4731,26 @@ Sub FinalMissionShowTimer_Timer()
 			FinalMissionShowTimer.Interval = 700
             DisplayB2SText "     AXEL                      "
 			D1.Text = "     AXEL                      "
-			Playsound "steel"
+			PlayEffect "steel"
 		Case 14:
             DisplayB2SText "     AXEL, BLAZE                "
 			D1.Text = "     AXEL, BLAZE                "
-			Playsound "steel"
+			PlayEffect "steel"
 		Case 15:
             DisplayB2SText "     AXEL, BLAZE MAX            "
 			D1.Text = "     AXEL, BLAZE MAX            "
-			Playsound "steel"
+			PlayEffect "steel"
 		Case 16:
             DisplayB2SText "     AXEL, BLAZE MAX & SKATE      "
 			D1.Text = "     AXEL, BLAZE MAX & SKATE      "
-			Playsound "steel"
+			PlayEffect "steel"
 		Case 17:
 			FinalMissionShowTimer.Interval = 2300
             DisplayB2SText "       HAVE DONE IT AGAIN       "
 			D1.Text = "       HAVE DONE IT AGAIN       "
 		'	D1.QueueText "       HAVE DONE IT AGAIN       ", seBlinkMask, 2300
 		'	D2.QueueText "       HAVE DONE IT AGAIN       ", seBlinkMask, 2300
-			Playsound "explode3"
+			PlayEffect "explode3"
 		Case 18:
             DisplayB2SText "      SEE YOU NEXT MISSION      "
 			D1.Text = "      SEE YOU NEXT MISSION      "
@@ -4928,7 +4939,7 @@ Sub StartMultiballTimer_Timer()
 		bMultiBallMode = TRUE
 		bLockIsLit = FALSE
 		StopSound Song:Song = "": PlaySong "mu_MSmultiball"
-		Playsound "explode5"
+		PlayEffect "explode5"
 		FlashAnimate6()
 		ReleaseBallsTimer.Enabled = TRUE
 		LightJackpot()
@@ -5012,47 +5023,47 @@ Sub JackpotDisplayTimer_Timer()
 			D1.Text = "         J                      "
             DisplayB2SText "         J                      "           
 			bInterruptedDisplay = TRUE
-			Playsound "steel"
+			PlayEffect "steel"
 		'	D1.FlushQueue()
 		'	D2.FlushQueue()
 		Case 2:
 			D1.Text = "         J A                    "
              DisplayB2SText  "         J A                    "                  
 			bInterruptedDisplay = TRUE
-			Playsound "steel"
+			PlayEffect "steel"
 		Case 3:
 			D1.Text = "         J A C                  "
             DisplayB2SText  "         J A C                  "                
 			bInterruptedDisplay = TRUE
-			Playsound "steel"
+			PlayEffect "steel"
 		Case 4:
 			D1.Text = "         J A C K                "
             DisplayB2SText "         J A C K                "
 			bInterruptedDisplay = TRUE
-			Playsound "steel"
+			PlayEffect "steel"
 		Case 5:
 			D1.Text = "         J A C K P              "
             DisplayB2SText "         J A C K P              "
 			bInterruptedDisplay = TRUE
-			Playsound "steel"
+			PlayEffect "steel"
 		Case 6:
 			D1.Text = "         J A C K P O            "
             DisplayB2SText "         J A C K P O            "
 			bInterruptedDisplay = TRUE
-			Playsound "steel"
+			PlayEffect "steel"
 		Case 7:
 			D1.Text = "         J A C K P O T          "
             DisplayB2SText "         J A C K P O T          "
 			bInterruptedDisplay = TRUE
-			Playsound "steel"
+			PlayEffect "steel"
 		Case 8:
 			D1.Text = "  *      J A C K P O T       *  "', seBlinkMask, 2000
             DisplayB2SText "  *      J A C K P O T       *  "
 			bInterruptedDisplay = TRUE
-			Playsound "explode5"
+			PlayEffect "explode5"
 			PlayCallout "Cheers"
 			FlashEffectMissionTimer.enabled = 1'GI_Flash()
-			If Not(bPlayingFinalMission) Then Playsound "MSJackpot"
+			If Not(bPlayingFinalMission) Then PlayStinger "MSJackpot"
 		Case 12:
 			InterruptDisplayTimer.interval = 2000
 			JackpotDisplayTimer.Enabled = FALSE
@@ -5235,7 +5246,7 @@ Sub EnteringSetupTimer_Timer()
 		EnteringSetupTimerUserData = 5
 		' Display first parameter: balls per game
 		SetupMenuDisplayCurrentSetting()
-		Playsound "steel"
+		PlayEffect "steel"
 	End If
 End Sub
 
@@ -5507,7 +5518,7 @@ Sub ScoreMission1()
 	D1.Text = "           * 20,000 *            "
 '	D1.QueueText "             20,000              "', seBlinkMask, 300
 '	D2.QueueText "             20,000              ", seBlinkMask, 300
-	Playsound "explode3"
+	PlayEffect "explode3"
 End Sub
 
 
@@ -5517,7 +5528,7 @@ End Sub
 ' *** DOCAM OPTIMIZED ***
 '
 Sub ScoreMission2()
-	Playsound "Gun4"
+	PlayEffect "Gun4"
 	InterruptDisplay(600)
 	AddScore(40000)
 '	D1.FlushQueue()
@@ -5536,7 +5547,7 @@ End Sub
 '
 Sub CheckJets()
 	AddScore(4500)
-	Playsound "Rocket1"
+	PlayEffect "Rocket1"
 	If RemainingJets = 0 Then CompleteMission()
 End Sub
 
@@ -5557,7 +5568,7 @@ Sub ScoreMission4()
 '	D2.QueueText "           SOR SAVED            ", seBlinkMask, 300
 	AddScore(15000)
 	PlayCallout "thankyou"
-	Playsound "chopper"
+	PlayEffect "chopper"
 	If RemainingPOW = 0 Then CompleteMission()
 End Sub
 
@@ -5570,7 +5581,7 @@ End Sub
 Sub ScoreMission5()
 	RemainingAllen = RemainingAllen - 1
 	AddScore(7500)
-	Playsound "gun9", FALSE
+	PlayEffect "gun9"
 	If RemainingAllen = 0 Then CompleteMission()
 End Sub
 
@@ -5598,10 +5609,10 @@ Sub ResetMusic()
 		End Select
 	Else
 		If bLockIsLit Then
-			Playsound "MSLocklit2"
+			PlayStinger "MSLocklit2"
 		Else
 			If bJackpotScored Then
-				Playsound "MSjackpot"
+				PlayStinger "MSjackpot"
 			Else
                 StopSound Song:Song = "": PlaySong "mu_MSMain"'
 				'Playsound "MSMain"
@@ -6014,7 +6025,7 @@ Sub StartMission()
 				RemainingPOW = 3
 				NextMessage = 7
 				bCanDisplayMessage = TRUE
-				Playsound "chopper"
+				PlayEffect "chopper"
 			Case 5: 
 				' Starting mission 5 (defeat Allen O'Neill).
 				Mission5Light.State = 1
@@ -6097,7 +6108,7 @@ Sub CompleteMission()
    bPlayingMission5 = FALSE
    bPlayingFinalMission = FALSE
 	FlashEffectMissionTimer.enabled = 1'GI_Flash()
-   Playsound "MSMissioncomplete"
+   PlayStinger "MSMissioncomplete"
    If Mission < 5 Then
 		PlayCallout "MissionComplete"
    ElseIf Mission = 5 Then
@@ -6405,7 +6416,7 @@ Sub CheckWeapon()
 			Case 5:
 				Weapon5.State = 1
 				Weapon6.State = 2
-				PlaySound "EnemyChaser"
+				PlayEffect "EnemyChaser"
 				InterruptDisplay(1000)
 			'	D1.FlushQueue()
 			'	D2.FlushQueue()
