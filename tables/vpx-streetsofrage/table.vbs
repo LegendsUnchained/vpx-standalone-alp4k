@@ -180,7 +180,7 @@ Const MaxPlayers = 4     ' from 1 to 4
 Const BallSaverTime = 15 ' in seconds
 Const MaxMultiplier = 5  ' limit to 5x in this game, both bonus multiplier and playfield multiplier
 Const BallsPerGame = 3   ' usually 3 or 5
-Const MusicVolume = 0.1     ' background music (stock 0.1)
+Const SongVolume = 0.1     ' background music (stock 0.1)
 Const CalloutVolume = 0.35  ' voice callouts (stock 1.0)
 Const EffectsVolume = 0.35  ' game effects: guns, explosions, rockets, steel, chopper (stock 1.0)
 Const StingerVolume = 0.15  ' Metal Slug music stingers: jackpot, game over, mission complete (stock 1.0)
@@ -801,9 +801,9 @@ Sub PlaySong(name)
             StopSound Song
             Song = name
             If Song = "mu_end" Then
-                PlaySound Song, 0, MusicVolume  'this last number is the volume, from 0 to 1
+                PlaySound Song, 0, SongVolume  'this last number is the volume, from 0 to 1
             Else
-                PlaySound Song, -1, MusicVolume 'this last number is the volume, from 0 to 1
+                PlaySound Song, -1, SongVolume 'this last number is the volume, from 0 to 1
             End If
         End If
     End If
@@ -5672,6 +5672,7 @@ End Sub
 ' *** DOCAM OPTIMIZED ***
 '
 Sub EnterAttractMode()
+   If bGameInPlay Then Exit Sub 'the 8s startup timer can fire after Start was pressed
    StartAttractMode
    'AttractLightsTimer.Enabled = TRUE
    AttractMessagesTimer.Enabled = TRUE
