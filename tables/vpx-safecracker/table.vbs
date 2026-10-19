@@ -79,8 +79,7 @@ const useownb2s = 0				'1 = player chooses to forego built in desktop backglass 
 ' Staged Flipper fix for debug coin
 '******************************************************
 
-const cSingleLFlip = 0
-const cSingleRFlip = 0								
+const cSingleLFlip = 0							
 
 '******************************************************
 ' VR Room Options
