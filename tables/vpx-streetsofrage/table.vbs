@@ -2492,9 +2492,10 @@ Sub FuturePinball_Tilted()
    Playsound "mordenlaugh", FALSE
    If bPlayingFinalMission Then ingamereset()
 	' Ensure all the flippers are down (as the keys won't work from now on).
-	LeftFlipper.SolenoidOff()
-	RightFlipper.SolenoidOff()
-   TopRightFlipper.SolenoidOff()
+	' VPX flippers (SolenoidOff is Future Pinball-only; TopRightFlipper is RightFlipper1 here)
+	LeftFlipper.RotateToStart
+	RightFlipper.RotateToStart
+	RightFlipper1.RotateToStart
 	' Ensure they're are not any ball near kickback.
 	bKickbackIsLit = FALSE
 	KickbackLight.State = 0
@@ -2899,7 +2900,7 @@ Sub Slug1_Hit()
 	DOF 122, DOFPulse
 	' Raise the drop target and ignore if the table is tilted.
 	If Tilted Then
-		Slug1.SolenoidPulse()
+		Slug1.IsDropped = 0 'raise target (FP SolenoidPulse)
 		Exit Sub
 	End If
 	AddScore(500)
@@ -2921,7 +2922,7 @@ Sub Slug2_Hit()
 	DOF 122, DOFPulse
 	' Raise the drop target and ignore if the table is tilted.
 	If Tilted Then
-		Slug2.SolenoidPulse()
+		Slug2.IsDropped = 0 'raise target (FP SolenoidPulse)
 		Exit Sub
 	End If
 	AddScore(500)
@@ -2943,7 +2944,7 @@ Sub Slug3_Hit()
 	DOF 122, DOFPulse
 	' Raise the drop target and ignore if the table is tilted.
 	If Tilted Then
-		Slug3.SolenoidPulse()
+		Slug3.IsDropped = 0 'raise target (FP SolenoidPulse)
 		Exit Sub
 	End If
 	AddScore(500)
@@ -2965,7 +2966,7 @@ Sub Slug4_Hit()
 	DOF 122, DOFPulse
 	' Raise the drop target and ignore if the table is tilted.
 	If Tilted Then
-		Slug4.SolenoidPulse()
+		Slug4.IsDropped = 0 'raise target (FP SolenoidPulse)
 		Exit Sub
 	End If
 	AddScore(500)
@@ -2987,7 +2988,7 @@ Sub Slug5_Hit()
 	DOF 122, DOFPulse
 	' Raise the drop target and ignore if the table is tilted.
 	If Tilted Then
-		Slug5.SolenoidPulse()
+		Slug5.IsDropped = 0 'raise target (FP SolenoidPulse)
 		Exit Sub
 	End If
 	AddScore(500)
@@ -3009,7 +3010,7 @@ Sub Slug6_Hit()
 	DOF 132, DOFPulse
 	' Raise the drop target and ignore if the table is tilted.
 	If Tilted Then
-		Slug6.SolenoidPulse()
+		Slug6.IsDropped = 0 'raise target (FP SolenoidPulse)
 		Exit Sub
 	End If
 	AddScore(500)
@@ -3031,7 +3032,7 @@ Sub Slug7_Hit()
 	DOF 132, DOFPulse
 	' Raise the drop target and ignore if the table is tilted.
 	If Tilted Then
-		Slug7.SolenoidPulse()
+		Slug7.IsDropped = 0 'raise target (FP SolenoidPulse)
 		Exit Sub
 	End If
 	AddScore(500)
@@ -3053,7 +3054,7 @@ Sub Slug8_Hit()
 	DOF 132, DOFPulse
 	' Raise the drop target and ignore if the table is tilted.
 	If Tilted Then
-		Slug8.SolenoidPulse()
+		Slug8.IsDropped = 0 'raise target (FP SolenoidPulse)
 		Exit Sub
 	End If
 	AddScore(500)
@@ -3075,7 +3076,7 @@ Sub Slug9_Hit()
 	DOF 132, DOFPulse
 	' Raise the drop target and ignore if the table is tilted.
 	If Tilted Then
-		Slug9.SolenoidPulse()
+		Slug9.IsDropped = 0 'raise target (FP SolenoidPulse)
 		Exit Sub
 	End If
 	AddScore(500)
