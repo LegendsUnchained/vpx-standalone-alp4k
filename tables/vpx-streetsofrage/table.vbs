@@ -201,6 +201,7 @@ Dim SuperJackpot
 Dim Tilt
 Dim TiltSensitivity
 Dim Tilted
+Dim fpTilted
 Dim TotalGamesPlayed
 Dim mBalls2Eject
 Dim SkillshotValue(4)
@@ -419,6 +420,7 @@ Sub Table1_Init()
     Tilt = 0
     TiltSensitivity = 6
     Tilted = False
+    fpTilted = False
     bBonusHeld = False
     bJustStarted = True
     bJackpot = False
@@ -723,13 +725,14 @@ Sub CheckTilt                                    'Called when table is nudged
         DisplayB2SText "CAREFUL!"
     End if
     If Tilt> 15 Then 'If more that 15 then TILT the table
+        If Not(bPlayingBall) Then Tilt = 0:Exit Sub 'ignore tilt outside live play (bonus count etc.)
         Tilted = True
-        'display Tilt
-        'DMDFlush
-        'DisplayB2SText "TILT!"
+        fpTilted = True 'Drain_Hit and switch hits check this flag
+        'display Tilt (cleared by DisableTable False in TiltRecoveryTimer)
+        DMDFlush
         DMD "", " ", "TILT!", 99999
         DisableTable True
-        TiltRecoveryTimer.Enabled = True 'start the Tilt delay to check for all the balls to be drained
+        FuturePinball_Tilted 'ends mission, kills ball saver/kickback, drops flippers, starts TiltRecoveryTimer
     End If
 End Sub
 
@@ -766,15 +769,7 @@ Sub DisableTable(Enabled)
     End If
 End Sub
 
-Sub TiltRecoveryTimer_Timer()
-    ' if all the balls have been drained then..
-    If(BallsOnPlayfield = 0) Then
-        ' do the normal end of ball thing (this doesn't give a bonus if the table is tilted)
-        EndOfBall()
-        TiltRecoveryTimer.Enabled = False
-    End If
-' else retry (checks again in another second or so)
-End Sub
+' (duplicate TiltRecoveryTimer_Timer removed - the active one is further down the script)
 
 '********************
 ' Music as wav sounds
@@ -1102,6 +1097,8 @@ Sub ResetForNewGame()
 
     ' initialise any other flags
     Tilt = 0
+    Tilted = False
+    fpTilted = False
 
 
     ' you may wish to start some music, play a sound, do whatever at this point
@@ -2237,7 +2234,7 @@ Sub ShowTableInfo
 
     'coins or freeplay
     If bFreePlay Then
-        DMD " ", "FREE PLAY", 2000
+        DMD "", " ", "FREE PLAY", 2000
         DMD "IntroMS.wmv", "", "", 24500
     Else
         If Credits> 0 Then
@@ -2277,6 +2274,7 @@ End Sub
 
 Sub StartLightSeq()
     'lights sequences
+    LightSeqFlasher.StopPlay 'don't stack a new 50s sequence on every attract loop
     LightSeqFlasher.UpdateInterval = 150
     LightSeqFlasher.Play SeqRandom, 10, , 50000
     LightSeqAttract.Play SeqBlinking, , 5, 150
@@ -2362,7 +2360,7 @@ Sub StartLightSeq()
 End Sub
 
 Sub LightSeqAttract_PlayDone()
-    StartLightSeq()
+    If bAttractMode Then StartLightSeq()
 End Sub
 
 Sub LightSeqTilt_PlayDone()
@@ -2475,6 +2473,11 @@ End Sub
 '
 ' *** DOCAM MUST BE CHECKED ***
 '
+' Future Pinball's StopMusic doesn't exist in VPX - map it to this table's song player.
+Sub StopMusic(channel)
+    StopSound Song:Song = ""
+End Sub
+
 Sub FuturePinball_Tilted()
 	If Not(bPlayingBall) Then
 		' Ignore the tilt when the player is not playing (e.g. during bonus countdown sequence).
@@ -3954,6 +3957,8 @@ Sub TiltRecoveryTimer_Timer()
 	If (BallsOnPlayfield - BallsLocked) = 0 Then
 		' Restore the general illumation (GI).
 		GIOn()
+		' Re-enable slings, stop the tilt light loop and clear the TILT message.
+		DisableTable False
 		' Restore the WEAPON drop targets state.
 		FixWeapon()
 		' If all non locked ball(s) have been drained, then do the normal end of ball.
@@ -4019,6 +4024,7 @@ Sub EndOfBallTimer_Timer()
 	' if were tilted, reset the internal tilted flag (this will also
 	' set fpTiltWarnings back to zero) which is useful if we are changing player LOL
 	Tilted = FALSE
+	fpTilted = FALSE
 	' Has the player won an extra-ball ?
 	If bExtraBallAward Then
 		' Reset the POW bonus if required (POW BONUS HOLD set to NEVER).
