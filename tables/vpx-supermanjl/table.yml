@@ -1,17 +1,14 @@
 ---
-backglassBundled: true
-backglassChecksum: "750d98eea65618d5398ea9cbbcaf8658"
-backglassNotes: "Bundled with table, in media folder"
-enabled: false
-fps: 58
-tableNotes: "Download v3.1"
+backglassChecksum: "750D98EEA65618D5398EA9CBBCAF8658"
+backglassNotes: "Download 'media_superman.zip'"
+backglassVPSId: "v52vItkHpb"
+fps: 60
 tableVPSId: "K9DgShFA7f"
 tagline: >-
-  'Gathered together from the cosmic reaches of the universe, 
-  here in this great Hall of Justice, are the most powerful 
+  'Gathered together from the cosmic reaches of the universe, here in this great Hall of Justice, are the most powerful
   forces of good ever assembled'
 testers:
   - "Wraith"
   - "Bla1ze"
-vpxChecksum: "e1a58bed7b1fae17f219ab9090ab5939"
+vpxChecksum: "E1A58BED7B1FAE17F219AB9090AB5939"
 vpxVPSId: "eb0Mem1PSt"
