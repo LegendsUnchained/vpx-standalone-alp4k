@@ -1,9 +1,10 @@
 ---
 backglassChecksum: "BDEE169AC272642007DEB86507FF75F6"
-backglassVPSId: "uNomIzbL7-"
+backglassVPSId: "wp8tUs9rPP"
 fps: 60
 romChecksum: "DEF1AD913E3C933B2282A8C64C84A739"
 romVPSId: "mK7guvau"
+tableNameOverride: "The Simpsons"
 tableVPSId: "54GsPTry"
 testers:
   - "Miku"
