@@ -1,4 +1,7 @@
 ---
+backglassBundled: true
+backglassChecksum: "765A985F6D35C4684EDF3E54FBBC543F"
+backglassNotes: "Included in the table download (2019 revision with defined grill and LED score strip)"
 fps: 60
 specialDMDArchiveRoot: "Streets of Rage.UltraDMD"
 specialDMDBundled: true
