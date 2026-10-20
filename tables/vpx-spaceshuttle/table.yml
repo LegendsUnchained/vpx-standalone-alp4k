@@ -1,0 +1,16 @@
+---
+backglassChecksum: "4B271E12E1067CF96BCA63B8CB50C494"
+backglassNotes: "Download 'space shuttle.directb2s'"
+backglassVPSId: "n2bsqo04h4"
+fps: 60
+romChecksum: "1FFC8475C8FC0D08A1147D9B2D1BF752"
+romNotes: "Download 'sshtl_l7.zip'"
+romVPSId: "WP15i43u"
+tableNotes: "Download 'Space Shuttle (Williams 1984)2.0.zip'"
+tableVPSId: "b3ADIOaj"
+testers:
+  - "PBW23"
+  - "Missile Toad"
+  - "pointdablame"
+vpxChecksum: "BCFBB3E0E152EB46422A0B5EE7B2E8D9"
+vpxVPSId: "hJhqnLyr"

@@ -1,0 +1,30 @@
+---
+altSoundArchiveFormat: "zip"
+altSoundArchiveRoot: "altsound/gw_l5"
+altSoundBundled: true
+altSoundChecksum: "C45F1C3988A4EC53CCE77214D56F862E"
+altSoundNotes: "Included in PuP archive."
+coloredROMChecksum: "E438FA8B9CE49D1A19F24DDFD9863969"
+coloredROMVPSId: "j0V6-6mzcG"
+fps: 60
+pupArchiveFormat: "zip"
+pupArchiveRoot: "gw_l5"
+pupChecksum: "C45F1C3988A4EC53CCE77214D56F862E"
+pupNotes: "Download TheGetaway.zip"
+pupNSFW: true
+pupRequired: true
+pupVersion: "1.0.0"
+pupVPSId: "6CSxXP0l"
+romChecksum: "54806BE981BBB3FABE98FB1D5D0C0FB0"
+romVPSId: "4lxSLKB7"
+tableNameOverride: "Getaway: Baby Driver Edition"
+tableVPSId: "cCV4A6uc"
+tagline: "Here it is, Baby. Your killer track."
+testers:
+  - "Dasme"
+  - "Missile Toad"
+  - "Coffee Joe"
+  - "OminousOsie"
+  - "Silentkat"
+vpxChecksum: "D2743CC3F2B27C4EFFB5DBB17C7E9385"
+vpxVPSId: "YoXfmzDV"

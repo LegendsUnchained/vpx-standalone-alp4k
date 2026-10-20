@@ -26,6 +26,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--tables-dir", default="tables", help="directory containing <table-key>/launcher.png folders (default: %(default)s)")
     parser.add_argument("--out", required=True, help="output directory for <table-key>.webp files")
+    parser.add_argument("--only", nargs="*", help="convert just these table keys (the pre-release sync re-encodes only what changed)")
     args = parser.parse_args()
 
     tables_dir = Path(args.tables_dir)
@@ -33,6 +34,12 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
 
     sources = sorted(tables_dir.glob("*/launcher.png"))
+    if args.only is not None:
+        wanted = set(args.only)
+        sources = [s for s in sources if s.parent.name in wanted]
+        if not sources:
+            print("No launcher.png among the requested tables; nothing to convert.")
+            return
     if not sources:
         print(f"No launcher.png files found under {tables_dir}/", file=sys.stderr)
         sys.exit(1)
