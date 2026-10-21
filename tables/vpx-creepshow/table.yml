@@ -1,0 +1,33 @@
+---
+altSoundArchiveFormat: "zip"
+altSoundArchiveRoot: "Music"
+altSoundBundled: true
+altSoundChecksum: "BF6F9C5DC79E3B24D4E645F8A4851C71"
+altSoundNotes: >-
+  Included in installation/media folder
+  add music folder to root of table
+backglassChecksum: "462398ED1FFA847BB3C55A952BE3C59D"
+backglassNotes: "Download Creepshow (Original 2022).zip"
+backglassVPSId: "NGiJ10E8X3"
+coloredROMBundled: true
+coloredROMChecksum:
+  - "D21930A365FCF9475FB1197D3BEA70CF"
+  - "DC94104676766D5552C990EB29CC59E5"
+coloredROMNotes: "included in installation folder DMD Altcolor"
+coloredROMPin2DMD: true
+fps: 60
+romBundled: true
+romChecksum: "4A30518B85CE5A4E7E3F6BC13834E5B3"
+romNotes: >-
+  Download installation.rar
+  Rom is included in installation/media folder in the Rom folder
+  use tftc_400.zip
+romUrlOverride: "https://vpuniverse.com/files/file/8790-creepshow/"
+romVersionOverride: "tftc_400.zip"
+tableNotes: "Download Creepshow.vpx"
+tableVPSId: "FfjzhB3z"
+tagline: "“The Most Fun You'll Ever Have BEING SCARED!”"
+testers:
+  - "Rocjr73"
+vpxChecksum: "0163BEAAEAA48BEE0EC44D53656BEC41"
+vpxVPSId: "VcsBp0F_"
