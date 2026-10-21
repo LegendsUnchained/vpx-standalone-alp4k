@@ -409,6 +409,9 @@ Sub Table1_Init()
 
     ' freeplay or coins
     bFreePlay = True 'we dont want coins
+    ' Future Pinball kept the table setup in fpRAM (nvR1-5); VPX never loads it, so they were Empty:
+    ' jackpot paid 0 and the SOR bonus paid 0. Set the factory defaults from SetupMenuResetSettings.
+    nvR1 = 15 : nvR2 = 10 : nvR3 = 3 : nvR4 = 3 : nvR5 = 3
 
     ' Init main variables and any other flags
     bAttractMode = False
@@ -2154,7 +2157,15 @@ End Sub
 Sub DMDScoreNow
     DMDFlush
     DMDScore
-    DisplayScore
+    ' Stand-in for Future Pinball's D1_Empty event (never fires in VPX): show a queued mission
+    ' instruction once, then the mission status / score line, instead of always plain score/ball
+    If bGameInPlay And bPlayingMission And bCanDisplayMessage Then
+        ShowNextMessage
+    ElseIf bGameInPlay And bPlayingBall Then
+        AddScore 0      ' score, or REMAINING SOR / WEAPONS / BOSS ENERGY during missions 3-5
+    Else
+        DisplayScore
+    End If
 End Sub
 
 Sub DMDFLush
@@ -5457,7 +5468,7 @@ Sub AddScore(points)
 			ElseIf bPlayingMission4 Then
 				' Specific display for mission 4 (POW).
 				If Score(1) < 1000000 Then
-                    DisplayB2SText (cstr(FormatScore(Score(1))))
+                    DisplayB2SText (cstr(FormatScore(Score(1)))) & "          REMAINING SOR " & RemainingPOW 'stock omitted the mission text here
 					D1.Text = FormatScore(Score(1)) & "          REMAINING SOR " & RemainingPOW
 				Else
                     DisplayB2SText (cstr(FormatScore(Score(1)))) & String(16 - Len(Score(1)), " ") & "REMAINING SOR " & RemainingPOW
