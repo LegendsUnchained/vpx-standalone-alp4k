@@ -4,7 +4,10 @@ pupArchiveFormat: "zip"
 pupArchiveRoot: "pupvideos/SCREAM"
 pupBundled: true
 pupChecksum: "690D996AEF0DF8F5F7B68B93C7A0AE6C"
-pupNotes: "Pup Pack is included with table download"
+pupNotes: >-
+  Pup Pack/folder scream is included with table download
+  Select the scream folder and right click to compress into a zip file
+  After the file is zipped just add it to the wizard like normal
 pupVersion: "1.0"
 tableNotes: "Download Scream vpx 1.0"
 tableVPSId: "AHlwtbi0zu"
