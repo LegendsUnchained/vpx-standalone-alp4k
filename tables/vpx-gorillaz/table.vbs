@@ -1531,7 +1531,7 @@ Sub AwardJackpot() 'award a normal jackpot, double or triple jackpot
     End Select
     AddScore Jackpot(CurrentPlayer)
     LightEffect 2
-    If Not bMultiBallMode Then FlashEffect 2 ' 4KP: skip the flasher show during multiball (GPU load)
+    FlashEffect 2
     'sjekk for superjackpot
     EnableSuperJackpot
 End Sub
@@ -1542,7 +1542,7 @@ Sub AwardSuperJackpot() 'this is actually 4 times a jackpot
     DOF 158, DOFPulse			'JWK
     AddScore SuperJackpot
     LightEffect 2
-    If Not bMultiBallMode Then FlashEffect 2 ' 4KP: skip the flasher show during multiball (GPU load)
+    FlashEffect 2
     'enabled jackpots again
     StartJackpots
 End Sub
@@ -7788,7 +7788,7 @@ End Sub
 
 Sub baxingtimer_Timer
 countrrr = countrrr + 1 : If Countrrr > 2 then Countrrr = 1 : end If
-select case countrrr ' Fix: was countrr (bexing's counter)
+select case countrr
 case 1 : bax001.z=120:bax002.z=-200
 case 2 : bax001.z=-200:bax002.z=120
 
@@ -7797,7 +7797,7 @@ End Sub
 
 Sub buxingtimer_Timer
 countrrrr = countrrrr + 1 : If Countrrrr > 3 then Countrrrr = 1 : end If
-select case countrrrr ' Fix: was countrr (bexing's counter)
+select case countrr
 case 1 : bux001.z=120:bux002.z=-200:bux003.z=-200
 case 2 : bux001.z=-200:bux002.z=120:bux003.z=-200
 case 3 : bux001.z=-200:bux002.z=-200:bux003.z=120
@@ -7807,7 +7807,7 @@ End Sub
 
 Sub bixingtimer_Timer
 countrrrrr = countrrrrr + 1 : If Countrrrrr > 2 then Countrrrrr = 1 : end If
-select case countrrrrr ' Fix: was countrr (bexing's counter)
+select case countrr
 case 1 : bix001.z=55:bix002.z=-200
 case 2 : bix001.z=-200:bix002.z=55
 
