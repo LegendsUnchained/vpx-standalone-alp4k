@@ -6,6 +6,7 @@ fps: 60
 specialDMDArchiveRoot: "ReadyPlayerOneDMD"
 specialDMDBundled: true
 specialDMDType: "UltraDMD"
+specialDMDNotes: "Bundled in .vpx archive"
 tableVPSId: "qO77ql1ce1"
 tagline: "I created the OASIS because I never felt at home in the real world..."
 testers:
