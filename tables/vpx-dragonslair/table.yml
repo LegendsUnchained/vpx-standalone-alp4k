@@ -7,7 +7,7 @@ mainNotes: >-
   When you enter mini game mode use the left and right flipper buttons to move left or right and use the plunger as your
   sword.
   
-  'Now go save the Princes'
+  'Now go save the Princess'
 pupArchiveFormat: "zip"
 pupArchiveRoot: "pupvideos/dragonslair"
 pupBundled: true
@@ -21,8 +21,9 @@ tagline: >-
   The fantasy adventure where you become a valiant knight, on a quest to rescue the fair princess from the clutches of
   an evil dragon.
 testers:
-  - "Rojr73"
+  - "Rocjr73"
   - "Coffee' Joe"
   - "Pointdablame"
+  - "Blue Öyster Curt"
 vpxChecksum: "03E781C816894FD033E949A11464554F"
 vpxVPSId: "mU_KvAiDAO"
