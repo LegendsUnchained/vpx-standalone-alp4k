@@ -70,6 +70,12 @@
 Option Explicit : Randomize
 SetLocale 1033
 
+' =====================================================================
+' PERFORMANCE OPTIMIZATION TOGGLES (ALP 4K / ARM HARDWARE)
+' =====================================================================
+Const EnablePWMFlashers          = False  ' Disables pulse-width modulation flasher loops
+Const TargetFrameInterval        = 16     ' Caps visual update timers to ~60 FPS (16ms)
+
 '******************************************************
 '  ZVAR: Constants and Global Variables
 '******************************************************
@@ -195,27 +201,30 @@ Dim DivValue : DivValue = 2                 ' Change Value to 4 if LED array doe
 'The frame timer should be used to update anything visual, like some animations, shadows, etc.
 'However, a lot of animations will be handled in their respective _animate subroutines.
 
-Dim FrameTime, InitFrameTime
-InitFrameTime = 0
+Dim FrameSkip : FrameSkip = 0
 
-FrameTimer.Interval = -1
 Sub FrameTimer_Timer() 
-	FrameTime = gametime - InitFrameTime 'Calculate FrameTime as some animuations could use this
-	InitFrameTime = gametime	'Count frametime
-	'Add animation stuff here
+	FrameTime = gametime - InitFrameTime
+	InitFrameTime = gametime
+	
 	UpdatePlunger
-	UpdateBallBrightness
-	If AmbientBallShadowOn = 1 Then
-		BSUpdate
+	
+	' Run heavy visual calculations every 2nd frame
+	FrameSkip = (FrameSkip + 1) Mod 2
+	If FrameSkip = 0 Then
+		UpdateBallBrightness
+		If AmbientBallShadowOn = 1 Then
+			BSUpdate
+		End If
 	End If
+	
 	RollingUpdate
 	DoSTAnim
 	DoDTAnim
-	UpdateFlashers
 End Sub
 
 'The CorTimer interval should be 10. It's sole purpose is to update the Cor calculations
-CorTimer.Interval = 10
+CorTimer.Interval = 16
 Sub CorTimer_Timer(): Cor.Update: End Sub
 
 Sub UpdatePlunger()
@@ -367,6 +376,16 @@ Sub Table1_Init
 	FlFadeBumper 1,1
 	FlFadeBumper 2,1
 	FlFadeBumper 3,1
+
+	' Performance Optimizations
+	If Not EnablePWMFlashers Then
+		On Error Resume Next
+		PWM_Flasher.Enabled = False
+		PWM_Timer.Enabled = False
+		On Error GoTo 0
+	End If
+
+	OptimizeTableTimers
 End Sub
 
 Sub Table1_Paused() : Controller.Pause = 1 : End Sub
@@ -879,6 +898,7 @@ End Sub
 
 Sub SolJailLatch(Enabled)
     If Enabled Then 'close jail
+		DT_Timer.Enabled = True
         JailDiv.IsDropped = false
         JailDiv1.IsDropped = false
         JailDiv2.IsDropped = false
@@ -889,6 +909,7 @@ End Sub
 
 Sub SolJailUp(Enabled)
     If Enabled Then
+		DT_Timer.Enabled = True
         JailDiv.IsDropped = true
         JailDiv1.IsDropped = true
         JailDiv2.IsDropped = true
@@ -899,6 +920,7 @@ End Sub
 
 Sub RRDownPost(Enabled)
     If Enabled Then
+		DT_Timer.Enabled = True
         RightPost.IsDropped = False
 		RightPost.Collidable = True
     Else
@@ -910,6 +932,7 @@ End Sub
 
 Sub LRPost(Enabled)
     If Enabled Then
+		DT_Timer.Enabled = True
         LeftPost.IsDropped = False
 		LeftPost.Collidable = True
     Else
@@ -1008,16 +1031,23 @@ Sub PrimT_Timer
 End Sub
 
 Sub DT_Timer()
-    If Jaildown = true and Jail1.z > 160 then Jail1.z = Jail1.z - 3
-    If Jaildown = true and Jail2.z > 160 then Jail2.z = Jail2.z - 3
-    If RPDown = true and RPPrim.z > 160 then RPPrim.z = RPPrim.z - 3
-    If LPUp = true and LeftPostPrim.z < 0 then LeftPostPrim.z = LeftPostPrim.z + 3
-    If Jaildown = False and Jail1.z < 210 then Jail1.z = Jail1.z + 3
-    If Jaildown = False and Jail2.z < 210 then Jail2.z = Jail2.z + 3
-    If RPDown = False and RPPrim.z < 210 then RPPrim.z = RPPrim.z + 3
-    If LPUp = False and LeftPostPrim.z > -50 then LeftPostPrim.z = LeftPostPrim.z - 3
+    Dim StillMoving : StillMoving = False
+
+    If Jaildown = true and Jail1.z > 160 then Jail1.z = Jail1.z - 3 : StillMoving = True
+    If Jaildown = true and Jail2.z > 160 then Jail2.z = Jail2.z - 3 : StillMoving = True
+    If RPDown = true and RPPrim.z > 160 then RPPrim.z = RPPrim.z - 3 : StillMoving = True
+    If LPUp = true and LeftPostPrim.z < 0 then LeftPostPrim.z = LeftPostPrim.z + 3 : StillMoving = True
+    
+    If Jaildown = False and Jail1.z < 210 then Jail1.z = Jail1.z + 3 : StillMoving = True
+    If Jaildown = False and Jail2.z < 210 then Jail2.z = Jail2.z + 3 : StillMoving = True
+    If RPDown = False and RPPrim.z < 210 then RPPrim.z = RPPrim.z + 3 : StillMoving = True
+    If LPUp = False and LeftPostPrim.z > -50 then LeftPostPrim.z = LeftPostPrim.z - 3 : StillMoving = True
+    
     If Jail1.z <= 210 then Jaildown = false
     If Jail2.z <= 210 then Jaildown = false
+
+    ' Stop timer execution when animations finish
+    If Not StillMoving Then Me.Enabled = False
 End Sub
 
 Dim BallInJail : BallInJail=  False
@@ -1246,7 +1276,6 @@ Set GiCallBack2 = GetRef("GI_PWM")
 
 Sub GI_PWM(nr, aLvl)
 	If DebugGI=True Then debug.print "GI_PWM nr="&nr&" aLvl="&aLvl
-	If Abs(aLvl - gilvl) < 0.02 And aLvl > 0 And aLvl < 1 Then Exit Sub	'PERF: skip tiny PWM changes
 	Dim ii
 	For each ii in GI : ii.state = aLvl : Next
 	For each ii in GIBulbs : ii.state = aLvl : Next
@@ -2091,7 +2120,7 @@ End Function
 '	 - Include a call the CheckLiveCatch from the LeftFlipper_Collide and RightFlipper_Collide subroutines
 '	 - Include FlipperActivate and FlipperDeactivate in the Flipper solenoid subs
 
-RightFlipper.timerinterval = 1
+RightFlipper.timerinterval = 10
 Rightflipper.timerenabled = True
 
 Sub RightFlipper_timer()
@@ -4501,58 +4530,26 @@ End Sub
 
 ''------ Use this for PWM following domes ---------'
 
-' PERF: The PWM callbacks fire many times per second, and each call used to set ~7 properties and
-' call UpdateMaterial with a string-built name. Now the callback only stores the target level; the
-' real work happens at most once per frame, only for flashers that actually changed (UpdateFlashers,
-' called from FrameTimer). Fully-off flashers are hidden so the GPU does not draw them at all.
-'
-' FlasherFX: 0 = dome + light only (fastest), 1 = dome + light + flare (no bloom), 2 = everything
-Const FlasherFX = 1
-Const FlasherStep = 0.04	'ignore level changes smaller than this (reduces material/property updates)
-
-Dim FlashTarget(20), FlashApplied(20), FlashMatName(20), FlashDirty
-Dim fi
-For fi = 0 To 20 : FlashTarget(fi) = 0 : FlashApplied(fi) = -1 : FlashMatName(fi) = "Flashermaterial" & fi : Next
-
 Sub ModFlashFlasher(nr, aValue)
-	FlashTarget(nr) = aValue
-	FlashDirty = True
-End Sub
+	' Fast performance mode: Simple ON/OFF toggling (bypasses heavy UpdateMaterial calls)
+	If Not EnablePWMFlashers Then
+		Dim state
+		If aValue > 0.1 Then state = 1 Else state = 0
+		objflasher(nr).visible = state
+		objbloom(nr).visible = state
+		objlit(nr).visible = state
+		objlight(nr).IntensityScale = state * FlasherLightIntensity
+		Exit Sub
+	End If
 
-Sub UpdateFlashers()
-	If Not FlashDirty Then Exit Sub
-	FlashDirty = False
-	Dim nr, v
-	For nr = 1 To 9
-		v = FlashTarget(nr)
-		If v <> FlashApplied(nr) Then
-			If v <= 0 Then
-				'fully off: hide everything and reset once
-				objflasher(nr).visible = 0 : objbloom(nr).visible = 0 : objlit(nr).visible = 0
-				objlight(nr).IntensityScale = 0
-				objbase(nr).BlendDisableLighting = FlasherOffBrightness
-				objlit(nr).BlendDisableLighting = 0
-				FlashApplied(nr) = 0
-			ElseIf Abs(v - FlashApplied(nr)) >= FlasherStep Or v >= 1 Then
-				objlit(nr).visible = 1
-				If FlasherFX >= 1 Then
-					objflasher(nr).visible = 1
-					objflasher(nr).opacity = 1000 * FlasherFlareIntensity * v
-				End If
-				If FlasherFX >= 2 Then
-					objbloom(nr).visible = 1
-					objbloom(nr).opacity = 100 * FlasherBloomIntensity * v
-				End If
-				objlight(nr).IntensityScale = 0.5 * FlasherLightIntensity * v
-				objbase(nr).BlendDisableLighting = FlasherOffBrightness + 10 * v
-				objlit(nr).BlendDisableLighting = 10 * v
-				UpdateMaterial FlashMatName(nr),0,0,0,0,0,0,v,RGB(255,255,255),0,0,False,True,0,0,0,0
-				FlashApplied(nr) = v
-			Else
-				FlashDirty = True	'small change: keep target pending, re-check next frame
-			End If
-		End If
-	Next
+	' Full PWM mode
+	objflasher(nr).visible = 1 : objbloom(nr).visible = 1 : objlit(nr).visible = 1
+	objflasher(nr).opacity = 1000 *  FlasherFlareIntensity * aValue
+	objbloom(nr).opacity = 100 *  FlasherBloomIntensity * aValue
+	objlight(nr).IntensityScale = 0.5 * FlasherLightIntensity * aValue
+	objbase(nr).BlendDisableLighting =  FlasherOffBrightness + 10 * aValue
+	objlit(nr).BlendDisableLighting = 10 * aValue
+	UpdateMaterial "Flashermaterial" & nr,0,0,0,0,0,0,aValue,RGB(255,255,255),0,0,False,True,0,0,0,0 
 End Sub
 
 Sub SolModFlashPWM22(level)				'Flasher Solonoid Name
@@ -4855,14 +4852,14 @@ Dim VolumeDial : VolumeDial = 0.8           	      ' Overall Mechanical sound ef
 Dim BallRollVolume : BallRollVolume = 0.5   	      ' Level of ball rolling volume. Value between 0 and 1
 Dim RampRollVolume : RampRollVolume = 0.5 		      ' Level of ramp rolling volume. Value between 0 and 1
 Dim StagedFlippers : StagedFlippers = 0               ' Staged Flippers. 0 = Disabled, 1 = Enabled
-Dim AmbientBallShadowOn : AmbientBallShadowon = 1     ' Ambient Ball Shadows. 0 = Disabled, 1 = Enabled 
+Dim AmbientBallShadowOn : AmbientBallShadowon = 0     ' Ambient Ball Shadows. 0 = Disabled, 1 = Enabled 
 Dim RenderProbeOpt : RenderProbeOpt = 1 		      ' 0 = No Refraction Probes (best performance), 1 = Full Refraction Probes (best visual)
 Dim PlayfieldReflections : PlayfieldReflections = 100 ' Defines the reflection strength of the (dynamic) table elements on the playfield (0-100) / 5 = 20 Max 
 Dim ReflOpt : ReflOpt = 1						      ' 0 = Reflections off, 1 = Reflections on
 Dim LightReflOpt : LightReflOpt = 1				      ' 0 = Light Reflections off, 1 = Light Reflections on
 Dim InsertReflOpt : InsertReflOpt = 1			      ' 0 = Insert Reflections off, 1 = Insert Reflections on
-Dim BackglassReflOpt : BackglassReflOpt = 1	          ' 0 = Backglass Reflections off, 1 = Backglass Reflections on
-Dim SidewallFlashOpt : SidewallFlashOpt = 1			  ' 0 = Sidewall Flashers off, 1 = Sidewall Flashers on
+Dim BackglassReflOpt : BackglassReflOpt = 0	          ' 0 = Backglass Reflections off, 1 = Backglass Reflections on
+Dim SidewallFlashOpt : SidewallFlashOpt = 0			  ' 0 = Sidewall Flashers off, 1 = Sidewall Flashers on
 
 Dim SideBladeMod, LegendsCabMod, OutlaneDifficulty, InstMod, FlipperMod, GlassMod, DMDDecalMod, DMDDetail, GrillDecalmod, TopperMod, BackglassMod, CabinetMod, LogoPosterMod, Railsmod
 
@@ -5413,4 +5410,19 @@ Sub SetupLogoPoster
 			VR_Poster.Visible = False
 		End If
 	End If
+End Sub
+
+' =====================================================================
+' TIMER OPTIMIZATION HELPER
+' =====================================================================
+Sub OptimizeTableTimers()
+	' Ensure non-physics visual update timers run no faster than 16ms (~60 Hz)
+	Dim t
+	On Error Resume Next
+	For Each t in Array(PinMAMETimer)
+		If t.Interval < TargetFrameInterval Then
+			t.Interval = TargetFrameInterval
+		End If
+	Next
+	On Error GoTo 0
 End Sub
