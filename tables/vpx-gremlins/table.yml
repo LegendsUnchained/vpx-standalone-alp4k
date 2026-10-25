@@ -8,11 +8,10 @@ romNotes: "Included in the .VPX download"
 tableVPSId: "6gWoDDnYsU"
 testers:
   - "Reboot"
-vpxChecksum: "EB3D6CAD7E5A7009C3947E1725F5BC6D"
 vpxVPSId: "x2-lo9dOv2"
 vpxArchiveFormat: "rar"
+vpxChecksum:                                    
+   - "EB3D6CAD7E5A7009C3947E1725F5BC6D"
+   - "1D202F893DFC4577195B7D4487707EBA"
 vpxExtractExtra:
-  - "gremlins.mp3"
-postInstallRename:
-  - source: "gremlins.mp3"
-    destination: "music"
+  - "Music"
