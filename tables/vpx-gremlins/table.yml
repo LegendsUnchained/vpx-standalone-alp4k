@@ -13,6 +13,6 @@ vpxArchiveFormat: "rar"
 vpxChecksum:                                    
    - "EB3D6CAD7E5A7009C3947E1725F5BC6D"
    - "1D202F893DFC4577195B7D4487707EBA"
-postInstallRename:
+postInstall:
   - source: "gremlins.mp3"
     destination: "music/gremlins/"
