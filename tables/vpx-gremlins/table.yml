@@ -1,0 +1,17 @@
+---
+backglassChecksum: "D78FE1371FD33CCAA894EE299F0BC652"
+backglassVPSId: "f5h5lkfklj"
+fps: 60
+romBundled: true
+romChecksum: "12820627F417695D9C0AECFE4EC3F227"
+romNotes: "Included in the .VPX download"
+tableVPSId: "6gWoDDnYsU"
+testers:
+  - "Reboot"
+vpxChecksum: "EB3D6CAD7E5A7009C3947E1725F5BC6D"
+vpxVPSId: "x2-lo9dOv2"
+vpxExtractExtra:
+  - "gremlins.mp3"
+postInstallRename:
+  - source: "gremlins.mp3"
+    destination: "music"
