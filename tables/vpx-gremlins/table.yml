@@ -10,6 +10,7 @@ testers:
   - "Reboot"
 vpxChecksum: "EB3D6CAD7E5A7009C3947E1725F5BC6D"
 vpxVPSId: "x2-lo9dOv2"
+vpxArchiveFormat: "rar"
 vpxExtractExtra:
   - "gremlins.mp3"
 postInstallRename:
