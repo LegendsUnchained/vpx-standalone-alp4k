@@ -178,7 +178,7 @@ Sub Table1_Init()
     DMD_Init
 
     ' freeplay or coins
-    bFreePlay = False 'we want coins
+    bFreePlay = true 'we DON'T want coins
 
     'if bFreePlay = false Then DOF 125, DOFOn
 
@@ -1710,7 +1710,7 @@ Sub DMD_Init() 'default/startup values
                 DMDScene.GetImage("Dig" & i).SetBounds 4 + i * 6, 3 + 16 + 2, 8, 8
             Next
             For i = 20 to 35 ' Bottom
-                DMDScene.GetImage("Dig" & i).SetBounds ((i - 20) * 8), 3, 8, 16
+                DMDScene.GetImage("Dig" & i).SetBounds (i - 20) * 8, 3, 8, 16
             Next
             FlexDMD.LockRenderThread
             FlexDMD.Stage.AddActor DMDScene
