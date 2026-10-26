@@ -5,7 +5,7 @@ altSoundBundled: true
 altSoundChecksum: "EB47CCBA781E10AB554373D6A6CAE349"
 altSoundNotes: "Download 'MediaPack.zip', next to the table .vpx download. Use it for the AltSound and backglass"
 postInstallRename:
-  - source: "pinmame/altsound/slbmania"
+  - source: "pinmame/altsound/slbmanib"
     destination: "music/STMILLERB"
 backglassBundled: true
 backglassChecksum: "B684249559C319A83BA9424A0BB0A70B"
