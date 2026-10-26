@@ -228,14 +228,13 @@ Sub Table1_Init
 		.ShowFrame=0
 		.ShowTitle=0
         .hidden = 1
-        .Games("slbmania").Settings.Value("sound") = 0
+        .Games("slbmanib").Settings.Value("sound") = 0
 		If Err Then MsgBox Err.Description
 	End With
 	On Error Goto 0
 		Controller.SolMask(0)=0
       vpmTimer.AddTimer 2000,"Controller.SolMask(0)=&Hffffffff'" 'ignore all solenoids - then add the timer to renable all the solenoids after 2 seconds
 		Controller.Run
-		vpmTimer.AddTimer 3000, "vpmTimer.PulseSw swCoin1'"	' auto-coin: one credit at boot
 	If Err Then MsgBox Err.Description
 	On Error Goto 0
 
@@ -329,7 +328,6 @@ Sub Table1_KeyUp(ByVal KeyCode)
 	If keycode = LeftFlipperKey Then FlipperDeactivate LeftFlipper, lfpress
 	If keycode = RightFlipperKey Then FlipperDeactivate RightFlipper, rfpress
 
-	If keycode = StartGameKey Then vpmTimer.PulseSw swCoin1	' auto-coin: refill credit after each Start
 	If KeyUpHandler(keycode) Then Exit Sub
 	If keycode = PlungerKey Then 
 		Plunger.Fire:PlaySound"plunger"
@@ -2074,7 +2072,7 @@ End Sub
 
 ' Thalamus : Exit in a clean and proper way
 Sub Table1_exit()
-  Controller.Games("slbmania").Settings.Value("sound") = 1  
+  Controller.Games("slbmanib").Settings.Value("sound") = 1  
   Controller.Pause = False 
   Controller.Stop
   
