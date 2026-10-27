@@ -202,6 +202,7 @@ Dim DivValue : DivValue = 2                 ' Change Value to 4 if LED array doe
 'However, a lot of animations will be handled in their respective _animate subroutines.
 
 Dim FrameSkip : FrameSkip = 0
+Dim FrameTime, InitFrameTime : InitFrameTime = 0  ' FIX: was never declared; Option Explicit killed FrameTimer every frame (DT/ST anims, rolling sounds, shadows)
 
 Sub FrameTimer_Timer() 
 	FrameTime = gametime - InitFrameTime
@@ -224,7 +225,7 @@ Sub FrameTimer_Timer()
 End Sub
 
 'The CorTimer interval should be 10. It's sole purpose is to update the Cor calculations
-CorTimer.Interval = 16
+CorTimer.Interval = 10  ' FIX: restored to 10ms; DT brick/ball physics reads Cor velocities
 Sub CorTimer_Timer(): Cor.Update: End Sub
 
 Sub UpdatePlunger()
@@ -898,7 +899,6 @@ End Sub
 
 Sub SolJailLatch(Enabled)
     If Enabled Then 'close jail
-		DT_Timer.Enabled = True
         JailDiv.IsDropped = false
         JailDiv1.IsDropped = false
         JailDiv2.IsDropped = false
@@ -909,7 +909,6 @@ End Sub
 
 Sub SolJailUp(Enabled)
     If Enabled Then
-		DT_Timer.Enabled = True
         JailDiv.IsDropped = true
         JailDiv1.IsDropped = true
         JailDiv2.IsDropped = true
@@ -920,7 +919,6 @@ End Sub
 
 Sub RRDownPost(Enabled)
     If Enabled Then
-		DT_Timer.Enabled = True
         RightPost.IsDropped = False
 		RightPost.Collidable = True
     Else
@@ -932,7 +930,6 @@ End Sub
 
 Sub LRPost(Enabled)
     If Enabled Then
-		DT_Timer.Enabled = True
         LeftPost.IsDropped = False
 		LeftPost.Collidable = True
     Else
@@ -1046,8 +1043,7 @@ Sub DT_Timer()
     If Jail1.z <= 210 then Jaildown = false
     If Jail2.z <= 210 then Jaildown = false
 
-    ' Stop timer execution when animations finish
-    If Not StillMoving Then Me.Enabled = False
+    ' FIX: self-disable removed; DT_Timer.Enabled (Sub, not object) threw 'Object required' and aborted jail/post solenoid subs
 End Sub
 
 Dim BallInJail : BallInJail=  False
