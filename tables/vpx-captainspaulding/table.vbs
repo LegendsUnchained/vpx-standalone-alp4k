@@ -20,7 +20,7 @@ Dim StagedFlippers : StagedFlippers = 0         ' Staged Flippers. 0 = Disabled,
 
 Const SongVolume = 0.1     ' 1 is full volume, but I set it quite low to listen better the other sounds since I use headphones, adjust to your setup :)
 Const FlippersBlood = True 'set it to false if you don't like that. In this version 4 I moved the blood to the slingshots
-Const FlexDMDHighQuality = False 'FlexDMD in high quality (True = LCD at 256x64) or normal quality (False = Real DMD at 128x32)
+Const FlexDMDHighQuality = True 'FlexDMD in high quality (True = LCD at 256x64) or normal quality (False = Real DMD at 128x32)
 
 '************************
 'Glowball
@@ -92,7 +92,7 @@ Const MaxMultiballs = 13     ' max number of balls during multiballs
 
 ' Use FlexDMD if in FS mode
 Dim UseFlexDMD
-If Table1.ShowDT = True then
+If Table1.ShowDT = True and not renderingmode = 2 then
     UseFlexDMD = False
 Else
     UseFlexDMD = True

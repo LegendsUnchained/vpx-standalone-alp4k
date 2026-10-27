@@ -1366,7 +1366,7 @@ end sub
 		select case govdnum
 			case 1
 				playmedia "dark and difficult times lie ahead.mp4","videogo",pBackglass,"",0,"",1,9
-				vpmtimer.addtimer 14000, "StartAttractMode() '"
+				vpmtimer.addtimer 26000, "StartAttractMode() '"
 			case 2
 				playmedia "everythings gonna change now isnt it.mp4","videogo",pBackglass,"",0,"",1,9
 				vpmtimer.addtimer 14000, "StartAttractMode() '"
@@ -1556,9 +1556,9 @@ end sub
 	PuPlayer.LabelSet pBackglass,"Play2score","",1,"{'mt':2,'color':2697513, 'size': 2, 'xpos': 46.8, 'xalign': 1, 'ypos': 91.9, 'yalign': 1}"
 	PuPlayer.LabelSet pBackglass,"Play3score","",1,"{'mt':2,'color':2697513, 'size': 2, 'xpos': 53.6, 'xalign': 1, 'ypos': 91.9, 'yalign': 1}"
 	PuPlayer.LabelSet pBackglass,"Play4score","",1,"{'mt':2,'color':2697513, 'size': 2, 'xpos': 60.1, 'xalign': 1, 'ypos': 91.9, 'yalign': 1}"
-	PuPlayer.LabelSet pBackglass,"ruletitle","Harry Potter && the Goblet of Fire",1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 86.8, 'yalign': 1}"
-	PuPlayer.LabelSet pBackglass,"rulecopy1","Games Played: " & TotalGamesPlayed,1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 89.8, 'yalign': 1}"
-	PuPlayer.LabelSet pBackglass,"rulecopy2","This is a fan game meant only for fun.",1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 92.8, 'yalign': 1}"
+	PuPlayer.LabelSet pBackglass,"ruletitle","Harry Potter && the Goblet of Fire",1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 86.8, 'yalign': 1}"
+	PuPlayer.LabelSet pBackglass,"rulecopy1","Games Played: " & TotalGamesPlayed,1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 89.8, 'yalign': 1}"
+	PuPlayer.LabelSet pBackglass,"rulecopy2","This is a fan game meant only for fun.",1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 92.8, 'yalign': 1}"
 
 
 
@@ -1996,7 +1996,7 @@ end sub
 
 	Sub pDMDGameOver
 	pAttractStart
-	pDMDStartBackLoop "DMDSplash","intro" & dmdver &".mp4"
+	'pDMDStartBackLoop "DMDSplash","intro" & dmdver &".mp4"
 	end Sub
 
 	Sub pAttractStart
@@ -2608,8 +2608,8 @@ end sub
 ' 
 
 	Sub StartAttractMode()
-		pNote "Game Set","Start Anytime"
-		pupDMDDisplay "-","Game Set^Start Anytime",dmdnote,3,0,10
+		'pNote "Game Set","Start Anytime"
+		'pupDMDDisplay "-","Game Set^Start Anytime",dmdnote,3,0,10
 		cineon =0
 		if bBallSaverActive = True then exit sub
 		'PuPlayer.playpause 4
@@ -4851,37 +4851,37 @@ end sub
 		rulesposition = rulesposition + 1
 		Select Case rulesposition
 		Case 1
-			PuPlayer.LabelSet pBackglass,"ruletitle","Harry Potter && the Goblet of Fire",1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 86.8, 'yalign': 1}"
-			PuPlayer.LabelSet pBackglass,"rulecopy1","Games Played: " & TotalGamesPlayed,1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 89.8, 'yalign': 1}"
-			PuPlayer.LabelSet pBackglass,"rulecopy2","Brilliant!",1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 92.8, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ruletitle","Harry Potter && the Goblet of Fire",1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 86.8, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"rulecopy1","Games Played: " & TotalGamesPlayed,1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 89.8, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"rulecopy2","Brilliant!",1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 92.8, 'yalign': 1}"
 		Case 8
-			PuPlayer.LabelSet pBackglass,"ruletitle","Golden Egg Multiball",1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 86.8, 'yalign': 1}"
-			PuPlayer.LabelSet pBackglass,"rulecopy1","Hit Golden Egg",1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 89.8, 'yalign': 1}"
-			PuPlayer.LabelSet pBackglass,"rulecopy2","Hit the left dugout to lock",1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 92.8, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ruletitle","Golden Egg Multiball",1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 86.8, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"rulecopy1","Hit Golden Egg",1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 89.8, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"rulecopy2","Hit the left dugout to lock",1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 92.8, 'yalign': 1}"
 		Case 15
-			PuPlayer.LabelSet pBackglass,"ruletitle","Lake Rescue Multiball",1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 86.8, 'yalign': 1}"
-			PuPlayer.LabelSet pBackglass,"rulecopy1","Get 100 Spins",1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 89.8, 'yalign': 1}"
-			PuPlayer.LabelSet pBackglass,"rulecopy2","Lock 1-3 balls and hit right dugout",1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 92.8, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ruletitle","Lake Rescue Multiball",1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 86.8, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"rulecopy1","Get 100 Spins",1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 89.8, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"rulecopy2","Lock 1-3 balls and hit right dugout",1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 92.8, 'yalign': 1}"
 		Case 24
-			PuPlayer.LabelSet pBackglass,"ruletitle","Maze Escape Multiball",1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 86.8, 'yalign': 1}"
-			PuPlayer.LabelSet pBackglass,"rulecopy1","Shoot ramps to open maze",1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 89.8, 'yalign': 1}"
-			PuPlayer.LabelSet pBackglass,"rulecopy2","Shoot left ramp to lock & start multi",1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 92.8, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ruletitle","Maze Escape Multiball",1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 86.8, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"rulecopy1","Shoot ramps to open maze",1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 89.8, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"rulecopy2","Shoot left ramp to lock & start multi",1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 92.8, 'yalign': 1}"
 		Case 32
-			PuPlayer.LabelSet pBackglass,"ruletitle","Wand Multiball",1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 86.8, 'yalign': 1}"
-			PuPlayer.LabelSet pBackglass,"rulecopy1","Hit 10 combos to light each lock",1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 89.8, 'yalign': 1}"
-			PuPlayer.LabelSet pBackglass,"rulecopy2","Hit the right ramp to lock balls",1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 92.8, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ruletitle","Wand Multiball",1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 86.8, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"rulecopy1","Hit 10 combos to light each lock",1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 89.8, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"rulecopy2","Hit the right ramp to lock balls",1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 92.8, 'yalign': 1}"
 		Case 40
-			PuPlayer.LabelSet pBackglass,"ruletitle","House Modes",1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 86.8, 'yalign': 1}"
-			PuPlayer.LabelSet pBackglass,"rulecopy1","Hit targets to spell POTTER",1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 89.8, 'yalign': 1}"
-			PuPlayer.LabelSet pBackglass,"rulecopy2","Then hit the right dugout to start.",1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 92.8, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ruletitle","House Modes",1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 86.8, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"rulecopy1","Hit targets to spell POTTER",1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 89.8, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"rulecopy2","Then hit the right dugout to start.",1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 92.8, 'yalign': 1}"
 		Case 48
-			PuPlayer.LabelSet pBackglass,"ruletitle","Learn a Spell",1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 86.8, 'yalign': 1}"
-			PuPlayer.LabelSet pBackglass,"rulecopy1","Collect bumpers for mini game",1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 89.8, 'yalign': 1}"
-			PuPlayer.LabelSet pBackglass,"rulecopy2","of spells and hit the left dugout.",1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 92.8, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ruletitle","Learn a Spell",1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 86.8, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"rulecopy1","Collect bumpers for mini game",1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 89.8, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"rulecopy2","of spells and hit the left dugout.",1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 92.8, 'yalign': 1}"
 		Case 56
-			PuPlayer.LabelSet pBackglass,"ruletitle","Make a Potion",1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 86.8, 'yalign': 1}"
-			PuPlayer.LabelSet pBackglass,"rulecopy1","Hit the spinner to collect",1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 89.8, 'yalign': 1}"
-			PuPlayer.LabelSet pBackglass,"rulecopy2","",1,"{'mt':2,'color':15066597, 'size': 2, 'xpos': 82.5, 'xalign': 1, 'ypos': 92.8, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"ruletitle","Make a Potion",1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 86.8, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"rulecopy1","Hit the spinner to collect",1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 89.8, 'yalign': 1}"
+			PuPlayer.LabelSet pBackglass,"rulecopy2","",1,"{'mt':2,'color':15066597, 'size': 2.8, 'xpos': 82.5, 'xalign': 1, 'ypos': 92.8, 'yalign': 1}"
 		case 64
 			rulesposition = 0
 	End Select
@@ -11541,7 +11541,7 @@ End Sub
 	'************************ where all the MAGIC goes,  pretty much call this everywhere  ****************************************
 	'*************************                see docs for examples                ************************************************
 	'****************************************   DONT TOUCH THIS CODE   ************************************************************
-	dim notenow:notenow = dmdnote
+	'dim notenow:notenow = dmdnote
 	Sub pupDMDDisplay(pEventID, pText, VideoName,TimeSec, pAni,pPriority)
 	' pEventID = reference if application,  
 	' pText = "text to show" separate lines by ^ in same string
@@ -11551,11 +11551,11 @@ End Sub
 	' animation if any 0=none 1=Flasher
 	' also,  now can specify color of each line (when no animation).  "sometext|12345"  will set label to "sometext" and set color to 12345
 
-	if dmdnote = notenow Then
-		VideoName = dmdver &"-shortnote2.mp4"
-	end if
+	'if dmdnote = notenow Then
+	'	VideoName = dmdver &"-shortnote2.mp4"
+	'end if
 	
-	notenow = VideoName	
+	'notenow = VideoName	
 
 	DIM curPos
 	if pDMDCurPriority>=pPriority then Exit Sub  'if something is being displayed that we don't want interrupted.  same level will interrupt.

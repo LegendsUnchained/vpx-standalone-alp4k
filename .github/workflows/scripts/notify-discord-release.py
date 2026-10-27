@@ -1,15 +1,20 @@
-"""Post a release's new and updated tables to Discord as one embed (stdlib only).
+"""Post a release's new and updated tables to Discord as embeds (stdlib only).
 
     notify-discord-release.py [--kind stable|testing] [--dry-run] RELEASE_JSON
 
 RELEASE_JSON is the release object from the GitHub API. The webhook comes from
-DISCORD_WEBHOOK_URL; --dry-run prints the payload instead of sending it.
+DISCORD_WEBHOOK_URL; --dry-run prints the payloads instead of sending them.
 
-stable is the promotion to a published release (promote-release.yml); testing
-is a new prerelease candidate (create-testing-release.yml). They differ only in
-color and footer. A greeting leads the description: "Happy Wizard Wednesday!"
-when the release went out on a Wednesday, US Eastern time, and a wistful
-version naming the actual day otherwise.
+stable is the promotion to a published release (promote-release.yml): one
+embed, led by a greeting ("Happy Wizard Wednesday!" when the release went out
+on a Wednesday, US Eastern time, and a wistful version naming the actual day
+otherwise). Past Discord's limits it ends with "…and N more in the Table
+Manager Catalog", where every promoted table can be found.
+
+testing is tables arriving in the rolling pre-release (sync-prerelease.yml),
+for testers only. Its tables are not in the catalog yet, so each one links to
+its card on the testers page, where it is signed off, and nothing is cut: what
+does not fit in one message goes out in further "(continued)" messages.
 """
 
 import argparse
@@ -26,6 +31,9 @@ from zoneinfo import ZoneInfo
 
 IMAGE = "https://vpxsmedia.legendsunchained.com/discord_embed_tm.png"
 CATALOG = "https://vpxtablemanager.com/catalog"
+TESTERS = "https://vpxtablemanager.com/testers"
+CATALOG_TABLE = CATALOG + "/#table="
+TESTERS_TABLE = TESTERS + "/#table="
 
 KINDS = {
     "stable": {"color": 0x6BD3F1, "footer": "Stable release"},
@@ -36,6 +44,10 @@ KINDS = {
 EASTERN = ZoneInfo("America/New_York")
 DAYS = ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
 INTRO = "The Wizard team is proud to present the following tables for your enjoyment:"
+
+TESTING_TITLE = "Wizard Table Pre-Release"
+TESTING_INTRO = ("**DO NOT FORWARD THIS ANNOUNCEMENT**\n\n"
+                 f"Please test the following tables and sign-off after testing at {TESTERS}:")
 
 SECTIONS = (("newly added tables", "New tables"), ("updated tables", "Updated tables"))
 
@@ -98,7 +110,14 @@ def description(found, kept, hello):
 def embed(release, kind):
     style = KINDS[kind]
     tag = release["tag_name"].strip()
-    title = f"Wizard Table Release - {tag if tag.startswith('v') else 'v' + tag}"[:TITLE_MAX]
+    # Stable releases are titled with their version. The rolling pre-release
+    # has none (its tag is just `pre-release`), and the footer already says it
+    # is a testing release, so its title stands alone.
+    if re.match(r"^v?\d", tag):
+        title = f"Wizard Table Release - {tag if tag.startswith('v') else 'v' + tag}"
+    else:
+        title = "Wizard Table Release"
+    title = title[:TITLE_MAX]
     footer = style["footer"]
     found = sections(release.get("body") or "")
     hello = greeting(release)
@@ -123,8 +142,74 @@ def embed(release, kind):
     return out
 
 
+def testers_link(entry):
+    """Point a catalog link at the table's card on the testers page instead."""
+    return entry.replace("(" + CATALOG_TABLE, "(" + TESTERS_TABLE)
+
+
+def testing_embeds(release):
+    """The pre-release announcement, packed into as many embeds as it takes.
+
+    Entries are never dropped: when the next one would overflow Discord's
+    limit, the embed is closed and a "(continued)" one starts, repeating the
+    section heading so every part reads on its own.
+    """
+    style = KINDS["testing"]
+    footer = style["footer"]
+    found = {t: [testers_link(e) for e in entries]
+             for t, entries in sections(release.get("body") or "").items()}
+    title_more = f"{TESTING_TITLE} (continued)"
+    limit = min(DESCRIPTION_MAX, EMBED_MAX - length(title_more) - length(footer))
+
+    parts, lines = [], [TESTING_INTRO]
+    def close():
+        parts.append("\n".join(lines).strip())
+    for title, entries in found.items():
+        if not entries:
+            continue
+        heading = f"\n### {title} ({len(entries)})"
+        if length("\n".join(lines + [heading, entries[0]])) > limit:
+            close()
+            lines = []
+        lines.append(heading)
+        for entry in entries:
+            if length(entry) + length(heading) > limit:
+                raise ValueError("a single table entry cannot fit Discord's embed limit")
+            if length("\n".join(lines + [entry])) > limit:
+                close()
+                lines = [f"### {title} (continued)"]
+            lines.append(entry)
+    if len(lines) > 1 or not parts:
+        if len(lines) == 1 and lines[0] == TESTING_INTRO:
+            lines.append("\nNo new or updated tables to test.")
+        close()
+
+    out = []
+    for i, desc in enumerate(parts):
+        e = {
+            "title": TESTING_TITLE if i == 0 else title_more,
+            "url": TESTERS + "/",
+            "description": desc,
+            "color": style["color"],
+            "footer": {"text": footer if len(parts) == 1 else f"{footer} · {i + 1} of {len(parts)}"},
+        }
+        if i == 0:
+            e["image"] = {"url": IMAGE}
+        if release.get("published_at"):
+            e["timestamp"] = release["published_at"]
+        out.append(e)
+    return out
+
+
+def payloads(release, kind):
+    """The webhook messages to send, in order: one embed each."""
+    embeds = testing_embeds(release) if kind == "testing" else [embed(release, kind)]
+    return [{"embeds": [e], "allowed_mentions": {"parse": []}} for e in embeds]
+
+
 def payload(release, kind):
-    return {"embeds": [embed(release, kind)], "allowed_mentions": {"parse": []}}
+    """The first (for stable, the only) message."""
+    return payloads(release, kind)[0]
 
 
 def send(url, body):
@@ -158,15 +243,19 @@ def main():
     args = parser.parse_args()
     with open(args.release_json, encoding="utf-8") as source:
         release = json.load(source)
-    body = payload(release, args.kind)
+    bodies = payloads(release, args.kind)
     if args.dry_run:
-        print(json.dumps(body, indent=2, ensure_ascii=False))
+        print(json.dumps(bodies, indent=2, ensure_ascii=False))
         return
     url = os.environ.get("DISCORD_WEBHOOK_URL", "")
     if not url:
         raise RuntimeError("Set DISCORD_WEBHOOK_URL from the workflow webhook secret")
-    send(url, body)
-    print(f"Posted the {args.kind} release embed for {release['tag_name']}")
+    # In order, one at a time: send() waits for each, so the parts arrive as
+    # numbered, and it rides out Discord's per-webhook rate limit.
+    for body in bodies:
+        send(url, body)
+    print(f"Posted the {args.kind} release for {release['tag_name']} "
+          f"({len(bodies)} message{'s' if len(bodies) != 1 else ''})")
 
 
 if __name__ == "__main__":

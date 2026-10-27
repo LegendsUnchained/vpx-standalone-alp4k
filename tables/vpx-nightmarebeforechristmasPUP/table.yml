@@ -1,10 +1,7 @@
 ---
-diffAuthorsOverride:
-  - "TeamTuga"
+diffBundled: true
 diffChecksum: "82B0AF8BB0846290DF9FB33E6498E0D4"
 diffNotes: "Use NBC-tuga.rar from the downloaded pup pack. The .dif file is in the same .rar as the puppack"
-diffUrlOverride: "https://vpuniverse.com/files/file/22770-nightmare-before-christmas-puppack-table-dif-file/"
-diffVersionOverride: "1.0.0"
 fps: 60
 mainNotes: "Twas a long time ago, longer now than it seems..."
 pupArchiveFormat: "rar"

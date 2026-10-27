@@ -63,7 +63,7 @@ Randomize
 Const BallSize = 50       ' 50 is the normal size used in the core.vbs, VP kicker routines uses this value divided by 2
 Const BallMass = 1      ' standard ball mass in JP's VPX Physics 3.0
 Const SongVolume = 0.5 ' 1 is full volume. Value is from 0 to 1. 0.0065 is a fix for VPX beta 10.7
-Const bFreePlay = False 'freeplay or coins
+Const bFreePlay = True 'freeplay or coins
 Const FlexDMDHighQuality = True 'FlexDMD in high quality (True = LCD at 256x64) or normal quality (False = Real DMD at 128x32)
 
 ' Load the core.vbs for supporting Subs and functions
@@ -82,10 +82,10 @@ End Sub
 ' Define any Constants
 Const cGameName = "pulp fiction"
 Const myVersion = "4.0.1"
-Const MaxPlayers = 4          ' from 1 to 4
+Const MaxPlayers = 1          ' from 1 to 4
 Const MaxMultiplier = 3       ' limit playfield multiplier
 Const MaxBonusMultiplier = 50 'limit Bonus multiplier
-Const BallsPerGame = 5        ' usually 3 or 5
+Const BallsPerGame = 3        ' usually 3 or 5
 Const MaxMultiballs = 6       ' max number of balls during multiballs
 Dim BallSaverTime             ' 20 in seconds
 Dim mMagnaSave2
@@ -236,6 +236,7 @@ end Sub
 
 Sub trigersound_hit
     PlaySound "sfx-game-end"
+pupevent 704
 end Sub
 
 Sub trigersoundindo_hit
@@ -353,6 +354,7 @@ Sub Table1_KeyDown(ByVal Keycode)
         EnterHighScoreKey(keycode)
         Exit Sub
     End If
+If keycode = StartGameKey Then pupevent 705
 
     If keycode = LeftMagnaSave Then bLutActive = True: Lutbox.text = "level of darkness " & LUTImage + 1
     If keycode = RightMagnaSave Then
@@ -687,6 +689,7 @@ End Sub
 Sub PlayQuote
     Dim tmp
     tmp = INT(RND * 15) + 1
+pupevent 751
     PlaySound "vo_pulp" &tmp
 End Sub
 
@@ -1055,6 +1058,7 @@ Sub FirstBall
     ResetForNewPlayerBall()
     ' create a new ball in the shooters lane
     CreateNewBall()
+pupevent 707
 End Sub
 
 ' (Re-)Initialise the Table for a new ball (either a new ball after the player has
@@ -1093,6 +1097,7 @@ Sub CreateNewBall()
     ' create a ball in the plunger lane kicker.
     BallRelease.CreateSizedBallWithMass BallSize / 2, BallMass
 
+
     ' There is a (or another) ball on the playfield
     BallsOnPlayfield = BallsOnPlayfield + 1
 
@@ -1100,10 +1105,12 @@ Sub CreateNewBall()
     PlaySoundAt SoundFXDOF("fx_Ballrel", 123, DOFPulse, DOFContactors), BallRelease
     BallRelease.Kick 90, 4
 
+
 ' if there is 2 or more balls then set the multibal flag (remember to check for locked balls and other balls used for animations)
 ' set the bAutoPlunger flag to kick the ball in play automatically
     If BallsOnPlayfield> 1 Then
         DOF 143, DOFPulse
+pupevent 823
         bMultiBallMode = True
         bAutoPlunger = True
     End If
@@ -1147,6 +1154,7 @@ Sub EndOfBall()
     TotalBonus = 0
     ' the first ball has been lost. From this point on no new players can join in
     bOnTheFirstBall = False
+pupevent 700:pupevent 701
 
     ' only process any of this if the table is not tilted.  (the tilt recovery
     ' mechanism will handle any extra balls or end of game)
@@ -1209,9 +1217,15 @@ Sub EndOfBall()
         AddScore TotalBonus
 
         ' add a bit of a delay to allow for the bonus points to be shown & added up
-        vpmtimer.addtimer 9500, "EndOfBall2 '"
+        vpmtimer.addtimer 9600, "EndOfBall2 '"
+pupevent 709
+pupevent 710
+
     Else 'if tilted then only add a short delay and go to the next end of ball routine.
         vpmtimer.addtimer 200, "EndOfBall2 '"
+pupevent 709
+pupevent 710
+
     End If
 End Sub
 
@@ -1239,13 +1253,14 @@ Sub EndOfBall2()
         End If
 
         ' You may wish to do a bit of a song AND dance at this point
-        DMD CL(0, "EXTRA BALL"), CL(1, "SHOOT AGAIN"), "", eNone, eNone, eBlink, 1000, True, "vo_extraball"
+        DMD CL(0, "EXTRA BALL"), CL(1, "SHOOT AGAIN"), "", eNone, eNone, eBlink, 1000, True, "vo_extraball":pupevent 720
 
         ' In this table an extra ball will have the skillshot and ball saver, so we reset the playfield for the new ball
         ResetForNewPlayerBall()
 
         ' Create a new ball in the shooters lane
         CreateNewBall()
+
     Else ' no extra balls
 
         BallsRemaining(CurrentPlayer) = BallsRemaining(CurrentPlayer)- 1
@@ -1297,7 +1312,7 @@ Sub EndOfBallComplete()
         ' generally only done when not in free play mode
 
         ' set the machine into game over mode
-        EndOfGame() : pupevent 820
+        EndOfGame() : pupevent 706: pupevent 820
 
     ' you may wish to put a Game Over message on the desktop/backglass
 
@@ -1323,7 +1338,7 @@ Sub EndOfBallComplete()
                 Case 4:DMD "", "", "player4", eNone, eNone, eNone, 1000, True, "vo_player4"
             End Select
         Else
-            DMD "", "", "player1", eNone, eNone, eNone, 1000, True, "vo_youareup"
+            DMD "", "", "player1", eNone, eNone, eNone, 1000, True, "vo_youareup":pupevent 709
         End If
     End If
 End Sub
@@ -1348,6 +1363,7 @@ Sub EndOfGame()
 
     ' set any lights for the attract mode
     StartAttractMode
+pupevent 718
 ' you may wish to light any Game Over Light you may have
 End Sub
 
@@ -1390,10 +1406,11 @@ Sub Drain_Hit()
 
         ' is the ball saver active,
         If(bBallSaverActive = True)Then
+pupevent 760
 
             ' yep, create a new ball in the shooters lane
             ' we use the Addmultiball in case the multiballs are being ejected
-            AddMultiball 1 : pupevent 823
+            AddMultiball 1  
             ' we kick the ball with the autoplunger
             bAutoPlunger = True
             ' you may wish to put something on a display or play a sound at this point
@@ -1411,6 +1428,7 @@ Sub Drain_Hit()
                     ChangeGi white
                     'stop any multiball modes
                     StopMultiballModes
+pupevent 723
                 End If
             End If
 
@@ -1753,7 +1771,7 @@ End Sub
 Sub AwardSkillshot()
     ResetSkillShotTimer_Timer
     'show dmd animation
-    DMD CL(0, FormatScore(SkillshotValue(CurrentPlayer))), CL(1, ("SKILLSHOT")), "", eBlinkFast, eNone, eNone, 1500, True, "fanfare2" : pupevent 825
+    DMD CL(0, FormatScore(SkillshotValue(CurrentPlayer))), CL(1, ("SKILLSHOT")), "", eBlinkFast, eNone, eNone, 1500, True, "fanfare2" :pupevent 724: pupevent 825
     DOF 127, DOFPulse
     Addscore SkillShotValue(CurrentPlayer)
     ' increment the skillshot value with 1 Million
@@ -1766,7 +1784,7 @@ End Sub
 Sub AwardSuperSkillshot()
     ResetSkillShotTimer_Timer
     'show dmd animation
-    DMD CL(0, FormatScore(SuperSkillshotValue(CurrentPlayer))), CL(1, ("SUPER SKILLSHOT")), "", eBlinkFast, eNone, eNone, 1500, True, "fanfare3" : pupevent 825
+    DMD CL(0, FormatScore(SuperSkillshotValue(CurrentPlayer))), CL(1, ("SUPER SKILLSHOT")), "", eBlinkFast, eNone, eNone, 1500, True, "fanfare3" :pupevent 724: pupevent 825
     DOF 127, DOFPulse
     Addscore SuperSkillShotValue(CurrentPlayer)
     ' increment the superskillshot value with 5 Million
@@ -1780,7 +1798,7 @@ End Sub
 Sub AwardSecretSkillshot(points)
     ResetSkillShotTimer_Timer
     'show dmd animation
-    DMD CL(0, FormatScore(points)), CL(1, ("SECRET SKILLSHOT")), "", eBlinkFast, eNone, eNone, 1500, True, "fanfare3"
+    DMD CL(0, FormatScore(points)), CL(1, ("SECRET SKILLSHOT")), "", eBlinkFast, eNone, eNone, 1500, True, "fanfare3":pupevent 724
     DOF 127, DOFPulse
     Addscore points
     'do some light show
@@ -2214,9 +2232,9 @@ Sub DMDScore()
             tmp1 = "    FIGHT IS LIT"
         ELSE
             Select Case Mode(CurrentPlayer, 0)
-                Case 1:tmp1 = "VINCENT MULTIBALL"
-                Case 2:tmp1 = "  JULES MULTIBALL"
-                Case 3:tmp1 = "GANGSTER MULTIBALL"
+                Case 1:tmp1 = "VINCENT MULTIBALL":pupevent 721
+                Case 2:tmp1 = "  JULES MULTIBALL":pupevent 721
+                Case 3:tmp1 = "GANGSTER MULTIBALL":pupevent 721
                 Case 4:tmp1 = " CAST CHAOS "
                 Case 5:tmp1 = " PULP FICTION"
                 Case 6:tmp1 = " ROLL SCENE"
@@ -2621,7 +2639,7 @@ Sub SetFlash(MyLamp, nr, TotalPeriod, BlinkPeriod) 'similar to FlashForms, works
     MyLamp.TimerInterval = BlinkPeriod
     MyLamp.TimerEnabled = 0
     MyLamp.TimerEnabled = 1
-    ExecuteGlobal "Sub " & MyLamp.Name & "_Timer:" & "SetLamp ((me.UserValue - INT(me.UserValue))*100), me.UserValue MOD 2:me.UserValue= me.UserValue -1:If me.UserValue < 0 then Me.TimerEnabled=0:End If:End Sub"
+    ExecuteGlobal "Sub " & MyLamp.Name & "_Timer:" & "SetLamp (me.UserValue - INT(me.UserValue))*100, me.UserValue MOD 2:me.UserValue= me.UserValue -1:If me.UserValue < 0 then Me.TimerEnabled=0:End If:End Sub"
 End Sub
 
 ' standard VPX objects
@@ -3326,17 +3344,17 @@ End Sub
 
 Sub StopMultiballModes 'called at the end of multiball
     Select case Mode(CurrentPLayer, 0)
-        Case 1:StopILUSSIA:StartBRUJAletter
-        Case 2:StopWitchMultiball:StartBRUJAletter
-        Case 3:StopFinisterra:StartBRUJALEtter
-        Case 4: 'no multi-ball
-        Case 5: 'no multi-ball
+        Case 1:StopILUSSIA:StartBRUJAletter:pupevent 722
+        Case 2:StopWitchMultiball:StartBRUJAletter:pupevent 722
+        Case 3:StopFinisterra:StartBRUJALEtter:pupevent 722
+        Case 4: :pupevent 722'no multi-ball
+        Case 5: :pupevent 722'no multi-ball
         Case 6:StopFoltergeist:ResetBRUJALetter:StartBRUJAletter
-        Case 7: 'no multi-ball
-        Case 8:StopArboles:ResetBRUJALetter:StartBRUJALetter
-        Case 9: 'no multi-ball
-        Case 11:StopFNC:StartBRUJALetter
-        Case 12:StartBRUJALetter
+        Case 7:pupevent 722 'no multi-ball
+        Case 8:StopArboles:ResetBRUJALetter:StartBRUJALetter:pupevent 722
+        Case 9: pupevent 722'no multi-ball
+        Case 11:StopFNC:StartBRUJALetter:pupevent 722
+        Case 12:StartBRUJALetter:pupevent 722
     End Select
 End Sub
 
@@ -3478,6 +3496,7 @@ Sub LeftSlingShot_Slingshot
     LeftSling004.Visible = 1
     Lemk.RotX = 26
     LStep = 0
+pupevent 748
     LeftSlingShot.TimerEnabled = True
     ' add some points
     AddScore SlingshotValue
@@ -3511,6 +3530,7 @@ Sub RightSlingShot_Slingshot
     RightSlingShot.TimerEnabled = True
     ' add some points
     AddScore SlingshotValue
+pupevent 747
     ' add some effect to the table?
     SetFlash Flasher010, 10, 2000, 50
     ' check modes
@@ -3536,6 +3556,7 @@ Sub Bumper1_Hit
     If Tilted Then Exit Sub
     PlaySoundAt SoundFXDOF("fx_bumper",113,DOFPulse,DOFContactors), Bumper1
     DOF 128, DOFPulse
+pupevent 744
     Flashforms LBumper1, 2000, 50, 0
     ' add some points
     Addscore 125000 + 125000 * bSuperPops(CurrentPlayer)
@@ -3572,6 +3593,7 @@ Sub Bumper2_Hit
     DOF 130, DOFPulse
     Flashforms LBumper2, 2000, 50, 0
     ' add some points
+pupevent 726
     Addscore 125000 + 125000 * bSuperPops(CurrentPlayer)
     ' check for modes
     StopCombo
@@ -3604,6 +3626,7 @@ Sub Bumper3_Hit
     If Tilted Then Exit Sub
     PlaySoundAt SoundFXDOF("fx_bumper",114,DOFPulse,DOFContactors), Bumper3
     DOF 129, DOFPulse
+pupevent 743
     Flashforms LBumper3, 2000, 50, 0
     ' add some points
     Addscore 125000 + 125000 * bSuperPops(CurrentPlayer)
@@ -3648,7 +3671,9 @@ End Sub
 Sub Trigger001_Hit 'Left outlane
     PlaySoundAt "fx_sensor", Trigger001
     If Tilted Then Exit Sub
+pupevent 750
     Addscore 25000
+
     ' check for modes
     StopCombo
     If bSkillShotReady Then
@@ -3684,6 +3709,7 @@ End Sub
 Sub Trigger002a_Hit 'Left inlane
     PlaySoundAt "fx_sensor", Trigger002
     If Tilted Then Exit Sub
+pupevent 738
     Addscore 25000
     'PFx
     If Light001a.State Then
@@ -3721,6 +3747,7 @@ End Sub
 Sub Trigger003a_Hit 'Right inlane
     PlaySoundAt "fx_sensor", Trigger003
     If Tilted Then Exit Sub
+pupevent 737
     Addscore 25000
     'PFx
     If Light002a.State Then
@@ -3738,6 +3765,7 @@ Sub Trigger004_Hit 'Right outlane
     PlaySoundAt "fx_sensor", Trigger004
     If Tilted Then Exit Sub
     Addscore 25000
+pupevent 749
     ' check for modes
     StopCombo
     ' remember last trigger hit by the ball
@@ -3758,6 +3786,7 @@ End Sub
 Sub Trigger012_Hit 'Mini Loop
     PlaySoundAt "fx_sensor", Trigger012
     If Tilted Then Exit Sub
+pupevent 736
     Addscore 330
     ' check for modes
     ' remember last trigger hit by the ball
@@ -3769,6 +3798,7 @@ Sub Trigger006_Hit 'Right Orbit, opto
     GiEffect 1
     MiniLoopMulti = 1
     Addscore 125000
+pupevent 741
     'loops, skillshots, addaballs
     LoopsBonusCount = LoopsBonusCount + 1
     If LastSwitchHit = "Trigger005" Then
@@ -3992,21 +4022,25 @@ Sub Trigger006_Hit 'Right Orbit, opto
             If LastSwitchHit = "Trigger005" AND Light052.State Then
                 Light052.State = 0
                 AwardJackpot
+pupevent 725
                 CheckLDDF
             End If
             If LastSwitchHit = "Trigger012" AND Light049.State Then
                 Light049.State = 0
                 AwardJackpot
+pupevent 725
                 CheckLDDF
             End If
             If LastSwitchHit = "Trigger007" AND Light056.State Then
                 Light056.State = 0
                 AwardJackpot
+pupevent 725
                 CheckLDDF
             End If
             If LastSwitchHit = "Trigger013" AND Light055.State Then
                 Light055.State = 0
                 AwardJackpot
+pupevent 725
                 CheckLDDF
             End If
     End Select
@@ -4029,6 +4063,7 @@ End Sub
 
 Sub Trigger007_Hit 'Center Orbit, opto
     If Tilted Then Exit Sub
+pupevent 735
     Addscore 330
     ' check for modes
     ' remember last trigger hit by the ball
@@ -4038,6 +4073,7 @@ End Sub
 Sub Trigger008_Hit 'Left ramp done
     If Tilted Then Exit Sub
     Addscore 125000
+pupevent 740
     SetFlash flasher004, 4, 3000, 60
     DOF 205, DOFPulse
     ' check for modes
@@ -4163,6 +4199,7 @@ Sub Trigger009_Hit 'Right ramp done
     If Tilted Then Exit Sub
     SetFlash flasher005, 5, 3000, 60
     DOF 207, DOFPulse
+pupevent 739
     Addscore 125000
     ' check for modes
     CheckCombo 5
@@ -4280,6 +4317,7 @@ End Sub
 
 Sub Trigger013_Hit 'Left Orbit, opto
     If Tilted Then Exit Sub
+pupevent 742
     Addscore 330
     ' check for modes
     ' remember last trigger hit by the ball
@@ -4340,6 +4378,7 @@ End Sub
 Sub Target002_hit 'gravestone
     PlaySoundAtBall SoundFXDOF("fx_target",108,DOFPulse,DOFTargets)
     If Tilted Then Exit Sub
+pupevent 734
     Addscore 75000
     GiEffect 3
     ' Tomb Treasure
@@ -4446,6 +4485,7 @@ End Sub
 Sub Target003a_hit 'bumpers, X target
     PlaySoundAtBall SoundFXDOF("fx_target",109,DOFPulse,DOFTargets)
     If Tilted Then Exit Sub
+pupevent 733
     Addscore 75000
     ' PFx
     If PFxActivated Then PFxSeconds = PFxSeconds + 5
@@ -4552,6 +4592,7 @@ Sub Target005_hit 'drop center
     If Mode(CurrentPlayer, 0) = 7 Then
         If Light010.State Then
             Light010.State = 0
+pupevent 745
             Addscore 3000000
             AtlantiaCount = AtlantiaCount + 1
             CheckAtlantia
@@ -4576,6 +4617,7 @@ Sub Target006_hit 'drop bottom
     If Mode(CurrentPlayer, 0) = 7 Then
         If Light011.State Then
             Light011.State = 0
+pupevent 746
             Addscore 3000000
             AtlantiaCount = AtlantiaCount + 1
             CheckAtlantia
@@ -4595,6 +4637,7 @@ End Sub
 Sub Target007_hit 'mini loop target, X
     PlaySoundAtBall SoundFXDOF("targetgun",111,DOFPulse,DOFTargets)
     If Tilted Then Exit Sub
+pupevent 732
     Addscore 75000
     ' PFx
     If PFxActivated Then PFxSeconds = PFxSeconds + 5
@@ -4665,6 +4708,7 @@ End Sub
 Sub Target008_hit 'Superskillshot, X
     PlaySoundAtBall SoundFXDOF("fx_target",111,DOFPulse,DOFTargets)
     If Tilted Then Exit Sub
+pupevent 731
     Addscore 75000
     SetFlash flasher013, 13, 6000, 50
     DOF 212, DOFPulse
@@ -4736,6 +4780,7 @@ Sub Target009_hit 'captive ball target
     GiEffect 3
     ' check for modes
     CheckDeathblow 3
+pupevent 730
     Addscore 25330
     Select Case Mode(CurrentPlayer, 0)
         Case 10, 1:AddILUSSIAletter
@@ -4756,6 +4801,7 @@ Sub CapWall1_Hit 'Newton ball
     If Tilted Then Exit Sub
     FlashForms ORBLight, 3000, 60, 0
     CheckDeathblow 2
+pupevent 729
     Addscore 25000
     ' check for modes
     If bMystery then
@@ -4816,6 +4862,7 @@ Sub bruja_target_Hit
             End Select
     End Select
     Addscore 25000 * WitchMultiplier
+pupevent 728
     FlashEffect 1
     'target animation
     bruja_target.IsDropped = 1
@@ -4899,7 +4946,7 @@ Sub bruja_target_Hit
                 DMD "_", "  ADDABALL IS LIT", "", eNone, eBlink, eNone, 1500, True, ""
                 bAddaBallActivated = True
                 Light046.State = 2
-                AddMultiball 1 : pupevent 823
+                AddMultiball 1 
                 LightEffect 5
                 post001.IsDropped = 0:PlaySoundAt "fx_SolenoidOn", Trigger010
                 post002.IsDropped = 0
@@ -4973,6 +5020,7 @@ End Sub
 
 Sub WitchNest_Hit
     PlaySoundAt "fx_hole_enter", WitchNest
+pupevent 727
     LightEffect 4
     GiEffect 0
     FlashEffect 4
@@ -5750,7 +5798,7 @@ End Sub
 Sub StartIlussiaMUltiball
     StopBRUJALetter
     DMD CL(0, "VINCENT"), CL(1, "MULTIBALL"), "", eBlink, eBlink, eNone, 1500, True, "vo_multiball2" : pupevent 826
-    AddMultiball 1 : pupevent 823
+    AddMultiball 1 :pupevent 721: pupevent 823
     post001.IsDropped = 0:PlaySoundAt "fx_SolenoidOn", Trigger010
     post002.IsDropped = 0
     vpmtimer.addtimer 2500, "PlaySoundAt""fx_SolenoidOff"", Trigger010: post001.IsDropped = 1:post002.IsDropped = 1 '"
@@ -5856,7 +5904,7 @@ End Sub
 
 Sub AwardAddaBall()
     DMD "_", CL(1, ("ADD A BALL")), "", eNone, eBlink, eNone, 1500, True, "vo_addaball"
-    AddMultiball 1 : pupevent 823
+    AddMultiball 1 
     LightEffect 5
     AddaBallLevel = AddaBallLevel + 1
     AddaBallCount = 0
@@ -5898,22 +5946,22 @@ Sub CheckLockedBalls 'updates also the lights
         Case 0:light007.State = 0:light006.State = 0:light070.State = 0
         Case 1:light007.State = 1:light006.State = 0:light070.State = 0
             LightEffect 1
-            DMD CL(0, "PAWN SHOP"), CL(1, "BALL 1 LOCKED"), "", eNone, eBlink, eNone, 1500, True, "vo_ball1locked" : pupevent 814
+            DMD CL(0, "PAWN SHOP"), CL(1, "BALL 1 LOCKED"), "", eNone, eBlink, eNone, 1500, True, "vo_ball1locked" : pupevent 814:pupevent 723
             vpmtimer.addtimer 2500, "Exit_WitchNest '"
         Case 2:light007.State = 1:light006.State = 1:light070.State = 0
             LightEffect 1
-            DMD CL(0, "PAWN SHOP"), CL(1, "BALL 2 LOCKED"), "", eNone, eBlink, eNone, 1500, True, "vo_ball2locked" : pupevent 815
+            DMD CL(0, "PAWN SHOP"), CL(1, "BALL 2 LOCKED"), "", eNone, eBlink, eNone, 1500, True, "vo_ball2locked" : pupevent 815:pupevent 723
             vpmtimer.addtimer 2500, "Exit_WitchNest '"
         Case 3:
             If Mode(CurrentPlayer, 0) = 10 Then
-                DMD CL(0, "PAWN SHOP"), CL(1, "BALL 3 LOCKED"), "", eNone, eBlink, eNone, 1500, True, "vo_ball3locked" : pupevent 816
+                DMD CL(0, "PAWN SHOP"), CL(1, "BALL 3 LOCKED"), "", eNone, eBlink, eNone, 1500, True, "vo_ball3locked" : pupevent 816:pupevent 723
                 light007.State = 2:light006.State = 2:light070.State = 2
                 LightEffect 1
                 light058.State = 2
                 bLockActive(CurrentPlayer) = False
                 bLockActive(CurrentPlayer) = False
                 DMD CL(0, "FIGHT"), CL(1, "MULTIBALL IS READY"), "", eNone, eBlink, eNone, 5000, True, ""
-                vpmtimer.addtimer 2500, "PlaySound""vo_multiballstarting321"" '"
+                vpmtimer.addtimer 2500, "PlaySound""vo_multiballstarting321"" '":pupevent 721
                 vpmtimer.addtimer 7000, "StartWitchMultiball '"
                 vpmtimer.addtimer 9000, "light007.State = 0:light006.State = 0:light070.State = 0 '"
             Else
@@ -6296,7 +6344,8 @@ End Sub
 
 Sub StartFinisterra
     StopBRUJALetter
-    DMD CL(0, "GANGSTER"), "     MULTIBALL", "", eNone, eBlink, eNone, 1500, True, "vo_multiball" : pupevent 829
+    DMD CL(0, "GANGSTER"), "     MULTIBALL", "", eNone, eBlink, eNone, 1500, True, "vo_multiball" :pupevent 721
+    
     light045.State = 0
     light024.State = 0
     light025.State = 0
@@ -6318,7 +6367,7 @@ Sub StartFinisterra
     bFinisterraMBReady = False
     Mode(CurrentPLayer, 0) = 3
     EnableBallSaver 30
-    AddMultiball 1 : pupevent 823
+    AddMultiball 1 : 
     LightEffect 5
     post001.IsDropped = 0:PlaySoundAt "fx_SolenoidOn", Trigger010
     post002.IsDropped = 0
@@ -6340,6 +6389,7 @@ Sub AwardFinisterraSJP
     AddBonusMultiplier 1
     tmp = FinisterraSJPValue(Currentplayer) * FinisterraSJPMultiplier
     DMD CL(0, FormatScore(tmp)), "GANGSTER JACKPOT", "", eNone, eBlinkFast, eNone, 1500, True, "vo_superjackpot"
+ pupevent 821  
     bFinisterraSJPActivated = False
     light045.State = 0
     light024.State = 0
