@@ -305,10 +305,6 @@ Sub Table1_Init()
 
 	PUPInit  'this should be called in table1_init at bottom after all else b2s/controller running.
 
-    pupDMDupdate.Enabled = false
-    pupDMDupdate.Interval = 500
-    pupDMDupdate.Enabled = true
-
     ' freeplay or coins
     bFreePlay = True 'we want coins
 
@@ -3105,7 +3101,7 @@ Sub HighScoreEntryInit()
 	pDMDSetPage(8)
 	PuPEvent 2
 	puPlayer.LabelSet pDMD,"HighScore3","ENTER INITIALS" ,1,""
-	puPlayer.LabelSet pDMD,"HighScore2","" ,1,""
+	puPlayer.LabelSet pDMD,"HighScore2","|16777215^|16777215^|16777215" ,1,""
 	puPlayer.LabelSet pDMD,"HighScore4","" & FormatNumber(Score(CurrentPlayer),0),1,""
     hsbModeActive = True
 	hsbStartButtonPresses = 0
@@ -8564,6 +8560,13 @@ pLine1Ani=""
 pLine2Ani=""
 pLine3Ani=""
 
+
+if pAni=1 Then  'we flashy now aren't we
+pLine1Ani="{'mt':1,'at':1,'fq':150,'len':" & (timeSec*1000) &  "}"  
+pLine2Ani="{'mt':1,'at':1,'fq':150,'len':" & (timeSec*1000) &  "}"  
+pLine3Ani="{'mt':1,'at':1,'fq':150,'len':" & (timeSec*1000) &  "}"  
+end If
+
 curPos=InStr(pText,"^")   'Lets break apart the string if needed
 if curPos>0 Then 
    pLine1=Left(pText,curPos-1) 
@@ -8671,7 +8674,6 @@ DIM dmddef
 DIM dmdalt
 DIM dmdscr
 DIM dmdfixed
-DIM dmdscreenscale
 
 'labelNew <screen#>, <Labelname>, <fontName>,<size%>,<colour>,<rotation>,<xalign>,<yalign>,<xpos>,<ypos>,<PageNum>,<visible>
 '***********************************************************************'
@@ -8693,49 +8695,48 @@ DIM dmdscreenscale
     dmdfixed="Komu A"
 	dmdscr="Komu A" 'main score font
 	dmddef="Exima Geometric"
-    dmdscreenscale = 0.7
 
 	'Page 1 (default score display)
-		PuPlayer.LabelNew pDMD,"Play1"      ,dmddef,18 * dmdscreenscale,14111599   ,1,1,0,5,0,1,0
-		PuPlayer.LabelNew pDMD,"Ball"       ,dmddef,18 * dmdscreenscale,14111599   ,1,1,0,95,0,1,0
-        PuPlayer.LabelNew pDMD, "pupStatus" ,dmdscr, 20 * dmdscreenscale, 14111599, 0, 1, 0, 0, 65, 1, 0
-		PuPlayer.LabelNew pDMD,"CurScore"   ,dmdscr,28 * dmdscreenscale,2530743   ,0,1,0, 0,10,1,0	
-		PuPlayer.LabelNew pDMD,"Credits"    ,dmddef,4 * dmdscreenscale,2041045   ,0,2,2,48,98,1,0
-		PuPlayer.LabelNew pDMD,"Recruits"    ,dmddef,4 * dmdscreenscale,2041045   ,0,0,2,51,98,1,0
+		PuPlayer.LabelNew pDMD,"Play1"      ,dmddef,18,14111599   ,1,1,0,5,0,1,0
+		PuPlayer.LabelNew pDMD,"Ball"       ,dmddef,18,14111599   ,1,1,0,95,0,1,0
+        PuPlayer.LabelNew pDMD, "pupStatus" ,dmdscr, 20, 14111599, 0, 1, 0, 0, 65, 1, 0
+		PuPlayer.LabelNew pDMD,"CurScore"   ,dmdscr,28,2530743   ,0,1,0, 0,10,1,0	
+		PuPlayer.LabelNew pDMD,"Credits"    ,dmddef,4,2041045   ,0,2,2,48,98,1,0
+		PuPlayer.LabelNew pDMD,"Recruits"    ,dmddef,4,2041045   ,0,0,2,51,98,1,0
 
 
 	'Page 2 (default Text Splash 1 Big Line)
-		PuPlayer.LabelNew pDMD,"Splash"  ,dmdalt,32 * dmdscreenscale,2041045,0,1,1,0,0,2,0
+		PuPlayer.LabelNew pDMD,"Splash"  ,dmdalt,32,2041045,0,1,1,0,0,2,0
 
 	'Page 3 (default Text 3 Lines)
-		PuPlayer.LabelNew pDMD,"Splash3a",dmddef,14 * dmdscreenscale,2041045,0,1,0,0,8,3,0
-		PuPlayer.LabelNew pDMD,"Splash3b",dmddef,14 * dmdscreenscale,2041045,0,1,0,0,24,3,0
-		PuPlayer.LabelNew pDMD,"Splash3c",dmdalt,18 * dmdscreenscale,14111599,0,1,0,0,65,3,0
+		PuPlayer.LabelNew pDMD,"Splash3a",dmddef,14,2041045,0,1,0,0,8,3,0
+		PuPlayer.LabelNew pDMD,"Splash3b",dmddef,14,2041045,0,1,0,0,24,3,0
+		PuPlayer.LabelNew pDMD,"Splash3c",dmdalt,18,14111599,0,1,0,0,65,3,0
 
 	'Page 4 (default Text 2 Line)
-		PuPlayer.LabelNew pDMD,"Splash4a",dmddef,16 * dmdscreenscale,2041045,0,1,0,0,22,4,0
-		PuPlayer.LabelNew pDMD,"Splash4b",dmdalt,22 * dmdscreenscale,14111599,0,1,2,0,90,4,0
+		PuPlayer.LabelNew pDMD,"Splash4a",dmddef,16,2041045,0,1,0,0,22,4,0
+		PuPlayer.LabelNew pDMD,"Splash4b",dmdalt,22,14111599,0,1,2,0,90,4,0
 
 	'Page 5 (3 layer large text for overlay targets function,  must you fixed width font!
-		PuPlayer.LabelNew pDMD,"Back5"    ,dmdfixed,20 * dmdscreenscale,8421504,0,1,1,0,0,5,0
-		PuPlayer.LabelNew pDMD,"Middle5"  ,dmdfixed,20 * dmdscreenscale,65535  ,0,1,1,0,0,5,0
-		PuPlayer.LabelNew pDMD,"Flash5"   ,dmdfixed,20 * dmdscreenscale,65535  ,0,1,1,0,0,5,0
+		PuPlayer.LabelNew pDMD,"Back5"    ,dmdfixed,20,8421504,0,1,1,0,0,5,0
+		PuPlayer.LabelNew pDMD,"Middle5"  ,dmdfixed,20,65535  ,0,1,1,0,0,5,0
+		PuPlayer.LabelNew pDMD,"Flash5"   ,dmdfixed,20,65535  ,0,1,1,0,0,5,0
 
 	'Page 6 (3 Lines for big # with two lines,  "19^Orbits^Count")
-		PuPlayer.LabelNew pDMD,"Splash6a",dmddef,18 * dmdscreenscale,65280,0,0,0,15,1,6,0
-		PuPlayer.LabelNew pDMD,"Splash6b",dmddef,18 * dmdscreenscale,33023,0,1,0,60,0,6,0
-		PuPlayer.LabelNew pDMD,"Splash6c",dmddef,18 * dmdscreenscale,33023,0,1,0,60,50,6,0
+		PuPlayer.LabelNew pDMD,"Splash6a",dmddef,18,65280,0,0,0,15,1,6,0
+		PuPlayer.LabelNew pDMD,"Splash6b",dmddef,18,33023,0,1,0,60,0,6,0
+		PuPlayer.LabelNew pDMD,"Splash6c",dmddef,18,33023,0,1,0,60,50,6,0
 
 	'Page 7 (Show High Scores Fixed Fonts)
-		PuPlayer.LabelNew pDMD,"Splash7a",dmddef,20 * dmdscreenscale,2041045,0,1,0,0,8,7,0
-		PuPlayer.LabelNew pDMD,"Splash7b",dmdfixed,28 * dmdscreenscale,14111599,0,1,0,0,30,7,0
-		PuPlayer.LabelNew pDMD,"Splash7c",dmdfixed,28 * dmdscreenscale,14111599,0,1,0,0,58,7,0
+		PuPlayer.LabelNew pDMD,"Splash7a",dmddef,20,2041045,0,1,0,0,8,7,0
+		PuPlayer.LabelNew pDMD,"Splash7b",dmdfixed,28,14111599,0,1,0,0,30,7,0
+		PuPlayer.LabelNew pDMD,"Splash7c",dmdfixed,28,14111599,0,1,0,0,58,7,0
 
 	'Page 8 (High Score Entry)
-		PuPlayer.LabelNew pDMD,"HighScore",dmdalt,24 * dmdscreenscale,14111599,0,1,0,0,32,8,0
-		PuPlayer.LabelNew pDMD,"HighScore2",dmdalt,22 * dmdscreenscale,14111599,0,1,0,28,50,8,0
-		PuPlayer.LabelNew pDMD,"HighScore3",dmddef,16 * dmdscreenscale,2041045,0,1,0,0,16,8,0
-		PuPlayer.LabelNew pDMD,"HighScore4",dmdalt,22 * dmdscreenscale,2530743,0,1,0,0,60,8,0
+		PuPlayer.LabelNew pDMD,"HighScore",dmdalt,24,14111599,0,1,0,0,32,8,0
+		PuPlayer.LabelNew pDMD,"HighScore2",dmdalt,22,14111599,0,1,0,28,50,8,0
+		PuPlayer.LabelNew pDMD,"HighScore3",dmddef,16,2041045,0,1,0,0,16,8,0
+		PuPlayer.LabelNew pDMD,"HighScore4",dmdalt,22,2530743,0,1,0,0,60,8,0
 
 END Sub 'page Layouts
 
@@ -8830,46 +8831,15 @@ Playsong ""
 end Sub
 
 '************************ called during gameplay to update Scores ***************************
-Dim lastScore : lastScore = -1
-Dim lastCredits : lastCredits = -1
-Dim lastCurrentPlayer : lastCurrentPlayer = -1
-Dim lastBalls : lastBalls = -1
-Dim lastPlayers : lastPlayers = -1
 
 Sub pUpdateScores()
-	if pDMDCurPage <> pScores then
-        lastScore = -1
-        lastCredits = -1
-        lastCurrentPlayer = -1
-        lastBalls = -1
-        Exit Sub
-    End if
+	if pDMDCurPage <> pScores then Exit Sub
 
-	If (lastScore <> Score(CurrentPlayer)) Then
-        lastScore = Score(CurrentPlayer)
-	    puPlayer.LabelSet pDMD,"CurScore","" & FormatNumber(lastScore,0) ,1,""
-    End If
-
-	If (lastCurrentPlayer <> CurrentPlayer) Then
-        lastCurrentPlayer = CurrentPlayer
-    	puPlayer.LabelSet pDMD,"Play1","" & lastCurrentPlayer,1,""
-    End If
-
-	If (lastBalls <> balls) Then
-        lastBalls = balls
-	    puPlayer.LabelSet pDMD,"Ball","" & ""& lastBalls ,1,""
-    End If
-
-	If (lastCredits <> Credits) Then
-        lastCredits = Credits
-	    puPlayer.LabelSet pDMD,"Credits","CREDITS:" & ""& lastCredits ,1,""
-    End If
-
-
-	If (lastPlayers <> PlayersPlayingGame) Then
-        lastPlayers = PlayersPlayingGame
-	    puPlayer.LabelSet pDMD,"Recruits","RECRUITS:" & ""& lastPlayers ,1,""
-    End if
+	puPlayer.LabelSet pDMD,"CurScore","" & FormatNumber(Score(CurrentPlayer),0) ,1,""
+	puPlayer.LabelSet pDMD,"Play1","" & CurrentPlayer,1,""
+	puPlayer.LabelSet pDMD,"Ball","" & ""& balls ,1,""
+	puPlayer.LabelSet pDMD,"Credits","CREDITS:" & ""& Credits ,1,""
+	puPlayer.LabelSet pDMD,"Recruits","RECRUITS:" & ""& PlayersPlayingGame ,1,""
 end Sub
 
 
