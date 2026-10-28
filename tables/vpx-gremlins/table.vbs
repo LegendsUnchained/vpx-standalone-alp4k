@@ -80,7 +80,7 @@ Dim Controller, cController, cGameName, bsTrough, bsTopKicker, bsRightKicker, bs
 Dim Tilted, FlipperEnabled, GI_On, GameOn, Hidden, i
 Dim DesktopMode: DesktopMode = Victory.ShowDT
 Dim DebugSwitch: DebugSwitch = False						'Don't even think about it, only Sindbad is allowed to do that ...
-cGameName="victory"
+cGameName="gremlins"
 
 Const UseFlexDMD = 1	' 1 is on - for real dmd's mainly but will work on lcd. 0 is off.
 
