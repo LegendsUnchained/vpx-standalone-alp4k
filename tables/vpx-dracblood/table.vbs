@@ -81,7 +81,7 @@ Option Explicit
 ' BLOOD EDITION OPTIONS
 '-----------------------
 Const StartMusic = True  			  'True = MP3 music track will automatically start when table is started, False = no music at start
-Const MagnaSaveMusicStartStop = False  'True = enables manual start/stop of MP3 music vith Magna Save keys (right - start music, left - stop music)
+Const MagnaSaveMusicStartStop = True  'True = enables manual start/stop of MP3 music vith Magna Save keys (right - start music, left - stop music)
 Const MoonLight = True               'True = every ball launch will turn moonlight on, False = original behaviour
 Const DraculaEyesLightsBlink = True   'True = Dracula's red glowing eyes will slowly (creepy :) ) fade in/out, False = eyes glowing constantly
 Const RedBall = True                  'True = play with red ball, False = play with normal ball
@@ -159,9 +159,7 @@ Dim mMagnet, dtLDrop, bsCastleLock, x, bumper1, bumper2, bumper3, plungerIM
 On Error Resume Next
 Dim i
 For i=0 To 127
-    If IsObject(eval("L" & i)) Then
     Execute "Set Lights(" & i & ")  = L" & i
-    End If
 Next
  
 Lights(58)=Array(L58,L58A)

@@ -5,7 +5,7 @@ Randomize
 
 ' core.vbs constants
 Const BallSize = 50 ' 50 is the normal size
-Const BallMass = 1  ' 1 is the normal ball mass.
+Const BallMass = 1.25  ' 1 is the normal ball mass.
 
 'DOF config - (DOF server needs to be updated)
 '101 Left Flipper
@@ -167,11 +167,14 @@ Sub Table1_Init()
     End If
 End Sub
 
+' Start the table with the score and balls to play at 0
 Sub UpdateStartup
-    ScoreReel1.SetValue HSScore(1)
+    ScoreReel1.SetValue 0
+    BallsReel.SetValue 0
     CreditsReel.SetValue credits
     If B2SOn then
-        Controller.B2SSetScorePlayer 1, HSScore(1)
+        Controller.B2SSetScorePlayer 1, 0
+        Controller.B2SSetScorePlayer 3, 0   'BALLS TO PLAY
         Controller.B2SSetCredits Credits
     End If
 End Sub
@@ -181,7 +184,7 @@ End Sub
 '******************
 Sub CapTrigger1_Hit:cbLeft.TrigHit ActiveBall:End Sub
 Sub CapTrigger1_UnHit:cbLeft.TrigHit 0:End Sub
-Sub CapWall1_Hit:cbLeft.BallHit ActiveBall:PlaySoundAtBall "fx_collide":End Sub
+Sub CapWall1_Hit:BallActivity:cbLeft.BallHit ActiveBall:PlaySoundAtBall "fx_collide":End Sub
 Sub CapKicker1a_Hit:cbLeft.BallReturn Me:End Sub
 
 '******
@@ -203,9 +206,10 @@ Sub Table1_KeyDown(ByVal Keycode)
         End If
     End If
 
-    ' plunger
-    If keycode = PlungerKey Then
+    ' plunger, only during a game
+    If keycode = PlungerKey AND bGameInPlay Then
         Plunger.Pullback
+        PlungerPulled = 1
         PlaySoundAt "fx_plungerpull", plunger
     End If
 
@@ -284,8 +288,11 @@ Sub Table1_KeyUp(ByVal keycode)
         If keycode = RightFlipperKey Then SolRFlipper 0
     End If
 
-    If keycode = PlungerKey Then
+    ' release only if it was pulled during a game, so a pull that started in a
+    ' game still fires even if the game has ended since
+    If keycode = PlungerKey AND PlungerPulled = 1 Then
         Plunger.Fire
+        PlungerPulled = 0
         If bBallInPlungerLane Then
             PlaySoundAt "fx_plunger", plunger
         Else
@@ -320,11 +327,13 @@ Sub SolLFlipper(Enabled)
         PlaySoundAt SoundFXDOF("fx_flipperup", 101, DOFOn, DOFFlippers), LeftFlipper
         LeftFlipper.RotateToEnd
         LeftFlipperOn = 1
+        BallActivity
         RotateLaneLights 0
     Else
         PlaySoundAt SoundFXDOF("fx_flipperdown", 101, DOFOff, DOFFlippers), LeftFlipper
         LeftFlipper.RotateToStart
         LeftFlipperOn = 0
+        BallActivity
     End If
 End Sub
 
@@ -333,11 +342,13 @@ Sub SolRFlipper(Enabled)
         PlaySoundAt SoundFXDOF("fx_flipperup", 102, DOFOn, DOFFlippers), RightFlipper
         RightFlipper.RotateToEnd
         RightFlipperOn = 1
+        BallActivity
         RotateLaneLights 1
     Else
         PlaySoundAt SoundFXDOF("fx_flipperdown", 102, DOFOff, DOFFlippers), RightFlipper
         RightFlipper.RotateToStart
         RightFlipperOn = 0
+        BallActivity
     End If
 End Sub
 
@@ -589,8 +600,8 @@ End Function
 '****************************************************
 
 Const tnob = 19   'total number of balls
-Const lob = 2     'number of locked balls
-Const maxvel = 28 'max ball velocity
+Const lob = 1     'number of locked balls
+Const maxvel = 35 'max ball velocity
 ReDim rolling(tnob)
 InitRolling
 
@@ -604,6 +615,7 @@ End Sub
 
 Sub RollingTimer_Timer()
     Dim BOT, b, ballpitch, ballvol, speedfactorx, speedfactory
+    CheckStuckBall
     BOT = GetBalls
 
     ' stop the sound of deleted balls
@@ -754,6 +766,7 @@ Sub FirstBall
     'debug.print "FirstBall"
     ' reset table for a new ball, rise droptargets ++
     ResetForNewPlayerBall()
+    StartPlayBall
     CreateNewBall()
 End Sub
 
@@ -882,6 +895,7 @@ Sub EndOfGame()
     DisableTable True
     bGameInPLay = False
     bJustStarted = False
+    RemovePlayBall ' the ball only exists during a game
     TurnON aGameOver
     BallsReel.SetValue 0
     If B2SOn then
@@ -974,6 +988,7 @@ End Sub
 ' *********************************************************************
 
 Sub Drain_Hit()
+    BallActivity
     If bGameInPLay = False Then Exit Sub 'don't do anything, just delete the ball
     BallsOnPlayfield = BallsOnPlayfield - 1
     PlaySoundAt "fx_sensor", Drain
@@ -1001,10 +1016,12 @@ Sub Drain_Hit()
 End Sub
 
 Sub swPlungerRest_Hit()
+    BallActivity
     bBallInPlungerLane = True
 End Sub
 
 Sub swPlungerRest_UnHit()
+    BallActivity
     bBallInPlungerLane = False
     'PlayRandomSong
 End Sub
@@ -1415,7 +1432,7 @@ End Sub
 
 Sub VPObjects_Init 'init objects
     TurnOffPlayfieldLights()
-    vpmTimer.AddTimer 2000, "BallRelease.CreateSizedBallWithMass BallSize / 2, BallMass: BallRelease.Kick 180, 0 '"
+    ' no ball until a game is started (see FirstBall)
     DisableTable True
 End Sub
 
@@ -1484,6 +1501,7 @@ End Sub
 '***********
 
 Sub Bumper001_Hit 'left bumper
+    BallActivity
     If Tilted Then Exit Sub
     PlaySoundAt SoundFXDOF("fx_bumper", 109, DOFPulse, DOFContactors), Bumper001
     AddScore 100
@@ -1491,14 +1509,15 @@ End Sub
 
 ' 10 point rebounds
 
-Sub rlband005_Hit:AddScore 10:End Sub
-Sub rlband007_Hit:AddScore 10:End Sub
-Sub rlband004_Hit:AddScore 10:End Sub
-Sub rlband001_Hit:AddScore 10:End Sub
+Sub rlband005_Hit:BallActivity:AddScore 10:End Sub
+Sub rlband007_Hit:BallActivity:AddScore 10:End Sub
+Sub rlband004_Hit:BallActivity:AddScore 10:End Sub
+Sub rlband001_Hit:BallActivity:AddScore 10:End Sub
 
 ' Top Lanes - skillshot
 
 Sub sw006_Hit '1st
+    BallActivity
     PlaySoundAt "fx_sensor", sw006
     If Tilted Then Exit Sub
     Select Case Mode
@@ -1528,6 +1547,7 @@ Sub sw006_Hit '1st
 End Sub
 
 Sub sw005_Hit '2nd
+    BallActivity
     PlaySoundAt "fx_sensor", sw005
     If Tilted Then Exit Sub
     Select Case Mode
@@ -1564,6 +1584,7 @@ Sub sw005_Hit '2nd
 End Sub
 
 Sub sw004_Hit '3rd
+    BallActivity
     PlaySoundAt "fx_sensor", sw004
     If Tilted Then Exit Sub
     Select Case Mode
@@ -1595,6 +1616,7 @@ End Sub
 ' Outlanes
 
 Sub sw001_Hit 'left
+    BallActivity
     PlaySoundAt "fx_sensor", sw001
     If Tilted Then Exit Sub
     AddScore 500
@@ -1605,6 +1627,7 @@ Sub sw001_Hit 'left
 End Sub
 
 Sub sw003_Hit 'right
+    BallActivity
     PlaySoundAt "fx_sensor", sw003
     If Tilted Then Exit Sub
     AddScore 500
@@ -1617,6 +1640,7 @@ End Sub
 ' Inlanes
 
 Sub sw002_Hit 'left
+    BallActivity
     PlaySoundAt "fx_sensor", sw002
     If Tilted Then Exit Sub
     AddScore 100
@@ -1665,6 +1689,7 @@ End Sub
 ' Right Trigger
 
 Sub Trigger011_Hit
+    BallActivity
     PlaySoundAt "fx_sensor", Trigger011
     If Tilted Then Exit Sub
     Addscore 100
@@ -1673,6 +1698,7 @@ End Sub
 ' orbit triggers
 
 Sub Trigger006_Hit
+    BallActivity
     PlaySoundAt "fx_sensor", Trigger006
     If Tilted Then Exit Sub
     FlashForMs RedInsert006, 50, 50, 0
@@ -1683,18 +1709,21 @@ Sub Trigger006_Hit
 End Sub
 
 Sub Trigger005_Hit
+    BallActivity
     PlaySoundAt "fx_sensor", Trigger005
     If Tilted Then Exit Sub
     FlashForMs RedInsert005, 50, 50, 0
 End Sub
 
 Sub Trigger002_Hit
+    BallActivity
     PlaySoundAt "fx_sensor", Trigger002
     If Tilted Then Exit Sub
     FlashForMs RedInsert004, 50, 50, 0
 End Sub
 
 Sub drain2_Hit
+    BallActivity
     PlaySoundAt "fx_sensor", drain2
     FlashForMs RedInsert001, 50, 50, 0
 End Sub
@@ -1702,6 +1731,7 @@ End Sub
 ' spinner
 
 Sub Spinner001_Spin
+    BallActivity
     PlaySoundAt "fx_spinner", Spinner001
     If Tilted Then Exit Sub
     Addscore 50
@@ -1710,6 +1740,7 @@ End Sub
 ' Base Targets
 
 Sub target001_Hit 'left - 3rd base
+    BallActivity
     PlaySoundAtBall SoundFXDOF("fx_target", 105, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     If mode = 1 AND base3 = 2 Then
@@ -1723,6 +1754,7 @@ Sub target001_Hit 'left - 3rd base
 End Sub
 
 Sub target007_Hit 'center - 2nd base
+    BallActivity
     PlaySoundAtBall SoundFXDOF("fx_target", 106, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     If mode = 1 AND base2 = 2 Then
@@ -1736,6 +1768,7 @@ Sub target007_Hit 'center - 2nd base
 End Sub
 
 Sub target002_Hit 'right - 1st base
+    BallActivity
     PlaySoundAtBall SoundFXDOF("fx_target", 107, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     If mode = 1 AND base1 = 2 Then
@@ -1751,6 +1784,7 @@ End Sub
 ' Grand Slam
 
 Sub target003_Hit 'captive ball
+    BallActivity
     PlaySoundAtBall SoundFXDOF("fx_target", 115, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     If mode = 3 Then
@@ -1764,6 +1798,7 @@ End Sub
 ' triple Targets
 
 Sub target004_Hit 'triple target top
+    BallActivity
     PlaySoundAtBall SoundFXDOF("fx_target", 111, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     If mode = 2 AND triple1 = 2 Then
@@ -1777,6 +1812,7 @@ Sub target004_Hit 'triple target top
 End Sub
 
 Sub target005_Hit 'triple target center
+    BallActivity
     PlaySoundAtBall SoundFXDOF("fx_target", 112, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     If mode = 2 AND triple2 = 2 Then
@@ -1790,6 +1826,7 @@ Sub target005_Hit 'triple target center
 End Sub
 
 Sub target006_Hit 'triple target lower
+    BallActivity
     PlaySoundAtBall SoundFXDOF("fx_target", 113, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     If mode = 2 AND triple3 = 2 Then
@@ -1896,6 +1933,111 @@ Sub WinGame
 End Sub
 
 '*****************************************
+'   Stuck ball detection and reset
+'*****************************************
+' If no switch has been hit and no flipper has moved for StuckBallTime ms,
+' the ball is assumed to be stuck. It is removed and a new ball is put in
+' the plunger lane. This does not count as a drain, so no ball is lost.
+' The play ball only exists during a game: it is created when a game starts
+' (FirstBall) and removed when the game ends (EndOfGame).
+' Ignored while the ball sits in the plunger lane, while a flipper is held up
+' (cradling) and when no game is running. The captive ball is never touched.
+
+Const StuckBallTime = 6000 ' ms without any switch or flipper activity
+
+Dim PlayBall, PlayBallID, LastActivityTime
+Set PlayBall = Nothing
+PlayBallID = -1
+LastActivityTime = 0
+
+Sub CreatePlayBall
+    Set PlayBall = BallRelease.CreateSizedBallWithMass(BallSize / 2, BallMass)
+    PlayBallID = PlayBall.ID
+    BallRelease.Kick 180, 0
+    BallActivity
+End Sub
+
+Sub BallActivity
+    LastActivityTime = GameTime
+End Sub
+
+Sub CheckStuckBall
+    If PlayBall Is Nothing Or bRemovingPlayBall Then Exit Sub
+    If bGameInPlay = False Or bBallInPlungerLane Then BallActivity:Exit Sub
+    If LeftFlipperOn = 1 Or RightFlipperOn = 1 Then BallActivity:Exit Sub
+    If GameTime - LastActivityTime < StuckBallTime Then Exit Sub
+    ResetStuckBall
+End Sub
+
+' True while the play ball is still on the table
+Function PlayBallOnTable
+    Dim b
+    PlayBallOnTable = False
+    If PlayBall Is Nothing Then Exit Function
+    For Each b in GetBalls
+        If b.ID = PlayBallID Then PlayBallOnTable = True
+    Next
+End Function
+
+' Removing a ball directly (ball.DestroyBall) does not work on this setup, so
+' the ball is removed through a kicker instead, which is reliable: it is moved
+' into the BallRelease kicker, and BallRelease_Hit destroys it once the kicker
+' has caught it. The captive ball is never touched.
+Dim bRemovingPlayBall, bRespawnAfterRemove, BallReleaseWasEnabled
+bRemovingPlayBall = False
+bRespawnAfterRemove = False
+
+Sub RemovePlayBall
+    If PlayBall Is Nothing Or bRemovingPlayBall Then Exit Sub
+    If Not PlayBallOnTable Then ClearPlayBall:Exit Sub
+    'debug.print "Removing play ball at X=" & Int(PlayBall.X) & " Y=" & Int(PlayBall.Y)
+    bRemovingPlayBall = True
+    BallReleaseWasEnabled = BallRelease.Enabled
+    BallRelease.Enabled = True
+    PlayBall.VelX = 0:PlayBall.VelY = 0:PlayBall.VelZ = 0
+    PlayBall.AngMomX = 0:PlayBall.AngMomY = 0:PlayBall.AngMomZ = 0
+    PlayBall.X = BallRelease.X
+    PlayBall.Y = BallRelease.Y
+    PlayBall.Z = BallSize / 2
+    BallActivity
+End Sub
+
+Sub BallRelease_Hit
+    If Not bRemovingPlayBall Then Exit Sub
+    'debug.print "Play ball removed"
+    BallRelease.DestroyBall
+    BallRelease.Enabled = BallReleaseWasEnabled
+    bRemovingPlayBall = False
+    ClearPlayBall
+    ' a stuck ball reset puts a fresh ball in the plunger lane
+    If bRespawnAfterRemove Then
+        bRespawnAfterRemove = False
+        If bGameInPlay Then CreatePlayBall
+    End If
+End Sub
+
+Sub ClearPlayBall
+    Set PlayBall = Nothing
+    PlayBallID = -1
+    bBallInPlungerLane = False
+End Sub
+
+' Called when a game starts: puts the ball in the plunger lane, unless one is
+' somehow still on the table from the last game
+Sub StartPlayBall
+    If bRemovingPlayBall Then Exit Sub
+    If Not PlayBallOnTable Then CreatePlayBall
+End Sub
+
+' Removes the stuck ball, and once it is gone creates a new one in the
+' plunger lane the same way a game starts (see BallRelease_Hit)
+Sub ResetStuckBall
+    'debug.print "Stuck ball reset at X=" & Int(PlayBall.X) & " Y=" & Int(PlayBall.Y)
+    bRespawnAfterRemove = True
+    RemovePlayBall
+End Sub
+
+'*****************************************
 '       Music as internal sounds
 '*****************************************
 
@@ -1927,6 +2069,11 @@ End Sub
 
 Dim LUTImage, BallsPerGame
 
+' Gravity as saved in the table, so the option below always scales from
+' the original value instead of compounding each time options change
+Dim BaseGravity
+BaseGravity = Table1.Gravity
+
 Sub Table1_OptionEvent(ByVal eventId)
     Dim x, y
 
@@ -1951,6 +2098,10 @@ Sub Table1_OptionEvent(ByVal eventId)
         Special2 = 380000
         Special3 = 540000
     End if
+
+    ' Gravity, as a percentage of the table's own value (default 125%)
+    x = Table1.Option("Gravity", 1, 1.3, 0.05, 1.25, 1)
+    Table1.Gravity = BaseGravity * x
 
     ' Music  On/Off
     x = Table1.Option("Music", 0, 1, 1, 1, 0, Array("OFF", "ON") )
