@@ -1,5 +1,5 @@
 ---
-fps: 55
+fps: 60
 pupArchiveFormat: "zip"
 pupArchiveRoot: "DarkestDungeon"
 pupBundled: true

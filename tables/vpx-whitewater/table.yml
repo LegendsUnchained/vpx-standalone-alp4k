@@ -18,6 +18,8 @@ romVPSId: "EQfOFCxq"
 tableVPSId: "LJRH3fKk"
 testers:
   - "Reboot"
+  - "Missile Toad"
+  - "PBW23"
 tutorialVPSId: "VfEWZNP8y3"
 vpxChecksum: "58BF754498CF629F5F0D4269735E0D8B"
 vpxVPSId: "--fspsKJ"
