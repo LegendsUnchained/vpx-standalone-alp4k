@@ -8,7 +8,7 @@ pupVersion: "1.0.0"
 pupVPSId: "Vcosltul6c"
 romBundled: true
 romChecksum: "12820627F417695D9C0AECFE4EC3F227"
-romNotes: "Included in the .VPX download"
+romNotes: "Extract 'victory.zip' from 'Gremlins by Balutito 1.7.rar'"
 tableVPSId: "6gWoDDnYsU"
 tagline: "Don't feed him after midnight!"
 testers:
