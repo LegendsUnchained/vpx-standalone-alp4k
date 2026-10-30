@@ -20,7 +20,7 @@ image:../images/add_table_yml.png[]
 
 === _All YML Fields - In Detail_
 
-Here is an example of every field possible: (as of 27 May 2025)
+Here is an example of every field possible: (as of 14 October 2026)
 
 ....
 additionalRoms:              | [Array of Objects]
@@ -28,7 +28,7 @@ altSoundArchiveFormat:       | [String]
 altSoundArchiveRoot:         | [String]
 altSoundAuthorsOverride:     | [Array]
 altSoundBundled:             | [Bool]
-altSoundChecksum:            | [String]
+altSoundChecksum:            | [String|List]
 altSoundNotes:               | [String]
 altSoundNSFW:                | [Bool]
 altSoundUrlOverride:         | [String]
@@ -37,56 +37,69 @@ altSoundVPSId:               | [String]
 applyFixes:                  | [Array]
 backglassAuthorsOverride:    | [Array]
 backglassBundled:            | [Bool]
-backglassChecksum:           | [String]
-backglassImageOverride       | [String]
+backglassChecksum:           | [String|List]
+backglassImageOverride:      | [String]
 backglassNotes:              | [String]
 backglassNSFW:               | [Bool]
 backglassUrlOverride:        | [String]
 backglassVPSId:              | [String]
 coloredROMBundled:           | [Bool]
-coloredROMChecksum:          | [String]
+coloredROMChecksum:          | [String|List]
 coloredROMNotes:             | [String]
 coloredROMNSFW:              | [Bool]
+coloredROMPin2DMD:           | [Bool]
 coloredROMUrlOverride:       | [String]
 coloredROMVersionOverride:   | [String]
 coloredROMVPSId:             | [String]
+diffAuthorsOverride:         | [Array]
+diffBundled:                 | [Bool]
+diffChecksum:                | [String|List]
+diffNotes:                   | [String]
 diffNSFW:                    | [Bool]
+diffUrlOverride:             | [String]
+diffVersionOverride:         | [String]
+diffVPSId:                   | [String]
 enabled:                     | [Bool]
 fps:                         | [Int]
 mainNotes:                   | [String]
 nsfw:                        | [Bool]
 pupArchiveFormat:            | [String]
 pupArchiveRoot:              | [String]
-pupChecksum:                 | [String]
+pupBundled:                  | [Bool]
+pupChecksum:                 | [String|List]
 pupFileUrl:                  | [String]
 pupNotes:                    | [String]
 pupNSFW:                     | [Bool]
 pupRequired:                 | [Bool]
 pupVersion:                  | [String]
+pupVPSId:                    | [String]
 postInstallRename:           | [Array of Objects]
 romBundled:                  | [Bool]
-romChecksum:                 | [String]
+romChecksum:                 | [String|List]
 romNotes:                    | [String]
 romNSFW:                     | [Bool]
 romUrlOverride:              | [String]
 romVersionOverride:          | [String]
 romVPSId:                    | [String]
+tableManufacturerOverride:   | [String]
 tableNameOverride:           | [String]
 tableNotes:                  | [String]
 tableVPSId:                  | [String]
+tableYearOverride:           | [Int]
 tagline:                     | [String]
 specialDMDArchiveFormat:     | [String]
 specialDMDArchiveRoot:       | [String]
 specialDMDBundled:           | [Bool]
-specialDMDChecksum:          | [String]
+specialDMDChecksum:          | [String|List]
 specialDMDNotes:             | [String]
 specialDMDNSFW:              | [Bool]
 specialDMDType:              | [String]
 specialDMDUrlOverride:       | [String]
 specialDMDVersion:           | [String]
 testers:                     | [Array]
+tutorialVPSId:               | [String]
 vpxArchiveFormat:            | [String]
-vpxChecksum:                 | [String]
+vpxChecksum:                 | [String|List]
 vpxExtractExtra:             | [Array]
 vpxMagic:                    | [Array]
 vpxNSFW:                     | [Bool]
@@ -310,7 +323,7 @@ backglassChecksum
 
 Type:
 ------------
-String
+String, or List for two or more accepted hashes
 
 Description:
 ------------
@@ -446,7 +459,7 @@ Boolean
 
 Description:
 ------------
-Set this field to 'true' if the serum .c7z file can be found in the same download as the .vpx file!
+Set this field to 'true' if the serum .cRZ file can be found in the same download as the .vpx file!
 This removes the download button from the serum, to simplify the process for the end user.
 
 Example:
@@ -458,7 +471,7 @@ Gotchas:
 - The wizard will assume the file is in the vpx download.
   You cannot currently tell the wizard that it's in a different place like the rom/puppack download etc.
 - If this field is set then 'coloredROMNotes' becomes mandatory.
-  You need to explain where to find the .c7z file.
+  You need to explain where to find the .cRZ file.
 ....
 
 ....
@@ -468,11 +481,11 @@ coloredROMChecksum
 
 Type:
 ------------
-String
+String, or List for two or more accepted hashes
 
 Description:
 ------------
-This is the MD5 checksum value for the .c7z file, taken from QuickHash.
+This is the MD5 checksum value for the .cRZ file, taken from QuickHash.
 See more info below on this page at "QuickHash (Checksums / Hash / MD5)"
 
 Example:
@@ -498,7 +511,7 @@ Description:
 ------------
 Notes for the serum field, displayed next to the download button.
 Put useful information here, or even just the file name to make things clear.
-I recommend always setting it if you have a .c7z file on the table.
+I recommend always setting it if you have a .cRZ file on the table.
 
 Example:
 ------------
@@ -520,6 +533,30 @@ Gotchas:
 
 ....
 ########################
+coloredROMPin2DMD
+########################
+
+Type:
+------------
+Boolean
+
+Description:
+------------
+Tells the wizard which colorization format the table uses.
+- true: a Pin2DMD pair, a .pal AND a .vni file (two upload slots).
+- false / not set: a single Serum file (e.g. .cRZ / .cromc).
+
+Example:
+------------
+coloredROMPin2DMD: true
+
+Gotchas:
+------------
+- For a Pin2DMD pair, coloredROMChecksum should list the hashes of BOTH files.
+....
+
+....
+########################
 coloredROMUrlOverride
 ########################
 
@@ -530,8 +567,8 @@ String
 Description:
 ------------
 This is a URL override for the serum file.
-If the c7z is in VPS there is no need for this field.
-Only use it when the c7z isn't on VPS yet, and make sure to request the c7z is added on the 'Visual Pinball Chat' discord, #vps channel
+If the .cRZ is in VPS there is no need for this field.
+Only use it when the .cRZ isn't on VPS yet, and make sure to request the .cRZ is added on the 'Visual Pinball Chat' discord, #vps channel
 
 Example:
 ------------
@@ -594,6 +631,53 @@ Gotchas:
 ------------
 - Same as the checksum, the only real problem seen here is accidently copying the ID from a different component!
   So just double check you pasted the right value :)
+....
+
+....
+########################
+diff (diffVPSId / diffUrlOverride / diffBundled / ...)
+########################
+
+Type:
+------------
+Group of fields (see below)
+
+Description:
+------------
+A diff is a VPU patch (.dif) applied to the .vpx at install time, e.g. a fix
+or a mod for the table. The wizard offers it as an optional upload. Fields:
+
+- diffVPSId: [String] VPS ID of the patch; resolves authors / url / version.
+- diffUrlOverride: [String] direct download URL. Unlike most components the
+  override WINS over the VPS url when both are set.
+- diffVersionOverride: [String] version label; required with diffUrlOverride.
+- diffAuthorsOverride: [Array] overrides the VPS-resolved authors.
+- diffChecksum: [String|List] MD5(s) of the .dif file. REQUIRED when
+  diffBundled is true. One hash -> a string; two or more -> a YAML list.
+- diffNotes: [String] Markdown notes shown on the wizard row. REQUIRED when
+  diffBundled is true.
+- diffBundled: [Bool] the .dif ships inside the table download itself. The
+  download button is hidden, and the wizard finds the .dif inside the table
+  archive the user picks.
+- diffNSFW: [Bool] see the NSFW section above.
+
+Example:
+------------
+diffVPSId: "xxxxxxxx"
+diffChecksum: "00000000000000000000000000000000"
+
+- or, bundled -
+
+diffBundled: true
+diffChecksum: "00000000000000000000000000000000"
+diffNotes: "The .dif is in the table download, next to the .vpx"
+
+
+Gotchas:
+------------
+- Hash the .dif file itself, not the archive it came in.
+- Like the other bundled fields, the wizard only looks inside the table
+  download. It cannot find a .dif that ships in the rom or puppack download.
 ....
 
 ....
@@ -717,7 +801,33 @@ pupArchiveRoot: "TableMedia/PupFiles/"
 
 Gotchas:
 ------------
-- THE TABLE MANAGER IS NOT SET UP TO USE THIS FIELD ATM!
+- Only the folder named here is extracted, into PUPVideos/<last folder of the path>,
+  so point it at the folder that should end up in PUPVideos (e.g. "PupFiles/mytable").
+....
+
+....
+########################
+pupBundled
+########################
+
+Type:
+------------
+Boolean
+
+Description:
+------------
+Set this field to 'true' if the puppack archive can be found in the same download as the .vpx file.
+This removes the download button from the puppack and makes the wizard offer it even
+when pupRequired is not set.
+
+Example:
+------------
+pupBundled: true
+
+Gotchas:
+------------
+- Recommended: set 'pupNotes' to explain where in the download the puppack is.
+- A bundled puppack is optional unless pupRequired is also true.
 ....
 
 ....
@@ -727,7 +837,7 @@ pupChecksum
 
 Type:
 ------------
-String
+String, or List for two or more accepted hashes
 
 Description:
 ------------
@@ -757,7 +867,8 @@ String
 Description:
 ------------
 This is the download URL for the puppack zip/rar.
-Currently this is the only way to link a puppack, as there is no pupFileVpsId field.
+Prefer pupVPSId when the puppack is on VPS. Use this field when it isn't; when
+both are set, the VPS urls win and this is only used if every VPS mirror is broken.
 
 Example:
 ------------
@@ -809,11 +920,12 @@ pupRequired
 
 Type:
 ------------
-String
+Boolean
 
 Description:
 ------------
 Specifies if the puppack is mandatory, like Space Cadet or John Wick for example.
+A linked (non-bundled) puppack is only offered by the wizard when this is true.
 
 Example:
 ------------
@@ -849,6 +961,31 @@ Gotchas:
 
 ....
 ########################
+pupVPSId
+########################
+
+Type:
+------------
+String
+
+Description:
+------------
+The VPS ID for the puppack. Resolves the download url (and the authors) from VPS,
+so pupFileUrl is not needed when this is set.
+For more information, see the "Visual Pinball Spreadsheet (VPS)" section below
+
+Example:
+------------
+pupVPSId: "2YD0f8I0Y2"
+
+Gotchas:
+------------
+- VPS does not provide a version for puppacks; set pupVersion yourself.
+- The wizard only offers a linked puppack when pupRequired is true (or pupBundled is set).
+....
+
+....
+########################
 romBundled
 ########################
 
@@ -880,7 +1017,7 @@ romChecksum
 
 Type:
 ------------
-String
+String, or List for two or more accepted hashes
 
 Description:
 ------------
@@ -1067,6 +1204,25 @@ Gotchas:
 
 ....
 ########################
+tableManufacturerOverride
+########################
+
+Type:
+------------
+String
+
+Description:
+------------
+Override for the table's manufacturer, normally taken from tableVPSId.
+Only use it when VPS is wrong, or the table isn't on VPS.
+
+Example:
+------------
+tableManufacturerOverride: "Williams"
+....
+
+....
+########################
 tableNameOverride
 ########################
 
@@ -1143,6 +1299,29 @@ Gotchas:
 
 ....
 ########################
+tableYearOverride
+########################
+
+Type:
+------------
+Integer
+
+Description:
+------------
+Override for the table's year, normally taken from tableVPSId.
+Only use it when VPS is wrong, or the table isn't on VPS.
+
+Example:
+------------
+tableYearOverride: 1992
+
+Gotchas:
+------------
+- Write it as a plain number, without quotes.
+....
+
+....
+########################
 tagline
 ########################
 
@@ -1197,6 +1376,32 @@ Gotchas:
 - Like all arrays, make sure that each item in the list has 2 spaces at the start: '  - "CoffeeAtJoes"'
 - Make sure to include the original tester who submitted the table! We don't leave anyone out.
   If they didn't write their name in the README then you can find it in the git history for the file.
+....
+
+....
+########################
+tutorialVPSId
+########################
+
+Type:
+------------
+String
+
+Description:
+------------
+The VPS ID of a tutorial video for the table. Resolves the title, authors and
+YouTube ID from VPS into the manifest (tutorialTitle / tutorialAuthors /
+tutorialYouTubeID).
+
+Example:
+------------
+tutorialVPSId: "2YD0f8I0Y2"
+
+Gotchas:
+------------
+- Optional. If the ID isn't found in VPS the field is dropped with a warning;
+  the table is not skipped.
+- Table Manager does not show the tutorial yet, so this is currently metadata only.
 ....
 
 ....
@@ -1296,7 +1501,7 @@ vpxChecksum
 
 Type:
 ------------
-String
+String, or List for two or more accepted hashes
 
 Description:
 ------------

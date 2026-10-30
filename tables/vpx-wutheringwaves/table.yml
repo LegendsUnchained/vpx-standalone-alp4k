@@ -3,15 +3,15 @@ fps: 57
 pupArchiveFormat: "rar"
 pupArchiveRoot: "WuWa"
 pupBundled: true
-pupChecksum: "E19189B506C28EDD12AF6408990F2077"
-pupNotes: "Download 'WuWa.rar'"
+pupChecksum: "25D3F38252832869086E1AF5AC91DCBD"
+pupNotes: "Download 'WuWa.rar' 5.61 GB"
 pupRequired: true
 pupVersion: "WuWa"
-tableNotes: "Download 'Wuthering Waves (2026) v1.02.vpx' File Size 333.07 MB. 1.03 is mislabeled as 1.02."
+tableNotes: "Download 'Wuthering Waves (2026) TombGman v1.04.vpx' 287.62 MB"
 tableVPSId: "Pfyv1wi_Go"
 tagline: "Master the concerto. Summon your echos. [sic]"
 testers:
   - "Curt"
   - "Wraith"
-vpxChecksum: "6C2BF6E8753475D3F7760F7771CF343A"
+vpxChecksum: "DFEB1B89E55D5A3B9678D08C8474BBAD"
 vpxVPSId: "ELfdwzW0JN"
