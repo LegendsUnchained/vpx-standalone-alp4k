@@ -1,26 +1,23 @@
 ---
-# yamllint disable-line rule:line-length
-backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/94082334064a08967b786dfde48f5c22_b2s_1638093208799.webp"
-fps: 58
-pupArchiveRoot: "avr_200"
-pupChecksum: "d22f46b5ca0c978dd8abc7948200f4d8"
-pupFileUrl: >-
-  https://mega.nz/file/iNlEQJjI#nxoXhGk1r8N9oGOqDu8Znbx6E8UEpCkyihWivGBVmJY
-pupRequired: true
-pupVersion: "avr_200"
-romVPSId: "IaYZ89Ev"
-romChecksum: "2f295027a8e90b45fc58eea2ec51d66f"
-coloredROMVPSId: "B82eMKSnmb"
 coloredROMChecksum: "EE233399780A952C707B1E04D9C15704"
 coloredROMNotes: "Download version 1.0.1"
-tableVPSId: "W_p2sxKM"
+coloredROMVPSId: "B82eMKSnmb"
+fps: 58
+pupArchiveFormat: "zip"
+pupArchiveRoot: "avr_200"
+pupChecksum: "D22F46B5CA0C978DD8ABC7948200F4D8"
+pupRequired: true
+pupVersion: "avr_200"
+pupVPSId: "tRM6anLVun"
+romChecksum: "2F295027A8E90B45FC58EEA2EC51D66F"
+romVPSId: "IaYZ89Ev"
 tableNotes: "Download version 3.2"
-tagline: >-
-  "The War For Pandora Begins Now!"
+tableVPSId: "W_p2sxKM"
+tagline: "'The War For Pandora Begins Now!'"
 testers:
   - "kaoticBPR"
   - "mrandromeda"
   - "OminousOsie"
   - "kingargyle"
-vpxVPSId: "_KkJPEqB"
 vpxChecksum: "C0A68A9BC49A2A77239FF89CE81C7FC6"
+vpxVPSId: "_KkJPEqB"
