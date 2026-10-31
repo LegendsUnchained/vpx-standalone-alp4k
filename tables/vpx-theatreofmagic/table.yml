@@ -1,0 +1,16 @@
+---
+backglassChecksum: "A1695208AB3F9EE39ECEC6CE927BFD70"
+backglassVPSId: "4ymZDDzey-"
+coloredROMChecksum: "C7D849C05B27A66CD947CCBD833120BD"
+coloredROMNotes: "Download 'tom_2.0.pac'"
+coloredROMVPSId: "fCcZMXuB"
+fps: 60
+romChecksum: "5D022B513D48D5149955558F8CC8F988"
+romNotes: "Download tom_14hb"
+romUrlOverride: "https://www.vpforums.org/index.php?app=downloads&showfile=5538"
+romVersionOverride: "tom_14hb"
+tableVPSId: "Tc_1PRrM"
+testers:
+  - "Wraith"
+vpxChecksum: "D7F5833416267729F89C8CE13A15E10B"
+vpxVPSId: "3cxF1Bss"
