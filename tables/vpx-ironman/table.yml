@@ -4,8 +4,9 @@ backglassVPSId: "7hX3a_EszE"
 coloredROMChecksum: "95A0C0723B5852C366C6DFEB2BE1DD95"
 coloredROMVPSId: "THqI2vgsOp"
 fps: 60
-romChecksum: "FB971A641EFB89B0D131FDD3BFE3579D"
-romNotes: "Iron Man 1.86 Game Code, im_186"
+romChecksum: "DDDF0586EA62450EE0E96C8A78EC9469"
+romNotes: "Download Iron Man 1.86 Game Code"
+romVersionOverride: "im_186"
 romVPSId: "YY3V3B3j"
 tableVPSId: "Rg-pW0Ks"
 testers:
