@@ -1,11 +1,9 @@
 ---
-# yamllint disable-line rule:line-length
-backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/undefined_b2s_1665578424738.webp"
 fps: 60
 pupArchiveRoot: "Hellraiser1.0.1/HellRaiser"
 pupChecksum: "6DE77436C19D088D9E701E26CB57D138"
-pupFileUrl: >-
-  https://vpuniverse.com/files/file/11763-hellraiser/
+pupVPSId: "dx2X180guD"
+pupNotes: "Download v1.0.1"
 pupRequired: true
 pupVersion: "Hellraiser"
 pupArchiveFormat: "rar"
