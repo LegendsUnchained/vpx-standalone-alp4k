@@ -3,6 +3,9 @@ backglassBundled: true
 backglassChecksum: "7CC43D93F71A7A407DABEF5285E16B46"
 backglassNotes: "Included in .vpx download"
 fps: 60
+mainNotes: >-
+  To change the home and away teams use the left magnasave and the left flipper or right flipper. Once chosen these
+  teams will stick for future plays.
 romChecksum: "1362DE77667CB4ABC042AC17A6972428"
 romNotes: "Download icefever.zip"
 romUrlOverride: "https://pinballnirvana.com/forums/resources/icefever.3350/"
