@@ -1,0 +1,18 @@
+---
+fps: 60
+pupArchiveFormat: "zip"
+pupArchiveRoot: "STRANGERTHINGS4"
+pupBundled: true
+pupChecksum: "2FADD558CFBC48EDC0FD737102351FC0"
+pupNotes: "In the vpx bundle"
+pupRequired: true
+pupVersion: "ST"
+tableNameOverride: "Stranger Things Season 4"
+tableYearOverride: 2023
+tableNotes: "Download ST.zip"
+tableVPSId: "RExBoops"
+tagline: "What's buried doesn't stay buried."
+testers:
+  - "mrandromeda"
+vpxChecksum: "69BF8452925E6C828625CAD1B846DCA0"
+vpxVPSId: "N9oM8Qqiq_"
