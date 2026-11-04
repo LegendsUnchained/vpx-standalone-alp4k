@@ -289,7 +289,7 @@ Sub Table1_Init
 	PinMAMETimer.Interval	= PinMAMEInterval
 	PinMAMETimer.Enabled	= True
 
-     vpmNudge.TiltSwitch = 7
+     vpmNudge.TiltSwitch = swTilt ' was 7 = swSlamTilt on System 7: a tilt ended the game
      vpmNudge.Sensitivity = 5
      vpmNudge.TiltObj = Array(Bumper1, Bumper2, Bumper3, Bumper4, LeftSlingshot, RightSlingshot)
 
