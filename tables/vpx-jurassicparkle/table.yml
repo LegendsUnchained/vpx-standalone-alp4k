@@ -1,17 +1,14 @@
 ---
-# yamllint disable-line rule:line-length
-backglassImageOverride: "https://virtualpinballspreadsheet.github.io/vps-db/img/jVK492fx_b2s_1699628256650.webp"
 fps: 60
+pupArchiveFormat: "zip"
 pupArchiveRoot: "jurassic Pro"
 pupChecksum: "BEA5B84EA32711022CE2B5F34144C1EF"
-pupFileUrl: >-
-  https://vpuniverse.com/files/file/20502-jurassic-park-pro-le/
 pupRequired: true
-pupVersion: "jurassic Pro"
-pupNotes: "Download 'PUPPACK jurassic Pro.zip'"
+pupVersion: "4.2"
+pupVPSId: "Z8DsnTH9Lc"
 tableNameOverride: "Jurassic Park Pro LE"
-tableVPSId: "jVK492fx"
 tableNotes: "Download version 4.2 | Found in 'Pack Jurassic Park Pro Le 4.02.zip'"
+tableVPSId: "jVK492fx"
 tagline: "An adventure 65 million years in the making"
 testers:
   - "mrandromeda"

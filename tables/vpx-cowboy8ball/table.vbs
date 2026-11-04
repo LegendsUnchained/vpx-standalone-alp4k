@@ -23,7 +23,7 @@ Const UseGI = 0
 Const UseSync = 0   'set it to 1 if the table runs too fast
 Const HandleMech = 0
 Const vpmhidden = 1 'hide the vpinmame window
-Const FreePlay = False
+Const FreePlay = True
 
 Plunger.MechStrength = 150
 
