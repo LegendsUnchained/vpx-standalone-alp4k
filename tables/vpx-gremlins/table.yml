@@ -1,0 +1,18 @@
+---
+fps: 60
+pupArchiveFormat: "zip"
+pupArchiveRoot: "Gremlins Pup-Pack/gremlins"
+pupChecksum: "87D4F35D1A4519CC274408FB7FF1D2EB"
+pupRequired: true
+pupVersion: "1.0.0"
+pupVPSId: "Vcosltul6c"
+romBundled: true
+romChecksum: "12820627F417695D9C0AECFE4EC3F227"
+romVersionOverride: "victory"
+romNotes: "Extract 'victory.zip' from 'Gremlins by Balutito 1.7.rar'"
+tableVPSId: "6gWoDDnYsU"
+tagline: "Don't feed him after midnight!"
+testers:
+  - "Reboot"
+vpxChecksum: "EB3D6CAD7E5A7009C3947E1725F5BC6D"
+vpxVPSId: "x2-lo9dOv2"
