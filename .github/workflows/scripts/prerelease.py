@@ -21,16 +21,25 @@ late, so a device holding the previous manifest still finds its download.
 The delta is decided by folder trees alone. A table whose files are untouched
 keeps stable's entry, VPSDB-side metadata included, until its folder changes.
 
+An updated table is marked metadataOnly when none of its files but table.yml
+changed and its manifest entry differs from stable's only in descriptive
+fields (VPS ids, URLs, authors, notes, versions, ...), every checksum
+included: the same downloads, installed the same way. Testers need not sign
+those off (tm-installer reports them ready).
+
     prerelease.py sync [--dry-run] [--out-dir DIR] [--summary FILE]
 """
 import argparse
 import copy
 import hashlib
+import io
 import json
 import os
 import subprocess
 import sys
 import tempfile
+import urllib.parse
+import zipfile
 from datetime import datetime, timezone
 
 import catalog_history
@@ -76,6 +85,105 @@ def compute_delta(stable, trees, enabled):
     return dict(sorted(delta.items()))
 
 
+# --- Metadata-only updates --------------------------------------------------
+
+# Release bookkeeping: differs for every new version, says nothing about it.
+RELEASE_FIELDS = frozenset({"configVersion", "configFingerprint", "repoConfig",
+                            "repoConfigChecksum", *catalog_history.DATE_FIELDS})
+# Manifest fields that only describe a table. Anything else (checksums, fps,
+# archive formats and roots, bundled flags, renames, fixes, folders, ...)
+# changes what is downloaded or how it installs or plays, and needs testers.
+METADATA_FIELDS = frozenset({"name", "manufacturer", "year", "tagline", "testers", "vpsdbId",
+                             "designers", "image", "players", "type", "version", "nsfw",
+                             "mainNotes"})
+METADATA_SUFFIXES = ("Authors", "Comment", "Notes", "Image", "Version", "VpsId", "FileUrl",
+                     "NSFW", "Title", "YouTubeID")
+
+
+def functional_changes(before, after):
+    """Manifest fields, other than metadata, that differ between two entries."""
+    return sorted(f for f in set(before) | set(after)
+                  if f not in RELEASE_FIELDS and f not in METADATA_FIELDS
+                  and not f.endswith(METADATA_SUFFIXES) and before.get(f) != after.get(f))
+
+
+def _ignored_file(path):
+    name = os.path.basename(path)
+    return name == "table.yml" or name in config_bundle.PRESENTATION_FILES
+
+
+def folder_digests(folder):
+    """{relative path: md5} of a folder's files but table.yml and presentation."""
+    out = {}
+    for root, _dirs, files in os.walk(folder):
+        for name in files:
+            path = os.path.join(root, name)
+            rel = os.path.relpath(path, folder).replace(os.sep, "/")
+            if not _ignored_file(rel):
+                out[rel] = config_bundle.md5sum(path)
+    return out
+
+
+def zip_digests(data):
+    """folder_digests for a config zip's contents."""
+    out = {}
+    with zipfile.ZipFile(io.BytesIO(data)) as zf:
+        for info in zf.infolist():
+            rel = info.filename.removeprefix("./")
+            if not info.is_dir() and not _ignored_file(rel):
+                out[rel] = md5(zf.read(info))
+    return out
+
+
+class StableZips:
+    """Stable config zips by download URL, fetched through the API."""
+
+    def __init__(self, api):
+        self.api = api
+        self.assets = {}
+
+    def get(self, url):
+        prefix = f"https://github.com/{self.api.repo}/releases/download/"
+        if not (url or "").startswith(prefix) or "/" not in url[len(prefix):]:
+            return None
+        tag, name = (urllib.parse.unquote(p) for p in url[len(prefix):].split("/", 1))
+        if tag not in self.assets:
+            release = self.api.release_by_tag(tag)
+            self.assets[tag] = self.api.assets(release["id"]) if release else []
+        return self.api.named_bytes(self.assets[tag], name)
+
+
+def mark_metadata_only(delta, entries, stable_m, prev_delta, stable_tag, zips,
+                       tables_dir=TABLES):
+    """Give each updated delta entry filesChanged and metadataOnly.
+
+    filesChanged: whether any file but table.yml (and presentation files)
+    differs from stable's zip. It is taken from the previous sync for the same
+    stable and version, so a table's stable zip is read once per version.
+    Unknown (stable's zip unreadable) counts as changed and is not recorded.
+    """
+    before = {}
+    if prev_delta and prev_delta.get("stable") == stable_tag:
+        before = prev_delta.get("tables") or {}
+    for key, v in delta.items():
+        if v["change"] != "updated" or key not in entries:
+            continue
+        then = before.get(key) or {}
+        if then.get("configVersion") == v["configVersion"] and "filesChanged" in then:
+            v["filesChanged"] = then["filesChanged"]
+        else:
+            try:
+                data = zips.get((stable_m.get(key) or {}).get("repoConfig"))
+                if data is not None:
+                    v["filesChanged"] = (folder_digests(os.path.join(tables_dir, key))
+                                         != zip_digests(data))
+            except Exception as e:  # never fail a sync over this; it needs sign-off
+                print(f"::warning::{key}: stable's zip could not be compared: {e}")
+        v["metadataOnly"] = (v.get("filesChanged") is False
+                             and not functional_changes(stable_m.get(key) or {}, entries[key]))
+    return delta
+
+
 def apply_delta(stable, entries, removed):
     """Stable's manifest with delta entries put in and removed keys taken out."""
     manifest = copy.deepcopy(stable)
@@ -117,10 +225,17 @@ def zips_to_purge(asset_names, manifest, previous, repo):
 
 
 def fresh_in_delta(delta, previous):
-    """Staged tables new since the previous sync: new to the delta or a new version."""
+    """Staged tables new since the previous sync: new to the delta or a new version.
+
+    Metadata-only updates are left out: there is nothing for testers to test.
+    """
     before = (previous or {}).get("tables", {})
+
+    def ident(v):
+        return v and (v.get("change"), v.get("configVersion"))
     return [k for k, v in delta.items()
-            if v["change"] != "removed" and before.get(k) != v]
+            if v["change"] != "removed" and not v.get("metadataOnly")
+            and ident(before.get(k)) != ident(v)]
 
 
 def notes(manifest, delta, keys=None):
@@ -292,6 +407,8 @@ def sync(api, dry_run=False, out_dir="prerelease-out", tables_dir=TABLES):
     entries, unresolved = resolve(staged, trees, tables_dir)
     for key in unresolved:
         delta.pop(key)
+    mark_metadata_only(delta, entries, stable_m, prev_delta, stable["tag_name"],
+                       StableZips(api), tables_dir)
     removed = [k for k, v in delta.items() if v["change"] == "removed"]
 
     # Zips: reuse what an earlier sync uploaded, build the rest.
@@ -420,7 +537,8 @@ def summary_markdown(result):
     if delta:
         lines += ["", "| Table | Change | Version | Built this run |", "|---|---|---|---|"]
         for k, v in delta.items():
-            lines.append(f"| `{k}` | {v['change']} | {v['configVersion'] or '-'} | "
+            change = v["change"] + (" (metadata only)" if v.get("metadataOnly") else "")
+            lines.append(f"| `{k}` | {change} | {v['configVersion'] or '-'} | "
                          f"{'yes' if k in result['build'] else ''} |")
     if result["unresolved"]:
         lines += ["", "**Not staged: VPSDB could not resolve** "

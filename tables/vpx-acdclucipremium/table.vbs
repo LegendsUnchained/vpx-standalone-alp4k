@@ -1373,24 +1373,23 @@ Sub sw54_UnHit:Controller.Switch(54) = 0:End Sub
 
 
 
+' ALP4KP: relay sound only on on/off edges (was played on every PWM step)
+Dim Flash121On, Flash131On : Flash121On = False : Flash131On = False
+
 Sub FlashSol121(level)
-'		Objlevel(1) = level/255 : FlasherFlash1_Timer
-		Objlevel(1) = (level/255)^0.75 : FlasherFlash1_Timer
-		if level > 0 then
-			Sound_Flash_Relay 1, Flasherflash1
-		else 
-			Sound_Flash_Relay 0, Flasherflash1
-		end if
+	Objlevel(1) = (level/255)^0.75 : FlasherFlash1_Timer
+	If (level > 0) <> Flash121On Then
+		Flash121On = (level > 0)
+		If Flash121On Then Sound_Flash_Relay 1, Flasherflash1 Else Sound_Flash_Relay 0, Flasherflash1
+	End If
 End Sub
 
 Sub FlashSol131(level)
-'		Objlevel(2) = level/255 : FlasherFlash2_Timer
-		Objlevel(2) = (level/255)^0.75 : FlasherFlash2_Timer
-		if level > 0 then
-			Sound_Flash_Relay 1, Flasherflash2
-		else 
-			Sound_Flash_Relay 0, Flasherflash2
-		end if
+	Objlevel(2) = (level/255)^0.75 : FlasherFlash2_Timer
+	If (level > 0) <> Flash131On Then
+		Flash131On = (level > 0)
+		If Flash131On Then Sound_Flash_Relay 1, Flasherflash2 Else Sound_Flash_Relay 0, Flasherflash2
+	End If
 End Sub
 
 Dim TestFlashers, TableRef, FlasherLightIntensity, FlasherFlareIntensity, FlasherBloomIntensity, FlasherOffBrightness
@@ -1400,7 +1399,7 @@ TestFlashers = 0				' *** set this to 1 to check position of flasher object 			*
 Set TableRef = ACDC				' *** change this, if your table has another name       			***
 FlasherLightIntensity = 0.1		' *** lower this, if the VPX lights are too bright (i.e. 0.1)		***
 FlasherFlareIntensity = 0.2		' *** lower this, if the flares are too bright (i.e. 0.1)			***
-FlasherBloomIntensity = 0.1		' *** lower this, if the blooms are too bright (i.e. 0.1)			***	
+FlasherBloomIntensity = 0		'ALP4KP: was 0.1 - bloom quads disabled	' *** lower this, if the blooms are too bright (i.e. 0.1)			***	
 FlasherOffBrightness = 0.3		' *** brightness of the flasher dome when switched off (range 0-2)	***
 								' *********************************************************************
 
@@ -1457,7 +1456,7 @@ End Sub
 Sub RotateFlasher(nr, angle) : angle = ((angle + 360 - objbase(nr).ObjRotZ) mod 180)/30 : objbase(nr).showframe(angle) : objlit(nr).showframe(angle) : End Sub
 
 Sub FlashFlasher(nr)
-	If not objflasher(nr).TimerEnabled Then objflasher(nr).TimerEnabled = True : objflasher(nr).visible = 1 : objbloom(nr).visible = 1 : objlit(nr).visible = 1 : End If
+	If not objflasher(nr).TimerEnabled Then objflasher(nr).TimerEnabled = True : objflasher(nr).visible = 1 : objbloom(nr).visible = 0 : objlit(nr).visible = 1 : End If
 	objflasher(nr).opacity = 1000 *  FlasherFlareIntensity * ObjLevel(nr)^2.5
 	objbloom(nr).opacity = 100 *  FlasherBloomIntensity * ObjLevel(nr)^2.5
 	objlight(nr).IntensityScale = 0.5 * FlasherLightIntensity * ObjLevel(nr)^3
@@ -4106,7 +4105,7 @@ Sub LampTimer_Timer()
 	chglamp = Controller.ChangedLamps
 	If Not IsEmpty(chglamp) Then
 		For x = 0 To UBound(chglamp) 			'nmbr = chglamp(x, 0), state = chglamp(x, 1)
-			If ChgLamp(ii, 0) = 130 Then 
+			If ChgLamp(x, 0) = 130 Then 
 				'Debug.print "chgLamp = 130"
 				'Debug.print "LampState(130) = " & LampState(130)
 				'Debug.print "ChgLamp(ii,1) = " & ChgLamp(ii,1)
@@ -4193,6 +4192,11 @@ Sub LampTimer_Timer()
 	'UpdateGIs
 	'Lampz.Update	'update (fading logic only)
 End Sub
+
+' ALP4KP: per-flasher dirty flags for LampzMod
+Dim ModDirty(200), ModNrs, mi
+ModNrs = Array(177,179,180,182,183,185,186,187,188,189,190)
+For mi = 0 To 200 : ModDirty(mi) = True : Next
 
 dim FrameTime, InitFrameTime : InitFrameTime = 0
 LampTimer2.Interval = -1
@@ -4309,6 +4313,7 @@ Sub LampTimer2_Timer()
 	LampzMod 189, f29b		'Thunder Right
 	LampzMod 189, f29c		'Thunder Right
 	LampzMod 190, f30		'Right Ramp
+	For Each mi In ModNrs : ModDirty(mi) = False : Next	'ALP4KP: flasher writes done this frame
 '	LampMod 191, f31 		'Red Dome
 '	LampMod 191, f31a		'Red Dome
 '	LampMod 191, f31b		'Red Dome
@@ -4896,16 +4901,12 @@ End Function
 
 
 
+' ALP4KP: only write flasher objects when their modulation level changed
 Sub LampzMod(nr, object)
-	Object.IntensityScale = ModulationLevel(nr)/128
-	'Debug.print "ModulationLevel(" & nr & ") = " & ModulationLevel(nr)/128
-	'Debug.print "Lampz.state(" & nr & ") = " & Lampz.state(nr)
-	If TypeName(object) = "Light" Then
-		Object.State = Lampz.state(nr)
-	End If
-	If TypeName(object) = "Flasher" Then
-		Object.visible = Lampz.state(nr)
-	End If
+	If Not ModDirty(nr) Then Exit Sub
+	object.IntensityScale = ModulationLevel(nr)/128
+	If TypeName(object) = "Light" Then object.State = Lampz.state(nr)
+	If TypeName(object) = "Flasher" Then object.visible = Lampz.state(nr)
 End Sub
 
 ' Flasher objects
@@ -4937,11 +4938,8 @@ End Sub
 ' Modulated Flasher and Lights objects
 
 Sub SetLampMod(nr, value)
-    If value > 0 Then
-		Lampz.state(nr) = 1
-	Else
-		Lampz.state(nr) = 0
-	End If
+	If value <> ModulationLevel(nr) Then ModDirty(nr) = True
+	If value > 0 Then Lampz.state(nr) = 1 Else Lampz.state(nr) = 0
 	ModulationLevel(nr) = value
 End Sub
 
@@ -4978,49 +4976,53 @@ Else
 	gi_lpf_intensity = 0.6
 End If
 
+' ALP4KP: dirty-checked GI update (was rewriting every GI object, 2x MaterialColor and ColorGradeImage every frame)
+Dim giL130, giL132, giL134, giL136, giLOff
+giL130 = -1 : giL132 = -1 : giL134 = -1 : giL136 = -1 : giLOff = 2
+
 Sub UpdateGIs
-	'VPM returns an 0-255 range value
+	Dim s130, s132, s134, s136, giOff
+	s130 = Lampz.state(130) : s132 = Lampz.state(132) : s134 = Lampz.state(134) : s136 = Lampz.state(136)
 
-	'130 gi red
-'	For each bulb in GI_Red: bulb.Intensity = Lampz.state(130)*gi_red_intensity: Next
-	For each bulb in GI_Red: bulb.IntensityScale = Lampz.state(130)/255: Next
-	For Each bulb in BLRLights: bulb.IntensityScale=Lampz.state(130)/255:Next
-	bulb2.BlendDisableLighting = Lampz.state(130)/255
-	bulb4.BlendDisableLighting = Lampz.state(130)/255
-	bulb6.BlendDisableLighting = Lampz.state(130)/255
-	MaterialColor "TrainRed", RGB(Lampz.state(130),Lampz.state(130), Lampz.state(130))
+	If s130 <> giL130 Then
+		giL130 = s130
+		For Each bulb in GI_Red : bulb.IntensityScale = s130/255 : Next
+		For Each bulb in BLRLights : bulb.IntensityScale = s130/255 : Next
+		bulb2.BlendDisableLighting = s130/255 : bulb4.BlendDisableLighting = s130/255 : bulb6.BlendDisableLighting = s130/255
+		MaterialColor "TrainRed", RGB(s130, s130, s130)
+	End If
 
-	'132 gi blue
-'	For each bulb in GI_Blue: bulb.Intensity = Lampz.state(132)*gi_blue_intensity: Next
-	For each bulb in GI_Blue: bulb.IntensityScale = Lampz.state(132)/255: Next
-	For Each bulb in BLBLights: bulb.IntensityScale=Lampz.state(132)/255:Next
-	bulb1.BlendDisableLighting = Lampz.state(132)/255
-	bulb3.BlendDisableLighting = Lampz.state(132)/255
-	bulb5.BlendDisableLighting = Lampz.state(132)/255
-	bulb7.BlendDisableLighting = Lampz.state(132)/255
-	MaterialColor "TrainBlue", RGB(Lampz.state(132),Lampz.state(132), Lampz.state(132))
+	If s132 <> giL132 Then
+		giL132 = s132
+		For Each bulb in GI_Blue : bulb.IntensityScale = s132/255 : Next
+		For Each bulb in BLBLights : bulb.IntensityScale = s132/255 : Next
+		bulb1.BlendDisableLighting = s132/255 : bulb3.BlendDisableLighting = s132/255
+		bulb5.BlendDisableLighting = s132/255 : bulb7.BlendDisableLighting = s132/255
+		MaterialColor "TrainBlue", RGB(s132, s132, s132)
+	End If
 
-	'134 gi low pf
-'	For each bulb in GI_LowPF: bulb.Intensity = Lampz.state(134)*gi_lpf_intensity: Next
-	For each bulb in GI_LowPF: bulb.IntensityScale = Lampz.state(134)/255: Next
-	light16.intensityScale = Lampz.state(134)/255
-	light19.intensityScale = Lampz.state(134)/255
-	light44.intensityScale = Lampz.state(134)/255
-	light45.intensityScale = Lampz.state(134)/255
+	If s134 <> giL134 Then
+		giL134 = s134
+		For Each bulb in GI_LowPF : bulb.IntensityScale = s134/255 : Next
+		light16.IntensityScale = s134/255 : light19.IntensityScale = s134/255
+		light44.IntensityScale = s134/255 : light45.IntensityScale = s134/255
+	End If
 
+	If s136 <> giL136 Then
+		giL136 = s136
+		For Each bulb in GI_White : bulb.IntensityScale = s136/255 : Next
+	End If
 
-	'136 gi white
-	For each bulb in GI_White: bulb.IntensityScale = Lampz.state(136)/255: Next
-
-	'change colorgrade when gi is off
-	If Lampz.state(130) = 0 AND Lampz.state(132) = 0 AND Lampz.state(136) = 0 Then
-'		ACDC.ColorGradeImage="ColorGrade_off":Translite.Blenddisablelighting=0.2:For Each bulb in BandMembersPoster: bulb.IntensityScale=0 :Next
-		ACDC.ColorGradeImage="ColorGrade_off":LM_Translite.intensityscale=0:For Each bulb in BandMembersPoster: bulb.IntensityScale=0 :Next
-'	ElseIf Lampz.state(130) > 0 AND Lampz.state(132) = 0 AND Lampz.state(134) > 0  AND Lampz.state(136) = 0 Then ACDC.ColorGradeImage="ColorGrade_red"
-'	ElseIf Lampz.state(130) = 0 AND Lampz.state(132) > 0 AND Lampz.state(134) = 0  AND Lampz.state(136) = 0 Then ACDC.ColorGradeImage="ColorGrade_blue"
-	Else
-'		ACDC.ColorGradeImage="ColorGrade_on":Translite.Blenddisablelighting=4:For Each bulb in BandMembersPoster: bulb.IntensityScale=1:Next
-		ACDC.ColorGradeImage="ColorGrade_on":LM_Translite.intensityscale=1:For Each bulb in BandMembersPoster: bulb.IntensityScale=1:Next
+	giOff = (s130 = 0 And s132 = 0 And s136 = 0)
+	If giOff <> giLOff Then
+		giLOff = giOff
+		If giOff Then
+			ACDC.ColorGradeImage = "ColorGrade_off" : LM_Translite.IntensityScale = 0
+			For Each bulb in BandMembersPoster : bulb.IntensityScale = 0 : Next
+		Else
+			ACDC.ColorGradeImage = "ColorGrade_on" : LM_Translite.IntensityScale = 1
+			For Each bulb in BandMembersPoster : bulb.IntensityScale = 1 : Next
+		End If
 	End If
 End Sub
 

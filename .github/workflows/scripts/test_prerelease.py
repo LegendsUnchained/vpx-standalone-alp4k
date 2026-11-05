@@ -1,4 +1,6 @@
+import io
 import subprocess
+import zipfile
 import tempfile
 import os
 import unittest
@@ -6,8 +8,8 @@ from pathlib import Path
 
 import config_bundle
 import mirror_tree
-from prerelease import (TAG, apply_delta, carry_dates, compute_delta, fresh_in_delta, notes,
-                        zip_name, zips_to_purge)
+from prerelease import (TAG, apply_delta, carry_dates, compute_delta, fresh_in_delta,
+                        functional_changes, mark_metadata_only, notes, zip_name, zips_to_purge)
 
 REPO = 'test/catalog'
 
@@ -89,6 +91,18 @@ class AnnounceTests(unittest.TestCase):
                  'vpx-gone': {'change': 'removed', 'configVersion': None}}
         self.assertEqual(fresh_in_delta(delta, before), ['vpx-c', 'vpx-new'])
 
+    def test_metadata_only_updates_are_not_announced(self):
+        before = {'tables': {'vpx-b': {'change': 'updated', 'configVersion': 'b1b1b1b'}}}
+        delta = {'vpx-b': {'change': 'updated', 'configVersion': 'b2b2b2b', 'metadataOnly': True},
+                 'vpx-c': {'change': 'updated', 'configVersion': 'c2c2c2c', 'metadataOnly': False}}
+        self.assertEqual(fresh_in_delta(delta, before), ['vpx-c'])
+
+    def test_new_fields_on_an_unchanged_version_are_not_fresh(self):
+        before = {'tables': {'vpx-b': {'change': 'updated', 'configVersion': 'b2b2b2b'}}}
+        delta = {'vpx-b': {'change': 'updated', 'configVersion': 'b2b2b2b',
+                           'filesChanged': True, 'metadataOnly': False}}
+        self.assertEqual(fresh_in_delta(delta, before), [])
+
     def test_notes_format_matches_the_discord_reader(self):
         delta = {'vpx-new': {'change': 'added'}, 'vpx-b': {'change': 'updated'},
                  'vpx-gone': {'change': 'removed'}}
@@ -97,6 +111,91 @@ class AnnounceTests(unittest.TestCase):
         self.assertIn('## Updated tables:\n- [B](', body)
         self.assertIn('## Removed tables\n- `vpx-gone`', body)
         self.assertEqual(notes({}, delta, []), '')
+
+
+class FakeZips:
+    """StableZips over in-memory zips; counts reads."""
+
+    def __init__(self, files_by_url):
+        self.data, self.reads = {}, 0
+        for u, files in files_by_url.items():
+            buf = io.BytesIO()
+            with zipfile.ZipFile(buf, 'w') as zf:
+                for name, text in files.items():
+                    zf.writestr(name, text)
+            self.data[u] = buf.getvalue()
+
+    def get(self, u):
+        self.reads += 1
+        return self.data.get(u)
+
+
+class MetadataOnlyTests(unittest.TestCase):
+    def setUp(self):
+        self.dir = tempfile.TemporaryDirectory()
+        self.addCleanup(self.dir.cleanup)
+        for path, text in {'vpx-a/table.yml': 'vpxVPSId: new', 'vpx-a/table.ini': 'ini',
+                           'vpx-a/launcher.png': 'new art', 'vpx-a/sub/x.txt': 'x',
+                           'vpx-b/table.yml': 'b', 'vpx-b/table.ini': 'changed ini'}.items():
+            Path(self.dir.name, path).parent.mkdir(parents=True, exist_ok=True)
+            Path(self.dir.name, path).write_text(text)
+        self.stable = {'vpx-a': {'repoConfig': url('v1', 'vpx-a.zip'), 'tableChecksum': 'c1',
+                                 'tableVpsId': 'old', 'configVersion': 'a1a1a1a',
+                                 'updatedRelease': 'v1'},
+                       'vpx-b': {'repoConfig': url('v1', 'vpx-b.zip'), 'tableChecksum': 'c1'}}
+        self.zips = FakeZips({
+            url('v1', 'vpx-a.zip'): {'table.yml': 'vpxVPSId: old', 'table.ini': 'ini',
+                                     'launcher.png': 'old art', 'sub/x.txt': 'x'},
+            url('v1', 'vpx-b.zip'): {'table.yml': 'b', 'table.ini': 'ini'}})
+
+    def entries(self, **a_fields):
+        return {'vpx-a': dict({'tableChecksum': 'c1', 'tableVpsId': 'new',
+                               'tableFileUrl': ['https://new'], 'configVersion': 'a2a2a2a'},
+                              **a_fields),
+                'vpx-b': {'tableChecksum': 'c1'}}
+
+    def delta(self):
+        return {'vpx-a': {'change': 'updated', 'configVersion': 'a2a2a2a'},
+                'vpx-b': {'change': 'updated', 'configVersion': 'b2b2b2b'},
+                'vpx-new': {'change': 'added', 'configVersion': 'nnnnnnn'},
+                'vpx-gone': {'change': 'removed', 'configVersion': None}}
+
+    def mark(self, entries, prev=None):
+        return mark_metadata_only(self.delta(), entries, self.stable, prev, 'v1', self.zips,
+                                  self.dir.name)
+
+    def test_only_yml_and_metadata_changed(self):
+        delta = self.mark(self.entries())
+        self.assertEqual(delta['vpx-a'], {'change': 'updated', 'configVersion': 'a2a2a2a',
+                                          'filesChanged': False, 'metadataOnly': True})
+        self.assertEqual(delta['vpx-b']['filesChanged'], True)
+        self.assertFalse(delta['vpx-b']['metadataOnly'])
+        self.assertNotIn('metadataOnly', delta['vpx-new'])
+        self.assertNotIn('metadataOnly', delta['vpx-gone'])
+
+    def test_a_checksum_or_install_field_needs_sign_off(self):
+        self.assertFalse(self.mark(self.entries(tableChecksum='c2'))['vpx-a']['metadataOnly'])
+        self.assertFalse(self.mark(self.entries(fps=30))['vpx-a']['metadataOnly'])
+        self.assertEqual(functional_changes({'pupArchiveFormat': 'zip', 'romAuthors': ['a']},
+                                            {'pupArchiveFormat': 'rar', 'romAuthors': ['b']}),
+                         ['pupArchiveFormat'])
+
+    def test_unreadable_stable_zip_needs_sign_off(self):
+        self.stable['vpx-a']['repoConfig'] = 'https://elsewhere.example/vpx-a.zip'
+        delta = self.mark(self.entries())
+        self.assertNotIn('filesChanged', delta['vpx-a'])
+        self.assertFalse(delta['vpx-a']['metadataOnly'])
+
+    def test_file_verdict_is_reused_for_the_same_stable_and_version(self):
+        prev = {'stable': 'v1', 'tables': self.mark(self.entries())}
+        reads = self.zips.reads
+        delta = self.mark(self.entries(), prev)
+        self.assertEqual(self.zips.reads, reads)
+        self.assertTrue(delta['vpx-a']['metadataOnly'])
+        # but the manifest fields are checked every time
+        self.assertFalse(self.mark(self.entries(fps=30), prev)['vpx-a']['metadataOnly'])
+        self.mark(self.entries(), dict(prev, stable='v0'))
+        self.assertEqual(self.zips.reads, reads + 2)
 
 
 class GitTests(unittest.TestCase):

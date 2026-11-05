@@ -22,6 +22,14 @@ merge to main ──Sync Pre-release──▶ pre-release  = stable + delta (new
   stable's entry, VPSDB metadata included, until its folder changes. A changed
   table that VPSDB cannot resolve stays out of the delta (it keeps stable's
   entry) and is listed as unresolved in the sync summary.
+* An **updated** table is **metadata only** when no file but `table.yml`
+  (and presentation files: README, launcher and art images) differs from
+  stable's zip, and its manifest entry differs from stable's only in
+  descriptive fields: VPS ids, file URLs, authors, notes, comments, versions,
+  images, tagline, testers. Every checksum, `fps`, archive format and root,
+  bundled flag, rename, fix or folder must match stable. The downloads and
+  how they install are the same, so testers need not sign it off:
+  tm-installer reports it ready, and the testing Discord post leaves it out.
 
 ## Sync Pre-release
 
@@ -42,7 +50,7 @@ demand. Each run reconciles the pre-release to main:
 5. Purges zips that neither this manifest nor the previous one references. The
    one-sync grace keeps a device that just read the old manifest working.
 6. Posts to the testing Discord channel, only for tables new to the delta or
-   with a new version in it.
+   with a new version in it, metadata-only updates excepted.
 
 When nothing changed it uploads nothing. A failed run leaves the previous
 `manifest.json` in place; the next run reconciles everything, so there is no
@@ -55,7 +63,9 @@ cleanup step.
   "schemaVersion": 1,
   "stable": "v2.0.14",              // the stable release this delta is against
   "main_sha": "…",                  // the main commit it was synced from
-  "tables": {"vpx-a": {"change": "updated", "configVersion": "a2a2a2a"},
+  "tables": {"vpx-a": {"change": "updated", "configVersion": "a2a2a2a",
+                       "filesChanged": true,   // a file but table.yml differs from stable's zip (absent: unknown)
+                       "metadataOnly": false}, // no sign-off needed when true (updated only)
              "vpx-gone": {"change": "removed", "configVersion": null}},
   "unresolved": [],                 // changed on main, but VPSDB could not resolve them
   "extras": {"achievements.json": "<md5>", "team_favorites.json": "<md5>", "editors_picks.json": "<md5>"}
