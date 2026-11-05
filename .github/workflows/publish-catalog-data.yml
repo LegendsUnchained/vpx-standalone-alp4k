@@ -35,8 +35,10 @@ permissions:
 #
 # The mirror is what carries updated launcher.png box art (re-encoded to WebP),
 # so it is published for candidates too — not just at promotion time.
-# Chained runs publish to manifest-testing; promote-release.yml calls this with
-# target_branch=manifest as the first half of promoting a candidate to stable.
+# Upstream, Sync Pre-release writes manifest-testing and Promote Release writes
+# manifest, each incrementally from blobs already on the mirror. This full
+# rebuild serves forks (chained after Create Fork Release's build) and manual
+# repairs; a run on upstream is overwritten by the next sync or promotion.
 on:
   workflow_run:
     workflows: ["Build release assets"]

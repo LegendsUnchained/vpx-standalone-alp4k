@@ -12,7 +12,7 @@
 The TM Wizard is a tool that let's you add VPXS tables to your USB in the easiest way possible!
 
 The tables added via the wizard will:
-- Require minimal input from you to install. We only need the files we can't host: `.vpx`, `.directB2S`, `rom.zip`, `.c7Z`
+- Require minimal input from you to install. We only need the files we can't host: `.vpx`, `.directB2S`, `rom.zip`, `.cRZ`
 - Contain all table bug fixes/updates
 - Be fully optimised. No table will be added that does not run well!
 - Have full art packages; customer launcher images, custom DMD images etc.
@@ -108,7 +108,7 @@ That will take you to the main install page:
     - `.vpx` file needs to be *not zipped*
     - `.directB2S` file needs to be *not zipped*
     - `ROM FILE` file needs to be ***zipped***
-    - `.c7Z` Serum file needs to be *not zipped*
+    - `.cRZ` Serum file needs to be *not zipped*
     - `PUP FILE` file needs to be ***zipped*** and uploaded whole as downloaded
 3) Upload each file in the inputs on the left hand side of the page
 4) Double check the 'File Check' tick boxes that you've uploaded the correct files! If not, upload the correct one.

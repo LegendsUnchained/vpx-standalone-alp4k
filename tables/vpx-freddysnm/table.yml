@@ -1,15 +1,21 @@
 ---
 fps: 55
+pupArchiveFormat: "zip"
 pupArchiveRoot: "Freddys Nightmares 1.2 Update/FreddysNightmares"
+pupBundled: true
 pupChecksum: "16E02484017C9BA954BAB60FEDD66981"
-pupFileUrl: "https://vpuniverse.com/files/file/23895-freddys-nightmares-original-table-and-pup-pack/"
-pupNotes: "Extract VPX file from the zip. Use same zip for pup."
-pupRequired: True
-pupBundled: True
+pupNotes: "PUP in VPX download"
+pupVersion: "1.2"
+specialDMDArchiveRoot: "Freddys Nightmares 1.2 Update/FreddysNightmares.UltraDMD"
+specialDMDBundled: true
+specialDMDType: "UltraDMD"
 tableNotes: "Download version 1.2"
 tableVPSId: "HcZ8zI6Ua6"
 tagline: "'One, Two, Freddy's coming for you...'"
 testers:
   - "Wraith"
-vpxChecksum: "22009435F91F97B5BFD480E38C1634D7"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "22009435F91F97B5BFD480E38C1634D7"
+  - "16E02484017C9BA954BAB60FEDD66981"
 vpxVPSId: "SY9OhbCQXm"

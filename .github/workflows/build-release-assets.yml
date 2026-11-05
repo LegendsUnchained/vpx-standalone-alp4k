@@ -4,16 +4,16 @@ permissions:
   contents: write
   pull-requests: write
 
-# Prerelease-first: assets are built onto a PRERELEASE so the team can vet a
-# candidate while stable users keep being served the published release.
-# GitHub excludes prereleases from /releases/latest, so stable clients never
-# see one — no gating of our own required. Promotion to stable is a separate,
-# deliberate step (promote-release.yml).
+# Builds a full release's assets: every changed table's zip, the manifest,
+# table-history and release notes. Used by Create Fork Release, which publishes
+# a fork's releases in one step.
 #
-# Not triggered by release events. "Create Testing Release" owns the flow: it
-# creates a draft, calls this workflow to fill it, mirrors the catalog, and only
-# then publishes. Reacting to `prereleased` here would fire a second, duplicate
-# build the moment that workflow published its own draft.
+# Upstream does not use it: there, Sync Pre-release keeps the rolling
+# pre-release in step with main and Promote Release assembles stable releases
+# out of it (see scripts/release-pipeline.md).
+#
+# Not triggered by release events. The caller creates a draft, calls this
+# workflow to fill it, and only then publishes.
 on:
   workflow_call:
     inputs:

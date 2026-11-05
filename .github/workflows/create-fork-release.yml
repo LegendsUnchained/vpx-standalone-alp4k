@@ -14,8 +14,8 @@ name: Create Fork Release
 # state a device can observe -- assets are uploaded to it and it is published in
 # the same run, or deleted if the run fails.
 #
-# Upstream uses "Create Testing Release" instead, which is the prerelease-first
-# flow this deliberately is not.
+# Upstream uses "Sync Pre-release" and "Promote Release" instead, the
+# pre-release-first flow this deliberately is not.
 
 on:
   workflow_dispatch:
@@ -46,8 +46,8 @@ jobs:
           set -euo pipefail
           if [ "${{ github.repository }}" = "$UPSTREAM" ]; then
             echo "::error::This workflow is for forks. ${{ github.repository }} is the upstream"
-            echo "::error::repository, whose releases are cut by 'Create Testing Release' and"
-            echo "::error::promoted by 'Promote Testing Release'. Publishing a plain release"
+            echo "::error::repository, whose tables are staged by 'Sync Pre-release' and"
+            echo "::error::promoted by 'Promote Release'. Publishing a plain release"
             echo "::error::here would bypass the testing track entirely."
             exit 1
           fi

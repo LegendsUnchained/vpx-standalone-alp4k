@@ -1,0 +1,19 @@
+---
+backglassChecksum: "3EA3E61C6CCC19A33F1555B2ECEF4843"
+backglassNotes: "Download 'Spongebob (original 2023).zip'"
+backglassVPSId: "CcRmPZ1pfy"
+fps: 60
+specialDMDArchiveRoot: "SpongebobDMD"
+specialDMDBundled: true
+specialDMDType: "FlexDMD"
+tableNotes: "Download 'SpongeBob's Bikini Bottom Pinball VPW 2.1.vpx' (v2.1)"
+tableVPSId: "OgtWKSmg"
+testers:
+  - "PBW23"
+  - "Missile Toad"
+  - "Dasme"
+vpxArchiveFormat: "zip"
+vpxChecksum:
+  - "BD000C0969511C7BC7F343DEB8CEFFEB"
+  - "75FDF3CC2B4D13984017CFB2E874E2C8"
+vpxVPSId: "hTwgaH56vw"

@@ -112,7 +112,7 @@ Sub Table1_Init()
     DMD_Init
 
     ' freeplay or coins
-    bFreePlay = False 'we want coins
+    bFreePlay = True 'we want coins
 
     if bFreePlay Then DOF 125, DOFOn
 
@@ -1908,8 +1908,8 @@ End Sub
 
 Sub Realtime_Timer
     RollingUpdate
-    LeftFlipperTop.Rotz = LeftFlipper.CurrentAngle
-    RightFlipperTop.Rotz = RightFlipper.CurrentAngle
+    LFLogo.Rotz = LeftFlipper.CurrentAngle
+    RFLogo.Rotz = RightFlipper.CurrentAngle
     Diverter001.Rotz = DiverterF.CurrentAngle
 End Sub
 

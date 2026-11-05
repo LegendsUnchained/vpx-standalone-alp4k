@@ -107,6 +107,23 @@ def check_bundled(meta):
                 print(f"ERROR: altSoundNotes is not a string in table: {table}")
                 sys.exit(1)
 
+        if table_meta.get("diffBundled"):
+            if table_meta.get("diffNotes") is None:
+                print(
+                    f"ERROR: diffBundled is True but diffNotes is not found in table: {table}"
+                )
+                sys.exit(1)
+
+            if table_meta.get("diffChecksum") is None:
+                print(
+                    f"ERROR: diffBundled is True but diffChecksum is not found in table: {table}"
+                )
+                sys.exit(1)
+
+            if not isinstance(table_meta["diffNotes"], str):
+                print(f"ERROR: diffNotes is not a string in table: {table}")
+                sys.exit(1)
+
 def check_checksums(meta):
     """Checks that required checksums are present.
 

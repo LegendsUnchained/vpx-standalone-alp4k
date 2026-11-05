@@ -1,0 +1,22 @@
+---
+enabled: true
+backglassChecksum: "CA96F60CBB731665C13322A048F00C47"
+backglassVPSId: "yt7j5dez"
+fps: 60
+tableNotes: "Download 'America's Most Haunted (Spooky Pinball 2014) LW 1.0.1.zip'."
+tableVPSId: "lVlGWK9A"
+testers:
+  - "Miku"
+  - "Dasme"
+  - "PBW23"
+vpxChecksum:
+  - "F03712F816C066CD3427C4FEEA4C1BFE"
+  - "7E6C9C5EAD7956AE6E020359D38A8D22"
+vpxVPSId: "KYsTwjS2-o"
+vpxArchiveFormat: "zip"
+vpxExtractExtra:
+  - "America's Most Haunted.UltraDMD"
+  - "AMH"
+postInstallRename:
+  - source: "AMH"
+    destination: "music/AMH"

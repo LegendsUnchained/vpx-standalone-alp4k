@@ -56,8 +56,8 @@ testers:
 # user has NOT enabled NSFW content:
 #   * a table flagged nsfw, vpxNSFW, backglassNSFW or romNSFW is hidden from the
 #     wizard listing entirely (those parts can't be skipped);
-#   * a table with only coloredROMNSFW / altSoundNSFW / pupNSFW / diffNSFW set
-#     still installs, but that component is filtered out of the install.
+#   * a table with only coloredROMNSFW / altSoundNSFW / pupNSFW / diffNSFW /
+#     specialDMDNSFW set still installs, but that component is filtered out.
 # Manage Tables always shows an NSFW chip when any flag is set.
 # nsfw: true            # the whole table is adult content
 # vpxNSFW: true         # the .vpx playfield art is adult (manifest key: tableNSFW)
@@ -134,12 +134,12 @@ testers:
 
 
 # --- PUP pack (optional) ----------------------------------------------------
-# pupVPSId: "xxxxxxxx"                            # [String]
-# pupFileUrl: "https://..."                       # [String] direct download (currently the only way to link a pup)
+# pupVPSId: "xxxxxxxx"                            # [String] resolves authors / url (not version)
+# pupFileUrl: "https://..."                       # [String] direct download when the pup isn't on VPS
 # pupChecksum: "00000000000000000000000000000000"   # [String|List] required if pupFileUrl is set
 # pupNotes: "Markdown notes."                     # [String]
-# pupRequired: false                              # [Boolean] the pup is mandatory for this table (e.g. Space Cadet)
-# pupBundled: false                               # [Boolean]
+# pupRequired: false                              # [Boolean] the pup is mandatory (e.g. Space Cadet); a linked pup is only offered when true
+# pupBundled: false                               # [Boolean] pup ships inside the table download (offered even when not required)
 # pupNSFW: false                                  # [Boolean] pup videos are adult (filtered out when NSFW is off; table still installs)
 # pupVersion: "1.0"                               # [String]
 # pupArchiveFormat: "zip"                         # [String] zip | rar | 7z  (default: zip)
@@ -147,13 +147,16 @@ testers:
 
 
 # --- Diff / VPU patch (optional) --------------------------------------------
-# diffVPSId: "xxxxxxxx"                           # [String]
+# A .dif patch applied to the .vpx at install time. Unlike most components,
+# diffUrlOverride wins over the VPS url when both are set.
+# diffVPSId: "xxxxxxxx"                           # [String] resolves authors / url / version
 # diffUrlOverride: "https://..."                  # [String] use INSTEAD of the VPSId
 # diffVersionOverride: "name"                     # [String] required with the UrlOverride
 # diffAuthorsOverride:                            # [List] override resolved authors
 #   - "author"
-# diffChecksum: "00000000000000000000000000000000"   # [String|List]
-# diffNotes: "Markdown notes."                    # [String]
+# diffChecksum: "00000000000000000000000000000000"   # [String|List] md5 of the .dif itself; REQUIRED when bundled
+# diffNotes: "Markdown notes."                    # [String] REQUIRED when bundled
+# diffBundled: false                              # [Boolean] the .dif ships inside the table download
 # diffNSFW: false                                 # [Boolean] the VPU patch adds adult content (filtered out when NSFW is off; table installs unpatched)
 
 
@@ -223,7 +226,7 @@ testers:
 
 
 # --- Tutorial (optional) ----------------------------------------------------
-# tutorialVPSId: "xxxxxxxx"                       # [String] resolves title / YouTube ID
+# tutorialVPSId: "xxxxxxxx"                       # [String] resolves title / authors / YouTube ID (not shown in Table Manager yet)
 
 
 # --- Fixes (optional) -------------------------------------------------------

@@ -21,7 +21,7 @@ The tables added via the wizard will:
 
 - Require minimal input from you
 to install. We only need the files we can’t host: `.vpx`, `.directB2S`,
-`rom.zip`, `.c7Z`
+`rom.zip`, `.cRZ`
 - Contain all table bug fixes/updates
 - Be fully optimised. No table will be added that does not run well!
 - Have full art packages; customer launcher images, custom DMD images etc.
@@ -97,7 +97,7 @@ unzipped:
 * `.vpx` file needs to be _not zipped_
 * `.directB2S` file needs to be _not zipped_
 * `ROM FILE` file needs to be *_zipped_*
-* `.c7Z` Serum file needs to be _not zipped_
+* `.cRZ` Serum file needs to be _not zipped_
 * `PUP FILE` file needs to be *_zipped_* and uploaded whole as
 downloaded
 . Upload each file in the inputs on the left hand side of the page

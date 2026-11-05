@@ -1,16 +1,19 @@
 ---
-backglassVPSId: "qevYdcn8gm"
-backglassChecksum: "edf005ec52dda2eb18ff60aaa1f233d0"
+backglassChecksum: "EDF005EC52DDA2EB18FF60AAA1F233D0"
 backglassNotes: "Download version 1.0.0"
-fps: 58
+backglassVPSId: "qevYdcn8gm"
+coloredROMChecksum: "F5D64ABA54AB4A0E4E7395D5A3A451FA"
+coloredROMNotes: "Download v1.0.0"
+coloredROMVPSId: "MGx-juCFIA"
+fps: 60
+romChecksum: "8E6453E95F91BFC774479B4EBEF92A02"
 romVPSId: "-XgDH4d3tp"
-romChecksum: "8e6453e95f91bfc774479b4ebef92a02"
+tableNotes: "Download version 1.12"
 tableVPSId: "4jP_7ljN"
 tagline: "Born to be Wild"
 testers:
   - "kaoticBPR"
   - "OminousOsie"
   - "Wraith"
+vpxChecksum: "A9045C51CAAED6E898317DAB8B87C972"
 vpxVPSId: "eoovupCgVg"
-vpxChecksum: "a9045c51caaed6e898317dab8b87c972"
-tableNotes: "Download version 1.12"
