@@ -1,0 +1,27 @@
+---
+tableNameOverride: "TRON Classic Neon"
+fps: 60
+pupArchiveFormat: "zip"
+pupArchiveRoot: "TRON-NEON"
+pupChecksum: "48185F865BA6D2AD9A5B959122C32CA8"
+pupNotes: "Download from the table link 'TRON-NEON_PUP_2024-05-28.zip'"
+pupRequired: true
+pupBundled: true
+pupVersion: "TRON-NEON"
+romBundled: true
+romChecksum: "5BFFF2B4A5B043FF621DEE0B42E482A1"
+romVersionOverride: "panther7"
+romNotes: "ROM Bundled with table"
+tableNotes: "Download 'TRON-NEON_3.0.vpx_2024-05-28.zip'"
+tableVPSId: "_p1dYSBiWd"
+tagline: "Enter the Grid. Beat the Program."
+testers:
+  - "mrandromeda"
+vpxChecksum:
+  - "4BAF2E9C30AD510D07E30C53061E2DC9"
+  - "E3BF7CDCC1673918F9949831191ED7FD"
+vpxVPSId: "OhE1dEJEEu"
+vpxArchiveFormat: "zip"
+vpxExtractExtra:
+  - "music"
+
