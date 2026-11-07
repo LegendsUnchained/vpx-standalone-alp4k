@@ -1,4 +1,12 @@
 ---
+altSoundArchiveFormat: "7z"
+altSoundArchiveRoot: "Music"
+altSoundChecksum: "6AC0AB8C1B943A1CC0037870FC9D5499"
+altSoundNotes: "Download Heavy Metal Rowamet 1983 Soundtrack.7z"
+altSoundVPSId: "UCb3YYKZDr"
+postInstallRename:
+  - source: "pinmame/altsound/heavymtl"
+    destination: "music/HeavyMetal"
 backglassChecksum: "9CE679BD6B941308E4C844B658DE941D"
 backglassNotes: "Use Laroullas Heavy Metal (Rowamet 1983) ).directb2s"
 backglassVPSId: "5e7dLIDWR5"
