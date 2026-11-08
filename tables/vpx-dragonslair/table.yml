@@ -9,13 +9,13 @@ mainNotes: >-
   
   'Now go save the Princess'
 pupArchiveFormat: "zip"
-pupArchiveRoot: "pupvideos/dragonslair"
+pupArchiveRoot: "Dragon's Lair_LTek_mod_1.1.3_PuP-Pack/PuP-Pack/dragonlair"
 pupBundled: true
 pupChecksum: "3BFE601A37E1D804C96EFC8925ECF2B0"
 pupNotes: "Bundled with Table download"
 pupRequired: true
-pupVersion: "1.1.3"
-tableNotes: "Download - Dragon's Lair_LTek_mod_1.1.3_PuP-Pack"
+pupVersion: "dragonlair"
+tableNotes: "Download - "Dragon's Lair_LTek_mod_1.1.3_PuP-Pack"
 tableVPSId: "IS9JONzlC9"
 tagline: >-
   The fantasy adventure where you become a valiant knight, on a quest to rescue the fair princess from the clutches of
@@ -25,5 +25,6 @@ testers:
   - "Coffee' Joe"
   - "Pointdablame"
   - "Blue Öyster Curt"
+  - "Filth"
 vpxChecksum: "03E781C816894FD033E949A11464554F"
 vpxVPSId: "mU_KvAiDAO"
