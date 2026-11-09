@@ -5,6 +5,7 @@ coloredROMChecksum: "B07BB9F51E4C4CF958408EA5BE049E9F"
 coloredROMVPSId: "4IjnVbGcyF"
 fps: 60
 romChecksum: "7F7EBE73EDBE0D28A85DC602E111C5A5"
+romVPSId: "Oj8aCVyH7A"
 tableVPSId: "_mbRxgJP"
 tagline: "May all your cards be live and your pots be monsters!"
 testers:
@@ -12,5 +13,5 @@ testers:
   - "Reboot"
   - "Ominous Osie 🌸"
 tutorialVPSId: "-hpnmDxFga"
-vpxChecksum: "D0EE0811077ED6860B4123B72CBC0EDF"
+vpxChecksum: "AF792CA6EFF6C7D9D50E36A8E043EF05"
 vpxVPSId: "eexsQAY9Wd"

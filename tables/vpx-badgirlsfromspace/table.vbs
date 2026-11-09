@@ -169,7 +169,6 @@ End Sub
 Sub Table1_Init
      With Controller
          .GameName = cGameName
-          InitMusic
          If Err Then MsgBox "Can't start Game " & cGameName & vbNewLine & Err.Description:Exit Sub
          .SplashInfoLine = "Flight 2000 (Stern 1980)"&chr(13)&"by bord"
          .HandleKeyboard = 0
@@ -183,6 +182,8 @@ Sub Table1_Init
          If Err Then MsgBox Err.Description
          On Error Goto 0
      End With
+
+    InitMusic ' after .Run: the B2S windows must exist before music opens the audio device
 
     PinMAMETimer.Interval = PinMAMEInterval
     PinMAMETimer.Enabled = 1
