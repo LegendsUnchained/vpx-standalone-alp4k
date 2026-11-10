@@ -2,14 +2,19 @@
 backglassChecksum: "E6867A078132A7EEDC38ED9C1144D428"
 backglassNotes: "Use HauntFreaks V 4.0"
 backglassVPSId: "-62c-nUf5t"
-enabled: false
-fps: 57
+fps: 60
 romChecksum: "E1F87E7C99A9889E063049832601B733"
 romVPSId: "d4nESeqt"
 tableNameOverride: "Creature From the Black Lagoon (Bally 1992) Vpin Workshop Edition"
 tableVPSId: "OiRcNWYu"
 tagline: "'Move your car!'"
+mainNotes: >-
+  Table by VPW
+  POV by Hauntfreaks
+  Backglass in 3-D
 testers:
   - "Curt"
+  - "Wraith"
+  - "Filth"
 vpxChecksum: "9887271DED5409EAE9E21D6D277677FA"
 vpxVPSId: "4MKFjZuJ_P"
