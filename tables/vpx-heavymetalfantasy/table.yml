@@ -1,8 +1,8 @@
 ---
-altSoundArchiveFormat: "7z"
+altSoundArchiveFormat: "zip"
 altSoundArchiveRoot: "Music"
-altSoundChecksum: "6AC0AB8C1B943A1CC0037870FC9D5499"
-altSoundNotes: "Download Heavy Metal Rowamet 1983 Soundtrack.7z"
+altSoundChecksum: "E7844C63222B5CB2B7A21B0C8D6002B7"
+altSoundNotes: "Download HM-Music.zip"
 altSoundVPSId: "UCb3YYKZDr"
 postInstallRename:
   - source: "pinmame/altsound/heavymtl"
@@ -32,7 +32,7 @@ testers:
   - "Missile Toad"
   - "Wraith"
   - "Not Me"
-  - "ChatalataLove"
+  - "ChalataLove"
   - "LionsFan"
 vpxChecksum: "FE65D834265EA34E271F01043041F4D2"
 vpxVPSId: "or_OYzZF"
