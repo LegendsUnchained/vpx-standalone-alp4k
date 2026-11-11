@@ -122,7 +122,9 @@ On Error Goto 0
 const UseVPMModSol=true
 LoadVPM "01530000", "WPC.VBS", 3.56
 
-Const UseSolenoids = 1
+Const UseSolenoids = 2
+Const cSingleLFlip = 0
+Const cSingleRFlip = 0
 Const UseLamps = 0
 Const UseGI = 0
 Const UseSync = 0
@@ -504,11 +506,11 @@ Sub FlasherPlacement() 'dirty script based flasher placement
 	FlSkull4_2.x =	772.2'774.3
 	FlSkull4_1.y =	81'86.609
 
+	f19f.x = 854'853.3457
+	f19f.y = 697'696.2
+	f18f.x = 703'695
+	f18f.y = 555'550.6
 
-'	f19f.x = 854'853.3457
-'	f19f.y = 697'696.2
-'	f18f.x = 703'695
-'	f18f.y = 555'550.6
 	f17.x = 858.2477164
 	f17.y = 355.0953586
 	f18.x = 712.9653396
@@ -516,8 +518,8 @@ Sub FlasherPlacement() 'dirty script based flasher placement
 	f19.x = 858.3208126
 	f19.y = 648.2506583
 
-'	f17f.x = 848'850.5333
-'	f17f.y = 420'424.1581
+	f17f.x = 848'850.5333
+	f17f.y = 420'424.1581
 
 	f23.x = 215'195
 	f23.y = 600'527
@@ -3916,12 +3918,12 @@ Class FlipperPolarity
 			'BallPos = BallPos + 
 			
 			'find slip Point B based on flipper strength	'could move elsewhere
-			'dim SlipPointB : SlipPointB = PSlope(ref.strength, 2000, 0.22-0.5, 2850, 0.285-0.5)	'at 20.157 X speed slips this much
+			dim SlipPointB : SlipPointB = PSlope(ref.strength, 2000, 0.22-0.5, 2850, 0.285-0.5)	'at 20.157 X speed slips this much
 			
-			'dim slipoffset : Slipoffset = pSlope(NewVector(0), 0, 0.5375-0.5, 20, SlipPointB)
-			'Teststr = Teststr & "Slip offset: " & round(Slipoffset,3) & vbnewline & _
-					'"Original Ballpos:" & formatpercent(ballpos) & vbnewline & vbnewline
-			'BallPos = BallPos - slipoffset
+			dim slipoffset : Slipoffset = pSlope(NewVector(0), 0, 0.5375-0.5, 20, SlipPointB)
+			Teststr = Teststr & "Slip offset: " & round(Slipoffset,3) & vbnewline & _
+					"Original Ballpos:" & formatpercent(ballpos) & vbnewline & vbnewline
+			BallPos = BallPos - slipoffset
 
 
 '
@@ -3934,12 +3936,12 @@ Class FlipperPolarity
 '						'Round(SQR(balldata(idx).VelX^2 + balldata(idx).VelY^2),3) &" = " & Round(SQR(NewVector(0)^2 + NewVector(1)^2),3) & vbnewline & _
 '						'" "
 '						'KickStr
-'						If DebugOn then 
-'							On Error Resume Next
-'							lVector.RotZ = VectTest-180
-'							lvector.Size_Y = SQR(balldata(idx).VelX^2 + balldata(idx).VelY^2)*0.2
-'							On Error Goto 0
-'						End If
+						If DebugOn then 
+							On Error Resume Next
+							lVector.RotZ = VectTest-180
+							lvector.Size_Y = SQR(balldata(idx).VelX^2 + balldata(idx).VelY^2)*0.2
+							On Error Goto 0
+						End If
 
 			'------------------------
 
@@ -4134,3 +4136,7 @@ End Function
 Function BallSpeed(ball) 'Calculates the ball speed
     BallSpeed = SQR(ball.VelX^2 + ball.VelY^2 + ball.VelZ^2)
 End Function
+
+
+
+
