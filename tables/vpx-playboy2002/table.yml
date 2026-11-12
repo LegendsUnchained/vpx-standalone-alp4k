@@ -3,10 +3,10 @@ coloredROMChecksum: "FB623CF8816DDDDD8A59B160952450DB"
 coloredROMNotes: "Download version 1.0.1"
 coloredROMVPSId: "0CmueoPUwI"
 fps: 60
-pupArchiveFormat: "zip"
+nsfw: true
 pupArchiveRoot: "playboys"
 pupChecksum: "AF446E36D9F8D90C26D61E1C268ECECB"
-pupFileUrl: "https://mega.nz/file/YIpSVC6T#sv7ZjtKMSoS-z4s8M8G3KnTsi5VaWE_epDuSxpGAv1U"
+pupVPSId: "_VsaklKg0u"
 pupNotes: "Download playboys.zip"
 pupRequired: true
 pupVersion: "playboys"
