@@ -2,10 +2,8 @@
 backglassChecksum: "CB48BDDE9B9C9B9EE809604E13353465"
 backglassVPSId: "aneW70BPl0"
 coloredROMChecksum: "D606D8D8A2215E5E11F0EBA2FB4A5FC3"
-coloredROMNotes: "Download 'pin2dmd.pal'"
-# yamllint disable-line rule:line-length
-coloredROMUrlOverride: "https://montetoncab.fr/leslipdejoane/Pincab/Medias/VPX/rom_color_pour_VPX_4_et_16_couleurs/DMD_Colorisee_patche/DMD_Colorise_16_color/Potc600af/potc_600af/"
-coloredROMVersionOverride: "potc600_as"
+coloredROMNotes: "Download pin2dmd.pal 2020-03-17 16:49 5.8K"
+coloredROMVPSId: "H8O2wVzh"
 fps: 58
 romChecksum: "7F2C8108D34A861AA565B70377ADFBDF"
 romNotes: "Download potc_600as"
