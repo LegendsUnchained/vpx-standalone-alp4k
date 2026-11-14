@@ -1,0 +1,19 @@
+---
+backglassBundled: true
+backglassChecksum: "F21C3821ED8117C81D186883A1656214"
+backglassNotes: "included in 'Knight Rider.zip'"
+fps: 60
+pupArchiveFormat: "zip"
+pupArchiveRoot: "Knight_Rider"
+pupBundled: true
+pupChecksum: "ABB06F9E5BAAA0105213EB45FC1BB7D9"
+pupNotes: "Use table link and Download - 'Knight Rider.zip'"
+pupVersion: "knight_rider"
+tableNameOverride: "Knight Rider Pup Pack"
+tableNotes: "Download - 'KnightRider.vpx'"
+tableVPSId: "S1vj0FjT"
+tagline: "'Knight Rider, a shadowy flight into the dangerous world of a man who does not exist.'"
+testers:
+  - "Rocjr73"
+vpxChecksum: "9FBE86F6AD064D55CC6FEBADBE8CD3DC"
+vpxVPSId: "4VNt6aLoWD"
