@@ -3,6 +3,7 @@ coloredROMChecksum: "3353C567E4C99191C352D75ED8C9464F"
 coloredROMNotes: "Download 'Starship_Troopers_JPAJMO.pac'"
 coloredROMVPSId: "S1xQNGdYbk"
 pupChecksum: "967B3C0373549ABF407C1766D6830782"
+pupNotes: "Download v1.1.0"
 pupVPSId: "PWK3gvozfs"
 pupArchiveRoot: "startrp2"
 pupRequired: true
