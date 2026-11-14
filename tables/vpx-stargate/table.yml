@@ -1,0 +1,18 @@
+---
+backglassChecksum: "2FCA8A6F1AD497FDDFFEDECD1573D089"
+backglassNotes: "Download 'Stargate (Gottlieb 1995).zip'"
+backglassVPSId: "zLyiAulVmD"
+coloredROMChecksum: "A34C58FA96B883408F94938725E36E9C"
+coloredROMNotes: "Download 'stargat5.cROMc'"
+coloredROMVPSId: "QKyObcDwYS"
+fps: 60
+romChecksum: "812F77B506E98BC8930BE2EFCBB6B1F1"
+romNotes: "Download 'stargat5.zip'"
+romUrlOverride: "https://pinballnirvana.com/forums/resources/stargat5.6026/"
+romVersionOverride: "1.0"
+tableNotes: "Download 'Stargate (Gottlieb 1995) v2.0.vpx.zip'"
+tableVPSId: "k8-hOYwg"
+testers:
+  - "Miku"
+vpxChecksum: "07815326D5B0447B633D8A27CDFFF6E9"
+vpxVPSId: "X590HVZs48"
