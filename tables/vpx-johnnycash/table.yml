@@ -1,0 +1,23 @@
+---
+backglassBundled: true
+backglassChecksum: "73FE9DEA0E2696D913747B3E965C88EE"
+backglassNotes: "included in table link Download - 'Johnny Cash oly1.0.directb2s'"
+fps: 60
+mainNotes: "Table link includes 'vpx, b2b and music links'"
+tableNotes: "Download 'Johnny Cash oly 1.01.vpx'"
+tableVPSId: "gsWmBsI6"
+tagline: "'Hello, I'm Johnny Cash.'"
+testers:
+  - "Rocjr73"
+  - "Missile Toad"
+vpxChecksum: "FF51AA3FC9B09D138A6AE81EB44327E5"
+vpxVPSId: "CRGFDAUGFb"
+specialDMDArchiveFormat: "rar"
+specialDMDChecksum: "25A205C29FD934CF0205C0E31983116A"
+specialDMDNotes: >-
+  'Not a DMD: this slot installs the table music. Use Johnny Cash.rar',  with same .vpx table link
+specialDMDArchiveRoot: "Johnny Cash"
+specialDMDType: "FlexDMD"
+postInstallRename:
+  - source: "Johnny Cash"
+    destination: "music/Johnny Cash"
