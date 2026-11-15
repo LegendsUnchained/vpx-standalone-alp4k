@@ -20,7 +20,7 @@ Const BloodRamps = 0	' Blood on the ramps = 1  No Blood = 0
 
 Const LCDScreen = True '( DMD- LCD Screen = True, RealDMD = False )
 
-Const PupScreen1 = 0	'(Apron Videos to see videos choose "1"(Recommended Exclusive Fullscreen on VPX editor) No videos "0") ONE Screen users Turn this option to 0
+Const PupScreen1 = 1	'(Apron Videos to see videos choose "1"(Recommended Exclusive Fullscreen on VPX editor) No videos "0") ONE Screen users Turn this option to 0
 
 Const FPS = 0			' Slow PC Recommended "0" Fast PC  1
 
@@ -69,7 +69,7 @@ GlowIntensity=15 'Glowblob intensity
 '************************************END OF TABLE OPTIONS*************************************
 Const BallSize = 50       ' 50 is the normal size used in the core.vbs, VP kicker routines uses this value divided by 2
 Const BallMass = 1.7      ' standard ball mass in JP's VPX Physics 3.0
-Const SongVolume = 0.7   ' 1 is full volume.
+Const SongVolume = 0.3   ' 1 is full volume.
 
 ' Load the core.vbs for supporting Subs and functions
 LoadCoreFiles
@@ -96,7 +96,7 @@ Dim BallSaverTime             ' 20 in seconds
 ' Use FlexDMD if in FS mode
 Dim UseFlexDMD
 If Table1.ShowDT = True then
-    UseFlexDMD = True
+    UseFlexDMD = False
 Else
     UseFlexDMD = True
 End If
@@ -545,32 +545,17 @@ End Sub
 ' in VPX 10.7 you may use also mp3 or ogg
 '*****************************************
 
-Dim Playlist, Song, Songnr
-PlayList = ""
+Dim Song, Songnr
 Song = ""
 Songnr = INT(RND * 12)
 
-Sub PlaySong(listname, name)
+Sub PlaySong(name)
     If bMusicOn Then
         If Song <> name Then
-	        Playlist = listname
+            StopSound Song
             Song = name
-	        PlayMusic "./pupvideos/" & cGameName & "/" & listname & "/" & name, SongVolume
+            PlaySound Song, -1, SongVolume
         End If
-    End If
-End Sub
-
-Sub StopSong()
-	EndMusic
-	PlayList = ""
-	Song = ""
-End Sub
-
-Sub Table1_MusicDone
-    If Song <> "" Then
-        Dim prevSong : prevSong = Song
-        Song = ""
-        PlaySong Playlist, prevSong
     End If
 End Sub
 
@@ -581,45 +566,22 @@ End Sub
 
 Sub PLaySelectedSong
     Select Case Songnr
-        Case 0:PlaySong "Music1", "01- Hellraiser 1 Suite 1.mp3" 
-        Case 1:PlaySong "Music2", "02- Hellraiser 1 Suite 2.mp3" 
-        Case 2:PlaySong "Music3", "03- Hellraiser 1 Suite 3.mp3" 
-        Case 3:PlaySong "Music4", "04- Hellraiser 1 Suite 4.mp3" 
-        Case 4:PlaySong "Music5", "05- Hellraiser 1 Suite 5.mp3" 
-        Case 5:PlaySong "Music6", "06- Hellraiser 1 Suite 6.mp3" 
-        Case 6:PlaySong "Music7", "07- Hellraiser 1 Suite 7.mp3" 
-        Case 7:PlaySong "Music8", "08- Hellraiser 2 Suite 1.mp3" 
-        Case 8:PlaySong "Music9", "09- Hellraiser 2 Suite 2.mp3" 
-        Case 9:PlaySong "Music10", "10- Hellraiser 2 Suite 3.mp3"
-        Case 10:PlaySong "Music11", "11- Hellraiser 2 Suite 4.mp3"
-        Case 11:PlaySong "Music12", "12- Hellraiser 2 Suite 5.mp3"
-        Case 12:PlaySong "Music13", "13- Hellraiser 2 Suite 6.mp3"
-        Case 13:PlaySong "Music14", "14- Hellraiser 2 Suite 7.mp3"
+        Case 0:PlaySong "mu_1" : pupevent 800 : pupevent 900
+        Case 1:PlaySong "mu_2" : pupevent 801 : pupevent 900
+        Case 2:PlaySong "mu_3" : pupevent 802 : pupevent 900
+        Case 3:PlaySong "mu_4" : pupevent 803 : pupevent 900
+        Case 4:PlaySong "mu_5" : pupevent 804 : pupevent 900
+        Case 5:PlaySong "mu_6" : pupevent 805 : pupevent 900
+        Case 6:PlaySong "mu_7" : pupevent 806 : pupevent 900
+        Case 7:PlaySong "mu_8" : pupevent 807 : pupevent 900
+        Case 8:PlaySong "mu_9" : pupevent 808 : pupevent 900
+        Case 9:PlaySong "mu_10" : pupevent 809 : pupevent 900
+        Case 10:PlaySong "mu_11" : pupevent 810 : pupevent 900
+        Case 11:PlaySong "mu_12" : pupevent 811 : pupevent 900
+        Case 12:PlaySong "mu_13" : pupevent 812 : pupevent 900
+        Case 13:PlaySong "mu_14" : pupevent 813 : pupevent 900
     End Select
 End Sub
-
-Sub PlayRandomGameOverSong
-    Dim number
-    number = INT(RND * 14)
-    Select Case number
-	Case 0: PlaySong "GameoverMusic", "Ministry - Burning Inside.mp3"
-	Case 1: PlaySong "GameoverMusic", "Ministry - Just One Fix.mp3"
-	Case 2: PlaySong "GameoverMusic", "Ministry - Stigmata.mp3"
-	Case 3: PlaySong "GameoverMusic", "Motorhead - Born To Raise Hell.mp3"
-	Case 4: PlaySong "GameoverMusic", "Motorhead - Hellraiser.mp3"
-	Case 5: PlaySong "GameoverMusic", "Nine Inch Nails - March Of The Pigs.mp3"
-	Case 6: PlaySong "GameoverMusic", "Rammstein - Asche zu Asche.mp3"
-	Case 7: PlaySong "GameoverMusic", "Rammstein - Du Riechst So Gut.mp3"
-	Case 8: PlaySong "GameoverMusic", "Rammstein - Feuer Frei.mp3"
-	Case 9: PlaySong "GameoverMusic", "Ramones - Pinhead.mp3"
-	Case 10: PlaySong "GameoverMusic", "Rob Zombie - Get Your Boots On! That's The End Of Rock And Roll.mp3"
-	Case 11: PlaySong "GameoverMusic", "Rob Zombie - Lucifer Rising.mp3"
-	Case 12: PlaySong "GameoverMusic", "Rob Zombie - The Hideous Exhibitions Of A Dedicated Gore Whore.mp3"
-	Case 13: PlaySong "GameoverMusic", "Scum of the Earth - Murder Song.mp3"
-	Case 14: PlaySong "GameoverMusic", "Young Gods - Kissing The Sun.mp3"
-    End Select
-End Sub
-
 
 Sub SelectSong(keycode)
     If keycode = PlungerKey OR keycode = StartGameKey Then
@@ -1334,7 +1296,6 @@ Sub EndOfBall()
         ' add a bit of a delay to allow for the bonus points to be shown & added up
         vpmtimer.addtimer 9500, "EndOfBall2 '"
     Else 'if tilted then only add a short delay and go to the next end of ball routine.
-	MusicVolume = SongVolume
         vpmtimer.addtimer 200, "EndOfBall2 '"
     End If
 End Sub
@@ -2226,46 +2187,46 @@ Sub DMD_Init() 'default/startup values
         If Not FlexDMD is Nothing Then
             FlexDMD.TableFile = Table1.Filename & ".vpx"
             FlexDMD.RenderMode = 2
-		If LCDScreen = False Then
-			FlexDMD.Width = 128
-			FlexDMD.Height = 32
+				If LCDScreen = False Then
+					FlexDMD.Width = 128
+					FlexDMD.Height = 32
+					End If
+					If LCDScreen = True Then
+						FlexDMD.Width = 512
+						FlexDMD.Height = 128
+						End If
+            FlexDMD.Clear = True
+            FlexDMD.GameName = cGameName
+            FlexDMD.Run = True
+            Set DMDScene = FlexDMD.NewGroup("Scene")
+            DMDScene.AddActor FlexDMD.NewImage("Back", "VPX.bkempty")
+            DMDScene.GetImage("Back").SetSize FlexDMD.Width, FlexDMD.Height
+            For i = 0 to 40
+                DMDScene.AddActor FlexDMD.NewImage("Dig" & i, "VPX.dempty&dmd=2")
+                Digits(i).Visible = False
+            Next
+            digitgrid.Visible = False
+            For i = 0 to 19 ' Top
+				If LCDScreen = False Then
+                DMDScene.GetImage("Dig" & i).SetBounds 4 + i * 6, 3, 7, 10
+				End If
+					If LCDScreen = True Then
+						DMDScene.GetImage("Dig" & i).SetBounds 8 + i * 25, 20, 25, 35
+						End If
+            Next
+            For i = 20 to 39 ' Bottom
+				If LCDScreen = False Then
+                DMDScene.GetImage("Dig" & i).SetBounds 4 + (i - 20) * 6, 3 + 12 + 2, 7, 10
+				End If
+					If LCDScreen = True Then
+						DMDScene.GetImage("Dig" & i).SetBounds 8 + (i - 20) * 25, 80, 25, 35
+						End If
+            Next
+            FlexDMD.LockRenderThread
+            FlexDMD.Stage.AddActor DMDScene
+            FlexDMD.UnlockRenderThread
+			End If
 		End If
-		If LCDScreen = True Then
-			FlexDMD.Width = 256
-			FlexDMD.Height = 64
-		End If
-	            FlexDMD.Clear = True
-	            FlexDMD.GameName = cGameName
-	            FlexDMD.Run = True
-	            Set DMDScene = FlexDMD.NewGroup("Scene")
-	            DMDScene.AddActor FlexDMD.NewImage("Back", "VPX.bkempty")
-	            DMDScene.GetImage("Back").SetSize FlexDMD.Width, FlexDMD.Height
-	            For i = 0 to 40
-	                DMDScene.AddActor FlexDMD.NewImage("Dig" & i, "VPX.dempty&dmd=2")
-	                Digits(i).Visible = False
-	            Next
-	            digitgrid.Visible = False
-	            For i = 0 to 19 ' Top
-			If LCDScreen = False Then
-		                DMDScene.GetImage("Dig" & i).SetBounds 4 + i * 6, 3, 7, 10
-			End If
-			If LCDScreen = True Then
-				DMDScene.GetImage("Dig" & i).SetBounds 8 + i * 12, 6, 14, 20
-			End If
-        	    Next
-	            For i = 20 to 39 ' Bottom
-			If LCDScreen = False Then
-		                DMDScene.GetImage("Dig" & i).SetBounds 4 + (i - 20) * 6, 3 + 12 + 2, 7, 10
-			End If
-			If LCDScreen = True Then
-				DMDScene.GetImage("Dig" & i).SetBounds 8 + (i - 20) * 12, 34, 14, 20
-			End If
-	            Next
-	            FlexDMD.LockRenderThread
-	            FlexDMD.Stage.AddActor DMDScene
-	            FlexDMD.UnlockRenderThread
-		End If
-	End If
     Dim i, j
     DMDFlush()
     deSpeed = 30
@@ -2826,7 +2787,7 @@ Sub SetFlash(MyLamp, nr, TotalPeriod, BlinkPeriod) 'similar to FlashForms, works
     MyLamp.TimerInterval = BlinkPeriod
     MyLamp.TimerEnabled = 0
     MyLamp.TimerEnabled = 1
-    ExecuteGlobal "Sub " & MyLamp.Name & "_Timer:" & "SetLamp 100 * (me.UserValue - INT(me.UserValue)), me.UserValue MOD 2:me.UserValue= me.UserValue -1:If me.UserValue < 0 then Me.TimerEnabled=0:End If:End Sub"
+    ExecuteGlobal "Sub " & MyLamp.Name & "_Timer:" & "SetLamp (me.UserValue - INT(me.UserValue))*100, me.UserValue MOD 2:me.UserValue= me.UserValue -1:If me.UserValue < 0 then Me.TimerEnabled=0:End If:End Sub"
 End Sub
 
 ' standard VPX objects
@@ -6844,7 +6805,7 @@ cPuPPack = "HellRaiser"    ' name of the PuP-Pack / PuPVideos folder for this ta
 
 ' This is used for the startup and control of Pinup Player
 
-Sub PuPStart()
+Sub PuPStart(cPuPPack)
     If PUPStatus=true then Exit Sub
     If usePUP=true then
         Set PuPlayer = CreateObject("PinUpPlayer.PinDisplay")
@@ -6860,19 +6821,6 @@ End Sub
 
 Sub pupevent(EventNum)
     if (usePUP=false or PUPStatus=false) then Exit Sub
-
-	Select Case EventNum
-		case 820
-			' Trigger: 96,1,"GameOver Music",E820,4,GameoverMusic,,100,8,,,,Loop,0
-			PlayRandomGameOverSong
-		case 826
-			' Trigger: 348,1,TiltmusicStop,E826,4,Music14,"14- Hellraiser 2 Suite 7.mp3",0,2,46,,,SplashResume,0
-		    	MusicVolume = 0
-		case 901
-			' Trigger: 97,1,"Stop GameOver Music",E901,4,GameoverMusic,,0,20,1,,,StopPlayer,0
-			StopSong
-	End Select
-
     PuPlayer.B2SData "E"&EventNum,1  'send event to Pup-Pack
 End Sub
 
@@ -6890,7 +6838,7 @@ End Sub
 
 '************ PuP-Pack Startup **************
 
-PuPStart() 'Check for PuP - If found, then start Pinup Player / PuP-Pack
+PuPStart(cPuPPack) 'Check for PuP - If found, then start Pinup Player / PuP-Pack
 
 
 '***********************************************LEFT SCREEN***************************************************
@@ -6911,7 +6859,7 @@ End If
 if PuPScreen1 = 0 Then
     ApronLeft.visible=false	
     ApronLeft.TimerEnabled=false
-    'PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 18, ""FN"":12 }" 
+    PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 18, ""FN"":12 }" 'STOPSCREEN
 End If
 '******************************************RIGHT Screen ******************************** 
 Sub ApronRight_Timer()
@@ -6930,7 +6878,7 @@ End If
 if PuPScreen1 = 0 Then
     ApronRight.visible=false	
     ApronRight.TimerEnabled=false
-    'PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 19, ""FN"":12 }"
+    PuPlayer.SendMSG "{ ""mt"":301, ""SN"": 19, ""FN"":12 }"
 End If
 
 
@@ -7095,9 +7043,9 @@ End Sub
 '*****************************************
 Dim BloodTrails
 
-dim objBlood(9)
+dim objBlood(19)
 
-for xxx = 0 to 9
+for xxx = 0 to 19
 '	msgbox xxx
 '	Eval("BallShadow" & xxx+1).image = "arrow"
 	Set objBlood(xxx) = Eval("BloodTrail0" & xxx)
@@ -7107,19 +7055,6 @@ for xxx = 0 to 9
 	objBlood(xxx).depthbias = -10 - xxx
 	objBlood(xxx).uservalue = 0
 next
-
-dim objDummy
-for xxx = 10 to 19
-'	msgbox xxx
-'	Eval("BallShadow" & xxx+1).image = "arrow"
-	Set objDummy = Eval("BloodTrail0" & xxx)
-	objDummy.image = "blood" & RndInt(1,6)
-'	objBlood(xxx).image = "arrow"
-    objDummy.z = 0 + 19/100
-	objDummy.depthbias = -29
-	objDummy.uservalue = 0
-next
-
 
 dim Bcnt : Bcnt = 0
 dim prevBcnt, rotateCnt
@@ -7132,7 +7067,7 @@ Sub BloodTrailUpdate_timer()
 
 	if bMultiBallMode = False then
 		if resetTrails = 1 Then
-			for xxx = 0 to 9
+			for xxx = 0 to 19
 				objBlood(xxx).x = 685: objBlood(xxx).y = 2234
 				objBlood(xxx).visible = false
 				objBlood(xxx).z = 0 + xxx/100
@@ -7160,7 +7095,7 @@ Sub BloodTrailUpdate_timer()
 
 			'make it thinner by time and make them fall unless on ramp. Use uservalue for ramp status
 			dim CurrentFallValue
-			for xxx = 0 to 9
+			for xxx = 0 to 19
 				if Not xxx = Bcnt then
 					CurrentFallValue = objBlood(xxx).uservalue
 					objBlood(xxx).size_x = objBlood(xxx).size_x * 0.95
@@ -7213,7 +7148,7 @@ Sub BloodTrailUpdate_timer()
 
 			prevBcnt = Bcnt
 			Bcnt = Bcnt + 1
-			if Bcnt > 9 Then 
+			if Bcnt > 19 Then 
 				Bcnt = 0
 			end if
 		end if
