@@ -398,9 +398,9 @@ Sub Table1_Init
 	DiverterON.IsDropped = 1
     KickBack.PullBack
  
-    ' 4kp: flipper strength raised from 3000 to 3450 so the ball has enough power to make the Route 66 ramp
+    ' 4kp: flipper strength raised from 3000 to 3375 so the ball has enough power to make the Route 66 ramp
     ' (the original 1.4.2 table uses 4800 with older flipper physics; 3000 here left the ball rolling back down).
-    LeftFlipper.Strength = 3450 : RightFlipper.Strength = 3450 : LeftFlipper1.Strength = 3450
+    LeftFlipper.Strength = 3375 : RightFlipper.Strength = 3375 : LeftFlipper1.Strength = 3375
     ' 4kp: drag race Christmas tree flashers were hidden in the .vpx because they float above the tree art (height 220, tilted)
     ' and so look off-centre from the cabinet view. Shift each one so it lines up over its bulb in cabinet view, and make it visible.
     Dim TreeF : For Each TreeF In Array(f81, f82, f83, f83a, f84, f84a, f85, f86)
