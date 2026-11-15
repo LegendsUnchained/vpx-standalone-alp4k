@@ -1,5 +1,5 @@
 ' ****************************************************************
-'           JP's Deadpool v6.10 for VISUAL PINBALL X 10.8
+'        JP's Deadpool v7.0.0 for VISUAL PINBALL X 10.8
 ' ****************************************************************
 'On the DOF website put Exxx
 'DOF some updating by outhere
@@ -81,7 +81,7 @@ End Sub
 
 ' Define any Constants
 Const cGameName = "jpsdeadpool"
-Const myVersion = "6.1.0"
+Const myVersion = "7.0.0"
 Const MaxPlayers = 4          ' from 1 to 4
 Const BallSaverTime = 20      ' in seconds of the first ball
 Const MaxMultiplier = 5       ' limit playfield multiplier
@@ -249,9 +249,9 @@ End Sub
 
 Sub Table1_KeyDown(ByVal Keycode)
 
-    If keycode = LeftTiltKey Then Nudge 90, 6:PlaySound "fx_nudge", 0, 1, -0.1, 0.25
-    If keycode = RightTiltKey Then Nudge 270, 6:PlaySound "fx_nudge", 0, 1, 0.1, 0.25
-    If keycode = CenterTiltKey Then Nudge 0, 7:PlaySound "fx_nudge", 0, 1, 1, 0.25
+    If keycode = LeftTiltKey Then Nudge 90, 2:PlaySound "fx_nudge", 0, 1, -0.1, 0.25
+    If keycode = RightTiltKey Then Nudge 270, 2:PlaySound "fx_nudge", 0, 1, 0.1, 0.25
+    If keycode = CenterTiltKey Then Nudge 0, 2:PlaySound "fx_nudge", 0, 1, 1, 0.25
     If keycode = MechanicalTilt Then CheckTilt 'original & EM tables
     If Keycode = AddCreditKey OR Keycode = AddCreditKey2 Then
         Credits = Credits + 1
@@ -821,7 +821,7 @@ Sub FlashEffect(n)
 End Sub
 
 '***************************************************************
-'             Supporting Ball & Sound Functions v4.0
+'             Supporting Ball & Sound Functions 2026
 '  includes random pitch in PlaySoundAt and PlaySoundAtBall
 '***************************************************************
 
@@ -866,8 +866,8 @@ Sub PlaySoundAt(soundname, tableobj) 'play sound at X and Y position of an objec
     PlaySound soundname, 0, 1, Pan(tableobj), 0.2, 0, 0, 0, AudioFade(tableobj)
 End Sub
 
-Sub PlaySoundAtBall(soundname) ' play a sound at the ball position, like rubbers, targets, metals, plastics
-    PlaySound soundname, 0, Vol(ActiveBall), pan(ActiveBall), 0.2, Pitch(ActiveBall) * 10, 0, 0, AudioFade(ActiveBall)
+Sub PlaySoundAtBall(soundname) ' play a collision sound at the ball position, like rubbers, targets, metals, plastics
+    PlaySound soundname, 0, Vol(ActiveBall), pan(ActiveBall), 0, Pitch(ActiveBall) * 10, 0, 0, AudioFade(ActiveBall)
 End Sub
 
 Function RndNbr(n) 'returns a random number between 1 and n
@@ -875,16 +875,22 @@ Function RndNbr(n) 'returns a random number between 1 and n
     RndNbr = Int((n * Rnd) + 1)
 End Function
 
-'********************************
-'   JP's VPX Rolling Sounds
-'   Roth's ball drop sounds
-'   JP's ball speed control
-'********************************
+Const Pi=3.1415926535
 
-Const tnob = 19   'total number of balls
-Const lob = 3     'number of locked balls
-Const maxvel = 45 'max ball velocity
+'***********************************************
+'      JP's VPX8 Ball Rolling Sounds 2026
+'***********************************************
+
+' physics 2026
+
+Const maxvel = 52 'max ball velocity during game play. EM: 20-35  SS: 35-50
+
+' rolling routines
+
+Const tnob = 19   'total number of balls, use a high number so you may test the table without errors.
+Const lob = 3    'number of locked balls
 ReDim rolling(tnob)
+
 InitRolling
 
 Sub InitRolling
@@ -896,7 +902,7 @@ Sub InitRolling
 End Sub
 
 Sub RollingTimer_Timer()
-    Dim BOT, b, ballpitch, ballvol, speedfactorx, speedfactory
+    Dim BOT, b, ballpitch, speedfactorx, speedfactory
     BOT = GetBalls
 
     ' stop the sound of deleted balls
@@ -908,18 +914,18 @@ Sub RollingTimer_Timer()
     ' exit the sub if no balls on the table
     If UBound(BOT) = lob - 1 Then Exit Sub 'there no extra balls on this table
 
-    ' play the rolling sound for each ball and draw the shadow
+    ' play the rolling sound for each ball
     For b = lob to UBound(BOT)
         If BallVel(BOT(b) )> 1 Then
-            If BOT(b).z <30 Then
+            If BOT(b).z <0 Then
+                ballpitch = Pitch(BOT(b) ) - 5000 'decrease the pitch under the playfield
+            ElseIf BOT(b).z <30 Then
                 ballpitch = Pitch(BOT(b) )
-                ballvol = Vol(BOT(b) )
             Else
-                ballpitch = Pitch(BOT(b) ) + 50000 'increase the pitch on a ramp
-                ballvol = Vol(BOT(b) ) * 5
+                ballpitch = Pitch(BOT(b) ) + 30000 'increase the pitch on a ramp or platform
             End If
             rolling(b) = True
-            PlaySound("fx_ballrolling" & b), -1, ballvol, Pan(BOT(b) ), 0, ballpitch, 1, 0, AudioFade(BOT(b) )
+            PlaySound("fx_ballrolling" & b), -1, Vol(BOT(b) ), Pan(BOT(b) ), 0, ballpitch, 1, 0, AudioFade(BOT(b) )
         Else
             If rolling(b) = True Then
                 StopSound("fx_ballrolling" & b)
@@ -927,23 +933,32 @@ Sub RollingTimer_Timer()
             End If
         End If
 
-        ' rothbauerw's Dropping Sounds
-        If BOT(b).VelZ <-1 and BOT(b).z <55 and BOT(b).z> 27 Then 'height adjust for ball drop sounds
-            PlaySound "fx_balldrop", 0, ABS(BOT(b).velz) / 17, Pan(BOT(b) ), 0, Pitch(BOT(b) ), 1, 0, AudioFade(BOT(b) )
+        ' dropping sounds
+        If BOT(b).VelZ <-1 Then
+            'from ramp
+            If BOT(b).z <55 and BOT(b).z> 27 Then PlaySound "fx_balldrop", 0, ABS(BOT(b).velz) / 17, Pan(BOT(b) ), 0, Pitch(BOT(b) ), 1, 0, AudioFade(BOT(b) )
+            'down a hole
+            If BOT(b).z <10 and BOT(b).z> -10 Then PlaySound "fx_hole_enter", 0, ABS(BOT(b).velz) / 17, Pan(BOT(b) ), 0, Pitch(BOT(b) ), 1, 0, AudioFade(BOT(b) )
         End If
 
-        ' jps ball speed & spin control
+        ' jps ball spin control
         BOT(b).AngMomZ = BOT(b).AngMomZ * 0.95
-        If BOT(b).VelX AND BOT(b).VelY <> 0 Then
-            speedfactorx = ABS(maxvel / BOT(b).VelX)
-            speedfactory = ABS(maxvel / BOT(b).VelY)
-            If speedfactorx <1 Then
-                BOT(b).VelX = BOT(b).VelX * speedfactorx
-                BOT(b).VelY = BOT(b).VelY * speedfactorx
+
+        ' jps ball speed control 2
+        If ABS(BallVel(BOT(b) ) )> maxvel Then
+            If BOT(b).VelX <> 0 Then
+                speedfactorx = ABS(maxvel / BOT(b).VelX)
+                If speedfactorx <1 Then
+                    BOT(b).VelX = BOT(b).VelX * speedfactorx
+                    BOT(b).VelY = BOT(b).VelY * speedfactorx
+                End If
             End If
-            If speedfactory <1 Then
-                BOT(b).VelX = BOT(b).VelX * speedfactory
-                BOT(b).VelY = BOT(b).VelY * speedfactory
+            If BOT(b).VelY <> 0 Then
+                speedfactory = ABS(maxvel / BOT(b).VelY)
+                If speedfactory <1 Then
+                    BOT(b).VelX = BOT(b).VelX * speedfactory
+                    BOT(b).VelY = BOT(b).VelY * speedfactory
+                End If
             End If
         End If
     Next
@@ -1133,7 +1148,7 @@ Sub EndOfBall()
         TotalBonus = TotalBonus + AwardPoints
         DMD CL(0, FormatScore(AwardPoints) ), CL(1, "CHIMICHANGAS " & Chimichangas(CurrentPlayer) ), "", eBlink, eNone, eNone, 1000, True, ""
 
-        'Chimichangas
+        'weapons
         AwardPoints = Weapons(CurrentPlayer) * 100000
         TotalBonus = TotalBonus + AwardPoints
         DMD CL(0, FormatScore(AwardPoints) ), CL(1, "WEAPONS " & Weapons(CurrentPlayer) ), "", eBlink, eNone, eNone, 1000, True, ""
@@ -4743,7 +4758,6 @@ End Sub
 '*****************
 
 Sub HellHouse_Hit
-    PlaySoundAt "fx_hole_enter", HellHouse
     If bSkillShotReady Then ResetSkillShotTimer_Timer
     ' check for modes
     StopCombo
@@ -5874,17 +5888,24 @@ End Sub
 Dim LUTImage, BallsPerGame, UseFlexDMD, OldUseFlex, FlexDMDHighQuality, SongVolume
 UseFlexDMD = False 'initialize variable
 OldUseFlex = False
+Dim dspTriggered : dspTriggered = False
+LUTImage = Array("LUT0", "LUT1", "LUT2", "LUT3", "LUT4", "LUT5", "LUT6", "LUT7", "LUT8", "LUT9", "LUT10", _
+        "LUT Warm 0", "LUT Warm 1", "LUT Warm 2", "LUT Warm 3", "LUT Warm 4", "LUT Warm 5", "LUT Warm 6", "LUT Warm 7", "LUT Warm 8", "LUT Warm 9", "LUT Warm 10", _
+        "LUT Warmer 0", "LUT Warmer 1", "LUT Warmer 2", "LUT Warmer 3", "LUT Warmer 4", "LUT Warmer 5", "LUT Warmer 6", "LUT Warmer 7", "LUT Warmer 8", "LUT Warmer 9", "LUT Warmer 10")
 
 Sub Table1_OptionEvent(ByVal eventId)
+    If eventId = 1 And Not dspTriggered Then dspTriggered = True : DisableStaticPreRendering = True : End If
+
     Dim x, y
 
     'LUT
-    LutImage = Table1.Option("Select LUT", 0, 21, 1, 0, 0, Array("Normal 0", "Normal 1", "Normal 2", "Normal 3", "Normal 4", "Normal 5", "Normal 6", "Normal 7", "Normal 8", "Normal 9", "Normal 10", _
-        "Warm 0", "Warm 1", "Warm 2", "Warm 3", "Warm 4", "Warm 5", "Warm 6", "Warm 7", "Warm 8", "Warm 9", "Warm 10") )
-    UpdateLUT
+    x = Table1.Option("Select LUT", 0, 32, 1, 0, 0, Array("Normal 0", "Normal 1", "Normal 2", "Normal 3", "Normal 4", "Normal 5", "Normal 6", "Normal 7", "Normal 8", "Normal 9", "Normal 10", _
+        "Warm 0", "Warm 1", "Warm 2", "Warm 3", "Warm 4", "Warm 5", "Warm 6", "Warm 7", "Warm 8", "Warm 9", "Warm 10", _
+        "Warmer 0", "Warmer 1", "Warmer 2", "Warmer 3", "Warmer 4", "Warmer 5", "Warmer 6", "Warmer 7", "Warmer 8", "Warmer 9", "Warmer 10") )
+    table1.ColorGradeImage =  LUTImage(x)
 
     ' Desktop DMD
-    x = Table1.Option("DMD Type", 0, 1, 1, 1, 0, Array("Desktop DMD", "FlexDMD") )
+    x = Table1.Option("DMD Type", 0, 1, 1, 0, 0, Array("Desktop DMD", "FlexDMD") )
     If UseFlexDMD AND x = 0 Then FlexDMD.Run = False
     If X then UseFlexDMD = True Else UseFlexDMD = False
 
@@ -5903,7 +5924,7 @@ Sub Table1_OptionEvent(ByVal eventId)
 
     ' Side Blades
     x = Table1.Option("Side Blades", 0, 1, 1, 1, 0, Array("Hide", "Show") )
-    For each y in aSideBlades:y.SideVisible = x:next
+    If X Then Cabinet_Side.Image = "cabinet_sides" Else Cabinet_Side.Image = "cabinet_sides black"
 
     ' Balls per Game
     x = Table1.Option("Balls per Game", 0, 1, 1, 0, 0, Array("3 Balls", "5 Balls") )
@@ -5924,33 +5945,13 @@ Sub Table1_OptionEvent(ByVal eventId)
     Else
         StopSound Song
     End If
-End Sub
 
-Sub UpdateLUT
-    Select Case LutImage
-        Case 0:table1.ColorGradeImage = "LUT0"
-        Case 1:table1.ColorGradeImage = "LUT1"
-        Case 2:table1.ColorGradeImage = "LUT2"
-        Case 3:table1.ColorGradeImage = "LUT3"
-        Case 4:table1.ColorGradeImage = "LUT4"
-        Case 5:table1.ColorGradeImage = "LUT5"
-        Case 6:table1.ColorGradeImage = "LUT6"
-        Case 7:table1.ColorGradeImage = "LUT7"
-        Case 8:table1.ColorGradeImage = "LUT8"
-        Case 9:table1.ColorGradeImage = "LUT9"
-        Case 10:table1.ColorGradeImage = "LUT10"
-        Case 11:table1.ColorGradeImage = "LUT Warm 0"
-        Case 12:table1.ColorGradeImage = "LUT Warm 1"
-        Case 13:table1.ColorGradeImage = "LUT Warm 2"
-        Case 14:table1.ColorGradeImage = "LUT Warm 3"
-        Case 15:table1.ColorGradeImage = "LUT Warm 4"
-        Case 16:table1.ColorGradeImage = "LUT Warm 5"
-        Case 17:table1.ColorGradeImage = "LUT Warm 6"
-        Case 18:table1.ColorGradeImage = "LUT Warm 7"
-        Case 19:table1.ColorGradeImage = "LUT Warm 8"
-        Case 20:table1.ColorGradeImage = "LUT Warm 9"
-        Case 21:table1.ColorGradeImage = "LUT Warm 10"
-    End Select
+    ' Table's Slope
+    x = Table1.Option("Table's Slope", 0, 10, 0.1, 6, 1)
+    Table1.SlopeMin = x
+    Table1.SlopeMax = x
+
+    If eventId = 3 And dspTriggered Then dspTriggered = False : DisableStaticPreRendering = False : End If
 End Sub
 
 '*****************************************************

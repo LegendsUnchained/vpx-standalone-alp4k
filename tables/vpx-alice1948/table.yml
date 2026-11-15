@@ -5,7 +5,7 @@ backglassChecksum: "ECE0EE9060A11417B1A515E9603589FF"
 backglassNotes: "Download 'Alice in Wonderland (Gottlieb 1948).directb2s.zip'"
 fps: 60
 mainNotes: "Press right on the control panel to load a ball from the hopper"
-tableNotes: "Alice in Wonderland (Gottlieb 1948) v600.zip"
+tableNotes: "Download 'Alice in Wonderland (Gottlieb 1948) [jpsalas 2026 - v7].zip'"
 tableVPSId: "9kjJEqftU6"
 tagline: "We're all mad here!"
 testers:
@@ -14,4 +14,4 @@ testers:
   - "Coffee Joe"
   - "PointDaBlame"
 vpxVPSId: "EQParLHs3z"
-vpxChecksum: "774D400223C623C40B66FBC6DECF65E7"
+vpxChecksum: "3D9E823F237462BAC596F2DA9824B2CE"

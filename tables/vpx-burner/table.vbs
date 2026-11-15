@@ -28,7 +28,7 @@ End Sub
 ' Define any Constants
 Const cGameName = "burner"     'used for DOF & saving highscores
 Const MyTable = "burner"       ' used to save the highscores
-Const myVersion = "1.01"
+Const myVersion = "7.00"
 Const MaxPlayers = 4           ' from 1 to 4
 Const MaxMultiplier = 100      ' no limit playfield multiplier
 Const MaxBonusMultiplier = 100 'no limit Bonus multiplier
@@ -294,6 +294,13 @@ Sub Table1_KeyDown(ByVal Keycode)
     If bSelectModeActive Then
         SelectMode(keycode)
         Exit Sub
+    End If
+
+    ' Reset High Score using the [7] key
+    if keycode = "8" then 
+        ResetHS
+        ResHS.Visible = 1
+        vpmTimer.AddTimer 2000, "Reshs.visible = 0 '"
     End If
 
     If keycode = LeftTiltKey Then Nudge 90, 6:PlaySound "fx_nudge", 0, 1, -0.1, 0.25
@@ -4447,14 +4454,21 @@ OldUseFlex = False
 SongVolume = 0.3
 VoiceVolume = 1
 SFXVolume = 1
+Dim dspTriggered : dspTriggered = False
+LUTImage = Array("LUT0", "LUT1", "LUT2", "LUT3", "LUT4", "LUT5", "LUT6", "LUT7", "LUT8", "LUT9", "LUT10", _
+        "LUT Warm 0", "LUT Warm 1", "LUT Warm 2", "LUT Warm 3", "LUT Warm 4", "LUT Warm 5", "LUT Warm 6", "LUT Warm 7", "LUT Warm 8", "LUT Warm 9", "LUT Warm 10", _
+        "LUT Warmer 0", "LUT Warmer 1", "LUT Warmer 2", "LUT Warmer 3", "LUT Warmer 4", "LUT Warmer 5", "LUT Warmer 6", "LUT Warmer 7", "LUT Warmer 8", "LUT Warmer 9", "LUT Warmer 10")
 
 Sub Table1_OptionEvent(ByVal eventId)
+    If eventId = 1 And Not dspTriggered Then dspTriggered = True : DisableStaticPreRendering = True : End If
+
     Dim x, y
 
     'LUT
-    LutImage = Table1.Option("Select LUT", 0, 21, 1, 0, 0, Array("Normal 0", "Normal 1", "Normal 2", "Normal 3", "Normal 4", "Normal 5", "Normal 6", "Normal 7", "Normal 8", "Normal 9", "Normal 10", _
-        "Warm 0", "Warm 1", "Warm 2", "Warm 3", "Warm 4", "Warm 5", "Warm 6", "Warm 7", "Warm 8", "Warm 9", "Warm 10") )
-    UpdateLUT
+    x = Table1.Option("Select LUT", 0, 32, 1, 0, 0, Array("Normal 0", "Normal 1", "Normal 2", "Normal 3", "Normal 4", "Normal 5", "Normal 6", "Normal 7", "Normal 8", "Normal 9", "Normal 10", _
+        "Warm 0", "Warm 1", "Warm 2", "Warm 3", "Warm 4", "Warm 5", "Warm 6", "Warm 7", "Warm 8", "Warm 9", "Warm 10", _
+        "Warmer 0", "Warmer 1", "Warmer 2", "Warmer 3", "Warmer 4", "Warmer 5", "Warmer 6", "Warmer 7", "Warmer 8", "Warmer 9", "Warmer 10") )
+    table1.ColorGradeImage =  LUTImage(x)
 
     ' Desktop DMD
     x = Table1.Option("DMD Type", 0, 1, 1, 0, 0, Array("Desktop DMD", "FlexDMD") )
@@ -4514,33 +4528,13 @@ Sub Table1_OptionEvent(ByVal eventId)
         PlaySound "s_ramp01", , SFXVolume
         SFXVolume = x
     End If
-End Sub
 
-Sub UpdateLUT
-    Select Case LutImage
-        Case 0:table1.ColorGradeImage = "LUT0"
-        Case 1:table1.ColorGradeImage = "LUT1"
-        Case 2:table1.ColorGradeImage = "LUT2"
-        Case 3:table1.ColorGradeImage = "LUT3"
-        Case 4:table1.ColorGradeImage = "LUT4"
-        Case 5:table1.ColorGradeImage = "LUT5"
-        Case 6:table1.ColorGradeImage = "LUT6"
-        Case 7:table1.ColorGradeImage = "LUT7"
-        Case 8:table1.ColorGradeImage = "LUT8"
-        Case 9:table1.ColorGradeImage = "LUT9"
-        Case 10:table1.ColorGradeImage = "LUT10"
-        Case 11:table1.ColorGradeImage = "LUT Warm 0"
-        Case 12:table1.ColorGradeImage = "LUT Warm 1"
-        Case 13:table1.ColorGradeImage = "LUT Warm 2"
-        Case 14:table1.ColorGradeImage = "LUT Warm 3"
-        Case 15:table1.ColorGradeImage = "LUT Warm 4"
-        Case 16:table1.ColorGradeImage = "LUT Warm 5"
-        Case 17:table1.ColorGradeImage = "LUT Warm 6"
-        Case 18:table1.ColorGradeImage = "LUT Warm 7"
-        Case 19:table1.ColorGradeImage = "LUT Warm 8"
-        Case 20:table1.ColorGradeImage = "LUT Warm 9"
-        Case 21:table1.ColorGradeImage = "LUT Warm 10"
-    End Select
+    ' Table's Slope
+    x = Table1.Option("Table's Slope", 0, 10, 0.1, 6, 1)
+    Table1.SlopeMin = x
+    Table1.SlopeMax = x
+
+    If eventId = 3 And dspTriggered Then dspTriggered = False : DisableStaticPreRendering = False : End If
 End Sub
 
 '*****************************
@@ -4582,4 +4576,3 @@ Sub UpdateHelmetColor
 End Sub
 
 'DMD CL(""), CL(""), "", eNone, eNone, eNone, 2000, True, ""
-sub test_hit:test.destroyball:end Sub

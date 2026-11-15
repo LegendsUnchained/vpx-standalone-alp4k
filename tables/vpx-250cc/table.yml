@@ -6,7 +6,7 @@ fps: 60
 romVPSId: "AYg8Ljzs"
 romChecksum: "7C4CFC17CCCD4F983C82714B71BF1C7E"
 romNotes: "Download ind250cc.zip"
-tableNotes: "Download v600.zip"
+tableNotes: "Download '250cc (Inder 1992) [jpsalas 2026 - v7].zip'"
 tableVPSId: "bafGvcae"
 tagline: >-
   "250 cc" is a motorcycle racing-themed pinball
@@ -17,4 +17,4 @@ testers:
   - "pointdablame"
   - "Bla1ze"
 vpxVPSId: "Gw5kOfmC"
-vpxChecksum: "83C1D8B781FAD7A4EAFE70CFC3EC5F3C"
+vpxChecksum: "A9CC1F14ED864738897C79DDCCA4B37B"
