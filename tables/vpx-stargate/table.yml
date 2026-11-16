@@ -9,7 +9,7 @@ fps: 60
 romChecksum: "812F77B506E98BC8930BE2EFCBB6B1F1"
 romNotes: "Download 'stargat5.zip'"
 romUrlOverride: "https://pinballnirvana.com/forums/resources/stargat5.6026/"
-romVersionOverride: "1.0"
+romVersionOverride: "stargat5"
 tableNotes: "Download 'Stargate (Gottlieb 1995) v2.0.vpx.zip'"
 tableVPSId: "k8-hOYwg"
 testers:
