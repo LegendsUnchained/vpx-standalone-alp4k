@@ -37,7 +37,7 @@ cPuPPack = "jpsdeadpool"    ' name of the PuP-Pack / PuPVideos folder for this t
 
 ' This is used for the startup and control of Pinup Player
 
-Sub PuPStart()
+Sub PuPStart(cPuPPack)
     If PUPStatus=true then Exit Sub
     If usePUP=true then
         Set PuPlayer = CreateObject("PinUpPlayer.PinDisplay")
@@ -56,6 +56,8 @@ Sub pupevent(EventNum)
     PuPlayer.B2SData "E"&EventNum,1  'send event to Pup-Pack
 End Sub
 
+PuPStart(cPuPPack) 'Check for PuP - If found, then start Pinup Player / PuP-Pack
+
 ' Load the core.vbs for supporting Subs and functions
 LoadCoreFiles
 
@@ -66,17 +68,6 @@ Sub LoadCoreFiles
     ExecuteGlobal GetTextFile("controller.vbs")
     If Err Then MsgBox "Can't open controller.vbs"
     On Error Goto 0
-	    If usePUP=true then
-        ' Check if puppack is installed
-        Dim fso
-        Set fso = CreateObject("Scripting.FileSystemObject")
-        If (fso.FolderExists(".\\pupvideos\\" & cPuPPack)) Then
-            B2SOff=True
-        Else
-            usePUP=false
-            PUPStatus=true
-        End If
-    End If
 End Sub
 
 ' Define any Constants
@@ -149,7 +140,6 @@ Sub Table1_Init()
     Dim i
     Randomize
 
-    PuPStart() 'Check for PuP - If found, then start Pinup Player / PuP-Pack																			
     'Impulse Plunger as autoplunger
     Const IMPowerSetting = 45 ' Plunger Power
     Const IMTime = 0.5        ' Time in seconds for Full Plunge
@@ -541,7 +531,7 @@ Sub CheckTilt                                    'Called when table is nudged
         Tilted = True
         'display Tilt
         DMDFlush
-        DMD "", "", "d_TILT", eNone, eNone, eBlink, 200, False, "" : pupevent 803
+        DMD "", "", "d_TILT", eNone, eNone, eBlink, 200, False, "" : pupevent 804
         DisableTable True
         TiltRecoveryTimer.Enabled = True 'start the Tilt delay to check for all the balls to be drained
     End If
@@ -5811,6 +5801,7 @@ End Sub
 '****************
 
 Sub StartMystery
+    pupevent 847
     DMD "   MYSTERY AWARD    ", CL(1, "LIGHT LOCK"), "", eNone, eNone, eNone, 100, False, ""
     DMD "   MYSTERY AWARD    ", CL(1, "DEADPOOL WUZ HERE"), "", eNone, eNone, eNone, 100, False, ""
     DMD "   MYSTERY AWARD    ", CL(1, "SMALL POINTS"), "", eNone, eNone, eNone, 100, False, ""
