@@ -3,7 +3,7 @@
 '       Game FrameWork JP Salas using Darks DMD Flashes
 '		Scripting by RusstyT 
 '		VPX script using core.vbs for supporting functions
-'            			Version GameOfDog 1.0
+'            			Version GameOfDog 1.0.5LW
 ' ****************************************************************
 
 
@@ -276,7 +276,7 @@ End Sub
 
 Const cGameName = "GameOfDog1.0"
 Const TableName = "GameOfDog1.0"
-Const myVersion = "GameOfDog1.0"
+Const myVersion = "GameOfDog1.0.5"
 Const MaxPlayers = 4     ' from 1 to 4
 Const BallSaverTime = 20 ' in seconds
 Const MaxMultiplier = 5  ' limit to 5x in this game, both bonus multiplier and playfield multiplier
@@ -299,8 +299,8 @@ Dim turnonultradmd
 Dim PlayersPlayingGame
 Dim CurrentPlayer
 Dim Credits
-Dim NewSong
-Dim NewSong2
+Dim NewSong(4)
+Dim NewSong2(4)
 Dim ChooseSongSet1
 Dim ChooseSongSet2
 Dim BonusPoints(4)
@@ -1538,32 +1538,31 @@ End Sub
 
 
 Sub ChangeSong
-	If ChooseSongset1=True then ChangeSongSet1:NewSong=1:debug.print "NewSong=1"
-	If ChooseSongSet2=True then ChangeSongSet2:NewSong2=1:debug.print "NewSong=2"
+	If ChooseSongset1=True then ChangeSongSet1
+	If ChooseSongSet2=True then ChangeSongSet2
 End Sub
 
 Sub	ChangeSongSet1
 debug.print "PlaySongSet1"
-		NewSong=NewSong +1
-		Select Case NewSong 
+		NewSong(CurrentPlayer)=NewSong (CurrentPlayer)+1
+		Select Case NewSong(CurrentPlayer) 
 			Case 1 PlaySong "m_mrbluesky"	:debug.print "MrBlueSky-Song1"
 			Case 2 PlaySong "m_CopyCat"	:debug.print "CopyCat-Song1"
 			Case 3 PlaySong "m_TheGrannies"	
 			Case 4 PlaySong "m_Omelette"
-			Case 5 PlaySong "m_CamillaAndTheChickens":	NewSong=0:	Debug.Print "NewSong=0/MrBlueSky"	
-'			Case 6 PlaySong "m_mrbluesky-nointro"
+			Case 5 PlaySong "m_WhoLetTheDogsOut":	NewSong(CurrentPlayer)=0:	Debug.Print "NewSong(CurrentPlayer)=0/MrBlueSky"	
 		End Select
 End Sub
 
 Sub ChangeSongSet2
 debug.print "PlaySongSet2"
-		NewSong2=NewSong2 +1
-		Select Case NewSong2 
-			Case 1 PlaySong "m_Omelette"	
-			Case 2 PlaySong "m_CopyCat"	
+		NewSong2(CurrentPlayer)=NewSong2(CurrentPlayer) +1
+		Select Case NewSong2(CurrentPlayer)
+			Case 1 PlaySong "m_mrbluesky"	
+			Case 2 PlaySong "m_WhoLetTheDogsOut"	
 			Case 3 PlaySong "m_TheGrannies"	
-			Case 4 PlaySong "m_CamillaAndTheChickens"
-			Case 5 PlaySong "m_CopyCat":	NewSong2=0:	Debug.Print "NewSong2=0/MrBlueSky"
+			Case 4 PlaySong "m_WhoLetTheDogsOut"
+			Case 5 PlaySong "m_Omelette":	NewSong2(CurrentPlayer)=0:	Debug.Print "NewSong2=0/MrBlueSky"
 		End Select
 End Sub
 
@@ -1623,8 +1622,8 @@ Sub FirstBall
 	FirstBallStarted=True
 	' create a new ball in the shooters lane
 	vpmtimer.addtimer 1500, " CreateNewBall'"
-	NewSong=1: debug.print "SetNewSong=1 at FirstBall"
-	NewSong2=1: debug.print "SetNewSong2=1 at FirstBall"
+	NewSong(CurrentPlayer)=1: debug.print "SetNewSong(CurrentPlayer)=1 at FirstBall"
+	NewSong2(CurrentPlayer)=1: debug.print "SetNewSong2(CurrentPlayer)=1 at FirstBall"
 End Sub
 
 ' (Re-)Initialise the Table for a new ball (either a new ball after the player has
@@ -3810,8 +3809,8 @@ Sub ResetStartofGameVariables()
 	MysteryActive(CurrentPlayer)=0
 	SelectMode=0
 	ModeActive=0
-	NewSong=0
-	NewSong2=0
+	NewSong(CurrentPlayer)=0
+	NewSong2(CurrentPlayer)=0
 	LuckyDogActive=1	
 	CatsLooseActive=0:KingDogActive(CurrentPlayer)=0: SuperSheepActive=0
 	NextMode1(CurrentPlayer)=1:NextMode2(CurrentPlayer)=0:NextMode3(CurrentPlayer)=0:NextMode4(CurrentPlayer)=0
@@ -3843,7 +3842,6 @@ Sub ResetModesAndAwards
 	CatCount(CurrentPlayer)=0:debug.print "CatCount(CurrentPlayer)=0"
 	ResetVetTargets
 	RightSideDiverterUsed=0
-	StopCats
 	StopAngrySheep
 	SuperSheepCount(CurrentPlayer)=0
 	FastScoreActive=0
@@ -4791,11 +4789,11 @@ End Sub
 Sub CheckCatAward
 	CatsSorted(CurrentPlayer)=CatsSorted(CurrentPlayer)+1
 	CatCount(CurrentPlayer)=CatCount(CurrentPlayer)+1
-	If CatCount(CurrentPlayer)=1 Then DMD CL(0, "DANG CAT"), CL(1, ""), "DMD_CatBG3", eNone, eNone, eNone, 3000, True, "": AddScore 200000: debug.print "CatCount 1"
-	If CatCount(CurrentPlayer)=2 Then DMD CL(0, "COP THAT"), CL(1, "POOTY"), "DMD_CatBG3", eBlink, eNone, eNone, 3000, True, "": AddScore 400000: debug.print "CatCount 2"
+	If CatCount(CurrentPlayer)=1 Then DMD CL(0, "DANG CAT"), CL(1, ""), "DMD_CatBG3", eNone, eNone, eNone, 3000, True, "":vpmtimer.addtimer 1500, "AdvanceBonoMeter'": AddScore 200000: debug.print "CatCount 1"
+	If CatCount(CurrentPlayer)=2 Then DMD CL(0, "COP THAT"), CL(1, "POOTY"), "DMD_CatBG3", eBlink, eNone, eNone, 3000, True, "":vpmtimer.addtimer 1500, "AdvanceBonoMeter'": AddScore 400000: debug.print "CatCount 2"
 	If CatCount(CurrentPlayer)=3 Then vpmtimer.addtimer 200,"AwardJackpot3'":vpmtimer.addtimer 1500, "AdvanceBonoMeter'": debug.print "CatCount 3"'*********************************
-	If CatCount(CurrentPlayer)=4 Then DMD CL(0, "    SNAPPY"), CL(1, "TOM"), "DMD_CatBG3", eNone, eNone, eNone, 3000, True, "": debug.print "CatCount 4"
-	If CatCount(CurrentPlayer)=5 Then DMD CL(0, "     NOT HAPPY"), CL(1, "POOTY"), "DMD_CatBG3", eBlink, eNone, eNone, 3000, True, "": debug.print "CatCount 5"
+	If CatCount(CurrentPlayer)=4 Then DMD CL(0, "    SNAPPY"), CL(1, "TOM"), "DMD_CatBG3", eNone, eNone, eNone, 3000, True, "":vpmtimer.addtimer 1500, "AdvanceBonoMeter'": debug.print "CatCount 4"
+	If CatCount(CurrentPlayer)=5 Then DMD CL(0, "     NOT HAPPY"), CL(1, "POOTY"), "DMD_CatBG3", eBlink, eNone, eNone, 3000, True, "":vpmtimer.addtimer 1500, "AdvanceBonoMeter'": debug.print "CatCount 5"
 	If CatCount(CurrentPlayer)=6 Then vpmtimer.addtimer 200,"AwardSuperJackpot'":StopCats:CatCount(CurrentPlayer)=0:vpmtimer.addtimer 3200, "AdvanceBonoMeter'":PrepareCatMultiball: debug.print "CatCount 6"'*********************************
 End Sub
 
@@ -4983,9 +4981,9 @@ debug.print "TriggerSheep2Hit"
 	SheepSorted(CurrentPlayer)=SheepSorted(CurrentPlayer)+1
 	SheepCount(CurrentPlayer)=SheepCount(CurrentPlayer)+1
 	If LightFastScore5.State=2 And LastSwitchHit="TriggerSheep1" Then
-		If LightAngrySheep8.State=2 Then vpmtimer.addtimer 32000, "AwardSuperJackPot2'":vpmtimer.addtimer 500, "ResetSheepLights'":debug.print "AngrySheep8Hit"
-		If LightAngrySheep7.State=2 Then LightAngrySheep7.State=1:LightAngrySheep8.State=2:PlaySound "Sheep7":vpmtimer.addtimer 3200, "AwardSuperJackPot'":vpmtimer.addtimer 3200, "AdvanceBonoMeter'":debug.print "AngrySheep7Hit"
-		If LightAngrySheep6.State=2 Then LightAngrySheep6.State=1:LightAngrySheep7.State=2:SheepSound:vpmtimer.addtimer 3200, "AwardSuperJackPot'"::debug.print "AngrySheep6Hit"
+		If LightAngrySheep8.State=2 Then vpmtimer.addtimer 32000, "AwardSuperJackPot2'":vpmtimer.addtimer 500, "ResetSheepLights'":vpmtimer.addtimer 3200, "AdvanceBonoMeter'":debug.print "AngrySheep8Hit"
+		If LightAngrySheep7.State=2 Then LightAngrySheep7.State=1:LightAngrySheep8.State=2:PlaySound "Sheep7":vpmtimer.addtimer 3200, "AwardSuperJackPot'":debug.print "AngrySheep7Hit"
+		If LightAngrySheep6.State=2 Then LightAngrySheep6.State=1:LightAngrySheep7.State=2:SheepSound:vpmtimer.addtimer 3200, "AwardSuperJackPot'":vpmtimer.addtimer 3200, "AdvanceBonoMeter'":debug.print "AngrySheep6Hit"
 		If LightAngrySheep5.State=2 Then LightAngrySheep5.State=1:LightAngrySheep6.State=2:SheepSound:vpmtimer.addtimer 3200, "AwardJackpot3'":debug.print "AngrySheep5Hit":PrepareSheepMultiball
 		If LightAngrySheep4.State=2 Then LightAngrySheep4.State=1:LightAngrySheep5.State=2:PlaySound "Sheep3":vpmtimer.addtimer 3200, "AwardJackPot2'":vpmtimer.addtimer 3200, "AdvanceBonoMeter'":debug.print "AngrySheep4Hit":PrepareSheepMultiball
 		If LightAngrySheep3.State=2 Then LightAngrySheep3.State=1:LightAngrySheep4.State=2:SheepSound:vpmtimer.addtimer 3200, "AwardJackPot'":debug.print "AngrySheep3Hit"
@@ -4994,12 +4992,12 @@ debug.print "TriggerSheep2Hit"
 	End If
 
 	If LightFastScore5.State=0 And LastSwitchHit="TriggerSheep1" Then
-		If LightAngrySheep8.State=2 Then AwardJackpot3:vpmtimer.addtimer 500, "ResetSheepLights'":debug.print "AngrySheep8Hit"
-		If LightAngrySheep7.State=2 Then LightAngrySheep7.State=1:LightAngrySheep8.State=2:PlaySound "Sheep7":AwardJackpot2:vpmtimer.addtimer 3200, "AdvanceBonoMeter'":debug.print "AngrySheep7Hit"
-		If LightAngrySheep6.State=2 Then LightAngrySheep6.State=1:LightAngrySheep7.State=2:SheepSound:AwardJackPot:debug.print "AngrySheep6Hit":
+		If LightAngrySheep8.State=2 Then AwardJackpot3:vpmtimer.addtimer 500, "ResetSheepLights'":vpmtimer.addtimer 3200, "AdvanceBonoMeter'":debug.print "AngrySheep8Hit"
+		If LightAngrySheep7.State=2 Then LightAngrySheep7.State=1:LightAngrySheep8.State=2:PlaySound "Sheep7":AwardJackpot2:debug.print "AngrySheep7Hit"
+		If LightAngrySheep6.State=2 Then LightAngrySheep6.State=1:LightAngrySheep7.State=2:SheepSound:AwardJackPot:vpmtimer.addtimer 3200, "AdvanceBonoMeter'":debug.print "AngrySheep6Hit":
 		If LightAngrySheep5.State=2 Then LightAngrySheep5.State=1:LightAngrySheep6.State=2:SheepSound:AddScore 500000:debug.print "AngrySheep5Hit":PrepareSheepMultiball
-		If LightAngrySheep4.State=2 Then LightAngrySheep4.State=1:LightAngrySheep5.State=2:PlaySound "Sheep3":AddScore 400000:vpmtimer.addtimer 3200, "AdvanceBonoMeter'":debug.print "AngrySheep4Hit"
-		If LightAngrySheep3.State=2 Then LightAngrySheep3.State=1:LightAngrySheep4.State=2:SheepSound:AddScore 300000:debug.print "AngrySheep3Hit"
+		If LightAngrySheep4.State=2 Then LightAngrySheep4.State=1:LightAngrySheep5.State=2:PlaySound "Sheep3":AddScore 400000:debug.print "AngrySheep4Hit"
+		If LightAngrySheep3.State=2 Then LightAngrySheep3.State=1:LightAngrySheep4.State=2:SheepSound:AddScore 300000:vpmtimer.addtimer 3200, "AdvanceBonoMeter'":debug.print "AngrySheep3Hit"
 		If LightAngrySheep2.State=2 Then LightAngrySheep2.State=1:LightAngrySheep3.State=2:SheepSound:AddScore 200000:debug.print "AngrySheep2Hit"
 		If LightAngrySheep1.State=2 Then LightAngrySheep1.State=1:LightAngrySheep2.State=2:SheepSound:AddScore 100000:debug.print "AngrySheep1Hit"
 	End If
@@ -6681,7 +6679,7 @@ Sub Table1_OptionEvent(ByVal eventId)
 	Else
 		Table1.ColorGradeImage = "LUT_Warm_" & (LUToption - 11)
 	End If
-		SongChoice = Table1.Option("MrBlueSky-SongSet", 0, 1, 1, 1, 0, Array("Bluey_SongSet", "Default"))
+		SongChoice = Table1.Option("BlueySongset", 0, 1, 1, 1, 0, Array("WhoLetTheDogsOut", "Default"))
 		SetSongs SongChoice
 		ShowMyDog = Table1.Option("DontShowMyDog", 0, 1, 1, 1, 0, Array("ShowMyDog", "Default"))
 		SetShowMyDog ShowMyDog	
