@@ -5968,16 +5968,27 @@ End Sub
 
 Dim ScoreServer
 
+' True only when ScoreServer_Connect found the object. A failed CreateObject leaves the variable
+' Empty, not Nothing, and "Empty Is Nothing" is a runtime error ("Object required") on every VPX
+' without VPinball.ScoreServer, so the type is tested before the identity.
+Function ScoreServer_Ready()
+    ScoreServer_Ready = False
+    If Not IsObject(ScoreServer) Then Exit Function
+    If ScoreServer Is Nothing Then Exit Function
+    ScoreServer_Ready = True
+End Function
+
 Sub ScoreServer_Connect()
+    Set ScoreServer = Nothing
     On Error Resume Next
     Set ScoreServer = CreateObject("VPinball.ScoreServer")
     On Error Goto 0
-    If Not ScoreServer Is Nothing Then ScoreServer.SetGameName cGameName
+    If ScoreServer_Ready() Then ScoreServer.SetGameName cGameName
 End Sub
 
 ' gameState: 1 = game start, 2 = in play, 3 = game end
 Sub ScoreServer_Report(gameState)
-    If ScoreServer Is Nothing Then Exit Sub
+    If Not ScoreServer_Ready() Then Exit Sub
     If PlayersPlayingGame < 1 Then Exit Sub   ' ReDim p(-1) would be a runtime error
 
     Dim i
@@ -5997,7 +6008,7 @@ Sub ScoreServer_Report(gameState)
 End Sub
 
 Sub ScoreServer_HighScores()
-    If ScoreServer Is Nothing Then Exit Sub
+    If Not ScoreServer_Ready() Then Exit Sub
     ScoreServer.SetHighScoresArray _
         "First Place|Second Place|Third Place|Fourth Place", _
         HighScoreName(0) & "|" & HighScoreName(1) & "|" & HighScoreName(2) & "|" & HighScoreName(3), _
@@ -6006,7 +6017,7 @@ Sub ScoreServer_HighScores()
 End Sub
 
 Sub ScoreServer_End()
-    If ScoreServer Is Nothing Then Exit Sub
+    If Not ScoreServer_Ready() Then Exit Sub
     ScoreServer_Report 3
     ScoreServer_HighScores
     ScoreServer.ClearState
