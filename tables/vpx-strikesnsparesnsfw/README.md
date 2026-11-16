@@ -1,0 +1,2 @@
+This table is in the Table Manager Wizard. To view its details visit (PLACEHOLDER)
+

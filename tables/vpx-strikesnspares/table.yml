@@ -1,0 +1,14 @@
+---
+enabled: false
+backglassChecksum: "5E95648753C97542B44037E7A0107568"
+backglassVPSId: "sv0AYvxih9"
+fps: 60
+romChecksum: "91C52D8AC940A2285C23615DD1D9BD22"
+romNotes: "Download version 1.0"
+romUrlOverride: "https://pinballnirvana.com/forums/resources/snspares.2321/"
+romVersionOverride: "snspares"
+tableVPSId: "tjkJq8F5"
+testers:
+  - "Miku"
+vpxChecksum: "337A2EFF9AB9FE06A43DA8F32DC2E5B2"
+vpxVPSId: "He_w7gT6"
