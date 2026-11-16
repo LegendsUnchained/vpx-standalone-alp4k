@@ -1869,7 +1869,6 @@ End Sub
 Dim SpecialTimerStep
 Dim SpecialTimerStarted
 SpecialTimerStarted = False
-									
 
 Sub SpecialTimer_Timer
     If SpecialTimerStep = -1 Then

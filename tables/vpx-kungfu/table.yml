@@ -4,10 +4,10 @@ backglassBundled: true
 backglassChecksum: "480d9949dcf7db3e6fae187c4763cefa"
 backglassNotes: "Included in table download"
 fps: 60
-tableNotes: "Make sure you have the 1975 table!"
+tableNotes: "Download 'Kung Fu (LTD do Brasil 1975) [jpsalas 2026 - v7].zip'"
 tableVPSId: "gkbqFrgRR0"
 tagline: "'Surely, not *everybody* was Kung Fu fighting!!"
 testers:
   - "Curt"
-vpxChecksum: "8d2c6f592599ea053c773335844dcfda"
+vpxChecksum: "6479BFAB013F2D875D041061678FC9C6"
 vpxVPSId: "rGntrHV3bg"

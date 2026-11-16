@@ -6,11 +6,11 @@ enabled: false
 fps: 60
 romChecksum: "53ac6796d35dd79be9b1aa375486928d"
 romVPSId: "DS9LaDTe"
-tableNotes: "Download v6.0.1"
+tableNotes: "Download 'Harley Davidson (Bally 1991) [jpsalas 2026 - v7].zip'"
 tableVPSId: "QUpU0r4n"
 tagline: "'Born to be wild!'"
 testers:
   - "kaoticBPR"
   - "bhhob"
-vpxChecksum: "436db0142a6b64c50f3a62aeb98aee1a"
+vpxChecksum: "DD2EAD905E9CAA3659E50EB7D4F94AD6"
 vpxVPSId: "Xq0ix4wk"
