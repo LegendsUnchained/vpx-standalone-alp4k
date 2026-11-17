@@ -5,7 +5,7 @@ enabled: false
 fps: 55
 romChecksum: "3607731fdbdbc1e589fb8d6ba498508f"
 romVPSId: "8SvZI6Ex"
-tableNotes: "Download v6.0.0"
+tableNotes: "Download 'Terminator 3 (Stern 2003) [jpsalas 2026 - v7].zip'"
 backglassNotes: "Download v2.0"
 tableVPSId: "j9F71ZEC"
 tagline: "Isn't this Beneath the Planet of the Apes?'"
@@ -16,5 +16,5 @@ testers:
   - "Wraith"
   - "lilalien"
   - "n-i-x"
-vpxChecksum: "cf6c7e63877e3abfc7f283f5009e8aad"
+vpxChecksum: "5616C55B2412BBC0197102686899C84A"
 vpxVPSId: "ZqAnVIW8"
