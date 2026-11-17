@@ -1,13 +1,13 @@
 ---
-fps: 57
+fps: 60
 pupArchiveFormat: "rar"
 pupArchiveRoot: "WuWa"
 pupBundled: true
-pupChecksum: "25D3F38252832869086E1AF5AC91DCBD"
-pupNotes: "Download 'WuWa.rar' 5.61 GB"
+pupChecksum: "E3048CD568FF9EFB2745D7E90DEF8E28"
+pupNotes: "Download 'WuWa.rar'"
 pupRequired: true
 pupVersion: "WuWa"
-tableNotes: "Download 'Wuthering Waves (2026) TombGman v1.04.vpx' 287.62 MB"
+tableNotes: "Download 'Wuthering Waves (2026)  TombGman v1.05.vpx'"
 tableVPSId: "Pfyv1wi_Go"
 tagline: "Master the concerto. Summon your echos. [sic]"
 testers:
