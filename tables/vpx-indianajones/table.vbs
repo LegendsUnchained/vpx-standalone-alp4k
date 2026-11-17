@@ -82,10 +82,10 @@ Sub table1_Init
     ' Trough
     Set bsTrough = New cvpmBallStack
     With bsTrough
-        .InitSw 0, 21, 20, 19, 18, 0, 0, 0
+        .InitSw 0, 21, 20, 19, 18, 17, 0, 0
         .InitKick BallRelease, 90, 4
         .InitExitSnd SoundFX("fx_ballrel", DOFContactors), SoundFX("fx_Solenoid", DOFContactors)
-        .Balls = 8
+        .Balls = 4 ' 8 balls: 4 here + 4 already in the Ark (bsArk), as on a set-up machine. sw17 closes only with more than 4 here.
     End With
 
     'Ark
@@ -94,7 +94,7 @@ Sub table1_Init
         .InitSw 0, 0, 0, 0, 0, 0, 0, 0
         .InitKick sw39, 190, 16
         .InitExitSnd SoundFX("fx_kicker", DOFContactors), SoundFX("fx_Solenoid", DOFContactors)
-        .Balls = 0
+        .Balls = 4 ' the Ark starts loaded, so the ROM does not reload it at the first Start
         .KickForceVar = 2
         .KickAngleVar = 10
     End With
