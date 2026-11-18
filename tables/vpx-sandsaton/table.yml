@@ -1,12 +1,13 @@
 ---
-enabled: false
-backglassChecksum: "f01909e19852b3f624684e91a5d1a9d3"
+backglassChecksum: "F01909E19852B3F624684E91A5D1A9D3"
 backglassVPSId: "THpCynTYRT"
 fps: 60
+tableNotes: "Download 'Sands of the Aton (Original 2023) [jpsalas 2026 - v7].zip'"
 tableVPSId: "KWr7oeIX5n"
 tagline: "'The Pharaohs were preceded by another civilization that came from the sky...'"
 testers:
   - "mcap10"
   - "bhhob"
-vpxChecksum: "7aa4db15c729ec2c6d4bf327ab2032e3"
+  - "Wraith"
+vpxChecksum: "F07B44AC1364B0094A60C5E0A6FECA0D"
 vpxVPSId: "7TpU6EgObk"

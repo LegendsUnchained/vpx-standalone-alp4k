@@ -6,10 +6,10 @@ enabled: false
 fps: 60
 romChecksum: "2b1ef2f17073f5a94f75bebd9024afbb"
 romVPSId: "jcep11pgGO"
-tableNotes: "Download v6.0.0"
+tableNotes: "Download 'World Joker Tour (Stern-Pinstein 2006) [jpsalas 2026 - v7].zip'"
 tableVPSId: "RRod5gPdAb"
 tagline: "*new* VPU source for ROM"
 testers:
   - "Wraith"
-vpxChecksum: "242987b924734e91c92f622ad7e5aaf1"
+vpxChecksum: "50D0E55025C9BC39421CDB2B31E6354B"
 vpxVPSId: "Nd6o1tTeZe"

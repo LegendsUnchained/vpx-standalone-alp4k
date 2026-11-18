@@ -155,17 +155,6 @@ Sub Table1_Init()
         Next
     End If
     If credits > 0 then:DOF 123, DOFOn
-
-    ' Start the RealTime timer
-    RealTime.Enabled = 1
-End Sub
-
-'*******************
-' Realtime updates
-'*******************
-
-Sub Realtime_Timer
-    RollingUpdate
 End Sub
 
 '******
@@ -177,6 +166,13 @@ Sub Table1_KeyDown(ByVal Keycode)
     If EnteringInitials then
         CollectInitials(keycode)
         Exit Sub
+    End If
+
+    ' Reset High Score using the [7] key
+    if keycode = "8" then 
+        ResetHS
+        ResHS.Visible = 1
+        vpmTimer.AddTimer 2000, "Reshs.visible = 0 '"
     End If
 
     ' add coins
@@ -194,9 +190,9 @@ Sub Table1_KeyDown(ByVal Keycode)
     End If
 
     ' tilt keys
-    If keycode = LeftTiltKey Then Nudge 90, 8:PlaySound "fx_nudge", 0, 1, -0.1, 0.25
-    If keycode = RightTiltKey Then Nudge 270, 8:PlaySound "fx_nudge", 0, 1, 0.1, 0.25
-    If keycode = CenterTiltKey Then Nudge 0, 9:PlaySound "fx_nudge", 0, 1, 1, 0.25
+    If keycode = LeftTiltKey Then Nudge 90, 2:PlaySound "fx_nudge", 0, 1, -0.1, 0.25
+    If keycode = RightTiltKey Then Nudge 270, 2:PlaySound "fx_nudge", 0, 1, 0.1, 0.25
+    If keycode = CenterTiltKey Then Nudge 0, 2:PlaySound "fx_nudge", 0, 1, 1, 0.25
 
     ' keys during game
 
@@ -331,84 +327,43 @@ Sub RightFlipper_Collide(parm)
     PlaySound "fx_rubber_flipper", 0, Vol(ActiveBall), pan(ActiveBall), 0.2, 0, 0, 0, AudioFade(ActiveBall)
 End Sub
 
-'*********************************************************
-' Real Time Flipper adjustments - by JLouLouLou & JPSalas
-'        (to enable flipper tricks) 
-'*********************************************************
+'**********************************
+' Real Time Flipper EOS adjustment
+' based on JLouLouLou flipper script
+'     JP's physics Version 2026
+'**********************************
 
-Dim FlipperPower
-Dim FlipperElasticity
-Dim SOSTorque, SOSAngle
-Dim FullStrokeEOS_Torque, LiveStrokeEOS_Torque
 Dim LeftFlipperOn
 Dim RightFlipperOn
 
-Dim LLiveCatchTimer
-Dim RLiveCatchTimer
-Dim LiveCatchSensivity
+' EOS Torque when flipper hold up ( EOS Coil is fully charged. 
+' Ampere increase due to flipper can't move or when it is pushed back when "On". EOS Coil have more power )
+Const FullStrokeEOS_Torque = 0.9 
 
-FlipperPower = 3600
-FlipperElasticity = 0.6
-FullStrokeEOS_Torque = 0.6 ' EOS Torque when flipper hold up ( EOS Coil is fully charged. Ampere increase due to flipper can't move or when it pushed back when "On". EOS Coil have more power )
-LiveStrokeEOS_Torque = 0.3 ' EOS Torque when flipper rotate to end ( When flipper move, EOS coil have less Ampere due to flipper can freely move. EOS Coil have less power )
-
-LeftFlipper.EOSTorqueAngle = 10
-RightFlipper.EOSTorqueAngle = 10
-
-SOSTorque = 0.2
-SOSAngle = 6
-
-LiveCatchSensivity = 10
-
-LLiveCatchTimer = 0
-RLiveCatchTimer = 0
+' EOS Torque when flipper rotate to end ( When flipper move, EOS coil have 
+' less Ampere due to flipper can freely move. EOS Coil have less power )
+Const LiveStrokeEOS_Torque = 0.2 
 
 LeftFlipper.TimerInterval = 1
 LeftFlipper.TimerEnabled = 1
 
-Sub LeftFlipper_Timer 'flipper's tricks timer
-'Start Of Stroke Flipper Stroke Routine : Start of Stroke for Tap pass and Tap shoot
-    If LeftFlipper.CurrentAngle >= LeftFlipper.StartAngle - SOSAngle Then LeftFlipper.Strength = FlipperPower * SOSTorque else LeftFlipper.Strength = FlipperPower : End If
- 
-'End Of Stroke Routine : Livecatch and Emply/Full-Charged EOS
-	If LeftFlipperOn = 1 Then
-		If LeftFlipper.CurrentAngle = LeftFlipper.EndAngle then
-			LeftFlipper.EOSTorque = FullStrokeEOS_Torque
-			LLiveCatchTimer = LLiveCatchTimer + 1
-			If LLiveCatchTimer < LiveCatchSensivity Then
-				LeftFlipper.Elasticity = 0
-			Else
-				LeftFlipper.Elasticity = FlipperElasticity
-				LLiveCatchTimer = LiveCatchSensivity
-			End If
-		End If
-	Else
-		LeftFlipper.Elasticity = FlipperElasticity
-		LeftFlipper.EOSTorque = LiveStrokeEOS_Torque
-		LLiveCatchTimer = 0
-	End If
-	
-
-'Start Of Stroke Flipper Stroke Routine : Start of Stroke for Tap pass and Tap shoot
-    If RightFlipper.CurrentAngle <= RightFlipper.StartAngle + SOSAngle Then RightFlipper.Strength = FlipperPower * SOSTorque else RightFlipper.Strength = FlipperPower : End If
- 
-'End Of Stroke Routine : Livecatch and Emply/Full-Charged EOS
- 	If RightFlipperOn = 1 Then
-		If RightFlipper.CurrentAngle = RightFlipper.EndAngle Then
-			RightFlipper.EOSTorque = FullStrokeEOS_Torque
-			RLiveCatchTimer = RLiveCatchTimer + 1
-			If RLiveCatchTimer < LiveCatchSensivity Then
-				RightFlipper.Elasticity = 0
-			Else
-				RightFlipper.Elasticity = FlipperElasticity
-				RLiveCatchTimer = LiveCatchSensivity
-			End If
-		End If
-	Else
-		RightFlipper.Elasticity = FlipperElasticity
-		RightFlipper.EOSTorque = LiveStrokeEOS_Torque
-		RLiveCatchTimer = 0
-	End If
+Sub LeftFlipper_Timer 'flipper's EOS changer
+    'Left End Of Stroke Routine
+    If LeftFlipperOn = 1 Then
+        If LeftFlipper.CurrentAngle = LeftFlipper.EndAngle then
+            LeftFlipper.EOSTorque = FullStrokeEOS_Torque
+        End If
+    Else
+        LeftFlipper.EOSTorque = LiveStrokeEOS_Torque
+    End If
+    'Right End Of Stroke Routine
+    If RightFlipperOn = 1 Then
+        If RightFlipper.CurrentAngle = RightFlipper.EndAngle Then
+            RightFlipper.EOSTorque = FullStrokeEOS_Torque
+        End If
+    Else
+        RightFlipper.EOSTorque = LiveStrokeEOS_Torque
+    End If
 End Sub
 
 '***********
@@ -488,7 +443,7 @@ Sub TiltRecoveryTimer_Timer()
 End Sub
 
 '***************************************************************
-'             Supporting Ball & Sound Functions v4.0
+'             Supporting Ball & Sound Functions 2026
 '  includes random pitch in PlaySoundAt and PlaySoundAtBall
 '***************************************************************
 
@@ -504,10 +459,10 @@ End Function
 Function Pan(ball) ' Calculates the pan for a ball based on the X position on the table. "table1" is the name of the table
     Dim tmp
     tmp = ball.x * 2 / TableWidth-1
-    If tmp > 0 Then
+    If tmp> 0 Then
         Pan = Csng(tmp ^10)
     Else
-        Pan = Csng(-((- tmp) ^10))
+        Pan = Csng(-((- tmp) ^10) )
     End If
 End Function
 
@@ -516,16 +471,16 @@ Function Pitch(ball) ' Calculates the pitch of the sound based on the ball speed
 End Function
 
 Function BallVel(ball) 'Calculates the ball speed
-    BallVel = (SQR((ball.VelX ^2) + (ball.VelY ^2)))
+    BallVel = (SQR((ball.VelX ^2) + (ball.VelY ^2) ) )
 End Function
 
 Function AudioFade(ball) 'only on VPX 10.4 and newer
     Dim tmp
     tmp = ball.y * 2 / TableHeight-1
-    If tmp > 0 Then
+    If tmp> 0 Then
         AudioFade = Csng(tmp ^10)
     Else
-        AudioFade = Csng(-((- tmp) ^10))
+        AudioFade = Csng(-((- tmp) ^10) )
     End If
 End Function
 
@@ -533,8 +488,8 @@ Sub PlaySoundAt(soundname, tableobj) 'play sound at X and Y position of an objec
     PlaySound soundname, 0, 1, Pan(tableobj), 0.2, 0, 0, 0, AudioFade(tableobj)
 End Sub
 
-Sub PlaySoundAtBall(soundname) ' play a sound at the ball position, like rubbers, targets, metals, plastics
-    PlaySound soundname, 0, Vol(ActiveBall), pan(ActiveBall), 0.2, Pitch(ActiveBall) * 10, 0, 0, AudioFade(ActiveBall)
+Sub PlaySoundAtBall(soundname) ' play a collision sound at the ball position, like rubbers, targets, metals, plastics
+    PlaySound soundname, 0, Vol(ActiveBall), pan(ActiveBall), 0, Pitch(ActiveBall) * 10, 0, 0, AudioFade(ActiveBall)
 End Sub
 
 Function RndNbr(n) 'returns a random number between 1 and n
@@ -542,15 +497,31 @@ Function RndNbr(n) 'returns a random number between 1 and n
     RndNbr = Int((n * Rnd) + 1)
 End Function
 
+Const Pi=3.1415926535
+
 '***********************************************
-'   JP's VP10 Rolling Sounds + Ballshadow v4.0
-'   uses a collection of shadows, aBallShadow
+'      JP's VPX8 Ball Rolling Sounds 2026
 '***********************************************
 
-Const tnob = 19   'total number of balls
-Const lob = 0     'number of locked balls
-Const maxvel = 30 'max ball velocity
+' physics 2026
+
+Dim maxvel
+maxvel = 100 'initial value
+
+Sub Maxvelswitch_Hit
+    maxvel = 32 'max ball velocity during game play. EM: 20-35  SS: 35-50
+End Sub
+
+Sub maxvelswitch2_Hit
+    maxvel = 100 'new ball
+End Sub
+
+' rolling routines
+
+Const tnob = 19   'total number of balls, use a high number so you may test the table without errors.
+Const lob = 0    'number of locked balls
 ReDim rolling(tnob)
+
 InitRolling
 
 Sub InitRolling
@@ -558,38 +529,34 @@ Sub InitRolling
     For i = 0 to tnob
         rolling(i) = False
     Next
+    RollingTimer.Enabled = 1
 End Sub
 
-Sub RollingUpdate()
-    Dim BOT, b, ballpitch, ballvol, speedfactorx, speedfactory
+Sub RollingTimer_Timer()
+    Dim BOT, b, ballpitch, speedfactorx, speedfactory
     BOT = GetBalls
 
     ' stop the sound of deleted balls
     For b = UBound(BOT) + 1 to tnob
         rolling(b) = False
         StopSound("fx_ballrolling" & b)
-        aBallShadow(b).Y = 3000
     Next
 
     ' exit the sub if no balls on the table
     If UBound(BOT) = lob - 1 Then Exit Sub 'there no extra balls on this table
 
-    ' play the rolling sound for each ball and draw the shadow
+    ' play the rolling sound for each ball
     For b = lob to UBound(BOT)
-        aBallShadow(b).X = BOT(b).X
-        aBallShadow(b).Y = BOT(b).Y
-        aBallShadow(b).Height = BOT(b).Z - Ballsize / 2 + 1
-
-        If BallVel(BOT(b)) > 1 Then
-            If BOT(b).z < 30 Then
-                ballpitch = Pitch(BOT(b))
-                ballvol = Vol(BOT(b))
+        If BallVel(BOT(b) )> 1 Then
+            If BOT(b).z <0 Then
+                ballpitch = Pitch(BOT(b) ) - 5000 'decrease the pitch under the playfield
+            ElseIf BOT(b).z <30 Then
+                ballpitch = Pitch(BOT(b) )
             Else
-                ballpitch = Pitch(BOT(b)) + 50000 'increase the pitch on a ramp
-                ballvol = Vol(BOT(b)) * 3
+                ballpitch = Pitch(BOT(b) ) + 30000 'increase the pitch on a ramp or platform
             End If
             rolling(b) = True
-            PlaySound("fx_ballrolling" & b), -1, ballvol, Pan(BOT(b)), 0, ballpitch, 1, 0, AudioFade(BOT(b))
+            PlaySound("fx_ballrolling" & b), -1, Vol(BOT(b) ), Pan(BOT(b) ), 0, ballpitch, 1, 0, AudioFade(BOT(b) )
         Else
             If rolling(b) = True Then
                 StopSound("fx_ballrolling" & b)
@@ -597,23 +564,32 @@ Sub RollingUpdate()
             End If
         End If
 
-        ' rothbauerw's Dropping Sounds
-        If BOT(b).VelZ < -1 and BOT(b).z < 55 and BOT(b).z > 27 Then 'height adjust for ball drop sounds
-            PlaySound "fx_balldrop", 0, ABS(BOT(b).velz) / 17, Pan(BOT(b)), 0, Pitch(BOT(b)), 1, 0, AudioFade(BOT(b))
+        ' dropping sounds
+        If BOT(b).VelZ <-1 Then
+            'from ramp
+            If BOT(b).z <55 and BOT(b).z> 27 Then PlaySound "fx_balldrop", 0, ABS(BOT(b).velz) / 17, Pan(BOT(b) ), 0, Pitch(BOT(b) ), 1, 0, AudioFade(BOT(b) )
+            'down a hole
+            If BOT(b).z <10 and BOT(b).z> -10 Then PlaySound "fx_hole_enter", 0, ABS(BOT(b).velz) / 17, Pan(BOT(b) ), 0, Pitch(BOT(b) ), 1, 0, AudioFade(BOT(b) )
         End If
 
-        ' jps ball speed & spin control
-            BOT(b).AngMomZ = BOT(b).AngMomZ * 0.95
-        If BOT(b).VelX AND BOT(b).VelY <> 0 Then
-            speedfactorx = ABS(maxvel / BOT(b).VelX)
-            speedfactory = ABS(maxvel / BOT(b).VelY)
-            If speedfactorx < 1 Then
-                BOT(b).VelX = BOT(b).VelX * speedfactorx
-                BOT(b).VelY = BOT(b).VelY * speedfactorx
+        ' jps ball spin control
+        BOT(b).AngMomZ = BOT(b).AngMomZ * 0.95
+
+        ' jps ball speed control 2
+        If ABS(BallVel(BOT(b) ) )> maxvel Then
+            If BOT(b).VelX <> 0 Then
+                speedfactorx = ABS(maxvel / BOT(b).VelX)
+                If speedfactorx <1 Then
+                    BOT(b).VelX = BOT(b).VelX * speedfactorx
+                    BOT(b).VelY = BOT(b).VelY * speedfactorx
+                End If
             End If
-            If speedfactory < 1 Then
-                BOT(b).VelX = BOT(b).VelX * speedfactory
-                BOT(b).VelY = BOT(b).VelY * speedfactory
+            If BOT(b).VelY <> 0 Then
+                speedfactory = ABS(maxvel / BOT(b).VelY)
+                If speedfactory <1 Then
+                    BOT(b).VelX = BOT(b).VelX * speedfactory
+                    BOT(b).VelY = BOT(b).VelY * speedfactory
+                End If
             End If
         End If
     Next
@@ -913,49 +889,21 @@ Function Balls
     End If
 End Function
 
-' check the highscore
-Sub CheckHighscore
-    Dim playertops, si, sj, i, stemp, stempplayers
-    For i = 1 to 4
-        sortscores(i) = 0
-        sortplayers(i) = 0
-    Next
-    playertops = 0
-    For i = 1 to PlayersPlayingGame
-        sortscores(i) = Score(i)
-        sortplayers(i) = i
-    Next
-    For si = 1 to PlayersPlayingGame
-        For sj = 1 to PlayersPlayingGame-1
-            If sortscores(sj) > sortscores(sj + 1)then
-                stemp = sortscores(sj + 1)
-                stempplayers = sortplayers(sj + 1)
-                sortscores(sj + 1) = sortscores(sj)
-                sortplayers(sj + 1) = sortplayers(sj)
-                sortscores(sj) = stemp
-                sortplayers(sj) = stempplayers
-            End If
-        Next
-    Next
-    HighScoreTimer.interval = 100
-    HighScoreTimer.enabled = True
-    ScoreChecker = 4
-    CheckAllScores = 1
-    NewHighScore sortscores(ScoreChecker), sortplayers(ScoreChecker)
-End Sub
-
 '******************
 '     Match
 '******************
 
 Sub Verification_Match()
+    Dim x
     PlaySound "fx_match"
-    Match = INT(RND(1) * 10) * 10 ' random between 10 and 90
+    Match = INT(RND(1) * 10) * 10 ' random between 0 and 90
     Display_Match
-    If(Score(CurrentPlayer)MOD 100) = Match Then
-        PlaySound SoundFXDOF("fx_knocker", 122, DOFPulse, DOFknocker)
-        AddCredits 1
-    End If
+    For x = 1 to PlayersPlayingGame
+        If(Score(x)MOD 100) = Match Then
+            PlaySound SoundFXDOF("fx_knocker", 122, DOFPulse, DOFknocker)
+            AddCredits 1
+        End If
+    Next
 End Sub
 
 Sub Clear_Match()
@@ -1313,110 +1261,86 @@ Sub StopAttractMode()
     GameOverReel.SetValue 0
 End Sub
 
-'*********************************
-'    Load / Save / Highscore
-'*********************************
+'*************************************
+'      Highscore Routines 2026
+' Based og Black's and GNANCE's code
+'*************************************
+
+Dim EnteringInitials
+EnteringInitials = False
+
+Dim SelectedChar   ' character under the "cursor" when entering initials
+Dim HSTimerCount:HSTimerCount = 0
+Dim InitialString  ' the string holding the player's initials as they're entered
+Dim AlphaString:AlphaString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_<"
+Dim AlphaStringPos ' pointer to AlphaString, move Forward and backward with flipper keys
+Dim HSNewHigh      ' The new score to be recorded
+Dim HSScore(5)     ' High Scores read in from config file
+Dim HSName(5)      ' High Score Initials read in from config file
+Dim HS 'array with the flashers
+HS = Array(HSpostit,HS1,HS2,HS3,HS4,HS5,HS6,HS7,HS8,HS9,HS10,HS11,HS12,HS13,HS14,HS15,HS16,HS17,HS18,HS19,HS20,HS21,HS22,HS23,HS24,HS25,HS26,HS27,HS28,HS29,HS30,HS31)
 
 Sub Loadhs
-    ' Based on Black's Highscore routines
-    Dim FileObj
-    Dim ScoreFile, TextStr
-    Dim temp1
-    Dim temp2
-    Dim temp3
-    Dim temp4
-    Dim temp5
-    Dim temp6
-    Dim temp8
-    Dim temp9
-    Dim temp10
-    Dim temp11
-    Dim temp12
-    Dim temp13
-    Dim temp14
-    Dim temp15
-    Dim temp16
-    Dim temp17
-
-    Set FileObj = CreateObject("Scripting.FileSystemObject")
-    If Not FileObj.FolderExists(UserDirectory)then
-        Credits = 0
-        Exit Sub
-    End If
-    If Not FileObj.FileExists(UserDirectory & TableName& ".txt")then
-        Credits = 0
-        Exit Sub
-    End If
-    Set ScoreFile = FileObj.GetFile(UserDirectory & TableName& ".txt")
-    Set TextStr = ScoreFile.OpenAsTextStream(1, 0)
-    If(TextStr.AtEndOfStream = True)then
-        Exit Sub
-    End If
-    temp1 = TextStr.ReadLine
-    temp2 = textstr.readline
-
-    HighScore = cdbl(temp1)
-    If HighScore < 1 then
-        temp8 = textstr.readline
-        temp9 = textstr.readline
-        temp10 = textstr.readline
-        temp11 = textstr.readline
-        temp12 = textstr.readline
-        temp13 = textstr.readline
-        temp14 = textstr.readline
-        temp15 = textstr.readline
-        temp16 = textstr.readline
-        temp17 = textstr.readline
-    End If
-    TextStr.Close
-    Credits = cdbl(temp2)
-
-    If HighScore < 1 then
-        HSScore(1) = int(temp8)
-        HSScore(2) = int(temp9)
-        HSScore(3) = int(temp10)
-        HSScore(4) = int(temp11)
-        HSScore(5) = int(temp12)
-
-        HSName(1) = temp13
-        HSName(2) = temp14
-        HSName(3) = temp15
-        HSName(4) = temp16
-        HSName(5) = temp17
-    End If
-    Set ScoreFile = Nothing
-    Set FileObj = Nothing
-    SortHighscore 'added to fix a previous error
+    Dim x
+    x = LoadValue(TableName, "HighScore1")
+    If(x <> "") Then HSScore(1) = CDbl(x) Else HSScore(1) = 20000 End If
+    x = LoadValue(TableName, "HighScore1Name")
+    If(x <> "") Then HSName(1) = x Else HSName(1) = "AAA" End If
+    x = LoadValue(TableName, "HighScore2")
+    If(x <> "") then HSScore(2) = CDbl(x) Else HSScore(2) = 19000 End If
+    x = LoadValue(TableName, "HighScore2Name")
+    If(x <> "") then HSName(2) = x Else HSName(2) = "BBB" End If
+    x = LoadValue(TableName, "HighScore3")
+    If(x <> "") then HSScore(3) = CDbl(x) Else HSScore(3) = 18000 End If
+    x = LoadValue(TableName, "HighScore3Name")
+    If(x <> "") then HSName(3) = x Else HSName(3) = "CCC" End If
+    x = LoadValue(TableName, "HighScore4")
+    If(x <> "") then HSScore(4) = CDbl(x) Else HSScore(4) = 17000 End If
+    x = LoadValue(TableName, "HighScore4Name")
+    If(x <> "") then HSName(4) = x Else HSName(4) = "DDD" End If
+    x = LoadValue(TableName, "HighScore5")
+    If(x <> "") then HSScore(5) = CDbl(x) Else HSScore(5) = 16000 End If
+    x = LoadValue(TableName, "HighScore5Name")
+    If(x <> "") then HSName(5) = x Else HSName(5) = "EEE" End If
+    x = LoadValue(TableName, "Credits")
+    If(x <> "") then Credits = CInt(x) Else Credits = 0
 End Sub
 
 Sub Savehs
-    ' Based on Black's Highscore routines
-    Dim FileObj
-    Dim ScoreFile
-    Dim xx
-    Set FileObj = CreateObject("Scripting.FileSystemObject")
-    If Not FileObj.FolderExists(UserDirectory)then
-        Exit Sub
-    End If
-    Set ScoreFile = FileObj.CreateTextFile(UserDirectory & TableName& ".txt", True)
-    ScoreFile.WriteLine 0
-    ScoreFile.WriteLine Credits
-    For xx = 1 to 5
-        scorefile.writeline HSScore(xx)
-    Next
-    For xx = 1 to 5
-        scorefile.writeline HSName(xx)
-    Next
-    ScoreFile.Close
-    Set ScoreFile = Nothing
-    Set FileObj = Nothing
+    SaveValue TableName, "HighScore1", HSScore(1)
+    SaveValue TableName, "HighScore1Name", HSName(1)
+    SaveValue TableName, "HighScore2", HSScore(2)
+    SaveValue TableName, "HighScore2Name", HSName(2)
+    SaveValue TableName, "HighScore3", HSScore(3)
+    SaveValue TableName, "HighScore3Name", HSName(3)
+    SaveValue TableName, "HighScore4", HSScore(4)
+    SaveValue TableName, "HighScore4Name", HSName(4)
+    SaveValue TableName, "HighScore5", HSScore(5)
+    SaveValue TableName, "HighScore5Name", HSName(5)
+    SaveValue TableName, "Credits", Credits
 End Sub
+
+Sub Reseths
+    HSName(1) = "AAA"
+    HSName(2) = "BBB"
+    HSName(3) = "CCC"
+    HSName(4) = "DDD"
+    HSName(5) = "EEE"
+    HSScore(1) = 20000
+    HSScore(2) = 19000
+    HSScore(3) = 18000
+    HSScore(4) = 17000
+    HSScore(5) = 16000
+    Savehs
+End Sub
+
+' Sort Highscores
 
 Sub SortHighscore
     Dim tmp, tmp2, i, j
     For i = 1 to 5
         For j = 1 to 4
-            If HSScore(j) < HSScore(j + 1)Then
+            If HSScore(j) < HSScore(j + 1) Then
                 tmp = HSScore(j + 1)
                 tmp2 = HSName(j + 1)
                 HSScore(j + 1) = HSScore(j)
@@ -1428,81 +1352,38 @@ Sub SortHighscore
     Next
 End Sub
 
-' ***************************************************
-' GNMOD - Multiple High Score Display and Collection
-' jpsalas: changed ramps by flashers to remove extra shadow
-' ***************************************************
+' check for new highscore
 
-Dim EnteringInitials ' Normally zero, set to non-zero to enter initials
-EnteringInitials = False
-Dim ScoreChecker
-ScoreChecker = 0
-Dim CheckAllScores
-CheckAllScores = 0
-Dim sortscores(4)
-Dim sortplayers(4)
+Sub CheckHighscore
+    HighScoreTimer.Enabled = 1
+    'If Score(CurrentPlayer)> HSSCore(1)Then
+    '   AwardSpecial
+    'End If
+    If Score(CurrentPlayer) > HSSCore(5) Then
+        NewHighScore Score(CurrentPlayer), CurrentPlayer
+    End If
+End Sub
 
-Dim PlungerPulled
-PlungerPulled = 0
-
-Dim SelectedChar   ' character under the "cursor" when entering initials
-
-Dim HSTimerCount   ' Pass counter For HS timer, scores are cycled by the timer
-HSTimerCount = 5   ' Timer is initially enabled, it'll wrap from 5 to 1 when it's displayed
-
-Dim InitialString  ' the string holding the player's initials as they're entered
-
-Dim AlphaString    ' A-Z, 0-9, space (_) and backspace (<)
-Dim AlphaStringPos ' pointer to AlphaString, move Forward and backward with flipper keys
-AlphaString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_<"
-
-Dim HSNewHigh      ' The new score to be recorded
-
-Dim HSScore(5)     ' High Scores read in from config file
-Dim HSName(5)      ' High Score Initials read in from config file
-
-' default high scores, remove this when the scores are available from the config file
-HSScore(1) = 95510
-HSScore(2) = 84000
-HSScore(3) = 73000
-HSScore(4) = 62000
-HSScore(5) = 51000
-
-HSName(1) = "AAA"
-HSName(2) = "ZZZ"
-HSName(3) = "XXX"
-HSName(4) = "ABC"
-HSName(5) = "BBB"
+' Highscore Timer
 
 Sub HighScoreTimer_Timer
     If EnteringInitials then
-        If HSTimerCount = 1 then
-            SetHSLine 3, InitialString & MID(AlphaString, AlphaStringPos, 1)
-            HSTimerCount = 2
-        Else
-            SetHSLine 3, InitialString
-            HSTimerCount = 1
-        End If
+        SetHSLine 3, InitialString & MID(AlphaString, AlphaStringPos, 1)
     ElseIf bGameInPlay then
-        SetHSLine 1, "HIGH SCORE1"
+        SetHSLine 1, "HIGH SCORE"
         SetHSLine 2, HSScore(1)
         SetHSLine 3, HSName(1)
-        HSTimerCount = 5 ' set so the highest score will show after the game is over
-        HighScoreTimer.enabled = false
-    ElseIf CheckAllScores then
-        NewHighScore sortscores(ScoreChecker), sortplayers(ScoreChecker)
+        Me.Enabled = 0
     Else
         ' cycle through high scores
-        HighScoreTimer.interval = 2000
-        HSTimerCount = HSTimerCount + 1
-        If HsTimerCount > 5 then
-            HSTimerCount = 1
-        End If
-        SetHSLine 1, "HIGH SCORE" + FormatNumber(HSTimerCount, 0)
-        SetHSLine 2, HSScore(HSTimerCount)
-        SetHSLine 3, HSName(HSTimerCount)
+        SetHSLine 1, "HIGH SCORE" & (HSTimerCount + 1)
+        SetHSLine 2, HSScore(HSTimerCount + 1)
+        SetHSLine 3, HSName(HSTimerCount + 1)
+        HSTimerCount = (HSTimerCount + 1) MOD 5
     End If
 End Sub
+
+' Enter Highscore initials
 
 Function GetHSChar(String, Index)
     Dim ThisChar
@@ -1522,31 +1403,24 @@ Function GetHSChar(String, Index)
 End Function
 
 Sub SetHsLine(LineNo, String)
-    Dim Letter
-    Dim ThisDigit
-    Dim ThisChar
     Dim StrLen
-    Dim LetterLine
     Dim Index
     Dim StartHSArray
     Dim EndHSArray
-    Dim LetterName
     Dim xFor
     StartHSArray = array(0, 1, 12, 22)
     EndHSArray = array(0, 11, 21, 31)
     StrLen = len(string)
     Index = 1
-
-    For xFor = StartHSArray(LineNo)to EndHSArray(LineNo)
-        Eval("HS" &xFor).imageA = GetHSChar(String, Index)
+    For xFor = StartHSArray(LineNo) to EndHSArray(LineNo)
+        HS(xFor).imageA = GetHSChar(String, Index)
         Index = Index + 1
     Next
 End Sub
 
 Sub NewHighScore(NewScore, PlayNum)
-    If NewScore > HSScore(5)then
+    If NewScore > HSScore(5) then
         HighScoreTimer.interval = 500
-        HSTimerCount = 1
         AlphaStringPos = 1      ' start with first character "A"
         EnteringInitials = true ' intercept the control keys while entering initials
         InitialString = ""      ' initials entered so far, initialize to empty
@@ -1554,11 +1428,6 @@ Sub NewHighScore(NewScore, PlayNum)
         SetHSLine 2, "ENTER NAME"
         SetHSLine 3, MID(AlphaString, AlphaStringPos, 1)
         HSNewHigh = NewScore
-        AwardSpecial
-    End If
-    ScoreChecker = ScoreChecker-1
-    If ScoreChecker = 0 then
-        CheckAllScores = 0
     End If
 End Sub
 
@@ -1579,7 +1448,7 @@ Sub CollectInitials(keycode)
     ElseIf keycode = RightFlipperKey Then
         ' advance to Next character
         AlphaStringPos = AlphaStringPos + 1
-        If AlphaStringPos > len(AlphaString)or(AlphaStringPos = len(AlphaString)and InitialString = "")then
+        If AlphaStringPos > len(AlphaString) or(AlphaStringPos = len(AlphaString) and InitialString = "") then
             ' Skip the backspace If there are no characters to backspace over
             AlphaStringPos = 1
         End If
@@ -1591,7 +1460,7 @@ Sub CollectInitials(keycode)
             InitialString = InitialString & " "
             PlaySound("fx_Esc")
         ElseIf SelectedChar = "<" then
-            InitialString = MID(InitialString, 1, len(InitialString)- 1)
+            InitialString = MID(InitialString, 1, len(InitialString) - 1)
             If len(InitialString) = 0 then
                 ' If there are no more characters to back over, don't leave the < displayed
                 AlphaStringPos = 1
@@ -1606,30 +1475,13 @@ Sub CollectInitials(keycode)
         End If
     End If
     If len(InitialString) = 3 then
-        ' save the score
-        For i = 5 to 1 step -1
-            If i = 1 or(HSNewHigh > HSScore(i)and HSNewHigh <= HSScore(i - 1))then
-                ' Replace the score at this location
-                If i < 5 then
-                    HSScore(i + 1) = HSScore(i)
-                    HSName(i + 1) = HSName(i)
-                End If
-                EnteringInitials = False
-                HSScore(i) = HSNewHigh
-                HSName(i) = InitialString
-                HSTimerCount = 5
-                HighScoreTimer_Timer
-                HighScoreTimer.interval = 2000
-                Exit Sub
-            ElseIf i < 5 then
-                ' move the score in this slot down by 1, it's been exceeded by the new score
-                HSScore(i + 1) = HSScore(i)
-                HSName(i + 1) = HSName(i)
-            End If
-        Next
+        EnteringInitials = False
+        HSScore(5) = HSNewHigh
+        HSName(5) = InitialString
+        SortHighScore
+        HighScoreTimer.interval = 2000
     End If
 End Sub
-' End GNMOD
 
 '***********************************************************************
 ' *********************************************************************
@@ -1914,14 +1766,21 @@ End Sub
 ' - option name, minimum value, maximum value, step between valid values, default value, unit (0=None, 1=Percent), an optional array of literal strings
 
 Dim LUTImage, BallsPerGame
+Dim dspTriggered : dspTriggered = False
+LUTImage = Array("LUT0", "LUT1", "LUT2", "LUT3", "LUT4", "LUT5", "LUT6", "LUT7", "LUT8", "LUT9", "LUT10", _
+        "LUT Warm 0", "LUT Warm 1", "LUT Warm 2", "LUT Warm 3", "LUT Warm 4", "LUT Warm 5", "LUT Warm 6", "LUT Warm 7", "LUT Warm 8", "LUT Warm 9", "LUT Warm 10", _
+        "LUT Warmer 0", "LUT Warmer 1", "LUT Warmer 2", "LUT Warmer 3", "LUT Warmer 4", "LUT Warmer 5", "LUT Warmer 6", "LUT Warmer 7", "LUT Warmer 8", "LUT Warmer 9", "LUT Warmer 10")
 
 Sub Table1_OptionEvent(ByVal eventId)
+    If eventId = 1 And Not dspTriggered Then dspTriggered = True : DisableStaticPreRendering = True : End If
+
     Dim x, y
 
     'LUT
-    LutImage = Table1.Option("Select LUT", 0, 21, 1, 0, 0, Array("Normal 0", "Normal 1", "Normal 2", "Normal 3", "Normal 4", "Normal 5", "Normal 6", "Normal 7", "Normal 8", "Normal 9", "Normal 10", _
-        "Warm 0", "Warm 1", "Warm 2", "Warm 3", "Warm 4", "Warm 5", "Warm 6", "Warm 7", "Warm 8", "Warm 9", "Warm 10") )
-    UpdateLUT
+    x = Table1.Option("Select LUT", 0, 32, 1, 0, 0, Array("Normal 0", "Normal 1", "Normal 2", "Normal 3", "Normal 4", "Normal 5", "Normal 6", "Normal 7", "Normal 8", "Normal 9", "Normal 10", _
+        "Warm 0", "Warm 1", "Warm 2", "Warm 3", "Warm 4", "Warm 5", "Warm 6", "Warm 7", "Warm 8", "Warm 9", "Warm 10", _
+        "Warmer 0", "Warmer 1", "Warmer 2", "Warmer 3", "Warmer 4", "Warmer 5", "Warmer 6", "Warmer 7", "Warmer 8", "Warmer 9", "Warmer 10") )
+    table1.ColorGradeImage =  LUTImage(x)
 
     ' Cabinet rails
     x = Table1.Option("Cabinet Rails", 0, 1, 1, 1, 0, Array("Hide", "Show") )
@@ -1930,31 +1789,11 @@ Sub Table1_OptionEvent(ByVal eventId)
     ' Balls per Game
     x = Table1.Option("Balls per Game", 0, 1, 1, 1, 0, Array("3 Balls", "5 Balls") )
     If x = 1 Then BallsPerGame = 5 Else BallsPerGame = 3
-End Sub
 
-Sub UpdateLUT
-    Select Case LutImage
-        Case 0:table1.ColorGradeImage = "LUT0"
-        Case 1:table1.ColorGradeImage = "LUT1"
-        Case 2:table1.ColorGradeImage = "LUT2"
-        Case 3:table1.ColorGradeImage = "LUT3"
-        Case 4:table1.ColorGradeImage = "LUT4"
-        Case 5:table1.ColorGradeImage = "LUT5"
-        Case 6:table1.ColorGradeImage = "LUT6"
-        Case 7:table1.ColorGradeImage = "LUT7"
-        Case 8:table1.ColorGradeImage = "LUT8"
-        Case 9:table1.ColorGradeImage = "LUT9"
-        Case 10:table1.ColorGradeImage = "LUT10"
-        Case 11:table1.ColorGradeImage = "LUT Warm 0"
-        Case 12:table1.ColorGradeImage = "LUT Warm 1"
-        Case 13:table1.ColorGradeImage = "LUT Warm 2"
-        Case 14:table1.ColorGradeImage = "LUT Warm 3"
-        Case 15:table1.ColorGradeImage = "LUT Warm 4"
-        Case 16:table1.ColorGradeImage = "LUT Warm 5"
-        Case 17:table1.ColorGradeImage = "LUT Warm 6"
-        Case 18:table1.ColorGradeImage = "LUT Warm 7"
-        Case 19:table1.ColorGradeImage = "LUT Warm 8"
-        Case 20:table1.ColorGradeImage = "LUT Warm 9"
-        Case 21:table1.ColorGradeImage = "LUT Warm 10"
-    End Select
+    ' Table's Slope
+    x = Table1.Option("Table's Slope", 0, 10, 0.1, 5, 1)
+    Table1.SlopeMin = x
+    Table1.SlopeMax = x
+
+    If eventId = 3 And dspTriggered Then dspTriggered = False : DisableStaticPreRendering = False : End If
 End Sub

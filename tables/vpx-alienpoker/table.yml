@@ -5,7 +5,7 @@ backglassVPSId: "btW9248zGB"
 fps: 60
 romChecksum: "FA58B6CD9D1B4A8D7AF1F320FF91A441"
 romVPSId: "EwqoZDE_rx"
-tableNotes: "download v600"
+tableNotes: "Download 'Alien Poker (Williams 1980) [jpsalas 2026 - v7].zip'"
 tableVPSId: "ZuXV_QDM"
 testers:
   - "PBW23"
@@ -13,5 +13,5 @@ testers:
   - "Wraith"
   - "Bla1ze"
   - "Brian-CK"
-vpxChecksum: "6CEAB7F8C6806134558AF580B4CA25BD"
+vpxChecksum: "ECFC26DDEE891F98DF08D8200DE9E7B1"
 vpxVPSId: "nFHkuwW8"

@@ -10,7 +10,7 @@ romChecksum: "DB720515080EA2725AA609F6B0D211E9"
 romNotes: "Download 'tricksht.zip'"
 romBundled: true
 romVersionOverride: "tricksht"
-tableNotes: "Download v600.zip"
+tableNotes: "Download 'Trick Shooter (LTD do Brasil 1980) [jpsalas 2026 - v7].zip'"
 tableVPSId: "dATFxT-tFL"
 tagline: "The backglass and playfield resembles Game Plan's 1983 'Sharp Shooter II'!"
 testers:
@@ -18,5 +18,5 @@ testers:
   - "OminousOsie"
   - "Coffee Joe"
 vpxVPSId: "cN_hykCey3"
-vpxChecksum: "A8D2E6ADCC58AEDEEA717D13637A9A1A"
+vpxChecksum: "DB595D08FB49D878774560D87A2B52D4"
 enabled: false # Osie: Batch for next week
