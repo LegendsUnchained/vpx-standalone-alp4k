@@ -201,9 +201,9 @@ Sub Victory_Init
 	' Trough handler
 	Set bsTrough=New cvpmBallStack
 	With bsTrough
-		.InitSw swOuthole,swTrough,0,0,0,0,0,0
+		.InitSw swOuthole,0,swTrough,0,0,0,0,0 'Switch 56 now closes only when both balls are in the trough.
 		.InitKick BallRelease, 90, 7
-		.Balls=3
+		.Balls=2
 	End With
 
 	' Top Kicker

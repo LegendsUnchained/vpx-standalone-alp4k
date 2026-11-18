@@ -2,8 +2,8 @@
 backglassVPSId: "VCkrs_C1"
 backglassChecksum: "e6dd42727519d4e810393636db580fc2"
 fps: 60
-romUrlOverride: "https://www.vpforums.org/index.php?app=downloads&showfile=556"
-romVersionOverride: "meteort"
+romNotes: "Download meteort.zip"
+romVPSId: "_AnZ-MCuUf"
 romChecksum: "dada7398238886184b911f6712a968c4"
 tableVPSId: "RwQfi1mb"
 tagline: >-
@@ -14,5 +14,5 @@ testers:
   - "Coffee Joe"
   - "shaver"
 vpxVPSId: "sIQfoxku"
-vpxChecksum: "EAC0CF61986304474B5B6022F1051D81"
-tableNotes: "Download 'v600_VPX8.zip'"
+vpxChecksum: "BEDCF5C2F075AB2101E830A26D6BC6BA"
+tableNotes: "Download 'Meteor (Taito do Brasil 1979) [jpsalas 2026 - v7].zip'"
