@@ -3,8 +3,8 @@ fps: 60
 pupArchiveFormat: "rar"
 pupArchiveRoot: "STLE147/STLE"
 pupChecksum: "99EBE4FB96FB53EB04F1999E695CB192"
-pupFileUrl: "https://mega.nz/file/6UEnSQyC#Wm57VL2YfCzi2Sr3bVEUBIc4KGwThQX3fVInnuhj8jM"
-pupNotes: "STLEpup.rar"
+pupVPSId: "bmjpu6fth7"
+pupNotes: "Download STLEpup.rar"
 pupRequired: true
 pupVersion: "STLE"
 specialDMDArchiveRoot: "STLE.UltraDMD"

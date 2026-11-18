@@ -5,8 +5,8 @@ backglassNotes: "Not the pairup in VPin spreadsheet"
 backglassVPSId: "5zno3zre"
 fps: 60
 romChecksum: "676b70c9a67ceca4a607e9a076358e80"
-romUrlOverride: "https://vpuniverse.com/files/file/4202-spider-man-vault-edition-v101/"
-romVersionOverride: "smanve_101"
+romNotes: "Download smanve_101"
+romVPSId: "Bd1z6oSai6"
 tableVPSId: "tXARdeGR"
 tagline: "'Does whatever a spider can'"
 testers:
