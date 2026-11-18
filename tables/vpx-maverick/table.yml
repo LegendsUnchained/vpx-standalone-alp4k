@@ -2,9 +2,12 @@
 backglassChecksum: "6B155EE1206269D1D1F3C3300C3CA084"
 backglassNotes: "Download Maverick (Data East 1994) b2s with full dmd"
 backglassVPSId: "uUey4vEpCR"
+diffAuthorsOverride:
+  - "capnclaw"
 diffChecksum: "EB2264B23E3D2CEDB161E2C11F57CA6A"
-diffNotes: "Download v1.0.0"
-diffVPSId: "TDahUHW6lS"
+diffNotes: "Maverick (Data East 1994) Side Blade Mod"
+diffUrlOverride: "https://vpuniverse.com/files/file/24330-maverick-data-east-1994-side-blade-mod/"
+diffVersionOverride: "1.0.0"
 fps: 58
 romChecksum: "3E0F367618E0871A96CFFDB791FE8350"
 romNotes: "Download mav_402.zip"
