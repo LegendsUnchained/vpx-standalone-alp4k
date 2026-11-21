@@ -1,0 +1,21 @@
+---
+enabled: false
+backglassAuthorsOverride:
+  - "HiRez00"
+backglassChecksum: "0E62A53D943C56D92F40F1ED76B964ED"
+# yamllint disable-line rule:line-length
+backglassImageOverride: "https://www.vpforums.org/index.php?app=downloads&module=display&section=screenshot&record=75597&id=14962&full=1"
+backglassNotes: "Download version 1.0"
+backglassUrlOverride: "https://www.vpforums.org/index.php?app=downloads&showfile=14962"
+fps: 60
+nsfw: true
+romChecksum: "91C52D8AC940A2285C23615DD1D9BD22"
+romNotes: "Download version 1.0"
+romUrlOverride: "https://pinballnirvana.com/forums/resources/snspares.2321/"
+romVersionOverride: "snspares"
+tableNameOverride: "Strikes N' Spares (NSFW)"
+tableVPSId: "tjkJq8F5"
+testers:
+  - "Miku"
+vpxChecksum: "337A2EFF9AB9FE06A43DA8F32DC2E5B2"
+vpxVPSId: "He_w7gT6"
