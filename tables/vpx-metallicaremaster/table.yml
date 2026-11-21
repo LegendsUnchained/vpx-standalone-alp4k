@@ -9,7 +9,8 @@ fps: 60
 romBundled: true
 romChecksum: "C20F0700C5F72982BCAAF190BB13EF4D"
 romNotes: "Included in 'Metallica Remastered pack.zip'"
-tableNotes: "Download version 1.3b - 'Metallica Remastered pack.zip'"
+romVersionOverride: "mtl_180"
+tableNotes: "Download version 1.3c - 'Metallica Remastered pack.zip'"
 tableVPSId: "AclWEth8Q3"
 tagline: "Ride the lightning!"
 testers:
