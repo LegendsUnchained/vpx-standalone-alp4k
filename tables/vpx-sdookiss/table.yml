@@ -1,0 +1,30 @@
+---
+backglassChecksum: "F70D7292069F9EB0F655424EEF4E7269"
+backglassNotes: "Download 'Scooby Doo! and KISS Rock n' Roll Mystery full dmd.directb2s'"
+backglassVPSId: "Ryv6cImbHu"
+fps: 60
+romBundled: true
+romChecksum: "775D9C63D975C3580639661FA68AC892"
+romVersionOverride: "kissb"
+romNotes: "bundled with table download"
+additionalRoms:
+  - bundled: true
+    checksum: "CFDA3ED06E85ECD81160761B12C61AC2"
+    notes: "bundled with table download"
+tableNotes: "Download 'Scooby Doo! and KISS Rock n' Roll Mystery v2.0.zip'"
+tableVPSId: "zl6gxeGk"
+testers:
+  - "PBW23"
+  - "Coffee Joe"
+  - "pointdablame"
+  - "Rocjr73"
+vpxChecksum:
+  - "69AC3A9599BFECE6E6704BC353CD7E13"
+  - "4814D359FCE961E8926A8DAC285DFD9A"
+vpxVPSId: "-Zj3Vhtn"
+vpxArchiveFormat: "zip"
+vpxExtractExtra:
+  - "sdookiss"
+postInstallRename:
+  - source: "sdookiss"
+    destination: "music/sdookiss"
