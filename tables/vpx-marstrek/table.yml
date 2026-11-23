@@ -1,6 +1,6 @@
 ---
 enabled: false
-backglassBundled: true
+backglassVPSId: "GeA2q7UIhE"
 backglassChecksum: "b54deffc6006daaaf127e0b36ebbc2e4"
 backglassNotes: "Backglass bundled with table"
 fps: 60
