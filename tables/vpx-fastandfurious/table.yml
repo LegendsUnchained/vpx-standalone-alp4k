@@ -14,7 +14,9 @@ coloredROMChecksum:
 coloredROMNotes: "Color ROM bundled with 1250481509_PackFF.zip"
 coloredROMPin2DMD: true
 fps: 60
-romChecksum: "54806BE981BBB3FABE98FB1D5D0C0FB0"
+romChecksum: 
+  - "54806BE981BBB3FABE98FB1D5D0C0FB0"
+  - "BF86E36655E5D1FCB94CAA8EC88DEC83"
 romVPSId: "v1fDf4StPr"
 tableVPSId: "ZYQe6vnRnu"
 tagline: "You almost had me? You never had me, you never had your car!"
