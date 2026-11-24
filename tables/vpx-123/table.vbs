@@ -50,6 +50,11 @@ End Sub
 Const TableName = "TlD_123" ' se usa para cargar y grabar los highscore y creditos
 Const cGameName = "TlD_123" ' para el B2S
 Const MaxPlayers = 1        ' de 1 a 4
+
+' --- B2S Ball-in-Play reel fix ---
+' In the .directb2s the 1-digit ball reel (in the bracelet) is defined as the CREDITS reel
+' (Score ID 2, B2SScoreType 2, B2SStartDigit 29), so B2SSetBallInPlay never reaches it.
+' The ball number is sent with B2SSetCredits instead, and credits are no longer sent to the backglass.
 Const MaxMultiplier = 5     ' limita el bonus multiplicador a 5
 Const Special1 = 80000      ' puntuación a obtener para partida extra
 Const Special2 = 90000      ' puntuación a obtener para partida extra
@@ -916,7 +921,7 @@ Sub EndOfGame()
     bJustStarted = False
     If B2SOn then
         Controller.B2SSetGameOver 1
-        Controller.B2SSetBallInPlay 0
+        SetB2SBallInPlay 0
         Controller.B2SSetPlayerUp 0
         Controller.B2SSetCanPlay 0
     end if
@@ -1181,9 +1186,10 @@ Sub UpdateCredits
     End If
     PlaySound "fx_relay"
     CreditsReel.SetValue credits
-    If B2SOn then
-        Controller.B2SSetCredits Credits
-    end if
+    ' No se envían los créditos al B2S: ese rodillo muestra la bola en juego (ver SetB2SBallInPlay)
+    'If B2SOn then
+    '    Controller.B2SSetCredits Credits
+    'end if
 End Sub
 
 Sub UpdateBallInPlay 'actualiza los marcadores de las bolas, el número de jugador y el número total de jugadores
@@ -1195,9 +1201,14 @@ Sub UpdateBallInPlay 'actualiza los marcadores de las bolas, el número de jugad
         Case 4:BallDisplay.ImageA = "Ballnr4"
         Case 5:BallDisplay.ImageA = "Ballnr5"
     End Select
-    If B2SOn then
-        Controller.B2SSetBallInPlay Balls
-    end if
+    SetB2SBallInPlay Balls
+End Sub
+
+Sub SetB2SBallInPlay(n) 'envía el número de bola al backglass (bombillas y/o rodillo)
+    If NOT B2SOn Then Exit Sub
+    If IsEmpty(n) Then n = 0
+    Controller.B2SSetBallInPlay n
+    Controller.B2SSetCredits n 'el rodillo de bolas está definido como créditos en el directb2s
 End Sub
 
 '*************************
@@ -2049,6 +2060,7 @@ Sub ch4_animate:mushrromP004.TransZ = - ch4.CurrentRingOffset / 6:End Sub
 ' - option name, minimum value, maximum value, step between valid values, default value, unit (0=None, 1=Percent), an optional array of literal strings
 
 Dim LUTImage, BallsPerGame, Tiempo
+BallsPerGame = 3 : Tiempo = 30 ' valores por defecto por si OptionEvent no se ha ejecutado todavía
 Dim dspTriggered : dspTriggered = False
 LUTImage = Array("LUT0", "LUT1", "LUT2", "LUT3", "LUT4", "LUT5", "LUT6", "LUT7", "LUT8", "LUT9", "LUT10", _
         "LUT Warm 0", "LUT Warm 1", "LUT Warm 2", "LUT Warm 3", "LUT Warm 4", "LUT Warm 5", "LUT Warm 6", "LUT Warm 7", "LUT Warm 8", "LUT Warm 9", "LUT Warm 10", _
