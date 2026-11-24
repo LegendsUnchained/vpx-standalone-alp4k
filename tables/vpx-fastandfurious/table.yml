@@ -1,0 +1,27 @@
+---
+altSoundArchiveFormat: "zip"
+altSoundArchiveRoot: "Altsound/ff"
+altSoundBundled: true
+altSoundChecksum: "617C76D4148B5EFAAB6541C58218A258"
+altSoundNotes: "Alt Sound bundled with 1250481509_PackFF.zip"
+backglassBundled: true
+backglassChecksum: "5B436B2C117F42AAAC910B6492F3622A"
+backglassNotes: "Backglass bundled with 1250481509_PackFF.zip"
+coloredROMBundled: true
+coloredROMChecksum:
+  - "7E9DC6ED55D17A3BC9A92CF89254A239"
+  - "F3A04FDA27708962B37D532F834248CE"
+coloredROMNotes: "Color ROM bundled with 1250481509_PackFF.zip"
+coloredROMPin2DMD: true
+fps: 60
+romChecksum: 
+  - "54806BE981BBB3FABE98FB1D5D0C0FB0"
+  - "BF86E36655E5D1FCB94CAA8EC88DEC83"
+romVPSId: "v1fDf4StPr"
+tableVPSId: "ZYQe6vnRnu"
+tagline: "You almost had me? You never had me, you never had your car!"
+testers:
+  - "Reboot"
+  - "PBW23"
+vpxChecksum: "1FED2B1BC3F3283BA01F939AAB911E57"
+vpxVPSId: "SG8ej0txB_"
