@@ -5,7 +5,7 @@ Randomize
 
 ' core.vbs constants
 Const BallSize = 50 ' 50 is the normal size
-Const BallMass = 1.25  ' 1 is the normal ball mass.
+Const BallMass = 1  ' 1 is the normal ball mass.
 
 'DOF config - (DOF server needs to be updated)
 '101 Left Flipper
@@ -167,14 +167,11 @@ Sub Table1_Init()
     End If
 End Sub
 
-' Start the table with the score and balls to play at 0
 Sub UpdateStartup
-    ScoreReel1.SetValue 0
-    BallsReel.SetValue 0
+    ScoreReel1.SetValue HSScore(1)
     CreditsReel.SetValue credits
     If B2SOn then
-        Controller.B2SSetScorePlayer 1, 0
-        Controller.B2SSetScorePlayer 3, 0   'BALLS TO PLAY
+        Controller.B2SSetScorePlayer 1, HSScore(1)
         Controller.B2SSetCredits Credits
     End If
 End Sub
@@ -184,7 +181,7 @@ End Sub
 '******************
 Sub CapTrigger1_Hit:cbLeft.TrigHit ActiveBall:End Sub
 Sub CapTrigger1_UnHit:cbLeft.TrigHit 0:End Sub
-Sub CapWall1_Hit:BallActivity:cbLeft.BallHit ActiveBall:PlaySoundAtBall "fx_collide":End Sub
+Sub CapWall1_Hit:cbLeft.BallHit ActiveBall:PlaySoundAtBall "fx_collide":End Sub
 Sub CapKicker1a_Hit:cbLeft.BallReturn Me:End Sub
 
 '******
@@ -192,6 +189,13 @@ Sub CapKicker1a_Hit:cbLeft.BallReturn Me:End Sub
 '******
 
 Sub Table1_KeyDown(ByVal Keycode)
+
+    ' Reset High Score using the [7] key
+    if keycode = "8" then 
+        ResetHS
+        ResHS.Visible = 1
+        vpmTimer.AddTimer 2000, "Reshs.visible = 0 '"
+    End If
 
     If EnteringInitials then
         CollectInitials(keycode)
@@ -206,17 +210,16 @@ Sub Table1_KeyDown(ByVal Keycode)
         End If
     End If
 
-    ' plunger, only during a game
-    If keycode = PlungerKey AND bGameInPlay Then
+    ' plunger
+    If keycode = PlungerKey Then
         Plunger.Pullback
-        PlungerPulled = 1
         PlaySoundAt "fx_plungerpull", plunger
     End If
 
     ' tilt keys
-    If keycode = LeftTiltKey Then Nudge 90, 8:PlaySound "fx_nudge", 0, 1, -0.1, 0.25
-    If keycode = RightTiltKey Then Nudge 270, 8:PlaySound "fx_nudge", 0, 1, 0.1, 0.25
-    If keycode = CenterTiltKey Then Nudge 0, 9:PlaySound "fx_nudge", 0, 1, 1, 0.25
+    If keycode = LeftTiltKey Then Nudge 90, 2:PlaySound "fx_nudge", 0, 1, -0.1, 0.25
+    If keycode = RightTiltKey Then Nudge 270, 2:PlaySound "fx_nudge", 0, 1, 0.1, 0.25
+    If keycode = CenterTiltKey Then Nudge 0, 2:PlaySound "fx_nudge", 0, 1, 1, 0.25
 
     ' keys during game
 
@@ -288,11 +291,8 @@ Sub Table1_KeyUp(ByVal keycode)
         If keycode = RightFlipperKey Then SolRFlipper 0
     End If
 
-    ' release only if it was pulled during a game, so a pull that started in a
-    ' game still fires even if the game has ended since
-    If keycode = PlungerKey AND PlungerPulled = 1 Then
+    If keycode = PlungerKey Then
         Plunger.Fire
-        PlungerPulled = 0
         If bBallInPlungerLane Then
             PlaySoundAt "fx_plunger", plunger
         Else
@@ -327,13 +327,11 @@ Sub SolLFlipper(Enabled)
         PlaySoundAt SoundFXDOF("fx_flipperup", 101, DOFOn, DOFFlippers), LeftFlipper
         LeftFlipper.RotateToEnd
         LeftFlipperOn = 1
-        BallActivity
         RotateLaneLights 0
     Else
         PlaySoundAt SoundFXDOF("fx_flipperdown", 101, DOFOff, DOFFlippers), LeftFlipper
         LeftFlipper.RotateToStart
         LeftFlipperOn = 0
-        BallActivity
     End If
 End Sub
 
@@ -342,13 +340,11 @@ Sub SolRFlipper(Enabled)
         PlaySoundAt SoundFXDOF("fx_flipperup", 102, DOFOn, DOFFlippers), RightFlipper
         RightFlipper.RotateToEnd
         RightFlipperOn = 1
-        BallActivity
         RotateLaneLights 1
     Else
         PlaySoundAt SoundFXDOF("fx_flipperdown", 102, DOFOff, DOFFlippers), RightFlipper
         RightFlipper.RotateToStart
         RightFlipperOn = 0
-        BallActivity
     End If
 End Sub
 
@@ -361,69 +357,42 @@ Sub RightFlipper_Collide(parm)
 End Sub
 
 
-'*******************************
-' Real Time Flipper adjustments
-' by JLouLouLou & JPSalas
-'      Version 5.0
-'*******************************
+'**********************************
+' Real Time Flipper EOS adjustment
+' based on JLouLouLou flipper script
+'     JP's physics Version 2026
+'**********************************
 
-Dim FlipperElasticity
-Dim FullStrokeEOS_Torque, LiveStrokeEOS_Torque
 Dim LeftFlipperOn
 Dim RightFlipperOn
 
-Dim LLiveCatchTimer
-Dim RLiveCatchTimer
-Dim LiveCatchSensivity
+' EOS Torque when flipper hold up ( EOS Coil is fully charged. 
+' Ampere increase due to flipper can't move or when it is pushed back when "On". EOS Coil have more power )
+Const FullStrokeEOS_Torque = 0.9 
 
-FlipperElasticity = LeftFlipper.Elasticity
-FullStrokeEOS_Torque = 0.9 ' EOS Torque when flipper hold up ( EOS Coil is fully charged. Ampere increase due to flipper can't move or when it pushed back when "On". EOS Coil have more power )
-LiveStrokeEOS_Torque = 0.3 ' EOS Torque when flipper rotate to end ( When flipper move, EOS coil have less Ampere due to flipper can freely move. EOS Coil have less power )
-
-LiveCatchSensivity = 10
-
-LLiveCatchTimer = 0
-RLiveCatchTimer = 0
+' EOS Torque when flipper rotate to end ( When flipper move, EOS coil have 
+' less Ampere due to flipper can freely move. EOS Coil have less power )
+Const LiveStrokeEOS_Torque = 0.2 
 
 LeftFlipper.TimerInterval = 1
 LeftFlipper.TimerEnabled = 1
 
-Sub LeftFlipper_Timer 'flipper's tricks timer
-
-    'End Of Stroke Routine : Livecatch and Emply/Full-Charged EOS
+Sub LeftFlipper_Timer 'flipper's EOS changer
+    'Left End Of Stroke Routine
     If LeftFlipperOn = 1 Then
         If LeftFlipper.CurrentAngle = LeftFlipper.EndAngle then
             LeftFlipper.EOSTorque = FullStrokeEOS_Torque
-            LLiveCatchTimer = LLiveCatchTimer + 1
-            If LLiveCatchTimer <LiveCatchSensivity Then
-                LeftFlipper.Elasticity = 0
-            Else
-                LeftFlipper.Elasticity = FlipperElasticity
-                LLiveCatchTimer = LiveCatchSensivity
-            End If
         End If
     Else
-        LeftFlipper.Elasticity = FlipperElasticity
         LeftFlipper.EOSTorque = LiveStrokeEOS_Torque
-        LLiveCatchTimer = 0
     End If
-
-    'End Of Stroke Routine : Livecatch and Emply/Full-Charged EOS
+    'Right End Of Stroke Routine
     If RightFlipperOn = 1 Then
         If RightFlipper.CurrentAngle = RightFlipper.EndAngle Then
             RightFlipper.EOSTorque = FullStrokeEOS_Torque
-            RLiveCatchTimer = RLiveCatchTimer + 1
-            If RLiveCatchTimer <LiveCatchSensivity Then
-                RightFlipper.Elasticity = 0
-            Else
-                RightFlipper.Elasticity = FlipperElasticity
-                RLiveCatchTimer = LiveCatchSensivity
-            End If
         End If
     Else
-        RightFlipper.Elasticity = FlipperElasticity
         RightFlipper.EOSTorque = LiveStrokeEOS_Torque
-        RLiveCatchTimer = 0
     End If
 End Sub
 
@@ -541,7 +510,7 @@ Sub TiltRecoveryTimer_Timer()
 End Sub
 
 '***************************************************************
-'             Supporting Ball & Sound Functions v4.0
+'             Supporting Ball & Sound Functions 2026
 '  includes random pitch in PlaySoundAt and PlaySoundAtBall
 '***************************************************************
 
@@ -565,7 +534,7 @@ Function Pan(ball) ' Calculates the pan for a ball based on the X position on th
 End Function
 
 Function Pitch(ball) ' Calculates the pitch of the sound based on the ball speed
-    Pitch = BallVel(ball) * 200
+    Pitch = BallVel(ball) * 20
 End Function
 
 Function BallVel(ball) 'Calculates the ball speed
@@ -583,11 +552,11 @@ Function AudioFade(ball) 'only on VPX 10.4 and newer
 End Function
 
 Sub PlaySoundAt(soundname, tableobj) 'play sound at X and Y position of an object, mostly bumpers, flippers and other fast objects
-    PlaySound soundname, 0, 1, Pan(tableobj), 0.1, 0, 0, 0, AudioFade(tableobj)
+    PlaySound soundname, 0, 1, Pan(tableobj), 0.2, 0, 0, 0, AudioFade(tableobj)
 End Sub
 
-Sub PlaySoundAtBall(soundname) ' play a sound at the ball position, like rubbers, targets, metals, plastics
-    PlaySound soundname, 0, Vol(ActiveBall), pan(ActiveBall), 0.2, Pitch(ActiveBall), 0, 0, AudioFade(ActiveBall)
+Sub PlaySoundAtBall(soundname) ' play a collision sound at the ball position, like rubbers, targets, metals, plastics
+    PlaySound soundname, 0, Vol(ActiveBall), pan(ActiveBall), 0, Pitch(ActiveBall) * 10, 0, 0, AudioFade(ActiveBall)
 End Sub
 
 Function RndNbr(n) 'returns a random number between 1 and n
@@ -595,14 +564,31 @@ Function RndNbr(n) 'returns a random number between 1 and n
     RndNbr = Int((n * Rnd) + 1)
 End Function
 
-'****************************************************
-'   JP's VPX Rolling Sounds with ball speed control
-'****************************************************
+Const Pi=3.1415926535
 
-Const tnob = 19   'total number of balls
-Const lob = 1     'number of locked balls
-Const maxvel = 35 'max ball velocity
+'***********************************************
+'      JP's VPX8 Ball Rolling Sounds 2026
+'***********************************************
+
+' physics 2026
+
+Dim maxvel
+maxvel = 100 'initial value
+
+Sub Maxvelswitch_Hit
+    maxvel = 28 'max ball velocity during game play. EM: 20-35  SS: 35-50
+End Sub
+
+Sub maxvelswitch2_Hit
+    maxvel = 100 'new ball
+End Sub
+
+' rolling routines
+
+Const tnob = 19   'total number of balls, use a high number so you may test the table without errors.
+Const lob = 2    'number of locked balls
 ReDim rolling(tnob)
+
 InitRolling
 
 Sub InitRolling
@@ -614,8 +600,7 @@ Sub InitRolling
 End Sub
 
 Sub RollingTimer_Timer()
-    Dim BOT, b, ballpitch, ballvol, speedfactorx, speedfactory
-    CheckStuckBall
+    Dim BOT, b, ballpitch, speedfactorx, speedfactory
     BOT = GetBalls
 
     ' stop the sound of deleted balls
@@ -632,16 +617,13 @@ Sub RollingTimer_Timer()
         If BallVel(BOT(b) )> 1 Then
             If BOT(b).z <0 Then
                 ballpitch = Pitch(BOT(b) ) - 5000 'decrease the pitch under the playfield
-                ballvol = Vol(BOT(b) )
             ElseIf BOT(b).z <30 Then
                 ballpitch = Pitch(BOT(b) )
-                ballvol = Vol(BOT(b) )
             Else
-                ballpitch = Pitch(BOT(b) ) + 25000 'increase the pitch on a ramp
-                ballvol = Vol(BOT(b) ) * 3
+                ballpitch = Pitch(BOT(b) ) + 30000 'increase the pitch on a ramp or platform
             End If
             rolling(b) = True
-            PlaySound("fx_ballrolling" & b), -1, ballvol, Pan(BOT(b) ), 0, ballpitch, 1, 0, AudioFade(BOT(b) )
+            PlaySound("fx_ballrolling" & b), -1, Vol(BOT(b) ), Pan(BOT(b) ), 0, ballpitch, 1, 0, AudioFade(BOT(b) )
         Else
             If rolling(b) = True Then
                 StopSound("fx_ballrolling" & b)
@@ -657,18 +639,24 @@ Sub RollingTimer_Timer()
             If BOT(b).z <10 and BOT(b).z> -10 Then PlaySound "fx_hole_enter", 0, ABS(BOT(b).velz) / 17, Pan(BOT(b) ), 0, Pitch(BOT(b) ), 1, 0, AudioFade(BOT(b) )
         End If
 
-        ' jps ball speed & spin control
+        ' jps ball spin control
         BOT(b).AngMomZ = BOT(b).AngMomZ * 0.95
-        If BOT(b).VelX AND BOT(b).VelY <> 0 Then
-            speedfactorx = ABS(maxvel / BOT(b).VelX)
-            speedfactory = ABS(maxvel / BOT(b).VelY)
-            If speedfactorx <1 Then
-                BOT(b).VelX = BOT(b).VelX * speedfactorx
-                BOT(b).VelY = BOT(b).VelY * speedfactorx
+
+        ' jps ball speed control 2
+        If ABS(BallVel(BOT(b) ) )> maxvel Then
+            If BOT(b).VelX <> 0 Then
+                speedfactorx = ABS(maxvel / BOT(b).VelX)
+                If speedfactorx <1 Then
+                    BOT(b).VelX = BOT(b).VelX * speedfactorx
+                    BOT(b).VelY = BOT(b).VelY * speedfactorx
+                End If
             End If
-            If speedfactory <1 Then
-                BOT(b).VelX = BOT(b).VelX * speedfactory
-                BOT(b).VelY = BOT(b).VelY * speedfactory
+            If BOT(b).VelY <> 0 Then
+                speedfactory = ABS(maxvel / BOT(b).VelY)
+                If speedfactory <1 Then
+                    BOT(b).VelX = BOT(b).VelX * speedfactory
+                    BOT(b).VelY = BOT(b).VelY * speedfactory
+                End If
             End If
         End If
     Next
@@ -766,7 +754,6 @@ Sub FirstBall
     'debug.print "FirstBall"
     ' reset table for a new ball, rise droptargets ++
     ResetForNewPlayerBall()
-    StartPlayBall
     CreateNewBall()
 End Sub
 
@@ -895,12 +882,9 @@ Sub EndOfGame()
     DisableTable True
     bGameInPLay = False
     bJustStarted = False
-    RemovePlayBall ' the ball only exists during a game
     TurnON aGameOver
-    BallsReel.SetValue 0
     If B2SOn then
         Controller.B2SSetGameOver 1
-        Controller.B2SSetScorePlayer 3, 0   'BALLS TO PLAY -> 00 at game over
     end if
     ' turn off flippers
     SolLFlipper 0
@@ -923,37 +907,6 @@ Function Balls
     End If
 End Function
 
-' check the highscore
-Sub CheckHighscore
-    Dim playertops, si, sj, i, stemp, stempplayers
-    For i = 1 to 4
-        sortscores(i) = 0
-        sortplayers(i) = 0
-    Next
-    playertops = 0
-    For i = 1 to PlayersPlayingGame
-        sortscores(i) = Score(i)
-        sortplayers(i) = i
-    Next
-    For si = 1 to PlayersPlayingGame
-        For sj = 1 to PlayersPlayingGame-1
-            If sortscores(sj)> sortscores(sj + 1) then
-                stemp = sortscores(sj + 1)
-                stempplayers = sortplayers(sj + 1)
-                sortscores(sj + 1) = sortscores(sj)
-                sortplayers(sj + 1) = sortplayers(sj)
-                sortscores(sj) = stemp
-                sortplayers(sj) = stempplayers
-            End If
-        Next
-    Next
-    HighScoreTimer.interval = 100
-    HighScoreTimer.enabled = True
-    ScoreChecker = 4
-    CheckAllScores = 1
-    NewHighScore sortscores(ScoreChecker), sortplayers(ScoreChecker)
-End Sub
-
 '******************
 '     Match
 '******************
@@ -972,14 +925,14 @@ Sub Clear_Match()
     Match = 0
     Display_Match
     If B2SOn then
-        Controller.B2SSetMatch 0
+        Controller.B2SSetScorePlayer3 0
     end if
 End Sub
 
 Sub Display_Match()
     BallsReel.SetValue Match
     If B2SOn then
-        Controller.B2SSetMatch Match
+        Controller.B2SSetScorePlayer3 Match
     end if
 End Sub
 
@@ -988,7 +941,6 @@ End Sub
 ' *********************************************************************
 
 Sub Drain_Hit()
-    BallActivity
     If bGameInPLay = False Then Exit Sub 'don't do anything, just delete the ball
     BallsOnPlayfield = BallsOnPlayfield - 1
     PlaySoundAt "fx_sensor", Drain
@@ -1016,12 +968,10 @@ Sub Drain_Hit()
 End Sub
 
 Sub swPlungerRest_Hit()
-    BallActivity
     bBallInPlungerLane = True
 End Sub
 
 Sub swPlungerRest_UnHit()
-    BallActivity
     bBallInPlungerLane = False
     'PlayRandomSong
 End Sub
@@ -1031,7 +981,7 @@ End Sub
 ' ****************************************
 
 Sub AddScore(Points)
-    If bGameInPLay = False Then Exit Sub
+    If bGameInPLay = False Then Exit Sub 
     If Tilted Then Exit Sub
     Score(CurrentPlayer) = Score(CurrentPlayer) + Points
     PlaySound "tone" &Points
@@ -1066,7 +1016,7 @@ End Sub
 Sub ResetScores
     ScoreReel1.SetValue 0
     If B2SOn then
-        Controller.B2SSetScorePlayer 1, 0
+        Controller.B2SSetScorePlayer1 0
     end if
 End Sub
 
@@ -1086,10 +1036,10 @@ Sub UpdateCredits
 End Sub
 
 Sub UpdateBallInPlay 'update backdrop lights
-    'Balls to play (balls remaining) - shown on the player-3 reel
+    'Ball in play
     BallsReel.SetValue BallsRemaining(CurrentPlayer)
     If B2SOn then
-        Controller.B2SSetScorePlayer 3, BallsRemaining(CurrentPlayer)
+        Controller.B2SSetScorePlayer3 BallsRemaining(CurrentPlayer)
     end if
 End Sub
 
@@ -1156,9 +1106,24 @@ Sub StopAttractMode()
     TurnOFF aGameOver
 End Sub
 
-'*********************************
-'    Load / Save / Highscore
-'*********************************
+'*************************************
+'      Highscore Routines 2026
+' Based og Black's and GNANCE's code
+'*************************************
+
+Dim EnteringInitials
+EnteringInitials = False
+
+Dim SelectedChar   ' character under the "cursor" when entering initials
+Dim HSTimerCount:HSTimerCount = 0
+Dim InitialString  ' the string holding the player's initials as they're entered
+Dim AlphaString:AlphaString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_<"
+Dim AlphaStringPos ' pointer to AlphaString, move Forward and backward with flipper keys
+Dim HSNewHigh      ' The new score to be recorded
+Dim HSScore(5)     ' High Scores read in from config file
+Dim HSName(5)      ' High Score Initials read in from config file
+Dim HS 'array with the flashers
+HS = Array(HSpostit,HS1,HS2,HS3,HS4,HS5,HS6,HS7,HS8,HS9,HS10,HS11,HS12,HS13,HS14,HS15,HS16,HS17,HS18,HS19,HS20,HS21,HS22,HS23,HS24,HS25,HS26,HS27,HS28,HS29,HS30,HS31)
 
 Sub Loadhs
     Dim x
@@ -1214,11 +1179,13 @@ Sub Reseths
     Savehs
 End Sub
 
+' Sort Highscores
+
 Sub SortHighscore
     Dim tmp, tmp2, i, j
     For i = 1 to 5
         For j = 1 to 4
-            If HSScore(j) <HSScore(j + 1) Then
+            If HSScore(j) < HSScore(j + 1) Then
                 tmp = HSScore(j + 1)
                 tmp2 = HSName(j + 1)
                 HSScore(j + 1) = HSScore(j)
@@ -1230,68 +1197,38 @@ Sub SortHighscore
     Next
 End Sub
 
-' ***************************************************
-' GNMOD - Multiple High Score Display and Collection  by GNance
-' jpsalas: changed ramps by flashers to remove extra shadow
-' ***************************************************
+' check for new highscore
 
-Dim EnteringInitials ' Normally zero, set to non-zero to enter initials
-EnteringInitials = False
-Dim ScoreChecker
-ScoreChecker = 0
-Dim CheckAllScores
-CheckAllScores = 0
-Dim sortscores(4)
-Dim sortplayers(4)
+Sub CheckHighscore
+    HighScoreTimer.Enabled = 1
+    'If Score(CurrentPlayer)> HSSCore(1)Then
+    '   AwardSpecial
+    'End If
+    If Score(CurrentPlayer) > HSSCore(5) Then
+        NewHighScore Score(CurrentPlayer), CurrentPlayer
+    End If
+End Sub
 
-Dim PlungerPulled
-PlungerPulled = 0
-
-Dim SelectedChar   ' character under the "cursor" when entering initials
-
-Dim HSTimerCount   ' Pass counter For HS timer, scores are cycled by the timer
-HSTimerCount = 5   ' Timer is initially enabled, it'll wrap from 5 to 1 when it's displayed
-
-Dim InitialString  ' the string holding the player's initials as they're entered
-
-Dim AlphaString    ' A-Z, 0-9, space (_) and backspace (<)
-Dim AlphaStringPos ' pointer to AlphaString, move Forward and backward with flipper keys
-AlphaString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_<"
-
-Dim HSNewHigh      ' The new score to be recorded
-
-Dim HSScore(5)     ' High Scores read in from config file
-Dim HSName(5)      ' High Score Initials read in from config file
+' Highscore Timer
 
 Sub HighScoreTimer_Timer
     If EnteringInitials then
-        If HSTimerCount = 1 then
-            SetHSLine 3, InitialString & MID(AlphaString, AlphaStringPos, 1)
-            HSTimerCount = 2
-        Else
-            SetHSLine 3, InitialString
-            HSTimerCount = 1
-        End If
+        SetHSLine 3, InitialString & MID(AlphaString, AlphaStringPos, 1)
     ElseIf bGameInPlay then
-        SetHSLine 1, "HIGH SCORE1"
+        SetHSLine 1, "HIGH SCORE"
         SetHSLine 2, HSScore(1)
         SetHSLine 3, HSName(1)
-        HSTimerCount = 5 ' set so the highest score will show after the game is over
-        HighScoreTimer.enabled = false
-    ElseIf CheckAllScores then
-        NewHighScore sortscores(ScoreChecker), sortplayers(ScoreChecker)
+        Me.Enabled = 0
     Else
         ' cycle through high scores
-        HighScoreTimer.interval = 2000
-        HSTimerCount = HSTimerCount + 1
-        If HsTimerCount> 5 then
-            HSTimerCount = 1
-        End If
-        SetHSLine 1, "HIGH SCORE" + FormatNumber(HSTimerCount, 0)
-        SetHSLine 2, HSScore(HSTimerCount)
-        SetHSLine 3, HSName(HSTimerCount)
+        SetHSLine 1, "HIGH SCORE" & (HSTimerCount + 1)
+        SetHSLine 2, HSScore(HSTimerCount + 1)
+        SetHSLine 3, HSName(HSTimerCount + 1)
+        HSTimerCount = (HSTimerCount + 1) MOD 5
     End If
 End Sub
+
+' Enter Highscore initials
 
 Function GetHSChar(String, Index)
     Dim ThisChar
@@ -1311,31 +1248,24 @@ Function GetHSChar(String, Index)
 End Function
 
 Sub SetHsLine(LineNo, String)
-    Dim Letter
-    Dim ThisDigit
-    Dim ThisChar
     Dim StrLen
-    Dim LetterLine
     Dim Index
     Dim StartHSArray
     Dim EndHSArray
-    Dim LetterName
     Dim xFor
     StartHSArray = array(0, 1, 12, 22)
     EndHSArray = array(0, 11, 21, 31)
     StrLen = len(string)
     Index = 1
-
     For xFor = StartHSArray(LineNo) to EndHSArray(LineNo)
-        Eval("HS" &xFor).imageA = GetHSChar(String, Index)
+        HS(xFor).imageA = GetHSChar(String, Index)
         Index = Index + 1
     Next
 End Sub
 
 Sub NewHighScore(NewScore, PlayNum)
-    If NewScore> HSScore(5) then
+    If NewScore > HSScore(5) then
         HighScoreTimer.interval = 500
-        HSTimerCount = 1
         AlphaStringPos = 1      ' start with first character "A"
         EnteringInitials = true ' intercept the control keys while entering initials
         InitialString = ""      ' initials entered so far, initialize to empty
@@ -1343,15 +1273,6 @@ Sub NewHighScore(NewScore, PlayNum)
         SetHSLine 2, "ENTER NAME"
         SetHSLine 3, MID(AlphaString, AlphaStringPos, 1)
         HSNewHigh = NewScore
-        'Award Special or simply play the knocker sound
-        'AwardSpecial
-        PlaySound SoundFXDOF("fx_knocker", 300, DOFPulse, DOFknocker)
-        DOF 230, DOFPulse
-        DOF 200, DOFOn
-    End If
-    ScoreChecker = ScoreChecker-1
-    If ScoreChecker = 0 then
-        CheckAllScores = 0
     End If
 End Sub
 
@@ -1360,7 +1281,7 @@ Sub CollectInitials(keycode)
     If keycode = LeftFlipperKey Then
         ' back up to previous character
         AlphaStringPos = AlphaStringPos - 1
-        If AlphaStringPos <1 then
+        If AlphaStringPos < 1 then
             AlphaStringPos = len(AlphaString) ' handle wrap from beginning to End
             If InitialString = "" then
                 ' Skip the backspace If there are no characters to backspace over
@@ -1368,61 +1289,44 @@ Sub CollectInitials(keycode)
             End If
         End If
         SetHSLine 3, InitialString & MID(AlphaString, AlphaStringPos, 1)
-        PlaySound "Menu_Previous"
+        PlaySound "fx_Previous"
     ElseIf keycode = RightFlipperKey Then
         ' advance to Next character
         AlphaStringPos = AlphaStringPos + 1
-        If AlphaStringPos> len(AlphaString) or(AlphaStringPos = len(AlphaString) and InitialString = "") then
+        If AlphaStringPos > len(AlphaString) or(AlphaStringPos = len(AlphaString) and InitialString = "") then
             ' Skip the backspace If there are no characters to backspace over
             AlphaStringPos = 1
         End If
         SetHSLine 3, InitialString & MID(AlphaString, AlphaStringPos, 1)
-        PlaySound "Menu_Next"
+        PlaySound "fx_Next"
     ElseIf keycode = StartGameKey or keycode = PlungerKey Then
         SelectedChar = MID(AlphaString, AlphaStringPos, 1)
         If SelectedChar = "_" then
             InitialString = InitialString & " "
-            PlaySound("Menu_Esc")
+            PlaySound("fx_Esc")
         ElseIf SelectedChar = "<" then
             InitialString = MID(InitialString, 1, len(InitialString) - 1)
             If len(InitialString) = 0 then
                 ' If there are no more characters to back over, don't leave the < displayed
                 AlphaStringPos = 1
             End If
-            PlaySound("Menu_Esc")
+            PlaySound("fx_Esc")
         Else
             InitialString = InitialString & SelectedChar
-            PlaySound("Menu_Enter")
+            PlaySound("fx_Enter")
         End If
-        If len(InitialString) <3 then
+        If len(InitialString) < 3 then
             SetHSLine 3, InitialString & SelectedChar
         End If
     End If
     If len(InitialString) = 3 then
-        ' save the score
-        For i = 5 to 1 step -1
-            If i = 1 or(HSNewHigh> HSScore(i) and HSNewHigh <= HSScore(i - 1) ) then
-                ' Replace the score at this location
-                If i <5 then
-                    HSScore(i + 1) = HSScore(i)
-                    HSName(i + 1) = HSName(i)
-                End If
-                EnteringInitials = False
-                HSScore(i) = HSNewHigh
-                HSName(i) = InitialString
-                HSTimerCount = 5
-                HighScoreTimer_Timer
-                HighScoreTimer.interval = 2000
-                Exit Sub
-            ElseIf i <5 then
-                ' move the score in this slot down by 1, it's been exceeded by the new score
-                HSScore(i + 1) = HSScore(i)
-                HSName(i + 1) = HSName(i)
-            End If
-        Next
+        EnteringInitials = False
+        HSScore(5) = HSNewHigh
+        HSName(5) = InitialString
+        SortHighScore
+        HighScoreTimer.interval = 2000
     End If
 End Sub
-' End GNMOD
 
 '***********************************************************************
 ' *********************************************************************
@@ -1432,7 +1336,7 @@ End Sub
 
 Sub VPObjects_Init 'init objects
     TurnOffPlayfieldLights()
-    ' no ball until a game is started (see FirstBall)
+    vpmTimer.AddTimer 2000, "BallRelease.CreateSizedBallWithMass BallSize / 2, BallMass: BallRelease.Kick 180, 0 '"
     DisableTable True
 End Sub
 
@@ -1457,7 +1361,7 @@ Sub Game_Init 'called at the start of a new game
     ModesWon = 0
     inningsReel.SetValue ModesWon
     If B2SOn then
-        Controller.B2SSetScorePlayer 2, ModesWon
+        Controller.B2SSetScorePlayer2 ModesWon
     end if
     'Start or init timers
     'Init lights?
@@ -1501,7 +1405,6 @@ End Sub
 '***********
 
 Sub Bumper001_Hit 'left bumper
-    BallActivity
     If Tilted Then Exit Sub
     PlaySoundAt SoundFXDOF("fx_bumper", 109, DOFPulse, DOFContactors), Bumper001
     AddScore 100
@@ -1509,15 +1412,14 @@ End Sub
 
 ' 10 point rebounds
 
-Sub rlband005_Hit:BallActivity:AddScore 10:End Sub
-Sub rlband007_Hit:BallActivity:AddScore 10:End Sub
-Sub rlband004_Hit:BallActivity:AddScore 10:End Sub
-Sub rlband001_Hit:BallActivity:AddScore 10:End Sub
+Sub rlband005_Hit:AddScore 10:End Sub
+Sub rlband007_Hit:AddScore 10:End Sub
+Sub rlband004_Hit:AddScore 10:End Sub
+Sub rlband001_Hit:AddScore 10:End Sub
 
 ' Top Lanes - skillshot
 
 Sub sw006_Hit '1st
-    BallActivity
     PlaySoundAt "fx_sensor", sw006
     If Tilted Then Exit Sub
     Select Case Mode
@@ -1547,7 +1449,6 @@ Sub sw006_Hit '1st
 End Sub
 
 Sub sw005_Hit '2nd
-    BallActivity
     PlaySoundAt "fx_sensor", sw005
     If Tilted Then Exit Sub
     Select Case Mode
@@ -1584,7 +1485,6 @@ Sub sw005_Hit '2nd
 End Sub
 
 Sub sw004_Hit '3rd
-    BallActivity
     PlaySoundAt "fx_sensor", sw004
     If Tilted Then Exit Sub
     Select Case Mode
@@ -1616,7 +1516,6 @@ End Sub
 ' Outlanes
 
 Sub sw001_Hit 'left
-    BallActivity
     PlaySoundAt "fx_sensor", sw001
     If Tilted Then Exit Sub
     AddScore 500
@@ -1627,7 +1526,6 @@ Sub sw001_Hit 'left
 End Sub
 
 Sub sw003_Hit 'right
-    BallActivity
     PlaySoundAt "fx_sensor", sw003
     If Tilted Then Exit Sub
     AddScore 500
@@ -1640,7 +1538,6 @@ End Sub
 ' Inlanes
 
 Sub sw002_Hit 'left
-    BallActivity
     PlaySoundAt "fx_sensor", sw002
     If Tilted Then Exit Sub
     AddScore 100
@@ -1689,7 +1586,6 @@ End Sub
 ' Right Trigger
 
 Sub Trigger011_Hit
-    BallActivity
     PlaySoundAt "fx_sensor", Trigger011
     If Tilted Then Exit Sub
     Addscore 100
@@ -1698,7 +1594,6 @@ End Sub
 ' orbit triggers
 
 Sub Trigger006_Hit
-    BallActivity
     PlaySoundAt "fx_sensor", Trigger006
     If Tilted Then Exit Sub
     FlashForMs RedInsert006, 50, 50, 0
@@ -1709,21 +1604,18 @@ Sub Trigger006_Hit
 End Sub
 
 Sub Trigger005_Hit
-    BallActivity
     PlaySoundAt "fx_sensor", Trigger005
     If Tilted Then Exit Sub
     FlashForMs RedInsert005, 50, 50, 0
 End Sub
 
 Sub Trigger002_Hit
-    BallActivity
     PlaySoundAt "fx_sensor", Trigger002
     If Tilted Then Exit Sub
     FlashForMs RedInsert004, 50, 50, 0
 End Sub
 
 Sub drain2_Hit
-    BallActivity
     PlaySoundAt "fx_sensor", drain2
     FlashForMs RedInsert001, 50, 50, 0
 End Sub
@@ -1731,7 +1623,6 @@ End Sub
 ' spinner
 
 Sub Spinner001_Spin
-    BallActivity
     PlaySoundAt "fx_spinner", Spinner001
     If Tilted Then Exit Sub
     Addscore 50
@@ -1740,7 +1631,6 @@ End Sub
 ' Base Targets
 
 Sub target001_Hit 'left - 3rd base
-    BallActivity
     PlaySoundAtBall SoundFXDOF("fx_target", 105, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     If mode = 1 AND base3 = 2 Then
@@ -1754,7 +1644,6 @@ Sub target001_Hit 'left - 3rd base
 End Sub
 
 Sub target007_Hit 'center - 2nd base
-    BallActivity
     PlaySoundAtBall SoundFXDOF("fx_target", 106, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     If mode = 1 AND base2 = 2 Then
@@ -1768,7 +1657,6 @@ Sub target007_Hit 'center - 2nd base
 End Sub
 
 Sub target002_Hit 'right - 1st base
-    BallActivity
     PlaySoundAtBall SoundFXDOF("fx_target", 107, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     If mode = 1 AND base1 = 2 Then
@@ -1784,7 +1672,6 @@ End Sub
 ' Grand Slam
 
 Sub target003_Hit 'captive ball
-    BallActivity
     PlaySoundAtBall SoundFXDOF("fx_target", 115, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     If mode = 3 Then
@@ -1798,7 +1685,6 @@ End Sub
 ' triple Targets
 
 Sub target004_Hit 'triple target top
-    BallActivity
     PlaySoundAtBall SoundFXDOF("fx_target", 111, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     If mode = 2 AND triple1 = 2 Then
@@ -1812,7 +1698,6 @@ Sub target004_Hit 'triple target top
 End Sub
 
 Sub target005_Hit 'triple target center
-    BallActivity
     PlaySoundAtBall SoundFXDOF("fx_target", 112, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     If mode = 2 AND triple2 = 2 Then
@@ -1826,7 +1711,6 @@ Sub target005_Hit 'triple target center
 End Sub
 
 Sub target006_Hit 'triple target lower
-    BallActivity
     PlaySoundAtBall SoundFXDOF("fx_target", 113, DOFPulse, DOFTargets)
     If Tilted Then Exit Sub
     If mode = 2 AND triple3 = 2 Then
@@ -1902,7 +1786,7 @@ Sub CheckMode
             AwardAddaBall
             inningsReel.SetValue ModesWon
             If B2SOn then
-                Controller.B2SSetScorePlayer 2, ModesWon
+                Controller.B2SSetScorePlayer2 ModesWon
             end if
             'lightshow
             LightEffect 2
@@ -1925,116 +1809,11 @@ Sub WinGame
     end if
     inningsReel.SetValue ModesWon
     If B2SOn then
-        Controller.B2SSetScorePlayer 2, ModesWon
+        Controller.B2SSetScorePlayer2 ModesWon
     end if
     AwardSpecial
     DisableTable 1
     BallsRemaining(CurrentPlayer) = 0
-End Sub
-
-'*****************************************
-'   Stuck ball detection and reset
-'*****************************************
-' If no switch has been hit and no flipper has moved for StuckBallTime ms,
-' the ball is assumed to be stuck. It is removed and a new ball is put in
-' the plunger lane. This does not count as a drain, so no ball is lost.
-' The play ball only exists during a game: it is created when a game starts
-' (FirstBall) and removed when the game ends (EndOfGame).
-' Ignored while the ball sits in the plunger lane, while a flipper is held up
-' (cradling) and when no game is running. The captive ball is never touched.
-
-Const StuckBallTime = 6000 ' ms without any switch or flipper activity
-
-Dim PlayBall, PlayBallID, LastActivityTime
-Set PlayBall = Nothing
-PlayBallID = -1
-LastActivityTime = 0
-
-Sub CreatePlayBall
-    Set PlayBall = BallRelease.CreateSizedBallWithMass(BallSize / 2, BallMass)
-    PlayBallID = PlayBall.ID
-    BallRelease.Kick 180, 0
-    BallActivity
-End Sub
-
-Sub BallActivity
-    LastActivityTime = GameTime
-End Sub
-
-Sub CheckStuckBall
-    If PlayBall Is Nothing Or bRemovingPlayBall Then Exit Sub
-    If bGameInPlay = False Or bBallInPlungerLane Then BallActivity:Exit Sub
-    If LeftFlipperOn = 1 Or RightFlipperOn = 1 Then BallActivity:Exit Sub
-    If GameTime - LastActivityTime < StuckBallTime Then Exit Sub
-    ResetStuckBall
-End Sub
-
-' True while the play ball is still on the table
-Function PlayBallOnTable
-    Dim b
-    PlayBallOnTable = False
-    If PlayBall Is Nothing Then Exit Function
-    For Each b in GetBalls
-        If b.ID = PlayBallID Then PlayBallOnTable = True
-    Next
-End Function
-
-' Removing a ball directly (ball.DestroyBall) does not work on this setup, so
-' the ball is removed through a kicker instead, which is reliable: it is moved
-' into the BallRelease kicker, and BallRelease_Hit destroys it once the kicker
-' has caught it. The captive ball is never touched.
-Dim bRemovingPlayBall, bRespawnAfterRemove, BallReleaseWasEnabled
-bRemovingPlayBall = False
-bRespawnAfterRemove = False
-
-Sub RemovePlayBall
-    If PlayBall Is Nothing Or bRemovingPlayBall Then Exit Sub
-    If Not PlayBallOnTable Then ClearPlayBall:Exit Sub
-    'debug.print "Removing play ball at X=" & Int(PlayBall.X) & " Y=" & Int(PlayBall.Y)
-    bRemovingPlayBall = True
-    BallReleaseWasEnabled = BallRelease.Enabled
-    BallRelease.Enabled = True
-    PlayBall.VelX = 0:PlayBall.VelY = 0:PlayBall.VelZ = 0
-    PlayBall.AngMomX = 0:PlayBall.AngMomY = 0:PlayBall.AngMomZ = 0
-    PlayBall.X = BallRelease.X
-    PlayBall.Y = BallRelease.Y
-    PlayBall.Z = BallSize / 2
-    BallActivity
-End Sub
-
-Sub BallRelease_Hit
-    If Not bRemovingPlayBall Then Exit Sub
-    'debug.print "Play ball removed"
-    BallRelease.DestroyBall
-    BallRelease.Enabled = BallReleaseWasEnabled
-    bRemovingPlayBall = False
-    ClearPlayBall
-    ' a stuck ball reset puts a fresh ball in the plunger lane
-    If bRespawnAfterRemove Then
-        bRespawnAfterRemove = False
-        If bGameInPlay Then CreatePlayBall
-    End If
-End Sub
-
-Sub ClearPlayBall
-    Set PlayBall = Nothing
-    PlayBallID = -1
-    bBallInPlungerLane = False
-End Sub
-
-' Called when a game starts: puts the ball in the plunger lane, unless one is
-' somehow still on the table from the last game
-Sub StartPlayBall
-    If bRemovingPlayBall Then Exit Sub
-    If Not PlayBallOnTable Then CreatePlayBall
-End Sub
-
-' Removes the stuck ball, and once it is gone creates a new one in the
-' plunger lane the same way a game starts (see BallRelease_Hit)
-Sub ResetStuckBall
-    'debug.print "Stuck ball reset at X=" & Int(PlayBall.X) & " Y=" & Int(PlayBall.Y)
-    bRespawnAfterRemove = True
-    RemovePlayBall
 End Sub
 
 '*****************************************
@@ -2068,19 +1847,21 @@ End Sub
 ' - option name, minimum value, maximum value, step between valid values, default value, unit (0=None, 1=Percent), an optional array of literal strings
 
 Dim LUTImage, BallsPerGame
-
-' Gravity as saved in the table, so the option below always scales from
-' the original value instead of compounding each time options change
-Dim BaseGravity
-BaseGravity = Table1.Gravity
+Dim dspTriggered : dspTriggered = False
+LUTImage = Array("LUT0", "LUT1", "LUT2", "LUT3", "LUT4", "LUT5", "LUT6", "LUT7", "LUT8", "LUT9", "LUT10", _
+        "LUT Warm 0", "LUT Warm 1", "LUT Warm 2", "LUT Warm 3", "LUT Warm 4", "LUT Warm 5", "LUT Warm 6", "LUT Warm 7", "LUT Warm 8", "LUT Warm 9", "LUT Warm 10", _
+        "LUT Warmer 0", "LUT Warmer 1", "LUT Warmer 2", "LUT Warmer 3", "LUT Warmer 4", "LUT Warmer 5", "LUT Warmer 6", "LUT Warmer 7", "LUT Warmer 8", "LUT Warmer 9", "LUT Warmer 10")
 
 Sub Table1_OptionEvent(ByVal eventId)
+    If eventId = 1 And Not dspTriggered Then dspTriggered = True : DisableStaticPreRendering = True : End If
+
     Dim x, y
 
     'LUT
-    LutImage = Table1.Option("Select LUT", 0, 21, 1, 0, 0, Array("Normal 0", "Normal 1", "Normal 2", "Normal 3", "Normal 4", "Normal 5", "Normal 6", "Normal 7", "Normal 8", "Normal 9", "Normal 10", _
-        "Warm 0", "Warm 1", "Warm 2", "Warm 3", "Warm 4", "Warm 5", "Warm 6", "Warm 7", "Warm 8", "Warm 9", "Warm 10") )
-    UpdateLUT
+    x = Table1.Option("Select LUT", 0, 32, 1, 0, 0, Array("Normal 0", "Normal 1", "Normal 2", "Normal 3", "Normal 4", "Normal 5", "Normal 6", "Normal 7", "Normal 8", "Normal 9", "Normal 10", _
+        "Warm 0", "Warm 1", "Warm 2", "Warm 3", "Warm 4", "Warm 5", "Warm 6", "Warm 7", "Warm 8", "Warm 9", "Warm 10", _
+        "Warmer 0", "Warmer 1", "Warmer 2", "Warmer 3", "Warmer 4", "Warmer 5", "Warmer 6", "Warmer 7", "Warmer 8", "Warmer 9", "Warmer 10") )
+    table1.ColorGradeImage =  LUTImage(x)
 
     ' Cabinet rails
     x = Table1.Option("Cabinet Rails", 0, 1, 1, 1, 0, Array("Hide", "Show") )
@@ -2099,10 +1880,6 @@ Sub Table1_OptionEvent(ByVal eventId)
         Special3 = 540000
     End if
 
-    ' Gravity, as a percentage of the table's own value (default 125%)
-    x = Table1.Option("Gravity", 1, 1.3, 0.05, 1.25, 1)
-    Table1.Gravity = BaseGravity * x
-
     ' Music  On/Off
     x = Table1.Option("Music", 0, 1, 1, 1, 0, Array("OFF", "ON") )
     If x Then bMusicOn = True Else bMusicOn = False
@@ -2112,33 +1889,13 @@ Sub Table1_OptionEvent(ByVal eventId)
     If bMusicOn AND bGameInPlay Then
         PlaySong Song
     Else
-
+        StopSound Song
     End If
-End Sub
 
-Sub UpdateLUT
-    Select Case LutImage
-        Case 0:table1.ColorGradeImage = "LUT0"
-        Case 1:table1.ColorGradeImage = "LUT1"
-        Case 2:table1.ColorGradeImage = "LUT2"
-        Case 3:table1.ColorGradeImage = "LUT3"
-        Case 4:table1.ColorGradeImage = "LUT4"
-        Case 5:table1.ColorGradeImage = "LUT5"
-        Case 6:table1.ColorGradeImage = "LUT6"
-        Case 7:table1.ColorGradeImage = "LUT7"
-        Case 8:table1.ColorGradeImage = "LUT8"
-        Case 9:table1.ColorGradeImage = "LUT9"
-        Case 10:table1.ColorGradeImage = "LUT10"
-        Case 11:table1.ColorGradeImage = "LUT Warm 0"
-        Case 12:table1.ColorGradeImage = "LUT Warm 1"
-        Case 13:table1.ColorGradeImage = "LUT Warm 2"
-        Case 14:table1.ColorGradeImage = "LUT Warm 3"
-        Case 15:table1.ColorGradeImage = "LUT Warm 4"
-        Case 16:table1.ColorGradeImage = "LUT Warm 5"
-        Case 17:table1.ColorGradeImage = "LUT Warm 6"
-        Case 18:table1.ColorGradeImage = "LUT Warm 7"
-        Case 19:table1.ColorGradeImage = "LUT Warm 8"
-        Case 20:table1.ColorGradeImage = "LUT Warm 9"
-        Case 21:table1.ColorGradeImage = "LUT Warm 10"
-    End Select
+    ' Table's Slope
+    x = Table1.Option("Table's Slope", 0, 10, 0.1, 5, 1)
+    Table1.SlopeMin = x
+    Table1.SlopeMax = x
+
+    If eventId = 3 And dspTriggered Then dspTriggered = False : DisableStaticPreRendering = False : End If
 End Sub

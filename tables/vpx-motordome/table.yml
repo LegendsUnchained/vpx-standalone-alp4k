@@ -5,11 +5,11 @@ enabled: false
 fps: 55
 romChecksum: "9c2f08434930f74de106906e2deb7f4d"
 romVPSId: "modaWsPPYc"
-tableNotes: "Download v6.0.0"
+tableNotes: "Download 'Motordome (Bally 1986) [jpsalas 2026 - v7].zip'"
 tableVPSId: "uwY8TgALj4"
 tagline: "'The Next Trend begins with Motordome'"
 testers:
   - "Wraith"
   - "shaver"
-vpxChecksum: "eb903ec6ce2e78aa93496c1a8e625ea9"
+vpxChecksum: "7255A8B65922E946B290856960F231A5"
 vpxVPSId: "ZxAlHYgoyc"

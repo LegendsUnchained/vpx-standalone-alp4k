@@ -6,11 +6,11 @@ fps: 60
 romChecksum: "02780874D385FB58BF690271BC578CE1"
 romNotes: "radcl_l1"
 romVPSId: "nb5TUt1D"
-tableNotes: "v600"
+tableNotes: "Download 'Radical (Bally 1990) [jpsalas 2026 - v7].zip'"
 tableVPSId: "bkbhaVNY"
 testers:
   - "PBW23"
   - "Wraith"
   - "Coffee Joe"
-vpxChecksum: "B4E7C9F0E1D6FA6487F0623103F5B406"
+vpxChecksum: "179B3D8A33552F7A30AD3996C9B67ACE"
 vpxVPSId: "K-v2s-oh"

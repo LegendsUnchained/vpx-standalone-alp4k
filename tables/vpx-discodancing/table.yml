@@ -9,11 +9,11 @@ romBundled: true
 romChecksum: "A2453167160FA50A024B96CF8C5E0C93"
 romNotes: "Download 'discodan.zip'"
 romVersionOverride: "discodan"
-tableNotes: "Download v600.zip"
+tableNotes: "Download 'Disco Dancing (LTD do Brasil 1979) [jpsalas 2026 - v7].zip'"
 tableVPSId: "uEICxkSaR8"
 tagline: "Disco Will Never Die!"
 testers:
   - "Curt"
   - "OminousOsie"
 vpxVPSId: "3ukBNGX9zq"
-vpxChecksum: "9E4288705047EE01F509CF177C0708AB"
+vpxChecksum: "0DBBACF8A9FFBC2EBD21E2FB26739480"

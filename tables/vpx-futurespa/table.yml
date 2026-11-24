@@ -1,16 +1,15 @@
 ---
 backglassChecksum: "06b3a3658a4e9c6ee4d4dff6954ebb2e"
 backglassVPSId: "sd-5KLtO"
-enabled: false
-fps: 57
+fps: 60
 romChecksum: "55db2783fccce845deed803c31545e90"
 romVPSId: "VPpaNQP3"
-tableNotes: "Download v6.0.0"
+tableNotes: "Download 'Future Spa (Bally 1979) [jpsalas 2026 - v7].zip'"
 tableVPSId: "ILvMU6RB"
 tagline: "'Future Spa will awaken your spouse’s ire'"
 testers:
   - "Mar3nBu"
   - "Coffee Joe"
   - "shaver"
-vpxChecksum: "f2d00e77336d6dd99bf35a4ab2b5b2d3"
+vpxChecksum: "30D4CA2370BC96B611F40DE353425610"
 vpxVPSId: "cWmQ_-7E"
