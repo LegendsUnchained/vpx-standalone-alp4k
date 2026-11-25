@@ -1,0 +1,18 @@
+---
+fps: 60
+pupArchiveFormat: "zip"
+pupArchiveRoot: "starfox"
+pupBundled: true
+pupChecksum: "62968AA7A6E6B4A2597B90958B36BE27"
+pupNotes: "Download - 'starfoxPUPPACK v2 beta.zip', next to the table .vpx link"
+pupRequired: true
+pupVersion: "v2"
+tableNameOverride: "STAR FOX – BATTLE FOR LYLAT PUP"
+tableNotes: "Download - 'STAR FOX – BATTLE FOR LYLAT v2.vpx', version 2"
+tableVPSId: "hdr3Ci0yD_"
+tagline: "Do a Barrel Roll!"
+testers:
+  - "Missile Toad"
+  - "Rocjr73"
+vpxChecksum: "F29B4C4142505E6251A54FEB082A9554"
+vpxVPSId: "Mf1ExRxp7r"
