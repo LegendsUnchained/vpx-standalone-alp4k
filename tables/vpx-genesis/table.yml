@@ -1,0 +1,19 @@
+---
+backglassChecksum: "5477A2859FF34175725D85C9AF2F6B05"
+backglassNotes: "Download - 'Genesis (Gottlieb 1986) full dmd.zip', version 2.0"
+backglassVPSId: "zQu533gcCI"
+fps: 60
+romChecksum: "2EB869559CA7637B9346A5C7FA9723E6"
+romNotes: "Download - 'genesis.zip'"
+romUrlOverride: "https://pinballnirvana.com/forums/resources/genesis.1862/"
+romVersionOverride: "genesis"
+tableNotes: "Download - 'Genesis (Gottlieb1986) VPW v1.0.vpx.zip', verstion 1.0"
+tableVPSId: "yuo1rci6"
+tagline: "Step into the lab and bring the machine to life!"
+testers:
+  - "Missile Toad"
+  - "PBW23"
+  - "Filth"
+  - "Curt"
+vpxChecksum: "4DF4939420E2531B262B7E294E96E99A"
+vpxVPSId: "2dVL_oPcR5"
