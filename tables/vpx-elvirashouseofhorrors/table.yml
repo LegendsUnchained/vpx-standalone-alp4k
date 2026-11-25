@@ -1,17 +1,22 @@
 ---
-backglassVPSId: "1Qzqsg9R"
-backglassChecksum: "32E5226AC4F5F3267DD7AF5B2F359828"
-backglassNotes: "Bundled with VPX"
-fps: 38
-romVPSId: "uBU9fEcnS6"
+backglassChecksum: "7BBA9A3A45924BCAC877695A2713DF52"
+backglassNotes: "Download Elvira re-mix (original 2021) full dmd.zip - v2.0.0"
+backglassVPSId: "O9Ly4EwiQ5"
+fps: 60
+nsfw: true
 romChecksum: "27F95F381AA86D4F747EACBC0A9E9A8A"
-romNotes: Download - eatpm_l4.zip"
+romNotes: "Download eatpm_l4.zip"
+romVPSId: "uBU9fEcnS6"
+tableNotes: "Download  v1.1"
 tableVPSId: "lZP1ZHtt"
-tagline: "How 'bout another ball?"
+tagline: "The taunting is over and the haunting begins!"
 testers:
+  - "Filth"
+  - "Missile Toad"
+  - "PBW23"
+  - "Curt"
   - "TechZombie"
   - "Mox"
   - "lloydbraun"
-vpxVPSId: "1Qzqsg9R"
 vpxChecksum: "015543F8B749615DDD91E6B31DAB22BB"
-enabled: false
+vpxVPSId: "1Qzqsg9R"
