@@ -1,0 +1,18 @@
+---
+fps: 60
+pupArchiveFormat: "zip"
+pupArchiveRoot: "pupvideos/SCREAM"
+pupBundled: true
+pupChecksum: "690D996AEF0DF8F5F7B68B93C7A0AE6C"
+pupNotes: >-
+  Pup Pack/folder scream is included with table download
+  Select the scream folder and right click to compress into a zip file
+  After the file is zipped just add it to the wizard like normal
+pupVersion: "1.0"
+tableNotes: "Download Scream vpx 1.0"
+tableVPSId: "AHlwtbi0zu"
+tagline: "Don't Answer The Door, Don't Leave The House, Don't Answer The Phone, But Most Of All, Don't SCREAM."
+testers:
+  - "Rocjr73"
+vpxChecksum: "AEAA35F02CD2E011A30F00E92D37B8FB"
+vpxVPSId: "3ipKG7yTdU"
