@@ -1,6 +1,7 @@
 ---
-backglassChecksum: "EF593976B22EAAD8DAFDB279413D6467"
-backglassVPSId: "xxPcdHB765"
+backglassChecksum: "3BB0FBA943861D6D5DCA4224E53EF2EE"
+backglassNotes: "Download 'X-Men Wolverine LE (Stern 2012) full dmd.zip'"
+backglassVPSId: "6p2tjIwLte"
 coloredROMChecksum:
   - "9C190BE91D8FBA222E7CB4A624799FF2"
   - "7305071808BBB3AB817B0274FF2C043F"
@@ -10,12 +11,11 @@ coloredROMVPSId: "UySa9Zil"
 fps: 60
 romChecksum: "EA3097A82B483FDD726545595751AE90"
 romVPSId: "ZyQybMpZ"
-tableNotes: "Download version 1.3"
 tableVPSId: "FTxECos3"
 tagline: "Go try that again Bub!"
 testers:
   - "Bla1ze"
   - "Wraith"
   - "Boris"
-vpxChecksum: "108CFD1D709D3A248FB7ACFC1559C5DE"
-vpxVPSId: "I8tgJEQRO-"
+vpxChecksum: "9CE06DD0D91940C89BD39AF39090C6C9"
+vpxVPSId: "3AML_w5N4S"
