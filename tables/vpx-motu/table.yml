@@ -1,0 +1,20 @@
+---
+backglassChecksum: "EDF68012B8C268CFE891B4CE1A1F5EF9"
+backglassNotes: "Download Masters of the Universe (Original 2018).directb2s"
+backglassVPSId: "8uh0720Rax"
+fps: 50
+tableNotes: "Download VR ROOM Masters of the Universe 1.1 Minimal.zip"
+tableVPSId: "Ua8rVDhy"
+tagline: "'I have the power!'"
+testers:
+  - "Curt"
+vpxChecksum: 
+- "216AF6772C6A2C82FC342C3C3A3B87A3"
+- "14EB676EABA23630B1D891FAB741B890"
+vpxVPSId: "g9ZMfhVFhz"
+vpxArchiveFormat: "zip"
+vpxExtractExtra:
+  - "Music heman"
+postInstallRename:
+  - source: "Music heman"
+    destination: "music"
