@@ -1,14 +1,14 @@
 ---
-tableVPSId: "4Rkn0Owa"
-vpxVPSId: "BQ_20OCc"
-vpxChecksum: "774986F50BC4EA82424A2B155B753AE5"
-tableNotes: "Download 'Ghostbusters Slimer (Original 2016) [jpsalas 2026 - v7].zip'"
-backglassVPSId: "oPS8YWqV"
-backglassChecksum: "1fa5ca526a3e88c878fbb89e4d356ad4"
-backglassNotes: "Download 'JP Ghostbusters Slimer.rar'"
 backglassAuthorsOverride:
   - "hauntfreaks"
+backglassChecksum: "1FA5CA526A3E88C878FBB89E4D356AD4"
+backglassNotes: "Download 'JP Ghostbusters Slimer.rar'"
+backglassVPSId: "oPS8YWqV"
 fps: 60
+tableNotes: "Download 'Ghostbusters Slimer (Original 2016) [jpsalas 2026 - v7].zip'"
+tableVPSId: "4Rkn0Owa"
 tagline: "Bustin’ makes me feel good!"
 testers:
   - "Boris"
+vpxChecksum: "26AB4DB6EB94C2CA97FA4097DB32A132"
+vpxVPSId: "BQ_20OCc"
