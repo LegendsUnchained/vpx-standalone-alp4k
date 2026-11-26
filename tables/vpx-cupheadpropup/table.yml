@@ -1,0 +1,19 @@
+---
+fps: 60
+mainNotes: "'This match will get red hot!'"
+pupArchiveFormat: "zip"
+pupArchiveRoot: "cuphead"
+pupBundled: true
+pupChecksum: "78D1E37BDAAEE4B49753A22B01C61A15"
+pupFileUrl: "https://vpuniverse.com/files/file/15901-cuphead-pro-pup-perdition-edition-d-goblett-co-2020/"
+pupNotes: "PupPack in cuphead-pup.zip"
+pupRequired: true
+pupVersion: "1.2"
+tableNameOverride: "Cuphead Pro (Perdition Edition) PuP-Pack"
+tableNotes: "Download Version 1.2"
+tableVPSId: "Ig2Y1F9u"
+testers:
+  - "Bla1ze"
+  - "Curt"
+vpxChecksum: "213F6E942642D26A17FCD8B6A24C2829"
+vpxVPSId: "vKDukaWtBU"
