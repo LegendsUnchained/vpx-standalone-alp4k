@@ -1,0 +1,17 @@
+---
+backglassChecksum: "4C277F5C9F4DBF10742ACD35A9B6B953"
+backglassNotes: "Download 'Tag-Team Pinball (Premier 1985).zip'"
+backglassVPSId: "TL7VZ_plxZ"
+fps: 60
+romChecksum: "FBDDFFBF24B2B8F558DFE27BC9BE06AD"
+romNotes: "Download 'tagteam2.zip'"
+romUrlOverride: "https://pinballnirvana.com/forums/resources/tagteam2.2458/"
+romVersionOverride: "tagteam2"
+tableNotes: "Download 'Tag-Team Pinball (Gottlieb 1985) v1.0.1.zip'"
+tableVPSId: "DWM9hcVE"
+testers:
+  - "PBW23"
+  - "Filth"
+  - "Miku"
+vpxChecksum: "2457C9D69C2F9479B1135C4C3F633450"
+vpxVPSId: "YViO0Fxu14"
